@@ -6,13 +6,13 @@ import org.testng.Assert;
 import com.automation.rei.controller.Controller;
 import com.automation.rei.handlers.Handlers;
 
-import govgrants.framework.automation.projectmanager.ProjectManager;
+import govgrants.framework.automation.projectmanager.GovGrantsManager;
 import govgrants.framework.automation.projectmanager.UsersAndURL;
 
 /**
  * Handles all login based methods and locators for Project
  */
-public class LoginPage extends ProjectManager {
+public class LoginPage extends GovGrantsManager {
     
     /******* "Variables and Locators" *****************/
     
