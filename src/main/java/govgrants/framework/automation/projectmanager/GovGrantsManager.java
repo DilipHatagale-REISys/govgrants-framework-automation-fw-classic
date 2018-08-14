@@ -2,10 +2,8 @@ package govgrants.framework.automation.projectmanager;
 
 import java.io.IOException;
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-
 import com.automation.rei.controller.Controller;
 import com.automation.rei.handlers.Handlers;
 
@@ -20,7 +18,8 @@ public class GovGrantsManager extends ProjectWebServices {
     public Controller controller;
     public String standardPassword = "Automation@12345";
     public String defaultComment = "Automation testing";
-    public final By navigationLogo;
+    public final By navigationLogo, loginDropDown, searchInput, rightHeaderBars, leftPanelHeader, topRightDropDown,
+            egmsHeader, secondTopRightFilter, completeTableHeader,completeTableRow;
 
     /**
      * Super Constructor
@@ -32,6 +31,16 @@ public class GovGrantsManager extends ProjectWebServices {
         this.controller = controller;
         this.reiDriver = reiDriver;
         navigationLogo = By.xpath("//div[@id='holdon-overlay']/div/div/div/img[@class='nav-logo']");
+        searchInput = By.xpath("//div/div[@class='quick-search']/div/input");
+        rightHeaderBars = By.xpath("//div[@class='panel-heading']//div[contains(@class,'header-bars')]");
+        leftPanelHeader = By.xpath("//div[contains(@class,'panel-title')]//div[@id='dropdownListView']");
+        loginDropDown = By.xpath("//div/ul/li[@class='dropdown userDropdown']");
+        topRightDropDown = By.xpath("//div/ul/li[@class='dropdown appDropdown']");
+        egmsHeader = By.xpath("//div[@class='navbar-header']/span[text()='Enterprise Grants Management System']");
+        secondTopRightFilter = By.xpath("//div[contains(@class,'panel-body')]//div/button");
+        completeTableHeader = By.xpath(
+                "//div[@class='panel-heading']/following-sibling::div[contains(@class,'panel-body')]//div/table/thead/tr");
+        completeTableRow=By.xpath("//div[@class='panel-heading']/following-sibling::div[contains(@class,'panel-body')]//div/table/tbody/tr");
     }
 
     /******* "Key Methods with complete functionality - Public" *****************/
@@ -79,8 +88,11 @@ public class GovGrantsManager extends ProjectWebServices {
      * wait for the EGMS header in Gov Grants
      */
     public void waitForEgmsHeader() {
-        reiDriver.WaitFor().WaitForElementToBePresent(
-                By.xpath("//div[@class='navbar-header']/span[text()='Enterprise Grants Management System']"));
+        try {
+            reiDriver.WaitFor().WaitForElementToDisapear(egmsHeader);
+        } catch (Exception e) {
+
+        }
     }
 
     /**
@@ -134,14 +146,14 @@ public class GovGrantsManager extends ProjectWebServices {
      * click on top right drop down. As a grantee etc.
      */
     public void clickTopRightDropDown() {
-        reiDriver.WaitFor().WaitForElementToBePresent(By.xpath("//div/ul/li[@class='dropdown appDropdown']")).click();
+        reiDriver.WaitFor().WaitForElementToBePresent(topRightDropDown).click();
     }
 
     /**
      * click on logout menu.
      */
     public void clickLoginDropDown() {
-        reiDriver.WaitFor().WaitForElementToBePresent(By.xpath("//div/ul/li[@class='dropdown userDropdown']")).click();
+        reiDriver.WaitFor().WaitForElementToBePresent(loginDropDown).click();
     }
 
     /**
@@ -170,8 +182,7 @@ public class GovGrantsManager extends ProjectWebServices {
      * click on left panel header
      */
     public void clickLeftPanelHeader() {
-        reiDriver.WaitFor().WaitForElementToBePresent(
-                By.xpath("//div[contains(@class,'panel-title')]//div[@id='dropdownListView']")).click();
+        reiDriver.WaitFor().WaitForElementToBePresent(leftPanelHeader).click();
     }
 
     /**
@@ -189,8 +200,7 @@ public class GovGrantsManager extends ProjectWebServices {
      * click on right header bars
      */
     public void clickRightHeaderBars() {
-        reiDriver.WaitFor().WaitForElementToBePresent(
-                By.xpath("//div[@class='panel-heading']//div[contains(@class,'header-bars')]")).click();
+        reiDriver.WaitFor().WaitForElementToBePresent(rightHeaderBars).click();
     }
 
     /**
@@ -204,6 +214,54 @@ public class GovGrantsManager extends ProjectWebServices {
                 By.xpath("//div[@class='panel-heading']//div[contains(@class,'header-buttons')]//button[@title='"
                         + buttonName + "']"));
 
+    }
+
+    /**
+     * generic search input box
+     * 
+     * @return
+     */
+    public WebElement getSearchInput() {
+        return reiDriver.WaitFor().WaitForElementToBePresent(searchInput);
+    }
+
+    /**
+     * get filter icon
+     * 
+     * @return
+     */
+    public WebElement getSecondTopRightFiler() {
+        return reiDriver.WaitFor().WaitForElementToBePresent(secondTopRightFilter);
+    }
+
+    /**
+     * fetch the complete header of table
+     * 
+     * @return
+     */
+    public List<WebElement> getCompleteTableHeader() {
+        reiDriver.WaitFor().WaitForElementToBePresent(completeTableHeader);
+        return reiDriver.findMyElement().getElements(completeTableHeader);
+    }
+
+    /**
+     * get any element from title table bar except Action
+     * @param titleName
+     * @return
+     */
+    public WebElement getSpecificElementFromTableHeader(String titleName) {
+        return reiDriver.findMyElement().getElement(By.xpath(
+                "//div[@class='panel-heading']/following-sibling::div[contains(@class,'panel-body')]//div/table/thead/tr/th/a//span[@title='"
+                        + titleName + "']"));
+    }
+    
+    /**
+     * get complete rows
+     * @return
+     */
+    public List<WebElement> getCompleteTableRow() {
+        reiDriver.WaitFor().WaitForElementToBePresent(completeTableRow);
+        return reiDriver.findMyElement().getElements(completeTableRow);
     }
 
     /******* "Local Methods with Limited functionality - Private" **********/
