@@ -9,7 +9,7 @@ public class ProjectWebServices {
     RestfulWebServices apiCall = new RestfulWebServices();
     private static String endPoint = EnvironmentFetcher.environment;
     String parameter;
-    private String defaultEndPointDeleteFileUpload = "";
+    private String defaultEndPoint = "/services/apexrest/frameworkAPI";
     private String defaultEndPointGetToken = "";
     private static String tokenString;
 
@@ -20,9 +20,6 @@ public class ProjectWebServices {
      */
     public void deleteUploadedBatchData(String pathway) {
         getAuthToken();
-        assertStatusCode(apiCall.DeleteCall(null, endPoint + defaultEndPointDeleteFileUpload + "MSP&fiscalYear=2018",
-                "Authorization", "Bearer " + tokenString, null));
-
     }
 
     /**
@@ -39,5 +36,8 @@ public class ProjectWebServices {
 
     private void assertStatusCode(Response response) {
         response.then().statusCode(200);
+    }
+    private void postConfigCall(String fieldName,String componentName,String value) {    
+        apiCall.postCall(new SetUpConfiguration().getConfigJson(fieldName, componentName, value), endPoint+defaultEndPoint, "Authorization", "Bearer " + tokenString, null);
     }
 }
