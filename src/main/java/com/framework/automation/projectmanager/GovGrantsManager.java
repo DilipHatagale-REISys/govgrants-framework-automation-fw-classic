@@ -1,4 +1,4 @@
-package govgrants.framework.automation.projectmanager;
+package com.framework.automation.projectmanager;
 
 import java.io.IOException;
 import java.util.List;
@@ -45,6 +45,20 @@ public class GovGrantsManager extends ProjectWebServices {
 
     /******* "Key Methods with complete functionality - Public" *****************/
 
+    /**
+     * Handle configuration
+     * @param componentName: Name of component
+     * @param componentCoreFieldName: Main field or phase name
+     * @param fieldLabel :field label
+     * @param value
+     */
+    public void initializeConfiguration(String componentName, String componentCoreFieldName, String fieldLabel, String value) {
+        setConfiguration(componentName,componentCoreFieldName,fieldLabel,value);
+    }
+    
+    public void reConfigurationToDefault(String componentName, String fieldLabel, String value) {
+        setConfiguration(componentName,"",fieldLabel,value);
+    }
     /**
      * navigate to a url
      * 

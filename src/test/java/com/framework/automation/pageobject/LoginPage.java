@@ -1,13 +1,12 @@
-package govgrants.framework.automation.pageobject;
+package com.framework.automation.pageobject;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import com.automation.rei.controller.Controller;
 import com.automation.rei.handlers.Handlers;
-
-import govgrants.framework.automation.projectmanager.GovGrantsManager;
-import govgrants.framework.automation.projectmanager.UsersAndURL;
+import com.framework.automation.projectmanager.GovGrantsManager;
+import com.framework.automation.projectmanager.UsersAndURL;
 
 /**
  * Handles all login based methods and locators for Project

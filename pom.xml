@@ -141,7 +141,7 @@
 		<dependency>
 			<groupId>com.automation</groupId>
 			<artifactId>REI-AutomationFramework</artifactId>
-			<version>0.0.12-SNAPSHOT</version>
+			<version>0.0.13-SNAPSHOT</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/ru.yandex.qatools.ashot/ashot -->
 		<dependency>
@@ -149,13 +149,18 @@
 			<artifactId>ashot</artifactId>
 			<version>1.5.3</version>
 		</dependency>
-
+		<!-- To handle javax for deprecated java 1.8 -->
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.3.0</version>
+		</dependency>
 	</dependencies>
 	<repositories>
 		<repository>
 			<id>snapshots</id>
 			<name>DL41-J8K40N2-snapshots</name>
-			<url>http://10.200.45.16:8081/artifactory/libs-snapshot-local</url>
+			<url>http://192.168.1.163:8081/artifactory/libs-snapshot-local</url>
 		</repository>
 	</repositories>
 	<build>
@@ -219,7 +224,6 @@
 						<configuration>
 							<glue>
 								<package>com.framework.automation.steps</package>
-								<package>com.framework.automation.configSteps</package>
 							</glue>
 							<featuresDirectory>src/test/resources/features/</featuresDirectory>
 							<plugins>
