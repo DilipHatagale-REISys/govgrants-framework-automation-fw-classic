@@ -1,14 +1,14 @@
-package govgrants.framework.automation.steps;
+package com.framework.automation.steps;
 
 import org.springframework.context.annotation.Description;
 
 import com.automation.rei.controller.Controller;
 import com.automation.rei.handlers.Handlers;
+import com.framework.automation.pageobject.LoginPage;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import govgrants.framework.automation.pageobject.LoginPage;
 
 public class LoginSteps {
     LoginPage loginPage;
