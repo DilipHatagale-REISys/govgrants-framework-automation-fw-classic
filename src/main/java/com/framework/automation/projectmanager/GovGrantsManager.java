@@ -56,9 +56,6 @@ public class GovGrantsManager extends ProjectWebServices {
         setConfiguration(componentName,componentCoreFieldName,fieldLabel,value);
     }
     
-    public void reConfigurationToDefault(String componentName, String fieldLabel, String value) {
-        setConfiguration(componentName,"",fieldLabel,value);
-    }
     /**
      * navigate to a url
      * 
