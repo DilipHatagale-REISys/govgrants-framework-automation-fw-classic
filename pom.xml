@@ -160,7 +160,7 @@
 		<repository>
 			<id>snapshots</id>
 			<name>DL41-J8K40N2-snapshots</name>
-			<url>http://192.168.1.163:8081/artifactory/libs-snapshot-local</url>
+			<url>http://10.200.45.16:8081/artifactory/libs-snapshot-local</url>
 		</repository>
 	</repositories>
 	<build>
