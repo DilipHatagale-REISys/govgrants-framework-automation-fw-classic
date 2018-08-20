@@ -5,6 +5,7 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import com.automation.rei.controller.Controller;
+import com.automation.rei.exception.ReiFrameworkCustomException;
 import com.automation.rei.handlers.Handlers;
 
 /**
@@ -19,7 +20,7 @@ public class GovGrantsManager extends ProjectWebServices {
     public String standardPassword = "Automation@12345";
     public String defaultComment = "Automation testing";
     public final By navigationLogo, loginDropDown, searchInput, rightHeaderBars, leftPanelHeader, topRightDropDown,
-            egmsHeader, secondTopRightFilter, completeTableHeader,completeTableRow;
+            egmsHeader, secondTopRightFilter, completeTableHeader, completeTableRow, sideBarHeadersList;
 
     /**
      * Super Constructor
@@ -40,22 +41,30 @@ public class GovGrantsManager extends ProjectWebServices {
         secondTopRightFilter = By.xpath("//div[contains(@class,'panel-body')]//div/button");
         completeTableHeader = By.xpath(
                 "//div[@class='panel-heading']/following-sibling::div[contains(@class,'panel-body')]//div/table/thead/tr");
-        completeTableRow=By.xpath("//div[@class='panel-heading']/following-sibling::div[contains(@class,'panel-body')]//div/table/tbody/tr");
+        completeTableRow = By.xpath(
+                "//div[@class='panel-heading']/following-sibling::div[contains(@class,'panel-body')]//div/table/tbody/tr");
+        sideBarHeadersList = By.xpath(
+                "//div[@id='sidebar-wrapper']//div[contains(@class,'panel-sidebar')]//span[contains(@class,'sidebar-label')]");
     }
 
     /******* "Key Methods with complete functionality - Public" *****************/
 
     /**
      * Handle configuration
-     * @param componentName: Name of component
-     * @param componentCoreFieldName: Main field or phase name
-     * @param fieldLabel :field label
+     * 
+     * @param componentName:
+     *            Name of component
+     * @param componentCoreFieldName:
+     *            Main field or phase name
+     * @param fieldLabel
+     *            :field label
      * @param value
      */
-    public void initializeConfiguration(String componentName, String componentCoreFieldName, String fieldLabel, String value) {
-        setConfiguration(componentName,componentCoreFieldName,fieldLabel,value);
+    public void initializeConfiguration(String componentName, String componentCoreFieldName, String fieldLabel,
+            String value) {
+        setConfiguration(componentName, componentCoreFieldName, fieldLabel, value);
     }
-    
+
     /**
      * navigate to a url
      * 
@@ -88,10 +97,9 @@ public class GovGrantsManager extends ProjectWebServices {
      */
     public void clickAdminNavBar(String tabName) {
         try {
-            reiDriver.WaitFor().WaitForElementToBePresent(By.xpath("//nav/ul/li/a[@title='" + tabName + "' +' Tab']"))
-                    .click();
+            reiDriver.WaitFor().WaitForElementToBePresent(By.xpath("//nav/ul/li/a[@title='" + tabName + "']")).click();
         } catch (Exception e) {
-            reiDriver.JavaScript().clickByJS(By.xpath("//nav/ul/li/a[@title='" + tabName + "' +' Tab']"));
+            reiDriver.JavaScript().clickByJS(By.xpath("//nav/ul/li/a[@title='" + tabName + "']"));
         }
     }
 
@@ -100,7 +108,7 @@ public class GovGrantsManager extends ProjectWebServices {
      */
     public void waitForEgmsHeader() {
         try {
-            reiDriver.WaitFor().WaitForElementToDisapear(egmsHeader);
+            reiDriver.WaitFor().WaitForElementToBePresent(egmsHeader);
         } catch (Exception e) {
 
         }
@@ -108,11 +116,25 @@ public class GovGrantsManager extends ProjectWebServices {
 
     /**
      * waits for navigation logo to get disappeared
+     * 
+     * @throws ReiFrameworkCustomException
      */
-    public void waitForNavigationLogo() {
-        if (reiDriver.is().elementDispalyed(navigationLogo)) {
-            reiDriver.WaitFor().WaitForElementToDisapear(navigationLogo);
+    public void waitForNavigationLogo() throws ReiFrameworkCustomException {
+        try {
+            if (reiDriver.is().elementDispalyed(navigationLogo)) {
+                reiDriver.WaitFor().WaitForElementToDisapear(navigationLogo);
+            }
+        } catch (Exception e) {
+            throw new ReiFrameworkCustomException("Unable to find logo " + e);
         }
+    }
+
+    /**
+     * 
+     * @return: List of all side bar headers. Use inner html as attribute to fetch all while using this method
+     */
+    public List<WebElement> getSideBarHeadersList() {
+        return reiDriver.findMyElement().getElements(sideBarHeadersList);
     }
 
     /**
@@ -257,6 +279,7 @@ public class GovGrantsManager extends ProjectWebServices {
 
     /**
      * get any element from title table bar except Action
+     * 
      * @param titleName
      * @return
      */
@@ -265,9 +288,10 @@ public class GovGrantsManager extends ProjectWebServices {
                 "//div[@class='panel-heading']/following-sibling::div[contains(@class,'panel-body')]//div/table/thead/tr/th/a//span[@title='"
                         + titleName + "']"));
     }
-    
+
     /**
      * get complete rows
+     * 
      * @return
      */
     public List<WebElement> getCompleteTableRow() {

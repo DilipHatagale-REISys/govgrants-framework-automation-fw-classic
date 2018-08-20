@@ -15,12 +15,12 @@ public class LoginPage extends GovGrantsManager {
     
     /******* "Variables and Locators" *****************/
     
-    private final By userName = By.xpath("//input[@placeholder='Username']");
-    private final By password = By.xpath("//input[@placeholder='Password']");
-    private final By loginButton = By.xpath("//input[@type='submit'] | //button[@type='submit']");
+    private final By userName = By.xpath("//input[@name='username' or id ='username']");
+    private final By password = By.xpath("//input[@id='password' or @type='password']");
+    private final By loginButton = By.xpath("//input[@id='Login' or @type='submit']");
     private final By userAvatar = By.xpath("//div[@id='myNavbarProfile']/ul/li/a/img[@alt='User Avatar']");
     private final By logOutOption = By.xpath("//ul/li/a[@aria-label='Logout']");
-    private final By loginPageLogo = By.xpath("//img[contains(@alt,'Enterprise Grants Management System')]");
+    private final By loginPageLogo = By.xpath("//div[@id='logo_wrapper']//img[@class='standard_logo'and @alt='Salesforce']");
 
     /**
      * Constructor to handle dependency injection and framework library
@@ -35,14 +35,14 @@ public class LoginPage extends GovGrantsManager {
      * Enter user name to login
      */
     public void enterUserName(String loginName) {
-        reiDriver.findMyElement().getElement(userName).sendKeys(loginName);
+        reiDriver.textInput().enterText(userName, loginName);
     }
 
     /**
      * Enter password to login
      */
     public void enterPassword(String loginPassword) {
-        reiDriver.findMyElement().getElement(password).sendKeys(loginPassword);
+        reiDriver.textInput().enterText(password, loginPassword);
     }
 
     /**
@@ -67,7 +67,7 @@ public class LoginPage extends GovGrantsManager {
     public void enterAsUser(String userLevel) {
         reiDriver.WaitFor().WaitForElementToBePresent(loginPageLogo);
         enterUserName(new UsersAndURL().handleUsersForEnv(userLevel));
-        enterPassword("passwrd");
+        enterPassword(standardPassword);
     }
 
     /**
@@ -75,7 +75,7 @@ public class LoginPage extends GovGrantsManager {
      */
     public void getToHomePage() {
         clickLogin();
-        waitForHomePageLogo();
+        waitForEgmsHeader();
     }
 
     /**
@@ -99,15 +99,8 @@ public class LoginPage extends GovGrantsManager {
      * check if home page logo is present
      */
     public boolean isHomePageLogoPresent() {
-        return reiDriver.findMyElement().getElement(By.xpath("//div/ul[contains(@title,'GovGrants logo')]"))
+        return reiDriver.findMyElement().getElement(egmsHeader)
                 .isDisplayed();
-    }
-
-    /**
-     * wait for home page logo to appear
-     */
-    public void waitForHomePageLogo() {
-        reiDriver.WaitFor().WaitForElementToBePresent(By.xpath("//div/a/img[@alt='GovGrants Logo expanded']"));
     }
 
 }

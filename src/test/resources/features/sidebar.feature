@@ -1,9 +1,10 @@
 @sidebar
-Feature: Test all sidebar based scenarios
+Feature: Test all sidebar component based scenarios
 
-  @test1 @smoke
-  Scenario: User set up configuration as .....
-    Given I configure "PHASES" with "GRANTORHOME" for "Tab Icon CSS" as "i" 
-    #When I login
-    #Then I am on the homepage
-    And I reconfigure "PHASES" with "GRANTORHOME" for "Tab Icon CSS" as "test" 
+  @31625 @all @validateChangeinTaskMenuSequence
+  Scenario: Changing sequence of task menu from second to third in side bar
+    Given I configure "PHASES" with "GRANTORHOME" for "Sidebar Component Sequence" as "Search,ActivityMenu,TaskMenu,RecentlyViewed,TechnicalSupport,Links" 
+    And I login as "Automation" User
+    When I access the "GovGrants Launcher Tab"
+  	Then i see "Tasks" shown at number "2" in sideBar
+    And I reconfigure "PHASES" with "GRANTORHOME" for "Sidebar Component Sequence" as "Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links" 

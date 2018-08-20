@@ -33,7 +33,7 @@ public class LoginSteps {
     @Given("^I login as \"([^\"]*)\" User$")
     public void login(String user) {
         loginPage.enterAsUser(user);
-        loginPage.getToHomePage();
+        loginPage.clickLogin();
     }
 
     @Description("Log out and login again according to user type")
