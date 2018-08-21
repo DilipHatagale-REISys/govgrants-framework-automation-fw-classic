@@ -24,20 +24,20 @@ public class SetUpConfiguration {
      *            value we want to modify
      * @return
      */
-    public String getConfigJson(String fieldLabel, String componentName, String ComponentCoreFieldName, String value) {
+    public String getConfigJson(String fieldLabel, String componentName, String ComponentCoreFieldName,
+            String SubCCFieldName, String value) {
         String stringPayload = null;
         switch (componentName.toUpperCase()) {
         case "PHASES":
-            stringPayload = setPhasesFieldConfig(fieldLabel, ComponentCoreFieldName, value);
+            stringPayload = setPhasesFieldConfig(fieldLabel, ComponentCoreFieldName, value,
+                    getFilterClause(componentName, ComponentCoreFieldName, SubCCFieldName));
             break;
         case "ACCORDIAN HEADER":
-            stringPayload = setAccordianFieldConfig(fieldLabel, ComponentCoreFieldName, value);
-            break;
-        case "SIDEBAR-CONTENT":
-            stringPayload = setAccordianContentFieldConfig(fieldLabel, ComponentCoreFieldName, value);
+            stringPayload = setAccordianFieldConfig(fieldLabel, ComponentCoreFieldName, value,
+                    getFilterClause(componentName, ComponentCoreFieldName, SubCCFieldName));
             break;
         }
-        
+        System.out.println("last payload " + stringPayload);
         return stringPayload;
     }
 
@@ -49,74 +49,57 @@ public class SetUpConfiguration {
      * @param value
      * @return
      */
-    private String setAccordianFieldConfig(String fieldLabel, String ComponentCoreFieldName, String value) {
+    private String setAccordianFieldConfig(String fieldLabel, String ComponentCoreFieldName, String value,
+            String filterClause) {
         String finalPayload = null;
         switch (fieldLabel.toUpperCase()) {
         case "NAME":
             finalPayload = String.format(payload, String.valueOf(SObjectAPIs.GNT__AccordionHeader__c),
-                    getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__AccordionHeader__c),
-                            ComponentCoreFieldName),
+                    getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__AccordionHeader__c), ComponentCoreFieldName,
+                            filterClause),
                     String.valueOf(SObjectAPIs.Name), value);
-            System.out.println("final payload is " + finalPayload);
             break;
         case "ACTIVE":
-            finalPayload = String.format(payload, String.valueOf(SObjectAPIs.GNT__AccordionHeader__c),
-                    getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__AccordionHeader__c),
-                            ComponentCoreFieldName),
-                    String.valueOf(SObjectAPIs.GNT__Active__c), value);
+            finalPayload = String
+                    .format(payload, String.valueOf(SObjectAPIs.GNT__AccordionHeader__c),
+                            getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__AccordionHeader__c),
+                                    ComponentCoreFieldName, filterClause),
+                            String.valueOf(SObjectAPIs.GNT__Active__c), value);
             break;
         case "ICON CSS":
-            finalPayload = String.format(payload, String.valueOf(SObjectAPIs.GNT__AccordionHeader__c),
-                    getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__AccordionHeader__c),
-                            ComponentCoreFieldName),
-                    String.valueOf(SObjectAPIs.GNT__IconCSS__c), value);
+            finalPayload = String
+                    .format(payload, String.valueOf(SObjectAPIs.GNT__AccordionHeader__c),
+                            getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__AccordionHeader__c),
+                                    ComponentCoreFieldName, filterClause),
+                            String.valueOf(SObjectAPIs.GNT__IconCSS__c), value);
             break;
         case "INTERNAL UNIQUE ID":
             finalPayload = String
                     .format(payload, String.valueOf(SObjectAPIs.GNT__AccordionHeader__c),
                             getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__AccordionHeader__c),
-                                    ComponentCoreFieldName),
+                                    ComponentCoreFieldName, filterClause),
                             String.valueOf(SObjectAPIs.GNT__InternalUniqueID__c), value);
             break;
         case "PHASE CONFIG":
-            finalPayload = String.format(payload, String.valueOf(SObjectAPIs.GNT__AccordionHeader__c),
-                    getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__AccordionHeader__c),
-                            ComponentCoreFieldName),
-                    String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), value);
+            finalPayload = String
+                    .format(payload, String.valueOf(SObjectAPIs.GNT__AccordionHeader__c),
+                            getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__AccordionHeader__c),
+                                    ComponentCoreFieldName, filterClause),
+                            String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), value);
             break;
         case "SEQUENCE":
-            finalPayload = String.format(payload, String.valueOf(SObjectAPIs.GNT__AccordionHeader__c),
-                    getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__AccordionHeader__c),
-                            ComponentCoreFieldName),
-                    String.valueOf(SObjectAPIs.GNT__Sequence__c), value);
+            finalPayload = String
+                    .format(payload, String.valueOf(SObjectAPIs.GNT__AccordionHeader__c),
+                            getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__AccordionHeader__c),
+                                    ComponentCoreFieldName, filterClause),
+                            String.valueOf(SObjectAPIs.GNT__Sequence__c), value);
             break;
         case "TYPE":
-            finalPayload = String.format(payload, String.valueOf(SObjectAPIs.GNT__AccordionHeader__c),
-                    getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__AccordionHeader__c),
-                            ComponentCoreFieldName),
-                    String.valueOf(SObjectAPIs.GNT__Type__c), value);
-            break;
-        }
-        return finalPayload;
-    }
-    
-    /**
-     * Handles fields of Accordian Content
-     * 
-     * @param fieldLabel
-     * @param id
-     * @param value
-     * @return
-     */
-    private String setAccordianContentFieldConfig(String fieldLabel, String ComponentCoreFieldName, String value) {
-        String finalPayload = null;
-        switch (fieldLabel.toUpperCase()) {
-        case "LABEL":
-            finalPayload = String.format(payload, String.valueOf(SObjectAPIs.GNT__AccordionContent__c),
-                    getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__AccordionContent__c),
-                            ComponentCoreFieldName),
-                    String.valueOf(SObjectAPIs.Name), value);
-            System.out.println("final payload is " + finalPayload);
+            finalPayload = String
+                    .format(payload, String.valueOf(SObjectAPIs.GNT__AccordionHeader__c),
+                            getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__AccordionHeader__c),
+                                    ComponentCoreFieldName, filterClause),
+                            String.valueOf(SObjectAPIs.GNT__Type__c), value);
             break;
         }
         return finalPayload;
@@ -131,33 +114,45 @@ public class SetUpConfiguration {
      * @return
      * @return
      */
-    private String setPhasesFieldConfig(String fieldLabel, String ComponentCoreFieldName, String value) {
+    private String setPhasesFieldConfig(String fieldLabel, String ComponentCoreFieldName, String value,
+            String filterClause) {
         String finalPayload = null;
         switch (fieldLabel.toUpperCase()) {
         case "TAB ICON CSS":
-            finalPayload = String.format(payload, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c),
-                    getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), ComponentCoreFieldName),
-                    String.valueOf(SObjectAPIs.GNT__TabIconCSS__c), value);
+            finalPayload = String
+                    .format(payload, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c),
+                            getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c),
+                                    ComponentCoreFieldName, filterClause),
+                            String.valueOf(SObjectAPIs.GNT__TabIconCSS__c), value);
             break;
         case "ABBREVIATION":
-            finalPayload = String.format(payload, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c),
-                    getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), ComponentCoreFieldName),
-                    String.valueOf(SObjectAPIs.GNT__Abbreviation__c), value);
+            finalPayload = String
+                    .format(payload, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c),
+                            getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c),
+                                    ComponentCoreFieldName, filterClause),
+                            String.valueOf(SObjectAPIs.GNT__Abbreviation__c), value);
             break;
         case "BODY FLEX TABLE":
-            finalPayload = String.format(payload, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c),
-                    getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), ComponentCoreFieldName),
-                    String.valueOf(SObjectAPIs.GNT__BodyTable__c), value);
+            finalPayload = String
+                    .format(payload, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c),
+                            getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c),
+                                    ComponentCoreFieldName, filterClause),
+                            String.valueOf(SObjectAPIs.GNT__BodyTable__c), value);
             break;
         case "CONFIG: CUSTOM APP":
-            finalPayload = String.format(payload, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c),
-                    getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), ComponentCoreFieldName),
-                    String.valueOf(SObjectAPIs.GNT__CustomAppConfig__c), value);
+            finalPayload = String
+                    .format(payload, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c),
+                            getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c),
+                                    ComponentCoreFieldName, filterClause),
+                            String.valueOf(SObjectAPIs.GNT__CustomAppConfig__c), value);
             break;
         case "SIDEBAR COMPONENT SEQUENCE":
-            finalPayload = String.format(payload, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c),
-                    getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), ComponentCoreFieldName),
-                    String.valueOf(SObjectAPIs.GNT__SidebarComponentSequence__c), value);
+            finalPayload = String
+                    .format(payload, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c),
+                            getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c),
+                                    ComponentCoreFieldName, filterClause),
+                            String.valueOf(SObjectAPIs.GNT__SidebarComponentSequence__c), value);
+            break;
         }
         return finalPayload;
     }
@@ -169,9 +164,9 @@ public class SetUpConfiguration {
      * @param ComponentCoreFieldName
      * @return
      */
-    private String getComponentCoreFieldId(String ComponentAPI, String ComponentCoreFieldName) {
-        
-        Response response = apiCall.postCall(getPayLaodForIdRetrieval(ComponentAPI, ComponentCoreFieldName), null,
+    private String getComponentCoreFieldId(String ComponentAPI, String ComponentCoreFieldName, String filterClause) {
+        Response response = apiCall.postCall(
+                getPayLaodForIdRetrieval(ComponentAPI, ComponentCoreFieldName, filterClause), null,
                 defaultRetrieveEndPoint, "Authorization", "Bearer " + ProjectWebServices.tokenString, null);
         String[] splittedStringForId = response.body().asString().split(":");
         String iD = splittedStringForId[4].substring(2, 20);
@@ -185,25 +180,30 @@ public class SetUpConfiguration {
      * @param ComponentCoreFieldName
      * @return
      */
-    private JsonObject getPayLaodForIdRetrieval(String ComponentAPI, String ComponentCoreFieldName) {
-        
+    private JsonObject getPayLaodForIdRetrieval(String ComponentAPI, String ComponentCoreFieldName,
+            String filterClause) {
         sObjectConfig = new JsonObject();
         sObjectConfig.addProperty("sObjectAPIName", ComponentAPI);
         sObjectConfig.addProperty("fields", "Id");
-        sObjectConfig.addProperty("filterClause", "Name='" + ComponentCoreFieldName + "'");
+        sObjectConfig.addProperty("filterClause", filterClause+"'");
         return sObjectConfig;
     }
-    
-    private String getFilterClause(String componentName,String ComponentCoreFieldName,String name) {
-        String filterClause=null;
-        switch(ComponentAPI) {
+
+    private String getFilterClause(String componentName, String ComponentCoreFieldName, String name) {
+        String filterClause = null;
+        switch (componentName.toUpperCase()) {
         case "PHASES":
-            filterClause="Name="+ComponentCoreFieldName;
+            filterClause = "Name="+"'" + ComponentCoreFieldName;
             break;
         case "ACCORDIAN HEADER":
-            filterClause=String.valueOf(SObjectAPIs.GNT__PhaseConfig__r)+".Name="+ComponentCoreFieldName+"and Name ="+name;
-        break;
-        case "Accordian Content"
+            filterClause = String.valueOf(SObjectAPIs.GNT__PhaseConfig__r) + ".Name=" +"'"+ ComponentCoreFieldName
+                    + "and Name ="+"'" + name;
+            break;
+        case "ACCORDIAN CONTENT":
+            filterClause = String.valueOf(SObjectAPIs.GNT__AccordionSubHeader__r) + "."
+                    + String.valueOf(SObjectAPIs.GNT__AccordionHeader__r) + "."
+                    + String.valueOf(SObjectAPIs.GNT__PhaseConfig__r) + ".Name="+"'" + ComponentCoreFieldName + "and Name ="+"'"
+                    + name;
         }
         return filterClause;
     }

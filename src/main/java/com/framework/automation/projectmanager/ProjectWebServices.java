@@ -17,10 +17,11 @@ public class ProjectWebServices {
      * 
      * @param pathway
      */
-    public void setConfiguration(String componentName, String componentCoreFieldName, String fieldLabel, String value) {
+    public void setConfiguration(String componentName, String componentCoreFieldName, String fieldLabel, String value,
+            String subCCFieldName) {
         createEndPoint();
         getAuthToken();
-        assertStatusCode(postConfigCall(componentName, componentCoreFieldName, fieldLabel, value));
+        assertStatusCode(postConfigCall(componentName, componentCoreFieldName, subCCFieldName, fieldLabel, value));
     }
 
     /**
@@ -59,27 +60,29 @@ public class ProjectWebServices {
      * @return
      */
 
-    private Response postConfigCall(String componentName, String componentCoreFieldName, String fieldLabel,
-            String value) {
+    private Response postConfigCall(String componentName, String componentCoreFieldName, String subCCFieldName,
+            String fieldLabel, String value) {
         return apiCall.postCall(null,
-                new SetUpConfiguration().getConfigJson(fieldLabel, componentName, componentCoreFieldName, value),
+                new SetUpConfiguration().getConfigJson(fieldLabel, componentName, componentCoreFieldName,
+                        subCCFieldName, value),
                 endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
     }
 
     public void setUpDefaultParameters(String componentName, String componentCoreFieldName, String fieldLabel,
-            String value) {
+            String value, String subCCFieldName) {
         setUpParameters = new ConfigurationParameters();
         setUpParameters.setComponentCoreFieldName(componentCoreFieldName);
         setUpParameters.setComponentName(componentName);
         setUpParameters.setFieldLabel(fieldLabel);
         setUpParameters.setValue(value);
+        setUpParameters.setSubCCFieldName(subCCFieldName);
     }
 
     public Response postReConfigCall() {
         return apiCall.postCall(null,
                 new SetUpConfiguration().getConfigJson(setUpParameters.getFieldLabel(),
                         setUpParameters.getComponentName(), setUpParameters.getComponentCoreFieldName(),
-                        setUpParameters.getValue()),
+                        setUpParameters.getSubCCFieldName(), setUpParameters.getValue()),
                 endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
     }
 
