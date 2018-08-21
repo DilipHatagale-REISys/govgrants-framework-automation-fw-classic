@@ -30,7 +30,7 @@ public class SetUpConfiguration {
         case "PHASES":
             stringPayload = setPhasesFieldConfig(fieldLabel, ComponentCoreFieldName, value);
             break;
-        case "SIDEBAR":
+        case "ACCORDIAN HEADER":
             stringPayload = setAccordianFieldConfig(fieldLabel, ComponentCoreFieldName, value);
             break;
         }
@@ -144,6 +144,7 @@ public class SetUpConfiguration {
      * @return
      */
     private String getComponentCoreFieldId(String ComponentAPI, String ComponentCoreFieldName) {
+        
         Response response = apiCall.postCall(getPayLaodForIdRetrieval(ComponentAPI, ComponentCoreFieldName), null,
                 defaultRetrieveEndPoint, "Authorization", "Bearer " + ProjectWebServices.tokenString, null);
         String[] splittedStringForId = response.body().asString().split(":");
@@ -159,10 +160,25 @@ public class SetUpConfiguration {
      * @return
      */
     private JsonObject getPayLaodForIdRetrieval(String ComponentAPI, String ComponentCoreFieldName) {
+        
         sObjectConfig = new JsonObject();
         sObjectConfig.addProperty("sObjectAPIName", ComponentAPI);
         sObjectConfig.addProperty("fields", "Id");
         sObjectConfig.addProperty("filterClause", "Name='" + ComponentCoreFieldName + "'");
         return sObjectConfig;
+    }
+    
+    private String getFilterClause(String componentName,String ComponentCoreFieldName,String name) {
+        String filterClause=null;
+        switch(ComponentAPI) {
+        case "PHASES":
+            filterClause="Name="+ComponentCoreFieldName;
+            break;
+        case "ACCORDIAN HEADER":
+            filterClause=String.valueOf(SObjectAPIs.GNT__PhaseConfig__r)+".Name="+ComponentCoreFieldName+"and Name ="+name;
+        break;
+        case "Accordian Content"
+        }
+        return filterClause;
     }
 }
