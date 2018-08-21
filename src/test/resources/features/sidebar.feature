@@ -34,8 +34,3 @@ Feature: Test all sidebar component based scenarios
     When I click on "Tasks" from left side panel
     When I click on  "My Tasks" inside task menu
     Then I see changed label as "Automation Tasks"
-    
-    
-    
-    
-    
