@@ -39,8 +39,11 @@ public class GrantorHomePage extends GovGrantsManager {
         Assert.assertFalse(isTaskMenuDisabled(headerName));
     }
     
+    /**
+     * @param subTabName
+     * @param mainTabName
+     */
     public void assertnewSubHeaderContentLabel(String subTabName,String mainTabName) {
-        System.out.println("text is "+getSideBarAccordianSubHeaderContent(mainTabName,subTabName).getText());
         Assert.assertEquals(getSideBarAccordianSubHeaderContent(mainTabName,subTabName).getText(), subTabName);
     }
 

@@ -16,12 +16,6 @@ public class GrantorHomeSteps {
 
     @When("^I click on  \"([^\"]*)\" inside \"([^\"]*)\" in side bar sub menu$")
     public void clickSideBarSubMenu(String subTabName,String mainTabName) {
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
         grantorHomePage.clickAccordianSubHeader(mainTabName, subTabName);
     }
 

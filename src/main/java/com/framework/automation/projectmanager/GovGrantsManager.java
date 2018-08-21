@@ -207,10 +207,10 @@ public class GovGrantsManager extends ProjectWebServices {
      * select item from panel header - left
      * 
      * @param leftPanelItem
-     * @return 
+     * @return
      */
     public WebElement getLeftPanelHeader(String leftPanelItem) {
-       return reiDriver.WaitFor().WaitForElementToBePresent(By.xpath(
+        return reiDriver.WaitFor().WaitForElementToBePresent(By.xpath(
                 "//div[@class='panel-heading']//div[contains(@class,'panel-title')]//div[@id='dropdownListView']/ul/li/a[@title='"
                         + leftPanelItem + "']"));
     }
@@ -287,6 +287,7 @@ public class GovGrantsManager extends ProjectWebServices {
 
     /**
      * click on main Accordian header
+     * 
      * @param headerName
      */
     public void clickAccordianHeader(String headerName) {
@@ -295,23 +296,23 @@ public class GovGrantsManager extends ProjectWebServices {
 
     /**
      * click on sub accordian header
+     * 
      * @param AccordianHeader
      * @param subHeaderName
      */
-    public void clickAccordianSubHeader(String AccordianHeader,String subHeaderName) {
-        getSideBarAccordianSubHeader(AccordianHeader,subHeaderName).click();
+    public void clickAccordianSubHeader(String AccordianHeader, String subHeaderName) {
+        getSideBarAccordianSubHeader(AccordianHeader, subHeaderName).click();
     }
 
     /**
      * click on sub header content
+     * 
      * @param AccordianHeader
      * @param subHeaderContentName
      */
-    public void clickAccordiansubHeaderContent(String AccordianHeader,String subHeaderContentName) {
-        getSideBarAccordianSubHeaderContent(AccordianHeader,subHeaderContentName).click();
+    public void clickAccordiansubHeaderContent(String AccordianHeader, String subHeaderContentName) {
+        getSideBarAccordianSubHeaderContent(AccordianHeader, subHeaderContentName).click();
     }
-
-
 
     /******* "Local Methods with Limited functionality - Private" **********/
 
