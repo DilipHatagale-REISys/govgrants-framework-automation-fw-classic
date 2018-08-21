@@ -38,6 +38,14 @@ public class GrantorHomePage extends GovGrantsManager {
     public void assertRemovalOfTaskMenu(String headerName) {
         Assert.assertFalse(isTaskMenuDisabled(headerName));
     }
+    
+    /**
+     * @param subTabName
+     * @param mainTabName
+     */
+    public void assertnewSubHeaderContentLabel(String subTabName,String mainTabName) {
+        Assert.assertEquals(getSideBarAccordianSubHeaderContent(mainTabName,subTabName).getText(), subTabName);
+    }
 
     /********
      * "Local Methods with Limited functionality - Private"

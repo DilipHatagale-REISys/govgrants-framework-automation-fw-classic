@@ -2,23 +2,28 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
 	<groupId>govgrants</groupId>
 	<artifactId>framework.automation</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
-
 	<name>framework.automation</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<tags>~@ignore</tags>
-		<threads>1</threads>
-
-		<!-- Plugin Versions -->
+		<!-- Versions -->
+		<java.version>1.8</java.version>
 		<selenium.version>3.8.0</selenium.version>
+		<selenium-server.version>3.8.1</selenium-server.version>
 		<appium.version>5.0.4</appium.version>
+		<cucumber-jvm.version>2.0.0</cucumber-jvm.version>
+		<cucumber-testng.version>1.2.5</cucumber-testng.version>
+		<cucumber-picocontainer.version>1.2.5</cucumber-picocontainer.version>
+		<testng.version>6.11</testng.version>
+		<cucumber-extentsreport.version>3.0.2</cucumber-extentsreport.version>
+		<webdrivermanager.version>2.1.0</webdrivermanager.version>
+		<rest-assured.version>2.9.0</rest-assured.version>
 	</properties>
 
 	<dependencies>
@@ -26,7 +31,7 @@
 		<dependency>
 			<groupId>io.github.bonigarcia</groupId>
 			<artifactId>webdrivermanager</artifactId>
-			<version>2.1.0</version>
+			<version>${webdrivermanager.version}</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/log4j/log4j -->
@@ -47,7 +52,7 @@
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-jvm</artifactId>
-			<version>2.0.0</version>
+			<version>${cucumber-jvm.version}</version>
 			<type>pom</type>
 		</dependency>
 
@@ -55,14 +60,14 @@
 		<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-testng</artifactId>
-			<version>1.2.5</version>
+			<version>${cucumber-testng.version}</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-picocontainer -->
 		<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-picocontainer</artifactId>
-			<version>1.2.5</version>
+			<version>${cucumber-picocontainer.version}</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
@@ -80,13 +85,13 @@
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
-			<version>6.11</version>
+			<version>${testng.version}</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server -->
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-server</artifactId>
-			<version>3.8.1</version>
+			<version>${selenium-server.version}</version>
 		</dependency>
 
 		<dependency>
@@ -105,7 +110,7 @@
 		<dependency>
 			<groupId>com.vimalselvam</groupId>
 			<artifactId>cucumber-extentsreport</artifactId>
-			<version>3.0.2</version>
+			<version>${cucumber-extentsreport.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.aventstack</groupId>
@@ -129,8 +134,7 @@
 		<dependency>
 			<groupId>com.jayway.restassured</groupId>
 			<artifactId>rest-assured</artifactId>
-			<version>2.9.0</version>
-			<!-- <scope>test</scope> -->
+			<version>${rest-assured.version}</version>
 		</dependency>
 
 		<dependency>
@@ -138,22 +142,16 @@
 			<artifactId>gson</artifactId>
 			<version>2.8.1</version>
 		</dependency>
-		<dependency>
-			<groupId>com.automation</groupId>
-			<artifactId>REI-AutomationFramework</artifactId>
-			<version>0.0.13-SNAPSHOT</version>
-		</dependency>
 		<!-- https://mvnrepository.com/artifact/ru.yandex.qatools.ashot/ashot -->
 		<dependency>
 			<groupId>ru.yandex.qatools.ashot</groupId>
 			<artifactId>ashot</artifactId>
 			<version>1.5.3</version>
 		</dependency>
-		<!-- To handle javax for deprecated java 1.8 -->
 		<dependency>
-			<groupId>javax.xml.bind</groupId>
-			<artifactId>jaxb-api</artifactId>
-			<version>2.3.0</version>
+			<groupId>com.automation</groupId>
+			<artifactId>REI-AutomationFramework</artifactId>
+			<version>0.0.14-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 	<repositories>
@@ -165,6 +163,7 @@
 	</repositories>
 	<build>
 		<plugins>
+		
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
