@@ -24,12 +24,21 @@ public class SetUpConfiguration {
      *            value we want to modify
      * @return
      */
+    /**
+     * 
+     * @param fieldLabel: Label/name of API
+     * @param componentName: Name of component like phases , side bar
+     * @param ComponentCoreFieldName: Main filed like GrantorHome
+     * @param SubCCFieldName: Sub core field like My tasks in accordian header
+     * @param value : value that we want to use as variable and test
+     * @return
+     */
     public String getConfigJson(String fieldLabel, String componentName, String ComponentCoreFieldName,
             String SubCCFieldName, String value) {
         String stringPayload = null;
         switch (componentName.toUpperCase()) {
         case "PHASES":
-            stringPayload = setPhasesFieldConfig(fieldLabel, ComponentCoreFieldName, value,
+            stringPayload = getPhasesFieldConfig(fieldLabel, ComponentCoreFieldName, value,
                     getFilterClause(componentName, ComponentCoreFieldName, SubCCFieldName));
             break;
         case "ACCORDIAN HEADER":
@@ -37,17 +46,16 @@ public class SetUpConfiguration {
                     getFilterClause(componentName, ComponentCoreFieldName, SubCCFieldName));
             break;
         }
-        System.out.println("last payload " + stringPayload);
         return stringPayload;
     }
 
     /**
-     * Handles fields of Accordian Header
-     * 
-     * @param fieldLabel
-     * @param id
-     * @param value
-     * @return
+     * Handles Accordian configuration
+     * @param fieldLabel : Name of the field. Name of the API.
+     * @param ComponentCoreFieldName: Main phase name: eg; GrantorHome
+     * @param value: Parameter that we want to change
+     * @param filterClause: filter clause to get the specific id
+     * @return: payload
      */
     private String setAccordianFieldConfig(String fieldLabel, String ComponentCoreFieldName, String value,
             String filterClause) {
@@ -106,15 +114,37 @@ public class SetUpConfiguration {
     }
 
     /**
-     * Handle phases
-     * 
-     * @param fieldLabel
-     * @param id
-     * @param value
-     * @return
-     * @return
+     * Handles Accordian Content level configuration
+     * @param fieldLabel : Name of the field. Name of the API.
+     * @param ComponentCoreFieldName: Main phase name: eg; GrantorHome
+     * @param value: Parameter that we want to change
+     * @param filterClause: filter clause to get the specific id
+     * @return: payload
      */
-    private String setPhasesFieldConfig(String fieldLabel, String ComponentCoreFieldName, String value,
+    private String setAccordianContentFieldConfig(String fieldLabel, String ComponentCoreFieldName, String value,
+            String filterClause) {
+        String finalPayload = null;
+        switch (fieldLabel.toUpperCase()) {
+        case "LABEL":
+            finalPayload = String.format(payload, String.valueOf(SObjectAPIs.GNT__AccordionContent__c),
+                    getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__AccordionContent__c),
+                            ComponentCoreFieldName, filterClause),
+                    String.valueOf(SObjectAPIs.Name), value);
+            System.out.println("final payload is " + finalPayload);
+            break;
+        }
+        return finalPayload;
+    }
+
+    /**
+     * Handles phase level configuration
+     * @param fieldLabel : Name of the field. Name of the API.
+     * @param ComponentCoreFieldName: Main phase name: eg; GrantorHome
+     * @param value: Parameter that we want to change
+     * @param filterClause: filter clause to get the specific id
+     * @return: payload
+     */
+    private String getPhasesFieldConfig(String fieldLabel, String ComponentCoreFieldName, String value,
             String filterClause) {
         String finalPayload = null;
         switch (fieldLabel.toUpperCase()) {
@@ -185,7 +215,7 @@ public class SetUpConfiguration {
         sObjectConfig = new JsonObject();
         sObjectConfig.addProperty("sObjectAPIName", ComponentAPI);
         sObjectConfig.addProperty("fields", "Id");
-        sObjectConfig.addProperty("filterClause", filterClause+"'");
+        sObjectConfig.addProperty("filterClause", filterClause + "'");
         return sObjectConfig;
     }
 
@@ -193,17 +223,17 @@ public class SetUpConfiguration {
         String filterClause = null;
         switch (componentName.toUpperCase()) {
         case "PHASES":
-            filterClause = "Name="+"'" + ComponentCoreFieldName;
+            filterClause = "Name=" + "'" + ComponentCoreFieldName;
             break;
         case "ACCORDIAN HEADER":
-            filterClause = String.valueOf(SObjectAPIs.GNT__PhaseConfig__r) + ".Name=" +"'"+ ComponentCoreFieldName
-                    + "and Name ="+"'" + name;
+            filterClause = String.valueOf(SObjectAPIs.GNT__PhaseConfig__r) + ".Name=" + "'" + ComponentCoreFieldName
+                    + "and Name =" + "'" + name;
             break;
         case "ACCORDIAN CONTENT":
             filterClause = String.valueOf(SObjectAPIs.GNT__AccordionSubHeader__r) + "."
                     + String.valueOf(SObjectAPIs.GNT__AccordionHeader__r) + "."
-                    + String.valueOf(SObjectAPIs.GNT__PhaseConfig__r) + ".Name="+"'" + ComponentCoreFieldName + "and Name ="+"'"
-                    + name;
+                    + String.valueOf(SObjectAPIs.GNT__PhaseConfig__r) + ".Name=" + "'" + ComponentCoreFieldName
+                    + "and Name =" + "'" + name;
         }
         return filterClause;
     }
