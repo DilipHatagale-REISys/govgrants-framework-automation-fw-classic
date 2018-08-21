@@ -1,6 +1,15 @@
 package com.framework.automation.projectmanager;
 
 public class ConfigurationParameters {
+
+    public String getSubCCFieldName() {
+        return subCCFieldName;
+    }
+
+    public void setSubCCFieldName(String subCCFieldName) {
+        this.subCCFieldName = subCCFieldName;
+    }
+
     public String getComponentName() {
         return componentName;
     }
@@ -33,5 +42,5 @@ public class ConfigurationParameters {
         this.value = value;
     }
 
-    String componentName,componentCoreFieldName,fieldLabel,value;
+    String componentName,componentCoreFieldName,fieldLabel,value,subCCFieldName;
 }

@@ -18,15 +18,15 @@ public class ConfigurationSteps {
         this.projectAPI = projectAPI;
     }
 
-    @And("^I reconfigure \"([^\"]*)\" with \"([^\"]*)\" for \"([^\"]*)\" as \"([^\"]*)\"$")
+    @Given("^I reconfigure \"([^\"]*)\" with \"([^\"]*)\" for \"([^\"]*)\" as \"([^\"]*)\" in \"([^\"]*)\"$")
     public void configurecomponent(String componentName, String componentCoreFieldName, String fieldLabel,
-            String value) {
-        projectAPI.setConfiguration(componentName, componentCoreFieldName, fieldLabel, value);
+            String value,String subCCFieldName) {
+        projectAPI.setConfiguration(componentName, componentCoreFieldName, fieldLabel, value,subCCFieldName);
     }
 
-    @Given("^I have default configuration of \"([^\"]*)\" with \"([^\"]*)\" for \"([^\"]*)\" as \"([^\"]*)\"$")
-    public void recofnigureComponentToDefault(String componentName, String componentCoreFieldName, String fieldLabel,
-            String value) {
-        projectAPI.setUpDefaultParameters(componentName, componentCoreFieldName, fieldLabel, value);
+    @Given("^I have default configuration of \"([^\"]*)\" with \"([^\"]*)\" for \"([^\"]*)\" as \"([^\"]*)\" in \"([^\"]*)\"$")
+    public void setComponentToDefault(String componentName, String componentCoreFieldName, String fieldLabel,
+            String value,String subCCFieldName) {
+        projectAPI.setUpDefaultParameters(componentName, componentCoreFieldName, fieldLabel, value,subCCFieldName);
     }
 }
