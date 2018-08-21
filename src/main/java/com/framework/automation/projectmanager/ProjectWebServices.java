@@ -6,7 +6,8 @@ import com.jayway.restassured.response.Response;
 
 public class ProjectWebServices {
     RestfulWebServices apiCall = new RestfulWebServices();
-    private static String endPoint = EnvironmentFetcher.environment;
+    ConfigurationParameters setUpParameters;
+    private static String endPoint;
     private String defaultUpdateEndPoint = "/services/apexrest/frameworkAPIUpdate";
     private String defaultEndPointGetToken = "/services/oauth2/token?grant_type=password&client_secret=7608231485378593656&client_id=3MVG91ftikjGaMd8E01oyLzW0qhdCcSTnpVVwmMdo3H_C6vbhroOOpEF4C.54CXCiOi5SQFyN.a6Ze8NCAcSa&username=pankaj@ggp.test5&password=test@123";
     public static String tokenString;
@@ -17,6 +18,7 @@ public class ProjectWebServices {
      * @param pathway
      */
     public void setConfiguration(String componentName, String componentCoreFieldName, String fieldLabel, String value) {
+        createEndPoint();
         getAuthToken();
         assertStatusCode(postConfigCall(componentName, componentCoreFieldName, fieldLabel, value));
     }
@@ -61,6 +63,23 @@ public class ProjectWebServices {
             String value) {
         return apiCall.postCall(null,
                 new SetUpConfiguration().getConfigJson(fieldLabel, componentName, componentCoreFieldName, value),
+                endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
+    }
+
+    public void setUpDefaultParameters(String componentName, String componentCoreFieldName, String fieldLabel,
+            String value) {
+        setUpParameters = new ConfigurationParameters();
+        setUpParameters.setComponentCoreFieldName(componentCoreFieldName);
+        setUpParameters.setComponentName(componentName);
+        setUpParameters.setFieldLabel(fieldLabel);
+        setUpParameters.setValue(value);
+    }
+
+    public Response postReConfigCall() {
+        return apiCall.postCall(null,
+                new SetUpConfiguration().getConfigJson(setUpParameters.getFieldLabel(),
+                        setUpParameters.getComponentName(), setUpParameters.getComponentCoreFieldName(),
+                        setUpParameters.getValue()),
                 endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
     }
 
