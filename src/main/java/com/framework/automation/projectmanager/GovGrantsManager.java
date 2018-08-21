@@ -115,7 +115,8 @@ public class GovGrantsManager extends ProjectWebServices {
 
     /**
      * 
-     * @return: List of all side bar headers. Use inner html as attribute to fetch all while using this method
+     * @return: List of all side bar headers. Use inner html as attribute to fetch
+     *          all while using this method
      */
     public List<WebElement> getSideBarHeadersList() {
         return reiDriver.findMyElement().getElements(sideBarHeadersList);
@@ -152,7 +153,7 @@ public class GovGrantsManager extends ProjectWebServices {
      * @param accordianSubHeaderDetail
      * @return
      */
-    public WebElement getSideBarAccordianSubHeaderDetail(String sideBarCategory, String accordianSubHeaderDetail) {
+    public WebElement getSideBarAccordianSubHeaderContent(String sideBarCategory, String accordianSubHeaderDetail) {
         return reiDriver.WaitFor()
                 .WaitForElementToBePresent(By.xpath("//div[@id='sidebar-wrapper']//div/p/span[contains(text(),'"
                         + sideBarCategory + "')]/../../following-sibling::div//div/ul/li/a[text()='"
@@ -206,9 +207,10 @@ public class GovGrantsManager extends ProjectWebServices {
      * select item from panel header - left
      * 
      * @param leftPanelItem
+     * @return 
      */
-    public void getLeftPanelHeader(String leftPanelItem) {
-        reiDriver.WaitFor().WaitForElementToBePresent(By.xpath(
+    public WebElement getLeftPanelHeader(String leftPanelItem) {
+       return reiDriver.WaitFor().WaitForElementToBePresent(By.xpath(
                 "//div[@class='panel-heading']//div[contains(@class,'panel-title')]//div[@id='dropdownListView']/ul/li/a[@title='"
                         + leftPanelItem + "']"));
     }
@@ -282,6 +284,34 @@ public class GovGrantsManager extends ProjectWebServices {
         reiDriver.WaitFor().WaitForElementToBePresent(completeTableRow);
         return reiDriver.findMyElement().getElements(completeTableRow);
     }
+
+    /**
+     * click on main Accordian header
+     * @param headerName
+     */
+    public void clickAccordianHeader(String headerName) {
+        getSideBarAccordianHeader(headerName).click();
+    }
+
+    /**
+     * click on sub accordian header
+     * @param AccordianHeader
+     * @param subHeaderName
+     */
+    public void clickAccordianSubHeader(String AccordianHeader,String subHeaderName) {
+        getSideBarAccordianSubHeader(AccordianHeader,subHeaderName).click();
+    }
+
+    /**
+     * click on sub header content
+     * @param AccordianHeader
+     * @param subHeaderContentName
+     */
+    public void clickAccordiansubHeaderContent(String AccordianHeader,String subHeaderContentName) {
+        getSideBarAccordianSubHeaderContent(AccordianHeader,subHeaderContentName).click();
+    }
+
+
 
     /******* "Local Methods with Limited functionality - Private" **********/
 

@@ -45,6 +45,10 @@ public class SetUpConfiguration {
             stringPayload = setAccordianFieldConfig(fieldLabel, ComponentCoreFieldName, value,
                     getFilterClause(componentName, ComponentCoreFieldName, SubCCFieldName));
             break;
+        case "ACCORDIAN CONTENT":
+            stringPayload = setAccordianContentFieldConfig(fieldLabel, ComponentCoreFieldName, value,
+                    getFilterClause(componentName, ComponentCoreFieldName, SubCCFieldName));
+            break;
         }
         return stringPayload;
     }
@@ -130,7 +134,6 @@ public class SetUpConfiguration {
                     getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__AccordionContent__c),
                             ComponentCoreFieldName, filterClause),
                     String.valueOf(SObjectAPIs.Name), value);
-            System.out.println("final payload is " + finalPayload);
             break;
         }
         return finalPayload;
@@ -216,6 +219,7 @@ public class SetUpConfiguration {
         sObjectConfig.addProperty("sObjectAPIName", ComponentAPI);
         sObjectConfig.addProperty("fields", "Id");
         sObjectConfig.addProperty("filterClause", filterClause + "'");
+        System.out.println("json is "+sObjectConfig);
         return sObjectConfig;
     }
 
@@ -233,7 +237,7 @@ public class SetUpConfiguration {
             filterClause = String.valueOf(SObjectAPIs.GNT__AccordionSubHeader__r) + "."
                     + String.valueOf(SObjectAPIs.GNT__AccordionHeader__r) + "."
                     + String.valueOf(SObjectAPIs.GNT__PhaseConfig__r) + ".Name=" + "'" + ComponentCoreFieldName
-                    + "and Name =" + "'" + name;
+                    +"'" +"and Name =" + "'" + name;
         }
         return filterClause;
     }

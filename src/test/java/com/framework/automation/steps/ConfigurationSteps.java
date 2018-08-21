@@ -18,13 +18,13 @@ public class ConfigurationSteps {
         this.projectAPI = projectAPI;
     }
 
-    @Given("^I reconfigure \"([^\"]*)\" with \"([^\"]*)\" for \"([^\"]*)\" as \"([^\"]*)\" in \"([^\"]*)\"$")
+    @Given("^I reconfigure \"([^\"]*)\" with \"([^\"]*)\" for \"([^\"]*)\" as \"([^\"]*)\" from \"([^\"]*)\"$")
     public void configurecomponent(String componentName, String componentCoreFieldName, String fieldLabel,
             String value,String subCCFieldName) {
         projectAPI.setConfiguration(componentName, componentCoreFieldName, fieldLabel, value,subCCFieldName);
     }
 
-    @Given("^I have default configuration of \"([^\"]*)\" with \"([^\"]*)\" for \"([^\"]*)\" as \"([^\"]*)\" in \"([^\"]*)\"$")
+    @Given("^I have default configuration of \"([^\"]*)\" with \"([^\"]*)\" for \"([^\"]*)\" as \"([^\"]*)\" from \"([^\"]*)\"$")
     public void setComponentToDefault(String componentName, String componentCoreFieldName, String fieldLabel,
             String value,String subCCFieldName) {
         projectAPI.setUpDefaultParameters(componentName, componentCoreFieldName, fieldLabel, value,subCCFieldName);
