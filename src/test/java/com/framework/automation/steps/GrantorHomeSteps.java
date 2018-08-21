@@ -7,15 +7,19 @@ import com.framework.automation.pageobject.GrantorHomePage;
 import cucumber.api.java.en.Then;
 
 public class GrantorHomeSteps {
-    GrantorHomePage grantorHomePage;
+	GrantorHomePage grantorHomePage;
 
-    public GrantorHomeSteps(Controller controller, Handlers handler) {
-        grantorHomePage = new GrantorHomePage(controller, handler);
-    }
-    
-    
-    @Then("^i see \"([^\"]*)\" shown at number \"([^\"]*)\" in sideBar$")
-    public void assertSequenceOfAccordianSideBarHeader(String headerName, String sequenceNumber) {
-        grantorHomePage.assertAccordianHeaderSequence(headerName, Integer.parseInt(sequenceNumber));
-    }
+	public GrantorHomeSteps(Controller controller, Handlers handler) {
+		grantorHomePage = new GrantorHomePage(controller, handler);
+	}
+
+	@Then("^i see \"([^\"]*)\" shown at number \"([^\"]*)\" in sideBar$")
+	public void assertSequenceOfAccordianSideBarHeader(String headerName, String sequenceNumber) {
+		grantorHomePage.assertAccordianHeaderSequence(headerName, Integer.parseInt(sequenceNumber));
+	}
+
+	@Then("^I see \"([^\"]*)\" as disabled from sidebar$")
+	public void assertRemovalOfTaskMenu(String headerName){
+		grantorHomePage.assertRemovalOfTaskMenu(headerName);
+	}
 }

@@ -33,7 +33,11 @@ public class SetUpConfiguration {
         case "SIDEBAR":
             stringPayload = setAccordianFieldConfig(fieldLabel, ComponentCoreFieldName, value);
             break;
+        case "SIDEBAR-CONTENT":
+            stringPayload = setAccordianContentFieldConfig(fieldLabel, ComponentCoreFieldName, value);
+            break;
         }
+        
         return stringPayload;
     }
 
@@ -91,6 +95,28 @@ public class SetUpConfiguration {
                     getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__AccordionHeader__c),
                             ComponentCoreFieldName),
                     String.valueOf(SObjectAPIs.GNT__Type__c), value);
+            break;
+        }
+        return finalPayload;
+    }
+    
+    /**
+     * Handles fields of Accordian Content
+     * 
+     * @param fieldLabel
+     * @param id
+     * @param value
+     * @return
+     */
+    private String setAccordianContentFieldConfig(String fieldLabel, String ComponentCoreFieldName, String value) {
+        String finalPayload = null;
+        switch (fieldLabel.toUpperCase()) {
+        case "LABEL":
+            finalPayload = String.format(payload, String.valueOf(SObjectAPIs.GNT__AccordionContent__c),
+                    getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__AccordionContent__c),
+                            ComponentCoreFieldName),
+                    String.valueOf(SObjectAPIs.Name), value);
+            System.out.println("final payload is " + finalPayload);
             break;
         }
         return finalPayload;
