@@ -128,6 +128,10 @@ public class SetUpConfiguration {
                     getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), ComponentCoreFieldName),
                     String.valueOf(SObjectAPIs.GNT__CustomAppConfig__c), value);
             break;
+        case "SIDEBAR COMPONENT SEQUENCE":
+            finalPayload = String.format(payload, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c),
+                    getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), ComponentCoreFieldName),
+                    String.valueOf(SObjectAPIs.GNT__SidebarComponentSequence__c), value);
         }
         return finalPayload;
     }
