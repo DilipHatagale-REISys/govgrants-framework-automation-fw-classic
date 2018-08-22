@@ -231,7 +231,7 @@ public class SetUpConfiguration {
             break;
         case "ACCORDIAN HEADER":
             filterClause = String.valueOf(SObjectAPIs.GNT__PhaseConfig__r) + ".Name=" + "'" + ComponentCoreFieldName
-                    + "and Name =" + "'" + name;
+                    +"' and Name =" + "'" + name;
             break;
         case "ACCORDIAN CONTENT":
             filterClause = String.valueOf(SObjectAPIs.GNT__AccordionSubHeader__r) + "."
