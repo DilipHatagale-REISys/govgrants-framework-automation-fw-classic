@@ -147,7 +147,23 @@ public class SetUpConfiguration {
                         String.valueOf(SObjectAPIs.Name), value);
             }
             break;
+        case "AVAILABLE FOR PROFILES":
+            if (m.find() && (!value.contains("TR"))) {
+                System.out.println("entered inte");
+                finalPayload = String.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__AccordionContent__c),
+                        getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__AccordionContent__c),
+                                ComponentCoreFieldName, filterClause),
+                        String.valueOf(SObjectAPIs.GNT__AvailableForProfiles__c), value);
+            } else {
+                finalPayload = String.format(payloadForStringValue,
+                        String.valueOf(SObjectAPIs.GNT__AccordionContent__c),
+                        getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__AccordionContent__c),
+                                ComponentCoreFieldName, filterClause),
+                        String.valueOf(SObjectAPIs.GNT__AvailableForProfiles__c), value);
+            }
+            break;
         }
+        System.out.println(finalPayload);
         return finalPayload;
     }
 
