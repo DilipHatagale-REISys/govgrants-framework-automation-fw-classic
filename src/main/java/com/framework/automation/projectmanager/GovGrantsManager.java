@@ -45,7 +45,7 @@ public class GovGrantsManager extends ProjectWebServices {
                 "//div[@class='panel-heading']/following-sibling::div[contains(@class,'panel-body')]//div/table/tbody/tr");
         sideBarHeadersList = By.xpath(
                 "//div[@id='sidebar-wrapper']//div[contains(@class,'panel-sidebar')]//span[contains(@class,'sidebar-label')]");
-    }
+            }
 
     /******* "Key Methods with complete functionality - Public" *****************/
 
@@ -115,11 +115,20 @@ public class GovGrantsManager extends ProjectWebServices {
 
     /**
      * 
-     * @return: List of all side bar headers. Use inner html as attribute to fetch
-     *          all while using this method
+     * @return: List of all side bar headers.
      */
     public List<WebElement> getSideBarHeadersList() {
         return reiDriver.findMyElement().getElements(sideBarHeadersList);
+    }
+
+    /**
+     * 
+     * @return: List of all Accordian headers.
+     */
+    public List<WebElement> accordianHeadersList(String headerName) {
+        return reiDriver.findMyElement()
+                .getElements(By.xpath("//div[@id='sidebar-wrapper']//div/p/span[contains(text(),'" + headerName
+                        + "')]/../../following-sibling::div//div//b/a"));
     }
 
     /**
@@ -128,7 +137,7 @@ public class GovGrantsManager extends ProjectWebServices {
      * @param sideBarCategory
      * @return
      */
-    public WebElement getSideBarAccordianHeader(String sideBarCategory) {
+    public WebElement getSideBarHeader(String sideBarCategory) {
         return reiDriver.WaitFor().WaitForElementToBePresent(
                 By.xpath("//div[@id='sidebar-wrapper']//div/p/span[contains(text(),'" + sideBarCategory + "')]"));
     }
@@ -140,7 +149,7 @@ public class GovGrantsManager extends ProjectWebServices {
      * @param accordianSubHeader
      * @return
      */
-    public WebElement getSideBarAccordianSubHeader(String sideBarCategory, String accordianSubHeader) {
+    public WebElement getSideBarAccordianHeader(String sideBarCategory, String accordianSubHeader) {
         return reiDriver.WaitFor().WaitForElementToBePresent(
                 By.xpath("//div[@id='sidebar-wrapper']//div/p/span[contains(text(),'" + sideBarCategory
                         + "')]/../../following-sibling::div//div//b[text()='" + accordianSubHeader + "']"));
@@ -291,7 +300,7 @@ public class GovGrantsManager extends ProjectWebServices {
      * @param headerName
      */
     public void clickAccordianHeader(String headerName) {
-        getSideBarAccordianHeader(headerName).click();
+        getSideBarHeader(headerName).click();
     }
 
     /**
@@ -301,7 +310,7 @@ public class GovGrantsManager extends ProjectWebServices {
      * @param subHeaderName
      */
     public void clickAccordianSubHeader(String AccordianHeader, String subHeaderName) {
-        getSideBarAccordianSubHeader(AccordianHeader, subHeaderName).click();
+        getSideBarAccordianHeader(AccordianHeader, subHeaderName).click();
     }
 
     /**

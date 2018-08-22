@@ -15,22 +15,27 @@ public class GrantorHomeSteps {
     }
 
     @When("^I click on  \"([^\"]*)\" inside \"([^\"]*)\" in side bar sub menu$")
-    public void clickSideBarSubMenu(String subTabName,String mainTabName) {
+    public void clickSideBarSubMenu(String subTabName, String mainTabName) {
         grantorHomePage.clickAccordianSubHeader(mainTabName, subTabName);
     }
 
     @Then("^I see changed label as \"([^\"]*)\" inside \"([^\"]*)\" in side bar sub menu$")
-    public void assertRenameSubHeaderContentName(String subTabName,String mainTabName) {
-        grantorHomePage.assertnewSubHeaderContentLabel(subTabName,mainTabName);
+    public void assertRenameSubHeaderContentName(String subTabName, String mainTabName) {
+        grantorHomePage.assertnewSubHeaderContentLabel(subTabName, mainTabName);
     }
 
     @Then("^i see \"([^\"]*)\" shown at number \"([^\"]*)\" in sideBar$")
     public void assertSequenceOfAccordianSideBarHeader(String headerName, String sequenceNumber) {
-        grantorHomePage.assertAccordianHeaderSequence(headerName, Integer.parseInt(sequenceNumber));
+        grantorHomePage.assertSideBarHeaderSequence(headerName, Integer.parseInt(sequenceNumber));
     }
 
     @Then("^I see \"([^\"]*)\" as disabled from sidebar$")
     public void assertRemovalOfTaskMenu(String headerName) {
         grantorHomePage.assertRemovalOfTaskMenu(headerName);
+    }
+
+    @Then("^i see \"([^\"]*)\" shown at number \"([^\"]*)\" inside \"([^\"]*)\"$")
+    public void assertSequenceOfAccordianHeader(String accordianHeaderName, String number, String headerName) {
+        grantorHomePage.assertAccordianHeaderSequence(accordianHeaderName, Integer.parseInt(number), headerName);
     }
 }
