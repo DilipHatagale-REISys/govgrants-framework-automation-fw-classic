@@ -26,7 +26,7 @@ public class GrantorHomePage extends GovGrantsManager {
      * @param headerName
      * @param sequenceNumber
      */
-    public void assertAccordianHeaderSequence(String headerName, int sequenceNumber) {
+    public void assertSideBarHeaderSequence(String headerName, int sequenceNumber) {
         Assert.assertTrue(isHeaderSequence(headerName, sequenceNumber));
     }
 
@@ -47,6 +47,16 @@ public class GrantorHomePage extends GovGrantsManager {
         Assert.assertEquals(getSideBarAccordianSubHeaderContent(mainTabName,subTabName).getText(), subTabName);
     }
 
+    /**
+     * 
+     * @param accordianHeaderName
+     * @param number
+     * @param headerName
+     */
+    public void assertAccordianHeaderSequence(String accordianHeaderName, int number, String headerName) {
+        Assert.assertTrue(isAccordianHeaderSequence(accordianHeaderName, number, headerName) );
+    }
+    
     /********
      * "Local Methods with Limited functionality - Private"
      *****************/
@@ -78,5 +88,12 @@ public class GrantorHomePage extends GovGrantsManager {
             }
         }
         return false;
+    }
+    
+    private Boolean isAccordianHeaderSequence(String accordianHeaderName, int number, String headerName) {
+        if (accordianHeadersList(headerName).get(number).getText().contains(accordianHeaderName)) {
+            return true;
+        } else
+            return false;
     }
 }
