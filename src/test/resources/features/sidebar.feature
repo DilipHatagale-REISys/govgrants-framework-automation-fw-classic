@@ -41,3 +41,14 @@ Feature: Test all sidebar component based scenarios
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" 
 	Then i see "Manage Forms" shown at number "0" inside "Activities" 
+	
+	@31628 @validateAccordionContentAllowedProfile
+	Scenario Outline: validate accordion content Pending in My tasks is available for a specific added profile
+	Given I have default configuration of "Accordian Content" with "GRANTORHOME" for "Available for Profiles" as "<Old-Profile>" for category "Reassign" 
+	And I reconfigure "Accordian Content" with "GRANTORHOME" for "Available for Profiles" as "<New-Profile>" for category "Reassign" 
+	When I login as "Automation-EXE" User 
+	When I access the "GovGrants Launcher Tab" 
+	Then I see changed label as "Reassign" inside "Tasks" in side bar sub menu
+	Examples:
+	|New-Profile|Old-Profile|
+	|Automation; DT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PD; PM; PO; SME; SPA; SPI; TR1; TR2; TR3; VND; EPOC|DT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PD; PM; PO; SME; SPA; SPI; TR1; TR2; TR3; VND; EPOC|
