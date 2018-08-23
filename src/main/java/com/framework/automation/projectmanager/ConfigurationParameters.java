@@ -2,12 +2,12 @@ package com.framework.automation.projectmanager;
 
 public class ConfigurationParameters {
 
-    public String getSubCCFieldName() {
-        return subCCFieldName;
+    public String getNewFieldValue() {
+        return newFieldValue;
     }
 
-    public void setSubCCFieldName(String subCCFieldName) {
-        this.subCCFieldName = subCCFieldName;
+    public void setNewFieldValue(String newFieldValue) {
+        this.newFieldValue = newFieldValue;
     }
 
     public String getComponentName() {
@@ -18,12 +18,12 @@ public class ConfigurationParameters {
         this.componentName = componentName;
     }
 
-    public String getComponentCoreFieldName() {
-        return componentCoreFieldName;
+    public String getOldFieldValue() {
+        return oldFieldValue;
     }
 
-    public void setComponentCoreFieldName(String componentCoreFieldName) {
-        this.componentCoreFieldName = componentCoreFieldName;
+    public void setOldFieldValue(String oldFieldValue) {
+        this.oldFieldValue = oldFieldValue;
     }
 
     public String getFieldLabel() {
@@ -42,5 +42,5 @@ public class ConfigurationParameters {
         this.value = value;
     }
 
-    String componentName,componentCoreFieldName,fieldLabel,value,subCCFieldName;
+    String componentName,oldFieldValue,fieldLabel,value,newFieldValue;
 }

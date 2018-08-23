@@ -11,22 +11,24 @@ import cucumber.api.java.en.Given;
 public class ConfigurationSteps {
     GovGrantsManager govGrantsManager;
     ProjectWebServices projectAPI;
-    int myCount = 0;
 
     public ConfigurationSteps(Controller controller, Handlers handler, ProjectWebServices projectAPI) {
         govGrantsManager = new GovGrantsManager(controller, handler);
         this.projectAPI = projectAPI;
     }
 
-    @Given("^I reconfigure \"([^\"]*)\" with \"([^\"]*)\" for \"([^\"]*)\" as \"([^\"]*)\" for category \"([^\"]*)\"$")
-    public void configurecomponent(String componentName, String componentCoreFieldName, String fieldLabel,
-            String value,String subCCFieldName) {
-        projectAPI.setConfiguration(componentName, componentCoreFieldName, fieldLabel, value,subCCFieldName);
+    @Given("^I setup filter clause for \"([^\"]*)\" in \"([^\"]*)\" for field \"([^\"]*)\" having value \"([^\"]*)\"$")
+    public void setUpFilterClause(String componentName, String ComponentCoreFieldName, String fieldName, String value) {
+        projectAPI.initilizeSalesForceIdFilter(componentName, ComponentCoreFieldName, fieldName,value);
     }
 
-    @Given("^I have default configuration of \"([^\"]*)\" with \"([^\"]*)\" for \"([^\"]*)\" as \"([^\"]*)\" for category \"([^\"]*)\"$")
-    public void setComponentToDefault(String componentName, String componentCoreFieldName, String fieldLabel,
-            String value,String subCCFieldName) {
-        projectAPI.setUpDefaultParameters(componentName, componentCoreFieldName, fieldLabel, value,subCCFieldName);
+    @Given("^I have default configuration for \"([^\"]*)\" field \"([^\"]*)\" as \"([^\"]*)\" with filter \"([^\"]*)\"$")
+    public void setComponentToDefault(String componentName, String fieldName, String orignalValue,String newValue) {
+        projectAPI.setUpDefaultParameters(componentName,fieldName,orignalValue,newValue);
+    }
+
+    @Given("^I reconfigure \"([^\"]*)\" field \"([^\"]*)\" as \"([^\"]*)\"$")
+    public void configurecomponent(String componentName, String fieldName, String value) {
+        projectAPI.setConfigurationTest(componentName, fieldName, value);
     }
 }

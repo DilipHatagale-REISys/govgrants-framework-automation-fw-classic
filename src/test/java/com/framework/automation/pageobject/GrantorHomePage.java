@@ -35,7 +35,7 @@ public class GrantorHomePage extends GovGrantsManager {
 	 * 
 	 * @param headerName
 	 */
-	public void assertRemovalOfTaskMenu(String headerName) {
+	public void assertRemovalOfSideBarHeader(String headerName) {
 		Assert.assertFalse(isTaskMenuDisabled(headerName));
 	}
 
@@ -67,9 +67,7 @@ public class GrantorHomePage extends GovGrantsManager {
 		Assert.assertEquals(getSideBarAccordionHeaderContent(mainTabName, subTabName).getText(), subTabName);
 	}
 
-	/********
-	 * "Local Methods with Limited functionality - Private"
-	 *****************/
+	/********* "Local Methods with Limited functionality - Private" *****************/
 
 	/**
 	 * 
