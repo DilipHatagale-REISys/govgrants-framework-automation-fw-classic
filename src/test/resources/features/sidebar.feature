@@ -56,21 +56,7 @@ Feature: Test all sidebar component based scenarios
 	@32095 @all @validateLabelChangeOfAccordionHeader 
 	Scenario: Changing label of accordion Header 
 	Given I have default configuration of "Accordian Header" with "GRANTORHOME" for "Name" as "My Tasks" for category "Automation"
-	#Given I have default configuration of "Accordian Header" with "GRANTORHOME" for "Name" as "My Tasks" from "Automation" 
 	And I reconfigure "Accordian Header" with "GRANTORHOME" for "Name" as "Automation" for category "My Tasks"
-	#And I reconfigure "Accordian Header" with "GRANTORHOME" for "Name" as "Automation" from "My Tasks" 
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" 
 	Then I see changed label as "Automation" inside "Tasks" in side accordion header menu
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
