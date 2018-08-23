@@ -30,8 +30,8 @@ public class GrantorHomeSteps {
 	}
 
 	@Then("^I see \"([^\"]*)\" as disabled from sidebar$")
-	public void assertRemovalOfTaskMenu(String headerName) {
-		grantorHomePage.assertRemovalOfTaskMenu(headerName);
+	public void assertRemovalOfSideBarHeader(String headerName) {
+		grantorHomePage.assertRemovalOfSideBarHeader(headerName);
 	}
 
 	@Then("^i see \"([^\"]*)\" shown at number \"([^\"]*)\" inside \"([^\"]*)\"$")

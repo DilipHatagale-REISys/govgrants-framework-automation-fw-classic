@@ -18,8 +18,13 @@ public class CommonSteps {
 
     @Description("click in admin menu to rechout to govegrants homepage")
     @When("^I access the \"([^\"]*)\"$")
-    public void accessthehomepage(String tabName){
+    public void accessthehomepage(String tabName) {
         govGrantsManager.clickAdminNavBar(tabName);
     }
 
+    @When("^I access the \"([^\"]*)\" to reach \"([^\"]*)\" tab$")
+    public void reachOutToSpecificPhasesTab(String adminTabName, String phaseTabName) {
+        govGrantsManager.clickAdminNavBar(adminTabName);
+        govGrantsManager.clickPhasesNaveBar(phaseTabName);
+    }
 }
