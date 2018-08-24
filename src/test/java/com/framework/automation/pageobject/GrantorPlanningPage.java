@@ -19,10 +19,19 @@ public class GrantorPlanningPage extends GovGrantsManager {
 
     /******* "Key Methods with complete functionality - public" *****************/
 
+    /**
+     * assert correct title name of table is displayed
+     * @param titleName
+     */
     public void assertCorrectFlexTableTitleDisplayed(String titleName) {
         Assert.assertTrue(isTitleDisplayed(titleName));
     }
 
+    /**
+     * assert two specific items are not displayed in top righ parallel lines bar
+     * @param option1
+     * @param option2
+     */
     public void assertTopRightParallelLinesBarSpecificOptionsDisabled(String option1, String option2) {
         Assert.assertTrue(isTopRightParallelLinesBarSpecificOptionsDisabled(option1, option2));
     }
@@ -30,7 +39,12 @@ public class GrantorPlanningPage extends GovGrantsManager {
     /********
      * "Local Methods with complete functionality - private"
      *****************/
-
+    /**
+     * validate if tile is displayed
+     * 
+     * @param titleName
+     * @return
+     */
     private boolean isTitleDisplayed(String titleName) {
         clickLeftPanelHeader();
         try {
@@ -44,6 +58,13 @@ public class GrantorPlanningPage extends GovGrantsManager {
         }
     }
 
+    /**
+     * validate if options are not displayed in top right parallel line bar
+     * 
+     * @param option1
+     * @param option2
+     * @return
+     */
     private boolean isTopRightParallelLinesBarSpecificOptionsDisabled(String option1, String option2) {
         boolean flag = false;
         try {

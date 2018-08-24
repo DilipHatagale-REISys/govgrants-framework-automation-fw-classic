@@ -15,6 +15,14 @@ public class ProjectWebServices {
     private String defaultEndPointGetToken = "/services/oauth2/token?grant_type=password&client_secret=7608231485378593656&client_id=3MVG91ftikjGaMd8E01oyLzW0qhdCcSTnpVVwmMdo3H_C6vbhroOOpEF4C.54CXCiOi5SQFyN.a6Ze8NCAcSa&username=pankaj@ggp.test5&password=test@123";
     public static String tokenString;
 
+    /**
+     * Start to setup filter for main api call
+     * 
+     * @param componentName
+     * @param ComponentCoreFieldName
+     * @param fieldieldName
+     * @param value
+     */
     public void initilizeSalesForceIdFilter(String componentName, String ComponentCoreFieldName, String fieldieldName,
             String value) {
         setUpParameters.setOldFieldValue(value);
@@ -22,6 +30,13 @@ public class ProjectWebServices {
         filterClause = apiUtil.getFilterClause(componentName, ComponentCoreFieldName, fieldieldName, value);
     }
 
+    /**
+     * set up configurational call
+     * 
+     * @param componentName
+     * @param fieldLabel
+     * @param value
+     */
     public void setConfigurationTest(String componentName, String fieldLabel, String value) {
         createEndPoint();
         getAuthToken();
@@ -52,12 +67,28 @@ public class ProjectWebServices {
         response.then().statusCode(200);
     }
 
+    /**
+     * handle setting up new configurational setting
+     * 
+     * @param componentName
+     * @param fieldName
+     * @param value
+     * @return
+     */
     private Response postConfigCall(String componentName, String fieldName, String value) {
         return apiCall.postCall(null,
                 new SetUpConfiguration().getConfigJson(componentName, fieldName, value, filterClause),
                 endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
     }
 
+    /**
+     * set up parameters for default confiuration
+     * 
+     * @param componentName
+     * @param fieldLabel
+     * @param value
+     * @param newValue
+     */
     public void setUpDefaultParameters(String componentName, String fieldLabel, String value, String newValue) {
         setUpParameters.setComponentName(componentName);
         setUpParameters.setFieldLabel(fieldLabel);
@@ -65,12 +96,22 @@ public class ProjectWebServices {
         setUpParameters.setNewFieldValue(newValue);
     }
 
+    /**
+     * handle setting up default configurational setting
+     * 
+     * @return
+     */
     public Response postReConfigCall() {
         return apiCall.postCall(null, new SetUpConfiguration().getConfigJson(setUpParameters.getComponentName(),
                 setUpParameters.getFieldLabel(), setUpParameters.getValue(), isFilterClauseGoodForDefaultSetting()),
                 endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
     }
 
+    /**
+     * update filter clause for default configuration
+     * 
+     * @return
+     */
     private String isFilterClauseGoodForDefaultSetting() {
         String newFilterClause = null;
         if (!filterClause.contains(setUpParameters.getNewFieldValue())) {
@@ -78,7 +119,7 @@ public class ProjectWebServices {
             newFilterClause = filterClause.replaceAll(setUpParameters.getOldFieldValue(),
                     setUpParameters.getNewFieldValue());
         } else {
-            newFilterClause=filterClause;
+            newFilterClause = filterClause;
         }
         return newFilterClause;
     }

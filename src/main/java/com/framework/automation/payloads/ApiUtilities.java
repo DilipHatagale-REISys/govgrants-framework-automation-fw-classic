@@ -72,6 +72,11 @@ public class ApiUtilities {
         return filterClause;
     }
 
+    /**
+     * setup configuration for general
+     * @param ComponentCoreFieldName
+     * @return
+     */
     private String genericParameterFilter(String ComponentCoreFieldName) {
         return "Name=" + "'" + ComponentCoreFieldName + "'";
     }
