@@ -1,6 +1,10 @@
 package com.framework.automation.steps;
 
 import java.io.IOException;
+
+import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
+
 import com.automation.rei.controller.Controller;
 import com.automation.rei.controller.EnvironmentFetcher;
 import com.automation.rei.controller.SetupController;
@@ -20,6 +24,7 @@ public class setup {
     private Controller controller;
     private SetupController setupController;
     private ProjectWebServices projectAPI;
+    SoftAssert softAssert = new SoftAssert();
 
     public setup(Controller controller, ProjectWebServices projectAPI) {
         this.controller = controller;

@@ -28,4 +28,9 @@ public class GrantorPlanningSteps {
     public void assertFlextableTitle(String titleName) {
         grantorPlanningPage.assertCorrectFlexTableTitleDisplayed(titleName);
     }
+    
+    @Then("^i see \"([^\"]*)\" option disabled$")
+    public void assertQuickSearchOptionDisabled(String quicksearch) {
+        //to be implemented
+    }
 }

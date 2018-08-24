@@ -28,9 +28,13 @@ public class CommonSteps {
 		govGrantsManager.clickPhasesNaveBar(phaseTabName);
 	}
 
-	@When("^I navigate to \"([^\"]*)\" on left panel inside \"([^\"]*)\" tabmenu$")
-	public void navigateToLeftPannelItemInsideTab(String leftPanelMenu, String mainMenuTab) {
-		govGrantsManager.clickMainMenuTab(mainMenuTab);
+	@When("^I navigate to \"([^\"]*)\" on side bar$")
+	public void navigateToSideBar(String leftPanelMenu) {
 		govGrantsManager.clickLeftPanel(leftPanelMenu);
 	}
+	
+	@Then("^I see page title \"([^\"]*)\"$")
+    public void asserPageTitle(String pageTitle) {
+        govGrantsManager.assertPageTitle(pageTitle);
+    }
 }

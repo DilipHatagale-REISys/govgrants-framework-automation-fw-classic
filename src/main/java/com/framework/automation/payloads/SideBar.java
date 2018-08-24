@@ -88,19 +88,11 @@ public class SideBar {
 			}
 			break;
 		case "TARGET URL":
-			if (m.find()) {
-				finalPayload = String
-						.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__AccordionContent__c),
-								new ApiUtilities().getComponentCoreFieldId(
-										String.valueOf(SObjectAPIs.GNT__AccordionContent__c), filterClause),
-								String.valueOf(SObjectAPIs.GNT__Link__c), value);
-			} else {
 				finalPayload = String
 						.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__AccordionContent__c),
 								new ApiUtilities().getComponentCoreFieldId(
 										String.valueOf(SObjectAPIs.GNT__AccordionContent__c), filterClause),
 								String.valueOf(SObjectAPIs.GNT__Link__c), value);
-			}
 			break;
 		}
 		return finalPayload;
