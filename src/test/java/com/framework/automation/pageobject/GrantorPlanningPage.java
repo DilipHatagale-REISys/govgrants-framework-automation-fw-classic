@@ -23,11 +23,16 @@ public class GrantorPlanningPage extends GovGrantsManager {
         Assert.assertTrue(isTitleDisplayed(titleName));
     }
 
-    /******** "Local Methods with complete functionality - private" *****************/
+    public void assertTopRightParallelLinesBarSpecificOptionsDisabled(String option1, String option2) {
+        Assert.assertTrue(isTopRightParallelLinesBarSpecificOptionsDisabled(option1, option2));
+    }
+
+    /********
+     * "Local Methods with complete functionality - private"
+     *****************/
 
     private boolean isTitleDisplayed(String titleName) {
         clickLeftPanelHeader();
-        System.out.println("title is " + getLeftPanelHeader(titleName).isDisplayed());
         try {
             if (getLeftPanelHeader(titleName).isDisplayed()) {
                 return true;
@@ -37,5 +42,26 @@ public class GrantorPlanningPage extends GovGrantsManager {
         } catch (Exception e) {
             return false;
         }
+    }
+
+    private boolean isTopRightParallelLinesBarSpecificOptionsDisabled(String option1, String option2) {
+        boolean flag = false;
+        try {
+            if (getItemFromTopRightHeaderBarsWithoutWaitTime(option1).isDisplayed()) {
+                flag = false;
+            }
+        } catch (Exception e) {
+            flag = true;
+        }
+
+        try {
+            if (getItemFromTopRightHeaderBarsWithoutWaitTime(option2).isDisplayed()) {
+                flag = false;
+            }
+        } catch (Exception e) {
+            flag = true;
+        }
+
+        return flag;
     }
 }
