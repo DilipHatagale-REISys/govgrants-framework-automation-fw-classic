@@ -46,6 +46,13 @@ public class FlexTable {
         return finalPayload;
     }
     
+    /**
+     * setup configuration for main flex table
+     * @param fieldLabel
+     * @param value
+     * @param filterClause
+     * @return
+     */
     public String setFlexTableFieldConfig(String fieldLabel, String value, String filterClause) {
         String finalPayload = null;
         Pattern p = Pattern.compile("([0-9])");

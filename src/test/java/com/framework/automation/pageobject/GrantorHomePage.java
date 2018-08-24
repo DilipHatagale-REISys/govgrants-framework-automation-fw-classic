@@ -98,6 +98,13 @@ public class GrantorHomePage extends GovGrantsManager {
 		return false;
 	}
 
+	/**
+	 * validate the sequence of accordian headers appearing
+	 * @param accordianHeaderName
+	 * @param number
+	 * @param headerName
+	 * @return
+	 */
 	private Boolean isAccordianHeaderSequence(String accordianHeaderName, int number, String headerName) {
 		if (accordianHeadersList(headerName).get(number).getText().contains(accordianHeaderName)) {
 			return true;
