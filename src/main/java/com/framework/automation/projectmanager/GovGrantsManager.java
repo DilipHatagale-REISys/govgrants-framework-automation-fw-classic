@@ -132,6 +132,16 @@ public class GovGrantsManager extends ProjectWebServices {
 	}
 
 	/**
+	 * 
+	 * @return: List of all Accordian content.
+	 */
+	public List<WebElement> accordianContentList(String headerName) {
+		return reiDriver.findMyElement()
+				.getElements(By.xpath("//div[@id='sidebar-wrapper']//div/p/span[contains(text(),'" + headerName
+						+ "')]/../../following-sibling::div//div//ul//li/a"));
+	}
+
+	/**
 	 * Access category in left side pane. Also can collapse and Expand side bar item
 	 * 
 	 * @param sideBarCategory
@@ -334,6 +344,46 @@ public class GovGrantsManager extends ProjectWebServices {
 		return reiDriver.WaitFor().WaitForElementToBePresent(
 				By.xpath("//div[@id='sidebar-wrapper']//div/p/span[contains(text(),'" + sideBarCategory
 						+ "')]/../../following-sibling::div/div//b[text()='" + accordianHeaderDetail + "']"));
+	}
+
+	/**
+	 * get main menu tab name to click on it. e.g; Home,Planning etc
+	 * 
+	 * @param menuItem
+	 */
+	public void clickMainMenuTab(String menuItem) {
+		try {
+			waitForNavigationLogo();
+		} catch (Exception e) {
+
+		}
+		reiDriver.WaitFor().WaitForElementToBePresent(
+				By.xpath("//div/ul[@class='nav navbar-nav']/li/a[@title='" + menuItem + "']")).click();
+		try {
+			waitForNavigationLogo();
+		} catch (Exception e) {
+
+		}
+	}
+
+	/**
+	 * method to click on any item on left hand panel including
+	 * completed, pending
+	 */
+	public void clickLeftPanel(String menuItem) {
+		reiDriver.WaitFor().makeThreadSleep(1000);
+		try {
+			waitForNavigationLogo();
+		} catch (Exception e) {
+
+		}
+		reiDriver.WaitFor().WaitForElementToBePresent(By.xpath("//div/ul/li/a[text()='" + menuItem + "']"));
+		reiDriver.JavaScript().clickByJS(By.xpath("//div/ul/li/a[text()='" + menuItem + "']"));
+		try {
+			waitForNavigationLogo();
+		} catch (Exception e) {
+
+		}
 	}
 
 	/******* "Local Methods with Limited functionality - Private" **********/

@@ -13,6 +13,6 @@ public enum SObjectAPIs {
     GNT__EnableMenu__c, GNT__EnableBIAnalytics__c, GNT__SidebarBIAnalyticsMenuLabel__c, GNT__EnableSidebarTaskMenu__c, GNT__SidebarTaskMenuLabel__c,
     GNT__EnableSearch__c, GNT__SidebarSearchLabel__c, GNT__EnableRecentlyViewed__c, GNT__SidebarRecentlyViewedLabel__c, GNT__EnableExternalLinks__c,
     GNT__SidebarExternalLinksLabel__c, GNT__Enable_Technical_Support__c, GNT__SidebarTechnicalSupportLabel__c, GNT__IconCSS__c, GNT__Type__c,GNT__FlexTableConfig__r,
-    GNT__FlexTableConfig__c;
+    GNT__FlexTableConfig__c,GNT__OpenInNewWindow__c,GNT__Link__c;
 
 }

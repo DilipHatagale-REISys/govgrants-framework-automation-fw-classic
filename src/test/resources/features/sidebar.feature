@@ -67,3 +67,40 @@ Feature: Test all sidebar component based scenarios
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" 
 	Then I see changed label as "Automation" inside "Tasks" in side accordion header menu
+	
+	@32111 @all @validateChangeAccordianContentSeq 
+	Scenario: validate after changing accordion content sequence for completed inside my tasks
+	Given I have default configuration for "Accordian Content" field "Sequence" as "1" with filter ""
+	Given I setup filter clause for "Accordian Content" in "GrantorHome" for field "Name" having value "Completed"
+	When I reconfigure "Accordian Content" field "Sequence" as "3"	 
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" 
+	Then I see "Completed" shown at number "1" inside "Tasks"
+	
+	@32112 @all @validateAccordionContentOpensInNewWindow
+	Scenario Outline: validate accordion content opens in new window 
+	Given I have default configuration for "Accordian Content" field "Open in new window" as "false" with filter ""
+	Given I setup filter clause for "Accordian Content" in "GrantorHome" for field "Name" having value "Completed"
+	When I reconfigure "Accordian Content" field "Open in new window" as "true"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab"
+	When I navigate to "Completed" on left panel inside "HOME" tabmenu
+	Then I see "Completed" opens with "<Page title>" 
+	Examples:
+	|Page title|
+	|My Task Page|
+	 
+	@32113 @all @validateTargetUrlForAccordionContent
+	Scenario Outline: validate accordion content opens with provided target url
+	Given I have default configuration for "Accordian Content" field "Target Url" as "<Old-TargetUrl>" with filter ""
+	Given I setup filter clause for "Accordian Content" in "GrantorHome" for field "Name" having value "Completed"
+	When I reconfigure "Accordian Content" field "Target Url" as "<New-TargetUrl>"
+	When I login as "Automation-EXE" User 
+	When I access the "GovGrants Launcher Tab"
+	When I navigate to "Completed" on left panel inside "HOME" tabmenu
+	#Then I see "Completed" opens with "<New-TargetUrl>"
+	Examples:
+	|New-TargetUrl|Old-TargetUrl|
+	|/apex/PendingRegistrations|/apex/FlexTableNewView?ft1=CompletedTasks&ft2=CompletedTasksBy|
+	
+		

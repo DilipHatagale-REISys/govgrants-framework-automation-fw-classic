@@ -10,21 +10,27 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class CommonSteps {
-    GovGrantsManager govGrantsManager;
+	GovGrantsManager govGrantsManager;
 
-    public CommonSteps(Controller controller, Handlers handler) {
-        govGrantsManager = new GovGrantsManager(controller, handler);
-    }
+	public CommonSteps(Controller controller, Handlers handler) {
+		govGrantsManager = new GovGrantsManager(controller, handler);
+	}
 
-    @Description("click in admin menu to rechout to govegrants homepage")
-    @When("^I access the \"([^\"]*)\"$")
-    public void accessthehomepage(String tabName) {
-        govGrantsManager.clickAdminNavBar(tabName);
-    }
+	@Description("click in admin menu to rechout to govegrants homepage")
+	@When("^I access the \"([^\"]*)\"$")
+	public void accessthehomepage(String tabName) {
+		govGrantsManager.clickAdminNavBar(tabName);
+	}
 
-    @When("^I access the \"([^\"]*)\" to reach \"([^\"]*)\" tab$")
-    public void reachOutToSpecificPhasesTab(String adminTabName, String phaseTabName) {
-        govGrantsManager.clickAdminNavBar(adminTabName);
-        govGrantsManager.clickPhasesNaveBar(phaseTabName);
-    }
+	@When("^I access the \"([^\"]*)\" to reach \"([^\"]*)\" tab$")
+	public void reachOutToSpecificPhasesTab(String adminTabName, String phaseTabName) {
+		govGrantsManager.clickAdminNavBar(adminTabName);
+		govGrantsManager.clickPhasesNaveBar(phaseTabName);
+	}
+
+	@When("^I navigate to \"([^\"]*)\" on left panel inside \"([^\"]*)\" tabmenu$")
+	public void navigateToLeftPannelItemInsideTab(String leftPanelMenu, String mainMenuTab) {
+		govGrantsManager.clickMainMenuTab(mainMenuTab);
+		govGrantsManager.clickLeftPanel(leftPanelMenu);
+	}
 }

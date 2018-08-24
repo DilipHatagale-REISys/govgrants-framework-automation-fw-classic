@@ -44,4 +44,14 @@ public class GrantorHomeSteps {
 		grantorHomePage.assertnewAccordionHeaderLabel(subTabName, mainTabName);
 	}
 
+	@Then("^I see \"([^\"]*)\" shown at number \"([^\"]*)\" inside \"([^\"]*)\"$")
+	public void assertSequenceOfAccordianContent(String accordianHeaderName, String number, String headerName) {
+		grantorHomePage.assertAccordianContentSequence(accordianHeaderName, Integer.parseInt(number), headerName);
+	}
+
+	@Then("^I see \"([^\"]*)\" opens with \"([^\"]*)\"$")
+	public void assertNewTabOpensForAccordionContent(String accordionContentName, String pageTitle) {
+		grantorHomePage.assertAccordionContentWithNewTab(accordionContentName, pageTitle);
+	}
+
 }
