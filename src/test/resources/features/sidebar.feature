@@ -31,9 +31,9 @@ Feature: Test all sidebar component based scenarios
 	
 	@32092 @all @validateLabelChangeOfAccordionContent 
 	Scenario: validate change of label in My tasks accordion content 
-	Given I have default configuration for "Accordian Content" field "Label" as "Completed" with filter "Automation"
-	Given I setup filter clause for "Accordian Content" in "GrantorHome" for field "Label" having value "Completed"
-	When I reconfigure "Accordian Content" field "Label" as "Automation"	 
+	Given I have default configuration for "Accordian Content" field "Name" as "Completed" with filter "Automation"
+	Given I setup filter clause for "Accordian Content" in "GrantorHome" for field "Name" having value "Completed"
+	When I reconfigure "Accordian Content" field "Name" as "Automation"	 
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" 
 	Then I see changed label as "Automation" inside "Tasks" in side bar sub menu

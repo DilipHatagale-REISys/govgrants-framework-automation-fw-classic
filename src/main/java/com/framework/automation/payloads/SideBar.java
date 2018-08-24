@@ -25,7 +25,7 @@ public class SideBar {
         Pattern p = Pattern.compile("([0-9])");
         Matcher m = p.matcher(value);
         switch (fieldLabel.toUpperCase()) {
-        case "LABEL":
+        case "NAME":
             if (m.find()) {
                 finalPayload = String
                         .format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__AccordionContent__c),
