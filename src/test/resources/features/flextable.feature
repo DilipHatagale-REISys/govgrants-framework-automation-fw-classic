@@ -18,4 +18,5 @@ Feature: Test all flex table component based scenarios
 	When I reconfigure "Flex Table" field "Enable Export" as "false"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
-	Then i see "Automation" shown as flex table title
+	When I click on top right parallel lines bar
+	Then i see "Download as PDF""Download as CSV" options disabled
