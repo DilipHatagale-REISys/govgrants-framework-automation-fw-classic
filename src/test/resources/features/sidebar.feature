@@ -95,7 +95,7 @@ Feature: Test all sidebar component based scenarios
 	Given I have default configuration for "Accordian Content" field "Target Url" as "<Old-TargetUrl>" with filter ""
 	Given I setup filter clause for "Accordian Content" in "GrantorHome" for field "Name" having value "Completed"
 	When I reconfigure "Accordian Content" field "Target Url" as "<New-TargetUrl>"
-	When I login as "Automation-EXE" User 
+	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab"
 	When I navigate to "Completed" on left panel inside "HOME" tabmenu
 	#Then I see "Completed" opens with "<New-TargetUrl>"
