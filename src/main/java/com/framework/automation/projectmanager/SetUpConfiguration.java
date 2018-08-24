@@ -1,13 +1,10 @@
 package com.framework.automation.projectmanager;
 
-import com.automation.rei.controller.EnvironmentFetcher;
-import com.automation.rei.webservices.RestfulWebServices;
-import com.framework.automation.payloads.ApiUtilities;
 import com.framework.automation.payloads.FlexTable;
 import com.framework.automation.payloads.SideBar;
-import com.google.gson.JsonObject;
 
 public class SetUpConfiguration {
+    public static String defaultRetrieveEndPoint = "https://ggptest5-dev-ed.my.salesforce.com/services/apexrest/frameworkAPIRetrieve";
     /**
      * 
      * @param componentName
