@@ -194,7 +194,7 @@ public class GovGrantsManager extends ProjectWebServices {
 	}
 
 	/**
-	 * get the top right drop down items
+	 * get the top right drop down items. grntee etc
 	 * 
 	 * @param dropDownItem
 	 * @return
@@ -251,8 +251,25 @@ public class GovGrantsManager extends ProjectWebServices {
 		return reiDriver.WaitFor().WaitForElementToBePresent(
 				By.xpath("//div[@class='panel-heading']//div[contains(@class,'header-buttons')]//button[@title='"
 						+ buttonName + "']"));
-
 	}
+	
+	/**
+	 * get any item from top right bar inside phases
+	 * @param headerItem
+	 * @return
+	 */
+	public WebElement getItemFromTopRightHeaderBars(String headerItem) {
+	    return reiDriver.WaitFor().WaitForElementToBePresent(By.xpath("//div[@class='panel-heading']//div[contains(@class,'header-bars')]//span/ul/li//a[@title='"+headerItem+"']"));
+	}
+	
+	   /**
+     * get any item from top right bar inside phases without waiting for presence.
+     * @param headerItem
+     * @return
+     */
+    public WebElement getItemFromTopRightHeaderBarsWithoutWaitTime(String headerItem) {
+        return reiDriver.findMyElement().getElement(By.xpath("//div[@class='panel-heading']//div[contains(@class,'header-bars')]//span/ul/li//a[@title='"+headerItem+"']"));
+    }
 
 	/**
 	 * generic search input box

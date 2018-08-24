@@ -52,7 +52,7 @@ public class ApiUtilities {
     public String getFilterClause(String componentName, String ComponentCoreFieldName, String fieldName, String value) {
         String filterClause = null;
         switch (componentName.toUpperCase()) {
-        case "PHASES":
+        case "GENERAL":
             filterClause = genericParameterFilter(ComponentCoreFieldName);
             break;
         case "ACCORDIAN HEADER":
@@ -72,6 +72,11 @@ public class ApiUtilities {
         return filterClause;
     }
 
+    /**
+     * setup configuration for general
+     * @param ComponentCoreFieldName
+     * @return
+     */
     private String genericParameterFilter(String ComponentCoreFieldName) {
         return "Name=" + "'" + ComponentCoreFieldName + "'";
     }

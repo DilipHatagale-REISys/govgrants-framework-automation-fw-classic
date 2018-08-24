@@ -13,6 +13,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<tags>~@ignore</tags>
 		<!-- Versions -->
+		<rei.version>0.0.1</rei.version>
 		<java.version>1.8</java.version>
 		<selenium.version>3.8.0</selenium.version>
 		<selenium-server.version>3.8.1</selenium-server.version>
@@ -151,7 +152,7 @@
 		<dependency>
 			<groupId>com.automation</groupId>
 			<artifactId>REI-AutomationFramework</artifactId>
-			<version>0.0.1</version>
+			<version>${rei.version}</version>
 		</dependency>
 	</dependencies>
 	<repositories>

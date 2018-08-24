@@ -19,15 +19,34 @@ public class GrantorPlanningPage extends GovGrantsManager {
 
     /******* "Key Methods with complete functionality - public" *****************/
 
+    /**
+     * assert correct title name of table is displayed
+     * @param titleName
+     */
     public void assertCorrectFlexTableTitleDisplayed(String titleName) {
         Assert.assertTrue(isTitleDisplayed(titleName));
     }
 
-    /******** "Local Methods with complete functionality - private" *****************/
+    /**
+     * assert two specific items are not displayed in top righ parallel lines bar
+     * @param option1
+     * @param option2
+     */
+    public void assertTopRightParallelLinesBarSpecificOptionsDisabled(String option1, String option2) {
+        Assert.assertTrue(isTopRightParallelLinesBarSpecificOptionsDisabled(option1, option2));
+    }
 
+    /********
+     * "Local Methods with complete functionality - private"
+     *****************/
+    /**
+     * validate if tile is displayed
+     * 
+     * @param titleName
+     * @return
+     */
     private boolean isTitleDisplayed(String titleName) {
         clickLeftPanelHeader();
-        System.out.println("title is " + getLeftPanelHeader(titleName).isDisplayed());
         try {
             if (getLeftPanelHeader(titleName).isDisplayed()) {
                 return true;
@@ -37,5 +56,33 @@ public class GrantorPlanningPage extends GovGrantsManager {
         } catch (Exception e) {
             return false;
         }
+    }
+
+    /**
+     * validate if options are not displayed in top right parallel line bar
+     * 
+     * @param option1
+     * @param option2
+     * @return
+     */
+    private boolean isTopRightParallelLinesBarSpecificOptionsDisabled(String option1, String option2) {
+        boolean flag = false;
+        try {
+            if (getItemFromTopRightHeaderBarsWithoutWaitTime(option1).isDisplayed()) {
+                flag = false;
+            }
+        } catch (Exception e) {
+            flag = true;
+        }
+
+        try {
+            if (getItemFromTopRightHeaderBarsWithoutWaitTime(option2).isDisplayed()) {
+                flag = false;
+            }
+        } catch (Exception e) {
+            flag = true;
+        }
+
+        return flag;
     }
 }

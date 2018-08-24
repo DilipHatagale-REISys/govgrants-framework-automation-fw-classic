@@ -1,25 +1,10 @@
 package com.framework.automation.projectmanager;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import com.automation.rei.controller.EnvironmentFetcher;
-import com.automation.rei.webservices.RestfulWebServices;
-import com.framework.automation.payloads.ApiUtilities;
 import com.framework.automation.payloads.FlexTable;
-import com.framework.automation.payloads.SObjectAPIs;
 import com.framework.automation.payloads.SideBar;
-import com.google.gson.JsonObject;
-import com.jayway.restassured.response.Response;
 
 public class SetUpConfiguration {
-    RestfulWebServices apiCall = new RestfulWebServices();
-    ApiUtilities apiUtil;
-    JsonObject sObjectConfig;
-    JsonObject fieldConfig;
-    private static String endPoint = EnvironmentFetcher.environment;
     public static String defaultRetrieveEndPoint = "https://ggptest5-dev-ed.my.salesforce.com/services/apexrest/frameworkAPIRetrieve";
-
     /**
      * 
      * @param componentName
@@ -40,11 +25,14 @@ public class SetUpConfiguration {
         case "ACCORDIAN CONTENT":
             stringPayload = new SideBar().setAccordianContentFieldConfig(fieldLabel, value, filterClause);
             break;
+        case "FLEX TABLE":
+            stringPayload = new FlexTable().setFlexTableFieldConfig(fieldLabel, value, filterClause);
+            break;
         case "FLEX TABLE LIST":
             stringPayload = new FlexTable().setFlexTableListFieldConfig(fieldLabel, value, filterClause);
             break;
         }
-        System.out.println("payoad is " + stringPayload);
+        System.out.println("final payload is " + stringPayload);
         return stringPayload;
     }
 
