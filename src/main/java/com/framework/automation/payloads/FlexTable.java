@@ -45,4 +45,29 @@ public class FlexTable {
         System.out.println(finalPayload);
         return finalPayload;
     }
+    
+    public String setFlexTableFieldConfig(String fieldLabel, String value, String filterClause) {
+        String finalPayload = null;
+        Pattern p = Pattern.compile("([0-9])");
+        Matcher m = p.matcher(value);
+        switch (fieldLabel.toUpperCase()) {
+        case "ENABLE EXPORT":
+            if (m.find() || (value.contains("true")) || (value.contains("false"))) {
+                finalPayload = String.format(payloadForIntValue,
+                        String.valueOf(SObjectAPIs.GNT__DataTableConfig__c),
+                        new ApiUtilities().getComponentCoreFieldId(
+                                String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__EnableExport__c), value);
+            } else {
+                finalPayload = String.format(payloadForStringValue,
+                        String.valueOf(SObjectAPIs.GNT__DataTableConfig__c),
+                        new ApiUtilities().getComponentCoreFieldId(
+                                String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__EnableExport__c), value);
+            }
+        }
+        System.out.println(finalPayload);
+        return finalPayload;
+        
+    }
 }
