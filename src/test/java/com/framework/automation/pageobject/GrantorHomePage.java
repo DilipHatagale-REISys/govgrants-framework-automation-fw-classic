@@ -1,5 +1,7 @@
 package com.framework.automation.pageobject;
 
+import java.util.ArrayList;
+
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
@@ -67,7 +69,29 @@ public class GrantorHomePage extends GovGrantsManager {
 		Assert.assertEquals(getSideBarAccordionHeaderContent(mainTabName, subTabName).getText(), subTabName);
 	}
 
-	/********* "Local Methods with Limited functionality - Private" *****************/
+	/**
+	 * 
+	 * @param accordianHeaderName
+	 * @param number
+	 * @param headerName
+	 */
+	public void assertAccordianContentSequence(String accordianHeaderName, int number, String headerName) {
+		Assert.assertTrue(isAccordianContentSequence(accordianHeaderName, number, headerName));
+	}
+
+	/**
+	 * assert if accordion content open in new tab or not
+	 * 
+	 * @param accordionContentName
+	 * @param Pagetitle
+	 */
+	public void assertAccordionContentWithNewTab(String accordionContentName, String Pagetitle) {
+		Assert.assertTrue(isNewTabOpens(accordionContentName, Pagetitle));
+	}
+
+	/*********
+	 * "Local Methods with Limited functionality - Private"
+	 *****************/
 
 	/**
 	 * 
@@ -111,4 +135,38 @@ public class GrantorHomePage extends GovGrantsManager {
 		} else
 			return false;
 	}
+
+	/**
+	 * Boolean status of Accordion Content sequence from sidebar
+	 * 
+	 * @param status
+	 */
+	private Boolean isAccordianContentSequence(String accordianHeaderName, int number, String headerName) {
+		if (accordianContentList(headerName).get(number).getText().contains(accordianHeaderName)) {
+			return true;
+		} else
+			return false;
+	}
+
+	/**
+	 * Boolean status of Accordion Content opens in another tab
+	 * 
+	 * @param accordionContentName:
+	 *            Content name in sidebar
+	 * @param pageTitle:
+	 * @return
+	 */
+	private Boolean isNewTabOpens(String accordionContentName, String pageTitle) {
+		ArrayList<String> tabHandles = new ArrayList<String>(reiDriver.switchTo().getWindowsHandlers());
+		boolean myNewTabFound = false;
+		for (int index = 0; index < tabHandles.size(); index++) {
+			reiDriver.switchTo().switchToWindowHandler(index);
+			if (reiDriver.get().getPageTitle().equalsIgnoreCase(pageTitle)) {
+				myNewTabFound = true;
+				break;
+			}
+		}
+		return myNewTabFound;
+	}
+
 }
