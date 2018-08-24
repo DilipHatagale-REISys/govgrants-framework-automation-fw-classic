@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+
 import com.automation.rei.controller.Controller;
 import com.automation.rei.exception.ReiFrameworkCustomException;
 import com.automation.rei.handlers.Handlers;
@@ -402,6 +404,16 @@ public class GovGrantsManager extends ProjectWebServices {
 
 		}
 	}
+	
+	/**
+	 * Assert for page title
+	 * @param pageTitle
+	 */
+    public void assertPageTitle(String pageTitle) {
+        System.out.println(reiDriver.get().getPageTitle());
+        Assert.assertEquals(reiDriver.get().getPageTitle(), pageTitle);
+    }
+
 
 	/******* "Local Methods with Limited functionality - Private" **********/
 

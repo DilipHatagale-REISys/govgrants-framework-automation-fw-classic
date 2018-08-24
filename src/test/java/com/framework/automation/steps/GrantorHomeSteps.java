@@ -8,50 +8,50 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class GrantorHomeSteps {
-	GrantorHomePage grantorHomePage;
+    GrantorHomePage grantorHomePage;
 
-	public GrantorHomeSteps(Controller controller, Handlers handler) {
-		grantorHomePage = new GrantorHomePage(controller, handler);
-	}
+    public GrantorHomeSteps(Controller controller, Handlers handler) {
+        grantorHomePage = new GrantorHomePage(controller, handler);
+    }
 
-	@When("^I click on  \"([^\"]*)\" inside \"([^\"]*)\" in side bar sub menu$")
-	public void clickSideBarSubMenu(String subTabName, String mainTabName) {
-		grantorHomePage.clickAccordianSubHeader(mainTabName, subTabName);
-	}
+    @When("^I click on  \"([^\"]*)\" inside \"([^\"]*)\" in side bar sub menu$")
+    public void clickSideBarSubMenu(String subTabName, String mainTabName) {
+        grantorHomePage.clickAccordianSubHeader(mainTabName, subTabName);
+    }
 
-	@Then("^I see changed label as \"([^\"]*)\" inside \"([^\"]*)\" in side bar sub menu$")
-	public void assertRenameSubHeaderContentName(String subTabName, String mainTabName) {
-		grantorHomePage.assertnewSubHeaderContentLabel(subTabName, mainTabName);
-	}
+    @Then("^I see changed label as \"([^\"]*)\" inside \"([^\"]*)\" in side bar sub menu$")
+    public void assertRenameSubHeaderContentName(String subTabName, String mainTabName) {
+        grantorHomePage.assertnewSubHeaderContentLabel(subTabName, mainTabName);
+    }
 
-	@Then("^i see \"([^\"]*)\" shown at number \"([^\"]*)\" in sideBar$")
-	public void assertSequenceOfAccordianSideBarHeader(String headerName, String sequenceNumber) {
-		grantorHomePage.assertSideBarHeaderSequence(headerName, Integer.parseInt(sequenceNumber));
-	}
+    @Then("^i see \"([^\"]*)\" shown at number \"([^\"]*)\" in sideBar$")
+    public void assertSequenceOfAccordianSideBarHeader(String headerName, String sequenceNumber) {
+        grantorHomePage.assertSideBarHeaderSequence(headerName, Integer.parseInt(sequenceNumber));
+    }
 
-	@Then("^I see \"([^\"]*)\" as disabled from sidebar$")
-	public void assertRemovalOfSideBarHeader(String headerName) {
-		grantorHomePage.assertRemovalOfSideBarHeader(headerName);
-	}
+    @Then("^I see \"([^\"]*)\" as disabled from sidebar$")
+    public void assertRemovalOfSideBarHeader(String headerName) {
+        grantorHomePage.assertRemovalOfSideBarHeader(headerName);
+    }
 
-	@Then("^i see \"([^\"]*)\" shown at number \"([^\"]*)\" inside \"([^\"]*)\"$")
-	public void assertSequenceOfAccordianHeader(String accordianHeaderName, String number, String headerName) {
-		grantorHomePage.assertAccordianHeaderSequence(accordianHeaderName, Integer.parseInt(number), headerName);
-	}
+    @Then("^i see \"([^\"]*)\" shown at number \"([^\"]*)\" inside \"([^\"]*)\"$")
+    public void assertSequenceOfAccordianHeader(String accordianHeaderName, String number, String headerName) {
+        grantorHomePage.assertAccordianHeaderSequence(accordianHeaderName, Integer.parseInt(number), headerName);
+    }
 
-	@Then("^I see changed label as \"([^\"]*)\" inside \"([^\"]*)\" in side accordion header menu$")
-	public void assertRenameAccordionHeaderLabelName(String subTabName, String mainTabName) {
-		grantorHomePage.assertnewAccordionHeaderLabel(subTabName, mainTabName);
-	}
+    @Then("^I see changed label as \"([^\"]*)\" inside \"([^\"]*)\" in side accordion header menu$")
+    public void assertRenameAccordionHeaderLabelName(String subTabName, String mainTabName) {
+        grantorHomePage.assertnewAccordionHeaderLabel(subTabName, mainTabName);
+    }
 
-	@Then("^I see \"([^\"]*)\" shown at number \"([^\"]*)\" inside \"([^\"]*)\"$")
-	public void assertSequenceOfAccordianContent(String accordianHeaderName, String number, String headerName) {
-		grantorHomePage.assertAccordianContentSequence(accordianHeaderName, Integer.parseInt(number), headerName);
-	}
+    @Then("^I see \"([^\"]*)\" shown at number \"([^\"]*)\" inside \"([^\"]*)\"$")
+    public void assertSequenceOfAccordianContent(String accordianHeaderName, String number, String headerName) {
+        grantorHomePage.assertAccordianContentSequence(accordianHeaderName, Integer.parseInt(number), headerName);
+    }
 
-	@Then("^I see \"([^\"]*)\" opens with \"([^\"]*)\"$")
-	public void assertNewTabOpensForAccordionContent(String accordionContentName, String pageTitle) {
-		grantorHomePage.assertAccordionContentWithNewTab(accordionContentName, pageTitle);
-	}
+    @Then("^I see \"([^\"]*)\" in new tab$")
+    public void assertNewTabOpensForAccordionContent(String pageTitle) {
+        grantorHomePage.assertAccordionContentWithNewTab(pageTitle);
+    }
 
 }

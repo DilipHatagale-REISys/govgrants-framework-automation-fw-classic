@@ -29,4 +29,4 @@ Feature: Test all flex table component based scenarios
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
 	When I click on top right parallel lines bar
-	Then i see "Quick Search" options disabled
+	Then i see "Quick Search" option disabled

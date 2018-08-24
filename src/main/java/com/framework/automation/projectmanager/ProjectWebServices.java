@@ -115,7 +115,6 @@ public class ProjectWebServices {
     private String isFilterClauseGoodForDefaultSetting() {
         String newFilterClause = null;
         if (!filterClause.contains(setUpParameters.getNewFieldValue())) {
-            System.out.println("Entered loop");
             newFilterClause = filterClause.replaceAll(setUpParameters.getOldFieldValue(),
                     setUpParameters.getNewFieldValue());
         } else {
