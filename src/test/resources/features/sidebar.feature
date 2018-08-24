@@ -5,7 +5,7 @@ Feature: Test all sidebar component based scenarios
 	@31625 @all @validateChangeinTaskMenuSequence 
 	Scenario: validate after changing sequence of task menu from second to third in side bar 
 	Given I have default configuration for "Phases" field "Sidebar Component Sequence" as "Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links" with filter ""
-	Given I setup filter clause for "Phases" in "GrantorHome" for field "NA" having value "NA"
+	Given I setup filter clause for "General" in "GrantorHome" for field "NA" having value "NA"
 	When I reconfigure "Phases" field "Sidebar Component Sequence" as "Search,ActivityMenu,TaskMenu,RecentlyViewed,TechnicalSupport,Links"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" 
@@ -14,7 +14,7 @@ Feature: Test all sidebar component based scenarios
 	@31624 @all @validateSidebarTaskMenuRemoval 
 	Scenario: validate disabling of task menu from side bar
 	Given I have default configuration for "Phases" field "Sidebar Component Sequence" as "Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links" with filter ""
-	Given I setup filter clause for "Phases" in "GrantorHome" for field "NA" having value "NA"
+	Given I setup filter clause for "General" in "GrantorHome" for field "NA" having value "NA"
 	When I reconfigure "Phases" field "Sidebar Component Sequence" as "Search,ActivityMenu,RecentlyViewed,TechnicalSupport,Links"	
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" 
@@ -23,7 +23,7 @@ Feature: Test all sidebar component based scenarios
 	@32005 @all @validateSidebarActivityMenuRemoval 
 	Scenario: validate disabling of activity menu from side bar 
 	Given I have default configuration for "Phases" field "Sidebar Component Sequence" as "Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links" with filter ""
-	Given I setup filter clause for "Phases" in "GrantorHome" for field "NA" having value "NA"
+	Given I setup filter clause for "General" in "GrantorHome" for field "NA" having value "NA"
 	When I reconfigure "Phases" field "Sidebar Component Sequence" as "Search,TaskMenu,RecentlyViewed,TechnicalSupport,Links"	
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" 

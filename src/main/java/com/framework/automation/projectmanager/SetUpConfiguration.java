@@ -40,11 +40,14 @@ public class SetUpConfiguration {
         case "ACCORDIAN CONTENT":
             stringPayload = new SideBar().setAccordianContentFieldConfig(fieldLabel, value, filterClause);
             break;
+        case "FLEX TABLE":
+            stringPayload = new FlexTable().setFlexTableFieldConfig(fieldLabel, value, filterClause);
+            break;
         case "FLEX TABLE LIST":
             stringPayload = new FlexTable().setFlexTableListFieldConfig(fieldLabel, value, filterClause);
             break;
         }
-        System.out.println("payoad is " + stringPayload);
+        System.out.println("final payload is " + stringPayload);
         return stringPayload;
     }
 

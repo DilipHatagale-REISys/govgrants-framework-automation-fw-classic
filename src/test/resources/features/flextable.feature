@@ -10,3 +10,12 @@ Feature: Test all flex table component based scenarios
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
 	Then i see "Automation" shown as flex table title
+	
+	@32331 @all @validateDisablingExportFile
+	Scenario: validate disabling of PDF/Excel download from menu option of flex table
+	Given I have default configuration for "Flex Table" field "Enable Export" as "true" with filter ""
+	Given I setup filter clause for "General" in "Programs" for field "" having value ""
+	When I reconfigure "Flex Table" field "Enable Export" as "false"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	Then i see "Automation" shown as flex table title
