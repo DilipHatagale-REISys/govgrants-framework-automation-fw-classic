@@ -22,7 +22,8 @@ public class GovGrantsManager extends ProjectWebServices {
 	public String standardPassword = "Automation@12345";
 	public String defaultComment = "Automation testing";
 	public final By navigationLogo, loginDropDown, searchInput, rightHeaderBars, leftPanelHeader, topRightDropDown,
-			egmsHeader, secondTopRightFilter, completeTableHeader, completeTableRow, sideBarHeadersList;
+			egmsHeader, secondTopRightFilter, completeTableHeader, completeTableRow, sideBarHeadersList,
+			advanceFilterButton,menuIcon;
 
 	/**
 	 * Super Constructor
@@ -47,6 +48,9 @@ public class GovGrantsManager extends ProjectWebServices {
 				"//div[@class='panel-heading']/following-sibling::div[contains(@class,'panel-body')]//div/table/tbody/tr");
 		sideBarHeadersList = By.xpath(
 				"//div[@id='sidebar-wrapper']//div[contains(@class,'panel-sidebar')]//span[contains(@class,'sidebar-label')]");
+		advanceFilterButton = By
+				.xpath(".//*[@id='toggleFlexTablePrograms']//button/span[contains(text(),'Advance Filter')]");
+		menuIcon = By.xpath("//div[@class='panel-heading']//div[contains(@class,'header-bars')]//a[@title='Menu']//span[contains(@class,'fa fa-bars')]");
 	}
 
 	/******* "Key Methods with complete functionality - Public" *****************/
@@ -254,24 +258,30 @@ public class GovGrantsManager extends ProjectWebServices {
 				By.xpath("//div[@class='panel-heading']//div[contains(@class,'header-buttons')]//button[@title='"
 						+ buttonName + "']"));
 	}
-	
+
 	/**
 	 * get any item from top right bar inside phases
+	 * 
 	 * @param headerItem
 	 * @return
 	 */
 	public WebElement getItemFromTopRightHeaderBars(String headerItem) {
-	    return reiDriver.WaitFor().WaitForElementToBePresent(By.xpath("//div[@class='panel-heading']//div[contains(@class,'header-bars')]//span/ul/li//a[@title='"+headerItem+"']"));
+		return reiDriver.WaitFor().WaitForElementToBePresent(
+				By.xpath("//div[@class='panel-heading']//div[contains(@class,'header-bars')]//span/ul/li//a[@title='"
+						+ headerItem + "']"));
 	}
-	
-	   /**
-     * get any item from top right bar inside phases without waiting for presence.
-     * @param headerItem
-     * @return
-     */
-    public WebElement getItemFromTopRightHeaderBarsWithoutWaitTime(String headerItem) {
-        return reiDriver.findMyElement().getElement(By.xpath("//div[@class='panel-heading']//div[contains(@class,'header-bars')]//span/ul/li//a[@title='"+headerItem+"']"));
-    }
+
+	/**
+	 * get any item from top right bar inside phases without waiting for presence.
+	 * 
+	 * @param headerItem
+	 * @return
+	 */
+	public WebElement getItemFromTopRightHeaderBarsWithoutWaitTime(String headerItem) {
+		return reiDriver.findMyElement().getElement(
+				By.xpath("//div[@class='panel-heading']//div[contains(@class,'header-bars')]//span/ul/li//a[@title='"
+						+ headerItem + "']"));
+	}
 
 	/**
 	 * generic search input box
@@ -366,55 +376,31 @@ public class GovGrantsManager extends ProjectWebServices {
 	}
 
 	/**
-	 * get main menu tab name to click on it. e.g; Home,Planning etc
-	 * 
-	 * @param menuItem
-	 */
-	public void clickMainMenuTab(String menuItem) {
-		try {
-			waitForNavigationLogo();
-		} catch (Exception e) {
-
-		}
-		reiDriver.WaitFor().WaitForElementToBePresent(
-				By.xpath("//div/ul[@class='nav navbar-nav']/li/a[@title='" + menuItem + "']")).click();
-		try {
-			waitForNavigationLogo();
-		} catch (Exception e) {
-
-		}
-	}
-
-	/**
-	 * method to click on any item on left hand panel including
-	 * completed, pending
-	 */
-	public void clickLeftPanel(String menuItem) {
-		reiDriver.WaitFor().makeThreadSleep(1000);
-		try {
-			waitForNavigationLogo();
-		} catch (Exception e) {
-
-		}
-		reiDriver.WaitFor().WaitForElementToBePresent(By.xpath("//div/ul/li/a[text()='" + menuItem + "']"));
-		reiDriver.JavaScript().clickByJS(By.xpath("//div/ul/li/a[text()='" + menuItem + "']"));
-		try {
-			waitForNavigationLogo();
-		} catch (Exception e) {
-
-		}
-	}
-	
-	/**
 	 * Assert for page title
+	 * 
 	 * @param pageTitle
 	 */
-    public void assertPageTitle(String pageTitle) {
-        System.out.println(reiDriver.get().getPageTitle());
-        Assert.assertEquals(reiDriver.get().getPageTitle(), pageTitle);
-    }
+	public void assertPageTitle(String pageTitle) {
+		System.out.println(reiDriver.get().getPageTitle());
+		Assert.assertEquals(reiDriver.get().getPageTitle(), pageTitle);
+	}
 
+	/**
+	 * @param advancefilter
+	 * @return
+	 */
+	public WebElement getAdvanceFilterItem() {
+		return reiDriver.findMyElement().getElement(advanceFilterButton);
+	}
 
+	/**
+	 * @param menuicon
+	 * @return
+	 */
+	public WebElement getMenuIcon() {
+		return reiDriver.findMyElement().getElement(menuIcon);
+	}
+	
 	/******* "Local Methods with Limited functionality - Private" **********/
 
 	/**
