@@ -2,11 +2,9 @@ package com.framework.automation.steps;
 
 import java.io.IOException;
 
-import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
 import com.automation.rei.controller.Controller;
-import com.automation.rei.controller.EnvironmentFetcher;
 import com.automation.rei.controller.SetupController;
 import com.framework.automation.projectmanager.ProjectWebServices;
 

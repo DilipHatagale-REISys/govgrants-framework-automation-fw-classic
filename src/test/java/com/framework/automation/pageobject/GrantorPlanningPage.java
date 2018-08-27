@@ -1,7 +1,9 @@
 package com.framework.automation.pageobject;
 
 import org.openqa.selenium.WebElement;
+import java.util.NoSuchElementException;
 import org.testng.Assert;
+import org.testng.Assert.ThrowingRunnable;
 
 import com.automation.rei.controller.Controller;
 import com.automation.rei.handlers.Handlers;
@@ -37,6 +39,13 @@ public class GrantorPlanningPage extends GovGrantsManager {
 	 */
 	public void assertTopRightParallelLinesBarSpecificOptionsDisabled(String option1, String option2) {
 		Assert.assertTrue(isTopRightParallelLinesBarSpecificOptionsDisabled(option1, option2));
+	}
+
+	/**
+	 * assert if quick search is not displayed
+	 */
+	public void assertquickSearchDisabled() {
+		Assert.assertTrue(isQuickSearchDisabled());
 	}
 
 	/**
@@ -80,7 +89,7 @@ public class GrantorPlanningPage extends GovGrantsManager {
 	 * 
 	 * @param option1
 	 * @param option2
-	 * @return
+	 * @return: true if it is not displayed
 	 */
 	private boolean isTopRightParallelLinesBarSpecificOptionsDisabled(String option1, String option2) {
 		boolean flag = false;
@@ -88,7 +97,7 @@ public class GrantorPlanningPage extends GovGrantsManager {
 			if (getItemFromTopRightHeaderBarsWithoutWaitTime(option1).isDisplayed()) {
 				flag = false;
 			}
-		} catch (org.openqa.selenium.NoSuchElementException e) {
+		} catch (Exception e) {
 			flag = true;
 		}
 
@@ -96,10 +105,27 @@ public class GrantorPlanningPage extends GovGrantsManager {
 			if (getItemFromTopRightHeaderBarsWithoutWaitTime(option2).isDisplayed()) {
 				flag = false;
 			}
-		} catch (org.openqa.selenium.NoSuchElementException e) {
+		} catch (Exception e) {
 			flag = true;
 		}
 
+		return flag;
+	}
+
+	/**
+	 * validate if quick dearch is displayed or not
+	 * 
+	 * @return: true if it is not displayed
+	 */
+	private boolean isQuickSearchDisabled() {
+		boolean flag = false;
+		try {
+			if (reiDriver.findMyElement().getElement(searchInput).isDisplayed()) {
+				flag = false;
+			}
+		} catch (Exception e) {
+			flag = true;
+		}
 		return flag;
 	}
 

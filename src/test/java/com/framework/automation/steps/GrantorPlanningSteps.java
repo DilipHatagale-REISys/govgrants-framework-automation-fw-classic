@@ -32,7 +32,7 @@ public class GrantorPlanningSteps {
 
 	@Then("^i see \"([^\"]*)\" option disabled$")
 	public void assertQuickSearchOptionDisabled(String quicksearch) {
-		// to be implemented
+		grantorPlanningPage.assertquickSearchDisabled();
 	}
 
 	@Then("^I see Advance filter is disabled from planning flex table$")

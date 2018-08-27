@@ -23,12 +23,11 @@ Feature: Test all flex table component based scenarios
 	
 	@32332 @all @validateDisblingQuickSearch-Programs
 	Scenario: validate disabling of quick search programs-planning
-	Given I have default configuration for "Flex Table" field "Enable Export" as "true" with filter ""
+	Given I have default configuration for "Flex Table" field "Enable Quick Search" as "true" with filter ""
 	Given I setup filter clause for "General" in "Programs" for field "" having value ""
-	When I reconfigure "Flex Table" field "Enable Export" as "false"
+	When I reconfigure "Flex Table" field "Enable Quick Search" as "false"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
-	When I click on top right parallel lines bar
 	Then i see "Quick Search" option disabled
 	
 	@32333 @all @validateDisablingAdvanceFilter-Programs
@@ -48,6 +47,3 @@ Feature: Test all flex table component based scenarios
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
 	Then I see Menu icon is disabled from planning flex table
-    
-    
-    
