@@ -22,10 +22,19 @@ Feature: Test all flex table component based scenarios
 	Then i see "Download as PDF""Download as CSV" options disabled
 	
 	@32332 @all @validateDisblingQuickSearch-Programs
-	Scenario: validate disabling of quick search programs-planning
+	Scenario: validate disabling of quick search for flex table in programs-planning
 	Given I have default configuration for "Flex Table" field "Enable Quick Search" as "true" with filter ""
 	Given I setup filter clause for "General" in "Programs" for field "" having value ""
 	When I reconfigure "Flex Table" field "Enable Quick Search" as "false"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
-	Then i see "Quick Search" option disabled
+	Then i see quick search option disabled
+	
+	@32335 @all @validateRecordSelectionForFlex-Programs
+	Scenario: validate enabling of record selection check boxes for flex table in programs-planning
+	Given I have default configuration for "Flex Table" field "Enable Record Selection" as "false" with filter ""
+	Given I setup filter clause for "General" in "Programs" for field "" having value ""
+	When I reconfigure "Flex Table" field "Enable Record Selection" as "true"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	Then i see select check box enabled in flex table

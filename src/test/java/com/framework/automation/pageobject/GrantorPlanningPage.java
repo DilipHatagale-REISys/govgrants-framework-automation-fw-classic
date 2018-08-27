@@ -1,10 +1,7 @@
 package com.framework.automation.pageobject;
 
-import java.util.NoSuchElementException;
-
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.Assert.ThrowingRunnable;
-
 import com.automation.rei.controller.Controller;
 import com.automation.rei.handlers.Handlers;
 import com.framework.automation.projectmanager.GovGrantsManager;
@@ -44,8 +41,15 @@ public class GrantorPlanningPage extends GovGrantsManager {
     /**
      * assert if quick search is not displayed
      */
-    public void assertquickSearchDisabled() {
+    public void assertQuickSearchDisabled() {
         Assert.assertTrue(isQuickSearchDisabled());
+    }
+
+    /***
+     * assert true if check box select record enabled
+     */
+    public void assertFlexTabelRecordSelectionEnabled() {
+        Assert.assertTrue(isSelectRecordCheckBox());
     }
 
     /********
@@ -111,6 +115,25 @@ public class GrantorPlanningPage extends GovGrantsManager {
             }
         } catch (Exception e) {
             flag = true;
+        }
+        return flag;
+    }
+
+    /**
+     * 
+     * @return: true if sselect record check box eneabled
+     */
+    private boolean isSelectRecordCheckBox() {
+        boolean flag = false;
+        try {
+            for (WebElement element : getCompleteTableRow()) {
+                if (element.findElement(selectRecordCheckBox).isDisplayed()) {
+                    flag = true;
+                    break;
+                }
+            }
+        } catch (Exception e) {
+
         }
         return flag;
     }

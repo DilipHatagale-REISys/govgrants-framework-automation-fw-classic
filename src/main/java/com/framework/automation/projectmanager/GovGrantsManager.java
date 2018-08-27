@@ -22,7 +22,7 @@ public class GovGrantsManager extends ProjectWebServices {
 	public String standardPassword = "Automation@12345";
 	public String defaultComment = "Automation testing";
 	public final By navigationLogo, loginDropDown, searchInput, rightHeaderBars, leftPanelHeader, topRightDropDown,
-			egmsHeader, secondTopRightFilter, completeTableHeader, completeTableRow, sideBarHeadersList;
+			egmsHeader, secondTopRightFilter, completeTableHeader, completeTableRow, sideBarHeadersList, selectRecordCheckBox;
 
 	/**
 	 * Super Constructor
@@ -47,6 +47,7 @@ public class GovGrantsManager extends ProjectWebServices {
 				"//div[@class='panel-heading']/following-sibling::div[contains(@class,'panel-body')]//div/table/tbody/tr");
 		sideBarHeadersList = By.xpath(
 				"//div[@id='sidebar-wrapper']//div[contains(@class,'panel-sidebar')]//span[contains(@class,'sidebar-label')]");
+		 selectRecordCheckBox = By.xpath("//input[@aria-label='Select Record']");
 	}
 
 	/******* "Key Methods with complete functionality - Public" *****************/
@@ -410,7 +411,6 @@ public class GovGrantsManager extends ProjectWebServices {
 	 * @param pageTitle
 	 */
     public void assertPageTitle(String pageTitle) {
-        System.out.println(reiDriver.get().getPageTitle());
         Assert.assertEquals(reiDriver.get().getPageTitle(), pageTitle);
     }
 
