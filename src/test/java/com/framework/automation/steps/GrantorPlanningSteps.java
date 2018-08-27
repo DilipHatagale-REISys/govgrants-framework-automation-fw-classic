@@ -31,6 +31,6 @@ public class GrantorPlanningSteps {
     
     @Then("^i see \"([^\"]*)\" option disabled$")
     public void assertQuickSearchOptionDisabled(String quicksearch) {
-        //to be implemented
+        grantorPlanningPage.assertquickSearchDisabled();
     }
 }

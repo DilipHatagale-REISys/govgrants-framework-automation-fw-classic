@@ -1,6 +1,9 @@
 package com.framework.automation.pageobject;
 
+import java.util.NoSuchElementException;
+
 import org.testng.Assert;
+import org.testng.Assert.ThrowingRunnable;
 
 import com.automation.rei.controller.Controller;
 import com.automation.rei.handlers.Handlers;
@@ -21,6 +24,7 @@ public class GrantorPlanningPage extends GovGrantsManager {
 
     /**
      * assert correct title name of table is displayed
+     * 
      * @param titleName
      */
     public void assertCorrectFlexTableTitleDisplayed(String titleName) {
@@ -29,11 +33,19 @@ public class GrantorPlanningPage extends GovGrantsManager {
 
     /**
      * assert two specific items are not displayed in top righ parallel lines bar
+     * 
      * @param option1
      * @param option2
      */
     public void assertTopRightParallelLinesBarSpecificOptionsDisabled(String option1, String option2) {
         Assert.assertTrue(isTopRightParallelLinesBarSpecificOptionsDisabled(option1, option2));
+    }
+
+    /**
+     * assert if quick search is not displayed
+     */
+    public void assertquickSearchDisabled() {
+        Assert.assertTrue(isQuickSearchDisabled());
     }
 
     /********
@@ -63,7 +75,7 @@ public class GrantorPlanningPage extends GovGrantsManager {
      * 
      * @param option1
      * @param option2
-     * @return
+     * @return: true if it is not displayed
      */
     private boolean isTopRightParallelLinesBarSpecificOptionsDisabled(String option1, String option2) {
         boolean flag = false;
@@ -83,6 +95,23 @@ public class GrantorPlanningPage extends GovGrantsManager {
             flag = true;
         }
 
+        return flag;
+    }
+
+    /**
+     * validate if quick dearch is displayed or not
+     * 
+     * @return: true if it is not displayed
+     */
+    private boolean isQuickSearchDisabled() {
+        boolean flag = false;
+        try {
+            if (reiDriver.findMyElement().getElement(searchInput).isDisplayed()) {
+                flag = false;
+            }
+        } catch (Exception e) {
+            flag = true;
+        }
         return flag;
     }
 }
