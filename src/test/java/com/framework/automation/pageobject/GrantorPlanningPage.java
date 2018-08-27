@@ -8,57 +8,57 @@ import com.framework.automation.projectmanager.GovGrantsManager;
 
 public class GrantorPlanningPage extends GovGrantsManager {
 
-	/******* "Variables and Locators" *****************/
+    /******* "Variables and Locators" *****************/
 
-	/**
-	 * Constructor to handle dependency injection and framework library
-	 */
-	public GrantorPlanningPage(Controller controller, Handlers reiDriver) {
-		super(controller, reiDriver);
-	}
+    /**
+     * Constructor to handle dependency injection and framework library
+     */
+    public GrantorPlanningPage(Controller controller, Handlers reiDriver) {
+        super(controller, reiDriver);
+    }
 
-	/******* "Key Methods with complete functionality - public" *****************/
+    /******* "Key Methods with complete functionality - public" *****************/
 
-	/**
-	 * assert correct title name of table is displayed
-	 * 
-	 * @param titleName
-	 */
-	public void assertCorrectFlexTableTitleDisplayed(String titleName) {
-		Assert.assertTrue(isTitleDisplayed(titleName));
-	}
+    /**
+     * assert correct title name of table is displayed
+     * 
+     * @param titleName
+     */
+    public void assertCorrectFlexTableTitleDisplayed(String titleName) {
+        Assert.assertTrue(isTitleDisplayed(titleName));
+    }
 
-	/**
-	 * assert two specific items are not displayed in top righ parallel lines bar
-	 * 
-	 * @param option1
-	 * @param option2
-	 */
-	public void assertTopRightParallelLinesBarSpecificOptionsDisabled(String option1, String option2) {
-		Assert.assertTrue(isTopRightParallelLinesBarSpecificOptionsDisabled(option1, option2));
-	}
+    /**
+     * assert two specific items are not displayed in top righ parallel lines bar
+     * 
+     * @param option1
+     * @param option2
+     */
+    public void assertTopRightParallelLinesBarSpecificOptionsDisabled(String option1, String option2) {
+        Assert.assertTrue(isTopRightParallelLinesBarSpecificOptionsDisabled(option1, option2));
+    }
 
-	/**
-	 * assert if quick search is not displayed
-	 */
-	public void assertquickSearchDisabled() {
-		Assert.assertTrue(isQuickSearchDisabled());
-	}
+    /**
+     * assert if quick search is not displayed
+     */
+    public void assertquickSearchDisabled() {
+        Assert.assertTrue(isQuickSearchDisabled());
+    }
 
-	/**
-	 * assert if advance filter is disabled from planning flex table
-	 */
-	public void assertDisableAdvanceFilter() {
-		Assert.assertTrue(isAdvanceFilterDisabled());
-	}
+    /**
+     * assert if advance filter is disabled from planning flex table
+     */
+    public void assertDisableAdvanceFilter() {
+        Assert.assertTrue(isAdvanceFilterDisabled());
+    }
 
-	/**
-	 * assert if menu icon is disabled from planning flex table
-	 */
-	public void assertDisableMenuIcon() {
-		Assert.assertTrue(isMenuIconDisabled());
-	}
-	
+    /**
+     * assert if menu icon is disabled from planning flex table
+     */
+    public void assertDisableMenuIcon() {
+        Assert.assertTrue(isMenuIconDisabled());
+    }
+
     /***
      * assert true if check box select record enabled
      */
@@ -66,107 +66,123 @@ public class GrantorPlanningPage extends GovGrantsManager {
         Assert.assertTrue(isSelectRecordCheckBox());
     }
 
-	/********
-	 * "Local Methods with complete functionality - private"
-	 *****************/
-	/**
-	 * validate if tile is displayed
-	 * 
-	 * @param titleName
-	 * @return
-	 */
-	private boolean isTitleDisplayed(String titleName) {
-		clickLeftPanelHeader();
-		try {
-			if (getLeftPanelHeader(titleName).isDisplayed()) {
-				return true;
-			} else {
-				return false;
-			}
-		} catch (Exception e) {
-			return false;
-		}
-	}
+    /**
+     * assert true if total row calculation is disabled
+     */
+    public void assertFlexTabelTotalCalulationRowDisabled() {
+        reiDriver.JavaScript().scrollpageJS("PageDown",0, 0);
+        Assert.assertTrue(isFlexTableRowsTotalDisabled());
+    }
+    
+    /**
+     * assert true if total row calculation is disabled
+     */
+    public void assertFlexTabelRowCountDisabled() {
+        reiDriver.JavaScript().scrollpageJS("PageDown",0, 0);
+        Assert.assertTrue(isFlexTableRowsCountDisabled());
+    }
 
-	/**
-	 * validate if options are not displayed in top right parallel line bar
-	 * 
-	 * @param option1
-	 * @param option2
-	 * @return: true if it is not displayed
-	 */
-	private boolean isTopRightParallelLinesBarSpecificOptionsDisabled(String option1, String option2) {
-		boolean flag = false;
-		try {
-			if (getItemFromTopRightHeaderBarsWithoutWaitTime(option1).isDisplayed()) {
-				flag = false;
-			}
-		} catch (Exception e) {
-			flag = true;
-		}
+    /********
+     * "Local Methods with complete functionality - private"
+     *****************/
+    /**
+     * validate if tile is displayed
+     * 
+     * @param titleName
+     * @return
+     */
+    private boolean isTitleDisplayed(String titleName) {
+        clickLeftPanelHeader();
+        try {
+            if (getLeftPanelHeader(titleName).isDisplayed()) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception e) {
+            return false;
+        }
+    }
 
-		try {
-			if (getItemFromTopRightHeaderBarsWithoutWaitTime(option2).isDisplayed()) {
-				flag = false;
-			}
-		} catch (Exception e) {
-			flag = true;
-		}
+    /**
+     * validate if options are not displayed in top right parallel line bar
+     * 
+     * @param option1
+     * @param option2
+     * @return: true if it is not displayed
+     */
+    private boolean isTopRightParallelLinesBarSpecificOptionsDisabled(String option1, String option2) {
+        boolean flag = false;
+        try {
+            if (getItemFromTopRightHeaderBarsWithoutWaitTime(option1).isDisplayed()) {
+                flag = false;
+            }
+        } catch (Exception e) {
+            flag = true;
+        }
 
-		return flag;
-	}
+        try {
+            if (getItemFromTopRightHeaderBarsWithoutWaitTime(option2).isDisplayed()) {
+                flag = false;
+            }
+        } catch (Exception e) {
+            flag = true;
+        }
 
-	/**
-	 * validate if quick dearch is displayed or not
-	 * 
-	 * @return: true if it is not displayed
-	 */
-	private boolean isQuickSearchDisabled() {
-		boolean flag = false;
-		try {
-			if (reiDriver.findMyElement().getElement(searchInput).isDisplayed()) {
-				flag = false;
-			}
-		} catch (Exception e) {
-			flag = true;
-		}
-		return flag;
-	}
+        return flag;
+    }
 
-	/**
-	 * Boolean status of advance filter option from program flex table
-	 * 
-	 * @param status
-	 */
-	private Boolean isAdvanceFilterDisabled() {
-		boolean flag = false;
-		try {
-			if (getAdvanceFilterItem().isDisplayed()) {
-				flag = false;
-			}
-		} catch (org.openqa.selenium.NoSuchElementException e) {
-			flag = true;
-		}
-		return flag;
-	}
+    /**
+     * validate if quick dearch is displayed or not
+     * 
+     * @return: true if it is not displayed
+     */
+    private boolean isQuickSearchDisabled() {
+        boolean flag = false;
+        try {
+            if (reiDriver.findMyElement().getElement(searchInput).isDisplayed()) {
+                flag = false;
+            }
+        } catch (Exception e) {
+            flag = true;
+        }
+        return flag;
+    }
 
-	/**
-	 * Boolean status of menu icon from program flex table
-	 * 
-	 * @param status
-	 */
-	private Boolean isMenuIconDisabled() {
-		boolean flag = false;
-		try {
-			if (getMenuIcon().isDisplayed()) {
-				flag = false;
-			}
-		} catch (org.openqa.selenium.NoSuchElementException e) {
-			flag = true;
-		}
-		return flag;
-	}
-	
+    /**
+     * Boolean status of advance filter option from program flex table
+     * 
+     * @param status
+     */
+    private Boolean isAdvanceFilterDisabled() {
+        boolean flag = false;
+        try {
+            if (getAdvanceFilterItem().isDisplayed()) {
+                flag = false;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+            flag = true;
+        }
+        return flag;
+    }
+
+    /**
+     * Boolean status of menu icon from program flex table
+     * 
+     * @param status
+     */
+    private Boolean isMenuIconDisabled() {
+        boolean flag = false;
+        try {
+            if (getMenuIcon().isDisplayed()) {
+                flag = false;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+            flag = true;
+        }
+        return flag;
+    }
+
     /**
      * 
      * @return: true if select record check box eneabled
@@ -184,5 +200,43 @@ public class GrantorPlanningPage extends GovGrantsManager {
 
         }
         return flag;
-}
     }
+
+    /**
+     * 
+     * @return true if element is not displayed
+     */
+    private Boolean isFlexTableRowsTotalDisabled() {
+        boolean flag = false;
+        try {
+            for (WebElement element : getCompleteTableRow()) {
+                if (element.findElement(totalRowsCalc).isDisplayed()) {
+                    flag = false;
+                    break;
+                }
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+            flag = true;
+        }
+        return flag;
+    }
+
+    /**
+     * 
+     * @return true if element is not displayed
+     */
+    private Boolean isFlexTableRowsCountDisabled() {
+        boolean flag = false;
+        try {
+            for (WebElement element : getCompleteTableRow()) {
+                if (element.findElement(totalRowCount).isDisplayed()) {
+                    flag = false;
+                    break;
+                }
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+            flag = true;
+        }
+        return flag;
+    }
+}

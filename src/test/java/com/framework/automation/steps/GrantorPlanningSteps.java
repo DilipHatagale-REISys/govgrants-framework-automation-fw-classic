@@ -30,7 +30,7 @@ public class GrantorPlanningSteps {
         grantorPlanningPage.assertCorrectFlexTableTitleDisplayed(titleName);
     }
 
-    @Then("^i see \"([^\"]*)\" option disabled$")
+    @Then("^i see quick search option disabled$")
     public void assertQuickSearchOptionDisabled(String quicksearch) {
         grantorPlanningPage.assertquickSearchDisabled();
     }
@@ -48,5 +48,15 @@ public class GrantorPlanningSteps {
     @Then("^i see select check box enabled in flex table$")
     public void assertOptionEnabledInFlexTable() {
         grantorPlanningPage.assertFlexTabelRecordSelectionEnabled();
+    }
+
+    @Then("^i see no total amount in flex table$")
+    public void assertNoTotalAmountInFlexTable() {
+        grantorPlanningPage.assertFlexTabelTotalCalulationRowDisabled();
+    }
+
+    @Then("^i see no total row count in flex table$")
+    public void assertFlexTableRowCountDisabled() {
+        grantorPlanningPage.assertFlexTabelRowCountDisabled();
     }
 }

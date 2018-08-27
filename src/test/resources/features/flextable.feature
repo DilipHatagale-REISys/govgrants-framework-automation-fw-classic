@@ -2,7 +2,7 @@
 Feature: Test all flex table component based scenarios 
 	As a configuration manager i make different configurational changes in flex table component and will validate them.
 
-	@32329 @all @validateChangeOfFlexTableTitle-Programs
+	@32329 @all @changeOfFlexTableTitle-Programs
 	Scenario: validate after changing name of flex table title inside planning-programs
 	Given I have default configuration for "Flex Table List" field "Label" as "Draft Programs" with filter ""
 	Given I setup filter clause for "Flex Table List" in "Programs" for field "Name" having value "FLV-1837"
@@ -11,8 +11,8 @@ Feature: Test all flex table component based scenarios
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
 	Then i see "Automation" shown as flex table title
 	
-	@32331 @all @validateDisablingExportFile-Programs
-	Scenario: validate disabling of PDF/Excel download from menu option of flex table - Programs
+	@32331 @all @disablingExportFile-Programs
+	Scenario: validate disabling of PDF/Excel download from menu option in flex table of programs-planning
 	Given I have default configuration for "Flex Table" field "Enable Export" as "true" with filter ""
 	Given I setup filter clause for "General" in "Programs" for field "" having value ""
 	When I reconfigure "Flex Table" field "Enable Export" as "false"
@@ -21,8 +21,8 @@ Feature: Test all flex table component based scenarios
 	When I click on top right parallel lines bar
 	Then i see "Download as PDF""Download as CSV" options disabled
 	
-	@32332 @all @validateDisblingQuickSearch-Programs
-	Scenario: validate disabling of quick search for flex table in programs-planning
+	@32332 @all @disblingQuickSearch-Programs
+	Scenario: validate disabling of quick search in flex table of programs-planning
 	Given I have default configuration for "Flex Table" field "Enable Quick Search" as "true" with filter ""
 	Given I setup filter clause for "General" in "Programs" for field "" having value ""
 	When I reconfigure "Flex Table" field "Enable Quick Search" as "false"
@@ -30,16 +30,7 @@ Feature: Test all flex table component based scenarios
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
 	Then i see quick search option disabled
 	
-	@32335 @all @validateRecordSelectionForFlex-Programs
-	Scenario: validate enabling of record selection check boxes for flex table in programs-planning
-	Given I have default configuration for "Flex Table" field "Enable Record Selection" as "false" with filter ""
-	Given I setup filter clause for "General" in "Programs" for field "" having value ""
-	When I reconfigure "Flex Table" field "Enable Record Selection" as "true"
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
-	Then i see select check box enabled in flex table
-	
-	@32333 @all @validateDisablingAdvanceFilter-Programs
+	@32333 @all @disablingAdvanceFilter-Programs
 	Scenario: validate disabling of advance filter from planning-Program flex table
 	Given I have default configuration for "Flex Table" field "Enable Filter" as "true" with filter ""
 	Given I setup filter clause for "General" in "Programs" for field "" having value ""
@@ -48,7 +39,7 @@ Feature: Test all flex table component based scenarios
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
     Then I see Advance filter is disabled from planning flex table
         
-    @32334 @all @validateDisablingMenuIcon-Program
+    @32334 @all @disablingMenuIcon-Program
     Scenario: validate disabling of menu icon from planning-Program flex table
     Given I have default configuration for "Flex Table" field "Disable Menu" as "false" with filter ""
 	Given I setup filter clause for "General" in "Programs" for field "" having value ""
@@ -56,3 +47,30 @@ Feature: Test all flex table component based scenarios
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
 	Then I see Menu icon is disabled from planning flex table
+	
+	@32335 @all @enableRecordSelectionForFlex-Programs
+	Scenario: validate enabling of record selection check boxes in flex table of programs-planning
+	Given I have default configuration for "Flex Table" field "Enable Record Selection" as "false" with filter ""
+	Given I setup filter clause for "General" in "Programs" for field "" having value ""
+	When I reconfigure "Flex Table" field "Enable Record Selection" as "true"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	Then i see select check box enabled in flex table
+	
+	@32336 @all @disablingAmountTotalForFlex-Programs
+	Scenario: validate disbaling of total amount in flex table of programs-planning
+	Given I have default configuration for "Flex Table" field "Enable Total Row" as "true" with filter ""
+	Given I setup filter clause for "General" in "Programs" for field "" having value ""
+	When I reconfigure "Flex Table" field "Enable Total Row" as "false"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	Then i see no total amount in flex table
+	
+	@32337 @all @disablingTotalRowCount-Programs
+	Scenario: validate disbaling of total row count in flex table of programs-planning
+	Given I have default configuration for "Flex Table" field "Enable Total Records Count" as "true" with filter ""
+	Given I setup filter clause for "General" in "Programs" for field "" having value ""
+	When I reconfigure "Flex Table" field "Enable Total Records Count" as "false"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	Then i see no total row count in flex table
