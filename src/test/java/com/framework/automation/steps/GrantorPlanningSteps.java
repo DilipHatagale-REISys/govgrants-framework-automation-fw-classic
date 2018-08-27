@@ -9,39 +9,44 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class GrantorPlanningSteps {
-	GrantorPlanningPage grantorPlanningPage;
+    GrantorPlanningPage grantorPlanningPage;
 
-	public GrantorPlanningSteps(Controller controller, Handlers handler) {
-		grantorPlanningPage = new GrantorPlanningPage(controller, handler);
-	}
+    public GrantorPlanningSteps(Controller controller, Handlers handler) {
+        grantorPlanningPage = new GrantorPlanningPage(controller, handler);
+    }
 
-	@When("^I click on top right parallel lines bar$")
-	public void clickTopRightParallelLinesBar() {
-		grantorPlanningPage.clickRightHeaderBars();
-	}
+    @When("^I click on top right parallel lines bar$")
+    public void clickTopRightParallelLinesBar() {
+        grantorPlanningPage.clickRightHeaderBars();
+    }
 
-	@Then("^i see \"([^\"]*)\"\"([^\"]*)\" options disabled$")
-	public void assertTopRightParallelLinesBarOptionsDisabled(String option1, String option2) {
-		grantorPlanningPage.assertTopRightParallelLinesBarSpecificOptionsDisabled(option1, option2);
-	}
+    @Then("^i see \"([^\"]*)\"\"([^\"]*)\" options disabled$")
+    public void assertTopRightParallelLinesBarOptionsDisabled(String option1, String option2) {
+        grantorPlanningPage.assertTopRightParallelLinesBarSpecificOptionsDisabled(option1, option2);
+    }
 
-	@Then("^i see \"([^\"]*)\" shown as flex table title$")
-	public void assertFlextableTitle(String titleName) {
-		grantorPlanningPage.assertCorrectFlexTableTitleDisplayed(titleName);
-	}
+    @Then("^i see \"([^\"]*)\" shown as flex table title$")
+    public void assertFlextableTitle(String titleName) {
+        grantorPlanningPage.assertCorrectFlexTableTitleDisplayed(titleName);
+    }
 
-	@Then("^i see \"([^\"]*)\" option disabled$")
-	public void assertQuickSearchOptionDisabled(String quicksearch) {
-		grantorPlanningPage.assertquickSearchDisabled();
-	}
+    @Then("^i see \"([^\"]*)\" option disabled$")
+    public void assertQuickSearchOptionDisabled(String quicksearch) {
+        grantorPlanningPage.assertquickSearchDisabled();
+    }
 
-	@Then("^I see Advance filter is disabled from planning flex table$")
-	public void assertAdvanceFilterOptionDisabled() {
-		grantorPlanningPage.assertDisableAdvanceFilter();
-	}
+    @Then("^I see Advance filter is disabled from planning flex table$")
+    public void assertAdvanceFilterOptionDisabled() {
+        grantorPlanningPage.assertDisableAdvanceFilter();
+    }
 
-	@Then("^I see Menu icon is disabled from planning flex table$")
-	public void assertDisableMenuIcon() {
-		grantorPlanningPage.assertDisableMenuIcon();
-	}
+    @Then("^I see Menu icon is disabled from planning flex table$")
+    public void assertDisableMenuIcon() {
+        grantorPlanningPage.assertDisableMenuIcon();
+    }
+
+    @Then("^i see select check box enabled in flex table$")
+    public void assertOptionEnabledInFlexTable() {
+        grantorPlanningPage.assertFlexTabelRecordSelectionEnabled();
+    }
 }
