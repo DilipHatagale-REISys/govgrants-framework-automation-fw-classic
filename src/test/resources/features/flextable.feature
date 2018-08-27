@@ -30,15 +30,6 @@ Feature: Test all flex table component based scenarios
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
 	Then i see quick search option disabled
 	
-	@32335 @all @validateRecordSelectionForFlex-Programs
-	Scenario: validate enabling of record selection check boxes for flex table in programs-planning
-	Given I have default configuration for "Flex Table" field "Enable Record Selection" as "false" with filter ""
-	Given I setup filter clause for "General" in "Programs" for field "" having value ""
-	When I reconfigure "Flex Table" field "Enable Record Selection" as "true"
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
-	Then i see select check box enabled in flex table
-	
 	@32333 @all @validateDisablingAdvanceFilter-Programs
 	Scenario: validate disabling of advance filter from planning-Program flex table
 	Given I have default configuration for "Flex Table" field "Enable Filter" as "true" with filter ""
@@ -56,3 +47,12 @@ Feature: Test all flex table component based scenarios
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
 	Then I see Menu icon is disabled from planning flex table
+	
+	@32335 @all @validateRecordSelectionForFlex-Programs
+	Scenario: validate enabling of record selection check boxes for flex table in programs-planning
+	Given I have default configuration for "Flex Table" field "Enable Record Selection" as "false" with filter ""
+	Given I setup filter clause for "General" in "Programs" for field "" having value ""
+	When I reconfigure "Flex Table" field "Enable Record Selection" as "true"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	Then i see select check box enabled in flex table
