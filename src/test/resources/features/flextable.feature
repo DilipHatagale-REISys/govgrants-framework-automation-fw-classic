@@ -38,3 +38,21 @@ Feature: Test all flex table component based scenarios
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
 	Then i see select check box enabled in flex table
+	
+	@32333 @all @validateDisablingAdvanceFilter-Programs
+	Scenario: validate disabling of advance filter from planning-Program flex table
+	Given I have default configuration for "Flex Table" field "Enable Filter" as "true" with filter ""
+	Given I setup filter clause for "General" in "Programs" for field "" having value ""
+	When I reconfigure "Flex Table" field "Enable Filter" as "false"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+    Then I see Advance filter is disabled from planning flex table
+        
+    @32334 @all @validateDisablingMenuIcon-Program
+    Scenario: validate disabling of menu icon from planning-Program flex table
+    Given I have default configuration for "Flex Table" field "Disable Menu" as "false" with filter ""
+	Given I setup filter clause for "General" in "Programs" for field "" having value ""
+	When I reconfigure "Flex Table" field "Disable Menu" as "true"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	Then I see Menu icon is disabled from planning flex table

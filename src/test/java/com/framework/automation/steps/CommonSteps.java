@@ -27,12 +27,12 @@ public class CommonSteps {
 		govGrantsManager.clickAdminNavBar(adminTabName);
 		govGrantsManager.clickPhasesNaveBar(phaseTabName);
 	}
-
-	@When("^I navigate to \"([^\"]*)\" on side bar$")
-	public void navigateToSideBar(String leftPanelMenu) {
-		govGrantsManager.clickLeftPanel(leftPanelMenu);
-	}
 	
+	@When("^I navigate to \"([^\"]*)\" with in \"([^\"]*)\" of side bar$")
+	public void navigateToSideBar(String sideBarCategory, String accordianSubHeaderDetail) {
+	    govGrantsManager.clickAccordiansubHeaderContent(sideBarCategory, accordianSubHeaderDetail);
+	}
+
 	@Then("^I see page title \"([^\"]*)\"$")
     public void asserPageTitle(String pageTitle) {
         govGrantsManager.assertPageTitle(pageTitle);
