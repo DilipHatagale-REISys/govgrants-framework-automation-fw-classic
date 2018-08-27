@@ -84,7 +84,7 @@ Feature: Test all sidebar component based scenarios
 	When I reconfigure "Accordian Content" field "Open in new window" as "true"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab"
-	When I navigate to "Completed" on side bar
+	When I navigate to "Tasks" with in "Completed" of side bar 
 	Then I see "<Page title>" in new tab
 	Examples:
 	|Page title|
@@ -97,10 +97,8 @@ Feature: Test all sidebar component based scenarios
 	When I reconfigure "Accordian Content" field "Target Url" as "<New-TargetUrl>"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab"
-	When I navigate to "Completed" on side bar
+	When I navigate to "Tasks" with in "Completed" of side bar
 	Then I see page title "Pending Registrations"
 	Examples:
 	|New-TargetUrl|Old-TargetUrl|
-	|/apex/PendingRegistrations|/apex/FlexTableNewView?ft1=CompletedTasks&ft2=CompletedTasksBy|
-	
-		
+	|/apex/PendingRegistrations|/apex/FlexTableNewView?ft1=CompletedTasks&ft2=CompletedTasksBy|		

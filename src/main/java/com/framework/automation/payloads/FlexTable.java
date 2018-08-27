@@ -6,8 +6,8 @@ import java.util.regex.Pattern;
 import com.framework.automation.projectmanager.SetUpConfiguration;
 
 public class FlexTable {
-    private String payloadForStringValue = "{\"sObjectAPIName\" : \"%s\",\"fieldMapStr\" : \"{\\\"Id\\\":\\\"%s\\\",\\\"%s\\\":\\\"%s\\\"}\"}";
-    private String payloadForIntValue = "{\"sObjectAPIName\" : \"%s\",\"fieldMapStr\" : \"{\\\"Id\\\":\\\"%s\\\",\\\"%s\\\":%s}\"}";
+	private String payloadForStringValue = "{\"sObjectAPIName\" : \"%s\",\"fieldMapStr\" : \"{\\\"Id\\\":\\\"%s\\\",\\\"%s\\\":\\\"%s\\\"}\"}";
+	private String payloadForIntValue = "{\"sObjectAPIName\" : \"%s\",\"fieldMapStr\" : \"{\\\"Id\\\":\\\"%s\\\",\\\"%s\\\":%s}\"}";
 
     /**
      * Handles Accordian Content level configuration
@@ -72,6 +72,7 @@ public class FlexTable {
                                 String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
                         String.valueOf(SObjectAPIs.GNT__EnableExport__c), value);
             }
+            break;
         case "ENABLE QUICK SEARCH":
             if (m.find() || (value.contains("true")) || (value.contains("false"))) {
                 finalPayload = String.format(payloadForIntValue,
@@ -86,9 +87,39 @@ public class FlexTable {
                                 String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
                         String.valueOf(SObjectAPIs.GNT__EnableQuickSearch__c), value);
             }
+            break;
+        case "ENABLE FILTER":
+			if (m.find() || (value.contains("true")) || (value.contains("false"))) {
+				finalPayload = String
+						.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c),
+								new ApiUtilities().getComponentCoreFieldId(
+										String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+								String.valueOf(SObjectAPIs.GNT__EnableFilter__c), value);
+			} else {
+				finalPayload = String
+						.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c),
+								new ApiUtilities().getComponentCoreFieldId(
+										String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+								String.valueOf(SObjectAPIs.GNT__EnableFilter__c), value);
+			}
+			break;
+		case "DISABLE MENU":
+			if (m.find() || (value.contains("true")) || (value.contains("false"))) {
+				finalPayload = String
+						.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c),
+								new ApiUtilities().getComponentCoreFieldId(
+										String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+								String.valueOf(SObjectAPIs.GNT__DisableMenu__c), value);
+			} else {
+				finalPayload = String
+						.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c),
+								new ApiUtilities().getComponentCoreFieldId(
+										String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+								String.valueOf(SObjectAPIs.GNT__DisableMenu__c), value);
+			}
+			break;
         }
         System.out.println(finalPayload);
         return finalPayload;
-        
-    }
+      }
 }
