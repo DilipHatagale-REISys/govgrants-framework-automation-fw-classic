@@ -23,36 +23,39 @@ public class GovGrantsManager extends ProjectWebServices {
     public String defaultComment = "Automation testing";
     public final By navigationLogo, loginDropDown, searchInput, rightHeaderBars, leftPanelHeader, topRightDropDown,
             egmsHeader, secondTopRightFilter, completeTableHeader, completeTableRow, sideBarHeadersList,
-            advanceFilterButton, menuIcon, selectRecordCheckBox;
+            advanceFilterButton, menuIcon, selectRecordCheckBox, totalRowsCalc, totalRowCount;
 
     /**
-	 * Super Constructor
-	 * 
-	 * @param controller
-	 * @param reiDriver
-	 */
-	public GovGrantsManager(Controller controller, Handlers reiDriver) {
-		this.controller = controller;
-		this.reiDriver = reiDriver;
-		navigationLogo = By.xpath("//div[@id='holdon-overlay']/div/div/div/img[@class='nav-logo']");
-		searchInput = By.xpath("//div/div[@class='quick-search']/div/input");
-		rightHeaderBars = By.xpath("//div[@class='panel-heading']//div[contains(@class,'header-bars')]");
-		leftPanelHeader = By.xpath("//div[contains(@class,'panel-title')]//div[@id='dropdownListView']");
-		loginDropDown = By.xpath("//div/ul/li[@class='dropdown userDropdown']");
-		topRightDropDown = By.xpath("//div/ul/li[@class='dropdown appDropdown']");
-		egmsHeader = By.xpath("//div[@class='navbar-header']/span[text()='Enterprise Grants Management System']");
-		secondTopRightFilter = By.xpath("//div[contains(@class,'panel-body')]//div/button");
-		completeTableHeader = By.xpath(
-				"//div[@class='panel-heading']/following-sibling::div[contains(@class,'panel-body')]//div/table/thead/tr");
-		completeTableRow = By.xpath(
-				"//div[@class='panel-heading']/following-sibling::div[contains(@class,'panel-body')]//div/table/tbody/tr");
-		sideBarHeadersList = By.xpath(
-				"//div[@id='sidebar-wrapper']//div[contains(@class,'panel-sidebar')]//span[contains(@class,'sidebar-label')]");
-		 selectRecordCheckBox = By.xpath("//input[@aria-label='Select Record']");
-		advanceFilterButton = By
-				.xpath(".//*[@id='toggleFlexTablePrograms']//button/span[contains(text(),'Advance Filter')]");
-		menuIcon = By.xpath("//div[@class='panel-heading']//div[contains(@class,'header-bars')]//a[@title='Menu']//span[contains(@class,'fa fa-bars')]");
-	}
+     * Super Constructor
+     * 
+     * @param controller
+     * @param reiDriver
+     */
+    public GovGrantsManager(Controller controller, Handlers reiDriver) {
+        this.controller = controller;
+        this.reiDriver = reiDriver;
+        navigationLogo = By.xpath("//div[@id='holdon-overlay']/div/div/div/img[@class='nav-logo']");
+        searchInput = By.xpath("//div/div[@class='quick-search']/div/input");
+        rightHeaderBars = By.xpath("//div[@class='panel-heading']//div[contains(@class,'header-bars')]");
+        leftPanelHeader = By.xpath("//div[contains(@class,'panel-title')]//div[@id='dropdownListView']");
+        loginDropDown = By.xpath("//div/ul/li[@class='dropdown userDropdown']");
+        topRightDropDown = By.xpath("//div/ul/li[@class='dropdown appDropdown']");
+        egmsHeader = By.xpath("//div[@class='navbar-header']/span[text()='Enterprise Grants Management System']");
+        secondTopRightFilter = By.xpath("//div[contains(@class,'panel-body')]//div/button");
+        completeTableHeader = By.xpath(
+                "//div[@class='panel-heading']/following-sibling::div[contains(@class,'panel-body')]//div/table/thead/tr");
+        completeTableRow = By.xpath(
+                "//div[@class='panel-heading']/following-sibling::div[contains(@class,'panel-body')]//div/table/tbody/tr");
+        sideBarHeadersList = By.xpath(
+                "//div[@id='sidebar-wrapper']//div[contains(@class,'panel-sidebar')]//span[contains(@class,'sidebar-label')]");
+        selectRecordCheckBox = By.xpath("//input[@aria-label='Select Record']");
+        advanceFilterButton = By
+                .xpath(".//*[@id='toggleFlexTablePrograms']//button/span[contains(text(),'Advance Filter')]");
+        menuIcon = By.xpath(
+                "//div[@class='panel-heading']//div[contains(@class,'header-bars')]//a[@title='Menu']//span[contains(@class,'fa fa-bars')]");
+        totalRowsCalc = By.xpath("//td/b/span[contains(@ng-bind,'calculateTotalRowValues')]");
+        totalRowCount = By.xpath("//span[@ng-bind='totalRecords']");
+    }
 
     /******* "Key Methods with complete functionality - Public" *****************/
 
@@ -400,7 +403,6 @@ public class GovGrantsManager extends ProjectWebServices {
     public WebElement getMenuIcon() {
         return reiDriver.findMyElement().getElement(menuIcon);
     }
-
 
     /******* "Local Methods with Limited functionality - Private" **********/
 
