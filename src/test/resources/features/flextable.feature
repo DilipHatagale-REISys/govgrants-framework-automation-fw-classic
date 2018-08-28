@@ -75,6 +75,24 @@ Feature: Test all flex table component based scenarios
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
 	Then i see no total row count in flex table
 	
+	@32338 @all @additionOfLabelForRowNamedTotal-Programs
+	Scenario: validate addition of label for row named as total of programs-planning
+	Given I have default configuration for "Flex Table" field "Total Row Label" as "Total" with filter "Automation Total"
+	Given I setup filter clause for "General" in "Programs" for field "Total Row Label" having value "Total"
+	When I reconfigure "Flex Table" field "Total Row Label" as "Automation Total"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	Then I see changed label as "Automation Total" of last row name
+	
+	@32339 @all @enableAutoIndex-Programs
+	Scenario: validate enable auto index for details inside flex table of programs-planning
+	Given I have default configuration for "Flex Table" field "Enable Auto Index" as "false" with filter "" 
+	Given I setup filter clause for "General" in "Programs" for field "" having value ""
+	When I reconfigure "Flex Table" field "Enable Auto Index" as "true"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	Then i see " #" in flex table header
+
 	@32543 @all @addingfieldNamesOfDifferentDataTypes-Programs
 	Scenario Outline: validate adding field names for different data types in flex table of programs-planning
 	Given I have default configuration for "Flex Table" field "Display Field Names" as "<defaultFieldsApi>" with filter ""
@@ -82,7 +100,7 @@ Feature: Test all flex table component based scenarios
 	When I reconfigure "Flex Table" field "Display Field Names" as "<newFieldsApi>"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
-	Then i see "<fieldDisplayNames>" in flex table
+	Then i see "<fieldDisplayNames>" in flex table header
 	
 	Examples:
 	|fieldDisplayNames|newFieldsApi|defaultFieldsApi|
@@ -93,6 +111,5 @@ Feature: Test all flex table component based scenarios
 	|Federal Program CFDA #|ProgramCFDA__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById|Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById|
 	|Program Type|ProgramType__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById|Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById|
 	|Website Address|WebsiteAddress__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById|Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById|
-	|Federal Program|IsFederalProgram__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById|Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById|
+	|Is Federal Program|IsFederalProgram__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById|Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById|
 	|Number|Number__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById|Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById|
-	

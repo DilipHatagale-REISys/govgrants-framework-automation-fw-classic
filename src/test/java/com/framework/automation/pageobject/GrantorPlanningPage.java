@@ -70,16 +70,34 @@ public class GrantorPlanningPage extends GovGrantsManager {
      * assert true if total row calculation is disabled
      */
     public void assertFlexTabelTotalCalulationRowDisabled() {
-        reiDriver.JavaScript().scrollpageJS("PageDown",0, 0);
+        reiDriver.JavaScript().scrollpageJS("PageDown", 0, 0);
         Assert.assertTrue(isFlexTableRowsTotalDisabled());
     }
-    
+
     /**
      * assert true if total row calculation is disabled
      */
     public void assertFlexTabelRowCountDisabled() {
-        reiDriver.JavaScript().scrollpageJS("PageDown",0, 0);
+        reiDriver.JavaScript().scrollpageJS("PageDown", 0, 0);
         Assert.assertTrue(isFlexTableRowsCountDisabled());
+    }
+
+    /**
+     * @param lastRowName
+     */
+    public void assertnewAddedLastRowLabelName(String flexTablelastRowName) {
+        reiDriver.WaitFor().WaitForElementToBePresent(flexTablelastRowNameAsTotal);
+        reiDriver.JavaScript().scrollpageToSpecificElement(flexTablelastRowNameAsTotal);
+        Assert.assertEquals(getLastRowLabelContent().getText(), flexTablelastRowName);
+    }
+
+    /**
+     * assert true if header column name is present
+     * 
+     * @param headerColumnName
+     */
+    public void assertFlexTableHeaderColumnName(String headerColumnName) {
+        Assert.assertTrue(isFlexTableColumnHeaderName(headerColumnName));
     }
 
     /********
@@ -239,4 +257,31 @@ public class GrantorPlanningPage extends GovGrantsManager {
         }
         return flag;
     }
+
+    /**
+     * access last row label name
+     * 
+     * @return
+     */
+    public WebElement getLastRowLabelContent() {
+        return reiDriver.WaitFor().WaitForElementToBePresent(flexTablelastRowNameAsTotal);
+    }
+
+    /**
+     * 
+     * @return false if element is not displayed
+     */
+    private Boolean isFlexTableColumnHeaderName(String titleName) {
+        boolean flag = false;
+        try {
+            if (getSpecificElementFromTableHeader(titleName).isDisplayed()
+                    || getSpecificElementFromTableHeader(titleName).isEnabled()) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+            flag = false;
+        }
+        return flag;
+    }
+
 }

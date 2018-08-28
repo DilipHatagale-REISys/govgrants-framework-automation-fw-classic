@@ -23,7 +23,8 @@ public class GovGrantsManager extends ProjectWebServices {
     public String defaultComment = "Automation testing";
     public final By navigationLogo, loginDropDown, searchInput, rightHeaderBars, leftPanelHeader, topRightDropDown,
             egmsHeader, secondTopRightFilter, completeTableHeader, completeTableRow, sideBarHeadersList,
-            advanceFilterButton, menuIcon, selectRecordCheckBox, totalRowsCalc, totalRowCount;
+            advanceFilterButton, menuIcon, selectRecordCheckBox, totalRowsCalc, totalRowCount,
+            flexTablelastRowNameAsTotal;
 
     /**
      * Super Constructor
@@ -55,6 +56,7 @@ public class GovGrantsManager extends ProjectWebServices {
                 "//div[@class='panel-heading']//div[contains(@class,'header-bars')]//a[@title='Menu']//span[contains(@class,'fa fa-bars')]");
         totalRowsCalc = By.xpath("//td/b/span[contains(@ng-bind,'calculateTotalRowValues')]");
         totalRowCount = By.xpath("//span[@ng-bind='totalRecords']");
+        flexTablelastRowNameAsTotal = By.xpath("//td/b/span[contains(@ng-bind-html,'TotalRowLabel')]");
     }
 
     /******* "Key Methods with complete functionality - Public" *****************/
@@ -322,9 +324,9 @@ public class GovGrantsManager extends ProjectWebServices {
      * @return
      */
     public WebElement getSpecificElementFromTableHeader(String titleName) {
-        return reiDriver.findMyElement().getElement(By.xpath(
-                "//div[@class='panel-heading']/following-sibling::div[contains(@class,'panel-body')]//div/table/thead/tr/th/a//span[@title='"
-                        + titleName + "']"));
+        return reiDriver.WaitFor().WaitForElementToBePresent(By.xpath(
+                "//div[@class='panel-heading']/following-sibling::div[contains(@class,'panel-body')]//div/table/thead/tr/th//span[@title='"
+                        + titleName + "' or text()='" + titleName + "']"));
     }
 
     /**

@@ -4,7 +4,6 @@ import com.automation.rei.controller.Controller;
 import com.automation.rei.handlers.Handlers;
 import com.framework.automation.pageobject.GrantorPlanningPage;
 import com.framework.automation.projectmanager.GovGrantsManager;
-
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
@@ -60,8 +59,13 @@ public class GrantorPlanningSteps {
         grantorPlanningPage.assertFlexTabelRowCountDisabled();
     }
     
-    @Then("^i see \"([^\"]*)\" in flex table$")
-    public void assertFlexTableHeaderName(String headerName) {
-
+    @Then("^I see changed label as \"([^\"]*)\" of last row name$")
+    public void assertRenameLastRowName(String flexTablelastRowName) {
+        grantorPlanningPage.assertnewAddedLastRowLabelName(flexTablelastRowName);
+    }
+    
+    @Then("^i see \"([^\"]*)\" in flex table header$")
+    public void assertFlexTableHeaderName(String headerColumnName) {
+        grantorPlanningPage.assertFlexTableHeaderColumnName(headerColumnName);;
     }
 }
