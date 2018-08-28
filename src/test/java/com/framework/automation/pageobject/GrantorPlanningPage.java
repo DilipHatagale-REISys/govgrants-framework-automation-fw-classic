@@ -85,10 +85,10 @@ public class GrantorPlanningPage extends GovGrantsManager {
 	/**
 	 * @param lastRowName
 	 */
-	public void assertnewAddedLastRowLabelName(String lastRowName) {
-		reiDriver.WaitFor().WaitForElementToBePresent(lastRowNameAsTotal);
-		reiDriver.JavaScript().scrollpageToSpecificElement(lastRowNameAsTotal);
-		Assert.assertEquals(getLastRowLabelContent().getText(), lastRowName);
+	public void assertnewAddedLastRowLabelName(String flexTablelastRowName) {
+		reiDriver.WaitFor().WaitForElementToBePresent(flexTablelastRowNameAsTotal);
+		reiDriver.JavaScript().scrollpageToSpecificElement(flexTablelastRowNameAsTotal);
+		Assert.assertEquals(getLastRowLabelContent().getText(), flexTablelastRowName);
 	}
 
 	/**
@@ -262,7 +262,7 @@ public class GrantorPlanningPage extends GovGrantsManager {
 	 * @return
 	 */
 	public WebElement getLastRowLabelContent() {
-		return reiDriver.WaitFor().WaitForElementToBePresent(lastRowNameAsTotal);
+		return reiDriver.WaitFor().WaitForElementToBePresent(flexTablelastRowNameAsTotal);
 	}
 
 	/**

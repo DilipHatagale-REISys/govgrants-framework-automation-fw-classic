@@ -23,7 +23,7 @@ public class GovGrantsManager extends ProjectWebServices {
 	public String defaultComment = "Automation testing";
 	public final By navigationLogo, loginDropDown, searchInput, rightHeaderBars, leftPanelHeader, topRightDropDown,
 			egmsHeader, secondTopRightFilter, completeTableHeader, completeTableRow, sideBarHeadersList,
-			advanceFilterButton, menuIcon, selectRecordCheckBox, totalRowsCalc, totalRowCount, lastRowNameAsTotal,
+			advanceFilterButton, menuIcon, selectRecordCheckBox, totalRowsCalc, totalRowCount, flexTablelastRowNameAsTotal,
 			autoIndexHeaderColumn;
 
 	/**
@@ -56,7 +56,7 @@ public class GovGrantsManager extends ProjectWebServices {
 				"//div[@class='panel-heading']//div[contains(@class,'header-bars')]//a[@title='Menu']//span[contains(@class,'fa fa-bars')]");
 		totalRowsCalc = By.xpath("//td/b/span[contains(@ng-bind,'calculateTotalRowValues')]");
 		totalRowCount = By.xpath("//span[@ng-bind='totalRecords']");
-		lastRowNameAsTotal = By.xpath("//td/b/span[contains(@ng-bind-html,'Total')]");
+		flexTablelastRowNameAsTotal = By.xpath("//td/b/span[contains(@ng-bind-html,'TotalRowLabel')]");
 		autoIndexHeaderColumn = By.xpath(
 				"//div[@class='panel-heading']/following-sibling::div[contains(@class,'panel-body')]//div/table/thead/tr//th/span[2][contains(text(),'#')]");
 	}

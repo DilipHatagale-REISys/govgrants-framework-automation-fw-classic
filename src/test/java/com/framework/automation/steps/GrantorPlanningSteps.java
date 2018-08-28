@@ -60,8 +60,8 @@ public class GrantorPlanningSteps {
 	}
 
 	@Then("^I see changed label as \"([^\"]*)\" of last row name$")
-	public void assertRenameLastRowName(String lastRowName) {
-		grantorPlanningPage.assertnewAddedLastRowLabelName(lastRowName);
+	public void assertRenameLastRowName(String flexTablelastRowName) {
+		grantorPlanningPage.assertnewAddedLastRowLabelName(flexTablelastRowName);
 	}
 
 	@Then("^I see no column for auto index in flex table header$")
