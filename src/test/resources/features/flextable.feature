@@ -91,17 +91,25 @@ Feature: Test all flex table component based scenarios
 	When I reconfigure "Flex Table" field "Enable Auto Index" as "true"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
-	Then I see no column for auto index in flex table header 
+	Then i see " #" in flex table header
 
 	@32543 @all @addingfieldNamesOfDifferentDataTypes-Programs
-	Scenario Outline: validate adding all field names for all data types in flex table of programs-planning
+	Scenario Outline: validate adding field names for different data types in flex table of programs-planning
 	Given I have default configuration for "Flex Table" field "Display Field Names" as "<defaultFieldsApi>" with filter ""
 	Given I setup filter clause for "General" in "Programs" for field "" having value ""
 	When I reconfigure "Flex Table" field "Display Field Names" as "<newFieldsApi>"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
-	Then i see "<fieldDisplayNames>" in flex table
+	Then i see "<fieldDisplayNames>" in flex table header
 	
 	Examples:
 	|fieldDisplayNames|newFieldsApi|defaultFieldsApi|
-	||FederalProgramCFDA__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById|Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById|
+	|CFDA Number|FederalProgramCFDA__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById|Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById|
+	|Program Approver|ProgramApprover__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById|Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById|
+	|Expected Funding|ExpectedFunding__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById|Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById|
+	|End Date|EndDate__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById|Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById|
+	|Federal Program CFDA #|ProgramCFDA__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById|Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById|
+	|Program Type|ProgramType__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById|Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById|
+	|Website Address|WebsiteAddress__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById|Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById|
+	|Is Federal Program|IsFederalProgram__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById|Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById|
+	|Number|Number__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById|Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById|
