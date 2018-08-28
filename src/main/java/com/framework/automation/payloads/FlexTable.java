@@ -75,124 +75,58 @@ public class FlexTable {
 			}
 			break;
 		case "ENABLE QUICK SEARCH":
-			if (m.find() || (value.contains("true")) || (value.contains("false"))) {
-				finalPayload = String
-						.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c),
-								new ApiUtilities().getComponentCoreFieldId(
-										String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
-								String.valueOf(SObjectAPIs.GNT__EnableQuickSearch__c), value);
-			} else {
-				finalPayload = String
-						.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c),
-								new ApiUtilities().getComponentCoreFieldId(
-										String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
-								String.valueOf(SObjectAPIs.GNT__EnableQuickSearch__c), value);
-			}
+			finalPayload = String.format(
+					payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), new ApiUtilities()
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__EnableQuickSearch__c), value);
 			break;
 		case "ENABLE RECORD SELECTION":
-			if (m.find() || (value.contains("true")) || (value.contains("false"))) {
-				finalPayload = String
-						.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c),
-								new ApiUtilities().getComponentCoreFieldId(
-										String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
-								String.valueOf(SObjectAPIs.GNT__EnableRecordSelection__c), value);
-			} else {
-				finalPayload = String
-						.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c),
-								new ApiUtilities().getComponentCoreFieldId(
-										String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
-								String.valueOf(SObjectAPIs.GNT__EnableQuickSearch__c), value);
-			}
+			finalPayload = String.format(
+					payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), new ApiUtilities()
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__EnableRecordSelection__c), value);
 			break;
 		case "ENABLE TOTAL ROW":
-			if (m.find() || (value.contains("true")) || (value.contains("false"))) {
-				finalPayload = String
-						.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c),
-								new ApiUtilities().getComponentCoreFieldId(
-										String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
-								String.valueOf(SObjectAPIs.GNT__EnableTotalRow__c), value);
-			} else {
-				finalPayload = String
-						.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c),
-								new ApiUtilities().getComponentCoreFieldId(
-										String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
-								String.valueOf(SObjectAPIs.GNT__EnableTotalRow__c), value);
-			}
+			finalPayload = String.format(
+					payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), new ApiUtilities()
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__EnableTotalRow__c), value);
 			break;
 		case "ENABLE TOTAL RECORDS COUNT":
-			if (m.find() || (value.contains("true")) || (value.contains("false"))) {
-				finalPayload = String
-						.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c),
-								new ApiUtilities().getComponentCoreFieldId(
-										String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
-								String.valueOf(SObjectAPIs.GNT__EnableTotalRecordsCount__c), value);
-			} else {
-				finalPayload = String
-						.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c),
-								new ApiUtilities().getComponentCoreFieldId(
-										String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
-								String.valueOf(SObjectAPIs.GNT__EnableTotalRecordsCount__c), value);
-			}
+			finalPayload = String.format(
+					payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), new ApiUtilities()
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__EnableTotalRecordsCount__c), value);
 			break;
 		case "ENABLE FILTER":
-			if (m.find() || (value.contains("true")) || (value.contains("false"))) {
-				finalPayload = String
-						.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c),
-								new ApiUtilities().getComponentCoreFieldId(
-										String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
-								String.valueOf(SObjectAPIs.GNT__EnableFilter__c), value);
-			} else {
-				finalPayload = String
-						.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c),
-								new ApiUtilities().getComponentCoreFieldId(
-										String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
-								String.valueOf(SObjectAPIs.GNT__EnableFilter__c), value);
-			}
+			finalPayload = String.format(
+					payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), new ApiUtilities()
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__EnableFilter__c), value);
 			break;
 		case "DISABLE MENU":
-			if (m.find() || (value.contains("true")) || (value.contains("false"))) {
-				finalPayload = String
-						.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c),
-								new ApiUtilities().getComponentCoreFieldId(
-										String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
-								String.valueOf(SObjectAPIs.GNT__DisableMenu__c), value);
-			} else {
-				finalPayload = String
-						.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c),
-								new ApiUtilities().getComponentCoreFieldId(
-										String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
-								String.valueOf(SObjectAPIs.GNT__DisableMenu__c), value);
-			}
+			finalPayload = String.format(
+					payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), new ApiUtilities()
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__DisableMenu__c), value);
+			break;
+		case "DISPLAY FIELD NAMES":
+			finalPayload = String.format(
+					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), new ApiUtilities()
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__FieldNames__c), value);
 			break;
 		case "TOTAL ROW LABEL":
-			if (m.find()) {
-				finalPayload = String
-						.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c),
-								new ApiUtilities().getComponentCoreFieldId(
-										String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
-								String.valueOf(SObjectAPIs.GNT__TotalRowLabel__c), value);
-			} else {
-				finalPayload = String
-						.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c),
-								new ApiUtilities().getComponentCoreFieldId(
-										String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
-								String.valueOf(SObjectAPIs.GNT__TotalRowLabel__c), value);
-			}
+			finalPayload = String.format(
+					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), new ApiUtilities()
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__TotalRowLabel__c), value);
 			break;
 		case "ENABLE AUTO INDEX":
-			if (m.find() || (value.contains("true")) || (value.contains("false"))) {
-				finalPayload = String
-						.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c),
-								new ApiUtilities().getComponentCoreFieldId(
-										String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
-								String.valueOf(SObjectAPIs.GNT__EnableAutoIndex__c), value);
-			} else {
-				finalPayload = String
-						.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c),
-								new ApiUtilities().getComponentCoreFieldId(
-										String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
-								String.valueOf(SObjectAPIs.GNT__EnableAutoIndex__c), value);
-			}
+			finalPayload = String.format(
+					payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), new ApiUtilities()
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__EnableAutoIndex__c), value);
 			break;
 		}
 		System.out.println(finalPayload);

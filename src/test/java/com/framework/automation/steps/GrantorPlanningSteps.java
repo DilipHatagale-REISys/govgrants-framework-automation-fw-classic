@@ -4,7 +4,6 @@ import com.automation.rei.controller.Controller;
 import com.automation.rei.handlers.Handlers;
 import com.framework.automation.pageobject.GrantorPlanningPage;
 import com.framework.automation.projectmanager.GovGrantsManager;
-
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
@@ -31,7 +30,7 @@ public class GrantorPlanningSteps {
 	}
 
 	@Then("^i see quick search option disabled$")
-	public void assertQuickSearchOptionDisabled(String quicksearch) {
+	public void assertQuickSearchOptionDisabled() {
 		grantorPlanningPage.assertquickSearchDisabled();
 	}
 
