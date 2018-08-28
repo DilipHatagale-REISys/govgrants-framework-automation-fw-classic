@@ -59,4 +59,9 @@ public class GrantorPlanningSteps {
     public void assertFlexTableRowCountDisabled() {
         grantorPlanningPage.assertFlexTabelRowCountDisabled();
     }
+    
+    @Then("^i see \"([^\"]*)\" in flex table$")
+    public void assertFlexTableHeaderName(String headerName) {
+
+    }
 }
