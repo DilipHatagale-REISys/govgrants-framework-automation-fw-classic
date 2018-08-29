@@ -24,7 +24,7 @@ public class GovGrantsManager extends ProjectWebServices {
     public final By navigationLogo, loginDropDown, searchInput, rightHeaderBars, leftPanelHeader, topRightDropDown,
             egmsHeader, secondTopRightFilter, completeTableHeader, completeTableRow, sideBarHeadersList,
             advanceFilterButton, menuIcon, selectRecordCheckBox, totalRowsCalc, totalRowCount,
-            flexTablelastRowNameAsTotal;
+            flexTablelastRowNameAsTotal,programEditIcon;
 
     /**
      * Super Constructor
@@ -57,6 +57,7 @@ public class GovGrantsManager extends ProjectWebServices {
         totalRowsCalc = By.xpath("//td/b/span[contains(@ng-bind,'calculateTotalRowValues')]");
         totalRowCount = By.xpath("//span[@ng-bind='totalRecords']");
         flexTablelastRowNameAsTotal = By.xpath("//td/b/span[contains(@ng-bind-html,'TotalRowLabel')]");
+        programEditIcon = By.xpath("//span//following-sibling::td[10]//a[contains(@title,'Edit')]");
     }
 
     /******* "Key Methods with complete functionality - Public" *****************/

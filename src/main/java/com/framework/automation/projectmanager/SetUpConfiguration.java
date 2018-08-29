@@ -31,6 +31,9 @@ public class SetUpConfiguration {
         case "FLEX TABLE LIST":
             stringPayload = new FlexTable().setFlexTableListFieldConfig(fieldLabel, value, filterClause);
             break;
+        case "FLEX TABLE ACTION":
+            stringPayload = new FlexTable().setFlexTableActionConfig(fieldLabel, value, filterClause);
+            break;
         }
         System.out.println("final payload is " + stringPayload);
         return stringPayload;

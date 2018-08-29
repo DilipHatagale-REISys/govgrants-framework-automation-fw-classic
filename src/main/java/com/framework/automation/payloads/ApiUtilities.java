@@ -68,6 +68,14 @@ public class ApiUtilities {
                     + String.valueOf(SObjectAPIs.GNT__AccordionHeader__r) + "."
                     + String.valueOf(SObjectAPIs.GNT__PhaseConfig__r) + ".Name=" + "'" + ComponentCoreFieldName
                     + "' and" + " " + fieldName + "=" + "'" + value + "'";
+            break;
+        case "FLEX TABLE ACTION":
+            filterClause =  fieldName +"="+ "'" +value+ "'" + " and" +" " + String.valueOf(SObjectAPIs.GNT__DataTableConfig__r) + ".Name=" + "'" + ComponentCoreFieldName + "'";
+            System.out.println("componentName=====================================" + componentName);
+            System.out.println("ComponentCoreFieldName============================" + ComponentCoreFieldName);
+            System.out.println("fieldName===========================================" + fieldName);
+            System.out.println("value=================================================" + value);
+            System.out.println("filter clause value =================================" + filterClause );
         }
         return filterClause;
     }
