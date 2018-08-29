@@ -113,3 +113,13 @@ Feature: Test all flex table component based scenarios
 	|Website Address|WebsiteAddress__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById|Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById|
 	|Is Federal Program|IsFederalProgram__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById|Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById|
 	|Number|Number__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById|Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById|
+	
+	@32547 @all @validateEditActionOpensInNewWindow-Programs
+	Scenario: validate flex table action field- Edit opens in new window 
+	Given I have default configuration for "Flex Table Action" field "Action Behavior" as "Open in same window" with filter ""
+	Given I setup filter clause for "Flex Table Action" in "Programs" for field "Name" having value "Edit"
+	When I reconfigure "Flex Table Action" field "Action Behavior" as "Open in new window"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	When I click on Program edit icon
+	Then I see edit opens in new tab

@@ -132,4 +132,25 @@ public class FlexTable {
 		System.out.println(finalPayload);
 		return finalPayload;
 	}
+
+	/**
+	 * setup configuration for flex table action
+	 * 
+	 * @param fieldLabel
+	 * @param value
+	 * @param filterClause
+	 * @return
+	 */
+	public String setFlexTableActionConfig(String fieldLabel, String value, String filterClause) {
+		String finalPayload = null;
+		switch (fieldLabel.toUpperCase()) {
+		case "ACTION BEHAVIOR":
+			finalPayload = String.format(
+					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableAction__c), new ApiUtilities()
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableAction__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__ActionBehavior__c), value);
+		}
+		System.out.println(finalPayload);
+		return finalPayload;
+	}
 }
