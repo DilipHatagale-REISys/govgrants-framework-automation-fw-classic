@@ -117,7 +117,7 @@ Feature: Test all flex table component based scenarios
 	@32544 @all @disableSpecificStatusCategory-Programs
 	Scenario Outline: validate removing Created status category from flex table of programs-planning
 	Given I have default configuration for "Flex Table List" field "Filter Clause" as "<oldSoqlFilter>" with filter "" 
-	Given I setup filter clause for "General" in "Programs" for field "" having value ""
+	Given I setup filter clause for "Flex table list" in "Programs" for field "Name" having value "FLV-1837"
 	When I reconfigure "Flex Table List" field "Filter Clause" as "<newSoqlFilter>"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
