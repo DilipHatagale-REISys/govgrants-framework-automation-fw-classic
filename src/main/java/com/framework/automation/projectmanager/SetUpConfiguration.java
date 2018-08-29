@@ -1,6 +1,7 @@
 package com.framework.automation.projectmanager;
 
 import com.framework.automation.payloads.FlexTable;
+import com.framework.automation.payloads.PageLayout;
 import com.framework.automation.payloads.SideBar;
 
 public class SetUpConfiguration {
@@ -17,7 +18,7 @@ public class SetUpConfiguration {
         String stringPayload = null;
         switch (componentName.toUpperCase()) {
         case "PHASES":
-            stringPayload = new SideBar().getPhasesFieldConfig(fieldLabel, value, filterClause);
+            stringPayload = new SideBar().setPhasesFieldConfig(fieldLabel, value, filterClause);
             break;
         case "ACCORDIAN HEADER":
             stringPayload = new SideBar().setAccordianHeaderConfig(fieldLabel, value, filterClause);
@@ -34,6 +35,8 @@ public class SetUpConfiguration {
         case "FLEX TABLE ACTION":
             stringPayload = new FlexTable().setFlexTableActionConfig(fieldLabel, value, filterClause);
             break;
+        case "PAGE LAYOUT":
+            stringPayload = new PageLayout().setPageLayOutConfig(fieldLabel,value,filterClause);
         }
         System.out.println("final payload is " + stringPayload);
         return stringPayload;

@@ -85,7 +85,7 @@ public class SideBar {
      *            filter clause to get the specific id
      * @return: payload
      */
-    public String getPhasesFieldConfig(String fieldLabel, String value, String filterClause) {
+    public String setPhasesFieldConfig(String fieldLabel, String value, String filterClause) {
         String finalPayload = null;
         Pattern p = Pattern.compile("([0-9])");
         Matcher m = p.matcher(value);

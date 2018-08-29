@@ -13,11 +13,15 @@ public class GrantorPlanningPage extends GovGrantsManager {
 
     /******* "Variables and Locators" *****************/
 
+    private final By overViewHeader, overViewTitle;
+
     /**
      * Constructor to handle dependency injection and framework library
      */
     public GrantorPlanningPage(Controller controller, Handlers reiDriver) {
         super(controller, reiDriver);
+        overViewHeader = By.cssSelector("h2.panel-title>div>span.customLabelstyle");
+        overViewTitle = By.cssSelector("h2.panel-title>div>span.overview-title");
     }
 
     /******* "Key Methods with complete functionality - public" *****************/
@@ -133,6 +137,10 @@ public class GrantorPlanningPage extends GovGrantsManager {
      */
     public void assertFlexTableStatusDisabled(String statusName) {
         Assert.assertTrue(isStatusCategoryDisabled(statusName));
+    }
+
+    public void assertOverViewTitleWithHeader(String overViewTitle, String overViewHeader) {
+        Assert.assertTrue(isOverViewTitleWithHeaderDisplayed(overViewHeader, overViewTitle));
     }
 
     /********
@@ -339,6 +347,23 @@ public class GrantorPlanningPage extends GovGrantsManager {
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
 
+        }
+        return flag;
+    }
+
+    /**
+     * return true if suggested over view header and title are displayed
+     * 
+     * @param overViewTitleName
+     * @param overViewHeaderName
+     * @return
+     */
+    private boolean isOverViewTitleWithHeaderDisplayed(String overViewHeaderName, String overViewTitleName) {
+        boolean flag = false;
+        if ((reiDriver.findMyElement().getElement(overViewHeader).getText().contains(overViewHeaderName))
+                && (reiDriver.findMyElement().getElement(overViewTitle).getText().contains(overViewTitleName))) {
+            System.out.println("entered if");
+            flag = true;
         }
         return flag;
     }
