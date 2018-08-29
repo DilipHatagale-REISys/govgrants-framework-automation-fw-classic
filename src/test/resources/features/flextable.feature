@@ -126,3 +126,14 @@ Feature: Test all flex table component based scenarios
 	Examples:
 	|newSoqlFilter|oldSoqlFilter|
 	|RecordType.Name = 'Internal Program' and Status__c IN ( 'Change Requested','Submitted for Approval','Approved')|RecordType.Name = 'Internal Program' and Status__c IN ( 'Created','Change Requested','Submitted for Approval','Approved')|
+
+	@32547 @all @validateEditActionOpensInNewWindow-Programs
+	Scenario: validate flex table action field- Edit opens in new window 
+	Given I have default configuration for "Flex Table Action" field "Action Behavior" as "Open in same window" with filter ""
+	Given I setup filter clause for "Flex Table Action" in "Programs" for field "Name" having value "Edit"
+	When I reconfigure "Flex Table Action" field "Action Behavior" as "Open in new window"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	When I click on Program edit icon
+	Then I see edit opens in new tab
+
