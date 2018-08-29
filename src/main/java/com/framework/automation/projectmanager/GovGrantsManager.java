@@ -405,6 +405,10 @@ public class GovGrantsManager extends ProjectWebServices {
     public WebElement getMenuIcon() {
         return reiDriver.findMyElement().getElement(menuIcon);
     }
+    
+    public By flexTableStatusColumn(String statusName) {
+        return By.xpath("//td//span[@title='"+statusName+"']");
+    }
 
     /******* "Local Methods with Limited functionality - Private" **********/
 

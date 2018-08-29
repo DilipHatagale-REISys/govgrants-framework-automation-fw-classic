@@ -100,6 +100,15 @@ public class GrantorPlanningPage extends GovGrantsManager {
         Assert.assertTrue(isFlexTableColumnHeaderName(headerColumnName));
     }
 
+    /**
+     * return true if specific status category is not displayed
+     * 
+     * @param statusName
+     */
+    public void assertFlexTableStatusDisabled(String statusName) {
+        Assert.assertTrue(isStatusCategoryDisabled(statusName));
+    }
+
     /********
      * "Local Methods with complete functionality - private"
      *****************/
@@ -284,4 +293,28 @@ public class GrantorPlanningPage extends GovGrantsManager {
         return flag;
     }
 
+    /**
+     * return true if statusName is not displayed
+     * 
+     * @param statusName
+     * @return
+     */
+    private Boolean isStatusCategoryDisabled(String statusName) {
+        boolean flag = true;
+        for (WebElement element : getCompleteTableRow()) {
+            System.out.println("size is " + getCompleteTableRow().size());
+            System.out.println("i am in loop");
+            try {
+                if (element.findElement(flexTableStatusColumn(statusName)).isDisplayed()
+                        || element.findElement(flexTableStatusColumn(statusName)).isEnabled()) {
+                    System.out.println("Entered if");
+                    flag = false;
+                    break;
+                }
+            } catch (Exception e) {
+
+            }
+        }
+        return flag;
+    }
 }
