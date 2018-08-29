@@ -132,7 +132,7 @@ public class FlexTable {
 		System.out.println(finalPayload);
 		return finalPayload;
 	}
-	
+
 	/**
 	 * setup configuration for flex table action
 	 * 
@@ -143,16 +143,13 @@ public class FlexTable {
 	 */
 	public String setFlexTableActionConfig(String fieldLabel, String value, String filterClause) {
 		String finalPayload = null;
-		Pattern p = Pattern.compile("([0-9])");
-		Matcher m = p.matcher(value);
 		switch (fieldLabel.toUpperCase()) {
 		case "ACTION BEHAVIOR":
-				finalPayload = String
-						.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableAction__c),
-								new ApiUtilities().getComponentCoreFieldId(
-										String.valueOf(SObjectAPIs.GNT__DataTableAction__c), filterClause),
-								String.valueOf(SObjectAPIs.GNT__ActionBehavior__c), value);
-			}
+			finalPayload = String.format(
+					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableAction__c), new ApiUtilities()
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableAction__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__ActionBehavior__c), value);
+		}
 		System.out.println(finalPayload);
 		return finalPayload;
 	}

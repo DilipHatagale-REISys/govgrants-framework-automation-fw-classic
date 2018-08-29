@@ -67,7 +67,6 @@ public class GrantorPlanningSteps {
 	@Then("^i see \"([^\"]*)\" in flex table header$")
 	public void assertFlexTableHeaderName(String headerColumnName) {
 		grantorPlanningPage.assertFlexTableHeaderColumnName(headerColumnName);
-		;
 	}
 
 	@When("^I click on Program edit icon$")

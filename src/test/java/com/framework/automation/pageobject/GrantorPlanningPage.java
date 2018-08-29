@@ -110,17 +110,12 @@ public class GrantorPlanningPage extends GovGrantsManager {
 	 * @return
 	 */
 	public void handleProgramEditIcon() {
-		reiDriver.WaitFor().WaitForElementToBePresent(completeTableRow);
-		try {
-			for (WebElement element : reiDriver.findMyElement().getElements(completeTableRow)) {
-				if (element.findElement(programEditIcon).isDisplayed()
-						|| element.findElement(programEditIcon).isEnabled()) {
-					reiDriver.JavaScript().clickByJSWebElement(element.findElement(programEditIcon));
-					break;
-				}
+		for (WebElement element : getCompleteTableRow()) {
+			if (element.findElement(editIconForProgramFlexTable).isDisplayed()
+					|| element.findElement(editIconForProgramFlexTable).isEnabled()) {
+				reiDriver.JavaScript().clickByJSWebElement(element.findElement(editIconForProgramFlexTable));
+				break;
 			}
-		} catch (Exception e) {
-			reiDriver.get().getRefresh();
 		}
 	}
 
@@ -129,19 +124,6 @@ public class GrantorPlanningPage extends GovGrantsManager {
 	 */
 	public void assertEditWithNewTab() {
 		Assert.assertTrue(isNewTabOpensForEdit());
-	}
-
-	/**
-	 * Boolean status of Edit icon opens in another tab
-	 * 
-	 * @return
-	 */
-	private Boolean isNewTabOpensForEdit() {
-		ArrayList<String> tabHandles = new ArrayList<String>(reiDriver.switchTo().getWindowsHandlers());
-		boolean myNewTabFound = false;
-		if (tabHandles.size() > 1)
-			myNewTabFound = true;
-		return myNewTabFound;
 	}
 
 	/********
@@ -328,4 +310,16 @@ public class GrantorPlanningPage extends GovGrantsManager {
 		return flag;
 	}
 
+	/**
+	 * Boolean status of Edit icon opens in another tab
+	 * 
+	 * @return
+	 */
+	private Boolean isNewTabOpensForEdit() {
+		ArrayList<String> tabHandles = new ArrayList<String>(reiDriver.switchTo().getWindowsHandlers());
+		boolean myNewTabFound = false;
+		if (tabHandles.size() > 1)
+			myNewTabFound = true;
+		return myNewTabFound;
+	}
 }
