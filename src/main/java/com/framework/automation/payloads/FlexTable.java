@@ -40,7 +40,13 @@ public class FlexTable {
 						new ApiUtilities().getComponentCoreFieldId(
 								String.valueOf(SObjectAPIs.GNT__FlexTableFilterListViewConfig__c), filterClause),
 						String.valueOf(SObjectAPIs.GNT__Label__c), value);
-			}
+			}	
+		case "FILTER CLAUSE":
+            finalPayload = String.format(
+                    payloadForStringValue, String.valueOf(SObjectAPIs.GNT__FlexTableFilterListViewConfig__c), new ApiUtilities()
+                            .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__FlexTableFilterListViewConfig__c), filterClause),
+                    String.valueOf(SObjectAPIs.GNT__FilterClause__c), value);
+            break;
 		}
 		System.out.println(finalPayload);
 		return finalPayload;
@@ -128,6 +134,12 @@ public class FlexTable {
 							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
 					String.valueOf(SObjectAPIs.GNT__EnableAutoIndex__c), value);
 			break;
+		case "FILTER CRITERIA":
+		    finalPayload = String.format(
+                    payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), new ApiUtilities()
+                            .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+                    String.valueOf(SObjectAPIs.GNT__FilterCriteria__c), value);
+            break;
 		}
 		System.out.println(finalPayload);
 		return finalPayload;

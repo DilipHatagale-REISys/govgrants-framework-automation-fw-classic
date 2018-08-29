@@ -406,6 +406,15 @@ public class GovGrantsManager extends ProjectWebServices {
 	public WebElement getMenuIcon() {
 		return reiDriver.findMyElement().getElement(menuIcon);
 	}
+	
+	/**
+	 * return locator for status column
+	 * @param statusName
+	 * @return
+	 */
+    public By flexTableStatusColumn(String statusName) {
+        return By.xpath("//td//span[@title='"+statusName+"']");
+    }
 
 	/******* "Local Methods with Limited functionality - Private" **********/
 
@@ -416,5 +425,4 @@ public class GovGrantsManager extends ProjectWebServices {
 		return reiDriver.findMyElement()
 				.getElements(By.xpath("//div/table/tbody/tr/td/span/span/span[text()='" + mycolumnValue + "']"));
 	}
-
 }

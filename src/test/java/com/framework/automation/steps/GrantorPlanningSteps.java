@@ -78,4 +78,9 @@ public class GrantorPlanningSteps {
 	public void assertNewTabOpenOnEditClick() {
 		grantorPlanningPage.assertEditWithNewTab();
 	}
+
+    @Then("^I see no \"([^\"]*)\" status in flex table$")
+    public void assertSpecificStatusCategoryNotDisplayed(String statusCategory) {
+        grantorPlanningPage.assertFlexTableStatusDisabled(statusCategory);
+    }
 }
