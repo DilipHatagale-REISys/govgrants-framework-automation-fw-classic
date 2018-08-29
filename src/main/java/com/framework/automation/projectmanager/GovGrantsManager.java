@@ -35,8 +35,8 @@ public class GovGrantsManager extends ProjectWebServices {
 	public GovGrantsManager(Controller controller, Handlers reiDriver) {
 		this.controller = controller;
 		this.reiDriver = reiDriver;
-		navigationLogo = By.xpath("//div[@id='holdon-overlay']/div/div/div/img[@class='nav-logo']");
-		searchInput = By.xpath("//div/div[@class='quick-search']/div/input");
+		navigationLogo=By.cssSelector("div#holdon-overlay>div>div>div>img.nav-logo");
+		searchInput = By.cssSelector("div>div.quick-search>div>input");
 		rightHeaderBars = By.xpath("//div[@class='panel-heading']//div[contains(@class,'header-bars')]");
 		leftPanelHeader = By.xpath("//div[contains(@class,'panel-title')]//div[@id='dropdownListView']");
 		loginDropDown = By.xpath("//div/ul/li[@class='dropdown userDropdown']");

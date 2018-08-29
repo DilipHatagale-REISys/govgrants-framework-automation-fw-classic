@@ -19,17 +19,17 @@ public class GrantorPlanningSteps {
 		grantorPlanningPage.clickRightHeaderBars();
 	}
 
-	@Then("^i see \"([^\"]*)\"\"([^\"]*)\" options disabled$")
+	@Then("^I see \"([^\"]*)\"\"([^\"]*)\" options disabled$")
 	public void assertTopRightParallelLinesBarOptionsDisabled(String option1, String option2) {
 		grantorPlanningPage.assertTopRightParallelLinesBarSpecificOptionsDisabled(option1, option2);
 	}
 
-	@Then("^i see \"([^\"]*)\" shown as flex table title$")
+	@Then("^I see \"([^\"]*)\" shown as flex table title$")
 	public void assertFlextableTitle(String titleName) {
 		grantorPlanningPage.assertCorrectFlexTableTitleDisplayed(titleName);
 	}
 
-	@Then("^i see quick search option disabled$")
+	@Then("^I see quick search option disabled$")
 	public void assertQuickSearchOptionDisabled() {
 		grantorPlanningPage.assertquickSearchDisabled();
 	}
@@ -44,17 +44,17 @@ public class GrantorPlanningSteps {
 		grantorPlanningPage.assertDisableMenuIcon();
 	}
 
-	@Then("^i see select check box enabled in flex table$")
+	@Then("^I see select check box enabled in flex table$")
 	public void assertOptionEnabledInFlexTable() {
 		grantorPlanningPage.assertFlexTabelRecordSelectionEnabled();
 	}
 
-	@Then("^i see no total amount in flex table$")
+	@Then("^I see no total amount in flex table$")
 	public void assertNoTotalAmountInFlexTable() {
 		grantorPlanningPage.assertFlexTabelTotalCalulationRowDisabled();
 	}
 
-	@Then("^i see no total row count in flex table$")
+	@Then("^I see no total row count in flex table$")
 	public void assertFlexTableRowCountDisabled() {
 		grantorPlanningPage.assertFlexTabelRowCountDisabled();
 	}
@@ -64,7 +64,7 @@ public class GrantorPlanningSteps {
 		grantorPlanningPage.assertnewAddedLastRowLabelName(flexTablelastRowName);
 	}
 
-	@Then("^i see \"([^\"]*)\" in flex table header$")
+	@Then("^I see \"([^\"]*)\" in flex table header$")
 	public void assertFlexTableHeaderName(String headerColumnName) {
 		grantorPlanningPage.assertFlexTableHeaderColumnName(headerColumnName);
 	}
@@ -82,5 +82,10 @@ public class GrantorPlanningSteps {
     @Then("^I see no \"([^\"]*)\" status in flex table$")
     public void assertSpecificStatusCategoryNotDisplayed(String statusCategory) {
         grantorPlanningPage.assertFlexTableStatusDisabled(statusCategory);
+    }
+    
+    @Then("^I see \"([^\"]*)\" shown as over view title in header \"([^\"]*)\"$")
+    public void assertOverViewTitleWithHeader(String overViewTitle, String overViewHeader) {
+        grantorPlanningPage.assertOverViewTitleWithHeader(overViewTitle, overViewHeader);
     }
 }
