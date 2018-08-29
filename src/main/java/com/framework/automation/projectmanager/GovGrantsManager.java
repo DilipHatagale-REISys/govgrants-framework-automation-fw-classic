@@ -47,6 +47,7 @@ public class GovGrantsManager extends ProjectWebServices {
                 "//div[@class='panel-heading']/following-sibling::div[contains(@class,'panel-body')]//div/table/thead/tr");
         completeTableRow = By.xpath(
                 "//div[@class='panel-heading']/following-sibling::div[contains(@class,'panel-body')]//div/table/tbody/tr");
+        //By.cssSelector("div.'panel-heading'/following-sibling::div[contains(@class,'panel-body')]//div/table/tbody/tr")
         sideBarHeadersList = By.xpath(
                 "//div[@id='sidebar-wrapper']//div[contains(@class,'panel-sidebar')]//span[contains(@class,'sidebar-label')]");
         selectRecordCheckBox = By.xpath("//input[@aria-label='Select Record']");
