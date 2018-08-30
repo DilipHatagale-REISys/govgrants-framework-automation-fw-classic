@@ -53,6 +53,12 @@ public class PageLayout {
                     payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageLayoutActionConfig__c), new ApiUtilities()
                             .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PageLayoutActionConfig__c), filterClause),
                     String.valueOf(SObjectAPIs.GNT__HideDecisionExpression__c), value);
+            break;
+        case "HIDE EXPRESSION JSON":
+            finalPayload = String.format(
+                    payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageLayoutActionConfig__c), new ApiUtilities()
+                            .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PageLayoutActionConfig__c), filterClause),
+                    String.valueOf(SObjectAPIs.GNT__HideExpressionJSON__c), value);
         }
         System.out.println(finalPayload);
         return finalPayload;

@@ -38,6 +38,7 @@ public class SetUpConfiguration {
             break;
         case "PAGE LAYOUT":
             stringPayload = new PageLayout().setPageLayOutConfig(fieldLabel, value, filterClause);
+            break;
         case "PAGE LAYOUT ACTION":
             stringPayload = new PageLayout().setPageLayOutActionConfig(fieldLabel, value, filterClause);
             break;
