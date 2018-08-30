@@ -13,7 +13,7 @@ public class GrantorPlanningPage extends GovGrantsManager {
 
     /******* "Variables and Locators" *****************/
 
-    private final By overViewHeader, overViewTitle;
+    private final By overViewHeader, overViewTitle, pageInstructionText;
 
     /**
      * Constructor to handle dependency injection and framework library
@@ -22,6 +22,7 @@ public class GrantorPlanningPage extends GovGrantsManager {
         super(controller, reiDriver);
         overViewHeader = By.cssSelector("h2.panel-title>div>span.customLabelstyle");
         overViewTitle = By.cssSelector("h2.panel-title>div>span.overview-title");
+        pageInstructionText = By.cssSelector("div.article>div");
     }
 
     /******* "Key Methods with complete functionality - public" *****************/
@@ -107,22 +108,6 @@ public class GrantorPlanningPage extends GovGrantsManager {
         Assert.assertTrue(isFlexTableColumnHeaderName(headerColumnName));
     }
 
-    /***
-     * handle clicking on program edit icon
-     * 
-     * @param Title
-     * @return
-     */
-    public void handleProgramEditIcon() {
-        for (WebElement element : getCompleteTableRow()) {
-            if (element.findElement(editIconForProgramFlexTable).isDisplayed()
-                    || element.findElement(editIconForProgramFlexTable).isEnabled()) {
-                reiDriver.JavaScript().clickByJSWebElement(element.findElement(editIconForProgramFlexTable));
-                break;
-            }
-        }
-    }
-
     /**
      * assert if Edit icon open in new tab or not
      */
@@ -139,10 +124,30 @@ public class GrantorPlanningPage extends GovGrantsManager {
         Assert.assertTrue(isStatusCategoryDisabled(statusName));
     }
 
+    /**
+     * assert true if correct overview header is displayed
+     * @param overViewTitle
+     * @param overViewHeader
+     */
     public void assertOverViewTitleWithHeader(String overViewTitle, String overViewHeader) {
         Assert.assertTrue(isOverViewTitleWithHeaderDisplayed(overViewHeader, overViewTitle));
     }
 
+    /**
+     * assert true if correct page instruction text is displayed
+     */
+    public void assertPageInstructionText(String text) {
+        Assert.assertTrue(isPageInstructionTextDisplayed(text));
+    }
+    
+    /**
+     * return true if correct overview header is displayed
+     * @param overViewHeaderName
+     */
+    public void assertOverViewHeaderDisplayed(String overViewHeaderName) {
+     Assert.assertTrue(isOverViewHeaderDisplayed(overViewHeaderName));   
+    }
+    
     /********
      * "Local Methods with complete functionality - private"
      *****************/
@@ -362,9 +367,31 @@ public class GrantorPlanningPage extends GovGrantsManager {
         boolean flag = false;
         if ((reiDriver.findMyElement().getElement(overViewHeader).getText().contains(overViewHeaderName))
                 && (reiDriver.findMyElement().getElement(overViewTitle).getText().contains(overViewTitleName))) {
-            System.out.println("entered if");
             flag = true;
         }
         return flag;
     }
+
+    /**
+     * return true if text is displayed
+     * 
+     * @param text
+     * @return
+     */
+    private boolean isPageInstructionTextDisplayed(String text) {
+        boolean flag = false;
+        if (reiDriver.findMyElement().getElement(pageInstructionText).getText().equalsIgnoreCase(text)) {
+            flag = true;
+        }
+        return flag;
+    }
+    
+    private boolean isOverViewHeaderDisplayed(String overViewHeaderName) {
+        boolean flag = false;
+        if ((reiDriver.findMyElement().getElement(overViewHeader).getText().contains(overViewHeaderName))) {
+            flag = true;
+        }
+        return flag;
+    }
+
 }

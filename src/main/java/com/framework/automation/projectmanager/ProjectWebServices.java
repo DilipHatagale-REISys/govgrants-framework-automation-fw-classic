@@ -1,5 +1,7 @@
 package com.framework.automation.projectmanager;
 
+import java.io.IOException;
+
 import com.automation.rei.controller.EnvironmentFetcher;
 import com.automation.rei.webservices.RestfulWebServices;
 import com.framework.automation.payloads.ApiUtilities;
@@ -88,8 +90,9 @@ public class ProjectWebServices {
      * @param fieldLabel
      * @param value
      * @param newValue
+     * @throws IOException 
      */
-    public void setUpDefaultParameters(String componentName, String fieldLabel, String value, String newValue) {
+    public void setUpDefaultParameters(String componentName, String fieldLabel, String value, String newValue) throws IOException {
         setUpParameters.setComponentName(componentName);
         setUpParameters.setFieldLabel(fieldLabel);
         setUpParameters.setValue(value);

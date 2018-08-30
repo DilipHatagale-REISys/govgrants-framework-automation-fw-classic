@@ -19,6 +19,19 @@ public class PageLayout {
                     payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageLayoutConfig__c), new ApiUtilities()
                             .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PageLayoutConfig__c), filterClause),
                     String.valueOf(SObjectAPIs.GNT__Title__c), value);
+            break;
+        case "PAGE INSTRUCTION TEXT":
+            finalPayload = String.format(
+                    payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageLayoutConfig__c), new ApiUtilities()
+                            .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PageLayoutConfig__c), filterClause),
+                    String.valueOf(SObjectAPIs.GNT__HeaderDescription__c), value);
+            break;
+        case "CREATE HEADER OVERRIDE":
+            finalPayload = String.format(
+                    payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageLayoutConfig__c), new ApiUtilities()
+                            .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PageLayoutConfig__c), filterClause),
+                    String.valueOf(SObjectAPIs.GNT__HeaderOverride__c), value);
+            break;
         }
         System.out.println(finalPayload);
         return finalPayload;
