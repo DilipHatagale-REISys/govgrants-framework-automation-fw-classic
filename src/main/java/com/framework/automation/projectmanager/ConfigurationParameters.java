@@ -1,6 +1,11 @@
 package com.framework.automation.projectmanager;
 
+import java.io.IOException;
+
+import com.automation.rei.handlers.Properties_Logs;
+
 public class ConfigurationParameters {
+    Properties_Logs readProp = new Properties_Logs();
 
     public String getNewFieldValue() {
         return newFieldValue;
@@ -38,9 +43,14 @@ public class ConfigurationParameters {
         return value;
     }
 
-    public void setValue(String value) {
-        this.value = value;
+    public void setValue(String value) throws IOException {
+           if (value.contains("govgrants_config")) {
+            String[] splittedValue = value.split(":");
+            this.value = readProp.ReadPropertyFile("govgrants_Config.properties", splittedValue[1]);
+        } else {
+            this.value = value;
+        }
     }
 
-    String componentName,oldFieldValue,fieldLabel,value,newFieldValue;
+    String componentName, oldFieldValue, fieldLabel, value, newFieldValue;
 }

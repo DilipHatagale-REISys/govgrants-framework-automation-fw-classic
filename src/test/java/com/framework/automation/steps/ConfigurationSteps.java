@@ -1,5 +1,7 @@
 package com.framework.automation.steps;
 
+import java.io.IOException;
+
 import com.automation.rei.controller.Controller;
 import com.automation.rei.handlers.Handlers;
 import com.framework.automation.projectmanager.GovGrantsManager;
@@ -23,7 +25,7 @@ public class ConfigurationSteps {
 	}
 
 	@Given("^I have default configuration for \"([^\"]*)\" field \"([^\"]*)\" as \"([^\"]*)\" with filter \"([^\"]*)\"$")
-	public void setComponentToDefault(String componentName, String fieldName, String orignalValue, String newValue) {
+	public void setComponentToDefault(String componentName, String fieldName, String orignalValue, String newValue) throws IOException {
 		projectAPI.setUpDefaultParameters(componentName, fieldName, orignalValue, newValue);
 	}
 
