@@ -4,7 +4,7 @@ Feature: Test all page layout component based scenarios
 	
 	@32762 @all @setUpHeaderWithContent-Programs
 	Scenario: setting up header from configuration and validating its content
-	Given I have default configuration for "Page Layout" field "Header" as "Program - {!Program__c}" with filter ""
+	Given I have default configuration for "Page Layout" field "Header" as "Program - {!ProgramName__c}" with filter ""
 	Given I setup filter clause for "General" in "Grantee State Program" for field "" having value ""
 	When I reconfigure "Page Layout" field "Header" as "Program - {!FederalProgramCFDA__c}"
 	When I login as "Automation" User 
