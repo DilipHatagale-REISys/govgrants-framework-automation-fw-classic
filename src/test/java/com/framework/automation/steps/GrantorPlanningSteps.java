@@ -103,4 +103,9 @@ public class GrantorPlanningSteps {
     public void assertOverViewHeaderDisplayed(String headerName) {
         grantorPlanningPage.assertOverViewHeaderDisplayed(headerName);
     }
+    
+    @Then("^I see \"([^\"]*)\" button is not displayed$")
+    public void assertTopRightHeaderButtonNotDisplayed(String buttonName) {
+        grantorPlanningPage.assertTopRightButtonNotDisplayed(buttonName);
+    }
 }

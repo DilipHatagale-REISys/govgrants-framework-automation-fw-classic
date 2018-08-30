@@ -6,6 +6,7 @@ import com.framework.automation.payloads.SideBar;
 
 public class SetUpConfiguration {
     public static String defaultRetrieveEndPoint = "https://ggptest5-dev-ed.my.salesforce.com/services/apexrest/frameworkAPIRetrieve";
+
     /**
      * 
      * @param componentName
@@ -36,7 +37,10 @@ public class SetUpConfiguration {
             stringPayload = new FlexTable().setFlexTableActionConfig(fieldLabel, value, filterClause);
             break;
         case "PAGE LAYOUT":
-            stringPayload = new PageLayout().setPageLayOutConfig(fieldLabel,value,filterClause);
+            stringPayload = new PageLayout().setPageLayOutConfig(fieldLabel, value, filterClause);
+        case "PAGE LAYOUT ACTION":
+            stringPayload = new PageLayout().setPageLayOutActionConfig(fieldLabel, value, filterClause);
+            break;
         }
         System.out.println("final payload is " + stringPayload);
         return stringPayload;

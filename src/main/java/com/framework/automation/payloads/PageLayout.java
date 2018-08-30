@@ -36,4 +36,25 @@ public class PageLayout {
         System.out.println(finalPayload);
         return finalPayload;
     }
+    
+    /**
+     * setup configuration for page lay out action
+     * 
+     * @param fieldLabel
+     * @param value
+     * @param filterClause
+     * @return
+     */
+    public String setPageLayOutActionConfig(String fieldLabel, String value, String filterClause) {
+        String finalPayload = null;
+        switch (fieldLabel.toUpperCase()) {
+        case "HIDE DECISION EXPRESSION":
+            finalPayload = String.format(
+                    payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageLayoutActionConfig__c), new ApiUtilities()
+                            .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PageLayoutActionConfig__c), filterClause),
+                    String.valueOf(SObjectAPIs.GNT__HideDecisionExpression__c), value);
+        }
+        System.out.println(finalPayload);
+        return finalPayload;
+    }
 }
