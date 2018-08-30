@@ -3,6 +3,7 @@ package com.framework.automation.projectmanager;
 import java.io.IOException;
 
 import com.automation.rei.controller.EnvironmentFetcher;
+import com.automation.rei.handlers.Properties_Logs;
 import com.automation.rei.webservices.RestfulWebServices;
 import com.framework.automation.payloads.ApiUtilities;
 import com.jayway.restassured.response.Response;
@@ -10,6 +11,7 @@ import com.jayway.restassured.response.Response;
 public class ProjectWebServices {
     RestfulWebServices apiCall = new RestfulWebServices();
     ConfigurationParameters setUpParameters = new ConfigurationParameters();
+    Properties_Logs readProp = new Properties_Logs();
     ApiUtilities apiUtil;
     String filterClause;
     private static String endPoint;
@@ -38,11 +40,17 @@ public class ProjectWebServices {
      * @param componentName
      * @param fieldLabel
      * @param value
+     * @throws IOException 
      */
-    public void setConfigurationTest(String componentName, String fieldLabel, String value) {
+    public void setConfigurationTest(String componentName, String fieldLabel, String value) throws IOException {
         createEndPoint();
         getAuthToken();
+        if (value.contains("govgrants_config")) {
+            String[] splittedValue = value.split(":");
+            assertStatusCode(postConfigCall(componentName, fieldLabel, readProp.ReadPropertyFile("govgrants_Config.properties", splittedValue[1])));
+        } else {   
         assertStatusCode(postConfigCall(componentName, fieldLabel, value));
+        }
     }
 
     /**

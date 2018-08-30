@@ -30,7 +30,7 @@ public class ConfigurationSteps {
 	}
 
 	@Given("^I reconfigure \"([^\"]*)\" field \"([^\"]*)\" as \"([^\"]*)\"$")
-	public void configurecomponent(String componentName, String fieldName, String value) {
+	public void configurecomponent(String componentName, String fieldName, String value) throws IOException {
 		projectAPI.setConfigurationTest(componentName, fieldName, value);
 	}
 }

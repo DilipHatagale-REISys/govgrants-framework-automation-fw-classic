@@ -126,6 +126,7 @@ public class GrantorPlanningPage extends GovGrantsManager {
 
     /**
      * assert true if correct overview header is displayed
+     * 
      * @param overViewTitle
      * @param overViewHeader
      */
@@ -139,15 +140,25 @@ public class GrantorPlanningPage extends GovGrantsManager {
     public void assertPageInstructionText(String text) {
         Assert.assertTrue(isPageInstructionTextDisplayed(text));
     }
-    
+
     /**
      * return true if correct overview header is displayed
+     * 
      * @param overViewHeaderName
      */
     public void assertOverViewHeaderDisplayed(String overViewHeaderName) {
-     Assert.assertTrue(isOverViewHeaderDisplayed(overViewHeaderName));   
+        Assert.assertTrue(isOverViewHeaderDisplayed(overViewHeaderName));
     }
-    
+
+    /**
+     * return true if top right header button as per name is not idsplayed
+     * 
+     * @param buttonName
+     */
+    public void assertTopRightButtonNotDisplayed(String buttonName) {
+        Assert.assertTrue(isTopRightHeaderButtonDisplayed(buttonName));
+    }
+
     /********
      * "Local Methods with complete functionality - private"
      *****************/
@@ -385,11 +396,39 @@ public class GrantorPlanningPage extends GovGrantsManager {
         }
         return flag;
     }
-    
+
+    /**
+     * return true if over view header is displayed
+     * 
+     * @param overViewHeaderName
+     * @return
+     */
     private boolean isOverViewHeaderDisplayed(String overViewHeaderName) {
         boolean flag = false;
         if ((reiDriver.findMyElement().getElement(overViewHeader).getText().contains(overViewHeaderName))) {
             flag = true;
+        }
+        return flag;
+    }
+
+    /**
+     * return true if any specific top right hand button is not displayed
+     * 
+     * @param buttonName
+     * @return
+     */
+    private boolean isTopRightHeaderButtonDisplayed(String buttonName) {
+        boolean flag = true;
+        try {
+            if (reiDriver.findMyElement()
+                    .getElement(By.xpath(
+                            "//div[@class='panel-heading']//div[contains(@class,'header-buttons')]//button[@title='"
+                                    + buttonName + "']"))
+                    .isDisplayed()) {
+                flag = false;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+
         }
         return flag;
     }
