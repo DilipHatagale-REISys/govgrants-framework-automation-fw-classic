@@ -75,8 +75,8 @@ public class GrantorPlanningSteps {
     }
 
     @When("^I click on \"([^\"]*)\" button in right header$")
-    public void clickbuttonOnRightHeader(String button) {
-        grantorPlanningPage.getRightHeaderButton(button).click();
+    public void clickbuttonOnRightHeader(String buttonName) {
+        grantorPlanningPage.getRightHeaderButton(buttonName).click();
     }
 
     @Then("^I see edit opens in new tab$")
@@ -103,7 +103,7 @@ public class GrantorPlanningSteps {
     public void assertOverViewHeaderDisplayed(String headerName) {
         grantorPlanningPage.assertOverViewHeaderDisplayed(headerName);
     }
-    
+
     @Then("^I see \"([^\"]*)\" button is not displayed$")
     public void assertTopRightHeaderButtonNotDisplayed(String buttonName) {
         grantorPlanningPage.assertTopRightButtonNotDisplayed(buttonName);

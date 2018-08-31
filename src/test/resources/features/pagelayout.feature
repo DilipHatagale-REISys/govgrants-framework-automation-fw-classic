@@ -55,3 +55,13 @@ Feature: Test all page layout component based scenarios
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
 	When I click on "View Program Details" icon of status "Created" in flex table
 	Then I see "Submit For Approval" button is not displayed
+	
+	@32837 @all @hideForProfile-Programs
+	Scenario: Hide Submit for approval for specific profile from configuration and validating it for Created status view icon
+	Given I have default configuration for "Page Layout Action" field "Hide for profile" as "" with filter ""
+	Given I setup filter clause for "Page Layout Action" in "Grantee State Program" for field "Name" having value "Submit For Approval"
+	When I reconfigure "Page Layout Action" field "Hide for profile" as "System Administrator"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	When I click on "View Program Details" icon of status "Created" in flex table
+	Then I see "Submit For Approval" button is not displayed
