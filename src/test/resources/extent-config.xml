@@ -3,8 +3,8 @@
 	<configuration>
 		<encoding>UTF-8</encoding>
 		<theme>dark</theme>
-		<documentTitle>Utah GovGrants</documentTitle>
-		<reportName>REI - Automation Framework -- ** Utah GovGrants **
+		<documentTitle>GovGrants Framework</documentTitle>
+		<reportName>REI - Automation Framework -for- ** GovGrants Framework **
 		</reportName>
 		<reportHeadline> - v1.0.0</reportHeadline>
 
