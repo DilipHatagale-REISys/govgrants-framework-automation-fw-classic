@@ -1,5 +1,6 @@
 package com.framework.automation.projectmanager;
 
+import com.framework.automation.payloads.ApprovalProcess;
 import com.framework.automation.payloads.FlexTable;
 import com.framework.automation.payloads.PageLayout;
 import com.framework.automation.payloads.SideBar;
@@ -41,6 +42,9 @@ public class SetUpConfiguration {
             break;
         case "PAGE LAYOUT ACTION":
             stringPayload = new PageLayout().setPageLayOutActionConfig(fieldLabel, value, filterClause);
+            break;
+        case "APPROVAL DECISION ACTION":
+            stringPayload = new ApprovalProcess().setApprovalDecisionActionConfig(fieldLabel, value, filterClause);
             break;
         }
         System.out.println("final payload is " + stringPayload);
