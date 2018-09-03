@@ -24,7 +24,7 @@ public class GovGrantsManager extends ProjectWebServices {
     public final By navigationLogo, loginDropDown, searchInput, rightHeaderBars, leftPanelHeader, topRightDropDown,
             egmsHeader, secondTopRightFilter, completeTableHeader, completeTableRow, sideBarHeadersList,
             advanceFilterButton, menuIcon, selectRecordCheckBox, totalRowsCalc, totalRowCount,
-            flexTablelastRowNameAsTotal, editIconForProgramFlexTable;
+            flexTablelastRowNameAsTotal, editIconForProgramFlexTable, pendingTasks, pendingTasksTableRef;
 
     /**
      * Super Constructor
@@ -58,6 +58,9 @@ public class GovGrantsManager extends ProjectWebServices {
         totalRowCount = By.xpath("//span[@ng-bind='totalRecords']");
         flexTablelastRowNameAsTotal = By.xpath("//td/b/span[contains(@ng-bind-html,'TotalRowLabel')]");
         editIconForProgramFlexTable = By.xpath("//a[contains(@title,'Edit')]");
+        pendingTasks = By.xpath(" //div/ul/li/a[text()='Pending Tasks']");
+        pendingTasksTableRef = By
+                .xpath("//div[@class='table-responsive']/table/thead/tr/th/a/span/span[contains(text(),'Ref. ID')]");
     }
 
     /******* "Key Methods with complete functionality - Public" *****************/
@@ -98,6 +101,14 @@ public class GovGrantsManager extends ProjectWebServices {
         } catch (Exception e) {
             reiDriver.JavaScript().clickByJS(By.xpath("//nav/ul/li/a[@title='" + tabName + "']"));
         }
+    }
+
+    /**
+     * generic method to click on pending tasks need to improve method by removing
+     * thread sleep and manage using explicit wait
+     */
+    public void clickPendingTasksLink() {
+        reiDriver.findMyElement().getElement(pendingTasks).click();
     }
 
     /**
@@ -417,12 +428,42 @@ public class GovGrantsManager extends ProjectWebServices {
         return By.xpath("//td//span[@title='" + statusName + "']");
     }
 
+    /**
+     * Click any icon in the flex table
+     * 
+     * @param statusName
+     * @param iconName
+     */
     public void clickTableIcons(String statusName, String iconName) {
         for (WebElement element : getCompleteTableRow()) {
             element.findElement(By.xpath("//td//span[@title='" + statusName
                     + "']/../../../following-sibling::td//span//a[@title='" + iconName + "']")).click();
             break;
         }
+    }
+
+    /**
+     * get exact start button for pending tasks assigned to me
+     */
+    public List<WebElement> getStartButtonInPendingTasks(String mycolumnValue, String approvertype,
+            String titleInLocator) {
+        int whileHandler = 0;
+        By startButton = By.xpath("//div/table/tbody/tr/td/span/span/span[text()='" + approvertype
+                + "']/following::span/span/span[text()='" + mycolumnValue
+                + "']/following::td/div/span/span/span/span/a[@title='" + titleInLocator + "']");
+        List<WebElement> approvalStartButtonTable = reiDriver.findMyElement().getElements(startButton);
+        int approvalStartButtonTableSize = approvalStartButtonTable.size();
+        while (approvalStartButtonTableSize == 0) {
+            whileHandler++;
+            if (whileHandler == 10) {
+                break;
+            }
+            reiDriver.get().getRefresh();
+            reiDriver.WaitFor().WaitForElementToBePresent(pendingTasksTableRef);
+            approvalStartButtonTable = reiDriver.findMyElement().getElements(startButton);
+            approvalStartButtonTableSize = approvalStartButtonTable.size();
+        }
+        return approvalStartButtonTable;
     }
 
     /******* "Local Methods with Limited functionality - Private" **********/

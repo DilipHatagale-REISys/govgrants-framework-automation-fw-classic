@@ -17,7 +17,7 @@ public class ApprovalProcess {
         switch (fieldLabel.toUpperCase()) {
         case "HIDE ACTION":
             finalPayload = String.format(
-                    payloadForStringValue, String.valueOf(SObjectAPIs.GNT__ApprovalDecisionActionConfig__c), new ApiUtilities()
+                    payloadForIntValue, String.valueOf(SObjectAPIs.GNT__ApprovalDecisionActionConfig__c), new ApiUtilities()
                             .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__ApprovalDecisionActionConfig__c), filterClause),
                     String.valueOf(SObjectAPIs.GNT__HideAction__c), value);
         }
