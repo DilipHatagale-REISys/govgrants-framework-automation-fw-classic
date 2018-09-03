@@ -9,3 +9,7 @@ Feature: Test all approval process component based scenarios
 	When I reconfigure "Approval Decision Action" field "Hide Action" as "true"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	When I navigate to "Tasks" with in "Completed" of side bar
+	When I start the "Approval" as "Approver" 
+	Then I see "Approve" is displayed
+	

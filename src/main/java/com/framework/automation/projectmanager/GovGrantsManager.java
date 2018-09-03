@@ -468,11 +468,5 @@ public class GovGrantsManager extends ProjectWebServices {
 
     /******* "Local Methods with Limited functionality - Private" **********/
 
-    /**
-     * get any specific column value in pending tasks (Assigned to me)
-     */
-    private List<WebElement> getToPendingTasksAssignedToMeDesiredColumn(String mycolumnValue) {
-        return reiDriver.findMyElement()
-                .getElements(By.xpath("//div/table/tbody/tr/td/span/span/span[text()='" + mycolumnValue + "']"));
-    }
+
 }
