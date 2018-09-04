@@ -13,7 +13,7 @@ public class GrantorPlanningPage extends GovGrantsManager {
 
     /******* "Variables and Locators" *****************/
 
-    private final By overViewHeader, overViewTitle, pageInstructionText;
+    private final By overViewHeader, overViewTitle, pageInstructionText, approvalDecisionPannel;
 
     /**
      * Constructor to handle dependency injection and framework library
@@ -23,9 +23,19 @@ public class GrantorPlanningPage extends GovGrantsManager {
         overViewHeader = By.cssSelector("h2.panel-title>div>span.customLabelstyle");
         overViewTitle = By.cssSelector("h2.panel-title>div>span.overview-title");
         pageInstructionText = By.cssSelector("div.article>div");
+        approvalDecisionPannel = By.cssSelector("div>span>input[name='myRadio']");
     }
 
     /******* "Key Methods with complete functionality - public" *****************/
+
+    /**
+     * selects radio option from approval decision panel
+     * 
+     * @param radioName
+     */
+    public void selectApproveDecisionOption(String radioName) {
+        getApprovalDecisionPannel(radioName).click();
+    }
 
     /**
      * assert correct title name of table is displayed
@@ -159,9 +169,38 @@ public class GrantorPlanningPage extends GovGrantsManager {
         Assert.assertTrue(isTopRightHeaderButtonDisplayed(buttonName));
     }
 
-    /********
+    /**
+     * Assert specific approce radio button is not displayed
+     * 
+     * @param radioButtonName
+     */
+    public void assertRadioButtonNotDisplayed(String radioButtonName) {
+        Assert.assertTrue(isApprovalDecisionRadioButtonDisplayed(radioButtonName));
+    }
+
+    /**
+     * assert true if sequence is correct as per provided name
+     * 
+     * @param radioName
+     * @param sequenceNumber
+     */
+    public void assertApprovalDecisoinRadioSequence(String radioName, int sequenceNumber) {
+        Assert.assertTrue(isApprovalDecisionRadioSequence(radioName, sequenceNumber));
+    }
+
+    /**
+     * assert if error is displayed on not entering text in decision box
+     * 
+     * @param error
+     */
+    public void assertDecisionCommentsMandatory(String error) {
+        Assert.assertTrue(reiDriver.WaitFor().WaitForElementToBePresent(dangerAlert).getText().equalsIgnoreCase(error));
+    }
+
+    /*********
      * "Local Methods with complete functionality - private"
      *****************/
+
     /**
      * validate if tile is displayed
      * 
@@ -433,4 +472,41 @@ public class GrantorPlanningPage extends GovGrantsManager {
         return flag;
     }
 
+    private boolean isApprovalDecisionRadioButtonDisplayed(String radioButtonName) {
+        boolean flag = true;
+        try {
+            if (getApprovalDecisionPannel(radioButtonName).isDisplayed()) {
+                flag = false;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+
+        }
+        return flag;
+    }
+
+    /**
+     * get radio button specific to Approval decision
+     * 
+     * @param radioButtonName
+     * @return
+     */
+    private WebElement getApprovalDecisionPannel(String radioButtonName) {
+        return reiDriver.findMyElement()
+                .getElement(By.xpath("//div/span/input[@name='myRadio' and @value='" + radioButtonName + "']"));
+    }
+
+    /**
+     * return true if specific radio name appears at a specific sequence
+     * 
+     * @param radioName
+     * @param sequenceNumber
+     * @return
+     */
+    private Boolean isApprovalDecisionRadioSequence(String radioName, int sequenceNumber) {
+        if (reiDriver.findMyElement().getElements(approvalDecisionPannel).get(sequenceNumber).getAttribute("value")
+                .contains(radioName)) {
+            return true;
+        } else
+            return false;
+    }
 }

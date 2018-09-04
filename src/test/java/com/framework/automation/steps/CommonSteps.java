@@ -10,30 +10,35 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class CommonSteps {
-	GovGrantsManager govGrantsManager;
+    GovGrantsManager govGrantsManager;
 
-	public CommonSteps(Controller controller, Handlers handler) {
-		govGrantsManager = new GovGrantsManager(controller, handler);
-	}
+    public CommonSteps(Controller controller, Handlers handler) {
+        govGrantsManager = new GovGrantsManager(controller, handler);
+    }
 
-	@Description("click in admin menu to rechout to govegrants homepage")
-	@When("^I access the \"([^\"]*)\"$")
-	public void accessthehomepage(String tabName) {
-		govGrantsManager.clickAdminNavBar(tabName);
-	}
+    @Description("click in admin menu to rechout to govegrants homepage")
+    @When("^I access the \"([^\"]*)\"$")
+    public void accessthehomepage(String tabName) {
+        govGrantsManager.clickAdminNavBar(tabName);
+    }
 
-	@When("^I access the \"([^\"]*)\" to reach \"([^\"]*)\" tab$")
-	public void reachOutToSpecificPhasesTab(String adminTabName, String phaseTabName) {
-		govGrantsManager.clickAdminNavBar(adminTabName);
-		govGrantsManager.clickPhasesNaveBar(phaseTabName);
-	}
-	
-	@When("^I navigate to \"([^\"]*)\" to reach \"([^\"]*)\" side bar content$")
-	public void navigateToSideBar(String sideBarCategory, String accordianSubHeaderDetail) {
-	    govGrantsManager.clickAccordiansubHeaderContent(sideBarCategory, accordianSubHeaderDetail);
-	}
+    @When("^I access the \"([^\"]*)\" to reach \"([^\"]*)\" tab$")
+    public void reachOutToSpecificPhasesTab(String adminTabName, String phaseTabName) {
+        govGrantsManager.clickAdminNavBar(adminTabName);
+        govGrantsManager.clickPhasesNaveBar(phaseTabName);
+    }
 
-	@Then("^I see page title \"([^\"]*)\"$")
+    @When("^I navigate to \"([^\"]*)\" to reach \"([^\"]*)\" side bar content$")
+    public void navigateToSideBar(String sideBarCategory, String accordianSubHeaderDetail) {
+        govGrantsManager.clickAccordiansubHeaderContent(sideBarCategory, accordianSubHeaderDetail);
+    }
+
+    @When("^I click submit$")
+    public void clickSubmit() {
+        govGrantsManager.clickSubmitButton();
+    }
+
+    @Then("^I see page title \"([^\"]*)\"$")
     public void asserPageTitle(String pageTitle) {
         govGrantsManager.assertPageTitle(pageTitle);
     }
