@@ -19,6 +19,11 @@ public class GrantorPlanningSteps {
         grantorPlanningPage.clickRightHeaderBars();
     }
 
+    @When("^I start the approval of type \"([^\"]*)\" with subject as \"([^\"]*)\"$")
+    public void startApproval(String programType, String programSubject) {
+        grantorPlanningPage.clickStartApprovalButton(programSubject, programType);
+    }
+
     @Then("^I see \"([^\"]*)\"\"([^\"]*)\" options disabled$")
     public void assertTopRightParallelLinesBarOptionsDisabled(String option1, String option2) {
         grantorPlanningPage.assertTopRightParallelLinesBarSpecificOptionsDisabled(option1, option2);
@@ -79,6 +84,11 @@ public class GrantorPlanningSteps {
         grantorPlanningPage.getRightHeaderButton(buttonName).click();
     }
 
+    @When("^I select \"([^\"]*)\" from approval decision panel$")
+    public void SelectApprovalDecisionPannel(String radioName) {
+        grantorPlanningPage.selectApproveDecisionOption(radioName);
+    }
+    
     @Then("^I see edit opens in new tab$")
     public void assertNewTabOpenOnEditClick() {
         grantorPlanningPage.assertEditWithNewTab();
@@ -107,5 +117,20 @@ public class GrantorPlanningSteps {
     @Then("^I see \"([^\"]*)\" button is not displayed$")
     public void assertTopRightHeaderButtonNotDisplayed(String buttonName) {
         grantorPlanningPage.assertTopRightButtonNotDisplayed(buttonName);
+    }
+
+    @Then("^I see \"([^\"]*)\" is disabled$")
+    public void assertRadioButtondisabled(String radioButtonName) {
+        grantorPlanningPage.assertRadioButtonNotDisplayed(radioButtonName);
+    }
+
+    @Then("^i see \"([^\"]*)\" shown at number \"([^\"]*)\" in Approve Decision panel$")
+    public void assertApprovalDecisionPannelRadioSequence(String radioName, String sequenceNumber) {
+        grantorPlanningPage.assertApprovalDecisoinRadioSequence(radioName, Integer.parseInt(sequenceNumber));
+    }
+    
+    @Then("^I see \"([^\"]*)\" error is displayed$")
+    public void assertApprovalDecisionMandatoryErrorDisplayed(String error) {
+        grantorPlanningPage.assertDecisionCommentsMandatory(error);
     }
 }

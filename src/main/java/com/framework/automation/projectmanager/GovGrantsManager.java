@@ -24,7 +24,8 @@ public class GovGrantsManager extends ProjectWebServices {
     public final By navigationLogo, loginDropDown, searchInput, rightHeaderBars, leftPanelHeader, topRightDropDown,
             egmsHeader, secondTopRightFilter, completeTableHeader, completeTableRow, sideBarHeadersList,
             advanceFilterButton, menuIcon, selectRecordCheckBox, totalRowsCalc, totalRowCount,
-            flexTablelastRowNameAsTotal, editIconForProgramFlexTable, pendingTasks, pendingTasksTableRef;
+            flexTablelastRowNameAsTotal, editIconForProgramFlexTable, pendingTasks, pendingTasksTableRef, submitButton,
+            dangerAlert;
 
     /**
      * Super Constructor
@@ -61,6 +62,8 @@ public class GovGrantsManager extends ProjectWebServices {
         pendingTasks = By.xpath(" //div/ul/li/a[text()='Pending Tasks']");
         pendingTasksTableRef = By
                 .xpath("//div[@class='table-responsive']/table/thead/tr/th/a/span/span[contains(text(),'Ref. ID')]");
+        submitButton = By.xpath("//input[@type='button' and @value='Submit']");
+        dangerAlert = By.cssSelector("div.alert-danger");
     }
 
     /******* "Key Methods with complete functionality - Public" *****************/
@@ -445,11 +448,11 @@ public class GovGrantsManager extends ProjectWebServices {
     /**
      * get exact start button for pending tasks assigned to me
      */
-    public List<WebElement> getStartButtonInPendingTasks(String mycolumnValue, String approvertype,
+    public List<WebElement> getStartButtonInPendingTasks(String programSubject, String programType,
             String titleInLocator) {
         int whileHandler = 0;
-        By startButton = By.xpath("//div/table/tbody/tr/td/span/span/span[text()='" + approvertype
-                + "']/following::span/span/span[text()='" + mycolumnValue
+        By startButton = By.xpath("//div/table/tbody/tr/td/span/span/span[text()='" + programType
+                + "']/following::span/span/span[text()='" + programSubject
                 + "']/following::td/div/span/span/span/span/a[@title='" + titleInLocator + "']");
         List<WebElement> approvalStartButtonTable = reiDriver.findMyElement().getElements(startButton);
         int approvalStartButtonTableSize = approvalStartButtonTable.size();
@@ -466,7 +469,25 @@ public class GovGrantsManager extends ProjectWebServices {
         return approvalStartButtonTable;
     }
 
-    /******* "Local Methods with Limited functionality - Private" **********/
+    /**
+     * click approval start play button
+     * 
+     * @param programSubject
+     * @param programType
+     */
+    public void clickStartApprovalButton(String programSubject, String programType) {
+        for (WebElement tasks : getStartButtonInPendingTasks(programSubject, programType, "Start")) {
+            tasks.click();
+            break;
+        }
+    }
 
+    /**
+     * click Submit
+     */
+    public void clickSubmitButton() {
+        reiDriver.WaitFor().WaitForElementToBePresent(submitButton).click();
+    }
+    /******* "Local Methods with Limited functionality - Private" **********/
 
 }
