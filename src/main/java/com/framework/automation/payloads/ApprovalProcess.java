@@ -20,6 +20,19 @@ public class ApprovalProcess {
                     payloadForIntValue, String.valueOf(SObjectAPIs.GNT__ApprovalDecisionActionConfig__c), new ApiUtilities()
                             .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__ApprovalDecisionActionConfig__c), filterClause),
                     String.valueOf(SObjectAPIs.GNT__HideAction__c), value);
+            break;
+        case "SEQUENCE":
+            finalPayload = String.format(
+                    payloadForIntValue, String.valueOf(SObjectAPIs.GNT__ApprovalDecisionActionConfig__c), new ApiUtilities()
+                            .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__ApprovalDecisionActionConfig__c), filterClause),
+                    String.valueOf(SObjectAPIs.GNT__Sequence__c), value);
+            break;
+        case "COMMENTS REQUIRED":
+            finalPayload = String.format(
+                    payloadForIntValue, String.valueOf(SObjectAPIs.GNT__ApprovalDecisionActionConfig__c), new ApiUtilities()
+                            .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__ApprovalDecisionActionConfig__c), filterClause),
+                    String.valueOf(SObjectAPIs.GNT__CommentsRequired__c), value);
+            break;
         }
         System.out.println(finalPayload);
         return finalPayload;

@@ -28,7 +28,7 @@ public class CommonSteps {
 		govGrantsManager.clickPhasesNaveBar(phaseTabName);
 	}
 	
-	@When("^I navigate to \"([^\"]*)\" with in \"([^\"]*)\" of side bar$")
+	@When("^I navigate to \"([^\"]*)\" to reach \"([^\"]*)\" side bar content$")
 	public void navigateToSideBar(String sideBarCategory, String accordianSubHeaderDetail) {
 	    govGrantsManager.clickAccordiansubHeaderContent(sideBarCategory, accordianSubHeaderDetail);
 	}

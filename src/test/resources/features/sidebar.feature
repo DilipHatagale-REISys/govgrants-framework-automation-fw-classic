@@ -1,4 +1,4 @@
-@sidebar-component 
+	@sidebar-component 
 Feature: Test all sidebar component based scenarios 
 	As a configuration manager i make different configurational changes in side bar component and will validate them.
 
@@ -84,7 +84,7 @@ Feature: Test all sidebar component based scenarios
 	When I reconfigure "Accordian Content" field "Open in new window" as "true"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab"
-	When I navigate to "Tasks" with in "Completed" of side bar 
+	When I navigate to "Tasks" to reach "Completed" side bar content 
 	Then I see "<Page title>" in new tab
 	Examples:
 	|Page title|
@@ -97,7 +97,7 @@ Feature: Test all sidebar component based scenarios
 	When I reconfigure "Accordian Content" field "Target Url" as "<New-TargetUrl>"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab"
-	When I navigate to "Tasks" with in "Completed" of side bar
+	When I navigate to "Tasks" to reach "Completed" side bar content
 	Then I see page title "Pending Registrations"
 	Examples:
 	|New-TargetUrl|Old-TargetUrl|
