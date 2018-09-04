@@ -33,6 +33,9 @@ public class UsersAndURL {
         case "AUTOMATION-EXE":
             username = "automationexe@reisystems.com";
             break;
+        case "AUTOMATION-PM":
+            username = "automationpm@reisystems.com";
+            break;
         default:
             username = "qa_automation@ggp.test5";
         }
