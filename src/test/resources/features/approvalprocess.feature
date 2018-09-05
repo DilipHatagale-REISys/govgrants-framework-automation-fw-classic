@@ -36,3 +36,14 @@ Feature: Test all approval process component based scenarios
 	When I select "Approve" from approval decision panel
 	And I click submit
 	Then I see "Comments are Required." error is displayed
+	
+	@32973 @all @labelChangeOfApprovalDecision-Programs
+	Scenario: Changing label of approve radio button text from configuration and validating its changed label in pending tasks approval decision 
+	Given I have default configuration for "Approval Decision Action" field "Action Label Override" as "Approve" with filter ""
+	Given I setup filter clause for "General" in "ADAC-0009" for field "" having value ""
+	When I reconfigure "Approval Decision Action" field "Action Label Override" as "Approved"
+	When I login as "Automation-PM" User 
+	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	And I navigate to "Tasks" to reach "Pending" side bar content
+	When I start the approval of type "Approve Program" with subject as "Test program for automation"
+	Then I see "Approved" inside approval decision box		

@@ -65,3 +65,46 @@ Feature: Test all page layout component based scenarios
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
 	When I click on "View Program Details" icon of status "Created" in flex table
 	Then I see "Submit For Approval" button is not displayed
+	
+	@32763 @all @HidePdfDownloadFromMenuForMainPageLayout-Programs
+	Scenario: Disabling of PDF download option from configuration and validating it from menu dropdown inside program detail page
+	Given I have default configuration for "Page Layout" field "Hide Pdf Download" as "false" with filter ""
+	Given I setup filter clause for "General" in "Grantee State Program" for field "" having value ""
+    When I reconfigure "Page Layout" field "Hide Pdf Download" as "true"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	When I click on "View Program Details" icon of status "Created" in flex table
+	When I click on "Menu" button inside detail page
+	Then I see Download as PDF options disabled
+	
+	@32765 @all @HideTakeSnapshotFromMenuForMainPageLayout-Programs
+	Scenario: Disabling of Take snapshot option from configuration and validating it from menu dropdown inside program detail page
+	Given I have default configuration for "Page Layout" field "Hide On Demand Snapshot" as "false" with filter ""
+	Given I setup filter clause for "General" in "Grantee State Program" for field "" having value ""
+	When I reconfigure "Page Layout" field "Hide On Demand Snapshot" as "true"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	When I click on "View Program Details" icon of status "Created" in flex table
+	When I click on "Menu" button inside detail page
+	Then I see "Take Snapshot" options disabled
+	
+	@32827 @all @enablePromptInputDialog-Programs
+	Scenario: Enable prompt input box for Submit for approval button configuration and validating it for Created status view icon
+	Given I have default configuration for "Page Layout Action" field "Enable Prompt Input Dialog" as "false" with filter ""
+	Given I setup filter clause for "Page Layout Action" in "Grantee State Program" for field "Name" having value "Submit For Approval"
+	When I reconfigure "Page Layout Action" field "Enable Prompt Input Dialog" as "true"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	When I click on "View Program Details" icon of status "Created" in flex table
+	When I click on "Submit For Approval" button inside detail page
+	Then I see prompt For automation is displayed
+	
+	@32831 @all @hideForContextFieldForMAinPageLayout-Programs
+	Scenario: Hide submit for approval button for program view page and validating it for created status view icon in program detail page
+	Given I have default configuration for "Page Layout Action" field "Hide For Context" as "" with filter ""
+	Given I setup filter clause for "Page Layout Action" in "Grantee State Program" for field "Name" having value "Submit For Approval"
+	When I reconfigure "Page Layout Action" field "Hide For Context" as "view"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	When I click on "View Program Details" icon of status "Created" in flex table
+	Then I see "Submit For Approval" button is not displayed at view detail page
