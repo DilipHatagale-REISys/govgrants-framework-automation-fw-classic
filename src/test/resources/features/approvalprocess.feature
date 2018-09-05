@@ -36,7 +36,3 @@ Feature: Test all approval process component based scenarios
 	When I select "Approve" from approval decision panel
 	And I click submit
 	Then I see "Comments are Required." error is displayed
-	
-	@test @test123
-	Scenario: Setup comments requried as mandatory for approval from configuration and in pending tasks approval decision
-	Given I login as "Automation-PM" User
