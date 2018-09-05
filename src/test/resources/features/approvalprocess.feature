@@ -37,10 +37,6 @@ Feature: Test all approval process component based scenarios
 	And I click submit
 	Then I see "Comments are Required." error is displayed
 	
-	@test @test123
-	Scenario: Setup comments requried as mandatory for approval from configuration and in pending tasks approval decision
-	Given I login as "Automation-PM" User
-	
 	@32973 @all @labelChangeOfApprovalDecision-Programs
 	Scenario: label change of approval decision
 	Given I have default configuration for "Approval Decision Action" field "Action Label Override" as "Approve" with filter ""
@@ -50,9 +46,4 @@ Feature: Test all approval process component based scenarios
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
 	And I navigate to "Tasks" to reach "Pending" side bar content
 	When I start the approval of type "Approve Program" with subject as "Test program for automation"
-	Then I see "Approved" inside approval decision box
-	
-	
-	
-	
-	
+	Then I see "Approved" inside approval decision box	
