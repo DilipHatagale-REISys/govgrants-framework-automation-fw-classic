@@ -33,6 +33,12 @@ public class ApprovalProcess {
                             .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__ApprovalDecisionActionConfig__c), filterClause),
                     String.valueOf(SObjectAPIs.GNT__CommentsRequired__c), value);
             break;
+        case "ACTION LABEL OVERRIDE":
+            finalPayload = String.format(
+                    payloadForStringValue, String.valueOf(SObjectAPIs.GNT__ApprovalDecisionActionConfig__c), new ApiUtilities()
+                            .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__ApprovalDecisionActionConfig__c), filterClause),
+                    String.valueOf(SObjectAPIs.GNT__ActionLabelOverride__c), value);
+            break;
         }
         System.out.println(finalPayload);
         return finalPayload;

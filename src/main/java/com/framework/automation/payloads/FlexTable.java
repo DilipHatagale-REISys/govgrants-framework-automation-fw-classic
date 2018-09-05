@@ -40,7 +40,8 @@ public class FlexTable {
 						new ApiUtilities().getComponentCoreFieldId(
 								String.valueOf(SObjectAPIs.GNT__FlexTableFilterListViewConfig__c), filterClause),
 						String.valueOf(SObjectAPIs.GNT__Label__c), value);
-			}	
+			}
+			break;
 		case "FILTER CLAUSE":
             finalPayload = String.format(
                     payloadForStringValue, String.valueOf(SObjectAPIs.GNT__FlexTableFilterListViewConfig__c), new ApiUtilities()
