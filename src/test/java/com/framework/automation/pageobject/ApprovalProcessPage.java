@@ -144,6 +144,14 @@ public class ApprovalProcessPage extends GovGrantsManager {
                 .getAttribute("innerText").equalsIgnoreCase(dropDownValue));
     }
 
+    /**
+     * assert true if specific subject is not displayed for approval
+     * @param approverType
+     * @param subject
+     */
+    public void assertSpecificApprovalNotDisplayed(String approverType,String subject) {
+       Assert.assertEquals(0, getStartButtonInPendingTasks(approverType,subject,"Start").size());
+    }
     /*********
      * "Local Methods with complete functionality - private"
      *****************/

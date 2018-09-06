@@ -72,4 +72,9 @@ public class ApprovalProcessSteps {
     public void assertUserInsideSelectDropdown(String dropDownValue) {
         approvalProcesPage.assertUserInsideDropdown(dropDownValue);
     }
+
+    @Then("^I see approval of type \"([^\"]*)\" with subject as \"([^\"]*)\" is not displayed$")
+    public void assertSpecificApprovalIsNotDisplayed(String approverType, String subject) {
+        approvalProcesPage.assertSpecificApprovalNotDisplayed(approverType, subject);
+    }
 }
