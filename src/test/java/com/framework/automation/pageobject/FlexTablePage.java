@@ -185,13 +185,12 @@ public class FlexTablePage extends GovGrantsManager {
      * @return: true if it is not displayed
      */
     private boolean isQuickSearchDisabled() {
-        boolean flag = false;
+        boolean flag = true;
         try {
             if (reiDriver.findMyElement().getElement(searchInput).isDisplayed()) {
                 flag = false;
             }
         } catch (Exception e) {
-            flag = true;
         }
         return flag;
     }
