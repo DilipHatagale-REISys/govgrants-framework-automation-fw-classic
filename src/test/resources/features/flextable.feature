@@ -40,7 +40,7 @@ Feature: Test all flex table component based scenarios
     Then I see Advance filter is disabled from planning flex table
         
     @32334 @all @disablingMenuIcon-Program
-    Scenario: validate disabling of menu icon from planning-Program flex table
+    Scenario: validate disabling of menu icon from Program flex table
     Given I have default configuration for "Flex Table" field "Disable Menu" as "false" with filter ""
 	Given I setup filter clause for "General" in "Programs" for field "" having value ""
 	When I reconfigure "Flex Table" field "Disable Menu" as "true"
