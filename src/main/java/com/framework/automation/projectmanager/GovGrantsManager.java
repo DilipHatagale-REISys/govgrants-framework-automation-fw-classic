@@ -261,12 +261,7 @@ public class GovGrantsManager extends ProjectWebServices {
                         + leftPanelItem + "']"));
     }
 
-    /**
-     * click on right header bars
-     */
-    public void clickRightHeaderBars() {
-        reiDriver.WaitFor().WaitForElementToBePresent(rightHeaderBars).click();
-    }
+    
 
     /**
      * get any button on right header
@@ -430,7 +425,7 @@ public class GovGrantsManager extends ProjectWebServices {
     public By flexTableStatusColumn(String statusName) {
         return By.xpath("//td//span[@title='" + statusName + "']");
     }
-
+    
     /**
      * Click any icon in the flex table
      * 
@@ -443,6 +438,13 @@ public class GovGrantsManager extends ProjectWebServices {
                     + "']/../../../following-sibling::td//span//a[@title='" + iconName + "']")).click();
             break;
         }
+    }
+
+    /**
+     * click on right header bars
+     */
+    public void clickRightHeaderBars() {
+        reiDriver.WaitFor().WaitForElementToBePresent(rightHeaderBars).click();
     }
 
     /**
@@ -470,48 +472,13 @@ public class GovGrantsManager extends ProjectWebServices {
     }
 
     /**
-     * click approval start play button
-     * 
-     * @param programSubject
-     * @param programType
-     */
-    public void clickStartApprovalButton(String programSubject, String programType) {
-        for (WebElement tasks : getStartButtonInPendingTasks(programSubject, programType, "Start")) {
-            tasks.click();
-            break;
-        }
-    }
-
-    /**
      * click Submit
      */
     public void clickSubmitButton() {
         reiDriver.WaitFor().WaitForElementToBePresent(submitButton).click();
     }
     
-    /**
-     * get any button on right header inside detail page
-     * 
-     * @param buttonName
-     * @return
-     */
-    public void getHeaderButtonInsideDetailPage(String buttonName) {
-		try {
-			reiDriver.WaitFor().makeThreadSleep(1500);
-			reiDriver.findMyElement()
-			.getElement(By.xpath("//div[@id='headerButtonsPanel']//*[@title='" + buttonName + "']"))
-			.click();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		if (buttonName.equalsIgnoreCase("Submit For Approval")) {
-			try {
-				reiDriver.WaitFor().WaitForAlert();
-				reiDriver.switchTo().acceptAlert();
-			} catch (Exception e) {
-			}
-		}
-    }
+    
     /******* "Local Methods with Limited functionality - Private" **********/
 
 }
