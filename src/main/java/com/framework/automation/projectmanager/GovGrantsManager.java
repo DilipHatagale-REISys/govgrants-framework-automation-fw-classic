@@ -25,7 +25,7 @@ public class GovGrantsManager extends ProjectWebServices {
             egmsHeader, secondTopRightFilter, completeTableHeader, completeTableRow, sideBarHeadersList,
             advanceFilterButton, menuIcon, selectRecordCheckBox, totalRowsCalc, totalRowCount,
             flexTablelastRowNameAsTotal, editIconForProgramFlexTable, pendingTasks, pendingTasksTableRef, submitButton,
-            dangerAlert;
+            dangerAlert,confirmationBoxMessage,selectDropdown, specificUserInsideDropdown;
 
     /**
      * Super Constructor
@@ -64,6 +64,9 @@ public class GovGrantsManager extends ProjectWebServices {
                 .xpath("//div[@class='table-responsive']/table/thead/tr/th/a/span/span[contains(text(),'Ref. ID')]");
         submitButton = By.xpath("//input[@type='button' and @value='Submit']");
         dangerAlert = By.cssSelector("div.alert-danger");
+        confirmationBoxMessage = By.xpath("//div[@class='modal-dialog']//div[contains(@class, 'bootbox-body')]");
+        selectDropdown = By.xpath("//div/span/input[@name='myRadio' and @value='Approve']//ancestor::span//div[@id='s2id_autogen13']");
+        specificUserInsideDropdown = By.xpath("//div[@id='select2-drop']//ul//li/div[@class='select2-result-label']");
     }
 
     /******* "Key Methods with complete functionality - Public" *****************/
