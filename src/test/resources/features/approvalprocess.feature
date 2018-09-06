@@ -10,7 +10,7 @@ Feature: Test all approval process component based scenarios
 	When I login as "Automation-PM" User 
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
 	And I navigate to "Tasks" to reach "Pending" side bar content
-	When I start the approval of type "Approve Program" with subject as "Test program for Automation-A to SA"
+	When I start the approval of type "Approve Program" with subject as "Test program for automation"
 	Then I see "Approve" is disabled
 	
 	@32974 @all @changeApproveOptionSequence-Programs
@@ -21,7 +21,7 @@ Feature: Test all approval process component based scenarios
 	When I login as "Automation-PM" User 
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
 	And I navigate to "Tasks" to reach "Pending" side bar content
-	When I start the approval of type "Approve Program" with subject as "Test program for Automation-A to SA"
+	When I start the approval of type "Approve Program" with subject as "Test program for automation"
 	Then i see "Approve" shown at number "3" in Approve Decision panel
 	
 	@32975 @all @mandatoryCommentsReq-Programs
@@ -45,7 +45,7 @@ Feature: Test all approval process component based scenarios
 	When I login as "Automation-PM" User 
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
 	And I navigate to "Tasks" to reach "Pending" side bar content
-	When I start the approval of type "Approve Program" with subject as "Test program for Automation-A to SA"
+	When I start the approval of type "Approve Program" with subject as "Test program for automation"
 	Then I see "Approved" inside approval decision box
 	
 	@32976 @all @confirmationMessageBoxPopupForApprovalDecisionAction-Programs
@@ -57,7 +57,7 @@ Feature: Test all approval process component based scenarios
 	When I login as "Automation-PM" User 
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
 	And I navigate to "Tasks" to reach "Pending" side bar content
-	When I start the approval of type "Approve Program" with subject as "Test program for Automation-A to SA"
+	When I start the approval of type "Approve Program" with subject as "Test program for automation"
 	When I select "Approve" from approval decision panel
 	When I enter Approval comment
 	And I click submit
@@ -71,10 +71,26 @@ Feature: Test all approval process component based scenarios
 	When I login as "Automation-PM" User 
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
 	And I navigate to "Tasks" to reach "Pending" side bar content
-	When I start the approval of type "Approve Program" with subject as "Test program for Automation-A to SA"
+	When I start the approval of type "Approve Program" with subject as "Test program for automation"
 	When I select "Reassign" from approval decision panel
 	When I click select dropdown
 	Then I see "Allen PM" inside selectbox
 	Examples:
 	|newFilterCriteriaValue|
-	|Name='Allen PM'|	
+	|Name='Allen PM'|
+	
+	@33099 @all @approverTaskNotCreatedPrograms-Programs
+	Scenario: Change approver setting for not receiveing approve task in configuration and validate that pending approver task is not displayed
+	Given I setup "Program" field "Status" as "Created" with filter clause on field "Test program for automation-SA to C"
+	Given I have default configuration for "Approval Process Steps Cache" field "Field API Name" as "ProgramApprover__c" with filter ""
+	Given I setup filter clause for "General" in "Program_Manager_Approver" for field "" having value ""
+	And I reconfigure "Approval Process Steps Cache" field "Field API Name" as ""
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	When I search for "Test program for automation-SA to C"
+	When I click on "Edit" icon of status "Created" in flex table
+	And I complete submit for approval
+	When I re-login as "Automation-PM"
+	And I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	When I navigate to "Tasks" to reach "Pending" side bar content
+	Then I see approval of type "Approve Program" with subject as "Test program for automation-SA to C" is not displayed

@@ -33,9 +33,9 @@ public class CommonSteps {
         govGrantsManager.clickAccordiansubHeaderContent(sideBarCategory, accordianSubHeaderDetail);
     }
 
-    @When("^I click submit$")
-    public void clickSubmit() {
-        govGrantsManager.clickSubmitButton();
+    @When("^I search for \"([^\"]*)\"$")
+    public void performQuickSearch(String searchTerm)  {
+        govGrantsManager.performQuickSearch(searchTerm);
     }
 
     @Then("^I see page title \"([^\"]*)\"$")

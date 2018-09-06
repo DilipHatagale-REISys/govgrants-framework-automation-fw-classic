@@ -24,8 +24,8 @@ public class GovGrantsManager extends ProjectWebServices {
     public final By navigationLogo, loginDropDown, searchInput, rightHeaderBars, leftPanelHeader, topRightDropDown,
             egmsHeader, secondTopRightFilter, completeTableHeader, completeTableRow, sideBarHeadersList,
             advanceFilterButton, menuIcon, selectRecordCheckBox, totalRowsCalc, totalRowCount,
-            flexTablelastRowNameAsTotal, editIconForProgramFlexTable, pendingTasks, pendingTasksTableRef, submitButton,
-            dangerAlert,confirmationBoxMessage,selectDropdown, specificUserInsideDropdown;
+            flexTablelastRowNameAsTotal, editIconForProgramFlexTable, pendingTasks, pendingTasksTableRef,
+            dangerAlert, confirmationBoxMessage, selectDropdown, specificUserInsideDropdown, quickSearchButton;
 
     /**
      * Super Constructor
@@ -62,11 +62,12 @@ public class GovGrantsManager extends ProjectWebServices {
         pendingTasks = By.xpath(" //div/ul/li/a[text()='Pending Tasks']");
         pendingTasksTableRef = By
                 .xpath("//div[@class='table-responsive']/table/thead/tr/th/a/span/span[contains(text(),'Ref. ID')]");
-        submitButton = By.xpath("//input[@type='button' and @value='Submit']");
         dangerAlert = By.cssSelector("div.alert-danger");
         confirmationBoxMessage = By.xpath("//div[@class='modal-dialog']//div[contains(@class, 'bootbox-body')]");
-        selectDropdown = By.xpath("//div/span/input[@name='myRadio' and @value='Approve']//ancestor::span//div[@id='s2id_autogen13']");
+        selectDropdown = By.xpath(
+                "//div/span/input[@name='myRadio' and @value='Approve']//ancestor::span//div[@id='s2id_autogen13']");
         specificUserInsideDropdown = By.xpath("//div[@id='select2-drop']//ul//li/div[@class='select2-result-label']");
+        quickSearchButton = By.cssSelector("div.input-group-btn>a>i.fa.fa-search");
     }
 
     /******* "Key Methods with complete functionality - Public" *****************/
@@ -264,8 +265,6 @@ public class GovGrantsManager extends ProjectWebServices {
                         + leftPanelItem + "']"));
     }
 
-    
-
     /**
      * get any button on right header
      * 
@@ -428,19 +427,16 @@ public class GovGrantsManager extends ProjectWebServices {
     public By flexTableStatusColumn(String statusName) {
         return By.xpath("//td//span[@title='" + statusName + "']");
     }
-    
+
     /**
-     * Click any icon in the flex table
+     * Click any icon in the flex table like Edit etc.
      * 
      * @param statusName
      * @param iconName
      */
     public void clickTableIcons(String statusName, String iconName) {
-        for (WebElement element : getCompleteTableRow()) {
-            element.findElement(By.xpath("//td//span[@title='" + statusName
-                    + "']/../../../following-sibling::td//span//a[@title='" + iconName + "']")).click();
-            break;
-        }
+        reiDriver.JavaScript().clickByJS(By.xpath("//td//span[@title='" + statusName
+                    + "']/../../../following-sibling::td//span//a[@title='" + iconName + "']"));
     }
 
     /**
@@ -475,13 +471,16 @@ public class GovGrantsManager extends ProjectWebServices {
     }
 
     /**
-     * click Submit
+     * perform complete quick search in flex
+     * 
+     * @return
      */
-    public void clickSubmitButton() {
-        reiDriver.WaitFor().WaitForElementToBePresent(submitButton).click();
+    public void performQuickSearch(String searchTerm) {
+        reiDriver.WaitFor().WaitForElementToBePresent(searchInput);
+        reiDriver.textInput().enterText(searchInput, searchTerm);
+        reiDriver.findMyElement().getElement(quickSearchButton).click();
     }
-    
-    
+
     /******* "Local Methods with Limited functionality - Private" **********/
 
 }

@@ -18,7 +18,6 @@ public class FlexTablePage extends GovGrantsManager {
      */
     public FlexTablePage(Controller controller, Handlers reiDriver) {
         super(controller, reiDriver);
-
     }
 
     /******* "Key Methods with complete functionality - public" *****************/

@@ -8,6 +8,7 @@ public enum SObjectAPIs {
     GNT__PhaseConfig__r,GNT__CustomAppConfig__c, GNT__BodyTable__c, GNT__PhaseConfig__c,
     GNT__AccordionHeader__c ,GNT__AccordionHeader__r, GNT__PhaseType__c,GNT__DataTableConfig__c,GNT__DataTableAction__c,
     GNT__PageLayoutConfig__r,GNT__PageLayoutActionConfig__c,GNT__ApprovalDecisionActionConfig__c,GNT__FlexTableConfig__r,GNT__DataTableConfig__r,
+    Program__c,GNT__ApprovalProcessStepCache__c,
     
     //Fields
     GNT__Abbreviation__c, GNT__Active__c,GNT__AvailableForProfiles__c, GNT__DefaultThemeName__c, GNT__InternalUniqueID__c, 
@@ -17,6 +18,6 @@ public enum SObjectAPIs {
     GNT__EnableRecentlyViewed__c, GNT__SidebarRecentlyViewedLabel__c, GNT__EnableExternalLinks__c,GNT__SidebarExternalLinksLabel__c, GNT__IconCSS__c, GNT__Type__c,G,GNT__OpenInNewWindow__c,GNT__Link__c,
     GNT__EnableExport__c,GNT__EnableQuickSearch__c,GNT__EnableFilter__c,GNT__DisableMenu__c,GNT__EnableRecordSelection__c,GNT__EnableTotalRecordsCount__c,GNT__EnableTotalRow__c,GNT__FieldNames__c,GNT__TotalRowLabel__c,
     GNT__EnableAutoIndex__c,GNT__ActionBehavior__c,GNT__FilterCriteria__c,GNT__FilterClause__c,GNT__PageLayoutConfig__c,GNT__Title__c,GNT__HeaderDescription__c,GNT__HeaderOverride__c,GNT__HideDecisionExpression__c,GNT__HideExpressionJSON__c,
-    GNT__EnablePromptInputDialog__c,GNT__HideForProfile__c,GNT__HideAction__c,GNT__CommentsRequired__c,GNT__HidePDFDownload__c,GNT__HideOnDemandSnaphot__c,GNT__PromptDailogHeader__c,GNT__PromptDialogText__c,GNT__HideForContext__c,GNT__CustomAppConfig__r,GNT__ActionLabelOverride__c,
-    GNT__ConfirmationTitle__c,GNT__ConfirmationMessage__c,GNT__FilterCriteriaforUserReassign__c
+    GNT__EnablePromptInputDialog__c,GNT__HideForProfile__c,GNT__HideAction__c,GNT__CommentsRequired__c,GNT__HidePDFDownload__c,GNT__HideOnDemandSnaphot__c,GNT__PromptDailogHeader__c,GNT__PromptDialogText__c,GNT__HideForContext__c,GNT__CustomAppConfig__r,
+    GNT__ActionLabelOverride__c,Status__c,ProgramName__c,GNT__ApproverFieldAPIName__c,GNT__ConfirmationTitle__c,GNT__ConfirmationMessage__c,GNT__FilterCriteriaforUserReassign__c
 }

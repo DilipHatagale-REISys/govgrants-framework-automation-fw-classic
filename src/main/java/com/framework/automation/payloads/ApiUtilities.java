@@ -87,6 +87,9 @@ public class ApiUtilities {
 					+ String.valueOf(SObjectAPIs.GNT__CustomAppConfig__r) + ".Name=" + "'" + ComponentCoreFieldName
 					+ "'";
 			break;
+		case "PROGRAM":
+            filterClause = String.valueOf(SObjectAPIs.ProgramName__c)+"=" + "'" + ComponentCoreFieldName + "'";
+            break;
 		}
 		return filterClause;
 	}
