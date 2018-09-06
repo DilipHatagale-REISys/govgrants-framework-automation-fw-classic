@@ -79,16 +79,16 @@ Feature: Test all approval process component based scenarios
 	|newFilterCriteriaValue|
 	|Name='Allen PM'|
 	
-	@33099 @all @approverTaskNotCreatedPrograms-Programs
+	@33099 @all @approverTaskNotCreatedPrograms-Programs @wip
 	Scenario: Change approver setting for not receiveing approve task in configuration and validate that pending approver task is not displayed
-	When I search for "Test program for automation-SA to C"
 	Given I setup "Program" field "Status" as "Created" with filter clause on field "Test program for automation-SA to C"
-	Given I have default configuration for "Approval Process Steps Cache" field "Approver Field API Name" as "ProgramApprover__c" with filter ""
-	Given I setup filter clause for "General" in "ApprovalProcessStepCache" for field "" having value ""
+	Given I have default configuration for "Approval Process Steps Cache" field "Field API Name" as "ProgramApprover__c" with filter ""
+	Given I setup filter clause for "General" in "Program_Manager_Approver" for field "" having value ""
 	And I reconfigure "Approval Process Steps Cache" field "Field API Name" as ""
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
 	When I search for "Test program for automation-SA to C"
 	When I click on "Edit" icon of status "Created" in flex table
+	And I complete submit for approval
 	#When I start the approval of type "Approve Program" with subject as "Test program for automation"
 	#Then I see "Approved" inside approval decision box

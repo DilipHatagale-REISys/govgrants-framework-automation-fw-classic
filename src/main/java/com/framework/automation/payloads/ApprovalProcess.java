@@ -81,7 +81,7 @@ public class ApprovalProcess {
         String finalPayload = null;
         switch (fieldLabel.toUpperCase()) {
         case "FIELD API NAME":
-            finalPayload = String.format(payloadForIntValue,
+            finalPayload = String.format(payloadForStringValue,
                     String.valueOf(SObjectAPIs.GNT__ApprovalProcessStepCache__c),
                     new ApiUtilities().getComponentCoreFieldId(
                             String.valueOf(SObjectAPIs.GNT__ApprovalProcessStepCache__c), filterClause),
