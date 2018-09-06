@@ -3,6 +3,7 @@ package com.framework.automation.projectmanager;
 import com.framework.automation.payloads.ApprovalProcess;
 import com.framework.automation.payloads.FlexTable;
 import com.framework.automation.payloads.PageLayout;
+import com.framework.automation.payloads.Program;
 import com.framework.automation.payloads.SideBar;
 
 public class SetUpConfiguration {
@@ -45,6 +46,12 @@ public class SetUpConfiguration {
             break;
         case "APPROVAL DECISION ACTION":
             stringPayload = new ApprovalProcess().setApprovalDecisionActionConfig(fieldLabel, value, filterClause);
+            break;
+        case "APPROVAL PROCESS STEPS CACHE":
+            stringPayload = new ApprovalProcess().setApprovalProcessStepsCacheConfig(fieldLabel, value, filterClause);
+            break;
+        case "PROGRAM":
+            stringPayload = new Program().setProgramFieldConfig(fieldLabel, value, filterClause);
             break;
         }
         System.out.println("final payload is " + stringPayload);

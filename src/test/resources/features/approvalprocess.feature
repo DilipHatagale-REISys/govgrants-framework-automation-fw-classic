@@ -46,4 +46,17 @@ Feature: Test all approval process component based scenarios
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
 	And I navigate to "Tasks" to reach "Pending" side bar content
 	When I start the approval of type "Approve Program" with subject as "Test program for automation"
-	Then I see "Approved" inside approval decision box		
+	Then I see "Approved" inside approval decision box
+	
+	@33099 @all @deleteSubmittedForApprovalPrograms-Programs
+	Scenario: Changing label of approve radio button text from configuration and validating its changed label in pending tasks approval decision 
+	Given I setup "Program" field "Status" as "Created" with filter clause on field "Test program for automation-SA to C"
+	Given I have default configuration for "Approval Process Steps Cache" field "Approver Field API Name" as "ProgramApprover__c" with filter ""
+	Given I setup filter clause for "General" in "ApprovalProcessStepCache" for field "" having value ""
+	And I reconfigure "Approval Process Steps Cache" field "Field API Name" as ""
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	When I search for "Test program for automation-SA to C"
+	When I click on "Edit" icon of status "Created" in flex table
+	#When I start the approval of type "Approve Program" with subject as "Test program for automation"
+	#Then I see "Approved" inside approval decision box
