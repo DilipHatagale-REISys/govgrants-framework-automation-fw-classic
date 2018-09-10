@@ -247,6 +247,19 @@ public class GovGrantsManager extends ProjectWebServices {
     }
 
     /**
+     * click on flex table icons. Inside click on any tab with flex table.Reach out
+     * to any panel header
+     * 
+     * @param pannelTitleName
+     * @return
+     */
+    public WebElement getFlexGridPanels(String pannelTitleName) {
+        return reiDriver.WaitFor().WaitForElementToBePresent(
+                By.xpath("//div[@class='panel-heading']//div[contains(@class,'panel-title')]/a[text()='"
+                        + pannelTitleName + "']"));
+    }
+
+    /**
      * select item from panel header - left
      * 
      * @param leftPanelItem
@@ -487,6 +500,18 @@ public class GovGrantsManager extends ProjectWebServices {
         reiDriver.WaitFor().WaitForElementToBePresent(searchInput);
         reiDriver.textInput().enterText(searchInput, searchTerm);
         reiDriver.findMyElement().getElement(quickSearchButton).click();
+    }
+
+    /**
+     * click on sub tab inside table icons. click view and then on new page click on
+     * the tab like overview etc.
+     * 
+     * @param tabName
+     */
+    public void clickSubTabsInsideTableView(String tabName) {
+        reiDriver.WaitFor().WaitForElementToBePresent(By.xpath("//div[@id='myTabs']/ul/li/a[@name='" + tabName + "']"))
+                .click();
+        ;
     }
 
     /******* "Local Methods with Limited functionality - Private" **********/

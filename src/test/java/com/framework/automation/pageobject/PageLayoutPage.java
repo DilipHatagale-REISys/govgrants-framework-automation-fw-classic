@@ -27,6 +27,15 @@ public class PageLayoutPage extends GovGrantsManager {
     /******* "Key Methods with complete functionality - public" *****************/
 
     /**
+     * click on the sub tab after clicking flex table icon
+     * @param subTab
+     */
+    public void clickSubTab(String subTab) {
+        reiDriver.WaitFor().WaitForElementToBePresent(By.xpath("//div[@id='myTabs']/ul/li/a[@name='" + subTab + "']"))
+                .click();
+    }
+
+    /**
      * get any button on right header inside detail page
      * 
      * @param buttonName

@@ -1,6 +1,7 @@
 package com.framework.automation.projectmanager;
 
 import com.framework.automation.payloads.ApprovalProcess;
+import com.framework.automation.payloads.FlexGrid;
 import com.framework.automation.payloads.FlexTable;
 import com.framework.automation.payloads.PageLayout;
 import com.framework.automation.payloads.Program;
@@ -52,6 +53,9 @@ public class SetUpConfiguration {
             break;
         case "PROGRAM":
             stringPayload = new Program().setProgramFieldConfig(fieldLabel, value, filterClause);
+            break;
+        case "FLEX GRID":
+            stringPayload = new FlexGrid().setFlexGridParentFlexTableConfig(fieldLabel, value, filterClause);
             break;
         }
         System.out.println("final payload is " + stringPayload);

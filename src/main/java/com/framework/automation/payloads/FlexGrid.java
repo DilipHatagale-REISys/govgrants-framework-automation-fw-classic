@@ -1,0 +1,21 @@
+package com.framework.automation.payloads;
+
+public class FlexGrid {
+    private String payloadForStringValue = "{\"sObjectAPIName\" : \"%s\",\"fieldMapStr\" : \"{\\\"Id\\\":\\\"%s\\\",\\\"%s\\\":\\\"%s\\\"}\"}";
+    private String payloadForIntValue = "{\"sObjectAPIName\" : \"%s\",\"fieldMapStr\" : \"{\\\"Id\\\":\\\"%s\\\",\\\"%s\\\":%s}\"}";
+
+    public String setFlexGridParentFlexTableConfig(String fieldLabel, String value, String filterClause) {
+        String finalPayload = null;
+        switch (fieldLabel.toUpperCase()) {
+        case "HEADER":
+                finalPayload = String.format(payloadForStringValue,
+                        String.valueOf(SObjectAPIs.GNT__DataTableConfig__c),
+                        new ApiUtilities().getComponentCoreFieldId(
+                                String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__Header__c), value);
+                break;
+            }
+        System.out.println(finalPayload);
+        return finalPayload;
+    }
+}

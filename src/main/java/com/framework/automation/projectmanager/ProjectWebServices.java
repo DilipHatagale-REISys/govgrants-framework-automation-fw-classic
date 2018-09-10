@@ -92,7 +92,7 @@ public class ProjectWebServices {
     }
 
     /**
-     * set up parameters for default confiuration
+     * set up parameters for default configuration
      * 
      * @param componentName
      * @param fieldLabel
