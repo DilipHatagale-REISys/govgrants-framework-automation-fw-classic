@@ -21,11 +21,13 @@ public class GovGrantsManager extends ProjectWebServices {
     public Controller controller;
     public String standardPassword = "Automation@12345";
     public String defaultComment = "Automation testing";
+    public String defaultQaUrl = "https://ggptest5-dev-ed.my.salesforce.com";
+    private final String completeTableRowString;
     public final By navigationLogo, loginDropDown, searchInput, rightHeaderBars, leftPanelHeader, topRightDropDown,
             egmsHeader, secondTopRightFilter, completeTableHeader, completeTableRow, sideBarHeadersList,
             advanceFilterButton, menuIcon, selectRecordCheckBox, totalRowsCalc, totalRowCount,
-            flexTablelastRowNameAsTotal, editIconForProgramFlexTable, pendingTasks, pendingTasksTableRef,
-            dangerAlert, confirmationBoxMessage, selectDropdown, specificUserInsideDropdown, quickSearchButton;
+            flexTablelastRowNameAsTotal, editIconForProgramFlexTable, pendingTasks, pendingTasksTableRef, dangerAlert,
+            confirmationBoxMessage, selectDropdown, specificUserInsideDropdown, quickSearchButton;
 
     /**
      * Super Constructor
@@ -68,6 +70,7 @@ public class GovGrantsManager extends ProjectWebServices {
                 "//div/span/input[@name='myRadio' and @value='Approve']//ancestor::span//div[@id='s2id_autogen13']");
         specificUserInsideDropdown = By.xpath("//div[@id='select2-drop']//ul//li/div[@class='select2-result-label']");
         quickSearchButton = By.cssSelector("div.input-group-btn>a>i.fa.fa-search");
+        completeTableRowString = "//div[@class='panel-heading']/following-sibling::div[contains(@class,'panel-body')]//div/table/tbody/tr";
     }
 
     /******* "Key Methods with complete functionality - Public" *****************/
@@ -75,11 +78,11 @@ public class GovGrantsManager extends ProjectWebServices {
     /**
      * navigate to a url
      * 
-     * @param urlName
+     * @param env Name
      * @throws IOException
      */
-    public void navigateToURL(String urlName) throws IOException {
-        reiDriver.get().navigateToUrl(new UsersAndURL().navigateToAnyUrl(urlName));
+    public void navigateToURL(String envName) throws IOException {
+        reiDriver.get().navigateToUrl(new UsersAndURL().navigateToAnyUrl(envName.toUpperCase()));
     }
 
     /**
@@ -435,8 +438,25 @@ public class GovGrantsManager extends ProjectWebServices {
      * @param iconName
      */
     public void clickTableIcons(String statusName, String iconName) {
-        reiDriver.JavaScript().clickByJS(By.xpath("//td//span[@title='" + statusName
-                    + "']/../../../following-sibling::td//span//a[@title='" + iconName + "']"));
+        for (WebElement element : getCompleteTableRow()) {
+            element.findElement(By.xpath("//td//span[@title='" + statusName
+                    + "']/../../../following-sibling::td//span//a[@title='" + iconName + "']")).click();
+        }
+    }
+
+    /**
+     * click flex table item based on program name/subject , status and icon name
+     * 
+     * @param programSubject
+     * @param statusName
+     * @param iconName
+     */
+    public void clickTableIconsForSpecificSubject(String programSubject, String statusName, String iconName) {
+        reiDriver.WaitFor()
+                .WaitForElementToBePresent(By.xpath(completeTableRowString + "//td//span[@title='" + programSubject
+                        + "']/../../../following-sibling::td//span[@title='" + statusName
+                        + "']/../../../following-sibling::td//span//a[@title='" + iconName + "']//i"))
+                .click();
     }
 
     /**

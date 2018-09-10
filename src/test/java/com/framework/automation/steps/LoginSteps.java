@@ -1,8 +1,11 @@
 package com.framework.automation.steps;
 
+import java.io.IOException;
+
 import org.springframework.context.annotation.Description;
 
 import com.automation.rei.controller.Controller;
+import com.automation.rei.exception.ReiFrameworkCustomException;
 import com.automation.rei.handlers.Handlers;
 import com.framework.automation.pageobject.LoginPage;
 
@@ -38,7 +41,7 @@ public class LoginSteps {
 
     @Description("Log out and login again according to user type")
     @When("^I re-login as \"([^\"]*)\"$")
-    public void reLogin(String user) {
+    public void reLogin(String user) throws ReiFrameworkCustomException {
         loginPage.clickLogOut();
         loginPage.enterAsUser(user);
         loginPage.getToHomePage();
@@ -50,6 +53,14 @@ public class LoginSteps {
         loginPage.clickLogin();
     }
 
+    @When("^I re-login as \"([^\"]*)\" with \"([^\"]*)\" url$")
+    public void reLoginWithDefaultQAUrl(String user,String envName) throws ReiFrameworkCustomException, IOException  {    
+        loginPage.clickLogOut();
+        loginPage.navigateToURL(envName);
+        loginPage.enterAsUser(user);
+        loginPage.getToHomePage();
+    }
+    
     @Description("Assert login is successful and landed on login page")
     @Then("^I am on the homepage$")
     public void assertHomepage() {

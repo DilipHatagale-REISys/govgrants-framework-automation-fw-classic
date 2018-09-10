@@ -19,13 +19,10 @@ import cucumber.api.java.Before;
  */
 
 public class setup {
-    private Controller controller;
     private SetupController setupController;
     private ProjectWebServices projectAPI;
-    SoftAssert softAssert = new SoftAssert();
 
     public setup(Controller controller, ProjectWebServices projectAPI) {
-        this.controller = controller;
         this.setupController = new SetupController(controller);
         this.projectAPI = projectAPI;
     }

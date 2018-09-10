@@ -18,9 +18,9 @@ public class FlexTableSteps {
         flexTablePage.clickRightHeaderBars();
     }
 
-    @When("^I click on \"([^\"]*)\" icon of status \"([^\"]*)\" in flex table$")
-    public void clickAnyIconInFlexTable(String iconName, String statusName) {
-        flexTablePage.clickTableIcons(statusName,iconName);
+    @When("^I click on \"([^\"]*)\" icon of status \"([^\"]*)\" for \"([^\"]*)\" program in flex table$")
+    public void clickAnyIconInFlexTable(String iconName, String statusName,String programSubject) {
+        flexTablePage.clickTableIconsForSpecificSubject(programSubject, statusName, iconName);
     }
 
     @Then("^I see \"([^\"]*)\" shown as flex table title$")

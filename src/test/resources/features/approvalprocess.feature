@@ -7,7 +7,7 @@ Feature: Test all approval process component based scenarios
 	Given I have default configuration for "Approval Decision Action" field "Hide Action" as "false" with filter ""
 	Given I setup filter clause for "General" in "ADAC-0009" for field "" having value ""
 	When I reconfigure "Approval Decision Action" field "Hide Action" as "true"
-	When I login as "Automation-PM" User 
+	When I login as "Automation-PM" User
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
 	And I navigate to "Tasks" to reach "Pending" side bar content
 	When I start the approval of type "Approve Program" with subject as "Test program for automation"
@@ -18,7 +18,7 @@ Feature: Test all approval process component based scenarios
 	Given I have default configuration for "Approval Decision Action" field "Sequence" as "1" with filter ""
 	Given I setup filter clause for "General" in "ADAC-0009" for field "" having value ""
 	When I reconfigure "Approval Decision Action" field "Sequence" as "5"
-	When I login as "Automation-PM" User 
+	When I login as "Automation-PM" User
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
 	And I navigate to "Tasks" to reach "Pending" side bar content
 	When I start the approval of type "Approve Program" with subject as "Test program for automation"
@@ -88,9 +88,9 @@ Feature: Test all approval process component based scenarios
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
 	When I search for "Test program for automation-SA to C"
-	When I click on "Edit" icon of status "Created" in flex table
+	When I click on "Edit" icon of status "Created" for "Test program for automation-SA to C" program in flex table
 	And I complete submit for approval
-	When I re-login as "Automation-PM"
+	When I re-login as "Automation-PM" with "QA" url
 	And I access the "GovGrants Launcher Tab" to reach "Planning" tab
 	When I navigate to "Tasks" to reach "Pending" side bar content
 	Then I see approval of type "Approve Program" with subject as "Test program for automation-SA to C" is not displayed
