@@ -13,9 +13,9 @@ public class ApprovalProcessSteps {
         approvalProcesPage = new ApprovalProcessPage(controller, handler);
     }
 
-    @When("^I start the approval of type \"([^\"]*)\" with subject as \"([^\"]*)\"$")
-    public void startApproval(String programType, String programSubject) {
-        approvalProcesPage.clickStartApprovalButton(programSubject, programType);
+    @When("^I start the approval with subject \"([^\"]*)\"$")
+    public void startApproval(String programSubject) {
+        approvalProcesPage.clickStartApprovalButton(programSubject);
     }
 
     @When("^I select \"([^\"]*)\" from approval decision panel$")
@@ -73,8 +73,8 @@ public class ApprovalProcessSteps {
         approvalProcesPage.assertUserInsideDropdown(dropDownValue);
     }
 
-    @Then("^I see approval of type \"([^\"]*)\" with subject as \"([^\"]*)\" is not displayed$")
-    public void assertSpecificApprovalIsNotDisplayed(String approverType, String subject) {
-        approvalProcesPage.assertSpecificApprovalNotDisplayed(approverType, subject);
+    @Then("^I see approval with subject as \"([^\"]*)\" is not displayed$")
+    public void assertSpecificApprovalIsNotDisplayed(String subject) {
+        approvalProcesPage.assertSpecificApprovalNotDisplayed(subject);
     }
 }

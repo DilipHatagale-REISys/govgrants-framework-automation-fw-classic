@@ -1,5 +1,7 @@
 package com.framework.automation.pageobject;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -55,8 +57,8 @@ public class ApprovalProcessPage extends GovGrantsManager {
      * @param programSubject
      * @param programType
      */
-    public void clickStartApprovalButton(String programSubject, String programType) {
-        for (WebElement tasks : getStartButtonInPendingTasks(programSubject, programType, "Start")) {
+    public void clickStartApprovalButton(String programSubject) {
+        for (WebElement tasks : getStartButtonInPendingTasks(programSubject, "Start")) {
             tasks.click();
             break;
         }
@@ -146,12 +148,14 @@ public class ApprovalProcessPage extends GovGrantsManager {
 
     /**
      * assert true if specific subject is not displayed for approval
+     * 
      * @param approverType
      * @param subject
      */
-    public void assertSpecificApprovalNotDisplayed(String approverType,String subject) {
-       Assert.assertEquals(0, getStartButtonInPendingTasks(approverType,subject,"Start").size());
+    public void assertSpecificApprovalNotDisplayed(String subject) {
+        Assert.assertEquals(0, isSpecificApprovalTask(subject, "Start").size());
     }
+
     /*********
      * "Local Methods with complete functionality - private"
      *****************/
@@ -226,5 +230,28 @@ public class ApprovalProcessPage extends GovGrantsManager {
     private WebElement getApprovedText(String radioButtonName) {
         return reiDriver.findMyElement().getElement(By.xpath(
                 "//div/span/input[@name='myRadio' and @value='Approve']//ancestor::span[@class='approval-actions ng-scope ng-binding']"));
+    }
+
+    /**
+     * get exact start button for pending tasks assigned to me
+     */
+    private List<WebElement> isSpecificApprovalTask(String programSubject,String titleInLocator) {
+        int whileHandler = 0;
+        By startButton = By.xpath("//div/table/tbody/tr/td/span/span/span[text()='" + programSubject
+                + "']//following::td/div/span/span/span/span/a[@title='" + titleInLocator + "']");
+        List<WebElement> approvalStartButtonTable = reiDriver.findMyElement().getElements(startButton);
+        int approvalStartButtonTableSize = approvalStartButtonTable.size();
+        while (approvalStartButtonTableSize == 0) {
+            whileHandler++;
+            if (whileHandler == 2) {
+                break;
+            }
+            reiDriver.get().getRefresh();
+            reiDriver.WaitFor().WaitForElementToBePresent(pendingTasksTableRef);
+            approvalStartButtonTable = reiDriver.findMyElement().getElements(startButton);
+            approvalStartButtonTableSize = approvalStartButtonTable.size();
+        }
+        System.out.println("size of pending task " + approvalStartButtonTable.size());
+        return approvalStartButtonTable;
     }
 }
