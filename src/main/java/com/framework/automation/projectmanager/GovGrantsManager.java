@@ -26,7 +26,7 @@ public class GovGrantsManager extends ProjectWebServices {
     public final By navigationLogo, loginDropDown, searchInput, rightHeaderBars, leftPanelHeader, topRightDropDown,
             egmsHeader, secondTopRightFilter, completeTableHeader, completeTableRow, sideBarHeadersList,
             advanceFilterButton, menuIcon, selectRecordCheckBox, totalRowsCalc, totalRowCount,
-            flexTablelastRowNameAsTotal, editIconForProgramFlexTable, pendingTasks, pendingTasksTableRef, dangerAlert,
+            flexTablelastRowNameAsTotal, editIconForProgramFlexTable, pendingTasksTableRef, dangerAlert,
             confirmationBoxMessage, selectDropdown, specificUserInsideDropdown, quickSearchButton;
 
     /**
@@ -51,7 +51,7 @@ public class GovGrantsManager extends ProjectWebServices {
         completeTableRow = By.xpath(
                 "//div[@class='panel-heading']/following-sibling::div[contains(@class,'panel-body')]//div/table/tbody/tr");
         sideBarHeadersList = By.xpath(
-                "//div[@id='sidebar-wrapper']//div[contains(@class,'panel-sidebar')]//span[contains(@class,'sidebar-label')]");
+                "//div[@id='sidebar-wrapper']//div[contains(@class,'customSidebar ')]//a/span/following-sibling::span");
         selectRecordCheckBox = By.xpath("//input[@aria-label='Select Record']");
         advanceFilterButton = By
                 .xpath(".//*[@id='toggleFlexTablePrograms']//button/span[contains(text(),'Advance Filter')]");
@@ -61,7 +61,6 @@ public class GovGrantsManager extends ProjectWebServices {
         totalRowCount = By.xpath("//span[@ng-bind='totalRecords']");
         flexTablelastRowNameAsTotal = By.xpath("//td/b/span[contains(@ng-bind-html,'TotalRowLabel')]");
         editIconForProgramFlexTable = By.xpath("//a[contains(@title,'Edit')]");
-        pendingTasks = By.xpath(" //div/ul/li/a[text()='Pending Tasks']");
         pendingTasksTableRef = By
                 .xpath("//div[@class='table-responsive']/table/thead/tr/th/a/span/span[contains(text(),'Ref. ID')]");
         dangerAlert = By.cssSelector("div.alert-danger");
@@ -78,7 +77,8 @@ public class GovGrantsManager extends ProjectWebServices {
     /**
      * navigate to a url
      * 
-     * @param env Name
+     * @param env
+     *            Name
      * @throws IOException
      */
     public void navigateToURL(String envName) throws IOException {
@@ -114,14 +114,6 @@ public class GovGrantsManager extends ProjectWebServices {
     }
 
     /**
-     * generic method to click on pending tasks need to improve method by removing
-     * thread sleep and manage using explicit wait
-     */
-    public void clickPendingTasksLink() {
-        reiDriver.findMyElement().getElement(pendingTasks).click();
-    }
-
-    /**
      * wait for the EGMS header in Gov Grants
      */
     public void waitForEgmsHeader() {
@@ -135,15 +127,14 @@ public class GovGrantsManager extends ProjectWebServices {
     /**
      * waits for navigation logo to get disappeared
      * 
-     * @throws ReiFrameworkCustomException
      */
-    public void waitForNavigationLogo() throws ReiFrameworkCustomException {
+    public void waitForNavigationLogo() {
         try {
             if (reiDriver.is().elementDispalyed(navigationLogo)) {
                 reiDriver.WaitFor().WaitForElementToDisapear(navigationLogo);
             }
         } catch (Exception e) {
-            throw new ReiFrameworkCustomException("Unable to find logo " + e);
+
         }
     }
 
@@ -160,9 +151,9 @@ public class GovGrantsManager extends ProjectWebServices {
      * @return: List of all Accordian headers.
      */
     public List<WebElement> accordianHeadersList(String headerName) {
-        return reiDriver.findMyElement()
-                .getElements(By.xpath("//div[@id='sidebar-wrapper']//div/p/span[contains(text(),'" + headerName
-                        + "')]/../../following-sibling::div//div//b/a"));
+        return reiDriver.findMyElement().getElements(By.xpath(
+                "//div[@id='sidebar-wrapper']//div/ul/li//span[text()='" + headerName + "']/../../ul/li/a/span"));
+
     }
 
     /**
@@ -170,9 +161,9 @@ public class GovGrantsManager extends ProjectWebServices {
      * @return: List of all Accordian content.
      */
     public List<WebElement> accordianContentList(String headerName) {
-        return reiDriver.findMyElement()
-                .getElements(By.xpath("//div[@id='sidebar-wrapper']//div/p/span[contains(text(),'" + headerName
-                        + "')]/../../following-sibling::div//div//ul//li/a"));
+        return reiDriver.findMyElement().getElements(By.xpath(
+                "//div[@id='sidebar-wrapper']//div/ul/li//span[text()='" + headerName + "']/../../ul/li/ul//a/span"));
+
     }
 
     /**
@@ -183,7 +174,7 @@ public class GovGrantsManager extends ProjectWebServices {
      */
     public WebElement getSideBarHeader(String sideBarCategory) {
         return reiDriver.WaitFor().WaitForElementToBePresent(
-                By.xpath("//div[@id='sidebar-wrapper']//div/p/span[contains(text(),'" + sideBarCategory + "')]"));
+                By.xpath("//div[@id='sidebar-wrapper']//div/ul/li//span[text()='" + sideBarCategory + "']"));
     }
 
     /**
@@ -194,9 +185,9 @@ public class GovGrantsManager extends ProjectWebServices {
      * @return
      */
     public WebElement getSideBarAccordianHeader(String sideBarCategory, String accordianSubHeader) {
-        return reiDriver.WaitFor().WaitForElementToBePresent(
-                By.xpath("//div[@id='sidebar-wrapper']//div/p/span[contains(text(),'" + sideBarCategory
-                        + "')]/../../following-sibling::div//div//b[text()='" + accordianSubHeader + "']"));
+        return reiDriver.WaitFor()
+                .WaitForElementToBePresent(By.xpath("//div[@id='sidebar-wrapper']//div/ul/li//span[text()='"
+                        + sideBarCategory + "']/../../ul/li//span[text()='" + accordianSubHeader + "']"));
     }
 
     /**
@@ -208,9 +199,8 @@ public class GovGrantsManager extends ProjectWebServices {
      */
     public WebElement getSideBarAccordianSubHeaderContent(String sideBarCategory, String accordianSubHeaderDetail) {
         return reiDriver.WaitFor()
-                .WaitForElementToBePresent(By.xpath("//div[@id='sidebar-wrapper']//div/p/span[contains(text(),'"
-                        + sideBarCategory + "')]/../../following-sibling::div//div/ul/li/a[text()='"
-                        + accordianSubHeaderDetail + "']"));
+                .WaitForElementToBePresent(By.xpath("//div[@id='sidebar-wrapper']//div/ul/li//span[text()='"
+                        + sideBarCategory + "']/../../ul//span[text()='" + accordianSubHeaderDetail + "']"));
     }
 
     /**
@@ -469,12 +459,10 @@ public class GovGrantsManager extends ProjectWebServices {
     /**
      * get exact start button for pending tasks assigned to me
      */
-    public List<WebElement> getStartButtonInPendingTasks(String programSubject, String programType,
-            String titleInLocator) {
+    public List<WebElement> getStartButtonInPendingTasks(String programSubject, String titleInLocator) {
         int whileHandler = 0;
-        By startButton = By.xpath("//div/table/tbody/tr/td/span/span/span[text()='" + programType
-                + "']/following::span/span/span[text()='" + programSubject
-                + "']/following::td/div/span/span/span/span/a[@title='" + titleInLocator + "']");
+        By startButton = By.xpath("//div/table/tbody/tr/td/span/span/span[text()='" + programSubject
+                + "']//following::td/div/span/span/span/span/a[@title='" + titleInLocator + "']");
         List<WebElement> approvalStartButtonTable = reiDriver.findMyElement().getElements(startButton);
         int approvalStartButtonTableSize = approvalStartButtonTable.size();
         while (approvalStartButtonTableSize == 0) {
