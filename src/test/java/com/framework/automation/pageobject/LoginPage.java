@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import com.automation.rei.controller.Controller;
+import com.automation.rei.exception.ReiFrameworkCustomException;
 import com.automation.rei.handlers.Handlers;
 import com.framework.automation.projectmanager.GovGrantsManager;
 import com.framework.automation.projectmanager.UsersAndURL;
@@ -18,7 +19,8 @@ public class LoginPage extends GovGrantsManager {
     private final By userName = By.xpath("//input[@name='username' or id ='username']");
     private final By password = By.xpath("//input[@id='password' or @type='password']");
     private final By loginButton = By.xpath("//input[@id='Login' or @type='submit']");
-    private final By userAvatar = By.xpath("//div[@id='myNavbarProfile']/ul/li/a/img[@alt='User Avatar']");
+    private final By userAvatar = By.cssSelector("div#myNavbarProfile>ul>li>a>img[alt='User Avatar']");
+    private final By userAvatarDownArrow = By.cssSelector("div#myNavbarProfile>ul>li>a>img[alt='User Avatar']+i");
     private final By logOutOption = By.xpath("//ul/li/a[@aria-label='Logout']");
     private final By loginPageLogo = By.xpath("//div[@id='logo_wrapper']//img[@class='standard_logo'and @alt='Salesforce']");
 
@@ -54,8 +56,10 @@ public class LoginPage extends GovGrantsManager {
 
     /**
      * click logout to log out
+     * @throws ReiFrameworkCustomException 
      */
-    public void clickLogOut() {
+    public void clickLogOut() throws ReiFrameworkCustomException {
+        waitForNavigationLogo();
         reiDriver.WaitFor().WaitForElementToBePresent(userAvatar).click();
         reiDriver.WaitFor().specialCustomWait(5, logOutOption);
         reiDriver.Clickers().MouseClick(logOutOption);

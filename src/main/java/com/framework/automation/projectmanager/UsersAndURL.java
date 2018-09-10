@@ -57,8 +57,8 @@ public class UsersAndURL {
     public static String navigateToAnyUrl(String urlName) throws IOException {
         String url=null;
         switch(urlName.toUpperCase()) {
-        case "ANY PORTAL":
-            url = new Properties_Logs().ReadPropertyFile("environment.properties", "ExternalLink");
+        case "QA":
+            url = new Properties_Logs().ReadPropertyFile("environment.properties", "QA");
             Reporter.addScenarioLog("Scenario is running using External Link" + " & Url is " + url);
             break;
         }
