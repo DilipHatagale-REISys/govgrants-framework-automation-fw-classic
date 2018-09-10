@@ -23,6 +23,11 @@ public class PageLayoutSteps {
         pageLayoutPage.getHeaderButtonInsideDetailPage(button);
     }
 
+    @When("^I click on \"([^\"]*)\" sub tab inside page layout$")
+    public void clickSubTabAfterSelectingFlexTableIcons(String subTabName) {
+        pageLayoutPage.clickSubTab(subTabName);
+    }
+
     @Then("^I see \"([^\"]*)\" shown as over view title in header \"([^\"]*)\"$")
     public void assertOverViewTitleWithHeader(String overViewTitle, String overViewHeader) {
         pageLayoutPage.assertOverViewTitleWithHeader(overViewTitle, overViewHeader);

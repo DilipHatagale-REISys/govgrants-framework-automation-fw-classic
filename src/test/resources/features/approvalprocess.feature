@@ -1,4 +1,4 @@
-@approvalprocess_componenet
+@approvalprocess-componenet
 Feature: Test all approval process component based scenarios 
 	As a configuration manager i make different configurational changes in approval process component and will validate them.
 	
@@ -10,7 +10,7 @@ Feature: Test all approval process component based scenarios
 	When I login as "Automation-PM" User
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
 	And I navigate to "Tasks" to reach "Pending" side bar content
-	When I start the approval with subject "Test program for automation"
+	When I start the approval with subject "Test program for Automation-A to SA"
 	Then I see "Approve" is disabled
 	
 	@32974 @all @changeApproveOptionSequence-Programs
@@ -21,7 +21,7 @@ Feature: Test all approval process component based scenarios
 	When I login as "Automation-PM" User
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
 	And I navigate to "Tasks" to reach "Pending" side bar content
-	When I start the approval with subject "Test program for automation"
+	When I start the approval with subject "Test program for Automation-A to SA"
 	Then i see "Approve" shown at number "3" in Approve Decision panel
 	
 	@32975 @all @mandatoryCommentsReq-Programs
@@ -32,7 +32,7 @@ Feature: Test all approval process component based scenarios
 	When I login as "Automation-PM" User 
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
 	And I navigate to "Tasks" to reach "Pending" side bar content
-	When I start the approval with subject "Test program for automation"
+	When I start the approval with subject "Test program for Automation-A to SA"
 	When I select "Approve" from approval decision panel
 	And I click submit
 	Then I see "Comments are Required." error is displayed
@@ -45,7 +45,7 @@ Feature: Test all approval process component based scenarios
 	When I login as "Automation-PM" User 
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
 	And I navigate to "Tasks" to reach "Pending" side bar content
-	When I start the approval with subject "Test program for automation"
+	When I start the approval with subject "Test program for Automation-A to SA"
 	Then I see "Approved" inside approval decision box
 	
 	@32976 @all @confirmationMessageBoxPopupForApprovalDecisionAction-Programs
@@ -57,7 +57,7 @@ Feature: Test all approval process component based scenarios
 	When I login as "Automation-PM" User 
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
 	And I navigate to "Tasks" to reach "Pending" side bar content
-	When I start the approval with subject "Test program for automation"
+	When I start the approval with subject "Test program for Automation-A to SA"
 	When I select "Approve" from approval decision panel
 	When I enter Approval comment
 	And I click submit
@@ -71,7 +71,7 @@ Feature: Test all approval process component based scenarios
 	When I login as "Automation-PM" User 
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
 	And I navigate to "Tasks" to reach "Pending" side bar content
-	When I start the approval with subject "Test program for automation"
+	When I start the approval with subject "Test program for Automation-A to SA"
 	When I select "Reassign" from approval decision panel
 	When I click select dropdown
 	Then I see "Allen PM" inside selectbox

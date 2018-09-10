@@ -1,6 +1,7 @@
 package com.framework.automation.steps;
 
 import com.automation.rei.controller.Controller;
+import com.automation.rei.exception.ReiFrameworkCustomException;
 import com.automation.rei.handlers.Handlers;
 import com.framework.automation.pageobject.ApprovalProcessPage;
 import cucumber.api.java.en.Then;
@@ -14,7 +15,7 @@ public class ApprovalProcessSteps {
     }
 
     @When("^I start the approval with subject \"([^\"]*)\"$")
-    public void startApproval(String programSubject) {
+    public void startApproval(String programSubject) throws ReiFrameworkCustomException {
         approvalProcesPage.clickStartApprovalButton(programSubject);
     }
 

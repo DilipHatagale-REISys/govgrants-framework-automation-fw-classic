@@ -9,8 +9,9 @@ Feature: Test all page layout component based scenarios
 	When I reconfigure "Page Layout" field "Header" as "Program - {!FederalProgramCFDA__c}"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
-	When I click on "Edit" icon of status "Created" in flex table
-	Then I see "12345" shown as over view title in header "Program"
+	When I search for "Test program for automation"
+	When I click on "Edit" icon of status "Created" for "Test program for automation" program in flex table
+	Then I see "1234" shown as over view title in header "Program"
 	
 	@32764 @all @setUpPageInstructionText-Programs
 	Scenario: validate the page instructions text apears as configured in Edit view
@@ -19,7 +20,8 @@ Feature: Test all page layout component based scenarios
 	When I reconfigure "Page Layout" field "Page Instruction Text" as "Automation Instruction Text"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
-	When I click on "Edit" icon of status "Created" in flex table
+	When I search for "Test program for automation"
+	When I click on "Edit" icon of status "Created" for "Test program for automation" program in flex table
 	Then I see "Automation Instruction Text" shown as page instruction text
 	
 	@32765 @all  @setUpHeaderOverRideField-Programs
@@ -39,7 +41,8 @@ Feature: Test all page layout component based scenarios
 	When I reconfigure "Page Layout Action" field "Hide Decision Expression" as "<new_hide_config>"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
-	When I click on "View Program Details" icon of status "Created" in flex table
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
 	Then I see "Submit For Approval" button is not displayed
 	
 	Examples:
@@ -53,7 +56,8 @@ Feature: Test all page layout component based scenarios
 	When I reconfigure "Page Layout Action" field "Hide Expression JSON" as "govgrants_config:HideExpressionJson"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
-	When I click on "View Program Details" icon of status "Created" in flex table
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
 	Then I see "Submit For Approval" button is not displayed
 	
 	@32837 @all @hideForProfile-Programs
@@ -63,7 +67,8 @@ Feature: Test all page layout component based scenarios
 	When I reconfigure "Page Layout Action" field "Hide for profile" as "System Administrator"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
-	When I click on "View Program Details" icon of status "Created" in flex table
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
 	Then I see "Submit For Approval" button is not displayed
 	
 	@32763 @all @HidePdfDownloadFromMenuForMainPageLayout-Programs
@@ -73,7 +78,8 @@ Feature: Test all page layout component based scenarios
     When I reconfigure "Page Layout" field "Hide Pdf Download" as "true"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
-	When I click on "View Program Details" icon of status "Created" in flex table
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
 	When I click on "Menu" button inside detail page
 	Then I see Download as PDF options disabled
 	
@@ -84,7 +90,8 @@ Feature: Test all page layout component based scenarios
 	When I reconfigure "Page Layout" field "Hide On Demand Snapshot" as "true"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
-	When I click on "View Program Details" icon of status "Created" in flex table
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
 	When I click on "Menu" button inside detail page
 	Then I see "Take Snapshot" options disabled
 	
@@ -95,7 +102,8 @@ Feature: Test all page layout component based scenarios
 	When I reconfigure "Page Layout Action" field "Enable Prompt Input Dialog" as "true"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
-	When I click on "View Program Details" icon of status "Created" in flex table
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
 	When I click on "Submit For Approval" button inside detail page
 	Then I see prompt For automation is displayed
 	
@@ -106,5 +114,6 @@ Feature: Test all page layout component based scenarios
 	When I reconfigure "Page Layout Action" field "Hide For Context" as "view"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
-	When I click on "View Program Details" icon of status "Created" in flex table
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
 	Then I see "Submit For Approval" button is not displayed at view detail page

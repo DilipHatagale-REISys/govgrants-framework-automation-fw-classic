@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import com.automation.rei.controller.Controller;
+import com.automation.rei.exception.ReiFrameworkCustomException;
 import com.automation.rei.handlers.Handlers;
 import com.framework.automation.projectmanager.GovGrantsManager;
 
@@ -56,8 +57,12 @@ public class ApprovalProcessPage extends GovGrantsManager {
      * 
      * @param programSubject
      * @param programType
+     * @throws ReiFrameworkCustomException 
      */
-    public void clickStartApprovalButton(String programSubject) {
+    public void clickStartApprovalButton(String programSubject) throws ReiFrameworkCustomException {
+        if(getStartButtonInPendingTasks(programSubject, "Start").size() == 0) {
+            throw new ReiFrameworkCustomException("Start button is not present for the program");
+        }
         for (WebElement tasks : getStartButtonInPendingTasks(programSubject, "Start")) {
             tasks.click();
             break;

@@ -134,6 +134,7 @@ Feature: Test all flex table component based scenarios
 	When I reconfigure "Flex Table Action" field "Action Behavior" as "Open in new window"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
-	When I click on "Edit" icon of status "Created" in flex table
+	When I search for "Test program for automation"
+	When I click on "Edit" icon of status "Created" for "Test program for automation" program in flex table
 	Then I see edit opens in new tab
 
