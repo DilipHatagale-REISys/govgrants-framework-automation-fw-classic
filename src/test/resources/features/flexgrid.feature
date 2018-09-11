@@ -10,6 +10,6 @@ Feature: Test all flex grid component based scenarios
 	When I login as "Automation" User
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
 	When I search for "Test program for automation"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automationm" program in flex table
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
 	When I click on "Plan" sub tab inside page layout 
 	Then I see "Automation Goals Objectives" as header

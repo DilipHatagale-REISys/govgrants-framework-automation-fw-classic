@@ -125,20 +125,6 @@ public class SideBarPage extends GovGrantsManager {
     }
 
     /**
-     * access side bar sub header detail
-     * 
-     * @param sideBarCategory
-     * @param accordianSubHeaderDetail
-     * @return
-     */
-    public WebElement getSideBarAccordianSubHeaderContent(String sideBarCategory, String accordianSubHeaderDetail) {
-        return reiDriver.WaitFor()
-                .WaitForElementToBePresent(By.xpath("//div[@id='sidebar-wrapper']//div/p/span[contains(text(),'"
-                        + sideBarCategory + "')]/../../following-sibling::div//div/ul/li/a[text()='"
-                        + accordianSubHeaderDetail + "']"));
-    }
-
-    /**
      * validate the sequence of accordian headers appearing
      * 
      * @param accordianHeaderName
@@ -151,19 +137,6 @@ public class SideBarPage extends GovGrantsManager {
             return true;
         } else
             return false;
-    }
-
-    /**
-     * access side bar header detail
-     * 
-     * @param sideBarCategory
-     * @param accordianSubHeaderDetail
-     * @return
-     */
-    public WebElement getSideBarAccordionHeaderContent(String sideBarCategory, String accordianHeaderDetail) {
-        return reiDriver.WaitFor().WaitForElementToBePresent(
-                By.xpath("//div[@id='sidebar-wrapper']//div/p/span[contains(text(),'" + sideBarCategory
-                        + "')]/../../following-sibling::div/div//b[text()='" + accordianHeaderDetail + "']"));
     }
 
     /**
