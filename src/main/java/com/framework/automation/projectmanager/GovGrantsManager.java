@@ -511,9 +511,23 @@ public class GovGrantsManager extends ProjectWebServices {
     public void clickSubTabsInsideTableView(String tabName) {
         reiDriver.WaitFor().WaitForElementToBePresent(By.xpath("//div[@id='myTabs']/ul/li/a[@name='" + tabName + "']"))
                 .click();
-        ;
     }
 
+    /**
+     * get specific quick search
+     * @param category
+     * @return
+     */
+    public By getSpecificQuickSearch(String category) {
+        By quickSearch = null;
+        switch(category) {
+        case "Program Performance Mgmt Grid View":
+            quickSearch=By.cssSelector(
+                    "div#toggleFGridProgramPerformanceMgmtGridView>div input[aria-label='Quick Search Field']");
+            break;    
+        }
+        return quickSearch;
+    }
     /******* "Local Methods with Limited functionality - Private" **********/
 
 }

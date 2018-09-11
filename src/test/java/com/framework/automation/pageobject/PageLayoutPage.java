@@ -28,6 +28,7 @@ public class PageLayoutPage extends GovGrantsManager {
 
     /**
      * click on the sub tab after clicking flex table icon
+     * 
      * @param subTab
      */
     public void clickSubTab(String subTab) {
@@ -43,9 +44,8 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public void getHeaderButtonInsideDetailPage(String buttonName) {
         try {
-            reiDriver.WaitFor().makeThreadSleep(1500);
-            reiDriver.findMyElement()
-                    .getElement(By.xpath("//div[@id='headerButtonsPanel']//*[@title='" + buttonName + "']")).click();
+            reiDriver.WaitFor().WaitForElementToBePresent(
+                    By.xpath("//div[@id='headerButtonsPanel']//*[@title='" + buttonName + "']")).click();
         } catch (Exception e) {
             e.printStackTrace();
         }
