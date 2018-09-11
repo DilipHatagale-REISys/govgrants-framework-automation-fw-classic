@@ -3,16 +3,19 @@
 	<configuration>
 		<encoding>UTF-8</encoding>
 		<theme>dark</theme>
-		<documentTitle>GovGrants Framework</documentTitle>
-		<reportName>REI - Automation Framework -for- ** GovGrants Framework **
-		</reportName>
-		<reportHeadline> - v1.0.0</reportHeadline>
-
+		<documentTitle>REI - Automation Framework</documentTitle>
+		<reportName>REI - Automation Framework | Reliable Emerging Innovative --------------- GovGrants Framework Test Automation Report</reportName>
 		<!-- settings to enable/disable views -->
 		<enableCategoryView>false</enableCategoryView>
 		<enableAuthorView>true</enableAuthorView>
-		<enableExceptionView>true</enableExceptionView>
-		<enableTestRunnerLogsView>true</enableTestRunnerLogsView>
-		<enableTimeline>true</enableTimeline>
+		<enableExceptionView>false</enableExceptionView>
+		<enableTestRunnerLogsView>false</enableTestRunnerLogsView>
+		<enableTimeline>false</enableTimeline>
+		<testViewChartLocation>bottom</testViewChartLocation>
+		<styles>
+      <![CDATA[
+        
+      ]]>
+    </styles>
 	</configuration>
 </extentreports>
