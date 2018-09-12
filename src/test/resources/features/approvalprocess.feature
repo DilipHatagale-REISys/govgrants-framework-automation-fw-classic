@@ -81,8 +81,8 @@ Feature: Test all approval process component based scenarios
 	
 	@33099 @all @approverTaskNotCreatedPrograms-Programs
 	Scenario: Change approver setting for not receiveing approve task in configuration and validate that pending approver task is not displayed	
-	Given I setup "Program" field "Status" as "Created" with filter clause on field "Automation Program -SA to C"
 	Given I have default configuration for "Approval Process Steps Cache" field "Field API Name" as "ProgramApprover__c" with filter ""
+	Given I setup "Program" field "Status" as "Created" with filter clause on field "Automation Program -SA to C"
 	Given I setup filter clause for "General" in "Program_Manager_Approver" for field "" having value ""
 	And I reconfigure "Approval Process Steps Cache" field "Field API Name" as ""
 	When I login as "Automation" User 
@@ -140,3 +140,4 @@ Feature: Test all approval process component based scenarios
 	When I enter Approval comment
 	And I click submit
 	Then I see confirmation box with body "Confirmation box for automation" is displayed
+
