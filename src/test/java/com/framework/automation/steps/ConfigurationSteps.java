@@ -29,9 +29,13 @@ public class ConfigurationSteps {
 
     @Description("Setting up configuration back to default")
     @Given("^I have default configuration for \"([^\"]*)\" field \"([^\"]*)\" as \"([^\"]*)\" with filter \"([^\"]*)\"$")
-    public void setComponentToDefault(String componentName, String fieldName, String orignalValue, String newValue)
+    public void setComponentToDefault(String componentName, String fieldName, String orignalValue, String newFilterValue)
             throws IOException {
-        projectAPI.setUpDefaultParameters(componentName, fieldName, orignalValue, newValue);
+        if(newFilterValue.contains("Automation Program")) {
+            projectAPI.setUpDefaultProgramParameters(componentName, fieldName, orignalValue, newFilterValue);
+        }else {
+        projectAPI.setUpDefaultParameters(componentName, fieldName, orignalValue, newFilterValue);
+        }
     }
 
     @Description("Setting up configuration for test")
@@ -44,7 +48,7 @@ public class ConfigurationSteps {
     @Given("^I setup \"([^\"]*)\" field \"([^\"]*)\" as \"([^\"]*)\" with filter clause on field \"([^\"]*)\"$")
     public void setUpProgramStatus(String componentName, String fieldName, String value, String filterField)
             throws IOException {
-        projectAPI.initilizeSalesForceIdFilter(componentName, filterField, "", "");
-        projectAPI.setConfigurationTest(componentName, fieldName, value);
+        projectAPI.initilizeSalesForceIdFilter_Program(componentName, filterField, "", "");
+        projectAPI.setConfigurationForProgram(componentName, fieldName, value);
     }
 }

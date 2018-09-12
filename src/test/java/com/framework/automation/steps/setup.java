@@ -41,6 +41,7 @@ public class setup {
     public void wrapUp(Scenario scenario) {
         try {
             projectAPI.postReConfigCall();
+            projectAPI.postProgramReConfigCall();
         } catch (Exception e) {
 
         }
