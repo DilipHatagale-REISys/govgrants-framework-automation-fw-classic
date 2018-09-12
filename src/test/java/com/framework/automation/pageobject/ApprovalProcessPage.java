@@ -160,6 +160,16 @@ public class ApprovalProcessPage extends GovGrantsManager {
     public void assertSpecificApprovalNotDisplayed(String subject) {
         Assert.assertEquals(0, isSpecificApprovalTask(subject, "Start").size());
     }
+    
+    /**
+	 * Assert success message text
+	 * 
+	 * @param status
+	 */
+	public void assertSuccessInsideStatusRow(String status) {
+		Assert.assertTrue(isSuccessDisplayed(status));
+	}
+    
 
     /*********
      * "Local Methods with complete functionality - private"
@@ -259,4 +269,51 @@ public class ApprovalProcessPage extends GovGrantsManager {
         System.out.println("size of pending task " + approvalStartButtonTable.size());
         return approvalStartButtonTable;
     }
+    
+    /**
+	 * click on Select double arrow dropdown inside email log of operate tab for
+	 * admin portal
+	 */
+	public void clickOnSelectDoubleArrowDropdown() {
+		reiDriver.WaitFor().WaitForElementToBePresent(clickDoubleArrowDropDown).click();
+	}
+	
+	/**
+	 * get values from double arrow dropdown inside email log for admin portal
+	 * 
+	 * @param options
+	 * @return
+	 */
+	public WebElement getValuesFromDoubleArrowDropDown(String options) {
+		return reiDriver.WaitFor().WaitForElementToBePresent(
+				By.xpath("//div[@id='dropdownListView']//ul/li//a[@title='" + options + "']"));
+	}
+	
+	/**
+	 * validate if success message is displayed inside status row at Admin portal
+	 * 
+	 * @param status
+	 * @return
+	 */
+	private boolean isSuccessDisplayed(String status) {
+		boolean flag = false;
+		try {
+			if (getSuccessText(status).getAttribute("innerText").equals(status)) {
+				flag = true;
+			}
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+		}
+		return flag;
+	}
+	
+	/**
+	 * get specific Approved text
+	 * 
+	 * @param status
+	 * @return
+	 */
+	private WebElement getSuccessText(String status) {
+		return reiDriver.findMyElement().getElement(By.xpath(
+				"//div[@class='tab-inner-content']//div[3]/div[2]//dl//dd/span[contains(@class,'wordPre field-value')]"));
+	}
 }
