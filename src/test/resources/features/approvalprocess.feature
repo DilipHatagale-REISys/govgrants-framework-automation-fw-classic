@@ -116,7 +116,7 @@ Feature: Test all approval process component based scenarios
 	When I re-login as "Automation" with "QA" url
 	When I complete steps of admin portal
 	When I navigate to "Activities" to reach "Email Logs" side bar content
-	When I select "Success Emails" from double headed dropdown
+	When I select "Success Emails" from double headed dropdown inside admin portal
 	When I click on "View" icon of status "Program_Approved_Email_Template" inside admin portal
 	Then I see "Success" is displayed
 	
@@ -125,14 +125,14 @@ Feature: Test all approval process component based scenarios
 	Given I setup "Program" field "Status" as "Created" with filter clause on field "Automation Program -SA to C"
 	Given I have default configuration for "Approval Process Steps Cache" field "Approve Confirmation Title" as "" with filter ""
 	Given I setup filter clause for "General" in "Program_Manager_Approver" for field "" having value ""
-    When I reconfigure "Approval Process Steps Cache" field "Approve Confirmation Title" as "Automation Approval"
-    When I reconfigure "Approval Process Steps Cache" field "Approve Confirmation Message" as "Confirmation box for automation"
-    When I login as "Automation" User 
+	When I reconfigure "Approval Process Steps Cache" field "Approve Confirmation Title" as "Automation Approval"
+	When I reconfigure "Approval Process Steps Cache" field "Approve Confirmation Message" as "Confirmation box for automation"
+	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
 	When I search for "Automation Program -SA to C"
 	When I click on "Edit" icon of status "Created" for "Automation Program -SA to C" program in flex table
 	And I complete submit for approval
-    When I re-login as "Automation-PM" with "QA" url
+	When I re-login as "Automation-PM" with "QA" url
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
 	And I navigate to "Tasks" to reach "Pending" side bar content
 	When I start the approval with subject "Automation Program -SA to C"

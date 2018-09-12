@@ -88,7 +88,7 @@ public class ApprovalProcessSteps {
 		approvalProcesPage.clickPhasesNaveBar("Operate");
 	}
 
-	@When("^I select \"([^\"]*)\" from double headed dropdown$")
+	@When("^I select \"([^\"]*)\" from double headed dropdown inside admin portal$")
 	public void selectSpecificOptionsFromDropDown(String options) {
 		approvalProcesPage.clickOnSelectDoubleArrowDropdown();
 		approvalProcesPage.getValuesFromDoubleArrowDropDown(options).click();
