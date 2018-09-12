@@ -162,11 +162,11 @@ public class ApprovalProcessPage extends GovGrantsManager {
     }
     
     /**
-	 * Assert success message text
+	 * Assert success message text inside success email of admin portal
 	 * 
 	 * @param status
 	 */
-	public void assertSuccessInsideStatusRow(String status) {
+	public void assertSuccessInsideStatusRowInsideSuccessEmails(String status) {
 		Assert.assertTrue(isSuccessDisplayed(status));
 	}
     
@@ -270,25 +270,6 @@ public class ApprovalProcessPage extends GovGrantsManager {
         return approvalStartButtonTable;
     }
     
-    /**
-	 * click on Select double arrow dropdown inside email log of operate tab for
-	 * admin portal
-	 */
-	public void clickOnSelectDoubleArrowDropdown() {
-		reiDriver.WaitFor().WaitForElementToBePresent(clickDoubleArrowDropDown).click();
-	}
-	
-	/**
-	 * get values from double arrow dropdown inside email log for admin portal
-	 * 
-	 * @param options
-	 * @return
-	 */
-	public WebElement getValuesFromDoubleArrowDropDown(String options) {
-		return reiDriver.WaitFor().WaitForElementToBePresent(
-				By.xpath("//div[@id='dropdownListView']//ul/li//a[@title='" + options + "']"));
-	}
-	
 	/**
 	 * validate if success message is displayed inside status row at Admin portal
 	 * 
@@ -307,7 +288,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
 	}
 	
 	/**
-	 * get specific Approved text
+	 * get success text inside success email of email logs
 	 * 
 	 * @param status
 	 * @return

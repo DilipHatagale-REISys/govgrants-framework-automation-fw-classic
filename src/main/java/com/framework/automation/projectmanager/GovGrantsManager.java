@@ -23,11 +23,11 @@ public class GovGrantsManager extends ProjectWebServices {
 	public String defaultComment = "Automation testing";
 	public String defaultQaUrl = "https://ggptest5-dev-ed.my.salesforce.com";
 	private final String completeTableRowString;
-	public final By navigationLogo, loginDropDown, searchInput, rightHeaderBars, leftPanelHeader, topRightDropDown,
+	public final By navigationLogo, loginDropDown, searchInput, rightHeaderBars,topRightDropDown,
 			egmsHeader, secondTopRightFilter, completeTableHeader, completeTableRow, sideBarHeadersList,
 			advanceFilterButton, menuIcon, selectRecordCheckBox, totalRowsCalc, totalRowCount,
 			flexTablelastRowNameAsTotal, editIconForProgramFlexTable, pendingTasksTableRef, dangerAlert,
-			confirmationBoxMessage, selectDropdown, specificUserInsideDropdown, quickSearchButton,clickDoubleArrowDropDown;
+			confirmationBoxMessage, selectDropdown, specificUserInsideDropdown, quickSearchButton,doubleArrowDropDown;
 
 	/**
 	 * Super Constructor
@@ -41,7 +41,7 @@ public class GovGrantsManager extends ProjectWebServices {
 		navigationLogo = By.cssSelector("div#holdon-overlay>div>div>div>img.nav-logo");
 		searchInput = By.cssSelector("div>div.quick-search>div>input");
 		rightHeaderBars = By.xpath("//div[@class='panel-heading']//div[contains(@class,'header-bars')]");
-		leftPanelHeader = By.xpath("//div[contains(@class,'panel-title')]//div[@id='dropdownListView']");
+		doubleArrowDropDown = By.xpath("//div[contains(@class,'panel-title')]//div[@id='dropdownListView']");
 		loginDropDown = By.xpath("//div/ul/li[@class='dropdown userDropdown']");
 		topRightDropDown = By.xpath("//div/ul/li[@class='dropdown appDropdown']");
 		egmsHeader = By.xpath("//div[@class='navbar-header']/span[text()='Enterprise Grants Management System']");
@@ -70,8 +70,6 @@ public class GovGrantsManager extends ProjectWebServices {
 		specificUserInsideDropdown = By.xpath("//div[@id='select2-drop']//ul//li/div[@class='select2-result-label']");
 		quickSearchButton = By.cssSelector("div.input-group-btn>a>i.fa.fa-search");
 		completeTableRowString = "//div[@class='panel-heading']/following-sibling::div[contains(@class,'panel-body')]//div/table/tbody/tr";
-		clickDoubleArrowDropDown = By
-				.xpath("//div[@id='dropdownListView']//a[@class='tableLinks dropdown-toggle tableLinksForHeader']");
 	}
 
 	/******* "Key Methods with complete functionality - Public" *****************/
@@ -242,10 +240,10 @@ public class GovGrantsManager extends ProjectWebServices {
 	}
 
 	/**
-	 * click on left panel header
+	 * genric method to click on the double arrow dropdown
 	 */
 	public void clickLeftPanelHeader() {
-		reiDriver.WaitFor().WaitForElementToBePresent(leftPanelHeader).click();
+		reiDriver.WaitFor().WaitForElementToBePresent(doubleArrowDropDown).click();
 	}
 
 	/**
@@ -262,15 +260,15 @@ public class GovGrantsManager extends ProjectWebServices {
 	}
 
 	/**
-	 * select item from panel header - left
+	 * select item from double arrow dropdown 
 	 * 
 	 * @param leftPanelItem
 	 * @return
 	 */
-	public WebElement getLeftPanelHeader(String leftPanelItem) {
+	public WebElement getLeftPanelHeader(String dropdownoption) {
 		return reiDriver.WaitFor().WaitForElementToBePresent(By.xpath(
 				"//div[@class='panel-heading']//div[contains(@class,'panel-title')]//div[@id='dropdownListView']/ul/li/a[@title='"
-						+ leftPanelItem + "']"));
+						+ dropdownoption + "']"));
 	}
 
 	/**

@@ -89,9 +89,9 @@ public class ApprovalProcessSteps {
 	}
 
 	@When("^I select \"([^\"]*)\" from double headed dropdown inside admin portal$")
-	public void selectSpecificOptionsFromDropDown(String options) {
-		approvalProcesPage.clickOnSelectDoubleArrowDropdown();
-		approvalProcesPage.getValuesFromDoubleArrowDropDown(options).click();
+	public void selectSpecificOptionsFromDropDown(String dropdownoption) {
+		approvalProcesPage.clickLeftPanelHeader();
+		approvalProcesPage.getLeftPanelHeader(dropdownoption).click();
 	}
 
 	@When("^I click on \"([^\"]*)\" icon of status \"([^\"]*)\" inside admin portal$")
@@ -101,6 +101,6 @@ public class ApprovalProcessSteps {
 	
 	@Then("^I see \"([^\"]*)\" is displayed$")
 	public void assertSuccessForEmailToProgramOwner(String status) {
-		approvalProcesPage.assertSuccessInsideStatusRow(status);
+		approvalProcesPage.assertSuccessInsideStatusRowInsideSuccessEmails(status);
 	}
 }
