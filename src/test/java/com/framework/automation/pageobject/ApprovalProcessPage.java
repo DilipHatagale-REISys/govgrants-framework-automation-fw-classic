@@ -160,6 +160,16 @@ public class ApprovalProcessPage extends GovGrantsManager {
     public void assertSpecificApprovalNotDisplayed(String subject) {
         Assert.assertEquals(0, isSpecificApprovalTask(subject, "Start").size());
     }
+    
+    /**
+	 * Assert success message text inside success email of admin portal
+	 * 
+	 * @param status
+	 */
+	public void assertSuccessInsideStatusRowInsideSuccessEmails(String status) {
+		Assert.assertTrue(isSuccessDisplayed(status));
+	}
+    
 
     /*********
      * "Local Methods with complete functionality - private"
@@ -259,4 +269,32 @@ public class ApprovalProcessPage extends GovGrantsManager {
         System.out.println("size of pending task " + approvalStartButtonTable.size());
         return approvalStartButtonTable;
     }
+    
+	/**
+	 * validate if success message is displayed inside status row at Admin portal
+	 * 
+	 * @param status
+	 * @return
+	 */
+	private boolean isSuccessDisplayed(String status) {
+		boolean flag = false;
+		try {
+			if (getSuccessText(status).getAttribute("innerText").equals(status)) {
+				flag = true;
+			}
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+		}
+		return flag;
+	}
+	
+	/**
+	 * get success text inside success email of email logs
+	 * 
+	 * @param status
+	 * @return
+	 */
+	private WebElement getSuccessText(String status) {
+		return reiDriver.findMyElement().getElement(By.xpath(
+				"//div[@class='tab-inner-content']//div[3]/div[2]//dl//dd/span[contains(@class,'wordPre field-value')]"));
+	}
 }
