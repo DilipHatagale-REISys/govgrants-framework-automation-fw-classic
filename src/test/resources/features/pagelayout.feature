@@ -1,5 +1,6 @@
 @pagelayout-component
-Feature: Test all page layout component based scenarios 
+Feature: Page Layout Component Scenarios 
+	Test all page layout component based scenarios 
 	As a configuration manager i make different configurational changes in page layout component and will validate them.
 	
 	@32762 @all @setUpHeaderWithContent-Programs

@@ -8,13 +8,36 @@ public class FlexGrid {
         String finalPayload = null;
         switch (fieldLabel.toUpperCase()) {
         case "HEADER":
-                finalPayload = String.format(payloadForStringValue,
-                        String.valueOf(SObjectAPIs.GNT__DataTableConfig__c),
-                        new ApiUtilities().getComponentCoreFieldId(
-                                String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
-                        String.valueOf(SObjectAPIs.GNT__Header__c), value);
-                break;
-            }
+            finalPayload = String.format(
+                    payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), new ApiUtilities()
+                            .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+                    String.valueOf(SObjectAPIs.GNT__Header__c), value);
+            break;
+        case "DISABLE MENU":
+            finalPayload = String.format(
+                    payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), new ApiUtilities()
+                            .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+                    String.valueOf(SObjectAPIs.GNT__DisableMenu__c), value);
+            break;
+        case "ENABLE QUICK SEARCH":
+            finalPayload = String.format(
+                    payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), new ApiUtilities()
+                            .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+                    String.valueOf(SObjectAPIs.GNT__EnableQuickSearch__c), value);
+            break;
+        case "ENABLE EXPORT":
+            finalPayload = String.format(
+                    payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), new ApiUtilities()
+                            .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+                    String.valueOf(SObjectAPIs.GNT__EnableExport__c), value);
+            break;
+        case "DISPLAY FIELD NAMES":
+            finalPayload = String.format(
+                    payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), new ApiUtilities()
+                            .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+                    String.valueOf(SObjectAPIs.GNT__FieldNames__c), value);
+            break;
+        }
         System.out.println(finalPayload);
         return finalPayload;
     }

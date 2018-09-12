@@ -1,5 +1,6 @@
 @flextable-component 
-Feature: Test all flex table component based scenarios 
+Feature: Flex Table Component Scenarios 
+	Test all flex table component based scenarios 
 	As a configuration manager i make different configurational changes in flex table component and will validate them.
 
 	@32329 @all @changeOfFlexTableTitle-Programs

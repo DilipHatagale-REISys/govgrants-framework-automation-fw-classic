@@ -1,5 +1,6 @@
 @login
-Feature: Test all login based scenarios
+Feature: Login Scenarios 
+	Test all login based scenarios
 
   @validlogin @smoke
   Scenario Outline: User enters correct username and password to login and reaches homepage

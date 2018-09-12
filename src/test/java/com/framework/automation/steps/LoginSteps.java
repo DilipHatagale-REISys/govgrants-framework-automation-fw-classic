@@ -44,7 +44,7 @@ public class LoginSteps {
     public void reLogin(String user) throws ReiFrameworkCustomException {
         loginPage.clickLogOut();
         loginPage.enterAsUser(user);
-        loginPage.getToHomePage();
+        loginPage.getToAdminPage();
     }
 
     @Description("Click on Login button")
@@ -54,11 +54,11 @@ public class LoginSteps {
     }
 
     @When("^I re-login as \"([^\"]*)\" with \"([^\"]*)\" url$")
-    public void reLoginWithDefaultQAUrl(String user,String envName) throws ReiFrameworkCustomException, IOException  {    
+    public void reLoginWithUrl(String user,String envName) throws ReiFrameworkCustomException, IOException  {    
         loginPage.clickLogOut();
         loginPage.navigateToURL(envName);
         loginPage.enterAsUser(user);
-        loginPage.getToHomePage();
+        loginPage.getToAdminPage();
     }
     
     @Description("Assert login is successful and landed on login page")
