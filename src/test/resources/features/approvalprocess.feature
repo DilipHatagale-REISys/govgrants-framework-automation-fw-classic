@@ -1,5 +1,6 @@
 @approvalprocess-componenet
-Feature: Test all approval process component based scenarios 
+Feature: Approval Process Component Scenarios
+	Test all approval process component based scenarios 
 	As a configuration manager i make different configurational changes in approval process component and will validate them.
 	
 	@32971 @all @hideApproveOption-Programs
@@ -95,7 +96,7 @@ Feature: Test all approval process component based scenarios
 	When I navigate to "Tasks" to reach "Pending" side bar content
 	Then I see approval with subject as "Automation Program -SA to C" is not displayed
 	
-	@33174 @all @successEmailSentToProgramOwner-Programs
+	@33174 @all @successEmailSentToProgramOwner-Programs @wip
 	Scenario: Setup email setting in configuration and validate that program owner receiving email for program approval
 	Given I setup "Program" field "Status" as "Created" with filter clause on field "Automation Program -SA to C"
 	Given I have default configuration for "Approval Process Steps Cache" field "Email Field API Name" as "CreatedById" with filter ""

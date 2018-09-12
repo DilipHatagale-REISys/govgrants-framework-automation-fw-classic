@@ -77,9 +77,8 @@ public class LoginPage extends GovGrantsManager {
     /**
      * Complete login till reached home page
      */
-    public void getToHomePage() {
+    public void getToAdminPage() {
         clickLogin();
-        waitForEgmsHeader();
     }
 
     /**

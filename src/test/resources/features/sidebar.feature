@@ -1,5 +1,6 @@
 @sidebar-component 
-Feature: Test all sidebar component based scenarios 
+Feature: Side bar Component Scenarios 
+	Test all sidebar component based scenarios 
 	As a configuration manager i make different configurational changes in side bar component and will validate them.
 
 	@31625 @all @validateChangeinTaskMenuSequence-gHome 
