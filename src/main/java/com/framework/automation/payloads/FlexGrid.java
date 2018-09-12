@@ -25,6 +25,18 @@ public class FlexGrid {
                             .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
                     String.valueOf(SObjectAPIs.GNT__EnableQuickSearch__c), value);
             break;
+        case "ENABLE EXPORT":
+            finalPayload = String.format(
+                    payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), new ApiUtilities()
+                            .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+                    String.valueOf(SObjectAPIs.GNT__EnableExport__c), value);
+            break;
+        case "DISPLAY FIELD NAMES":
+            finalPayload = String.format(
+                    payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), new ApiUtilities()
+                            .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+                    String.valueOf(SObjectAPIs.GNT__FieldNames__c), value);
+            break;
         }
         System.out.println(finalPayload);
         return finalPayload;
