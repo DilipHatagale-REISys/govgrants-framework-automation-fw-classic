@@ -140,4 +140,3 @@ Feature: Test all approval process component based scenarios
 	When I enter Approval comment
 	And I click submit
 	Then I see confirmation box with body "Confirmation box for automation" is displayed
-
