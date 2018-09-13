@@ -78,12 +78,12 @@ public class FlexTableSteps {
         flexTablePage.assertFlexTableStatusDisabled(statusCategory);
     }
 
-    @Then("^Then I see new tab is opened$")
+    @Then("^I see new tab is opened$")
     public void assertNewTabOpenOnEditClick() {
         flexTablePage.assertEditWithNewTab();
     }
     
-    @Then("^Then I see no new tab is opene$")
+    @Then("^I see no new tab is opened$")
     public void assertNoNewTabOpensOnEditClick() {
         flexTablePage.assertEditOpenInSameTab();
     }

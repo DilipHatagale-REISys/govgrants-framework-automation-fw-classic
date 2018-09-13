@@ -10,7 +10,7 @@ Feature: Flex Grid Component Scenarios
 	Given I setup filter clause for "General" in "ProgramStrategicGoals" for field "" having value ""
 	When I reconfigure "Flex Grid" field "Header" as "Automation Goals Objectives"
 	When I login as "Automation" User
-	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
 	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
 	When I click on "Plan" sub tab inside page layout 
@@ -22,7 +22,7 @@ Feature: Flex Grid Component Scenarios
 	Given I setup filter clause for "General" in "ProgramStrategicGoals" for field "" having value ""
 	When I reconfigure "Flex Grid" field "Disable Menu" as "true"
 	When I login as "Automation" User
-	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
 	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
 	When I click on "Plan" sub tab inside page layout 
@@ -34,7 +34,7 @@ Feature: Flex Grid Component Scenarios
 	Given I setup filter clause for "General" in "ProgramStrategicGoals" for field "" having value ""
 	When I reconfigure "Flex Grid" field "Enable Quick Search" as "false"
 	When I login as "Automation" User
-	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
 	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
 	When I click on "Plan" sub tab inside page layout 
@@ -46,7 +46,7 @@ Feature: Flex Grid Component Scenarios
 	Given I setup filter clause for "General" in "ProgramStrategicGoals" for field "" having value ""
 	When I reconfigure "Flex Grid" field "Enable Export" as "false"
 	When I login as "Automation" User
-	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
 	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
 	When I click on "Plan" sub tab inside page layout 
@@ -59,7 +59,7 @@ Feature: Flex Grid Component Scenarios
 	Given I setup filter clause for "General" in "ProgramStrategicGoals" for field "" having value ""
 	When I reconfigure "Flex Grid" field "Display Field Names" as "Type__c,Title__c,Description__c,Status__c"
 	When I login as "Automation" User
-	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
 	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
 	When I click on "Plan" sub tab inside page layout

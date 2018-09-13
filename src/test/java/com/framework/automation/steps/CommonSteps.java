@@ -17,14 +17,14 @@ public class CommonSteps {
     }
 
     @Description("click in admin menu to rechout to govegrants homepage")
-    @When("^I access the \"([^\"]*)\"$")
-    public void accessthehomepage(String tabName) {
-        govGrantsManager.clickAdminNavBar(tabName);
+    @When("^I access the \"([^\"]*)\" for \"([^\"]*)\" app$")
+    public void accessthehomepage(String tabName,String appName) {
+        govGrantsManager.clickAdminNavBar(tabName,appName);
     }
 
-    @When("^I access the \"([^\"]*)\" to reach \"([^\"]*)\" tab$")
-    public void reachOutToSpecificPhasesTab(String adminTabName, String phaseTabName) {
-        govGrantsManager.clickAdminNavBar(adminTabName);
+    @When("^I access the \"([^\"]*)\" for \"([^\"]*)\" app to reach \"([^\"]*)\" tab$")
+    public void reachOutToSpecificPhasesTab(String adminTabName,String appName,String phaseTabName) {
+        govGrantsManager.clickAdminNavBar(adminTabName,appName);
         govGrantsManager.clickPhasesNaveBar(phaseTabName);
     }
 

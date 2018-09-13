@@ -90,18 +90,11 @@ public class LoginPage extends GovGrantsManager {
 
     /******* "Local Methods with Limited functionality " **********/
 
-    /**
-     * Grab element if present after waiting
-     */
-    public WebElement getGovGrantsLauncher() {
-        return reiDriver.WaitFor()
-                .WaitForElementToBePresent(By.xpath("//a[contains(@title,'GovGrants Launcher Tab')]"));
-    }
 
     /**
      * check if home page logo is present
      */
-    public boolean isHomePageLogoPresent() {
+    private boolean isHomePageLogoPresent() {
         return reiDriver.findMyElement().getElement(egmsHeader)
                 .isDisplayed();
     }

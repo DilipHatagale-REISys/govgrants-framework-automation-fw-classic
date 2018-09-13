@@ -9,7 +9,7 @@ Feature: Flex Table Component Scenarios
 	Given I setup filter clause for "Flex Table List" in "Programs" for field "Name" having value "FLV-1837"
 	When I reconfigure "Flex Table List" field "Label" as "Automation"
 	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	Then I see "Automation" shown as flex table title
 	
 	@32331 @all @disablingExportFile-Programs
@@ -18,7 +18,7 @@ Feature: Flex Table Component Scenarios
 	Given I setup filter clause for "General" in "Programs" for field "" having value ""
 	When I reconfigure "Flex Table" field "Enable Export" as "false"
 	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I click on top right parallel lines bar
 	Then I see "Download as PDF""Download as CSV" options disabled
 	
@@ -28,7 +28,7 @@ Feature: Flex Table Component Scenarios
 	Given I setup filter clause for "General" in "Programs" for field "" having value ""
 	When I reconfigure "Flex Table" field "Enable Quick Search" as "false"
 	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	Then I see quick search option disabled
 	
 	@32333 @all @disablingAdvanceFilter-Programs
@@ -37,7 +37,7 @@ Feature: Flex Table Component Scenarios
 	Given I setup filter clause for "General" in "Programs" for field "" having value ""
 	When I reconfigure "Flex Table" field "Enable Filter" as "false"
 	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
     Then I see Advance filter is disabled from planning flex table
         
     @32334 @all @disablingMenuIcon-Program
@@ -46,7 +46,7 @@ Feature: Flex Table Component Scenarios
 	Given I setup filter clause for "General" in "Programs" for field "" having value ""
 	When I reconfigure "Flex Table" field "Disable Menu" as "true"
 	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	Then I see Menu icon is disabled from planning flex table
 	
 	@32335 @all @enableRecordSelectionForFlex-Programs
@@ -55,7 +55,7 @@ Feature: Flex Table Component Scenarios
 	Given I setup filter clause for "General" in "Programs" for field "" having value ""
 	When I reconfigure "Flex Table" field "Enable Record Selection" as "true"
 	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	Then I see select check box enabled in flex table
 	
 	@32336 @all @disablingAmountTotalForFlex-Programs
@@ -64,7 +64,7 @@ Feature: Flex Table Component Scenarios
 	Given I setup filter clause for "General" in "Programs" for field "" having value ""
 	When I reconfigure "Flex Table" field "Enable Total Row" as "false"
 	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	Then I see no total amount in flex table
 	
 	@32337 @all @disablingTotalRowCount-Programs
@@ -73,7 +73,7 @@ Feature: Flex Table Component Scenarios
 	Given I setup filter clause for "General" in "Programs" for field "" having value ""
 	When I reconfigure "Flex Table" field "Enable Total Records Count" as "false"
 	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	Then I see no total row count in flex table
 	
 	@32338 @all @additionOfLabelForRowNamedTotal-Programs
@@ -82,7 +82,7 @@ Feature: Flex Table Component Scenarios
 	Given I setup filter clause for "General" in "Programs" for field "Total Row Label" having value "Total"
 	When I reconfigure "Flex Table" field "Total Row Label" as "Automation Total"
 	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	Then I see changed label as "Automation Total" of last row name
 	
 	@32339 @all @enableAutoIndex-Programs
@@ -91,7 +91,7 @@ Feature: Flex Table Component Scenarios
 	Given I setup filter clause for "General" in "Programs" for field "" having value ""
 	When I reconfigure "Flex Table" field "Enable Auto Index" as "true"
 	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	Then I see " #" in flex table header
 
 	@32543 @all @addingfieldNamesOfDifferentDataTypes-Programs
@@ -100,7 +100,7 @@ Feature: Flex Table Component Scenarios
 	Given I setup filter clause for "General" in "Programs" for field "" having value ""
 	When I reconfigure "Flex Table" field "Display Field Names" as "<newFieldsApi>"
 	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	Then I see "<fieldDisplayNames>" in flex table header
 	
 	Examples:
@@ -121,7 +121,7 @@ Feature: Flex Table Component Scenarios
 	Given I setup filter clause for "Flex table list" in "Programs" for field "Name" having value "FLV-1837"
 	When I reconfigure "Flex Table List" field "Filter Clause" as "<newSoqlFilter>"
 	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	Then I see no "Created" status in flex table
 	
 	Examples:
@@ -134,7 +134,7 @@ Feature: Flex Table Component Scenarios
 	Given I setup filter clause for "Flex Table Action" in "Programs" for field "Name" having value "Edit"
 	When I reconfigure "Flex Table Action" field "Action Behavior" as "Open in new window"
 	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
 	When I click on "Edit" icon of status "Created" for "Test program for automation" program in flex table
 	Then I see new tab is opened
@@ -144,7 +144,7 @@ Feature: Flex Table Component Scenarios
 	Given I setup filter clause for "Flex Table Action" in "Programs" for field "Name" having value "Edit"
 	When I reconfigure "Flex Table Action" field "Action Behavior" as "Open in same window"
 	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
 	When I click on "Edit" icon of status "Created" for "Test program for automation" program in flex table
 	Then I see no new tab is opened
@@ -155,7 +155,7 @@ Feature: Flex Table Component Scenarios
 	Given I setup filter clause for "Flex Table Action" in "Programs" for field "Name" having value "Edit"
 	When I reconfigure "Flex Table Action" field "Action Behavior" as "Open in overlay"
 	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
 	When I click on "Edit" icon of status "Created" for "Test program for automation" program in flex table
 	Then I see "Edit" opens in overLay window
