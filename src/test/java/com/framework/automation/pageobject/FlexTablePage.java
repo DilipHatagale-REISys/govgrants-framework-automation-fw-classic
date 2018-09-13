@@ -1,7 +1,5 @@
 package com.framework.automation.pageobject;
 
-import java.util.ArrayList;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -12,12 +10,14 @@ import com.framework.automation.projectmanager.GovGrantsManager;
 
 public class FlexTablePage extends GovGrantsManager {
     /******* "Variables and Locators" *****************/
+    private final By overLayFrame;
 
     /**
      * Constructor to handle dependency injection and framework library
      */
     public FlexTablePage(Controller controller, Handlers reiDriver) {
         super(controller, reiDriver);
+        overLayFrame = By.xpath("//iframe[@id='ProgramsiframeContentId']");
     }
 
     /******* "Key Methods with complete functionality - public" *****************/
@@ -125,6 +125,22 @@ public class FlexTablePage extends GovGrantsManager {
      */
     public void assertEditWithNewTab() {
         Assert.assertTrue(isNewTabOpensForEdit());
+    }
+
+    /**
+     * assert if Edit icon open in same tab or not
+     */
+    public void assertEditOpenInSameTab() {
+        Assert.assertTrue(isSameTabStaysForEdit());
+    }
+
+    /**
+     * assert if correct title is displayed in overlay iframe window
+     * 
+     * @param titleName
+     */
+    public void asserTextInOverLayIframe(String titleName) {
+        Assert.assertTrue(isSpecificOverlayDisplayed(titleName));
     }
 
     /*********
@@ -328,11 +344,46 @@ public class FlexTablePage extends GovGrantsManager {
      * @return
      */
     private Boolean isNewTabOpensForEdit() {
-        ArrayList<String> tabHandles = new ArrayList<String>(reiDriver.switchTo().getWindowsHandlers());
         boolean myNewTabFound = false;
-        if (tabHandles.size() > 1)
+        if (reiDriver.switchTo().getWindowsHandlers().size() > 1)
             myNewTabFound = true;
         return myNewTabFound;
     }
 
+    /**
+     * Boolean status of Edit icon opens in same tab
+     * 
+     * @return
+     */
+    private Boolean isSameTabStaysForEdit() {
+        boolean sameTabFound = false;
+        if (reiDriver.switchTo().getWindowsHandlers().size() == 1) {
+            sameTabFound = true;
+        }
+        return sameTabFound;
+    }
+
+    /**
+     * get webelemnt with title inside overlay iframe
+     * 
+     * @param titleName
+     * @return
+     */
+    private WebElement getOverLayTitle(String titleName) {
+        return reiDriver.WaitFor().WaitForElementToBePresent(By.xpath("//div//p[text()='" + titleName + "']"));
+    }
+
+    /**
+     * return true if overlay open up with the required title
+     * 
+     * @param titleName
+     * @return
+     */
+    private boolean isSpecificOverlayDisplayed(String titleName) {
+        boolean flag = false;
+        if (getOverLayTitle(titleName).isDisplayed()) {
+            flag = true;
+        }
+        return flag;
+    }
 }
