@@ -27,7 +27,7 @@ public class GovGrantsManager extends ProjectWebServices {
             secondTopRightFilter, completeTableHeader, completeTableRow, sideBarHeadersList, advanceFilterButton,
             menuIcon, selectRecordCheckBox, totalRowsCalc, totalRowCount, flexTablelastRowNameAsTotal,
             editIconForProgramFlexTable, pendingTasksTableRef, dangerAlert, confirmationBoxMessage, selectDropdown,
-            specificUserInsideDropdown, quickSearchButton, doubleArrowDropDown;
+            specificUserInsideDropdown, quickSearchButton, doubleArrowDropDown, navProfile_CurrentApp;
 
     /**
      * Super Constructor
@@ -70,6 +70,7 @@ public class GovGrantsManager extends ProjectWebServices {
         specificUserInsideDropdown = By.xpath("//div[@id='select2-drop']//ul//li/div[@class='select2-result-label']");
         quickSearchButton = By.cssSelector("div.input-group-btn>a>i.fa.fa-search");
         completeTableRowString = "//div[@class='panel-heading']/following-sibling::div[contains(@class,'panel-body')]//div/table/tbody/tr";
+        navProfile_CurrentApp = By.cssSelector("div#myNavbarProfile>ul>li>a>span");
     }
 
     /******* "Key Methods with complete functionality - Public" *****************/
@@ -105,7 +106,7 @@ public class GovGrantsManager extends ProjectWebServices {
      * 
      * @param tabName
      */
-    public void clickAdminNavBar(String tabName) {
+    public void clickAdminNavBar(String tabName, String appName) {
         try {
             reiDriver.WaitFor().WaitForElementToBePresent(By.xpath("//nav/ul/li/a[@title='" + tabName + "']")).click();
         } catch (Exception e) {
@@ -113,6 +114,7 @@ public class GovGrantsManager extends ProjectWebServices {
 
         }
         waitForEgmsHeader();
+        setUpCustomAppDropDown(appName);
     }
 
     /**
@@ -206,17 +208,17 @@ public class GovGrantsManager extends ProjectWebServices {
     }
 
     /**
-     * click on top right drop down. As a grantee etc.
-     */
-    public void clickTopRightDropDown() {
-        reiDriver.WaitFor().WaitForElementToBePresent(topRightDropDown).click();
-    }
-
-    /**
      * click on logout menu.
      */
     public void clickLoginDropDown() {
         reiDriver.WaitFor().WaitForElementToBePresent(loginDropDown).click();
+    }
+
+    /**
+     * click on top right drop down. As a grantee etc.
+     */
+    public void clickTopRightDropDown() {
+        reiDriver.WaitFor().WaitForElementToBePresent(topRightDropDown).click();
     }
 
     /**
@@ -530,4 +532,19 @@ public class GovGrantsManager extends ProjectWebServices {
         return quickSearch;
     }
 
+    /******* "Local Methods with Limited functionality " **********/
+    
+    /**
+     * handles custom app. selects if current app on page is not desired one
+     * 
+     * @param appName
+     */
+    private void setUpCustomAppDropDown(String appName) {
+        if (!(reiDriver.WaitFor().WaitForElementToBePresent(navProfile_CurrentApp).getText()
+                .equalsIgnoreCase(appName))) {
+            clickTopRightDropDown();
+            reiDriver.WaitFor().makeThreadSleep(500);
+            getTopRightDropDown(appName).click();
+        }
+    }
 }

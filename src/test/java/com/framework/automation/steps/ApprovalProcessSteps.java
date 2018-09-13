@@ -79,15 +79,6 @@ public class ApprovalProcessSteps {
 		approvalProcesPage.assertSpecificApprovalNotDisplayed(subject);
 	}
 
-	@When("^I complete steps of admin portal$")
-	public void completeStepsOfAdminPortal() {
-		approvalProcesPage.clickAdminNavBar("GovGrants Launcher Tab");
-		approvalProcesPage.clickPhasesNaveBar("Planning");
-		approvalProcesPage.clickTopRightDropDown();
-		approvalProcesPage.getTopRightDropDown("As an Administrator").click();
-		approvalProcesPage.clickPhasesNaveBar("Operate");
-	}
-
 	@When("^I select \"([^\"]*)\" from double headed dropdown inside admin portal$")
 	public void selectSpecificOptionsFromDropDown(String dropdownoption) {
 		approvalProcesPage.clickLeftPanelHeader();
