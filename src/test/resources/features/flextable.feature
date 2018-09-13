@@ -128,7 +128,7 @@ Feature: Flex Table Component Scenarios
 	|newSoqlFilter|oldSoqlFilter|
 	|RecordType.Name = 'Internal Program' and Status__c IN ( 'Change Requested','Submitted for Approval','Approved')|RecordType.Name = 'Internal Program' and Status__c IN ( 'Created','Change Requested','Submitted for Approval','Approved')|
 
-	@32547 @all @validateEditActionOpensInNewWindow-Programs
+	@32547 @all @editActionOpensInNewWindow-Programs
 	Scenario: validate flex table action field- Edit opens in new window 
 	Given I have default configuration for "Flex Table Action" field "Action Behavior" as "Open in same window" with filter ""
 	Given I setup filter clause for "Flex Table Action" in "Programs" for field "Name" having value "Edit"
@@ -137,5 +137,26 @@ Feature: Flex Table Component Scenarios
 	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
 	When I search for "Test program for automation"
 	When I click on "Edit" icon of status "Created" for "Test program for automation" program in flex table
-	Then I see edit opens in new tab
+	Then I see new tab is opened
+	
+	@32549 @all @editActionOpensInSameWindow-Programs
+	Scenario: validate flex table action field- Edit opens in same window 
+	Given I setup filter clause for "Flex Table Action" in "Programs" for field "Name" having value "Edit"
+	When I reconfigure "Flex Table Action" field "Action Behavior" as "Open in same window"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "Edit" icon of status "Created" for "Test program for automation" program in flex table
+	Then I see no new tab is opened
+	
+	@32733 @all @editActionOpensInOverLayWindow-Programs
+	Scenario: validate flex table action field- Edit opens in overlay window
+	Given I have default configuration for "Flex Table Action" field "Action Behavior" as "Open in same window" with filter ""
+	Given I setup filter clause for "Flex Table Action" in "Programs" for field "Name" having value "Edit"
+	When I reconfigure "Flex Table Action" field "Action Behavior" as "Open in overlay"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "Edit" icon of status "Created" for "Test program for automation" program in flex table
+	Then I see "Edit" opens in overLay window
 

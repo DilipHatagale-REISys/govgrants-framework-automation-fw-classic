@@ -3,7 +3,7 @@ Feature: Side bar Component Scenarios
 	Test all sidebar component based scenarios 
 	As a configuration manager i make different configurational changes in side bar component and will validate them.
 
-	@31625 @all @validateChangeinTaskMenuSequence-gHome 
+	@33877 @all @validateChangeinTaskMenuSequence-gHome 
 	Scenario: validate after changing sequence of task menu from second to third in side bar 
 	Given I have default configuration for "Phases" field "Sidebar Component Sequence" as "Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links" with filter ""
 	Given I setup filter clause for "General" in "GrantorHome" for field "" having value ""
@@ -12,7 +12,7 @@ Feature: Side bar Component Scenarios
 	When I access the "GovGrants Launcher Tab" 
 	Then i see "Tasks" shown at number "2" in sideBar 
 	
-	@31624 @all @validateSidebarTaskMenuRemoval-gHome
+	@33876	 @all @validateSidebarTaskMenuRemoval-gHome
 	Scenario: validate disabling of task menu from side bar
 	Given I have default configuration for "Phases" field "Sidebar Component Sequence" as "Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links" with filter ""
 	Given I setup filter clause for "General" in "GrantorHome" for field "" having value ""
@@ -21,7 +21,7 @@ Feature: Side bar Component Scenarios
 	When I access the "GovGrants Launcher Tab" 
 	Then I see "Tasks" as disabled from sidebar 
 	
-	@32005 @all @validateSidebarActivityMenuRemoval-gHome 
+	@33879 @all @validateSidebarActivityMenuRemoval-gHome 
 	Scenario: validate disabling of activity menu from side bar 
 	Given I have default configuration for "Phases" field "Sidebar Component Sequence" as "Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links" with filter ""
 	Given I setup filter clause for "General" in "GrantorHome" for field "" having value ""
@@ -30,7 +30,7 @@ Feature: Side bar Component Scenarios
 	When I access the "GovGrants Launcher Tab" 
 	Then I see "Activities" as disabled from sidebar 
 	
-	@32092 @all @validateLabelChangeOfAccordionContent-gHome 
+	@33881 @all @validateLabelChangeOfAccordionContent-gHome 
 	Scenario: validate change of label in My tasks accordion content 
 	Given I have default configuration for "Accordian Content" field "Name" as "Completed" with filter "Automation"
 	Given I setup filter clause for "Accordian Content" in "GrantorHome" for field "Name" having value "Completed"
@@ -39,7 +39,7 @@ Feature: Side bar Component Scenarios
 	When I access the "GovGrants Launcher Tab" 
 	Then I see changed label as "Automation" inside "Tasks" in side bar sub menu
 	
-	@31626 @all @validateChangeAccordianHeaderSeq-gHome 
+	@33880 @all @validateChangeAccordianHeaderSeq-gHome 
 	Scenario: validate after changing accordian header sequence for activities
 	Given I have default configuration for "Accordian Header" field "Sequence" as "9" with filter ""
 	Given I setup filter clause for "Accordian Header" in "GrantorHome" for field "Name" having value "Manage Forms"
@@ -48,19 +48,19 @@ Feature: Side bar Component Scenarios
 	When I access the "GovGrants Launcher Tab" 
 	Then i see "Manage Forms" shown at number "0" inside "Activities" 
 	
-	@31628 @validateAccordionContentAllowedProfile-gHome
+	@33883 @all @validateAccordionContentAllowedProfile-gHome @pankaj-blocked @wip
 	Scenario Outline: validate accordion content Pending in My tasks is available for a specific added profile	
 	Given I have default configuration for "Accordian Content" field "Available for Profiles" as "<Old-Profile>" with filter ""
 	Given I setup filter clause for "Accordian Content" in "GrantorHome" for field "Name" having value "Reassign"
 	When I reconfigure "Accordian Content" field "Available for Profiles" as "<New-Profile>"	 	
-	When I login as "Automation-EXE" User 
+	When I login as "Automation-PM" User 
 	When I access the "GovGrants Launcher Tab" 
 	Then I see changed label as "Reassign" inside "Tasks" in side bar sub menu
 	Examples:
 	|New-Profile|Old-Profile|
 	|Automation; DT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PD; PM; PO; SME; SPA; SPI; TR1; TR2; TR3; VND; EPOC|DT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PD; PM; PO; SME; SPA; SPI; TR1; TR2; TR3; VND; EPOC|
 	
-	@32095 @all @validateLabelChangeOfAccordionHeader-gHome 
+	@33884 @all @validateLabelChangeOfAccordionHeader-gHome 
 	Scenario: Changing label of accordion Header 
 	Given I have default configuration for "Accordian Header" field "Name" as "My Tasks" with filter "Automation"
 	Given I setup filter clause for "Accordian Header" in "GrantorHome" for field "Name" having value "My Tasks"
@@ -69,7 +69,7 @@ Feature: Side bar Component Scenarios
 	When I access the "GovGrants Launcher Tab" 
 	Then I see changed label as "Automation" inside "Tasks" in side accordion header menu
 	
-	@32111 @all @validateChangeAccordianContentSeq-gHome
+	@33885 @all @validateChangeAccordianContentSeq-gHome
 	Scenario: validate after changing accordion content sequence for completed inside my tasks
 	Given I have default configuration for "Accordian Content" field "Sequence" as "1" with filter ""
 	Given I setup filter clause for "Accordian Content" in "GrantorHome" for field "Name" having value "Completed"
@@ -78,7 +78,7 @@ Feature: Side bar Component Scenarios
 	When I access the "GovGrants Launcher Tab" 
 	Then I see "Completed" shown at number "1" inside "Tasks"
 	
-	@32112 @all @validateAccordionContentOpensInNewWindow-gHome
+	@33886 @all @validateAccordionContentOpensInNewWindow-gHome
 	Scenario Outline: validate accordion content opens in new window 
 	Given I have default configuration for "Accordian Content" field "Open in new window" as "false" with filter ""
 	Given I setup filter clause for "Accordian Content" in "GrantorHome" for field "Name" having value "Completed"
@@ -91,7 +91,7 @@ Feature: Side bar Component Scenarios
 	|Page title|
 	|My Task Page|
 	 
-	@32113 @all @validateTargetUrlForAccordionContent-gHome
+	@33887 @all @validateTargetUrlForAccordionContent-gHome
 	Scenario Outline: validate accordion content opens with provided target url
 	Given I have default configuration for "Accordian Content" field "Target Url" as "<Old-TargetUrl>" with filter ""
 	Given I setup filter clause for "Accordian Content" in "GrantorHome" for field "Name" having value "Completed"

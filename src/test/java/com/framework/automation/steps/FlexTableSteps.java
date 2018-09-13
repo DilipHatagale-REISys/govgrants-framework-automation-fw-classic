@@ -78,8 +78,18 @@ public class FlexTableSteps {
         flexTablePage.assertFlexTableStatusDisabled(statusCategory);
     }
 
-    @Then("^I see edit opens in new tab$")
+    @Then("^Then I see new tab is opened$")
     public void assertNewTabOpenOnEditClick() {
         flexTablePage.assertEditWithNewTab();
+    }
+    
+    @Then("^Then I see no new tab is opene$")
+    public void assertNoNewTabOpensOnEditClick() {
+        flexTablePage.assertEditOpenInSameTab();
+    }
+    
+    @Then("^I see \"([^\"]*)\" opens in overLay window$")
+    public void assertEditOpensInOverLayWindow(String titleName) {
+        flexTablePage.asserTextInOverLayIframe(titleName);
     }
 }
