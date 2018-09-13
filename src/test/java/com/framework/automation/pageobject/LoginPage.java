@@ -37,6 +37,7 @@ public class LoginPage extends GovGrantsManager {
      * Enter user name to login
      */
     public void enterUserName(String loginName) {
+        reiDriver.WaitFor().WaitForElementToBePresent(userName);
         reiDriver.textInput().enterText(userName, loginName);
     }
 
@@ -69,7 +70,6 @@ public class LoginPage extends GovGrantsManager {
      * login according to user level i.e: exe , gm etc.
      */
     public void enterAsUser(String userLevel) {
-        reiDriver.WaitFor().WaitForElementToBePresent(loginPageLogo);
         enterUserName(new UsersAndURL().handleUsersForEnv(userLevel));
         enterPassword(standardPassword);
     }

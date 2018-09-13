@@ -543,6 +543,7 @@ public class GovGrantsManager extends ProjectWebServices {
         if (!(reiDriver.WaitFor().WaitForElementToBePresent(navProfile_CurrentApp).getText()
                 .equalsIgnoreCase(appName))) {
             clickTopRightDropDown();
+            reiDriver.WaitFor().makeThreadSleep(500);
             getTopRightDropDown(appName).click();
         }
     }
