@@ -1,5 +1,8 @@
 package com.framework.automation.payloads;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class ApprovalProcess {
 	private String payloadForStringValue = "{\"sObjectAPIName\" : \"%s\",\"fieldMapStr\" : \"{\\\"Id\\\":\\\"%s\\\",\\\"%s\\\":\\\"%s\\\"}\"}";
 	private String payloadForIntValue = "{\"sObjectAPIName\" : \"%s\",\"fieldMapStr\" : \"{\\\"Id\\\":\\\"%s\\\",\\\"%s\\\":%s}\"}";
@@ -114,6 +117,37 @@ public class ApprovalProcess {
 					new ApiUtilities().getComponentCoreFieldId(
 							String.valueOf(SObjectAPIs.GNT__ApprovalProcessStepCache__c), filterClause),
 					String.valueOf(SObjectAPIs.GNT__ApprovalConfirmationMessage__c), value);
+			break;
+		}
+		System.out.println(finalPayload);
+		return finalPayload;
+	}
+
+	/**
+	 * setup configuration for Approval Process
+	 * 
+	 * @param fieldLabel
+	 * @param value
+	 * @param filterClause
+	 * @return
+	 */
+	public String setTaskConfig(String fieldLabel, String value, String filterClause) {
+		String finalPayload = null;
+		Pattern p = Pattern.compile("([0-9])");
+		Matcher m = p.matcher(value);
+		switch (fieldLabel.toUpperCase()) {
+		case "SEND TASK ASSIGNMENT NOTIFICATION?":
+			if (m.find() || (value.contains("true")) || (value.contains("false"))) {
+				finalPayload = String.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__TaskConfig__c),
+						new ApiUtilities().getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__TaskConfig__c),
+								filterClause),
+						String.valueOf(SObjectAPIs.GNT__SendTaskAssignmentNotification__c), value);
+			} else {
+				finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__TaskConfig__c),
+						new ApiUtilities().getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__TaskConfig__c),
+								filterClause),
+						String.valueOf(SObjectAPIs.GNT__SendTaskAssignmentNotification__c), value);
+			}
 			break;
 		}
 		System.out.println(finalPayload);
