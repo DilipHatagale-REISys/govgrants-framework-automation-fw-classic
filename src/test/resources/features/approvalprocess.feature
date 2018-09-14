@@ -141,3 +141,40 @@ Feature: Approval Process Component Scenarios
 	When I enter Approval comment
 	And I click submit
 	Then I see confirmation box with body "Confirmation box for automation" is displayed
+	
+	@33368 @all @taskAssignmentNotificationForProgramSubmissionThroughMail
+	Scenario: Setup email setting in configuration and validate that program owner receiving email for program submitted for approval
+	Given I setup "Program" field "Status" as "Created" with filter clause on field "Automation Program -SA to C"
+	Given I have default configuration for "Task Config" field "Send Task Assignment Notification?" as "false" with filter ""
+	Given I setup filter clause for "Task Action" in "Approve Program" for field "" having value ""
+	And I reconfigure "Task Config" field "Send Task Assignment Notification?" as "true"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Automation Program -SA to C"
+	When I click on "Edit" icon of status "Created" for "Automation Program -SA to C" program in flex table
+	And I complete submit for approval
+	When I re-login as "Automation" with "QA" url
+	When I access the "GovGrants Launcher Tab" for "As an Administrator" app to reach "Operate" tab
+	When I navigate to "Activities" to reach "Email Logs" side bar content
+	When I select "Queued Emails" from double headed dropdown inside admin portal
+	Then I see "Queued" is displayed
+	
+	@33305 @all @completeOnViewForSendToOwnerTaskConfig-Programs
+    Scenario: Setup complete on view checkbox to true from send to owner task configuration and validating it by owner user
+    Given I have default configuration for "Program" field "Status" as "Submitted for Approval" with filter "Automation Program -SA to C"
+    Given I have default configuration for "Task Config" field "Complete On View?" as "false" with filter ""
+	Given I setup filter clause for "Task Action" in "Program Sent To Owner" for field "" having value ""
+	When I reconfigure "Task Config" field "Complete On View?" as "true"
+    When I login as "Automation-PM" User
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	And I navigate to "Tasks" to reach "Pending" side bar content
+	When I start the approval with subject "Automation Program -SA to C"
+	When I select "Send to Owner" from approval decision panel
+	When I enter Approval comment
+	And I click submit
+	When I re-login as "Automation" with "QA" url
+    When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	And I navigate to "Tasks" to reach "Pending" side bar content
+	When I start the approval with subject "Program Sent To Owner"
+	And I navigate to "Tasks" to reach "Pending" side bar content  
+	Then I see approval with subject as "Program Sent To Owner" is not displayed	
