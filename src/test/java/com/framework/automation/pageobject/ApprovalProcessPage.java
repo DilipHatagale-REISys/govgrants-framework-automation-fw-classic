@@ -294,7 +294,6 @@ public class ApprovalProcessPage extends GovGrantsManager {
 	 * @return
 	 */
 	private WebElement getSuccessText(String status) {
-		return reiDriver.findMyElement().getElement(By.xpath(
-				"//div[@class='tab-inner-content']//div[3]/div[2]//dl//dd/span[contains(@class,'wordPre field-value')]"));
+		return reiDriver.WaitFor().WaitForElementToBePresent(By.xpath("//td//span[@title='Queued']"));
 	}
 }

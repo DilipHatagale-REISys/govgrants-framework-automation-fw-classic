@@ -149,6 +149,19 @@ public class ApprovalProcess {
 						String.valueOf(SObjectAPIs.GNT__SendTaskAssignmentNotification__c), value);
 			}
 			break;
+		case "COMPLETE ON VIEW?":
+			if (m.find() || (value.contains("true")) || (value.contains("false"))) {
+				finalPayload = String.format(
+						payloadForIntValue, String.valueOf(SObjectAPIs.GNT__TaskConfig__c), new ApiUtilities()
+								.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__TaskConfig__c), filterClause),
+						String.valueOf(SObjectAPIs.GNT__CompleteOnView__c), value);
+			} else {
+				finalPayload = String.format(
+						payloadForStringValue, String.valueOf(SObjectAPIs.GNT__TaskConfig__c), new ApiUtilities()
+								.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__TaskConfig__c), filterClause),
+						String.valueOf(SObjectAPIs.GNT__CompleteOnView__c), value);
+			}
+			break;
 		}
 		System.out.println(finalPayload);
 		return finalPayload;
