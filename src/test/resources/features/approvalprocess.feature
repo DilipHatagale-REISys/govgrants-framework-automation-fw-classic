@@ -157,7 +157,6 @@ Feature: Approval Process Component Scenarios
 	When I access the "GovGrants Launcher Tab" for "As an Administrator" app to reach "Operate" tab
 	When I navigate to "Activities" to reach "Email Logs" side bar content
 	When I select "Queued Emails" from double headed dropdown inside admin portal
-	#When I click on "View" icon of status "TaskReminderTemplateMultiple" inside admin portal
 	Then I see "Queued" is displayed
 	
 	@33305 @all @completeOnViewForSendToOwnerTaskConfig-Programs
@@ -179,4 +178,3 @@ Feature: Approval Process Component Scenarios
 	When I start the approval with subject "Program Sent To Owner"
 	And I navigate to "Tasks" to reach "Pending" side bar content  
 	Then I see approval with subject as "Program Sent To Owner" is not displayed	
-	
