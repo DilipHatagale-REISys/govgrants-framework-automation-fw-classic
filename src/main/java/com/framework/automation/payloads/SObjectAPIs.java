@@ -8,7 +8,7 @@ public enum SObjectAPIs {
     GNT__PhaseConfig__r,GNT__CustomAppConfig__c, GNT__BodyTable__c, GNT__PhaseConfig__c,
     GNT__AccordionHeader__c ,GNT__AccordionHeader__r, GNT__PhaseType__c,GNT__DataTableConfig__c,GNT__DataTableAction__c,
     GNT__PageLayoutConfig__r,GNT__PageLayoutActionConfig__c,GNT__ApprovalDecisionActionConfig__c,GNT__FlexTableConfig__r,GNT__DataTableConfig__r,
-    Program__c,GNT__ApprovalProcessStepCache__c,
+    Program__c,GNT__ApprovalProcessStepCache__c,GNT__SobjectActionConfig__c,
     
     //Fields
     GNT__Abbreviation__c, GNT__Active__c,GNT__AvailableForProfiles__c, GNT__DefaultThemeName__c, GNT__InternalUniqueID__c, 

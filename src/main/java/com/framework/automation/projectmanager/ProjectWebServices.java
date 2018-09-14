@@ -1,6 +1,7 @@
 package com.framework.automation.projectmanager;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import com.automation.rei.controller.EnvironmentFetcher;
 import com.automation.rei.handlers.Properties_Logs;
@@ -12,7 +13,6 @@ public class ProjectWebServices {
     RestfulWebServices apiCall = new RestfulWebServices();
     ConfigurationParameters setUpParameters = new ConfigurationParameters();
     SetUpConfiguration configPostCall=new SetUpConfiguration();
-    //SetUpConfiguration configProgramPostCall=new SetUpConfiguration();
     Properties_Logs readProp = new Properties_Logs();
     ApiUtilities apiUtil;
     String filterClause_Reconfig;
