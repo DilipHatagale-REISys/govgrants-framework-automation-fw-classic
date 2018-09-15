@@ -5,9 +5,7 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-
 import com.automation.rei.controller.Controller;
-import com.automation.rei.exception.ReiFrameworkCustomException;
 import com.automation.rei.handlers.Handlers;
 
 /**
@@ -22,6 +20,7 @@ public class GovGrantsManager extends ProjectWebServices {
     public String standardPassword = "Automation@12345";
     public String defaultComment = "Automation testing";
     public String defaultQaUrl = "https://ggptest5-dev-ed.my.salesforce.com";
+    private int urlOpeningNumber = 0;
     private final String completeTableRowString;
     public final By navigationLogo, loginDropDown, searchInput, rightHeaderBars, topRightDropDown, egmsHeader,
             secondTopRightFilter, completeTableHeader, completeTableRow, sideBarHeadersList, advanceFilterButton,
@@ -41,9 +40,9 @@ public class GovGrantsManager extends ProjectWebServices {
         navigationLogo = By.cssSelector("div#holdon-overlay>div>div>div>img.nav-logo");
         searchInput = By.cssSelector("div>div.quick-search>div>input");
         rightHeaderBars = By.xpath("//div[@class='panel-heading']//div[contains(@class,'header-bars')]");
-        doubleArrowDropDown = By.xpath("//div[contains(@class,'panel-title')]//div[@id='dropdownListView']");
+        doubleArrowDropDown = By.cssSelector("div[class*='panel-title'] div#dropdownListView span[class*='fa fa-angle-double-down']");
         loginDropDown = By.xpath("//div/ul/li[@class='dropdown userDropdown']");
-        topRightDropDown = By.xpath("//div/ul/li[@class='dropdown appDropdown']");
+        topRightDropDown = By.cssSelector("div>ul>li.dropdown.appDropdown>a");
         egmsHeader = By.xpath("//div[@class='navbar-header']/span[text()='Enterprise Grants Management System']");
         secondTopRightFilter = By.xpath("//div[contains(@class,'panel-body')]//div/button");
         completeTableHeader = By.xpath(
@@ -83,7 +82,12 @@ public class GovGrantsManager extends ProjectWebServices {
      * @throws IOException
      */
     public void navigateToURL(String envName) throws IOException {
-        reiDriver.get().navigateToUrl(new UsersAndURL().navigateToAnyUrl(envName.toUpperCase()));
+        urlOpeningNumber++;
+        if (urlOpeningNumber > 0) {
+            clearCookies();
+            reiDriver.get().getRefresh();
+        }
+        reiDriver.get().openURL(new UsersAndURL().navigateToAnyUrl(envName.toUpperCase()));
     }
 
     /**
@@ -107,12 +111,11 @@ public class GovGrantsManager extends ProjectWebServices {
      * @param tabName
      */
     public void clickAdminNavBar(String tabName, String appName) {
+        reiDriver.WaitFor().makeThreadSleep(500);
         try {
             reiDriver.WaitFor().WaitForElementToBePresent(By.xpath("//nav/ul/li/a[@title='" + tabName + "']")).click();
         } catch (Exception e) {
-            reiDriver.WaitFor().makeThreadSleep(500);
             reiDriver.JavaScript().clickByJS(By.xpath("//nav/ul/li/a[@title='" + tabName + "']"));
-
         }
         waitForEgmsHeader();
         setUpCustomAppDropDown(appName);
@@ -141,6 +144,15 @@ public class GovGrantsManager extends ProjectWebServices {
         } catch (Exception e) {
 
         }
+    }
+
+    /**
+     * click on any button on modal content
+     */
+    public void clickModalContentSpecificButton(String buttonName) {
+        reiDriver.WaitFor()
+                .WaitForElementClickAble(By.xpath("//div[@class='modal-footer']/button[text()='" + buttonName + "']"))
+                .click();
     }
 
     /**
@@ -219,7 +231,12 @@ public class GovGrantsManager extends ProjectWebServices {
      * click on top right drop down. As a grantee etc.
      */
     public void clickTopRightDropDown() {
-        reiDriver.WaitFor().WaitForElementToBePresent(topRightDropDown).click();
+        try {
+            reiDriver.WaitFor().WaitForElementToBePresent(topRightDropDown).click();
+        } catch (Exception e) {
+            reiDriver.WaitFor().WaitForWebElementToBeVisible(reiDriver.findMyElement().getElement(topRightDropDown))
+                    .click();
+        }
     }
 
     /**
@@ -248,8 +265,13 @@ public class GovGrantsManager extends ProjectWebServices {
      * genric method to click on the double arrow dropdown
      */
     public void clickLeftPanelHeader() {
-        reiDriver.WaitFor().WaitForElementToBePresent(doubleArrowDropDown).click();
-    }
+        reiDriver.WaitFor().makeThreadSleep(500);
+        try {
+        reiDriver.WaitFor().WaitForWebElementToBeVisible(reiDriver.findMyElement().getElement(doubleArrowDropDown)).click();
+        } catch (Exception e) {
+            reiDriver.JavaScript().clickByJS(doubleArrowDropDown);
+        }
+        }
 
     /**
      * click on flex table icons. Inside click on any tab with flex table.Reach out
@@ -271,7 +293,8 @@ public class GovGrantsManager extends ProjectWebServices {
      * @return
      */
     public WebElement getLeftPanelHeader(String dropdownoption) {
-        return reiDriver.WaitFor().WaitForElementToBePresent(By.xpath(
+        reiDriver.WaitFor().makeThreadSleep(500);
+        return reiDriver.WaitFor().FluentWaitForClick(By.xpath(
                 "//div[@class='panel-heading']//div[contains(@class,'panel-title')]//div[@id='dropdownListView']/ul/li/a[@title='"
                         + dropdownoption + "']"));
     }
@@ -542,6 +565,10 @@ public class GovGrantsManager extends ProjectWebServices {
         getLeftPanelHeader(dropDownOption).click();
     }
 
+    public void clearCookies() {
+        reiDriver.eatCookies().deleteAllCookies();
+    }
+
     /******* "Local Methods with Limited functionality " **********/
 
     /**
@@ -550,11 +577,27 @@ public class GovGrantsManager extends ProjectWebServices {
      * @param appName
      */
     private void setUpCustomAppDropDown(String appName) {
-        if (!(reiDriver.WaitFor().WaitForElementToBePresent(navProfile_CurrentApp).getText()
-                .equalsIgnoreCase(appName))) {
+        reiDriver.WaitFor().makeThreadSleep(200);
+        if (!isAppDisplayed(appName)) {
+            reiDriver.WaitFor().makeThreadSleep(200);
             clickTopRightDropDown();
             reiDriver.WaitFor().makeThreadSleep(500);
             getTopRightDropDown(appName).click();
         }
+    }
+
+    private boolean isAppDisplayed(String appName) {
+        boolean isAppPresent;
+        try {
+            isAppPresent = reiDriver.WaitFor()
+                    .WaitForWebElementToBeVisible(reiDriver.findMyElement().getElement(navProfile_CurrentApp)).getText()
+                    .equalsIgnoreCase(appName);
+        } catch (Exception e) {
+            reiDriver.get().getRefresh();
+            isAppPresent = reiDriver.WaitFor()
+                    .WaitForWebElementToBeVisible(reiDriver.findMyElement().getElement(navProfile_CurrentApp)).getText()
+                    .equalsIgnoreCase(appName);
+        }
+        return isAppPresent;
     }
 }

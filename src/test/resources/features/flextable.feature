@@ -3,7 +3,7 @@ Feature: Flex Table Component Scenarios
 	Test all flex table component based scenarios 
 	As a configuration manager i make different configurational changes in flex table component and will validate them.
 
-	@34022 @all @@changeOfFlexTableTitle-gPlanning
+	@34022 @all @changeOfFlexTableTitle-gPlanning
 	Scenario: validate after changing name of flex table title inside planning-programs
 	Given I have default configuration for "Flex Table List" field "Label" as "Draft Programs" with filter ""
 	Given I setup filter clause for "Flex Table List" in "Programs" for field "Name" having value "FLV-1837"

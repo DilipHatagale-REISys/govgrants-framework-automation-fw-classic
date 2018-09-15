@@ -26,7 +26,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
         submitButton = By.xpath("//input[@type='button' and @value='Submit']");
         saveButton = By.xpath("//input[@type='submit' and @value ='Save']");
     }
-
+    
     /**
      * click Submit
      */
@@ -271,7 +271,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
     private boolean isSuccessForEmailToProgramOwner() {
         boolean flag = false;
         try {
-            if (validateQueueEmail().isDisplayed()) {
+            if (validateQueueEmail().getAttribute("title").equalsIgnoreCase("Queued")) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -297,6 +297,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
      * @return
      */
     private WebElement validateQueueEmail() {
+        reiDriver.WaitFor().makeThreadSleep(200);
         return reiDriver.findMyElement().getElement(By.xpath("//td//span[@title='Queued']"));
     }
 
