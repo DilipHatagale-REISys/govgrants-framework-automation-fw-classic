@@ -40,8 +40,8 @@ public class setup {
     @After
     public void wrapUp(Scenario scenario) {
         try {
-            projectAPI.postReConfigCall();
-            projectAPI.postProgramReConfigCall();
+            projectAPI.postDefaultConfigCall();
+            projectAPI.postProgramDefaultConfigCall();
         } catch (Exception e) {
 
         }

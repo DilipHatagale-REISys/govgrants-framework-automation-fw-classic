@@ -8,7 +8,7 @@ public enum SObjectAPIs {
     GNT__PhaseConfig__r,GNT__CustomAppConfig__c, GNT__BodyTable__c, GNT__PhaseConfig__c,
     GNT__AccordionHeader__c ,GNT__AccordionHeader__r, GNT__PhaseType__c,GNT__DataTableConfig__c,GNT__DataTableAction__c,
     GNT__PageLayoutConfig__r,GNT__PageLayoutActionConfig__c,GNT__ApprovalDecisionActionConfig__c,GNT__FlexTableConfig__r,GNT__DataTableConfig__r,
-    Program__c,GNT__ApprovalProcessStepCache__c,GNT__SobjectActionConfig__c,
+    Program__c,GNT__ApprovalProcessStepCache__c,GNT__SobjectActionConfig__c,GNT__TaskAction__c,
     
     //Fields
     GNT__Abbreviation__c, GNT__Active__c,GNT__AvailableForProfiles__c, GNT__DefaultThemeName__c, GNT__InternalUniqueID__c, 
@@ -20,6 +20,6 @@ public enum SObjectAPIs {
     GNT__EnableAutoIndex__c,GNT__ActionBehavior__c,GNT__FilterCriteria__c,GNT__FilterClause__c,GNT__PageLayoutConfig__c,GNT__Title__c,GNT__HeaderDescription__c,GNT__HeaderOverride__c,GNT__HideDecisionExpression__c,GNT__HideExpressionJSON__c,
     GNT__EnablePromptInputDialog__c,GNT__HideForProfile__c,GNT__HideAction__c,GNT__CommentsRequired__c,GNT__HidePDFDownload__c,GNT__HideOnDemandSnaphot__c,GNT__PromptDailogHeader__c,GNT__PromptDialogText__c,GNT__HideForContext__c,GNT__CustomAppConfig__r,
     GNT__ActionLabelOverride__c,Status__c,ProgramName__c,GNT__ApproverFieldAPIName__c,GNT__ConfirmationTitle__c,GNT__ConfirmationMessage__c,GNT__FilterCriteriaforUserReassign__c,GNT__Header__c,GNT__EmailFieldAPIName__c,GNT__ApproveEmailTemplate__c,
-    GNT__ApproveConfirmationTitle__c,GNT__ApprovalConfirmationMessage__c
+    GNT__ApproveConfirmationTitle__c,GNT__ApprovalConfirmationMessage__c,GNT__TaskConfig__c,GNT__SendTaskAssignmentNotification__c,GNT__CompleteOnView__c
    
 }

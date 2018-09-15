@@ -110,6 +110,7 @@ public class GovGrantsManager extends ProjectWebServices {
         try {
             reiDriver.WaitFor().WaitForElementToBePresent(By.xpath("//nav/ul/li/a[@title='" + tabName + "']")).click();
         } catch (Exception e) {
+            reiDriver.WaitFor().makeThreadSleep(500);
             reiDriver.JavaScript().clickByJS(By.xpath("//nav/ul/li/a[@title='" + tabName + "']"));
 
         }
@@ -276,15 +277,14 @@ public class GovGrantsManager extends ProjectWebServices {
     }
 
     /**
-     * get any button on right header
+     * get any button on right header inside planning etc.
      * 
      * @param buttonName
      * @return
      */
     public WebElement getRightHeaderButton(String buttonName) {
         return reiDriver.WaitFor().WaitForElementToBePresent(
-                By.xpath("//div[@class='panel-heading']//div[contains(@class,'header-buttons')]//button[@title='"
-                        + buttonName + "']"));
+                By.xpath("//div[contains(@class,'panel-heading')]//button[@title='" + buttonName + "']"));
     }
 
     /**
@@ -456,7 +456,7 @@ public class GovGrantsManager extends ProjectWebServices {
      * @param statusName
      * @param iconName
      */
-    public void clickTableIconsForSpecificSubject(String programSubject, String statusName, String iconName) {
+    public void clickTableActionIconsForSpecificSubject(String programSubject, String statusName, String iconName) {
         reiDriver.WaitFor()
                 .WaitForElementToBePresent(By.xpath(completeTableRowString + "//td//span[@title='" + programSubject
                         + "']/../../../following-sibling::td//span[@title='" + statusName
@@ -532,8 +532,18 @@ public class GovGrantsManager extends ProjectWebServices {
         return quickSearch;
     }
 
+    /**
+     * click and select any value from double arrow drop down
+     * 
+     * @param dropDownOption
+     */
+    public void clickAndSelectOptionFromLeftDoubleArrowDropDown(String dropDownOption) {
+        clickLeftPanelHeader();
+        getLeftPanelHeader(dropDownOption).click();
+    }
+
     /******* "Local Methods with Limited functionality " **********/
-    
+
     /**
      * handles custom app. selects if current app on page is not desired one
      * 

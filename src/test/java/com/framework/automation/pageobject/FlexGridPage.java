@@ -68,8 +68,22 @@ public class FlexGridPage extends GovGrantsManager {
         Assert.assertTrue(isprogramPPMGVLinesBarMenuSpecificOptionsDisabled(option1, option2));
     }
 
+    /**
+     * assert if specific table header is not displayed
+     * 
+     * @param columnName
+     */
     public void assertPPMGVFlexTableColumnNotDisplayed(String columnName) {
         Assert.assertTrue(ppmgvSpecificColumnNameNotDisplayed(columnName));
+    }
+
+    /**
+     * assert if specific action icon is not displayed
+     * 
+     * @param actionIcon
+     */
+    public void assertActionIconNotDisplayedInsidePPMGVflexTable(String actionIcon) {
+        Assert.assertTrue(isActionIconNotDisplayedInsidePPMGVflexTable(actionIcon));
     }
 
     /*********
@@ -158,6 +172,7 @@ public class FlexGridPage extends GovGrantsManager {
 
     /**
      * get specific column in PPMGV flex table header
+     * 
      * @param headerName
      * @return
      */
@@ -166,9 +181,10 @@ public class FlexGridPage extends GovGrantsManager {
                 "//div[@class='panel-heading']/following-sibling::div[contains(@class,'panel-body')]//div/table/thead/tr[@class='n2gheader']/th//span[text()='"
                         + headerName + "']"));
     }
-    
+
     /**
      * column name in PPMGV flex table
+     * 
      * @return: true if it is not displayed
      */
     private boolean ppmgvSpecificColumnNameNotDisplayed(String headerName) {
@@ -177,6 +193,31 @@ public class FlexGridPage extends GovGrantsManager {
                 By.xpath("//div[@id='flexGridHeaderButtonsProgramPerformanceMgmtGridView']"));
         try {
             if (getPPMGVFlexTableSpecificColumnHeader(headerName).isDisplayed()) {
+                flag = false;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * get specific column in PPMGV flex table action item present
+     * 
+     * @param headerName
+     * @return
+     */
+    private WebElement getPPMGVFlexTableSpecificColumnActions(String actionName) {
+        return reiDriver.findMyElement().getElement(By.xpath(
+                "//div[@class='panel-heading']/following-sibling::div[contains(@class,'panel-body')]//div/table/thead/tr[@class='n2gheader']/../../tbody//tr//td//a[@title='"
+                        + actionName + "']"));
+    }
+
+    private boolean isActionIconNotDisplayedInsidePPMGVflexTable(String actionIcon) {
+        boolean flag = true;
+        reiDriver.JavaScript().scrollpageToSpecificElement(
+                By.xpath("//div[@id='flexGridHeaderButtonsProgramPerformanceMgmtGridView']"));
+        try {
+            if (getPPMGVFlexTableSpecificColumnActions(actionIcon).isDisplayed()) {
                 flag = false;
             }
         } catch (Exception e) {

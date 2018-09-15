@@ -20,7 +20,7 @@ public class FlexTableSteps {
 
     @When("^I click on \"([^\"]*)\" icon of status \"([^\"]*)\" for \"([^\"]*)\" program in flex table$")
     public void clickAnyIconInFlexTable(String iconName, String statusName,String programSubject) {
-        flexTablePage.clickTableIconsForSpecificSubject(programSubject, statusName, iconName);
+        flexTablePage.clickTableActionIconsForSpecificSubject(programSubject, statusName, iconName);
     }
 
     @Then("^I see \"([^\"]*)\" shown as flex table title$")

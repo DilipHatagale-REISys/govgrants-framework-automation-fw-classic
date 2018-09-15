@@ -122,8 +122,11 @@ public class ApiUtilities {
 					+ "'";
 			break;
 		case "PROGRAM":
-            filterClause = String.valueOf(SObjectAPIs.ProgramName__c)+"=" + "'" + ComponentCoreFieldName + "'";
-            break;
+			filterClause = String.valueOf(SObjectAPIs.ProgramName__c) + "=" + "'" + ComponentCoreFieldName + "'";
+			break;
+		case "TASK ACTION":
+			filterClause = String.valueOf(SObjectAPIs.GNT__TaskAction__c) + "=" + "'" + ComponentCoreFieldName + "'";
+			break;
 		}
 		return filterClause;
 	}
