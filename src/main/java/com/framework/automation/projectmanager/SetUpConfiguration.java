@@ -5,6 +5,7 @@ import com.framework.automation.payloads.FlexGrid;
 import com.framework.automation.payloads.FlexTable;
 import com.framework.automation.payloads.PageLayout;
 import com.framework.automation.payloads.Program;
+
 import com.framework.automation.payloads.SideBar;
 
 public class SetUpConfiguration {
@@ -60,6 +61,9 @@ public class SetUpConfiguration {
 		case "TASK CONFIG":
 			stringPayload = new ApprovalProcess().setTaskConfig(fieldLabel, value, filterClause);
 			break;
+	     case "FLEX GRID ACTION":
+	            stringPayload = new FlexGrid().setFlexGridParentFlexTableActionConfig(fieldLabel, value, filterClause);
+	            break;
 		}
 		System.out.println("final payload is " + stringPayload);
 		return stringPayload;

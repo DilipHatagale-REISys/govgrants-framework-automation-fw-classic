@@ -54,7 +54,7 @@ public class UsersAndURL {
         return username;
     }
     
-    public static String navigateToAnyUrl(String urlName) throws IOException {
+    public String navigateToAnyUrl(String urlName) throws IOException {
         String url=null;
         switch(urlName.toUpperCase()) {
         case "QA":

@@ -38,6 +38,11 @@ public class CommonSteps {
         govGrantsManager.performQuickSearch(searchTerm);
     }
 
+    @When("^I click \"([^\"]*)\" on modal content$")
+    public void clickModalContentSpecificButton(String buttonName)  {
+        govGrantsManager.clickModalContentSpecificButton(buttonName);
+    }
+    
     @Then("^I see page title \"([^\"]*)\"$")
     public void asserPageTitle(String pageTitle) {
         govGrantsManager.assertPageTitle(pageTitle);

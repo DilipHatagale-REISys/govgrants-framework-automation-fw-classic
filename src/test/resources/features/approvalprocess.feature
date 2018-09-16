@@ -113,13 +113,14 @@ Feature: Approval Process Component Scenarios
 	When I start the approval with subject "Automation Program -SA to C"
 	When I select "Approve" from approval decision panel
 	When I enter Approval comment
-	And I click submit
-	When I re-login as "Automation" with "QA" url
+    And I click submit
+	When I click "Continue" on modal content
+	And I re-login as "Automation" with "QA" url
 	When I access the "GovGrants Launcher Tab" for "As an Administrator" app to reach "Operate" tab
 	When I navigate to "Activities" to reach "Email Logs" side bar content
 	When I select "Success Emails" from double headed dropdown inside admin portal
 	When I click on "View" icon of status "Program_Approved_Email_Template" inside admin portal
-	Then I see "Success" is displayed
+	#Then I see "Success" is displayed
 	
 	@33179 @all @confirmationMessageBoxPopupForApprovalDecisionUsingApprovalCache-Programs
 	Scenario: Setup confirmation message inside confirmation message box from approval process step cache configuration and validating it in pending tasks approval decision
@@ -157,15 +158,21 @@ Feature: Approval Process Component Scenarios
 	When I access the "GovGrants Launcher Tab" for "As an Administrator" app to reach "Operate" tab
 	When I navigate to "Activities" to reach "Email Logs" side bar content
 	When I select "Queued Emails" from double headed dropdown inside admin portal
-	Then I see "Queued" is displayed
+	Then I see email is generated
 	
 	@33305 @all @completeOnViewForSendToOwnerTaskConfig-Programs
     Scenario: Setup complete on view checkbox to true from send to owner task configuration and validating it by owner user
     Given I have default configuration for "Program" field "Status" as "Submitted for Approval" with filter "Automation Program -SA to C"
     Given I have default configuration for "Task Config" field "Complete On View?" as "false" with filter ""
+	Given I setup "Program" field "Status" as "Created" with filter clause on field "Automation Program -SA to C"
 	Given I setup filter clause for "Task Action" in "Program Sent To Owner" for field "" having value ""
 	When I reconfigure "Task Config" field "Complete On View?" as "true"
-    When I login as "Automation-PM" User
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Automation Program -SA to C"
+	When I click on "Edit" icon of status "Created" for "Automation Program -SA to C" program in flex table
+	And I complete submit for approval
+	When I re-login as "Automation-PM" with "QA" url
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	And I navigate to "Tasks" to reach "Pending" side bar content
 	When I start the approval with subject "Automation Program -SA to C"
@@ -177,4 +184,4 @@ Feature: Approval Process Component Scenarios
 	And I navigate to "Tasks" to reach "Pending" side bar content
 	When I start the approval with subject "Program Sent To Owner"
 	And I navigate to "Tasks" to reach "Pending" side bar content  
-	Then I see approval with subject as "Program Sent To Owner" is not displayed	
+	Then I see approval with subject as "Program Sent To Owner" is not displayed

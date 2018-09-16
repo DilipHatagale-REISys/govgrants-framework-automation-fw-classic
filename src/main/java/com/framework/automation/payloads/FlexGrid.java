@@ -37,6 +37,26 @@ public class FlexGrid {
                             .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
                     String.valueOf(SObjectAPIs.GNT__FieldNames__c), value);
             break;
+        case "HIDE FOR CONTEXT": // handled through context object. Specific to getting id
+            finalPayload = String.format(
+                    payloadForStringValue, String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c), new ApiUtilities()
+                            . getComponentCoreFieldIdForContextObjects(String.valueOf(SObjectAPIs.GNT__DataTableAction__c),String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c), filterClause),
+                    String.valueOf(SObjectAPIs.GNT__HideForContext__c), value);
+            break;
+        }
+        System.out.println(finalPayload);
+        return finalPayload;
+    }
+    
+    public String setFlexGridParentFlexTableActionConfig(String fieldLabel, String value, String filterClause) {
+        String finalPayload = null;
+        switch (fieldLabel.toUpperCase()) {
+        case "HIDE FOR CONTEXT": // handled through context object. Specific to getting id
+            finalPayload = String.format(
+                    payloadForStringValue, String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c), new ApiUtilities()
+                            . getComponentCoreFieldIdForContextObjects(String.valueOf(SObjectAPIs.GNT__DataTableAction__c),String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c), filterClause),
+                    String.valueOf(SObjectAPIs.GNT__HideForContext__c), value);
+            break;
         }
         System.out.println(finalPayload);
         return finalPayload;

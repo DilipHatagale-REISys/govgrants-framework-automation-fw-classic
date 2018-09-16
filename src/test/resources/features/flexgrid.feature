@@ -64,3 +64,15 @@ Feature: Flex Grid Component Scenarios
 	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
 	When I click on "Plan" sub tab inside page layout
 	Then I see "Due Date" column for PPMGV flex table is not displayed
+	
+	@33793 @all @hideViewIconForPPMGVflexTable-Programs
+	Scenario: Hide view context from PPMGV view cofniguration and validate inside planning-programs view icon - plan subtab - Goal Objectives flex table
+	Given I have default configuration for "Flex Grid Action" field "Hide for context" as "" with filter ""
+	Given I setup filter clause for "Flex Table Action" in "ProgramStrategicGoals" for field "Name" having value "View"
+	When I reconfigure "Flex Grid Action" field "Hide For Context" as "View"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	When I click on "Plan" sub tab inside page layout
+	Then I see "View" icon is not displayed inside PPMGV flex table

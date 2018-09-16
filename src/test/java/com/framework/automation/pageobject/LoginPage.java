@@ -13,22 +13,31 @@ import com.framework.automation.projectmanager.UsersAndURL;
  * Handles all login based methods and locators for Project
  */
 public class LoginPage extends GovGrantsManager {
-    
+
     /******* "Variables and Locators" *****************/
-    
-    private final By userName = By.xpath("//input[@name='username' or id ='username']");
-    private final By password = By.xpath("//input[@id='password' or @type='password']");
-    private final By loginButton = By.xpath("//input[@id='Login' or @type='submit']");
-    private final By userAvatar = By.cssSelector("div#myNavbarProfile>ul>li>a>img[alt='User Avatar']");
-    private final By userAvatarDownArrow = By.cssSelector("div#myNavbarProfile>ul>li>a>img[alt='User Avatar']+i");
-    private final By logOutOption = By.xpath("//ul/li/a[@aria-label='Logout']");
-    private final By loginPageLogo = By.xpath("//div[@id='logo_wrapper']//img[@class='standard_logo'and @alt='Salesforce']");
+
+    private final By userName;
+    private final By password;
+    private final By loginButton;
+    private final By userAvatar;
+    private final By userAvatarDownArrow;
+    private final By logOutOption;
+    private final By loginPageLogo;
+    private final By loginWithOtherUser;
 
     /**
      * Constructor to handle dependency injection and framework library
      */
     public LoginPage(Controller controller, Handlers reiDriver) {
         super(controller, reiDriver);
+        userName = By.xpath("//input[@name='username' or id ='username']");
+        password = By.xpath("//input[@id='password' or @type='password']");
+        loginButton = By.xpath("//input[@id='Login' or @type='submit']");
+        userAvatar = By.cssSelector("div#myNavbarProfile>ul>li>a>img[alt='User Avatar']");
+        userAvatarDownArrow = By.cssSelector("div#myNavbarProfile>ul>li>a>img[alt='User Avatar']+i");
+        logOutOption = By.xpath("//ul/li/a[@aria-label='Logout']");
+        loginPageLogo = By.xpath("//div[@id='logo_wrapper']//img[@class='standard_logo'and @alt='Salesforce']");
+        loginWithOtherUser = By.xpath("//a[text()='Log In with a Different Username']");
     }
 
     /******* "Key Methods with complete functionality" *****************/
@@ -57,11 +66,16 @@ public class LoginPage extends GovGrantsManager {
 
     /**
      * click logout to log out
-     * @throws ReiFrameworkCustomException 
+     * 
      */
-    public void clickLogOut() throws ReiFrameworkCustomException {
+    public void clickLogOut() {
         waitForNavigationLogo();
-        reiDriver.WaitFor().WaitForElementToBePresent(userAvatar).click();
+        reiDriver.WaitFor().specialCustomWait(5, userAvatar);
+        try {
+            reiDriver.Clickers().MouseClick(userAvatar);
+        } catch (Exception e) {
+            reiDriver.JavaScript().clickByJS(userAvatar);
+        }
         reiDriver.WaitFor().specialCustomWait(5, logOutOption);
         reiDriver.Clickers().MouseClick(logOutOption);
     }
@@ -90,13 +104,11 @@ public class LoginPage extends GovGrantsManager {
 
     /******* "Local Methods with Limited functionality " **********/
 
-
     /**
      * check if home page logo is present
      */
     private boolean isHomePageLogoPresent() {
-        return reiDriver.findMyElement().getElement(egmsHeader)
-                .isDisplayed();
+        return reiDriver.findMyElement().getElement(egmsHeader).isDisplayed();
     }
 
 }

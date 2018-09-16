@@ -14,7 +14,7 @@ import com.framework.automation.projectmanager.GovGrantsManager;
 public class ApprovalProcessPage extends GovGrantsManager {
     /******* "Variables and Locators" *****************/
 
-    private final By approvalDecisionPannel, approvalCommentTextBox, submitButton, saveButton, submitForApprovalButton;
+    private final By approvalDecisionPannel, approvalCommentTextBox, submitButton, saveButton;
 
     /**
      * Constructor to handle dependency injection and framework library
@@ -25,9 +25,8 @@ public class ApprovalProcessPage extends GovGrantsManager {
         approvalCommentTextBox = By.xpath("//div[@id='ApprovalDecisionComponent']//textarea");
         submitButton = By.xpath("//input[@type='button' and @value='Submit']");
         saveButton = By.xpath("//input[@type='submit' and @value ='Save']");
-        submitForApprovalButton = By.xpath("//button[@type='button' and @title='Submit For Approval']");
     }
-
+    
     /**
      * click Submit
      */
@@ -42,13 +41,9 @@ public class ApprovalProcessPage extends GovGrantsManager {
         reiDriver.WaitFor().WaitForElementToBePresent(saveButton).click();
     }
 
-    public void clickSubmitForApproval() {
-        reiDriver.WaitFor().WaitForElementToBePresent(submitForApprovalButton).click();
-    }
-
     public void completeSubmitForapproval() {
         clickSaveButton();
-        clickSubmitForApproval();
+        getRightHeaderButton("Submit For Approval").click();
         reiDriver.switchTo().acceptAlert();
     }
 
@@ -57,10 +52,10 @@ public class ApprovalProcessPage extends GovGrantsManager {
      * 
      * @param programSubject
      * @param programType
-     * @throws ReiFrameworkCustomException 
+     * @throws ReiFrameworkCustomException
      */
     public void clickStartApprovalButton(String programSubject) throws ReiFrameworkCustomException {
-        if(getStartButtonInPendingTasks(programSubject, "Start").size() == 0) {
+        if (getStartButtonInPendingTasks(programSubject, "Start").size() == 0) {
             throw new ReiFrameworkCustomException("Start button is not present for the program");
         }
         for (WebElement tasks : getStartButtonInPendingTasks(programSubject, "Start")) {
@@ -160,16 +155,15 @@ public class ApprovalProcessPage extends GovGrantsManager {
     public void assertSpecificApprovalNotDisplayed(String subject) {
         Assert.assertEquals(0, isSpecificApprovalTask(subject, "Start").size());
     }
-    
+
     /**
-	 * Assert success message text inside success email of admin portal
-	 * 
-	 * @param status
-	 */
-	public void assertSuccessInsideStatusRowInsideSuccessEmails(String status) {
-		Assert.assertTrue(isSuccessDisplayed(status));
-	}
-    
+     * Assert success message text inside success email of admin portal
+     * 
+     * @param status
+     */
+    public void assertSuccessForEmailToProgramOwner() {
+        Assert.assertTrue(isSuccessForEmailToProgramOwner());
+    }
 
     /*********
      * "Local Methods with complete functionality - private"
@@ -250,7 +244,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
     /**
      * get exact start button for pending tasks assigned to me
      */
-    private List<WebElement> isSpecificApprovalTask(String programSubject,String titleInLocator) {
+    private List<WebElement> isSpecificApprovalTask(String programSubject, String titleInLocator) {
         int whileHandler = 0;
         By startButton = By.xpath("//div/table/tbody/tr/td/span/span/span[text()='" + programSubject
                 + "']//following::td/div/span/span/span/span/a[@title='" + titleInLocator + "']");
@@ -269,31 +263,54 @@ public class ApprovalProcessPage extends GovGrantsManager {
         System.out.println("size of pending task " + approvalStartButtonTable.size());
         return approvalStartButtonTable;
     }
-    
-	/**
-	 * validate if success message is displayed inside status row at Admin portal
-	 * 
-	 * @param status
-	 * @return
-	 */
-	private boolean isSuccessDisplayed(String status) {
-		boolean flag = false;
-		try {
-			if (getSuccessText(status).getAttribute("innerText").equals(status)) {
-				flag = true;
-			}
-		} catch (org.openqa.selenium.NoSuchElementException e) {
-		}
-		return flag;
-	}
-	
-	/**
-	 * get success text inside success email of email logs
-	 * 
-	 * @param status
-	 * @return
-	 */
-	private WebElement getSuccessText(String status) {
-		return reiDriver.WaitFor().WaitForElementToBePresent(By.xpath("//td//span[@title='Queued']"));
-	}
+
+    /**
+     * validate if email is successfully generated and is in queue or success in Admin portal
+     * @return
+     */
+    private boolean isSuccessForEmailToProgramOwner() {
+        boolean flag = false;
+        reiDriver.WaitFor().makeThreadSleep(1000);
+        try {
+            if (validateQueueEmail().getAttribute("title").equalsIgnoreCase("Queued")) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+            
+            }
+            if (flag == false) {
+                try {
+                    reiDriver.WaitFor().makeThreadSleep(1000);
+                    clickAndSelectOptionFromLeftDoubleArrowDropDown("Success Emails");
+                    if (validateSuccessEmail().get(0).isDisplayed()) {
+                        flag = true;
+                    }
+                } catch (Exception ee) {
+
+                }
+            }
+        return flag;
+    }
+
+    /**
+     * get success text inside success email of email logs
+     * 
+     * @param status
+     * @return
+     */
+    private WebElement validateQueueEmail() {
+        reiDriver.WaitFor().makeThreadSleep(200);
+        return reiDriver.findMyElement().getElement(By.xpath("//td//span[@title='Queued']"));
+    }
+
+    /**
+     * validate success message
+     * 
+     * @param status
+     * @return
+     */
+    private List<WebElement> validateSuccessEmail() {
+        return reiDriver.findMyElement().getElements(By.xpath(
+                "//td//span[text()='nauman.shahid@reisystems.com']/../../../../following-sibling::td//span[text()='TaskReminderTemplateMultiple']/../../../following-sibling::td//span[text()='Success']"));
+    }
 }
