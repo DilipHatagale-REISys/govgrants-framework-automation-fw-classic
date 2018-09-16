@@ -270,6 +270,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
      */
     private boolean isSuccessForEmailToProgramOwner() {
         boolean flag = false;
+        reiDriver.WaitFor().makeThreadSleep(1000);
         try {
             if (validateQueueEmail().getAttribute("title").equalsIgnoreCase("Queued")) {
                 flag = true;
@@ -279,6 +280,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
             }
             if (flag == false) {
                 try {
+                    reiDriver.WaitFor().makeThreadSleep(1000);
                     clickAndSelectOptionFromLeftDoubleArrowDropDown("Success Emails");
                     if (validateSuccessEmail().get(0).isDisplayed()) {
                         flag = true;

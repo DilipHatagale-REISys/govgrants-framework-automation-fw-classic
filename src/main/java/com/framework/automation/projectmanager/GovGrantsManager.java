@@ -153,6 +153,7 @@ public class GovGrantsManager extends ProjectWebServices {
         reiDriver.WaitFor()
                 .WaitForElementClickAble(By.xpath("//div[@class='modal-footer']/button[text()='" + buttonName + "']"))
                 .click();
+        waitForNavigationLogo();
     }
 
     /**
@@ -265,7 +266,7 @@ public class GovGrantsManager extends ProjectWebServices {
      * genric method to click on the double arrow dropdown
      */
     public void clickLeftPanelHeader() {
-        reiDriver.WaitFor().makeThreadSleep(500);
+        reiDriver.WaitFor().makeThreadSleep(1000);
         try {
         reiDriver.WaitFor().WaitForWebElementToBeVisible(reiDriver.findMyElement().getElement(doubleArrowDropDown)).click();
         } catch (Exception e) {
