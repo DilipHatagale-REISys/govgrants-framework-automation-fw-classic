@@ -22,6 +22,12 @@ public class FlexTableSteps {
     public void clickAnyIconInFlexTable(String iconName, String statusName,String programSubject) {
         flexTablePage.clickTableActionIconsForSpecificSubject(programSubject, statusName, iconName);
     }
+    
+    @When("^I click on \"([^\"]*)\" icon for \"([^\"]*)\" to save inside subtab$")
+    public void clickAnyIconInFlexTable(String iconName,String programRole) {
+        flexTablePage.clickRowLevelActionIconsInsideSubTab(programRole, iconName);
+        flexTablePage.clickSaveInModal();
+    }
 
     @Then("^I see \"([^\"]*)\" shown as flex table title$")
     public void assertFlextableTitle(String titleName) {
@@ -91,5 +97,10 @@ public class FlexTableSteps {
     @Then("^I see \"([^\"]*)\" opens in overLay window$")
     public void assertEditOpensInOverLayWindow(String titleName) {
         flexTablePage.asserTextInOverLayIframe(titleName);
+    }
+    
+    @Then("^I see entire page is refreshing$")
+    public void assertEntirePageRefresh() {
+    	flexTablePage.asserEntirePageRefreshOnButtonClick();
     }
 }

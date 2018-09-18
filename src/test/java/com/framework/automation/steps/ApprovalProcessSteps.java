@@ -8,89 +8,89 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class ApprovalProcessSteps {
-    ApprovalProcessPage approvalProcesPage;
+	ApprovalProcessPage approvalProcesPage;
 
-    public ApprovalProcessSteps(Controller controller, Handlers handler) {
-        approvalProcesPage = new ApprovalProcessPage(controller, handler);
-    }
+	public ApprovalProcessSteps(Controller controller, Handlers handler) {
+		approvalProcesPage = new ApprovalProcessPage(controller, handler);
+	}
 
-    @When("^I start the approval with subject \"([^\"]*)\"$")
-    public void startApproval(String programSubject) throws ReiFrameworkCustomException {
-        approvalProcesPage.clickStartApprovalButton(programSubject);
-    }
+	@When("^I start the approval with subject \"([^\"]*)\"$")
+	public void startApproval(String programSubject) throws ReiFrameworkCustomException {
+		approvalProcesPage.clickStartApprovalButton(programSubject);
+	}
 
-    @When("^I select \"([^\"]*)\" from approval decision panel$")
-    public void SelectApprovalDecisionPannel(String radioName) {
-        approvalProcesPage.selectApproveDecisionOption(radioName);
-    }
+	@When("^I select \"([^\"]*)\" from approval decision panel$")
+	public void SelectApprovalDecisionPannel(String radioName) {
+		approvalProcesPage.selectApproveDecisionOption(radioName);
+	}
 
-    @When("^I click submit$")
-    public void clickSubmit() {
-        approvalProcesPage.clickSubmitButton();
-    }
+	@When("^I click submit$")
+	public void clickSubmit() {
+		approvalProcesPage.clickSubmitButton();
+	}
 
-    @When("^I complete submit for approval$")
-    public void clickSave() {
-        approvalProcesPage.completeSubmitForapproval();
-    }
-    
-    @Then("^I see \"([^\"]*)\" is disabled$")
-    public void assertRadioButtondisabled(String radioButtonName) {
-        approvalProcesPage.assertRadioButtonNotDisplayed(radioButtonName);
-    }
+	@When("^I complete submit for approval$")
+	public void clickSave() {
+		approvalProcesPage.completeSubmitForapproval();
+	}
 
-    @Then("^i see \"([^\"]*)\" shown at number \"([^\"]*)\" in Approve Decision panel$")
-    public void assertApprovalDecisionPannelRadioSequence(String radioName, String sequenceNumber) {
-        approvalProcesPage.assertApprovalDecisoinRadioSequence(radioName, Integer.parseInt(sequenceNumber));
-    }
+	@Then("^I see \"([^\"]*)\" is disabled$")
+	public void assertRadioButtondisabled(String radioButtonName) {
+		approvalProcesPage.assertRadioButtonNotDisplayed(radioButtonName);
+	}
 
-    @Then("^I see \"([^\"]*)\" error is displayed$")
-    public void assertApprovalDecisionMandatoryErrorDisplayed(String error) {
-        approvalProcesPage.assertDecisionCommentsMandatory(error);
-    }
+	@Then("^i see \"([^\"]*)\" shown at number \"([^\"]*)\" in Approve Decision panel$")
+	public void assertApprovalDecisionPannelRadioSequence(String radioName, String sequenceNumber) {
+		approvalProcesPage.assertApprovalDecisoinRadioSequence(radioName, Integer.parseInt(sequenceNumber));
+	}
 
-    @Then("^I see \"([^\"]*)\" inside approval decision box$")
-    public void assertApproveTextInsideDecisionBox(String radioButtonName) {
-        approvalProcesPage.assertApproveRadioButtonText(radioButtonName);
-    }
+	@Then("^I see \"([^\"]*)\" error is displayed$")
+	public void assertApprovalDecisionMandatoryErrorDisplayed(String error) {
+		approvalProcesPage.assertDecisionCommentsMandatory(error);
+	}
 
-    @When("^I enter Approval comment$")
-    public void enterApprovalComment() {
-        approvalProcesPage.programApprovalTextBox();
-    }
+	@Then("^I see \"([^\"]*)\" inside approval decision box$")
+	public void assertApproveTextInsideDecisionBox(String radioButtonName) {
+		approvalProcesPage.assertApproveRadioButtonText(radioButtonName);
+	}
 
-    @Then("^I see confirmation box with body \"([^\"]*)\" is displayed$")
-    public void assertConfirmationBoxWithMessage(String message) {
-        approvalProcesPage.assertMessageOfConfirmationBoxPopUp(message);
-    }
+	@When("^I enter Approval comment$")
+	public void enterApprovalComment() {
+		approvalProcesPage.programApprovalTextBox();
+	}
 
-    @When("^I click select dropdown$")
-    public void clickSelectDropdown() {
-        approvalProcesPage.clickOnSelectDropdown();
-    }
+	@Then("^I see confirmation box with body \"([^\"]*)\" is displayed$")
+	public void assertConfirmationBoxWithMessage(String message) {
+		approvalProcesPage.assertMessageOfConfirmationBoxPopUp(message);
+	}
 
-    @Then("^I see \"([^\"]*)\" inside selectbox$")
-    public void assertUserInsideSelectDropdown(String dropDownValue) {
-        approvalProcesPage.assertUserInsideDropdown(dropDownValue);
-    }
+	@When("^I click select dropdown$")
+	public void clickSelectDropdown() {
+		approvalProcesPage.clickOnSelectDropdown();
+	}
 
-    @Then("^I see approval with subject as \"([^\"]*)\" is not displayed$")
-    public void assertSpecificApprovalIsNotDisplayed(String subject) {
-        approvalProcesPage.assertSpecificApprovalNotDisplayed(subject);
-    }
+	@Then("^I see \"([^\"]*)\" inside selectbox$")
+	public void assertUserInsideSelectDropdown(String dropDownValue) {
+		approvalProcesPage.assertUserInsideDropdown(dropDownValue);
+	}
 
-    @When("^I select \"([^\"]*)\" from double headed dropdown inside admin portal$")
-    public void selectSpecificOptionsFromDropDown(String dropdownoption) {
-        approvalProcesPage.clickAndSelectOptionFromLeftDoubleArrowDropDown(dropdownoption);
-    }
+	@Then("^I see approval with subject as \"([^\"]*)\" is not displayed$")
+	public void assertSpecificApprovalIsNotDisplayed(String subject) {
+		approvalProcesPage.assertSpecificApprovalNotDisplayed(subject);
+	}
 
-    @When("^I click on \"([^\"]*)\" icon of status \"([^\"]*)\" inside admin portal$")
-    public void clickAnyIconInFlexTable(String iconName, String statusName) {
-        approvalProcesPage.clickTableIcons(statusName, iconName);
-    }
+	@When("^I select \"([^\"]*)\" from double headed dropdown inside admin portal$")
+	public void selectSpecificOptionsFromDropDown(String dropdownoption) {
+		approvalProcesPage.clickAndSelectOptionFromLeftDoubleArrowDropDown(dropdownoption);
+	}
 
-    @Then("^I see email is generated$")
-    public void assertSuccessForEmailToProgramOwner() {
-        approvalProcesPage.assertSuccessForEmailToProgramOwner();
-    }
+	@When("^I click on \"([^\"]*)\" icon of status \"([^\"]*)\" inside admin portal$")
+	public void clickAnyIconInFlexTable(String iconName, String statusName) {
+		approvalProcesPage.clickTableIcons(statusName, iconName);
+	}
+
+	@Then("^I see email is generated with template \"([^\"]*)\"$")
+	public void assertSuccessForEmailToProgramOwner(String templateName) {
+		approvalProcesPage.assertSuccessForEmailToProgramOwner(templateName);
+	}
 }
