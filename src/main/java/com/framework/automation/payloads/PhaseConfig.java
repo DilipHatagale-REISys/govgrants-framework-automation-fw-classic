@@ -28,8 +28,12 @@ public class PhaseConfig {
                     payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), new ApiUtilities()
                             .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), filterClause),
                     String.valueOf(SObjectAPIs.GNT__AvailableforProfiles__c), value);
-
             break;
+        case "TAB DISPLAY LABEL":
+            finalPayload = String.format(
+                    payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), new ApiUtilities()
+                            .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), filterClause),
+                    String.valueOf(SObjectAPIs.GNT__TabName__c), value);
         }
         System.out.println("method for finalpayload " + finalPayload);
         return finalPayload;
