@@ -47,9 +47,4 @@ public class CommonSteps {
 	public void asserPageTitle(String pageTitle) {
 		govGrantsManager.assertPageTitle(pageTitle);
 	}
-
-	@When("^I navigate to \"([^\"]*)\" sub tab$")
-	public void navigateToSubTabs(String subtabName) {
-		govGrantsManager.clickSubTab(subtabName);
-	}
 }

@@ -27,7 +27,7 @@ public class GovGrantsManager extends ProjectWebServices {
 			menuIcon, selectRecordCheckBox, totalRowsCalc, totalRowCount, flexTablelastRowNameAsTotal,
 			editIconForProgramFlexTable, pendingTasksTableRef, dangerAlert, confirmationBoxMessage, selectDropdown,
 			specificUserInsideDropdown, quickSearchButton, doubleArrowDropDown, navProfile_CurrentApp,
-			iframeRowLevelEdit, saveButton,stepProgressBar;
+			saveButton,stepProgressBar;
 
 	/**
 	 * Super Constructor
@@ -72,7 +72,6 @@ public class GovGrantsManager extends ProjectWebServices {
 		quickSearchButton = By.cssSelector("div.input-group-btn>a>i.fa.fa-search");
 		completeTableRowString = "//div[@class='panel-heading']/following-sibling::div[contains(@class,'panel-body')]//div/table/tbody/tr";
 		navProfile_CurrentApp = By.cssSelector("div#myNavbarProfile>ul>li>a>span");
-		iframeRowLevelEdit = By.xpath("//iframe[@id='ProgramRolesAndResponsibilitiesiframeContentId']");
 		saveButton = By.xpath("//input[ @value='Save' and @type='submit']");
 		stepProgressBar = By.xpath("//div[@class='container-fluid']//*[@id='progressBarId']//ol");
 	}
@@ -576,20 +575,6 @@ public class GovGrantsManager extends ProjectWebServices {
 	}
 
 	/**
-	 * 
-	 * Click on Sub Tabs inside planning and Announcements
-	 */
-
-	public void clickSubTab(String subTab) {
-		try {
-			reiDriver.JavaScript().clickByJS(By.xpath("//div[@id='myTabs']/ul/li/a[@name='" + subTab + "']"));
-		} catch (Exception e) {
-			reiDriver.findMyElement().getElement(By.xpath("//div[@id='myTabs']/ul/li/a[@name='" + subTab + "']"))
-					.click();
-		}
-	}
-
-	/**
 	 * click row level action item based on program role ,icon name
 	 * 
 	 * @param programRole
@@ -630,13 +615,5 @@ public class GovGrantsManager extends ProjectWebServices {
 					.equalsIgnoreCase(appName);
 		}
 		return isAppPresent;
-	}
-
-	/**
-	 * click on save button for row level action item iframe
-	 */
-	public void clickSave() {
-		reiDriver.switchTo().switchToFrame(iframeRowLevelEdit);
-		reiDriver.WaitFor().WaitForElementToBePresent(saveButton).click();
 	}
 }

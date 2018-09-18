@@ -169,6 +169,6 @@ Feature: Flex Table Component Scenarios
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
 	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
-	When I navigate to "Roles" sub tab
-	When I click on "Edit" icon for "Owner" inside subtab
+	When I click on "Roles" sub tab inside page layout 
+	When I click on "Edit" icon for "Owner" to save inside subtab
 	Then I see entire page is refreshing	
