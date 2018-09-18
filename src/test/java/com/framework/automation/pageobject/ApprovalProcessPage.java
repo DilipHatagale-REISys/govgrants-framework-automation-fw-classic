@@ -12,305 +12,308 @@ import com.automation.rei.handlers.Handlers;
 import com.framework.automation.projectmanager.GovGrantsManager;
 
 public class ApprovalProcessPage extends GovGrantsManager {
-    /******* "Variables and Locators" *****************/
+	/******* "Variables and Locators" *****************/
 
-    private final By approvalDecisionPannel, approvalCommentTextBox, submitButton, saveButton;
+	private final By approvalDecisionPannel, approvalCommentTextBox, submitButton, saveButton;
 
-    /**
-     * Constructor to handle dependency injection and framework library
-     */
-    public ApprovalProcessPage(Controller controller, Handlers reiDriver) {
-        super(controller, reiDriver);
-        approvalDecisionPannel = By.cssSelector("div>span>input[name='myRadio']");
-        approvalCommentTextBox = By.xpath("//div[@id='ApprovalDecisionComponent']//textarea");
-        submitButton = By.xpath("//input[@type='button' and @value='Submit']");
-        saveButton = By.xpath("//input[@type='submit' and @value ='Save']");
-    }
-    
-    /**
-     * click Submit
-     */
-    public void clickSubmitButton() {
-        reiDriver.WaitFor().WaitForElementToBePresent(submitButton).click();
-    }
+	/**
+	 * Constructor to handle dependency injection and framework library
+	 */
+	public ApprovalProcessPage(Controller controller, Handlers reiDriver) {
+		super(controller, reiDriver);
+		approvalDecisionPannel = By.cssSelector("div>span>input[name='myRadio']");
+		approvalCommentTextBox = By.xpath("//div[@id='ApprovalDecisionComponent']//textarea");
+		submitButton = By.xpath("//input[@type='button' and @value='Submit']");
+		saveButton = By.xpath("//input[@type='submit' and @value ='Save']");
+	}
 
-    /**
-     * click Save
-     */
-    public void clickSaveButton() {
-        reiDriver.WaitFor().WaitForElementToBePresent(saveButton).click();
-    }
+	/**
+	 * click Submit
+	 */
+	public void clickSubmitButton() {
+		reiDriver.WaitFor().WaitForElementToBePresent(submitButton).click();
+	}
 
-    public void completeSubmitForapproval() {
-        clickSaveButton();
-        getRightHeaderButton("Submit For Approval").click();
-        reiDriver.switchTo().acceptAlert();
-    }
+	/**
+	 * click Save
+	 */
+	public void clickSaveButton() {
+		reiDriver.WaitFor().WaitForElementToBePresent(saveButton).click();
+	}
 
-    /**
-     * click approval start play button
-     * 
-     * @param programSubject
-     * @param programType
-     * @throws ReiFrameworkCustomException
-     */
-    public void clickStartApprovalButton(String programSubject) throws ReiFrameworkCustomException {
-        if (getStartButtonInPendingTasks(programSubject, "Start").size() == 0) {
-            throw new ReiFrameworkCustomException("Start button is not present for the program");
-        }
-        for (WebElement tasks : getStartButtonInPendingTasks(programSubject, "Start")) {
-            tasks.click();
-            break;
-        }
-    }
+	public void completeSubmitForapproval() {
+		clickSaveButton();
+		getRightHeaderButton("Submit For Approval").click();
+		reiDriver.switchTo().acceptAlert();
+	}
 
-    /**
-     * selects radio option from approval decision panel
-     * 
-     * @param radioName
-     */
-    public void selectApproveDecisionOption(String radioName) {
-        getApprovalDecisionPannel(radioName).click();
-    }
+	/**
+	 * click approval start play button
+	 * 
+	 * @param programSubject
+	 * @param programType
+	 * @throws ReiFrameworkCustomException
+	 */
+	public void clickStartApprovalButton(String programSubject) throws ReiFrameworkCustomException {
+		if (getStartButtonInPendingTasks(programSubject, "Start").size() == 0) {
+			throw new ReiFrameworkCustomException("Start button is not present for the program");
+		}
+		for (WebElement tasks : getStartButtonInPendingTasks(programSubject, "Start")) {
+			tasks.click();
+			break;
+		}
+	}
 
-    /**
-     * Assert specific approce radio button is not displayed
-     * 
-     * @param radioButtonName
-     */
-    public void assertRadioButtonNotDisplayed(String radioButtonName) {
-        Assert.assertTrue(isApprovalDecisionRadioButtonDisplayed(radioButtonName));
-    }
+	/**
+	 * selects radio option from approval decision panel
+	 * 
+	 * @param radioName
+	 */
+	public void selectApproveDecisionOption(String radioName) {
+		getApprovalDecisionPannel(radioName).click();
+	}
 
-    /**
-     * assert true if sequence is correct as per provided name
-     * 
-     * @param radioName
-     * @param sequenceNumber
-     */
-    public void assertApprovalDecisoinRadioSequence(String radioName, int sequenceNumber) {
-        Assert.assertTrue(isApprovalDecisionRadioSequence(radioName, sequenceNumber));
-    }
+	/**
+	 * Assert specific approce radio button is not displayed
+	 * 
+	 * @param radioButtonName
+	 */
+	public void assertRadioButtonNotDisplayed(String radioButtonName) {
+		Assert.assertTrue(isApprovalDecisionRadioButtonDisplayed(radioButtonName));
+	}
 
-    /**
-     * assert if error is displayed on not entering text in decision box
-     * 
-     * @param error
-     */
-    public void assertDecisionCommentsMandatory(String error) {
-        Assert.assertTrue(reiDriver.WaitFor().WaitForElementToBePresent(dangerAlert).getText().equalsIgnoreCase(error));
-    }
+	/**
+	 * assert true if sequence is correct as per provided name
+	 * 
+	 * @param radioName
+	 * @param sequenceNumber
+	 */
+	public void assertApprovalDecisoinRadioSequence(String radioName, int sequenceNumber) {
+		Assert.assertTrue(isApprovalDecisionRadioSequence(radioName, sequenceNumber));
+	}
 
-    /**
-     * Assert specific approve radio button text
-     * 
-     * @param radioButtonName
-     */
-    public void assertApproveRadioButtonText(String radioButtonName) {
-        Assert.assertTrue(isApprovalRadioButtonTextChanged(radioButtonName));
-    }
+	/**
+	 * assert if error is displayed on not entering text in decision box
+	 * 
+	 * @param error
+	 */
+	public void assertDecisionCommentsMandatory(String error) {
+		Assert.assertTrue(reiDriver.WaitFor().WaitForElementToBePresent(dangerAlert).getText().equalsIgnoreCase(error));
+	}
 
-    /**
-     * Enter input value to program approval comment box.
-     */
-    public void programApprovalTextBox() {
-        reiDriver.WaitFor().WaitForElementToBePresent(approvalCommentTextBox);
-        reiDriver.textInput().enterText(approvalCommentTextBox, defaultComment);
-    }
+	/**
+	 * Assert specific approve radio button text
+	 * 
+	 * @param radioButtonName
+	 */
+	public void assertApproveRadioButtonText(String radioButtonName) {
+		Assert.assertTrue(isApprovalRadioButtonTextChanged(radioButtonName));
+	}
 
-    /**
-     * assert if message is displayed on confirmation box pop up on approve radio
-     * button
-     * 
-     * @param message
-     */
-    public void assertMessageOfConfirmationBoxPopUp(String message) {
-        Assert.assertTrue(reiDriver.WaitFor().WaitForElementToBePresent(confirmationBoxMessage)
-                .getAttribute("innerText").equalsIgnoreCase(message));
-    }
+	/**
+	 * Enter input value to program approval comment box.
+	 */
+	public void programApprovalTextBox() {
+		reiDriver.WaitFor().WaitForElementToBePresent(approvalCommentTextBox);
+		reiDriver.textInput().enterText(approvalCommentTextBox, defaultComment);
+	}
 
-    /**
-     * click on Select dropdown inside Approval decision box
-     */
-    public void clickOnSelectDropdown() {
-        reiDriver.WaitFor().WaitForElementToBePresent(selectDropdown).click();
-    }
+	/**
+	 * assert if message is displayed on confirmation box pop up on approve radio
+	 * button
+	 * 
+	 * @param message
+	 */
+	public void assertMessageOfConfirmationBoxPopUp(String message) {
+		Assert.assertTrue(reiDriver.WaitFor().WaitForElementToBePresent(confirmationBoxMessage)
+				.getAttribute("innerText").equalsIgnoreCase(message));
+	}
 
-    /**
-     * assert if user is displayed inside select dropdown list
-     * 
-     * @param userName
-     */
-    public void assertUserInsideDropdown(String dropDownValue) {
-        Assert.assertTrue(reiDriver.WaitFor().WaitForElementToBePresent(specificUserInsideDropdown)
-                .getAttribute("innerText").equalsIgnoreCase(dropDownValue));
-    }
+	/**
+	 * click on Select dropdown inside Approval decision box
+	 */
+	public void clickOnSelectDropdown() {
+		reiDriver.WaitFor().WaitForElementToBePresent(selectDropdown).click();
+	}
 
-    /**
-     * assert true if specific subject is not displayed for approval
-     * 
-     * @param approverType
-     * @param subject
-     */
-    public void assertSpecificApprovalNotDisplayed(String subject) {
-        Assert.assertEquals(0, isSpecificApprovalTask(subject, "Start").size());
-    }
+	/**
+	 * assert if user is displayed inside select dropdown list
+	 * 
+	 * @param userName
+	 */
+	public void assertUserInsideDropdown(String dropDownValue) {
+		Assert.assertTrue(reiDriver.WaitFor().WaitForElementToBePresent(specificUserInsideDropdown)
+				.getAttribute("innerText").equalsIgnoreCase(dropDownValue));
+	}
 
-    /**
-     * Assert success message text inside success email of admin portal
-     * 
-     * @param status
-     */
-    public void assertSuccessForEmailToProgramOwner() {
-        Assert.assertTrue(isSuccessForEmailToProgramOwner());
-    }
+	/**
+	 * assert true if specific subject is not displayed for approval
+	 * 
+	 * @param approverType
+	 * @param subject
+	 */
+	public void assertSpecificApprovalNotDisplayed(String subject) {
+		Assert.assertEquals(0, isSpecificApprovalTask(subject, "Start").size());
+	}
 
-    /*********
-     * "Local Methods with complete functionality - private"
-     *****************/
+	/**
+	 * Assert success message text inside success email of admin portal
+	 * 
+	 * @param status
+	 */
+	public void assertSuccessForEmailToProgramOwner(String templateName) {
+		Assert.assertTrue(isSuccessForEmailToProgramOwner(templateName));
+	}
 
-    /**
-     * get radio button specific to Approval decision
-     * 
-     * @param radioButtonName
-     * @return
-     */
-    private WebElement getApprovalDecisionPannel(String radioButtonName) {
-        return reiDriver.findMyElement()
-                .getElement(By.xpath("//div/span/input[@name='myRadio' and @value='" + radioButtonName + "']"));
-    }
+	/*********
+	 * "Local Methods with complete functionality - private"
+	 *****************/
 
-    /**
-     * is specific radio button displayed in approval decision
-     * 
-     * @param radioButtonName
-     * @return
-     */
-    private boolean isApprovalDecisionRadioButtonDisplayed(String radioButtonName) {
-        boolean flag = true;
-        try {
-            if (getApprovalDecisionPannel(radioButtonName).isDisplayed()) {
-                flag = false;
-            }
-        } catch (org.openqa.selenium.NoSuchElementException e) {
+	/**
+	 * get radio button specific to Approval decision
+	 * 
+	 * @param radioButtonName
+	 * @return
+	 */
+	private WebElement getApprovalDecisionPannel(String radioButtonName) {
+		return reiDriver.findMyElement()
+				.getElement(By.xpath("//div/span/input[@name='myRadio' and @value='" + radioButtonName + "']"));
+	}
 
-        }
-        return flag;
-    }
+	/**
+	 * is specific radio button displayed in approval decision
+	 * 
+	 * @param radioButtonName
+	 * @return
+	 */
+	private boolean isApprovalDecisionRadioButtonDisplayed(String radioButtonName) {
+		boolean flag = true;
+		try {
+			if (getApprovalDecisionPannel(radioButtonName).isDisplayed()) {
+				flag = false;
+			}
+		} catch (org.openqa.selenium.NoSuchElementException e) {
 
-    /**
-     * return true if specific radio name appears at a specific sequence
-     * 
-     * @param radioName
-     * @param sequenceNumber
-     * @return
-     */
-    private Boolean isApprovalDecisionRadioSequence(String radioName, int sequenceNumber) {
-        if (reiDriver.findMyElement().getElements(approvalDecisionPannel).get(sequenceNumber).getAttribute("value")
-                .contains(radioName)) {
-            return true;
-        } else
-            return false;
-    }
+		}
+		return flag;
+	}
 
-    /**
-     * validate if radio button text is changed
-     * 
-     * @param radioButtonName
-     * @return
-     */
-    private boolean isApprovalRadioButtonTextChanged(String radioButtonName) {
-        boolean flag = false;
-        try {
-            if (getApprovedText(radioButtonName).getAttribute("innerText").equals(radioButtonName)) {
-                flag = true;
-            }
-        } catch (org.openqa.selenium.NoSuchElementException e) {
-        }
-        return flag;
-    }
+	/**
+	 * return true if specific radio name appears at a specific sequence
+	 * 
+	 * @param radioName
+	 * @param sequenceNumber
+	 * @return
+	 */
+	private Boolean isApprovalDecisionRadioSequence(String radioName, int sequenceNumber) {
+		if (reiDriver.findMyElement().getElements(approvalDecisionPannel).get(sequenceNumber).getAttribute("value")
+				.contains(radioName)) {
+			return true;
+		} else
+			return false;
+	}
 
-    /**
-     * get specific Approved text
-     * 
-     * @param radioButtonName
-     * @return
-     */
-    private WebElement getApprovedText(String radioButtonName) {
-        return reiDriver.findMyElement().getElement(By.xpath(
-                "//div/span/input[@name='myRadio' and @value='Approve']//ancestor::span[@class='approval-actions ng-scope ng-binding']"));
-    }
+	/**
+	 * validate if radio button text is changed
+	 * 
+	 * @param radioButtonName
+	 * @return
+	 */
+	private boolean isApprovalRadioButtonTextChanged(String radioButtonName) {
+		boolean flag = false;
+		try {
+			if (getApprovedText(radioButtonName).getAttribute("innerText").equals(radioButtonName)) {
+				flag = true;
+			}
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+		}
+		return flag;
+	}
 
-    /**
-     * get exact start button for pending tasks assigned to me
-     */
-    private List<WebElement> isSpecificApprovalTask(String programSubject, String titleInLocator) {
-        int whileHandler = 0;
-        By startButton = By.xpath("//div/table/tbody/tr/td/span/span/span[text()='" + programSubject
-                + "']//following::td/div/span/span/span/span/a[@title='" + titleInLocator + "']");
-        List<WebElement> approvalStartButtonTable = reiDriver.findMyElement().getElements(startButton);
-        int approvalStartButtonTableSize = approvalStartButtonTable.size();
-        while (approvalStartButtonTableSize == 0) {
-            whileHandler++;
-            if (whileHandler == 2) {
-                break;
-            }
-            reiDriver.get().getRefresh();
-            reiDriver.WaitFor().WaitForElementToBePresent(pendingTasksTableRef);
-            approvalStartButtonTable = reiDriver.findMyElement().getElements(startButton);
-            approvalStartButtonTableSize = approvalStartButtonTable.size();
-        }
-        System.out.println("size of pending task " + approvalStartButtonTable.size());
-        return approvalStartButtonTable;
-    }
+	/**
+	 * get specific Approved text
+	 * 
+	 * @param radioButtonName
+	 * @return
+	 */
+	private WebElement getApprovedText(String radioButtonName) {
+		return reiDriver.findMyElement().getElement(By.xpath(
+				"//div/span/input[@name='myRadio' and @value='Approve']//ancestor::span[@class='approval-actions ng-scope ng-binding']"));
+	}
 
-    /**
-     * validate if email is successfully generated and is in queue or success in Admin portal
-     * @return
-     */
-    private boolean isSuccessForEmailToProgramOwner() {
-        boolean flag = false;
-        reiDriver.WaitFor().makeThreadSleep(1000);
-        try {
-            if (validateQueueEmail().getAttribute("title").equalsIgnoreCase("Queued")) {
-                flag = true;
-            }
-        } catch (org.openqa.selenium.NoSuchElementException e) {
-            
-            }
-            if (flag == false) {
-                try {
-                    reiDriver.WaitFor().makeThreadSleep(1000);
-                    clickAndSelectOptionFromLeftDoubleArrowDropDown("Success Emails");
-                    if (validateSuccessEmail().get(0).isDisplayed()) {
-                        flag = true;
-                    }
-                } catch (Exception ee) {
+	/**
+	 * get exact start button for pending tasks assigned to me
+	 */
+	private List<WebElement> isSpecificApprovalTask(String programSubject, String titleInLocator) {
+		int whileHandler = 0;
+		By startButton = By.xpath("//div/table/tbody/tr/td/span/span/span[text()='" + programSubject
+				+ "']//following::td/div/span/span/span/span/a[@title='" + titleInLocator + "']");
+		List<WebElement> approvalStartButtonTable = reiDriver.findMyElement().getElements(startButton);
+		int approvalStartButtonTableSize = approvalStartButtonTable.size();
+		while (approvalStartButtonTableSize == 0) {
+			whileHandler++;
+			if (whileHandler == 2) {
+				break;
+			}
+			reiDriver.get().getRefresh();
+			reiDriver.WaitFor().WaitForElementToBePresent(pendingTasksTableRef);
+			approvalStartButtonTable = reiDriver.findMyElement().getElements(startButton);
+			approvalStartButtonTableSize = approvalStartButtonTable.size();
+		}
+		System.out.println("size of pending task " + approvalStartButtonTable.size());
+		return approvalStartButtonTable;
+	}
 
-                }
-            }
-        return flag;
-    }
+	/**
+	 * validate if email is successfully generated and is in queue or success in
+	 * Admin portal
+	 * 
+	 * @return
+	 */
+	private boolean isSuccessForEmailToProgramOwner(String templateName) {
+		boolean flag = false;
+		reiDriver.WaitFor().makeThreadSleep(1000);
+		try {
+			if (validateQueueEmail().getAttribute("title").equalsIgnoreCase("Queued")) {
+				flag = true;
+			}
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+		}
+		if (flag == false) {
+			try {
+				clickAndSelectOptionFromLeftDoubleArrowDropDown("Success Emails");
+				reiDriver.WaitFor().makeThreadSleep(2500);
+				if (validateSuccessEmail(templateName).get(0).isDisplayed()) {
+					flag = true;
+				}
+			} catch (Exception ee) {
 
-    /**
-     * get success text inside success email of email logs
-     * 
-     * @param status
-     * @return
-     */
-    private WebElement validateQueueEmail() {
-        reiDriver.WaitFor().makeThreadSleep(200);
-        return reiDriver.findMyElement().getElement(By.xpath("//td//span[@title='Queued']"));
-    }
+			}
+		}
+		return flag;
+	}
 
-    /**
-     * validate success message
-     * 
-     * @param status
-     * @return
-     */
-    private List<WebElement> validateSuccessEmail() {
-        return reiDriver.findMyElement().getElements(By.xpath(
-                "//td//span[text()='nauman.shahid@reisystems.com']/../../../../following-sibling::td//span[text()='TaskReminderTemplateMultiple']/../../../following-sibling::td//span[text()='Success']"));
-    }
+	/**
+	 * get success text inside success email of email logs
+	 * 
+	 * @param status
+	 * @return
+	 */
+	private WebElement validateQueueEmail() {
+		reiDriver.WaitFor().makeThreadSleep(200);
+		return reiDriver.findMyElement().getElement(By.xpath("//td//span[@title='Queued']"));
+	}
+
+	/**
+	 * validate success message
+	 * 
+	 * @param status
+	 * @return
+	 */
+	private List<WebElement> validateSuccessEmail(String templateName) {
+
+		return reiDriver.findMyElement().getElements(By.xpath(
+				"//td//span[text()='nauman.shahid@reisystems.com']/../../../../following-sibling::td//span[text()='"
+						+ templateName + "']/../../../following-sibling::td//span[text()='Success']"));
+	}
 }

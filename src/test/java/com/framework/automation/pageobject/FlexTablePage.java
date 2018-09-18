@@ -10,7 +10,8 @@ import com.framework.automation.projectmanager.GovGrantsManager;
 
 public class FlexTablePage extends GovGrantsManager {
     /******* "Variables and Locators" *****************/
-    private final By overLayFrame;
+	
+    private final By overLayFrame,innerFlexTableActionIframe;
 
     /**
      * Constructor to handle dependency injection and framework library
@@ -18,6 +19,7 @@ public class FlexTablePage extends GovGrantsManager {
     public FlexTablePage(Controller controller, Handlers reiDriver) {
         super(controller, reiDriver);
         overLayFrame = By.xpath("//iframe[@id='ProgramsiframeContentId']");
+        innerFlexTableActionIframe = By.xpath("//iframe[@id='ProgramRolesAndResponsibilitiesiframeContentId']");
     }
 
     /******* "Key Methods with complete functionality - public" *****************/
@@ -141,6 +143,16 @@ public class FlexTablePage extends GovGrantsManager {
      */
     public void asserTextInOverLayIframe(String titleName) {
         Assert.assertTrue(isSpecificOverlayDisplayed(titleName));
+    }
+    
+    /**
+     * assert if entire page is refreshing
+     * 
+     */
+    public void asserEntirePageRefreshOnButtonClick() {
+    	waitForNavigationLogo();
+    	String state = isPageRefreshOnButtonClick();
+        Assert.assertTrue(state.equalsIgnoreCase("Complete"));
     }
 
     /*********
@@ -386,4 +398,20 @@ public class FlexTablePage extends GovGrantsManager {
         }
         return flag;
     }
+    
+    /**
+     * return true if entire page refreshed on button click 
+     * 
+     */
+    private String isPageRefreshOnButtonClick() {
+    	return reiDriver.JavaScript().getPageLoadStatus();
+    }
+    
+    /**
+	 * click on save button and after clicking on save button switching to iframe for row level action item
+	 */
+	public void clickSaveInModal() {
+		reiDriver.switchTo().switchToFrame(innerFlexTableActionIframe);
+		reiDriver.WaitFor().WaitForElementToBePresent(saveButton).click();
+	}
 }
