@@ -92,4 +92,15 @@ public class FlexTableSteps {
     public void assertEditOpensInOverLayWindow(String titleName) {
         flexTablePage.asserTextInOverLayIframe(titleName);
     }
+    
+    @When("^I click on \"([^\"]*)\" icon for \"([^\"]*)\" inside subtab$")
+    public void clickAnyIconInFlexTable(String iconName,String programRole) {
+        flexTablePage.clickRowLevelActionIconsInsideSubTab(programRole, iconName);
+        flexTablePage.clickSave();
+    }
+    
+    @Then("^I see entire page is refreshing$")
+    public void assertEntirePageRefresh() {
+    	flexTablePage.asserEntirePageRefreshOnButtonClick();
+    }
 }

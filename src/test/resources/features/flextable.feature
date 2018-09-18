@@ -159,4 +159,16 @@ Feature: Flex Table Component Scenarios
 	When I search for "Test program for automation"
 	When I click on "Edit" icon of status "Created" for "Test program for automation" program in flex table
 	Then I see "Edit" opens in overLay window
-
+	
+	@34292 @all @refreshEntirePage-gPlanning
+	Scenario: validate flex table action field- refresh entire page
+	Given I have default configuration for "Flex Table Action" field "Refresh Behavior" as "" with filter ""
+	Given I setup filter clause for "Flex Table Action" in "ProgramRolesAndResponsibilities" for field "Name" having value "Edit"
+	When I reconfigure "Flex Table Action" field "Refresh Behavior" as "Refresh the entire page"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	When I navigate to "Roles" sub tab
+	When I click on "Edit" icon for "Owner" inside subtab
+	Then I see entire page is refreshing	

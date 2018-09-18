@@ -142,6 +142,20 @@ public class FlexTablePage extends GovGrantsManager {
     public void asserTextInOverLayIframe(String titleName) {
         Assert.assertTrue(isSpecificOverlayDisplayed(titleName));
     }
+    
+    /**
+     * assert if entire page is refreshing
+     * 
+     */
+    public void asserEntirePageRefreshOnButtonClick() {
+    	waitForNavigationLogo();
+    	if(isPageRefreshOnButtonClick().equalsIgnoreCase("loading")) {
+    			System.out.println("staus is loading");
+    	}
+    	String state = isPageRefreshOnButtonClick();
+        Assert.assertTrue(state.equalsIgnoreCase("Complete"));
+        
+    }
 
     /*********
      * "Local Methods with complete functionality - private"
@@ -385,5 +399,15 @@ public class FlexTablePage extends GovGrantsManager {
             flag = true;
         }
         return flag;
+    }
+    
+    /**
+     * return true if entire page refreshed on button click 
+     * 
+     */
+    private String isPageRefreshOnButtonClick() {
+    	return reiDriver.JavaScript().getPageLoadStatus();
+		 
+        
     }
 }
