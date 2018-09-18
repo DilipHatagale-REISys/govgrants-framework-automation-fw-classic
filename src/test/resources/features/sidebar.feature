@@ -5,27 +5,27 @@ Feature: Side bar Component Scenarios
 
 	@33877 @all @validateChangeinTaskMenuSequence-gHome 
 	Scenario: validate after changing sequence of task menu from second to third in side bar 
-	Given I have default configuration for "Phases" field "Sidebar Component Sequence" as "Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links" with filter ""
+	Given I have default configuration for "Side Bar Header" field "Sidebar Component Sequence" as "Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links" with filter ""
 	Given I setup filter clause for "General" in "GrantorHome" for field "" having value ""
-	When I reconfigure "Phases" field "Sidebar Component Sequence" as "Search,ActivityMenu,TaskMenu,RecentlyViewed,TechnicalSupport,Links"
+	When I reconfigure "Side Bar Header" field "Sidebar Component Sequence" as "Search,ActivityMenu,TaskMenu,RecentlyViewed,TechnicalSupport,Links"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app 
 	Then i see "Tasks" shown at number "2" in sideBar 
 	
 	@33876	 @all @validateSidebarTaskMenuRemoval-gHome
 	Scenario: validate disabling of task menu from side bar
-	Given I have default configuration for "Phases" field "Sidebar Component Sequence" as "Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links" with filter ""
+	Given I have default configuration for "Side Bar Header" field "Sidebar Component Sequence" as "Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links" with filter ""
 	Given I setup filter clause for "General" in "GrantorHome" for field "" having value ""
-	When I reconfigure "Phases" field "Sidebar Component Sequence" as "Search,ActivityMenu,RecentlyViewed,TechnicalSupport,Links"	
+	When I reconfigure "Side Bar Header" field "Sidebar Component Sequence" as "Search,ActivityMenu,RecentlyViewed,TechnicalSupport,Links"	
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app 
 	Then I see "Tasks" as disabled from sidebar 
 	
 	@33879 @all @validateSidebarActivityMenuRemoval-gHome 
 	Scenario: validate disabling of activity menu from side bar 
-	Given I have default configuration for "Phases" field "Sidebar Component Sequence" as "Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links" with filter ""
+	Given I have default configuration for "Side Bar Header" field "Sidebar Component Sequence" as "Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links" with filter ""
 	Given I setup filter clause for "General" in "GrantorHome" for field "" having value ""
-	When I reconfigure "Phases" field "Sidebar Component Sequence" as "Search,TaskMenu,RecentlyViewed,TechnicalSupport,Links"	
+	When I reconfigure "Side Bar Header" field "Sidebar Component Sequence" as "Search,TaskMenu,RecentlyViewed,TechnicalSupport,Links"	
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app 
 	Then I see "Activities" as disabled from sidebar 
