@@ -15,7 +15,6 @@ public class StepProgressBarPage extends GovGrantsManager {
 	 */
 	public StepProgressBarPage(Controller controller, Handlers reiDriver) {
 		super(controller, reiDriver);
-
 	}
 
 	/******* "Key Methods with complete functionality - public" *****************/
@@ -47,5 +46,4 @@ public class StepProgressBarPage extends GovGrantsManager {
 		}
 		return flag;
 	}
-
 }
