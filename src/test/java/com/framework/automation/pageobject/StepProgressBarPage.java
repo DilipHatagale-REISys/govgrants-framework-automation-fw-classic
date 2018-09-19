@@ -62,7 +62,6 @@ public class StepProgressBarPage extends GovGrantsManager {
 		boolean flag = false;
 		try {
 			if (getSpecificStatusFromProgressBar(statusName).isDisplayed())
-				;
 			{
 				flag = false;
 			}
@@ -98,7 +97,7 @@ public class StepProgressBarPage extends GovGrantsManager {
 	 * @param statusName
 	 * @return
 	 */
-	public WebElement getSpecificStatusFromProgressBar(String statusName) {
+	private WebElement getSpecificStatusFromProgressBar(String statusName) {
 		return reiDriver.findMyElement().getElement(
 				By.xpath("//div[@class='container-fluid']//*[@id='progressBarId']//li//span[contains(text(),'"
 						+ statusName + "')]"));
@@ -120,7 +119,7 @@ public class StepProgressBarPage extends GovGrantsManager {
 	/**
 	 * @return: List of all status item of step progress bar.
 	 */
-	public List<WebElement> getallStatusItemList() {
+	private List<WebElement> getallStatusItemList() {
 		return reiDriver.WaitFor().WaitForElementListToBeVisisble(stepProgressBar);
 	}
 }
