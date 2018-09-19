@@ -26,7 +26,7 @@ public class GovGrantsManager extends ProjectWebServices {
 			secondTopRightFilter, completeTableHeader, completeTableRow, sideBarHeadersList, advanceFilterButton,
 			menuIcon, selectRecordCheckBox, totalRowsCalc, totalRowCount, flexTablelastRowNameAsTotal,
 			editIconForProgramFlexTable, pendingTasksTableRef, dangerAlert, confirmationBoxMessage, selectDropdown,
-			specificUserInsideDropdown, quickSearchButton, doubleArrowDropDown, navProfile_CurrentApp, saveButton;
+			specificUserInsideDropdown, quickSearchButton, doubleArrowDropDown, navProfile_CurrentApp, saveButton,allPhases,chartsContainer;
 
 	/**
 	 * Super Constructor
@@ -72,6 +72,8 @@ public class GovGrantsManager extends ProjectWebServices {
 		completeTableRowString = "//div[@class='panel-heading']/following-sibling::div[contains(@class,'panel-body')]//div/table/tbody/tr";
 		navProfile_CurrentApp = By.cssSelector("div#myNavbarProfile>ul>li>a>span");
 		saveButton = By.xpath("//input[ @value='Save' and @type='submit']");
+		allPhases = By.xpath("//div/ul[@class='nav navbar-nav']/li/a");
+		chartsContainer=By.cssSelector("div#charts span[id*='chartPageId'] div[class*='chartcontainer']");
 	}
 
 	/******* "Key Methods with complete functionality - Public" *****************/

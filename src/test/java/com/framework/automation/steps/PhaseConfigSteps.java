@@ -17,9 +17,19 @@ public class PhaseConfigSteps {
     public void assertPhaseNotDisplayed(String phaseName) {
         phaseConfigPage.assertSpecificPhaseNotDisplayed(phaseName);
     }
-    
+
     @Then("^I see \"([^\"]*)\" phase$")
     public void asserPhaseDisplayed(String phaseName) {
         phaseConfigPage.assertSpecificPhaseDisplayed(phaseName);
+    }
+
+    @Then("^I see \"([^\"]*)\" phase at position \"([^\"]*)\"$")
+    public void i_see_phase_at_position(String phaseName, String sequenceNumber) {
+        phaseConfigPage.assertSequenceOfPhase(phaseName, Integer.parseInt(sequenceNumber));
+    }
+    
+    @Then("^I see \"([^\"]*)\" charts are displayed$")
+    public void assertNumberOfChartsDisplayed(String numberOfCharts) {
+        phaseConfigPage.assertNumberOfChartsDisplayed(Integer.parseInt(numberOfCharts));
     }
 }

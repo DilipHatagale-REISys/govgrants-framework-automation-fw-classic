@@ -37,7 +37,25 @@ public class PhaseConfigPage extends GovGrantsManager {
     public void assertSpecificPhaseDisplayed(String phaseName) {
         Assert.assertTrue(isPhaseDisplayed(phaseName));
     }
-
+    
+    /**
+     * assert if specific phase appears at a specific position
+     * @param phaseName
+     * @param phasePoistion
+     */
+    public void assertSequenceOfPhase(String phaseName,int sequenceNumber) {
+        Assert.assertTrue(isPhaseSequence(phaseName,sequenceNumber) );
+    }
+    
+    /**
+     * assert number of charts displayed
+     * @param numberOfCharts
+     */
+    public void assertNumberOfChartsDisplayed(int numberOfCharts) {
+        System.out.println("number of charts "+reiDriver.findMyElement().getElements(chartsContainer).size());
+        Assert.assertEquals(numberOfCharts, reiDriver.findMyElement().getElements(chartsContainer).size());
+    }
+    
     /*********
      * "Local Methods with complete functionality - private"
      *****************/
@@ -78,5 +96,19 @@ public class PhaseConfigPage extends GovGrantsManager {
 
         }
         return flag;
+    }
+    
+    /**
+     * check the sequence of the phases
+     * @param phaseName
+     * @param sequenceNumber
+     * @return true/false
+     */
+    private boolean isPhaseSequence(String phaseName,int sequenceNumber) {
+        System.out.println(reiDriver.findMyElement().getElements(allPhases).size());
+        if (reiDriver.findMyElement().getElements(allPhases).get(sequenceNumber).getAttribute("title").contains(phaseName)) {
+            return true;
+        } else
+            return false;
     }
 }

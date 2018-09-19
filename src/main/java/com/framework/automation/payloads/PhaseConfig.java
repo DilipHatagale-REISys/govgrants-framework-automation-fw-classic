@@ -34,6 +34,18 @@ public class PhaseConfig {
                     payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), new ApiUtilities()
                             .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), filterClause),
                     String.valueOf(SObjectAPIs.GNT__TabName__c), value);
+        case "SEQUENCE":
+            finalPayload = String.format(
+                    payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), new ApiUtilities()
+                            .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), filterClause),
+                    String.valueOf(SObjectAPIs.GNT__Sequence__c), value);
+            break;
+        case "TOTAL CHARTS ALLOWED":
+            finalPayload = String.format(
+                    payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), new ApiUtilities()
+                            .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), filterClause),
+                    String.valueOf(SObjectAPIs.GNT__TotalChartsAllowed__c), value);
+            break;
         }
         System.out.println("method for finalpayload " + finalPayload);
         return finalPayload;
