@@ -26,8 +26,7 @@ public class GovGrantsManager extends ProjectWebServices {
 			secondTopRightFilter, completeTableHeader, completeTableRow, sideBarHeadersList, advanceFilterButton,
 			menuIcon, selectRecordCheckBox, totalRowsCalc, totalRowCount, flexTablelastRowNameAsTotal,
 			editIconForProgramFlexTable, pendingTasksTableRef, dangerAlert, confirmationBoxMessage, selectDropdown,
-			specificUserInsideDropdown, quickSearchButton, doubleArrowDropDown, navProfile_CurrentApp,
-			saveButton,stepProgressBar;
+			specificUserInsideDropdown, quickSearchButton, doubleArrowDropDown, navProfile_CurrentApp, saveButton;
 
 	/**
 	 * Super Constructor
@@ -73,7 +72,6 @@ public class GovGrantsManager extends ProjectWebServices {
 		completeTableRowString = "//div[@class='panel-heading']/following-sibling::div[contains(@class,'panel-body')]//div/table/tbody/tr";
 		navProfile_CurrentApp = By.cssSelector("div#myNavbarProfile>ul>li>a>span");
 		saveButton = By.xpath("//input[ @value='Save' and @type='submit']");
-		stepProgressBar = By.xpath("//div[@class='container-fluid']//*[@id='progressBarId']//ol");
 	}
 
 	/******* "Key Methods with complete functionality - Public" *****************/
@@ -485,11 +483,21 @@ public class GovGrantsManager extends ProjectWebServices {
 	 * @param iconName
 	 */
 	public void clickTableActionIconsForSpecificSubject(String programSubject, String statusName, String iconName) {
-		reiDriver.WaitFor()
-				.WaitForElementToBePresent(By.xpath(completeTableRowString + "//td//span[@title='" + programSubject
-						+ "']/../../../following-sibling::td//span[@title='" + statusName
-						+ "']/../../../following-sibling::td//span//a[@title='" + iconName + "']//i"))
-				.click();
+		try {
+			reiDriver.WaitFor()
+					.WaitForElementToBePresent(By.xpath(completeTableRowString + "//td//span[@title='" + programSubject
+							+ "']/../../../following-sibling::td//span[@title='" + statusName
+							+ "']/../../../following-sibling::td//span//a[@title='" + iconName + "']//i"))
+					.click();
+
+		} catch (Exception e) {
+			reiDriver.WaitFor().makeThreadSleep(1000);
+			reiDriver.JavaScript()
+					.clickByJS(By.xpath(completeTableRowString + "//td//span[@title='" + programSubject
+							+ "']/../../../following-sibling::td//span[@title='" + statusName
+							+ "']/../../../following-sibling::td//span//a[@title='" + iconName + "']//i"));
+		}
+
 	}
 
 	/**

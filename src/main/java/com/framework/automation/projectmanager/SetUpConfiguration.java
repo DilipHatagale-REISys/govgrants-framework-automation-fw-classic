@@ -67,14 +67,16 @@ public class SetUpConfiguration {
             stringPayload = new FlexGrid().setFlexGridParentFlexTableActionConfig(fieldLabel, value, filterClause);
             break;
         case "STEP PROGRESSBAR HEADER CONFIG":
-            stringPayload = new StepProgressBar().setStepProgressBarConfig(fieldLabel, value, filterClause);
+        	stringPayload = new StepProgressBar().setStepProgressBarHeaderConfig(fieldLabel, value, filterClause);
             break;
         case "PHASE CONFIG":
             stringPayload = new PhaseConfig().setPhaseFieldConfig(fieldLabel, value, filterClause);
             break;
+        case "STEP PROGRESSBAR DETAIL CONFIG":
+			stringPayload = new StepProgressBar().setStepProgressBarDetailConfig(fieldLabel, value, filterClause);
+			break;
         }
         System.out.println("final payload is " + stringPayload);
         return stringPayload;
     }
-
 }
