@@ -52,24 +52,7 @@ public class StepProgressBarPage extends GovGrantsManager {
 		Assert.assertTrue(isStatusItemSequence(statusName, sequenceNumber));
 	}
 
-	/**
-	 * validate if status step 'submit for approval' is displayed or not inside step
-	 * status progress bar
-	 * 
-	 * @return: true if it is not displayed
-	 */
-	private boolean isStatusStepInsideProgressBarIsNotDisplayed(String statusName) {
-		boolean flag = false;
-		try {
-			if (getSpecificStatusFromProgressBar(statusName).isDisplayed())
-			{
-				flag = false;
-			}
-		} catch (org.openqa.selenium.NoSuchElementException e) {
-			flag = true;
-		}
-		return flag;
-	}
+	
 
 	/*********
 	 * "Local Methods with Limited functionality - Private"
@@ -122,4 +105,23 @@ public class StepProgressBarPage extends GovGrantsManager {
 	private List<WebElement> getallStatusItemList() {
 		return reiDriver.WaitFor().WaitForElementListToBeVisisble(stepProgressBar);
 	}
+	
+	/**
+     * validate if status step 'submit for approval' is displayed or not inside step
+     * status progress bar
+     * 
+     * @return: true if it is not displayed
+     */
+    private boolean isStatusStepInsideProgressBarIsNotDisplayed(String statusName) {
+        boolean flag = false;
+        try {
+            if (getSpecificStatusFromProgressBar(statusName).isDisplayed())
+            {
+                flag = false;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+            flag = true;
+        }
+        return flag;
+    }
 }

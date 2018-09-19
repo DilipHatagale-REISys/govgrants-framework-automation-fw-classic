@@ -3,7 +3,7 @@ Feature: Phase Config Component Scenarios
 	Test all phase config component based scenarios 
 	As a configuration manager i make different configurational changes in phase component and will validate them.
 
-    @34419 @all @validatePlanningPhaseAllowedProfile-planning
+    @34419 @all @validatePlanningPhaseAllowedProfile-gplanning
 	Scenario Outline: Remove admin profile from config. and validate that Plannign phase doesn't show up in admin user	
 	Given I have default configuration for "Phase Config" field "Available for Profiles" as "<Old-Profile>" with filter ""
 	Given I setup filter clause for "General" in "GrantorPlanning" for field "" having value ""
@@ -15,11 +15,29 @@ Feature: Phase Config Component Scenarios
 	|New-Profile|Old-Profile|
 	|ADT; CON; CTR; DA; DEV; EBZ; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; TR1; TR2; TR3; VND|ADT; CON; CTR; DA; DEV; EBZ; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND|
 	
-	@34420 @all @validateTabDisplayName-planning
-	Scenario: Setup tab name as Automation from config. and validate that tab name for planning is changed to Automatin
+	@34420 @all @validateTabDisplayName-gplanning
+	Scenario: Setup tab name as Automation from config. and validate that tab name for planning is changed to Automation
 	Given I have default configuration for "Phase Config" field "Tab Display Label" as "Planning" with filter ""
 	Given I setup filter clause for "General" in "GrantorPlanning" for field "" having value ""
 	When I reconfigure "Phase Config" field "Tab Display Label" as "Automation"	 	
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app 
 	Then I see "Automation" phase
+	
+	@34484 @all @validatePhaseSequence-gplanning
+	Scenario: Setup tab sequence as "0" from config. and validate that tab name for planning is changed to first position
+	Given I have default configuration for "Phase Config" field "Sequence" as "2" with filter ""
+	Given I setup filter clause for "General" in "GrantorPlanning" for field "" having value ""
+	When I reconfigure "Phase Config" field "Sequence" as "0"	 	
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app 
+	Then I see "Planning" phase at position "0"
+	
+	@34485 @all @validateNumberOfCharts-gplanning
+	Scenario: Setup number of charts as "2" from config. and validate only two charts are displayed inside planning
+	Given I have default configuration for "Phase Config" field "Total Charts Allowed" as "3" with filter ""
+	Given I setup filter clause for "General" in "GrantorPlanning" for field "" having value ""
+	When I reconfigure "Phase Config" field "Total Charts Allowed" as "2"	 	
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	Then I see "2" charts are displayed
