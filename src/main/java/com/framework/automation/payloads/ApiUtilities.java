@@ -117,7 +117,7 @@ public class ApiUtilities {
 					+ String.valueOf(SObjectAPIs.GNT__PageLayoutConfig__r) + ".Name=" + "'" + ComponentCoreFieldName
 					+ "'";
 			break;
-		case "PAGE LAYOUT":
+		case "FIELD SPECIFIC":
 			filterClause = fieldName + "=" + "'" + value;
 			break;
 		case "APPROVAL DECISION ACTION":
