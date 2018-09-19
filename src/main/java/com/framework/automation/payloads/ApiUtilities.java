@@ -11,8 +11,8 @@ import com.jayway.restassured.response.Response;
 public class ApiUtilities {
 	JsonObject sObjectConfig;
 	RestfulWebServices apiCall = new RestfulWebServices();
-	ArrayList<String> contextObjects=new ArrayList<String>();
-	
+	ArrayList<String> contextObjects = new ArrayList<String>();
+
 	/**
 	 * get Id based on component api and field name
 	 * 
@@ -28,22 +28,24 @@ public class ApiUtilities {
 		String iD = splittedStringForId[4].substring(2, 20);
 		return iD;
 	}
-	
-	   /**
-     * get Id based on component api and field name for context objects
-     * 
-     * @param ComponentAPI
-     * @param ComponentCoreFieldName
-     * @return
-     */
-    public String getComponentCoreFieldIdForContextObjects(String ComponentAPI, String contextSobject, String filterClause) {
-        Response response = apiCall.postCall(getPayLaodForIdRetrievalForContextObjects(ComponentAPI,contextSobject,filterClause), null,
-                SetUpConfiguration.defaultRetrieveEndPoint, "Authorization", "Bearer " + ProjectWebServices.tokenString,
-                null);
-        String[] splittedStringForId = response.body().asString().split(":");
-        String iD = splittedStringForId[4].substring(2, 20);
-        return iD;
-    }
+
+	/**
+	 * get Id based on component api and field name for context objects
+	 * 
+	 * @param ComponentAPI
+	 * @param ComponentCoreFieldName
+	 * @return
+	 */
+	public String getComponentCoreFieldIdForContextObjects(String ComponentAPI, String contextSobject,
+			String filterClause) {
+		Response response = apiCall.postCall(
+				getPayLaodForIdRetrievalForContextObjects(ComponentAPI, contextSobject, filterClause), null,
+				SetUpConfiguration.defaultRetrieveEndPoint, "Authorization", "Bearer " + ProjectWebServices.tokenString,
+				null);
+		String[] splittedStringForId = response.body().asString().split(":");
+		String iD = splittedStringForId[4].substring(2, 20);
+		return iD;
+	}
 
 	/**
 	 * create payload for getting ID API call
@@ -61,21 +63,23 @@ public class ApiUtilities {
 		return sObjectConfig;
 	}
 
-	   /**
-     * create payload for getting ID API call
-     * 
-     * @param ComponentAPI
-     * @param ComponentCoreFieldName
-     * @return
-     */
-    private JsonObject getPayLaodForIdRetrievalForContextObjects(String ComponentAPI, String contextSobject,String filterClause) {
-        sObjectConfig = new JsonObject();
-        sObjectConfig.addProperty("sObjectAPIName", ComponentAPI);
-        sObjectConfig.addProperty("fields", contextSobject);
-        sObjectConfig.addProperty("filterClause", filterClause);
-        System.out.println("json is " + sObjectConfig);
-        return sObjectConfig;
-    }
+	/**
+	 * create payload for getting ID API call
+	 * 
+	 * @param ComponentAPI
+	 * @param ComponentCoreFieldName
+	 * @return
+	 */
+	private JsonObject getPayLaodForIdRetrievalForContextObjects(String ComponentAPI, String contextSobject,
+			String filterClause) {
+		sObjectConfig = new JsonObject();
+		sObjectConfig.addProperty("sObjectAPIName", ComponentAPI);
+		sObjectConfig.addProperty("fields", contextSobject);
+		sObjectConfig.addProperty("filterClause", filterClause);
+		System.out.println("json is " + sObjectConfig);
+		return sObjectConfig;
+	}
+
 	/**
 	 * 
 	 * @param componentName
@@ -127,6 +131,11 @@ public class ApiUtilities {
 		case "TASK ACTION":
 			filterClause = String.valueOf(SObjectAPIs.GNT__TaskAction__c) + "=" + "'" + ComponentCoreFieldName + "'";
 			break;
+		case "STEP PROGRESSBAR DETAIL":
+			filterClause = String.valueOf(SObjectAPIs.GNT__PicklistValue__c) + "=" + "'" + value + "'" + " and" + " "
+					+ String.valueOf(SObjectAPIs.GNT__ProgressbarHeaderConfig__r) + "."
+					+ String.valueOf(SObjectAPIs.GNT__GroupName__c) + "=" + "'" + ComponentCoreFieldName + "'";
+			;
 		}
 		return filterClause;
 	}

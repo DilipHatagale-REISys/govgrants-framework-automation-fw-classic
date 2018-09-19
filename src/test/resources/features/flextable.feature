@@ -171,4 +171,4 @@ Feature: Flex Table Component Scenarios
 	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
 	When I click on "Roles" sub tab inside page layout 
 	When I click on "Edit" icon for "Owner" to save inside subtab
-	Then I see entire page is refreshing	
+	Then I see entire page is refreshing		
