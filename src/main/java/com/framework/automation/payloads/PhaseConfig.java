@@ -47,6 +47,18 @@ public class PhaseConfig {
                             .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), filterClause),
                     String.valueOf(SObjectAPIs.GNT__TotalChartsAllowed__c), value);
             break;
+        case "BODY BOTTOM PAGE URL":
+            finalPayload = String.format(
+                    payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), new ApiUtilities()
+                            .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), filterClause),
+                    String.valueOf(SObjectAPIs.GNT__BodyBottomPageURL__c), value);
+            break;
+        case "IS PHASE":
+            finalPayload = String.format(
+                    payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), new ApiUtilities()
+                            .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), filterClause),
+                    String.valueOf(SObjectAPIs.GNT__IsPhase__c), value);
+            break;
         }
         System.out.println("method for finalpayload " + finalPayload);
         return finalPayload;

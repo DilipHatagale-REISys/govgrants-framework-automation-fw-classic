@@ -27,9 +27,19 @@ public class PhaseConfigSteps {
     public void i_see_phase_at_position(String phaseName, String sequenceNumber) {
         phaseConfigPage.assertSequenceOfPhase(phaseName, Integer.parseInt(sequenceNumber));
     }
-    
+
     @Then("^I see \"([^\"]*)\" charts are displayed$")
     public void assertNumberOfChartsDisplayed(String numberOfCharts) {
         phaseConfigPage.assertNumberOfChartsDisplayed(Integer.parseInt(numberOfCharts));
+    }
+
+    @Then("^I charts are displayed at \"([^\"]*)\"$")
+    public void assertPostionOfChartsDisplayedAt(String position) {
+        phaseConfigPage.assertPostionOfChartsDisplayed(position);
+    }
+
+    @Then("^I do not see \"([^\"]*)\" in task summary by phase$")
+    public void assertSpecificPhaseNotDisplayedInTaskSummaryByPhase(String phaseName) {
+        phaseConfigPage.assertPhaseNotDisplayedInTaskSummaryByPhase(phaseName);
     }
 }

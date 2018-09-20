@@ -41,3 +41,21 @@ Feature: Phase Config Component Scenarios
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	Then I see "2" charts are displayed
+	
+	@34487 @all @validateChartsDisplayedAtBottom-gplanning
+	Scenario: Setup body bottom page url for charts in config. and validate charts are displayed at bottom are displayed inside planning
+	Given I have default configuration for "Phase Config" field "Body Bottom Page URL" as "" with filter ""
+	Given I setup filter clause for "General" in "GrantorPlanning" for field "" having value ""
+	When I reconfigure "Phase Config" field "Body Bottom Page URL" as "/apex/GNT__ChartsView?t=Planning"	 	
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	Then I charts are displayed at "Bottom"
+	
+	@34587 @all @validateIsPlanningDisplayedInTaskSummary-gplanning
+	Scenario: Uncheck is Phase for planning in config. and validate Planning is not displayed in Task Summary on home page
+	Given I have default configuration for "Phase Config" field "Is Phase" as "true" with filter ""
+	Given I setup filter clause for "General" in "GrantorPlanning" for field "" having value ""
+	When I reconfigure "Phase Config" field "Is Phase" as "false"	 	
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app 
+	Then I do not see "Planning" in task summary by phase
