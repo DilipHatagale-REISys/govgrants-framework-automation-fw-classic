@@ -5,7 +5,7 @@ Feature: Approval Process Component Scenarios
 	
 	@34305 @all @hideApproveOption-Programs
 	Scenario: Hiding approve option from configuration and validating its content in pending tasks approval decision
-	Given I have default configuration for "Approval Decision Action" field "Hide Action" as "false" with filter ""
+	Given I have default configuration for "Approval Decision Action" field "Hide Action" as "false" with filter "" for field ""
 	Given I setup filter clause for "General" in "ADAC-0009" for field "" having value ""
 	When I reconfigure "Approval Decision Action" field "Hide Action" as "true"
 	When I login as "Automation-PM" User
@@ -16,7 +16,7 @@ Feature: Approval Process Component Scenarios
 	
 	@34307 @all @changeApproveOptionSequence-Programs
 	Scenario: Changing sequence of Approve option from configuration and validating its sequence in pending tasks approval decision
-	Given I have default configuration for "Approval Decision Action" field "Sequence" as "1" with filter ""
+	Given I have default configuration for "Approval Decision Action" field "Sequence" as "1" with filter "" for field ""
 	Given I setup filter clause for "General" in "ADAC-0009" for field "" having value ""
 	When I reconfigure "Approval Decision Action" field "Sequence" as "5"
 	When I login as "Automation-PM" User
@@ -27,7 +27,7 @@ Feature: Approval Process Component Scenarios
 	
 	@34308 @all @mandatoryCommentsReq-Programs
 	Scenario: Setup comments requried as mandatory for approval from configuration and in pending tasks approval decision
-	Given I have default configuration for "Approval Decision Action" field "Comments Required" as "false" with filter ""
+	Given I have default configuration for "Approval Decision Action" field "Comments Required" as "false" with filter "" for field ""
 	Given I setup filter clause for "General" in "ADAC-0009" for field "" having value ""
 	When I reconfigure "Approval Decision Action" field "Comments Required" as "true"
 	When I login as "Automation-PM" User 
@@ -40,7 +40,7 @@ Feature: Approval Process Component Scenarios
 	
 	@34306 @all @labelChangeOfApprovalDecision-Programs
 	Scenario: Changing label of approve radio button text from configuration and validating its changed label in pending tasks approval decision 
-	Given I have default configuration for "Approval Decision Action" field "Action Label Override" as "Approve" with filter ""
+	Given I have default configuration for "Approval Decision Action" field "Action Label Override" as "Approve" with filter "" for field ""
 	Given I setup filter clause for "General" in "ADAC-0009" for field "" having value ""
 	When I reconfigure "Approval Decision Action" field "Action Label Override" as "Approved"
 	When I login as "Automation-PM" User 
@@ -51,7 +51,7 @@ Feature: Approval Process Component Scenarios
 	
 	@34309 @all @confirmationMessageBoxPopupForApprovalDecisionAction-Programs
 	Scenario: Setup confirmation message inside confirmation message box from configuration and validating it in pending tasks approval decision
-	Given I have default configuration for "Approval Decision Action" field "Confirmation Title" as "" with filter ""
+	Given I have default configuration for "Approval Decision Action" field "Confirmation Title" as "" with filter "" for field ""
 	Given I setup filter clause for "General" in "ADAC-0009" for field "" having value ""
 	When I reconfigure "Approval Decision Action" field "Confirmation Title" as "Automation Approval"
 	When I reconfigure "Approval Decision Action" field "Confirmation Message" as "Confirmation box for automation"
@@ -66,7 +66,7 @@ Feature: Approval Process Component Scenarios
 	
 	@34310 @all @filterCriteriaForUserReassignForApprovalDecisionAction-Programs
 	Scenario Outline: Entering filter criteria for user reassign using forward action from configuration and validating it in pending tasks approval decision
-	Given I have default configuration for "Approval Decision Action" field "Filter Criteria for User Reassign" as "" with filter ""
+	Given I have default configuration for "Approval Decision Action" field "Filter Criteria for User Reassign" as "" with filter "" for field ""
 	Given I setup filter clause for "General" in "ADAC-0011" for field "" having value ""
 	When I reconfigure "Approval Decision Action" field "Filter Criteria for User Reassign" as "<newFilterCriteriaValue>"
 	When I login as "Automation-PM" User 
@@ -82,7 +82,7 @@ Feature: Approval Process Component Scenarios
 	
 	@34311 @wip @automationNotRequired @approverTaskNotCreatedPrograms-Programs
 	Scenario: Change approver setting for not receiveing approve task in configuration and validate that pending approver task is not displayed	
-	Given I have default configuration for "Approval Process Steps Cache" field "Field API Name" as "ProgramApprover__c" with filter ""
+	Given I have default configuration for "Approval Process Steps Cache" field "Field API Name" as "ProgramApprover__c" with filter "" for field ""
 	Given I setup "Program" field "Status" as "Created" with filter clause on field "Automation Program -SA to C"
 	Given I setup filter clause for "General" in "Program_Manager_Approver" for field "" having value ""
 	And I reconfigure "Approval Process Steps Cache" field "Field API Name" as ""
@@ -99,7 +99,7 @@ Feature: Approval Process Component Scenarios
 	@34313 @all @successEmailSentToProgramOwner-Programs
 	Scenario: Setup email setting in configuration and validate that program owner receiving email for program approval
 	Given I setup "Program" field "Status" as "Created" with filter clause on field "Automation Program -SA to C"
-	Given I have default configuration for "Approval Process Steps Cache" field "Email Field API Name" as "CreatedById" with filter ""
+	Given I have default configuration for "Approval Process Steps Cache" field "Email Field API Name" as "CreatedById" with filter "" for field ""
 	Given I setup filter clause for "General" in "Program_Manager_Approver" for field "" having value ""
 	And I reconfigure "Approval Process Steps Cache" field "Email Field API Name" as "OwnerId"
 	When I login as "Automation" User 
@@ -123,7 +123,7 @@ Feature: Approval Process Component Scenarios
 	@34314 @all @confirmationMessageBoxPopupForApprovalDecisionUsingApprovalCache-Programs
 	Scenario: Setup confirmation message inside confirmation message box from approval process step cache configuration and validating it in pending tasks approval decision
 	Given I setup "Program" field "Status" as "Created" with filter clause on field "Automation Program -SA to C"
-	Given I have default configuration for "Approval Process Steps Cache" field "Approve Confirmation Title" as "" with filter ""
+	Given I have default configuration for "Approval Process Steps Cache" field "Approve Confirmation Title" as "" with filter "" for field ""
 	Given I setup filter clause for "General" in "Program_Manager_Approver" for field "" having value ""
 	When I reconfigure "Approval Process Steps Cache" field "Approve Confirmation Title" as "Automation Approval"
 	When I reconfigure "Approval Process Steps Cache" field "Approve Confirmation Message" as "Confirmation box for automation"
@@ -144,7 +144,7 @@ Feature: Approval Process Component Scenarios
 	@34317 @all @taskAssignmentNotificationForProgramSubmissionThroughMail
 	Scenario: Setup email setting in configuration and validate that program owner receiving email for program submitted for approval
 	Given I setup "Program" field "Status" as "Created" with filter clause on field "Automation Program -SA to C"
-	Given I have default configuration for "Task Config" field "Send Task Assignment Notification?" as "false" with filter ""
+	Given I have default configuration for "Task Config" field "Send Task Assignment Notification?" as "false" with filter "" for field ""
 	Given I setup filter clause for "Task Action" in "Approve Program" for field "" having value ""
 	And I reconfigure "Task Config" field "Send Task Assignment Notification?" as "true"
 	When I login as "Automation" User 
@@ -160,7 +160,7 @@ Feature: Approval Process Component Scenarios
 	
 	@34316 @all @completeOnViewForSendToOwnerTaskConfig-Programs
     Scenario: Setup complete on view checkbox to true from send to owner task configuration and validating it by owner user
-    Given I have default configuration for "Task Config" field "Complete On View?" as "false" with filter ""
+    Given I have default configuration for "Task Config" field "Complete On View?" as "false" with filter "" for field ""
 	Given I setup "Program" field "Status" as "Created" with filter clause on field "Automation Program -SA to C"
 	Given I setup filter clause for "Task Action" in "Program Sent To Owner" for field "" having value ""
 	When I reconfigure "Task Config" field "Complete On View?" as "true"

@@ -5,7 +5,7 @@ Feature: Page Layout Component Scenarios
 	
 	@34042 @all @setUpHeaderWithContent-gPlanning
 	Scenario: setting up header from configuration and validating its content in Edit view
-	Given I have default configuration for "Page Layout" field "Header" as "Program - {!ProgramName__c}" with filter ""
+	Given I have default configuration for "Page Layout" field "Header" as "Program - {!ProgramName__c}" with filter "" for field ""
 	Given I setup filter clause for "General" in "Grantee State Program" for field "" having value ""
 	When I reconfigure "Page Layout" field "Header" as "Program - {!FederalProgramCFDA__c}"
 	When I login as "Automation" User 
@@ -16,7 +16,7 @@ Feature: Page Layout Component Scenarios
 	
 	@34047 @all @setUpPageInstructionText-gPlanning
 	Scenario: validate the page instructions text apears as configured in Edit view
-	Given I have default configuration for "Page Layout" field "Page Instruction Text" as "govgrants_config:PageInstructionText" with filter ""
+	Given I have default configuration for "Page Layout" field "Page Instruction Text" as "govgrants_config:PageInstructionText" with filter "" for field ""
 	Given I setup filter clause for "General" in "Grantee State Program" for field "" having value ""
 	When I reconfigure "Page Layout" field "Page Instruction Text" as "Automation Instruction Text"
 	When I login as "Automation" User 
@@ -27,7 +27,7 @@ Feature: Page Layout Component Scenarios
 	
 	@34049 @all  @setUpHeaderOverRideField-gPlanning
 	Scenario: setting up header over ride configuration and validating its content after clicking New button
-	Given I have default configuration for "Page Layout" field "Create Header Override" as "Creating New Program" with filter ""
+	Given I have default configuration for "Page Layout" field "Create Header Override" as "Creating New Program" with filter "" for field ""
 	Given I setup filter clause for "General" in "Grantee State Program" for field "" having value ""
 	When I reconfigure "Page Layout" field "Create Header Override" as "Creating New Program for Automation"
 	When I login as "Automation" User 
@@ -37,7 +37,7 @@ Feature: Page Layout Component Scenarios
 	
 	@34052 @all @hideDecisionExpression-gPlanning
 	Scenario Outline: Hide Submit for approval for Created from configuration and validating it for Created status view icon
-	Given I have default configuration for "Page Layout Action" field "Hide Decision Expression" as "<old_hide_config>" with filter ""
+	Given I have default configuration for "Page Layout Action" field "Hide Decision Expression" as "<old_hide_config>" with filter "" for field ""
 	Given I setup filter clause for "Page Layout Action" in "Grantee State Program" for field "Name" having value "Submit For Approval"
 	When I reconfigure "Page Layout Action" field "Hide Decision Expression" as "<new_hide_config>"
 	When I login as "Automation" User 
@@ -52,7 +52,7 @@ Feature: Page Layout Component Scenarios
 	
 	@34053 @all @hideExpressionJSON-gPlanning @wip
 	Scenario: Hide Submit for approval for Created from json configuration and validating it for Created status view icon
-	Given I have default configuration for "Page Layout Action" field "Hide Expression JSON" as "" with filter ""
+	Given I have default configuration for "Page Layout Action" field "Hide Expression JSON" as "" with filter "" for field ""
 	Given I setup filter clause for "Page Layout Action" in "Grantee State Program" for field "Name" having value "Submit For Approval"
 	When I reconfigure "Page Layout Action" field "Hide Expression JSON" as "govgrants_config:HideExpressionJson"
 	When I login as "Automation" User 
@@ -63,7 +63,7 @@ Feature: Page Layout Component Scenarios
 	
 	@34069 @all @hideForProfile-gPlanning
 	Scenario: Hide Submit for approval for specific profile from configuration and validating it for Created status view icon
-	Given I have default configuration for "Page Layout Action" field "Hide for profile" as "" with filter ""
+	Given I have default configuration for "Page Layout Action" field "Hide for profile" as "" with filter "" for field ""
 	Given I setup filter clause for "Page Layout Action" in "Grantee State Program" for field "Name" having value "Submit For Approval"
 	When I reconfigure "Page Layout Action" field "Hide for profile" as "System Administrator"
 	When I login as "Automation" User 
@@ -74,7 +74,7 @@ Feature: Page Layout Component Scenarios
 	
 	@34043 @all @HidePdfDownloadFromMenuForMainPageLayout-gPlanning
 	Scenario: Disabling of PDF download option from configuration and validating it from menu dropdown inside program detail page
-	Given I have default configuration for "Page Layout" field "Hide Pdf Download" as "false" with filter ""
+	Given I have default configuration for "Page Layout" field "Hide Pdf Download" as "false" with filter "" for field ""
 	Given I setup filter clause for "General" in "Grantee State Program" for field "" having value ""
     When I reconfigure "Page Layout" field "Hide Pdf Download" as "true"
 	When I login as "Automation" User 
@@ -86,7 +86,7 @@ Feature: Page Layout Component Scenarios
 	
 	@34046 @all @HideTakeSnapshotFromMenuForMainPageLayout-gPlanning
 	Scenario: Disabling of Take snapshot option from configuration and validating it from menu dropdown inside program detail page
-	Given I have default configuration for "Page Layout" field "Hide On Demand Snapshot" as "false" with filter ""
+	Given I have default configuration for "Page Layout" field "Hide On Demand Snapshot" as "false" with filter "" for field ""
 	Given I setup filter clause for "General" in "Grantee State Program" for field "" having value ""
 	When I reconfigure "Page Layout" field "Hide On Demand Snapshot" as "true"
 	When I login as "Automation" User 
@@ -98,7 +98,7 @@ Feature: Page Layout Component Scenarios
 	
 	@34055 @all @enablePromptInputDialog-gPlanning
 	Scenario: Enable prompt input box for Submit for approval button configuration and validating it for Created status view icon
-	Given I have default configuration for "Page Layout Action" field "Enable Prompt Input Dialog" as "false" with filter ""
+	Given I have default configuration for "Page Layout Action" field "Enable Prompt Input Dialog" as "false" with filter "" for field ""
 	Given I setup filter clause for "Page Layout Action" in "Grantee State Program" for field "Name" having value "Submit For Approval"
 	When I reconfigure "Page Layout Action" field "Enable Prompt Input Dialog" as "true"
 	When I login as "Automation" User 
@@ -110,7 +110,7 @@ Feature: Page Layout Component Scenarios
 	
 	@34056 @all @hideForContextFieldForMAinPageLayout-gPlanning
 	Scenario: Hide submit for approval button for program view page and validating it for created status view icon in program detail page
-	Given I have default configuration for "Page Layout Action" field "Hide For Context" as "" with filter ""
+	Given I have default configuration for "Page Layout Action" field "Hide For Context" as "" with filter "" for field ""
 	Given I setup filter clause for "Page Layout Action" in "Grantee State Program" for field "Name" having value "Submit For Approval"
 	When I reconfigure "Page Layout Action" field "Hide For Context" as "view"
 	When I login as "Automation" User 

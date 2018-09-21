@@ -7,11 +7,27 @@ import com.automation.rei.handlers.Properties_Logs;
 public class ConfigurationParameters {
     Properties_Logs readProp = new Properties_Logs();
 
+    public String getNewComponentCoreFieldName() {
+        return newComponentCoreField;
+    }
+    
+    public void setNewComponentCoreFieldName(String newComponentCoreField) {
+        this.newComponentCoreField=newComponentCoreField;
+    }
+    
+    public String getOldComponentCoreFieldName() {
+        return oldComponentCoreField;
+    }
+    
+    public void setOldComponentCoreFieldName(String oldComponentCoreField) {
+        this.oldComponentCoreField=oldComponentCoreField;
+    }
+    
     public String getNewFieldValue() {
         return newFieldValue;
     }
 
-    public void setNewFieldValue(String newFieldValue) {
+    public void setNewFilterFieldValue(String newFieldValue) {
         this.newFieldValue = newFieldValue;
     }
 
@@ -52,7 +68,7 @@ public class ConfigurationParameters {
         }
     }
 
-    String componentName, oldFieldValue, fieldLabel, value, newFieldValue;
+    String componentName, oldFieldValue, fieldLabel, value, newFieldValue,oldComponentCoreField,newComponentCoreField;
     String componentName_Program, oldFieldValue_Program, fieldLabel_Program, value_Program,newFieldValue_Program;
 
     public String getComponentName_Program() {

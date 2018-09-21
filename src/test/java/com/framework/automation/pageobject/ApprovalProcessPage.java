@@ -272,7 +272,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
 	 */
 	private boolean isSuccessForEmailToProgramOwner(String templateName) {
 		boolean flag = false;
-		reiDriver.WaitFor().makeThreadSleep(1000);
+		reiDriver.WaitFor().makeThreadSleep(3000);
 		try {
 			if (validateQueueEmail().getAttribute("title").equalsIgnoreCase("Queued")) {
 				flag = true;
