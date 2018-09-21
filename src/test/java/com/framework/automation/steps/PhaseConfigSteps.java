@@ -42,4 +42,9 @@ public class PhaseConfigSteps {
     public void assertSpecificPhaseNotDisplayedInTaskSummaryByPhase(String phaseName) {
         phaseConfigPage.assertPhaseNotDisplayedInTaskSummaryByPhase(phaseName);
     }
+
+    @Then("^I see book icon as \"([^\"]*)\" tab$")
+    public void i_see_book_icon_as_tab(String phaseName) {
+        phaseConfigPage.assertPhaseBookIconDisplayed(phaseName);
+    }
 }

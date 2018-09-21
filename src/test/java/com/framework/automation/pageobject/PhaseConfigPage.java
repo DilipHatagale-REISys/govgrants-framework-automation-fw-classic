@@ -10,13 +10,13 @@ import com.framework.automation.projectmanager.GovGrantsManager;
 public class PhaseConfigPage extends GovGrantsManager {
 
     /******* "Variables and Locators" *****************/
+    
 
     /**
      * Constructor to handle dependency injection and framework library
      */
     public PhaseConfigPage(Controller controller, Handlers reiDriver) {
         super(controller, reiDriver);
-
     }
 
     /******* "Key Methods with complete functionality - public" *****************/
@@ -74,11 +74,18 @@ public class PhaseConfigPage extends GovGrantsManager {
 
     /**
      * Assert if specific phase is not displayed in task summary on home page
+     * 
      * @param phaseName
      */
     public void assertPhaseNotDisplayedInTaskSummaryByPhase(String phaseName) {
         reiDriver.WaitFor().makeThreadSleep(1000);
         Assert.assertTrue(isPhaseNotDisplayedInTaskSummary(phaseName));
+    }
+
+    public void assertPhaseBookIconDisplayed(String phaseName) {
+        Assert.assertTrue(reiDriver.WaitFor().WaitForElementToBePresent(By.xpath(
+                "//div/ul[@class='nav navbar-nav']/li/a[@title='" + phaseName + "']//i[contains(@class,'fa-book')]"))
+                .isDisplayed());
     }
 
     /*********
@@ -159,7 +166,7 @@ public class PhaseConfigPage extends GovGrantsManager {
         }
         return flag;
     }
-    
+
     /**
      * is specific phase not displayed in task summary on homepage
      * 
@@ -177,4 +184,5 @@ public class PhaseConfigPage extends GovGrantsManager {
         }
         return flag;
     }
+
 }

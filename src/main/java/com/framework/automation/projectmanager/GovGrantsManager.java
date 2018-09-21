@@ -421,19 +421,6 @@ public class GovGrantsManager extends ProjectWebServices {
     }
 
     /**
-     * access side bar header detail
-     * 
-     * @param sideBarCategory
-     * @param accordianSubHeaderDetail
-     * @return
-     */
-    public WebElement getSideBarAccordionHeaderContent(String sideBarCategory, String accordianHeaderDetail) {
-        return reiDriver.WaitFor().WaitForElementToBePresent(
-                By.xpath("//div[@id='sidebar-wrapper']//div/p/span[contains(text(),'" + sideBarCategory
-                        + "')]/../../following-sibling::div/div//b[text()='" + accordianHeaderDetail + "']"));
-    }
-
-    /**
      * Assert for page title
      * 
      * @param pageTitle
@@ -607,6 +594,15 @@ public class GovGrantsManager extends ProjectWebServices {
                 + phaseName + "']");
     }
 
+    /**
+     * Assert true if any part of the content matches with current url
+     * @param content
+     */
+    public void assertCurrentURL(String content) {
+        Assert.assertTrue(isCurrentURL(content));
+    }
+   
+
     /******* "Local Methods with Limited functionality " **********/
 
     /**
@@ -637,5 +633,19 @@ public class GovGrantsManager extends ProjectWebServices {
                     .equalsIgnoreCase(appName);
         }
         return isAppPresent;
+    }
+    
+    /**
+     * match the current url content with provided content
+     * 
+     * @param content
+     * @return true if any part is matched
+     */
+    private boolean isCurrentURL(String content) {
+        boolean flag = false;
+        if (reiDriver.get().getCurretnURL().contains(content)) {
+            flag = true;
+        }
+        return flag;
     }
 }

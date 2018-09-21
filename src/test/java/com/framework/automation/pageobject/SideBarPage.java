@@ -68,7 +68,7 @@ public class SideBarPage extends GovGrantsManager {
      *            Changed Accordion header label/Name
      */
     public void assertnewAccordionHeaderLabel(String subTabName, String mainTabName) {
-        Assert.assertEquals(getSideBarAccordionHeaderContent(mainTabName, subTabName).getText(), subTabName);
+        Assert.assertEquals(getSideBarAccordianHeader(mainTabName, subTabName).getText(), subTabName);
     }
 
     /**

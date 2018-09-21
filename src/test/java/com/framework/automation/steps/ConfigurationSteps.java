@@ -28,13 +28,13 @@ public class ConfigurationSteps {
     }
 
     @Description("Setting up configuration back to default")
-    @Given("^I have default configuration for \"([^\"]*)\" field \"([^\"]*)\" as \"([^\"]*)\" with filter \"([^\"]*)\"$")
-    public void setComponentToDefault(String componentName, String fieldName, String orignalValue, String newFilterValue)
+    @Given("^I have default configuration for \"([^\"]*)\" field \"([^\"]*)\" as \"([^\"]*)\" with filter \"([^\"]*)\" for field \"([^\"]*)\"$")
+    public void setComponentToDefault(String componentName, String fieldName, String orignalValue,String newFilterComponentCoreFieldName, String newFilterLabelValue)
             throws IOException {
-        if(newFilterValue.contains("Automation Program")) {
-            projectAPI.setUpDefaultProgramParameters(componentName, fieldName, orignalValue, newFilterValue);
+        if(newFilterLabelValue.contains("Automation Program")) {
+            projectAPI.setUpDefaultProgramParameters(componentName, fieldName, orignalValue,newFilterLabelValue);
         }else {
-        projectAPI.setUpDefaultParameters(componentName, fieldName, orignalValue, newFilterValue);
+        projectAPI.setUpDefaultParameters(componentName, fieldName, orignalValue,newFilterComponentCoreFieldName, newFilterLabelValue);
         }
     }
 

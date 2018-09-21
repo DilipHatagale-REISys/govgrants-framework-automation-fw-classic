@@ -34,6 +34,7 @@ public class ProjectWebServices {
      */
     public void initilizeSalesForceIdFilter(String componentName, String ComponentCoreFieldName, String fieldieldName,
             String value) {
+        setUpParameters.setOldComponentCoreFieldName(ComponentCoreFieldName);
         setUpParameters.setOldFieldValue(value);
         apiUtil = new ApiUtilities();
         filterClause_Reconfig = apiUtil.getFilterClause(componentName, ComponentCoreFieldName, fieldieldName, value);
@@ -106,12 +107,13 @@ public class ProjectWebServices {
      * @param newValue
      * @throws IOException
      */
-    public void setUpDefaultParameters(String componentName, String fieldLabel, String value, String newFilterValue)
+    public void setUpDefaultParameters(String componentName, String fieldLabel, String value, String newFilterComponentCoreFieldName, String newFilterLabelValue)
             throws IOException {
         setUpParameters.setComponentName(componentName);
         setUpParameters.setFieldLabel(fieldLabel);
         setUpParameters.setValue(value);
-        setUpParameters.setNewFieldValue(newFilterValue);
+        setUpParameters.setNewFilterFieldValue(newFilterLabelValue);
+        setUpParameters.setNewComponentCoreFieldName(newFilterComponentCoreFieldName);
     }
 
     /**
@@ -130,11 +132,15 @@ public class ProjectWebServices {
      * 
      * @return
      */
-    private String isFilterClauseGoodForDefaultSetting() {
+    private String isFilterClauseGoodForDefaultSetting() {        
         String newFilterClause = null;
-        if (!filterClause_Reconfig.contains(setUpParameters.getNewFieldValue())) {
-            newFilterClause = filterClause_Reconfig.replaceAll(setUpParameters.getOldFieldValue(),
+        if((!setUpParameters.getOldFieldValue().equals(setUpParameters.getNewFieldValue())) && (!setUpParameters.getNewFieldValue().equals(""))) {
+            newFilterClause = filterClause_Reconfig.replace(setUpParameters.getOldFieldValue(),
                     setUpParameters.getNewFieldValue());
+        } else if((!setUpParameters.getOldComponentCoreFieldName().equals(setUpParameters.getNewComponentCoreFieldName())) && (!setUpParameters.getNewComponentCoreFieldName().equals(""))) {
+            System.out.println("entered second if");
+            newFilterClause = filterClause_Reconfig.replace(setUpParameters.getOldComponentCoreFieldName(),
+                    setUpParameters.getNewComponentCoreFieldName());
         } else {
             newFilterClause = filterClause_Reconfig;
         }

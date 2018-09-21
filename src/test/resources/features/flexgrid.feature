@@ -6,7 +6,7 @@ Feature: Flex Grid Component Scenarios
 
 	@34320 @all @changeOfN2GgridHeaderGoalOjective-ProgramStrategicGoals
 	Scenario: changing information section header name of flex grid in configuratin and validating inside planning-programs view icon - plan subtab
-	Given I have default configuration for "Flex Grid" field "Header" as "Goals Objectives" with filter ""
+	Given I have default configuration for "Flex Grid" field "Header" as "Goals Objectives" with filter "" for field ""
 	Given I setup filter clause for "General" in "ProgramStrategicGoals" for field "" having value ""
 	When I reconfigure "Flex Grid" field "Header" as "Automation Goals Objectives"
 	When I login as "Automation" User
@@ -18,7 +18,7 @@ Feature: Flex Grid Component Scenarios
 	
 	@34321 @all @disableMenuOptionGoalObjective-ProgramStrategicGoals
 	Scenario: Disable menu bars for Goal Objective flex grid in configuratin and validating inside planning-programs view icon - plan subtab
-	Given I have default configuration for "Flex Grid" field "Disable Menu" as "false" with filter ""
+	Given I have default configuration for "Flex Grid" field "Disable Menu" as "false" with filter "" for field ""
 	Given I setup filter clause for "General" in "ProgramStrategicGoals" for field "" having value ""
 	When I reconfigure "Flex Grid" field "Disable Menu" as "true"
 	When I login as "Automation" User
@@ -30,7 +30,7 @@ Feature: Flex Grid Component Scenarios
 	
 	@34323 @all @disableQuicksearchfromN2GFlexGrid-ProgramStrategicGoals
 	Scenario: Disable quick search bar for Goal Objective flex grid in configuratin and validating inside planning-programs view icon - plan subtab
-	Given I have default configuration for "Flex Grid" field "Enable Quick Search" as "true" with filter ""
+	Given I have default configuration for "Flex Grid" field "Enable Quick Search" as "true" with filter "" for field ""
 	Given I setup filter clause for "General" in "ProgramStrategicGoals" for field "" having value ""
 	When I reconfigure "Flex Grid" field "Enable Quick Search" as "false"
 	When I login as "Automation" User
@@ -42,7 +42,7 @@ Feature: Flex Grid Component Scenarios
 	
 	@34325 @all @disableExport-ProgramStrategicGoals
 	Scenario: Disable download PDF/Excel from for Goal Objective menu flex grid in configuratin and validating inside planning-programs view icon - plan subtab
-	Given I have default configuration for "Flex Grid" field "Enable Export" as "true" with filter ""
+	Given I have default configuration for "Flex Grid" field "Enable Export" as "true" with filter "" for field ""
 	Given I setup filter clause for "General" in "ProgramStrategicGoals" for field "" having value ""
 	When I reconfigure "Flex Grid" field "Enable Export" as "false"
 	When I login as "Automation" User
@@ -55,7 +55,7 @@ Feature: Flex Grid Component Scenarios
 	
 	@34327 @all @disableFlexTableFieldName-ProgramStrategicGoals
 	Scenario: Remove flex table header date column inside Goal Objective configuratin and validating inside planning-programs view icon - plan subtab
-	Given I have default configuration for "Flex Grid" field "Display Field Names" as "Type__c,Title__c,Description__c,Status__c,DueDate__c" with filter ""
+	Given I have default configuration for "Flex Grid" field "Display Field Names" as "Type__c,Title__c,Description__c,Status__c,DueDate__c" with filter "" for field ""
 	Given I setup filter clause for "General" in "ProgramStrategicGoals" for field "" having value ""
 	When I reconfigure "Flex Grid" field "Display Field Names" as "Type__c,Title__c,Description__c,Status__c"
 	When I login as "Automation" User
@@ -67,7 +67,7 @@ Feature: Flex Grid Component Scenarios
 	
 	@34332 @all @hideViewIconForPPMGVflexTable-Programs
 	Scenario: Hide view context from PPMGV view cofniguration and validate inside planning-programs view icon - plan subtab - Goal Objectives flex table
-	Given I have default configuration for "Flex Grid Action" field "Hide for context" as "" with filter ""
+	Given I have default configuration for "Flex Grid Action" field "Hide for context" as "" with filter "" for field ""
 	Given I setup filter clause for "Flex Table Action" in "ProgramStrategicGoals" for field "Name" having value "View"
 	When I reconfigure "Flex Grid Action" field "Hide For Context" as "View"
 	When I login as "Automation" User 
