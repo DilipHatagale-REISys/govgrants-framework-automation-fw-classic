@@ -596,12 +596,50 @@ public class GovGrantsManager extends ProjectWebServices {
 
     /**
      * Assert true if any part of the content matches with current url
+     * 
      * @param content
      */
     public void assertCurrentURL(String content) {
         Assert.assertTrue(isCurrentURL(content));
     }
-   
+
+    /**
+     * click on menu of charts
+     * 
+     * @param chartName
+     */
+    public void clickChartMenuIcon(String chartName) {
+        reiDriver.WaitFor()
+                .WaitForElementToBePresent(By.xpath(
+                        "//div[@class='chartTitle']/a[@title='" + chartName + "']/../..//a[@data-toggle='dropdown']"))
+                .click();
+    }
+
+    /**
+     * select specific value from specific chart
+     * 
+     * @param chartName
+     * @param valueToSelect
+     */
+    public void selectAnyItemFromChartsMenu(String chartName, String valueToSelect) {
+        reiDriver.WaitFor()
+                .WaitForWebElementToBeVisible(
+                        reiDriver.WaitFor().WaitForElementToBePresent(By.xpath("//div[@class='chartTitle']/a[@title='"
+                                + chartName + "']/../..//li//a[@title='" + valueToSelect + "']")))
+                .click();
+    }
+
+    /**
+     * check title of any modal
+     * 
+     * @param titleName
+     * @return
+     */
+    public boolean isTitleOfModal(String titleName) {
+        return reiDriver.WaitFor()
+                .WaitForElementToBePresent(By.xpath("//*[@class='modal-title ng-binding'][text()='" + titleName + "']"))
+                .isDisplayed();
+    }
 
     /******* "Local Methods with Limited functionality " **********/
 
@@ -634,7 +672,7 @@ public class GovGrantsManager extends ProjectWebServices {
         }
         return isAppPresent;
     }
-    
+
     /**
      * match the current url content with provided content
      * 

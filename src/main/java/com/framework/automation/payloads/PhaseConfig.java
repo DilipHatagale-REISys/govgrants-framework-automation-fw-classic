@@ -1,12 +1,10 @@
 package com.framework.automation.payloads;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class PhaseConfig {
     private String payloadForStringValue = "{\"sObjectAPIName\" : \"%s\",\"fieldMapStr\" : \"{\\\"Id\\\":\\\"%s\\\",\\\"%s\\\":\\\"%s\\\"}\"}";
     private String payloadForIntValue = "{\"sObjectAPIName\" : \"%s\",\"fieldMapStr\" : \"{\\\"Id\\\":\\\"%s\\\",\\\"%s\\\":%s}\"}";
-
+    private ApiUtilities apiUtilities =new ApiUtilities();
     /**
      * Handles Phases Header level configuration
      * 
@@ -25,49 +23,49 @@ public class PhaseConfig {
         switch (fieldLabel.toUpperCase()) {
         case "AVAILABLE FOR PROFILES":
             finalPayload = String.format(
-                    payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), new ApiUtilities()
+                    payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), apiUtilities
                             .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), filterClause),
                     String.valueOf(SObjectAPIs.GNT__AvailableforProfiles__c), value);
             break;
         case "TAB DISPLAY LABEL":
             finalPayload = String.format(
-                    payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), new ApiUtilities()
+                    payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), apiUtilities
                             .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), filterClause),
                     String.valueOf(SObjectAPIs.GNT__TabName__c), value);
             break;
         case "SEQUENCE":
             finalPayload = String.format(
-                    payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), new ApiUtilities()
+                    payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), apiUtilities
                             .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), filterClause),
                     String.valueOf(SObjectAPIs.GNT__Sequence__c), value);
             break;
         case "TOTAL CHARTS ALLOWED":
             finalPayload = String.format(
-                    payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), new ApiUtilities()
+                    payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), apiUtilities
                             .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), filterClause),
                     String.valueOf(SObjectAPIs.GNT__TotalChartsAllowed__c), value);
             break;
         case "BODY BOTTOM PAGE URL":
             finalPayload = String.format(
-                    payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), new ApiUtilities()
+                    payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), apiUtilities
                             .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), filterClause),
                     String.valueOf(SObjectAPIs.GNT__BodyBottomPageURL__c), value);
             break;
         case "IS PHASE":
             finalPayload = String.format(
-                    payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), new ApiUtilities()
+                    payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), apiUtilities
                             .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), filterClause),
                     String.valueOf(SObjectAPIs.GNT__IsPhase__c), value);
             break;
         case "DEFAULT LANDING TAB?":
             finalPayload = String.format(
-                    payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), new ApiUtilities()
+                    payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), apiUtilities
                             .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), filterClause),
                     String.valueOf(SObjectAPIs.GNT__SelectedByDefault__c), value);
             break;
         case "TAB ICON CSS":
             finalPayload = String.format(
-                    payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), new ApiUtilities()
+                    payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), apiUtilities
                             .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), filterClause),
                     String.valueOf(SObjectAPIs.GNT__TabIconCSS__c), value);
             break;

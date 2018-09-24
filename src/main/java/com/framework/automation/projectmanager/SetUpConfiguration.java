@@ -1,6 +1,7 @@
 package com.framework.automation.projectmanager;
 
 import com.framework.automation.payloads.ApprovalProcess;
+import com.framework.automation.payloads.Charts;
 import com.framework.automation.payloads.FlexGrid;
 import com.framework.automation.payloads.FlexTable;
 import com.framework.automation.payloads.PageLayout;
@@ -75,6 +76,12 @@ public class SetUpConfiguration {
         case "STEP PROGRESSBAR DETAIL CONFIG":
 			stringPayload = new StepProgressBar().setStepProgressBarDetailConfig(fieldLabel, value, filterClause);
 			break;
+        case "CHARTS CONFIG":
+            stringPayload = new Charts().setChartsFieldConfig(fieldLabel, value, filterClause);
+            break;
+        case "CHARTS DETAILS CONFIG":
+            stringPayload = new Charts().setChartDetailsConfig(fieldLabel, value, filterClause);
+            break;
         }
         System.out.println("final payload is " + stringPayload);
         return stringPayload;

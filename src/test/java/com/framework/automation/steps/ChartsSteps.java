@@ -1,0 +1,36 @@
+package com.framework.automation.steps;
+
+import com.automation.rei.controller.Controller;
+import com.automation.rei.handlers.Handlers;
+import com.framework.automation.pageobject.ChartsPage;
+
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+public class ChartsSteps {
+    ChartsPage chartsPage;
+
+    public ChartsSteps(Controller controller, Handlers handler) {
+        chartsPage = new ChartsPage(controller, handler);
+    }
+
+    @When("^I click on menu icon of chart \"([^\"]*)\"$")
+    public void clickChartMenuIcon(String chartName) {
+        chartsPage.clickChartMenuIcon(chartName);
+    }
+
+    @When("^I select \"([^\"]*)\" from chart menu of chart \"([^\"]*)\"$")
+    public void selectValueFromChartMenu(String valueToSelect, String chartName) {
+        chartsPage.selectAnyItemFromChartsMenu(chartName, valueToSelect);
+    }
+
+    @Then("^I see \"([^\"]*)\" displayed in modal$")
+    public void assertModalTitle(String titleName) {
+        chartsPage.isTitleOfModal(titleName);
+    }
+
+    @Then("^I see \"([^\"]*)\" displayed as chart title$")
+    public void assertDisplayedChartTitle(String title) {
+        chartsPage.assertChartTitleDisplayed(title);
+    }
+}

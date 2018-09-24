@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import com.automation.rei.controller.EnvironmentFetcher;
 import com.automation.rei.handlers.Properties_Logs;
 import com.automation.rei.webservices.RestfulWebServices;
+import com.framework.automation.objects.IdBucket;
 import com.framework.automation.payloads.ApiUtilities;
 import com.jayway.restassured.response.Response;
 
@@ -93,9 +94,19 @@ public class ProjectWebServices {
      * @return
      */
     private Response postConfigCall(String componentName, String fieldName, String value) {
-        return apiCall.postCall(null,
-                configPostCall.getConfigJson(componentName, fieldName, value, filterClause_Reconfig),
-                endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
+        Response reponse;
+        if (value.contains("ApiGeneratedId")) {
+            String[] getValueAt = value.split(":");
+            reponse = apiCall.postCall(null, configPostCall.getConfigJson(componentName, fieldName,
+                    ApiUtilities.storeAllIds.get(Integer.parseInt(getValueAt[1])).getId(), filterClause_Reconfig),
+                    endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
+        } else {
+            reponse = apiCall.postCall(null,
+                    configPostCall.getConfigJson(componentName, fieldName, value, filterClause_Reconfig),
+                    endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
+
+        }
+        return reponse;
     }
 
     /**
@@ -107,8 +118,8 @@ public class ProjectWebServices {
      * @param newValue
      * @throws IOException
      */
-    public void setUpDefaultParameters(String componentName, String fieldLabel, String value, String newFilterComponentCoreFieldName, String newFilterLabelValue)
-            throws IOException {
+    public void setUpDefaultParameters(String componentName, String fieldLabel, String value,
+            String newFilterComponentCoreFieldName, String newFilterLabelValue) throws IOException {
         setUpParameters.setComponentName(componentName);
         setUpParameters.setFieldLabel(fieldLabel);
         setUpParameters.setValue(value);
@@ -122,9 +133,24 @@ public class ProjectWebServices {
      * @return
      */
     public Response postDefaultConfigCall() {
-        return apiCall.postCall(null, new SetUpConfiguration().getConfigJson(setUpParameters.getComponentName(),
-                setUpParameters.getFieldLabel(), setUpParameters.getValue(), isFilterClauseGoodForDefaultSetting()),
-                endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
+        Response reponse;
+
+        if (setUpParameters.getValue().contains("ApiGeneratedId")) {
+            String[] getValueAt = setUpParameters.getValue().split(":");
+            System.out.println(
+                    "valueeeeeeeeeeee is " + ApiUtilities.storeAllIds.get(Integer.parseInt(getValueAt[1])).getId());
+            reponse = apiCall.postCall(null,
+                    new SetUpConfiguration().getConfigJson(setUpParameters.getComponentName(),
+                            setUpParameters.getFieldLabel(),
+                            ApiUtilities.storeAllIds.get(Integer.parseInt(getValueAt[1])).getId(),
+                            isFilterClauseGoodForDefaultSetting()),
+                    endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
+        } else {
+            reponse = apiCall.postCall(null, new SetUpConfiguration().getConfigJson(setUpParameters.getComponentName(),
+                    setUpParameters.getFieldLabel(), setUpParameters.getValue(), isFilterClauseGoodForDefaultSetting()),
+                    endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
+        }
+        return reponse;
     }
 
     /**
@@ -132,12 +158,15 @@ public class ProjectWebServices {
      * 
      * @return
      */
-    private String isFilterClauseGoodForDefaultSetting() {        
+    private String isFilterClauseGoodForDefaultSetting() {
         String newFilterClause = null;
-        if((!setUpParameters.getOldFieldValue().equals(setUpParameters.getNewFieldValue())) && (!setUpParameters.getNewFieldValue().equals(""))) {
+        if ((!setUpParameters.getOldFieldValue().equals(setUpParameters.getNewFieldValue()))
+                && (!setUpParameters.getNewFieldValue().equals(""))) {
             newFilterClause = filterClause_Reconfig.replace(setUpParameters.getOldFieldValue(),
                     setUpParameters.getNewFieldValue());
-        } else if((!setUpParameters.getOldComponentCoreFieldName().equals(setUpParameters.getNewComponentCoreFieldName())) && (!setUpParameters.getNewComponentCoreFieldName().equals(""))) {
+        } else if ((!setUpParameters.getOldComponentCoreFieldName()
+                .equals(setUpParameters.getNewComponentCoreFieldName()))
+                && (!setUpParameters.getNewComponentCoreFieldName().equals(""))) {
             System.out.println("entered second if");
             newFilterClause = filterClause_Reconfig.replace(setUpParameters.getOldComponentCoreFieldName(),
                     setUpParameters.getNewComponentCoreFieldName());
