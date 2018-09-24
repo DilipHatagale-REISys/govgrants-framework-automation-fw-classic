@@ -10,7 +10,6 @@ import com.framework.automation.projectmanager.GovGrantsManager;
 public class PhaseConfigPage extends GovGrantsManager {
 
     /******* "Variables and Locators" *****************/
-    
 
     /**
      * Constructor to handle dependency injection and framework library
@@ -88,9 +87,7 @@ public class PhaseConfigPage extends GovGrantsManager {
                 .isDisplayed());
     }
 
-    /*********
-     * "Local Methods with complete functionality - private"
-     *****************/
+    /********* "Local Methods with complete functionality - private" *********/
 
     /**
      * 

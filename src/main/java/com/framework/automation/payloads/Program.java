@@ -3,7 +3,7 @@ package com.framework.automation.payloads;
 public class Program {
     private String payloadForStringValue = "{\"sObjectAPIName\" : \"%s\",\"fieldMapStr\" : \"{\\\"Id\\\":\\\"%s\\\",\\\"%s\\\":\\\"%s\\\"}\"}";
     private String payloadForIntValue = "{\"sObjectAPIName\" : \"%s\",\"fieldMapStr\" : \"{\\\"Id\\\":\\\"%s\\\",\\\"%s\\\":%s}\"}";
-
+    private ApiUtilities apiUtilities =new ApiUtilities();
     /**
      * Handles Program level configuration
      * 
@@ -22,7 +22,7 @@ public class Program {
         switch (fieldLabel.toUpperCase()) {
         case "STATUS":
             finalPayload = String.format(
-                    payloadForStringValue, String.valueOf(SObjectAPIs.Program__c), new ApiUtilities()
+                    payloadForStringValue, String.valueOf(SObjectAPIs.Program__c), apiUtilities
                             .getComponentCoreFieldId(String.valueOf(SObjectAPIs.Program__c), filterClause),
                     String.valueOf(SObjectAPIs.Status__c), value);
             break;
