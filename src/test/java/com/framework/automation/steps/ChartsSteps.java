@@ -33,4 +33,14 @@ public class ChartsSteps {
     public void assertDisplayedChartTitle(String title) {
         chartsPage.assertChartTitleDisplayed(title);
     }
+
+    @Then("^I see chart legends are not displayed for chart \"([^\"]*)\"$")
+    public void assertChartLegendsNotDisplayed(String chartName) {
+        chartsPage.assertChartLegendNotDisplayed(chartName);
+    }
+
+    @Then("^I see \"([^\"]*)\" for chart \"([^\"]*)\"$")
+    public void assertSpecificTextForChart(String label, String chartName) {
+        chartsPage.assertCorrectTextDisplayed(label, chartName);
+    }
 }

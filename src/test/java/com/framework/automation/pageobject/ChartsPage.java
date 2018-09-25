@@ -24,14 +24,58 @@ public class ChartsPage extends GovGrantsManager {
         Assert.assertTrue(isChartTitleDisplayed(title));
     }
 
+    /**
+     * 
+     * @param chartName
+     */
+    public void assertChartLegendNotDisplayed(String chartName) {
+        Assert.assertTrue(isChartLegendNotDisplayed(chartName));
+    }
+
+    /**
+     * If correct text is displayed in xhart. like xaxis label and prefix
+     * @param title
+     * @param chartName
+     */
+    public void assertCorrectTextDisplayed(String title, String chartName) {
+        Assert.assertTrue(reiDriver.WaitFor().WaitForElementToBePresent(By.xpath(
+                "//div[@id='" + chartName + "Id']//*[contains(@class,'highcharts-container')]//*[contains(text(),'" + title + "')]"))
+                .isDisplayed());
+    }
+
     /********* "Local Methods with complete functionality - private" ******/
 
+    /**
+     * If correct chart title is displayed
+     * 
+     * @param title
+     * @return true
+     */
     private boolean isChartTitleDisplayed(String title) {
         boolean flag = false;
         try {
             if (reiDriver.WaitFor().WaitForElementToBePresent(By.cssSelector("div#charts [title='" + title + "']"))
                     .isDisplayed()) {
                 flag = true;
+            }
+        } catch (Exception e) {
+
+        }
+        return flag;
+    }
+
+    /**
+     * If chart legends not displayed
+     * 
+     * @param title
+     * @return true
+     */
+    private boolean isChartLegendNotDisplayed(String title) {
+        boolean flag = true;
+        try {
+            if (reiDriver.findMyElement().getElement(By.cssSelector("div#" + title + "Id .highcharts-legend"))
+                    .isDisplayed()) {
+                flag = false;
             }
         } catch (Exception e) {
 

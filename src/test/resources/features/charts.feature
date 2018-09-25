@@ -4,7 +4,7 @@ Feature: Charts Component Scenarios
 	As a configuration manager i make different configurational changes in flex grid component and will validate them.
 
 	@34666 @all @validateTitleField-gplanning
-	Scenario: changing chart title in configuratin and validating inside planning-programs
+	Scenario: Changing chart title for 'AnnouncementByAdminBureauUnit' chart in configuration and validating inside planning-programs
 	Given I have default configuration for "Charts Config" field "Title" as "AnnouncementByAdminBureauUnit" with filter "" for field ""
 	Given I setup filter clause for "Charts Config" in "GrantorPlanning" for field "Name" having value "AnnouncementByAdminBureauUnit"
 	When I reconfigure "Charts Config" field "Title" as "Funding Opportunities for Automation"
@@ -13,7 +13,7 @@ Feature: Charts Component Scenarios
 	Then I see "Funding Opportunities for Automation" displayed as chart title
 	
 	@34667 @all @validateChartDisplayedInCorrectPhase-gAnnouncement
-	Scenario: changing chart phase config to Annoucnement in configuratin and validating inside annoucenment
+	Scenario: Changing chart phase config to Annoucnement for 'AnnouncementByAdminBureauUnit' chart in configuratin and validating inside annoucenment
 	Given I have default configuration for "Charts Config" field "Phase Config" as "ApiGeneratedId:1" with filter "FundingOpportunity" for field ""
 	Given I setup filter clause for "General" in "FundingOpportunity" for field "" having value ""
 	And   I reconfigure "Phase Config" field "Tab Display Label" as "Announcements"
@@ -26,12 +26,39 @@ Feature: Charts Component Scenarios
 	Then I see "AnnouncementByAdminBureauUnit" displayed as chart title
 	
 	@34668 @all @validateAllDataHeaders-gPlannging
-	Scenario: changing chart menu button config to "Funding Opportunity Automation" in configuratin and validating inside planning
-	Given I have default configuration for "CHARTS DETAILS CONFIG" field "All data table header" as "Funding Opportunity1" with filter "" for field ""
-	Given I setup filter clause for "CHARTS DETAILS CONFIG" in "GrantorPlanning" for field "Name" having value "CD-0147"
-	When I reconfigure "CHARTS DETAILS CONFIG" field "All data table header" as "Funding Opportunity Automation"
+	Scenario: Changing chart menu button config to "Funding Opportunity Automation" for 'AnnouncementByAdminBureauUnit' chart  in configuratin and validating inside planning
+	Given I have default configuration for "Charts Details Config" field "All data table header" as "Funding Opportunity1" with filter "" for field ""
+	Given I setup filter clause for "Charts Details Config" in "GrantorPlanning" for field "Name" having value "CD-0147"
+	When I reconfigure "CCharts Details Config" field "All data table header" as "Funding Opportunity Automation"
 	When I login as "Automation" User
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	And I click on menu icon of chart "AnnouncementByAdminBureauUnit"
 	When I select "Show All Data" from chart menu of chart "AnnouncementByAdminBureauUnit"
 	Then I see "Funding Opportunity Automation" displayed in modal
+	
+	@34977 @all @validateDisablingChartLegends-gPlannging
+	Scenario: Disable chart legends for 'AnnouncementByAdminBureauUnit' chart in configuratin and validating inside planning
+	Given I have default configuration for "Charts Details Config" field "Disable Legend" as "false" with filter "" for field ""
+	Given I setup filter clause for "Charts Details Config" in "GrantorPlanning" for field "Name" having value "CD-0147"
+	When I reconfigure "Charts Details Config" field "Disable Legend" as "true"
+	When I login as "Automation" User
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	Then I see chart legends are not displayed for chart "AnnouncementByAdminBureauUnit"
+	
+	@34981 @all @validateX-axisLabel-gPlannging
+	Scenario: Change chart x-axis label for 'Funding Sources by Total Amount' chart in configuratin and validating inside planning
+	Given I have default configuration for "Charts Details Config" field "X-Axis Label" as "Total Allocated Amount" with filter "" for field ""
+	Given I setup filter clause for "Charts Details Config" in "GrantorPlanning" for field "Name" having value "CD-0159"
+	When I reconfigure "Charts Details Config" field "X-Axis Label" as "Total Allocated Amount Automation"
+	When I login as "Automation" User
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	Then I see "Total Allocated Amount Automation" for chart "FundingSourcesbyTotalAmount"
+	
+	@34985 @all @validateX-axisPrefix-gPlannging
+	Scenario: Change chart x-axis prefix for 'Funding Sources by Total Amount' chart in configuratin and validating inside planning
+	Given I have default configuration for "Charts Details Config" field "X-Axis Prefix" as "" with filter "" for field ""
+	Given I setup filter clause for "Charts Details Config" in "GrantorPlanning" for field "Name" having value "CD-0159"
+	When I reconfigure "Charts Details Config" field "X-Axis Prefix" as "$"
+	When I login as "Automation" User
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	Then I see "$" for chart "FundingSourcesbyTotalAmount"
