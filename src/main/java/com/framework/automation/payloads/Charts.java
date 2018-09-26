@@ -80,6 +80,20 @@ public class Charts {
                                     String.valueOf(SObjectAPIs.GNT__ChartDetailConfig__c), filterClause),
                             String.valueOf(SObjectAPIs.GNT__XAxisPrefix__c), value);
             break;
+        case "X FORMATTED NUMBER":
+            finalPayload = String
+                    .format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__ChartDetailConfig__c),
+                            new ApiUtilities().getComponentCoreFieldId(
+                                    String.valueOf(SObjectAPIs.GNT__ChartDetailConfig__c), filterClause),
+                            String.valueOf(SObjectAPIs.GNT__XFormattedNumber__c), value);
+            break;
+        case "X AXIS SUFFIX":
+            finalPayload = String
+                    .format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__ChartDetailConfig__c),
+                            new ApiUtilities().getComponentCoreFieldId(
+                                    String.valueOf(SObjectAPIs.GNT__ChartDetailConfig__c), filterClause),
+                            String.valueOf(SObjectAPIs.GNT__XAxisSuffix__c), value);
+            break;
         }
         System.out.println("method for finalpayload " + finalPayload);
         return finalPayload;
