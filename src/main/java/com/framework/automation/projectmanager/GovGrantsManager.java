@@ -272,12 +272,13 @@ public class GovGrantsManager extends ProjectWebServices {
     /**
      * genric method to click on the double arrow dropdown
      */
-    public void clickLeftPanelHeader() {
-        reiDriver.WaitFor().makeThreadSleep(1000);
+    public void clickLeftPanelHeader() {       
         try {
+            reiDriver.WaitFor().makeThreadSleep(2000);
             reiDriver.WaitFor().WaitForWebElementToBeVisible(reiDriver.findMyElement().getElement(doubleArrowDropDown))
                     .click();
         } catch (Exception e) {
+            reiDriver.WaitFor().makeThreadSleep(3000);
             reiDriver.JavaScript().clickByJS(doubleArrowDropDown);
         }
     }

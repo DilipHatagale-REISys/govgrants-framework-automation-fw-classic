@@ -29,7 +29,7 @@ Feature: Charts Component Scenarios
 	Scenario: Changing chart menu button config to "Funding Opportunity Automation" for 'AnnouncementByAdminBureauUnit' chart  in configuratin and validating inside planning
 	Given I have default configuration for "Charts Details Config" field "All data table header" as "Funding Opportunity1" with filter "" for field ""
 	Given I setup filter clause for "Charts Details Config" in "GrantorPlanning" for field "Name" having value "CD-0147"
-	When I reconfigure "CCharts Details Config" field "All data table header" as "Funding Opportunity Automation"
+	When I reconfigure "Charts Details Config" field "All data table header" as "Funding Opportunity Automation"
 	When I login as "Automation" User
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	And I click on menu icon of chart "AnnouncementByAdminBureauUnit"
