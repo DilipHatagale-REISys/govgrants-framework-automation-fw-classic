@@ -11,7 +11,7 @@ import com.jayway.restassured.response.Response;
 public class ApiUtilities {
     JsonObject sObjectConfig;
     RestfulWebServices apiCall = new RestfulWebServices();
-    public static ArrayList<IdBucket> storeAllIds=new ArrayList<IdBucket>();
+    public static ArrayList<IdBucket> storeAllIds = new ArrayList<IdBucket>();
 
     /**
      * get Id based on component api and field name
@@ -90,7 +90,7 @@ public class ApiUtilities {
      * @return
      */
     public String getFilterClause(String componentName, String ComponentCoreFieldName, String fieldName, String value) {
-        String filterClause = null;     
+        String filterClause = null;
         switch (componentName.toUpperCase()) {
         case "GENERAL":
             filterClause = genericParameterFilter(ComponentCoreFieldName);
@@ -134,9 +134,8 @@ public class ApiUtilities {
             filterClause = String.valueOf(SObjectAPIs.GNT__TaskAction__c) + "=" + "'" + ComponentCoreFieldName + "'";
             break;
         case "STEP PROGRESSBAR DETAIL":
-            filterClause = String.valueOf(SObjectAPIs.GNT__PicklistValue__c) + "=" + "'" + value + "'" + " and" + " "
-                    + String.valueOf(SObjectAPIs.GNT__ProgressbarHeaderConfig__r) + "."
-                    + String.valueOf(SObjectAPIs.GNT__GroupName__c) + "=" + "'" + ComponentCoreFieldName + "'";
+            filterClause = String.valueOf(SObjectAPIs.GNT__ProgressbarHeaderConfig__r) + ".GNT__GroupName__c=" + "'"
+                    + ComponentCoreFieldName + "' and" + " " + fieldName + "=" + "'" + value + "'";
             break;
         case "CHARTS CONFIG":
             filterClause = String.valueOf(SObjectAPIs.GNT__PhaseConfig__r) + ".Name=" + "'" + ComponentCoreFieldName

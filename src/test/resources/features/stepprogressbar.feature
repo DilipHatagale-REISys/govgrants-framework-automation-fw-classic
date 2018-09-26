@@ -36,7 +36,7 @@ Feature: Step Progress Bar Component Scenarios
 	@34349 @all @disablingRenderingOfParticularStatusProgressBarForUser-gPlanning
 	Scenario Outline: validate after disabling of submit for approval status from progress bar for internal user and validating it on program detail page-programs
 	Given I have default configuration for "Step Progressbar Detail Config" field "Hide For Users" as "" with filter "" for field ""
-	Given I setup filter clause for "Step Progressbar Detail" in "Program Progress Bar" for field "" having value "Submitted for Approval"
+	Given I setup filter clause for "Step Progressbar Detail" in "Program Progress Bar" for field "Name" having value "Submitted for Approval"
 	When I reconfigure "Step Progressbar Detail Config" field "Hide For Users" as "<changedUser>"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
@@ -51,7 +51,7 @@ Feature: Step Progress Bar Component Scenarios
 	@34350 @all @sequenceChangeOfStatusStepInsideStepProgressBar-gPlanning
 	Scenario: validate after changin sequence of submit for approval status to zero and validating it on program detail page-programs
 	Given I have default configuration for "Step Progressbar Detail Config" field "Sequence" as "2" with filter "" for field ""
-	Given I setup filter clause for "Step Progressbar Detail" in "Program Progress Bar" for field "" having value "Submitted for Approval"
+	Given I setup filter clause for "Step Progressbar Detail" in "Program Progress Bar" for field "Name" having value "Submitted for Approval"
 	When I reconfigure "Step Progressbar Detail Config" field "Sequence" as "0"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
