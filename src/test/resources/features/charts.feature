@@ -1,7 +1,7 @@
 @charts-component
 Feature: Charts Component Scenarios
 	Test all charts component based scenarios 
-	As a configuration manager i make different configurational changes in flex grid component and will validate them.
+	As a configuration manager i make different configurational changes in charts component and will validate them.
 
 	@34666 @all @validateTitleField-gplanning
 	Scenario: Changing chart title for 'AnnouncementByAdminBureauUnit' chart in configuration and validating inside planning-programs

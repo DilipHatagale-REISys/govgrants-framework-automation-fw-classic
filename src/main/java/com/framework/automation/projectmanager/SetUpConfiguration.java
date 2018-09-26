@@ -4,6 +4,7 @@ import com.framework.automation.payloads.ApprovalProcess;
 import com.framework.automation.payloads.Charts;
 import com.framework.automation.payloads.FlexGrid;
 import com.framework.automation.payloads.FlexTable;
+import com.framework.automation.payloads.Forms;
 import com.framework.automation.payloads.PageLayout;
 import com.framework.automation.payloads.PhaseConfig;
 import com.framework.automation.payloads.Program;
@@ -81,6 +82,9 @@ public class SetUpConfiguration {
             break;
         case "CHARTS DETAILS CONFIG":
             stringPayload = new Charts().setChartDetailsConfig(fieldLabel, value, filterClause);
+            break;
+        case "FORMS":
+            stringPayload = new Forms().setFormsFieldConfig(fieldLabel, value, filterClause);
             break;
         }
         System.out.println("final payload is " + stringPayload);
