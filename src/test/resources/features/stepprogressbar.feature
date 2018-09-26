@@ -59,3 +59,14 @@ Feature: Step Progress Bar Component Scenarios
 	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
 	Then I see "Submitted for Approval" status shown at number "0" in step progress bar	
 	
+	@34351 @all @colorFieldOfStepProgressBar-gPlanning
+	Scenario: validate after changing color of created status to different and validating it on program detail page-programs
+	Given I have default configuration for "Step Progressbar Header Config" field "Complete Color" as "#3ba10b" with filter "" for field ""
+	Given I setup filter clause for "General" in "PB-0016" for field "" having value ""
+	When I reconfigure "Step Progressbar Header Config" field "Complete Color" as "#0b0ba0"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	Then I see step progress bar displayed in "Blue" color
+	

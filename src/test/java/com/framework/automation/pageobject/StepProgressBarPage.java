@@ -12,7 +12,7 @@ import com.framework.automation.projectmanager.GovGrantsManager;
 
 public class StepProgressBarPage extends GovGrantsManager {
 
-	public final By stepProgressBar;
+	public final By stepProgressBar, stepProgressBarColor;
 
 	/**
 	 * Constructor to handle dependency injection and framework library
@@ -21,6 +21,8 @@ public class StepProgressBarPage extends GovGrantsManager {
 		super(controller, reiDriver);
 
 		stepProgressBar = By.xpath("//div[@class='container-fluid']//*[@id='progressBarId']//ol//li");
+		stepProgressBarColor = By.xpath(
+				"//div[@class='container-fluid']//*[@id='progressBarId']//ol//li[contains(@class, 'progtrckr-done')]");
 	}
 
 	/******* "Key Methods with complete functionality - public" *****************/
@@ -52,7 +54,13 @@ public class StepProgressBarPage extends GovGrantsManager {
 		Assert.assertTrue(isStatusItemSequence(statusName, sequenceNumber));
 	}
 
-	
+	/**
+	 * assert if step progress bar is displayed in different color
+	 * 
+	 */
+	public void assertStepProgressBarAppearence(String color) {
+		Assert.assertTrue(isStepProgressBarDisplayedInSpecifiedColor(color));
+	}
 
 	/*********
 	 * "Local Methods with Limited functionality - Private"
@@ -105,23 +113,49 @@ public class StepProgressBarPage extends GovGrantsManager {
 	private List<WebElement> getallStatusItemList() {
 		return reiDriver.WaitFor().WaitForElementListToBeVisisble(stepProgressBar);
 	}
-	
+
 	/**
-     * validate if status step 'submit for approval' is displayed or not inside step
-     * status progress bar
-     * 
-     * @return: true if it is not displayed
-     */
-    private boolean isStatusStepInsideProgressBarIsNotDisplayed(String statusName) {
-        boolean flag = false;
-        try {
-            if (getSpecificStatusFromProgressBar(statusName).isDisplayed())
-            {
-                flag = false;
-            }
-        } catch (org.openqa.selenium.NoSuchElementException e) {
-            flag = true;
-        }
-        return flag;
-    }
+	 * validate if status step 'submit for approval' is displayed or not inside step
+	 * status progress bar
+	 * 
+	 * @return: true if it is not displayed
+	 */
+	private boolean isStatusStepInsideProgressBarIsNotDisplayed(String statusName) {
+		boolean flag = false;
+		try {
+			if (getSpecificStatusFromProgressBar(statusName).isDisplayed()) {
+				flag = false;
+			}
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			flag = true;
+		}
+		return flag;
+	}
+
+	/**
+	 * validate if step progress bar Created is displayed in different color as blue
+	 * 
+	 * @return: true if it is displayed in specified color
+	 */
+	private boolean isStepProgressBarDisplayedInSpecifiedColor(String color) {
+		boolean flag = false;
+		String licolor = reiDriver.WaitFor().WaitForElementToBePresent(stepProgressBarColor).getCssValue("color");
+		switch (color.toUpperCase()) {
+		case "BLUE":
+			if (licolor.contains("rgba(11, 11, 160, 1)"))
+				flag = true;
+			break;
+		case "GREEN":
+			if (licolor.contains("rgba(59, 161, 11, 1)"))
+				flag = true;
+			break;
+		case "RED":
+			if (licolor.contains("rgba(230, 0, 0, 1)"))
+				flag = true;
+			break;
+		default:
+			flag = false;
+		}
+		return flag;
+	}
 }

@@ -28,5 +28,10 @@ public class StepProgressBarSteps {
     public void assertSequenceOfAccordianSideBarHeader(String statusName, String sequenceNumber) {
 		stepProgressBarPage.assertStatusSequenceInsideProgressBar(statusName, Integer.parseInt(sequenceNumber));
     }
+	
+	@Then("^I see step progress bar displayed in \"([^\\\"]*)\" color$")
+	public void assertStepProgressBarColor(String color) {
+		stepProgressBarPage.assertStepProgressBarAppearence(color);
+	}
 
 }

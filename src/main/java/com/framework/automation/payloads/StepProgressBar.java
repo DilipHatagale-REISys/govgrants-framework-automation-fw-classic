@@ -33,6 +33,13 @@ public class StepProgressBar {
                             String.valueOf(SObjectAPIs.GNT__StepProgressbarHeader__c), filterClause),
                     String.valueOf(SObjectAPIs.GNT__RenderforUser__c), value);
             break;
+        case "COMPLETE COLOR":
+            finalPayload = String.format(payloadForStringValue,
+                    String.valueOf(SObjectAPIs.GNT__StepProgressbarHeader__c),
+                    apiUtilities.getComponentCoreFieldId(
+                            String.valueOf(SObjectAPIs.GNT__StepProgressbarHeader__c), filterClause),
+                    String.valueOf(SObjectAPIs.GNT__CompleteColor__c), value);
+            break;
         }
         System.out.println(finalPayload);
         return finalPayload;
