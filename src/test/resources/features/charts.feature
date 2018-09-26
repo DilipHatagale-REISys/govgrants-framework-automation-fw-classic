@@ -55,10 +55,29 @@ Feature: Charts Component Scenarios
 	Then I see "Total Allocated Amount Automation" for chart "FundingSourcesbyTotalAmount"
 	
 	@34985 @all @validateX-axisPrefix-gPlannging
-	Scenario: Change chart x-axis prefix for 'Funding Sources by Total Amount' chart in configuratin and validating inside planning
+	Scenario: Change chart x-axis prefix as $ for 'Funding Sources by Total Amount' chart in configuratin and validating inside planning
 	Given I have default configuration for "Charts Details Config" field "X-Axis Prefix" as "" with filter "" for field ""
 	Given I setup filter clause for "Charts Details Config" in "GrantorPlanning" for field "Name" having value "CD-0159"
 	When I reconfigure "Charts Details Config" field "X-Axis Prefix" as "$"
 	When I login as "Automation" User
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	Then I see "$" for chart "FundingSourcesbyTotalAmount"
+	
+	@34984 @all @validateXFormattedNubers-gPlannging
+	Scenario: Enable x-formatted numbers for 'Funding Sources by Total Amount' chart in configuratin and validating inside planning
+	Given I have default configuration for "Charts Details Config" field "X Formatted Number" as "false" with filter "" for field ""
+	Given I setup filter clause for "Charts Details Config" in "GrantorPlanning" for field "Name" having value "CD-0159"
+	When I reconfigure "Charts Details Config" field "X Formatted Number" as "true"
+	When I login as "Automation" User
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	Then I see ",000" for chart "FundingSourcesbyTotalAmount"
+	
+	@34984 @all @validateX-axisSuffix-gPlannging
+	Scenario: Change chart x-axis suffix as $ for 'Funding Sources by Total Amount' chart in configuratin and validating inside planning
+	Given I have default configuration for "Charts Details Config" field "X Axis Suffix" as "" with filter "" for field ""
+	Given I setup filter clause for "Charts Details Config" in "GrantorPlanning" for field "Name" having value "CD-0159"
+	When I reconfigure "Charts Details Config" field "X Axis Suffix" as "$"
+	When I login as "Automation" User
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	Then I see "$" for chart "FundingSourcesbyTotalAmount"
+	
