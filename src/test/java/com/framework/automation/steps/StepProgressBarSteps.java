@@ -23,10 +23,14 @@ public class StepProgressBarSteps {
 	public void assertStepInsideStepProgressBar(String statusName) {
 		stepProgressBarPage.assertStepInsideStepProgressBarForUser(statusName);
 	}
-	
-	@Then("^I see \"([^\"]*)\" status shown at number \"([^\"]*)\" in step progress bar$")
-    public void assertSequenceOfAccordianSideBarHeader(String statusName, String sequenceNumber) {
-		stepProgressBarPage.assertStatusSequenceInsideProgressBar(statusName, Integer.parseInt(sequenceNumber));
-    }
 
+	@Then("^I see \"([^\"]*)\" status shown at number \"([^\"]*)\" in step progress bar$")
+	public void assertSequenceOfAccordianSideBarHeader(String statusName, String sequenceNumber) {
+		stepProgressBarPage.assertStatusSequenceInsideProgressBar(statusName, Integer.parseInt(sequenceNumber));
+	}
+
+	@Then("^I see step progress bar displayed in \"([^\"]*)\" color for status \"([^\"]*)\"$")
+	public void assertStepProgressBarColor(String color, String status) {
+		stepProgressBarPage.assertStepProgressBarAppearence(color, status);
+	}
 }
