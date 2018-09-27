@@ -272,12 +272,13 @@ public class GovGrantsManager extends ProjectWebServices {
     /**
      * genric method to click on the double arrow dropdown
      */
-    public void clickLeftPanelHeader() {
-        reiDriver.WaitFor().makeThreadSleep(1000);
+    public void clickLeftPanelHeader() {       
         try {
+            reiDriver.WaitFor().makeThreadSleep(2000);
             reiDriver.WaitFor().WaitForWebElementToBeVisible(reiDriver.findMyElement().getElement(doubleArrowDropDown))
                     .click();
         } catch (Exception e) {
+            reiDriver.WaitFor().makeThreadSleep(3000);
             reiDriver.JavaScript().clickByJS(doubleArrowDropDown);
         }
     }
@@ -340,6 +341,28 @@ public class GovGrantsManager extends ProjectWebServices {
         return reiDriver.findMyElement().getElement(
                 By.xpath("//div[@class='panel-heading']//div[contains(@class,'header-bars')]//span/ul/li//a[@title='"
                         + headerItem + "']"));
+    }
+    
+    /**
+     * click any button on right header inside detail page
+     * 
+     * @param buttonName
+     * @return
+     */
+    public void clickRightHeaderButtonInsideDetailPage(String buttonName) {
+        try {
+            reiDriver.WaitFor().WaitForElementToBePresent(
+                    By.xpath("//div[@id='headerButtonsPanel']//*[@title='" + buttonName + "']")).click();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (buttonName.equalsIgnoreCase("Submit For Approval")) {
+            try {
+                reiDriver.WaitFor().WaitForAlert();
+                reiDriver.switchTo().acceptAlert();
+            } catch (Exception e) {
+            }
+        }
     }
 
     /**

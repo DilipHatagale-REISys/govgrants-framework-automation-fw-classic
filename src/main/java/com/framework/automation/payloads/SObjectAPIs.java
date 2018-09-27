@@ -9,7 +9,7 @@ public enum SObjectAPIs {
     GNT__AccordionHeader__c ,GNT__AccordionHeader__r, GNT__PhaseType__c,GNT__DataTableConfig__c,GNT__DataTableAction__c,
     GNT__PageLayoutConfig__r,GNT__PageLayoutActionConfig__c,GNT__ApprovalDecisionActionConfig__c,GNT__FlexTableConfig__r,GNT__DataTableConfig__r,
     Program__c,GNT__ApprovalProcessStepCache__c,GNT__SobjectActionConfig__c,GNT__TaskAction__c,GNT__ProgressbarHeaderConfig__r,GNT__ChartConfig__c,GNT__ChartDetailConfig__c,
-    GNT__ChartConfig__r,
+    GNT__ChartConfig__r,GNT__PageTemplate__c,
     
     //Fields
     GNT__Abbreviation__c, GNT__Active__c,GNT__AvailableForProfiles__c, GNT__DefaultThemeName__c, GNT__InternalUniqueID__c, 
@@ -23,5 +23,5 @@ public enum SObjectAPIs {
     GNT__ActionLabelOverride__c,Status__c,ProgramName__c,GNT__ApproverFieldAPIName__c,GNT__ConfirmationTitle__c,GNT__ConfirmationMessage__c,GNT__FilterCriteriaforUserReassign__c,GNT__Header__c,GNT__EmailFieldAPIName__c,GNT__ApproveEmailTemplate__c,
     GNT__ApproveConfirmationTitle__c,GNT__ApprovalConfirmationMessage__c,GNT__TaskConfig__c,GNT__SendTaskAssignmentNotification__c,GNT__CompleteOnView__c,GNT__RefreshBehavior__c,GNT__RenderforApp__c,GNT__StepProgressbarHeader__c,GNT__AvailableforProfiles__c,
     GNT__StepProgressbarDetail__c,GNT__HideForUsers__c,GNT__PicklistValue__c,GNT__RenderforUser__c,GNT__TotalChartsAllowed__c,GNT__BodyBottomPageURL__c,GNT__IsPhase__c,GNT__AllDataTableHeader__c,GNT__DisableLegend__c,GNT__XAxisLabel__c,GNT__XAxisPrefix__c,GNT__XFormattedNumber__c,
-    GNT__XAxisSuffix__c,GNT__CompleteColor__c,GNT__NegativePath__c,GNT__PageTemplate__c,GNT__SkipFormDownload__c
+    GNT__XAxisSuffix__c,GNT__SkipFormDownload__c,GNT__CompleteColor__c,GNT__NegativePath__c
 }

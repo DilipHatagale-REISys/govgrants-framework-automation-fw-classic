@@ -20,7 +20,7 @@ public class PageLayoutSteps {
 
     @When("^I click on \"([^\"]*)\" button inside detail page$")
     public void clickbuttonInsideDetailPage(String button) {
-        pageLayoutPage.getHeaderButtonInsideDetailPage(button);
+        pageLayoutPage.clickRightHeaderButtonInsideDetailPage(button);
     }
 
     @When("^I click on \"([^\"]*)\" sub tab inside page layout$")

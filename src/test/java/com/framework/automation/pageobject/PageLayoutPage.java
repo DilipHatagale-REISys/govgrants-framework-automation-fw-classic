@@ -37,28 +37,6 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
-     * get any button on right header inside detail page
-     * 
-     * @param buttonName
-     * @return
-     */
-    public void getHeaderButtonInsideDetailPage(String buttonName) {
-        try {
-            reiDriver.WaitFor().WaitForElementToBePresent(
-                    By.xpath("//div[@id='headerButtonsPanel']//*[@title='" + buttonName + "']")).click();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        if (buttonName.equalsIgnoreCase("Submit For Approval")) {
-            try {
-                reiDriver.WaitFor().WaitForAlert();
-                reiDriver.switchTo().acceptAlert();
-            } catch (Exception e) {
-            }
-        }
-    }
-
-    /**
      * assert true if correct overview header is displayed
      * 
      * @param overViewTitle
