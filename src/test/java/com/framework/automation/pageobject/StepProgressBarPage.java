@@ -12,7 +12,7 @@ import com.framework.automation.projectmanager.GovGrantsManager;
 
 public class StepProgressBarPage extends GovGrantsManager {
 
-	public final By stepProgressBar, stepProgressBarColor;
+	public final By stepProgressBar;
 
 	/**
 	 * Constructor to handle dependency injection and framework library
@@ -21,8 +21,6 @@ public class StepProgressBarPage extends GovGrantsManager {
 		super(controller, reiDriver);
 
 		stepProgressBar = By.xpath("//div[@class='container-fluid']//*[@id='progressBarId']//ol//li");
-		stepProgressBarColor = By.xpath(
-				"//div[@class='container-fluid']//*[@id='progressBarId']//ol//li[contains(@class, 'progtrckr-done')]");
 	}
 
 	/******* "Key Methods with complete functionality - public" *****************/
