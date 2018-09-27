@@ -58,8 +58,8 @@ public class StepProgressBarPage extends GovGrantsManager {
 	 * assert if step progress bar is displayed in different color
 	 * 
 	 */
-	public void assertStepProgressBarAppearence(String color) {
-		Assert.assertTrue(isStepProgressBarDisplayedInSpecifiedColor(color));
+	public void assertStepProgressBarAppearence(String color, String status) {
+		Assert.assertTrue(isStepProgressBarDisplayedInSpecifiedColor(color, status));
 	}
 
 	/*********
@@ -134,28 +134,36 @@ public class StepProgressBarPage extends GovGrantsManager {
 
 	/**
 	 * validate if step progress bar Created is displayed in different color as blue
-	 * 
+	 * @param status
+	 * @param color
 	 * @return: true if it is displayed in specified color
 	 */
-	private boolean isStepProgressBarDisplayedInSpecifiedColor(String color) {
+	private boolean isStepProgressBarDisplayedInSpecifiedColor(String color, String status) {
 		boolean flag = false;
-		String licolor = reiDriver.WaitFor().WaitForElementToBePresent(stepProgressBarColor).getCssValue("color");
 		switch (color.toUpperCase()) {
 		case "BLUE":
-			if (licolor.contains("rgba(11, 11, 160, 1)"))
+			if (getAllStepProgressStatus(status).getCssValue("color").equals("rgba(11, 11, 160, 1)")) {
 				flag = true;
+			}
 			break;
 		case "GREEN":
-			if (licolor.contains("rgba(59, 161, 11, 1)"))
+			if (getAllStepProgressStatus(status).getCssValue("color").equals("rgba(59, 161, 11, 1)")) {
 				flag = true;
+			}
 			break;
 		case "RED":
-			if (licolor.contains("rgba(230, 0, 0, 1)"))
+			if (getAllStepProgressStatus(status).getCssValue("color").equals("rgba(230, 0, 0, 1)")) {
 				flag = true;
+			}
 			break;
 		default:
 			flag = false;
 		}
 		return flag;
+	}
+
+	private WebElement getAllStepProgressStatus(String status) {
+		return reiDriver.WaitFor().WaitForElementToBePresent(By.xpath(("//div[@class='container-fluid']//*[@id='progressBarId']//ol//li//span[contains(text(),'"
+						+ status + "')and @class='progressStatusText']")));
 	}
 }
