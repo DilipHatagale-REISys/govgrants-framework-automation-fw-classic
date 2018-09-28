@@ -25,7 +25,6 @@ import com.cucumber.listener.Reporter;
 import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.parser.PdfTextExtractor;
 
-
 /**
  * for Rei Systems
  * 
@@ -336,31 +335,31 @@ public class GovGrantsManager extends ProjectWebServices {
                 By.xpath("//div[contains(@class,'panel-heading')]//button[@title='" + buttonName + "']"));
     }
 
-    
     /**
-    * get any item from top right bar inside phases 
-    * 
-    * @param headerItem
-    * @return
-    */
-   public WebElement getItemFromTopRightHeaderBars(String headerItem) {
-       return reiDriver.WaitFor().WaitForElementToBePresent(
-                   By.xpath("//*[@title='Menu']/following-sibling::ul//li//span[text()='"+headerItem+"']"));
-       /*
-        * reiDriver.WaitFor().WaitForElementToBePresent( By.xpath(
-        * "//div[@class='panel-heading']//div[contains(@class,'header-bars')]//span/ul/li//a[@title='"
-        * + headerItem + "']"));
-        */
-   }
+     * get any item from top right bar inside phases
+     * 
+     * @param headerItem
+     * @return
+     */
+    public WebElement getItemFromTopRightHeaderBars(String headerItem) {
+        return reiDriver.WaitFor().WaitForElementToBePresent(
+                By.xpath("//*[@title='Menu']/following-sibling::ul//li//span[text()='" + headerItem + "']"));
+        /*
+         * reiDriver.WaitFor().WaitForElementToBePresent( By.xpath(
+         * "//div[@class='panel-heading']//div[contains(@class,'header-bars')]//span/ul/li//a[@title='"
+         * + headerItem + "']"));
+         */
+    }
 
-   /**
-    * get any item from top right bar inside phases 
-    * @param headerItem
-    * @return
-    */
+    /**
+     * get any item from top right bar inside phases
+     * 
+     * @param headerItem
+     * @return
+     */
     public WebElement getItemFromTopRightHeaderBarsWithoutWaitTime(String headerItem) {
         return reiDriver.findMyElement().getElement(
-                By.xpath("//*[@title='Menu']/following-sibling::ul//li//span[text()='"+headerItem+"']"));
+                By.xpath("//*[@title='Menu']/following-sibling::ul//li//span[text()='" + headerItem + "']"));
     }
 
     /**
@@ -695,30 +694,35 @@ public class GovGrantsManager extends ProjectWebServices {
 
     /**
      * save file using robot class
+     * 
      * @throws AWTException
      */
     public void saveFile() throws AWTException {
-       reiDriver.switchTo().switchToWindowHandler(1);  
-       reiDriver.WaitFor().makeThreadSleep(10000);
-       reiDriver.RobotActions().ctrl_Save();
-       reiDriver.WaitFor().makeThreadSleep(1000);
-       reiDriver.RobotActions().Robot_Enter();
-       reiDriver.WaitFor().makeThreadSleep(5000);
-            }
-    
+        reiDriver.switchTo().switchToWindowHandler(1);
+        reiDriver.WaitFor().makeThreadSleep(10000);
+        reiDriver.RobotActions().ctrl_Save();
+        reiDriver.WaitFor().makeThreadSleep(1000);
+        reiDriver.RobotActions().Robot_Enter();
+        reiDriver.WaitFor().makeThreadSleep(10000);
+    }
+
     /**
      * Rename the file and change it from temp to pdf. Read from pdf file
+     * 
      * @return
      */
-    public String readPDF() {
-        File directory=reiDriver.get().getCompleteFilesListOnLocalDirectory(System.getProperty("user.dir")+"\\target");
+    public String readPDF(int pageNumber, String fileName) {
+        File directory = reiDriver.get()
+                .getCompleteFilesListOnLocalDirectory(System.getProperty("user.dir") + "\\target");
         for (File file : directory.listFiles()) {
             if (file.getName().endsWith(".tmp")) {
-                new File(file.getAbsolutePath().toString()).renameTo(new File(directory.getAbsolutePath().toString()+"\\govgrants.pdf"));
+                new File(file.getAbsolutePath().toString())
+                        .renameTo(new File(directory.getAbsolutePath().toString() + "\\" + fileName + ".pdf"));
                 break;
-            } 
-        }       
-        return reiDriver.adobeReader().readFromAdobeFileOnLocalAtUserDirectory(directory.getAbsolutePath().toString()+"\\govgrants.pdf", 4);
+            }
+        }
+        return reiDriver.adobeReader().readFromAdobeFileOnLocalAtUserDirectory(
+                directory.getAbsolutePath().toString() + "\\" + fileName + ".pdf", pageNumber);
     }
 
     /******* "Local Methods with Limited functionality " **********/
