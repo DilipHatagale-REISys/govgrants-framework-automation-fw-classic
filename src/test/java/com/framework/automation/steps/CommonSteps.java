@@ -1,5 +1,9 @@
 package com.framework.automation.steps;
 
+import java.awt.AWTException;
+import java.io.FileNotFoundException;
+import java.net.MalformedURLException;
+
 import org.springframework.context.annotation.Description;
 
 import com.automation.rei.controller.Controller;
@@ -51,5 +55,10 @@ public class CommonSteps {
     @Then("^I see \"([^\"]*)\" in current url$")
     public void assertPlanningDefaultLandingTab(String content) {
         govGrantsManager.assertCurrentURL(content);;
+    }
+    
+    @Then("^I do not see \"([^\"]*)\" in pdf$")
+    public void textNotDisplayedInPdf(String text) {
+
     }
 }

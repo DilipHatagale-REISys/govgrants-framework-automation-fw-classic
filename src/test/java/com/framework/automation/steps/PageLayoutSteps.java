@@ -27,6 +27,11 @@ public class PageLayoutSteps {
     public void clickSubTabAfterSelectingFlexTableIcons(String subTabName) {
         pageLayoutPage.clickSubTab(subTabName);
     }
+    
+    @When("^I select \"([^\"]*)\" from dropdown$")
+    public void selectFromDropdown(String itemName) {
+        pageLayoutPage.getItemFromTopRightHeaderBars(itemName).click();
+    }
 
     @Then("^I see \"([^\"]*)\" shown as over view title in header \"([^\"]*)\"$")
     public void assertOverViewTitleWithHeader(String overViewTitle, String overViewHeader) {
