@@ -49,3 +49,16 @@ Feature: Forms Component Scenarios
 	When I click on "View" icon of status "Review Initiated" for "Test announcement for program 2" program in flex table
 	When I click on "Attachments" sub tab inside page layout
 	Then I see "View" action item is not displayed inside business form
+	
+	@35271 @all @changeLabelOfEditFormPageLayoutActionItem-gApplication
+	Scenario: Validate label change of edit action button at form page layout action from config and validating inside Application form view
+	Given I have default configuration for "Page Layout Action" field "Action Name" as "Edit" with filter "" for field ""
+	Given I setup filter clause for "Page Layout Action" in "Application Cover Page" for field "Name" having value "Edit"
+	When I reconfigure "Page Layout Action" field "Action Name" as "Edit Automation"
+	When I login as "Automation" User
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Applications" tab
+	When I search for "AP-755-198"
+	When I click on "View" icon of status "Review Initiated" for "Test announcement for program 2" program in flex table
+	When I click on "Attachments" sub tab inside page layout
+	When I click on "View" icon of form "General Application Cover Page" program in flex table
+	Then I see changed label as "Edit Automation" of action item inside form page layout

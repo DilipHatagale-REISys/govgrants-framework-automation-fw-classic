@@ -144,6 +144,20 @@ public class PageLayout {
                                     String.valueOf(SObjectAPIs.GNT__PageLayoutActionConfig__c), filterClause),
                             String.valueOf(SObjectAPIs.GNT__HideForContext__c), value);
             break;
+        case "STANDARD ACTION":
+        	finalPayload = String
+            .format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageLayoutActionConfig__c),
+                    apiUtilities.getComponentCoreFieldId(
+                            String.valueOf(SObjectAPIs.GNT__PageLayoutActionConfig__c), filterClause),
+                    String.valueOf(SObjectAPIs.GNT__StandardAction__c), value);
+        	break;
+        case "ACTION NAME":
+        	finalPayload = String
+            .format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageLayoutActionConfig__c),
+                    apiUtilities.getComponentCoreFieldId(
+                            String.valueOf(SObjectAPIs.GNT__PageLayoutActionConfig__c), filterClause),
+                    String.valueOf(SObjectAPIs.Name), value);
+        	break;
         }
         System.out.println(finalPayload);
         return finalPayload;

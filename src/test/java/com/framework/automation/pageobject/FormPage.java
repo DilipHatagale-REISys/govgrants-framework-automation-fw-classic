@@ -38,6 +38,35 @@ public class FormPage extends GovGrantsManager {
 		Assert.assertTrue(isPreviewActionItemNotDisplayForInternalUser(Item));
 	}
 
+	/**
+	 * click table item inside based on Forms name/subject ,icon name
+	 * 
+	 * @param programSubject
+	 * @param iconName
+	 */
+	public void clickFormActionIconsForSpecificSubject(String programSubject, String iconName) {
+		try {
+			reiDriver.WaitFor()
+					.WaitForElementToBePresent(By.xpath(
+							"//td//span[@title='" + programSubject + "']/../../../td//a[@title='" + iconName + "']//i"))
+					.click();
+
+		} catch (Exception e) {
+			reiDriver.WaitFor().makeThreadSleep(1000);
+			reiDriver.JavaScript().clickByJS(By
+					.xpath("//td//span[@title='" + programSubject + "']/../../../td//a[@title='" + iconName + "']//i"));
+		}
+	}
+
+	/**
+	 * assert if changed label of button is displayed
+	 * 
+	 * @param phaseName
+	 */
+	public void assertChangedButtonLabelDisplayed(String actionButtonName) {
+		Assert.assertTrue(isChangedButtonNameDisplayed(actionButtonName));
+	}
+
 	/*********
 	 * "Local Methods with complete functionality - private"
 	 *****************/
@@ -85,5 +114,24 @@ public class FormPage extends GovGrantsManager {
 	private WebElement getAllActionItemInsideBusinessForm(String Item) {
 		return reiDriver.WaitFor().WaitForElementToBePresent(
 				By.xpath(("//div[@id='FormComponent']//div/table/tbody/tr//td//a[@title='" + Item + "']")));
+	}
+
+	/**
+	 * 
+	 * @param actionButtonName
+	 * @return true if changed button label is displayed
+	 */
+	private boolean isChangedButtonNameDisplayed(String actionButtonName) {
+		boolean flag = false;
+		try {
+			if (reiDriver.findMyElement()
+					.getElement(By.xpath("//div[@id='headerButtonsPanel']//*[@title='" + actionButtonName + "']"))
+					.isDisplayed()) {
+				flag = true;
+			}
+		} catch (Exception e) {
+
+		}
+		return flag;
 	}
 }
