@@ -1,13 +1,29 @@
 package com.framework.automation.projectmanager;
 
+import java.awt.AWTException;
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import com.automation.rei.controller.Controller;
 import com.automation.rei.handlers.Handlers;
+import com.cucumber.listener.Reporter;
+import com.itextpdf.text.pdf.PdfReader;
+import com.itextpdf.text.pdf.parser.PdfTextExtractor;
 
 /**
  * for Rei Systems
@@ -272,7 +288,7 @@ public class GovGrantsManager extends ProjectWebServices {
     /**
      * genric method to click on the double arrow dropdown
      */
-    public void clickLeftPanelHeader() {       
+    public void clickLeftPanelHeader() {
         try {
             reiDriver.WaitFor().makeThreadSleep(2000);
             reiDriver.WaitFor().WaitForWebElementToBeVisible(reiDriver.findMyElement().getElement(doubleArrowDropDown))
@@ -327,22 +343,25 @@ public class GovGrantsManager extends ProjectWebServices {
      */
     public WebElement getItemFromTopRightHeaderBars(String headerItem) {
         return reiDriver.WaitFor().WaitForElementToBePresent(
-                By.xpath("//div[@class='panel-heading']//div[contains(@class,'header-bars')]//span/ul/li//a[@title='"
-                        + headerItem + "']"));
+                By.xpath("//*[@title='Menu']/following-sibling::ul//li//span[text()='" + headerItem + "']"));
+        /*
+         * reiDriver.WaitFor().WaitForElementToBePresent( By.xpath(
+         * "//div[@class='panel-heading']//div[contains(@class,'header-bars')]//span/ul/li//a[@title='"
+         * + headerItem + "']"));
+         */
     }
 
     /**
-     * get any item from top right bar inside phases without waiting for presence.
+     * get any item from top right bar inside phases
      * 
      * @param headerItem
      * @return
      */
     public WebElement getItemFromTopRightHeaderBarsWithoutWaitTime(String headerItem) {
         return reiDriver.findMyElement().getElement(
-                By.xpath("//div[@class='panel-heading']//div[contains(@class,'header-bars')]//span/ul/li//a[@title='"
-                        + headerItem + "']"));
+                By.xpath("//*[@title='Menu']/following-sibling::ul//li//span[text()='" + headerItem + "']"));
     }
-    
+
     /**
      * click any button on right header inside detail page
      * 
@@ -550,9 +569,17 @@ public class GovGrantsManager extends ProjectWebServices {
      * @return
      */
     public void performQuickSearch(String searchTerm) {
-        reiDriver.WaitFor().WaitForElementToBePresent(searchInput);
-        reiDriver.textInput().enterText(searchInput, searchTerm);
-        reiDriver.findMyElement().getElement(quickSearchButton).click();
+        try {
+            reiDriver.JavaScript().scrollpageToSpecificElement(searchInput);
+            reiDriver.WaitFor().WaitForElementToBePresent(searchInput);
+            reiDriver.textInput().enterText(searchInput, searchTerm);
+            reiDriver.WaitFor().WaitForElementToBePresent(quickSearchButton).click();
+        } catch (Exception e) {
+            reiDriver.WaitFor().WaitForElementToBePresent(searchInput);
+            reiDriver.JavaScript().InputJS(searchInput, searchTerm);
+            reiDriver.JavaScript().clickByJS(quickSearchButton);
+        }
+
     }
 
     /**
@@ -663,6 +690,39 @@ public class GovGrantsManager extends ProjectWebServices {
         return reiDriver.WaitFor()
                 .WaitForElementToBePresent(By.xpath("//*[@class='modal-title ng-binding'][text()='" + titleName + "']"))
                 .isDisplayed();
+    }
+
+    /**
+     * save file using robot class
+     * 
+     * @throws AWTException
+     */
+    public void saveFile() throws AWTException {
+        reiDriver.switchTo().switchToWindowHandler(1);
+        reiDriver.WaitFor().makeThreadSleep(10000);
+        reiDriver.RobotActions().ctrl_Save();
+        reiDriver.WaitFor().makeThreadSleep(1000);
+        reiDriver.RobotActions().Robot_Enter();
+        reiDriver.WaitFor().makeThreadSleep(10000);
+    }
+
+    /**
+     * Rename the file and change it from temp to pdf. Read from pdf file
+     * 
+     * @return
+     */
+    public String readPDF(int pageNumber, String fileName) {
+        File directory = reiDriver.get()
+                .getCompleteFilesListOnLocalDirectory(System.getProperty("user.dir") + "\\target");
+        for (File file : directory.listFiles()) {
+            if (file.getName().endsWith(".tmp")) {
+                new File(file.getAbsolutePath().toString())
+                        .renameTo(new File(directory.getAbsolutePath().toString() + "\\" + fileName + ".pdf"));
+                break;
+            }
+        }
+        return reiDriver.adobeReader().readFromAdobeFileOnLocalAtUserDirectory(
+                directory.getAbsolutePath().toString() + "\\" + fileName + ".pdf", pageNumber);
     }
 
     /******* "Local Methods with Limited functionality " **********/
