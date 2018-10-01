@@ -13,6 +13,9 @@ Feature: Forms Component Scenarios
 	When I search for "AP-755-198"
 	When I click on "View" icon of status "Review Initiated" for "Test announcement for program 2" program in flex table
 	When I click on "Menu" button inside detail page
+	And I select "Download As PDF" from dropdown
+	And I download the file
+	Then I do not see "Form - Application Budget" on page "29" of "govgrants" pdf file
 	
 	@35185 @all @validateBusinessFormsRemoval-gApplication
 	Scenario: Validate disabling of business form from config and validating inside Application view
@@ -62,3 +65,4 @@ Feature: Forms Component Scenarios
 	When I click on "Attachments" sub tab inside page layout
 	When I click on "View" icon of form "General Application Cover Page" program in flex table
 	Then I see changed label as "Edit Automation" of action item inside form page layout
+	
