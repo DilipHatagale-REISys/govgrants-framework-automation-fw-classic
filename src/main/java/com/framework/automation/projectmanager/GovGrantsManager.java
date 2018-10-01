@@ -1,29 +1,15 @@
 package com.framework.automation.projectmanager;
 
 import java.awt.AWTException;
-import java.io.BufferedOutputStream;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
-import java.util.Collections;
 import java.util.List;
-import java.util.Set;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import com.automation.rei.controller.Controller;
 import com.automation.rei.handlers.Handlers;
-import com.cucumber.listener.Reporter;
-import com.itextpdf.text.pdf.PdfReader;
-import com.itextpdf.text.pdf.parser.PdfTextExtractor;
 
 /**
  * for Rei Systems
