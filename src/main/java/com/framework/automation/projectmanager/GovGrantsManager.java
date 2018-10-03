@@ -330,11 +330,6 @@ public class GovGrantsManager extends ProjectWebServices {
     public WebElement getItemFromTopRightHeaderBars(String headerItem) {
         return reiDriver.WaitFor().WaitForElementToBePresent(
                 By.xpath("//*[@title='Menu']/following-sibling::ul//li//span[text()='" + headerItem + "']"));
-        /*
-         * reiDriver.WaitFor().WaitForElementToBePresent( By.xpath(
-         * "//div[@class='panel-heading']//div[contains(@class,'header-bars')]//span/ul/li//a[@title='"
-         * + headerItem + "']"));
-         */
     }
 
     /**
@@ -384,7 +379,7 @@ public class GovGrantsManager extends ProjectWebServices {
      * 
      * @return
      */
-    public WebElement getSecondTopRightFiler() {
+    public WebElement getSecondTopRightFilter() {
         return reiDriver.WaitFor().WaitForElementToBePresent(secondTopRightFilter);
     }
 
