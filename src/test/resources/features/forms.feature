@@ -55,7 +55,7 @@ Feature: Forms Component Scenarios
 	
 	@35271 @all @changeLabelOfEditFormPageLayoutActionItem-gApplication
 	Scenario: Validate label change of edit action button at form page layout action from config and validating inside Application form view
-	Given I have default configuration for "Page Layout Action" field "Action Name" as "Edit" with filter "" for field ""
+	Given I have default configuration for "Page Layout Action" field "Action Name" as "Edit" with filter "Name" for field "Edit Automation"
 	Given I setup filter clause for "Page Layout Action" in "Application Cover Page" for field "Name" having value "Edit"
 	When I reconfigure "Page Layout Action" field "Action Name" as "Edit Automation"
 	When I login as "Automation" User

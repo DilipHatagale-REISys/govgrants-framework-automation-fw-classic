@@ -134,11 +134,8 @@ public class ProjectWebServices {
      */
     public Response postDefaultConfigCall() {
         Response reponse;
-
         if (setUpParameters.getValue().contains("ApiGeneratedId")) {
             String[] getValueAt = setUpParameters.getValue().split(":");
-            System.out.println(
-                    "valueeeeeeeeeeee is " + ApiUtilities.storeAllIds.get(Integer.parseInt(getValueAt[1])).getId());
             reponse = apiCall.postCall(null,
                     new SetUpConfiguration().getConfigJson(setUpParameters.getComponentName(),
                             setUpParameters.getFieldLabel(),
@@ -167,7 +164,6 @@ public class ProjectWebServices {
         } else if ((!setUpParameters.getOldComponentCoreFieldName()
                 .equals(setUpParameters.getNewComponentCoreFieldName()))
                 && (!setUpParameters.getNewComponentCoreFieldName().equals(""))) {
-            System.out.println("entered second if");
             newFilterClause = filterClause_Reconfig.replace(setUpParameters.getOldComponentCoreFieldName(),
                     setUpParameters.getNewComponentCoreFieldName());
         } else {
