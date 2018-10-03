@@ -65,4 +65,3 @@ Feature: Forms Component Scenarios
 	When I click on "Attachments" sub tab inside page layout
 	When I click on "View" icon of form "General Application Cover Page" program in flex table
 	Then I see changed label as "Edit Automation" of action item inside form page layout
-	
