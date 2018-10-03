@@ -13,42 +13,43 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 
 public class ConfigurationSteps {
-    GovGrantsManager govGrantsManager;
-    ProjectWebServices projectAPI;
+	GovGrantsManager govGrantsManager;
+	ProjectWebServices projectAPI;
 
-    public ConfigurationSteps(Controller controller, Handlers handler, ProjectWebServices projectAPI) {
-        govGrantsManager = new GovGrantsManager(controller, handler);
-        this.projectAPI = projectAPI;
-    }
+	public ConfigurationSteps(Controller controller, Handlers handler, ProjectWebServices projectAPI) {
+		govGrantsManager = new GovGrantsManager(controller, handler);
+		this.projectAPI = projectAPI;
+	}
 
-    @Description("Set up filter clause to grab ID")
-    @Given("^I setup filter clause for \"([^\"]*)\" in \"([^\"]*)\" for field \"([^\"]*)\" having value \"([^\"]*)\"$")
-    public void setUpFilterClause(String componentName, String ComponentCoreFieldName, String fieldName, String value) {
-        projectAPI.initilizeSalesForceIdFilter(componentName, ComponentCoreFieldName, fieldName, value);
-    }
+	@Description("Set up filter clause to grab ID")
+	@Given("^I setup filter clause for \"([^\"]*)\" in \"([^\"]*)\" for field \"([^\"]*)\" having value \"([^\"]*)\"$")
+	public void setUpFilterClause(String componentName, String ComponentCoreFieldName, String fieldName, String value) {
+		projectAPI.initilizeSalesForceIdFilter(componentName, ComponentCoreFieldName, fieldName, value);
+	}
 
-    @Description("Setting up configuration back to default")
-    @Given("^I have default configuration for \"([^\"]*)\" field \"([^\"]*)\" as \"([^\"]*)\" with filter \"([^\"]*)\" for field \"([^\"]*)\"$")
-    public void setComponentToDefault(String componentName, String fieldName, String orignalValue,String newFilterComponentCoreFieldName, String newFilterLabelValue)
-            throws IOException {
-        if(newFilterLabelValue.contains("Automation Program")) {
-            projectAPI.setUpDefaultProgramParameters(componentName, fieldName, orignalValue,newFilterLabelValue);
-        }else {
-        projectAPI.setUpDefaultParameters(componentName, fieldName, orignalValue,newFilterComponentCoreFieldName, newFilterLabelValue);
-        }
-    }
+	@Description("Setting up configuration back to default")
+	@Given("^I have default configuration for \"([^\"]*)\" field \"([^\"]*)\" as \"([^\"]*)\" with filter \"([^\"]*)\" for field \"([^\"]*)\"$")
+	public void setComponentToDefault(String componentName, String fieldName, String orignalValue,
+			String newFilterComponentCoreFieldName, String newFilterLabelValue) throws IOException {
+		if (newFilterLabelValue.contains("Automation Program")) {
+			projectAPI.setUpDefaultProgramParameters(componentName, fieldName, orignalValue, newFilterLabelValue);
+		} else {
+			projectAPI.setUpDefaultParameters(componentName, fieldName, orignalValue, newFilterComponentCoreFieldName,
+					newFilterLabelValue);
+		}
+	}
 
-    @Description("Setting up configuration for test")
-    @Given("^I reconfigure \"([^\"]*)\" field \"([^\"]*)\" as \"([^\"]*)\"$")
-    public void configurecomponent(String componentName, String fieldName, String value) throws IOException {
-        projectAPI.setConfigurationTest(componentName, fieldName, value);
-    }
+	@Description("Setting up configuration for test")
+	@Given("^I reconfigure \"([^\"]*)\" field \"([^\"]*)\" as \"([^\"]*)\"$")
+	public void configurecomponent(String componentName, String fieldName, String value) throws IOException {
+		projectAPI.setConfigurationTest(componentName, fieldName, value);
+	}
 
-    @Description("Setting up configuration for programs")
-    @Given("^I setup \"([^\"]*)\" field \"([^\"]*)\" as \"([^\"]*)\" with filter clause on field \"([^\"]*)\"$")
-    public void setUpProgramStatus(String componentName, String fieldName, String value, String filterField)
-            throws IOException {
-        projectAPI.initilizeSalesForceIdFilter_Program(componentName, filterField, "", "");
-        projectAPI.setConfigurationForProgram(componentName, fieldName, value);
-    }
+	@Description("Setting up configuration for programs")
+	@Given("^I setup \"([^\"]*)\" field \"([^\"]*)\" as \"([^\"]*)\" with filter clause on field \"([^\"]*)\"$")
+	public void setUpProgramStatus(String componentName, String fieldName, String value, String filterField)
+			throws IOException {
+		projectAPI.initilizeSalesForceIdFilter_Program(componentName, filterField, "", "");
+		projectAPI.setConfigurationForProgram(componentName, fieldName, value);
+	}
 }

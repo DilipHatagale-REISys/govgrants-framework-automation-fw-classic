@@ -38,4 +38,9 @@ public class FormStep {
 	public void assertRenameSubHeaderContentName(String actionButtonName) {
 		formPage.assertChangedButtonLabelDisplayed(actionButtonName);
 	}
+	
+	@Then("^I see \"([^\"]*)\" of action item inside form page layout is not displayed$")
+	public void assertEditActionButtonAtFormDetailPage(String actionButtonName) {
+		formPage.assertEditActionButtonVisibility(actionButtonName);
+	}
 }

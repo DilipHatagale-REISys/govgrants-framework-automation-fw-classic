@@ -66,6 +66,14 @@ public class FormPage extends GovGrantsManager {
 	public void assertChangedButtonLabelDisplayed(String actionButtonName) {
 		Assert.assertTrue(isChangedButtonNameDisplayed(actionButtonName));
 	}
+	
+	 /**
+     * assert Edit page layout action item not displayed inside business form action for
+     * internal user
+     */
+    public void assertEditActionButtonVisibility(String Item) {
+        Assert.assertTrue(isEditButtonDisplayed(Item));
+    }
 
 	/*********
 	 * "Local Methods with complete functionality - private"
@@ -103,13 +111,28 @@ public class FormPage extends GovGrantsManager {
 	private boolean isChangedButtonNameDisplayed(String actionButtonName) {
 		boolean flag = false;
 		try {
-			if (reiDriver.findMyElement()
-					.getElement(By.xpath("//div[@id='headerButtonsPanel']//*[@title='" + actionButtonName + "']"))
-					.isDisplayed()) {
+			if (getAllActionItemInsideFormDetalPage(actionButtonName).isDisplayed()) {
 				flag = true;
 			}
 		} catch (Exception e) {
 
+		}
+		return flag;
+	}
+    
+    /**
+	 * 
+	 * @param actionButtonName
+	 * @return true if Edit button is not displayed
+	 */
+	private boolean isEditButtonDisplayed(String actionButtonName) {
+		boolean flag = false;
+		try {
+			if (getAllActionItemInsideFormDetalPage(actionButtonName).isDisplayed()) {
+				flag = false;
+			}
+		} catch (Exception e) {
+            flag = true;
 		}
 		return flag;
 	}
@@ -149,4 +172,16 @@ public class FormPage extends GovGrantsManager {
         }
         return flag;
     }
+    
+    /**
+     * check all page layout action item inside form detail page
+     * 
+     * @param actionButtonName
+     * @return
+     */
+    private WebElement getAllActionItemInsideFormDetalPage(String actionButtonName) {
+        return reiDriver.WaitFor().WaitForElementToBePresent(
+                By.xpath(("//div[@id='headerButtonsPanel']//*[@title='" + actionButtonName + "']")));
+    }
+
 }
