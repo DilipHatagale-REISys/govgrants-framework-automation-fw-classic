@@ -19,8 +19,8 @@ Feature: Flex Table Component Scenarios
 	When I reconfigure "Flex Table" field "Enable Export" as "false"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I click on top right parallel lines bar
-	Then I see "Download as PDF""Download as CSV" options disabled
+	When I click on top right parallel lines bar for "Draft Programs"
+	Then I see "Download as PDF""Download as CSV" options inside "Draft Programs" disabled
 	
 	@34026 @all @disblingQuickSearch-gPlanning
 	Scenario: validate disabling of quick search in flex table of programs-planning

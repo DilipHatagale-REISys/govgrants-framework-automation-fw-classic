@@ -38,6 +38,46 @@ public class FormPage extends GovGrantsManager {
         Assert.assertTrue(isPreviewActionItemNotDisplayForInternalUser(Item));
     }
 
+	/**
+	 * click table item inside based on Forms name/subject ,icon name
+	 * 
+	 * @param programSubject
+	 * @param iconName
+	 */
+	public void clickFormActionIconsForSpecificSubject(String programSubject, String iconName) {
+		try {
+			reiDriver.WaitFor()
+					.WaitForElementToBePresent(By.xpath(
+							"//td//span[@title='" + programSubject + "']/../../../td//a[@title='" + iconName + "']//i"))
+					.click();
+
+		} catch (Exception e) {
+			reiDriver.WaitFor().makeThreadSleep(1000);
+			reiDriver.JavaScript().clickByJS(By
+					.xpath("//td//span[@title='" + programSubject + "']/../../../td//a[@title='" + iconName + "']//i"));
+		}
+	}
+
+	/**
+	 * assert if changed label of button is displayed
+	 * 
+	 * @param phaseName
+	 */
+	public void assertChangedButtonLabelDisplayed(String actionButtonName) {
+		Assert.assertTrue(isChangedButtonNameDisplayed(actionButtonName));
+	}
+	
+	 /**
+     * assert Edit page layout action item not displayed inside business form action for
+     * internal user
+     */
+    public void assertEditActionButtonVisibility(String Item) {
+        Assert.assertTrue(isEditButtonDisplayed(Item));
+    }
+
+	/*********
+	 * "Local Methods with complete functionality - private"
+	 *****************/
     public void assertTextNotDisplayedInPDF(String text, int pageNumber, String fileName) {
         Assert.assertTrue(isTextNotDisplayedInFile(text, pageNumber, fileName));
     }
@@ -63,6 +103,40 @@ public class FormPage extends GovGrantsManager {
         return flag;
     }
 
+	/**
+	 * 
+	 * @param actionButtonName
+	 * @return true if changed button label is displayed
+	 */
+	private boolean isChangedButtonNameDisplayed(String actionButtonName) {
+		boolean flag = false;
+		try {
+			if (getAllActionItemInsideFormDetalPage(actionButtonName).isDisplayed()) {
+				flag = true;
+			}
+		} catch (Exception e) {
+
+		}
+		return flag;
+	}
+    
+    /**
+	 * 
+	 * @param actionButtonName
+	 * @return true if Edit button is not displayed
+	 */
+	private boolean isEditButtonDisplayed(String actionButtonName) {
+		boolean flag = false;
+		try {
+			if (getAllActionItemInsideFormDetalPage(actionButtonName).isDisplayed()) {
+				flag = false;
+			}
+		} catch (Exception e) {
+            flag = true;
+		}
+		return flag;
+	}
+	
     /**
      * validate if action item are not displayed
      * 
@@ -98,4 +172,16 @@ public class FormPage extends GovGrantsManager {
         }
         return flag;
     }
+    
+    /**
+     * check all page layout action item inside form detail page
+     * 
+     * @param actionButtonName
+     * @return
+     */
+    private WebElement getAllActionItemInsideFormDetalPage(String actionButtonName) {
+        return reiDriver.WaitFor().WaitForElementToBePresent(
+                By.xpath(("//div[@id='headerButtonsPanel']//*[@title='" + actionButtonName + "']")));
+    }
+
 }
