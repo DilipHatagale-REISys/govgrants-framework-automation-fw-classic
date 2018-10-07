@@ -10,6 +10,8 @@ public class FlexGrid {
 
 	public String setFlexGridParentFlexTableConfig(String fieldLabel, String value, String filterClause) {
 		String finalPayload = null;
+		Pattern p = Pattern.compile("([0-9])");
+		Matcher m = p.matcher(value);
 		switch (fieldLabel.toUpperCase()) {
 		case "HEADER":
 			finalPayload = String.format(
@@ -54,6 +56,21 @@ public class FlexGrid {
 					payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), apiUtilities
 							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
 					String.valueOf(SObjectAPIs.GNT__EnableFilter__c), value);
+			break;
+		case "LABEL":
+			if (m.find()) {
+				finalPayload = String.format(payloadForIntValue,
+						String.valueOf(SObjectAPIs.GNT__FlexTableFilterListViewConfig__c),
+						apiUtilities.getComponentCoreFieldId(
+								String.valueOf(SObjectAPIs.GNT__FlexTableFilterListViewConfig__c), filterClause),
+						String.valueOf(SObjectAPIs.GNT__Label__c), value);
+			} else {
+				finalPayload = String.format(payloadForStringValue,
+						String.valueOf(SObjectAPIs.GNT__FlexTableFilterListViewConfig__c),
+						apiUtilities.getComponentCoreFieldId(
+								String.valueOf(SObjectAPIs.GNT__FlexTableFilterListViewConfig__c), filterClause),
+						String.valueOf(SObjectAPIs.GNT__Label__c), value);
+			}
 			break;
 		}
 		System.out.println(finalPayload);
