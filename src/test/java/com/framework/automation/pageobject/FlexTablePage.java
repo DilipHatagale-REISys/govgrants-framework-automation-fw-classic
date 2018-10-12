@@ -39,7 +39,8 @@ public class FlexTablePage extends GovGrantsManager {
 	 * @param option1
 	 * @param option2
 	 */
-	public void assertTopRightParallelLinesBarSpecificOptionsDisabled(String option1, String option2, String pannelTitleName) {
+	public void assertTopRightParallelLinesBarSpecificOptionsDisabled(String option1, String option2,
+			String pannelTitleName) {
 		Assert.assertTrue(isTopRightParallelLinesBarSpecificOptionsDisabled(option1, option2, pannelTitleName));
 	}
 
@@ -184,17 +185,20 @@ public class FlexTablePage extends GovGrantsManager {
 	 * @param option2
 	 * @return: true if it is not displayed
 	 */
-	private boolean isTopRightParallelLinesBarSpecificOptionsDisabled(String option1, String option2, String pannelTitleName) {
+	private boolean isTopRightParallelLinesBarSpecificOptionsDisabled(String option1, String option2,
+			String pannelTitleName) {
 		boolean flag = false;
 		try {
-			if (reiDriver.govGrants().getItemFromPhaseTopRightHeaderBarsWithOutWait(pannelTitleName, option1).isDisplayed()) {
+			if (reiDriver.govGrants().getItemFromPhaseTopRightHeaderBarsWithOutWait(pannelTitleName, option1)
+					.isDisplayed()) {
 				flag = false;
 			}
 		} catch (Exception e) {
 			flag = true;
 		}
 		try {
-			if (reiDriver.govGrants().getItemFromPhaseTopRightHeaderBarsWithOutWait(pannelTitleName, option2).isDisplayed()) {
+			if (reiDriver.govGrants().getItemFromPhaseTopRightHeaderBarsWithOutWait(pannelTitleName, option2)
+					.isDisplayed()) {
 				flag = false;
 			}
 		} catch (Exception e) {

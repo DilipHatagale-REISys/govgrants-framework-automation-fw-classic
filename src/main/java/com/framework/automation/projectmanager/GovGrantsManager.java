@@ -19,7 +19,6 @@ import com.automation.rei.handlers.Handlers;
  * 
  */
 public class GovGrantsManager extends ProjectWebServices {
-	GovGrantsUtil govGrantsUtil;
 	public Handlers reiDriver;
 	public Controller controller;
 	public String standardPassword = "Automation@12345";
@@ -72,7 +71,7 @@ public class GovGrantsManager extends ProjectWebServices {
 		dangerAlert = By.cssSelector("div.alert-danger");
 		confirmationBoxMessage = By.xpath("//div[@class='modal-dialog']//div[contains(@class, 'bootbox-body')]");
 		selectDropdown = By.xpath(
-				"//div/span/input[@name='myRadio' and @value='Approve']//ancestor::span//div[@id='s2id_autogen13']");
+				"//div/span/input[@name='myRadio' and @value='Approve']/../../following-sibling::div//span[@class='select2-chosen']");
 		specificUserInsideDropdown = By.xpath("//div[@id='select2-drop']//ul//li/div[@class='select2-result-label']");
 		quickSearchButton = By.cssSelector("div.input-group-btn>a>i.fa.fa-search");
 		completeTableRowString = "//div[@class='panel-heading']/following-sibling::div[contains(@class,'panel-body')]//div/table/tbody/tr";
@@ -81,7 +80,10 @@ public class GovGrantsManager extends ProjectWebServices {
 		allPhases = By.xpath("//div/ul[@class='nav navbar-nav']/li/a");
 		chartsContainer = By.cssSelector("div#charts span[id*='chartPageId'] div[class*='chartcontainer']");
 		containerFluid_PageWrapperList = By.cssSelector("div#page-content-wrapper>div.container-fluid>div>div>div");
-		reachOutToEnhancedGridCollapse = By.id("ProgramBudgetCategoryflexTable");
+		// reachOutToEnhancedGridCollapse =
+		// By.id("toggleFlexTableProgramBudgetCategory");
+		reachOutToEnhancedGridCollapse = By.xpath(
+				"//div[@class='panel-heading']//div[contains(@class,'panel-title')]//*[text()='Budget Category ']");
 	}
 
 	/******* "Key Methods with complete functionality - Public" *****************/
@@ -96,6 +98,8 @@ public class GovGrantsManager extends ProjectWebServices {
 	public void navigateToURL(String envName) throws IOException {
 		urlOpeningNumber++;
 		if (urlOpeningNumber > 0) {
+			System.out.println("entered navigation");
+			System.err.println("current url" + reiDriver.get().getCurretnURL());
 			clearCookies();
 			reiDriver.get().getRefresh();
 		}
@@ -297,7 +301,7 @@ public class GovGrantsManager extends ProjectWebServices {
 	 */
 	public WebElement getFlexGridPanels(String pannelTitleName) {
 		return reiDriver.WaitFor().WaitForElementToBePresent(
-				By.xpath("//div[@class='panel-heading']//div[contains(@class,'panel-title')]/a[text()='"
+				By.xpath("//div[@class='panel-heading']//div[contains(@class,'panel-title')]//*[text()='"
 						+ pannelTitleName + "']"));
 	}
 
@@ -321,7 +325,10 @@ public class GovGrantsManager extends ProjectWebServices {
 	 */
 	public WebElement getRightHeaderButton(String buttonName) {
 		return reiDriver.WaitFor().WaitForElementToBePresent(
-				By.xpath("//div[contains(@class,'panel-heading')]//button[@title='" + buttonName + "']"));
+				// By.xpath("//div[contains(@class,'panel-heading')]//button[contains(text(),'"
+				// + buttonName + "')]"));
+				By.xpath("//div[contains(@class,'panel-heading')]//*[@title='" + buttonName + "' or text()='"
+						+ buttonName + "']"));
 	}
 
 	/**
@@ -333,21 +340,6 @@ public class GovGrantsManager extends ProjectWebServices {
 	public WebElement getItemFromTopRightHeaderBars(String headerItem) {
 		return reiDriver.WaitFor().WaitForElementToBePresent(
 				By.xpath("//*[@title='Menu']/following-sibling::ul//li//span[text()='" + headerItem + "']"));
-	}
-
-	/**
-	 * get any item from top right bar inside phases
-	 * 
-	 * @param headerItem
-	 * @return
-	 */
-	public WebElement getItemFromTopRightHeaderBarsWithoutWaitTime(String menuItemName, String pannelTitleName) {
-		return govGrantsUtil.WaitForElementToBePresent(By.xpath("//div[text()='" + pannelTitleName
-				+ "']/../../../../following-sibling::div/div[contains(@class,'header-bars')]//*[text()='" + menuItemName
-				+ "'] | //div//a/following-sibling::span[text()='" + pannelTitleName
-				+ "']/../following-sibling::div/span[contains(@class,'header-bars')]//*[text()='" + menuItemName
-				+ "'] | //span[text()='" + pannelTitleName + "']/..//div[@class='header-bars']//*[text()='"
-				+ menuItemName + "']"));
 	}
 
 	/**
@@ -525,10 +517,8 @@ public class GovGrantsManager extends ProjectWebServices {
 	 * click on right header bars
 	 */
 	public void clickRightHeaderBars(String title) {
-		try {
-			reiDriver.JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
-		} catch (Exception e) {
-		}
+
+		reiDriver.JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
 		reiDriver.govGrants().clickRightHeaderBars(title);
 	}
 

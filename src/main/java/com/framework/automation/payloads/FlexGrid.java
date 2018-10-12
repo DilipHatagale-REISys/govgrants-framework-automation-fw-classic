@@ -72,6 +72,24 @@ public class FlexGrid {
 						String.valueOf(SObjectAPIs.GNT__Label__c), value);
 			}
 			break;
+		case "ENABLE TOTAL RECORDS COUNT":
+			finalPayload = String.format(
+					payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__EnableTotalRecordsCount__c), value);
+			break;
+		case "ENABLE AUTO INDEX":
+			finalPayload = String.format(
+					payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__EnableAutoIndex__c), value);
+			break;
+		case "ENABLE RECORD SELECTION":
+			finalPayload = String.format(
+					payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__EnableRecordSelection__c), value);
+			break;
 		}
 		System.out.println(finalPayload);
 		return finalPayload;

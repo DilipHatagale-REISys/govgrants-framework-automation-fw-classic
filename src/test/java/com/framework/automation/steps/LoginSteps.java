@@ -54,7 +54,8 @@ public class LoginSteps {
     }
 
     @When("^I re-login as \"([^\"]*)\" with \"([^\"]*)\" url$")
-    public void reLoginWithUrl(String user,String envName) throws ReiFrameworkCustomException, IOException  {    
+    public void reLoginWithUrl(String user,String envName) throws ReiFrameworkCustomException, IOException, InterruptedException  {   
+        Thread.sleep(3000);
         loginPage.clickLogOut();
         loginPage.navigateToURL(envName);
         loginPage.enterAsUser(user);
