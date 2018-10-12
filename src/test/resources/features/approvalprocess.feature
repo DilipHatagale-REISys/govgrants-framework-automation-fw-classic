@@ -102,7 +102,7 @@ Feature: Approval Process Component Scenarios
 	Given I have default configuration for "Approval Process Steps Cache" field "Email Field API Name" as "CreatedById" with filter "" for field ""
 	Given I setup filter clause for "General" in "Program_Manager_Approver" for field "" having value ""
 	And I reconfigure "Approval Process Steps Cache" field "Email Field API Name" as "OwnerId"
-	When I login as "Automation" User 
+    When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Automation Program -SA to C"
 	When I click on "Edit" icon of status "Created" for "Automation Program -SA to C" program in flex table

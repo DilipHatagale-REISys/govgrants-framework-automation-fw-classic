@@ -132,6 +132,7 @@ public class StepProgressBarPage extends GovGrantsManager {
 
 	/**
 	 * validate if step progress bar Created is displayed in different color as blue
+	 * 
 	 * @param status
 	 * @param color
 	 * @return: true if it is displayed in specified color
@@ -161,7 +162,8 @@ public class StepProgressBarPage extends GovGrantsManager {
 	}
 
 	private WebElement getAllStepProgressStatus(String status) {
-		return reiDriver.WaitFor().WaitForElementToBePresent(By.xpath(("//div[@class='container-fluid']//*[@id='progressBarId']//ol//li//span[contains(text(),'"
+		return reiDriver.WaitFor().WaitForElementToBePresent(
+				By.xpath(("//div[@class='container-fluid']//*[@id='progressBarId']//ol//li//span[contains(text(),'"
 						+ status + "')and @class='progressStatusText']")));
 	}
 }
