@@ -24,6 +24,8 @@ public class LoginPage extends GovGrantsManager {
     private final By logOutOption;
     private final By loginPageLogo;
     private final By loginWithOtherUser;
+    private boolean clickLogOutFlag = false;
+    private int clickLogOutretry = 0;
 
     /**
      * Constructor to handle dependency injection and framework library
@@ -69,12 +71,23 @@ public class LoginPage extends GovGrantsManager {
      * 
      */
     public void clickLogOut() {
+        if (clickLogOutFlag = true) {
+            clickLogOutFlag = false;
+            clickLogOutretry = 0;
+        }
         waitForNavigationLogo();
         reiDriver.WaitFor().specialCustomWait(5, userAvatar);
         try {
             reiDriver.Clickers().MouseClick(userAvatar);
+            clickLogOutFlag = true;
         } catch (Exception e) {
-            reiDriver.JavaScript().clickByJS(userAvatar);
+            clickLogOutretry++;
+            if (clickLogOutFlag = false && clickLogOutretry < 6) {
+                waitForNavigationLogo();
+                clickLogOut();
+            } else {
+                clickLogOutretry = 0;
+            }
         }
         reiDriver.WaitFor().specialCustomWait(5, logOutOption);
         reiDriver.Clickers().MouseClick(logOutOption);
