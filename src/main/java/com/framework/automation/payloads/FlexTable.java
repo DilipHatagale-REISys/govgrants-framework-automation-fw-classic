@@ -171,6 +171,12 @@ public class FlexTable {
 							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableAction__c), filterClause),
 					String.valueOf(SObjectAPIs.GNT__RefreshBehavior__c), value);
 			break;
+		case "WHERE TO OPEN ?":
+			finalPayload = String.format(
+					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableAction__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableAction__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__WhereToOpen__c), value);
+			break;
 		}
 		System.out.println(finalPayload);
 		return finalPayload;

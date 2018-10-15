@@ -76,7 +76,7 @@ Feature: Side bar Component Scenarios
 	When I reconfigure "Accordian Content" field "Sequence" as "3"	 
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app
-	Then I see "Completed" shown at number "1" inside "Tasks"
+	Then I see "Completed" shown at number "2" inside "Tasks"
 	
 	@33886 @all @validateAccordionContentOpensInNewWindow-gHome
 	Scenario Outline: validate accordion content opens in new window 
