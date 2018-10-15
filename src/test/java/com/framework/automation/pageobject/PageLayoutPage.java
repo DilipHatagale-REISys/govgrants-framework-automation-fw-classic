@@ -106,6 +106,33 @@ public class PageLayoutPage extends GovGrantsManager {
 		Assert.assertTrue(isHeaderButtonDisplayed(buttonName));
 	}
 
+	/**
+	 * assert true if header button inside edit detail page as per name is displayed
+	 * 
+	 * @param buttonName
+	 */
+	public void assertHeaderButtonsDisplayed(String buttonName) {
+		Assert.assertTrue(isHeaderButtonDisplayed(buttonName));
+	}
+
+	/**
+	 * assert true if sub tab inside detail page as per name is not displayed
+	 * 
+	 * @param subTabName
+	 */
+	public void assertSubTabButtonsNotDisplayed(String subTabName) {
+		Assert.assertTrue(isSubTabButtonDisplayed(subTabName));
+	}
+	
+	/**
+	 * 
+	 * @param subTabName
+	 * @param number
+	 */
+	public void assertSortingOfSubTab(String subTabName, int number) {
+		Assert.assertTrue(isSubTabSequence(subTabName, number));
+	}
+
 	/*********
 	 * "Local Methods with complete functionality - private"
 	 *****************/
@@ -282,5 +309,35 @@ public class PageLayoutPage extends GovGrantsManager {
 
 		}
 		return flag;
+	}
+
+	/**
+	 * return true if any header button is not displayed
+	 * 
+	 * @param buttonName
+	 * @return
+	 */
+	private boolean isSubTabButtonDisplayed(String subTabName) {
+		boolean flag = true;
+		try {
+			if (getSubTabsInsideMainDetailPage(subTabName).isDisplayed()) {
+				flag = false;
+			}
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+
+		}
+		return flag;
+	}
+	
+	/**
+	 * Boolean status of Sub tab sorting order 
+	 * 
+	 * @param status
+	 */
+	private Boolean isSubTabSequence(String subTabName, int number) {
+		if (getListSubTabsInsideMainDetailPage().get(number).getText().contains(subTabName)) {
+			return true;
+		} else
+			return false;
 	}
 }

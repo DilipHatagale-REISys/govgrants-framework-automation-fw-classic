@@ -69,6 +69,18 @@ public class PageLayout {
 								String.valueOf(SObjectAPIs.GNT__HideOnDemandSnaphot__c), value);
 			}
 			break;
+		case "CANCEL BUTTON LABEL":
+			finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageLayoutConfig__c),
+					apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PageLayoutConfig__c),
+							filterClause),
+					String.valueOf(SObjectAPIs.GNT__CancelButtonLabel__c), value);
+			break;
+		case "SAVE BUTTON LABEL":
+			finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageLayoutConfig__c),
+					apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PageLayoutConfig__c),
+							filterClause),
+					String.valueOf(SObjectAPIs.GNT__SaveButtonLabel__c), value);
+			break;
 		}
 		System.out.println(finalPayload);
 		return finalPayload;
@@ -164,6 +176,42 @@ public class PageLayout {
 							apiUtilities.getComponentCoreFieldId(
 									String.valueOf(SObjectAPIs.GNT__PageLayoutActionConfig__c), filterClause),
 							String.valueOf(SObjectAPIs.GNT__HideForUser__c), value);
+			break;
+		}
+		System.out.println(finalPayload);
+		return finalPayload;
+	}
+
+	/**
+	 * setup configuration for page tabs
+	 * 
+	 * @param fieldLabel
+	 * @param value
+	 * @param filterClause
+	 * @return
+	 */
+	public String setPageTabConfig(String fieldLabel, String value, String filterClause) {
+		String finalPayload = null;
+		Pattern p = Pattern.compile("([0-9])");
+		Matcher m = p.matcher(value);
+		switch (fieldLabel.toUpperCase()) {
+		case "HIDE FOR CONTEXT":
+			finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__TabConfig__c),
+					apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__TabConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__HideForContext__c), value);
+			break;
+		case "SORT ORDER":
+			if (m.find() || (value.contains("true")) || (value.contains("false"))) {
+				finalPayload = String.format(
+						payloadForIntValue, String.valueOf(SObjectAPIs.GNT__TabConfig__c), apiUtilities
+								.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__TabConfig__c), filterClause),
+						String.valueOf(SObjectAPIs.GNT__SortOrder__c), value);
+			} else {
+				finalPayload = String.format(
+						payloadForStringValue, String.valueOf(SObjectAPIs.GNT__TabConfig__c), apiUtilities
+								.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__TabConfig__c), filterClause),
+						String.valueOf(SObjectAPIs.GNT__SortOrder__c), value);
+			}
 			break;
 		}
 		System.out.println(finalPayload);
