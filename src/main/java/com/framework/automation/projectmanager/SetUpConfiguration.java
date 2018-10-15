@@ -93,6 +93,9 @@ public class SetUpConfiguration {
 		case "PAGE BLOCK RULE":
 			stringPayload = new PageBlock().setPageBlockRuleConfig(fieldLabel, value, filterClause);
 			break;
+		case "PAGE TABS CONFIG":
+			stringPayload = new PageLayout().setPageTabConfig(fieldLabel, value, filterClause);
+			break;
 		}
 		System.out.println("final payload is " + stringPayload);
 		return stringPayload;

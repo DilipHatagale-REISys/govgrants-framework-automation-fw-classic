@@ -118,3 +118,50 @@ Feature: Page Layout Component Scenarios
 	When I search for "Test program for automation"
 	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
 	Then I see "Submit For Approval" button is not displayed at view detail page
+	
+	@35814 @all @labelChangeOfCancelButtonAtMainPageLayout
+	Scenario: Setup cancel button label name as Automation cancel from config and it for created status view icon in program detail page
+	Given I have default configuration for "Page Layout" field "Cancel Button Label" as "" with filter "" for field ""
+	Given I setup filter clause for "General" in "Grantee State Program" for field "" having value ""
+	When I reconfigure "Page Layout" field "Cancel Button Label" as "Auto Cancel"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	When I click on "Edit" button inside detail page
+	Then I see "Auto Cancel" button is displayed at edit detail page
+	
+	@35814 @all @labelChangeOfSaveButtonAtMainPageLayout
+	Scenario: Setup save button label name as Automation cancel from config and it for created status view icon in program detail page
+	Given I have default configuration for "Page Layout" field "Save Button Label" as "" with filter "" for field ""
+	Given I setup filter clause for "General" in "Grantee State Program" for field "" having value ""
+	When I reconfigure "Page Layout" field "Save Button Label" as "Auto Save"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	When I click on "Edit" button inside detail page
+	Then I see "Auto Save" button is displayed at edit detail page
+	
+	@35817 @all @hideOperatorFieldAtPageLayout
+	Scenario: Hide overview for program view page and validating it for created status view icon in program detail page
+	Given I have default configuration for "Page Tabs Config" field "Hide For Context" as "" with filter "" for field ""
+	Given I setup filter clause for "Page Layout Action" in "Grantee State Program" for field "Name" having value "TAB-029"
+	When I reconfigure "Page Tabs Config" field "Hide For Context" as "view"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	Then I see "Overview" sub tab is not displayed at view detail page
+	
+	@34354 @all @sortOrderForFieldAtPageTab
+	Scenario: Changing sort order for overview from config and validating it for created view icon in program detail page
+	Given I have default configuration for "Page Tabs Config" field "Sort Order" as "0" with filter "" for field ""
+	Given I setup filter clause for "Page Layout Action" in "Grantee State Program" for field "Name" having value "TAB-029"
+	When I reconfigure "Page Tabs Config" field "Sort Order" as "10"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	Then I see "Overview" shown at number "8" inside subtabs
+	
