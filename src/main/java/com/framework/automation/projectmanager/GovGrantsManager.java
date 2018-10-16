@@ -756,7 +756,7 @@ public class GovGrantsManager extends ProjectWebServices {
 		return reiDriver.findMyElement()
 				.getElement(By.xpath("//div[@id='myTabs']/ul/li/a[@name='" + SubTabName + "']"));
 	}
-	
+
 	/**
 	 * get list of sub tab inside detail each main detail page like overview etc.
 	 */

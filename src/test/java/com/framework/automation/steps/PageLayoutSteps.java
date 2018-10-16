@@ -87,4 +87,19 @@ public class PageLayoutSteps {
 	public void assertSequenceOfAccordianContent(String subTabName, String number) {
 		pageLayoutPage.assertSortingOfSubTab(subTabName, Integer.parseInt(number));
 	}
+
+	@Then("^I see \"([^\"]*)\" shown as header instruction text$")
+	public void assertHeaderInstructionText(String headerText) {
+		pageLayoutPage.assertHeaderInstructionText(headerText);
+	}
+
+	@Then("^I see \"([^\"]*)\" sub tab is displayed at view detail page$")
+	public void assertChangedSubTabTitleInsideDetailsPage(String subTabName) {
+		pageLayoutPage.assertChangedTitleOfSubTab(subTabName);
+	}
+
+	@Then("^I see pencil icon as \"([^\"]*)\" sub tab$")
+	public void assertPencilIconAsSubTab(String subTabName) {
+		pageLayoutPage.assertSubTabIconDisplayed(subTabName);
+	}
 }

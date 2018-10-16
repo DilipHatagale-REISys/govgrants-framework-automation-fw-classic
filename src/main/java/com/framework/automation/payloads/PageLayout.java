@@ -213,6 +213,34 @@ public class PageLayout {
 						String.valueOf(SObjectAPIs.GNT__SortOrder__c), value);
 			}
 			break;
+		case "HEADER INSTRUCTION TEXT":
+			finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__TabConfig__c),
+					apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__TabConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__HeaderInstructionText__c), value);
+			break;
+		case "TAB TITLE":
+			finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__TabConfig__c),
+					apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__TabConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__StandardTabName__c), value);
+			break;
+		case "TAB ICON":
+			finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__TabConfig__c),
+					apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__TabConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__TabIcon__c), value);
+			break;
+		case "IS ACTIVE":
+			if (m.find() || (value.contains("true")) || (value.contains("false"))) {
+				finalPayload = String.format(
+						payloadForIntValue, String.valueOf(SObjectAPIs.GNT__TabConfig__c), apiUtilities
+								.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__TabConfig__c), filterClause),
+						String.valueOf(SObjectAPIs.GNT__IsActive__c), value);
+			} else {
+				finalPayload = String.format(
+						payloadForStringValue, String.valueOf(SObjectAPIs.GNT__TabConfig__c), apiUtilities
+								.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__TabConfig__c), filterClause),
+						String.valueOf(SObjectAPIs.GNT__IsActive__c), value);
+			}
+			break;
 		}
 		System.out.println(finalPayload);
 		return finalPayload;
