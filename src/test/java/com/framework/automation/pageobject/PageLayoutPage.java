@@ -138,7 +138,7 @@ public class PageLayoutPage extends GovGrantsManager {
 	 * assert true if correct header instruction text is displayed
 	 */
 	public void assertHeaderInstructionText(String headerText) {
-		Assert.assertTrue(isHeaserInstructionTextDisplayed(headerText));
+		Assert.assertTrue(isHeaderInstructionTextDisplayed(headerText));
 	}
 
 	/**
@@ -378,7 +378,7 @@ public class PageLayoutPage extends GovGrantsManager {
 	 * @param text
 	 * @return
 	 */
-	private boolean isHeaserInstructionTextDisplayed(String headerText) {
+	private boolean isHeaderInstructionTextDisplayed(String headerText) {
 		boolean flag = false;
 		if (reiDriver.findMyElement().getElement(headerInstructionText).getText().equalsIgnoreCase(headerText)) {
 			flag = true;
