@@ -79,8 +79,6 @@ public class GovGrantsManager extends ProjectWebServices {
 		allPhases = By.xpath("//div/ul[@class='nav navbar-nav']/li/a");
 		chartsContainer = By.cssSelector("div#charts span[id*='chartPageId'] div[class*='chartcontainer']");
 		containerFluid_PageWrapperList = By.cssSelector("div#page-content-wrapper>div.container-fluid>div>div>div");
-		// reachOutToEnhancedGridCollapse =
-		// By.id("toggleFlexTableProgramBudgetCategory");
 		reachOutToEnhancedGridCollapse = By.xpath(
 				"//div[@class='panel-heading']//div[contains(@class,'panel-title')]//*[text()='Budget Category ']");
 	}
@@ -196,7 +194,6 @@ public class GovGrantsManager extends ProjectWebServices {
 	public List<WebElement> accordianContentList(String headerName) {
 		return reiDriver.findMyElement().getElements(By.xpath(
 				"//div[@id='sidebar-wrapper']//div/ul/li//span[text()='" + headerName + "']/../../ul/li/ul//a/span"));
-
 	}
 
 	/**
@@ -323,11 +320,9 @@ public class GovGrantsManager extends ProjectWebServices {
 	 * @return
 	 */
 	public WebElement getRightHeaderButton(String buttonName) {
-		return reiDriver.WaitFor().WaitForElementToBePresent(
-				// By.xpath("//div[contains(@class,'panel-heading')]//button[contains(text(),'"
-				// + buttonName + "')]"));
-				By.xpath("//div[contains(@class,'panel-heading')]//*[@title='" + buttonName + "' or text()='"
-						+ buttonName + "']"));
+		return reiDriver.WaitFor()
+				.WaitForElementToBePresent(By.xpath("//div[contains(@class,'panel-heading')]//*[@title='" + buttonName
+						+ "' or text()='" + buttonName + "']"));
 	}
 
 	/**
@@ -749,5 +744,22 @@ public class GovGrantsManager extends ProjectWebServices {
 			flag = true;
 		}
 		return flag;
+	}
+
+	/**
+	 * get sub tab inside detail each main detail page like overview etc.
+	 * 
+	 * @param tabName
+	 */
+	public WebElement getSubTabsInsideMainDetailPage(String SubTabName) {
+		return reiDriver.findMyElement()
+				.getElement(By.xpath("//div[@id='myTabs']/ul/li/a[@name='" + SubTabName + "']"));
+	}
+
+	/**
+	 * get list of sub tab inside detail each main detail page like overview etc.
+	 */
+	public List<WebElement> getListSubTabsInsideMainDetailPage() {
+		return reiDriver.findMyElement().getElements(By.xpath("//div[@id='myTabs']/ul/li/a"));
 	}
 }

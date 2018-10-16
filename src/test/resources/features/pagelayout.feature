@@ -108,8 +108,8 @@ Feature: Page Layout Component Scenarios
 	When I click on "Submit For Approval" button inside detail page
 	Then I see prompt For automation is displayed
 	
-	@34056 @all @hideForContextFieldForMAinPageLayout-gPlanning
-	Scenario: Hide submit for approval button for program view page and validating it for created status view icon in program detail page
+	@34056 @all @hideForContextFieldForMainPageLayoutAction-gPlanning
+	Scenario: Hide submit for approval button for program view page and validating it at program detail page
 	Given I have default configuration for "Page Layout Action" field "Hide For Context" as "" with filter "" for field ""
 	Given I setup filter clause for "Page Layout Action" in "Grantee State Program" for field "Name" having value "Submit For Approval"
 	When I reconfigure "Page Layout Action" field "Hide For Context" as "view"
@@ -118,3 +118,94 @@ Feature: Page Layout Component Scenarios
 	When I search for "Test program for automation"
 	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
 	Then I see "Submit For Approval" button is not displayed at view detail page
+	
+	@35814 @all @labelChangeOfCancelButtonAtMainPageLayout-gPlanning
+	Scenario: Setup cancel button label name as Automation cancel from config and it at program detail page
+	Given I have default configuration for "Page Layout" field "Cancel Button Label" as "" with filter "" for field ""
+	Given I setup filter clause for "General" in "Grantee State Program" for field "" having value ""
+	When I reconfigure "Page Layout" field "Cancel Button Label" as "Auto Cancel"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	When I click on "Edit" button inside detail page
+	Then I see "Auto Cancel" button is displayed at edit detail page
+	
+	@35813 @all @labelChangeOfSaveButtonAtMainPageLayout-gPlanning
+	Scenario: Setup save button label name as Automation cancel from config and it at program detail page
+	Given I have default configuration for "Page Layout" field "Save Button Label" as "" with filter "" for field ""
+	Given I setup filter clause for "General" in "Grantee State Program" for field "" having value ""
+	When I reconfigure "Page Layout" field "Save Button Label" as "Auto Save"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	When I click on "Edit" button inside detail page
+	Then I see "Auto Save" button is displayed at edit detail page
+	
+	@35817 @all @hideForContextFieldAtPageLayout-gPlanning
+	Scenario: Hide overview for program view page and validating it at program detail page
+	Given I have default configuration for "Page Tabs Config" field "Hide For Context" as "" with filter "" for field ""
+	Given I setup filter clause for "Page Layout Action" in "Grantee State Program" for field "Name" having value "TAB-029"
+	When I reconfigure "Page Tabs Config" field "Hide For Context" as "view"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	Then I see "Overview" sub tab is not displayed at view detail page
+	
+	@34354 @all @sortOrderForFieldAtPageTab-gPlanning
+	Scenario: Changing sort order for overview page tab from config and validating it at program detail page
+	Given I have default configuration for "Page Tabs Config" field "Sort Order" as "0" with filter "" for field ""
+	Given I setup filter clause for "Page Layout Action" in "Grantee State Program" for field "Name" having value "TAB-029"
+	When I reconfigure "Page Tabs Config" field "Sort Order" as "10"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	Then I see "Overview" shown at number "8" inside subtabs
+	
+	@34355 @all @headerInstructionTextFieldAtPageTab-gPlanning
+	Scenario: Setup header instruction text for overview page tab from config and validating it at program detail page
+	Given I have default configuration for "Page Tabs Config" field "Header Instruction Text" as "" with filter "" for field ""
+	Given I setup filter clause for "Page Layout Action" in "Grantee State Program" for field "Name" having value "TAB-029"
+	When I reconfigure "Page Tabs Config" field "Header Instruction Text" as "Automation Header Text"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	Then I see "Automation Header Text" shown as header instruction text
+	
+	@34357 @all @tabTitleFieldAtPagePageTab-gPlanning
+	Scenario: Changing sub tab title for overview page tab from config and validating it at program detail page
+	Given I have default configuration for "Page Tabs Config" field "Tab Title" as "Overview" with filter "" for field ""
+	Given I setup filter clause for "Page Layout Action" in "Grantee State Program" for field "Name" having value "TAB-029"
+	When I reconfigure "Page Tabs Config" field "Tab Title" as "Automation Overview"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	Then I see "Automation Overview" sub tab is displayed at view detail page
+	
+	@34359 @all @tabIconFieldAtPageTab-gPlanning
+	Scenario: Setup tab icon for overview page tab from config and validating it at program detail page
+	Given I have default configuration for "Page Tabs Config" field "Tab Icon" as "govgrants_config:TabIconDefaultCss" with filter "" for field ""
+	Given I setup filter clause for "Page Layout Action" in "Grantee State Program" for field "Name" having value "TAB-029"
+	When I reconfigure "Page Tabs Config" field "Tab Icon" as "govgrants_config:TabIconNewCss"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	Then I see pencil icon as "Overview" sub tab
+		
+	@35949 @all @isActiveFieldAtPageTab-gPlanning
+	Scenario: Disabling of Overview page tab from config and validating it at program detail page
+	Given I have default configuration for "Page Tabs Config" field "Is Active" as "true" with filter "" for field ""
+	Given I setup filter clause for "Page Layout Action" in "Grantee State Program" for field "Name" having value "TAB-029"
+	When I reconfigure "Page Tabs Config" field "Is Active" as "false"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	Then I see "Overview" sub tab is not displayed at view detail page
+	
