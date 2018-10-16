@@ -12,7 +12,7 @@ public class PageLayoutPage extends GovGrantsManager {
 
 	/******* "Variables and Locators" *****************/
 
-	private final By overViewHeader, overViewTitle, pageInstructionText;
+	private final By overViewHeader, overViewTitle, pageInstructionText, headerInstructionText;
 
 	/**
 	 * Constructor to handle dependency injection and framework library
@@ -22,6 +22,7 @@ public class PageLayoutPage extends GovGrantsManager {
 		overViewHeader = By.cssSelector("h2.panel-title>div>span.customLabelstyle");
 		overViewTitle = By.cssSelector("h2.panel-title>div>span.overview-title");
 		pageInstructionText = By.cssSelector("div.article>div");
+		headerInstructionText = By.cssSelector("div.tabheaderinstruction");
 	}
 
 	/******* "Key Methods with complete functionality - public" *****************/
@@ -123,7 +124,7 @@ public class PageLayoutPage extends GovGrantsManager {
 	public void assertSubTabButtonsNotDisplayed(String subTabName) {
 		Assert.assertTrue(isSubTabButtonDisplayed(subTabName));
 	}
-	
+
 	/**
 	 * 
 	 * @param subTabName
@@ -131,6 +132,36 @@ public class PageLayoutPage extends GovGrantsManager {
 	 */
 	public void assertSortingOfSubTab(String subTabName, int number) {
 		Assert.assertTrue(isSubTabSequence(subTabName, number));
+	}
+
+	/**
+	 * assert true if correct header instruction text is displayed
+	 */
+	public void assertHeaderInstructionText(String headerText) {
+		Assert.assertTrue(isHeaserInstructionTextDisplayed(headerText));
+	}
+
+	/**
+	 * assert true if changed title of sub tab inside detail page as per name is
+	 * displayed
+	 * 
+	 * @param subTabName
+	 */
+	public void assertChangedTitleOfSubTab(String subTabName) {
+		Assert.assertTrue(isChangedSubTabTitleDisplayed(subTabName));
+	}
+
+	/**
+	 * assert true if changed icon css of sub tab inside detail page as per name is
+	 * displayed
+	 * 
+	 * @param subTabName
+	 */
+	public void assertSubTabIconDisplayed(String subTabName) {
+		Assert.assertTrue(reiDriver.WaitFor()
+				.WaitForElementToBePresent(By.xpath(
+						"//div[@id='myTabs']/ul/li/a[@name='" + subTabName + "']//i[contains(@class,'fa-pencil')]"))
+				.isDisplayed());
 	}
 
 	/*********
@@ -328,9 +359,9 @@ public class PageLayoutPage extends GovGrantsManager {
 		}
 		return flag;
 	}
-	
+
 	/**
-	 * Boolean status of Sub tab sorting order 
+	 * Boolean status of Sub tab sorting order
 	 * 
 	 * @param status
 	 */
@@ -339,5 +370,37 @@ public class PageLayoutPage extends GovGrantsManager {
 			return true;
 		} else
 			return false;
+	}
+
+	/**
+	 * return true if text is displayed
+	 * 
+	 * @param text
+	 * @return
+	 */
+	private boolean isHeaserInstructionTextDisplayed(String headerText) {
+		boolean flag = false;
+		if (reiDriver.findMyElement().getElement(headerInstructionText).getText().equalsIgnoreCase(headerText)) {
+			flag = true;
+		}
+		return flag;
+	}
+
+	/**
+	 * return true if changed tile of sub tab is displayed
+	 * 
+	 * @param subTabName
+	 * @return
+	 */
+	private boolean isChangedSubTabTitleDisplayed(String subTabName) {
+		boolean flag = false;
+		try {
+			if (getSubTabsInsideMainDetailPage(subTabName).isDisplayed()) {
+				flag = true;
+			}
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+
+		}
+		return flag;
 	}
 }
