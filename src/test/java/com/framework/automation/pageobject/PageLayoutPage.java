@@ -12,7 +12,7 @@ public class PageLayoutPage extends GovGrantsManager {
 
 	/******* "Variables and Locators" *****************/
 
-	private final By overViewHeader, overViewTitle, pageInstructionText, headerInstructionText;
+	private final By overViewHeader, overViewTitle, pageInstructionText, headerInstructionText, headerOverviewTab;
 
 	/**
 	 * Constructor to handle dependency injection and framework library
@@ -23,6 +23,7 @@ public class PageLayoutPage extends GovGrantsManager {
 		overViewTitle = By.cssSelector("h2.panel-title>div>span.overview-title");
 		pageInstructionText = By.cssSelector("div.article>div");
 		headerInstructionText = By.cssSelector("div.tabheaderinstruction");
+		headerOverviewTab = By.xpath("//div[@class='panel-body']//span[contains(text(),'ID')]");
 	}
 
 	/******* "Key Methods with complete functionality - public" *****************/
@@ -162,6 +163,13 @@ public class PageLayoutPage extends GovGrantsManager {
 				.WaitForElementToBePresent(By.xpath(
 						"//div[@id='myTabs']/ul/li/a[@name='" + subTabName + "']//i[contains(@class,'fa-pencil')]"))
 				.isDisplayed());
+	}
+
+	/**
+	 * assert true if header overview tab inside detail page is displayed
+	 */
+	public void assertHeaderOverviewTabDisplayed() {
+		Assert.assertTrue(isHeaderOviewTabDisplayed());
 	}
 
 	/*********
@@ -400,6 +408,22 @@ public class PageLayoutPage extends GovGrantsManager {
 			}
 		} catch (org.openqa.selenium.NoSuchElementException e) {
 
+		}
+		return flag;
+	}
+
+	/**
+	 * return true if header overview tab is displayed
+	 * 
+	 * @return
+	 */
+	private boolean isHeaderOviewTabDisplayed() {
+		boolean flag = false;
+		try {
+			if (reiDriver.findMyElement().getElement(headerOverviewTab).isDisplayed()) {
+				flag = true;
+			}
+		} catch (Exception e) {
 		}
 		return flag;
 	}

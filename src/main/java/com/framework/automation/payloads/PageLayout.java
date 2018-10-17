@@ -241,6 +241,39 @@ public class PageLayout {
 						String.valueOf(SObjectAPIs.GNT__IsActive__c), value);
 			}
 			break;
+		case "HIDE FOR USER":
+			finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__TabConfig__c),
+					apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__TabConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__HideForUser__c), value);
+			break;
+		case "HIDE FOR PROFILE":
+			finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__TabConfig__c),
+					apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__TabConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__HideForProfile__c), value);
+			break;
+		case "HIDE DECISION FIELD":
+			finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__TabConfig__c),
+					apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__TabConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__HideDecisionField__c), value);
+			break;
+		case "HIGHLIGHTS PANEL?":
+			if (m.find() || (value.contains("true")) || (value.contains("false"))) {
+				finalPayload = String.format(
+						payloadForIntValue, String.valueOf(SObjectAPIs.GNT__TabConfig__c), apiUtilities
+								.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__TabConfig__c), filterClause),
+						String.valueOf(SObjectAPIs.GNT__isOverview__c), value);
+			} else {
+				finalPayload = String.format(
+						payloadForStringValue, String.valueOf(SObjectAPIs.GNT__TabConfig__c), apiUtilities
+								.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__TabConfig__c), filterClause),
+						String.valueOf(SObjectAPIs.GNT__isOverview__c), value);
+			}
+			break;
+		case "HIDE EXPRESSION JSON":
+			finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__TabConfig__c),
+					apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__TabConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__HideExpressionJSON__c), value);
+			break;
 		}
 		System.out.println(finalPayload);
 		return finalPayload;
