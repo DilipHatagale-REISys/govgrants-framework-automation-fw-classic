@@ -209,3 +209,57 @@ Feature: Page Layout Component Scenarios
 	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
 	Then I see "Overview" sub tab is not displayed at view detail page
 	
+	@35955 @all @hideForUserAtPageTab-gPlanning
+	Scenario: Hiding of overview page tab for internal user from config and validating it at program detail page
+	Given I have default configuration for "Page Tabs Config" field "Hide for User" as "" with filter "" for field ""
+	Given I setup filter clause for "Page Layout Action" in "Grantee State Program" for field "Name" having value "TAB-029"
+	When I reconfigure "Page Tabs Config" field "Hide for User" as "Internal"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	Then I see "Overview" sub tab is not displayed at view detail page
+	
+	@35956 @all @hideForProfileAtPageTab-gPlanning
+	Scenario: Hiding of overview page tab for specific profile from config and validating it at program detail page
+	Given I have default configuration for "Page Tabs Config" field "Hide for Profile" as "" with filter "" for field ""
+	Given I setup filter clause for "Page Layout Action" in "Grantee State Program" for field "Name" having value "TAB-029"
+	When I reconfigure "Page Tabs Config" field "Hide for Profile" as "System Administrator"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	Then I see "Overview" sub tab is not displayed at view detail page
+	
+	@35959 @all @hideDecisionFieldAtPageTab-gPlanning
+	Scenario: Hiding of overview page tab for created state from config and validating it at program detail page
+	Given I have default configuration for "Page Tabs Config" field "Hide Decision Field" as "" with filter "" for field ""
+	Given I setup filter clause for "Page Layout Action" in "Grantee State Program" for field "Name" having value "TAB-029"
+	When I reconfigure "Page Tabs Config" field "Hide Decision Field" as "ShowActiveProgram__c"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	Then I see "Overview" sub tab is not displayed at view detail page
+	
+	@35962 @all @highlightsPanelFeildAtPageTab-gPlanning
+	Scenario: Setup of header overview page tab from config and validating it at program detail page
+	Given I have default configuration for "Page Tabs Config" field "Highlights Panel?" as "false" with filter "" for field ""
+	Given I setup filter clause for "Page Layout Action" in "Grantee State Program" for field "Name" having value "TAB-409"
+	When I reconfigure "Page Tabs Config" field "Highlights Panel?" as "true"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	Then I see complete header overview tab is displayed at view detail page
+	
+	@35976 @all @hideExpressionJsonFieldAtPageTab-gPlanning @wip
+	Scenario: Hiding overview tab from json config and validating it at program detail page
+	Given I have default configuration for "Page Tabs Config" field "Hide Expression JSON" as "" with filter "" for field ""
+	Given I setup filter clause for "Page Layout Action" in "Grantee State Program" for field "Name" having value "TAB-029"
+	When I reconfigure "Page Tabs Config" field "Hide Expression JSON" as "govgrants_config:HideExpressionJsonForPageTab"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	Then I see "Overview" sub tab is not displayed at view detail page

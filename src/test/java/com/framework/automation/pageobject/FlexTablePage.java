@@ -77,7 +77,7 @@ public class FlexTablePage extends GovGrantsManager {
 	 */
 	public void assertFlexTabelTotalCalulationRowDisabled() {
 		try {
-			reiDriver.JavaScript().scrollpageJS("PageDown", 0, 0);
+			reiDriver.JavaScript().scrollPageDocumentJS("PageDown", 0, 0);
 		} catch (Exception e) {
 		}
 		Assert.assertTrue(isFlexTableRowsTotalDisabled());
@@ -88,7 +88,7 @@ public class FlexTablePage extends GovGrantsManager {
 	 */
 	public void assertFlexTabelRowCountDisabled() {
 		try {
-			reiDriver.JavaScript().scrollpageJS("PageDown", 0, 0);
+			reiDriver.JavaScript().scrollPageDocumentJS("PageDown", 0, 0);
 		} catch (Exception e) {
 
 		}

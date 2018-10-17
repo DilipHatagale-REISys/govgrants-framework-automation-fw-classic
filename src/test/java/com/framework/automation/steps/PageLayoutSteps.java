@@ -102,4 +102,9 @@ public class PageLayoutSteps {
 	public void assertPencilIconAsSubTab(String subTabName) {
 		pageLayoutPage.assertSubTabIconDisplayed(subTabName);
 	}
+
+	@Then("^I see complete header overview tab is displayed at view detail page$")
+	public void assertHeaderOverviewTabInsideDetailsPage() {
+		pageLayoutPage.assertHeaderOverviewTabDisplayed();
+	}
 }
