@@ -172,6 +172,24 @@ public class PageLayoutPage extends GovGrantsManager {
 		Assert.assertTrue(isHeaderOviewTabDisplayed());
 	}
 
+	/**
+	 * assert if changed page block title is displayed
+	 * 
+	 * @param titleName
+	 */
+	public void assertChangedPageBlockTitleDisplayed(String titleName) {
+		Assert.assertTrue(isPageBlockTitleDisplayed(titleName));
+	}
+
+	/**
+	 * assert if page block is not displayed
+	 * 
+	 * @param titleName
+	 */
+	public void assertPageBlockIsNotDisplayed(String titleName) {
+		Assert.assertFalse(isPageBlockTitleDisplayed(titleName));
+	}
+
 	/*********
 	 * "Local Methods with complete functionality - private"
 	 *****************/
@@ -424,6 +442,24 @@ public class PageLayoutPage extends GovGrantsManager {
 				flag = true;
 			}
 		} catch (Exception e) {
+		}
+		return flag;
+	}
+
+	/**
+	 * 
+	 * @param titleName
+	 * @return true if page block title is displayed
+	 */
+	private boolean isPageBlockTitleDisplayed(String titleName) {
+		boolean flag = false;
+		try {
+			if (reiDriver.findMyElement().getElement(By.xpath("//h3//a[contains(text(),'" + titleName + "')]"))
+					.isDisplayed()) {
+				flag = true;
+			}
+		} catch (Exception e) {
+
 		}
 		return flag;
 	}

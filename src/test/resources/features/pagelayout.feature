@@ -263,3 +263,28 @@ Feature: Page Layout Component Scenarios
 	When I search for "Test program for automation"
 	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
 	Then I see "Overview" sub tab is not displayed at view detail page
+	
+	@35979 @all @pageBlockTitleFieldAtPageBlock-gPlanning
+	Scenario: Changing page block title from config and validating it at program detail page
+	Given I have default configuration for "Page Block" field "Page Block Title" as "Program Information" with filter "GNT__PageBlockTitle__c" for field "Program Information Automation"
+	Given I setup filter clause for "Page Block Detail" in "Grantee State Program" for field "GNT__PageBlockTitle__c" having value "Program Information"
+	When I reconfigure "Page Block" field "Page Block Title" as "Program Information Automation"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	Then I see "Program Information Automation" page block title
+	
+	@35980 @all @isActiveFieldAtPageBlock-gPlanning
+	Scenario: Disabling of program information page block from config and validating it at program detail page
+	Given I have default configuration for "Page Block" field "Is Active" as "true" with filter "" for field ""
+	Given I setup filter clause for "Page Block Detail" in "Grantee State Program" for field "GNT__PageBlockTitle__c" having value "Program Information"
+	When I reconfigure "Page Block" field "Is Active" as "false"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	Then I see "Program Information" page block is not displayed
+	
+	
+	
