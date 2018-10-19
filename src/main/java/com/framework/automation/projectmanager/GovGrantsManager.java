@@ -81,6 +81,7 @@ public class GovGrantsManager extends ProjectWebServices {
 		containerFluid_PageWrapperList = By.cssSelector("div#page-content-wrapper>div.container-fluid>div>div>div");
 		reachOutToEnhancedGridCollapse = By.xpath(
 				"//div[@class='panel-heading']//div[contains(@class,'panel-title')]//*[text()='Budget Category ']");
+
 	}
 
 	/******* "Key Methods with complete functionality - Public" *****************/
@@ -511,8 +512,10 @@ public class GovGrantsManager extends ProjectWebServices {
 	 * click on right header bars
 	 */
 	public void clickRightHeaderBars(String title) {
-
-		reiDriver.JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
+		try {
+			reiDriver.JavaScript().scrollElementToPageDetailCenter(reachOutToEnhancedGridCollapse);
+		} catch (Exception e) {
+		}
 		reiDriver.govGrants().clickRightHeaderBars(title);
 	}
 

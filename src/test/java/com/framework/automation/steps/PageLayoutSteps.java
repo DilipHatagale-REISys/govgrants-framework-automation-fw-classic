@@ -107,4 +107,14 @@ public class PageLayoutSteps {
 	public void assertHeaderOverviewTabInsideDetailsPage() {
 		pageLayoutPage.assertHeaderOverviewTabDisplayed();
 	}
+	
+	@Then("^I see \"([^\"]*)\" page block title$")
+    public void asserPageBlockTitleDisplayed(String titleName) {
+        pageLayoutPage.assertChangedPageBlockTitleDisplayed(titleName);
+    }
+	
+	@Then("^I see \"([^\"]*)\" page block is not displayed$")
+    public void asserPageBlockIsNotDisplayed(String titleName) {
+        pageLayoutPage.assertPageBlockIsNotDisplayed(titleName);
+    }
 }

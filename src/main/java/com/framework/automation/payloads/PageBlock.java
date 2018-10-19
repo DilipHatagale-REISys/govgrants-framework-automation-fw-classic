@@ -36,6 +36,13 @@ public class PageBlock {
 								String.valueOf(SObjectAPIs.GNT__IsActive__c), value);
 			}
 			break;
+		case "PAGE BLOCK TITLE":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageBlockConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__PageBlockConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__PageBlockTitle__c), value);
+			break;
 		}
 		System.out.println(finalPayload);
 		return finalPayload;
