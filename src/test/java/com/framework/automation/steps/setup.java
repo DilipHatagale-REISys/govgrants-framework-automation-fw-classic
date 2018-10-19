@@ -43,7 +43,7 @@ public class setup {
             projectAPI.postDefaultConfigCall();
             projectAPI.postProgramDefaultConfigCall();
         } catch (Exception e) {
-
+            System.out.println("Exception is "+e.getStackTrace());
         }
         setupController.theEnd(scenario);
     }

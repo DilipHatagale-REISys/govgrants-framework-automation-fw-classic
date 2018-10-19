@@ -1,12 +1,43 @@
 package com.framework.automation.projectmanager;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.Map;
 
 import com.automation.rei.handlers.Properties_Logs;
 
 public class ConfigurationParameters {
     Properties_Logs readProp = new Properties_Logs();
 
+    String componentName, oldFieldValue, fieldLabel, value, newFieldValue,oldComponentCoreField,newComponentCoreField;
+    String componentName_Program, oldFieldValue_Program, fieldLabel_Program, value_Program,newFieldValue_Program;
+    static List<Map<String, String>> defaultConfigurationParameters;
+    
+    
+    
+    
+    
+    
+    
+    
+
+    /**
+     * @return the defaultConfigurationParameters
+     */
+    public static List<Map<String, String>> getDefaultConfigurationParameters() {
+        return defaultConfigurationParameters;
+    }
+
+    /**
+     * @param defaultConfigurationParameters the defaultConfigurationParameters to set
+     */
+    public static void setDefaultConfigurationParameters(List<Map<String, String>> defaultConfigurationParameters) {
+        ConfigurationParameters.defaultConfigurationParameters = defaultConfigurationParameters;
+    }
+
+    
+    
+    
     public String getNewComponentCoreFieldName() {
         return newComponentCoreField;
     }
@@ -68,9 +99,7 @@ public class ConfigurationParameters {
         }
     }
 
-    String componentName, oldFieldValue, fieldLabel, value, newFieldValue,oldComponentCoreField,newComponentCoreField;
-    String componentName_Program, oldFieldValue_Program, fieldLabel_Program, value_Program,newFieldValue_Program;
-
+   
     public String getComponentName_Program() {
         return componentName_Program;
     }

@@ -90,6 +90,9 @@ public class SetUpConfiguration {
 		case "PAGE BLOCK":
 			stringPayload = new PageBlock().setPageBlockConfig(fieldLabel, value, filterClause);
 			break;
+		case "PAGE BLOCK DETAIL":
+            stringPayload = new PageBlock().setPageBlockConfig(fieldLabel, value, filterClause);
+            break;
 		case "PAGE BLOCK RULE":
 			stringPayload = new PageBlock().setPageBlockRuleConfig(fieldLabel, value, filterClause);
 			break;
