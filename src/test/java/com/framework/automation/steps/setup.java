@@ -41,7 +41,6 @@ public class setup {
     public void wrapUp(Scenario scenario) {
         try {
             projectAPI.postDefaultConfigCall();
-            projectAPI.postProgramDefaultConfigCall();
         } catch (Exception e) {
             System.out.println("Exception is "+e.getStackTrace());
         }

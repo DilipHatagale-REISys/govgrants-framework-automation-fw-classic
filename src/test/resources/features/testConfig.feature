@@ -4,11 +4,11 @@ Feature: Test Scenarios
 	@35979 @all @pageBlockTitleFieldAtPageBlock-test
 	Scenario: Changing page block title from config and validating it at program detail page
 	Given I have default configuration as below:
-	|configurationCategory|fieldName        |fieldOrignalValue  |coreComponentField   |coreCOmponentSubFieldName|coreComponentSubFieldValue|
-	|Page Block Detail    |Page Block Title|Program Information |Grantee State Program|GNT__PageBlockTitle__c   |Program Information Automation|
+	|configurationCategory           |fieldName        |fieldOrignalValue  |coreComponentField   |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Block:Page Block Detail    |Page Block Title|Program Information |Grantee State Program|GNT__PageBlockTitle__c   |Program Information Automation|
 	Given I setup test configuration as below:
-	|configurationCategory|fieldName        |fieldNewValue                |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue |
-	|Page Block Detail    |Page Block Title|Program Information Automation|Grantee State Program|GNT__PageBlockTitle__c    |Program Information|
+	|configurationCategory            |fieldName        |fieldNewValue                |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Block:Page Block Detail    |Page Block Title|Program Information Automation|Grantee State Program|GNT__PageBlockTitle__c    |Program Information        |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
@@ -22,9 +22,28 @@ Feature: Test Scenarios
 	|Charts Config        |Phase Config    |ApiGeneratedId:1 |ApiGeneratedId:2|
 	Given I setup test configuration as below:
 	|configurationCategory|fieldName         |fieldNewValue   |coreComponentField|coreCOmponentSubFieldName|coreComponentSubFieldValue   |
-	|Phase Config         |Tab Display Label|Announcements    |FundingOpportunity|                          |                             |
-	|Phase Config         |Tab Display Label|Planning         |GrantorPlanning   |                          |                             |
+	|Phase Config:General |Tab Display Label|Announcements    |FundingOpportunity|                          |                             |
+	|Phase Config:General |Tab Display Label|Planning         |GrantorPlanning   |                          |                             |
 	|Charts Config        |Phase Config     |ApiGeneratedId:0|GrantorPlanning    |Name                      |AnnouncementByAdminBureauUnit|
 	When I login as "Automation" User
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Announcements" tab
 	Then I see "AnnouncementByAdminBureauUnit" displayed as chart title
+	
+	@34311 @w @automationNotRequired @approverTaskNotCreatedPrograms-test
+	Scenario: Change approver setting for not receiveing approve task in configuration and validate that pending approver task is not displayed	
+	Given I have default configuration as below:
+	|configurationCategory               |fieldName      |fieldOrignalValue |filterId|
+	|Approval Process Steps Cache        |Field API Name|ProgramApprover__c |ApiGeneratedId:1|
+	Given I setup test configuration as below:
+	|configurationCategory                |fieldName         |fieldNewValue   |coreComponentField          |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Program	                          |Status           |Created          |Automation Program -SA to C|                          |                             |
+	|Approval Process Steps Cache:General|Field API Name    |                 |Program_Manager_Approver   |                          |                             |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Automation Program -SA to C"
+	When I click on "Edit" icon of status "Created" for "Automation Program -SA to C" program in flex table
+	And I complete submit for approval
+	When I re-login as "Automation-PM" with "QA" url
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I navigate to "Tasks" to reach "Pending" side bar content
+	Then I see approval with subject as "Automation Program -SA to C" is not displayed

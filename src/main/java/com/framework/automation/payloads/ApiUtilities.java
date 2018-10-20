@@ -22,7 +22,6 @@ public class ApiUtilities {
      */
     public String getComponentCoreFieldId(String ComponentAPI, String filterClause) {
         String iD;
-        System.out.println("filterCluase is " +filterClause);
         if (filterClause.startsWith("a0")) {
             iD = filterClause;
         } else {
@@ -33,7 +32,6 @@ public class ApiUtilities {
             iD = splittedStringForId[4].substring(2, 20);
             storeAllIds.add(new IdBucket(iD));
         }
-        System.out.println("ID is "+iD);
         return iD;
     }
 
@@ -96,10 +94,11 @@ public class ApiUtilities {
      * @param name
      * @return
      */
-    public String getFilterClause(String componentName, String ComponentCoreFieldName, String fieldName, String value) {
+    public String getFilterClause(String configCategory, String ComponentCoreFieldName, String fieldName,
+            String value) {
         String filterClause = null;
-        switch (componentName.toUpperCase()) {
-        case "PHASE CONFIG":
+        switch (handleConfigCategory(configCategory).toUpperCase()) {
+        case "GENERAL":
             filterClause = genericParameterFilter(ComponentCoreFieldName);
             break;
         case "ACCORDIAN HEADER":
@@ -181,5 +180,16 @@ public class ApiUtilities {
 
     public static ArrayList<IdBucket> getTheId() {
         return storeAllIds;
+    }
+
+    private String handleConfigCategory(String configCategory) {
+        String configurationCategory = null;
+        if (configCategory.contains(":")) {
+            String[] configurationCat = configCategory.split(":");
+            configurationCategory = configurationCat[1];
+        } else {
+            configurationCategory = configCategory;
+        }
+        return configurationCategory;
     }
 }
