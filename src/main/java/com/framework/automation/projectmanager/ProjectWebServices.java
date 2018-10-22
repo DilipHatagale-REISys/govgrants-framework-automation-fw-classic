@@ -1,45 +1,25 @@
 package com.framework.automation.projectmanager;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.Map;
 
 import com.automation.rei.controller.EnvironmentFetcher;
 import com.automation.rei.handlers.Properties_Logs;
 import com.automation.rei.webservices.RestfulWebServices;
-import com.framework.automation.objects.IdBucket;
 import com.framework.automation.payloads.ApiUtilities;
 import com.jayway.restassured.response.Response;
 
 public class ProjectWebServices {
     RestfulWebServices apiCall = new RestfulWebServices();
-    ConfigurationParameters setUpParameters = new ConfigurationParameters();
     SetUpConfiguration configPostCall = new SetUpConfiguration();
     Properties_Logs readProp = new Properties_Logs();
-    ApiUtilities apiUtil;
-    String filterClause_Reconfig;
-    String filterClause_Program;
+    ApiUtilities apiUtil = new ApiUtilities();;
     private static String endPoint;
     private String defaultUpdateEndPoint = "/services/apexrest/frameworkAPIUpdate";
     private String defaultEndPointGetToken = "/services/oauth2/token?grant_type=password&client_secret=7608231485378593656&client_id=3MVG91ftikjGaMd8E01oyLzW0qhdCcSTnpVVwmMdo3H_C6vbhroOOpEF4C.54CXCiOi5SQFyN.a6Ze8NCAcSa&username=pankaj@ggp.test5&password=test@123";
     public static String tokenString;
 
     //////////////////// Test case configuration API calls ///////////////////////
-
-    /**
-     * Start to setup filter for main api call
-     * 
-     * @param componentName
-     * @param ComponentCoreFieldName
-     * @param fieldieldName
-     * @param value
-     */
-    public void initilizeSalesForceIdFilter(String componentName, String ComponentCoreFieldName, String fieldieldName,
-            String value) {
-        setUpParameters.setOldComponentCoreFieldName(ComponentCoreFieldName);
-        setUpParameters.setOldFieldValue(value);
-        apiUtil = new ApiUtilities();
-        filterClause_Reconfig = apiUtil.getFilterClause(componentName, ComponentCoreFieldName, fieldieldName, value);
-    }
 
     /**
      * set up configurational call
@@ -49,16 +29,85 @@ public class ProjectWebServices {
      * @param value
      * @throws IOException
      */
-    public void setConfigurationTest(String componentName, String fieldLabel, String value) throws IOException {
+    public void setupConfigurationForTest(String configurationCategory, String fieldName, String fieldValue,
+            String coreComponentField, String coreCOmponentSubFieldName, String coreComponentSubFieldValue)
+            throws IOException {
         createEndPoint();
         getAuthToken();
-        if (value.contains("govgrants_config")) {
-            String[] splittedValue = value.split(":");
-            assertStatusCode(postConfigCall(componentName, fieldLabel,
-                    readProp.ReadPropertyFile("govgrants_Config.properties", splittedValue[1])));
+        String filterClause = initilizeSalesForceIdFilter(configurationCategory, coreComponentField,
+                coreCOmponentSubFieldName, coreComponentSubFieldValue);
+        if (fieldValue.contains("govgrants_config")) {
+            String[] splittedValue = fieldValue.split(":");
+            assertStatusCode(postConfigCall(configurationCategory, fieldName,
+                    readProp.ReadPropertyFile("govgrants_Config.properties", splittedValue[1]), filterClause));
         } else {
-            assertStatusCode(postConfigCall(componentName, fieldLabel, value));
+            assertStatusCode(postConfigCall(configurationCategory, fieldName, fieldValue, filterClause));
         }
+    }
+
+    /**
+     * handle setting up new configurational setting
+     * 
+     * @param componentName
+     * @param fieldName
+     * @param value
+     * @return
+     */
+    private Response postConfigCall(String configCategory, String fieldName, String value, String filterClause) {
+        Response response = null;
+        if (value.contains("ApiGeneratedId")) {
+            String[] getValueAt = value.split(":");
+            response = apiCall.postCall(null,
+                    configPostCall.getConfigJson(handleConfigCategory(configCategory), fieldName,
+                            ApiUtilities.storeAllIds.get(Integer.parseInt(getValueAt[1])).getId(), filterClause),
+                    endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
+        } else {
+            response = apiCall.postCall(null,
+                    configPostCall.getConfigJson(handleConfigCategory(configCategory), fieldName, value, filterClause),
+                    endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
+        }
+        return response;
+    }
+
+    ////////////// Setup Default Config//////////////
+
+    public Response postDefaultConfigCall() throws IOException {
+        Response response = null;
+        String filterClause;
+        String filterIdValue;
+        for (Map<String, String> defaultParameters : ConfigurationParameters.getDefaultConfigurationParameters()) {
+            if (defaultParameters.get("filterId") != null) {
+                String[] getValueAt = defaultParameters.get("filterId").split(":");
+                filterIdValue = ApiUtilities.storeAllIds.get(Integer.parseInt(getValueAt[1])).getId();
+                response = handleDefaultConfigWithFilterId(
+                        handleConfigCategory(defaultParameters.get("configurationCategory")),
+                        defaultParameters.get("fieldName"), defaultParameters.get("fieldOrignalValue"), filterIdValue);
+            } else {
+                filterClause = initilizeSalesForceIdFilter(
+                        defaultParameters.get("configurationCategory"),
+                        defaultParameters.get("coreComponentField"), defaultParameters.get("coreCOmponentSubFieldName"),
+                        defaultParameters.get("coreComponentSubFieldValue"));
+                response = handleDefaultConfigWithoutFileterId(handleConfigCategory(defaultParameters.get("configurationCategory")),
+                        defaultParameters.get("fieldName"), defaultParameters.get("fieldOrignalValue"), filterClause);
+            }
+        }
+        return response;
+    }
+
+    ////////////// Private methods ///////////////////
+
+    /**
+     * Start to setup filter for main api call
+     * 
+     * @param componentName
+     * @param ComponentCoreFieldName
+     * @param fieldieldName
+     * @param value
+     * @return
+     */
+    private String initilizeSalesForceIdFilter(String componentName, String ComponentCoreFieldName,
+            String fieldieldName, String value) {
+        return apiUtil.getFilterClause(componentName, ComponentCoreFieldName, fieldieldName, value);
     }
 
     /**
@@ -85,169 +134,59 @@ public class ProjectWebServices {
         response.then().statusCode(200);
     }
 
-    /**
-     * handle setting up new configurational setting
-     * 
-     * @param componentName
-     * @param fieldName
-     * @param value
-     * @return
-     */
-    private Response postConfigCall(String componentName, String fieldName, String value) {
-        Response reponse;
-        if (value.contains("ApiGeneratedId")) {
-            String[] getValueAt = value.split(":");
-            reponse = apiCall.postCall(null, configPostCall.getConfigJson(componentName, fieldName,
-                    ApiUtilities.storeAllIds.get(Integer.parseInt(getValueAt[1])).getId(), filterClause_Reconfig),
+    private Response handleDefaultConfigWithFilterId(String configurationCategory, String fieldName,
+            String fieldOrignalValue, String filterId) throws IOException {
+        Response response = null;
+        if (fieldOrignalValue.contains("govgrants_config")) {
+            String[] splittedValue = fieldOrignalValue.split(":");
+            response = postConfigCall(configurationCategory, fieldName,
+                    readProp.ReadPropertyFile("govgrants_Config.properties", splittedValue[1]), filterId);
+        } else if (fieldOrignalValue.contains("ApiGeneratedId")) {
+            String[] getValueAt = fieldOrignalValue.split(":");
+            response = apiCall.postCall(null,
+                    new SetUpConfiguration().getConfigJson(configurationCategory, fieldName,
+                            ApiUtilities.storeAllIds.get(Integer.parseInt(getValueAt[1])).getId(), filterId),
                     endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
         } else {
-            reponse = apiCall.postCall(null,
-                    configPostCall.getConfigJson(componentName, fieldName, value, filterClause_Reconfig),
+            response = apiCall.postCall(null,
+                    new SetUpConfiguration().getConfigJson(configurationCategory, fieldName, fieldOrignalValue,
+                            filterId),
                     endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
-
         }
-        return reponse;
+        return response;
     }
 
-    /**
-     * set up parameters for default configuration
-     * 
-     * @param componentName
-     * @param fieldLabel
-     * @param value
-     * @param newValue
-     * @throws IOException
-     */
-    public void setUpDefaultParameters(String componentName, String fieldLabel, String value,
-            String newFilterComponentCoreFieldName, String newFilterLabelValue) throws IOException {
-        setUpParameters.setComponentName(componentName);
-        setUpParameters.setFieldLabel(fieldLabel);
-        setUpParameters.setValue(value);
-        setUpParameters.setNewFilterFieldValue(newFilterLabelValue);
-        setUpParameters.setNewComponentCoreFieldName(newFilterComponentCoreFieldName);
-    }
+    private Response handleDefaultConfigWithoutFileterId(String configurationCategory, String fieldName,
+            String fieldOrignalValue, String filterClause) throws IOException {
+        Response response = null;
 
-    /**
-     * handle setting up default configurational setting
-     * 
-     * @return
-     */
-    public Response postDefaultConfigCall() {
-        Response reponse;
-        if (setUpParameters.getValue().contains("ApiGeneratedId")) {
-            String[] getValueAt = setUpParameters.getValue().split(":");
-            reponse = apiCall.postCall(null,
-                    new SetUpConfiguration().getConfigJson(setUpParameters.getComponentName(),
-                            setUpParameters.getFieldLabel(),
-                            ApiUtilities.storeAllIds.get(Integer.parseInt(getValueAt[1])).getId(),
-                            isFilterClauseGoodForDefaultSetting()),
+        if (fieldOrignalValue.contains("govgrants_config")) {
+            String[] splittedValue = fieldOrignalValue.split(":");
+            response = postConfigCall(configurationCategory, fieldName,
+                    readProp.ReadPropertyFile("govgrants_Config.properties", splittedValue[1]), filterClause);
+        } else if (fieldOrignalValue.contains("ApiGeneratedId")) {
+            String[] getValueAt = fieldOrignalValue.split(":");
+            response = apiCall.postCall(null,
+                    new SetUpConfiguration().getConfigJson(configurationCategory, fieldName,
+                            ApiUtilities.storeAllIds.get(Integer.parseInt(getValueAt[1])).getId(), filterClause),
                     endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
         } else {
-            reponse = apiCall.postCall(null, new SetUpConfiguration().getConfigJson(setUpParameters.getComponentName(),
-                    setUpParameters.getFieldLabel(), setUpParameters.getValue(), isFilterClauseGoodForDefaultSetting()),
+            response = apiCall.postCall(null,
+                    new SetUpConfiguration().getConfigJson(configurationCategory, fieldName, fieldOrignalValue,
+                            filterClause),
                     endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
         }
-        return reponse;
+        return response;
     }
 
-    /**
-     * update filter clause for default configuration
-     * 
-     * @return
-     */
-    private String isFilterClauseGoodForDefaultSetting() {
-        String newFilterClause = null;
-        if ((!setUpParameters.getOldFieldValue().equals(setUpParameters.getNewFieldValue()))
-                && (!setUpParameters.getNewFieldValue().equals(""))) {
-            newFilterClause = filterClause_Reconfig.replace(setUpParameters.getOldFieldValue(),
-                    setUpParameters.getNewFieldValue());
-        } else if ((!setUpParameters.getOldComponentCoreFieldName()
-                .equals(setUpParameters.getNewComponentCoreFieldName()))
-                && (!setUpParameters.getNewComponentCoreFieldName().equals(""))) {
-            newFilterClause = filterClause_Reconfig.replace(setUpParameters.getOldComponentCoreFieldName(),
-                    setUpParameters.getNewComponentCoreFieldName());
+    private String handleConfigCategory(String configCategory) {
+        String configurationCategory = null;
+        if (configCategory.contains(":")) {
+            String[] configurationCat = configCategory.split(":");
+            configurationCategory = configurationCat[0];
         } else {
-            newFilterClause = filterClause_Reconfig;
+            configurationCategory = configCategory;
         }
-        return newFilterClause;
-    }
-
-    //////////////////// Program configuration API calls ///////////////////////
-
-    /**
-     * set up configurational call
-     * 
-     * @param componentName
-     * @param fieldLabel
-     * @param value
-     * @throws IOException
-     */
-    public void setConfigurationForProgram(String componentName, String fieldLabel, String value) throws IOException {
-        createEndPoint();
-        getAuthToken();
-        assertStatusCode(postProgramConfigCall(componentName, fieldLabel, value));
-    }
-
-    /**
-     * handle setting up new configurational setting
-     * 
-     * @param componentName
-     * @param fieldName
-     * @param value
-     * @return
-     */
-    private Response postProgramConfigCall(String componentName, String fieldName, String value) {
-        return apiCall.postCall(null,
-                configPostCall.getConfigJson(componentName, fieldName, value, filterClause_Program),
-                endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
-    }
-
-    /**
-     * Start to setup filter for program
-     * 
-     * @param componentName
-     * @param ComponentCoreFieldName
-     * @param fieldieldName
-     * @param value
-     */
-    public void initilizeSalesForceIdFilter_Program(String componentName, String ComponentCoreFieldName,
-            String fieldieldName, String value) {
-        apiUtil = new ApiUtilities();
-        filterClause_Program = apiUtil.getFilterClause(componentName, ComponentCoreFieldName, fieldieldName, value);
-    }
-
-    /**
-     * set up parameters for default configuration
-     * 
-     * @param componentName
-     * @param fieldLabel
-     * @param value
-     * @param newValue
-     *            for filter. it can be a component core field as well in special
-     *            cases
-     * @throws IOException
-     */
-    public void setUpDefaultProgramParameters(String componentName, String fieldLabel, String value,
-            String newFilterValue) throws IOException {
-        setUpParameters.setComponentName_Program(componentName);
-        setUpParameters.setFieldLabel_Program(fieldLabel);
-        setUpParameters.setValue_Program(value);
-        setUpParameters.setNewFieldValue_Program(newFilterValue);
-    }
-
-    /**
-     * handle setting up default configurational setting
-     * 
-     * @return
-     */
-    public Response postProgramDefaultConfigCall() {
-        if (filterClause_Program == null) {
-            initilizeSalesForceIdFilter_Program(setUpParameters.getComponentName_Program(),
-                    setUpParameters.getNewFieldValue_Program(), "", "");
-
-        }
-        return apiCall.postCall(null, configPostCall.getConfigJson(setUpParameters.getComponentName_Program(),
-                setUpParameters.getFieldLabel_Program(), setUpParameters.getValue_Program(), filterClause_Program),
-                endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
+        return configurationCategory;
     }
 }
