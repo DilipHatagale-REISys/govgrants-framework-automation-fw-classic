@@ -286,5 +286,14 @@ Feature: Page Layout Component Scenarios
 	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
 	Then I see "Program Information" page block is not displayed
 	
-	
+	@35981 @all @sortOrderFieldAtPageBlock-gPlanning
+	Scenario: Changing sort order for Program information page block from config and validating it at program detail page
+	Given I have default configuration for "Page Block" field "Sort Order" as "0" with filter "" for field ""
+	Given I setup filter clause for "Page Block Detail" in "Grantee State Program" for field "GNT__PageBlockTitle__c" having value "Program Information"
+	When I reconfigure "Page Block" field "Sort Order" as "10"
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	Then I see "Program Information" shown at number "5" inside page block
 	

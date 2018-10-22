@@ -117,4 +117,9 @@ public class PageLayoutSteps {
     public void asserPageBlockIsNotDisplayed(String titleName) {
         pageLayoutPage.assertPageBlockIsNotDisplayed(titleName);
     }
+	
+	@Then("^I see \"([^\"]*)\" shown at number \"([^\"]*)\" inside page block$")
+	public void assertSequenceOfPageBlock(String pageBlockName, String number) {
+		pageLayoutPage.assertSortingOfPageBlock(pageBlockName, Integer.parseInt(number));
+	}
 }

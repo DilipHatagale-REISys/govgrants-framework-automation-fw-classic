@@ -760,9 +760,16 @@ public class GovGrantsManager extends ProjectWebServices {
 	}
 
 	/**
-	 * get list of sub tab inside detail each main detail page like overview etc.
+	 * get list of sub tab inside main detail page like overview etc.
 	 */
 	public List<WebElement> getListSubTabsInsideMainDetailPage() {
 		return reiDriver.findMyElement().getElements(By.xpath("//div[@id='myTabs']/ul/li/a"));
+	}
+	
+	/**
+	 * get list of page block inside detail page like overview etc.
+	 */
+	public List<WebElement> getListPageBlockInsideMainDetailPage() {
+		return reiDriver.findMyElement().getElements(By.xpath("//div[@class='tab-pane active']//div[@class='panel-heading']"));
 	}
 }

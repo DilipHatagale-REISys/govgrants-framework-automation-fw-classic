@@ -37,11 +37,25 @@ public class PageBlock {
 			}
 			break;
 		case "PAGE BLOCK TITLE":
-			finalPayload = String
-					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageBlockConfig__c),
-							apiUtilities.getComponentCoreFieldId(
-									String.valueOf(SObjectAPIs.GNT__PageBlockConfig__c), filterClause),
-							String.valueOf(SObjectAPIs.GNT__PageBlockTitle__c), value);
+			finalPayload = String.format(
+					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageBlockConfig__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PageBlockConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__PageBlockTitle__c), value);
+			break;
+		case "SORT ORDER":
+			if (m.find() || (value.contains("true")) || (value.contains("false"))) {
+				finalPayload = String
+						.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PageBlockConfig__c),
+								apiUtilities.getComponentCoreFieldId(
+										String.valueOf(SObjectAPIs.GNT__PageBlockConfig__c), filterClause),
+								String.valueOf(SObjectAPIs.GNT__SortOrder__c), value);
+			} else {
+				finalPayload = String
+						.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageBlockConfig__c),
+								apiUtilities.getComponentCoreFieldId(
+										String.valueOf(SObjectAPIs.GNT__PageBlockConfig__c), filterClause),
+								String.valueOf(SObjectAPIs.GNT__SortOrder__c), value);
+			}
 			break;
 		}
 		System.out.println(finalPayload);

@@ -190,6 +190,15 @@ public class PageLayoutPage extends GovGrantsManager {
 		Assert.assertFalse(isPageBlockTitleDisplayed(titleName));
 	}
 
+	/**
+	 * 
+	 * @param pageBlockName
+	 * @param number
+	 */
+	public void assertSortingOfPageBlock(String pageBlockName, int number) {
+		Assert.assertTrue(isPageBlockSequence(pageBlockName, number));
+	}
+
 	/*********
 	 * "Local Methods with complete functionality - private"
 	 *****************/
@@ -462,5 +471,17 @@ public class PageLayoutPage extends GovGrantsManager {
 
 		}
 		return flag;
+	}
+
+	/**
+	 * Boolean status of page block sorting order
+	 * 
+	 * @param status
+	 */
+	private Boolean isPageBlockSequence(String pageBlockName, int number) {
+		if (getListPageBlockInsideMainDetailPage().get(number).getText().contains(pageBlockName)) {
+			return true;
+		} else
+			return false;
 	}
 }
