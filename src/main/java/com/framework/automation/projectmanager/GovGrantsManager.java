@@ -434,8 +434,8 @@ public class GovGrantsManager extends ProjectWebServices {
 	 * @param AccordianHeader
 	 * @param subHeaderContentName
 	 */
-	public void clickAccordiansubHeaderContent(String AccordianHeader, String subHeaderContentName) {
-		getSideBarAccordianSubHeaderContent(AccordianHeader, subHeaderContentName).click();
+	public void clickAccordiansubHeaderContent(String subHeader, String subHeaderDetailTabs) {
+		reiDriver.govGrants().getSideBarContent(subHeader, subHeaderDetailTabs).click();
 	}
 
 	/**

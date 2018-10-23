@@ -77,6 +77,7 @@ public class ProjectWebServices {
         String filterIdValue;
         for (Map<String, String> defaultParameters : ConfigurationParameters.getDefaultConfigurationParameters()) {
             if (defaultParameters.get("filterId") != null) {
+            	System.out.println("Entered filterid" +defaultParameters.get("filterId"));
                 String[] getValueAt = defaultParameters.get("filterId").split(":");
                 filterIdValue = ApiUtilities.storeAllIds.get(Integer.parseInt(getValueAt[1])).getId();
                 response = handleDefaultConfigWithFilterId(
@@ -141,13 +142,8 @@ public class ProjectWebServices {
             String[] splittedValue = fieldOrignalValue.split(":");
             response = postConfigCall(configurationCategory, fieldName,
                     readProp.ReadPropertyFile("govgrants_Config.properties", splittedValue[1]), filterId);
-        } else if (fieldOrignalValue.contains("ApiGeneratedId")) {
-            String[] getValueAt = fieldOrignalValue.split(":");
-            response = apiCall.postCall(null,
-                    new SetUpConfiguration().getConfigJson(configurationCategory, fieldName,
-                            ApiUtilities.storeAllIds.get(Integer.parseInt(getValueAt[1])).getId(), filterId),
-                    endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
         } else {
+        	System.out.println("entered" +filterId);
             response = apiCall.postCall(null,
                     new SetUpConfiguration().getConfigJson(configurationCategory, fieldName, fieldOrignalValue,
                             filterId),
@@ -164,13 +160,13 @@ public class ProjectWebServices {
             String[] splittedValue = fieldOrignalValue.split(":");
             response = postConfigCall(configurationCategory, fieldName,
                     readProp.ReadPropertyFile("govgrants_Config.properties", splittedValue[1]), filterClause);
-        } else if (fieldOrignalValue.contains("ApiGeneratedId")) {
+        }/* else if (fieldOrignalValue.contains("ApiGeneratedId")) {
             String[] getValueAt = fieldOrignalValue.split(":");
             response = apiCall.postCall(null,
                     new SetUpConfiguration().getConfigJson(configurationCategory, fieldName,
                             ApiUtilities.storeAllIds.get(Integer.parseInt(getValueAt[1])).getId(), filterClause),
                     endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
-        } else {
+        }*/ else {
             response = apiCall.postCall(null,
                     new SetUpConfiguration().getConfigJson(configurationCategory, fieldName, fieldOrignalValue,
                             filterClause),

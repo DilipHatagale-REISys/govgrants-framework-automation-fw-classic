@@ -75,7 +75,7 @@ public class SetUpConfiguration {
 		case "PHASE CONFIG":
 			stringPayload = new PhaseConfig().setPhaseFieldConfig(fieldLabel, value, filterClause);
 			break;
-		case "STEP PROGRESSBAR DETAIL CONFIG":
+		case "STEP PROGRESSBAR DETAIL":
 			stringPayload = new StepProgressBar().setStepProgressBarDetailConfig(fieldLabel, value, filterClause);
 			break;
 		case "CHARTS CONFIG":

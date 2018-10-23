@@ -5,6 +5,12 @@ Feature: Flex Table Component Scenarios
 
 	@34022 @all @changeOfFlexTableTitle-gPlanning
 	Scenario: validate after changing name of flex table title inside planning-programs
+	Given I have default configuration as below:
+	|configurationCategory |fieldName     |fieldOrignalValue|coreComponentField |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table List       |Label         |Draft Programs   |                   |                         |                          |
+	Given I setup test configuration as below:
+	|configurationCategory     |fieldName     |fieldNewValue   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table List           |Is Active     |false           |Programs              |GNT__PageBlockTitle__c   |Business Forms            |
 	Given I have default configuration for "Flex Table List" field "Label" as "Draft Programs" with filter "" for field ""
 	Given I setup filter clause for "Flex Table List" in "Programs" for field "Name" having value "FLV-1837"
 	When I reconfigure "Flex Table List" field "Label" as "Automation"
