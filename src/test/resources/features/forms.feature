@@ -20,11 +20,11 @@ Feature: Forms Component Scenarios
 	And I download the file
 	Then I do not see "Form - Application Budget" on page "29" of "govgrants" pdf file
 	
-	@35185 @all @validateBusinessFormsRemoval-gApplication @check
+	@35185 @all @validateBusinessFormsRemoval-gApplication
 	Scenario: Validate disabling of business form from config and validating inside Application view
 	Given I have default configuration as below:
-	|configurationCategory |fieldName     |fieldOrignalValue|coreComponentField |coreCOmponentSubFieldName|coreComponentSubFieldValue|
-	|Page Block            |Is Active     |true             |ApplicationView    |GNT__PageBlockTitle__c   |Business Forms            |
+	|configurationCategory |fieldName     |fieldOrignalValue|filterId        |
+	|Page Block            |Is Active     |true             |ApiGeneratedId:0|
 	Given I setup test configuration as below:
 	|configurationCategory                  |fieldName     |fieldNewValue   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block:Page Block Detail           |Is Active     |false           |ApplicationView       |GNT__PageBlockTitle__c   |Business Forms            |
@@ -38,11 +38,11 @@ Feature: Forms Component Scenarios
 	When I click on "Attachments" sub tab inside page layout
 	Then I see Business Form section is not displayed
 	
-	@35189 @all @hidingPreviewActionItemForUsersInsideBusinessForms-gApplication @check
+	@35189 @all @hidingPreviewActionItemForUsersInsideBusinessForms-gApplication
 	Scenario: Validate disabling preview of business form action item from config and validating inside Application view
 	Given I have default configuration as below:
-	|configurationCategory |fieldName     |fieldOrignalValue|coreComponentField     |coreCOmponentSubFieldName|coreComponentSubFieldValue|
-	|Page Block Rule       |Hide For User |                 |ApplicationView        |Name                     |preview rule              |
+	|configurationCategory |fieldName     |fieldOrignalValue|coreComponentField     |filterId        |
+	|Page Block Rule       |Hide For User |                 |ApplicationView        |ApiGeneratedId:0|
 	Given I setup test configuration as below:
 	|configurationCategory                  |fieldName     |fieldNewValue   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block Rule:Page Block Rule Detail |Hide For User |Internal        |ApplicationView       |Name                     |preview rule              |
@@ -56,11 +56,11 @@ Feature: Forms Component Scenarios
 	When I click on "Attachments" sub tab inside page layout
 	Then I see "Preview" action item is not displayed inside business form
 	
-	@35193 @all @hidingViewActionItemForUsersInsideBusinessForms-gApplication @check
+	@35193 @all @hidingViewActionItemForUsersInsideBusinessForms-gApplication
 	Scenario: Validate disabling View of business form action item from config and validating inside Application view
 	Given I have default configuration as below:
-	|configurationCategory |fieldName     |fieldOrignalValue|coreComponentField     |coreCOmponentSubFieldName|coreComponentSubFieldValue|
-	|Page Block Rule       |Hide For User |                 |ApplicationView        |Name                     |View                      |
+	|configurationCategory |fieldName     |fieldOrignalValue|coreComponentField     |filterId        |
+	|Page Block Rule       |Hide For User |                 |ApplicationView        |ApiGeneratedId:0|
 	Given I setup test configuration as below:
 	|configurationCategory                  |fieldName     |fieldNewValue   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block Rule:Page Block Rule Detail |Hide For User |Internal        |ApplicationView       |Name                     |View                      |

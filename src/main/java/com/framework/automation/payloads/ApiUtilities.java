@@ -22,8 +22,9 @@ public class ApiUtilities {
      */
     public String getComponentCoreFieldId(String ComponentAPI, String filterClause) {
         String iD;
-        if (filterClause.startsWith("a0")) {
-            iD = filterClause;
+        if (filterClause.contains("idValue")) {
+            String[] getFilterId = filterClause.split(":");
+            iD = getFilterId[0];
         } else {
             Response response = apiCall.postCall(getPayLaodForIdRetrieval(ComponentAPI, filterClause), null,
                     SetUpConfiguration.defaultRetrieveEndPoint, "Authorization",

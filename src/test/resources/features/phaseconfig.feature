@@ -9,8 +9,8 @@ Feature: Phase Config Component Scenarios
 	|configurationCategory|fieldName              |fieldOrignalValue    |filterId        |
 	|Phase Config         |Available for Profiles |<Old-Profile>        |ApiGeneratedId:0|                    
 	Given I setup test configuration as below:
-	|configurationCategory  |fieldName                 |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
-	|Phase Config:General   |Available for Profiles    |<New-Profile>|GrantorPlanning       |                         |                          |	
+	|configurationCategory  |fieldName                 |fieldNewValue|coreComponentField    |
+	|Phase Config:General   |Available for Profiles    |<New-Profile>|GrantorPlanning       |	
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app 
 	Then I do not see "Planning" phase
@@ -24,8 +24,8 @@ Feature: Phase Config Component Scenarios
 	|configurationCategory|fieldName              |fieldOrignalValue    |filterId        |
 	|Phase Config         |Tab Display Label      |Planning             |ApiGeneratedId:0|                    
 	Given I setup test configuration as below:
-	|configurationCategory  |fieldName                 |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
-	|Phase Config:General   |Tab Display Label         |Automation   |GrantorPlanning       |                         |                          |
+	|configurationCategory  |fieldName                 |fieldNewValue|coreComponentField    |
+	|Phase Config:General   |Tab Display Label         |Automation   |GrantorPlanning       |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app 
 	Then I see "Automation" phase
@@ -36,8 +36,8 @@ Feature: Phase Config Component Scenarios
 	|configurationCategory|fieldName              |fieldOrignalValue    |filterId        |
 	|Phase Config         |Sequence               |2                    |ApiGeneratedId:0|                    
 	Given I setup test configuration as below:
-	|configurationCategory  |fieldName  |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
-	|Phase Config:General   |Sequence   |0            |GrantorPlanning       |                         |                          |
+	|configurationCategory  |fieldName  |fieldNewValue|coreComponentField    |
+	|Phase Config:General   |Sequence   |0            |GrantorPlanning       |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app 
 	Then I see "Planning" phase at position "0"
@@ -48,8 +48,8 @@ Feature: Phase Config Component Scenarios
 	|configurationCategory|fieldName              |fieldOrignalValue    |filterId        |
 	|Phase Config         |Total Charts Allowed   |3                    |ApiGeneratedId:0|                    
 	Given I setup test configuration as below:
-	|configurationCategory  |fieldName              |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
-	|Phase Config:General   |Total Charts Allowed   |2            |GrantorPlanning       |                         |                          |
+	|configurationCategory  |fieldName              |fieldNewValue|coreComponentField    |
+	|Phase Config:General   |Total Charts Allowed   |2            |GrantorPlanning       |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	Then I see "2" charts are displayed
@@ -60,8 +60,8 @@ Feature: Phase Config Component Scenarios
 	|configurationCategory|fieldName              |fieldOrignalValue    |filterId        |
 	|Phase Config         |Body Bottom Page URL   |                     |ApiGeneratedId:0|                    
 	Given I setup test configuration as below:
-	|configurationCategory  |fieldName              |fieldNewValue                       |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
-	|Phase Config:General   |Body Bottom Page URL   |/apex/GNT__ChartsView?t=Planning    |GrantorPlanning       |                         |                          |
+	|configurationCategory  |fieldName              |fieldNewValue                       |coreComponentField    |
+	|Phase Config:General   |Body Bottom Page URL   |/apex/GNT__ChartsView?t=Planning    |GrantorPlanning       |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	Then I charts are displayed at "Bottom"
@@ -72,26 +72,21 @@ Feature: Phase Config Component Scenarios
 	|configurationCategory|fieldName   |fieldOrignalValue    |filterId        |
 	|Phase Config         |Is Phase    |true                 |ApiGeneratedId:0|                    
 	Given I setup test configuration as below:
-	|configurationCategory  |fieldName   |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
-	|Phase Config:General   |Is Phase    |false        |GrantorPlanning       |                         |                          |
+	|configurationCategory  |fieldName   |fieldNewValue|coreComponentField    |
+	|Phase Config:General   |Is Phase    |false        |GrantorPlanning       |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app 
 	Then I do not see "Planning" in task summary by phase
 	
-	@34589 @all @validateSettingAsDefaultLandingTab-gplanning @check
+	@34589 @all @validateSettingAsDefaultLandingTab-gplanning
 	Scenario: Select planning as "Default landing tab" in config. and validate Planning is default landing page
 	Given I have default configuration as below:
-	|configurationCategory |fieldName           |fieldOrignalValue|coreComponentField |coreCOmponentSubFieldName|coreComponentSubFieldValue|
-	|Phase Config          |Default Landing Tab?|true              |GrantorHome       |                         |                          |
+	|configurationCategory |fieldName           |fieldOrignalValue|filterId         |
+	|Phase Config          |Default Landing Tab?|true             |ApiGeneratedId:0 |
 	Given I setup test configuration as below:
-	|configurationCategory  |fieldName           |fieldNewValue |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
-	|Phase Config:General   |Default Landing Tab?|false         |GrantorHome           |                         |                          |
-	|Phase Config:General   |Default Landing Tab?|true          |GrantorPlanning       |                         |                          |
-	#Given I have default configuration for "Phase Config" field "Default Landing Tab?" as "true" with filter "GrantorHome" for field ""
-	#Given I setup filter clause for "General" in "GrantorHome" for field "" having value ""
-	#And I reconfigure "Phase Config" field "Default Landing Tab?" as "false"
-	#Given I setup filter clause for "General" in "GrantorPlanning" for field "" having value ""
-	#When I reconfigure "Phase Config" field "Default Landing Tab?" as "true"	 	
+	|configurationCategory  |fieldName           |fieldNewValue |coreComponentField|
+	|Phase Config:General   |Default Landing Tab?|false         |GrantorHome       |
+	|Phase Config:General   |Default Landing Tab?|true          |GrantorPlanning   |	 	
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app 
 	Then I see "GrantorPlanning" in current url
@@ -102,8 +97,8 @@ Feature: Phase Config Component Scenarios
 	|configurationCategory|fieldName     |fieldOrignalValue    |filterId        |
 	|Phase Config         |Tab Icon Css  |                     |ApiGeneratedId:0|                    
 	Given I setup test configuration as below:
-	|configurationCategory  |fieldName   |fieldNewValue               |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
-	|Phase Config:General   |Tab Icon Css|govgrants_config:TabIconCss |GrantorPlanning       |                         |                          |
+	|configurationCategory  |fieldName   |fieldNewValue               |coreComponentField    |
+	|Phase Config:General   |Tab Icon Css|govgrants_config:TabIconCss |GrantorPlanning       |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app 
 	Then I see book icon as "Planning" tab
@@ -114,8 +109,8 @@ Feature: Phase Config Component Scenarios
 	|configurationCategory|fieldName             |fieldOrignalValue    |filterId        |
 	|Phase Config         |Total Charts Allowed  |3                    |ApiGeneratedId:0|                    
 	Given I setup test configuration as below:
-	|configurationCategory  |fieldName           |fieldNewValue |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
-	|Phase Config:General   |Total Charts Allowed|1             |GrantorPlanning       |                         |                          |
+	|configurationCategory  |fieldName           |fieldNewValue |coreComponentField    |
+	|Phase Config:General   |Total Charts Allowed|1             |GrantorPlanning       |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	Then I see "1" charts are displayed

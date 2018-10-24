@@ -6,9 +6,12 @@ Feature: Flex Grid Component Scenarios
 
 	@34320 @all @changeOfN2GgridHeaderGoalOjective-ProgramStrategicGoals
 	Scenario: changing information section header name of flex grid in configuratin and validating inside planning-programs view icon - plan subtab
-	Given I have default configuration for "Flex Grid" field "Header" as "Goals Objectives" with filter "" for field ""
-	Given I setup filter clause for "General" in "ProgramStrategicGoals" for field "" having value ""
-	When I reconfigure "Flex Grid" field "Header" as "Automation Goals Objectives"
+	Given I have default configuration as below:
+	|configurationCategory |fieldName  |fieldOrignalValue    |filterId        |
+	|Flex Grid             |Header     |Goals Objectives     |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory|fieldName      |fieldNewValue                   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Grid:General    |Header         |Automation Goals Objectives     |ProgramStrategicGoals |                         |                          | 
 	When I login as "Automation" User
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
@@ -18,9 +21,12 @@ Feature: Flex Grid Component Scenarios
 	
 	@34321 @all @disableMenuOptionGoalObjective-ProgramStrategicGoals
 	Scenario: Disable menu bars for Goal Objective flex grid in configuratin and validating inside planning-programs view icon - plan subtab
-	Given I have default configuration for "Flex Grid" field "Disable Menu" as "false" with filter "" for field ""
-	Given I setup filter clause for "General" in "ProgramStrategicGoals" for field "" having value ""
-	When I reconfigure "Flex Grid" field "Disable Menu" as "true"
+	Given I have default configuration as below:
+	|configurationCategory |fieldName        |fieldOrignalValue    |filterId        |
+	|Flex Grid             |Disable Menu     |false                |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory|fieldName      |fieldNewValue   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Grid:General    |Disable Menu   |true            |ProgramStrategicGoals |                         |                          | 
 	When I login as "Automation" User
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
@@ -30,9 +36,12 @@ Feature: Flex Grid Component Scenarios
 	
 	@34323 @all @disableQuicksearchfromN2GFlexGrid-ProgramStrategicGoals
 	Scenario: Disable quick search bar for Goal Objective flex grid in configuratin and validating inside planning-programs view icon - plan subtab
-	Given I have default configuration for "Flex Grid" field "Enable Quick Search" as "true" with filter "" for field ""
-	Given I setup filter clause for "General" in "ProgramStrategicGoals" for field "" having value ""
-	When I reconfigure "Flex Grid" field "Enable Quick Search" as "false"
+	Given I have default configuration as below:
+	|configurationCategory |fieldName           |fieldOrignalValue    |filterId        |
+	|Flex Grid             |Enable Quick Search |true                 |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory|fieldName             |fieldNewValue    |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Grid:General    |Enable Quick Search   |false            |ProgramStrategicGoals |                         |                          |
 	When I login as "Automation" User
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
@@ -42,9 +51,12 @@ Feature: Flex Grid Component Scenarios
 	
 	@34325 @all @disableExport-ProgramStrategicGoals
 	Scenario: Disable download PDF/Excel from for Goal Objective menu flex grid in configuratin and validating inside planning-programs view icon - plan subtab
-	Given I have default configuration for "Flex Grid" field "Enable Export" as "true" with filter "" for field ""
-	Given I setup filter clause for "General" in "ProgramStrategicGoals" for field "" having value ""
-	When I reconfigure "Flex Grid" field "Enable Export" as "false"
+	Given I have default configuration as below:
+	|configurationCategory |fieldName           |fieldOrignalValue    |filterId        |
+	|Flex Grid             |Enable Export       |true                 |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory|fieldName             |fieldNewValue    |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Grid:General    |Enable Export         |false            |ProgramStrategicGoals |                         |                          |
 	When I login as "Automation" User
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
@@ -55,9 +67,12 @@ Feature: Flex Grid Component Scenarios
 	
 	@34327 @all @disableFlexTableFieldName-ProgramStrategicGoals
 	Scenario: Remove flex table header date column inside Goal Objective configuratin and validating inside planning-programs view icon - plan subtab
-	Given I have default configuration for "Flex Grid" field "Display Field Names" as "Type__c,Title__c,Description__c,Status__c,DueDate__c" with filter "" for field ""
-	Given I setup filter clause for "General" in "ProgramStrategicGoals" for field "" having value ""
-	When I reconfigure "Flex Grid" field "Display Field Names" as "Type__c,Title__c,Description__c,Status__c"
+	Given I have default configuration as below:
+	|configurationCategory |fieldName           |fieldOrignalValue                                    |filterId        |
+	|Flex Grid             |Display Field Names |Type__c,Title__c,Description__c,Status__c,DueDate__c |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory|fieldName             |fieldNewValue                             |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Grid:General    |Display Field Names   |Type__c,Title__c,Description__c,Status__c |ProgramStrategicGoals |                         |                          |
 	When I login as "Automation" User
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
@@ -67,9 +82,12 @@ Feature: Flex Grid Component Scenarios
 	
 	@34332 @all @hideViewIconForPPMGVflexTable-Programs
 	Scenario: Hide view context from PPMGV view cofniguration and validate inside planning-programs view icon - plan subtab - Goal Objectives flex table
-	Given I have default configuration for "Flex Grid Action" field "Hide for context" as "" with filter "" for field ""
-	Given I setup filter clause for "Flex Table Action" in "ProgramStrategicGoals" for field "Name" having value "View"
-	When I reconfigure "Flex Grid Action" field "Hide For Context" as "View"
+	Given I have default configuration as below:
+	|configurationCategory                 |fieldName           |fieldOrignalValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Grid Action:Flex Table Action    |Hide for context    |                 |ProgramStrategicGoals |Name                     |View                      |
+	Given I setup test configuration as below:
+	|configurationCategory                 |fieldName           |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Grid Action:Flex Table Action    |Hide For Context    |View         |ProgramStrategicGoals |Name                     |View                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
