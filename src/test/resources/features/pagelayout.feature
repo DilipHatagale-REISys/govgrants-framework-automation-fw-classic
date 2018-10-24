@@ -94,8 +94,8 @@ Feature: Page Layout Component Scenarios
 	@34069 @all @hideForProfile-gPlanning
 	Scenario: Hide Submit for approval for specific profile from configuration and validating it for Created status view icon
 	Given I have default configuration as below:
-	|configurationCategory |fieldName           |fieldOrignalValue    |filterId        |
-	|Page Layout Action    |Hide for profile    |                     |ApiGeneratedId:0|
+	|configurationCategory |fieldName           |fieldOrignalValue|filterId        |
+	|Page Layout Action    |Hide for profile    |                 |ApiGeneratedId:0|
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName           |fieldNewValue              |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Layout Action    |Hide for profile    |System Administrator       |Grantee State Program |Name                     |Submit For Approval          |
