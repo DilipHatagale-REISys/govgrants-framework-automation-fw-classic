@@ -5,9 +5,12 @@ Feature: Enhanced Flex Grid Component Scenarios
 
     @35432 @all @disablingAdvanceFilterForEnhancedGrid-gPlanning
 	Scenario: validate disabling of advance filter from planning-Program enhance flex grid
-	Given I have default configuration for "Flex Grid" field "Enable Filter" as "true" with filter "" for field ""
-	Given I setup filter clause for "General" in "TmpActiveGrantsGrid" for field "" having value ""
-	When I reconfigure "Flex Grid" field "Enable Filter" as "false"
+	Given I have default configuration as below:
+	|configurationCategory |fieldName         |fieldOrignalValue    |filterId        |
+	|Flex Grid             |Enable Filter     |true                 |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory|fieldName      |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Grid:General    |Enable Filter  |false        |TmpActiveGrantsGrid   |                         |                          | 
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
@@ -17,9 +20,12 @@ Feature: Enhanced Flex Grid Component Scenarios
     
     @35433 @all @disablingMenuIconForEnhancedGrid-gPlanning
     Scenario: validate disabling of menu icon from Planning- Program enhanced flex grid
-    Given I have default configuration for "Flex Grid" field "Disable Menu" as "false" with filter "" for field ""
-	Given I setup filter clause for "General" in "TmpActiveGrantsGrid" for field "" having value ""
-	When I reconfigure "Flex Grid" field "Disable Menu" as "true"
+    Given I have default configuration as below:
+	|configurationCategory |fieldName         |fieldOrignalValue    |filterId        |
+	|Flex Grid             |Disable Menu      |false                |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory|fieldName      |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Grid:General    |Disable Menu   |true         |TmpActiveGrantsGrid   |                         |                          | 
     When I login as "Automation" User 
     When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
     When I search for "Test program for Automation"
@@ -29,9 +35,12 @@ Feature: Enhanced Flex Grid Component Scenarios
     
     @35436 @all @changeOfFlexTableTitleForEnhancedGrid-gPlanning
     Scenario: validate after changing name of enhanced flex grid title inside planning-program enhanced flex grid
-    Given I have default configuration for "Flex Grid" field "Label" as "Monitoring Schedule For All Active Grants" with filter "" for field ""
-	Given I setup filter clause for "Flex Table List" in "TmpActiveGrantsGrid" for field "Name" having value "FLV-2539"
-	When I reconfigure "Flex Grid" field "Label" as "Automation Enhanced Grid"
+    Given I have default configuration as below:
+	|configurationCategory    |fieldName         |fieldOrignalValue                        |filterId        |
+	|Flex Grid:Flex Table List|Label             |Monitoring Schedule For All Active Grants|ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory            |fieldName      |fieldNewValue            |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Grid:Flex Table List        |Label          |Automation Enhanced Grid |TmpActiveGrantsGrid   |Name                     |FLV-2539                  | 
     When I login as "Automation" User 
     When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
     When I search for "Test program for Automation"
@@ -41,9 +50,15 @@ Feature: Enhanced Flex Grid Component Scenarios
 	
 	@35438 @all @disablingExportFileForEnhancedGrid-gPlanning
 	Scenario: validate disabling of PDF/Excel download from menu option in enhanced flex grid planning- Program enhanced flex grid
-	Given I have default configuration for "Flex Grid" field "Enable Export" as "true" with filter "" for field ""
-	Given I setup filter clause for "General" in "TmpActiveGrantsGrid" for field "" having value ""
-	When I reconfigure "Flex Grid" field "Enable Export" as "false"
+	 Given I have default configuration as below:
+	|configurationCategory |fieldName         |fieldOrignalValue|filterId        |
+	|Flex Grid             |Enable Export     |true             |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName      |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Grid:General     |Enable Export  |false        |TmpActiveGrantsGrid   |                         |                          | 
+	#Given I have default configuration for "Flex Grid" field "Enable Export" as "true" with filter "" for field ""
+	#Given I setup filter clause for "General" in "TmpActiveGrantsGrid" for field "" having value ""
+	#When I reconfigure "Flex Grid" field "Enable Export" as "false"
     When I login as "Automation" User 
     When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
     When I search for "Test program for Automation"
@@ -54,9 +69,12 @@ Feature: Enhanced Flex Grid Component Scenarios
 	
 	@35439 @all @disblingQuickSearchForEnhancedGrid-gPlanning
 	Scenario: validate disabling of quick search in enhanced flex grid planning-Program enhanced flex grid
-	Given I have default configuration for "Flex Grid" field "Enable Quick Search" as "true" with filter "" for field ""
-	Given I setup filter clause for "General" in "TmpActiveGrantsGrid" for field "" having value ""
-	When I reconfigure "Flex Table" field "Enable Quick Search" as "false"
+	 Given I have default configuration as below:
+	|configurationCategory |fieldName           |fieldOrignalValue|filterId        |
+	|Flex Grid             |Enable Quick Search |true             |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName           |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table:General    |Enable Quick Search |false        |TmpActiveGrantsGrid   |                         |                          | 
 	When I login as "Automation" User 
     When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
     When I search for "Test program for Automation"
@@ -66,10 +84,13 @@ Feature: Enhanced Flex Grid Component Scenarios
 	
 	@35437 @all @disablingAmountTotalForFlexForEnhancedGrid-gPlanning
 	Scenario: validate disbaling of total row count in enhanced flex grid planning-Program enhanced flex grid
-	Given I have default configuration for "Flex Grid" field "Enable Total Records Count" as "true" with filter "" for field ""
-	Given I setup filter clause for "General" in "TmpActiveGrantsGrid" for field "" having value ""
-	When I reconfigure "Flex Grid" field "Enable Total Records Count" as "false"
-    When I login as "Automation" User 
+	Given I have default configuration as below:
+	|configurationCategory |fieldName                  |fieldOrignalValue|filterId        |
+	|Flex Grid             |Enable Total Records Count |true             |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName                  |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Grid:General     |Enable Total Records Count |false        |TmpActiveGrantsGrid   |                         |                          | 
+	When I login as "Automation" User 
     When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
     When I search for "Test program for Automation"
     When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
@@ -78,9 +99,12 @@ Feature: Enhanced Flex Grid Component Scenarios
 	
 	@35434 @all @enableAutoIndexForEnhancedGrid-gPlanning
 	Scenario: validate enable auto index for details inside enhanced flex grid planning-Program enhanced flex grid
-	Given I have default configuration for "Flex Grid" field "Enable Auto Index" as "false" with filter "" for field "" 
-	Given I setup filter clause for "General" in "TmpActiveGrantsGrid" for field "" having value ""
-	When I reconfigure "Flex Grid" field "Enable Auto Index" as "true"
+	Given I have default configuration as below:
+	|configurationCategory |fieldName            |fieldOrignalValue|filterId        |
+	|Flex Grid             |Enable Auto Index    |false            |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName           |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Grid:General     |Enable Auto Index   |true         |TmpActiveGrantsGrid   |                         |                          |
 	When I login as "Automation" User 
     When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
     When I search for "Test program for Automation"
@@ -90,10 +114,13 @@ Feature: Enhanced Flex Grid Component Scenarios
 	
 	@35442 @all @enableRecordSelectionForFlexForEnhancedGrid-gPlanning
 	Scenario: validate enabling of record selection check boxes in enhanced flex grid planning-Program enhanced flex grid
-    Given I have default configuration for "Flex Grid" field "Enable Record Selection" as "false" with filter "" for field ""
-	Given I setup filter clause for "General" in "TmpActiveGrantsGrid" for field "" having value ""
-	When I reconfigure "Flex Grid" field "Enable Record Selection" as "true"
-	When I login as "Automation" User 
+	Given I have default configuration as below:
+	|configurationCategory |fieldName              |fieldOrignalValue|filterId        |
+	|Flex Grid             |Enable Record Selection|false            |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName              |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Grid:General     |Enable Record Selection|true         |TmpActiveGrantsGrid   |                         |                          |
+    When I login as "Automation" User 
     When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
     When I search for "Test program for Automation"
     When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
@@ -102,8 +129,14 @@ Feature: Enhanced Flex Grid Component Scenarios
 	
 	@35441 @all @editActionOpensInSameWindowForEnhancedGrid-gPlanning
 	Scenario: validate enhanced flex grid action field Edit opens in same window planning-Program enhanced flex grid
-	Given I setup filter clause for "Flex Table Action" in "TmpActiveGrantsGrid" for field "Name" having value "Edit"
-	When I reconfigure "Flex Table Action" field "Where To Open ?" as "same window"
+	Given I have default configuration as below:
+	|configurationCategory |fieldName         |fieldOrignalValue|filterId        |
+	|Flex Table Action     |Where To Open ?   |same window      |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName         |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table Action     |Where To Open ?   |same window  |TmpActiveGrantsGrid   |Name                     |Edit                      |
+	#Given I setup filter clause for "Flex Table Action" in "TmpActiveGrantsGrid" for field "Name" having value "Edit"
+	#When I reconfigure "Flex Table Action" field "Where To Open ?" as "same window"
 	When I login as "Automation" User 
     When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
     When I search for "Test program for Automation"
@@ -114,9 +147,15 @@ Feature: Enhanced Flex Grid Component Scenarios
 	
 	@35440 @all @editActionOpensInOverLayWindowForEnhancedGrid-gPlanning
 	Scenario: validate flex table action field- Edit opens in overlay window
-	Given I have default configuration for "Flex Table Action" field "Where To Open ?" as "same window" with filter "" for field ""
-	Given I setup filter clause for "Flex Table Action" in "TmpActiveGrantsGrid" for field "Name" having value "Edit"
-	When I reconfigure "Flex Table Action" field "Where To Open ?" as "Modal"
+	Given I have default configuration as below:
+	|configurationCategory |fieldName         |fieldOrignalValue|filterId        |
+	|Flex Table Action     |Where To Open ?   |same window      |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName         |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table Action     |Where To Open ?   |Modal        |TmpActiveGrantsGrid   |Name                     |Edit                      |
+	#Given I have default configuration for "Flex Table Action" field "Where To Open ?" as "same window" with filter "" for field ""
+	#Given I setup filter clause for "Flex Table Action" in "TmpActiveGrantsGrid" for field "Name" having value "Edit"
+	#When I reconfigure "Flex Table Action" field "Where To Open ?" as "Modal"
 	When I login as "Automation" User 
     When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
     When I search for "Test program for Automation"
@@ -127,9 +166,12 @@ Feature: Enhanced Flex Grid Component Scenarios
 	
 	@35435 @all @addingfieldNamesOfDifferentDataTypesForEnhancedGrid-gPlanning
 	Scenario Outline: validate adding field names for different data types in enhanced flex grid planning-Program enhanced flex grid
-	Given I have default configuration for "Flex Grid" field "Display Field Names" as "<defaultFieldsApi>" with filter "" for field ""
-	Given I setup filter clause for "General" in "TmpActiveGrantsGrid" for field "" having value ""
-	When I reconfigure "Flex Grid" field "Display Field Names" as "<newFieldsApi>"
+	Given I have default configuration as below:
+	|configurationCategory |fieldName          |fieldOrignalValue |filterId        |
+	|Flex Grid             |Display Field Names|<defaultFieldsApi>|ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName          |fieldNewValue |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Grid:General     |Display Field Names|<newFieldsApi>|TmpActiveGrantsGrid   |                         |                          |
 	When I login as "Automation" User 
     When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
     When I search for "Test program for Automation"

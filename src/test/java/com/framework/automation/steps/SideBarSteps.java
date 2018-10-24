@@ -1,6 +1,7 @@
 package com.framework.automation.steps;
 
 import com.automation.rei.controller.Controller;
+import com.automation.rei.handlers.GovGrantsHandler;
 import com.automation.rei.handlers.Handlers;
 import com.framework.automation.pageobject.SideBarPage;
 
@@ -10,8 +11,8 @@ import cucumber.api.java.en.When;
 public class SideBarSteps {
     SideBarPage sidebarPage;
 
-    public SideBarSteps(Controller controller, Handlers handler) {
-        sidebarPage = new SideBarPage(controller, handler);
+    public SideBarSteps(Controller controller, Handlers handler,GovGrantsHandler govgrants) {
+        sidebarPage = new SideBarPage(controller, handler,govgrants);
     }
 
     @When("^I click on  \"([^\"]*)\" inside \"([^\"]*)\" in side bar sub menu$")

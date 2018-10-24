@@ -4,21 +4,22 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import com.automation.rei.controller.Controller;
+import com.automation.rei.handlers.GovGrantsHandler;
 import com.automation.rei.handlers.Handlers;
 import com.framework.automation.projectmanager.GovGrantsManager;
 
 public class FormPage extends GovGrantsManager {
 
-	/******* "Variables and Locators" *****************/
+    /******* "Variables and Locators" *****************/
 
-	private final By businessFormSection;
+    private final By businessFormSection;
 
-	public FormPage(Controller controller, Handlers reiDriver) {
-		super(controller, reiDriver);
+    public FormPage(Controller controller, Handlers reiDriver, GovGrantsHandler govgrants) {
+        super(controller, reiDriver, govgrants);
 
-		businessFormSection = By.xpath(
-				"//a//span[contains(text(),'Business Forms')]/ancestor::div[contains(@class,'panel panel-default ng-scope')]");
-	}
+        businessFormSection = By.xpath(
+                "//a//span[contains(text(),'Business Forms')]/ancestor::div[contains(@class,'panel panel-default ng-scope')]");
+    }
 
 	/******* "Key Methods with complete functionality - public" *****************/
 

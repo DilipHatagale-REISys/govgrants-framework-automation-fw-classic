@@ -1,6 +1,7 @@
 package com.framework.automation.steps;
 
 import com.automation.rei.controller.Controller;
+import com.automation.rei.handlers.GovGrantsHandler;
 import com.automation.rei.handlers.Handlers;
 import com.framework.automation.pageobject.PageLayoutPage;
 import cucumber.api.java.en.Then;
@@ -9,9 +10,9 @@ import cucumber.api.java.en.When;
 public class PageLayoutSteps {
 	PageLayoutPage pageLayoutPage;
 
-	public PageLayoutSteps(Controller controller, Handlers handler) {
-		pageLayoutPage = new PageLayoutPage(controller, handler);
-	}
+    public PageLayoutSteps(Controller controller, Handlers handler, GovGrantsHandler govgrants) {
+        pageLayoutPage = new PageLayoutPage(controller, handler, govgrants);
+    }
 
 	@When("^I click on \"([^\"]*)\" button in right header$")
 	public void clickbuttonOnRightHeader(String buttonName) {
@@ -117,4 +118,9 @@ public class PageLayoutSteps {
     public void asserPageBlockIsNotDisplayed(String titleName) {
         pageLayoutPage.assertPageBlockIsNotDisplayed(titleName);
     }
+	
+	@Then("^I see \"([^\"]*)\" shown at number \"([^\"]*)\" inside page block$")
+	public void assertSequenceOfPageBlock(String pageBlockName, String number) {
+		pageLayoutPage.assertSortingOfPageBlock(pageBlockName, Integer.parseInt(number));
+	}
 }

@@ -5,9 +5,12 @@ Feature: Forms Component Scenarios
 
 	@35095 @all @validateSkipFormForDownload-gapplications
 	Scenario: Setup skip form download for 'General Application Budget Form' in configuration and validating inside Applications view
-	Given I have default configuration for "Forms" field "Skip Form Download" as "false" with filter "" for field ""
-	Given I setup filter clause for "General" in "General Application Budget Form" for field "" having value ""
-	When I reconfigure "Forms" field "Skip Form Download" as "true"
+	Given I have default configuration as below:
+	|configurationCategory|fieldName             |fieldOrignalValue    |filterId        |
+	|Forms                |Skip Form Download    |false                |ApiGeneratedId:0|                    
+	Given I setup test configuration as below:
+	|configurationCategory  |fieldName                      |fieldNewValue|coreComponentField             |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Forms:General          |Skip Form Download             |true         |General Application Budget Form|                         |                          |
 	When I login as "Automation" User
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Applications" tab
 	When I search for "AP-755-198"
@@ -19,9 +22,15 @@ Feature: Forms Component Scenarios
 	
 	@35185 @all @validateBusinessFormsRemoval-gApplication
 	Scenario: Validate disabling of business form from config and validating inside Application view
-	Given I have default configuration for "Page Block" field "Is Active" as "true" with filter "" for field ""
-	Given I setup filter clause for "Page Block Detail" in "ApplicationView" for field "GNT__PageBlockTitle__c" having value "Business Forms"
-	When I reconfigure "Page Block" field "Is Active" as "false"
+	Given I have default configuration as below:
+	|configurationCategory |fieldName     |fieldOrignalValue|filterId        |
+	|Page Block            |Is Active     |true             |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory                  |fieldName     |fieldNewValue   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Block:Page Block Detail           |Is Active     |false           |ApplicationView       |GNT__PageBlockTitle__c   |Business Forms            |
+	#Given I have default configuration for "Page Block" field "Is Active" as "true" with filter "" for field ""
+	#Given I setup filter clause for "Page Block Detail" in "ApplicationView" for field "GNT__PageBlockTitle__c" having value "Business Forms"
+	#When I reconfigure "Page Block" field "Is Active" as "false"
 	When I login as "Automation" User
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Applications" tab
 	When I search for "AP-755-198"
@@ -31,9 +40,15 @@ Feature: Forms Component Scenarios
 	
 	@35189 @all @hidingPreviewActionItemForUsersInsideBusinessForms-gApplication
 	Scenario: Validate disabling preview of business form action item from config and validating inside Application view
-	Given I have default configuration for "Page Block Rule" field "Hide For User" as "" with filter "" for field ""
-	Given I setup filter clause for "Page Block Rule Detail" in "ApplicationView" for field "Name" having value "preview rule"
-	When I reconfigure "Page Block Rule" field "Hide For User" as "Internal"
+	Given I have default configuration as below:
+	|configurationCategory |fieldName     |fieldOrignalValue|coreComponentField     |filterId        |
+	|Page Block Rule       |Hide For User |                 |ApplicationView        |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory                  |fieldName     |fieldNewValue   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Block Rule:Page Block Rule Detail |Hide For User |Internal        |ApplicationView       |Name                     |preview rule              |
+	#Given I have default configuration for "Page Block Rule" field "Hide For User" as "" with filter "" for field ""
+	#Given I setup filter clause for "Page Block Rule Detail" in "ApplicationView" for field "Name" having value "preview rule"
+	#When I reconfigure "Page Block Rule" field "Hide For User" as "Internal"
 	When I login as "Automation" User
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Applications" tab
 	When I search for "AP-755-198"
@@ -43,9 +58,15 @@ Feature: Forms Component Scenarios
 	
 	@35193 @all @hidingViewActionItemForUsersInsideBusinessForms-gApplication
 	Scenario: Validate disabling View of business form action item from config and validating inside Application view
-	Given I have default configuration for "Page Block Rule" field "Hide For User" as "" with filter "" for field ""
-	Given I setup filter clause for "Page Block Rule Detail" in "ApplicationView" for field "Name" having value "View"
-	When I reconfigure "Page Block Rule" field "Hide For User" as "Internal"
+	Given I have default configuration as below:
+	|configurationCategory |fieldName     |fieldOrignalValue|coreComponentField     |filterId        |
+	|Page Block Rule       |Hide For User |                 |ApplicationView        |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory                  |fieldName     |fieldNewValue   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Block Rule:Page Block Rule Detail |Hide For User |Internal        |ApplicationView       |Name                     |View                      |
+	#Given I have default configuration for "Page Block Rule" field "Hide For User" as "" with filter "" for field ""
+	#Given I setup filter clause for "Page Block Rule Detail" in "ApplicationView" for field "Name" having value "View"
+	#When I reconfigure "Page Block Rule" field "Hide For User" as "Internal"
 	When I login as "Automation" User
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Applications" tab
 	When I search for "AP-755-198"
@@ -55,9 +76,12 @@ Feature: Forms Component Scenarios
 	
 	@35271 @all @changeLabelOfEditFormPageLayoutActionItem-gApplication
 	Scenario: Validate label change of edit action button at form page layout action from config and validating inside Application form view
-	Given I have default configuration for "Page Layout Action" field "Action Name" as "Edit" with filter "Name" for field "Edit Automation"
-	Given I setup filter clause for "Page Layout Action" in "Application Cover Page" for field "Name" having value "Edit"
-	When I reconfigure "Page Layout Action" field "Action Name" as "Edit Automation"
+	Given I have default configuration as below:
+	|configurationCategory |fieldName     |fieldOrignalValue|coreComponentField     |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Layout Action    |Action Name   |Edit             |Application Cover Page |Name                     |Edit Automation           |
+	Given I setup test configuration as below:
+	|configurationCategory  |fieldName     |fieldNewValue   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Layout Action     |Action Name   |Edit Automation |Application Cover Page|Name                         |Edit                  |
 	When I login as "Automation" User
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Applications" tab
 	When I search for "AP-755-198"
@@ -68,9 +92,12 @@ Feature: Forms Component Scenarios
 	
 	@35290 @all @hidingOfEditFormPageLayoutActionItemForUser-gApplication
 	Scenario: Validate disabling of edit action button at form page layout action from config and validating inside Application form view
-	Given I have default configuration for "Page Layout Action" field "Hide For User" as "" with filter "" for field ""
-	Given I setup filter clause for "Page Layout Action" in "Application Cover Page" for field "Name" having value "Edit"
-	When I reconfigure "Page Layout Action" field "Hide For User" as "Internal"
+	Given I have default configuration as below:
+	|configurationCategory |fieldName     |fieldOrignalValue|coreComponentField     |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Layout Action    |Hide For User |                 |Application Cover Page |Name                     |Edit                      |
+	Given I setup test configuration as below:
+	|configurationCategory  |fieldName     |fieldNewValue |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Layout Action     |Hide For User |Internal      |Application Cover Page|Name                         |Edit                  |
 	When I login as "Automation" User
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Applications" tab
 	When I search for "AP-755-198"

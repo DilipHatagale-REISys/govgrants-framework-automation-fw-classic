@@ -8,6 +8,7 @@ import org.testng.Assert;
 
 import com.automation.rei.controller.Controller;
 import com.automation.rei.exception.ReiFrameworkCustomException;
+import com.automation.rei.handlers.GovGrantsHandler;
 import com.automation.rei.handlers.Handlers;
 import com.framework.automation.projectmanager.GovGrantsManager;
 
@@ -19,8 +20,8 @@ public class ApprovalProcessPage extends GovGrantsManager {
 	/**
 	 * Constructor to handle dependency injection and framework library
 	 */
-	public ApprovalProcessPage(Controller controller, Handlers reiDriver) {
-		super(controller, reiDriver);
+	public ApprovalProcessPage(Controller controller, Handlers reiDriver, GovGrantsHandler govgrants) {
+		super(controller, reiDriver, govgrants);
 		approvalDecisionPannel = By.cssSelector("div>span>input[name='myRadio']");
 		approvalCommentTextBox = By.xpath("//div[@id='ApprovalDecisionComponent']//textarea");
 		submitButton = By.xpath("//input[@type='button' and @value='Submit']");

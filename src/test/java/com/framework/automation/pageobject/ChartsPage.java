@@ -4,18 +4,18 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 
 import com.automation.rei.controller.Controller;
+import com.automation.rei.handlers.GovGrantsHandler;
 import com.automation.rei.handlers.Handlers;
 import com.framework.automation.projectmanager.GovGrantsManager;
 
 public class ChartsPage extends GovGrantsManager {
 	/******* "Variables and Locators" *****************/
 
-	/**
-	 * Constructor to handle dependency injection and framework library
-	 */
-	public ChartsPage(Controller controller, Handlers reiDriver) {
-		super(controller, reiDriver);
-
+    /**
+     * Constructor to handle dependency injection and framework library
+     */
+    public ChartsPage(Controller controller, Handlers reiDriver,GovGrantsHandler govgrants) {
+        super(controller, reiDriver, govgrants);
 	}
 
 	/******* "Key Methods with complete functionality - public" *****************/

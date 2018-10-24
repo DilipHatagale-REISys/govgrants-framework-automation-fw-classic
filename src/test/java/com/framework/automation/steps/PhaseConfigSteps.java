@@ -1,6 +1,7 @@
 package com.framework.automation.steps;
 
 import com.automation.rei.controller.Controller;
+import com.automation.rei.handlers.GovGrantsHandler;
 import com.automation.rei.handlers.Handlers;
 import com.framework.automation.pageobject.PhaseConfigPage;
 
@@ -9,8 +10,8 @@ import cucumber.api.java.en.Then;
 public class PhaseConfigSteps {
     PhaseConfigPage phaseConfigPage;
 
-    public PhaseConfigSteps(Controller controller, Handlers handler) {
-        phaseConfigPage = new PhaseConfigPage(controller, handler);
+    public PhaseConfigSteps(Controller controller, Handlers handler,GovGrantsHandler govgrants) {
+        phaseConfigPage = new PhaseConfigPage(controller, handler, govgrants);
     }
 
     @Then("^I do not see \"([^\"]*)\" phase$")

@@ -5,23 +5,25 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import com.automation.rei.controller.Controller;
+import com.automation.rei.handlers.GovGrantsHandler;
 import com.automation.rei.handlers.Handlers;
 import com.framework.automation.projectmanager.GovGrantsManager;
 
 public class FlexGridPage extends GovGrantsManager {
-	/******* "Variables and Locators" *****************/
-	private final By programPerformanceMgmtGridViewMenuBars, ppmgvFlexTableHeader;
 
-	/**
-	 * Constructor to handle dependency injection and framework library
-	 */
-	public FlexGridPage(Controller controller, Handlers reiDriver) {
-		super(controller, reiDriver);
-		programPerformanceMgmtGridViewMenuBars = By.xpath(
-				"//div[@id='flexGridHeaderButtonsProgramPerformanceMgmtGridView']//span[contains(@class,'fa fa-bars')]");
-		ppmgvFlexTableHeader = By.xpath(
-				"//div[@class='panel-heading']/following-sibling::div[contains(@class,'panel-body')]//div/table/thead/tr[@class='n2gheader']");
-	}
+    /******* "Variables and Locators" *****************/
+    private final By programPerformanceMgmtGridViewMenuBars, ppmgvFlexTableHeader;
+
+    /**
+     * Constructor to handle dependency injection and framework library
+     */
+    public FlexGridPage(Controller controller, Handlers reiDriver, GovGrantsHandler govgrants) {
+        super(controller, reiDriver, govgrants);
+        programPerformanceMgmtGridViewMenuBars = By.xpath(
+                "//div[@id='flexGridHeaderButtonsProgramPerformanceMgmtGridView']//span[contains(@class,'fa fa-bars')]");
+        ppmgvFlexTableHeader = By.xpath(
+                "//div[@class='panel-heading']/following-sibling::div[contains(@class,'panel-body')]//div/table/thead/tr[@class='n2gheader']");
+    }
 
 	/******* "Key Methods with complete functionality - public" *****************/
 
@@ -224,4 +226,5 @@ public class FlexGridPage extends GovGrantsManager {
 		}
 		return flag;
 	}
+
 }
