@@ -1,6 +1,7 @@
 package com.framework.automation.steps;
 
 import com.automation.rei.controller.Controller;
+import com.automation.rei.handlers.GovGrantsHandler;
 import com.automation.rei.handlers.Handlers;
 import com.framework.automation.pageobject.FlexTablePage;
 import cucumber.api.java.en.Then;
@@ -9,8 +10,8 @@ import cucumber.api.java.en.When;
 public class FlexTableSteps {
     FlexTablePage flexTablePage;
 
-    public FlexTableSteps(Controller controller, Handlers handler) {
-        flexTablePage = new FlexTablePage(controller, handler);
+    public FlexTableSteps(Controller controller, Handlers handler, GovGrantsHandler govgrants) {
+        flexTablePage = new FlexTablePage(controller, handler, govgrants);
     }
 
     @When("^I click on top right parallel lines bar$")

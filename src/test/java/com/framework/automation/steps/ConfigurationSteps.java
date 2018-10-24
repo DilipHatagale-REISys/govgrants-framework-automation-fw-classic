@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.springframework.context.annotation.Description;
 
 import com.automation.rei.controller.Controller;
+import com.automation.rei.handlers.GovGrantsHandler;
 import com.automation.rei.handlers.Handlers;
 import com.framework.automation.projectmanager.GovGrantsManager;
 import com.framework.automation.projectmanager.ProjectWebServices;
@@ -16,8 +17,8 @@ public class ConfigurationSteps {
     GovGrantsManager govGrantsManager;
     ProjectWebServices projectAPI;
 
-    public ConfigurationSteps(Controller controller, Handlers handler, ProjectWebServices projectAPI) {
-        govGrantsManager = new GovGrantsManager(controller, handler);
+    public ConfigurationSteps(Controller controller, Handlers handler, ProjectWebServices projectAPI, GovGrantsHandler govgrants) {
+        govGrantsManager = new GovGrantsManager(controller, handler, govgrants);
         this.projectAPI = projectAPI;
     }
 

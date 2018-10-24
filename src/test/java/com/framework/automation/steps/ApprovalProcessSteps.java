@@ -2,6 +2,7 @@ package com.framework.automation.steps;
 
 import com.automation.rei.controller.Controller;
 import com.automation.rei.exception.ReiFrameworkCustomException;
+import com.automation.rei.handlers.GovGrantsHandler;
 import com.automation.rei.handlers.Handlers;
 import com.framework.automation.pageobject.ApprovalProcessPage;
 import cucumber.api.java.en.Then;
@@ -10,8 +11,8 @@ import cucumber.api.java.en.When;
 public class ApprovalProcessSteps {
     ApprovalProcessPage approvalProcesPage;
 
-    public ApprovalProcessSteps(Controller controller, Handlers handler) {
-        approvalProcesPage = new ApprovalProcessPage(controller, handler);
+    public ApprovalProcessSteps(Controller controller, Handlers handler, GovGrantsHandler govgrants) {
+        approvalProcesPage = new ApprovalProcessPage(controller, handler, govgrants);
     }
 
     @When("^I start the approval with subject \"([^\"]*)\"$")

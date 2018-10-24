@@ -1,6 +1,7 @@
 package com.framework.automation.steps;
 
 import com.automation.rei.controller.Controller;
+import com.automation.rei.handlers.GovGrantsHandler;
 import com.automation.rei.handlers.Handlers;
 import com.framework.automation.pageobject.StepProgressBarPage;
 
@@ -10,8 +11,8 @@ public class StepProgressBarSteps {
 
 	StepProgressBarPage stepProgressBarPage;
 
-	public StepProgressBarSteps(Controller controller, Handlers handler) {
-		stepProgressBarPage = new StepProgressBarPage(controller, handler);
+	public StepProgressBarSteps(Controller controller, Handlers handler,GovGrantsHandler govgrants) {
+		stepProgressBarPage = new StepProgressBarPage(controller, handler,govgrants);
 	}
 
 	@Then("^I see step progress bar is not displayed$")

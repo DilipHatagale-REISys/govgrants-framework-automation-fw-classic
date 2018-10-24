@@ -1,6 +1,7 @@
 package com.framework.automation.steps;
 
 import com.automation.rei.controller.Controller;
+import com.automation.rei.handlers.GovGrantsHandler;
 import com.automation.rei.handlers.Handlers;
 import com.framework.automation.pageobject.ChartsPage;
 
@@ -10,8 +11,8 @@ import cucumber.api.java.en.When;
 public class ChartsSteps {
     ChartsPage chartsPage;
 
-    public ChartsSteps(Controller controller, Handlers handler) {
-        chartsPage = new ChartsPage(controller, handler);
+    public ChartsSteps(Controller controller, Handlers handler, GovGrantsHandler govgrants) {
+        chartsPage = new ChartsPage(controller, handler, govgrants);
     }
 
     @When("^I click on menu icon of chart \"([^\"]*)\"$")

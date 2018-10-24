@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import com.automation.rei.controller.Controller;
+import com.automation.rei.handlers.GovGrantsHandler;
 import com.automation.rei.handlers.Handlers;
 import com.framework.automation.projectmanager.GovGrantsManager;
 
@@ -17,8 +18,8 @@ public class PageLayoutPage extends GovGrantsManager {
     /**
      * Constructor to handle dependency injection and framework library
      */
-    public PageLayoutPage(Controller controller, Handlers reiDriver) {
-        super(controller, reiDriver);
+    public PageLayoutPage(Controller controller, Handlers reiDriver, GovGrantsHandler govgrants) {
+        super(controller, reiDriver, govgrants);
         overViewHeader = By.cssSelector("h2.panel-title>div>span.customLabelstyle");
         overViewTitle = By.cssSelector("h2.panel-title>div>span.overview-title");
         pageInstructionText = By.cssSelector("div.article>div");

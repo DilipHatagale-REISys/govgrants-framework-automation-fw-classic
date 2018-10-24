@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import com.automation.rei.controller.Controller;
+import com.automation.rei.handlers.GovGrantsHandler;
 import com.automation.rei.handlers.Handlers;
 import com.framework.automation.projectmanager.GovGrantsManager;
 
@@ -17,8 +18,8 @@ public class StepProgressBarPage extends GovGrantsManager {
 	/**
 	 * Constructor to handle dependency injection and framework library
 	 */
-	public StepProgressBarPage(Controller controller, Handlers reiDriver) {
-		super(controller, reiDriver);
+	public StepProgressBarPage(Controller controller, Handlers reiDriver, GovGrantsHandler govgrants) {
+		super(controller, reiDriver, govgrants);
 
 		stepProgressBar = By.xpath("//div[@class='container-fluid']//*[@id='progressBarId']//ol//li");
 	}
