@@ -6,6 +6,7 @@ import com.automation.rei.handlers.Handlers;
 import com.framework.automation.pageobject.FormPage;
 
 import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 
 public class FormStep {
     FormPage formPage;
@@ -27,5 +28,20 @@ public class FormStep {
     @Then("^I do not see \"([^\"]*)\" on page \"([^\"]*)\" of \"([^\"]*)\" pdf file$")
     public void assertTExtNotDisplayed(String text, String pageNumber, String fileName) {
         formPage.assertTextNotDisplayedInPDF(text, Integer.parseInt(pageNumber), fileName);
+    }
+
+    @When("^I click on \"([^\"]*)\" icon of form \"([^\"]*)\" program in flex table$")
+    public void clickAnyIconInFlexTable(String iconName, String programSubject) {
+        formPage.clickFormActionIconsForSpecificSubject(programSubject, iconName);
+    }
+
+    @Then("^I see changed label as \"([^\"]*)\" of action item inside form page layout$")
+    public void assertRenameSubHeaderContentName(String actionButtonName) {
+        formPage.assertChangedButtonLabelDisplayed(actionButtonName);
+    }
+
+    @Then("^I see \"([^\"]*)\" of action item inside form page layout is not displayed$")
+    public void assertEditActionButtonAtFormDetailPage(String actionButtonName) {
+        formPage.assertEditActionButtonVisibility(actionButtonName);
     }
 }

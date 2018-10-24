@@ -13,7 +13,7 @@ public class PageLayoutPage extends GovGrantsManager {
 
     /******* "Variables and Locators" *****************/
 
-    private final By overViewHeader, overViewTitle, pageInstructionText;
+    private final By overViewHeader, overViewTitle, pageInstructionText, headerInstructionText, headerOverviewTab;
 
     /**
      * Constructor to handle dependency injection and framework library
@@ -23,6 +23,8 @@ public class PageLayoutPage extends GovGrantsManager {
         overViewHeader = By.cssSelector("h2.panel-title>div>span.customLabelstyle");
         overViewTitle = By.cssSelector("h2.panel-title>div>span.overview-title");
         pageInstructionText = By.cssSelector("div.article>div");
+        headerInstructionText = By.cssSelector("div.tabheaderinstruction");
+        headerOverviewTab = By.xpath("//div[@class='panel-body']//span[contains(text(),'ID')]");
     }
 
     /******* "Key Methods with complete functionality - public" *****************/
@@ -105,6 +107,97 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public void assertHeaderButtonsNotDisplayed(String buttonName) {
         Assert.assertTrue(isHeaderButtonDisplayed(buttonName));
+    }
+
+    /**
+     * assert true if header button inside edit detail page as per name is displayed
+     * 
+     * @param buttonName
+     */
+    public void assertHeaderButtonsDisplayed(String buttonName) {
+        Assert.assertTrue(isHeaderButtonDisplayed(buttonName));
+    }
+
+    /**
+     * assert true if sub tab inside detail page as per name is not displayed
+     * 
+     * @param subTabName
+     */
+    public void assertSubTabButtonsNotDisplayed(String subTabName) {
+        Assert.assertTrue(isSubTabButtonDisplayed(subTabName));
+    }
+
+    /**
+     * 
+     * @param subTabName
+     * @param number
+     */
+    public void assertSortingOfSubTab(String subTabName, int number) {
+        Assert.assertTrue(isSubTabSequence(subTabName, number));
+    }
+
+    /**
+     * assert true if correct header instruction text is displayed
+     */
+    public void assertHeaderInstructionText(String headerText) {
+        Assert.assertTrue(isHeaderInstructionTextDisplayed(headerText));
+    }
+
+    /**
+     * assert true if changed title of sub tab inside detail page as per name is
+     * displayed
+     * 
+     * @param subTabName
+     */
+    public void assertChangedTitleOfSubTab(String subTabName) {
+        Assert.assertTrue(isChangedSubTabTitleDisplayed(subTabName));
+    }
+
+    /**
+     * assert true if changed icon css of sub tab inside detail page as per name is
+     * displayed
+     * 
+     * @param subTabName
+     */
+    public void assertSubTabIconDisplayed(String subTabName) {
+        Assert.assertTrue(reiDriver.WaitFor()
+                .WaitForElementToBePresent(By.xpath(
+                        "//div[@id='myTabs']/ul/li/a[@name='" + subTabName + "']//i[contains(@class,'fa-pencil')]"))
+                .isDisplayed());
+    }
+
+    /**
+     * assert true if header overview tab inside detail page is displayed
+     */
+    public void assertHeaderOverviewTabDisplayed() {
+        Assert.assertTrue(isHeaderOviewTabDisplayed());
+    }
+
+    /**
+     * assert if changed page block title is displayed
+     * 
+     * @param titleName
+     */
+    public void assertChangedPageBlockTitleDisplayed(String titleName) {
+        Assert.assertTrue(isPageBlockTitleDisplayed(titleName));
+    }
+
+    /**
+     * assert if page block is not displayed
+     * 
+     * @param titleName
+     */
+    public void assertPageBlockIsNotDisplayed(String titleName) {
+        Assert.assertFalse(isPageBlockTitleDisplayed(titleName));
+    }
+
+    /**
+     * 
+     * @param pageBlockName
+     * @param number
+     */
+    public void assertSortingOfPageBlock(String pageBlockName, int number) {
+        Assert.assertTrue(isPageBlockSequence(pageBlockName, number));
     }
 
     /*********
@@ -283,5 +376,113 @@ public class PageLayoutPage extends GovGrantsManager {
 
         }
         return flag;
+    }
+
+    /**
+     * return true if any header button is not displayed
+     * 
+     * @param buttonName
+     * @return
+     */
+    private boolean isSubTabButtonDisplayed(String subTabName) {
+        boolean flag = true;
+        try {
+            if (getSubTabsInsideMainDetailPage(subTabName).isDisplayed()) {
+                flag = false;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+
+        }
+        return flag;
+    }
+
+    /**
+     * Boolean status of Sub tab sorting order
+     * 
+     * @param status
+     */
+    private Boolean isSubTabSequence(String subTabName, int number) {
+        if (getListSubTabsInsideMainDetailPage().get(number).getText().contains(subTabName)) {
+            return true;
+        } else
+            return false;
+    }
+
+    /**
+     * return true if text is displayed
+     * 
+     * @param text
+     * @return
+     */
+    private boolean isHeaderInstructionTextDisplayed(String headerText) {
+        boolean flag = false;
+        if (reiDriver.findMyElement().getElement(headerInstructionText).getText().equalsIgnoreCase(headerText)) {
+            flag = true;
+        }
+        return flag;
+    }
+
+    /**
+     * return true if changed tile of sub tab is displayed
+     * 
+     * @param subTabName
+     * @return
+     */
+    private boolean isChangedSubTabTitleDisplayed(String subTabName) {
+        boolean flag = false;
+        try {
+            if (getSubTabsInsideMainDetailPage(subTabName).isDisplayed()) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+
+        }
+        return flag;
+    }
+
+    /**
+     * return true if header overview tab is displayed
+     * 
+     * @return
+     */
+    private boolean isHeaderOviewTabDisplayed() {
+        boolean flag = false;
+        try {
+            if (reiDriver.findMyElement().getElement(headerOverviewTab).isDisplayed()) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * 
+     * @param titleName
+     * @return true if page block title is displayed
+     */
+    private boolean isPageBlockTitleDisplayed(String titleName) {
+        boolean flag = false;
+        try {
+            if (reiDriver.findMyElement().getElement(By.xpath("//h3//a[contains(text(),'" + titleName + "')]"))
+                    .isDisplayed()) {
+                flag = true;
+            }
+        } catch (Exception e) {
+
+        }
+        return flag;
+    }
+
+    /**
+     * Boolean status of page block sorting order
+     * 
+     * @param status
+     */
+    private Boolean isPageBlockSequence(String pageBlockName, int number) {
+        if (getListPageBlockInsideMainDetailPage().get(number).getText().contains(pageBlockName)) {
+            return true;
+        } else
+            return false;
     }
 }

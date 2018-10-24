@@ -8,69 +8,119 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class PageLayoutSteps {
-    PageLayoutPage pageLayoutPage;
+	PageLayoutPage pageLayoutPage;
 
     public PageLayoutSteps(Controller controller, Handlers handler, GovGrantsHandler govgrants) {
         pageLayoutPage = new PageLayoutPage(controller, handler, govgrants);
     }
 
-    @When("^I click on \"([^\"]*)\" button in right header$")
-    public void clickbuttonOnRightHeader(String buttonName) {
-        pageLayoutPage.getRightHeaderButton(buttonName).click();
-    }
+	@When("^I click on \"([^\"]*)\" button in right header$")
+	public void clickbuttonOnRightHeader(String buttonName) {
+		pageLayoutPage.getRightHeaderButton(buttonName).click();
+	}
 
-    @When("^I click on \"([^\"]*)\" button inside detail page$")
-    public void clickbuttonInsideDetailPage(String button) {
-        pageLayoutPage.clickRightHeaderButtonInsideDetailPage(button);
-    }
+	@When("^I click on \"([^\"]*)\" button inside detail page$")
+	public void clickbuttonInsideDetailPage(String button) {
+		pageLayoutPage.clickRightHeaderButtonInsideDetailPage(button);
+	}
 
-    @When("^I click on \"([^\"]*)\" sub tab inside page layout$")
-    public void clickSubTabAfterSelectingFlexTableIcons(String subTabName) {
-        pageLayoutPage.clickSubTab(subTabName);
-    }
-    
-    @When("^I select \"([^\"]*)\" from dropdown$")
-    public void selectFromDropdown(String itemName) {
-        pageLayoutPage.getItemFromTopRightHeaderBars(itemName).click();
-    }
+	@When("^I click on \"([^\"]*)\" sub tab inside page layout$")
+	public void clickSubTabAfterSelectingFlexTableIcons(String subTabName) {
+		pageLayoutPage.clickSubTab(subTabName);
+	}
 
-    @Then("^I see \"([^\"]*)\" shown as over view title in header \"([^\"]*)\"$")
-    public void assertOverViewTitleWithHeader(String overViewTitle, String overViewHeader) {
-        pageLayoutPage.assertOverViewTitleWithHeader(overViewTitle, overViewHeader);
-    }
+	@When("^I select \"([^\"]*)\" from dropdown$")
+	public void selectFromDropdown(String itemName) {
+		pageLayoutPage.getItemFromTopRightHeaderBars(itemName).click();
+	}
 
-    @Then("^I see \"([^\"]*)\" shown as page instruction text$")
-    public void assertPageInstructionText(String pageInstructionText) {
-        pageLayoutPage.assertPageInstructionText(pageInstructionText);
-    }
+	@Then("^I see \"([^\"]*)\" shown as over view title in header \"([^\"]*)\"$")
+	public void assertOverViewTitleWithHeader(String overViewTitle, String overViewHeader) {
+		pageLayoutPage.assertOverViewTitleWithHeader(overViewTitle, overViewHeader);
+	}
 
-    @Then("^I see \"([^\"]*)\" shown as over view header$")
-    public void assertOverViewHeaderDisplayed(String headerName) {
-        pageLayoutPage.assertOverViewHeaderDisplayed(headerName);
-    }
+	@Then("^I see \"([^\"]*)\" shown as page instruction text$")
+	public void assertPageInstructionText(String pageInstructionText) {
+		pageLayoutPage.assertPageInstructionText(pageInstructionText);
+	}
 
-    @Then("^I see \"([^\"]*)\" button is not displayed$")
-    public void assertTopRightHeaderButtonNotDisplayed(String buttonName) {
-        pageLayoutPage.assertTopRightButtonNotDisplayed(buttonName);
-    }
+	@Then("^I see \"([^\"]*)\" shown as over view header$")
+	public void assertOverViewHeaderDisplayed(String headerName) {
+		pageLayoutPage.assertOverViewHeaderDisplayed(headerName);
+	}
 
-    @Then("^I see Download as PDF options disabled$")
-    public void assertPDFDownloadOptionsDisabled() {
-        pageLayoutPage.assertDownloadPDFDisabled();
-    }
+	@Then("^I see \"([^\"]*)\" button is not displayed$")
+	public void assertTopRightHeaderButtonNotDisplayed(String buttonName) {
+		pageLayoutPage.assertTopRightButtonNotDisplayed(buttonName);
+	}
 
-    @Then("^I see \"([^\"]*)\" options disabled$")
-    public void assertTopRightParallelLinesBarOptionsDisabled(String option) {
-        pageLayoutPage.assertTakeSnapshotDisabled(option);
-    }
+	@Then("^I see Download as PDF options disabled$")
+	public void assertPDFDownloadOptionsDisabled() {
+		pageLayoutPage.assertDownloadPDFDisabled();
+	}
 
-    @Then("^I see prompt For automation is displayed$")
-    public void assertPromptBoxDisplayed() {
-        pageLayoutPage.assertPromptDialogBoxDisplayed();
-    }
+	@Then("^I see \"([^\"]*)\" options disabled$")
+	public void assertTopRightParallelLinesBarOptionsDisabled(String option) {
+		pageLayoutPage.assertTakeSnapshotDisabled(option);
+	}
 
-    @Then("^I see \"([^\"]*)\" button is not displayed at view detail page$")
-    public void assertHeaderButtonsInsideDetailsPageNotDisplayed(String buttonName) {
-        pageLayoutPage.assertHeaderButtonsNotDisplayed(buttonName);
+	@Then("^I see prompt For automation is displayed$")
+	public void assertPromptBoxDisplayed() {
+		pageLayoutPage.assertPromptDialogBoxDisplayed();
+	}
+
+	@Then("^I see \"([^\"]*)\" button is not displayed at view detail page$")
+	public void assertHeaderButtonsInsideDetailsPageNotDisplayed(String buttonName) {
+		pageLayoutPage.assertHeaderButtonsNotDisplayed(buttonName);
+	}
+
+	@Then("^I see \"([^\"]*)\" button is displayed at edit detail page$")
+	public void assertHeaderButtonsInsideEditDetailsPageDisplayed(String buttonName) {
+		pageLayoutPage.assertHeaderButtonsNotDisplayed(buttonName);
+	}
+
+	@Then("^I see \"([^\"]*)\" sub tab is not displayed at view detail page$")
+	public void assertSubTabInsideDetailsPageNotDisplayed(String subTabName) {
+		pageLayoutPage.assertSubTabButtonsNotDisplayed(subTabName);
+	}
+
+	@Then("^I see \"([^\"]*)\" shown at number \"([^\"]*)\" inside subtabs$")
+	public void assertSequenceOfAccordianContent(String subTabName, String number) {
+		pageLayoutPage.assertSortingOfSubTab(subTabName, Integer.parseInt(number));
+	}
+
+	@Then("^I see \"([^\"]*)\" shown as header instruction text$")
+	public void assertHeaderInstructionText(String headerText) {
+		pageLayoutPage.assertHeaderInstructionText(headerText);
+	}
+
+	@Then("^I see \"([^\"]*)\" sub tab is displayed at view detail page$")
+	public void assertChangedSubTabTitleInsideDetailsPage(String subTabName) {
+		pageLayoutPage.assertChangedTitleOfSubTab(subTabName);
+	}
+
+	@Then("^I see pencil icon as \"([^\"]*)\" sub tab$")
+	public void assertPencilIconAsSubTab(String subTabName) {
+		pageLayoutPage.assertSubTabIconDisplayed(subTabName);
+	}
+
+	@Then("^I see complete header overview tab is displayed at view detail page$")
+	public void assertHeaderOverviewTabInsideDetailsPage() {
+		pageLayoutPage.assertHeaderOverviewTabDisplayed();
+	}
+	
+	@Then("^I see \"([^\"]*)\" page block title$")
+    public void asserPageBlockTitleDisplayed(String titleName) {
+        pageLayoutPage.assertChangedPageBlockTitleDisplayed(titleName);
     }
+	
+	@Then("^I see \"([^\"]*)\" page block is not displayed$")
+    public void asserPageBlockIsNotDisplayed(String titleName) {
+        pageLayoutPage.assertPageBlockIsNotDisplayed(titleName);
+    }
+	
+	@Then("^I see \"([^\"]*)\" shown at number \"([^\"]*)\" inside page block$")
+	public void assertSequenceOfPageBlock(String pageBlockName, String number) {
+		pageLayoutPage.assertSortingOfPageBlock(pageBlockName, Integer.parseInt(number));
+	}
 }

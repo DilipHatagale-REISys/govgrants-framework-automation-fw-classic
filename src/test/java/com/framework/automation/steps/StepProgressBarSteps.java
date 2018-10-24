@@ -8,11 +8,10 @@ import com.framework.automation.pageobject.StepProgressBarPage;
 import cucumber.api.java.en.Then;
 
 public class StepProgressBarSteps {
-
 	StepProgressBarPage stepProgressBarPage;
 
 	public StepProgressBarSteps(Controller controller, Handlers handler,GovGrantsHandler govgrants) {
-		stepProgressBarPage = new StepProgressBarPage(controller, handler,govgrants);
+		stepProgressBarPage = new StepProgressBarPage(controller, handler, govgrants);
 	}
 
 	@Then("^I see step progress bar is not displayed$")

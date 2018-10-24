@@ -2,7 +2,6 @@ package com.framework.automation.pageobject;
 
 import java.util.ArrayList;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
@@ -23,153 +22,155 @@ public class SideBarPage extends GovGrantsManager {
 
     }
 
-    /******* "Key Methods with complete functionality - public" *****************/
 
-    /**
-     * assert if header is on correct location in side bar
-     * 
-     * @param headerName
-     * @param sequenceNumber
-     */
-    public void assertSideBarHeaderSequence(String headerName, int sequenceNumber) {
-        Assert.assertTrue(isHeaderSequence(headerName, sequenceNumber));
-    }
+	/******* "Key Methods with complete functionality - public" *****************/
 
-    /**
-     * assert if Task menu is disabled from side bar
-     * 
-     * @param headerName
-     */
-    public void assertRemovalOfSideBarHeader(String headerName) {
-        Assert.assertFalse(isTaskMenuDisabled(headerName));
-    }
+	/**
+	 * assert if header is on correct location in side bar
+	 * 
+	 * @param headerName
+	 * @param sequenceNumber
+	 */
+	public void assertSideBarHeaderSequence(String headerName, int sequenceNumber) {
+		Assert.assertTrue(isHeaderSequence(headerName, sequenceNumber));
+	}
 
-    /**
-     * @param subTabName
-     * @param mainTabName
-     */
-    public void assertnewSubHeaderContentLabel(String subTabName, String mainTabName) {
-        Assert.assertEquals(getSideBarAccordianSubHeaderContent(mainTabName, subTabName).getText(), subTabName);
-    }
+	/**
+	 * assert if Task menu is disabled from side bar
+	 * 
+	 * @param headerName
+	 */
+	public void assertRemovalOfSideBarHeader(String headerName) {
+		Assert.assertFalse(isTaskMenuDisabled(headerName));
+	}
 
-    /**
-     * 
-     * @param accordianHeaderName
-     * @param number
-     * @param headerName
-     */
-    public void assertAccordianHeaderSequence(String accordianHeaderName, int number, String headerName) {
-        Assert.assertTrue(isAccordianHeaderSequence(accordianHeaderName, number, headerName));
-    }
+	/**
+	 * @param subTabName
+	 * @param mainTabName
+	 */
+	public void assertnewSubHeaderContentLabel(String subTabName, String mainTabName) {
+		Assert.assertEquals(getSideBarAccordianSubHeaderContent(mainTabName, subTabName).getText(), subTabName);
+	}
 
-    /**
-     * @param subTabName:
-     *            Accordion header
-     * @param mainTabName:
-     *            Changed Accordion header label/Name
-     */
-    public void assertnewAccordionHeaderLabel(String subTabName, String mainTabName) {
-        Assert.assertEquals(getSideBarAccordianHeader(mainTabName, subTabName).getText(), subTabName);
-    }
+	/**
+	 * 
+	 * @param accordianHeaderName
+	 * @param number
+	 * @param headerName
+	 */
+	public void assertAccordianHeaderSequence(String accordianHeaderName, int number, String headerName) {
+		Assert.assertTrue(isAccordianHeaderSequence(accordianHeaderName, number, headerName));
+	}
 
-    /**
-     * 
-     * @param accordianHeaderName
-     * @param number
-     * @param headerName
-     */
-    public void assertAccordianContentSequence(String accordianHeaderName, int number, String headerName) {
-        Assert.assertTrue(isAccordianContentSequence(accordianHeaderName, number, headerName));
-    }
+	/**
+	 * @param subTabName:
+	 *            Accordion header
+	 * @param mainTabName:
+	 *            Changed Accordion header label/Name
+	 */
+	public void assertnewAccordionHeaderLabel(String subTabName, String mainTabName) {
+		Assert.assertEquals(getSideBarAccordianHeader(mainTabName, subTabName).getText(), subTabName);
+	}
 
-    /**
-     * assert if accordion content open in new tab or not
-     * 
-     * @param accordionContentName
-     * @param Pagetitle
-     */
-    public void assertAccordionContentWithNewTab(String Pagetitle) {
-        Assert.assertTrue(isNewTabOpens(Pagetitle));
-    }
+	/**
+	 * 
+	 * @param accordianHeaderName
+	 * @param number
+	 * @param headerName
+	 */
+	public void assertAccordianContentSequence(String accordianHeaderName, int number, String headerName) {
+		Assert.assertTrue(isAccordianContentSequence(accordianHeaderName, number, headerName));
+	}
 
-    /*********
-     * "Local Methods with Limited functionality - Private"
-     *****************/
+	/**
+	 * assert if accordion content open in new tab or not
+	 * 
+	 * @param accordionContentName
+	 * @param Pagetitle
+	 */
+	public void assertAccordionContentWithNewTab(String Pagetitle) {
+		Assert.assertTrue(isNewTabOpens(Pagetitle));
+	}
 
-    /**
-     * 
-     * @param headerName:
-     *            Header name in sidebar
-     * @param sequenceNumber:
-     *            item number in side bar
-     * @return
-     */
-    private Boolean isHeaderSequence(String headerName, int sequenceNumber) {
-        if (getSideBarHeadersList().get(sequenceNumber).getText().contains(headerName)) {
-            return true;
-        } else
-            return false;
-    }
+	/*********
+	 * "Local Methods with Limited functionality - Private"
+	 *****************/
 
-    /**
-     * Boolean status of Task menu from sidebar
-     * 
-     * @param status
-     */
-    private Boolean isTaskMenuDisabled(String headerName) {
-        for (WebElement we : getSideBarHeadersList()) {
-            if (we.getText().equalsIgnoreCase(headerName)) {
-                return true;
-            }
-        }
-        return false;
-    }
+	/**
+	 * 
+	 * @param headerName:
+	 *            Header name in sidebar
+	 * @param sequenceNumber:
+	 *            item number in side bar
+	 * @return
+	 */
+	private Boolean isHeaderSequence(String headerName, int sequenceNumber) {
+		if (getSideBarHeadersList().get(sequenceNumber).getText().contains(headerName)) {
+			return true;
+		} else
+			return false;
+	}
 
-    /**
-     * validate the sequence of accordian headers appearing
-     * 
-     * @param accordianHeaderName
-     * @param number
-     * @param headerName
-     * @return
-     */
-    private Boolean isAccordianHeaderSequence(String accordianHeaderName, int number, String headerName) {
-        if (accordianHeadersList(headerName).get(number).getText().contains(accordianHeaderName)) {
-            return true;
-        } else
-            return false;
-    }
+	/**
+	 * Boolean status of Task menu from sidebar
+	 * 
+	 * @param status
+	 */
+	private Boolean isTaskMenuDisabled(String headerName) {
+		for (WebElement we : getSideBarHeadersList()) {
+			if (we.getText().equalsIgnoreCase(headerName)) {
+				return true;
+			}
+		}
+		return false;
+	}
 
-    /**
-     * Boolean status of Accordion Content sequence from sidebar
-     * 
-     * @param status
-     */
-    private Boolean isAccordianContentSequence(String accordianHeaderName, int number, String headerName) {
-        if (accordianContentList(headerName).get(number).getText().contains(accordianHeaderName)) {
-            return true;
-        } else
-            return false;
-    }
+	/**
+	 * validate the sequence of accordian headers appearing
+	 * 
+	 * @param accordianHeaderName
+	 * @param number
+	 * @param headerName
+	 * @return
+	 */
+	private Boolean isAccordianHeaderSequence(String accordianHeaderName, int number, String headerName) {
+		if (accordianHeadersList(headerName).get(number).getText().contains(accordianHeaderName)) {
+			return true;
+		} else
+			return false;
+	}
 
-    /**
-     * Boolean status of Accordion Content opens in another tab
-     * 
-     * @param accordionContentName:
-     *            Content name in sidebar
-     * @param pageTitle:
-     * @return
-     */
-    private Boolean isNewTabOpens(String pageTitle) {
-        ArrayList<String> tabHandles = new ArrayList<String>(reiDriver.switchTo().getWindowsHandlers());
-        boolean myNewTabFound = false;
-        for (int index = 0; index < tabHandles.size(); index++) {
-            reiDriver.switchTo().switchToWindowHandler(index);
-            if (reiDriver.get().getPageTitle().equalsIgnoreCase(pageTitle)) {
-                myNewTabFound = true;
-                break;
-            }
-        }
-        return myNewTabFound;
-    }
+	/**
+	 * Boolean status of Accordion Content sequence from sidebar
+	 * 
+	 * @param status
+	 */
+	private Boolean isAccordianContentSequence(String accordianHeaderName, int number, String headerName) {
+		System.out.println("sequence will be========" + accordianContentList(headerName).get(number).getText());
+		if (accordianContentList(headerName).get(number).getText().contains(accordianHeaderName)) {
+			return true;
+		} else
+			return false;
+	}
+
+	/**
+	 * Boolean status of Accordion Content opens in another tab
+	 * 
+	 * @param accordionContentName:
+	 *            Content name in sidebar
+	 * @param pageTitle:
+	 * @return
+	 */
+	private Boolean isNewTabOpens(String pageTitle) {
+		ArrayList<String> tabHandles = new ArrayList<String>(reiDriver.switchTo().getWindowsHandlers());
+		boolean myNewTabFound = false;
+		for (int index = 0; index < tabHandles.size(); index++) {
+			reiDriver.switchTo().switchToWindowHandler(index);
+			if (reiDriver.get().getPageTitle().equalsIgnoreCase(pageTitle)) {
+				myNewTabFound = true;
+				break;
+			}
+		}
+		return myNewTabFound;
+	}
 }

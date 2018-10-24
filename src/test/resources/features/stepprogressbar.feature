@@ -5,9 +5,12 @@ Feature: Step Progress Bar Component Scenarios
 
 	@34347 @all @disablingRenderingOfProgressBarForCustomApp-gPlanning
 	Scenario Outline: validate after disabling of progress bar for grantor planning and validating it on program detail page-programs
-	Given I have default configuration for "Step Progressbar Header Config" field "Render for Application" as "<defaultcustomApp>" with filter "" for field ""
-	Given I setup filter clause for "General" in "PB-0016" for field "" having value ""
-	When I reconfigure "Step Progressbar Header Config" field "Render for Application" as ""
+	Given I have default configuration as below:
+	|configurationCategory                    |fieldName              |fieldOrignalValue |coreComponentField |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Step Progressbar Header Config:General   |Render for Application |<defaultcustomApp>|PB-0016            |                         |                          |
+	Given I setup test configuration as below:
+	|configurationCategory                    |fieldName              |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Step Progressbar Header Config:General   |Render for Application |             |PB-0016               |                         |                          |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
@@ -20,9 +23,12 @@ Feature: Step Progress Bar Component Scenarios
 	
 	@34348 @all @disablingRenderingOfProgressBarForUser-gPlanning
 	Scenario Outline: validate after disabling of progress bar for internal user and validating it on program detail page-programs
-	Given I have default configuration for "Step Progressbar Header Config" field "Render for User" as "<defaultuser>" with filter "" for field ""
-	Given I setup filter clause for "General" in "PB-0016" for field "" having value ""
-	When I reconfigure "Step Progressbar Header Config" field "Render for User" as ""
+	Given I have default configuration as below:
+	|configurationCategory                    |fieldName         |fieldOrignalValue |coreComponentField |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Step Progressbar Header Config:General   |Render for User   |<defaultuser>     |PB-0016            |                         |                          |
+	Given I setup test configuration as below:
+	|configurationCategory                    |fieldName       |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Step Progressbar Header Config:General   |Render for User |             |PB-0016               |                         |                          |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
@@ -35,9 +41,12 @@ Feature: Step Progress Bar Component Scenarios
 	
 	@34349 @all @disablingRenderingOfParticularStatusProgressBarForUser-gPlanning
 	Scenario Outline: validate after disabling of submit for approval status from progress bar for internal user and validating it on program detail page-programs
-	Given I have default configuration for "Step Progressbar Detail Config" field "Hide For Users" as "" with filter "" for field ""
-	Given I setup filter clause for "Step Progressbar Detail" in "Program Progress Bar" for field "Name" having value "Submitted for Approval" 
-	When I reconfigure "Step Progressbar Detail Config" field "Hide For Users" as "<changedUser>"
+	Given I have default configuration as below:
+	|configurationCategory  |fieldName         |fieldOrignalValue|filterId        |
+	|Step Progressbar Detail|Hide For Users    |                 |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory   |fieldName       |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Step Progressbar Detail|Hide For Users  |<changedUser>|Program Progress Bar  |Name                     |Submitted for Approval    |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
@@ -50,9 +59,12 @@ Feature: Step Progress Bar Component Scenarios
 	
 	@34350 @all @sequenceChangeOfStatusStepInsideStepProgressBar-gPlanning
 	Scenario: validate after changin sequence of submit for approval status to zero and validating it on program detail page-programs
-	Given I have default configuration for "Step Progressbar Detail Config" field "Sequence" as "2" with filter "" for field ""
-	Given I setup filter clause for "Step Progressbar Detail" in "Program Progress Bar" for field "Name" having value "Submitted for Approval" 
-	When I reconfigure "Step Progressbar Detail Config" field "Sequence" as "0"
+	Given I have default configuration as below:
+	|configurationCategory  |fieldName         |fieldOrignalValue|filterId        |
+	|Step Progressbar Detail|Sequence          |2                |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory   |fieldName       |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Step Progressbar Detail |Sequence        |0            |Program Progress Bar  |Name                     |Submitted for Approval    |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
@@ -61,9 +73,12 @@ Feature: Step Progress Bar Component Scenarios
 	
 	@34351 @all @colorFieldOfStepProgressBar-gPlanning
 	Scenario: validate after changing color of created status to different and validating it on program detail page-programs
-	Given I have default configuration for "Step Progressbar Header Config" field "Complete Color" as "#3ba10b" with filter "" for field ""
-	Given I setup filter clause for "General" in "PB-0016" for field "" having value ""
-	When I reconfigure "Step Progressbar Header Config" field "Complete Color" as "#0b0ba0"
+	Given I have default configuration as below:
+	|configurationCategory                    |fieldName         |fieldOrignalValue |coreComponentField |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Step Progressbar Header Config:General   |Complete Color    |#3ba10b           |PB-0016            |                         |                          |
+	Given I setup test configuration as below:
+	|configurationCategory                    |fieldName       |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Step Progressbar Header Config:General   |Complete Color  |#0b0ba0      |PB-0016               |                         |                          |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
@@ -72,9 +87,12 @@ Feature: Step Progress Bar Component Scenarios
 	
 	@34593 @all @negativeFieldOfStepProgressBar-gPlanning
 	Scenario: validate after enabling negative field for submit for approval step progress bar and validating its appearence on program detail page-programs
-	Given I have default configuration for "Step Progressbar Detail Config" field "Negative Path" as "false" with filter "" for field ""
-	Given I setup filter clause for "Step Progressbar Detail" in "Program Progress Bar" for field "Name" having value "Submitted for Approval" 
-	When I reconfigure "Step Progressbar Detail Config" field "Negative Path" as "true"
+	Given I have default configuration as below:
+	|configurationCategory  |fieldName         |fieldOrignalValue|filterId        |
+	|Step Progressbar Detail|Negative Path     |false            |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory   |fieldName       |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Step Progressbar Detail |Negative Path   |true         |Program Progress Bar  |Name                     |Submitted for Approval    |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for Automation-A to SA"
