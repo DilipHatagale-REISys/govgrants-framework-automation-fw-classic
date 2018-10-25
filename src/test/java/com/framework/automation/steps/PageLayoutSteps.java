@@ -10,9 +10,9 @@ import cucumber.api.java.en.When;
 public class PageLayoutSteps {
 	PageLayoutPage pageLayoutPage;
 
-    public PageLayoutSteps(Controller controller, Handlers handler, GovGrantsHandler govgrants) {
-        pageLayoutPage = new PageLayoutPage(controller, handler, govgrants);
-    }
+	public PageLayoutSteps(Controller controller, Handlers handler, GovGrantsHandler govgrants) {
+		pageLayoutPage = new PageLayoutPage(controller, handler, govgrants);
+	}
 
 	@When("^I click on \"([^\"]*)\" button in right header$")
 	public void clickbuttonOnRightHeader(String buttonName) {
@@ -108,19 +108,24 @@ public class PageLayoutSteps {
 	public void assertHeaderOverviewTabInsideDetailsPage() {
 		pageLayoutPage.assertHeaderOverviewTabDisplayed();
 	}
-	
+
 	@Then("^I see \"([^\"]*)\" page block title$")
-    public void asserPageBlockTitleDisplayed(String titleName) {
-        pageLayoutPage.assertChangedPageBlockTitleDisplayed(titleName);
-    }
-	
+	public void asserPageBlockTitleDisplayed(String titleName) {
+		pageLayoutPage.assertChangedPageBlockTitleDisplayed(titleName);
+	}
+
 	@Then("^I see \"([^\"]*)\" page block is not displayed$")
-    public void asserPageBlockIsNotDisplayed(String titleName) {
-        pageLayoutPage.assertPageBlockIsNotDisplayed(titleName);
-    }
-	
+	public void asserPageBlockIsNotDisplayed(String titleName) {
+		pageLayoutPage.assertPageBlockIsNotDisplayed(titleName);
+	}
+
 	@Then("^I see \"([^\"]*)\" shown at number \"([^\"]*)\" inside page block$")
 	public void assertSequenceOfPageBlock(String pageBlockName, String number) {
 		pageLayoutPage.assertSortingOfPageBlock(pageBlockName, Integer.parseInt(number));
+	}
+
+	@Then("^I see \"([^\"]*)\" shown as header instruction text for page block$")
+	public void assertHeaderInstructionTextAtPageBlock(String headerText) {
+		pageLayoutPage.assertHeaderInstructionTextAtPageBlock(headerText);
 	}
 }

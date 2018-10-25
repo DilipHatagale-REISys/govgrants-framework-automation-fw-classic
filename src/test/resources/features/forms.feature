@@ -9,8 +9,8 @@ Feature: Forms Component Scenarios
 	|configurationCategory|fieldName             |fieldOrignalValue    |filterId        |
 	|Forms                |Skip Form Download    |false                |ApiGeneratedId:0|                    
 	Given I setup test configuration as below:
-	|configurationCategory  |fieldName                      |fieldNewValue|coreComponentField             |coreCOmponentSubFieldName|coreComponentSubFieldValue|
-	|Forms:General          |Skip Form Download             |true         |General Application Budget Form|                         |                          |
+	|configurationCategory  |fieldName           |fieldNewValue|coreComponentField             |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Forms:General          |Skip Form Download  |true         |General Application Budget Form|                         |                          |
 	When I login as "Automation" User
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Applications" tab
 	When I search for "AP-755-198"

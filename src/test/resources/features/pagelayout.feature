@@ -11,9 +11,6 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName          |fieldNewValue                       |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Layout:General   |Header             |Program - {!FederalProgramCFDA__c}  |Grantee State Program |                         |                             |
-	#Given I have default configuration for "Page Layout" field "Header" as "Program - {!ProgramName__c}" with filter "" for field ""
-	#Given I setup filter clause for "General" in "Grantee State Program" for field "" having value ""
-	#When I reconfigure "Page Layout" field "Header" as "Program - {!FederalProgramCFDA__c}"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
@@ -28,16 +25,13 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName            |fieldNewValue                       |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Layout:General   |Page Instruction Text|Automation Instruction Text         |Grantee State Program |                         |                             |
-	#Given I have default configuration for "Page Layout" field "Page Instruction Text" as "govgrants_config:PageInstructionText" with filter "" for field ""
-	#Given I setup filter clause for "General" in "Grantee State Program" for field "" having value ""
-	#When I reconfigure "Page Layout" field "Page Instruction Text" as "Automation Instruction Text"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
 	When I click on "Edit" icon of status "Created" for "Test program for automation" program in flex table
 	Then I see "Automation Instruction Text" shown as page instruction text
 	
-	@34049 @all  @setUpHeaderOverRideField-gPlanning
+	@34049 @all @setUpHeaderOverRideField-gPlanning
 	Scenario: setting up header over ride configuration and validating its content after clicking New button
 	Given I have default configuration as below:
 	|configurationCategory |fieldName             |fieldOrignalValue    |filterId        |
@@ -45,9 +39,6 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName             |fieldNewValue                       |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Layout:General   |Create Header Override|Creating New Program for Automation |Grantee State Program |                         |                             |
-	#Given I have default configuration for "Page Layout" field "Create Header Override" as "Creating New Program" with filter "" for field ""
-	#Given I setup filter clause for "General" in "Grantee State Program" for field "" having value ""
-	#When I reconfigure "Page Layout" field "Create Header Override" as "Creating New Program for Automation"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I click on "New" button in right header
@@ -61,9 +52,6 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName               |fieldNewValue      |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Layout Action    |Hide Decision Expression|<new_hide_config>  |Grantee State Program |Name                     |Submit For Approval          |
-	#Given I have default configuration for "Page Layout Action" field "Hide Decision Expression" as "<old_hide_config>" with filter "" for field ""
-	#Given I setup filter clause for "Page Layout Action" in "Grantee State Program" for field "Name" having value "Submit For Approval"
-	#When I reconfigure "Page Layout Action" field "Hide Decision Expression" as "<new_hide_config>"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
@@ -99,9 +87,6 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName           |fieldNewValue              |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Layout Action    |Hide for profile    |System Administrator       |Grantee State Program |Name                     |Submit For Approval          |
-	#Given I have default configuration for "Page Layout Action" field "Hide for profile" as "" with filter "" for field ""
-	#Given I setup filter clause for "Page Layout Action" in "Grantee State Program" for field "Name" having value "Submit For Approval"
-	#When I reconfigure "Page Layout Action" field "Hide for profile" as "System Administrator"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
@@ -116,9 +101,6 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName           |fieldNewValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Layout:General   |Hide Pdf Download   |true           |Grantee State Program |Name                     |Submit For Approval          |
-	#Given I have default configuration for "Page Layout" field "Hide Pdf Download" as "false" with filter "" for field ""
-	#Given I setup filter clause for "General" in "Grantee State Program" for field "" having value ""
-    #When I reconfigure "Page Layout" field "Hide Pdf Download" as "true"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
@@ -134,9 +116,6 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName                 |fieldNewValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Layout:General   |Hide On Demand Snapshot   |true           |Grantee State Program |                         |                             |
-	#Given I have default configuration for "Page Layout" field "Hide On Demand Snapshot" as "false" with filter "" for field ""
-	#Given I setup filter clause for "General" in "Grantee State Program" for field "" having value ""
-	#When I reconfigure "Page Layout" field "Hide On Demand Snapshot" as "true"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
@@ -152,9 +131,6 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName                 |fieldNewValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Layout Action    |Enable Prompt Input Dialog|true           |Grantee State Program |Name                     |Submit For Approval          |
-	#Given I have default configuration for "Page Layout Action" field "Enable Prompt Input Dialog" as "false" with filter "" for field ""
-	#Given I setup filter clause for "Page Layout Action" in "Grantee State Program" for field "Name" having value "Submit For Approval"
-	#When I reconfigure "Page Layout Action" field "Enable Prompt Input Dialog" as "true"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
@@ -170,9 +146,6 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName                 |fieldNewValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Layout Action    |Hide For Context          |view           |Grantee State Program |Name                     |Submit For Approval          |
-	#Given I have default configuration for "Page Layout Action" field "Hide For Context" as "" with filter "" for field ""
-	#Given I setup filter clause for "Page Layout Action" in "Grantee State Program" for field "Name" having value "Submit For Approval"
-	#When I reconfigure "Page Layout Action" field "Hide For Context" as "view"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
@@ -187,9 +160,6 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName                 |fieldNewValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Layout:General   |Cancel Button Label       |Auto Cancel    |Grantee State Program |                         |                             |
-	#Given I have default configuration for "Page Layout" field "Cancel Button Label" as "" with filter "" for field ""
-	#Given I setup filter clause for "General" in "Grantee State Program" for field "" having value ""
-	#When I reconfigure "Page Layout" field "Cancel Button Label" as "Auto Cancel"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
@@ -205,9 +175,6 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName                 |fieldNewValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Layout:General   |Save Button Label         |Auto Save      |Grantee State Program |                         |                             |
-	#Given I have default configuration for "Page Layout" field "Save Button Label" as "" with filter "" for field ""
-	#Given I setup filter clause for "General" in "Grantee State Program" for field "" having value ""
-	#When I reconfigure "Page Layout" field "Save Button Label" as "Auto Save"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
@@ -223,9 +190,6 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                 |fieldName                 |fieldNewValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Tabs Config:Page Layout Action   |Hide For Context          |view           |Grantee State Program |Name                     |TAB-029                      |
-	#Given I have default configuration for "Page Tabs Config" field "Hide For Context" as "" with filter "" for field ""
-	#Given I setup filter clause for "Page Layout Action" in "Grantee State Program" for field "Name" having value "TAB-029"
-	#When I reconfigure "Page Tabs Config" field "Hide For Context" as "view"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
@@ -240,9 +204,6 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                 |fieldName                 |fieldNewValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Tabs Config:Page Layout Action   |Sort Order                |10             |Grantee State Program |Name                     |TAB-029                      |
-	#Given I have default configuration for "Page Tabs Config" field "Sort Order" as "0" with filter "" for field ""
-	#Given I setup filter clause for "Page Layout Action" in "Grantee State Program" for field "Name" having value "TAB-029"
-	#When I reconfigure "Page Tabs Config" field "Sort Order" as "10"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
@@ -257,9 +218,6 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                 |fieldName                 |fieldNewValue         |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Tabs Config:Page Layout Action   |Header Instruction Text   |Automation Header Text|Grantee State Program |Name                     |TAB-029                      |
-	#Given I have default configuration for "Page Tabs Config" field "Header Instruction Text" as "" with filter "" for field ""
-	#Given I setup filter clause for "Page Layout Action" in "Grantee State Program" for field "Name" having value "TAB-029"
-	#When I reconfigure "Page Tabs Config" field "Header Instruction Text" as "Automation Header Text"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
@@ -274,9 +232,6 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                 |fieldName   |fieldNewValue         |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Tabs Config:Page Layout Action   |Tab Title   |Automation Overview   |Grantee State Program |Name                     |TAB-029                      |
-	#Given I have default configuration for "Page Tabs Config" field "Tab Title" as "Overview" with filter "" for field ""
-	#Given I setup filter clause for "Page Layout Action" in "Grantee State Program" for field "Name" having value "TAB-029"
-	#When I reconfigure "Page Tabs Config" field "Tab Title" as "Automation Overview"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
@@ -291,9 +246,6 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                 |fieldName   |fieldNewValue                 |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Tabs Config:Page Layout Action   |Tab Icon    |govgrants_config:TabIconNewCss|Grantee State Program |Name                     |TAB-029                      |
-	#Given I have default configuration for "Page Tabs Config" field "Tab Icon" as "govgrants_config:TabIconDefaultCss" with filter "" for field ""
-	#Given I setup filter clause for "Page Layout Action" in "Grantee State Program" for field "Name" having value "TAB-029"
-	#When I reconfigure "Page Tabs Config" field "Tab Icon" as "govgrants_config:TabIconNewCss"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
@@ -308,9 +260,6 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                 |fieldName   |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Tabs Config:Page Layout Action   |Is Active   |false        |Grantee State Program |Name                     |TAB-029                      |
-	#Given I have default configuration for "Page Tabs Config" field "Is Active" as "true" with filter "" for field ""
-	#Given I setup filter clause for "Page Layout Action" in "Grantee State Program" for field "Name" having value "TAB-029"
-	#When I reconfigure "Page Tabs Config" field "Is Active" as "false"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
@@ -325,9 +274,6 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                 |fieldName    |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Tabs Config:Page Layout Action   |Hide for User|Internal     |Grantee State Program |Name                     |TAB-029                      |
-	#Given I have default configuration for "Page Tabs Config" field "Hide for User" as "" with filter "" for field ""
-	#Given I setup filter clause for "Page Layout Action" in "Grantee State Program" for field "Name" having value "TAB-029"
-	#When I reconfigure "Page Tabs Config" field "Hide for User" as "Internal"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
@@ -434,4 +380,34 @@ Feature: Page Layout Component Scenarios
 	When I search for "Test program for automation"
 	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
 	Then I see "Program Information" shown at number "5" inside page block
+		
+	@35984 @all @headerInstructionTextFieldAtPageBlock-gPlanning
+	Scenario: Setup header instruction text for program information page block from config and validating it at program detail page
+	Given I have default configuration as below:
+	|configurationCategory        |fieldName                     |fieldOrignalValue    |coreComponentField    |filterId        |
+	|Page Block:Page Block Detail |Header Instruction Text       |                     |Grantee State Program |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory        |fieldName                     |fieldNewValue        |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Block:Page Block Detail |Header Instruction Text       |Header for Automation|Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	Then I see "Header for Automation" shown as header instruction text for page block
 	
+	@35986 @all @skipForExportFieldAtPageBlock-gPlanning
+	Scenario: Setup skip form export for 'Program Information' in configuration and validating inside program detail page
+	Given I have default configuration as below:
+	|configurationCategory        |fieldName                     |fieldOrignalValue    |coreComponentField    |filterId        |
+	|Page Block:Page Block Detail |Skip for Export               |false                |Grantee State Program |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory        |fieldName                     |fieldNewValue        |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Block:Page Block Detail |Skip for Export               |true                 |Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	When I click on "Menu" button inside detail page
+	And I select "Download As PDF" from dropdown
+	And I download the file
+	Then I do not see "Program Information" on page "1" of "govgrants" pdf file	
