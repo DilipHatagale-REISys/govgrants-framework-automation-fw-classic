@@ -6,8 +6,8 @@ Feature: Approval Process Component Scenarios
 	@34305 @all @hideApproveOption-Programs
 	Scenario: Hiding approve option from configuration and validating its content in pending tasks approval decision
 	Given I have default configuration as below:
-	|configurationCategory    |fieldName          |fieldOrignalValue|filterId        |
-	|Approval Decision Action |Hide Action        |false            |ApiGeneratedId:0|
+	|configurationCategory    |fieldName  |fieldOrignalValue|filterId        |
+	|Approval Decision Action |Hide Action|false            |ApiGeneratedId:0|
 	Given I setup test configuration as below:
 	|configurationCategory            |fieldName  |fieldNewValue|coreComponentField|
 	|Approval Decision Action:General |Hide Action|true         |ADAC-0009         |
@@ -23,8 +23,8 @@ Feature: Approval Process Component Scenarios
 	|configurationCategory    |fieldName  |fieldOrignalValue|filterId        |
 	|Approval Decision Action |Sequence   |1                |ApiGeneratedId:0|
 	Given I setup test configuration as below:
-	|configurationCategory            |fieldName          |fieldNewValue|coreComponentField    |
-	|Approval Decision Action:General |Sequence           |5            |ADAC-0009             |
+	|configurationCategory            |fieldName |fieldNewValue|coreComponentField    |
+	|Approval Decision Action:General |Sequence  |5           |ADAC-0009             |
 	When I login as "Automation-PM" User
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	And I navigate to "Tasks" to reach "Pending" side bar content
@@ -37,8 +37,8 @@ Feature: Approval Process Component Scenarios
 	|configurationCategory    |fieldName         |fieldOrignalValue|filterId        |
 	|Approval Decision Action |Comments Required |false            |ApiGeneratedId:0|
 	Given I setup test configuration as below:
-	|configurationCategory            |fieldName          |fieldNewValue|coreComponentField    |
-	|Approval Decision Action:General |Comments Required  |true         |ADAC-0009             |
+	|configurationCategory            |fieldName          |fieldNewValue|coreComponentField|
+	|Approval Decision Action:General |Comments Required  |true         |ADAC-0009         |
 	When I login as "Automation-PM" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	And I navigate to "Tasks" to reach "Pending" side bar content
@@ -53,8 +53,8 @@ Feature: Approval Process Component Scenarios
 	|configurationCategory    |fieldName             |fieldOrignalValue|filterId        |
 	|Approval Decision Action |Action Label Override |Approve          |ApiGeneratedId:0|
 	Given I setup test configuration as below:
-	|configurationCategory            |fieldName              |fieldNewValue|coreComponentField    |
-	|Approval Decision Action:General |Action Label Override  |Approved     |ADAC-0009             | 
+	|configurationCategory            |fieldName              |fieldNewValue|coreComponentField|
+	|Approval Decision Action:General |Action Label Override  |Approved     |ADAC-0009         | 
 	When I login as "Automation-PM" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	And I navigate to "Tasks" to reach "Pending" side bar content
@@ -64,12 +64,12 @@ Feature: Approval Process Component Scenarios
 	@34309 @all @confirmationMessageBoxPopupForApprovalDecisionAction-Programs
 	Scenario: Setup confirmation message inside confirmation message box from configuration and validating it in pending tasks approval decision
 	Given I have default configuration as below:
-	|configurationCategory    |fieldName             |fieldOrignalValue|filterId        |
-	|Approval Decision Action |Confirmation Title    |                 |ApiGeneratedId:0|
+	|configurationCategory    |fieldName         |fieldOrignalValue|filterId        |
+	|Approval Decision Action |Confirmation Title|                 |ApiGeneratedId:0|
 	Given I setup test configuration as below:
-	|configurationCategory            |fieldName              |fieldNewValue                  |coreComponentField    |
-	|Approval Decision Action:General |Confirmation Title     |Automation Approval            |ADAC-0009             |
-	|Approval Decision Action:General |Confirmation Message   |Confirmation box for automation|ADAC-0009             |
+	|configurationCategory            |fieldName              |fieldNewValue                  |coreComponentField|
+	|Approval Decision Action:General |Confirmation Title     |Automation Approval            |ADAC-0009         |
+	|Approval Decision Action:General |Confirmation Message   |Confirmation box for automation|ADAC-0009         |
 	When I login as "Automation-PM" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	And I navigate to "Tasks" to reach "Pending" side bar content
@@ -85,8 +85,8 @@ Feature: Approval Process Component Scenarios
 	|configurationCategory    |fieldName                         |fieldOrignalValue|filterId        |
 	|Approval Decision Action |Filter Criteria for User Reassign |                 |ApiGeneratedId:0|
 	Given I setup test configuration as below:
-	|configurationCategory            |fieldName                          |fieldNewValue           |coreComponentField    |
-	|Approval Decision Action:General |Filter Criteria for User Reassign  |<newFilterCriteriaValue>|ADAC-0011             | 
+	|configurationCategory            |fieldName                          |fieldNewValue           |coreComponentField|
+	|Approval Decision Action:General |Filter Criteria for User Reassign  |<newFilterCriteriaValue>|ADAC-0011         | 
 	When I login as "Automation-PM" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	And I navigate to "Tasks" to reach "Pending" side bar content
@@ -123,9 +123,9 @@ Feature: Approval Process Component Scenarios
 	|configurationCategory               |fieldName           |fieldOrignalValue  |filterId        |
 	|Approval Process Steps Cache        |Email Field API Name|CreatedById        |ApiGeneratedId:1|
 	Given I setup test configuration as below:
-	|configurationCategory                |fieldName               |fieldNewValue   |coreComponentField         |
-	|Program	                          |Status                  |Created          |Automation Program -SA to C|
-	|Approval Process Steps Cache:General |Email Field API Name    |OwnerId          |Program_Manager_Approver   |
+	|configurationCategory                |fieldName               |fieldNewValue |coreComponentField         |
+	|Program	                          |Status                  |Created       |Automation Program -SA to C|
+	|Approval Process Steps Cache:General |Email Field API Name    |OwnerId       |Program_Manager_Approver   |
     When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Automation Program -SA to C"
@@ -153,12 +153,7 @@ Feature: Approval Process Component Scenarios
 	|configurationCategory                |fieldName                   |fieldNewValue                   |coreComponentField         |
 	|Program	                          |Status                      |Created                         |Automation Program -SA to C|
 	|Approval Process Steps Cache:General |Approve Confirmation Title  |Automation Approval             |Program_Manager_Approver   |
-	|Approval Process Steps Cache:General |Approve Confirmation Message|Confirmation box for automation |                           |
-	#Given I setup "Program" field "Status" as "Created" with filter clause on field "Automation Program -SA to C"
-	#Given I have default configuration for "Approval Process Steps Cache" field "Approve Confirmation Title" as "" with filter "" for field ""
-	#Given I setup filter clause for "General" in "Program_Manager_Approver" for field "" having value ""
-	#When I reconfigure "Approval Process Steps Cache" field "Approve Confirmation Title" as "Automation Approval"
-	#When I reconfigure "Approval Process Steps Cache" field "Approve Confirmation Message" as "Confirmation box for automation"
+	|Approval Process Steps Cache:General |Approve Confirmation Message|Confirmation box for automation |Program_Manager_Approver   |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Automation Program -SA to C"
@@ -176,17 +171,12 @@ Feature: Approval Process Component Scenarios
 	@34317 @all @taskAssignmentNotificationForProgramSubmissionThroughMail
 	Scenario: Setup email setting in configuration and validate that program owner receiving email for program submitted for approval
 	Given I have default configuration as below:
-	|configurationCategory               |fieldName                         |fieldOrignalValue  |filterId        |
-	|Task Config                         |Send Task Assignment Notification?|false              |ApiGeneratedId:0|
+	|configurationCategory|fieldName                         |fieldOrignalValue|filterId        |
+	|Task Config          |Send Task Assignment Notification?|false            |ApiGeneratedId:1|
 	Given I setup test configuration as below:
-	|configurationCategory                |fieldName                         |fieldNewValue                   |coreComponentField         |
-	|Program	                          |Status                            |Created                         |Automation Program -SA to C|
-	|Task Action                          |Approve Program                   |                                |                           |
-	|Task Config                          |Send Task Assignment Notification?|true                            |                           |
-	#Given I setup "Program" field "Status" as "Created" with filter clause on field "Automation Program -SA to C"
-	#Given I have default configuration for "Task Config" field "Send Task Assignment Notification?" as "false" with filter "" for field ""
-	#Given I setup filter clause for "Task Action" in "Approve Program" for field "" having value ""
-	#And I reconfigure "Task Config" field "Send Task Assignment Notification?" as "true"
+	|configurationCategory   |fieldName                        |fieldNewValue |coreComponentField         |
+	|Program	             |Status                           |Created       |Automation Program -SA to C|
+	|Task Config:Task Action|Send Task Assignment Notification?|true          |Approve Program            |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Automation Program -SA to C"
@@ -197,21 +187,16 @@ Feature: Approval Process Component Scenarios
 	When I navigate to "Activities" to reach "Email Logs" side bar content
 	When I select "Queued Emails" from double headed dropdown inside admin portal
 	Then I see email is generated with template "TaskReminderTemplateMultiple"
-	
-	@34316 @all @completeOnViewForSendToOwnerTaskConfig-Programs
+
+    @34316 @all @completeOnViewForSendToOwnerTaskConfig-Programs
     Scenario: Setup complete on view checkbox to true from send to owner task configuration and validating it by owner user
     Given I have default configuration as below:
-	|configurationCategory               |fieldName                         |fieldOrignalValue  |filterId        |
-	|Task Config                         |Complete On View?                 |false              |ApiGeneratedId:0|
+	|configurationCategory|fieldName        |fieldOrignalValue|filterId        |
+	|Task Config          |Complete On View?|false            |ApiGeneratedId:1|
 	Given I setup test configuration as below:
-	|configurationCategory                |fieldName                         |fieldNewValue                   |coreComponentField         |
-	|Program	                          |Status                            |Created                         |Automation Program -SA to C|
-	|Task Action                          |Program Sent To Owner             |                                |                           |
-	|Task Config                          |Complete On View?                 |true                            |                           |
-    #Given I have default configuration for "Task Config" field "Complete On View?" as "false" with filter "" for field ""
-	#Given I setup "Program" field "Status" as "Created" with filter clause on field "Automation Program -SA to C"
-	#Given I setup filter clause for "Task Action" in "Program Sent To Owner" for field "" having value ""
-	#When I reconfigure "Task Config" field "Complete On View?" as "true"
+	|configurationCategory  |fieldName        |fieldNewValue |coreComponentField         |
+	|Program	            |Status           |Created       |Automation Program -SA to C|
+	|Task Config:Task Action|Complete On View?|true          |Approve Program            |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Automation Program -SA to C"
@@ -229,4 +214,4 @@ Feature: Approval Process Component Scenarios
 	And I navigate to "Tasks" to reach "Pending" side bar content
 	When I start the approval with subject "Program Sent To Owner"
 	And I navigate to "Tasks" to reach "Pending" side bar content  
-	Then I see approval with subject as "Program Sent To Owner" is not displayed
+	Then I see approval with subject as "Program Sent To Owner" is not displayed	

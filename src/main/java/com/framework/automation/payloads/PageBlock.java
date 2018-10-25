@@ -57,6 +57,24 @@ public class PageBlock {
 								String.valueOf(SObjectAPIs.GNT__SortOrder__c), value);
 			}
 			break;
+		case "HELP TEXT":
+			finalPayload = String.format(
+					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageBlockConfig__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PageBlockConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__HelpText__c), value);
+			break;
+		case "HEADER INSTRUCTION TEXT":
+			finalPayload = String.format(
+					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageBlockConfig__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PageBlockConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__HeaderInstructionText__c), value);
+			break;
+		case "SKIP FOR EXPORT":
+			finalPayload = String.format(
+					payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PageBlockConfig__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PageBlockConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__SkipForExport__c), value);
+			break;
 		}
 		System.out.println(finalPayload);
 		return finalPayload;
