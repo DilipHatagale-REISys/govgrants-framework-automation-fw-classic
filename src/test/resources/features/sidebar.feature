@@ -54,8 +54,10 @@ Feature: Side bar Component Scenarios
 	@33880 @all @validateChangeAccordianHeaderSeq-gHome 
 	Scenario: validate after changing accordian header sequence for activities
 	Given I have default configuration as below:
-	|configurationCategory|fieldName  |fieldOrignalValue |filterId        |
-	|Accordian Header     |Sequence   |9                 |ApiGeneratedId:0|                    
+	#|configurationCategory|fieldName  |fieldOrignalValue |filterId        |
+	#|Accordian Header     |Sequence   |9                 |ApiGeneratedId:0|
+	 |configurationCategory|fieldName  |fieldOrignalValue |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	 |Accordian Header     |Sequence   |9                 |GrantorHome           |Name                     |Manage Forms              |                    
 	Given I setup test configuration as below:
 	|configurationCategory  |fieldName   |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Accordian Header       |Sequence    |1            |GrantorHome           |Name                     |Manage Forms              |
@@ -93,8 +95,8 @@ Feature: Side bar Component Scenarios
 	@33885 @all @validateChangeAccordianContentSeq-gHome
 	Scenario: validate after changing accordion content sequence for completed inside my tasks
 	Given I have default configuration as below:
-	|configurationCategory|fieldName  |fieldOrignalValue |filterId        |
-	|Accordian Content    |Sequence   |1                 |ApiGeneratedId:0|                    
+	|configurationCategory|fieldName  |fieldOrignalValue |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Accordian Content    |Sequence   |1                 |GrantorHome           |Name                     |Completed                 |                    
 	Given I setup test configuration as below:
 	|configurationCategory|fieldName   |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Accordian Content    |Sequence    |3            |GrantorHome           |Name                     |Completed                 |
@@ -105,8 +107,8 @@ Feature: Side bar Component Scenarios
 	@33886 @all @validateAccordionContentOpensInNewWindow-gHome
 	Scenario Outline: validate accordion content opens in new window
 	Given I have default configuration as below:
-	|configurationCategory|fieldName            |fieldOrignalValue |filterId        |
-	|Accordian Content    |Open in new window   |false             |ApiGeneratedId:0|                    
+	|configurationCategory|fieldName            |fieldOrignalValue |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Accordian Content    |Open in new window   |false             |GrantorHome           |Name                     |Completed                 |                   
 	Given I setup test configuration as below:
 	|configurationCategory|fieldName             |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Accordian Content    |Open in new window    |true         |GrantorHome           |Name                     |Completed                 |
@@ -121,8 +123,8 @@ Feature: Side bar Component Scenarios
 	@33887 @all @validateTargetUrlForAccordionContent-gHome
 	Scenario Outline: validate accordion content opens with provided target url
 	Given I have default configuration as below:
-	|configurationCategory|fieldName   |fieldOrignalValue    |filterId        |
-	|Accordian Content    |Target Url  |<Old-TargetUrl>      |ApiGeneratedId:0|                    
+	|configurationCategory|fieldName   |fieldOrignalValue    |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Accordian Content    |Target Url  |<Old-TargetUrl>      |GrantorHome           |Name                     |Completed                 |                   
 	Given I setup test configuration as below:
 	|configurationCategory  |fieldName     |fieldNewValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Accordian Content      |Target Url    |<New-TargetUrl>|GrantorHome           |Name                     |Completed                 |
@@ -131,5 +133,5 @@ Feature: Side bar Component Scenarios
 	When I navigate to "My Tasks" to reach "Completed" side bar content
 	Then I see page title "Pending Registrations"
 	Examples:
-	|New-TargetUrl|Old-TargetUrl|
+	|New-TargetUrl             |Old-TargetUrl|
 	|/apex/PendingRegistrations|/apex/FlexTableNewView?ft1=CompletedTasks&ft2=CompletedTasksBy|		

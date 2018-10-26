@@ -75,7 +75,7 @@ Feature: Phase Config Component Scenarios
 	|configurationCategory  |fieldName   |fieldNewValue|coreComponentField    |
 	|Phase Config:General   |Is Phase    |false        |GrantorPlanning       |
 	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "HOME" tab
 	Then I do not see "Planning" in task summary by phase
 	
 	@34589 @all @validateSettingAsDefaultLandingTab-gplanning
