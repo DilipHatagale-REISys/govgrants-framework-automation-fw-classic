@@ -25,6 +25,7 @@ public class setup {
     public setup(Controller controller, ProjectWebServices projectAPI) {
         this.setupController = new SetupController(controller);
         this.projectAPI = projectAPI;
+        this.projectAPI.setupIdBucket();
     }
 
     @Before(order = 1)
