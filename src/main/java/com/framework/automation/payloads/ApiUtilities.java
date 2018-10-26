@@ -24,11 +24,9 @@ public class ApiUtilities {
         String iD;
         int i=0;
         i++;
-        System.out.println("Method iteration is "+i);
         if (filterClause.contains("idValue")) {
             String[] getFilterId = filterClause.split(":");
             iD = getFilterId[0];
-            System.out.println("Filter Id is inside method "+iD);
         } else {
             Response response = apiCall.postCall(getPayLaodForIdRetrieval(ComponentAPI, filterClause), null,
                     SetUpConfiguration.defaultRetrieveEndPoint, "Authorization",
@@ -36,7 +34,6 @@ public class ApiUtilities {
             String[] splittedStringForId = response.body().asString().split(":");
             iD = splittedStringForId[4].substring(2, 20);
             ProjectWebServices.storeAllIds.add(new IdBucket(iD));
-            System.out.println("Array size is "+ProjectWebServices.storeAllIds.size());
         }
         return iD;
     }
