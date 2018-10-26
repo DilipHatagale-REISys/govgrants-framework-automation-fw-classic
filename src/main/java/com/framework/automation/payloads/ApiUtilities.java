@@ -11,7 +11,7 @@ import com.jayway.restassured.response.Response;
 public class ApiUtilities {
     JsonObject sObjectConfig;
     RestfulWebServices apiCall = new RestfulWebServices();
-    public static ArrayList<IdBucket> storeAllIds = new ArrayList<IdBucket>();
+    
 
     /**
      * get Id based on component api and field name
@@ -22,6 +22,8 @@ public class ApiUtilities {
      */
     public String getComponentCoreFieldId(String ComponentAPI, String filterClause) {
         String iD;
+        int i=0;
+        i++;
         if (filterClause.contains("idValue")) {
             String[] getFilterId = filterClause.split(":");
             iD = getFilterId[0];
@@ -31,7 +33,7 @@ public class ApiUtilities {
                     "Bearer " + ProjectWebServices.tokenString, null);
             String[] splittedStringForId = response.body().asString().split(":");
             iD = splittedStringForId[4].substring(2, 20);
-            storeAllIds.add(new IdBucket(iD));
+            ProjectWebServices.storeAllIds.add(new IdBucket(iD));
         }
         return iD;
     }
@@ -51,7 +53,7 @@ public class ApiUtilities {
                 null);
         String[] splittedStringForId = response.body().asString().split(":");
         String iD = splittedStringForId[4].substring(2, 20);
-        storeAllIds.add(new IdBucket(iD));
+        ProjectWebServices.storeAllIds.add(new IdBucket(iD));
         return iD;
     }
 
@@ -178,11 +180,11 @@ public class ApiUtilities {
     private String genericParameterFilter(String ComponentCoreFieldName) {
         return "Name=" + "'" + ComponentCoreFieldName + "'";
     }
-
+/*
     public static ArrayList<IdBucket> getTheId() {
         return storeAllIds;
     }
-
+*/
     private String handleConfigCategory(String configCategory) {
         String configurationCategory = null;
         if (configCategory.contains(":")) {
