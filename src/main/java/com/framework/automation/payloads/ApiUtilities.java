@@ -11,7 +11,7 @@ import com.jayway.restassured.response.Response;
 public class ApiUtilities {
     JsonObject sObjectConfig;
     RestfulWebServices apiCall = new RestfulWebServices();
-    public static ArrayList<IdBucket> storeAllIds = new ArrayList<IdBucket>();
+    
 
     /**
      * get Id based on component api and field name
@@ -22,16 +22,21 @@ public class ApiUtilities {
      */
     public String getComponentCoreFieldId(String ComponentAPI, String filterClause) {
         String iD;
+        int i=0;
+        i++;
+        System.out.println("Method iteration is "+i);
         if (filterClause.contains("idValue")) {
             String[] getFilterId = filterClause.split(":");
             iD = getFilterId[0];
+            System.out.println("Filter Id is inside method "+iD);
         } else {
             Response response = apiCall.postCall(getPayLaodForIdRetrieval(ComponentAPI, filterClause), null,
                     SetUpConfiguration.defaultRetrieveEndPoint, "Authorization",
                     "Bearer " + ProjectWebServices.tokenString, null);
             String[] splittedStringForId = response.body().asString().split(":");
             iD = splittedStringForId[4].substring(2, 20);
-            storeAllIds.add(new IdBucket(iD));
+            ProjectWebServices.storeAllIds.add(new IdBucket(iD));
+            System.out.println("Array size is "+ProjectWebServices.storeAllIds.size());
         }
         return iD;
     }
@@ -51,7 +56,7 @@ public class ApiUtilities {
                 null);
         String[] splittedStringForId = response.body().asString().split(":");
         String iD = splittedStringForId[4].substring(2, 20);
-        storeAllIds.add(new IdBucket(iD));
+        ProjectWebServices.storeAllIds.add(new IdBucket(iD));
         return iD;
     }
 
@@ -178,11 +183,11 @@ public class ApiUtilities {
     private String genericParameterFilter(String ComponentCoreFieldName) {
         return "Name=" + "'" + ComponentCoreFieldName + "'";
     }
-
+/*
     public static ArrayList<IdBucket> getTheId() {
         return storeAllIds;
     }
-
+*/
     private String handleConfigCategory(String configCategory) {
         String configurationCategory = null;
         if (configCategory.contains(":")) {

@@ -1,11 +1,13 @@
 package com.framework.automation.projectmanager;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Map;
 
 import com.automation.rei.controller.EnvironmentFetcher;
 import com.automation.rei.handlers.Properties_Logs;
 import com.automation.rei.webservices.RestfulWebServices;
+import com.framework.automation.objects.IdBucket;
 import com.framework.automation.payloads.ApiUtilities;
 import com.jayway.restassured.response.Response;
 
@@ -18,9 +20,18 @@ public class ProjectWebServices {
 	private String defaultUpdateEndPoint = "/services/apexrest/frameworkAPIUpdate";
 	private String defaultEndPointGetToken = "/services/oauth2/token?grant_type=password&client_secret=7608231485378593656&client_id=3MVG91ftikjGaMd8E01oyLzW0qhdCcSTnpVVwmMdo3H_C6vbhroOOpEF4C.54CXCiOi5SQFyN.a6Ze8NCAcSa&username=pankaj@ggp.test5&password=test@123";
 	public static String tokenString;
+	public static ArrayList<IdBucket> storeAllIds;
+	
 
 	//////////////////// Test case configuration API calls ///////////////////////
 
+	/**
+	 * setup id bucket
+	 */
+	   public static void setupIdBucket() {
+	        storeAllIds = new ArrayList<IdBucket>();
+	    }
+	   
 	/**
 	 * set up configurational call
 	 * 
@@ -59,7 +70,7 @@ public class ProjectWebServices {
 			String[] getValueAt = value.split(":");
 			response = apiCall.postCall(null,
 					configPostCall.getConfigJson(handleConfigCategory(configCategory), fieldName,
-							ApiUtilities.storeAllIds.get(Integer.parseInt(getValueAt[1])).getId(), filterClause),
+							storeAllIds.get(Integer.parseInt(getValueAt[1])).getId(), filterClause),
 					endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
 		} else {
 			response = apiCall.postCall(null,
@@ -77,9 +88,8 @@ public class ProjectWebServices {
 		String filterIdValue;
 		for (Map<String, String> defaultParameters : ConfigurationParameters.getDefaultConfigurationParameters()) {
 			if (defaultParameters.get("filterId") != null) {
-				System.out.println("Entered filterid" + defaultParameters.get("filterId"));
 				String[] getValueAt = defaultParameters.get("filterId").split(":");
-				filterIdValue = ApiUtilities.storeAllIds.get(Integer.parseInt(getValueAt[1])).getId();
+				filterIdValue = storeAllIds.get(Integer.parseInt(getValueAt[1])).getId();
 				response = handleDefaultConfigWithFilterId(
 						handleConfigCategory(defaultParameters.get("configurationCategory")),
 						defaultParameters.get("fieldName"), defaultParameters.get("fieldOrignalValue"), filterIdValue);
@@ -145,10 +155,9 @@ public class ProjectWebServices {
 		} else if (fieldOrignalValue.contains("ApiGeneratedId")) {
 			String[] getValueAt = fieldOrignalValue.split(":");
 			response = apiCall.postCall(null, new SetUpConfiguration().getConfigJson(configurationCategory, fieldName,
-					ApiUtilities.storeAllIds.get(Integer.parseInt(getValueAt[1])).getId(), filterId + ":idValue"),
+					storeAllIds.get(Integer.parseInt(getValueAt[1])).getId(), filterId + ":idValue"),
 					endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
 		} else {
-			System.out.println("entered" + filterId);
 			response = apiCall.postCall(null,
 					new SetUpConfiguration().getConfigJson(configurationCategory, fieldName, fieldOrignalValue,
 							filterId + ":idValue"),
@@ -168,7 +177,7 @@ public class ProjectWebServices {
 			String[] getValueAt = fieldOrignalValue.split(":");
 			response = apiCall.postCall(null,
 					new SetUpConfiguration().getConfigJson(configurationCategory, fieldName,
-							ApiUtilities.storeAllIds.get(Integer.parseInt(getValueAt[1])).getId(), filterClause),
+							storeAllIds.get(Integer.parseInt(getValueAt[1])).getId(), filterClause),
 					endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
 		} else {
 			response = apiCall.postCall(null,
