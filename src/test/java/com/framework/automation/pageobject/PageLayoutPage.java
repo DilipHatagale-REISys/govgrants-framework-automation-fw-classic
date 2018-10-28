@@ -287,8 +287,6 @@ public class PageLayoutPage extends GovGrantsManager {
 	 */
 	private boolean isOptionsDownloadPDFDisabled() {
 		boolean flag = false;
-		System.out.println(
-				"till lower case========" + (getPDFOptionForVerification().getAttribute("style").toLowerCase()));
 		try {
 			if (getPDFOptionForVerification().getAttribute("style").toLowerCase().contains("display: none")) {
 				flag = true;
@@ -307,7 +305,7 @@ public class PageLayoutPage extends GovGrantsManager {
 	 */
 	public WebElement getPDFOptionForVerification() {
 		return reiDriver.findMyElement()
-				.getElement(By.cssSelector(".dropdown.open>.dropdown-menu-right>li:nth-child(7)"));
+				.getElement(By.cssSelector(".dropdown.open>.dropdown-menu-right>li:nth-child(8)"));
 	}
 
 	/**

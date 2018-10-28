@@ -28,9 +28,6 @@ Feature: Forms Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                  |fieldName     |fieldNewValue   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block:Page Block Detail           |Is Active     |false           |ApplicationView       |GNT__PageBlockTitle__c   |Business Forms            |
-	#Given I have default configuration for "Page Block" field "Is Active" as "true" with filter "" for field ""
-	#Given I setup filter clause for "Page Block Detail" in "ApplicationView" for field "GNT__PageBlockTitle__c" having value "Business Forms"
-	#When I reconfigure "Page Block" field "Is Active" as "false"
 	When I login as "Automation" User
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Applications" tab
 	When I search for "AP-755-198"
@@ -46,9 +43,6 @@ Feature: Forms Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                  |fieldName     |fieldNewValue   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block Rule:Page Block Rule Detail |Hide For User |Internal        |ApplicationView       |Name                     |preview rule              |
-	#Given I have default configuration for "Page Block Rule" field "Hide For User" as "" with filter "" for field ""
-	#Given I setup filter clause for "Page Block Rule Detail" in "ApplicationView" for field "Name" having value "preview rule"
-	#When I reconfigure "Page Block Rule" field "Hide For User" as "Internal"
 	When I login as "Automation" User
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Applications" tab
 	When I search for "AP-755-198"
@@ -64,9 +58,6 @@ Feature: Forms Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                  |fieldName     |fieldNewValue   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block Rule:Page Block Rule Detail |Hide For User |Internal        |ApplicationView       |Name                     |View                      |
-	#Given I have default configuration for "Page Block Rule" field "Hide For User" as "" with filter "" for field ""
-	#Given I setup filter clause for "Page Block Rule Detail" in "ApplicationView" for field "Name" having value "View"
-	#When I reconfigure "Page Block Rule" field "Hide For User" as "Internal"
 	When I login as "Automation" User
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Applications" tab
 	When I search for "AP-755-198"
