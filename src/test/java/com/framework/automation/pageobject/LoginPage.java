@@ -68,12 +68,12 @@ private final By logOutOption;
 		waitForNavigationLogo();
 		reiDriver.WaitFor().specialCustomWait(5, userAvatar);
 		try {
-			reiDriver.Clickers().MouseClick(userAvatar);
+			reiDriver.Clickers().mouseClick(userAvatar);
 		} catch (Exception e) {
 			reiDriver.JavaScript().clickByJS(userAvatar);
 		}
 		reiDriver.WaitFor().specialCustomWait(5, logOutOption);
-		reiDriver.Clickers().MouseClick(logOutOption);
+		reiDriver.Clickers().mouseClick(logOutOption);
 	}
 
 	/**
