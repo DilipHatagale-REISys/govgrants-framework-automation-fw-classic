@@ -54,10 +54,8 @@ Feature: Side bar Component Scenarios
 	@33880 @all @validateChangeAccordianHeaderSeq-gHome 
 	Scenario: validate after changing accordian header sequence for activities
 	Given I have default configuration as below:
-	#|configurationCategory|fieldName  |fieldOrignalValue |filterId        |
-	#|Accordian Header     |Sequence   |9                 |ApiGeneratedId:0|
-	 |configurationCategory|fieldName  |fieldOrignalValue |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
-	 |Accordian Header     |Sequence   |9                 |GrantorHome           |Name                     |Manage Forms              |                    
+	|configurationCategory|fieldName  |fieldOrignalValue |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Accordian Header     |Sequence   |9                 |GrantorHome           |Name                     |Manage Forms              |                    
 	Given I setup test configuration as below:
 	|configurationCategory  |fieldName   |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Accordian Header       |Sequence    |1            |GrantorHome           |Name                     |Manage Forms              |
