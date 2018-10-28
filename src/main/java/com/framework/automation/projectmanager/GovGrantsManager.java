@@ -553,7 +553,7 @@ public class GovGrantsManager extends ProjectWebServices {
      */
     public void performQuickSearch(String searchTerm) {
         try {
-            reiDriver.JavaScript().scrollpageToSpecificElement(searchInput);
+        	reiDriver.JavaScript().scrollPageWindowJS("searchInput", 0, 0);
             reiDriver.WaitFor().WaitForElementToBePresent(searchInput);
             reiDriver.textInput().enterText(searchInput, searchTerm);
             reiDriver.WaitFor().WaitForElementToBePresent(quickSearchButton).click();

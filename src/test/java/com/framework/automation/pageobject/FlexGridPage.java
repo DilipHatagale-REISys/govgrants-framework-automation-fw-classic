@@ -29,7 +29,7 @@ public class FlexGridPage extends GovGrantsManager {
 
 	public void clickPPMGParallelLinesMenuBar() {
 		reiDriver.JavaScript().scrollpageToSpecificElement(
-				By.xpath("//div[@id='flexGridHeaderButtonsProgramPerformanceMgmtGridView']"));
+				By.xpath("//div[@id='flexGridHeaderButtonsSampleGrid']"));
 		reiDriver.WaitFor().WaitForElementToBePresent(programPerformanceMgmtGridViewMenuBars).click();
 	}
 

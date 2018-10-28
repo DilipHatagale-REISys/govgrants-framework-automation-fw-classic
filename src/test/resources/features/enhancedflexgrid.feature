@@ -56,9 +56,6 @@ Feature: Enhanced Flex Grid Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName      |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Flex Grid:General     |Enable Export  |false        |TmpActiveGrantsGrid   |                         |                          | 
-	#Given I have default configuration for "Flex Grid" field "Enable Export" as "true" with filter "" for field ""
-	#Given I setup filter clause for "General" in "TmpActiveGrantsGrid" for field "" having value ""
-	#When I reconfigure "Flex Grid" field "Enable Export" as "false"
     When I login as "Automation" User 
     When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
     When I search for "Test program for Automation"
@@ -135,8 +132,6 @@ Feature: Enhanced Flex Grid Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName         |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Flex Table Action     |Where To Open ?   |same window  |TmpActiveGrantsGrid   |Name                     |Edit                      |
-	#Given I setup filter clause for "Flex Table Action" in "TmpActiveGrantsGrid" for field "Name" having value "Edit"
-	#When I reconfigure "Flex Table Action" field "Where To Open ?" as "same window"
 	When I login as "Automation" User 
     When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
     When I search for "Test program for Automation"

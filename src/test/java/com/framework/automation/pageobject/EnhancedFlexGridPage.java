@@ -21,7 +21,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	 * Constructor to handle dependency injection and framework library
 	 */
 	public EnhancedFlexGridPage(Controller controller, Handlers reiDriver, GovGrantsHandler govgrants) {
-		super(controller, reiDriver,govgrants);
+		super(controller, reiDriver, govgrants);
 		advanceFilterButtonForEnhancedGrid = By
 				.xpath("//div[@id='flexGridEnhanced1']//span[contains(text(),'Advance Filter')]");
 		reachOutToEnhancedGridCollapse = By.id("ProgramBudgetCategoryflexTable");
@@ -308,18 +308,18 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 		try {
 			reiDriver.JavaScript().scrollpageToSpecificElement(scrollToActionColumn);
 			reiDriver.WaitFor()
-					.WaitForElementToBePresent(By.xpath(
-							"//td//span[contains(text(),'" + programSubject + "')]/../../..//td//span[contains(text(),'"
-									+ statusName + "')]/../../..//td//span//a[@title='" + iconName + "']//i"))
+					.WaitForElementToBePresent(By.xpath("//td//span[contains(text(),'" + programSubject
+							+ "')]/../../../..//td//span[contains(text(),'" + statusName
+							+ "')]/../../../..//td//span//a[@title='" + iconName + "']//i"))
 					.click();
 
 		} catch (Exception e) {
 			reiDriver.JavaScript().scrollpageToSpecificElement(scrollToActionColumn);
 			reiDriver.WaitFor().makeThreadSleep(1000);
 			reiDriver.JavaScript()
-					.clickByJS(By.xpath(
-							"//td//span[contains(text(),'" + programSubject + "')]/../../..//td//span[contains(text(),'"
-									+ statusName + "')]/../../..//td//span//a[@title='" + iconName + "']//i"));
+					.clickByJS(By.xpath("//td//span[contains(text(),'" + programSubject
+							+ "')]/../../../..//td//span[contains(text(),'" + statusName
+							+ "')]/../../../..//td//span//a[@title='" + iconName + "']//i"));
 		}
 	}
 }

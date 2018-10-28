@@ -100,7 +100,7 @@ Feature: Page Layout Component Scenarios
 	|Page Layout           |Hide Pdf Download   |false                |ApiGeneratedId:0|
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName           |fieldNewValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
-	|Page Layout:General   |Hide Pdf Download   |true           |Grantee State Program |Name                     |Submit For Approval          |
+	|Page Layout:General   |Hide Pdf Download   |true           |Grantee State Program |                         |                             |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
@@ -410,4 +410,32 @@ Feature: Page Layout Component Scenarios
 	When I click on "Menu" button inside detail page
 	And I select "Download As PDF" from dropdown
 	And I download the file
-	Then I do not see "Program Information" on page "1" of "govgrants" pdf file	
+	Then I do not see "Program Information" on page "1" of "govgrants" pdf file
+	
+	@36037 @all @hideForContextFieldAtPageBlock-gPlanning
+	Scenario: Hide program information page block from config and validating it at program detail page
+	Given I have default configuration as below:
+	|configurationCategory        |fieldName        |fieldOrignalValue    |coreComponentField    |filterId        |
+	|Page Block:Page Block Detail |Hide for Context |                     |Grantee State Program |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory        |fieldName        |fieldNewValue        |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Block:Page Block Detail |Hide for Context |View                 |Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	Then I see "Program Information" page block is not displayed
+	
+	@36038 @all @hideForUserFieldAtPageBlock-gPlanning
+	Scenario: Hiding of program information page block for internal user from config and validating it at program detail page
+	Given I have default configuration as below:
+	|configurationCategory        |fieldName        |fieldOrignalValue    |coreComponentField    |filterId        |
+	|Page Block:Page Block Detail |Hide for User    |                     |Grantee State Program |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory        |fieldName        |fieldNewValue        |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Block:Page Block Detail |Hide for User    |Internal             |Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	Then I see "Program Information" page block is not displayed
