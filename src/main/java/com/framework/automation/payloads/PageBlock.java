@@ -77,7 +77,7 @@ public class PageBlock {
 			break;
 		case "TOTAL FIELDS PER ROW":
 			finalPayload = String.format(
-					payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PageBlockConfig__c), apiUtilities
+					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageBlockConfig__c), apiUtilities
 							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PageBlockConfig__c), filterClause),
 					String.valueOf(SObjectAPIs.GNT__BodyColumns__c), value);
 			break;
@@ -93,6 +93,19 @@ public class PageBlock {
 							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PageBlockConfig__c), filterClause),
 					String.valueOf(SObjectAPIs.GNT__HideForUser__c), value);
 			break;
+		case "HIDE FOR PROFILE":
+			finalPayload = String.format(
+					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageBlockConfig__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PageBlockConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__HideForProfile__c), value);
+			break;
+		case "OPERATOR":
+			finalPayload = String.format(
+					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageBlockConfig__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PageBlockConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__Operator__c), value);
+			break;
+
 		}
 		System.out.println(finalPayload);
 		return finalPayload;

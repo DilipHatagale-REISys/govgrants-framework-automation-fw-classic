@@ -65,7 +65,6 @@ private final By logOutOption;
 	 */
 	public void clickLogOut() {
 		waitForNavigationLogo();
-		waitForNavigationLogo();
 		reiDriver.WaitFor().specialCustomWait(5, userAvatar);
 		try {
 			reiDriver.Clickers().mouseClick(userAvatar);
