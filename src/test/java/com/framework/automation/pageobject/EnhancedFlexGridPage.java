@@ -270,7 +270,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	private boolean isSelectRecordCheckBoxEnabledAtEnhancedGrid() {
 		boolean flag = false;
 		try {
-			reiDriver.JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
+			reiDriver.JavaScript().scrollElementToPageDetailCenter(reachOutToEnhancedGridCollapse);
 			for (WebElement element : getCompleteTableRowOfEnhancedGrid()) {
 				if (element.findElement(selectRecordCheckBoxForEnhancedGrid).isDisplayed()) {
 					flag = true;
