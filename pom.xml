@@ -192,6 +192,7 @@
 					<excludes>
 						<exclude>**/IT*.java</exclude>
 					</excludes>
+					<rerunFailingTestsCount>1</rerunFailingTestsCount>
 				</configuration>
 				<executions>
 					<execution>
