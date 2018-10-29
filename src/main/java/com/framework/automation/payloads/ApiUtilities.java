@@ -180,9 +180,6 @@ public class ApiUtilities {
 		return "Name=" + "'" + ComponentCoreFieldName + "'";
 	}
 
-	/*
-	 * public static ArrayList<IdBucket> getTheId() { return storeAllIds; }
-	 */
 	private String handleConfigCategory(String configCategory) {
 		String configurationCategory = null;
 		if (configCategory.contains(":")) {
