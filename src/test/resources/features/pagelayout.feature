@@ -557,15 +557,13 @@ Feature: Page Layout Component Scenarios
 	@36045 @all @flexTableNameFieldAtPageBlock-gPlanning
 	Scenario: Changing flex table rendering by changing name inside flex table name field at page block from config and validating it on program detail page
 	Given I have default configuration as below:
-	#|configurationCategory        |fieldName      |fieldOrignalValue|coreComponentField    |filterId        |
-	#|Page Block:Page Block Detail |Flex Table Name|ProgramContacts  |Grantee State Program |ApiGeneratedId:0|
-	#Given I setup test configuration as below:
-	#|configurationCategory        |fieldName      |fieldNewValue                  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
-	#|Page Block:Page Bock Detail |Flex Table Name|ProgramRolesAndResponsibilities|Grantee State Program |GNT__PageBlockTitle__c   |Contacts                  |
-	|configurationCategory       |fieldName              |fieldNewValue   |coreComponentField|coreCOmponentSubFieldName |coreComponentSubFieldValue   |
-	|Page Block:Page Bock Detail |GNT__FlexTableName__c |Contacts        |ProgramContacts   |                          |                             |
-	|Phase Config:General |Tab Display Label|Planning         |GrantorPlanning   |                          |                             |
-	|Charts Config        |Phase Config     |ApiGeneratedId:0 |GrantorPlanning   |Name                      |AnnouncementByAdminBureauUnit|
+	|configurationCategory |fieldName         |fieldOrignalValue |filterId                  |
+	|Page Block                    |Flex Table Name|ApiGeneratedId:0|ApiGeneratedId:2|
+	Given I setup test configuration as below:
+	|configurationCategory           |fieldName         |fieldNewValue                     |coreComponentField                      |coreCOmponentSubFieldName |coreComponentSubFieldValue   |
+	|Flex Grid:General                    |Header               |Program Contacts              |ProgramContacts                            |                                                      |                                                      |
+	|Flex Grid:General                    |Header               |Roles And Responsibilities |ProgramRolesAndResponsibilities|                                                     |                                                       |
+	|Page Block:Page Block Detail|Flex Table Name|ApiGeneratedId:1                |Grantee State Program                   |GNT__PageBlockTitle__c            |Contacts |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
