@@ -1,5 +1,7 @@
 package com.framework.automation.pageobject;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -14,7 +16,7 @@ public class PageLayoutPage extends GovGrantsManager {
 	/******* "Variables and Locators" *****************/
 
 	private final By overViewHeader, overViewTitle, pageInstructionText, headerInstructionText, headerOverviewTab,
-			headerInstructionTextForPageBlock;
+			headerInstructionTextForPageBlock, rolesAndResponsibilitiesFlexTableTitle;
 
 	/**
 	 * Constructor to handle dependency injection and framework library
@@ -27,6 +29,8 @@ public class PageLayoutPage extends GovGrantsManager {
 		headerInstructionText = By.cssSelector("div.tabheaderinstruction");
 		headerOverviewTab = By.xpath("//div[@class='panel-body']//span[contains(text(),'ID')]");
 		headerInstructionTextForPageBlock = By.xpath("//div//span[contains(text(),'Header for Automation')]");
+		rolesAndResponsibilitiesFlexTableTitle = By.xpath(
+				"//div[@class='panel-heading']//div[contains(@class,'panel-title')]//a//span[contains(text(),'Roles And Responsibilities')]");
 	}
 
 	/******* "Key Methods with complete functionality - public" *****************/
@@ -207,6 +211,23 @@ public class PageLayoutPage extends GovGrantsManager {
 	 */
 	public void assertHeaderInstructionTextAtPageBlock(String headerText) {
 		Assert.assertTrue(isHeaderInstructionTextDisplayedAtPageBlock(headerText));
+	}
+
+	/**
+	 * 
+	 * @param titleName
+	 * @param number
+	 */
+	public void assertNumberOfElementsInsidePageBlock(String titleName, int number) {
+		Assert.assertTrue(isExpectedNumberOfElementPresent(titleName, number));
+	}
+
+	/**
+	 * assert correct title name of flex table is displayed at page block
+	 * 
+	 */
+	public void assertCorrectFlexTableTitleDisplayedAtPageBlock() {
+		Assert.assertTrue(isFlexTableTitleDisplayedAtPageBlock());
 	}
 
 	/*********
@@ -508,5 +529,49 @@ public class PageLayoutPage extends GovGrantsManager {
 			flag = true;
 		}
 		return flag;
+	}
+
+	/**
+	 * Boolean status of no of elements inside page block row
+	 * 
+	 * @param status
+	 */
+	private Boolean isExpectedNumberOfElementPresent(String titleName, int number) {
+		boolean flag = false;
+		List<WebElement> firstRowElements = reiDriver.WaitFor()
+				.WaitForElementListToBePresent(By.xpath("//h3//a[contains(text(),'" + titleName
+						+ "')]/ancestor::div[2]/following-sibling::div[contains(@id,'toggleBlock')]/div[1]/div"));
+		if (firstRowElements.size() == number) {
+			flag = true;
+		} else {
+			flag = false;
+		}
+		return flag;
+	}
+
+	/**
+	 * get list of sub tab inside main detail page like overview etc.
+	 */
+	public List<WebElement> getListOfFirstRowElementsInsidePageBlock(String titleName) {
+		return reiDriver.findMyElement().getElements(By.xpath("//h3//a[contains(text(),'" + titleName
+				+ "')]/ancestor::div[2]/following-sibling::div[contains(@id,'toggleBlock')]/div[1]/div"));
+	}
+
+	/**
+	 * validate if flex table title is displayed at page block
+	 * 
+	 * @return
+	 */
+	private boolean isFlexTableTitleDisplayedAtPageBlock() {
+		reiDriver.JavaScript().scrollElementToPageDetailCenter(rolesAndResponsibilitiesFlexTableTitle);
+		try {
+			if (reiDriver.findMyElement().getElement(rolesAndResponsibilitiesFlexTableTitle).isDisplayed()) {
+				return true;
+			} else {
+				return false;
+			}
+		} catch (Exception e) {
+			return false;
+		}
 	}
 }
