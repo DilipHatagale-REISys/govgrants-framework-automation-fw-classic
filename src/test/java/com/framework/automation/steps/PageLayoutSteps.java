@@ -128,4 +128,14 @@ public class PageLayoutSteps {
 	public void assertHeaderInstructionTextAtPageBlock(String headerText) {
 		pageLayoutPage.assertHeaderInstructionTextAtPageBlock(headerText);
 	}
+
+	@Then("^I see \"([^\"]*)\" page block contains \"([^\"]*)\" elements$")
+	public void asserPageBlockRowElement(String titleName, String number) {
+		pageLayoutPage.assertNumberOfElementsInsidePageBlock(titleName, Integer.parseInt(number));
+	}
+
+	@Then("^I see Roles And Responsibilities flex table inside page block$")
+	public void assertFlextableTitleAtPageBlock() {
+		pageLayoutPage.assertCorrectFlexTableTitleDisplayedAtPageBlock();
+	}
 }

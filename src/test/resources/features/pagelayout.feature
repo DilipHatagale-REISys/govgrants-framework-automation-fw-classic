@@ -459,7 +459,7 @@ Feature: Page Layout Component Scenarios
 	Then I see "Overview" sub tab is not displayed at view detail page
 	
 	@35958 @all @hideOperatorFieldUsingOROperatorAtPageTab-gPlanning
-	Scenario: Hide overview for program view page from config using AND operator and validating it at program detail page
+	Scenario: Hide overview for program view page from config using OR operator and validating it at program detail page
 	Given I have default configuration as below:
 	|configurationCategory |fieldName       |fieldOrignalValue    |filterId        |
 	|Page Tabs Config      |Operator        |                     |ApiGeneratedId:0|
@@ -506,4 +506,69 @@ Feature: Page Layout Component Scenarios
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
 	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
-	Then I see "Program Information" page block is not displayed	
+	Then I see "Program Information" page block is not displayed
+	
+	@36036 @all @totalFieldsPerRowFieldAtPageBlock-gPlanning
+	Scenario: Setup value for total fields per row page block from config and validating it at program detail page
+	Given I have default configuration as below:
+	|configurationCategory        |fieldName             |fieldOrignalValue    |coreComponentField    |filterId        |
+	|Page Block:Page Block Detail |Total Fields per Row  |2                    |Grantee State Program |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory        |fieldName             |fieldNewValue        |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Block:Page Block Detail |Total Fields per Row  |3                    |Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
+    When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+  	Then I see "Program Information" page block contains "3" elements
+  	
+  	@36041 @all @hideOperatorFieldUsingOROperatorAtPageBlock-gPlanning
+	Scenario: Hide program information for program view page from config using AND operator and validating it at program detail page
+	Given I have default configuration as below:
+	|configurationCategory             |fieldName       |fieldOrignalValue    |coreComponentField    |filterId        |
+	|Page Block:Page Block Detail      |Operator        |                     |Grantee State Program |ApiGeneratedId:0|
+    |Page Block:Page Block Detail      |Hide for Profile|                     |Grantee State Program |ApiGeneratedId:0|
+    |Page Block:Page Block Detail      |Hide for User   |                     |Grantee State Program |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory             |fieldName       |fieldNewValue       |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Block:Page Block Detail      |Operator        |OR                  |Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
+    |Page Block:Page Block Detail      |Hide for Profile|System Administrator|Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
+    |Page Block:Page Block Detail      |Hide for User   |Internal            |Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
+    When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	Then I see "Program Information" page block is not displayed
+	
+	@36042 @all @hideDecisionFieldAtPageBlock-gPlanning
+	Scenario: Hiding of program information page block from config and validating it at program detail page
+	Given I have default configuration as below:
+	|configurationCategory        |fieldName          |fieldOrignalValue|coreComponentField    |filterId        |
+	|Page Block:Page Block Detail |Hide Decision Field|                 |Grantee State Program |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory        |fieldName          |fieldNewValue       |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Block:Page Block Detail |Hide Decision Field|ShowActiveProgram__c|Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	Then I see "Program Information" page block is not displayed
+	
+	@36045 @all @flexTableNameFieldAtPageBlock-gPlanning
+	Scenario: Changing flex table rendering by changing name inside flex table name field at page block from config and validating it on program detail page
+	Given I have default configuration as below:
+	#|configurationCategory        |fieldName      |fieldOrignalValue|coreComponentField    |filterId        |
+	#|Page Block:Page Block Detail |Flex Table Name|ProgramContacts  |Grantee State Program |ApiGeneratedId:0|
+	#Given I setup test configuration as below:
+	#|configurationCategory        |fieldName      |fieldNewValue                  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	#|Page Block:Page Bock Detail |Flex Table Name|ProgramRolesAndResponsibilities|Grantee State Program |GNT__PageBlockTitle__c   |Contacts                  |
+	|configurationCategory       |fieldName              |fieldNewValue   |coreComponentField|coreCOmponentSubFieldName |coreComponentSubFieldValue   |
+	|Page Block:Page Bock Detail |GNT__FlexTableName__c |Contacts        |ProgramContacts   |                          |                             |
+	|Phase Config:General |Tab Display Label|Planning         |GrantorPlanning   |                          |                             |
+	|Charts Config        |Phase Config     |ApiGeneratedId:0 |GrantorPlanning   |Name                      |AnnouncementByAdminBureauUnit|
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	Then I see Roles And Responsibilities flex table inside page block	
+	
