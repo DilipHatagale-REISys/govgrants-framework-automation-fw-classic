@@ -51,7 +51,6 @@ public class FlexGrid {
 					String.valueOf(SObjectAPIs.GNT__HideForContext__c), value);
 			break;
 		case "ENABLE FILTER":
-			System.out.println("enable filter");
 			finalPayload = String.format(
 					payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), apiUtilities
 							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),

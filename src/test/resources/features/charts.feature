@@ -9,8 +9,8 @@ Feature: Charts Component Scenarios
 	|configurationCategory |fieldName          |fieldOrignalValue            |filterId        |
 	|Charts Config         |Title              |AnnouncementByAdminBureauUnit|ApiGeneratedId:0|
 	Given I setup test configuration as below:
-	|configurationCategory |fieldName          |fieldNewValue                       |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
-	|Charts Config         |Title              |Funding Opportunities for Automation|GrantorPlanning       |Name                     |AnnouncementByAdminBureauUnit|
+	|configurationCategory |fieldName          |fieldNewValue                                          |coreComponentField|coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Charts Config                |Title                     |Funding Opportunities for Automation|GrantorPlanning        |Name                                          |AnnouncementByAdminBureauUnit|
 	When I login as "Automation" User
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	Then I see "Funding Opportunities for Automation" displayed as chart title
@@ -21,10 +21,10 @@ Feature: Charts Component Scenarios
 	|configurationCategory|fieldName        |fieldOrignalValue|filterId|
 	|Charts Config        |Phase Config     |ApiGeneratedId:1 |ApiGeneratedId:2|
 	Given I setup test configuration as below:
-	|configurationCategory|fieldName         |fieldNewValue   |coreComponentField|coreCOmponentSubFieldName |coreComponentSubFieldValue   |
-	|Phase Config:General |Tab Display Label|Announcements    |FundingOpportunity|                          |                             |
-	|Phase Config:General |Tab Display Label|Planning         |GrantorPlanning   |                          |                             |
-	|Charts Config        |Phase Config     |ApiGeneratedId:0 |GrantorPlanning   |Name                      |AnnouncementByAdminBureauUnit|
+	|configurationCategory|fieldName            |fieldNewValue       |coreComponentField|coreCOmponentSubFieldName |coreComponentSubFieldValue         |
+	|Phase Config:General  |Tab Display Label|Announcements    |FundingOpportunity|                                                       |                                                            |
+	|Phase Config:General  |Tab Display Label|Planning                 |GrantorPlanning       |                                                       |                                                            |
+	|Charts Config               |Phase Config       |ApiGeneratedId:0   |GrantorPlanning       |Name                                             |AnnouncementByAdminBureauUnit|
 	When I login as "Automation" User
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Announcements" tab
 	Then I see "AnnouncementByAdminBureauUnit" displayed as chart title
