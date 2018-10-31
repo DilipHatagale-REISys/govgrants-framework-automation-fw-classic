@@ -557,16 +557,64 @@ Feature: Page Layout Component Scenarios
 	@36045 @all @flexTableNameFieldAtPageBlock-gPlanning
 	Scenario: Changing flex table rendering by changing name inside flex table name field at page block from config and validating it on program detail page
 	Given I have default configuration as below:
-	|configurationCategory |fieldName         |fieldOrignalValue |filterId                  |
-	|Page Block                    |Flex Table Name|ApiGeneratedId:0|ApiGeneratedId:2|
+	|configurationCategory |fieldName         |fieldOrignalValue |filterId        |
+	|Page Block            |Flex Table Name   |ApiGeneratedId:0  |ApiGeneratedId:2|
 	Given I setup test configuration as below:
-	|configurationCategory           |fieldName         |fieldNewValue                     |coreComponentField                      |coreCOmponentSubFieldName |coreComponentSubFieldValue   |
-	|Flex Grid:General                    |Header               |Program Contacts              |ProgramContacts                            |                                                      |                                                      |
-	|Flex Grid:General                    |Header               |Roles And Responsibilities |ProgramRolesAndResponsibilities|                                                     |                                                       |
-	|Page Block:Page Block Detail|Flex Table Name|ApiGeneratedId:1                |Grantee State Program                   |GNT__PageBlockTitle__c            |Contacts |
+	|configurationCategory       |fieldName         |fieldNewValue              |coreComponentField             |coreCOmponentSubFieldName |coreComponentSubFieldValue |
+	|Flex Grid:General           |Header            |Program Contacts           |ProgramContacts                |                                                      |                                                      |
+	|Flex Grid:General           |Header            |Roles And Responsibilities |ProgramRolesAndResponsibilities|                                                      |                                                       |
+	|Page Block:Page Block Detail|Flex Table Name   |ApiGeneratedId:1           |Grantee State Program          |GNT__PageBlockTitle__c    |Contacts                   |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
 	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
-	Then I see Roles And Responsibilities flex table inside page block	
+	When I click on "Overview" sub tab inside page layout
+	Then I see Roles And Responsibilities flex table inside page block
+	
+	@36046 @all @flexGridNameFieldAtPageBlock-gPlanning
+	Scenario: Changing flex grid rendering by changing name inside flex grid name field at page block from config and validating it on program detail page
+	Given I have default configuration as below:
+	|configurationCategory |fieldName         |fieldOrignalValue |filterId        |
+	|Page Block            |Flex Grid Name    |ApiGeneratedId:0  |ApiGeneratedId:2|
+	Given I setup test configuration as below:
+	|configurationCategory       |fieldName            |fieldNewValue              |coreComponentField             |coreCOmponentSubFieldName |coreComponentSubFieldValue |
+	|Flex Grid:General           |Flex Grid Config Name|ProgramOutcomes            |ProgramOutcomes                |                                                      |                                                      |
+	|Flex Grid:General           |Flex Grid Config Name|MonitoringGridView         |MonitoringGridView             |                                                      |                                                       |
+	|Page Block:Page Block Detail|Flex Grid Name       |ApiGeneratedId:1           |Grantee State Program          |GNT__PageBlockTitle__c    |Out Comes                  |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	When I click on "Plan" sub tab inside page layout
+	Then I see Monitoring Schedule For All Active Grants flex grid inside page block
+		
+	@36051 @all @hideDisableAttachmentRowActionsFieldWithDisableOptionAtPageBlock-gPlanning
+	Scenario: Hiding edit action item at row level inside attachments page block from config using disable option and validating it at program-submitted for approval detail page
+	Given I have default configuration as below:
+	|configurationCategory        |fieldName                          |fieldOrignalValue |coreComponentField    |filterId        |
+	|Page Block:Page Block Detail |Hide/Disable attachment Row actions|                  |Grantee State Program |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory        |fieldName                          |fieldNewValue     |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Block:Page Block Detail |Hide/Disable attachment Row actions|Disable           |Grantee State Program |GNT__PageBlockTitle__c   |Attachments               |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Automation Program -SA to C"
+	When I click on "View Program Details" icon of status "Submitted for Approval" for "Automation Program -SA to C" program in flex table
+	When I click on "Attachments" sub tab inside page layout
+	Then I see edit icon is disabled inside "Attachments" page block
+	
+	@36053 @all @hideDisableAttachmentRowActionsFieldWithHideOptionAtPageBlock-gPlanning
+	Scenario: Hiding edit action item at row level inside attachments page block from config using hide option and validating it at program-submitted for approval detail page
+	Given I have default configuration as below:
+	|configurationCategory        |fieldName                          |fieldOrignalValue |coreComponentField    |filterId        |
+	|Page Block:Page Block Detail |Hide/Disable attachment Row actions|Disable           |Grantee State Program |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory        |fieldName                          |fieldNewValue     |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Block:Page Block Detail |Hide/Disable attachment Row actions|Hide              |Grantee State Program |GNT__PageBlockTitle__c   |Attachments               |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Automation Program -SA to C"
+	When I click on "View Program Details" icon of status "Submitted for Approval" for "Automation Program -SA to C" program in flex table
+	When I click on "Attachments" sub tab inside page layout
+	Then I see edit icon is not visible inside "Attachments" page block	
 	
