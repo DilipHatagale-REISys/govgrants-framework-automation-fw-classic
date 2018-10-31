@@ -145,12 +145,12 @@ public class PageLayoutSteps {
 	}
 
 	@Then("^I see edit icon is disabled inside \"([^\"]*)\" page block$")
-	public void assertActionIconNotDisplayedInsidePPMGVflexTable(String pageBlockName) {
-		pageLayoutPage.assertActionIconNotDisplayedInsideAttachment(pageBlockName);
+	public void assertActionEditIconIsDisabledForAttachmentPageBlock(String pageBlockName) {
+		pageLayoutPage.assertEditActionItemDisabledForAttachment(pageBlockName);
 	}
 
 	@Then("^I see edit icon is not visible inside \"([^\"]*)\" page block$")
-	public void assertActionIconNotVisibleInsidePPMGVflexTable(String pageBlockName) {
-		pageLayoutPage.assertActionIconNotVisibleInsideAttachment(pageBlockName);
+	public void assertEditActionItemNotVisibleForAttachmentPageBlock(String pageBlockName) {
+		pageLayoutPage.assertEditActionItemNotVisibleForAttachment(pageBlockName);
 	}
 }

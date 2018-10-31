@@ -90,20 +90,11 @@ public class FlexGrid {
 					String.valueOf(SObjectAPIs.GNT__EnableRecordSelection__c), value);
 			break;
 		case "FLEX GRID CONFIG NAME":
-            if (m.find()) {
-                finalPayload = String
-                        .format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__FlexGridConfig__c),
-                                apiUtilities.getComponentCoreFieldId(
-                                        String.valueOf(SObjectAPIs.GNT__FlexGridConfig__c), filterClause),
-                                String.valueOf(SObjectAPIs.Name), value);
-            } else {
-                finalPayload = String
-                        .format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__FlexGridConfig__c),
-                                apiUtilities.getComponentCoreFieldId(
-                                        String.valueOf(SObjectAPIs.GNT__FlexGridConfig__c), filterClause),
-                                String.valueOf(SObjectAPIs.Name), value);
-            }
-            break;
+			finalPayload = String.format(
+					payloadForIntValue, String.valueOf(SObjectAPIs.GNT__FlexGridConfig__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__FlexGridConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.Name), value);
+			break;
 		}
 		System.out.println(finalPayload);
 		return finalPayload;

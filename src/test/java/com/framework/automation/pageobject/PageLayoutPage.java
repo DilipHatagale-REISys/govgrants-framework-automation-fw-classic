@@ -241,21 +241,21 @@ public class PageLayoutPage extends GovGrantsManager {
 	}
 
 	/**
-	 * assert if specific action icon is not displayed inside attachment
-	 * 
-	 * @param actionIcon
-	 */
-	public void assertActionIconNotDisplayedInsideAttachment(String pageBlockName) {
-		Assert.assertTrue(isActionIconNotDisplayedInsideAttachment(pageBlockName));
-	}
-
-	/**
-	 * assert if specific action icon is not visible inside attachment
+	 * assert if Edit action item is disabled inside attachment page block
 	 * 
 	 * @param pageBlockName
 	 */
-	public void assertActionIconNotVisibleInsideAttachment(String pageBlockName) {
-		Assert.assertFalse(isActionIconNotDisplayedInsideAttachment(pageBlockName));
+	public void assertEditActionItemDisabledForAttachment(String pageBlockName) {
+		Assert.assertTrue(isEditActionItemDisabledForAttachment(pageBlockName));
+	}
+
+	/**
+	 * assert if Edit action item is not visible inside attachment page block
+	 * 
+	 * @param pageBlockName
+	 */
+	public void assertEditActionItemNotVisibleForAttachment(String pageBlockName) {
+		Assert.assertFalse(isEditActionItemDisabledForAttachment(pageBlockName));
 	}
 
 	/*********
@@ -615,11 +615,11 @@ public class PageLayoutPage extends GovGrantsManager {
 	}
 
 	/**
-	 * Boolean status of action item inside attachment page block row
+	 * Boolean status of Edit action item inside attachment page block row
 	 * 
 	 * @param status
 	 */
-	private boolean isActionIconNotDisplayedInsideAttachment(String pageBlockName) {
+	private boolean isEditActionItemDisabledForAttachment(String pageBlockName) {
 		boolean flag = false;
 		try {
 			if (getListAttachmentTableSpecificColumnActions(pageBlockName).size() > 0) {
