@@ -91,7 +91,7 @@ public class FlexGrid {
 			break;
 		case "FLEX GRID CONFIG NAME":
 			finalPayload = String.format(
-					payloadForIntValue, String.valueOf(SObjectAPIs.GNT__FlexGridConfig__c), apiUtilities
+					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__FlexGridConfig__c), apiUtilities
 							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__FlexGridConfig__c), filterClause),
 					String.valueOf(SObjectAPIs.Name), value);
 			break;
