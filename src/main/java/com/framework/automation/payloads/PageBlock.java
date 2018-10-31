@@ -117,6 +117,24 @@ public class PageBlock {
 							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PageBlockConfig__c), filterClause),
 					String.valueOf(SObjectAPIs.GNT__FlexTableName__c), value);
 			break;
+		case "FLEX GRID NAME":
+			finalPayload = String.format(
+					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageBlockConfig__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PageBlockConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__FlexGridName__c), value);
+			break;
+		case "ATTACHMENT CLASSIFICATIONS":
+			finalPayload = String.format(
+					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageBlockConfig__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PageBlockConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__AttachmentClassifications__c), value);
+			break;
+		case "HIDE/DISABLE ATTACHMENT ROW ACTIONS":
+			finalPayload = String.format(
+					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageBlockConfig__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PageBlockConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__HideDisableRowactions__c), value);
+			break;
 		}
 		System.out.println(finalPayload);
 		return finalPayload;

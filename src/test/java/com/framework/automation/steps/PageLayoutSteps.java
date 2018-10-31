@@ -135,7 +135,22 @@ public class PageLayoutSteps {
 	}
 
 	@Then("^I see Roles And Responsibilities flex table inside page block$")
-	public void assertFlextableTitleAtPageBlock() {
-		pageLayoutPage.assertCorrectFlexTableTitleDisplayedAtPageBlock();
+	public void assertChangedFlextableRenderingAtPageBlock() {
+		pageLayoutPage.assertCorrectFlexTableDisplayedAtPageBlock();
+	}
+
+	@Then("^I see Monitoring Schedule For All Active Grants flex grid inside page block$")
+	public void assertChangedFlexGridRenderingAtPageBlock() {
+		pageLayoutPage.assertCorrectFlexGridDisplayedAtPageBlock();
+	}
+
+	@Then("^I see edit icon is disabled inside \"([^\"]*)\" page block$")
+	public void assertActionIconNotDisplayedInsidePPMGVflexTable(String pageBlockName) {
+		pageLayoutPage.assertActionIconNotDisplayedInsideAttachment(pageBlockName);
+	}
+
+	@Then("^I see edit icon is not visible inside \"([^\"]*)\" page block$")
+	public void assertActionIconNotVisibleInsidePPMGVflexTable(String pageBlockName) {
+		pageLayoutPage.assertActionIconNotVisibleInsideAttachment(pageBlockName);
 	}
 }

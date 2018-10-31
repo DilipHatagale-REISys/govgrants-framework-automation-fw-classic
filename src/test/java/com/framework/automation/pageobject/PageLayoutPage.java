@@ -16,7 +16,7 @@ public class PageLayoutPage extends GovGrantsManager {
 	/******* "Variables and Locators" *****************/
 
 	private final By overViewHeader, overViewTitle, pageInstructionText, headerInstructionText, headerOverviewTab,
-			headerInstructionTextForPageBlock, rolesAndResponsibilitiesFlexTableTitle;
+			headerInstructionTextForPageBlock, rolesAndResponsibilitiesFlexTableTitle, monitoringFlexGridTitle;
 
 	/**
 	 * Constructor to handle dependency injection and framework library
@@ -31,6 +31,8 @@ public class PageLayoutPage extends GovGrantsManager {
 		headerInstructionTextForPageBlock = By.xpath("//div//span[contains(text(),'Header for Automation')]");
 		rolesAndResponsibilitiesFlexTableTitle = By.xpath(
 				"//div[@class='panel-heading']//div[contains(@class,'panel-title')]//a//span[contains(text(),'Roles And Responsibilities')]");
+		monitoringFlexGridTitle = By.xpath(
+				"//div[@class='panel-heading']//div[contains(@class,'panel-title')]//a[@title='Monitoring Schedule For All Active Grants']");
 	}
 
 	/******* "Key Methods with complete functionality - public" *****************/
@@ -223,11 +225,37 @@ public class PageLayoutPage extends GovGrantsManager {
 	}
 
 	/**
-	 * assert correct title name of flex table is displayed at page block
+	 * assert changed flex table is displayed at page block
 	 * 
 	 */
-	public void assertCorrectFlexTableTitleDisplayedAtPageBlock() {
-		Assert.assertTrue(isFlexTableTitleDisplayedAtPageBlock());
+	public void assertCorrectFlexTableDisplayedAtPageBlock() {
+		Assert.assertTrue(isChangedFlexTableTitleDisplayedAtPageBlock());
+	}
+
+	/**
+	 * assert changed flex grid is displayed at page block
+	 * 
+	 */
+	public void assertCorrectFlexGridDisplayedAtPageBlock() {
+		Assert.assertTrue(isChangedFlexGridTitleDisplayedAtPageBlock());
+	}
+
+	/**
+	 * assert if specific action icon is not displayed inside attachment
+	 * 
+	 * @param actionIcon
+	 */
+	public void assertActionIconNotDisplayedInsideAttachment(String pageBlockName) {
+		Assert.assertTrue(isActionIconNotDisplayedInsideAttachment(pageBlockName));
+	}
+
+	/**
+	 * assert if specific action icon is not visible inside attachment
+	 * 
+	 * @param pageBlockName
+	 */
+	public void assertActionIconNotVisibleInsideAttachment(String pageBlockName) {
+		Assert.assertFalse(isActionIconNotDisplayedInsideAttachment(pageBlockName));
 	}
 
 	/*********
@@ -550,19 +578,11 @@ public class PageLayoutPage extends GovGrantsManager {
 	}
 
 	/**
-	 * get list of sub tab inside main detail page like overview etc.
-	 */
-	public List<WebElement> getListOfFirstRowElementsInsidePageBlock(String titleName) {
-		return reiDriver.findMyElement().getElements(By.xpath("//h3//a[contains(text(),'" + titleName
-				+ "')]/ancestor::div[2]/following-sibling::div[contains(@id,'toggleBlock')]/div[1]/div"));
-	}
-
-	/**
-	 * validate if flex table title is displayed at page block
+	 * validate if flex table title is displayed with respective title at page block
 	 * 
 	 * @return
 	 */
-	private boolean isFlexTableTitleDisplayedAtPageBlock() {
+	private boolean isChangedFlexTableTitleDisplayedAtPageBlock() {
 		reiDriver.JavaScript().scrollElementToPageDetailCenter(rolesAndResponsibilitiesFlexTableTitle);
 		try {
 			if (reiDriver.findMyElement().getElement(rolesAndResponsibilitiesFlexTableTitle).isDisplayed()) {
@@ -573,5 +593,53 @@ public class PageLayoutPage extends GovGrantsManager {
 		} catch (Exception e) {
 			return false;
 		}
+	}
+
+	/**
+	 * validate if changed flex grid is displayed with respective title at page
+	 * block
+	 * 
+	 * @return
+	 */
+	private boolean isChangedFlexGridTitleDisplayedAtPageBlock() {
+		reiDriver.JavaScript().scrollElementToPageDetailCenter(monitoringFlexGridTitle);
+		try {
+			if (reiDriver.findMyElement().getElement(monitoringFlexGridTitle).isDisplayed()) {
+				return true;
+			} else {
+				return false;
+			}
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
+	/**
+	 * Boolean status of action item inside attachment page block row
+	 * 
+	 * @param status
+	 */
+	private boolean isActionIconNotDisplayedInsideAttachment(String pageBlockName) {
+		boolean flag = false;
+		try {
+			if (getListAttachmentTableSpecificColumnActions(pageBlockName).size() > 0) {
+				flag = true;
+			}
+		} catch (Exception e) {
+			flag = false;
+		}
+		return flag;
+	}
+
+	/**
+	 * get list of element in attachment table action
+	 * 
+	 * @param headerName
+	 * @return
+	 */
+	private List<WebElement> getListAttachmentTableSpecificColumnActions(String pageBlockName) {
+		return reiDriver.findMyElement().getElements(By.xpath("//div[@class='panel-heading']//a[@title='"
+				+ pageBlockName
+				+ "']/../../../following-sibling::div[contains(@class,'panel-body')]//table/tbody/tr/td//a/span[contains(@class,'fa fa-pencil disable-action')]"));
 	}
 }
