@@ -153,4 +153,39 @@ public class PageLayoutSteps {
 	public void assertEditActionItemNotVisibleForAttachmentPageBlock(String pageBlockName) {
 		pageLayoutPage.assertEditActionItemNotVisibleForAttachment(pageBlockName);
 	}
+
+	@When("^I click Add button inside attachments page block$")
+	public void clickAddButton() {
+		pageLayoutPage.clickAddUnderAttachmentsPageBlock();
+	}
+
+	@When("^I click select dropdown inside add attachment iframe$")
+	public void clickSelectDropdown() {
+		pageLayoutPage.clickOnTypeDropdown();
+	}
+
+	@Then("^I see \"([^\"]*)\" inside Type selectbox$")
+	public void assertValueInsideTypeDropdown(String dropDownValue) {
+		pageLayoutPage.assertValueInsideDropdown(dropDownValue);
+	}
+
+	@Then("^I see \"([^\"]*)\" inside page block details$")
+	public void assertChangedFieldInsidePageBlockDetail(String changedFieldName) {
+		pageLayoutPage.assertChangedFieldInsidePageBlockDetailDisplayed(changedFieldName);
+	}
+
+	@Then("^I see \"([^\"]*)\" is not displayed inside page block detail$")
+	public void assertSpecificFieldAtPageBlockDetailNotDisplayed(String changedFieldName) {
+		pageLayoutPage.assertSpecificFieldInsidePageBlockDetailNotDisplayed(changedFieldName);
+	}
+
+	@Then("^I see \"([^\"]*)\" shown at number \"([^\"]*)\" inside page block detail$")
+	public void assertSequenceOfPageBlockElement(String changedFieldName, String number) {
+		pageLayoutPage.assertSortingOfPageBlockDetailElementSubTab(changedFieldName, Integer.parseInt(number));
+	}
+
+	@Then("^I see Program Name rendered in view mode only$")
+	public void assertViewModeOfPageBlockDetailElement() {
+		pageLayoutPage.assertPageBlockDetailElementDisplayedInViewMode();
+	}
 }
