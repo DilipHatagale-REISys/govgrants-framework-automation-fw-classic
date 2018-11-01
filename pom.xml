@@ -154,7 +154,12 @@
 			<groupId>com.itextpdf</groupId>
 			<artifactId>itextpdf</artifactId>
 			<version>5.5.13</version>
-		</dependency>
+		</dependency> 
+        <dependency>
+           <groupId>org.apache.maven.shared</groupId>
+           <artifactId>maven-invoker</artifactId>
+           <version>3.0.1</version>
+        </dependency>
 		<dependency>
 			<groupId>com.automation</groupId>
 			<artifactId>REI-AutomationFramework</artifactId>
