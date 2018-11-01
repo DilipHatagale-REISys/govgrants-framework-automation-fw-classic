@@ -150,6 +150,8 @@ public class PageBlock {
 	 */
 	public String setPageBlockRuleConfig(String fieldLabel, String value, String filterClause) {
 		String finalPayload = null;
+		Pattern p = Pattern.compile("([0-9])");
+		Matcher m = p.matcher(value);
 		switch (fieldLabel.toUpperCase()) {
 		case "HIDE FOR USER":
 			finalPayload = String
@@ -157,6 +159,41 @@ public class PageBlock {
 							apiUtilities.getComponentCoreFieldId(
 									String.valueOf(SObjectAPIs.GNT__PageAttachmentConfig__c), filterClause),
 							String.valueOf(SObjectAPIs.GNT__HideForUser__c), value);
+			break;
+		case "FIELD API NAME":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__FieldAPIName__c), value);
+			break;
+		case "IS ACTIVE":
+			finalPayload = String
+					.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__IsActive__c), value);
+			break;
+		case "SORT ORDER":
+			finalPayload = String
+					.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__SortOrder__c), value);
+			break;
+		case "FIELD LABEL OVERRIDE":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__FieldLabelOverride__c), value);
+			break;
+		case "READ ONLY":
+			finalPayload = String
+					.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__ReadOnly__c), value);
 			break;
 		}
 		System.out.println(finalPayload);
