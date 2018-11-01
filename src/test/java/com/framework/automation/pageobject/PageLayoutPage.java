@@ -16,7 +16,8 @@ public class PageLayoutPage extends GovGrantsManager {
 	/******* "Variables and Locators" *****************/
 
 	private final By overViewHeader, overViewTitle, pageInstructionText, headerInstructionText, headerOverviewTab,
-			headerInstructionTextForPageBlock, rolesAndResponsibilitiesFlexTableTitle, monitoringFlexGridTitle;
+			headerInstructionTextForPageBlock, rolesAndResponsibilitiesFlexTableTitle, monitoringFlexGridTitle,
+			addButtonUnderAttachments, selectTypeDropdown;
 
 	/**
 	 * Constructor to handle dependency injection and framework library
@@ -33,6 +34,8 @@ public class PageLayoutPage extends GovGrantsManager {
 				"//div[@class='panel-heading']//div[contains(@class,'panel-title')]//a//span[contains(text(),'Roles And Responsibilities')]");
 		monitoringFlexGridTitle = By.xpath(
 				"//div[@class='panel-heading']//div[contains(@class,'panel-title')]//a[@title='Monitoring Schedule For All Active Grants']");
+		addButtonUnderAttachments = By.xpath("//button[@title='AddAttachments']");
+		selectTypeDropdown = By.xpath("//select[@title='Classification']");
 	}
 
 	/******* "Key Methods with complete functionality - public" *****************/
@@ -256,6 +259,52 @@ public class PageLayoutPage extends GovGrantsManager {
 	 */
 	public void assertEditActionItemNotVisibleForAttachment(String pageBlockName) {
 		Assert.assertFalse(isEditActionItemDisabledForAttachment(pageBlockName));
+	}
+
+	/**
+	 * assert if specific value is displayed inside Type dropdown list
+	 * 
+	 * @param dropDownValue
+	 */
+	public void assertValueInsideDropdown(String dropDownValue) {
+		Assert.assertTrue(reiDriver.WaitFor().WaitForElementToBePresent(selectTypeDropdown).getAttribute("innerText")
+				.equalsIgnoreCase(dropDownValue));
+	}
+
+	/**
+	 * assert if changed field inside page block detail is displayed
+	 * 
+	 * @param changedFieldName
+	 */
+	public void assertChangedFieldInsidePageBlockDetailDisplayed(String changedFieldName) {
+		Assert.assertTrue(isChangedPageBlockDetailFieldDisplayed(changedFieldName));
+	}
+
+	/**
+	 * assert true if specific field inside page block detail as per name is not
+	 * displayed
+	 * 
+	 * @param fieldName
+	 */
+	public void assertSpecificFieldInsidePageBlockDetailNotDisplayed(String changedFieldName) {
+		Assert.assertTrue(isSpecificFieldAtPageBlockDetailDisplayed(changedFieldName));
+	}
+
+	/**
+	 * 
+	 * @param changedFieldName
+	 * @param number
+	 */
+	public void assertSortingOfPageBlockDetailElementSubTab(String changedFieldName, int number) {
+		Assert.assertTrue(isPageBlockDetailElementSequence(changedFieldName, number));
+	}
+
+	/**
+	 * assert if program name field rendered in view mode inside page block detail
+	 * 
+	 */
+	public void assertPageBlockDetailElementDisplayedInViewMode() {
+		Assert.assertTrue(isElementAtPageBlockDetailInViewMode());
 	}
 
 	/*********
@@ -641,5 +690,90 @@ public class PageLayoutPage extends GovGrantsManager {
 		return reiDriver.findMyElement().getElements(By.xpath("//div[@class='panel-heading']//a[@title='"
 				+ pageBlockName
 				+ "']/../../../following-sibling::div[contains(@class,'panel-body')]//table/tbody/tr/td//a/span[contains(@class,'fa fa-pencil disable-action')]"));
+	}
+
+	/**
+	 * 
+	 * @param changedFieldName
+	 * @return true if changed field inside page block detail is displayed
+	 */
+	private boolean isChangedPageBlockDetailFieldDisplayed(String changedFieldName) {
+		boolean flag = false;
+		try {
+			if (getPageBlockDetailsElement(changedFieldName).isDisplayed()) {
+				flag = true;
+			}
+		} catch (Exception e) {
+
+		}
+		return flag;
+	}
+
+	/**
+	 * return true if Specified field at page block detail is not displayed
+	 * 
+	 * @param changedFieldName
+	 * @return
+	 */
+	private boolean isSpecificFieldAtPageBlockDetailDisplayed(String changedFieldName) {
+		boolean flag = true;
+		try {
+			if (getPageBlockDetailsElement(changedFieldName).isDisplayed()) {
+				flag = false;
+			}
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+
+		}
+		return flag;
+	}
+
+	/**
+	 * get item from page block details
+	 * 
+	 * @param changedFieldName
+	 * @return
+	 */
+	private WebElement getPageBlockDetailsElement(String changedFieldName) {
+		return reiDriver.findMyElement().getElement(By.xpath("//span[contains(text(),'" + changedFieldName + "')]"));
+	}
+
+	/**
+	 * Boolean status of page block detail element sorting order
+	 * 
+	 * @param status
+	 */
+	private Boolean isPageBlockDetailElementSequence(String changedFieldName, int number) {
+		if (getListOfPageBlockDetailElement().get(number).getText().contains(changedFieldName)) {
+			return true;
+		} else
+			return false;
+	}
+
+	/**
+	 * get list of element inside page block detail like program name, program code
+	 * etc.
+	 */
+	public List<WebElement> getListOfPageBlockDetailElement() {
+		return reiDriver.findMyElement().getElements(By
+				.xpath("//h3//a[contains(text(),'Program Information')]/ancestor::div[2]/following-sibling::div//dt"));
+	}
+
+	/**
+	 * 
+	 * @return true if program name field rendered in view mode only inside page
+	 *         block detail
+	 */
+	private boolean isElementAtPageBlockDetailInViewMode() {
+		boolean flag = false;
+		try {
+			if (reiDriver.findMyElement()
+					.getElement(By.xpath("//div[@id='fieldProgramName__c']//span[@class='readonlySpan']"))
+					.isDisplayed()) {
+				flag = true;
+			}
+		} catch (Exception e) {
+
+		}
+		return flag;
 	}
 }
