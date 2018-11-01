@@ -262,23 +262,6 @@ public class PageLayoutPage extends GovGrantsManager {
 	}
 
 	/**
-	 * click add button inside attachments page block and switching to repective
-	 * frame.
-	 */
-	public void clickAddUnderAttachmentsPageBlock() {
-		reiDriver.WaitFor().WaitForElementToBePresent(addButtonUnderAttachments).click();
-		// reiDriver.switchTo().switchToParentFrame();
-		reiDriver.switchTo().switchToActiveContext();
-	}
-
-	/**
-	 * click on Select dropdown inside add attachment iframe
-	 */
-	public void clickOnTypeDropdown() {
-		reiDriver.findMyElement().getElement(selectTypeDropdown).click();
-	}
-
-	/**
 	 * assert if specific value is displayed inside Type dropdown list
 	 * 
 	 * @param dropDownValue

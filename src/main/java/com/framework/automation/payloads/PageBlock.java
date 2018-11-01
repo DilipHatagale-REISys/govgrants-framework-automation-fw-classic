@@ -168,34 +168,18 @@ public class PageBlock {
 							String.valueOf(SObjectAPIs.GNT__FieldAPIName__c), value);
 			break;
 		case "IS ACTIVE":
-			if (m.find() || (value.contains("true")) || (value.contains("false"))) {
-				finalPayload = String
-						.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c),
-								apiUtilities.getComponentCoreFieldId(
-										String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
-								String.valueOf(SObjectAPIs.GNT__IsActive__c), value);
-			} else {
-				finalPayload = String
-						.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c),
-								apiUtilities.getComponentCoreFieldId(
-										String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
-								String.valueOf(SObjectAPIs.GNT__IsActive__c), value);
-			}
+			finalPayload = String
+					.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__IsActive__c), value);
 			break;
 		case "SORT ORDER":
-			if (m.find() || (value.contains("true")) || (value.contains("false"))) {
-				finalPayload = String
-						.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c),
-								apiUtilities.getComponentCoreFieldId(
-										String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
-								String.valueOf(SObjectAPIs.GNT__SortOrder__c), value);
-			} else {
-				finalPayload = String
-						.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c),
-								apiUtilities.getComponentCoreFieldId(
-										String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
-								String.valueOf(SObjectAPIs.GNT__SortOrder__c), value);
-			}
+			finalPayload = String
+					.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__SortOrder__c), value);
 			break;
 		case "FIELD LABEL OVERRIDE":
 			finalPayload = String
@@ -205,19 +189,11 @@ public class PageBlock {
 							String.valueOf(SObjectAPIs.GNT__FieldLabelOverride__c), value);
 			break;
 		case "READ ONLY":
-			if (m.find() || (value.contains("true")) || (value.contains("false"))) {
-				finalPayload = String
-						.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c),
-								apiUtilities.getComponentCoreFieldId(
-										String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
-								String.valueOf(SObjectAPIs.GNT__ReadOnly__c), value);
-			} else {
-				finalPayload = String
-						.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c),
-								apiUtilities.getComponentCoreFieldId(
-										String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
-								String.valueOf(SObjectAPIs.GNT__ReadOnly__c), value);
-			}
+			finalPayload = String
+					.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__ReadOnly__c), value);
 			break;
 		}
 		System.out.println(finalPayload);

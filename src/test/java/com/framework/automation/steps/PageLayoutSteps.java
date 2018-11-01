@@ -154,16 +154,6 @@ public class PageLayoutSteps {
 		pageLayoutPage.assertEditActionItemNotVisibleForAttachment(pageBlockName);
 	}
 
-	@When("^I click Add button inside attachments page block$")
-	public void clickAddButton() {
-		pageLayoutPage.clickAddUnderAttachmentsPageBlock();
-	}
-
-	@When("^I click select dropdown inside add attachment iframe$")
-	public void clickSelectDropdown() {
-		pageLayoutPage.clickOnTypeDropdown();
-	}
-
 	@Then("^I see \"([^\"]*)\" inside Type selectbox$")
 	public void assertValueInsideTypeDropdown(String dropDownValue) {
 		pageLayoutPage.assertValueInsideDropdown(dropDownValue);
