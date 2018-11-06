@@ -66,11 +66,14 @@ public class LoginPage extends GovGrantsManager {
 	public void clickLogOut() {
 		waitForNavigationLogo();
 		waitForNavigationLogo();
-		reiDriver.WaitFor().specialCustomWait(5, userAvatar);
+		reiDriver.WaitFor().WaitForElementToBePresent(userAvatar);
 		try {
 			reiDriver.Clickers().mouseClick(userAvatar);
-		} catch (Exception e) {
+		} catch (org.openqa.selenium.StaleElementReferenceException stale) {
+		    reiDriver.get().getRefresh();
 			reiDriver.JavaScript().clickByJS(userAvatar);
+		} catch (Exception e) {
+	          reiDriver.JavaScript().clickByJS(userAvatar);
 		}
 		reiDriver.WaitFor().specialCustomWait(5, logOutOption);
 		reiDriver.Clickers().mouseClick(logOutOption);
