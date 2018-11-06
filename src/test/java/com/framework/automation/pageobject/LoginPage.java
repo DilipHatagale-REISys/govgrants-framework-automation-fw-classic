@@ -15,25 +15,25 @@ import com.framework.automation.projectmanager.UsersAndURL;
  */
 public class LoginPage extends GovGrantsManager {
 
-    /******* "Variables and Locators" *****************/
+	/******* "Variables and Locators" *****************/
 
-private final By userName;
-private final By password;
-private final By loginButton;
-private final By userAvatar;
-private final By logOutOption;
+	private final By userName;
+	private final By password;
+	private final By loginButton;
+	private final By userAvatar;
+	private final By logOutOption;
 
-    /**
-     * Constructor to handle dependency injection and framework library
-     */
-    public LoginPage(Controller controller, Handlers reiDriver, GovGrantsHandler govgrants) {
-        super(controller, reiDriver, govgrants);
-        userName = By.xpath("//input[@name='username' or id ='username']");
-        password = By.xpath("//input[@id='password' or @type='password']");
-        loginButton = By.xpath("//input[@id='Login' or @type='submit']");
-        userAvatar = By.cssSelector("div#myNavbarProfile>ul>li>a>img[alt='User Avatar']");
-        logOutOption = By.xpath("//ul/li/a[@aria-label='Logout']");
-    }
+	/**
+	 * Constructor to handle dependency injection and framework library
+	 */
+	public LoginPage(Controller controller, Handlers reiDriver, GovGrantsHandler govgrants) {
+		super(controller, reiDriver, govgrants);
+		userName = By.xpath("//input[@name='username' or id ='username']");
+		password = By.xpath("//input[@id='password' or @type='password']");
+		loginButton = By.xpath("//input[@id='Login' or @type='submit']");
+		userAvatar = By.cssSelector("div#myNavbarProfile>ul>li>a>img[alt='User Avatar']");
+		logOutOption = By.xpath("//ul/li/a[@aria-label='Logout']");
+	}
 
 	/******* "Key Methods with complete functionality" *****************/
 
@@ -64,6 +64,7 @@ private final By logOutOption;
 	 * 
 	 */
 	public void clickLogOut() {
+		waitForNavigationLogo();
 		waitForNavigationLogo();
 		reiDriver.WaitFor().specialCustomWait(5, userAvatar);
 		try {

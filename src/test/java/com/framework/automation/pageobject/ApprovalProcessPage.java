@@ -44,7 +44,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
 
 	public void completeSubmitForapproval() {
 		clickSaveButton();
-		getRightHeaderButton("Submit For Approval").click();
+		govgrants.pageDetails().clickAnyTopRightButton("Submit For Approval");
 		reiDriver.switchTo().acceptAlert();
 	}
 
@@ -99,7 +99,8 @@ public class ApprovalProcessPage extends GovGrantsManager {
 	 * @param error
 	 */
 	public void assertDecisionCommentsMandatory(String error) {
-		Assert.assertTrue(reiDriver.WaitFor().WaitForElementToBePresent(dangerAlert).getText().equalsIgnoreCase(error));
+		Assert.assertTrue(reiDriver.WaitFor().WaitForElementToBePresent(dangerAlert).getText().equalsIgnoreCase(error)
+				|| reiDriver.WaitFor().WaitForElementToBePresent(dangerAlert).getText().contains(error));
 	}
 
 	/**

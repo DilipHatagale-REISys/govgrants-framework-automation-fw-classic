@@ -309,7 +309,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 			reiDriver.JavaScript().scrollpageToSpecificElement(scrollToActionColumn);
 			reiDriver.WaitFor()
 					.WaitForElementToBePresent(By.xpath("//td//span[contains(text(),'" + programSubject
-							+ "')]/../../../..//td//span[contains(text(),'" + statusName
+							+ "')]/./../../../../../td//span[contains(text(),'" + statusName
 							+ "')]/../../../..//td//span//a[@title='" + iconName + "']//i"))
 					.click();
 
@@ -318,7 +318,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 			reiDriver.WaitFor().makeThreadSleep(1000);
 			reiDriver.JavaScript()
 					.clickByJS(By.xpath("//td//span[contains(text(),'" + programSubject
-							+ "')]/../../../..//td//span[contains(text(),'" + statusName
+							+ "')]/./../../../../../td//span[contains(text(),'" + statusName
 							+ "')]/../../../..//td//span//a[@title='" + iconName + "']//i"));
 		}
 	}

@@ -16,7 +16,7 @@ public class PageLayoutSteps {
 
 	@When("^I click on \"([^\"]*)\" button in right header$")
 	public void clickbuttonOnRightHeader(String buttonName) {
-		pageLayoutPage.getRightHeaderButton(buttonName).click();
+		pageLayoutPage.getRightHeaderButton(buttonName);
 	}
 
 	@When("^I click on \"([^\"]*)\" button inside detail page$")
@@ -177,5 +177,15 @@ public class PageLayoutSteps {
 	@Then("^I see Program Name rendered in view mode only$")
 	public void assertViewModeOfPageBlockDetailElement() {
 		pageLayoutPage.assertPageBlockDetailElementDisplayedInViewMode();
+	}
+
+	@When("^I click Add button inside attachments page block$")
+	public void clickAddButton() {
+		pageLayoutPage.clickAddUnderAttachmentsPageBlock();
+	}
+
+	@When("^I click select dropdown inside add attachment iframe$")
+	public void clickSelectDropdown() {
+		pageLayoutPage.clickOnTypeDropdown();
 	}
 }

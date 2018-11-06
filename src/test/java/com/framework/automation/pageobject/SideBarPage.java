@@ -12,16 +12,15 @@ import com.framework.automation.projectmanager.GovGrantsManager;
 
 public class SideBarPage extends GovGrantsManager {
 
-    /******* "Variables and Locators" *****************/
+	/******* "Variables and Locators" *****************/
 
-    /**
-     * Constructor to handle dependency injection and framework library
-     */
-    public SideBarPage(Controller controller, Handlers reiDriver, GovGrantsHandler govgrants) {
-        super(controller, reiDriver, govgrants);
+	/**
+	 * Constructor to handle dependency injection and framework library
+	 */
+	public SideBarPage(Controller controller, Handlers reiDriver, GovGrantsHandler govgrants) {
+		super(controller, reiDriver, govgrants);
 
-    }
-
+	}
 
 	/******* "Key Methods with complete functionality - public" *****************/
 
@@ -63,10 +62,8 @@ public class SideBarPage extends GovGrantsManager {
 	}
 
 	/**
-	 * @param subTabName:
-	 *            Accordion header
-	 * @param mainTabName:
-	 *            Changed Accordion header label/Name
+	 * @param subTabName: Accordion header
+	 * @param mainTabName: Changed Accordion header label/Name
 	 */
 	public void assertnewAccordionHeaderLabel(String subTabName, String mainTabName) {
 		Assert.assertEquals(getSideBarAccordianHeader(mainTabName, subTabName).getText(), subTabName);
@@ -98,10 +95,8 @@ public class SideBarPage extends GovGrantsManager {
 
 	/**
 	 * 
-	 * @param headerName:
-	 *            Header name in sidebar
-	 * @param sequenceNumber:
-	 *            item number in side bar
+	 * @param headerName: Header name in sidebar
+	 * @param sequenceNumber: item number in side bar
 	 * @return
 	 */
 	private Boolean isHeaderSequence(String headerName, int sequenceNumber) {
@@ -146,8 +141,7 @@ public class SideBarPage extends GovGrantsManager {
 	 * @param status
 	 */
 	private Boolean isAccordianContentSequence(String accordianHeaderName, int number, String headerName) {
-		System.out.println("sequence will be========" + accordianContentList(headerName).get(number).getText());
-		if (accordianContentList(headerName).get(number).getText().contains(accordianHeaderName)) {
+		if (govgrants.sideBar().getSideBarContents(headerName).get(number).getText().contains(accordianHeaderName)) {
 			return true;
 		} else
 			return false;
@@ -156,8 +150,7 @@ public class SideBarPage extends GovGrantsManager {
 	/**
 	 * Boolean status of Accordion Content opens in another tab
 	 * 
-	 * @param accordionContentName:
-	 *            Content name in sidebar
+	 * @param accordionContentName: Content name in sidebar
 	 * @param pageTitle:
 	 * @return
 	 */

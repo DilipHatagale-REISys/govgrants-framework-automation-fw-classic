@@ -17,7 +17,7 @@ public class PageLayoutPage extends GovGrantsManager {
 
 	private final By overViewHeader, overViewTitle, pageInstructionText, headerInstructionText, headerOverviewTab,
 			headerInstructionTextForPageBlock, rolesAndResponsibilitiesFlexTableTitle, monitoringFlexGridTitle,
-			addButtonUnderAttachments, selectTypeDropdown;
+			addButtonUnderAttachments, selectTypeDropdown, addAttachmentIframe;
 
 	/**
 	 * Constructor to handle dependency injection and framework library
@@ -36,6 +36,7 @@ public class PageLayoutPage extends GovGrantsManager {
 				"//div[@class='panel-heading']//div[contains(@class,'panel-title')]//a[@title='Monitoring Schedule For All Active Grants']");
 		addButtonUnderAttachments = By.xpath("//button[@title='AddAttachments']");
 		selectTypeDropdown = By.xpath("//select[@title='Classification']");
+		addAttachmentIframe = By.cssSelector("#addmodaldialog iframe");
 	}
 
 	/******* "Key Methods with complete functionality - public" *****************/
@@ -775,5 +776,21 @@ public class PageLayoutPage extends GovGrantsManager {
 
 		}
 		return flag;
+	}
+
+	/**
+	 * click add button inside attachments page block and switching to repective
+	 * frame.
+	 */
+	public void clickAddUnderAttachmentsPageBlock() {
+		reiDriver.WaitFor().WaitForElementToBePresent(addButtonUnderAttachments).click();
+		reiDriver.switchTo().switchToFrame(addAttachmentIframe);
+	}
+
+	/**
+	 * click on Select dropdown inside add attachment iframe
+	 */
+	public void clickOnTypeDropdown() {
+		reiDriver.findMyElement().getElement(selectTypeDropdown).click();
 	}
 }
