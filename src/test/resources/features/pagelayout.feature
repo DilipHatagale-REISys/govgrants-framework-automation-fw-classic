@@ -70,9 +70,6 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName           |fieldNewValue                        |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Layout Action    |Hide Expression JSON|govgrants_config:HideExpressionJson  |Grantee State Program |Name                     |Submit For Approval          |
-	#Given I have default configuration for "Page Layout Action" field "Hide Expression JSON" as "" with filter "" for field ""
-	#Given I setup filter clause for "Page Layout Action" in "Grantee State Program" for field "Name" having value "Submit For Approval"
-	#When I reconfigure "Page Layout Action" field "Hide Expression JSON" as "govgrants_config:HideExpressionJson"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
@@ -330,9 +327,6 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                 |fieldName             |fieldNewValue                                |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Tabs Config:Page Layout Action   |Hide Expression JSON  |govgrants_config:HideExpressionJsonForPageTab|Grantee State Program |Name                     |TAB-209                      |
-	#Given I have default configuration for "Page Tabs Config" field "Hide Expression JSON" as "" with filter "" for field ""
-	#Given I setup filter clause for "Page Layout Action" in "Grantee State Program" for field "Name" having value "TAB-029"
-	#When I reconfigure "Page Tabs Config" field "Hide Expression JSON" as "govgrants_config:HideExpressionJsonForPageTab"
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
@@ -621,11 +615,11 @@ Feature: Page Layout Component Scenarios
 	@36094 @all @feildAPINAmeFieldAtPageBlockDetail-gPlanning
 	Scenario: Changing field api name for page block detail from config and validating it on program detail page
 	Given I have default configuration as below:
-	|configurationCategory                  |fieldName       |fieldOrignalValue |coreComponentField    |filterId        |
-	|Page Block Rule:Page Block Rule Detail |Field API Name  |ProgramName__c    |Grantee State Program |ApiGeneratedId:0|
+	|configurationCategory                    |fieldName       |fieldOrignalValue |coreComponentField    |filterId        |
+	|Page Block Config:Page Block Rule Detail |Field API Name  |ProgramName__c    |Grantee State Program |ApiGeneratedId:0|
 	Given I setup test configuration as below:
-	|configurationCategory                  |fieldName       |fieldNewValue           |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
-	|Page Block Rule:Page Block Rule Detail |Field API Name  |BudgetingPreference__c  |Grantee State Program |Name                     |PBD-3107                  |
+	|configurationCategory                    |fieldName       |fieldNewValue           |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Block Config:Page Block Rule Detail |Field API Name  |BudgetingPreference__c  |Grantee State Program |Name                     |PBD-3107                  |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
@@ -635,11 +629,11 @@ Feature: Page Layout Component Scenarios
 	@36099 @all @isActiveFieldAtPageBlockDetail-gPlanning
 	Scenario: Disabling of program name page block detail from config and validating it at program detail page
 	Given I have default configuration as below:
-	|configurationCategory                  |fieldName       |fieldOrignalValue |coreComponentField    |filterId        |
-	|Page Block Rule:Page Block Rule Detail |Is Active       |true              |Grantee State Program |ApiGeneratedId:0|
+	|configurationCategory                    |fieldName       |fieldOrignalValue |coreComponentField    |filterId        |
+	|Page Block Config:Page Block Rule Detail |Is Active       |true              |Grantee State Program |ApiGeneratedId:0|
 	Given I setup test configuration as below:
-	|configurationCategory                  |fieldName       |fieldNewValue     |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
-	|Page Block Rule:Page Block Rule Detail |Is Active       |false             |Grantee State Program |Name                     |PBD-3107                  |
+	|configurationCategory                    |fieldName       |fieldNewValue     |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Block Config:Page Block Rule Detail |Is Active       |false             |Grantee State Program |Name                     |PBD-3107                  |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
@@ -649,11 +643,11 @@ Feature: Page Layout Component Scenarios
 	@36100 @all @sortOrderFieldAtPageBlockDetail-gPlanning
 	Scenario: Changing sort order of program name page block detail from config and validating it at program detail page
 	Given I have default configuration as below:
-	|configurationCategory                  |fieldName       |fieldOrignalValue |coreComponentField    |filterId        |
-	|Page Block Rule:Page Block Rule Detail |Sort Order      |0                 |Grantee State Program |ApiGeneratedId:0|
+	|configurationCategory                    |fieldName       |fieldOrignalValue |coreComponentField    |filterId        |
+	|Page Block Config:Page Block Rule Detail |Sort Order      |0                 |Grantee State Program |ApiGeneratedId:0|
 	Given I setup test configuration as below:
-	|configurationCategory                  |fieldName       |fieldNewValue     |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
-	|Page Block Rule:Page Block Rule Detail |Sort Order      |10                |Grantee State Program |Name                     |PBD-3107                  |
+	|configurationCategory                    |fieldName       |fieldNewValue     |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Block Config:Page Block Rule Detail |Sort Order      |10                |Grantee State Program |Name                     |PBD-3107                  |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
@@ -663,11 +657,11 @@ Feature: Page Layout Component Scenarios
 	@36101 @all @fieldLabelOverrideFieldAtPageBlockDetail-gPlanning
 	Scenario: Changing label of program name page block detail fom config and validating it at program detail page
 	Given I have default configuration as below:
-	|configurationCategory                  |fieldName           |fieldOrignalValue |coreComponentField    |filterId        |
-	|Page Block Rule:Page Block Rule Detail |Field Label Override|                  |Grantee State Program |ApiGeneratedId:0|
+	|configurationCategory                    |fieldName           |fieldOrignalValue |coreComponentField    |filterId        |
+	|Page Block Config:Page Block Rule Detail |Field Label Override|                  |Grantee State Program |ApiGeneratedId:0|
 	Given I setup test configuration as below:
-	|configurationCategory                  |fieldName           |fieldNewValue     |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
-	|Page Block Rule:Page Block Rule Detail |Field Label Override|Automation Title  |Grantee State Program |Name                     |PBD-3107                  |
+	|configurationCategory                    |fieldName           |fieldNewValue     |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Block Config:Page Block Rule Detail |Field Label Override|Automation Title  |Grantee State Program |Name                     |PBD-3107                  |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
@@ -677,13 +671,151 @@ Feature: Page Layout Component Scenarios
 	@36106 @all @readOnlyFieldAtPageBlockDetail-gPlanning
 	Scenario: changing rendering behaviour of program name read only from config and validaying it at program detail page
 	Given I have default configuration as below:
-	|configurationCategory                  |fieldName           |fieldOrignalValue |coreComponentField    |filterId        |
-	|Page Block Rule:Page Block Rule Detail |Read Only           |false             |Grantee State Program |ApiGeneratedId:0|
+	|configurationCategory                    |fieldName           |fieldOrignalValue |coreComponentField    |filterId        |
+	|Page Block Config:Page Block Rule Detail |Read Only           |false             |Grantee State Program |ApiGeneratedId:0|
 	Given I setup test configuration as below:
-	|configurationCategory                  |fieldName           |fieldNewValue     |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
-	|Page Block Rule:Page Block Rule Detail |Read Only           |true              |Grantee State Program |Name                     |PBD-3107                  |
+	|configurationCategory                    |fieldName           |fieldNewValue     |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Block Config:Page Block Rule Detail |Read Only           |true              |Grantee State Program |Name                     |PBD-3107                  |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
 	When I click on "Edit" icon of status "Created" for "Test program for automation" program in flex table
 	Then I see Program Name rendered in view mode only
+	
+	@36109 @all @hideForContextFieldAtPageBlockDetail-gPlanning
+	Scenario: Hide program name field at page block detail from config validating it at program detail page
+	Given I have default configuration as below:
+	|configurationCategory                    |fieldName           |fieldOrignalValue |coreComponentField    |filterId        |
+	|Page Block Config:Page Block Rule Detail |Hide for Context    |                  |Grantee State Program |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory                    |fieldName           |fieldNewValue     |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Block Config:Page Block Rule Detail |Hide for Context    |View              |Grantee State Program |Name                     |PBD-3107                  |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	Then I see "Program Name" is not displayed inside page block detail
+	
+	@36110 @all @hideForUserFieldAtPageBlockDetail-gPlanning
+	Scenario: Hiding of program name page block detail for internal user from config and validating it at program detail page
+	Given I have default configuration as below:
+	|configurationCategory                    |fieldName           |fieldOrignalValue |coreComponentField    |filterId        |
+	|Page Block Config:Page Block Rule Detail |Hide for User       |                  |Grantee State Program |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory                    |fieldName           |fieldNewValue     |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Block Config:Page Block Rule Detail |Hide for User       |Internal          |Grantee State Program |Name                     |PBD-3107                  |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	Then I see "Program Name" is not displayed inside page block detail
+	
+	@36111 @all @hideForProfileFieldAtPageBlockDetail-gPlanning
+	Scenario: Hide program name page block detail for specific profile from configuration and validating it at program detail page
+	Given I have default configuration as below:
+	|configurationCategory                    |fieldName           |fieldOrignalValue   |coreComponentField    |filterId        |
+	|Page Block Config:Page Block Rule Detail |Hide For Profile    |                    |Grantee State Program |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory                    |fieldName           |fieldNewValue       |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Block Config:Page Block Rule Detail |Hide For Profile    |System Administrator|Grantee State Program |Name                     |PBD-3107                  |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	Then I see "Program Name" is not displayed inside page block detail
+	
+	@36113 @all @hideOperatorFieldUsingANDOperatorAtPageBlockDetail-gPlanning
+	Scenario: Hide program name page block detail from config using AND operator and validating it at program detail page
+	Given I have default configuration as below:
+	|configurationCategory                    |fieldName           |fieldOrignalValue   |coreComponentField    |filterId        |
+	|Page Block Config:Page Block Rule Detail |Operator            |                    |Grantee State Program |ApiGeneratedId:0|
+	|Page Block Config:Page Block Rule Detail |Hide For Profile    |                    |Grantee State Program |ApiGeneratedId:0|
+	|Page Block Config:Page Block Rule Detail |Hide For User       |                    |Grantee State Program |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory                    |fieldName           |fieldNewValue       |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Block Config:Page Block Rule Detail |Operator            |AND                 |Grantee State Program |Name                     |PBD-3107                  |
+	|Page Block Config:Page Block Rule Detail |Hide For Profile    |System Administrator|Grantee State Program |Name                     |PBD-3107                  |
+	|Page Block Config:Page Block Rule Detail |Hide For User       |Internal            |Grantee State Program |Name                     |PBD-3107                  |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	Then I see "Program Name" is not displayed inside page block detail
+	
+	@36114 @all @hideOperatorFieldUsingOROperatorAtPageBlockDetail-gPlanning
+	Scenario: Hide program name page block detail from config using OR operator and validating it at program detail page
+	Given I have default configuration as below:
+	|configurationCategory                    |fieldName           |fieldOrignalValue   |coreComponentField    |filterId        |
+	|Page Block Config:Page Block Rule Detail |Operator            |AND                 |Grantee State Program |ApiGeneratedId:0|
+	|Page Block Config:Page Block Rule Detail |Hide For Profile    |                    |Grantee State Program |ApiGeneratedId:0|
+	|Page Block Config:Page Block Rule Detail |Hide For User       |                    |Grantee State Program |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory                    |fieldName           |fieldNewValue       |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Block Config:Page Block Rule Detail |Operator            |OR                  |Grantee State Program |Name                     |PBD-3107                  |
+	|Page Block Config:Page Block Rule Detail |Hide For Profile    |System Administrator|Grantee State Program |Name                     |PBD-3107                  |
+	|Page Block Config:Page Block Rule Detail |Hide For User       |Internal            |Grantee State Program |Name                     |PBD-3107                  |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	Then I see "Program Name" is not displayed inside page block detail
+	
+	@36126 @all @readOnlyForContextFieldAtPageBlockDetail-gPlanning
+	Scenario: changing rendering behaviour of program name read only for context from config and validaying it at program detail page
+	Given I have default configuration as below:
+	|configurationCategory                    |fieldName            |fieldOrignalValue   |coreComponentField    |filterId        |
+	|Page Block Config:Page Block Rule Detail |Read Only For Context|                    |Grantee State Program |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory                    |fieldName            |fieldNewValue       |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Block Config:Page Block Rule Detail |Read Only For Context|Edit                |Grantee State Program |Name                     |PBD-3107                  |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "Edit" icon of status "Created" for "Test program for automation" program in flex table
+	Then I see Program Name rendered in view mode only
+	
+	@36127 @all @readOnlyForProfileFieldAtPageBlockDetail-gPlanning
+	Scenario: changing rendering behaviour of program name to read only for specific profile from config and validaying it at program detail page
+	Given I have default configuration as below:
+	|configurationCategory                    |fieldName            |fieldOrignalValue   |coreComponentField    |filterId        |
+	|Page Block Config:Page Block Rule Detail |Read Only For Profile|                    |Grantee State Program |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory                    |fieldName            |fieldNewValue       |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Block Config:Page Block Rule Detail |Read Only For Profile|System Administrator|Grantee State Program |Name                     |PBD-3107                  |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "Edit" icon of status "Created" for "Test program for automation" program in flex table
+	Then I see Program Name rendered in view mode only
+	
+	@36107 @all @requiredForSaveBehaviourAtPageBlockDetail-gPlanning
+	Scenario: Changing value for required for save behaviour field from config and checking error message at program save
+	Given I have default configuration as below:
+	|configurationCategory                    |fieldName            |fieldOrignalValue   |coreComponentField    |filterId        |
+	|Page Block Config:Page Block Rule Detail |Required Behavior    |                    |Grantee State Program |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory                    |fieldName            |fieldNewValue       |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Block Config:Page Block Rule Detail |Required Behavior    |Required for Save   |Grantee State Program |Name                     |PBD-2600                  |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "Edit" icon of status "Created" for "Test program for automation" program in flex table
+	When I click on "Save" button inside detail page
+	Then I see "Program Sub Type is Required to save under Overview." error is displayed
+	
+	@36050 @all @attachementClassificationFieldAtPageBlock-gPlanning
+	Scenario: Changing the values for Attachement classifications field from config and validating it at Program detail page
+	Given I have default configuration as below:
+	|configurationCategory        |fieldName                 |fieldOrignalValue                                    |coreComponentField    |filterId        |
+	|Page Block:Page Block Detail |Attachment Classifications|Program Artifacts;Financial Artifacts;Other Artifacts|Grantee State Program |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory        |fieldName                 |fieldNewValue          |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Block:Page Block Detail |Attachment Classifications|Announcement Artifacts |Grantee State Program |GNT__PageBlockTitle__c   |Attachments               |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	When I click on "Attachments" sub tab inside page layout
+	When I click Add button inside attachments page block
+	When I click select dropdown inside add attachment iframe
+	Then I see "Announcement Artifacts" inside Type selectbox

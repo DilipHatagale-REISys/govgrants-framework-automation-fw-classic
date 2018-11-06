@@ -8,7 +8,7 @@
 	<packaging>jar</packaging>
 	<name>framework.automation</name>
 	<url>http://maven.apache.org</url>
-	
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<tags>~@ignore</tags>
@@ -165,6 +165,11 @@
 			<artifactId>REI-AutomationFramework</artifactId>
 			<version>${rei.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.shared</groupId>
+			<artifactId>maven-invoker</artifactId>
+			<version>3.0.1</version>
+		</dependency>
 	</dependencies>
 	<repositories>
 		<repository>
@@ -172,7 +177,7 @@
 			<url>http://nexus.reisys.com:8081/nexus/content/repositories/govgrants-releases</url>
 		</repository>
 	</repositories>
-		
+
 	<build>
 		<plugins>
 			<plugin>

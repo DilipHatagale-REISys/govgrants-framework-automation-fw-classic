@@ -114,13 +114,7 @@ public class GovGrantsManager extends ProjectWebServices {
 	 * @param menuItem
 	 */
 	public void clickPhasesNaveBar(String tabName) {
-		try {
-			reiDriver.WaitFor().WaitForElementToBePresent(
-					By.xpath("//div/ul[@class='nav navbar-nav']/li/a[@title='" + tabName + "']")).click();
-		} catch (Exception e) {
-			reiDriver.JavaScript()
-					.clickByJS(By.xpath("//div/ul[@class='nav navbar-nav']/li/a[@title='" + tabName + "']"));
-		}
+		govgrants.mainPage().clickMainMenuBar(tabName);
 	}
 
 	/**
@@ -130,24 +124,9 @@ public class GovGrantsManager extends ProjectWebServices {
 	 */
 	public void clickAdminNavBar(String tabName, String appName) {
 		reiDriver.WaitFor().makeThreadSleep(500);
-		try {
-			reiDriver.WaitFor().WaitForElementToBePresent(By.xpath("//nav/ul/li/a[@title='" + tabName + "']")).click();
-		} catch (Exception e) {
-			reiDriver.JavaScript().clickByJS(By.xpath("//nav/ul/li/a[@title='" + tabName + "']"));
-		}
-		waitForEgmsHeader();
-		setUpCustomAppDropDown(appName);
-	}
-
-	/**
-	 * wait for the EGMS header in Gov Grants
-	 */
-	public void waitForEgmsHeader() {
-		try {
-			reiDriver.WaitFor().WaitForElementToBePresent(egmsHeader);
-		} catch (Exception e) {
-
-		}
+		govgrants.mainPage().clickAdminNavBar(tabName);
+		govgrants.mainPage().waitForEgmsHeader();
+		govgrants.mainPage().setUpCustomAppDropDown(appName);
 	}
 
 	/**
@@ -168,10 +147,8 @@ public class GovGrantsManager extends ProjectWebServices {
 	 * click on any button on modal content
 	 */
 	public void clickModalContentSpecificButton(String buttonName) {
-		reiDriver.WaitFor()
-				.WaitForElementClickAble(By.xpath("//div[@class='modal-footer']/button[text()='" + buttonName + "']"))
-				.click();
-		waitForNavigationLogo();
+		govgrants.modal().clickModalContentSpecificButton(buttonName);
+		govgrants.mainPage().waitForNavigationLogoToDisappear();
 	}
 
 	/**
@@ -187,29 +164,7 @@ public class GovGrantsManager extends ProjectWebServices {
 	 * @return: List of all Accordian headers.
 	 */
 	public List<WebElement> accordianHeadersList(String headerName) {
-		return reiDriver.findMyElement().getElements(By.xpath(
-				"//div[@id='sidebar-wrapper']//div/ul/li//span[text()='" + headerName + "']/../../ul/li/a/span"));
-
-	}
-
-	/**
-	 * 
-	 * @return: List of all Accordian content.
-	 */
-	public List<WebElement> accordianContentList(String headerName) {
-		return reiDriver.findMyElement().getElements(By.xpath(
-				"//div[@id='sidebar-wrapper']//div/ul/li//span[text()='" + headerName + "']/../../ul/li/ul//a/span"));
-	}
-
-	/**
-	 * Access category in left side pane. Also can collapse and Expand side bar item
-	 * 
-	 * @param sideBarCategory
-	 * @return
-	 */
-	public WebElement getSideBarHeader(String sideBarCategory) {
-		return reiDriver.WaitFor().WaitForElementToBePresent(
-				By.xpath("//div[@id='sidebar-wrapper']//div/ul/li//span[text()='" + sideBarCategory + "']"));
+		return govgrants.sideBar().getSideBarSubHeaders(headerName);
 	}
 
 	/**
@@ -220,9 +175,7 @@ public class GovGrantsManager extends ProjectWebServices {
 	 * @return
 	 */
 	public WebElement getSideBarAccordianHeader(String sideBarCategory, String accordianSubHeader) {
-		return reiDriver.WaitFor()
-				.WaitForElementToBePresent(By.xpath("//div[@id='sidebar-wrapper']//div/ul/li//span[text()='"
-						+ sideBarCategory + "']/../../ul/li//span[text()='" + accordianSubHeader + "']"));
+		return govgrants.sideBar().getSideBarSubHeader(sideBarCategory, accordianSubHeader);
 	}
 
 	/**
@@ -233,64 +186,7 @@ public class GovGrantsManager extends ProjectWebServices {
 	 * @return
 	 */
 	public WebElement getSideBarAccordianSubHeaderContent(String sideBarCategory, String accordianSubHeaderDetail) {
-		return reiDriver.WaitFor()
-				.WaitForElementToBePresent(By.xpath("//div[@id='sidebar-wrapper']//div/ul/li//span[text()='"
-						+ sideBarCategory + "']/../../ul//span[text()='" + accordianSubHeaderDetail + "']"));
-	}
-
-	/**
-	 * click on logout menu.
-	 */
-	public void clickLoginDropDown() {
-		reiDriver.WaitFor().WaitForElementToBePresent(loginDropDown).click();
-	}
-
-	/**
-	 * click on top right drop down. As a grantee etc.
-	 */
-	public void clickTopRightDropDown() {
-		try {
-			reiDriver.WaitFor().WaitForElementToBePresent(topRightDropDown).click();
-		} catch (Exception e) {
-			reiDriver.WaitFor().WaitForWebElementToBeVisible(reiDriver.findMyElement().getElement(topRightDropDown))
-					.click();
-		}
-	}
-
-	/**
-	 * get the top right drop down items. grntee etc
-	 * 
-	 * @param dropDownItem
-	 * @return
-	 */
-	public WebElement getTopRightDropDown(String dropDownItem) {
-		return reiDriver.WaitFor().WaitForElementToBePresent(
-				By.xpath("//div/ul/li[@class='dropdown appDropdown open']/ul/li/a[@title='" + dropDownItem + "']"));
-	}
-
-	/**
-	 * access items in logout menu items
-	 * 
-	 * @param loginMenuItem
-	 * @return
-	 */
-	public WebElement getLoginDropDown(String loginMenuItem) {
-		return reiDriver.WaitFor().WaitForElementToBePresent(
-				By.xpath("//div/ul/li[@class='dropdown userDropdown']/ul/li/a[@title='" + loginMenuItem + "']"));
-	}
-
-	/**
-	 * genric method to click on the double arrow dropdown
-	 */
-	public void clickLeftPanelHeader() {
-		try {
-			reiDriver.WaitFor().makeThreadSleep(2000);
-			reiDriver.WaitFor().WaitForWebElementToBeVisible(reiDriver.findMyElement().getElement(doubleArrowDropDown))
-					.click();
-		} catch (Exception e) {
-			reiDriver.WaitFor().makeThreadSleep(3000);
-			reiDriver.JavaScript().clickByJS(doubleArrowDropDown);
-		}
+		return govgrants.sideBar().getSideBarSubHeaderContent(sideBarCategory, accordianSubHeaderDetail);
 	}
 
 	/**
@@ -307,27 +203,12 @@ public class GovGrantsManager extends ProjectWebServices {
 	}
 
 	/**
-	 * select item from double arrow dropdown
-	 * 
-	 * @param leftPanelItem
-	 * @return
-	 */
-	public WebElement getLeftPanelHeader(String dropdownoption) {
-		return reiDriver.WaitFor().FluentWaitForClick(By.xpath(
-				"//div[@class='panel-heading']//div[contains(@class,'panel-title')]//div[@id='dropdownListView']/ul/li/a[@title='"
-						+ dropdownoption + "']"));
-	}
-
-	/**
 	 * get any button on right header inside planning etc.
 	 * 
 	 * @param buttonName
-	 * @return
 	 */
-	public WebElement getRightHeaderButton(String buttonName) {
-		return reiDriver.WaitFor()
-				.WaitForElementToBePresent(By.xpath("//div[contains(@class,'panel-heading')]//*[@title='" + buttonName
-						+ "' or text()='" + buttonName + "']"));
+	public void getRightHeaderButton(String buttonName) {
+		govgrants.pageDetails().clickAnyTopRightButton(buttonName);
 	}
 
 	/**
@@ -337,8 +218,7 @@ public class GovGrantsManager extends ProjectWebServices {
 	 * @return
 	 */
 	public WebElement getItemFromTopRightHeaderBars(String headerItem) {
-		return reiDriver.WaitFor().WaitForElementToBePresent(
-				By.xpath("//*[@title='Menu']/following-sibling::ul//li//span[text()='" + headerItem + "']"));
+		return govgrants.pageDetails().getMenuItemFromParallelLinesDropDown(headerItem);
 	}
 
 	/**
@@ -348,12 +228,7 @@ public class GovGrantsManager extends ProjectWebServices {
 	 * @return
 	 */
 	public void clickRightHeaderButtonInsideDetailPage(String buttonName) {
-		try {
-			reiDriver.WaitFor().WaitForElementToBePresent(
-					By.xpath("//div[@id='headerButtonsPanel']//*[@title='" + buttonName + "']")).click();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		govgrants.pageDetails().clickAnyTopRightButton(buttonName);
 		if (buttonName.equalsIgnoreCase("Submit For Approval")) {
 			try {
 				reiDriver.WaitFor().WaitForAlert();
@@ -364,43 +239,13 @@ public class GovGrantsManager extends ProjectWebServices {
 	}
 
 	/**
-	 * generic search input box
-	 * 
-	 * @return
-	 */
-	public WebElement getSearchInput() {
-		return reiDriver.WaitFor().WaitForElementToBePresent(searchInput);
-	}
-
-	/**
-	 * get filter icon
-	 * 
-	 * @return
-	 */
-	public WebElement getSecondTopRightFilter() {
-		return reiDriver.WaitFor().WaitForElementToBePresent(secondTopRightFilter);
-	}
-
-	/**
-	 * fetch the complete header of table
-	 * 
-	 * @return
-	 */
-	public List<WebElement> getCompleteTableHeader() {
-		reiDriver.WaitFor().WaitForElementToBePresent(completeTableHeader);
-		return reiDriver.findMyElement().getElements(completeTableHeader);
-	}
-
-	/**
 	 * get any element from title table bar except Action
 	 * 
 	 * @param titleName
 	 * @return
 	 */
 	public WebElement getSpecificElementFromTableHeader(String titleName) {
-		return reiDriver.WaitFor().WaitForElementToBePresent(By.xpath(
-				"//div[@class='panel-heading']/following-sibling::div[contains(@class,'panel-body')]//div/table/thead/tr/th//span[@title='"
-						+ titleName + "' or text()='" + titleName + "']"));
+		return govgrants.flexTable().getSpecificElementFromTableHeader(titleName);
 	}
 
 	/**
@@ -410,7 +255,7 @@ public class GovGrantsManager extends ProjectWebServices {
 	 */
 	public List<WebElement> getCompleteTableRow() {
 		reiDriver.WaitFor().WaitForElementToBePresent(completeTableRow);
-		return reiDriver.findMyElement().getElements(completeTableRow);
+		return govgrants.flexTable().getCompleteTableRow();
 	}
 
 	/**
@@ -419,7 +264,7 @@ public class GovGrantsManager extends ProjectWebServices {
 	 * @param headerName
 	 */
 	public void clickAccordianHeader(String headerName) {
-		getSideBarHeader(headerName).click();
+		govgrants.sideBar().getSideBarHeader(headerName).click();
 	}
 
 	/**
@@ -429,6 +274,7 @@ public class GovGrantsManager extends ProjectWebServices {
 	 * @param subHeaderName
 	 */
 	public void clickAccordianSubHeader(String AccordianHeader, String subHeaderName) {
+		govgrants.sideBar().getSideBarSubHeader(AccordianHeader, subHeaderName).click();
 		getSideBarAccordianHeader(AccordianHeader, subHeaderName).click();
 	}
 
@@ -452,7 +298,7 @@ public class GovGrantsManager extends ProjectWebServices {
 	}
 
 	/**
-	 * @param advancefilter
+	 * @param advancefilter .........................need to check
 	 * @return
 	 */
 	public WebElement getAdvanceFilterItem() {
@@ -474,42 +320,19 @@ public class GovGrantsManager extends ProjectWebServices {
 	 * @return
 	 */
 	public By flexTableStatusColumn(String statusName) {
-		return By.xpath("//td//span[@title='" + statusName + "']");
+		return govgrants.flexTable().getFlexTableColumn(statusName);
 	}
 
 	/**
-	 * Click any icon in the flex table like Edit etc.
-	 * 
-	 * @param statusName
-	 * @param iconName
-	 */
-	public void clickTableIcons(String statusName, String iconName) {
-		reiDriver.WaitFor().WaitForElementToBePresent(By.xpath("//td//span[@title='" + statusName
-				+ "']/../../../following-sibling::td//span//a[@title='" + iconName + "']")).click();
-	}
-
-	/**
-	 * click flex table item based on program name/subject , status and icon name
+	 * click flex table item based on program name/subject , status and icon
+	 * name...........need to check
 	 * 
 	 * @param programSubject
 	 * @param statusName
 	 * @param iconName
 	 */
 	public void clickTableActionIconsForSpecificSubject(String programSubject, String statusName, String iconName) {
-		try {
-			reiDriver.WaitFor()
-					.WaitForElementToBePresent(By.xpath(completeTableRowString + "//td//span[@title='" + programSubject
-							+ "']/../../../following-sibling::td//span[@title='" + statusName
-							+ "']/../../../following-sibling::td//span//a[@title='" + iconName + "']//i"))
-					.click();
-
-		} catch (Exception e) {
-			reiDriver.WaitFor().makeThreadSleep(1000);
-			reiDriver.JavaScript()
-					.clickByJS(By.xpath(completeTableRowString + "//td//span[@title='" + programSubject
-							+ "']/../../../following-sibling::td//span[@title='" + statusName
-							+ "']/../../../following-sibling::td//span//a[@title='" + iconName + "']//i"));
-		}
+		govgrants.flexTable().clickTableActionIcons(iconName, programSubject, statusName);
 	}
 
 	/**
@@ -551,28 +374,7 @@ public class GovGrantsManager extends ProjectWebServices {
 	 * @return
 	 */
 	public void performQuickSearch(String searchTerm) {
-		try {
-			reiDriver.JavaScript().scrollPageWindowJS("searchInput", 0, 0);
-			reiDriver.WaitFor().WaitForElementToBePresent(searchInput);
-			reiDriver.textInput().enterText(searchInput, searchTerm);
-			reiDriver.WaitFor().WaitForElementToBePresent(quickSearchButton).click();
-		} catch (Exception e) {
-			reiDriver.WaitFor().WaitForElementToBePresent(searchInput);
-			reiDriver.JavaScript().InputJS(searchInput, searchTerm);
-			reiDriver.JavaScript().clickByJS(quickSearchButton);
-		}
-
-	}
-
-	/**
-	 * click on sub tab inside table icons. click view and then on new page click on
-	 * the tab like overview etc.
-	 * 
-	 * @param tabName
-	 */
-	public void clickSubTabsInsideTableView(String tabName) {
-		reiDriver.WaitFor().WaitForElementToBePresent(By.xpath("//div[@id='myTabs']/ul/li/a[@name='" + tabName + "']"))
-				.click();
+		govgrants.quickSearch().performQuickSearch(searchTerm);
 	}
 
 	/**
@@ -598,8 +400,7 @@ public class GovGrantsManager extends ProjectWebServices {
 	 * @param dropDownOption
 	 */
 	public void clickAndSelectOptionFromLeftDoubleArrowDropDown(String dropDownOption) {
-		clickLeftPanelHeader();
-		getLeftPanelHeader(dropDownOption).click();
+		govgrants.phasePannel().clickDoubleArrowDropDownAndSelectItem(dropDownOption);
 	}
 
 	public void clearCookies() {
@@ -613,8 +414,7 @@ public class GovGrantsManager extends ProjectWebServices {
 	 * @param iconName
 	 */
 	public void clickRowLevelActionIconsInsideSubTab(String programRole, String iconName) {
-		reiDriver.WaitFor().WaitForElementToBePresent(By.xpath("//td//span[@title='" + programRole
-				+ "']/../../../following-sibling::td//span//a[@title='" + iconName + "']")).click();
+		govgrants.flexTable().clickTableActionIcons(programRole, iconName);
 	}
 
 	/**
@@ -642,10 +442,7 @@ public class GovGrantsManager extends ProjectWebServices {
 	 * @param chartName
 	 */
 	public void clickChartMenuIcon(String chartName) {
-		reiDriver.WaitFor()
-				.WaitForElementToBePresent(By.xpath(
-						"//div[@class='chartTitle']/a[@title='" + chartName + "']/../..//a[@data-toggle='dropdown']"))
-				.click();
+		govgrants.charts().clickChartMenuIcon(chartName);
 	}
 
 	/**
@@ -655,11 +452,7 @@ public class GovGrantsManager extends ProjectWebServices {
 	 * @param valueToSelect
 	 */
 	public void selectAnyItemFromChartsMenu(String chartName, String valueToSelect) {
-		reiDriver.WaitFor()
-				.WaitForWebElementToBeVisible(
-						reiDriver.WaitFor().WaitForElementToBePresent(By.xpath("//div[@class='chartTitle']/a[@title='"
-								+ chartName + "']/../..//li//a[@title='" + valueToSelect + "']")))
-				.click();
+		govgrants.charts().selectAnyItemFromChartsMenu(chartName, valueToSelect);
 	}
 
 	/**
@@ -708,36 +501,6 @@ public class GovGrantsManager extends ProjectWebServices {
 	}
 
 	/******* "Local Methods with Limited functionality " **********/
-
-	/**
-	 * handles custom app. selects if current app on page is not desired one
-	 * 
-	 * @param appName
-	 */
-	private void setUpCustomAppDropDown(String appName) {
-		reiDriver.WaitFor().makeThreadSleep(200);
-		if (!isAppDisplayed(appName)) {
-			reiDriver.WaitFor().makeThreadSleep(200);
-			clickTopRightDropDown();
-			reiDriver.WaitFor().makeThreadSleep(500);
-			getTopRightDropDown(appName).click();
-		}
-	}
-
-	private boolean isAppDisplayed(String appName) {
-		boolean isAppPresent;
-		try {
-			isAppPresent = reiDriver.WaitFor()
-					.WaitForWebElementToBeVisible(reiDriver.findMyElement().getElement(navProfile_CurrentApp)).getText()
-					.equalsIgnoreCase(appName);
-		} catch (Exception e) {
-			reiDriver.get().getRefresh();
-			isAppPresent = reiDriver.WaitFor()
-					.WaitForWebElementToBeVisible(reiDriver.findMyElement().getElement(navProfile_CurrentApp)).getText()
-					.equalsIgnoreCase(appName);
-		}
-		return isAppPresent;
-	}
 
 	/**
 	 * match the current url content with provided content

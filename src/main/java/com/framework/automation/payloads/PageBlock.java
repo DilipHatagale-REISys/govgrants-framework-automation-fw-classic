@@ -150,8 +150,6 @@ public class PageBlock {
 	 */
 	public String setPageBlockRuleConfig(String fieldLabel, String value, String filterClause) {
 		String finalPayload = null;
-		Pattern p = Pattern.compile("([0-9])");
-		Matcher m = p.matcher(value);
 		switch (fieldLabel.toUpperCase()) {
 		case "HIDE FOR USER":
 			finalPayload = String
@@ -160,6 +158,22 @@ public class PageBlock {
 									String.valueOf(SObjectAPIs.GNT__PageAttachmentConfig__c), filterClause),
 							String.valueOf(SObjectAPIs.GNT__HideForUser__c), value);
 			break;
+		}
+		System.out.println(finalPayload);
+		return finalPayload;
+	}
+
+	/**
+	 * Set pay load for page Block Detail page
+	 * 
+	 * @param fieldLabel
+	 * @param value
+	 * @param filterClause
+	 * @return
+	 */
+	public String setPageBlockDetailConfig(String fieldLabel, String value, String filterClause) {
+		String finalPayload = null;
+		switch (fieldLabel.toUpperCase()) {
 		case "FIELD API NAME":
 			finalPayload = String
 					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c),
@@ -194,6 +208,55 @@ public class PageBlock {
 							apiUtilities.getComponentCoreFieldId(
 									String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
 							String.valueOf(SObjectAPIs.GNT__ReadOnly__c), value);
+			break;
+		case "HIDE FOR CONTEXT":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__HideForContext__c), value);
+			break;
+		case "HIDE FOR USER":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__HideForUser__c), value);
+			break;
+		case "HIDE FOR PROFILE":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__HideForProfile__c), value);
+			break;
+		case "OPERATOR":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__Operator__c), value);
+			break;
+		case "READ ONLY FOR CONTEXT":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__ReadOnlyForContext__c), value);
+			break;
+		case "READ ONLY FOR PROFILE":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__ReadOnlyForProfile__c), value);
+			break;
+		case "REQUIRED BEHAVIOR":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__RequiredBehavior__c), value);
 			break;
 		}
 		System.out.println(finalPayload);

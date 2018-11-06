@@ -24,7 +24,7 @@ Feature: Approval Process Component Scenarios
 	|Approval Decision Action |Sequence   |1                |ApiGeneratedId:0|
 	Given I setup test configuration as below:
 	|configurationCategory            |fieldName |fieldNewValue|coreComponentField    |
-	|Approval Decision Action:General |Sequence  |5           |ADAC-0009             |
+	|Approval Decision Action:General |Sequence  |5            |ADAC-0009             |
 	When I login as "Automation-PM" User
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	And I navigate to "Tasks" to reach "Pending" side bar content
@@ -64,8 +64,8 @@ Feature: Approval Process Component Scenarios
 	@34309 @all @confirmationMessageBoxPopupForApprovalDecisionAction-Programs
 	Scenario: Setup confirmation message inside confirmation message box from configuration and validating it in pending tasks approval decision
 	Given I have default configuration as below:
-	|configurationCategory    |fieldName         |fieldOrignalValue|filterId        |
-	|Approval Decision Action |Confirmation Title|                 |ApiGeneratedId:0|
+	|configurationCategory            |fieldName              |fieldOrignalValue              |filterId        |
+	|Approval Decision Action         |Confirmation Title     |                               |ApiGeneratedId:0|
 	Given I setup test configuration as below:
 	|configurationCategory            |fieldName              |fieldNewValue                  |coreComponentField|
 	|Approval Decision Action:General |Confirmation Title     |Automation Approval            |ADAC-0009         |
