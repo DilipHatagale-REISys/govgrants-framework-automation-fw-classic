@@ -44,16 +44,6 @@ public class PageLayoutSteps {
 		pageLayoutPage.clickOnTypeDropdown();
 	}
 
-	@When("^I click search icon for owner organization$")
-	public void clickSearchOwnerOrganization() {
-		pageLayoutPage.clickSearchIconOfOwnerOrganization();
-	}
-
-	@Then("^I see modal box with body \"([^\"]*)\" is displayed$")
-	public void assertOwnerOrganizationModalBoxWithMessage(String headerText) {
-		pageLayoutPage.assertOwnerOrganizationMOdalTitle(headerText);
-	}
-
 	@Then("^I see \"([^\"]*)\" shown as over view title in header \"([^\"]*)\"$")
 	public void assertOverViewTitleWithHeader(String overViewTitle, String overViewHeader) {
 		pageLayoutPage.assertOverViewTitleWithHeader(overViewTitle, overViewHeader);

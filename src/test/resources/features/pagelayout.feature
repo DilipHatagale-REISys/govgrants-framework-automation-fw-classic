@@ -891,20 +891,3 @@ Feature: Page Layout Component Scenarios
 	When I search for "Test program for automation"
 	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
 	Then I see "Program Name" is not displayed inside page block detail
-	
-	@36169 @all @lookUpHeaderTextFieldAtPageBlockDetail-gPlanning
-	Scenario: Hiding program name label at page block detail from config and validating it at program detail page
-	Given I have default configuration as below:
-	|configurationCategory                    |fieldName           |fieldOrignalValue |coreComponentField    |filterId        |
-	|Page Block Config:Page Block Rule Detail |Lookup Header Text  |Organization      |Grantee State Program |ApiGeneratedId:0|
-	Given I setup test configuration as below:
-	|configurationCategory                    |fieldName           |fieldNewValue          |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
-	|Page Block Config:Page Block Rule Detail |Lookup Header Text  |Organization Automation|Grantee State Program |Name                     |PBD-3178                  |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation"
-	When I click on "Edit" icon of status "Created" for "Test program for automation" program in flex table
-	When I click search icon for owner organization
-	Then I see modal box with body "Organization Automation" is displayed
-	
-	
