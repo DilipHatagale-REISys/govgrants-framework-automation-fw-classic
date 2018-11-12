@@ -154,12 +154,12 @@
 			<groupId>com.itextpdf</groupId>
 			<artifactId>itextpdf</artifactId>
 			<version>5.5.13</version>
-		</dependency> 
-        <dependency>
-           <groupId>org.apache.maven.shared</groupId>
-           <artifactId>maven-invoker</artifactId>
-           <version>3.0.1</version>
-        </dependency>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.shared</groupId>
+			<artifactId>maven-invoker</artifactId>
+			<version>3.0.1</version>
+		</dependency>
 		<dependency>
 			<groupId>com.automation</groupId>
 			<artifactId>REI-AutomationFramework</artifactId>
@@ -173,8 +173,8 @@
 	</dependencies>
 	<repositories>
 		<repository>
-			<id>govgrants-releases</id>
-			<url>http://nexus.reisys.com:8081/nexus/content/repositories/govgrants-releases</url>
+			<id>REI-Automation-Framework</id>
+			<url>http://nexus.reisys.com:8081/nexus/content/repositories/REI-Automation-Framework</url>
 		</repository>
 	</repositories>
 
