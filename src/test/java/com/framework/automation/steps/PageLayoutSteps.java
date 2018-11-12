@@ -34,6 +34,26 @@ public class PageLayoutSteps {
 		pageLayoutPage.getItemFromTopRightHeaderBars(itemName).click();
 	}
 
+	@When("^I click Add button inside attachments page block$")
+	public void clickAddButton() {
+		pageLayoutPage.clickAddUnderAttachmentsPageBlock();
+	}
+
+	@When("^I click select dropdown inside add attachment iframe$")
+	public void clickSelectDropdown() {
+		pageLayoutPage.clickOnTypeDropdown();
+	}
+
+	@When("^I click search icon for owner organization$")
+	public void clickSearchOwnerOrganization() {
+		pageLayoutPage.clickSearchIconOfOwnerOrganization();
+	}
+
+	@Then("^I see modal box with body \"([^\"]*)\" is displayed$")
+	public void assertOwnerOrganizationModalBoxWithMessage(String headerText) {
+		pageLayoutPage.assertOwnerOrganizationMOdalTitle(headerText);
+	}
+
 	@Then("^I see \"([^\"]*)\" shown as over view title in header \"([^\"]*)\"$")
 	public void assertOverViewTitleWithHeader(String overViewTitle, String overViewHeader) {
 		pageLayoutPage.assertOverViewTitleWithHeader(overViewTitle, overViewHeader);
@@ -177,25 +197,5 @@ public class PageLayoutSteps {
 	@Then("^I see Program Name rendered in view mode only$")
 	public void assertViewModeOfPageBlockDetailElement() {
 		pageLayoutPage.assertPageBlockDetailElementDisplayedInViewMode();
-	}
-
-	@When("^I click Add button inside attachments page block$")
-	public void clickAddButton() {
-		pageLayoutPage.clickAddUnderAttachmentsPageBlock();
-	}
-
-	@When("^I click select dropdown inside add attachment iframe$")
-	public void clickSelectDropdown() {
-		pageLayoutPage.clickOnTypeDropdown();
-	}
-
-	@When("^I click search icon for owner organization$")
-	public void clickSearchOwnerOrganization() {
-		pageLayoutPage.clickSearchIconOfOwnerOrganization();
-	}
-
-	@Then("^I see modal box with body \"([^\"]*)\" is displayed$")
-	public void assertOwnerOrganizationModalBoxWithMessage(String headerText) {
-		pageLayoutPage.assertOwnerOrganizationMOdalTitle(headerText);
 	}
 }
