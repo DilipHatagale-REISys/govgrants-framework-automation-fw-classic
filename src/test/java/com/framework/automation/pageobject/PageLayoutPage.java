@@ -46,9 +46,8 @@ public class PageLayoutPage extends GovGrantsManager {
 	 * 
 	 * @param subTab
 	 */
-	public void clickSubTab(String subTab) {
-		reiDriver.WaitFor().WaitForElementToBePresent(By.xpath("//div[@id='myTabs']/ul/li/a[@name='" + subTab + "']"))
-				.click();
+	public void clickSubTab(String tabName) {
+		govgrants.pageDetails().clickSubTabsInsideTableView(tabName);
 	}
 
 	/**
