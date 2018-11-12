@@ -258,6 +258,48 @@ public class PageBlock {
 									String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
 							String.valueOf(SObjectAPIs.GNT__RequiredBehavior__c), value);
 			break;
+		case "IS HIDDEN FIELD":
+			finalPayload = String
+					.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__IsHiddenField__c), value);
+			break;
+		case "HIDE DECISION FIELD":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__HideDecisionField__c), value);
+			break;
+		case "READ ONLY FOR USER":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__ReadOnlyForUser__c), value);
+			break;
+		case "READ DECISION FIELD":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__ReadDecisionField__c), value);
+			break;
+		case "HIDE LABEL":
+			finalPayload = String
+					.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__HideLabel__c), value);
+			break;
+		case "LOOKUP HEADER TEXT":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__CustomLookupModalHeader__c), value);
+			break;
 		}
 		System.out.println(finalPayload);
 		return finalPayload;

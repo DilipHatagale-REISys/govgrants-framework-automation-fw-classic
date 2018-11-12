@@ -17,7 +17,8 @@ public class PageLayoutPage extends GovGrantsManager {
 
 	private final By overViewHeader, overViewTitle, pageInstructionText, headerInstructionText, headerOverviewTab,
 			headerInstructionTextForPageBlock, rolesAndResponsibilitiesFlexTableTitle, monitoringFlexGridTitle,
-			addButtonUnderAttachments, selectTypeDropdown, addAttachmentIframe;
+			addButtonUnderAttachments, selectTypeDropdown, addAttachmentIframe, searchIconOwnerOrganization,
+			ownerOrganizationModalTitle;
 
 	/**
 	 * Constructor to handle dependency injection and framework library
@@ -37,6 +38,9 @@ public class PageLayoutPage extends GovGrantsManager {
 		addButtonUnderAttachments = By.xpath("//button[@title='AddAttachments']");
 		selectTypeDropdown = By.xpath("//select[@title='Classification']");
 		addAttachmentIframe = By.cssSelector("#addmodaldialog iframe");
+		searchIconOwnerOrganization = By.xpath("//img[@title='Organization Lookup (New Window)']");
+		ownerOrganizationModalTitle = By.xpath("//p[@id='customLookupModalTitle']");
+
 	}
 
 	/******* "Key Methods with complete functionality - public" *****************/
@@ -306,6 +310,17 @@ public class PageLayoutPage extends GovGrantsManager {
 	 */
 	public void assertPageBlockDetailElementDisplayedInViewMode() {
 		Assert.assertTrue(isElementAtPageBlockDetailInViewMode());
+	}
+
+	/**
+	 * assert if expected text is displayed on owner organization lookup field modal
+	 * box
+	 * 
+	 * @param headerText
+	 */
+	public void assertOwnerOrganizationMOdalTitle(String headerText) {
+		Assert.assertTrue(reiDriver.findMyElement().getElement(ownerOrganizationModalTitle).getAttribute("innerText")
+				.equalsIgnoreCase(headerText));
 	}
 
 	/*********
@@ -792,5 +807,13 @@ public class PageLayoutPage extends GovGrantsManager {
 	 */
 	public void clickOnTypeDropdown() {
 		reiDriver.findMyElement().getElement(selectTypeDropdown).click();
+	}
+
+	/**
+	 * click search icon of owner organization at page block detail edit page and
+	 * switching to repective frame.
+	 */
+	public void clickSearchIconOfOwnerOrganization() {
+		reiDriver.WaitFor().WaitForElementToBePresent(searchIconOwnerOrganization).click();
 	}
 }

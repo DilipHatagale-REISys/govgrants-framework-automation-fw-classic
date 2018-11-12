@@ -188,4 +188,14 @@ public class PageLayoutSteps {
 	public void clickSelectDropdown() {
 		pageLayoutPage.clickOnTypeDropdown();
 	}
+
+	@When("^I click search icon for owner organization$")
+	public void clickSearchOwnerOrganization() {
+		pageLayoutPage.clickSearchIconOfOwnerOrganization();
+	}
+
+	@Then("^I see modal box with body \"([^\"]*)\" is displayed$")
+	public void assertOwnerOrganizationModalBoxWithMessage(String headerText) {
+		pageLayoutPage.assertOwnerOrganizationMOdalTitle(headerText);
+	}
 }
