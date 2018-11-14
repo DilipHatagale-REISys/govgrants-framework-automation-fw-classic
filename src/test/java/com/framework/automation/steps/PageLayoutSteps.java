@@ -44,6 +44,16 @@ public class PageLayoutSteps {
 		pageLayoutPage.clickOnTypeDropdown();
 	}
 
+	@When("^I click search icon for owner organization with \"([^\"]*)\"$")
+	public void clickSearchOwnerOrganization(String param) {
+		pageLayoutPage.clickQuickSearchLookupModal(param);
+	}
+
+	@When("^I click on Manage Attachments inside page block details$")
+	public void clickPageBlockDetailElement() {
+		pageLayoutPage.clickPageBlockDetailParticularElement();
+	}
+
 	@Then("^I see \"([^\"]*)\" shown as over view title in header \"([^\"]*)\"$")
 	public void assertOverViewTitleWithHeader(String overViewTitle, String overViewHeader) {
 		pageLayoutPage.assertOverViewTitleWithHeader(overViewTitle, overViewHeader);
@@ -188,4 +198,30 @@ public class PageLayoutSteps {
 	public void assertViewModeOfPageBlockDetailElement() {
 		pageLayoutPage.assertPageBlockDetailElementDisplayedInViewMode();
 	}
+
+	@Then("^I see modal box with body \"([^\"]*)\" is displayed$")
+	public void assertOwnerOrganizationModalBoxWithMessage(String headerText) {
+		pageLayoutPage.assertOwnerOrganizationMOdalTitle(headerText);
+	}
+
+	@Then("^I see \"([^\"]*)\" in table header on lookup Modal$")
+	public void assertFlexTableHeaderName(String headerColumnName) {
+		pageLayoutPage.assertTableHeaderColumnNameForLookupModal(headerColumnName);
+	}
+
+	@Then("^I see \"([^\"]*)\" status in lookup modal table$")
+	public void assertSpecificStatusCategoryNotDisplayed(String statusCategory) {
+		pageLayoutPage.assertTableStatusInsideLookupModal(statusCategory);
+	}
+
+	@Then("^I see \"([^\"]*)\" message inside confirmation box is displayed$")
+	public void assertSAConfirmationBoxWithMessageText(String message) {
+		pageLayoutPage.assertMessageOfAcceptAlertBox(message);
+	}
+
+	@Then("^I see Edit opens in overlay window with \"([^\"]*)\" button$")
+	public void assertLayoutButtonOpenInOverlayDisplayed(String buttonName) {
+		pageLayoutPage.assertActionButtonOfPagrLayoutDisplayed(buttonName);
+	}
+
 }

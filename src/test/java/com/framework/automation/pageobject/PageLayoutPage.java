@@ -17,7 +17,9 @@ public class PageLayoutPage extends GovGrantsManager {
 
 	private final By overViewHeader, overViewTitle, pageInstructionText, headerInstructionText, headerOverviewTab,
 			headerInstructionTextForPageBlock, rolesAndResponsibilitiesFlexTableTitle, monitoringFlexGridTitle,
-			addButtonUnderAttachments, selectTypeDropdown, addAttachmentIframe;
+			addButtonUnderAttachments, selectTypeDropdown, addAttachmentIframe, lookupSearchInputBox,
+			lookupSearchButton, ownerOrganizationModalTitle, lookupModalIframe, completeTableRowInsideLookupModal,
+			manageAttachmentInsidePageBlockDetail, manageAttachmentIframe, editActionModalIframe;
 
 	/**
 	 * Constructor to handle dependency injection and framework library
@@ -35,8 +37,18 @@ public class PageLayoutPage extends GovGrantsManager {
 		monitoringFlexGridTitle = By.xpath(
 				"//div[@class='panel-heading']//div[contains(@class,'panel-title')]//a[@title='Monitoring Schedule For All Active Grants']");
 		addButtonUnderAttachments = By.xpath("//button[@title='AddAttachments']");
-		selectTypeDropdown = By.xpath("//select[@title='Classification']");
+		selectTypeDropdown = By.xpath("//select[@title='Classification']/option");
 		addAttachmentIframe = By.cssSelector("#addmodaldialog iframe");
+		lookupSearchInputBox = By.xpath("//img[@title='Organization Lookup (New Window)']/../../input[@type='text']");
+		lookupSearchButton = By.xpath("//img[@title='Organization Lookup (New Window)']");
+		ownerOrganizationModalTitle = By.xpath("//p[@id='customLookupModalTitle']");
+		lookupModalIframe = By.xpath("//iframe[@id='iframeCustomLookupModalId']");
+		completeTableRowInsideLookupModal = By
+				.xpath("//div[@id='lookuploading']//div[contains(@class,'panel-body')]//div/table/tbody/tr");
+		manageAttachmentInsidePageBlockDetail = By.xpath(
+				"//span[contains(text(),'Additional Documentation')]/..//following-sibling::span/a[contains(text(),'Manage Attachments')]");
+		manageAttachmentIframe = By.xpath("//iframe[@id='iframeviewFieldAttContentIdField']");
+		editActionModalIframe = By.xpath("//iframe[@id='iframeActionModalIdViewLayout']");
 	}
 
 	/******* "Key Methods with complete functionality - public" *****************/
@@ -267,8 +279,7 @@ public class PageLayoutPage extends GovGrantsManager {
 	 * @param dropDownValue
 	 */
 	public void assertValueInsideDropdown(String dropDownValue) {
-		Assert.assertTrue(reiDriver.WaitFor().WaitForElementToBePresent(selectTypeDropdown).getAttribute("innerText")
-				.equalsIgnoreCase(dropDownValue));
+		Assert.assertTrue(isValuePresentInsidePickList(dropDownValue));
 	}
 
 	/**
@@ -305,6 +316,57 @@ public class PageLayoutPage extends GovGrantsManager {
 	 */
 	public void assertPageBlockDetailElementDisplayedInViewMode() {
 		Assert.assertTrue(isElementAtPageBlockDetailInViewMode());
+	}
+
+	/**
+	 * assert if expected text is displayed on owner organization lookup field modal
+	 * box
+	 * 
+	 * @param headerText
+	 */
+	public void assertOwnerOrganizationMOdalTitle(String headerText) {
+		Assert.assertTrue(reiDriver.WaitFor().WaitForElementToBePresent(ownerOrganizationModalTitle)
+				.getAttribute("innerText").equalsIgnoreCase(headerText));
+	}
+
+	/**
+	 * assert true if header column name is present on lookup modal
+	 * 
+	 * @param headerColumnName
+	 */
+	public void assertTableHeaderColumnNameForLookupModal(String headerColumnName) {
+		Assert.assertTrue(isTableColumnHeaderNameOnLookModal(headerColumnName));
+	}
+
+	/**
+	 * return true if specific status category is displayed inside lookup modal
+	 * table
+	 * 
+	 * @param statusName
+	 */
+	public void assertTableStatusInsideLookupModal(String statusName) {
+		Assert.assertTrue(isStatusDisplayedForLookupModal(statusName));
+	}
+
+	/**
+	 * assert if message is displayed on accept alert pop up on submit for approval
+	 * button
+	 * 
+	 * @param message
+	 */
+	public void assertMessageOfAcceptAlertBox(String message) {
+		Assert.assertTrue(reiDriver.switchTo().getAlertText().equalsIgnoreCase(message));
+		reiDriver.switchTo().rejectAlert();
+	}
+
+	/**
+	 * assert true if header button inside overlay layout is displayed
+	 * 
+	 * @param buttonName
+	 */
+	public void assertActionButtonOfPagrLayoutDisplayed(String buttonName) {
+		reiDriver.switchTo().switchToFrame(editActionModalIframe);
+		Assert.assertTrue(isButtonDisplayedAtOverlayWindow(buttonName));
 	}
 
 	/*********
@@ -364,15 +426,13 @@ public class PageLayoutPage extends GovGrantsManager {
 	private boolean isTopRightHeaderButtonDisplayed(String buttonName) {
 		boolean flag = true;
 		try {
-			if (reiDriver.findMyElement()
-					.getElement(By.xpath(
-							"//div[@class='panel-heading']//div[contains(@class,'header-buttons')]//button[@title='"
-									+ buttonName + "']"))
+			if (reiDriver
+					.findMyElement().getElement(By.xpath("//div[contains(@class,'panel-heading')]//*[@title='"
+							+ buttonName + "' or text()='" + buttonName + "' or @value='" + buttonName + "']"))
 					.isDisplayed()) {
 				flag = false;
 			}
 		} catch (org.openqa.selenium.NoSuchElementException e) {
-
 		}
 		return flag;
 	}
@@ -791,5 +851,146 @@ public class PageLayoutPage extends GovGrantsManager {
 	 */
 	public void clickOnTypeDropdown() {
 		reiDriver.findMyElement().getElement(selectTypeDropdown).click();
+	}
+
+	/**
+	 * click search icon of owner organization at page block detail edit page
+	 */
+
+	public void clickQuickSearchLookupModal(String cnd) {
+		reiDriver.WaitFor().WaitForElementToBePresent(lookupSearchInputBox);
+		reiDriver.WaitFor().WaitForElementClickAble(lookupSearchInputBox).clear();
+		reiDriver.JavaScript().clickByJS(lookupSearchButton);
+		if (cnd.equals("header with modal")) {
+			reiDriver.switchTo().switchToFrame(lookupModalIframe);
+		}
+	}
+
+	/**
+	 * 
+	 * @return false if expected element is not displayed on look modal
+	 */
+	private Boolean isTableColumnHeaderNameOnLookModal(String titleName) {
+		boolean flag = false;
+		try {
+			if (getSpecificElementFromTableHeaderFromLookupModal(titleName).isDisplayed()
+					|| getSpecificElementFromTableHeaderFromLookupModal(titleName).isEnabled()) {
+				flag = true;
+			}
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			flag = false;
+		}
+		return flag;
+	}
+
+	/**
+	 * get any element from title table from lookup modal
+	 *
+	 * @param titleName
+	 * @return
+	 */
+	public WebElement getSpecificElementFromTableHeaderFromLookupModal(String titleName) {
+		return reiDriver.WaitFor().WaitForElementToBePresent(
+				By.xpath("//div[contains(@class,'panel-body')]//div/table/thead/tr/th//span[@title='" + titleName
+						+ "' or text()='" + titleName + "']"));
+	}
+
+	/**
+	 * return true if statusName is displayed
+	 * 
+	 * @param statusName
+	 * @return
+	 */
+	private Boolean isStatusDisplayedForLookupModal(String statusName) {
+		boolean flag = false;
+		try {
+			if (getCompleteTableRowOfLookupModal().stream()
+					.anyMatch(item -> item.findElement(getTableColumnOfLookupModal(statusName)).isDisplayed())) {
+				flag = true;
+			}
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+		}
+		return flag;
+	}
+
+	/**
+	 * get complete rows of table inside lookup modal
+	 * 
+	 * @return
+	 */
+	public List<WebElement> getCompleteTableRowOfLookupModal() {
+		return reiDriver.WaitFor().WaitForElementListToBePresent(completeTableRowInsideLookupModal);
+	}
+
+	/**
+	 * return locator for status column insise lookup modal
+	 *
+	 * @param columnValueName
+	 * @return
+	 */
+	public By getTableColumnOfLookupModal(String columnValueName) {
+		return By.xpath("//td//span[@title='" + columnValueName + "' or text()='" + columnValueName + "']");
+	}
+
+	/**
+	 * click on page block detail element and switching to respective iframe
+	 */
+	public void clickPageBlockDetailParticularElement() {
+		reiDriver.JavaScript().scrollElementToPageDetailCenter(manageAttachmentInsidePageBlockDetail);
+		reiDriver.WaitFor().WaitForElementToBePresent(manageAttachmentInsidePageBlockDetail).click();
+		reiDriver.switchTo().switchToFrame(manageAttachmentIframe);
+	}
+
+	/**
+	 * get complete rows of table inside lookup modal
+	 * 
+	 * @return
+	 */
+	public List<WebElement> getOptionsFromPickList() {
+		return reiDriver.WaitFor().WaitForElementListToBePresent(selectTypeDropdown);
+	}
+
+	/**
+	 * return true if picklist dropDownValue is displayed
+	 * 
+	 * @param dropDownValue
+	 * @return
+	 */
+	public boolean isValuePresentInsidePickList(String dropDownValue) {
+
+		String[] exp = dropDownValue.split(" ");
+		int count = 0;
+		List<WebElement> options = getOptionsFromPickList();
+		for (WebElement we : options) {
+			for (int i = 0; i < exp.length; i++) {
+				if (we.getText().equals(exp[i])) {
+					count++;
+				}
+			}
+		}
+		if (count == exp.length) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	/**
+	 * return true if cancel button is displayed
+	 * 
+	 * @param buttonName
+	 * @return
+	 */
+	private boolean isButtonDisplayedAtOverlayWindow(String buttonName) {
+		boolean flag = false;
+		try {
+			if (reiDriver.findMyElement().getElement(By.xpath("//span/a[contains(text(),'" + buttonName + "')]"))
+					.isDisplayed()) {
+				flag = true;
+			}
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+
+		}
+		return flag;
 	}
 }

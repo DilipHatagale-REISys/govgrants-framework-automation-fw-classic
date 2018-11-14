@@ -809,8 +809,8 @@ Feature: Page Layout Component Scenarios
 	|configurationCategory        |fieldName                 |fieldOrignalValue                                    |coreComponentField    |filterId        |
 	|Page Block:Page Block Detail |Attachment Classifications|Program Artifacts;Financial Artifacts;Other Artifacts|Grantee State Program |ApiGeneratedId:0|
 	Given I setup test configuration as below:
-	|configurationCategory        |fieldName                 |fieldNewValue          |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
-	|Page Block:Page Block Detail |Attachment Classifications|Announcement Artifacts |Grantee State Program |GNT__PageBlockTitle__c   |Attachments               |
+	|configurationCategory        |fieldName                 |fieldNewValue                                   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Block:Page Block Detail |Attachment Classifications|AnnouncementArtifacts1;AnnouncementArtifacts2;  |Grantee State Program |GNT__PageBlockTitle__c   |Attachments               |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
@@ -818,7 +818,7 @@ Feature: Page Layout Component Scenarios
 	When I click on "Attachments" sub tab inside page layout
 	When I click Add button inside attachments page block
 	When I click select dropdown inside add attachment iframe
-	Then I see "Announcement Artifacts" inside Type selectbox
+	Then I see "AnnouncementArtifacts1 AnnouncementArtifacts2" inside Type selectbox
 	
 	@36104 @all @isHiddenFieldAtPageBlockDetail-gPlanning
 	Scenario: Hiding program name while making is hidden field as false from config and validaying it at program detail page
@@ -891,3 +891,130 @@ Feature: Page Layout Component Scenarios
 	When I search for "Test program for automation"
 	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
 	Then I see "Program Name" is not displayed inside page block detail
+	
+	@36169 @all @lookUpHeaderTextFieldAtPageBlockDetail-gPlanning
+	Scenario: Hiding program name label at page block detail from config and validating it at program detail page
+	Given I have default configuration as below:
+	|configurationCategory                    |fieldName           |fieldOrignalValue |coreComponentField    |filterId        |
+	|Page Block Config:Page Block Rule Detail |Lookup Header Text  |Organization      |Grantee State Program |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory                    |fieldName           |fieldNewValue          |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Block Config:Page Block Rule Detail |Lookup Header Text  |Organization Automation|Grantee State Program |Name                     |PBD-3178                  |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "Edit" icon of status "Created" for "Test program for automation" program in flex table
+	When I click search icon for owner organization with "header without modal"
+	Then I see modal box with body "Organization Automation" is displayed
+	
+	@36170 @all @lookupDisplayFieldNamesFieldAtPageBlockDetail-gPlanning
+	Scenario: Changing column header and its data of lookup modal from config and valiodating it on program detail page
+	Given I have default configuration as below:
+	|configurationCategory                    |fieldName                  |fieldOrignalValue |coreComponentField    |filterId        |
+	|Page Block Config:Page Block Rule Detail |Lookup Display Field Names |Name              |Grantee State Program |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory                    |fieldName                  |fieldNewValue     |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Block Config:Page Block Rule Detail |Lookup Display Field Names |Code__c           |Grantee State Program |Name                     |PBD-3178                  |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "Edit" icon of status "Created" for "Test program for automation" program in flex table
+	When I click search icon for owner organization with "header with modal"
+	Then I see "Code" in table header on lookup Modal
+	
+	@36172 @all @lookupFilterCriteriaFieldAtPAgeBlockDetail-gPlanning
+	Scenario Outline: Validate removing Created status category from table on lookup modal from config and validating it at program detail page
+	Given I have default configuration as below:
+	|configurationCategory                    |fieldName                  |fieldOrignalValue |coreComponentField    |filterId        |
+	|Page Block Config:Page Block Rule Detail |Lookup Display Field Names |Name              |Grantee State Program |ApiGeneratedId:0|
+	|Page Block Config:Page Block Rule Detail |Lookup Filter Criteria     |<oldLookupFilter> |Grantee State Program |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory                    |fieldName                  |fieldNewValue         |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Block Config:Page Block Rule Detail |Lookup Display Field Names |<newLookupDisplayName>|Grantee State Program |Name                     |PBD-3178                  |
+	|Page Block Config:Page Block Rule Detail |Lookup Filter Criteria     |<newLookupFilter>     |Grantee State Program |Name                     |PBD-3178                  |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "Edit" icon of status "Created" for "Test program for automation" program in flex table
+	When I click search icon for owner organization with "header with modal"
+	Then I see "Created" status in lookup modal table
+	
+	Examples:
+	|oldLookupFilter|newLookupFilter|newLookupDisplayName|
+	|RecordType.Name='Internal' AND GroupCode__c='{!GroupCode}' AND Status__c ='Active'|Status__c = 'Created'|Name,Status__c|
+	
+	@36178 @all @attachmentClassificationFieldAtPageBlockDetail-gPlanning
+	Scenario: Changing value of attachment classification field from config and validating it at announcement detail page
+	Given I have default configuration as below:
+	|configurationCategory                    |fieldName                  |fieldOrignalValue    |coreComponentField      |filterId        |
+	|Page Block Config:Page Block Rule Detail |Attachment Classifications |FOA;CFA;CFDA;Other;  |Annoucement Profile-FOA |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory                    |fieldName                  |fieldNewValue        |coreComponentField      |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Block Config:Page Block Rule Detail |Attachment Classifications |Test1;Test2;         |Annoucement Profile-FOA |Name                     |PBD-5205                  |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Announcements" tab
+	When I search for "Test Announcement For Automation"
+	When I click on "View" icon of status "Created" for "Test Announcement For Automation" program in flex table
+	When I click on "Overview" sub tab inside page layout
+	When I click on Manage Attachments inside page block details
+	When I click select dropdown inside add attachment iframe
+	Then I see "Test1 Test2" inside Type selectbox
+	
+	@36196 @all @submitWarningMessageFieldAtPageLayoutAction-gPlanning
+	Scenario: Setup submit warning message at program submit for approval from configuration and validating it at program detail page
+	Given I have default configuration as below:
+	|configurationCategory |fieldName             |fieldOrignalValue                                                                                  |filterId        |
+	|Page Layout Action    |Submit Warning Message|You Will not be able to edit the Program once it is submitted , Are you sure you want to continue ?|ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName             |fieldNewValue              |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Submit Warning Message|Test message for Automation|Grantee State Program |Name                     |Submit For Approval          |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+    When I click on "Submit For Approval" button in right header
+    Then I see "Test message for Automation" message inside confirmation box is displayed
+    
+    @36198 @all @isActiveFieldAtPageLayoutAction-gPlanning
+    Scenario: Disabling of edit button action at page layout action from config and validating it at program detail page
+    Given I have default configuration as below:
+	|configurationCategory |fieldName    |fieldOrignalValue |filterId        |
+	|Page Layout Action    |Is Active    |true              |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName    |fieldNewValue     |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Is Active    |false             |Grantee State Program |Name                     |Edit                         |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	Then I see "Edit" button is not displayed
+	
+	@36200 @all @editButtonActionOpensInOverLayWindowAtPageLayoutAction-gPlanning
+	Scenario: validate page layout action button field- Edit opens in overlay window
+	Given I have default configuration as below:
+	|configurationCategory |fieldName      |fieldOrignalValue |filterId        |
+	|Page Layout Action    |Action Behavior|                  |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName      |fieldNewValue     |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Action Behavior|Open in overlay   |Grantee State Program |Name                     |Edit                         |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	When I click on "Edit" button in right header
+	Then I see Edit opens in overlay window with "Cancel" button
+	
+	@36202 @all @editButtonActionOpensInNewWindowAtPageLayoutAction-gPlanning
+	Scenario: validate page layout action button field- Edit opens in New window
+	Given I have default configuration as below:
+	|configurationCategory |fieldName      |fieldOrignalValue |filterId        |
+	|Page Layout Action    |Action Behavior|                  |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName      |fieldNewValue      |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Action Behavior|Open in new window |Grantee State Program |Name                     |Edit                         |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	When I click on "Edit" button in right header
+	Then I see new tab is opened

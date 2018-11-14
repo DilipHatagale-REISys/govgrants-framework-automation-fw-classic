@@ -177,6 +177,27 @@ public class PageLayout {
 									String.valueOf(SObjectAPIs.GNT__PageLayoutActionConfig__c), filterClause),
 							String.valueOf(SObjectAPIs.GNT__HideForUser__c), value);
 			break;
+		case "SUBMIT WARNING MESSAGE":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageLayoutActionConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__PageLayoutActionConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__SubmitWarningMessage__c), value);
+			break;
+		case "IS ACTIVE":
+			finalPayload = String
+					.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PageLayoutActionConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__PageLayoutActionConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__Active__c), value);
+			break;
+		case "ACTION BEHAVIOR":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageLayoutActionConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__PageLayoutActionConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__ActionBehavior__c), value);
+			break;
 		}
 		System.out.println(finalPayload);
 		return finalPayload;

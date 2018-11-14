@@ -300,6 +300,27 @@ public class PageBlock {
 									String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
 							String.valueOf(SObjectAPIs.GNT__CustomLookupModalHeader__c), value);
 			break;
+		case "LOOKUP DISPLAY FIELD NAMES":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__DisplayLookupFieldNames__c), value);
+			break;
+		case "LOOKUP FILTER CRITERIA":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__FilterCriteria__c), value);
+			break;
+		case "ATTACHMENT CLASSIFICATIONS":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__AttachmentClassifications__c), value);
+			break;
 		}
 		System.out.println(finalPayload);
 		return finalPayload;
