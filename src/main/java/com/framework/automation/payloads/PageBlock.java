@@ -321,6 +321,13 @@ public class PageBlock {
 									String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
 							String.valueOf(SObjectAPIs.GNT__AttachmentClassifications__c), value);
 			break;
+		case "HELP TEXT LONG":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__HelpTextLong__c), value);
+			break;
 		}
 		System.out.println(finalPayload);
 		return finalPayload;

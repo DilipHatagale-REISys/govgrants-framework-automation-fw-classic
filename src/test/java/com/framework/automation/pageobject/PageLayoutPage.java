@@ -18,8 +18,9 @@ public class PageLayoutPage extends GovGrantsManager {
 	private final By overViewHeader, overViewTitle, pageInstructionText, headerInstructionText, headerOverviewTab,
 			headerInstructionTextForPageBlock, rolesAndResponsibilitiesFlexTableTitle, monitoringFlexGridTitle,
 			addButtonUnderAttachments, selectTypeDropdown, addAttachmentIframe, lookupSearchInputBox,
-			lookupSearchButton, ownerOrganizationModalTitle, lookupModalIframe, completeTableRowInsideLookupModal,
-			manageAttachmentInsidePageBlockDetail, manageAttachmentIframe, editActionModalIframe;
+			lookupSearchButton, ownerOrganizationModalTitle, completeTableRowInsideLookupModal,
+			manageAttachmentInsidePageBlockDetail, manageAttachmentIframe, editActionModalIframe, pageLayoutButton,
+			textInsideHelpText;
 
 	/**
 	 * Constructor to handle dependency injection and framework library
@@ -37,18 +38,20 @@ public class PageLayoutPage extends GovGrantsManager {
 		monitoringFlexGridTitle = By.xpath(
 				"//div[@class='panel-heading']//div[contains(@class,'panel-title')]//a[@title='Monitoring Schedule For All Active Grants']");
 		addButtonUnderAttachments = By.xpath("//button[@title='AddAttachments']");
-		selectTypeDropdown = By.xpath("//select[@title='Classification']/option");
+		selectTypeDropdown = By.xpath("//select[@title='Classification']");
 		addAttachmentIframe = By.cssSelector("#addmodaldialog iframe");
 		lookupSearchInputBox = By.xpath("//img[@title='Organization Lookup (New Window)']/../../input[@type='text']");
 		lookupSearchButton = By.xpath("//img[@title='Organization Lookup (New Window)']");
 		ownerOrganizationModalTitle = By.xpath("//p[@id='customLookupModalTitle']");
-		lookupModalIframe = By.xpath("//iframe[@id='iframeCustomLookupModalId']");
 		completeTableRowInsideLookupModal = By
 				.xpath("//div[@id='lookuploading']//div[contains(@class,'panel-body')]//div/table/tbody/tr");
 		manageAttachmentInsidePageBlockDetail = By.xpath(
 				"//span[contains(text(),'Additional Documentation')]/..//following-sibling::span/a[contains(text(),'Manage Attachments')]");
 		manageAttachmentIframe = By.xpath("//iframe[@id='iframeviewFieldAttContentIdField']");
 		editActionModalIframe = By.xpath("//iframe[@id='iframeActionModalIdViewLayout']");
+		pageLayoutButton = By.xpath("//div[@id='headerButtonsPanel']/span/button");
+		textInsideHelpText = By
+				.xpath("//div[@class='tooltipster-base tooltipster-noir tooltipster-fade tooltipster-fade-show']");
 	}
 
 	/******* "Key Methods with complete functionality - public" *****************/
@@ -367,6 +370,38 @@ public class PageLayoutPage extends GovGrantsManager {
 	public void assertActionButtonOfPagrLayoutDisplayed(String buttonName) {
 		reiDriver.switchTo().switchToFrame(editActionModalIframe);
 		Assert.assertTrue(isButtonDisplayedAtOverlayWindow(buttonName));
+	}
+
+	/**
+	 * return false if top right header button as per name is displayed
+	 * 
+	 * @param buttonName
+	 */
+	public void assertTopRightButtonDisplayed(String buttonName) {
+		Assert.assertFalse(isTopRightHeaderButtonDisplayed(buttonName));
+	}
+
+	/**
+	 * assert edit option displayed inside menu dropdown for program detail page
+	 */
+	public void assertEditButtonInsideMenuDropDown() {
+		Assert.assertFalse(isEditButtonDisplayedInsideMenuDropDown());
+	}
+
+	/**
+	 * assert if specific page layout action button appears at a specific position
+	 * 
+	 * @param buttonName
+	 */
+	public void assertSequenceOfEditButtonAction(String buttonName, int sequenceNumber) {
+		Assert.assertTrue(isEditButtonActionSequence(buttonName, sequenceNumber));
+	}
+
+	/**
+	 * assert true if mentioned help text displayed
+	 */
+	public void assertHelpTextAtPageBlock(String helptext) {
+		Assert.assertTrue(isHelpTextDisplayed(helptext));
 	}
 
 	/*********
@@ -857,13 +892,19 @@ public class PageLayoutPage extends GovGrantsManager {
 	 * click search icon of owner organization at page block detail edit page
 	 */
 
-	public void clickQuickSearchLookupModal(String cnd) {
-		reiDriver.WaitFor().WaitForElementToBePresent(lookupSearchInputBox);
-		reiDriver.WaitFor().WaitForElementClickAble(lookupSearchInputBox).clear();
+	public void clickQuickSearchLookupModal() {
+		reiDriver.textInput().clearText(reiDriver.WaitFor().WaitForElementToBePresent(lookupSearchInputBox));
 		reiDriver.JavaScript().clickByJS(lookupSearchButton);
-		if (cnd.equals("header with modal")) {
-			reiDriver.switchTo().switchToFrame(lookupModalIframe);
-		}
+	}
+
+	/**
+	 * click search icon of owner organization at page block detail edit page
+	 */
+
+	public void clickQuickSearchAndSwitchingToLookupModal(String frameId) {
+		reiDriver.textInput().clearText(reiDriver.WaitFor().WaitForElementToBePresent(lookupSearchInputBox));
+		reiDriver.JavaScript().clickByJS(lookupSearchButton);
+		reiDriver.switchTo().switchToFrame(By.xpath("//iframe[@id='" + frameId + "']"));
 	}
 
 	/**
@@ -873,26 +914,14 @@ public class PageLayoutPage extends GovGrantsManager {
 	private Boolean isTableColumnHeaderNameOnLookModal(String titleName) {
 		boolean flag = false;
 		try {
-			if (getSpecificElementFromTableHeaderFromLookupModal(titleName).isDisplayed()
-					|| getSpecificElementFromTableHeaderFromLookupModal(titleName).isEnabled()) {
+			if (govgrants.flexTable().getSpecificElementFromTableHeader(titleName).isDisplayed()
+					|| govgrants.flexTable().getSpecificElementFromTableHeader(titleName).isEnabled()) {
 				flag = true;
 			}
 		} catch (org.openqa.selenium.NoSuchElementException e) {
 			flag = false;
 		}
 		return flag;
-	}
-
-	/**
-	 * get any element from title table from lookup modal
-	 *
-	 * @param titleName
-	 * @return
-	 */
-	public WebElement getSpecificElementFromTableHeaderFromLookupModal(String titleName) {
-		return reiDriver.WaitFor().WaitForElementToBePresent(
-				By.xpath("//div[contains(@class,'panel-body')]//div/table/thead/tr/th//span[@title='" + titleName
-						+ "' or text()='" + titleName + "']"));
 	}
 
 	/**
@@ -942,26 +971,15 @@ public class PageLayoutPage extends GovGrantsManager {
 	}
 
 	/**
-	 * get complete rows of table inside lookup modal
-	 * 
-	 * @return
-	 */
-	public List<WebElement> getOptionsFromPickList() {
-		return reiDriver.WaitFor().WaitForElementListToBePresent(selectTypeDropdown);
-	}
-
-	/**
 	 * return true if picklist dropDownValue is displayed
 	 * 
 	 * @param dropDownValue
 	 * @return
 	 */
 	public boolean isValuePresentInsidePickList(String dropDownValue) {
-
 		String[] exp = dropDownValue.split(" ");
 		int count = 0;
-		List<WebElement> options = getOptionsFromPickList();
-		for (WebElement we : options) {
+		for (WebElement we : reiDriver.findMyElement().getDropDown(selectTypeDropdown).getOptions()) {
 			for (int i = 0; i < exp.length; i++) {
 				if (we.getText().equals(exp[i])) {
 					count++;
@@ -989,8 +1007,84 @@ public class PageLayoutPage extends GovGrantsManager {
 				flag = true;
 			}
 		} catch (org.openqa.selenium.NoSuchElementException e) {
-
 		}
 		return flag;
+	}
+
+	/**
+	 * validate if options are not displayed in Detail page
+	 * 
+	 * @param option
+	 * @return: true if it is not displayed
+	 */
+	private boolean isEditButtonDisplayedInsideMenuDropDown() {
+		boolean flag = false;
+		try {
+			if (getEditButtonOptionVerification().getAttribute("style").toLowerCase().contains("display: none")) {
+				flag = true;
+			}
+		} catch (Exception e) {
+			flag = false;
+		}
+		return flag;
+	}
+
+	/**
+	 * get Edit Button inside menu without waiting for presence.
+	 * 
+	 * @return
+	 */
+	public WebElement getEditButtonOptionVerification() {
+		return reiDriver.findMyElement()
+				.getElement(By.cssSelector(".dropdown.open>.dropdown-menu-right>li:nth-child(2)"));
+	}
+
+	/**
+	 * check the sequence of the edit button action at page layout action
+	 * 
+	 * @param buttonName
+	 * @param sequenceNumber
+	 * @return true/false
+	 */
+	private boolean isEditButtonActionSequence(String buttonName, int sequenceNumber) {
+		if (reiDriver.findMyElement().getElements(pageLayoutButton).get(sequenceNumber).getAttribute("title")
+				.contains(buttonName)) {
+			return true;
+		} else
+			return false;
+	}
+
+	/**
+	 * return true if text is displayed
+	 * 
+	 * @param text
+	 * @return
+	 */
+	private boolean isHelpTextDisplayed(String helpText) {
+		boolean flag = false;
+		if (reiDriver.findMyElement().getElement(textInsideHelpText).getText().equalsIgnoreCase(helpText)) {
+			flag = true;
+		}
+		return flag;
+	}
+
+	/**
+	 * click on help text inside program information page block
+	 * 
+	 * @param blockTitle
+	 */
+	public void getHelpTextAtPageBlock(String blockTitle) {
+		reiDriver.Clickers().moveMouseToSpecificLocation(reiDriver.findMyElement().getElement(
+				By.xpath("//h3//a[contains(text(),'" + blockTitle + "')]/..//span[contains(@class,'fa-info')]")));
+	}
+
+	/**
+	 * click on help text inside program name page block details
+	 * 
+	 * @param blockDetailTitle
+	 */
+	public void getHelpTextAtPageBlockDetail(String pageBlockDetailTitle) {
+		reiDriver.Clickers().moveMouseToSpecificLocation(reiDriver.findMyElement().getElement(By.xpath(
+				"//span[contains(text(),'" + pageBlockDetailTitle + "')]/..//span[contains(@class,'fa-info')]")));
 	}
 }

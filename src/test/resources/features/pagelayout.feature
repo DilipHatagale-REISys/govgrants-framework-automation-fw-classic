@@ -904,7 +904,7 @@ Feature: Page Layout Component Scenarios
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
 	When I click on "Edit" icon of status "Created" for "Test program for automation" program in flex table
-	When I click search icon for owner organization with "header without modal"
+	When I click search icon for owner organization
 	Then I see modal box with body "Organization Automation" is displayed
 	
 	@36170 @all @lookupDisplayFieldNamesFieldAtPageBlockDetail-gPlanning
@@ -919,7 +919,7 @@ Feature: Page Layout Component Scenarios
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
 	When I click on "Edit" icon of status "Created" for "Test program for automation" program in flex table
-	When I click search icon for owner organization with "header with modal"
+	When I click search icon for owner organization and swithing to frame "iframeCustomLookupModalId"
 	Then I see "Code" in table header on lookup Modal
 	
 	@36172 @all @lookupFilterCriteriaFieldAtPAgeBlockDetail-gPlanning
@@ -936,7 +936,7 @@ Feature: Page Layout Component Scenarios
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
 	When I click on "Edit" icon of status "Created" for "Test program for automation" program in flex table
-	When I click search icon for owner organization with "header with modal"
+	When I click search icon for owner organization and swithing to frame "iframeCustomLookupModalId"
 	Then I see "Created" status in lookup modal table
 	
 	Examples:
@@ -1018,3 +1018,104 @@ Feature: Page Layout Component Scenarios
 	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
 	When I click on "Edit" button in right header
 	Then I see new tab is opened
+	
+	@36204 @all @displayAreaFieldForCreateCampaignAtPageLayoutAction-gPlanning
+	Scenario: Set up create campaign at page layout action from config and validating it at program detail page
+	Given I have default configuration as below:
+	|configurationCategory |fieldName      |fieldOrignalValue |filterId        |
+	|Page Layout Action    |Display Area   |Menu              |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName      |fieldNewValue      |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Display Area   |Page Header        |Grantee State Program |Name                     |Create Campaign              |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	Then I see "Create Campaign" button is displayed
+	
+	@36205 @all @displayAreaFieldForEditAtPageLayoutAction-gPlanning
+	Scenario: Set up create campaign at page layout action from config and validating it at program detail page
+	Given I have default configuration as below:
+	|configurationCategory |fieldName      |fieldOrignalValue |filterId        |
+	|Page Layout Action    |Display Area   |Page Header       |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName      |fieldNewValue      |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Display Area   |Menu               |Grantee State Program |Name                     |Edit                         |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	When I click on "Menu" button inside detail page
+	Then I see Edit options inside Menu Dropdown
+	
+	@36208 @all @headerSequenceFieldAtPageLayoutAction-gPlanning
+	Scenario: Setup edit page layout action sequence as "1" from config. and validating it on program detail page
+	Given I have default configuration as below:
+	|configurationCategory |fieldName      |fieldOrignalValue |filterId        |
+	|Page Layout Action    |Header Sequence|2                 |ApiGeneratedId:0|
+	|Page Layout Action    |Header Sequence|1                 |ApiGeneratedId:1|
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName      |fieldNewValue     |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Header Sequence|1                 |Grantee State Program |Name                     |Edit                         |
+	|Page Layout Action    |Header Sequence|2                 |Grantee State Program |Name                     |Submit For Approval          |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	Then I see "Edit" Button at position "0"
+	
+	@35982 @all @helpTextFieldAtPageBlock-gPlanning
+	Scenario Outline: Changing content of help text field at page block from config and validating it at program detail page
+	Given I have default configuration as below:
+	|configurationCategory        |fieldName       |fieldOrignalValue  |coreComponentField    |filterId        |
+	|Page Block:Page Block Detail |Help Text       |<old_helpText>     |Grantee State Program |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory        |fieldName       |fieldNewValue    |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Block:Page Block Detail |Help Text       |<new_helpText>   |Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	When I hovering mouse on help text icon inside "Program Information"
+	Then I see "<new_helpText>" shown as help text 
+	Examples:
+	|new_helpText            |old_helpText                                                                          |
+	|Help Text for Automation|The section gives program overview along with funder and funding organization details.|
+	
+	@36102 @all @helpTextLongFieldAtPageBlockDetail-gPlanning
+	Scenario Outline: Changing content of help text long field at page block detail from config and validating it at program detail page
+	Given I have default configuration as below:
+	|configurationCategory                    |fieldName       |fieldOrignalValue |coreComponentField    |filterId        |
+	|Page Block Config:Page Block Rule Detail |Help Text Long  |<old_helpText>    |Grantee State Program |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory                    |fieldName       |fieldNewValue     |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Block Config:Page Block Rule Detail |Help Text Long  |<new_helpText>    |Grantee State Program |Name                     |PBD-3107                  |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	When I hovering mouse on help text icon inside page block detail "Program Name"
+	Then I see "<new_helpText>" shown as help text 
+	Examples:
+	|new_helpText            |old_helpText                                                                          |
+	|Help Text for Automation|Name represents for what the program is meant for.|
+	
+	@35816 @all @hideApprovalDecisionFieldAtPageLayout-gPlanning
+	Scenario: Hiding approval decision box at page layout from config and validating it inside pending task approval decision
+	Given I have default configuration as below:
+	|configurationCategory |fieldName                  |fieldOrignalValue   |filterId        |
+	|Page Layout           |Hide Approval Decision comp|false               |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName                  |fieldNewValue       |coreComponentField         |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout:General   |Hide Approval Decision comp|true                |Grantee State Program      |                         |                             |
+	|Program               |Status                     |Created             |Automation Program -SA to C|                         |                             |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Automation Program -SA to C"
+	When I click on "Edit" icon of status "Created" for "Automation Program -SA to C" program in flex table
+	And I complete submit for approval
+	When I re-login as "Automation-PM" with "QA" url 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	And I navigate to "Tasks" to reach "Pending" side bar content
+	When I start the approval with subject "Automation Program -SA to C"
+	Then I see "Approve" is disabled
