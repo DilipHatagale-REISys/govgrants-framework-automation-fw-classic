@@ -45,13 +45,13 @@ public class PageLayoutSteps {
 	}
 
 	@When("^I click search icon for owner organization and swithing to frame \"([^\"]*)\"$")
-	public void clickSearchOwnerOrganization(String frameId) {
+	public void clickSearchOwnerOrganizationAndSwitchingFrame(String frameId) {
 		pageLayoutPage.clickQuickSearchAndSwitchingToLookupModal(frameId);
 	}
 
 	@When("^I click search icon for owner organization$")
 	public void clickSearchOwnerOrganization() {
-		pageLayoutPage.clickQuickSearchLookupModal();
+		pageLayoutPage.clickLookupModalQuickSearch();
 	}
 
 	@When("^I click on Manage Attachments inside page block details$")

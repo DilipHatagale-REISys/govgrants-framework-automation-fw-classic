@@ -973,7 +973,7 @@ public class PageLayoutPage extends GovGrantsManager {
 	 * click search icon of owner organization at page block detail edit page
 	 */
 
-	public void clickQuickSearchLookupModal() {
+	public void clickLookupModalQuickSearch() {
 		reiDriver.textInput().clearText(reiDriver.WaitFor().WaitForElementToBePresent(lookupSearchInputBox));
 		reiDriver.JavaScript().clickByJS(lookupSearchButton);
 	}
