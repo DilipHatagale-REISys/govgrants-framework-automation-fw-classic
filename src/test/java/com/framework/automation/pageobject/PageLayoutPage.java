@@ -404,6 +404,108 @@ public class PageLayoutPage extends GovGrantsManager {
 		Assert.assertTrue(isHelpTextDisplayed(helptext));
 	}
 
+	/**
+	 * click on help text inside program information page block
+	 * 
+	 * @param blockTitle
+	 */
+	public void getHelpTextAtPageBlock(String blockTitle) {
+		reiDriver.Clickers().moveMouseToSpecificLocation(reiDriver.findMyElement().getElement(
+				By.xpath("//h3//a[contains(text(),'" + blockTitle + "')]/..//span[contains(@class,'fa-info')]")));
+	}
+
+	/**
+	 * click on help text inside program name page block details
+	 * 
+	 * @param blockDetailTitle
+	 */
+	public void getHelpTextAtPageBlockDetail(String pageBlockDetailTitle) {
+		reiDriver.Clickers().moveMouseToSpecificLocation(reiDriver.findMyElement().getElement(By.xpath(
+				"//span[contains(text(),'" + pageBlockDetailTitle + "')]/..//span[contains(@class,'fa-info')]")));
+	}
+
+	/**
+	 * get Edit Button inside menu without waiting for presence.
+	 * 
+	 * @return
+	 */
+	public WebElement getEditButtonOptionVerification() {
+		return reiDriver.findMyElement()
+				.getElement(By.cssSelector(".dropdown.open>.dropdown-menu-right>li:nth-child(2)"));
+	}
+
+	/**
+	 * return true if picklist dropDownValue is displayed
+	 * 
+	 * @param dropDownValue
+	 * @return
+	 */
+	public boolean isValuePresentInsidePickList(String dropDownValue) {
+		String[] exp = dropDownValue.split(" ");
+		int count = 0;
+		for (WebElement we : reiDriver.findMyElement().getDropDown(selectTypeDropdown).getOptions()) {
+			for (int i = 0; i < exp.length; i++) {
+				if (we.getText().equals(exp[i])) {
+					count++;
+				}
+			}
+		}
+		if (count == exp.length) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	/**
+	 * get complete rows of table inside lookup modal
+	 * 
+	 * @return
+	 */
+	public List<WebElement> getCompleteTableRowOfLookupModal() {
+		return reiDriver.WaitFor().WaitForElementListToBePresent(completeTableRowInsideLookupModal);
+	}
+
+	/**
+	 * return locator for status column insise lookup modal
+	 *
+	 * @param columnValueName
+	 * @return
+	 */
+	public By getTableColumnOfLookupModal(String columnValueName) {
+		return By.xpath("//td//span[@title='" + columnValueName + "' or text()='" + columnValueName + "']");
+	}
+
+	/**
+	 * click on page block detail element and switching to respective iframe
+	 */
+	public void clickPageBlockDetailParticularElement() {
+		reiDriver.JavaScript().scrollElementToPageDetailCenter(manageAttachmentInsidePageBlockDetail);
+		reiDriver.WaitFor().WaitForElementToBePresent(manageAttachmentInsidePageBlockDetail).click();
+		reiDriver.switchTo().switchToFrame(manageAttachmentIframe);
+	}
+
+	/**
+	 * get pdf download item from top right bar inside menu without waiting for
+	 * presence.
+	 * 
+	 * @return
+	 */
+	public WebElement getPDFOptionForVerification() {
+		return reiDriver.findMyElement()
+				.getElement(By.cssSelector(".dropdown.open>.dropdown-menu-right>li:nth-child(8)"));
+	}
+
+	/**
+	 * get prompt box details
+	 * 
+	 * @return
+	 */
+	public WebElement getPromptBoxForVerification() {
+		return reiDriver.WaitFor().WaitForElementToBePresent(
+				By.xpath("//div[@class='modal-dialog modal-sm']/div[@class='modal-content']"));
+	}
+
 	/*********
 	 * "Local Methods with complete functionality - private"
 	 *****************/
@@ -491,17 +593,6 @@ public class PageLayoutPage extends GovGrantsManager {
 	}
 
 	/**
-	 * get pdf download item from top right bar inside menu without waiting for
-	 * presence.
-	 * 
-	 * @return
-	 */
-	public WebElement getPDFOptionForVerification() {
-		return reiDriver.findMyElement()
-				.getElement(By.cssSelector(".dropdown.open>.dropdown-menu-right>li:nth-child(8)"));
-	}
-
-	/**
 	 * validate if options are not displayed in Detail page
 	 * 
 	 * @param option
@@ -551,16 +642,6 @@ public class PageLayoutPage extends GovGrantsManager {
 	}
 
 	/**
-	 * get prompt box details
-	 * 
-	 * @return
-	 */
-	public WebElement getPromptBoxForVerification() {
-		return reiDriver.WaitFor().WaitForElementToBePresent(
-				By.xpath("//div[@class='modal-dialog modal-sm']/div[@class='modal-content']"));
-	}
-
-	/**
 	 * return true if any header button is not displayed
 	 * 
 	 * @param buttonName
@@ -603,7 +684,7 @@ public class PageLayoutPage extends GovGrantsManager {
 	 * 
 	 * @param status
 	 */
-	private Boolean isSubTabSequence(String subTabName, int number) {
+	private boolean isSubTabSequence(String subTabName, int number) {
 		if (getListSubTabsInsideMainDetailPage().get(number).getText().contains(subTabName)) {
 			return true;
 		} else
@@ -943,57 +1024,6 @@ public class PageLayoutPage extends GovGrantsManager {
 	}
 
 	/**
-	 * get complete rows of table inside lookup modal
-	 * 
-	 * @return
-	 */
-	public List<WebElement> getCompleteTableRowOfLookupModal() {
-		return reiDriver.WaitFor().WaitForElementListToBePresent(completeTableRowInsideLookupModal);
-	}
-
-	/**
-	 * return locator for status column insise lookup modal
-	 *
-	 * @param columnValueName
-	 * @return
-	 */
-	public By getTableColumnOfLookupModal(String columnValueName) {
-		return By.xpath("//td//span[@title='" + columnValueName + "' or text()='" + columnValueName + "']");
-	}
-
-	/**
-	 * click on page block detail element and switching to respective iframe
-	 */
-	public void clickPageBlockDetailParticularElement() {
-		reiDriver.JavaScript().scrollElementToPageDetailCenter(manageAttachmentInsidePageBlockDetail);
-		reiDriver.WaitFor().WaitForElementToBePresent(manageAttachmentInsidePageBlockDetail).click();
-		reiDriver.switchTo().switchToFrame(manageAttachmentIframe);
-	}
-
-	/**
-	 * return true if picklist dropDownValue is displayed
-	 * 
-	 * @param dropDownValue
-	 * @return
-	 */
-	public boolean isValuePresentInsidePickList(String dropDownValue) {
-		String[] exp = dropDownValue.split(" ");
-		int count = 0;
-		for (WebElement we : reiDriver.findMyElement().getDropDown(selectTypeDropdown).getOptions()) {
-			for (int i = 0; i < exp.length; i++) {
-				if (we.getText().equals(exp[i])) {
-					count++;
-				}
-			}
-		}
-		if (count == exp.length) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	/**
 	 * return true if cancel button is displayed
 	 * 
 	 * @param buttonName
@@ -1030,16 +1060,6 @@ public class PageLayoutPage extends GovGrantsManager {
 	}
 
 	/**
-	 * get Edit Button inside menu without waiting for presence.
-	 * 
-	 * @return
-	 */
-	public WebElement getEditButtonOptionVerification() {
-		return reiDriver.findMyElement()
-				.getElement(By.cssSelector(".dropdown.open>.dropdown-menu-right>li:nth-child(2)"));
-	}
-
-	/**
 	 * check the sequence of the edit button action at page layout action
 	 * 
 	 * @param buttonName
@@ -1066,25 +1086,5 @@ public class PageLayoutPage extends GovGrantsManager {
 			flag = true;
 		}
 		return flag;
-	}
-
-	/**
-	 * click on help text inside program information page block
-	 * 
-	 * @param blockTitle
-	 */
-	public void getHelpTextAtPageBlock(String blockTitle) {
-		reiDriver.Clickers().moveMouseToSpecificLocation(reiDriver.findMyElement().getElement(
-				By.xpath("//h3//a[contains(text(),'" + blockTitle + "')]/..//span[contains(@class,'fa-info')]")));
-	}
-
-	/**
-	 * click on help text inside program name page block details
-	 * 
-	 * @param blockDetailTitle
-	 */
-	public void getHelpTextAtPageBlockDetail(String pageBlockDetailTitle) {
-		reiDriver.Clickers().moveMouseToSpecificLocation(reiDriver.findMyElement().getElement(By.xpath(
-				"//span[contains(text(),'" + pageBlockDetailTitle + "')]/..//span[contains(@class,'fa-info')]")));
 	}
 }

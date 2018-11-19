@@ -133,20 +133,12 @@ public class ApprovalProcessPage extends GovGrantsManager {
 	}
 
 	/**
-	 * click on Select dropdown inside Approval decision box
-	 */
-	public void clickOnSelectDropdown() {
-		reiDriver.WaitFor().WaitForElementToBePresent(selectDropdown).click();
-	}
-
-	/**
 	 * assert if user is displayed inside select dropdown list
 	 * 
 	 * @param userName
 	 */
 	public void assertUserInsideDropdown(String dropDownValue) {
-		Assert.assertTrue(reiDriver.WaitFor().WaitForElementToBePresent(specificUserInsideDropdown)
-				.getAttribute("innerText").equalsIgnoreCase(dropDownValue));
+		Assert.assertTrue(isSpecificUserDisplayed(dropDownValue));
 	}
 
 	/**
@@ -166,6 +158,34 @@ public class ApprovalProcessPage extends GovGrantsManager {
 	 */
 	public void assertSuccessForEmailToProgramOwner(String templateName) {
 		Assert.assertTrue(isSuccessForEmailToProgramOwner(templateName));
+	}
+
+	/**
+	 * click on Select dropdown inside Approval decision box
+	 */
+	public void clickOnSelectDropdown() {
+		reiDriver.WaitFor().WaitForElementToBePresent(selectDropdown).click();
+	}
+
+	/**
+	 * click on specific user from approval decision action inside approval decision
+	 * panel
+	 * 
+	 * @param dropDownValue
+	 */
+	public void selectUserFromApproveDecisionOptionDropdown(String dropDownValue) {
+		getuserFromApprovalDecisionAction(dropDownValue).click();
+	}
+
+	/**
+	 * get item from Approval Decision action item
+	 * 
+	 * @param dropDownValue
+	 * @return
+	 */
+	public WebElement getuserFromApprovalDecisionAction(String dropDownValue) {
+		return reiDriver.findMyElement().getElement(
+				By.xpath("//div[@id='select2-drop']//ul//li/div[contains(text(),'" + dropDownValue + "')]"));
 	}
 
 	/*********
@@ -318,5 +338,24 @@ public class ApprovalProcessPage extends GovGrantsManager {
 		return reiDriver.findMyElement().getElements(By.xpath(
 				"//td//span[text()='nauman.shahid@reisystems.com']/../../../../following-sibling::td//span[text()='"
 						+ templateName + "']/../../../following-sibling::td//span[text()='Success']"));
+	}
+
+	/**
+	 * return true if specific user displayed
+	 * 
+	 * @param dropDownValue
+	 * @return
+	 */
+	private boolean isSpecificUserDisplayed(String dropDownValue) {
+		boolean flag = false;
+		try {
+			if (getuserFromApprovalDecisionAction(dropDownValue).getAttribute("innerText")
+					.equalsIgnoreCase(dropDownValue)) {
+				flag = true;
+			}
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+
+		}
+		return flag;
 	}
 }
