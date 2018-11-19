@@ -332,6 +332,7 @@ public class GovGrantsManager extends ProjectWebServices {
 	 * @param iconName
 	 */
 	public void clickTableActionIconsForSpecificSubject(String programSubject, String statusName, String iconName) {
+		govgrants.mainPage().waitForNavigationLogoToDisappear();
 		govgrants.flexTable().clickTableActionIcons(iconName, programSubject, statusName);
 	}
 

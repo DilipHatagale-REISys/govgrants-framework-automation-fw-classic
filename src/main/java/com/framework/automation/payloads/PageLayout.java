@@ -81,6 +81,12 @@ public class PageLayout {
 							filterClause),
 					String.valueOf(SObjectAPIs.GNT__SaveButtonLabel__c), value);
 			break;
+		case "HIDE APPROVAL DECISION COMP":
+			finalPayload = String.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PageLayoutConfig__c),
+					apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PageLayoutConfig__c),
+							filterClause),
+					String.valueOf(SObjectAPIs.GNT__HideApprovalDecisionComponentinEdit__c), value);
+			break;
 		}
 		System.out.println(finalPayload);
 		return finalPayload;
@@ -176,6 +182,41 @@ public class PageLayout {
 							apiUtilities.getComponentCoreFieldId(
 									String.valueOf(SObjectAPIs.GNT__PageLayoutActionConfig__c), filterClause),
 							String.valueOf(SObjectAPIs.GNT__HideForUser__c), value);
+			break;
+		case "SUBMIT WARNING MESSAGE":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageLayoutActionConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__PageLayoutActionConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__SubmitWarningMessage__c), value);
+			break;
+		case "IS ACTIVE":
+			finalPayload = String
+					.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PageLayoutActionConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__PageLayoutActionConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__Active__c), value);
+			break;
+		case "ACTION BEHAVIOR":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageLayoutActionConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__PageLayoutActionConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__ActionBehavior__c), value);
+			break;
+		case "DISPLAY AREA":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageLayoutActionConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__PageLayoutActionConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__DisplayArea__c), value);
+			break;
+		case "HEADER SEQUENCE":
+			finalPayload = String
+					.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PageLayoutActionConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__PageLayoutActionConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__HeaderSequence__c), value);
 			break;
 		}
 		System.out.println(finalPayload);

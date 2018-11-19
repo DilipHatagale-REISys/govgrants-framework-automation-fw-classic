@@ -44,6 +44,31 @@ public class PageLayoutSteps {
 		pageLayoutPage.clickOnTypeDropdown();
 	}
 
+	@When("^I click search icon for owner organization and swithing to frame \"([^\"]*)\"$")
+	public void clickSearchOwnerOrganization(String frameId) {
+		pageLayoutPage.clickQuickSearchAndSwitchingToLookupModal(frameId);
+	}
+
+	@When("^I click search icon for owner organization$")
+	public void clickSearchOwnerOrganization() {
+		pageLayoutPage.clickQuickSearchLookupModal();
+	}
+
+	@When("^I click on Manage Attachments inside page block details$")
+	public void clickPageBlockDetailElement() {
+		pageLayoutPage.clickPageBlockDetailParticularElement();
+	}
+
+	@When("^I hovering mouse on help text icon inside \"([^\"]*)\"$")
+	public void getHelpTextIconsAtPageBlock(String blockTitle) {
+		pageLayoutPage.getHelpTextAtPageBlock(blockTitle);
+	}
+
+	@When("^I hovering mouse on help text icon inside page block detail \"([^\"]*)\"$")
+	public void getHelpTextIconsAtPageBlockDetail(String pageBlockDetailTitle) {
+		pageLayoutPage.getHelpTextAtPageBlockDetail(pageBlockDetailTitle);
+	}
+
 	@Then("^I see \"([^\"]*)\" shown as over view title in header \"([^\"]*)\"$")
 	public void assertOverViewTitleWithHeader(String overViewTitle, String overViewHeader) {
 		pageLayoutPage.assertOverViewTitleWithHeader(overViewTitle, overViewHeader);
@@ -188,4 +213,50 @@ public class PageLayoutSteps {
 	public void assertViewModeOfPageBlockDetailElement() {
 		pageLayoutPage.assertPageBlockDetailElementDisplayedInViewMode();
 	}
+
+	@Then("^I see modal box with body \"([^\"]*)\" is displayed$")
+	public void assertOwnerOrganizationModalBoxWithMessage(String headerText) {
+		pageLayoutPage.assertOwnerOrganizationMOdalTitle(headerText);
+	}
+
+	@Then("^I see \"([^\"]*)\" in table header on lookup Modal$")
+	public void assertFlexTableHeaderName(String headerColumnName) {
+		pageLayoutPage.assertTableHeaderColumnNameForLookupModal(headerColumnName);
+	}
+
+	@Then("^I see \"([^\"]*)\" status in lookup modal table$")
+	public void assertSpecificStatusCategoryNotDisplayed(String statusCategory) {
+		pageLayoutPage.assertTableStatusInsideLookupModal(statusCategory);
+	}
+
+	@Then("^I see \"([^\"]*)\" message inside confirmation box is displayed$")
+	public void assertSAConfirmationBoxWithMessageText(String message) {
+		pageLayoutPage.assertMessageOfAcceptAlertBox(message);
+	}
+
+	@Then("^I see Edit opens in overlay window with \"([^\"]*)\" button$")
+	public void assertLayoutButtonOpenInOverlayDisplayed(String buttonName) {
+		pageLayoutPage.assertActionButtonOfPagrLayoutDisplayed(buttonName);
+	}
+
+	@Then("^I see \"([^\"]*)\" button is displayed$")
+	public void assertTopRightHeaderButtonDisplayed(String buttonName) {
+		pageLayoutPage.assertTopRightButtonDisplayed(buttonName);
+	}
+
+	@Then("^I see Edit options inside Menu Dropdown$")
+	public void assertEditOptionsInsideMenuBar() {
+		pageLayoutPage.assertEditButtonInsideMenuDropDown();
+	}
+
+	@Then("^I see \"([^\"]*)\" Button at position \"([^\"]*)\"$")
+	public void assertSequenceOfPageLayoutEditButtonAction(String buttonName, String sequenceNumber) {
+		pageLayoutPage.assertSequenceOfEditButtonAction(buttonName, Integer.parseInt(sequenceNumber));
+	}
+
+	@Then("^I see \"([^\"]*)\" shown as help text$")
+	public void assertHelpText(String helpText) {
+		pageLayoutPage.assertHelpTextAtPageBlock(helpText);
+	}
+
 }
