@@ -70,6 +70,11 @@ public class ApprovalProcessSteps {
 		approvalProcesPage.clickOnSelectDropdown();
 	}
 
+	@When("^I select specific user \"([^\"]*)\"$")
+	public void selectSpeificUserFromSelectDropdown(String dropDownValue) {
+		approvalProcesPage.selectUserFromApproveDecisionOptionDropdown(dropDownValue);
+	}
+
 	@Then("^I see confirmation box with body \"([^\"]*)\" is displayed$")
 	public void assertConfirmationBoxWithMessage(String message) {
 		approvalProcesPage.assertMessageOfConfirmationBoxPopUp(message);

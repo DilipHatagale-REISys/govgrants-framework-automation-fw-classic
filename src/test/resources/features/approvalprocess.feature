@@ -61,7 +61,7 @@ Feature: Approval Process Component Scenarios
 	When I start the approval with subject "Test program for Automation-A to SA"
 	Then I see "Approved" inside approval decision box
 	
-	@34309 @all @confirmationMessageBoxPopupForApprovalDecisionAction-Programs
+	@34309 @all @confirmationMessageBoxPopupForApproveApprovalDecisionAction-Programs
 	Scenario: Setup confirmation message inside confirmation message box from configuration and validating it in pending tasks approval decision
 	Given I have default configuration as below:
 	|configurationCategory            |fieldName              |fieldOrignalValue              |filterId        |
@@ -168,7 +168,7 @@ Feature: Approval Process Component Scenarios
 	And I click submit
 	Then I see confirmation box with body "Confirmation box for automation" is displayed
 	
-	@34317 @all @taskAssignmentNotificationForProgramSubmissionThroughMail
+	@34317 @all @taskAssignmentNotificationForProgramSubmissionThroughMail-Programs
 	Scenario: Setup email setting in configuration and validate that program owner receiving email for program submitted for approval
 	Given I have default configuration as below:
 	|configurationCategory|fieldName                         |fieldOrignalValue|filterId        |
@@ -214,4 +214,131 @@ Feature: Approval Process Component Scenarios
 	And I navigate to "Tasks" to reach "Pending" side bar content
 	When I start the approval with subject "Program Sent To Owner"
 	And I navigate to "Tasks" to reach "Pending" side bar content  
-	Then I see approval with subject as "Program Sent To Owner" is not displayed	
+	Then I see approval with subject as "Program Sent To Owner" is not displayed
+	
+	@37348 @all @rejectConfirmationMessageFieldAtApprovalProcess-Programs
+	Scenario: Setup confirmation message inside confirmation message box for reject from configuration and validating it in pending tasks approval decision
+	Given I have default configuration as below:
+	|configurationCategory               |fieldName                   |fieldOrignalValue  |filterId        |
+	|Approval Process Steps Cache        |Reject Confirmation Title   |                   |ApiGeneratedId:1|
+	|Approval Process Steps Cache        |Reject Confirmation Message |                   |ApiGeneratedId:2|
+	Given I setup test configuration as below:
+	|configurationCategory                |fieldName                   |fieldNewValue                   |coreComponentField         |
+	|Program	                          |Status                      |Created                         |Automation Program -SA to C|
+	|Approval Process Steps Cache:General |Reject Confirmation Title   |Automation Reject               |Program_Manager_Approver   |
+	|Approval Process Steps Cache:General |Reject Confirmation Message |Confirmation box for automation |Program_Manager_Approver   |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Automation Program -SA to C"
+	When I click on "Edit" icon of status "Created" for "Automation Program -SA to C" program in flex table
+	And I complete submit for approval
+	When I re-login as "Automation-PM" with "QA" url
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	And I navigate to "Tasks" to reach "Pending" side bar content
+	When I start the approval with subject "Automation Program -SA to C"
+	When I select "Disapprove" from approval decision panel
+	When I enter Approval comment
+	And I click submit
+	Then I see confirmation box with body "Confirmation box for automation" is displayed
+	
+	@37431 @all @reassignConfirmationMessageFieldAtApprovalProcess-Programs
+	Scenario: Setup confirmation message inside confirmation message box for reassign from configuration and validating it in pending tasks approval decision
+	Given I have default configuration as below:
+	|configurationCategory               |fieldName                     |fieldOrignalValue  |filterId        |
+	|Approval Process Steps Cache        |Reassign Confirmation Title   |                   |ApiGeneratedId:1|
+	|Approval Process Steps Cache        |Reassign Confirmation Message |                   |ApiGeneratedId:2|
+	Given I setup test configuration as below:
+	|configurationCategory                |fieldName                     |fieldNewValue                            |coreComponentField         |
+	|Program	                          |Status                        |Created                                  |Automation Program -SA to C|
+	|Approval Process Steps Cache:General |Reassign Confirmation Title   |Automation Reassign                      |Program_Manager_Approver   |
+	|Approval Process Steps Cache:General |Reassign Confirmation Message |Reassign Confirmation box for automation |Program_Manager_Approver   |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Automation Program -SA to C"
+	When I click on "Edit" icon of status "Created" for "Automation Program -SA to C" program in flex table
+	And I complete submit for approval
+	When I re-login as "Automation-PM" with "QA" url
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	And I navigate to "Tasks" to reach "Pending" side bar content
+	When I start the approval with subject "Automation Program -SA to C"
+	When I select "Reassign" from approval decision panel
+	When I click select dropdown
+	When I select specific user "Allen PM"
+	And I click submit
+	Then I see confirmation box with body "Reassign Confirmation box for automation" is displayed
+	
+	@37433 @all @sendToOwnerConfirmationMessageFieldAtApprovalProcess-Programs
+	Scenario: Setup confirmation message inside confirmation message box for reassign from configuration and validating it in pending tasks approval decision
+	Given I have default configuration as below:
+	|configurationCategory               |fieldName                         |fieldOrignalValue  |filterId        |
+	|Approval Process Steps Cache        |Send To Owner Confirmation Title  |                   |ApiGeneratedId:1|
+	|Approval Process Steps Cache        |Send To Owner Confirmation Message|                   |ApiGeneratedId:2|
+	Given I setup test configuration as below:
+	|configurationCategory                |fieldName                         |fieldNewValue                                |coreComponentField         |
+	|Program	                          |Status                            |Created                                      |Automation Program -SA to C|
+	|Approval Process Steps Cache:General |Send To Owner Confirmation Title  |Automation Send to Owner                     |Program_Manager_Approver   |
+	|Approval Process Steps Cache:General |Send To Owner Confirmation Message|Send to Owner Confirmation box for automation|Program_Manager_Approver   |                             
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Automation Program -SA to C"
+	When I click on "Edit" icon of status "Created" for "Automation Program -SA to C" program in flex table
+	And I complete submit for approval
+	When I re-login as "Automation-PM" with "QA" url
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	And I navigate to "Tasks" to reach "Pending" side bar content
+	When I start the approval with subject "Automation Program -SA to C"
+	When I select "Send to Owner" from approval decision panel
+	When I enter Approval comment
+	And I click submit
+	Then I see confirmation box with body "Send to Owner Confirmation box for automation" is displayed
+	
+	@37506 @all @confirmationMessageBoxPopupForRejectApprovalDecisionAction-Programs
+	Scenario: Setup confirmation message inside confirmation message box for reject approval decision action using Approval Decision Action from configuration and validating it in pending tasks approval decision
+	Given I have default configuration as below:
+	|configurationCategory            |fieldName              |fieldOrignalValue              |filterId        |
+	|Approval Decision Action         |Confirmation Title     |                               |ApiGeneratedId:1|
+	|Approval Decision Action         |Confirmation Message   |                               |ApiGeneratedId:2|
+	Given I setup test configuration as below:
+	|configurationCategory            |fieldName              |fieldNewValue                  |coreComponentField         |
+	|Program                          |Status                 |Created                        |Automation Program -SA to C|
+	|Approval Decision Action:General |Confirmation Title     |Automation for Rejection       |ADAC-0010                  |
+	|Approval Decision Action:General |Confirmation Message   |Test Automation for Rejection  |ADAC-0010                  |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Automation Program -SA to C"
+	When I click on "Edit" icon of status "Created" for "Automation Program -SA to C" program in flex table
+	And I complete submit for approval
+	When I re-login as "Automation-PM" with "QA" url
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	And I navigate to "Tasks" to reach "Pending" side bar content
+	When I start the approval with subject "Automation Program -SA to C"
+	When I select "Disapprove" from approval decision panel
+	When I enter Approval comment
+	And I click submit
+	Then I see confirmation box with body "Test Automation for Rejection" is displayed
+	
+	@37523 @all @confirmationMessageBoxPopupForReassignApprovalDecisionAction-Programs
+	Scenario: Setup confirmation message inside confirmation message box for reassign approval decision action using Approval Decision Action from configuration and validating it in pending tasks approval decision
+	Given I have default configuration as below:
+	|configurationCategory            |fieldName              |fieldOrignalValue              |filterId        |
+	|Approval Decision Action         |Confirmation Title     |                               |ApiGeneratedId:1|
+	|Approval Decision Action         |Confirmation Message   |                               |ApiGeneratedId:2|
+	Given I setup test configuration as below:
+	|configurationCategory            |fieldName              |fieldNewValue                  |coreComponentField         |
+	|Program                          |Status                 |Created                        |Automation Program -SA to C|
+	|Approval Decision Action:General |Confirmation Title     |Automation for Forward         |ADAC-0011                  |
+	|Approval Decision Action:General |Confirmation Message   |Test Automation for Forward    |ADAC-0011                  |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Automation Program -SA to C"
+	When I click on "Edit" icon of status "Created" for "Automation Program -SA to C" program in flex table
+	And I complete submit for approval
+	When I re-login as "Automation-PM" with "QA" url
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	And I navigate to "Tasks" to reach "Pending" side bar content
+	When I start the approval with subject "Automation Program -SA to C"
+	When I select "Reassign" from approval decision panel
+	When I click select dropdown
+	When I select specific user "Allen PM"
+	And I click submit
+	Then I see confirmation box with body "Test Automation for Forward" is displayed
