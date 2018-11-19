@@ -45,12 +45,12 @@ public class PageLayoutSteps {
 	}
 
 	@When("^I click search icon for owner organization and swithing to frame \"([^\"]*)\"$")
-	public void clickSearchOwnerOrganizationAndSwitchingFrame(String frameId) {
-		pageLayoutPage.clickQuickSearchAndSwitchingToLookupModal(frameId);
+	public void searchLookUpModal(String frameId) {
+		pageLayoutPage.handleLookUpSearchWithFrame(frameId);
 	}
 
 	@When("^I click search icon for owner organization$")
-	public void clickSearchOwnerOrganization() {
+	public void clickLookUpSearchOwnerOrganization() {
 		pageLayoutPage.clickLookupModalQuickSearch();
 	}
 

@@ -506,6 +506,35 @@ public class PageLayoutPage extends GovGrantsManager {
 				By.xpath("//div[@class='modal-dialog modal-sm']/div[@class='modal-content']"));
 	}
 
+	/**
+	 * click search icon of owner organization at page block detail edit page
+	 */
+
+	public void clickLookupModalQuickSearch() {
+		reiDriver.textInput().clearText(reiDriver.WaitFor().WaitForElementToBePresent(lookupSearchInputBox));
+		reiDriver.JavaScript().clickByJS(lookupSearchButton);
+	}
+
+	/**
+	 * click search icon of owner organization at page block detail edit page
+	 * @param frameId
+	 */
+
+	public void handleLookUpSearchWithFrame(String frameId) {
+		reiDriver.textInput().clearText(reiDriver.WaitFor().WaitForElementToBePresent(lookupSearchInputBox));
+		reiDriver.JavaScript().clickByJS(lookupSearchButton);
+		reiDriver.switchTo().switchToFrame(By.xpath("//iframe[@id='" + frameId + "']"));
+	}
+
+	/**
+	 * get list of element inside page block detail like program name, program code
+	 * etc.
+	 */
+	public List<WebElement> getListOfPageBlockDetailElement() {
+		return reiDriver.findMyElement().getElements(By
+				.xpath("//h3//a[contains(text(),'Program Information')]/ancestor::div[2]/following-sibling::div//dt"));
+	}
+
 	/*********
 	 * "Local Methods with complete functionality - private"
 	 *****************/
@@ -926,15 +955,6 @@ public class PageLayoutPage extends GovGrantsManager {
 	}
 
 	/**
-	 * get list of element inside page block detail like program name, program code
-	 * etc.
-	 */
-	public List<WebElement> getListOfPageBlockDetailElement() {
-		return reiDriver.findMyElement().getElements(By
-				.xpath("//h3//a[contains(text(),'Program Information')]/ancestor::div[2]/following-sibling::div//dt"));
-	}
-
-	/**
 	 * 
 	 * @return true if program name field rendered in view mode only inside page
 	 *         block detail
@@ -967,25 +987,6 @@ public class PageLayoutPage extends GovGrantsManager {
 	 */
 	public void clickOnTypeDropdown() {
 		reiDriver.findMyElement().getElement(selectTypeDropdown).click();
-	}
-
-	/**
-	 * click search icon of owner organization at page block detail edit page
-	 */
-
-	public void clickLookupModalQuickSearch() {
-		reiDriver.textInput().clearText(reiDriver.WaitFor().WaitForElementToBePresent(lookupSearchInputBox));
-		reiDriver.JavaScript().clickByJS(lookupSearchButton);
-	}
-
-	/**
-	 * click search icon of owner organization at page block detail edit page
-	 */
-
-	public void clickQuickSearchAndSwitchingToLookupModal(String frameId) {
-		reiDriver.textInput().clearText(reiDriver.WaitFor().WaitForElementToBePresent(lookupSearchInputBox));
-		reiDriver.JavaScript().clickByJS(lookupSearchButton);
-		reiDriver.switchTo().switchToFrame(By.xpath("//iframe[@id='" + frameId + "']"));
 	}
 
 	/**
