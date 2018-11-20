@@ -68,6 +68,13 @@ public class ApprovalProcess {
 							String.valueOf(SObjectAPIs.GNT__ApprovalDecisionActionConfig__c), filterClause),
 					String.valueOf(SObjectAPIs.GNT__FilterCriteriaforUserReassign__c), value);
 			break;
+		case "COMMENTS FIELD API NAME":
+			finalPayload = String.format(payloadForStringValue,
+					String.valueOf(SObjectAPIs.GNT__ApprovalDecisionActionConfig__c),
+					apiUtilities.getComponentCoreFieldId(
+							String.valueOf(SObjectAPIs.GNT__ApprovalDecisionActionConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__CommentsFieldsAPIName__c), value);
+			break;
 		}
 		System.out.println(finalPayload);
 		return finalPayload;
@@ -204,6 +211,11 @@ public class ApprovalProcess {
 								.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__TaskConfig__c), filterClause),
 						String.valueOf(SObjectAPIs.GNT__CompleteOnView__c), value);
 			}
+			break;
+		case "VIEW PAGE PROFILES":
+			finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__TaskConfig__c),
+					apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__TaskConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__ViewPageProfiles__c), value);
 			break;
 		}
 		System.out.println(finalPayload);
