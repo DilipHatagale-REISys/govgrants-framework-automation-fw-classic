@@ -104,9 +104,9 @@ Feature: Approval Process Component Scenarios
 	|configurationCategory               |fieldName      |fieldOrignalValue |filterId|
 	|Approval Process Steps Cache        |Field API Name|ProgramApprover__c |ApiGeneratedId:1|
 	Given I setup test configuration as below:
-	|configurationCategory                |fieldName         |fieldNewValue   |coreComponentField         |
-	|Program	                          |Status           |Created          |Automation Program -SA to C|
-	|Approval Process Steps Cache:General|Field API Name    |                 |Program_Manager_Approver   |
+	|configurationCategory                |fieldName         |fieldNewValue    |coreComponentField         |
+	|Program	                          |Status            |Created          |Automation Program -SA to C|
+	|Approval Process Steps Cache:General |Field API Name    |                 |Program_Manager_Approver   |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Automation Program -SA to C"
@@ -147,8 +147,9 @@ Feature: Approval Process Component Scenarios
 	@34314 @all @confirmationMessageBoxPopupForApprovalDecisionUsingApprovalCache-Programs
 	Scenario: Setup confirmation message inside confirmation message box from approval process step cache configuration and validating it in pending tasks approval decision
 	Given I have default configuration as below:
-	|configurationCategory               |fieldName                 |fieldOrignalValue  |filterId        |
-	|Approval Process Steps Cache        |Approve Confirmation Title|                   |ApiGeneratedId:1|
+	|configurationCategory               |fieldName                   |fieldOrignalValue  |filterId        |
+	|Approval Process Steps Cache        |Approve Confirmation Title  |                   |ApiGeneratedId:1|
+	|Approval Process Steps Cache        |Approve Confirmation Message|                   |ApiGeneratedId:2|
 	Given I setup test configuration as below:
 	|configurationCategory                |fieldName                   |fieldNewValue                   |coreComponentField         |
 	|Program	                          |Status                      |Created                         |Automation Program -SA to C|
@@ -342,3 +343,78 @@ Feature: Approval Process Component Scenarios
 	When I select specific user "Allen PM"
 	And I click submit
 	Then I see confirmation box with body "Test Automation for Forward" is displayed
+	
+	@37539 @all @commentsFieldAPINameFieldForApproveAction-Programs
+	Scenario: Setup comments as projectTitle_c inside comments field API field using Approval decision action config from config and validating it at program detail page
+	Given I have default configuration as below:
+	|configurationCategory            |fieldName              |fieldOrignalValue              |filterId        |
+	|Approval Decision Action         |Comments Field API Name|                               |ApiGeneratedId:1|
+	Given I setup test configuration as below:
+	|configurationCategory            |fieldName              |fieldNewValue                  |coreComponentField                 |
+	|Program                          |Status                 |Created                        |Test program for Automation-A to SA|
+	|Approval Decision Action:General |Comments Field API Name|FederalProgramCFDA__c          |ADAC-0009                          |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for Automation-A to SA"
+	When I click on "Edit" icon of status "Created" for "Test program for Automation-A to SA" program in flex table
+	And I complete submit for approval
+	When I re-login as "Automation-PM" with "QA" url
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	And I navigate to "Tasks" to reach "Pending" side bar content
+    When I start the approval with subject "Test program for Automation-A to SA"
+	When I select "Approve" from approval decision panel
+	When I enter Approval comment
+	And I click submit
+	When I re-login as "Automation" with "QA" url
+    When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+    When I search for "Test program for Automation-A to SA"
+	When I click on "View Program Details" icon of status "Approved" for "Test program for Automation-A to SA" program in flex table
+	Then I see "Automation testing" inside page block details
+	
+	@38847 @all @confirmationMessageBoxPopupForSendToOwnerApprovalDecisionAction-Programs
+	Scenario: Setup confirmation message inside confirmation message box for send back approval decision action using Approval Decision Action from configuration and validating it in pending tasks approval decision
+	Given I have default configuration as below:
+	|configurationCategory            |fieldName              |fieldOrignalValue              |filterId        |
+	|Approval Decision Action         |Confirmation Title     |                               |ApiGeneratedId:1|
+	|Approval Decision Action         |Confirmation Message   |                               |ApiGeneratedId:2|
+	Given I setup test configuration as below:
+	|configurationCategory            |fieldName              |fieldNewValue                  |coreComponentField         |
+	|Program                          |Status                 |Created                        |Automation Program -SA to C|
+	|Approval Decision Action:General |Confirmation Title     |Automation for Sendback        |ADAC-0012                  |
+	|Approval Decision Action:General |Confirmation Message   |Test Automation for Sendback   |ADAC-0012                  |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Automation Program -SA to C"
+	When I click on "Edit" icon of status "Created" for "Automation Program -SA to C" program in flex table
+	And I complete submit for approval
+	When I re-login as "Automation-PM" with "QA" url
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	And I navigate to "Tasks" to reach "Pending" side bar content
+	When I start the approval with subject "Automation Program -SA to C"
+	When I select "Send to Owner" from approval decision panel
+	When I enter Approval comment
+	And I click submit
+	Then I see confirmation box with body "Test Automation for Sendback" is displayed
+	
+	@37540 @all @viewPageProfileFieldForApprovalProcess-Programs
+	Scenario Outline: Changing user inside profile field inside task config from config validating it at program approval page
+	Given I have default configuration as below:
+	|configurationCategory|fieldName             |fieldOrignalValue|filterId        |
+	|Task Config          |View Page Profiles    |<oldProfiles>    |ApiGeneratedId:1|
+	Given I setup test configuration as below:
+	|configurationCategory   |fieldName          |fieldNewValue |coreComponentField         |
+	|Program	             |Status             |Created       |Automation Program -SA to C|
+	|Task Config:Task Action |View Page Profiles |<newProfiles> |Approve Program            |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Automation Program -SA to C"
+	When I click on "Edit" icon of status "Created" for "Automation Program -SA to C" program in flex table
+	And I complete submit for approval
+	When I re-login as "Automation-PM" with "QA" url
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	And I navigate to "Tasks" to reach "Pending" side bar content
+	Then I see approval with subject as "Automation Program -SA to C" is not displayed
+	
+	Examples:
+	|oldProfiles|newProfiles|
+	|ADT; CON; CTR; DA; DEV; EPOC; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND|ADT; CON; CTR; DA; DEV; EPOC; EXE; FD; FO; GA; GMO; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND|
