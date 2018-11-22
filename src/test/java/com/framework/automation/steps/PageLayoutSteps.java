@@ -258,5 +258,4 @@ public class PageLayoutSteps {
 	public void assertHelpText(String helpText) {
 		pageLayoutPage.assertHelpTextAtPageBlock(helpText);
 	}
-
 }

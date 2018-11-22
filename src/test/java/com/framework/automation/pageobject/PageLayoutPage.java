@@ -10,6 +10,7 @@ import com.automation.rei.controller.Controller;
 import com.automation.rei.handlers.GovGrantsHandler;
 import com.automation.rei.handlers.Handlers;
 import com.framework.automation.projectmanager.GovGrantsManager;
+import com.itextpdf.text.log.SysoCounter;
 
 public class PageLayoutPage extends GovGrantsManager {
 
@@ -517,6 +518,7 @@ public class PageLayoutPage extends GovGrantsManager {
 
 	/**
 	 * click search icon of owner organization at page block detail edit page
+	 * 
 	 * @param frameId
 	 */
 
@@ -1083,7 +1085,8 @@ public class PageLayoutPage extends GovGrantsManager {
 	 */
 	private boolean isHelpTextDisplayed(String helpText) {
 		boolean flag = false;
-		if (reiDriver.findMyElement().getElement(textInsideHelpText).getText().equalsIgnoreCase(helpText)) {
+		if (reiDriver.findMyElement().getElement(textInsideHelpText).getText().contains(helpText)
+				|| reiDriver.findMyElement().getElement(textInsideHelpText).getText().equalsIgnoreCase(helpText)) {
 			flag = true;
 		}
 		return flag;

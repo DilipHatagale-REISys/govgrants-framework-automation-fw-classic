@@ -8,11 +8,11 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class FlexTableSteps {
-    FlexTablePage flexTablePage;
+	FlexTablePage flexTablePage;
 
-    public FlexTableSteps(Controller controller, Handlers handler, GovGrantsHandler govgrants) {
-        flexTablePage = new FlexTablePage(controller, handler, govgrants);
-    }
+	public FlexTableSteps(Controller controller, Handlers handler, GovGrantsHandler govgrants) {
+		flexTablePage = new FlexTablePage(controller, handler, govgrants);
+	}
 
 	@When("^I click on top right parallel lines bar for \"([^\"]*)\"$")
 	public void clickTopRightParallelLinesBar(String title) {
@@ -21,7 +21,7 @@ public class FlexTableSteps {
 
 	@When("^I click on \"([^\"]*)\" icon of status \"([^\"]*)\" for \"([^\"]*)\" program in flex table$")
 	public void clickAnyIconInFlexTable(String iconName, String statusName, String programSubject) {
-		flexTablePage.clickTableActionIconsForSpecificSubject(programSubject, statusName, iconName);
+		flexTablePage.clickTableActionIconsForSpecificSubject(iconName, statusName, programSubject);
 	}
 
 	@When("^I click on \"([^\"]*)\" icon for \"([^\"]*)\" to save inside subtab$")
@@ -105,4 +105,8 @@ public class FlexTableSteps {
 		flexTablePage.asserEntirePageRefreshOnButtonClick();
 	}
 
+	@Then("^I see \"([^\"]*)\" icon for \"([^\"]*)\" is not displayed inside RAR flex table$")
+	public void assertActionIconNotDisplayedForRARflexTable(String iconName, String uniqueColumnValue) {
+		flexTablePage.assertActionIconNotDisplayedInsideRARflexTable(iconName, uniqueColumnValue);
+	}
 }

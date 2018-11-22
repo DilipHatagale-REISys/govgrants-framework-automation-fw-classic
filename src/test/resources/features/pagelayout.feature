@@ -1097,7 +1097,7 @@ Feature: Page Layout Component Scenarios
 	When I hovering mouse on help text icon inside page block detail "Program Name"
 	Then I see "<new_helpText>" shown as help text 
 	Examples:
-	|new_helpText            |old_helpText                                                                          |
+	|new_helpText            |old_helpText                                      |
 	|Help Text for Automation|Name represents for what the program is meant for.|
 	
 	@35816 @all @hideApprovalDecisionFieldAtPageLayout-gPlanning

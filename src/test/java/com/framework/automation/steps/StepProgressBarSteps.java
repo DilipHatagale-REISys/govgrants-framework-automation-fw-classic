@@ -6,12 +6,18 @@ import com.automation.rei.handlers.Handlers;
 import com.framework.automation.pageobject.StepProgressBarPage;
 
 import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 
 public class StepProgressBarSteps {
 	StepProgressBarPage stepProgressBarPage;
 
-	public StepProgressBarSteps(Controller controller, Handlers handler,GovGrantsHandler govgrants) {
+	public StepProgressBarSteps(Controller controller, Handlers handler, GovGrantsHandler govgrants) {
 		stepProgressBarPage = new StepProgressBarPage(controller, handler, govgrants);
+	}
+
+	@When("^I hovering mouse on Status inside step progress bar \"([^\"]*)\"$")
+	public void getStepProgressStatusContent(String statusName) {
+		stepProgressBarPage.getHoveringContentOfStepProgressBar(statusName);
 	}
 
 	@Then("^I see step progress bar is not displayed$")
@@ -30,7 +36,12 @@ public class StepProgressBarSteps {
 	}
 
 	@Then("^I see step progress bar displayed in \"([^\"]*)\" color for status \"([^\"]*)\"$")
-	public void assertStepProgressBarColor(String color, String status) {
-		stepProgressBarPage.assertStepProgressBarAppearence(color, status);
+	public void assertStepProgressBarColor(String colorName, String statusName) {
+		stepProgressBarPage.assertStepProgressBarAppearence(colorName, statusName);
+	}
+
+	@Then("^I see changed display name as \"([^\"]*)\" inside step progress bar$")
+	public void assertChangedDisplayNameOfStatusInsideStepProgressBar(String statusName) {
+		stepProgressBarPage.assertChangedDisplayNameInsideStepProgressBarForUser(statusName);
 	}
 }
