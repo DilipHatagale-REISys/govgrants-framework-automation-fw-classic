@@ -171,8 +171,7 @@ public class FlexTablePage extends GovGrantsManager {
 	 * for row level action item
 	 */
 	public void clickSaveInModal() {
-		reiDriver.switchTo().switchToFrame(innerFlexTableActionIframe);
-		reiDriver.WaitFor().WaitForElementToBePresent(saveButton).click();
+		govgrants.modal().clickButtonAndProcess(saveButton);
 	}
 
 	/**

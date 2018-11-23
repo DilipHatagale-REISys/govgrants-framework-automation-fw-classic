@@ -10,7 +10,6 @@ import com.automation.rei.controller.Controller;
 import com.automation.rei.handlers.GovGrantsHandler;
 import com.automation.rei.handlers.Handlers;
 import com.framework.automation.projectmanager.GovGrantsManager;
-import com.itextpdf.text.log.SysoCounter;
 
 public class PageLayoutPage extends GovGrantsManager {
 

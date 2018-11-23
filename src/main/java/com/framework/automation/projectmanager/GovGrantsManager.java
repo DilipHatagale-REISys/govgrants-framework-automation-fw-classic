@@ -414,8 +414,8 @@ public class GovGrantsManager extends ProjectWebServices {
 	 * @param programRole
 	 * @param iconName
 	 */
-	public void clickRowLevelActionIconsInsideSubTab(String programRole, String iconName) {
-		govgrants.flexTable().clickTableActionIcons(programRole, iconName);
+	public void clickRowLevelActionIconsInsideSubTab(String iconName, String programRole) {
+		govgrants.flexTable().clickTableActionIcons(iconName, programRole);
 	}
 
 	/**

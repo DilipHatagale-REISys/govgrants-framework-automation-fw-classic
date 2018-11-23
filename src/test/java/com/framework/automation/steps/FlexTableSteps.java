@@ -20,13 +20,13 @@ public class FlexTableSteps {
 	}
 
 	@When("^I click on \"([^\"]*)\" icon of status \"([^\"]*)\" for \"([^\"]*)\" program in flex table$")
-	public void clickAnyIconInFlexTable(String iconName, String statusName, String programSubject) {
+	public void clickTableActionIcons(String iconName, String statusName, String programSubject) {
 		flexTablePage.clickTableActionIconsForSpecificSubject(iconName, statusName, programSubject);
 	}
 
 	@When("^I click on \"([^\"]*)\" icon for \"([^\"]*)\" to save inside subtab$")
 	public void clickAnyIconInFlexTable(String iconName, String programRole) {
-		flexTablePage.clickRowLevelActionIconsInsideSubTab(programRole, iconName);
+		flexTablePage.clickRowLevelActionIconsInsideSubTab(iconName, programRole);
 		flexTablePage.clickSaveInModal();
 	}
 
