@@ -1,8 +1,8 @@
 package com.framework.automation.steps;
 
 import com.automation.rei.controller.Controller;
+import com.automation.rei.handlers.CoreHandlers;
 import com.automation.rei.handlers.GovGrantsHandler;
-import com.automation.rei.handlers.Handlers;
 import com.framework.automation.pageobject.SideBarPage;
 
 import cucumber.api.java.en.Then;
@@ -11,7 +11,7 @@ import cucumber.api.java.en.When;
 public class SideBarSteps {
 	SideBarPage sidebarPage;
 
-	public SideBarSteps(Controller controller, Handlers handler, GovGrantsHandler govgrants) {
+	public SideBarSteps(Controller controller, CoreHandlers handler, GovGrantsHandler govgrants) {
 		sidebarPage = new SideBarPage(controller, handler, govgrants);
 	}
 

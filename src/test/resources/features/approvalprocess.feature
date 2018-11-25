@@ -396,7 +396,7 @@ Feature: Approval Process Component Scenarios
 	And I click submit
 	Then I see confirmation box with body "Test Automation for Sendback" is displayed
 	
-	@37540 @all @viewPageProfileFieldForApprovalProcess-Programs
+	@37540 @all @viewPageProfileFieldForApprovalProcess-Programs @AutomationNotRequired @wip
 	Scenario Outline: Changing user inside profile field inside task config from config validating it at program approval page
 	Given I have default configuration as below:
 	|configurationCategory|fieldName             |fieldOrignalValue|filterId        |

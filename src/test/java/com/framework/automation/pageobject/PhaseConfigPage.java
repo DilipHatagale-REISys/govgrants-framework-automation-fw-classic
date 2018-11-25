@@ -4,8 +4,8 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 
 import com.automation.rei.controller.Controller;
+import com.automation.rei.handlers.CoreHandlers;
 import com.automation.rei.handlers.GovGrantsHandler;
-import com.automation.rei.handlers.Handlers;
 import com.framework.automation.projectmanager.GovGrantsManager;
 
 public class PhaseConfigPage extends GovGrantsManager {
@@ -15,7 +15,7 @@ public class PhaseConfigPage extends GovGrantsManager {
     /**
      * Constructor to handle dependency injection and framework library
      */
-    public PhaseConfigPage(Controller controller, Handlers reiDriver, GovGrantsHandler govgrants) {
+    public PhaseConfigPage(Controller controller, CoreHandlers reiDriver, GovGrantsHandler govgrants) {
         super(controller, reiDriver, govgrants);
     }
 

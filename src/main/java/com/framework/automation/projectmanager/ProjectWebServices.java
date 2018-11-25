@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 import com.automation.rei.controller.EnvironmentFetcher;
-import com.automation.rei.handlers.Properties_Logs;
+import com.automation.rei.corelib.Properties_Logs;
 import com.automation.rei.webservices.RestfulWebServices;
 import com.framework.automation.objects.IdBucket;
 import com.framework.automation.payloads.ApiUtilities;

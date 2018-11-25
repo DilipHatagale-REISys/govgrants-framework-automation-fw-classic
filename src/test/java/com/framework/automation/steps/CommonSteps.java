@@ -1,14 +1,10 @@
 package com.framework.automation.steps;
 
-import java.awt.AWTException;
-import java.io.FileNotFoundException;
-import java.net.MalformedURLException;
-
 import org.springframework.context.annotation.Description;
 
 import com.automation.rei.controller.Controller;
+import com.automation.rei.handlers.CoreHandlers;
 import com.automation.rei.handlers.GovGrantsHandler;
-import com.automation.rei.handlers.Handlers;
 import com.framework.automation.projectmanager.GovGrantsManager;
 
 import cucumber.api.java.en.Then;
@@ -17,7 +13,7 @@ import cucumber.api.java.en.When;
 public class CommonSteps {
     GovGrantsManager govGrantsManager;
 
-    public CommonSteps(Controller controller, Handlers handler, GovGrantsHandler govgrants) {
+    public CommonSteps(Controller controller, CoreHandlers handler, GovGrantsHandler govgrants) {
         govGrantsManager = new GovGrantsManager(controller, handler, govgrants);
     }
 

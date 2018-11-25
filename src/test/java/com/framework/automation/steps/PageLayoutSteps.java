@@ -1,16 +1,17 @@
 package com.framework.automation.steps;
 
 import com.automation.rei.controller.Controller;
+import com.automation.rei.handlers.CoreHandlers;
 import com.automation.rei.handlers.GovGrantsHandler;
-import com.automation.rei.handlers.Handlers;
 import com.framework.automation.pageobject.PageLayoutPage;
+
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class PageLayoutSteps {
 	PageLayoutPage pageLayoutPage;
 
-	public PageLayoutSteps(Controller controller, Handlers handler, GovGrantsHandler govgrants) {
+	public PageLayoutSteps(Controller controller, CoreHandlers handler, GovGrantsHandler govgrants) {
 		pageLayoutPage = new PageLayoutPage(controller, handler, govgrants);
 	}
 
@@ -229,9 +230,9 @@ public class PageLayoutSteps {
 		pageLayoutPage.assertTableStatusInsideLookupModal(statusCategory);
 	}
 
-	@Then("^I see \"([^\"]*)\" message inside confirmation box is displayed$")
-	public void assertSAConfirmationBoxWithMessageText(String message) {
-		pageLayoutPage.assertMessageOfAcceptAlertBox(message);
+	@Then("^I see \"([^\"]*)\" message inside confirmation box is displayed on click \"([^\"]*)\"$")
+	public void assertSAConfirmationBoxWithMessageText(String message, String buttonName) {
+		pageLayoutPage.assertMessageOfAcceptAlertBox(message, buttonName);
 	}
 
 	@Then("^I see Edit opens in overlay window with \"([^\"]*)\" button$")

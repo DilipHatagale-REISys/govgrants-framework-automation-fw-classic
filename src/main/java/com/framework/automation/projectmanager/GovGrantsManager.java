@@ -10,8 +10,8 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import com.automation.rei.controller.Controller;
+import com.automation.rei.handlers.CoreHandlers;
 import com.automation.rei.handlers.GovGrantsHandler;
-import com.automation.rei.handlers.Handlers;
 
 /**
  * for Rei Systems
@@ -21,7 +21,7 @@ import com.automation.rei.handlers.Handlers;
  */
 public class GovGrantsManager extends ProjectWebServices {
 
-	public Handlers reiDriver;
+	public CoreHandlers reiDriver;
 	public Controller controller;
 	public GovGrantsHandler govgrants;
 	public String standardPassword = "Automation@12345";
@@ -42,7 +42,7 @@ public class GovGrantsManager extends ProjectWebServices {
 	 * @param controller
 	 * @param reiDriver
 	 */
-	public GovGrantsManager(Controller controller, Handlers reiDriver, GovGrantsHandler govgrants) {
+	public GovGrantsManager(Controller controller, CoreHandlers reiDriver, GovGrantsHandler govgrants) {
 		this.controller = controller;
 		this.reiDriver = reiDriver;
 		this.govgrants = govgrants;
@@ -208,9 +208,10 @@ public class GovGrantsManager extends ProjectWebServices {
 	 * @param buttonName
 	 */
 	public void getRightHeaderButton(String buttonName) {
-		govgrants.pageDetails().clickAnyTopRightButton(buttonName);
+		govgrants.pageDetails().clickAnyTopRightButtonWithoutSwitching(buttonName);
+		reiDriver.switchTo().acceptAlert();
 	}
-
+	
 	/**
 	 * get any item from top right bar inside phases
 	 * 
@@ -324,8 +325,7 @@ public class GovGrantsManager extends ProjectWebServices {
 	}
 
 	/**
-	 * click flex table item based on program name/subject , status and icon
-	 * name...........need to check
+	 * click flex table item based on program name/subject , status and iconName
 	 * 
 	 * @param programSubject
 	 * @param statusName

@@ -3,7 +3,7 @@ package com.framework.automation.projectmanager;
 
 import java.io.IOException;
 
-import com.automation.rei.handlers.Properties_Logs;
+import com.automation.rei.corelib.Properties_Logs;
 import com.cucumber.listener.Reporter;
 
 public class UsersAndURL {

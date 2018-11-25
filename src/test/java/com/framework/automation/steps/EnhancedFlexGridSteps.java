@@ -1,8 +1,8 @@
 package com.framework.automation.steps;
 
 import com.automation.rei.controller.Controller;
+import com.automation.rei.handlers.CoreHandlers;
 import com.automation.rei.handlers.GovGrantsHandler;
-import com.automation.rei.handlers.Handlers;
 import com.framework.automation.pageobject.EnhancedFlexGridPage;
 
 import cucumber.api.java.en.Then;
@@ -11,7 +11,7 @@ import cucumber.api.java.en.When;
 public class EnhancedFlexGridSteps {
 	EnhancedFlexGridPage enhancedFlexGrid;
 
-	public EnhancedFlexGridSteps(Controller controller, Handlers handler, GovGrantsHandler govgrants) {
+	public EnhancedFlexGridSteps(Controller controller, CoreHandlers handler, GovGrantsHandler govgrants) {
 		enhancedFlexGrid = new EnhancedFlexGridPage(controller, handler, govgrants);
 	}
 
