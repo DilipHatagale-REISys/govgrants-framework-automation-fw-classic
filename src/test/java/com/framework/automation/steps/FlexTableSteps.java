@@ -106,8 +106,8 @@ public class FlexTableSteps {
 		flexTablePage.asserEntirePageRefreshOnButtonClick();
 	}
 
-	@Then("^I see \"([^\"]*)\" icon for \"([^\"]*)\" is not displayed inside RAR flex table$")
-	public void assertActionIconNotDisplayedForRARflexTable(String iconName, String uniqueColumnValue) {
-		flexTablePage.assertActionIconNotDisplayedInsideRARflexTable(iconName, uniqueColumnValue);
+	@Then("^I see \"([^\"]*)\" icon for \"([^\"]*)\" is not displayed inside flex table$")
+	public void assertActionIconNotDisplayedForflexTable(String iconName, String uniqueColumnValue) {
+		flexTablePage.assertActionIconNotDisplayedInsideflexTable(iconName, uniqueColumnValue);
 	}
 }

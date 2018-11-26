@@ -235,7 +235,7 @@ Feature: Flex Table Component Scenarios
 	When I search for "Test program for automation"
 	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
 	When I click on "Roles" sub tab inside page layout
-	Then I see "Edit" icon for "Owner" is not displayed inside RAR flex table
+	Then I see "Edit" icon for "Owner" is not displayed inside flex table
 	
 	@34298 @all @hideForUserFieldAtFlexTableAction-gPlanning
 	Scenario: Hide edit row level action for specific profile from configuration and validating it at under roles and responibilities flex table- gPlanning
@@ -250,7 +250,7 @@ Feature: Flex Table Component Scenarios
 	When I search for "Test program for automation"
 	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
 	When I click on "Roles" sub tab inside page layout
-	Then I see "Edit" icon for "Owner" is not displayed inside RAR flex table
+	Then I see "Edit" icon for "Owner" is not displayed inside flex table
 	
 	@34299 @all @hideForContextFieldAtFlexTableAction-gPlanning
 	Scenario: Hide edit row level action for specific profile from configuration and validating it at under roles and responibilities flex table- gPlanning
@@ -265,7 +265,7 @@ Feature: Flex Table Component Scenarios
 	When I search for "Test program for automation"
 	When I click on "Edit" icon of status "Created" for "Test program for automation" program in flex table
 	When I click on "Roles" sub tab inside page layout
-	Then I see "Edit" icon for "Owner" is not displayed inside RAR flex table
+	Then I see "Edit" icon for "Owner" is not displayed inside flex table
 	
 	@34300 @all @hideOperatorFieldUsingANDOperatorAtFlexTAbleAction-gPlanning
 	Scenario: Hide edit row level action using AND operator from configuration and validating it at under roles and responibilities flex table- gPlanning
@@ -284,4 +284,4 @@ Feature: Flex Table Component Scenarios
 	When I search for "Test program for automation"
 	When I click on "Edit" icon of status "Created" for "Test program for automation" program in flex table
 	When I click on "Roles" sub tab inside page layout
-	Then I see "Edit" icon for "Owner" is not displayed inside RAR flex table
+	Then I see "Edit" icon for "Owner" is not displayed inside flex table

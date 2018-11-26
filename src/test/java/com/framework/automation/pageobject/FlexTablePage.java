@@ -161,7 +161,7 @@ public class FlexTablePage extends GovGrantsManager {
 	 * 
 	 * @param actionIcon
 	 */
-	public void assertActionIconNotDisplayedInsideRARflexTable(String iconName, String uniqueColumnValue) {
+	public void assertActionIconNotDisplayedInsideflexTable(String iconName, String uniqueColumnValue) {
 		Assert.assertFalse(reiDriver.findMyElement()
 				.getElement(govgrants.flexTable().getTableActionIcon(iconName, uniqueColumnValue)).isDisplayed());
 	}
