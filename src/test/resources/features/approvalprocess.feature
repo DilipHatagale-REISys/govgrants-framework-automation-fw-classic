@@ -14,6 +14,7 @@ Feature: Approval Process Component Scenarios
 	When I login as "Automation-PM" User
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	And I navigate to "Tasks" to reach "Pending" side bar content
+	#When I search for "Test program for Automation-A to SA"
 	When I start the approval with subject "Test program for Automation-A to SA"
 	Then I see "Approve" is disabled
 	

@@ -592,12 +592,18 @@ Feature: Page Layout Component Scenarios
 	|configurationCategory        |fieldName                          |fieldOrignalValue |coreComponentField    |filterId        |
 	|Page Block:Page Block Detail |Hide/Disable attachment Row actions|                  |Grantee State Program |ApiGeneratedId:0|
 	Given I setup test configuration as below:
-	|configurationCategory        |fieldName                          |fieldNewValue     |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
-	|Page Block:Page Block Detail |Hide/Disable attachment Row actions|Disable           |Grantee State Program |GNT__PageBlockTitle__c   |Attachments               |
+	|configurationCategory        |fieldName                          |fieldNewValue     |coreComponentField         |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Block:Page Block Detail |Hide/Disable attachment Row actions|Disable           |Grantee State Program      |GNT__PageBlockTitle__c   |Attachments               |
+	|Program                      |Status                             |Created           |Automation Program -SA to C|
+	#When I login as "Automation" User 
+	#When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	#When I search for "Automation Program -SA to C"
+	#When I click on "View Program Details" icon of status "Submitted for Approval" for "Automation Program -SA to C" program in flex table
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Automation Program -SA to C"
-	When I click on "View Program Details" icon of status "Submitted for Approval" for "Automation Program -SA to C" program in flex table
+	When I click on "Edit" icon of status "Created" for "Automation Program -SA to C" program in flex table
+	And I complete submit for approval
 	When I click on "Attachments" sub tab inside page layout
 	Then I see edit icon is disabled inside "Attachments" page block
 	
@@ -1111,8 +1117,8 @@ Feature: Page Layout Component Scenarios
 	|Page Layout           |Hide Approval Decision comp|false               |ApiGeneratedId:0|
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName                  |fieldNewValue       |coreComponentField         |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
-	|Page Layout:General   |Hide Approval Decision comp|true                |Grantee State Program      |                         |                             |
 	|Program               |Status                     |Created             |Automation Program -SA to C|                         |                             |
+	|Page Layout:General   |Hide Approval Decision comp|true                |Grantee State Program      |                         |                             |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Automation Program -SA to C"
