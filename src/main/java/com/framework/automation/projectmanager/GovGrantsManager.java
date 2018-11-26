@@ -345,29 +345,7 @@ public class GovGrantsManager extends ProjectWebServices {
 		} catch (Exception e) {
 		}
 		govgrants.phasePannel().clickParallelMenuBars(title);
-	}
-
-	/**
-	 * get exact start button for pending tasks assigned to me
-	 */
-	public List<WebElement> getStartButtonInPendingTasks(String programSubject, String titleInLocator) {
-		int whileHandler = 0;
-		By startButton = By.xpath("//div/table/tbody/tr/td/span/span/span[text()='" + programSubject
-				+ "']//following::td/div/span/span/span/span/a[@title='" + titleInLocator + "']");
-		List<WebElement> approvalStartButtonTable = reiDriver.findMyElement().getElements(startButton);
-		int approvalStartButtonTableSize = approvalStartButtonTable.size();
-		while (approvalStartButtonTableSize == 0) {
-			whileHandler++;
-			if (whileHandler == 10) {
-				break;
-			}
-			reiDriver.get().getRefresh();
-			reiDriver.WaitFor().WaitForElementToBePresent(pendingTasksTableRef);
-			approvalStartButtonTable = reiDriver.findMyElement().getElements(startButton);
-			approvalStartButtonTableSize = approvalStartButtonTable.size();
-		}
-		return approvalStartButtonTable;
-	}
+	}	
 
 	/**
 	 * perform complete quick search in flex
