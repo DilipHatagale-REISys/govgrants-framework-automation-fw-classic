@@ -594,7 +594,7 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory        |fieldName                          |fieldNewValue     |coreComponentField         |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block:Page Block Detail |Hide/Disable attachment Row actions|Disable           |Grantee State Program      |GNT__PageBlockTitle__c   |Attachments               |
-	|Program                      |Status                             |Created           |Automation Program -SA to C|
+	|Program                      |Status                             |Created           |Automation Program -SA to C|                         |                           |
 	#When I login as "Automation" User 
 	#When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	#When I search for "Automation Program -SA to C"
