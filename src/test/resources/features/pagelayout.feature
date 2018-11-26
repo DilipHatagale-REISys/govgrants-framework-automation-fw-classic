@@ -123,16 +123,20 @@ Feature: Page Layout Component Scenarios
 	@34055 @all @enablePromptInputDialog-gPlanning
 	Scenario: Enable prompt input box for Submit for approval button configuration and validating it for Created status view icon
 	Given I have default configuration as below:
-	|configurationCategory |fieldName                 |fieldOrignalValue    |filterId        |
-	|Page Layout Action    |Enable Prompt Input Dialog|false                |ApiGeneratedId:0|
+	|configurationCategory |fieldName                 |fieldOrignalValue    |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Enable Prompt Input Dialog|false                |Grantee State Program |Name                     |Submit For Approval          |
+	|Page Layout Action    |Prompt Dailogue Header    |                     |Grantee State Program |Name                     |Submit For Approval          |
+	|Page Layout Action    |Prompt Dialogue Text      |                     |Grantee State Program |Name                     |Submit For Approval          |
 	Given I setup test configuration as below:
-	|configurationCategory |fieldName                 |fieldNewValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
-	|Page Layout Action    |Enable Prompt Input Dialog|true           |Grantee State Program |Name                     |Submit For Approval          |
+	|configurationCategory |fieldName                 |fieldNewValue        |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Prompt Dailogue Header    |Automation Header    |Grantee State Program |Name                     |Submit For Approval          |
+	|Page Layout Action    |Prompt Dialogue Text      |Automation Text      |Grantee State Program |Name                     |Submit For Approval          |
+	|Page Layout Action    |Enable Prompt Input Dialog|true                 |Grantee State Program |Name                     |Submit For Approval          |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
 	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
-	When I click on "Submit For Approval" button inside detail page
+	When I click on "Submit For Approval" button in right header
 	Then I see prompt For automation is displayed
 	
 	@34056 @all @hideForContextFieldForMainPageLayoutAction-gPlanning
@@ -588,12 +592,18 @@ Feature: Page Layout Component Scenarios
 	|configurationCategory        |fieldName                          |fieldOrignalValue |coreComponentField    |filterId        |
 	|Page Block:Page Block Detail |Hide/Disable attachment Row actions|                  |Grantee State Program |ApiGeneratedId:0|
 	Given I setup test configuration as below:
-	|configurationCategory        |fieldName                          |fieldNewValue     |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
-	|Page Block:Page Block Detail |Hide/Disable attachment Row actions|Disable           |Grantee State Program |GNT__PageBlockTitle__c   |Attachments               |
+	|configurationCategory        |fieldName                          |fieldNewValue     |coreComponentField         |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Block:Page Block Detail |Hide/Disable attachment Row actions|Disable           |Grantee State Program      |GNT__PageBlockTitle__c   |Attachments               |
+	|Program                      |Status                             |Created           |Automation Program -SA to C|
+	#When I login as "Automation" User 
+	#When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	#When I search for "Automation Program -SA to C"
+	#When I click on "View Program Details" icon of status "Submitted for Approval" for "Automation Program -SA to C" program in flex table
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Automation Program -SA to C"
-	When I click on "View Program Details" icon of status "Submitted for Approval" for "Automation Program -SA to C" program in flex table
+	When I click on "Edit" icon of status "Created" for "Automation Program -SA to C" program in flex table
+	And I complete submit for approval
 	When I click on "Attachments" sub tab inside page layout
 	Then I see edit icon is disabled inside "Attachments" page block
 	
@@ -953,6 +963,7 @@ Feature: Page Layout Component Scenarios
 	|Page Block Config:Page Block Rule Detail |Attachment Classifications |Test1;Test2;         |Annoucement Profile-FOA |Name                     |PBD-5205                  |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Announcements" tab
+	When I select "Draft Announcements" from double headed dropdown inside admin portal
 	When I search for "Test Announcement For Automation"
 	When I click on "View" icon of status "Created" for "Test Announcement For Automation" program in flex table
 	When I click on "Overview" sub tab inside page layout
@@ -972,8 +983,7 @@ Feature: Page Layout Component Scenarios
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
 	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
-    When I click on "Submit For Approval" button in right header
-    Then I see "Test message for Automation" message inside confirmation box is displayed
+    Then I see "Test message for Automation" message inside confirmation box is displayed on click "Submit For Approval"
     
     @36198 @all @isActiveFieldAtPageLayoutAction-gPlanning
     Scenario: Disabling of edit button action at page layout action from config and validating it at program detail page
@@ -1097,7 +1107,7 @@ Feature: Page Layout Component Scenarios
 	When I hovering mouse on help text icon inside page block detail "Program Name"
 	Then I see "<new_helpText>" shown as help text 
 	Examples:
-	|new_helpText            |old_helpText                                                                          |
+	|new_helpText            |old_helpText                                      |
 	|Help Text for Automation|Name represents for what the program is meant for.|
 	
 	@35816 @all @hideApprovalDecisionFieldAtPageLayout-gPlanning
@@ -1107,8 +1117,8 @@ Feature: Page Layout Component Scenarios
 	|Page Layout           |Hide Approval Decision comp|false               |ApiGeneratedId:0|
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName                  |fieldNewValue       |coreComponentField         |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
-	|Page Layout:General   |Hide Approval Decision comp|true                |Grantee State Program      |                         |                             |
 	|Program               |Status                     |Created             |Automation Program -SA to C|                         |                             |
+	|Page Layout:General   |Hide Approval Decision comp|true                |Grantee State Program      |                         |                             |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Automation Program -SA to C"

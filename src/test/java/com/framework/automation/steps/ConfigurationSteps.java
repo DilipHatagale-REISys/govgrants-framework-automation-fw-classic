@@ -4,8 +4,8 @@ import java.io.IOException;
 import java.util.Map;
 
 import com.automation.rei.controller.Controller;
+import com.automation.rei.handlers.CoreHandlers;
 import com.automation.rei.handlers.GovGrantsHandler;
-import com.automation.rei.handlers.Handlers;
 import com.framework.automation.projectmanager.ConfigurationParameters;
 import com.framework.automation.projectmanager.GovGrantsManager;
 import com.framework.automation.projectmanager.ProjectWebServices;
@@ -17,7 +17,7 @@ public class ConfigurationSteps {
     GovGrantsManager govGrantsManager;
     ProjectWebServices projectAPI;
 
-    public ConfigurationSteps(Controller controller, Handlers handler, ProjectWebServices projectAPI, GovGrantsHandler govgrants) {
+    public ConfigurationSteps(Controller controller, CoreHandlers handler, ProjectWebServices projectAPI, GovGrantsHandler govgrants) {
         govGrantsManager = new GovGrantsManager(controller, handler, govgrants);
         this.projectAPI = projectAPI;
     }

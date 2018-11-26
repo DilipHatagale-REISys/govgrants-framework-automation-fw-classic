@@ -14,6 +14,7 @@ Feature: Approval Process Component Scenarios
 	When I login as "Automation-PM" User
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	And I navigate to "Tasks" to reach "Pending" side bar content
+	#When I search for "Test program for Automation-A to SA"
 	When I start the approval with subject "Test program for Automation-A to SA"
 	Then I see "Approve" is disabled
 	
@@ -396,7 +397,7 @@ Feature: Approval Process Component Scenarios
 	And I click submit
 	Then I see confirmation box with body "Test Automation for Sendback" is displayed
 	
-	@37540 @all @viewPageProfileFieldForApprovalProcess-Programs
+	@37540 @all @viewPageProfileFieldForApprovalProcess-Programs @AutomationNotRequired @wip
 	Scenario Outline: Changing user inside profile field inside task config from config validating it at program approval page
 	Given I have default configuration as below:
 	|configurationCategory|fieldName             |fieldOrignalValue|filterId        |

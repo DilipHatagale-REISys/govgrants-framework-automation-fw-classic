@@ -5,8 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import com.automation.rei.controller.Controller;
+import com.automation.rei.handlers.CoreHandlers;
 import com.automation.rei.handlers.GovGrantsHandler;
-import com.automation.rei.handlers.Handlers;
 import com.framework.automation.projectmanager.GovGrantsManager;
 
 public class FlexGridPage extends GovGrantsManager {
@@ -17,7 +17,7 @@ public class FlexGridPage extends GovGrantsManager {
     /**
      * Constructor to handle dependency injection and framework library
      */
-    public FlexGridPage(Controller controller, Handlers reiDriver, GovGrantsHandler govgrants) {
+    public FlexGridPage(Controller controller, CoreHandlers reiDriver, GovGrantsHandler govgrants) {
         super(controller, reiDriver, govgrants);
         programPerformanceMgmtGridViewMenuBars = By.xpath(
                 "//div[@id='flexGridHeaderButtonsProgramPerformanceMgmtGridView']//span[contains(@class,'fa fa-bars')]");

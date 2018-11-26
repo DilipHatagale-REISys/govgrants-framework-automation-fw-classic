@@ -6,8 +6,8 @@ import org.springframework.context.annotation.Description;
 
 import com.automation.rei.controller.Controller;
 import com.automation.rei.exception.ReiFrameworkCustomException;
+import com.automation.rei.handlers.CoreHandlers;
 import com.automation.rei.handlers.GovGrantsHandler;
-import com.automation.rei.handlers.Handlers;
 import com.framework.automation.pageobject.LoginPage;
 
 import cucumber.api.java.en.Given;
@@ -17,7 +17,7 @@ import cucumber.api.java.en.When;
 public class LoginSteps {
     LoginPage loginPage;
 
-    public LoginSteps(Controller controller, Handlers handler, GovGrantsHandler govgrants) {
+    public LoginSteps(Controller controller, CoreHandlers handler, GovGrantsHandler govgrants) {
         loginPage = new LoginPage(controller, handler, govgrants);
     }
 

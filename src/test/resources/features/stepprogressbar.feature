@@ -46,12 +46,12 @@ Feature: Step Progress Bar Component Scenarios
 	|Step Progressbar Detail|Hide For Users    |                 |ApiGeneratedId:0|
 	Given I setup test configuration as below:
 	|configurationCategory   |fieldName       |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
-	|Step Progressbar Detail|Hide For Users  |<changedUser>|Program Progress Bar  |Name                     |Submitted for Approval    |
+	|Step Progressbar Detail |Hide For Users  |<changedUser>|Program Progress Bar  |Name                     |Submitted for Approval    |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation"
 	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
-	Then I see "Submit for Approval" is not displayed inside step progress bar
+	Then I see "Submitted for Approval" is not displayed inside step progress bar
 	
 	Examples:
 	|changedUser|
@@ -95,6 +95,69 @@ Feature: Step Progress Bar Component Scenarios
 	|Step Progressbar Detail |Negative Path   |true         |Program Progress Bar  |Name                     |Submitted for Approval    |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for Automation-A to SA"
-	When I click on "View Program Details" icon of status "Submitted for Approval" for "Test program for Automation-A to SA" program in flex table
-	Then I see step progress bar displayed in "Red" color for status "Submitted for Approval"	
+	When I search for "Test program for automation-SA to C"
+	When I click on "View Program Details" icon of status "Submitted for Approval" for "Test program for automation-SA to C" program in flex table
+	Then I see step progress bar displayed in "Red" color for status "Submitted for Approval"
+	
+	@37316 @all @rejectColorFieldAtStepProgressBar-gPlanning
+	Scenario: validate after changing color of rejected status to different color and validating it on program detail page-programs
+	Given I have default configuration as below:
+	|configurationCategory                    |fieldName         |fieldOrignalValue     |coreComponentField         |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Step Progressbar Header Config:General   |Reject Color      |#E60000               |PB-0016                    |                         |                          |
+	Given I setup test configuration as below:
+	|configurationCategory                    |fieldName       |fieldNewValue|coreComponentField         |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Step Progressbar Header Config:General   |Reject Color    |#0b0ba0      |PB-0016                    |                         |                          | 
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I select "Rejected Programs" from double headed dropdown inside admin portal
+	When I search for "Test Program For Automation Reject"
+	When I click on "View Program Details" icon of status "Rejected" for "Test Program For Automation Reject" program in flex table
+	Then I see step progress bar displayed in "Blue" color for status "Rejected"
+	
+	@37318 @all @incompleteColorFieldAtStepProgressBar-gPlanning
+	Scenario: validate after changing color of rejected status to different color and validating it on program detail page-programs
+	Given I have default configuration as below:
+	|configurationCategory                    |fieldName         |fieldOrignalValue     |coreComponentField         |
+	|Step Progressbar Header Config:General   |Incomplete Color  |#a0a0a0               |PB-0016                    |
+	Given I setup test configuration as below:
+	|configurationCategory                    |fieldName       |fieldNewValue|coreComponentField         |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Step Progressbar Header Config:General   |Incomplete Color|#0b0ba0      |PB-0016                    |                         |                          |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I select "Draft Programs" from double headed dropdown inside admin portal
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	Then I see step progress bar displayed in "Blue" color for status "Submitted for Approval"
+	
+	@37324 @all @displayValueFieldAtStepProgressBAr-gPlanning
+	Scenario: validate after changing display value of created disabling of submit for approval status from progress bar for internal user and validating it on program detail page-programs
+	Given I have default configuration as below:
+	|configurationCategory  |fieldName         |fieldOrignalValue|filterId        |
+	|Step Progressbar Detail|Display Value     |Created          |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory   |fieldName       |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Step Progressbar Detail |Display Value   |Automation   |Program Progress Bar  |Name                     |Created                   |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	Then I see changed display name as "Automation" inside step progress bar
+	
+	@37328 @all @isCreatedFieldAtStepProgressBar-gPlanning
+	Scenario Outline: validate hover text of submit for approval status from progress bar for internal user and validating it on program detail page-programs
+	Given I have default configuration as below:
+	|configurationCategory  |fieldName         |fieldOrignalValue|filterId        |
+	|Step Progressbar Detail|IsCreated         |false            |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory   |fieldName       |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Step Progressbar Detail |IsCreated       |true         |Program Progress Bar  |Name                     |Submitted for Approval    |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Automation Program -SA to C"
+	When I click on "View Program Details" icon of status "Submitted for Approval" for "Automation Program -SA to C" program in flex table
+	When I hovering mouse on Status inside step progress bar "Submitted for Approval"
+	Then I see "<textInsideStatus>" shown as help text
+	
+	Examples:
+	|textInsideStatus|	
+	|By : Nauman Shahid|

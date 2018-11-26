@@ -40,6 +40,20 @@ public class StepProgressBar {
 									String.valueOf(SObjectAPIs.GNT__StepProgressbarHeader__c), filterClause),
 							String.valueOf(SObjectAPIs.GNT__CompleteColor__c), value);
 			break;
+		case "REJECT COLOR":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__StepProgressbarHeader__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__StepProgressbarHeader__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__RejectColor__c), value);
+			break;
+		case "INCOMPLETE COLOR":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__StepProgressbarHeader__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__StepProgressbarHeader__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__IncompleteColor__c), value);
+			break;
 		}
 		System.out.println(finalPayload);
 		return finalPayload;
@@ -86,6 +100,20 @@ public class StepProgressBar {
 							apiUtilities.getComponentCoreFieldId(
 									String.valueOf(SObjectAPIs.GNT__StepProgressbarDetail__c), filterClause),
 							String.valueOf(SObjectAPIs.GNT__NegativePath__c), value);
+			break;
+		case "DISPLAY VALUE":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__StepProgressbarDetail__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__StepProgressbarDetail__c), filterClause),
+							String.valueOf(SObjectAPIs.Name), value);
+			break;
+		case "ISCREATED":
+			finalPayload = String
+					.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__StepProgressbarDetail__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__StepProgressbarDetail__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__IsCreated__c), value);
 			break;
 		}
 		System.out.println(finalPayload);

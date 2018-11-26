@@ -3,9 +3,10 @@ package com.framework.automation.pageobject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+
 import com.automation.rei.controller.Controller;
+import com.automation.rei.handlers.CoreHandlers;
 import com.automation.rei.handlers.GovGrantsHandler;
-import com.automation.rei.handlers.Handlers;
 import com.framework.automation.projectmanager.GovGrantsManager;
 
 public class FormPage extends GovGrantsManager {
@@ -14,7 +15,7 @@ public class FormPage extends GovGrantsManager {
 
     private final By businessFormSection;
 
-    public FormPage(Controller controller, Handlers reiDriver, GovGrantsHandler govgrants) {
+    public FormPage(Controller controller, CoreHandlers reiDriver, GovGrantsHandler govgrants) {
         super(controller, reiDriver, govgrants);
 
         businessFormSection = By.xpath(

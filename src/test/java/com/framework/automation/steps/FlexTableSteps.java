@@ -1,18 +1,19 @@
 package com.framework.automation.steps;
 
 import com.automation.rei.controller.Controller;
+import com.automation.rei.handlers.CoreHandlers;
 import com.automation.rei.handlers.GovGrantsHandler;
-import com.automation.rei.handlers.Handlers;
 import com.framework.automation.pageobject.FlexTablePage;
+
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class FlexTableSteps {
-    FlexTablePage flexTablePage;
+	FlexTablePage flexTablePage;
 
-    public FlexTableSteps(Controller controller, Handlers handler, GovGrantsHandler govgrants) {
-        flexTablePage = new FlexTablePage(controller, handler, govgrants);
-    }
+	public FlexTableSteps(Controller controller, CoreHandlers handler, GovGrantsHandler govgrants) {
+		flexTablePage = new FlexTablePage(controller, handler, govgrants);
+	}
 
 	@When("^I click on top right parallel lines bar for \"([^\"]*)\"$")
 	public void clickTopRightParallelLinesBar(String title) {
@@ -20,13 +21,13 @@ public class FlexTableSteps {
 	}
 
 	@When("^I click on \"([^\"]*)\" icon of status \"([^\"]*)\" for \"([^\"]*)\" program in flex table$")
-	public void clickAnyIconInFlexTable(String iconName, String statusName, String programSubject) {
-		flexTablePage.clickTableActionIconsForSpecificSubject(programSubject, statusName, iconName);
+	public void clickTableActionIcons(String iconName, String statusName, String programSubject) {
+		flexTablePage.clickTableActionIconsForSpecificSubject(iconName, statusName, programSubject);
 	}
 
 	@When("^I click on \"([^\"]*)\" icon for \"([^\"]*)\" to save inside subtab$")
 	public void clickAnyIconInFlexTable(String iconName, String programRole) {
-		flexTablePage.clickRowLevelActionIconsInsideSubTab(programRole, iconName);
+		flexTablePage.clickRowLevelActionIconsInsideSubTab(iconName, programRole);
 		flexTablePage.clickSaveInModal();
 	}
 
@@ -105,4 +106,8 @@ public class FlexTableSteps {
 		flexTablePage.asserEntirePageRefreshOnButtonClick();
 	}
 
+	@Then("^I see \"([^\"]*)\" icon for \"([^\"]*)\" is not displayed inside flex table$")
+	public void assertActionIconNotDisplayedForflexTable(String iconName, String uniqueColumnValue) {
+		flexTablePage.assertActionIconNotDisplayedInsideflexTable(iconName, uniqueColumnValue);
+	}
 }

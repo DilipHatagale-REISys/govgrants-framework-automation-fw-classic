@@ -7,8 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import com.automation.rei.controller.Controller;
+import com.automation.rei.handlers.CoreHandlers;
 import com.automation.rei.handlers.GovGrantsHandler;
-import com.automation.rei.handlers.Handlers;
 import com.framework.automation.projectmanager.GovGrantsManager;
 
 public class PageLayoutPage extends GovGrantsManager {
@@ -25,7 +25,7 @@ public class PageLayoutPage extends GovGrantsManager {
 	/**
 	 * Constructor to handle dependency injection and framework library
 	 */
-	public PageLayoutPage(Controller controller, Handlers reiDriver, GovGrantsHandler govgrants) {
+	public PageLayoutPage(Controller controller, CoreHandlers reiDriver, GovGrantsHandler govgrants) {
 		super(controller, reiDriver, govgrants);
 		overViewHeader = By.cssSelector("h2.panel-title>div>span.customLabelstyle");
 		overViewTitle = By.cssSelector("h2.panel-title>div>span.overview-title");
@@ -357,7 +357,8 @@ public class PageLayoutPage extends GovGrantsManager {
 	 * 
 	 * @param message
 	 */
-	public void assertMessageOfAcceptAlertBox(String message) {
+	public void assertMessageOfAcceptAlertBox(String message, String buttonName) {
+		govgrants.pageDetails().clickAnyTopRightButtonWithoutSwitching(buttonName);
 		Assert.assertTrue(reiDriver.switchTo().getAlertText().equalsIgnoreCase(message));
 		reiDriver.switchTo().rejectAlert();
 	}
@@ -517,6 +518,7 @@ public class PageLayoutPage extends GovGrantsManager {
 
 	/**
 	 * click search icon of owner organization at page block detail edit page
+	 * 
 	 * @param frameId
 	 */
 
@@ -1083,7 +1085,8 @@ public class PageLayoutPage extends GovGrantsManager {
 	 */
 	private boolean isHelpTextDisplayed(String helpText) {
 		boolean flag = false;
-		if (reiDriver.findMyElement().getElement(textInsideHelpText).getText().equalsIgnoreCase(helpText)) {
+		if (reiDriver.findMyElement().getElement(textInsideHelpText).getText().contains(helpText)
+				|| reiDriver.findMyElement().getElement(textInsideHelpText).getText().equalsIgnoreCase(helpText)) {
 			flag = true;
 		}
 		return flag;

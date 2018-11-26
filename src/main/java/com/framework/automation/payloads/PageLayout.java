@@ -127,28 +127,20 @@ public class PageLayout {
 							String.valueOf(SObjectAPIs.GNT__HideForProfile__c), value);
 			break;
 		case "ENABLE PROMPT INPUT DIALOG":
-			if (m.find() || (value.contains("true")) || (value.contains("false"))) {
 				finalPayload = String
 						.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PageLayoutActionConfig__c),
 								apiUtilities.getComponentCoreFieldId(
 										String.valueOf(SObjectAPIs.GNT__PageLayoutActionConfig__c), filterClause),
 								String.valueOf(SObjectAPIs.GNT__EnablePromptInputDialog__c), value);
-			} else {
-				finalPayload = String
-						.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageLayoutActionConfig__c),
-								apiUtilities.getComponentCoreFieldId(
-										String.valueOf(SObjectAPIs.GNT__PageLayoutActionConfig__c), filterClause),
-								String.valueOf(SObjectAPIs.GNT__EnablePromptInputDialog__c), value);
-			}
 			break;
-		case "PROMPT DAILOG HEADER":
+		case "PROMPT DAILOGUE HEADER":
 			finalPayload = String
 					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageLayoutActionConfig__c),
 							apiUtilities.getComponentCoreFieldId(
 									String.valueOf(SObjectAPIs.GNT__PageLayoutActionConfig__c), filterClause),
 							String.valueOf(SObjectAPIs.GNT__PromptDailogHeader__c), value);
 			break;
-		case "PROMPT DIALOG TEXT":
+		case "PROMPT DIALOGUE TEXT":
 			finalPayload = String
 					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageLayoutActionConfig__c),
 							apiUtilities.getComponentCoreFieldId(

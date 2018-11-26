@@ -1,12 +1,11 @@
 package com.framework.automation.pageobject;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+
 import com.automation.rei.controller.Controller;
-import com.automation.rei.exception.ReiFrameworkCustomException;
+import com.automation.rei.handlers.CoreHandlers;
 import com.automation.rei.handlers.GovGrantsHandler;
-import com.automation.rei.handlers.Handlers;
 import com.framework.automation.projectmanager.GovGrantsManager;
 import com.framework.automation.projectmanager.UsersAndURL;
 
@@ -26,7 +25,7 @@ public class LoginPage extends GovGrantsManager {
 	/**
 	 * Constructor to handle dependency injection and framework library
 	 */
-	public LoginPage(Controller controller, Handlers reiDriver, GovGrantsHandler govgrants) {
+	public LoginPage(Controller controller, CoreHandlers reiDriver, GovGrantsHandler govgrants) {
 		super(controller, reiDriver, govgrants);
 		userName = By.xpath("//input[@name='username' or id ='username']");
 		password = By.xpath("//input[@id='password' or @type='password']");

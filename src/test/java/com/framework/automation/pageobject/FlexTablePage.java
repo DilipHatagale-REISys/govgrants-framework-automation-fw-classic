@@ -5,8 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import com.automation.rei.controller.Controller;
+import com.automation.rei.handlers.CoreHandlers;
 import com.automation.rei.handlers.GovGrantsHandler;
-import com.automation.rei.handlers.Handlers;
 import com.framework.automation.projectmanager.GovGrantsManager;
 
 public class FlexTablePage extends GovGrantsManager {
@@ -17,7 +17,7 @@ public class FlexTablePage extends GovGrantsManager {
 	/**
 	 * Constructor to handle dependency injection and framework library
 	 */
-	public FlexTablePage(Controller controller, Handlers reiDriver, GovGrantsHandler govgrants) {
+	public FlexTablePage(Controller controller, CoreHandlers reiDriver, GovGrantsHandler govgrants) {
 		super(controller, reiDriver, govgrants);
 		overLayFrame = By.xpath("//iframe[@id='ProgramsiframeContentId']");
 		innerFlexTableActionIframe = By.xpath("//iframe[@id='ProgramRolesAndResponsibilitiesiframeContentId']");
@@ -154,6 +154,33 @@ public class FlexTablePage extends GovGrantsManager {
 		waitForNavigationLogo();
 		String state = isPageRefreshOnButtonClick();
 		Assert.assertTrue(state.equalsIgnoreCase("Complete"));
+	}
+
+	/**
+	 * assert if specific action icon is not displayed for flex table
+	 * 
+	 * @param actionIcon
+	 */
+	public void assertActionIconNotDisplayedInsideflexTable(String iconName, String uniqueColumnValue) {
+		Assert.assertFalse(reiDriver.findMyElement()
+				.getElement(govgrants.flexTable().getTableActionIcon(iconName, uniqueColumnValue)).isDisplayed());
+	}
+
+	/**
+	 * click on save button and after clicking on save button switching to iframe
+	 * for row level action item
+	 */
+	public void clickSaveInModal() {
+		govgrants.modal().clickButtonAndProcess(saveButton);
+	}
+
+	/**
+	 * access last row label name
+	 * 
+	 * @return
+	 */
+	public WebElement getLastRowLabelContent() {
+		return reiDriver.WaitFor().WaitForElementToBePresent(flexTablelastRowNameAsTotal);
 	}
 
 	/*********
@@ -306,15 +333,6 @@ public class FlexTablePage extends GovGrantsManager {
 	}
 
 	/**
-	 * access last row label name
-	 * 
-	 * @return
-	 */
-	public WebElement getLastRowLabelContent() {
-		return reiDriver.WaitFor().WaitForElementToBePresent(flexTablelastRowNameAsTotal);
-	}
-
-	/**
 	 * 
 	 * @return false if element is not displayed
 	 */
@@ -404,14 +422,5 @@ public class FlexTablePage extends GovGrantsManager {
 	 */
 	private String isPageRefreshOnButtonClick() {
 		return reiDriver.JavaScript().getPageLoadStatus();
-	}
-
-	/**
-	 * click on save button and after clicking on save button switching to iframe
-	 * for row level action item
-	 */
-	public void clickSaveInModal() {
-		reiDriver.switchTo().switchToFrame(innerFlexTableActionIframe);
-		reiDriver.WaitFor().WaitForElementToBePresent(saveButton).click();
 	}
 }
