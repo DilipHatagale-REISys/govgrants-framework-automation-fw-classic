@@ -174,8 +174,8 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action    |Action Behavior|Open in new window |Programs              |Name                     |Edit                      | 
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation"
-	When I click on "Edit" icon of status "Created" for "Test program for automation" program in flex table
+	When I search for "Test program for automation - Created mode only"
+	When I click on "Edit" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
 	Then I see new tab is opened
 	
 	@34038 @all @editActionOpensInSameWindow-gPlanning
@@ -188,8 +188,8 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action    |Action Behavior|Open in same window |Programs              |Name                     |Edit                      | 
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation"
-	When I click on "Edit" icon of status "Created" for "Test program for automation" program in flex table
+	When I search for "Test program for automation - Created mode only"
+	When I click on "Edit" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
 	Then I see no new tab is opened
 	
 	@34039 @all @editActionOpensInOverLayWindow-gPlanning
@@ -202,8 +202,8 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action    |Action Behavior|Open in overlay     |Programs              |Name                     |Edit                      | 
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation"
-	When I click on "Edit" icon of status "Created" for "Test program for automation" program in flex table
+	When I search for "Test program for automation - Created mode only"
+	When I click on "Edit" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
 	Then I see "Edit" opens in overLay window
 	
 	@34292 @all @refreshEntirePage-gPlanning
@@ -216,8 +216,8 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action    |Refresh Behavior|Refresh the entire page |ProgramRolesAndResponsibilities|Name                     |Edit                      | 
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	When I search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
 	When I click on "Roles" sub tab inside page layout 
 	When I click on "Edit" icon for "Owner" to save inside subtab
 	Then I see entire page is refreshing
@@ -232,8 +232,8 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action    |Hide For Profile|System Administrator   |ProgramRolesAndResponsibilities|Name                       |Edit                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	When I search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
 	When I click on "Roles" sub tab inside page layout
 	Then I see "Edit" icon for "Owner" is not displayed inside flex table
 	
@@ -247,8 +247,8 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action    |Hide For User   |Internal             |ProgramRolesAndResponsibilities|Name                       |Edit                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	When I search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
 	When I click on "Roles" sub tab inside page layout
 	Then I see "Edit" icon for "Owner" is not displayed inside flex table
 	
@@ -262,8 +262,8 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action    |Hide For Context  |Edit                 |ProgramRolesAndResponsibilities|Name                       |Edit                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation"
-	When I click on "Edit" icon of status "Created" for "Test program for automation" program in flex table
+	When I search for "Test program for automation - Created mode only"
+	When I click on "Edit" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
 	When I click on "Roles" sub tab inside page layout
 	Then I see "Edit" icon for "Owner" is not displayed inside flex table
 	
@@ -281,7 +281,7 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action    |Hide Operator     |AND                  |ProgramRolesAndResponsibilities|Name                       |Edit                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation"
-	When I click on "Edit" icon of status "Created" for "Test program for automation" program in flex table
+	When I search for "Test program for automation - Created mode only"
+	When I click on "Edit" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
 	When I click on "Roles" sub tab inside page layout
 	Then I see "Edit" icon for "Owner" is not displayed inside flex table

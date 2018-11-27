@@ -399,7 +399,9 @@ public class FlexTablePage extends GovGrantsManager {
 	 * @return
 	 */
 	private WebElement getOverLayTitle(String titleName) {
-		return reiDriver.WaitFor().WaitForElementToBePresent(By.xpath("//div//p[text()='" + titleName + "']"));
+		return reiDriver.WaitFor().WaitForElementToBePresent(By.xpath(
+				"//iframe[contains(@ng-src,'apex')]//ancestor::div[contains(@class,'modal-content')][1]//p[text()='"
+						+ titleName + "']"));
 	}
 
 	/**
@@ -409,6 +411,8 @@ public class FlexTablePage extends GovGrantsManager {
 	 * @return
 	 */
 	private boolean isSpecificOverlayDisplayed(String titleName) {
+		reiDriver.switchTo().switchToParentFrame();
+		govgrants.mainPage().waitForNavigationLogoToDisappear();
 		boolean flag = false;
 		if (getOverLayTitle(titleName).isDisplayed()) {
 			flag = true;

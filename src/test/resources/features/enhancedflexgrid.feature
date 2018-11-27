@@ -13,8 +13,8 @@ Feature: Enhanced Flex Grid Component Scenarios
 	|Flex Grid:General    |Enable Filter  |false        |TmpActiveGrantsGrid   |                         |                          | 
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	When I search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
 	When I click on "Financials" sub tab inside page layout 
     Then I see Advance Filter is disabled from planning enhanced flex grid
     
@@ -28,8 +28,8 @@ Feature: Enhanced Flex Grid Component Scenarios
 	|Flex Grid:General    |Disable Menu   |true         |TmpActiveGrantsGrid   |                         |                          | 
     When I login as "Automation" User 
     When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-    When I search for "Test program for Automation"
-    When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+    When I search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
 	When I click on "Financials" sub tab inside page layout 
     Then I see Menu Icon is disabled from planning enhanced flex grid
     
@@ -43,8 +43,8 @@ Feature: Enhanced Flex Grid Component Scenarios
 	|Flex Grid:Flex Table List        |Label          |Automation Enhanced Grid |TmpActiveGrantsGrid   |Name                     |FLV-2539                  | 
     When I login as "Automation" User 
     When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-    When I search for "Test program for Automation"
-    When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+    When I search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
 	When I click on "Financials" sub tab inside page layout
 	Then I see "Automation Enhanced Grid" shown as enhanced flex grid title
 	
@@ -58,8 +58,8 @@ Feature: Enhanced Flex Grid Component Scenarios
 	|Flex Grid:General     |Enable Export  |false        |TmpActiveGrantsGrid   |                         |                          | 
     When I login as "Automation" User 
     When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-    When I search for "Test program for Automation"
-    When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+    When I search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
 	When I click on "Financials" sub tab inside page layout
 	When I click on top right parallel lines bar for "Monitoring Schedule For All Active Grants"
 	Then I see "Download as PDF""Download as CSV" options inside "Monitoring Schedule For All Active Grants" disabled
@@ -74,8 +74,8 @@ Feature: Enhanced Flex Grid Component Scenarios
 	|Flex Table:General    |Enable Quick Search |false        |TmpActiveGrantsGrid   |                         |                          | 
 	When I login as "Automation" User 
     When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-    When I search for "Test program for Automation"
-    When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+    When I search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
 	When I click on "Financials" sub tab inside page layout
 	Then I see quick search option disabled from enhanced grid
 	
@@ -89,8 +89,8 @@ Feature: Enhanced Flex Grid Component Scenarios
 	|Flex Grid:General     |Enable Total Records Count |false        |TmpActiveGrantsGrid   |                         |                          | 
 	When I login as "Automation" User 
     When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-    When I search for "Test program for Automation"
-    When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+    When I search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
 	When I click on "Financials" sub tab inside page layout
 	Then I see no total row count in enhanced flex grid
 	
@@ -104,8 +104,8 @@ Feature: Enhanced Flex Grid Component Scenarios
 	|Flex Grid:General     |Enable Auto Index   |true         |TmpActiveGrantsGrid   |                         |                          |
 	When I login as "Automation" User 
     When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-    When I search for "Test program for Automation"
-    When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+    When I search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
 	When I click on "Financials" sub tab inside page layout
 	Then I see "#" in enhanced flex grid header	
 	
@@ -119,8 +119,8 @@ Feature: Enhanced Flex Grid Component Scenarios
 	|Flex Grid:General     |Enable Record Selection|true         |TmpActiveGrantsGrid   |                         |                          |
     When I login as "Automation" User 
     When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-    When I search for "Test program for Automation"
-    When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+    When I search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
 	When I click on "Financials" sub tab inside page layout
 	Then I see select check box enabled in enhanced flex grid
 	
@@ -134,8 +134,8 @@ Feature: Enhanced Flex Grid Component Scenarios
 	|Flex Table Action     |Where To Open ?   |same window  |TmpActiveGrantsGrid   |Name                     |Edit                      |
 	When I login as "Automation" User 
     When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-    When I search for "Test program for Automation"
-    When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+    When I search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
 	When I click on "Financials" sub tab inside page layout
 	When I click on "Edit" icon of status "Active" for "ratnagiri Announcement" program in enhanced flex grid
 	Then I see no new tab is opened for action item in enhanced flex grid
@@ -150,8 +150,8 @@ Feature: Enhanced Flex Grid Component Scenarios
 	|Flex Table Action     |Where To Open ?   |Modal        |TmpActiveGrantsGrid   |Name                     |Edit                      |
 	When I login as "Automation" User 
     When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-    When I search for "Test program for Automation"
-    When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+    When I search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
 	When I click on "Financials" sub tab inside page layout
 	When I click on "Edit" icon of status "Active" for "ratnagiri Announcement" program in enhanced flex grid
 	Then I see "TmpActiveGrantsGrid" opens in overLay window
@@ -166,8 +166,8 @@ Feature: Enhanced Flex Grid Component Scenarios
 	|Flex Grid:General     |Display Field Names|<newFieldsApi>|TmpActiveGrantsGrid   |                         |                          |
 	When I login as "Automation" User 
     When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-    When I search for "Test program for Automation"
-    When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+    When I search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
 	When I click on "Financials" sub tab inside page layout
 	Then I see "<fieldDisplayNames>" in enhanced flex grid header
 	
