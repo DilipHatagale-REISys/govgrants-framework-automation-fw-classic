@@ -14,8 +14,8 @@ Feature: Flex Grid Component Scenarios
 	|Flex Grid:General    |Header         |Automation Goals Objectives     |ProgramStrategicGoals |                         |                          | 
 	When I login as "Automation" User
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	When I search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
 	When I click on "Plan" sub tab inside page layout 
 	Then I see "Automation Goals Objectives" as header
 	
@@ -29,8 +29,8 @@ Feature: Flex Grid Component Scenarios
 	|Flex Grid:General    |Disable Menu   |true            |ProgramStrategicGoals |                         |                          | 
 	When I login as "Automation" User
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	When I search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
 	When I click on "Plan" sub tab inside page layout 
 	Then I see PPMGV menu bars not displayed
 	
@@ -44,8 +44,8 @@ Feature: Flex Grid Component Scenarios
 	|Flex Grid:General    |Enable Quick Search   |false            |ProgramStrategicGoals |                         |                          |
 	When I login as "Automation" User
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	When I search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
 	When I click on "Plan" sub tab inside page layout 
 	Then I see quick search option disabled for "Program Performance Mgmt Grid View"
 	
@@ -59,8 +59,8 @@ Feature: Flex Grid Component Scenarios
 	|Flex Grid:General    |Enable Export         |false            |ProgramStrategicGoals |                         |                          |
 	When I login as "Automation" User
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	When I search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
 	When I click on "Plan" sub tab inside page layout 
 	And I click on PPMGV parallel lines bar
 	Then I see "Download as PDF""Download as CSV" options disabled in PPMGV menu
@@ -75,8 +75,8 @@ Feature: Flex Grid Component Scenarios
 	|Flex Grid:General    |Display Field Names   |Type__c,Title__c,Description__c,Status__c |ProgramStrategicGoals |                         |                          |
 	When I login as "Automation" User
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	When I search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
 	When I click on "Plan" sub tab inside page layout
 	Then I see "Due Date" column for PPMGV flex table is not displayed
 	
@@ -90,7 +90,7 @@ Feature: Flex Grid Component Scenarios
 	|Flex Grid Action:Flex Table Action    |Hide For Context    |View         |ProgramStrategicGoals |Name                     |View                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation" program in flex table
+	When I search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
 	When I click on "Plan" sub tab inside page layout
 	Then I see "View" icon is not displayed inside PPMGV flex table
