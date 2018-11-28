@@ -171,7 +171,7 @@ public class FlexTablePage extends GovGrantsManager {
 	 * for row level action item
 	 */
 	public void clickSaveInModal() {
-		govgrants.modal().clickModalContentSpecificButton("Save");;
+		govgrants.modal().clickModalContentSpecificButton("Save");
 	}
 
 	/**

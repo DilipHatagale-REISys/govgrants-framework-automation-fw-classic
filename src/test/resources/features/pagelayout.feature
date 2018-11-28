@@ -62,7 +62,7 @@ Feature: Page Layout Component Scenarios
 	|new_hide_config|old_hide_config|
 	|Status__c='Created'|Status__c='Active' OR Status__c='Submitted for Approval' OR Status__c='Approved' OR Status__c='Closed' OR Status__c='Disapproved' OR Status__c='Change Requested' OR Status__c='Disapproved' OR Status__c='Rejected'|
 	
-	@34053 @all @hideExpressionJSON-gPlanning @wip
+	@34053 @all @hideExpressionJSON-gPlanning 
 	Scenario: Hide Submit for approval for Created from json configuration and validating it for Created status view icon
 	Given I have default configuration as below:
 	|configurationCategory |fieldName           |fieldOrignalValue    |filterId        |
@@ -323,14 +323,14 @@ Feature: Page Layout Component Scenarios
 	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
 	Then I see complete header overview tab is displayed at view detail page
 	
-	@35976 @all @hideExpressionJsonFieldAtPageTab-gPlanning @wip
+	@35976 @all @hideExpressionJsonFieldAtPageTab-gPlanning
 	Scenario: Hiding overview tab from json config and validating it at program detail page
 	Given I have default configuration as below:
 	|configurationCategory |fieldName             |fieldOrignalValue|filterId        |
 	|Page Tabs Config      |Hide Expression JSON  |                 |ApiGeneratedId:0|
 	Given I setup test configuration as below:
 	|configurationCategory                 |fieldName             |fieldNewValue                                |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
-	|Page Tabs Config:Page Layout Action   |Hide Expression JSON  |govgrants_config:HideExpressionJsonForPageTab|Grantee State Program |Name                     |TAB-209                      |
+	|Page Tabs Config:Page Layout Action   |Hide Expression JSON  |govgrants_config:HideExpressionJsonForPageTab|Grantee State Program |Name                     |TAB-029                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation - Created mode only"
