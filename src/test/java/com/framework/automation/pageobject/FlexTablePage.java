@@ -400,7 +400,7 @@ public class FlexTablePage extends GovGrantsManager {
 	 */
 	private WebElement getOverLayTitle(String titleName) {
 		return reiDriver.WaitFor().WaitForElementToBePresent(By.xpath(
-				"//iframe[contains(@ng-src,'apex')]//ancestor::div[contains(@class,'modal-content')][1]//p[text()='"
+				"//iframe[contains(@ng-src,'apex') or contains(@src,'apex')]//ancestor::div[contains(@class,'modal-content')][1]//p[text()='"
 						+ titleName + "']"));
 	}
 

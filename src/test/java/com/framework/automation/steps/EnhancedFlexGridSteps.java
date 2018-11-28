@@ -57,7 +57,8 @@ public class EnhancedFlexGridSteps {
 
 	@When("^I click on \"([^\"]*)\" icon of status \"([^\"]*)\" for \"([^\"]*)\" program in enhanced flex grid$")
 	public void clickAnyIconInFlexTable(String iconName, String statusName, String programSubject) {
-		enhancedFlexGrid.clickTableActionIconsForSpecificSubjectInsideEnhancedGrid(programSubject, statusName,
-				iconName);
+		//enhancedFlexGrid.clickTableActionIconsForSpecificSubjectInsideEnhancedGrid(programSubject, statusName,
+				//iconName);
+	    enhancedFlexGrid.clickTableActionIconsForSpecificSubject(iconName, statusName, programSubject);
 	}
 }
