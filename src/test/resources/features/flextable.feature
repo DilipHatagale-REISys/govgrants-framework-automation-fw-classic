@@ -276,7 +276,7 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action    |Hide Operator     |                     |ProgramRolesAndResponsibilities|Name                       |Edit                      |
 	Given I setup test configuration as below:
 	|configurationCategory|fieldName         |fieldNewValue        |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
-	|Flex Table Action    |Hide For Profile|System Administrator   |ProgramRolesAndResponsibilities|Name                       |Edit                      |
+	|Flex Table Action    |Hide For Profile  |System Administrator |ProgramRolesAndResponsibilities|Name                       |Edit                      |
 	|Flex Table Action    |Hide For Context  |Edit                 |ProgramRolesAndResponsibilities|Name                       |Edit                      |
 	|Flex Table Action    |Hide Operator     |AND                  |ProgramRolesAndResponsibilities|Name                       |Edit                      |
 	When I login as "Automation" User 
@@ -285,3 +285,22 @@ Feature: Flex Table Component Scenarios
 	When I click on "Edit" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
 	When I click on "Roles" sub tab inside page layout
 	Then I see "Edit" icon for "Owner" is not displayed inside flex table
+	
+	@34302 @all @hideOperatorFieldUsingOROperatorAtFlexTAbleAction-gPlanning
+	Scenario: Hide edit row level action using OR operator from configuration and validating it at under roles and responibilities flex table- gPlanning
+	Given I have default configuration as below:
+	|configurationCategory|fieldName         |fieldOrignalValue    |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action     |Hide For Profile |                     |ProgramRolesAndResponsibilities|Name                       |Edit                      |
+	|Flex Table Action     |Hide For Context |                     |ProgramRolesAndResponsibilities|Name                       |Edit                      |
+	|Flex Table Action     |Hide Operator    |                     |ProgramRolesAndResponsibilities|Name                       |Edit                      |
+	Given I setup test configuration as below:
+	|configurationCategory|fieldName         |fieldNewValue        |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action    |Hide For Profile  |System Administrator |ProgramRolesAndResponsibilities|Name                       |Edit                      |
+	|Flex Table Action    |Hide For Context  |Edit                 |ProgramRolesAndResponsibilities|Name                       |Edit                      |
+	|Flex Table Action    |Hide Operator     |OR                   |ProgramRolesAndResponsibilities|Name                       |Edit                      |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation - Created mode only"
+	When I click on "Edit" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I click on "Roles" sub tab inside page layout
+	Then I see "Edit" icon for "Owner" is not displayed inside flex table	
