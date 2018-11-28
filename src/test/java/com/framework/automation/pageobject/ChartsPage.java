@@ -42,7 +42,7 @@ public class ChartsPage extends GovGrantsManager {
 		Assert.assertTrue(reiDriver.WaitFor()
 				.WaitForElementToBePresent(By.xpath("//div[@id='" + chartName
 						+ "Id']//*[contains(@class,'highcharts-container')]//*[contains(text(),'" + title + "')]"))
-				.isDisplayed());
+				.getText().contains("Automation"));
 	}
 
 	/********* "Local Methods with complete functionality - private" ******/
