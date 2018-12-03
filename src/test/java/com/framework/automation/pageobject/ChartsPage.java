@@ -11,11 +11,11 @@ import com.framework.automation.projectmanager.GovGrantsManager;
 public class ChartsPage extends GovGrantsManager {
 	/******* "Variables and Locators" *****************/
 
-    /**
-     * Constructor to handle dependency injection and framework library
-     */
-    public ChartsPage(Controller controller, CoreHandlers reiDriver,GovGrantsHandler govgrants) {
-        super(controller, reiDriver, govgrants);
+	/**
+	 * Constructor to handle dependency injection and framework library
+	 */
+	public ChartsPage(Controller controller, CoreHandlers reiDriver, GovGrantsHandler govgrants) {
+		super(controller, reiDriver, govgrants);
 	}
 
 	/******* "Key Methods with complete functionality - public" *****************/
@@ -42,7 +42,7 @@ public class ChartsPage extends GovGrantsManager {
 		Assert.assertTrue(reiDriver.WaitFor()
 				.WaitForElementToBePresent(By.xpath("//div[@id='" + chartName
 						+ "Id']//*[contains(@class,'highcharts-container')]//*[contains(text(),'" + title + "')]"))
-				.getText().contains("Automation"));
+				.getText().contains(title));
 	}
 
 	/********* "Local Methods with complete functionality - private" ******/
@@ -61,7 +61,6 @@ public class ChartsPage extends GovGrantsManager {
 				flag = true;
 			}
 		} catch (Exception e) {
-
 		}
 		return flag;
 	}
@@ -80,9 +79,7 @@ public class ChartsPage extends GovGrantsManager {
 				flag = false;
 			}
 		} catch (Exception e) {
-
 		}
 		return flag;
 	}
-
 }

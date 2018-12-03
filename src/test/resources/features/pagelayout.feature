@@ -593,11 +593,13 @@ Feature: Page Layout Component Scenarios
 	|Page Block:Page Block Detail |Hide/Disable attachment Row actions|                  |Grantee State Program |ApiGeneratedId:0|
 	Given I setup test configuration as below:
 	|configurationCategory        |fieldName                          |fieldNewValue     |coreComponentField                                        |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Program	                  |Status                             |Created           |Test program for automation -  SA mode only - Not approved|                         |                          |
 	|Page Block:Page Block Detail |Hide/Disable attachment Row actions|Disable           |Grantee State Program                                     |GNT__PageBlockTitle__c   |Attachments               |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation -  SA mode only - Not approved"
-	When I click on "View Program Details" icon of status "Submitted for Approval" for "Test program for automation -  SA mode only - Not approved" program in flex table
+	When I click on "Edit" icon of status "Created" for "Test program for automation -  SA mode only - Not approved" program in flex table
+	And I complete submit for approval
 	When I click on "Attachments" sub tab inside page layout
 	Then I see edit icon is disabled inside "Attachments" page block
 	
@@ -607,12 +609,14 @@ Feature: Page Layout Component Scenarios
 	|configurationCategory        |fieldName                          |fieldOrignalValue |coreComponentField    |filterId        |
 	|Page Block:Page Block Detail |Hide/Disable attachment Row actions|Disable           |Grantee State Program |ApiGeneratedId:0|
 	Given I setup test configuration as below:
-	|configurationCategory        |fieldName                          |fieldNewValue     |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
-	|Page Block:Page Block Detail |Hide/Disable attachment Row actions|Hide              |Grantee State Program |GNT__PageBlockTitle__c   |Attachments               |
+	|configurationCategory        |fieldName                          |fieldNewValue     |coreComponentField                                        |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Program	                  |Status                             |Created           |Test program for automation -  SA mode only - Not approved|                         |                          |
+	|Page Block:Page Block Detail |Hide/Disable attachment Row actions|Hide              |Grantee State Program                                     |GNT__PageBlockTitle__c   |Attachments               |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation -  SA mode only - Not approved"
-	When I click on "View Program Details" icon of status "Submitted for Approval" for "Test program for automation -  SA mode only - Not approved" program in flex table
+	When I click on "Edit" icon of status "Created" for "Test program for automation -  SA mode only - Not approved" program in flex table
+	And I complete submit for approval
 	When I click on "Attachments" sub tab inside page layout
 	Then I see edit icon is not visible inside "Attachments" page block
 	
@@ -1124,3 +1128,45 @@ Feature: Page Layout Component Scenarios
 	When I search for "Test program for automation -  SA mode only - Can be Approved"
 	When I start the approval with subject "Test program for automation -  SA mode only - Can be Approved"
 	Then I see "Approve" is disabled
+	
+	@36043 @all @hideExpressionJsonFieldAtPageBlock-gPlanning
+	Scenario: Hiding program information page block from json config and validating it at program detail page
+	Given I have default configuration as below:
+	|configurationCategory|fieldName           |fieldOrignalValue  |filterId        |
+	|Page Block           |Hide Expression JSON|                   |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory        |fieldName           |fieldNewValue                                  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Block:Page Block Detail |Hide Expression JSON|govgrants_config:HideExpressionJsonForPageBlock|Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	Then I see "Program Information" page block is not displayed
+	
+	@36116 @all @hideExpressionJsonFieldAtPageBlockDetail-gPlanning
+	Scenario: Disabling of program name page block detail from json config and validating it at program detail page
+	Given I have default configuration as below:
+	|configurationCategory                    |fieldName           |fieldOrignalValue |coreComponentField    |filterId        |
+	|Page Block Config:Page Block Rule Detail |Hide Expression JSON|                  |Grantee State Program |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory                    |fieldName           |fieldNewValue                                         |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue       |
+	|Page Block Config:Page Block Rule Detail |Hide Expression JSON|govgrants_config:HideExpressionJsonForPageBlockDetail |Grantee State Program |Name                     |PBD-3107                         |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	Then I see "Program Name" is not displayed inside page block detail
+	
+	@36134 @all @readOnlyExpressionJSONFieldAtPageBlockDetail-gPlanning
+	Scenario: changing rendering behaviour of program name read only with read only expression json field from config and validaying it at program detail page
+	Given I have default configuration as below:
+	|configurationCategory                    |fieldName                |fieldOrignalValue |coreComponentField    |filterId        |
+	|Page Block Config:Page Block Rule Detail |Read Only Expression JSON|                  |Grantee State Program |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory                    |fieldName                |fieldNewValue                                             |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue       |
+	|Page Block Config:Page Block Rule Detail |Read Only Expression JSON|govgrants_config:ReadOnlyExpressionJsonForPageBlockDetail |Grantee State Program |Name                     |PBD-3107                         |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation - Created mode only"
+	When I click on "Edit" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	Then I see Program Name rendered in view mode only

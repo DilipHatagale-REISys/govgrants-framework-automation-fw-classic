@@ -166,9 +166,9 @@ Feature: Approval Process Component Scenarios
 	|configurationCategory               |fieldName           |fieldOrignalValue  |filterId        |
 	|Approval Process Steps Cache        |Email Field API Name|CreatedById        |ApiGeneratedId:1|
 	Given I setup test configuration as below:
-	|configurationCategory                |fieldName               |fieldNewValue |coreComponentField                                           |
-	|Program	                          |Status                  |Created       |Test program for automation -  SA mode only - Can be Approved|
-	|Approval Process Steps Cache:General |Email Field API Name    |OwnerId       |Program_Manager_Approver                                     |
+	|configurationCategory                |fieldName           |fieldNewValue |coreComponentField                                           |
+	|Program	                          |Status              |Created       |Test program for automation -  SA mode only - Can be Approved|
+	|Approval Process Steps Cache:General |Email Field API Name|OwnerId       |Program_Manager_Approver                                     |
     When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation -  SA mode only - Can be Approved"
@@ -472,3 +472,151 @@ Feature: Approval Process Component Scenarios
 	Examples:
 	|oldProfiles|newProfiles|
 	|ADT; CON; CTR; DA; DEV; EPOC; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND|ADT; CON; CTR; DA; DEV; EPOC; EXE; FD; FO; GA; GMO; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND|
+	
+	@37645 @all @successEmailSentWithRejectTemplateToProgramOwner-Programs 
+	Scenario: Setup email setting in configuration and validate that program owner receiving email with reject email template for program approval
+	Given I have default configuration as below:
+	|configurationCategory               |fieldName             |fieldOrignalValue              |filterId        |
+	|Approval Process Steps Cache        |Approve Email Template|ApiGeneratedId:1               |ApiGeneratedId:3|
+	Given I setup test configuration as below:
+	|configurationCategory                |fieldName               |fieldNewValue                  |coreComponentField                                           |coreCOmponentSubFieldName |coreComponentSubFieldValue |
+	|Program	                          |Status                  |Created                        |Test program for automation -  SA mode only - Can be Approved|                          |                           |
+	|Approval Process Steps Cache:General |Email Template Name     |Program Approved Email Template|Program Approved Email Template                              |                          |                           |
+	|Approval Process Steps Cache:General |Email Template Name     |Program Rejected Email Template|Program Rejected Email Template                              |                          |                           |
+	|Approval Process Steps Cache:General |Approve Email Template  |ApiGeneratedId:2               |Program_Manager_Approver                                     |                          |                           |
+    When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation -  SA mode only - Can be Approved"
+	When I click on "Edit" icon of status "Created" for "Test program for automation -  SA mode only - Can be Approved" program in flex table
+	And I complete submit for approval
+	When I re-login as "Automation-PM" with "QA" url 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	And I navigate to "Tasks" to reach "Pending" side bar content
+	When I search for "Test program for automation -  SA mode only - Can be Approved"
+	When I start the approval with subject "Test program for automation -  SA mode only - Can be Approved"
+	When I select "Approve" from approval decision panel
+	When I enter Approval comment
+    And I click submit
+	And I re-login as "Automation" with "QA" url
+	When I access the "GovGrants Launcher Tab" for "As an Administrator" app to reach "Operate" tab
+	When I navigate to "Activities" to reach "Email Logs" side bar content
+	When I select "Queued Emails" from double headed dropdown inside admin portal
+	Then I see email is generated with template "Program_Rejected_Email_Template"
+	
+	@37646 @all @rejectEmailSentWithApproveTemplateToProgramOwner-Programs
+	Scenario: Setup email setting in configuration and validate that program owner receiving email for rejection with approve email template for program approval
+	Given I have default configuration as below:
+	|configurationCategory               |fieldName             |fieldOrignalValue              |filterId        |
+	|Approval Process Steps Cache        |Reject Email Template |ApiGeneratedId:1               |ApiGeneratedId:3|
+	Given I setup test configuration as below:
+	|configurationCategory                |fieldName               |fieldNewValue                  |coreComponentField                                        |coreCOmponentSubFieldName |coreComponentSubFieldValue |
+	|Program	                          |Status                  |Created                        |Test program for automation -  SA mode only - Not approved|                          |                           |
+	|Approval Process Steps Cache:General |Email Template Name     |Program Rejected Email Template|Program Rejected Email Template                           |                          |                           |
+	|Approval Process Steps Cache:General |Email Template Name     |Program Approved Email Template|Program Approved Email Template                           |                          |                           |
+	|Approval Process Steps Cache:General |Reject Email Template   |ApiGeneratedId:2               |Program_Manager_Approver                                  |                          |                           |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation -  SA mode only - Not approved"
+	When I click on "Edit" icon of status "Created" for "Test program for automation -  SA mode only - Not approved" program in flex table
+	And I complete submit for approval
+	When I re-login as "Automation-PM" with "QA" url
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	And I navigate to "Tasks" to reach "Pending" side bar content
+	When I search for "Test program for automation -  SA mode only - Not approved"
+	When I start the approval with subject "Test program for automation -  SA mode only - Not approved"
+	When I select "Disapprove" from approval decision panel
+	When I enter Approval comment
+	And I click submit
+	And I re-login as "Automation" with "QA" url
+	When I access the "GovGrants Launcher Tab" for "As an Administrator" app to reach "Operate" tab
+	When I navigate to "Activities" to reach "Email Logs" side bar content
+	When I select "Queued Emails" from double headed dropdown inside admin portal
+	Then I see email is generated with template "Program_Approved_Email_Template"
+	
+	@37656 @all @reassignedEmailSentWithApproveTemplateToProgramOwner-Programs
+	Scenario: Setup email setting in configuration and validate that program owner receiving email for reassign with approve email template for program approval
+	Given I have default configuration as below:
+	|configurationCategory               |fieldName                 |fieldOrignalValue              |filterId        |
+	|Approval Process Steps Cache        |Reassigned Email Template |                               |ApiGeneratedId:2|
+	Given I setup test configuration as below:
+	|configurationCategory                |fieldName                |fieldNewValue                  |coreComponentField                                        |coreCOmponentSubFieldName |coreComponentSubFieldValue |
+	|Program	                          |Status                   |Created                        |Test program for automation -  SA mode only - Not approved|                          |                           |
+	|Approval Process Steps Cache:General |Email Template Name      |Program Approved Email Template|Program Approved Email Template                           |                          |                           |
+	|Approval Process Steps Cache:General |Reassigned Email Template|ApiGeneratedId:1               |Program_Manager_Approver                                  |                          |                           |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation -  SA mode only - Not approved"
+	When I click on "Edit" icon of status "Created" for "Test program for automation -  SA mode only - Not approved" program in flex table
+	And I complete submit for approval
+	When I re-login as "Automation-PM" with "QA" url
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	And I navigate to "Tasks" to reach "Pending" side bar content
+	When I search for "Test program for automation -  SA mode only - Not approved"
+	When I start the approval with subject "Test program for automation -  SA mode only - Not approved"
+	When I select "Reassign" from approval decision panel
+	When I click select dropdown
+	When I select specific user "Allen PM"
+	And I click submit
+	And I re-login as "Automation" with "QA" url
+	When I access the "GovGrants Launcher Tab" for "As an Administrator" app to reach "Operate" tab
+	When I navigate to "Activities" to reach "Email Logs" side bar content
+	When I select "Queued Emails" from double headed dropdown inside admin portal
+	Then I see email is generated with template "Program_Approved_Email_Template"
+	
+	@37656 @all @sendToOwnerEmailSentWithApproveTemplateToProgramOwner-Programs
+	Scenario: Setup email setting in configuration and validate that program owner receiving email for reassign with approve email template for program approval
+	Given I have default configuration as below:
+	|configurationCategory               |fieldName                    |fieldOrignalValue              |filterId        |
+	|Approval Process Steps Cache        |Send To Owner Email Template |                               |ApiGeneratedId:2|
+	Given I setup test configuration as below:
+	|configurationCategory                |fieldName                   |fieldNewValue                  |coreComponentField                                        |coreCOmponentSubFieldName |coreComponentSubFieldValue |
+	|Program	                          |Status                      |Created                        |Test program for automation -  SA mode only - Not approved|                          |                           |
+	|Approval Process Steps Cache:General |Email Template Name         |Program Approved Email Template|Program Approved Email Template                           |                          |                           |
+	|Approval Process Steps Cache:General |Send To Owner Email Template|ApiGeneratedId:1               |Program_Manager_Approver                                  |                          |                           |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation -  SA mode only - Not approved"
+	When I click on "Edit" icon of status "Created" for "Test program for automation -  SA mode only - Not approved" program in flex table
+	And I complete submit for approval
+	When I re-login as "Automation-PM" with "QA" url
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	And I navigate to "Tasks" to reach "Pending" side bar content
+	When I search for "Test program for automation -  SA mode only - Not approved"
+	When I start the approval with subject "Test program for automation -  SA mode only - Not approved"
+	When I select "Send to Owner" from approval decision panel
+	When I enter Approval comment
+	And I click submit
+	And I re-login as "Automation" with "QA" url
+	When I access the "GovGrants Launcher Tab" for "As an Administrator" app to reach "Operate" tab
+	When I navigate to "Activities" to reach "Email Logs" side bar content
+	When I select "Queued Emails" from double headed dropdown inside admin portal
+	Then I see email is generated with template "Program_Approved_Email_Template"
+	
+	@37667 @all @notifyAdditionalPeopleThroughEmailWithApproveTemplateToProgramOwner-Programs 
+	Scenario: Setup email setting in configuration and validate that program owner receiving email for program approval
+	Given I have default configuration as below:
+	|configurationCategory                |fieldName               |fieldOrignalValue  |filterId        |
+	|Approval Process Steps Cache         |Notify Additional People|false              |ApiGeneratedId:1|
+	Given I setup test configuration as below:
+	|configurationCategory                |fieldName               |fieldNewValue |coreComponentField                                           |
+	|Program                              |Status                  |Created       |Test program for automation -  SA mode only - Can be Approved|
+	|Approval Process Steps Cache:General |Notify Additional People|true          |Program_Manager_Approver                                     |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation -  SA mode only - Can be Approved"
+	When I click on "Edit" icon of status "Created" for "Test program for automation -  SA mode only - Can be Approved" program in flex table
+	And I complete submit for approval
+	When I re-login as "Automation-PM" with "QA" url 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	And I navigate to "Tasks" to reach "Pending" side bar content
+	When I search for "Test program for automation -  SA mode only - Can be Approved"
+	When I start the approval with subject "Test program for automation -  SA mode only - Can be Approved"
+	When I select "Approve" from approval decision panel
+	When I enter Approval comment
+    And I click submit
+	And I re-login as "Automation" with "QA" url
+	When I access the "GovGrants Launcher Tab" for "As an Administrator" app to reach "Operate" tab
+	When I navigate to "Activities" to reach "Email Logs" side bar content
+	When I select "Queued Emails" from double headed dropdown inside admin portal
+	Then I see email is generated with template "Program_Approved_Email_Template"
+		

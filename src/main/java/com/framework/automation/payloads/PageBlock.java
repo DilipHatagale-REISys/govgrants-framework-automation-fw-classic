@@ -135,6 +135,12 @@ public class PageBlock {
 							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PageBlockConfig__c), filterClause),
 					String.valueOf(SObjectAPIs.GNT__HideDisableRowactions__c), value);
 			break;
+		case "HIDE EXPRESSION JSON":
+			finalPayload = String.format(
+					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageBlockConfig__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PageBlockConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__HideExpressionJSON__c), value);
+			break;
 		}
 		System.out.println(finalPayload);
 		return finalPayload;
@@ -327,6 +333,20 @@ public class PageBlock {
 							apiUtilities.getComponentCoreFieldId(
 									String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
 							String.valueOf(SObjectAPIs.GNT__HelpTextLong__c), value);
+			break;
+		case "HIDE EXPRESSION JSON":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__HideExpressionJSON__c), value);
+			break;
+		case "READ ONLY EXPRESSION JSON":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__ReadOnlyExpressionJSON__c), value);
 			break;
 		}
 		System.out.println(finalPayload);

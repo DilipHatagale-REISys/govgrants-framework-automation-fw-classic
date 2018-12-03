@@ -303,4 +303,69 @@ Feature: Flex Table Component Scenarios
 	When I search for "Test program for automation - Created mode only"
 	When I click on "Edit" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
 	When I click on "Roles" sub tab inside page layout
-	Then I see "Edit" icon for "Owner" is not displayed inside flex table	
+	
+	@39287 @all @headerHelpTextFieldAtFlexTable-gPlanning
+	Scenario Outline: validate disabling of quick search in flex table of programs-planning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName           |fieldOrignalValue|filterId        |
+	|Flex Table            |Header Help Text    |<old_helpText>   |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory     |fieldName           |fieldNewValue   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table:General        |Header Help Text    |<new_helpText>  |Programs              |                         |                          |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I hovering mouse on help text icon inside "Draft Programs" for flex table
+	Then I see "<new_helpText>" shown as help text
+	Examples:
+	|new_helpText            |old_helpText                                                                                                      |
+	|Help Text for Automation|'internal program' represents all the programs that the user has access to and are presented as a list or a table.|
+	
+	@39296 @all @enableHelpFieldAtFlexTable-gPlanning
+	Scenario: validate enabling of help inside menu option in flex table of programs-planning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName     |fieldOrignalValue|filterId        |
+	|Flex Table            |Enable Help   |false            |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory     |fieldName     |fieldNewValue   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table:General        |Enable Help   |true            |Programs              |                         |                          |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I click on top right parallel lines bar for "Draft Programs"
+	Then I see "Help" options inside "Draft Programs" enabled
+	
+	@39298 @all @enablePageSizeFieldAtFlexTable-gPlanning
+	Scenario: validate enabling of page size dropdown at bottom in flex table of programs-planning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName       |fieldOrignalValue|filterId        |
+	|Flex Table            |Enable Page Size|false            |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory     |fieldName       |fieldNewValue   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table:General        |Enable Page Size|true            |Programs              |                         |                          |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	Then I see "Show" with page size dropdown at bottom in flex table
+	
+	@39299 @all @enablePaginationFieldAtFlexTable-gPlanning
+	Scenario: validate enabling of page size dropdown at bottom in flex table of programs-planning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName        |fieldOrignalValue|filterId        |
+	|Flex Table            |Enable Pagination|false            |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory     |fieldName        |fieldNewValue   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table:General        |Enable Pagination|true            |Programs              |                         |                          |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	Then I see "Page" with pagination arrow at bottom in flex table
+	
+	@39302 @all @defaultPageSizeFieldAtFlexTable-gPlanning
+	Scenario: validate enabling of page size dropdown at bottom in flex table of programs-planning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName        |fieldOrignalValue|filterId        |
+	|Flex Table            |Default Page Size|10               |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory     |fieldName        |fieldNewValue   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table:General        |Default Page Size|20              |Programs              |                         |                          |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	Then I see "20" records inside flex table
+	

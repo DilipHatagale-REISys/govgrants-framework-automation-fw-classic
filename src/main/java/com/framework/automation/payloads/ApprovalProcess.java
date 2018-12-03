@@ -168,6 +168,41 @@ public class ApprovalProcess {
 									String.valueOf(SObjectAPIs.GNT__ApprovalProcessStepCache__c), filterClause),
 							String.valueOf(SObjectAPIs.GNT__SendToOwnerConfirmationMessage__c), value);
 			break;
+		case "EMAIL TEMPLATE NAME":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__EmailTemplateConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__EmailTemplateConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.Name), value);
+			break;
+		case "REJECT EMAIL TEMPLATE":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__ApprovalProcessStepCache__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__ApprovalProcessStepCache__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__RejectEmailTemplate__c), value);
+			break;
+		case "REASSIGNED EMAIL TEMPLATE":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__ApprovalProcessStepCache__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__ApprovalProcessStepCache__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__ReassignedEmailTemplate__c), value);
+			break;
+		case "SEND TO OWNER EMAIL TEMPLATE":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__ApprovalProcessStepCache__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__ApprovalProcessStepCache__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__SendToOwnerEmailTemplate__c), value);
+			break;
+		case "NOTIFY ADDITIONAL PEOPLE":
+			finalPayload = String
+					.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__ApprovalProcessStepCache__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__ApprovalProcessStepCache__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__NotifyAdditionalPeople__c), value);
+			break;
 		}
 		System.out.println(finalPayload);
 		return finalPayload;
@@ -216,6 +251,11 @@ public class ApprovalProcess {
 			finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__TaskConfig__c),
 					apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__TaskConfig__c), filterClause),
 					String.valueOf(SObjectAPIs.GNT__ViewPageProfiles__c), value);
+			break;
+		case "EMAIL TEMPLATE CONFIG":
+			finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__TaskConfig__c),
+					apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__TaskConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__EmailTemplateConfig__c), value);
 			break;
 		}
 		System.out.println(finalPayload);
