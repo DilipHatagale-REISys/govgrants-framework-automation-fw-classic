@@ -13,14 +13,10 @@ public class FlexTable {
 	/**
 	 * Handles Accordian Content level configuration
 	 * 
-	 * @param fieldLabel
-	 *            : Name of the field. Name of the API.
-	 * @param ComponentCoreFieldName:
-	 *            Main phase name: eg; GrantorHome
-	 * @param value:
-	 *            Parameter that we want to change
-	 * @param filterClause:
-	 *            filter clause to get the specific id
+	 * @param fieldLabel : Name of the field. Name of the API.
+	 * @param            ComponentCoreFieldName: Main phase name: eg; GrantorHome
+	 * @param            value: Parameter that we want to change
+	 * @param            filterClause: filter clause to get the specific id
 	 * @return: payload
 	 */
 	public String setFlexTableListFieldConfig(String fieldLabel, String value, String filterClause) {
@@ -65,23 +61,12 @@ public class FlexTable {
 	 */
 	public String setFlexTableFieldConfig(String fieldLabel, String value, String filterClause) {
 		String finalPayload = null;
-		Pattern p = Pattern.compile("([0-9])");
-		Matcher m = p.matcher(value);
 		switch (fieldLabel.toUpperCase()) {
 		case "ENABLE EXPORT":
-			if (m.find() || (value.contains("true")) || (value.contains("false"))) {
-				finalPayload = String
-						.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c),
-								apiUtilities.getComponentCoreFieldId(
-										String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
-								String.valueOf(SObjectAPIs.GNT__EnableExport__c), value);
-			} else {
-				finalPayload = String
-						.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c),
-								apiUtilities.getComponentCoreFieldId(
-										String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
-								String.valueOf(SObjectAPIs.GNT__EnableExport__c), value);
-			}
+			finalPayload = String.format(
+					payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__EnableExport__c), value);
 			break;
 		case "ENABLE QUICK SEARCH":
 			finalPayload = String.format(
@@ -143,6 +128,36 @@ public class FlexTable {
 							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
 					String.valueOf(SObjectAPIs.GNT__FilterCriteria__c), value);
 			break;
+		case "HEADER HELP TEXT":
+			finalPayload = String.format(
+					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__HeaderDescription__c), value);
+			break;
+		case "ENABLE HELP":
+			finalPayload = String.format(
+					payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__EnableHelp__c), value);
+			break;
+		case "ENABLE PAGE SIZE":
+			finalPayload = String.format(
+					payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__EnablePageSize__c), value);
+			break;
+		case "ENABLE PAGINATION":
+			finalPayload = String.format(
+					payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__EnablePagination__c), value);
+			break;
+		case "DEFAULT PAGE SIZE":
+			finalPayload = String.format(
+					payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__DefaultPageSize__c), value);
+			break;
 		}
 		System.out.println(finalPayload);
 		return finalPayload;
@@ -177,28 +192,28 @@ public class FlexTable {
 							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableAction__c), filterClause),
 					String.valueOf(SObjectAPIs.GNT__WhereToOpen__c), value);
 			break;
-		case "HIDE FOR PROFILE": 
+		case "HIDE FOR PROFILE":
 			finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c),
 					apiUtilities.getComponentCoreFieldIdForContextObjects(
 							String.valueOf(SObjectAPIs.GNT__DataTableAction__c),
 							String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c), filterClause),
 					String.valueOf(SObjectAPIs.GNT__HideForProfile1__c), value);
 			break;
-		case "HIDE FOR USER": 
+		case "HIDE FOR USER":
 			finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c),
 					apiUtilities.getComponentCoreFieldIdForContextObjects(
 							String.valueOf(SObjectAPIs.GNT__DataTableAction__c),
 							String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c), filterClause),
 					String.valueOf(SObjectAPIs.GNT__HideForUser__c), value);
 			break;
-		case "HIDE FOR CONTEXT": 
+		case "HIDE FOR CONTEXT":
 			finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c),
 					apiUtilities.getComponentCoreFieldIdForContextObjects(
 							String.valueOf(SObjectAPIs.GNT__DataTableAction__c),
 							String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c), filterClause),
 					String.valueOf(SObjectAPIs.GNT__HideForContext__c), value);
 			break;
-		case "HIDE OPERATOR": 
+		case "HIDE OPERATOR":
 			finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c),
 					apiUtilities.getComponentCoreFieldIdForContextObjects(
 							String.valueOf(SObjectAPIs.GNT__DataTableAction__c),

@@ -183,6 +183,46 @@ public class FlexTablePage extends GovGrantsManager {
 		return reiDriver.WaitFor().WaitForElementToBePresent(flexTablelastRowNameAsTotal);
 	}
 
+	/**
+	 * click on help text inside draft program flex table
+	 * 
+	 * @param blockTitle
+	 */
+	public void getHelpTextAtDraftProgramFlexTable(String blockTitle) {
+		reiDriver.Clickers().moveMouseToSpecificLocation(reiDriver.findMyElement()
+				.getElement(By.xpath("//div[text()='" + blockTitle + "']/../../..//span[contains(@class,'fa-info')]")));
+	}
+
+	/**
+	 * assert specific items are displayed in top righ parallel lines bar
+	 * 
+	 * @param option1
+	 */
+	public void assertTopRightParallelLinesBarSpecificOptionsEnabled(String menuOption, String pannelTitleName) {
+		Assert.assertTrue(isTopRightParallelLinesBarSpecificOptionsEnabled(menuOption, pannelTitleName));
+	}
+
+	/**
+	 * assert true if page size is enabled at program flex table
+	 */
+	public void assertFlexTabelPageSizeEnabled(String text) {
+		Assert.assertTrue(isFlexTableBottomElementEnabled(text));
+	}
+
+	/**
+	 * assert true if pagination is enabled at program flex table
+	 */
+	public void assertFlexTabelPaginationEnabled(String text) {
+		Assert.assertTrue(isFlexTableBottomElementEnabled(text));
+	}
+
+	/**
+	 * assert true if 20 records present inside program flex table
+	 */
+	public void assertFlexTabelNumberOfRecordsPresent(int rowCount) {
+		Assert.assertTrue(isNoOfRecordsInsideFlexTablePresent(rowCount));
+	}
+
 	/*********
 	 * "Local Methods with complete functionality - private"
 	 *****************/
@@ -426,5 +466,68 @@ public class FlexTablePage extends GovGrantsManager {
 	 */
 	private String isPageRefreshOnButtonClick() {
 		return reiDriver.JavaScript().getPageLoadStatus();
+	}
+
+	/**
+	 * validate if options are displayed in top right parallel line bar
+	 * 
+	 * @param option1
+	 * @return: true if it is displayed
+	 */
+	private boolean isTopRightParallelLinesBarSpecificOptionsEnabled(String menuOption, String pannelTitleName) {
+		boolean flag = false;
+		try {
+			if (govgrants.phasePannel().getItemFromParallelMenuBars(pannelTitleName, menuOption).isDisplayed()) {
+				flag = true;
+			}
+		} catch (Exception e) {
+			flag = true;
+		}
+		return flag;
+	}
+
+	/**
+	 * 
+	 * @return true if bottom element is displayed at flex table
+	 */
+	private boolean isFlexTableBottomElementEnabled(String text) {
+		reiDriver.JavaScript().scrollPageDocumentJS("PageDown", 0, 0);
+		boolean flag = false;
+		try {
+			if (getBottomFlexTableElement(text).isDisplayed() || getBottomFlexTableElement(text).isEnabled()) {
+				flag = true;
+			}
+		} catch (Exception e) {
+		}
+		return flag;
+	}
+
+	/**
+	 * get webelemnt with text inside bottom of flex table
+	 * 
+	 * @param text
+	 * @return
+	 */
+	private WebElement getBottomFlexTableElement(String text) {
+		return reiDriver.WaitFor().WaitForElementToBePresent(By.xpath(
+				"//div[@class='panel-heading']/following-sibling::div[contains(@class,'panel-body')]//following-sibling::span[contains(text(),'"
+						+ text + "')]"));
+	}
+
+	/**
+	 * 
+	 * @return true if expected count of records is present inside flex table
+	 */
+	private boolean isNoOfRecordsInsideFlexTablePresent(int rowCount) {
+		reiDriver.JavaScript().scrollPageDocumentJS("PageDown", 0, 0);
+		boolean flag = false;
+		try {
+			int listSize = govgrants.flexTable().getCompleteTableRow().size() - 1;
+			if (listSize == rowCount) {
+				flag = true;
+			}
+		} catch (Exception e) {
+		}
+		return flag;
 	}
 }

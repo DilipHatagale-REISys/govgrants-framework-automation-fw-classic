@@ -31,6 +31,11 @@ public class FlexTableSteps {
 		flexTablePage.clickSaveInModal();
 	}
 
+	@When("^I hovering mouse on help text icon inside \"([^\"]*)\" for flex table$")
+	public void getHelpTextIconsAtPageBlock(String blockTitle) {
+		flexTablePage.getHelpTextAtDraftProgramFlexTable(blockTitle);
+	}
+
 	@Then("^I see \"([^\"]*)\" shown as flex table title$")
 	public void assertFlextableTitle(String titleName) {
 		flexTablePage.assertCorrectFlexTableTitleDisplayed(titleName);
@@ -109,5 +114,25 @@ public class FlexTableSteps {
 	@Then("^I see \"([^\"]*)\" icon for \"([^\"]*)\" is not displayed inside flex table$")
 	public void assertActionIconNotDisplayedForflexTable(String iconName, String uniqueColumnValue) {
 		flexTablePage.assertActionIconNotDisplayedInsideflexTable(iconName, uniqueColumnValue);
+	}
+
+	@Then("^I see \"([^\"]*)\" options inside \"([^\"]*)\" enabled$")
+	public void assertTopRightParallelLinesBarOptionsEnabled(String menuOption, String pannelTitleName) {
+		flexTablePage.assertTopRightParallelLinesBarSpecificOptionsEnabled(menuOption, pannelTitleName);
+	}
+
+	@Then("^I see \"([^\"]*)\" with page size dropdown at bottom in flex table$")
+	public void assertFlexTablePageSizeEnabled(String text) {
+		flexTablePage.assertFlexTabelPageSizeEnabled(text);
+	}
+
+	@Then("^I see \"([^\"]*)\" with pagination arrow at bottom in flex table$")
+	public void assertFlexTablePaginationEnabled(String text) {
+		flexTablePage.assertFlexTabelPageSizeEnabled(text);
+	}
+
+	@Then("^I see \"([^\"]*)\" records inside flex table$")
+	public void assertFlexTableNoOfRecords(int rowCount) {
+		flexTablePage.assertFlexTabelNumberOfRecordsPresent(rowCount);
 	}
 }

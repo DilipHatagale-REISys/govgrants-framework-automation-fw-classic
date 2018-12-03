@@ -79,7 +79,7 @@ Feature: Charts Component Scenarios
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	Then I see "$" for chart "FundingSourcesbyTotalAmount"
 	
-	@34984 @all @validateXFormattedNubers-gPlannging
+	@35086 @all @validateXFormattedNubers-gPlannging
 	Scenario: Enable x-formatted numbers for 'Funding Sources by Total Amount' chart in configuratin and validating inside planning
 	Given I have default configuration as below:
 	|configurationCategory |fieldName           |fieldOrignalValue |filterId        |
