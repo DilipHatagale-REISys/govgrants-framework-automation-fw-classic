@@ -198,8 +198,8 @@ public class FlexTablePage extends GovGrantsManager {
 	 * 
 	 * @param option1
 	 */
-	public void assertTopRightParallelLinesBarSpecificOptionsEnabled(String option1, String pannelTitleName) {
-		Assert.assertTrue(isTopRightParallelLinesBarSpecificOptionsEnabled(option1, pannelTitleName));
+	public void assertTopRightParallelLinesBarSpecificOptionsEnabled(String menuOption, String pannelTitleName) {
+		Assert.assertTrue(isTopRightParallelLinesBarSpecificOptionsEnabled(menuOption, pannelTitleName));
 	}
 
 	/**
@@ -474,10 +474,10 @@ public class FlexTablePage extends GovGrantsManager {
 	 * @param option1
 	 * @return: true if it is displayed
 	 */
-	private boolean isTopRightParallelLinesBarSpecificOptionsEnabled(String option1, String pannelTitleName) {
+	private boolean isTopRightParallelLinesBarSpecificOptionsEnabled(String menuOption, String pannelTitleName) {
 		boolean flag = false;
 		try {
-			if (govgrants.phasePannel().getItemFromParallelMenuBars(pannelTitleName, option1).isDisplayed()) {
+			if (govgrants.phasePannel().getItemFromParallelMenuBars(pannelTitleName, menuOption).isDisplayed()) {
 				flag = true;
 			}
 		} catch (Exception e) {

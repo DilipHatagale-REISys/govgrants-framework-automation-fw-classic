@@ -117,8 +117,8 @@ public class FlexTableSteps {
 	}
 
 	@Then("^I see \"([^\"]*)\" options inside \"([^\"]*)\" enabled$")
-	public void assertTopRightParallelLinesBarOptionsEnabled(String option1, String pannelTitleName) {
-		flexTablePage.assertTopRightParallelLinesBarSpecificOptionsEnabled(option1, pannelTitleName);
+	public void assertTopRightParallelLinesBarOptionsEnabled(String menuOption, String pannelTitleName) {
+		flexTablePage.assertTopRightParallelLinesBarSpecificOptionsEnabled(menuOption, pannelTitleName);
 	}
 
 	@Then("^I see \"([^\"]*)\" with page size dropdown at bottom in flex table$")
