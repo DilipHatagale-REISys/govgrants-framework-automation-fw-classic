@@ -46,6 +46,20 @@ public class FlexTable {
 							String.valueOf(SObjectAPIs.GNT__FlexTableFilterListViewConfig__c), filterClause),
 					String.valueOf(SObjectAPIs.GNT__FilterClause__c), value);
 			break;
+		case "HELP TEXT":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__HelpText__c), value);
+			break;
+		case "FIELD LABEL OVERRIDE":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__FieldLabelOverride__c), value);
+			break;
 		}
 		System.out.println(finalPayload);
 		return finalPayload;

@@ -369,3 +369,31 @@ Feature: Flex Table Component Scenarios
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	Then I see "20" records inside flex table
 	
+	@40002 @all @helpTextFieldAtFlexTableColumnHeader-gPlanning
+	Scenario Outline: Changing content of help text field at flex table column header from config and validating it inside flex table of programs-planning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName       |fieldOrignalValue    |filterId        |
+	|Flex Table List       |Help Text       |                     |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory|fieldName        |fieldNewValue       |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table List      |Help Text        |<new_helpText>      |Programs              |Name                     |FTC-1016                  |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I hovering mouse on help text icon inside "ID" for flex table column
+	Then I see "<new_helpText>" shown as help text
+	
+	Examples:
+	|new_helpText            |
+	|Help Text for Automation|
+	
+	@40004 @all @fieldLabelOverrideFieldAtFlexTableColumnHeader-gPlanning
+	Scenario: Changing specific column name of program flex table from config and validating it inside flex table of programs-planning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName           |fieldOrignalValue    |filterId        |
+	|Flex Table List       |Field Label Override|ID                   |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory|fieldName           |fieldNewValue       |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table List      |Field Label Override|Test                |Programs              |Name                     |FTC-1016                  |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	Then I see "Test" shown as flex table column title

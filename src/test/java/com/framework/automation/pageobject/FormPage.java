@@ -11,16 +11,17 @@ import com.framework.automation.projectmanager.GovGrantsManager;
 
 public class FormPage extends GovGrantsManager {
 
-    /******* "Variables and Locators" *****************/
+	/******* "Variables and Locators" *****************/
 
-    private final By businessFormSection;
+	private final By businessFormSection, versionNumber;
 
-    public FormPage(Controller controller, CoreHandlers reiDriver, GovGrantsHandler govgrants) {
-        super(controller, reiDriver, govgrants);
+	public FormPage(Controller controller, CoreHandlers reiDriver, GovGrantsHandler govgrants) {
+		super(controller, reiDriver, govgrants);
 
-        businessFormSection = By.xpath(
-                "//a//span[contains(text(),'Business Forms')]/ancestor::div[contains(@class,'panel panel-default ng-scope')]");
-    }
+		businessFormSection = By.xpath(
+				"//a//span[contains(text(),'Business Forms')]/ancestor::div[contains(@class,'panel panel-default ng-scope')]");
+		versionNumber = By.xpath("//*[@class='editfooterBtnCls']/span[contains(@class,'spacer')]");
+	}
 
 	/******* "Key Methods with complete functionality - public" *****************/
 
@@ -75,6 +76,17 @@ public class FormPage extends GovGrantsManager {
 	 */
 	public void assertEditActionButtonVisibility(String Item) {
 		Assert.assertTrue(isEditButtonDisplayed(Item));
+	}
+
+	/**
+	 * assert if version no is displayed inside form detail page under application
+	 * 
+	 * @param message
+	 */
+	public void assertVersionNoInsideForm(String versionNo) {
+		reiDriver.JavaScript().scrollPageDocumentJS("PageDown", 0, 0);
+		Assert.assertTrue(reiDriver.WaitFor().WaitForElementToBePresent(versionNumber).getAttribute("innerText")
+				.equalsIgnoreCase(versionNo));
 	}
 
 	/*********
