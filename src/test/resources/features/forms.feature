@@ -95,5 +95,21 @@ Feature: Forms Component Scenarios
 	When I click on "View" icon of status "Review Initiated" for "Test announcement for program 2" program in flex table
 	When I click on "Attachments" sub tab inside page layout
 	When I click on "View" icon of form "General Application Cover Page" program in flex table
-	Then I see "Edit" of action item inside form page layout is not displayed	
+	Then I see "Edit" of action item inside form page layout is not displayed
+	
+	@37857 @all @versionFieldAtFormConfig-gApplication
+	Scenario: Changing text for version field at form config for general application form from config and validating it at particular form detail page
+	Given I have default configuration as below:
+	|configurationCategory|fieldName    |fieldOrignalValue    |filterId        |
+	|Forms                |Version      |1.0                  |ApiGeneratedId:0|                    
+	Given I setup test configuration as below:
+	|configurationCategory  |fieldName  |fieldNewValue|coreComponentField      |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Forms:General          |Version    |2.0          |General Application Form|                         |                          |	
+	When I login as "Automation" User
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Applications" tab
+	When I search for "AP-755-198"
+	When I click on "View" icon of status "Review Initiated" for "Test announcement for program 2" program in flex table
+	When I click on "Attachments" sub tab inside page layout
+	When I click on "View" icon of form "General Application Form" program in flex table
+	Then I see "Form Version 2.0" inside Form Version
 	

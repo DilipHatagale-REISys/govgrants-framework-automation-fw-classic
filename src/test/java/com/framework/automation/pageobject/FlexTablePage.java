@@ -223,6 +223,26 @@ public class FlexTablePage extends GovGrantsManager {
 		Assert.assertTrue(isNoOfRecordsInsideFlexTablePresent(rowCount));
 	}
 
+	/**
+	 * click on help text inside program flex table specific to ID column
+	 * 
+	 * @param columnTitle
+	 */
+	public void getHelpTextAtFlexTableSpecificColumn(String columnTitle) {
+		reiDriver.Clickers().moveMouseToSpecificLocation(
+				reiDriver.findMyElement().getElement(By.xpath("//th//span[@title='" + columnTitle + "' or text()='"
+						+ columnTitle + "']/../../following-sibling::span//span[contains(@class,'fa-info')]")));
+	}
+
+	/**
+	 * assert correct flex table column name of table is displayed
+	 * 
+	 * @param columnTitleName
+	 */
+	public void assertCorrectFlexTableColumnTitleDisplayed(String columnTitleName) {
+		Assert.assertTrue(isFlexTableColumnTitleDisplayed(columnTitleName));
+	}
+
 	/*********
 	 * "Local Methods with complete functionality - private"
 	 *****************/
@@ -529,5 +549,23 @@ public class FlexTablePage extends GovGrantsManager {
 		} catch (Exception e) {
 		}
 		return flag;
+	}
+
+	/**
+	 * validate if changed column name of program flex table is displayed
+	 * 
+	 * @param columnTitleName
+	 * @return
+	 */
+	private boolean isFlexTableColumnTitleDisplayed(String columnValueName) {
+		try {
+			if (govgrants.flexTable().getSpecificElementFromTableHeader(columnValueName).isDisplayed()) {
+				return true;
+			} else {
+				return false;
+			}
+		} catch (Exception e) {
+			return false;
+		}
 	}
 }

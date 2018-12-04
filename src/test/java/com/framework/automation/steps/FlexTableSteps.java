@@ -35,6 +35,11 @@ public class FlexTableSteps {
 	public void getHelpTextIconsAtPageBlock(String blockTitle) {
 		flexTablePage.getHelpTextAtDraftProgramFlexTable(blockTitle);
 	}
+	
+	@When("^I hovering mouse on help text icon inside \"([^\"]*)\" for flex table column$")
+	public void getHelpTextIconsAtFlexTableColumn(String columnTitle) {
+		flexTablePage.getHelpTextAtFlexTableSpecificColumn(columnTitle);
+	}
 
 	@Then("^I see \"([^\"]*)\" shown as flex table title$")
 	public void assertFlextableTitle(String titleName) {
@@ -134,5 +139,10 @@ public class FlexTableSteps {
 	@Then("^I see \"([^\"]*)\" records inside flex table$")
 	public void assertFlexTableNoOfRecords(int rowCount) {
 		flexTablePage.assertFlexTabelNumberOfRecordsPresent(rowCount);
+	}
+	
+	@Then("^I see \"([^\"]*)\" shown as flex table column title$")
+	public void assertFlextableColumnName(String columnTitleName) {
+		flexTablePage.assertCorrectFlexTableColumnTitleDisplayed(columnTitleName);
 	}
 }

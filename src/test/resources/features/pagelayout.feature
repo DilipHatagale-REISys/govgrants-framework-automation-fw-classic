@@ -1170,3 +1170,19 @@ Feature: Page Layout Component Scenarios
 	When I search for "Test program for automation - Created mode only"
 	When I click on "Edit" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
 	Then I see Program Name rendered in view mode only
+	
+	@37856 @all @headerFieldAtFormLayout-gApplication
+	Scenario: Changing header name for particular form inside application phase from config and validating it at application form detail page
+	Given I have default configuration as below:
+	|configurationCategory |fieldName          |fieldOrignalValue     |filterId        |
+	|Page Layout           |Header             |Application Simple    |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName          |fieldNewValue         |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout:General   |Header             |Test Automation       |Application - Simple  |                         |                             |
+	When I login as "Automation" User
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Applications" tab
+	When I search for "AP-755-198"
+	When I click on "View" icon of status "Review Initiated" for "Test announcement for program 2" program in flex table
+	When I click on "Attachments" sub tab inside page layout
+	When I click on "View" icon of form "General Application Form" program in flex table
+	Then I see "Test Automation" shown as over view header	

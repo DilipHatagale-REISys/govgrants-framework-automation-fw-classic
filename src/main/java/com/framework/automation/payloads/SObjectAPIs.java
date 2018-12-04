@@ -10,6 +10,7 @@ public enum SObjectAPIs {
     GNT__PageLayoutConfig__r,GNT__PageLayoutActionConfig__c,GNT__ApprovalDecisionActionConfig__c,GNT__FlexTableConfig__r,GNT__DataTableConfig__r,
     Program__c,GNT__ApprovalProcessStepCache__c,GNT__SobjectActionConfig__c,GNT__TaskAction__c,GNT__ProgressbarHeaderConfig__r,GNT__ChartConfig__c,GNT__ChartDetailConfig__c,
     GNT__ChartConfig__r,GNT__PageTemplate__c,GNT__PageBlockConfig__c,GNT__TabLayoutConfig__r,GNT__TabConfig__c,GNT__PageBlockDetailConfig__c,GNT__EmailTemplateConfig__c,
+    GNT__DataTableDetailConfig__c,
     
     //Fields
     GNT__Abbreviation__c, GNT__Active__c,GNT__AvailableForProfiles__c, GNT__DefaultThemeName__c, GNT__InternalUniqueID__c, 
@@ -29,5 +30,5 @@ public enum SObjectAPIs {
     GNT__ReadDecisionField__c,GNT__HideLabel__c,GNT__CustomLookupModalHeader__c,GNT__DisplayLookupFieldNames__c,GNT__SubmitWarningMessage__c,GNT__DisplayArea__c,GNT__HeaderSequence__c,GNT__HelpTextLong__c,GNT__HideApprovalDecisionComponentinEdit__c,GNT__RejectConfirmationTitle__c,
     GNT__RejectConfirmationMessage__c,GNT__ReassignConfirmationTitle__c,GNT__ReassignConfirmationMessage__c,GNT__SendToOwnerConfirmationTitle__c,GNT__SendToOwnerConfirmationMessage__c,GNT__CommentsFieldsAPIName__c,GNT__ViewPageProfiles__c,GNT__RejectColor__c,GNT__IncompleteColor__c,
     GNT__IsCreated__c,GNT__HideForProfile1__c,GNT__HideOperator__c,GNT__RejectEmailTemplate__c,GNT__ReassignedEmailTemplate__c,GNT__SendToOwnerEmailTemplate__c,GNT__NotifyAdditionalPeople__c,GNT__EnableHelp__c,GNT__EnablePageSize__c,GNT__EnablePagination__c,GNT__DefaultPageSize__c,
-    GNT__ReadOnlyExpressionJSON__c
+    GNT__ReadOnlyExpressionJSON__c,GNT__Version__c,
 }
