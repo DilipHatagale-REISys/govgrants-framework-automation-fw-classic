@@ -716,7 +716,7 @@ public class PageLayoutPage extends GovGrantsManager {
 	 * @param status
 	 */
 	private boolean isSubTabSequence(String subTabName, int number) {
-		if (getListSubTabsInsideMainDetailPage().get(number).getText().contains(subTabName) || getListSubTabsInsideMainDetailPage().get(number + 1).getText().contains(subTabName)) {
+		if (getListSubTabsInsideMainDetailPage().get(number).getText().contains(subTabName)) {
 			return true;
 		} else
 			return false;
