@@ -34,7 +34,7 @@ public class GovGrantsManager extends ProjectWebServices {
 			menuIcon, selectRecordCheckBox, totalRowsCalc, totalRowCount, flexTablelastRowNameAsTotal,
 			editIconForProgramFlexTable, pendingTasksTableRef, dangerAlert, confirmationBoxMessage, selectDropdown,
 			specificUserInsideDropdown, quickSearchButton, doubleArrowDropDown, navProfile_CurrentApp, saveButton,
-			allPhases, chartsContainer, containerFluid_PageWrapperList, reachOutToEnhancedGridCollapse ;
+			allPhases, chartsContainer, containerFluid_PageWrapperList, reachOutToEnhancedGridCollapse;
 
 	/**
 	 * Super Constructor
@@ -86,7 +86,7 @@ public class GovGrantsManager extends ProjectWebServices {
 		containerFluid_PageWrapperList = By.cssSelector("div#page-content-wrapper>div.container-fluid>div>div>div");
 		reachOutToEnhancedGridCollapse = By.xpath(
 				"//div[@class='panel-heading']//div[contains(@class,'panel-title')]//*[text()='Budget Category ']");
-		
+
 	}
 
 	/******* "Key Methods with complete functionality - Public" *****************/
@@ -211,7 +211,7 @@ public class GovGrantsManager extends ProjectWebServices {
 		govgrants.pageDetails().clickAnyTopRightButtonWithoutSwitching(buttonName);
 		reiDriver.switchTo().acceptAlert();
 	}
-	
+
 	/**
 	 * get any item from top right bar inside phases
 	 * 
@@ -337,6 +337,21 @@ public class GovGrantsManager extends ProjectWebServices {
 	}
 
 	/**
+	 * click flex table item based on program name/subject , status and iconName
+	 * without processing any operation on modal/confirmation box
+	 * 
+	 * @param programSubject
+	 * @param statusName
+	 * @param iconName
+	 */
+	public void clickTableActionIconsForSpecificSubjectWithoutProcessing(String iconName, String statusName,
+			String programSubject) {
+		govgrants.mainPage().waitForNavigationLogoToDisappear();
+		reiDriver.findMyElement()
+				.getElement(govgrants.flexTable().getTableActionIcon(iconName, programSubject, statusName)).click();
+	}
+
+	/**
 	 * click on right header bars
 	 */
 	public void clickRightHeaderBars(String title) {
@@ -345,7 +360,7 @@ public class GovGrantsManager extends ProjectWebServices {
 		} catch (Exception e) {
 		}
 		govgrants.phasePannel().clickParallelMenuBars(title);
-	}	
+	}
 
 	/**
 	 * perform complete quick search in flex
