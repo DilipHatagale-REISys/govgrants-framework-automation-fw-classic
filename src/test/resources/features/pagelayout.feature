@@ -204,12 +204,12 @@ Feature: Page Layout Component Scenarios
 	|Page Tabs Config      |Sort Order                |0                    |ApiGeneratedId:0|
 	Given I setup test configuration as below:
 	|configurationCategory                 |fieldName     |fieldNewValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
-	|Page Tabs Config:Page Layout Action   |Sort Order    |10             |Grantee State Program |Name                     |TAB-029                      |
+	|Page Tabs Config:Page Layout Action   |Sort Order    |6              |Grantee State Program |Name                     |TAB-029                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
-	Then I see "Overview" shown at number "8" inside subtabs
+	Then I see "Overview" shown at number "5" inside subtabs
 	
 	@34355 @all @headerInstructionTextFieldAtPageTab-gPlanning
 	Scenario: Setup header instruction text for overview page tab from config and validating it at program detail page

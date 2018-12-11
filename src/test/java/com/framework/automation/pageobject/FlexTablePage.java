@@ -320,6 +320,17 @@ public class FlexTablePage extends GovGrantsManager {
 				.getElement(govgrants.flexTable().getTableActionIcon(iconName, uniqueColumnValue)).isDisplayed());
 	}
 
+	/**
+	 * return false if action button inside active funding opportunities flex table
+	 * as per name is displayed
+	 * 
+	 * @param buttonName
+	 * @param headerName
+	 */
+	public void assertActionButtonInsideFlexTableIsNotDisplayed(String buttonName, String headerName) {
+		Assert.assertFalse(isActionButtonInsideTopOfFlexTableDisplayed(buttonName, headerName));
+	}
+	
 	/*********
 	 * "Local Methods with complete functionality - private"
 	 *****************/
@@ -703,7 +714,7 @@ public class FlexTablePage extends GovGrantsManager {
 			if (govgrants.phasePannel().getTopRightButton(headerName, buttonName).isDisplayed()) {
 				flag = true;
 			}
-		} catch (org.openqa.selenium.NoSuchElementException e) {
+		} catch (Exception e) {
 		}
 		return flag;
 	}

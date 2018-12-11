@@ -225,11 +225,11 @@ Feature: Flex Table Component Scenarios
 	@34297 @all @hideForProfileFieldAtRolesAndResponsibilitiesFlexTableAction-gPlanning
 	Scenario: Hide edit row level action for specific profile from configuration and validating it at under roles and responibilities flex table- gPlanning
 	Given I have default configuration as below:
-	|configurationCategory |fieldName        |fieldOrignalValue    |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
-	|Flex Table Action     |Hide For Profile |                     |ProgramRolesAndResponsibilities|Name                       |Edit                      |
+	|configurationCategory         |fieldName        |fieldOrignalValue    |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action Sobject     |Hide For Profile |                     |ProgramRolesAndResponsibilities|Name                       |Edit                      |
 	Given I setup test configuration as below:
-	|configurationCategory|fieldName       |fieldNewValue          |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
-	|Flex Table Action    |Hide For Profile|System Administrator   |ProgramRolesAndResponsibilities|Name                       |Edit                      |
+	|configurationCategory         |fieldName        |fieldNewValue          |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action Sobject     |Hide For Profile |System Administrator   |ProgramRolesAndResponsibilities|Name                       |Edit                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation - Created mode only"
@@ -240,11 +240,11 @@ Feature: Flex Table Component Scenarios
 	@34298 @all @hideForUserFieldAtRolesAndResponsibilitiesFlexTableAction-gPlanning
 	Scenario: Hide edit row level action for specific profile from configuration and validating it at under roles and responibilities flex table- gPlanning
 	Given I have default configuration as below:
-	|configurationCategory|fieldName      |fieldOrignalValue    |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
-	|Flex Table Action    |Hide For User  |                     |ProgramRolesAndResponsibilities|Name                       |Edit                      |
+	|configurationCategory        |fieldName       |fieldOrignalValue    |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action Sobject    |Hide For User   |                     |ProgramRolesAndResponsibilities|Name                       |Edit                      |
 	Given I setup test configuration as below:
-	|configurationCategory|fieldName       |fieldNewValue        |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
-	|Flex Table Action    |Hide For User   |Internal             |ProgramRolesAndResponsibilities|Name                       |Edit                      |
+	|configurationCategory        |fieldName       |fieldNewValue        |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action Sobject    |Hide For User   |Internal             |ProgramRolesAndResponsibilities|Name                       |Edit                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation - Created mode only"
@@ -255,11 +255,11 @@ Feature: Flex Table Component Scenarios
 	@34299 @all @hideForContextFieldAtRolesAndResponsibilitiesFlexTableAction-gPlanning
 	Scenario: Hide edit row level action for edit layout from configuration and validating it at under roles and responibilities flex table- gPlanning
 	Given I have default configuration as below:
-	|configurationCategory|fieldName         |fieldOrignalValue    |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
-	|Flex Table Action    |Hide For Context  |                     |ProgramRolesAndResponsibilities|Name                       |Edit                      |
+	|configurationCategory        |fieldName         |fieldOrignalValue    |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action Sobject    |Hide For Context  |                     |ProgramRolesAndResponsibilities|Name                       |Edit                      |
 	Given I setup test configuration as below:
-	|configurationCategory|fieldName         |fieldNewValue        |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
-	|Flex Table Action    |Hide For Context  |Edit                 |ProgramRolesAndResponsibilities|Name                       |Edit                      |
+	|configurationCategory        |fieldName         |fieldNewValue        |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action Sobject    |Hide For Context  |Edit                 |ProgramRolesAndResponsibilities|Name                       |Edit                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation - Created mode only"
@@ -270,15 +270,15 @@ Feature: Flex Table Component Scenarios
 	@34300 @all @hideOperatorFieldUsingANDOperatorAtRolesAndResponsibilitiesFlexTAbleAction-gPlanning
 	Scenario: Hide edit row level action using AND operator from configuration and validating it at under roles and responibilities flex table- gPlanning
 	Given I have default configuration as below:
-	|configurationCategory|fieldName         |fieldOrignalValue    |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
-	|Flex Table Action     |Hide For Profile |                     |ProgramRolesAndResponsibilities|Name                       |Edit                      |
-	|Flex Table Action     |Hide For Context |                     |ProgramRolesAndResponsibilities|Name                       |Edit                      |
-	|Flex Table Action    |Hide Operator     |                     |ProgramRolesAndResponsibilities|Name                       |Edit                      |
+	|configurationCategory       |fieldName        |fieldOrignalValue    |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action Sobject   |Hide For Profile |                     |ProgramRolesAndResponsibilities|Name                       |Edit                      |
+	|Flex Table Action Sobject   |Hide For Context |                     |ProgramRolesAndResponsibilities|Name                       |Edit                      |
+	|Flex Table Action Sobject   |Hide Operator    |                     |ProgramRolesAndResponsibilities|Name                       |Edit                      |
 	Given I setup test configuration as below:
-	|configurationCategory|fieldName         |fieldNewValue        |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
-	|Flex Table Action    |Hide For Profile  |System Administrator |ProgramRolesAndResponsibilities|Name                       |Edit                      |
-	|Flex Table Action    |Hide For Context  |Edit                 |ProgramRolesAndResponsibilities|Name                       |Edit                      |
-	|Flex Table Action    |Hide Operator     |AND                  |ProgramRolesAndResponsibilities|Name                       |Edit                      |
+	|configurationCategory       |fieldName        |fieldNewValue        |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action Sobject   |Hide For Profile |System Administrator |ProgramRolesAndResponsibilities|Name                       |Edit                      |
+	|Flex Table Action Sobject   |Hide For Context |Edit                 |ProgramRolesAndResponsibilities|Name                       |Edit                      |
+	|Flex Table Action Sobject   |Hide Operator    |AND                  |ProgramRolesAndResponsibilities|Name                       |Edit                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation - Created mode only"
@@ -289,15 +289,15 @@ Feature: Flex Table Component Scenarios
 	@34302 @all @hideOperatorFieldUsingOROperatorAtRolesAndResponsibilitiesFlexTAbleAction-gPlanning
 	Scenario: Hide edit row level action using OR operator from configuration and validating it at under roles and responibilities flex table- gPlanning
 	Given I have default configuration as below:
-	|configurationCategory|fieldName         |fieldOrignalValue    |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
-	|Flex Table Action     |Hide For Profile |                     |ProgramRolesAndResponsibilities|Name                       |Edit                      |
-	|Flex Table Action     |Hide For Context |                     |ProgramRolesAndResponsibilities|Name                       |Edit                      |
-	|Flex Table Action     |Hide Operator    |                     |ProgramRolesAndResponsibilities|Name                       |Edit                      |
+	|configurationCategory        |fieldName        |fieldOrignalValue    |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action Sobject    |Hide For Profile |                     |ProgramRolesAndResponsibilities|Name                       |Edit                      |
+	|Flex Table Action Sobject    |Hide For Context |                     |ProgramRolesAndResponsibilities|Name                       |Edit                      |
+	|Flex Table Action Sobject    |Hide Operator    |                     |ProgramRolesAndResponsibilities|Name                       |Edit                      |
 	Given I setup test configuration as below:
-	|configurationCategory|fieldName         |fieldNewValue        |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
-	|Flex Table Action    |Hide For Profile  |System Administrator |ProgramRolesAndResponsibilities|Name                       |Edit                      |
-	|Flex Table Action    |Hide For Context  |Edit                 |ProgramRolesAndResponsibilities|Name                       |Edit                      |
-	|Flex Table Action    |Hide Operator     |OR                   |ProgramRolesAndResponsibilities|Name                       |Edit                      |
+	|configurationCategory        |fieldName        |fieldNewValue        |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action Sobject    |Hide For Profile |System Administrator |ProgramRolesAndResponsibilities|Name                       |Edit                      |
+	|Flex Table Action Sobject    |Hide For Context |Edit                 |ProgramRolesAndResponsibilities|Name                       |Edit                      |
+	|Flex Table Action Sobject    |Hide Operator    |OR                   |ProgramRolesAndResponsibilities|Name                       |Edit                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation - Created mode only"
@@ -570,7 +570,7 @@ Feature: Flex Table Component Scenarios
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table without processing
 	Then I see confirmation box with body "null" is displayed
 	
 	@40102 @all @ConfirmationMessageFieldForProgramFlexTAbleViewAction-gPlanning
@@ -586,7 +586,7 @@ Feature: Flex Table Component Scenarios
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table without processing
 	Then I see confirmation box with body "Automation" is displayed
 	
 	@40103 @all @modalTitleFieldForProgramFlexTAbleViewAction-gPlanning
@@ -608,15 +608,15 @@ Feature: Flex Table Component Scenarios
 	@40106 @all @hideForProfileFieldAtProgramFlexTableEditAction-gPlanning
 	Scenario Outline: Hide edit row level action for specific profile from configuration and validating it at under program flex table- gPlanning
 	Given I have default configuration as below:
-	|configurationCategory |fieldName               |fieldOrignalValue         |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
-	|Flex Table Action     |Hide For Profile        |                          |Programs                  |Name                       |Edit                      |
-	|Flex Table Action     |Hide Decision Expression|<defaultExpression>       |Programs                  |Name                       |Edit                      |
-	|Flex Table Action     |Hide Decision Field     |<defaultHideDecisionField>|Programs                  |Name                       |Edit                      |
+	|configurationCategory        |fieldName               |fieldOrignalValue         |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action Sobject    |Hide For Profile        |                          |Programs                  |Name                       |Edit                      |
+	|Flex Table Action Sobject    |Hide Decision Expression|<defaultExpression>       |Programs                  |Name                       |Edit                      |
+	|Flex Table Action Sobject    |Hide Decision Field     |<defaultHideDecisionField>|Programs                  |Name                       |Edit                      |
 	Given I setup test configuration as below:
-	|configurationCategory |fieldName               |fieldNewValue         |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
-	|Flex Table Action     |Hide For Profile        |System Administrator  |Programs                       |Name                       |Edit                      |
-	|Flex Table Action     |Hide Decision Expression|                      |Programs                       |Name                       |Edit                      |
-	|Flex Table Action     |Hide Decision Field     |                      |Programs                       |Name                       |Edit                      |
+	|configurationCategory        |fieldName               |fieldNewValue         |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action Sobject    |Hide For Profile        |System Administrator  |Programs                       |Name                       |Edit                      |
+	|Flex Table Action Sobject    |Hide Decision Expression|                      |Programs                       |Name                       |Edit                      |
+	|Flex Table Action Sobject    |Hide Decision Field     |                      |Programs                       |Name                       |Edit                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation - Created mode only"
@@ -629,15 +629,15 @@ Feature: Flex Table Component Scenarios
 	@40109 @all @hideForUserFieldAtProgramFlexTableEditAction-gPlanning
 	Scenario Outline: Hide edit row level action for specific user from configuration and validating it at under program flex table- gPlanning
 	Given I have default configuration as below:
-	|configurationCategory |fieldName               |fieldOrignalValue         |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
-	|Flex Table Action     |Hide For User           |                          |Programs                  |Name                       |Edit                      |
-	|Flex Table Action     |Hide Decision Expression|<defaultExpression>       |Programs                  |Name                       |Edit                      |
-	|Flex Table Action     |Hide Decision Field     |<defaultHideDecisionField>|Programs                  |Name                       |Edit                      |
+	|configurationCategory         |fieldName               |fieldOrignalValue         |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action Sobject     |Hide For User           |                          |Programs                  |Name                       |Edit                      |
+	|Flex Table Action Sobject     |Hide Decision Expression|<defaultExpression>       |Programs                  |Name                       |Edit                      |
+	|Flex Table Action Sobject     |Hide Decision Field     |<defaultHideDecisionField>|Programs                  |Name                       |Edit                      |
 	Given I setup test configuration as below:
-	|configurationCategory |fieldName               |fieldNewValue         |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
-	|Flex Table Action     |Hide For User           |Internal              |Programs                       |Name                       |Edit                      |
-	|Flex Table Action     |Hide Decision Expression|                      |Programs                       |Name                       |Edit                      |
-	|Flex Table Action     |Hide Decision Field     |                      |Programs                       |Name                       |Edit                      |
+	|configurationCategory         |fieldName               |fieldNewValue         |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action Sobject     |Hide For User           |Internal              |Programs                       |Name                       |Edit                      |
+	|Flex Table Action Sobject     |Hide Decision Expression|                      |Programs                       |Name                       |Edit                      |
+	|Flex Table Action Sobject     |Hide Decision Field     |                      |Programs                       |Name                       |Edit                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation - Created mode only"
@@ -650,15 +650,15 @@ Feature: Flex Table Component Scenarios
 	@40112 @all @hideForContextFieldAtProgramFlexTableEditAction-gPlanning
 	Scenario Outline: Hide edit row level action for view layout from configuration and validating it at under program flex table- gPlanning
 	Given I have default configuration as below:
-	|configurationCategory |fieldName               |fieldOrignalValue         |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
-	|Flex Table Action     |Hide For Context        |                          |Programs                  |Name                       |Edit                      |
-	|Flex Table Action     |Hide Decision Expression|<defaultExpression>       |Programs                  |Name                       |Edit                      |
-	|Flex Table Action     |Hide Decision Field     |<defaultHideDecisionField>|Programs                  |Name                       |Edit                      |
+	|configurationCategory         |fieldName               |fieldOrignalValue         |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action Sobject     |Hide For Context        |                          |Programs                  |Name                       |Edit                      |
+	|Flex Table Action Sobject     |Hide Decision Expression|<defaultExpression>       |Programs                  |Name                       |Edit                      |
+	|Flex Table Action Sobject     |Hide Decision Field     |<defaultHideDecisionField>|Programs                  |Name                       |Edit                      |
 	Given I setup test configuration as below:
-	|configurationCategory |fieldName               |fieldNewValue         |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
-	|Flex Table Action     |Hide For Context        |View                  |Programs                       |Name                       |Edit                      |
-	|Flex Table Action     |Hide Decision Expression|                      |Programs                       |Name                       |Edit                      |
-	|Flex Table Action     |Hide Decision Field     |                      |Programs                       |Name                       |Edit                      |
+	|configurationCategory         |fieldName               |fieldNewValue         |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action Sobject     |Hide For Context        |View                  |Programs                       |Name                       |Edit                      |
+	|Flex Table Action Sobject     |Hide Decision Expression|                      |Programs                       |Name                       |Edit                      |
+	|Flex Table Action Sobject     |Hide Decision Field     |                      |Programs                       |Name                       |Edit                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation - Created mode only"
@@ -671,14 +671,14 @@ Feature: Flex Table Component Scenarios
 	@40115 @all @hideDecisionFieldAtProgramFlexTableEditAction-gPlanning
 	Scenario Outline: Hide edit row level action for view layout from configuration and validating it at under program flex table- gPlanning
 	Given I have default configuration as below:
-	|configurationCategory |fieldName               |fieldOrignalValue         |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
-	|Flex Table Action     |Hide Decision Expression|<defaultExpression>       |Programs                  |Name                       |Edit                      |
-	|Flex Table Action     |Hide Decision Field     |<defaultHideDecisionField>|Programs                  |Name                       |Edit                      |
+	|configurationCategory         |fieldName               |fieldOrignalValue         |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action Sobject     |Hide Decision Expression|<defaultExpression>       |Programs                  |Name                       |Edit                      |
+	|Flex Table Action Sobject     |Hide Decision Field     |<defaultHideDecisionField>|Programs                  |Name                       |Edit                      |
 	Given I setup test configuration as below:
-	|configurationCategory |fieldName               |fieldNewValue             |coreComponentField                                           |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
-	|Program               |Status                  |Created                   |Test program for automation -  SA mode only - Can be Approved|                           |                          |
-	|Flex Table Action     |Hide Decision Expression|                          |Programs                                                     |Name                       |Edit                      |
-	|Flex Table Action     |Hide Decision Field     |<defaultHideDecisionField>|Programs                                                     |Name                       |Edit                      |
+	|configurationCategory         |fieldName               |fieldNewValue             |coreComponentField                                           |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Program                       |Status                  |Created                   |Test program for automation -  SA mode only - Can be Approved|                           |                          |
+	|Flex Table Action Sobject     |Hide Decision Expression|                          |Programs                                                     |Name                       |Edit                      |
+	|Flex Table Action Sobject     |Hide Decision Field     |<defaultHideDecisionField>|Programs                                                     |Name                       |Edit                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation -  SA mode only - Can be Approved"
@@ -704,18 +704,18 @@ Feature: Flex Table Component Scenarios
 	@40119 @all @hideOperatorFieldUsingANDOperatorAtProgramFlexTAbleAction-gPlanning
 	Scenario Outline: Hide edit row level action using AND operator for program flex table from configuration and validating it at under programs flex table- gPlanning
 	Given I have default configuration as below:
-	|configurationCategory|fieldName                |fieldOrignalValue         |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
-	|Flex Table Action     |Hide For Profile        |                          |Programs                       |Name                       |Edit                      |
-	|Flex Table Action     |Hide For User           |                          |Programs                       |Name                       |Edit                      |
-	|Flex Table Action     |Hide Decision Expression|<defaultExpression>       |Programs                       |Name                       |Edit                      |
-	|Flex Table Action     |Hide Decision Field     |<defaultHideDecisionField>|Programs                       |Name                       |Edit                      |
+	|configurationCategory        |fieldName               |fieldOrignalValue         |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action Sobject    |Hide For Profile        |                          |Programs                       |Name                       |Edit                      |
+	|Flex Table Action Sobject    |Hide For User           |                          |Programs                       |Name                       |Edit                      |
+	|Flex Table Action Sobject    |Hide Decision Expression|<defaultExpression>       |Programs                       |Name                       |Edit                      |
+	|Flex Table Action Sobject    |Hide Decision Field     |<defaultHideDecisionField>|Programs                       |Name                       |Edit                      |
 	Given I setup test configuration as below:
-	|configurationCategory|fieldName               |fieldNewValue        |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
-	|Flex Table Action    |Hide For Profile        |System Administrator |Programs                       |Name                       |Edit                      |
-	|Flex Table Action    |Hide For User           |Internal             |Programs                       |Name                       |Edit                      |
-	|Flex Table Action    |Hide Operator           |AND                  |Programs                       |Name                       |Edit                      |
-	|Flex Table Action    |Hide Decision Expression|                     |Programs                       |Name                       |Edit                      |
-	|Flex Table Action    |Hide Decision Field     |                     |Programs                       |Name                       |Edit                      |
+	|configurationCategory        |fieldName               |fieldNewValue        |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action Sobject    |Hide For Profile        |System Administrator |Programs                       |Name                       |Edit                      |
+	|Flex Table Action Sobject    |Hide For User           |Internal             |Programs                       |Name                       |Edit                      |
+	|Flex Table Action Sobject    |Hide Operator           |AND                  |Programs                       |Name                       |Edit                      |
+	|Flex Table Action Sobject    |Hide Decision Expression|                     |Programs                       |Name                       |Edit                      |
+	|Flex Table Action Sobject    |Hide Decision Field     |                     |Programs                       |Name                       |Edit                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation - Created mode only"
@@ -728,19 +728,19 @@ Feature: Flex Table Component Scenarios
 	@40121 @all @hideOperatorFieldUsingOROperatorAtProgramFlexTAbleAction-gPlanning
 	Scenario Outline: Hide edit row level action using AND operator for program flex table from configuration and validating it at under programs flex table- gPlanning
 	Given I have default configuration as below:
-	|configurationCategory|fieldName                |fieldOrignalValue         |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
-	|Flex Table Action     |Hide For Profile        |                          |Programs                       |Name                       |Edit                      |
-	|Flex Table Action     |Hide For User           |                          |Programs                       |Name                       |Edit                      |
-	|Flex Table Action     |Hide Operator           |AND                       |Programs                       |Name                       |Edit                      |
-	|Flex Table Action     |Hide Decision Expression|<defaultExpression>       |Programs                       |Name                       |Edit                      |
-	|Flex Table Action     |Hide Decision Field     |<defaultHideDecisionField>|Programs                       |Name                       |Edit                      |
+	|configurationCategory         |fieldName               |fieldOrignalValue         |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action Sobject     |Hide For Profile        |                          |Programs                       |Name                       |Edit                      |
+	|Flex Table Action Sobject     |Hide For User           |                          |Programs                       |Name                       |Edit                      |
+	|Flex Table Action Sobject     |Hide Operator           |AND                       |Programs                       |Name                       |Edit                      |
+	|Flex Table Action Sobject     |Hide Decision Expression|<defaultExpression>       |Programs                       |Name                       |Edit                      |
+	|Flex Table Action Sobject     |Hide Decision Field     |<defaultHideDecisionField>|Programs                       |Name                       |Edit                      |
 	Given I setup test configuration as below:
-	|configurationCategory|fieldName               |fieldNewValue        |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
-	|Flex Table Action    |Hide For Profile        |System Administrator |Programs                       |Name                       |Edit                      |
-	|Flex Table Action    |Hide For User           |Internal             |Programs                       |Name                       |Edit                      |
-	|Flex Table Action    |Hide Operator           |OR                   |Programs                       |Name                       |Edit                      |
-	|Flex Table Action    |Hide Decision Expression|                     |Programs                       |Name                       |Edit                      |
-	|Flex Table Action    |Hide Decision Field     |                     |Programs                       |Name                       |Edit                      |
+	|configurationCategory        |fieldName               |fieldNewValue        |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action Sobject    |Hide For Profile        |System Administrator |Programs                       |Name                       |Edit                      |
+	|Flex Table Action Sobject    |Hide For User           |Internal             |Programs                       |Name                       |Edit                      |
+	|Flex Table Action Sobject    |Hide Operator           |OR                   |Programs                       |Name                       |Edit                      |
+	|Flex Table Action Sobject    |Hide Decision Expression|                     |Programs                       |Name                       |Edit                      |
+	|Flex Table Action Sobject    |Hide Decision Field     |                     |Programs                       |Name                       |Edit                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation - Created mode only"
@@ -753,12 +753,84 @@ Feature: Flex Table Component Scenarios
 	@40124 @all @hideExpressionJSONFieldAtProgramFlexTable-gPlanning 
 	Scenario: Hide edit row level action for program flex table from json configuration and validating it under program flex table-gPlanning
 	Given I have default configuration as below:
-	|configurationCategory |fieldName           |fieldOrignalValue    |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
-	|Flex Table Action     |Hide Expression JSON|                     |Programs              |Name                     |Edit                      |
+	|configurationCategory         |fieldName           |fieldOrignalValue    |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table Action Sobject     |Hide Expression JSON|                     |Programs              |Name                     |Edit                      |
 	Given I setup test configuration as below:
-	|configurationCategory |fieldName           |fieldNewValue                                    |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
-	|Flex Table Action     |Hide Expression JSON|govgrants_config:ProgramFlexTableExpressionJson  |Programs              |Name                     |Edit                      |
+	|configurationCategory         |fieldName           |fieldNewValue                                    |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table Action Sobject     |Hide Expression JSON|govgrants_config:ProgramFlexTableExpressionJson  |Programs              |Name                     |Edit                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation - Created mode only"
 	Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
+	
+	@40128 @all @hideForProfileFieldAtActiveFundingOpprtunityFlexTableCreateAction-gAnnouncement
+	Scenario: Hide create top level action for specific profile from configuration and validating it at under active funding opprtunities flex table- gPlanning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName         |fieldOrignalValue     |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action     |Hide For Profile  |                      |ActiveFundingOpportunities|Name                       |Create                    |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName         |fieldNewValue         |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action     |Hide For Profile  |System Administrator  |ActiveFundingOpportunities|Name                       |Create                    |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Announcements" tab
+	When I select "Draft Announcements" from double headed dropdown inside admin portal
+	Then I see "Create" button inside "Draft Announcements" flex table not displayed
+	
+	@40129 @all @hideForUserFieldAtActiveFundingOpprtunityFlexTableCreateAction-gAnnouncement
+	Scenario: Hide create top level action for specific profile from configuration and validating it at under active funding opprtunities flex table- gPlanning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName         |fieldOrignalValue     |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action     |Hide For User     |                      |ActiveFundingOpportunities|Name                       |Create                    |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName         |fieldNewValue         |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action     |Hide For User     |Internal              |ActiveFundingOpportunities|Name                       |Create                    |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Announcements" tab
+	When I select "Draft Announcements" from double headed dropdown inside admin portal
+	Then I see "Create" button inside "Draft Announcements" flex table not displayed
+	
+	@40217 @all @hideOperatorFieldUsingANDOperatorAtActiveFundingOpprtunityFlexTableCreateAction-gAnnouncement
+	Scenario: Hide create top level action for specific profile from configuration and validating it at under active funding opprtunities flex table- gPlanning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName         |fieldOrignalValue     |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action     |Hide For User     |                      |ActiveFundingOpportunities|Name                       |Create                    |
+	|Flex Table Action     |Hide For Profile  |                      |ActiveFundingOpportunities|Name                       |Create                    |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName         |fieldNewValue         |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action     |Hide For User     |Internal              |ActiveFundingOpportunities|Name                       |Create                    |
+	|Flex Table Action     |Hide For Profile  |System Administrator  |ActiveFundingOpportunities|Name                       |Create                    |
+	|Flex Table Action     |Hide Operator     |AND                   |ActiveFundingOpportunities|Name                       |Create                    |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Announcements" tab
+	When I select "Draft Announcements" from double headed dropdown inside admin portal
+	Then I see "Create" button inside "Draft Announcements" flex table not displayed
+	
+	@40219 @all @hideOperatorFieldUsingOROperatorAtActiveFundingOpprtunityFlexTableCreateAction-gAnnouncement
+	Scenario: Hide create top level action for specific profile from configuration and validating it at under active funding opprtunities flex table- gPlanning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName         |fieldOrignalValue     |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action     |Hide For User     |                      |ActiveFundingOpportunities|Name                       |Create                    |
+	|Flex Table Action     |Hide For Profile  |                      |ActiveFundingOpportunities|Name                       |Create                    |
+	|Flex Table Action     |Hide Operator     |AND                   |ActiveFundingOpportunities|Name                       |Create                    |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName         |fieldNewValue         |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action     |Hide For User     |Internal              |ActiveFundingOpportunities|Name                       |Create                    |
+	|Flex Table Action     |Hide For Profile  |System Administrator  |ActiveFundingOpportunities|Name                       |Create                    |
+	|Flex Table Action     |Hide Operator     |OR                    |ActiveFundingOpportunities|Name                       |Create                    |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Announcements" tab
+	When I select "Draft Announcements" from double headed dropdown inside admin portal
+	Then I see "Create" button inside "Draft Announcements" flex table not displayed
+	
+	@40220 @all @hideExpressionJSONFieldAtActiveFundingOpprtunityFlexTableCreateAction-gAnnouncement
+	Scenario: Hide create top level action for specific profile from configuration and validating it at under active funding opprtunities flex table- gPlanning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName            |fieldOrignalValue     |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action     |Hide Expression JSON |                      |ActiveFundingOpportunities|Name                       |Create                    |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName            |fieldNewValue                                                     |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action     |Hide Expression JSON |govgrants_config:ActiveFundingOpportunitiesFlexTableExpressionJson|ActiveFundingOpportunities|Name                       |Create                    |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Announcements" tab
+	When I select "Draft Announcements" from double headed dropdown inside admin portal
+	Then I see "Create" button inside "Draft Announcements" flex table not displayed

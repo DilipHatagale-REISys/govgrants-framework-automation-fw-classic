@@ -89,14 +89,16 @@ Feature: Step Progress Bar Component Scenarios
 	Scenario: validate after enabling negative field for submit for approval step progress bar and validating its appearence on program detail page-programs
 	Given I have default configuration as below:
 	|configurationCategory  |fieldName         |fieldOrignalValue|filterId        |
-	|Step Progressbar Detail|Negative Path     |false            |ApiGeneratedId:0|
+	|Step Progressbar Detail|Negative Path     |false            |ApiGeneratedId:1|
 	Given I setup test configuration as below:
-	|configurationCategory   |fieldName       |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
-	|Step Progressbar Detail |Negative Path   |true         |Program Progress Bar  |Name                     |Submitted for Approval    |
-	When I login as "Automation" User
+	|configurationCategory   |fieldName       |fieldNewValue|coreComponentField                                        |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Program	             |Status          |Created      |Test program for automation -  SA mode only - Not approved|                         |                          |
+	|Step Progressbar Detail |Negative Path   |true         |Program Progress Bar                                      |Name                     |Submitted for Approval    |
+	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation -  SA mode only - Not approved"
-	When I click on "View Program Details" icon of status "Submitted for Approval" for "Test program for automation -  SA mode only - Not approved" program in flex table
+	When I click on "Edit" icon of status "Created" for "Test program for automation -  SA mode only - Not approved" program in flex table
+	And I complete submit for approval
 	Then I see step progress bar displayed in "Red" color for status "Submitted for Approval"
 	
 	@37316 @all @rejectColorFieldAtStepProgressBar-gPlanning
@@ -147,14 +149,16 @@ Feature: Step Progress Bar Component Scenarios
 	Scenario Outline: validate hover text of submit for approval status from progress bar for internal user and validating it on program detail page-programs
 	Given I have default configuration as below:
 	|configurationCategory  |fieldName         |fieldOrignalValue|filterId        |
-	|Step Progressbar Detail|IsCreated         |false            |ApiGeneratedId:0|
+	|Step Progressbar Detail|IsCreated         |false            |ApiGeneratedId:1|
 	Given I setup test configuration as below:
-	|configurationCategory   |fieldName       |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
-	|Step Progressbar Detail |IsCreated       |true         |Program Progress Bar  |Name                     |Submitted for Approval    |
+	|configurationCategory   |fieldName       |fieldNewValue|coreComponentField                                        |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Program	             |Status          |Created      |Test program for automation -  SA mode only - Not approved|                         |                          |
+	|Step Progressbar Detail |IsCreated       |true         |Program Progress Bar                                      |Name                     |Submitted for Approval    |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I search for "Test program for automation -  SA mode only - Not approved"
-	When I click on "View Program Details" icon of status "Submitted for Approval" for "Test program for automation -  SA mode only - Not approved" program in flex table
+	When I click on "Edit" icon of status "Created" for "Test program for automation -  SA mode only - Not approved" program in flex table
+	And I complete submit for approval
 	When I hovering mouse on Status inside step progress bar "Submitted for Approval"
 	Then I see "<textInsideStatus>" shown as help text
 	

@@ -219,55 +219,6 @@ public class FlexTable {
 							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableAction__c), filterClause),
 					String.valueOf(SObjectAPIs.GNT__WhereToOpen__c), value);
 			break;
-		case "HIDE FOR PROFILE":
-			finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c),
-					apiUtilities.getComponentCoreFieldIdForContextObjects(
-							String.valueOf(SObjectAPIs.GNT__DataTableAction__c),
-							String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c), filterClause),
-					String.valueOf(SObjectAPIs.GNT__HideForProfile1__c), value);
-			break;
-		case "HIDE FOR USER":
-			finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c),
-					apiUtilities.getComponentCoreFieldIdForContextObjects(
-							String.valueOf(SObjectAPIs.GNT__DataTableAction__c),
-							String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c), filterClause),
-					String.valueOf(SObjectAPIs.GNT__HideForUser__c), value);
-			break;
-		case "HIDE FOR CONTEXT":
-			finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c),
-					apiUtilities.getComponentCoreFieldIdForContextObjects(
-							String.valueOf(SObjectAPIs.GNT__DataTableAction__c),
-							String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c), filterClause),
-					String.valueOf(SObjectAPIs.GNT__HideForContext__c), value);
-			break;
-		case "HIDE OPERATOR":
-			finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c),
-					apiUtilities.getComponentCoreFieldIdForContextObjects(
-							String.valueOf(SObjectAPIs.GNT__DataTableAction__c),
-							String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c), filterClause),
-					String.valueOf(SObjectAPIs.GNT__HideOperator__c), value);
-			break;
-		case "HIDE DECISION EXPRESSION":
-			finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c),
-					apiUtilities.getComponentCoreFieldIdForContextObjects(
-							String.valueOf(SObjectAPIs.GNT__DataTableAction__c),
-							String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c), filterClause),
-					String.valueOf(SObjectAPIs.GNT__HideDecisionExpression__c), value);
-			break;
-		case "HIDE DECISION FIELD":
-			finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c),
-					apiUtilities.getComponentCoreFieldIdForContextObjects(
-							String.valueOf(SObjectAPIs.GNT__DataTableAction__c),
-							String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c), filterClause),
-					String.valueOf(SObjectAPIs.GNT__HideDecisionField__c), value);
-			break;
-		case "HIDE EXPRESSION JSON":
-			finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c),
-					apiUtilities.getComponentCoreFieldIdForContextObjects(
-							String.valueOf(SObjectAPIs.GNT__DataTableAction__c),
-							String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c), filterClause),
-					String.valueOf(SObjectAPIs.GNT__HideExpressionJSON__c), value);
-			break;
 		case "SEQUENCE":
 			finalPayload = String.format(
 					payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableAction__c), apiUtilities
@@ -321,6 +272,95 @@ public class FlexTable {
 					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableAction__c), apiUtilities
 							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableAction__c), filterClause),
 					String.valueOf(SObjectAPIs.GNT__ModalTitle__c), value);
+			break;
+		case "HIDE FOR PROFILE":
+			finalPayload = String.format(
+					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableAction__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableAction__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__HideForProfile__c), value);
+			break;
+		case "HIDE FOR USER":
+			finalPayload = String.format(
+					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableAction__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableAction__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__HideForUser__c), value);
+			break;
+		case "HIDE OPERATOR":
+			finalPayload = String.format(
+					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableAction__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableAction__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__HideOperator__c), value);
+			break;
+		case "HIDE EXPRESSION JSON":
+			finalPayload = String.format(
+					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableAction__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableAction__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__HideExpressionJSON__c), value);
+			break;
+		}
+		System.out.println(finalPayload);
+		return finalPayload;
+	}
+	
+	/**
+	 * setup configuration for flex table action with Sobject
+	 * 
+	 * @param fieldLabel
+	 * @param value
+	 * @param filterClause
+	 * @return
+	 */
+	public String setFlexTableActionConfigSobject(String fieldLabel, String value, String filterClause) {
+		String finalPayload = null;
+		switch (fieldLabel.toUpperCase()) {
+		case "HIDE FOR PROFILE":
+			finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c),
+					apiUtilities.getComponentCoreFieldIdForContextObjects(
+							String.valueOf(SObjectAPIs.GNT__DataTableAction__c),
+							String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__HideForProfile1__c), value);
+			break;
+		case "HIDE FOR USER":
+			finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c),
+					apiUtilities.getComponentCoreFieldIdForContextObjects(
+							String.valueOf(SObjectAPIs.GNT__DataTableAction__c),
+							String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__HideForUser__c), value);
+			break;
+		case "HIDE FOR CONTEXT":
+			finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c),
+					apiUtilities.getComponentCoreFieldIdForContextObjects(
+							String.valueOf(SObjectAPIs.GNT__DataTableAction__c),
+							String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__HideForContext__c), value);
+			break;
+		case "HIDE OPERATOR":
+			finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c),
+					apiUtilities.getComponentCoreFieldIdForContextObjects(
+							String.valueOf(SObjectAPIs.GNT__DataTableAction__c),
+							String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__HideOperator__c), value);
+			break;
+		case "HIDE DECISION EXPRESSION":
+			finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c),
+					apiUtilities.getComponentCoreFieldIdForContextObjects(
+							String.valueOf(SObjectAPIs.GNT__DataTableAction__c),
+							String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__HideDecisionExpression__c), value);
+			break;
+		case "HIDE DECISION FIELD":
+			finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c),
+					apiUtilities.getComponentCoreFieldIdForContextObjects(
+							String.valueOf(SObjectAPIs.GNT__DataTableAction__c),
+							String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__HideDecisionField__c), value);
+			break;
+		case "HIDE EXPRESSION JSON":
+			finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c),
+					apiUtilities.getComponentCoreFieldIdForContextObjects(
+							String.valueOf(SObjectAPIs.GNT__DataTableAction__c),
+							String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__HideExpressionJSON__c), value);
 			break;
 		}
 		System.out.println(finalPayload);

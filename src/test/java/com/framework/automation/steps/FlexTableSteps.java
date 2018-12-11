@@ -41,6 +41,11 @@ public class FlexTableSteps {
 		flexTablePage.getHelpTextAtFlexTableSpecificColumn(columnTitle);
 	}
 
+	@When("^I click on \"([^\"]*)\" icon of status \"([^\"]*)\" for \"([^\"]*)\" program in flex table without processing$")
+	public void clickTableActionIconsWithoutProcessing(String iconName, String statusName, String programSubject) {
+		flexTablePage.clickTableActionIconsForSpecificSubjectWithoutProcessing(iconName, statusName, programSubject);
+	}
+
 	@Then("^I see \"([^\"]*)\" shown as flex table title$")
 	public void assertFlextableTitle(String titleName) {
 		flexTablePage.assertCorrectFlexTableTitleDisplayed(titleName);
@@ -184,5 +189,10 @@ public class FlexTableSteps {
 	@Then("^I see \"([^\"]*)\" displayed in flex table Action modal$")
 	public void assertModalTitleForFlexTableAction(String titleName) {
 		flexTablePage.asserTextInOverLayIframe(titleName);
+	}
+
+	@Then("^I see \"([^\"]*)\" button inside \"([^\"]*)\" flex table not displayed$")
+	public void assertCreateButtonInsideActiveFundingOpprtunitiesFlexTable(String buttonName, String headerName) {
+		flexTablePage.assertActionButtonInsideFlexTableIsNotDisplayed(buttonName, headerName);
 	}
 }

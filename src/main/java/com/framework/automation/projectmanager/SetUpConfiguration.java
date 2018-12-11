@@ -45,6 +45,9 @@ public class SetUpConfiguration {
 		case "FLEX TABLE ACTION":
 			stringPayload = new FlexTable().setFlexTableActionConfig(fieldLabel, value, filterClause);
 			break;
+		case "FLEX TABLE ACTION SOBJECT":
+			stringPayload = new FlexTable().setFlexTableActionConfigSobject(fieldLabel, value, filterClause);
+			break;
 		case "PAGE LAYOUT":
 			stringPayload = new PageLayout().setPageLayOutConfig(fieldLabel, value, filterClause);
 			break;
