@@ -180,4 +180,9 @@ public class FlexTableSteps {
 	public void getHelpTextAtEditIconsInsideFlexTable(String iconName, String columnName) {
 		flexTablePage.getHelpTextAtEditActionOfFlexTable(iconName, columnName);
 	}
+
+	@Then("^I see \"([^\"]*)\" displayed in flex table Action modal$")
+	public void assertModalTitleForFlexTableAction(String titleName) {
+		flexTablePage.asserTextInOverLayIframe(titleName);
+	}
 }

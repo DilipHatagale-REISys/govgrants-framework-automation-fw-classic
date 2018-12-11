@@ -163,6 +163,8 @@ public class FlexTablePage extends GovGrantsManager {
 	 * @param actionIcon
 	 */
 	public void assertActionIconNotDisplayedInsideflexTable(String iconName, String uniqueColumnValue) {
+		reiDriver.WaitFor()
+				.WaitForElementToBePresent(govgrants.flexTable().getTableActionIcon(iconName, uniqueColumnValue));
 		Assert.assertFalse(reiDriver.findMyElement()
 				.getElement(govgrants.flexTable().getTableActionIcon(iconName, uniqueColumnValue)).isDisplayed());
 	}
@@ -698,11 +700,7 @@ public class FlexTablePage extends GovGrantsManager {
 	private boolean isActionButtonInsideTopOfFlexTableDisplayed(String buttonName, String headerName) {
 		boolean flag = false;
 		try {
-			if (reiDriver.findMyElement().getElement(By.xpath("//*[@title='" + headerName
-					+ "']/ancestor::div[contains(@class,'header-title') or 1]/following-sibling::div/div[contains(@class,'header-buttons')]//*[text()='"
-					+ buttonName + "'] | //*[text()='" + buttonName
-					+ "']/ancestor::div[1]/following-sibling::div/div//*[text()='" + buttonName + "']"))
-					.isDisplayed()) {
+			if (govgrants.phasePannel().getTopRightButton(headerName, buttonName).isDisplayed()) {
 				flag = true;
 			}
 		} catch (org.openqa.selenium.NoSuchElementException e) {
