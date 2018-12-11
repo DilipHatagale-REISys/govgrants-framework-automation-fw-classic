@@ -86,7 +86,7 @@ Feature: Flex Table Component Scenarios
 	|Flex Table:General        |Enable Total Row         |false           |Programs              |                         |                          |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	Then I see no total amount in flex table
+	Then I see no total amount row in flex table
 	
 	@34031 @all @disablingTotalRowCount-gPlanning
 	Scenario: validate disbaling of total row count in flex table of programs-planning
@@ -222,7 +222,7 @@ Feature: Flex Table Component Scenarios
 	When I click on "Edit" icon for "Owner" to save inside subtab
 	Then I see entire page is refreshing
 	
-	@34297 @all @hideForProfileFieldAtFlexTableAction-gPlanning
+	@34297 @all @hideForProfileFieldAtRolesAndResponsibilitiesFlexTableAction-gPlanning
 	Scenario: Hide edit row level action for specific profile from configuration and validating it at under roles and responibilities flex table- gPlanning
 	Given I have default configuration as below:
 	|configurationCategory |fieldName        |fieldOrignalValue    |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
@@ -237,7 +237,7 @@ Feature: Flex Table Component Scenarios
 	When I click on "Roles" sub tab inside page layout
 	Then I see "Edit" icon for "Owner" is not displayed inside flex table
 	
-	@34298 @all @hideForUserFieldAtFlexTableAction-gPlanning
+	@34298 @all @hideForUserFieldAtRolesAndResponsibilitiesFlexTableAction-gPlanning
 	Scenario: Hide edit row level action for specific profile from configuration and validating it at under roles and responibilities flex table- gPlanning
 	Given I have default configuration as below:
 	|configurationCategory|fieldName      |fieldOrignalValue    |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
@@ -252,8 +252,8 @@ Feature: Flex Table Component Scenarios
 	When I click on "Roles" sub tab inside page layout
 	Then I see "Edit" icon for "Owner" is not displayed inside flex table
 	
-	@34299 @all @hideForContextFieldAtFlexTableAction-gPlanning
-	Scenario: Hide edit row level action for specific profile from configuration and validating it at under roles and responibilities flex table- gPlanning
+	@34299 @all @hideForContextFieldAtRolesAndResponsibilitiesFlexTableAction-gPlanning
+	Scenario: Hide edit row level action for edit layout from configuration and validating it at under roles and responibilities flex table- gPlanning
 	Given I have default configuration as below:
 	|configurationCategory|fieldName         |fieldOrignalValue    |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
 	|Flex Table Action    |Hide For Context  |                     |ProgramRolesAndResponsibilities|Name                       |Edit                      |
@@ -267,7 +267,7 @@ Feature: Flex Table Component Scenarios
 	When I click on "Roles" sub tab inside page layout
 	Then I see "Edit" icon for "Owner" is not displayed inside flex table
 	
-	@34300 @all @hideOperatorFieldUsingANDOperatorAtFlexTAbleAction-gPlanning
+	@34300 @all @hideOperatorFieldUsingANDOperatorAtRolesAndResponsibilitiesFlexTAbleAction-gPlanning
 	Scenario: Hide edit row level action using AND operator from configuration and validating it at under roles and responibilities flex table- gPlanning
 	Given I have default configuration as below:
 	|configurationCategory|fieldName         |fieldOrignalValue    |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
@@ -286,7 +286,7 @@ Feature: Flex Table Component Scenarios
 	When I click on "Roles" sub tab inside page layout
 	Then I see "Edit" icon for "Owner" is not displayed inside flex table
 	
-	@34302 @all @hideOperatorFieldUsingOROperatorAtFlexTAbleAction-gPlanning
+	@34302 @all @hideOperatorFieldUsingOROperatorAtRolesAndResponsibilitiesFlexTAbleAction-gPlanning
 	Scenario: Hide edit row level action using OR operator from configuration and validating it at under roles and responibilities flex table- gPlanning
 	Given I have default configuration as below:
 	|configurationCategory|fieldName         |fieldOrignalValue    |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
@@ -303,9 +303,10 @@ Feature: Flex Table Component Scenarios
 	When I search for "Test program for automation - Created mode only"
 	When I click on "Edit" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
 	When I click on "Roles" sub tab inside page layout
+	Then I see "Edit" icon for "Owner" is not displayed inside flex table
 	
 	@39287 @all @headerHelpTextFieldAtFlexTable-gPlanning
-	Scenario Outline: validate disabling of quick search in flex table of programs-planning
+	Scenario Outline: Changing content of header help text field at flex table and validating it at draft program flex table
 	Given I have default configuration as below:
 	|configurationCategory |fieldName           |fieldOrignalValue|filterId        |
 	|Flex Table            |Header Help Text    |<old_helpText>   |ApiGeneratedId:0|
@@ -397,3 +398,367 @@ Feature: Flex Table Component Scenarios
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	Then I see "Test" shown as flex table column title
+	
+	@39294 @all @skipFieldForExportFieldAtFlexTable-gPlanning
+	Scenario: Setup skip form export for 'Status_c' in configuration and validating inside program flex table
+	Given I have default configuration as below:
+	|configurationCategory |fieldName              |fieldOrignalValue|filterId        |
+	|Flex Table            |Skip Fields For Export |                 |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory     |fieldName              |fieldNewValue   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table:General        |Skip Fields For Export |Status__c       |Programs              |                         |                          |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I click on top right parallel lines bar for "Draft Programs"
+	And I select "Download As PDF" from dropdown
+	And I download the file
+	Then I do not see "Status" on page "1" of "govgrants" pdf file
+	
+	@40005 @all @enableTotalFieldAtFlexTable-gPlanning
+	Scenario: Enabling total amount inside funded amount columb for all records config and validating it inside flex table of programs-planning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName           |fieldOrignalValue    |filterId        |
+	|Flex Table List       |Enable Total        |true                     |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory|fieldName           |fieldNewValue       |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table List      |Enable Total        |true                |Programs              |Name                     |FTC-1018                  |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	Then I see total amount in flex table
+	
+	@40012 @all @sequenceFieldAtFlexTableAction-gPlanning
+	Scenario: Changing sequence of edit row level action item at flex table from config and validating it inside flex table of programs-planning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName       |fieldOrignalValue    |filterId        |
+	|Flex Table Action     |Sequence        |1                    |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory|fieldName      |fieldNewValue      |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table Action    |Sequence       |2                  |Programs              |Name                     |Edit                      |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation - Created mode only"
+	Then I see "Edit" row action Button at position "1"
+	
+	@40014 @all @buttonHelpTextFieldAtFlexTableAction-gPlanning
+	Scenario: Changing content of button help text field at flex table action from config and validating it inside flex table of programs-planning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName       |fieldOrignalValue    |filterId        |
+	|Flex Table Action     |Button Help Text|                     |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory|fieldName       |fieldNewValue      |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table Action    |Button Help Text|Automation Help    |Programs              |Name                     |Edit                      |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation - Created mode only"
+	Then I see "Automation Help" as title for "Test program for automation - Created mode only" inside flex table action
+		
+	@40015 @all @actionURLFieldAtFlexTableAction-gPlanning
+	Scenario Outline: Changing action url of action url field for edit action from config and validating it at flex table of program-planning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName       |fieldOrignalValue    |filterId        |
+	|Flex Table Action     |Action URL      |<oldActionUrl>       |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory|fieldName       |fieldNewValue      |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table Action    |Action URL      |<newActionUrl>     |Programs              |Name                     |Edit                      |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation - Created mode only"
+	When I click on "Edit" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	Then I see edit opens with "<newActionUrl>"
+	
+	Examples:
+	|oldActionUrl|newActionUrl|
+	|/apex/ProgramEdit?id={!Program__c.Id}&RecordType=InternalProgram|https://www.google.com/|
+	
+	@40020 @all @iconCSSFieldAtFlexTableAction-gPlanning
+	Scenario: Setup icon for flex table edit action from config and validating it at flex table of program-planning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName       |fieldOrignalValue                                 |filterId        |
+	|Flex Table Action     |Icon CSS        |govgrants_config:FlexTableEditActionDefaultIconCss|ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory|fieldName       |fieldNewValue                                 |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table Action    |Icon CSS        |govgrants_config:FlexTableEditActionNewIconCss|Programs              |Name                     |Edit                      |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation - Created mode only"
+	Then I see external link icon as "Test program for automation - Created mode only" for "Edit" inside flex table action
+	
+	@40079 @all @locationFieldAtFlexTableRowLevelEditAction-gPlanning
+	Scenario: Changing location of roles and responsibilities flex table edit action from row to top from config anf validating it inside Roles and Responsibilities flex table
+	Given I have default configuration as below:
+	|configurationCategory |fieldName                 |fieldOrignalValue    |coreComponentField             |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table Action     |Location                  |Row                  |ProgramRolesAndResponsibilities|Name                     |Edit                      |
+	|Flex Table Action     |Header Action Display Type|                     |ProgramRolesAndResponsibilities|Name                     |Edit                      |
+	Given I setup test configuration as below:
+	|configurationCategory|fieldName                  |fieldNewValue           |coreComponentField             |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table Action    |Location                   |Top                     |ProgramRolesAndResponsibilities|Name                     |Edit                      |
+	|Flex Table Action    |Header Action Display Type |Button                  |ProgramRolesAndResponsibilities|Name                     |Edit                      |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I click on "Roles" sub tab inside page layout
+	Then I see "Edit" button inside "Roles And Responsibilities" flex table
+	
+	@40080 @all @locationFieldAtFlexTableTopLevelNewAction-gPlanning
+	Scenario: Changing location of roles and responsibilities flex table new action button from top to row from config anf validating it inside Roles and Responsibilities flex table
+	Given I have default configuration as below:
+	|configurationCategory |fieldName                 |fieldOrignalValue    |coreComponentField             |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table Action     |Location                  |Top                  |ProgramRolesAndResponsibilities|Name                     |New                       |
+	|Flex Table Action     |Header Action Display Type|Button               |ProgramRolesAndResponsibilities|Name                     |New                       |
+	Given I setup test configuration as below:
+	|configurationCategory|fieldName                  |fieldNewValue           |coreComponentField             |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table Action    |Location                   |Row                     |ProgramRolesAndResponsibilities|Name                     |New                       |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I click on "Roles" sub tab inside page layout
+	Then I see "New" icon for "Owner" is displayed inside flex table
+	
+	@40087 @all @headerActionDisplayTypeFieldAtFlexTableTopLevelNewActionAsMenu-gPlanning
+	Scenario: Changing display type of roles and responsibilities flex table new action button from button to menu from config anf validating it inside Roles and Responsibilities flex table
+	Given I have default configuration as below:
+	|configurationCategory |fieldName                 |fieldOrignalValue    |coreComponentField             |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table Action     |Header Action Display Type|Button               |ProgramRolesAndResponsibilities|Name                     |New                       |
+	Given I setup test configuration as below:
+	|configurationCategory|fieldName                  |fieldNewValue           |coreComponentField             |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table Action     |Header Action Display Type|Menu                    |ProgramRolesAndResponsibilities|Name                     |New                       |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I click on "Roles" sub tab inside page layout
+	When I click on top right parallel lines bar for "Roles And Responsibilities"
+	Then I see "New" options inside "Roles And Responsibilities" enabled
+	
+	@40088 @all @headerActionDisplayTypeFieldAtFlexTableTopLevelNewActionAsLink-gPlanning
+	Scenario: Changing display type of roles and responsibilities flex table new action button from button to menu from config anf validating it inside Roles and Responsibilities flex table
+	Given I have default configuration as below:
+	|configurationCategory |fieldName                 |fieldOrignalValue    |coreComponentField             |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table Action     |Header Action Display Type|Button               |ProgramRolesAndResponsibilities|Name                     |New                       |
+	Given I setup test configuration as below:
+	|configurationCategory|fieldName                  |fieldNewValue           |coreComponentField             |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table Action     |Header Action Display Type|link                    |ProgramRolesAndResponsibilities|Name                     |New                       |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I click on "Roles" sub tab inside page layout
+	Then I see "New" button inside "Roles And Responsibilities" flex table
+	
+	@40096 @all @headerActionDisplayTypeFieldAtFlexTableTopLevelViewSubmittedApplicationsAsLink-gPlanning
+	Scenario: Changing display type of roles and responsibilities flex table new action button from button to menu from config anf validating it at flex table of program-planning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName                 |fieldOrignalValue    |coreComponentField |coreCOmponentSubFieldName|coreComponentSubFieldValue |
+	|Flex Table Action     |Header Action Display Type|Menu                 |Programs           |Name                     |View Submitted Applications|
+	Given I setup test configuration as below:
+	|configurationCategory|fieldName                  |fieldNewValue           |coreComponentField|coreCOmponentSubFieldName|coreComponentSubFieldValue |
+	|Flex Table Action     |Header Action Display Type|Button                  |Programs          |Name                     |View Submitted Applications|
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	Then I see "View Submitted Applications" options inside "Draft Programs" enabled
+	
+	@40100 @all @showConfirmationBoxFieldForProgramFlexTAbleViewAction-gPlanning
+	Scenario: Setup confirmation box for program flex table view action configuration and validating it at flex table of program-planning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName                 |fieldOrignalValue    |coreComponentField |coreCOmponentSubFieldName|coreComponentSubFieldValue |
+	|Flex Table Action     |Show Confirmation Box     |false                |Programs           |Name                     |View                       |
+	Given I setup test configuration as below:
+	|configurationCategory|fieldName                  |fieldNewValue           |coreComponentField|coreCOmponentSubFieldName|coreComponentSubFieldValue |
+	|Flex Table Action     |Show Confirmation Box     |true                    |Programs          |Name                     |View                       |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	Then I see confirmation box with body "null" is displayed
+	
+	@40102 @all @ConfirmationMessageFieldForProgramFlexTAbleViewAction-gPlanning
+	Scenario: Setup confirmation message for program flex table view action from configuration and validating it at flex table of program-planning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName                 |fieldOrignalValue    |coreComponentField |coreCOmponentSubFieldName|coreComponentSubFieldValue |
+	|Flex Table Action     |Show Confirmation Box     |false                |Programs           |Name                     |View                       |
+	|Flex Table Action     |Confirmation Message      |                     |Programs           |Name                     |View                       |
+	Given I setup test configuration as below:
+	|configurationCategory|fieldName                  |fieldNewValue           |coreComponentField|coreCOmponentSubFieldName|coreComponentSubFieldValue |
+	|Flex Table Action     |Show Confirmation Box     |true                    |Programs          |Name                     |View                       |
+	|Flex Table Action     |Confirmation Message      |Automation              |Programs          |Name                     |View                       |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	Then I see confirmation box with body "Automation" is displayed
+	
+	@40103 @all @modalTitleFieldForProgramFlexTAbleViewAction-gPlanning
+	Scenario: Setup modal title for program flex table view action from configuration and validating it at flex table of program-planning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName                 |fieldOrignalValue    |coreComponentField |coreCOmponentSubFieldName|coreComponentSubFieldValue |
+	|Flex Table Action     |Action Behavior           |                     |Programs           |Name                     |View                       |
+	|Flex Table Action     |Modal Title               |                     |Programs           |Name                     |View                       |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName                 |fieldNewValue           |coreComponentField|coreCOmponentSubFieldName|coreComponentSubFieldValue |
+	|Flex Table Action     |Action Behavior           |Open in overlay         |Programs          |Name                     |View                       |
+	|Flex Table Action     |Modal Title               |Automation Title        |Programs          |Name                     |View                       |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	Then I see "Automation Title" displayed in flex table Action modal
+	
+	@40106 @all @hideForProfileFieldAtProgramFlexTableEditAction-gPlanning
+	Scenario Outline: Hide edit row level action for specific profile from configuration and validating it at under program flex table- gPlanning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName               |fieldOrignalValue         |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action     |Hide For Profile        |                          |Programs                  |Name                       |Edit                      |
+	|Flex Table Action     |Hide Decision Expression|<defaultExpression>       |Programs                  |Name                       |Edit                      |
+	|Flex Table Action     |Hide Decision Field     |<defaultHideDecisionField>|Programs                  |Name                       |Edit                      |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName               |fieldNewValue         |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action     |Hide For Profile        |System Administrator  |Programs                       |Name                       |Edit                      |
+	|Flex Table Action     |Hide Decision Expression|                      |Programs                       |Name                       |Edit                      |
+	|Flex Table Action     |Hide Decision Field     |                      |Programs                       |Name                       |Edit                      |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation - Created mode only"
+	Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
+	
+	Examples:
+	|defaultExpression|defaultHideDecisionField|
+	|Status__c <> 'Created' AND Status__c<> 'Being Amended'|HideEditDeleteBtn__c|
+	
+	@40109 @all @hideForUserFieldAtProgramFlexTableEditAction-gPlanning
+	Scenario Outline: Hide edit row level action for specific user from configuration and validating it at under program flex table- gPlanning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName               |fieldOrignalValue         |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action     |Hide For User           |                          |Programs                  |Name                       |Edit                      |
+	|Flex Table Action     |Hide Decision Expression|<defaultExpression>       |Programs                  |Name                       |Edit                      |
+	|Flex Table Action     |Hide Decision Field     |<defaultHideDecisionField>|Programs                  |Name                       |Edit                      |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName               |fieldNewValue         |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action     |Hide For User           |Internal              |Programs                       |Name                       |Edit                      |
+	|Flex Table Action     |Hide Decision Expression|                      |Programs                       |Name                       |Edit                      |
+	|Flex Table Action     |Hide Decision Field     |                      |Programs                       |Name                       |Edit                      |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation - Created mode only"
+	Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
+	
+	Examples:
+	|defaultExpression|defaultHideDecisionField|
+	|Status__c <> 'Created' AND Status__c<> 'Being Amended'|HideEditDeleteBtn__c|
+	
+	@40112 @all @hideForContextFieldAtProgramFlexTableEditAction-gPlanning
+	Scenario Outline: Hide edit row level action for view layout from configuration and validating it at under program flex table- gPlanning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName               |fieldOrignalValue         |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action     |Hide For Context        |                          |Programs                  |Name                       |Edit                      |
+	|Flex Table Action     |Hide Decision Expression|<defaultExpression>       |Programs                  |Name                       |Edit                      |
+	|Flex Table Action     |Hide Decision Field     |<defaultHideDecisionField>|Programs                  |Name                       |Edit                      |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName               |fieldNewValue         |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action     |Hide For Context        |View                  |Programs                       |Name                       |Edit                      |
+	|Flex Table Action     |Hide Decision Expression|                      |Programs                       |Name                       |Edit                      |
+	|Flex Table Action     |Hide Decision Field     |                      |Programs                       |Name                       |Edit                      |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation - Created mode only"
+	Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
+	
+	Examples:
+	|defaultExpression|defaultHideDecisionField|
+	|Status__c <> 'Created' AND Status__c<> 'Being Amended'|HideEditDeleteBtn__c|
+	
+	@40115 @all @hideDecisionFieldAtProgramFlexTableEditAction-gPlanning
+	Scenario Outline: Hide edit row level action for view layout from configuration and validating it at under program flex table- gPlanning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName               |fieldOrignalValue         |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action     |Hide Decision Expression|<defaultExpression>       |Programs                  |Name                       |Edit                      |
+	|Flex Table Action     |Hide Decision Field     |<defaultHideDecisionField>|Programs                  |Name                       |Edit                      |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName               |fieldNewValue             |coreComponentField                                           |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Program               |Status                  |Created                   |Test program for automation -  SA mode only - Can be Approved|                           |                          |
+	|Flex Table Action     |Hide Decision Expression|                          |Programs                                                     |Name                       |Edit                      |
+	|Flex Table Action     |Hide Decision Field     |<defaultHideDecisionField>|Programs                                                     |Name                       |Edit                      |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation -  SA mode only - Can be Approved"
+	When I click on "Edit" icon of status "Created" for "Test program for automation -  SA mode only - Can be Approved" program in flex table
+	And I complete submit for approval
+	When I re-login as "Automation-PM" with "QA" url 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	And I navigate to "Tasks" to reach "Pending" side bar content
+	When I search for "Test program for automation -  SA mode only - Can be Approved"
+	When I start the approval with subject "Test program for automation -  SA mode only - Can be Approved"
+	When I select "Approve" from approval decision panel
+	When I enter Approval comment
+    And I click submit
+	And I re-login as "Automation" with "QA" url
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation -  SA mode only - Can be Approved"
+	Then I see "Edit" icon for "Test program for automation -  SA mode only - Can be Approved" is not displayed inside flex table
+	
+	Examples:
+	|defaultExpression|defaultHideDecisionField|
+	|Status__c <> 'Created' AND Status__c<> 'Being Amended'|HideEditDeleteBtn__c|
+	
+	@40119 @all @hideOperatorFieldUsingANDOperatorAtProgramFlexTAbleAction-gPlanning
+	Scenario Outline: Hide edit row level action using AND operator for program flex table from configuration and validating it at under programs flex table- gPlanning
+	Given I have default configuration as below:
+	|configurationCategory|fieldName                |fieldOrignalValue         |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action     |Hide For Profile        |                          |Programs                       |Name                       |Edit                      |
+	|Flex Table Action     |Hide For User           |                          |Programs                       |Name                       |Edit                      |
+	|Flex Table Action     |Hide Decision Expression|<defaultExpression>       |Programs                       |Name                       |Edit                      |
+	|Flex Table Action     |Hide Decision Field     |<defaultHideDecisionField>|Programs                       |Name                       |Edit                      |
+	Given I setup test configuration as below:
+	|configurationCategory|fieldName               |fieldNewValue        |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action    |Hide For Profile        |System Administrator |Programs                       |Name                       |Edit                      |
+	|Flex Table Action    |Hide For User           |Internal             |Programs                       |Name                       |Edit                      |
+	|Flex Table Action    |Hide Operator           |AND                  |Programs                       |Name                       |Edit                      |
+	|Flex Table Action    |Hide Decision Expression|                     |Programs                       |Name                       |Edit                      |
+	|Flex Table Action    |Hide Decision Field     |                     |Programs                       |Name                       |Edit                      |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation - Created mode only"
+	Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
+	
+	Examples:
+	|defaultExpression|defaultHideDecisionField|
+	|Status__c <> 'Created' AND Status__c<> 'Being Amended'|HideEditDeleteBtn__c|
+	
+	@40121 @all @hideOperatorFieldUsingOROperatorAtProgramFlexTAbleAction-gPlanning
+	Scenario Outline: Hide edit row level action using AND operator for program flex table from configuration and validating it at under programs flex table- gPlanning
+	Given I have default configuration as below:
+	|configurationCategory|fieldName                |fieldOrignalValue         |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action     |Hide For Profile        |                          |Programs                       |Name                       |Edit                      |
+	|Flex Table Action     |Hide For User           |                          |Programs                       |Name                       |Edit                      |
+	|Flex Table Action     |Hide Operator           |AND                       |Programs                       |Name                       |Edit                      |
+	|Flex Table Action     |Hide Decision Expression|<defaultExpression>       |Programs                       |Name                       |Edit                      |
+	|Flex Table Action     |Hide Decision Field     |<defaultHideDecisionField>|Programs                       |Name                       |Edit                      |
+	Given I setup test configuration as below:
+	|configurationCategory|fieldName               |fieldNewValue        |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action    |Hide For Profile        |System Administrator |Programs                       |Name                       |Edit                      |
+	|Flex Table Action    |Hide For User           |Internal             |Programs                       |Name                       |Edit                      |
+	|Flex Table Action    |Hide Operator           |OR                   |Programs                       |Name                       |Edit                      |
+	|Flex Table Action    |Hide Decision Expression|                     |Programs                       |Name                       |Edit                      |
+	|Flex Table Action    |Hide Decision Field     |                     |Programs                       |Name                       |Edit                      |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation - Created mode only"
+	Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
+	
+	Examples:
+	|defaultExpression|defaultHideDecisionField|
+	|Status__c <> 'Created' AND Status__c<> 'Being Amended'|HideEditDeleteBtn__c|
+	
+	@40124 @all @hideExpressionJSONFieldAtProgramFlexTable-gPlanning 
+	Scenario: Hide edit row level action for program flex table from json configuration and validating it under program flex table-gPlanning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName           |fieldOrignalValue    |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table Action     |Hide Expression JSON|                     |Programs              |Name                     |Edit                      |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName           |fieldNewValue                                    |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table Action     |Hide Expression JSON|govgrants_config:ProgramFlexTableExpressionJson  |Programs              |Name                     |Edit                      |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation - Created mode only"
+	Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table

@@ -35,7 +35,7 @@ public class FlexTableSteps {
 	public void getHelpTextIconsAtPageBlock(String blockTitle) {
 		flexTablePage.getHelpTextAtDraftProgramFlexTable(blockTitle);
 	}
-	
+
 	@When("^I hovering mouse on help text icon inside \"([^\"]*)\" for flex table column$")
 	public void getHelpTextIconsAtFlexTableColumn(String columnTitle) {
 		flexTablePage.getHelpTextAtFlexTableSpecificColumn(columnTitle);
@@ -71,7 +71,7 @@ public class FlexTableSteps {
 		flexTablePage.assertFlexTabelRecordSelectionEnabled();
 	}
 
-	@Then("^I see no total amount in flex table$")
+	@Then("^I see no total amount row in flex table$")
 	public void assertNoTotalAmountInFlexTable() {
 		flexTablePage.assertFlexTabelTotalCalulationRowDisabled();
 	}
@@ -140,9 +140,49 @@ public class FlexTableSteps {
 	public void assertFlexTableNoOfRecords(int rowCount) {
 		flexTablePage.assertFlexTabelNumberOfRecordsPresent(rowCount);
 	}
-	
+
 	@Then("^I see \"([^\"]*)\" shown as flex table column title$")
 	public void assertFlextableColumnName(String columnTitleName) {
 		flexTablePage.assertCorrectFlexTableColumnTitleDisplayed(columnTitleName);
+	}
+
+	@Then("^I see total amount in flex table$")
+	public void assertTotalAmountInFlexTable() {
+		flexTablePage.assertFlexTabelTotalCalulationAmountDiplayed();
+	}
+
+	@Then("^I see \"([^\"]*)\" row action Button at position \"([^\"]*)\"$")
+	public void assertSequenceOfPageLayoutEditButtonAction(String buttonName, String sequenceNumber) {
+		flexTablePage.assertSequenceOfEditActionOfProgramFlexTable(buttonName, Integer.parseInt(sequenceNumber));
+	}
+
+	@Then("^I see edit opens with \"([^\"]*)\"$")
+	public void assertEditOpenedWithSpefifiedUrl(String newActionUrl) {
+		flexTablePage.assertSpecifiedUrlForEditActionOfProgramFlexTable(newActionUrl);
+	}
+
+	@Then("^I see external link icon as \"([^\"]*)\" for \"([^\"]*)\" inside flex table action$")
+	public void assertPencilIconAsSubTab(String columnTitle, String iconTitle) {
+		flexTablePage.assertFlexTableEditActionIconDisplayed(columnTitle, iconTitle);
+	}
+
+	@Then("^I see \"([^\"]*)\" button inside \"([^\"]*)\" flex table$")
+	public void assertEditButtonInsideFlexTable(String buttonName, String headerName) {
+		flexTablePage.assertActionButtonInsideFlexTableIsDisplayed(buttonName, headerName);
+	}
+
+	@Then("^I see \"([^\"]*)\" icon for \"([^\"]*)\" is displayed inside flex table$")
+	public void assertActionIconDisplayedForflexTable(String iconName, String uniqueColumnValue) {
+		flexTablePage.assertActionIconDisplayedInsideflexTable(iconName, uniqueColumnValue);
+	}
+
+	@Then("^I see \"([^\"]*)\" as title for \"([^\"]*)\" inside flex table action$")
+	public void getHelpTextAtEditIconsInsideFlexTable(String iconName, String columnName) {
+		flexTablePage.getHelpTextAtEditActionOfFlexTable(iconName, columnName);
+	}
+
+	@Then("^I see \"([^\"]*)\" displayed in flex table Action modal$")
+	public void assertModalTitleForFlexTableAction(String titleName) {
+		flexTablePage.asserTextInOverLayIframe(titleName);
 	}
 }

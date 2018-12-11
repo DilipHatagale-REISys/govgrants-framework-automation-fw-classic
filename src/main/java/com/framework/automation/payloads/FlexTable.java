@@ -60,6 +60,13 @@ public class FlexTable {
 									String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c), filterClause),
 							String.valueOf(SObjectAPIs.GNT__FieldLabelOverride__c), value);
 			break;
+		case "ENABLE TOTAL":
+			finalPayload = String
+					.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__EnableTotal__c), value);
+			break;
 		}
 		System.out.println(finalPayload);
 		return finalPayload;
@@ -172,6 +179,12 @@ public class FlexTable {
 							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
 					String.valueOf(SObjectAPIs.GNT__DefaultPageSize__c), value);
 			break;
+		case "SKIP FIELDS FOR EXPORT":
+			finalPayload = String.format(
+					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__SkipFieldsForExport__c), value);
+			break;
 		}
 		System.out.println(finalPayload);
 		return finalPayload;
@@ -233,6 +246,81 @@ public class FlexTable {
 							String.valueOf(SObjectAPIs.GNT__DataTableAction__c),
 							String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c), filterClause),
 					String.valueOf(SObjectAPIs.GNT__HideOperator__c), value);
+			break;
+		case "HIDE DECISION EXPRESSION":
+			finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c),
+					apiUtilities.getComponentCoreFieldIdForContextObjects(
+							String.valueOf(SObjectAPIs.GNT__DataTableAction__c),
+							String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__HideDecisionExpression__c), value);
+			break;
+		case "HIDE DECISION FIELD":
+			finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c),
+					apiUtilities.getComponentCoreFieldIdForContextObjects(
+							String.valueOf(SObjectAPIs.GNT__DataTableAction__c),
+							String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__HideDecisionField__c), value);
+			break;
+		case "HIDE EXPRESSION JSON":
+			finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c),
+					apiUtilities.getComponentCoreFieldIdForContextObjects(
+							String.valueOf(SObjectAPIs.GNT__DataTableAction__c),
+							String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__HideExpressionJSON__c), value);
+			break;
+		case "SEQUENCE":
+			finalPayload = String.format(
+					payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableAction__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableAction__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__Sequence__c), value);
+			break;
+		case "BUTTON HELP TEXT":
+			finalPayload = String.format(
+					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableAction__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableAction__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__ButtonHelpText__c), value);
+			break;
+		case "ACTION URL":
+			finalPayload = String.format(
+					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableAction__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableAction__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__ActionURL__c), value);
+			break;
+		case "ICON CSS":
+			finalPayload = String.format(
+					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableAction__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableAction__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__IconCSS__c), value);
+			break;
+		case "LOCATION":
+			finalPayload = String.format(
+					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableAction__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableAction__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__Location__c), value);
+			break;
+		case "HEADER ACTION DISPLAY TYPE":
+			finalPayload = String.format(
+					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableAction__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableAction__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__HeaderActionDisplayType__c), value);
+			break;
+		case "SHOW CONFIRMATION BOX":
+			finalPayload = String.format(
+					payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableAction__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableAction__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__ShowConfirmationBox__c), value);
+			break;
+		case "CONFIRMATION MESSAGE":
+			finalPayload = String.format(
+					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableAction__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableAction__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__ConfirmationMessage__c), value);
+			break;
+		case "MODAL TITLE":
+			finalPayload = String.format(
+					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableAction__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableAction__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__ModalTitle__c), value);
 			break;
 		}
 		System.out.println(finalPayload);

@@ -12,7 +12,7 @@ import com.framework.automation.projectmanager.GovGrantsManager;
 public class FlexTablePage extends GovGrantsManager {
 	/******* "Variables and Locators" *****************/
 
-	private final By overLayFrame, innerFlexTableActionIframe;
+	private final By overLayFrame, innerFlexTableActionIframe, programFlexTableActionItems;
 
 	/**
 	 * Constructor to handle dependency injection and framework library
@@ -21,6 +21,7 @@ public class FlexTablePage extends GovGrantsManager {
 		super(controller, reiDriver, govgrants);
 		overLayFrame = By.xpath("//iframe[@id='ProgramsiframeContentId']");
 		innerFlexTableActionIframe = By.xpath("//iframe[@id='ProgramRolesAndResponsibilitiesiframeContentId']");
+		programFlexTableActionItems = By.xpath("//span[@class='focusActionItem ng-scope']//a");
 	}
 
 	/******* "Key Methods with complete functionality - public" *****************/
@@ -162,6 +163,8 @@ public class FlexTablePage extends GovGrantsManager {
 	 * @param actionIcon
 	 */
 	public void assertActionIconNotDisplayedInsideflexTable(String iconName, String uniqueColumnValue) {
+		reiDriver.WaitFor()
+				.WaitForElementToBePresent(govgrants.flexTable().getTableActionIcon(iconName, uniqueColumnValue));
 		Assert.assertFalse(reiDriver.findMyElement()
 				.getElement(govgrants.flexTable().getTableActionIcon(iconName, uniqueColumnValue)).isDisplayed());
 	}
@@ -241,6 +244,80 @@ public class FlexTablePage extends GovGrantsManager {
 	 */
 	public void assertCorrectFlexTableColumnTitleDisplayed(String columnTitleName) {
 		Assert.assertTrue(isFlexTableColumnTitleDisplayed(columnTitleName));
+	}
+
+	/**
+	 * assert true if total calculation amount field is displayed
+	 */
+	public void assertFlexTabelTotalCalulationAmountDiplayed() {
+		try {
+			reiDriver.JavaScript().scrollPageDocumentJS("PageDown", 0, 0);
+		} catch (Exception e) {
+		}
+		Assert.assertTrue(isTotalAmountFieldAtFlexTableDisplayed());
+	}
+
+	/**
+	 * assert if specific action item appears at a specific position for program
+	 * flex table
+	 * 
+	 * @param buttonName
+	 */
+	public void assertSequenceOfEditActionOfProgramFlexTable(String buttonName, int sequenceNumber) {
+		Assert.assertTrue(isEditActionIconSequenceAtProgramFlexTable(buttonName, sequenceNumber));
+	}
+
+	/**
+	 * hovering mouse on edit action icon inside draft program flex table
+	 * 
+	 * @param blockTitle
+	 */
+	public void getHelpTextAtEditActionOfFlexTable(String iconName, String columnName) {
+		reiDriver.WaitFor().WaitForElementToBePresent(govgrants.flexTable().getTableActionIcon(iconName, columnName))
+				.getAttribute("title").equalsIgnoreCase(iconName);
+	}
+
+	/**
+	 * assert if program flex table edit action opened with specified url
+	 * 
+	 * @param buttonName
+	 */
+	public void assertSpecifiedUrlForEditActionOfProgramFlexTable(String newActionUrl) {
+		Assert.assertTrue(isEditActionOpenedWithSpecifiedUrl(newActionUrl));
+	}
+
+	/**
+	 * assert true if changed icon css of flex table edit action is displayed
+	 * 
+	 * @param iconTitle
+	 */
+	public void assertFlexTableEditActionIconDisplayed(String columnTitle, String iconTitle) {
+		Assert.assertTrue(reiDriver.WaitFor()
+				.WaitForElementToBePresent(By.xpath("//td//*[@title = '" + columnTitle + "' or text() = '" + columnTitle
+						+ "']/ancestor::tr[1]//td//a[@title = '" + iconTitle
+						+ "']//i[contains(@class,'fa fa-external-link')]"))
+				.isDisplayed());
+	}
+
+	/**
+	 * return true if action button inside flex table as per name is displayed
+	 * 
+	 * @param buttonName
+	 * @param headerName
+	 */
+	public void assertActionButtonInsideFlexTableIsDisplayed(String buttonName, String headerName) {
+		Assert.assertTrue(isActionButtonInsideTopOfFlexTableDisplayed(buttonName, headerName));
+	}
+
+	/**
+	 * assert if specific action icon is displayed for flex table
+	 * 
+	 * @param iconName
+	 * @param uniqueColumnValue
+	 */
+	public void assertActionIconDisplayedInsideflexTable(String iconName, String uniqueColumnValue) {
+		Assert.assertTrue(reiDriver.findMyElement()
+				.getElement(govgrants.flexTable().getTableActionIcon(iconName, uniqueColumnValue)).isDisplayed());
 	}
 
 	/*********
@@ -567,5 +644,67 @@ public class FlexTablePage extends GovGrantsManager {
 		} catch (Exception e) {
 			return false;
 		}
+	}
+
+	/**
+	 * 
+	 * @return true if total calculation amount field element is displayed
+	 */
+	private Boolean isTotalAmountFieldAtFlexTableDisplayed() {
+		boolean flag = false;
+		try {
+			if (getCompleteTableRow().stream().anyMatch(item -> item.findElement(totalRowsCalc).isDisplayed())) {
+				flag = true;
+			}
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+		}
+		return flag;
+	}
+
+	/**
+	 * check the sequence of the edit action at program flex table
+	 * 
+	 * @param buttonName
+	 * @param sequenceNumber
+	 * @return true/false
+	 */
+	private boolean isEditActionIconSequenceAtProgramFlexTable(String buttonName, int sequenceNumber) {
+		if (reiDriver.findMyElement().getElements(programFlexTableActionItems).get(sequenceNumber).getAttribute("title")
+				.contains(buttonName)) {
+			return true;
+		} else
+			return false;
+	}
+
+	/**
+	 * return true if edit opened with specified url
+	 * 
+	 * @param newActionUrl
+	 * @return true/false
+	 */
+	private boolean isEditActionOpenedWithSpecifiedUrl(String newActionUrl) {
+		String currentUrl = reiDriver.get().getCurretnURL();
+		if (currentUrl.contains(newActionUrl)) {
+			return true;
+		} else
+			return false;
+	}
+
+	/**
+	 * return true if action button inside flex table is displayed
+	 * 
+	 * @param buttonName
+	 * @param headerName
+	 * @return
+	 */
+	private boolean isActionButtonInsideTopOfFlexTableDisplayed(String buttonName, String headerName) {
+		boolean flag = false;
+		try {
+			if (govgrants.phasePannel().getTopRightButton(headerName, buttonName).isDisplayed()) {
+				flag = true;
+			}
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+		}
+		return flag;
 	}
 }
