@@ -834,3 +834,31 @@ Feature: Flex Table Component Scenarios
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Announcements" tab
 	When I select "Draft Announcements" from double headed dropdown inside admin portal
 	Then I see "Create" button inside "Draft Announcements" flex table not displayed
+	
+	@40225 @all @activeFieldAtFlexTable-gPlanning
+	Scenario: Disabling active programs from list view of program flex table from config and validating it at program flex table-programs
+	Given I have default configuration as below:
+	|configurationCategory |fieldName     |fieldOrignalValue|filterId        |
+	|Flex Table List       |Active ?      |true             |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName     |fieldNewValue    |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table List       |Active ?      |false            |Programs              |Name                     |FLV-1835                  |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I click double headed arrow icon for "#toggleFlexTablePrograms" inside program flex table
+	Then I see "Active Programs" is not displayed inside program flex table dropdown	
+	
+	@40233 @all @showInPdfFieldAtFlexTable-gPlanning
+	Scenario: Disabling active programs from list view of program flex table from config and validating it at program flex table-programs
+	Given I have default configuration as below:
+	|configurationCategory |fieldName     |fieldOrignalValue|filterId        |
+	|Flex Table List       |Show in PDF   |false            |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName     |fieldNewValue    |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table List       |Show in PDF   |true             |Programs              |Name                     |FLV-1835                  |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I click on top right parallel lines bar for "Draft Programs"
+	And I select "Download As PDF" from dropdown
+	And I download the file
+	Then I see "Active Programs" on page "1" of "govgrants" pdf file	

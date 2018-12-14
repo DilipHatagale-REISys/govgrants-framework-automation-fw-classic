@@ -1,10 +1,5 @@
 package com.framework.automation.payloads;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import com.framework.automation.projectmanager.SetUpConfiguration;
-
 public class FlexTable {
 	private String payloadForStringValue = "{\"sObjectAPIName\" : \"%s\",\"fieldMapStr\" : \"{\\\"Id\\\":\\\"%s\\\",\\\"%s\\\":\\\"%s\\\"}\"}";
 	private String payloadForIntValue = "{\"sObjectAPIName\" : \"%s\",\"fieldMapStr\" : \"{\\\"Id\\\":\\\"%s\\\",\\\"%s\\\":%s}\"}";
@@ -21,23 +16,13 @@ public class FlexTable {
 	 */
 	public String setFlexTableListFieldConfig(String fieldLabel, String value, String filterClause) {
 		String finalPayload = null;
-		Pattern p = Pattern.compile("([0-9])");
-		Matcher m = p.matcher(value);
 		switch (fieldLabel.toUpperCase()) {
 		case "LABEL":
-			if (m.find()) {
-				finalPayload = String.format(payloadForIntValue,
-						String.valueOf(SObjectAPIs.GNT__FlexTableFilterListViewConfig__c),
-						apiUtilities.getComponentCoreFieldId(
-								String.valueOf(SObjectAPIs.GNT__FlexTableFilterListViewConfig__c), filterClause),
-						String.valueOf(SObjectAPIs.GNT__Label__c), value);
-			} else {
-				finalPayload = String.format(payloadForStringValue,
-						String.valueOf(SObjectAPIs.GNT__FlexTableFilterListViewConfig__c),
-						apiUtilities.getComponentCoreFieldId(
-								String.valueOf(SObjectAPIs.GNT__FlexTableFilterListViewConfig__c), filterClause),
-						String.valueOf(SObjectAPIs.GNT__Label__c), value);
-			}
+			finalPayload = String.format(payloadForStringValue,
+					String.valueOf(SObjectAPIs.GNT__FlexTableFilterListViewConfig__c),
+					apiUtilities.getComponentCoreFieldId(
+							String.valueOf(SObjectAPIs.GNT__FlexTableFilterListViewConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__Label__c), value);
 			break;
 		case "FILTER CLAUSE":
 			finalPayload = String.format(payloadForStringValue,
@@ -66,6 +51,20 @@ public class FlexTable {
 							apiUtilities.getComponentCoreFieldId(
 									String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c), filterClause),
 							String.valueOf(SObjectAPIs.GNT__EnableTotal__c), value);
+			break;
+		case "ACTIVE ?":
+			finalPayload = String
+					.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__FlexTableFilterListViewConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__FlexTableFilterListViewConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__IsActive__c), value);
+			break;
+		case "SHOW IN PDF":
+			finalPayload = String
+					.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__FlexTableFilterListViewConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__FlexTableFilterListViewConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__ShowInPDF__c), value);
 			break;
 		}
 		System.out.println(finalPayload);
@@ -301,7 +300,7 @@ public class FlexTable {
 		System.out.println(finalPayload);
 		return finalPayload;
 	}
-	
+
 	/**
 	 * setup configuration for flex table action with Sobject
 	 * 
