@@ -293,11 +293,12 @@ Feature: Approval Process Component Scenarios
 	Scenario: Setup confirmation message inside confirmation message box for reassign from configuration and validating it in pending tasks approval decision
 	Given I have default configuration as below:
 	|configurationCategory               |fieldName                     |fieldOrignalValue  |filterId        |
-	|Approval Process Steps Cache        |Reassign Confirmation Title   |                   |ApiGeneratedId:1|
-	|Approval Process Steps Cache        |Reassign Confirmation Message |                   |ApiGeneratedId:2|
+	|Approval Process Steps Cache        |Reassign Confirmation Title   |                   |ApiGeneratedId:2|
+	|Approval Process Steps Cache        |Reassign Confirmation Message |                   |ApiGeneratedId:3|
 	Given I setup test configuration as below:
 	|configurationCategory                |fieldName                     |fieldNewValue                            |coreComponentField                                        |
 	|Program	                          |Status                        |Created                                  |Test program for automation -  SA mode only - Not approved|
+	|Approval Decision Action:General     |Comments Required             |false                                    |ADAC-0011                                                 |
 	|Approval Process Steps Cache:General |Reassign Confirmation Title   |Automation Reassign                      |Program_Manager_Approver                                  |
 	|Approval Process Steps Cache:General |Reassign Confirmation Message |Reassign Confirmation box for automation |Program_Manager_Approver                                  |
 	When I login as "Automation" User 
@@ -372,11 +373,12 @@ Feature: Approval Process Component Scenarios
 	Scenario: Setup confirmation message inside confirmation message box for reassign approval decision action using Approval Decision Action from configuration and validating it in pending tasks approval decision
 	Given I have default configuration as below:
 	|configurationCategory            |fieldName              |fieldOrignalValue              |filterId        |
-	|Approval Decision Action         |Confirmation Title     |                               |ApiGeneratedId:1|
-	|Approval Decision Action         |Confirmation Message   |                               |ApiGeneratedId:2|
+	|Approval Decision Action         |Confirmation Title     |                               |ApiGeneratedId:2|
+	|Approval Decision Action         |Confirmation Message   |                               |ApiGeneratedId:3|
 	Given I setup test configuration as below:
 	|configurationCategory            |fieldName              |fieldNewValue                  |coreComponentField                                        |
 	|Program                          |Status                 |Created                        |Test program for automation -  SA mode only - Not approved|
+	|Approval Decision Action:General |Comments Required      |false                          |ADAC-0011                                                 |
 	|Approval Decision Action:General |Confirmation Title     |Automation for Forward         |ADAC-0011                                                 |
 	|Approval Decision Action:General |Confirmation Message   |Test Automation for Forward    |ADAC-0011                                                 |
 	When I login as "Automation" User 
