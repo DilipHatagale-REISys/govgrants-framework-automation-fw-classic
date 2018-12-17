@@ -494,15 +494,6 @@ public class GovGrantsManager extends ProjectWebServices {
 				directory.getAbsolutePath().toString() + "\\" + fileName + ".pdf", pageNumber);
 	}
 	
-	/**
-	 * click flex table item based on data target
-	 * 
-	 * @param termContainedInDataTarget
-	 */
-	public void clickDoubleHeadedArrowIconInsideProgramFlexTable(String termContainedInDataTarget) {
-		govgrants.phasePannel().clickDoubleArrowToggle(termContainedInDataTarget);
-	}
-
 	/******* "Local Methods with Limited functionality " **********/
 
 	/**

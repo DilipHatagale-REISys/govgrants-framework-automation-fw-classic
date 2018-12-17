@@ -206,7 +206,7 @@ Feature: Flex Table Component Scenarios
 	When I click on "Edit" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
 	Then I see "Edit" opens in overLay window
 	
-	@34292 @all @refreshEntirePage-gPlanning
+	@34292 @all @refreshBehaviourFieldAtRolesAndResponsilitiesFlexTableAsRefreshEntirePage-gPlanning
 	Scenario: validate flex table action field- refresh entire page
 	Given I have default configuration as below:
 	|configurationCategory |fieldName       |fieldOrignalValue    |filterId        |
@@ -845,7 +845,7 @@ Feature: Flex Table Component Scenarios
 	|Flex Table List       |Active ?      |false            |Programs              |Name                     |FLV-1835                  |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I click double headed arrow icon for "#toggleFlexTablePrograms" inside program flex table
+	When I click toggle button for "Draft Programs"
 	Then I see "Active Programs" is not displayed inside program flex table dropdown	
 	
 	@40233 @all @showInPdfFieldAtFlexTable-gPlanning
@@ -861,4 +861,4 @@ Feature: Flex Table Component Scenarios
 	When I click on top right parallel lines bar for "Draft Programs"
 	And I select "Download As PDF" from dropdown
 	And I download the file
-	Then I see "Active Programs" on page "1" of "govgrants" pdf file	
+	Then I see "Active Programs" on page "1" of "govgrants" pdf file

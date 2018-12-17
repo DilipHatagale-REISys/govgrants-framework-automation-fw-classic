@@ -155,6 +155,14 @@ public class ApprovalProcessPage extends GovGrantsManager {
 	}
 
 	/**
+	 * assert true if specified comment is displayed inside history tab table
+	 * 
+	 */
+	public void assertCommentTextInsideHistoryTab(String commentText, String User) {
+		Assert.assertTrue(isCommentTextDisplayed(commentText, User));
+	}
+
+	/**
 	 * click on Select dropdown inside Approval decision box
 	 */
 	public void clickOnSelectDropdown() {
@@ -328,10 +336,21 @@ public class ApprovalProcessPage extends GovGrantsManager {
 	 * @return
 	 */
 	private List<WebElement> validateSuccessEmail(String templateName) {
-
 		return reiDriver.findMyElement().getElements(By.xpath(
 				"//td//span[text()='nauman.shahid@reisystems.com']/../../../../following-sibling::td//span[text()='"
 						+ templateName + "']/../../../following-sibling::td//span[text()='Success']"));
+	}
+
+	/**
+	 * check if expected comment text is present inside history tab
+	 * 
+	 * @param commentText
+	 * @param User
+	 * @return
+	 */
+	private WebElement getCommentTextInsideHistoryTab(String commentText, String User) {
+		return reiDriver.WaitFor().WaitForElementToBePresent(By.xpath("//td/span[contains(text(),'" + User
+				+ "')]/../following-sibling::td/span[contains(text(),'" + commentText + "')]"));
 	}
 
 	/**
@@ -349,6 +368,25 @@ public class ApprovalProcessPage extends GovGrantsManager {
 			}
 		} catch (org.openqa.selenium.NoSuchElementException e) {
 
+		}
+		return flag;
+	}
+
+	/**
+	 * return true if expected comment text is displayed inside history table
+	 * 
+	 * @param commentText
+	 * @param User
+	 * @return
+	 */
+	private boolean isCommentTextDisplayed(String commentText, String User) {
+		reiDriver.JavaScript().scrollPageDocumentJS("PageDown", 0, 0);
+		boolean flag = false;
+		try {
+			if (getCommentTextInsideHistoryTab(commentText, User).getText().contains(commentText)) {
+				flag = true;
+			}
+		} catch (Exception e) {
 		}
 		return flag;
 	}

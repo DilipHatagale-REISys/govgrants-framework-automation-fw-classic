@@ -300,7 +300,7 @@ public class FlexTablePage extends GovGrantsManager {
 						+ "']//i[contains(@class,'fa fa-external-link')]"))
 				.isDisplayed());
 	}
-	
+
 	/**
 	 * return false if specified item is displayed
 	 * 
@@ -357,7 +357,7 @@ public class FlexTablePage extends GovGrantsManager {
 	public void assertSpecificItemsInsideDropdown(String itemName) {
 		Assert.assertFalse(isValuePresentInsideDropDown(itemName));
 	}
-	
+
 	/**
 	 * assert if specified name is displayed inside downloaded pdf file
 	 * 
@@ -365,7 +365,14 @@ public class FlexTablePage extends GovGrantsManager {
 	public void assertTextDisplayedInPDF(String text, int pageNumber, String fileName) {
 		Assert.assertFalse(isTextNotDisplayedInFile(text, pageNumber, fileName));
 	}
-	
+
+	/**
+	 * Click on toggle button inside program flex table
+	 */
+	public void clickToggleButtonAndSelect(String menuItemName) {
+		govgrants.phasePannel().clickDoubleArrowtoggle(menuItemName);
+	}
+
 	/*********
 	 * "Local Methods with complete functionality - private"
 	 *****************/
@@ -754,7 +761,6 @@ public class FlexTablePage extends GovGrantsManager {
 		return flag;
 	}
 
-	
 	private boolean isTextNotDisplayedInFile(String text, int pageNumber, String fileName) {
 		boolean flag = true;
 		if (readPDF(pageNumber, fileName).contains(text)) {

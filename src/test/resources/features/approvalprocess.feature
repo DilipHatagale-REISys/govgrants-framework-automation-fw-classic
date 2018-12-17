@@ -759,4 +759,30 @@ Feature: Approval Process Component Scenarios
 	When I search for "Test program for automation -  SA mode only - Not approved"
 	When I start the approval with subject "Test program for automation -  SA mode only - Not approved"
 	Then I see "Send to Owner" is disabled
-		
+	
+	@41060 @all @validateCommentedTextInsideHistoryTabForReassignAction-Programs
+	Scenario: Validating commented text inside history tab for reassign approval action at program detail page
+	Given I setup test configuration as below:
+	|configurationCategory                |fieldName                     |fieldNewValue                            |coreComponentField                                        |
+	|Program	                          |Status                        |Created                                  |Test program for automation -  SA mode only - Not approved|
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation -  SA mode only - Not approved"
+	When I click on "Edit" icon of status "Created" for "Test program for automation -  SA mode only - Not approved" program in flex table
+	And I complete submit for approval
+	When I re-login as "Automation-PM" with "QA" url
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	And I navigate to "Tasks" to reach "Pending" side bar content
+	When I search for "Test program for automation -  SA mode only - Not approved"
+	When I start the approval with subject "Test program for automation -  SA mode only - Not approved"
+	When I select "Reassign" from approval decision panel
+	When I click select dropdown
+	When I select specific user "Allen PM"
+	When I enter Approval comment
+	And I click submit
+	When I re-login as "Automation" with "QA" url
+    When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+    When I search for "Test program for automation -  SA mode only - Not approved"
+	When I click on "View Program Details" icon of status "Submitted for Approval" for "Test program for automation -  SA mode only - Not approved" program in flex table
+	When I click on "History" sub tab inside page layout
+	Then I see "Automation testing" comment for user "Allen PM"	

@@ -46,9 +46,9 @@ public class FlexTableSteps {
 		flexTablePage.clickTableActionIconsForSpecificSubjectWithoutProcessing(iconName, statusName, programSubject);
 	}
 
-	@When("^I click double headed arrow icon for \"([^\"]*)\" inside program flex table$")
-	public void clickDoubleHeadedArrowIconOfProgramFlexTable(String termContainedInDataTarget) {
-		flexTablePage.clickDoubleHeadedArrowIconInsideProgramFlexTable(termContainedInDataTarget);
+	@When("^I click toggle button for \"([^\"]*)\"$")
+	public void clickToggleButtonAndSelect(String menuItemName) {
+		flexTablePage.clickToggleButtonAndSelect(menuItemName);
 	}
 
 	@Then("^I see \"([^\"]*)\" shown as flex table title$")
@@ -205,7 +205,7 @@ public class FlexTableSteps {
 	public void assertItemNotDisplayedInsideProgramFlexTable(String itemName) {
 		flexTablePage.assertSpecificItemsInsideDropdown(itemName);
 	}
-	
+
 	@Then("^I see \"([^\"]*)\" on page \"([^\"]*)\" of \"([^\"]*)\" pdf file$")
 	public void assertTExtNotDisplayed(String text, String pageNumber, String fileName) {
 		flexTablePage.assertTextDisplayedInPDF(text, Integer.parseInt(pageNumber), fileName);
