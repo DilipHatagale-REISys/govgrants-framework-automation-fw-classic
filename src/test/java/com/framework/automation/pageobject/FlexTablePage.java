@@ -12,7 +12,7 @@ import com.framework.automation.projectmanager.GovGrantsManager;
 public class FlexTablePage extends GovGrantsManager {
 	/******* "Variables and Locators" *****************/
 
-	private final By overLayFrame, innerFlexTableActionIframe, programFlexTableActionItems;
+	private final By overLayFrame, innerFlexTableActionIframe, programFlexTableActionItems, programFlexTableDropdown;
 
 	/**
 	 * Constructor to handle dependency injection and framework library
@@ -22,6 +22,8 @@ public class FlexTablePage extends GovGrantsManager {
 		overLayFrame = By.xpath("//iframe[@id='ProgramsiframeContentId']");
 		innerFlexTableActionIframe = By.xpath("//iframe[@id='ProgramRolesAndResponsibilitiesiframeContentId']");
 		programFlexTableActionItems = By.xpath("//span[@class='focusActionItem ng-scope']//a");
+		programFlexTableDropdown = By
+				.xpath("//div[contains(@class,'panel-title')]//div[@id='dropdownListView']/ul/li/a");
 	}
 
 	/******* "Key Methods with complete functionality - public" *****************/
@@ -300,6 +302,22 @@ public class FlexTablePage extends GovGrantsManager {
 	}
 
 	/**
+	 * return false if specified item is displayed
+	 * 
+	 * @param itemName
+	 * @return
+	 */
+	public boolean isValuePresentInsideDropDown(String dropDownValue) {
+		boolean flag = false;
+		for (WebElement we : reiDriver.findMyElement().getElements(programFlexTableDropdown)) {
+			if (we.getAttribute("title").equalsIgnoreCase(dropDownValue)) {
+				flag = true;
+			}
+		}
+		return flag;
+	}
+
+	/**
 	 * return true if action button inside flex table as per name is displayed
 	 * 
 	 * @param buttonName
@@ -330,7 +348,31 @@ public class FlexTablePage extends GovGrantsManager {
 	public void assertActionButtonInsideFlexTableIsNotDisplayed(String buttonName, String headerName) {
 		Assert.assertFalse(isActionButtonInsideTopOfFlexTableDisplayed(buttonName, headerName));
 	}
-	
+
+	/**
+	 * assert if specified item is displayed inside program flex table dropdown list
+	 * 
+	 * @param itemName
+	 */
+	public void assertSpecificItemsInsideDropdown(String itemName) {
+		Assert.assertFalse(isValuePresentInsideDropDown(itemName));
+	}
+
+	/**
+	 * assert if specified name is displayed inside downloaded pdf file
+	 * 
+	 */
+	public void assertTextDisplayedInPDF(String text, int pageNumber, String fileName) {
+		Assert.assertFalse(isTextNotDisplayedInFile(text, pageNumber, fileName));
+	}
+
+	/**
+	 * Click on toggle button inside program flex table
+	 */
+	public void clickToggleButtonAndSelect(String menuItemName) {
+		govgrants.phasePannel().clickDoubleArrowtoggle(menuItemName);
+	}
+
 	/*********
 	 * "Local Methods with complete functionality - private"
 	 *****************/
@@ -715,6 +757,14 @@ public class FlexTablePage extends GovGrantsManager {
 				flag = true;
 			}
 		} catch (Exception e) {
+		}
+		return flag;
+	}
+
+	private boolean isTextNotDisplayedInFile(String text, int pageNumber, String fileName) {
+		boolean flag = true;
+		if (readPDF(pageNumber, fileName).contains(text)) {
+			flag = false;
 		}
 		return flag;
 	}

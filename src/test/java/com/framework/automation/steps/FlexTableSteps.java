@@ -46,6 +46,11 @@ public class FlexTableSteps {
 		flexTablePage.clickTableActionIconsForSpecificSubjectWithoutProcessing(iconName, statusName, programSubject);
 	}
 
+	@When("^I click toggle button for \"([^\"]*)\"$")
+	public void clickToggleButtonAndSelect(String menuItemName) {
+		flexTablePage.clickToggleButtonAndSelect(menuItemName);
+	}
+
 	@Then("^I see \"([^\"]*)\" shown as flex table title$")
 	public void assertFlextableTitle(String titleName) {
 		flexTablePage.assertCorrectFlexTableTitleDisplayed(titleName);
@@ -194,5 +199,15 @@ public class FlexTableSteps {
 	@Then("^I see \"([^\"]*)\" button inside \"([^\"]*)\" flex table not displayed$")
 	public void assertCreateButtonInsideActiveFundingOpprtunitiesFlexTable(String buttonName, String headerName) {
 		flexTablePage.assertActionButtonInsideFlexTableIsNotDisplayed(buttonName, headerName);
+	}
+
+	@Then("^I see \"([^\"]*)\" is not displayed inside program flex table dropdown$")
+	public void assertItemNotDisplayedInsideProgramFlexTable(String itemName) {
+		flexTablePage.assertSpecificItemsInsideDropdown(itemName);
+	}
+
+	@Then("^I see \"([^\"]*)\" on page \"([^\"]*)\" of \"([^\"]*)\" pdf file$")
+	public void assertTExtNotDisplayed(String text, String pageNumber, String fileName) {
+		flexTablePage.assertTextDisplayedInPDF(text, Integer.parseInt(pageNumber), fileName);
 	}
 }

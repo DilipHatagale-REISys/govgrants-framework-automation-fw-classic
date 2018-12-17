@@ -45,7 +45,7 @@ Feature: Approval Process Component Scenarios
 	When I start the approval with subject "Test program for automation -  SA mode only - Not approved"
 	Then i see "Approve" shown at number "3" in Approve Decision panel
 	
-	@34308 @all @mandatoryCommentsReq-Programs
+	@34308 @all @mandatoryCommentsReqForApproveAction-Programs
 	Scenario: Setup comments requried as mandatory for approval from configuration and in pending tasks approval decision
 	Given I have default configuration as below:
 	|configurationCategory    |fieldName         |fieldOrignalValue|filterId        |
@@ -293,11 +293,12 @@ Feature: Approval Process Component Scenarios
 	Scenario: Setup confirmation message inside confirmation message box for reassign from configuration and validating it in pending tasks approval decision
 	Given I have default configuration as below:
 	|configurationCategory               |fieldName                     |fieldOrignalValue  |filterId        |
-	|Approval Process Steps Cache        |Reassign Confirmation Title   |                   |ApiGeneratedId:1|
-	|Approval Process Steps Cache        |Reassign Confirmation Message |                   |ApiGeneratedId:2|
+	|Approval Process Steps Cache        |Reassign Confirmation Title   |                   |ApiGeneratedId:2|
+	|Approval Process Steps Cache        |Reassign Confirmation Message |                   |ApiGeneratedId:3|
 	Given I setup test configuration as below:
 	|configurationCategory                |fieldName                     |fieldNewValue                            |coreComponentField                                        |
 	|Program	                          |Status                        |Created                                  |Test program for automation -  SA mode only - Not approved|
+	|Approval Decision Action:General     |Comments Required             |false                                    |ADAC-0011                                                 |
 	|Approval Process Steps Cache:General |Reassign Confirmation Title   |Automation Reassign                      |Program_Manager_Approver                                  |
 	|Approval Process Steps Cache:General |Reassign Confirmation Message |Reassign Confirmation box for automation |Program_Manager_Approver                                  |
 	When I login as "Automation" User 
@@ -372,11 +373,12 @@ Feature: Approval Process Component Scenarios
 	Scenario: Setup confirmation message inside confirmation message box for reassign approval decision action using Approval Decision Action from configuration and validating it in pending tasks approval decision
 	Given I have default configuration as below:
 	|configurationCategory            |fieldName              |fieldOrignalValue              |filterId        |
-	|Approval Decision Action         |Confirmation Title     |                               |ApiGeneratedId:1|
-	|Approval Decision Action         |Confirmation Message   |                               |ApiGeneratedId:2|
+	|Approval Decision Action         |Confirmation Title     |                               |ApiGeneratedId:2|
+	|Approval Decision Action         |Confirmation Message   |                               |ApiGeneratedId:3|
 	Given I setup test configuration as below:
 	|configurationCategory            |fieldName              |fieldNewValue                  |coreComponentField                                        |
 	|Program                          |Status                 |Created                        |Test program for automation -  SA mode only - Not approved|
+	|Approval Decision Action:General |Comments Required      |false                          |ADAC-0011                                                 |
 	|Approval Decision Action:General |Confirmation Title     |Automation for Forward         |ADAC-0011                                                 |
 	|Approval Decision Action:General |Confirmation Message   |Test Automation for Forward    |ADAC-0011                                                 |
 	When I login as "Automation" User 
@@ -396,7 +398,7 @@ Feature: Approval Process Component Scenarios
 	Then I see confirmation box with body "Test Automation for Forward" is displayed
 	
 	@37539 @all @commentsFieldAPINameFieldForApproveAction-Programs
-	Scenario: Setup comments as projectTitle_c inside comments field API field using Approval decision action config from config and validating it at program detail page
+	Scenario: Setup comments as FederalProgramCFDA__c inside comments field API field using Approval decision action config from config and validating it at program detail page
 	Given I have default configuration as below:
 	|configurationCategory            |fieldName              |fieldOrignalValue              |filterId        |
 	|Approval Decision Action         |Comments Field API Name|                               |ApiGeneratedId:1|
@@ -603,6 +605,7 @@ Feature: Approval Process Component Scenarios
 	|Approval Process Steps Cache:General |Notify Additional People|true          |Program_Manager_Approver                                     |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I select "Draft Programs" from double headed dropdown inside admin portal
 	When I search for "Test program for automation -  SA mode only - Can be Approved"
 	When I click on "Edit" icon of status "Created" for "Test program for automation -  SA mode only - Can be Approved" program in flex table
 	And I complete submit for approval
@@ -619,4 +622,167 @@ Feature: Approval Process Component Scenarios
 	When I navigate to "Activities" to reach "Email Logs" side bar content
 	When I select "Queued Emails" from double headed dropdown inside admin portal
 	Then I see email is generated with template "Program_Approved_Email_Template"
-		
+	
+	@41058 @all @mandatoryCommentsReqForReassignAction-Programs
+	Scenario: Setup comments requried as mandatory for reassign from configuration and in pending tasks approval decision
+	Given I have default configuration as below:
+	|configurationCategory    |fieldName         |fieldOrignalValue|filterId        |
+	|Approval Decision Action |Comments Required |false            |ApiGeneratedId:1|
+	Given I setup test configuration as below:
+	|configurationCategory            |fieldName          |fieldNewValue|coreComponentField                                        |
+	|Program	                      |Status             |Created      |Test program for automation -  SA mode only - Not approved|
+	|Approval Decision Action:General |Comments Required  |true         |ADAC-0011                                                 |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation -  SA mode only - Not approved"
+	When I click on "Edit" icon of status "Created" for "Test program for automation -  SA mode only - Not approved" program in flex table
+	And I complete submit for approval
+	When I re-login as "Automation-PM" with "QA" url
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	And I navigate to "Tasks" to reach "Pending" side bar content
+	When I search for "Test program for automation -  SA mode only - Not approved"
+	When I start the approval with subject "Test program for automation -  SA mode only - Not approved"
+	When I select "Reassign" from approval decision panel
+	And I click submit
+	Then I see "Please Select User." error is displayed
+	
+	@41059 @all @commentsFieldAPINameFieldForReassignAction-Programs
+	Scenario: Setup comments as FederalProgramCFDA__c inside comments field API field using Approval decision action config from config and validating it at program detail page
+	Given I have default configuration as below:
+	|configurationCategory            |fieldName              |fieldOrignalValue              |filterId        |
+	|Approval Decision Action         |Comments Field API Name|                               |ApiGeneratedId:1|
+	Given I setup test configuration as below:
+	|configurationCategory            |fieldName              |fieldNewValue                  |coreComponentField                                           |
+	|Program                          |Status                 |Created                        |Test program for automation -  SA mode only - Can be Approved|
+	|Approval Decision Action:General |Comments Field API Name|FederalProgramCFDA__c          |ADAC-0011                                                    |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation -  SA mode only - Can be Approved"
+	When I click on "Edit" icon of status "Created" for "Test program for automation -  SA mode only - Can be Approved" program in flex table
+	And I complete submit for approval
+	When I re-login as "Automation-PM" with "QA" url
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	And I navigate to "Tasks" to reach "Pending" side bar content
+	When I search for "Test program for automation -  SA mode only - Can be Approved"
+    When I start the approval with subject "Test program for automation -  SA mode only - Can be Approved"
+	When I select "Reassign" from approval decision panel
+	When I click select dropdown
+	When I select specific user "Allen PM"
+	When I enter Approval comment
+	And I click submit
+	When I re-login as "Automation" with "QA" url
+    When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+    When I search for "Test program for automation -  SA mode only - Can be Approved"
+	When I click on "View Program Details" icon of status "Submitted for Approval" for "Test program for automation -  SA mode only - Can be Approved" program in flex table
+	Then I see "Automation testing" inside page block details
+	
+	@41063 @all @hideApproveOptionFromHideExpressionJSONField-Programs
+	Scenario: Hiding approve option from configuration and validating its content in pending tasks approval decision
+	Given I have default configuration as below:
+	|configurationCategory    |fieldName           |fieldOrignalValue|filterId        |
+	|Approval Decision Action |Hide Expression JSON|                 |ApiGeneratedId:1|
+	Given I setup test configuration as below:
+	|configurationCategory            |fieldName            |fieldNewValue                                      |coreComponentField                                        |
+	|Program	                      |Status               |Created                                            |Test program for automation -  SA mode only - Not approved|
+	|Approval Decision Action:General |Hide Expression JSON |govgrants_config:HideExpressonJsonForApprovalAction|ADAC-0009                                                 |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation -  SA mode only - Not approved"
+	When I click on "Edit" icon of status "Created" for "Test program for automation -  SA mode only - Not approved" program in flex table
+	And I complete submit for approval
+	When I re-login as "Automation-PM" with "QA" url
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	And I navigate to "Tasks" to reach "Pending" side bar content
+	When I search for "Test program for automation -  SA mode only - Not approved"
+	When I start the approval with subject "Test program for automation -  SA mode only - Not approved"
+	Then I see "Approve" is disabled
+	
+	@41064 @all @hideDisapproveOptionFromHideExpressionJSONField-Programs
+	Scenario: Hiding reject option from configuration and validating its content in pending tasks approval decision
+	Given I have default configuration as below:
+	|configurationCategory    |fieldName           |fieldOrignalValue|filterId        |
+	|Approval Decision Action |Hide Expression JSON|                 |ApiGeneratedId:1|
+	Given I setup test configuration as below:
+	|configurationCategory            |fieldName            |fieldNewValue                                      |coreComponentField                                        |
+	|Program	                      |Status               |Created                                            |Test program for automation -  SA mode only - Not approved|
+	|Approval Decision Action:General |Hide Expression JSON |govgrants_config:HideExpressonJsonForApprovalAction|ADAC-0010                                                 |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation -  SA mode only - Not approved"
+	When I click on "Edit" icon of status "Created" for "Test program for automation -  SA mode only - Not approved" program in flex table
+	And I complete submit for approval
+	When I re-login as "Automation-PM" with "QA" url
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	And I navigate to "Tasks" to reach "Pending" side bar content
+	When I search for "Test program for automation -  SA mode only - Not approved"
+	When I start the approval with subject "Test program for automation -  SA mode only - Not approved"
+	Then I see "Disapprove" is disabled
+	
+	@41065 @all @hideReassignOptionFromHideExpressionJSONField-Programs
+	Scenario: Hiding forward option from configuration and validating its content in pending tasks approval decision
+	Given I have default configuration as below:
+	|configurationCategory    |fieldName           |fieldOrignalValue|filterId        |
+	|Approval Decision Action |Hide Expression JSON|                 |ApiGeneratedId:1|
+	Given I setup test configuration as below:
+	|configurationCategory            |fieldName            |fieldNewValue                                      |coreComponentField                                        |
+	|Program	                      |Status               |Created                                            |Test program for automation -  SA mode only - Not approved|
+	|Approval Decision Action:General |Hide Expression JSON |govgrants_config:HideExpressonJsonForApprovalAction|ADAC-0011                                                 |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation -  SA mode only - Not approved"
+	When I click on "Edit" icon of status "Created" for "Test program for automation -  SA mode only - Not approved" program in flex table
+	And I complete submit for approval
+	When I re-login as "Automation-PM" with "QA" url
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	And I navigate to "Tasks" to reach "Pending" side bar content
+	When I search for "Test program for automation -  SA mode only - Not approved"
+	When I start the approval with subject "Test program for automation -  SA mode only - Not approved"
+	Then I see "Reassign" is disabled
+	
+	@41067 @all @hideSendToOwnerOptionFromHideExpressionJSONField-Programs
+	Scenario: Hiding send back option from configuration and validating its content in pending tasks approval decision
+	Given I have default configuration as below:
+	|configurationCategory    |fieldName           |fieldOrignalValue|filterId        |
+	|Approval Decision Action |Hide Expression JSON|                 |ApiGeneratedId:1|
+	Given I setup test configuration as below:
+	|configurationCategory            |fieldName            |fieldNewValue                                      |coreComponentField                                        |
+	|Program	                      |Status               |Created                                            |Test program for automation -  SA mode only - Not approved|
+	|Approval Decision Action:General |Hide Expression JSON |govgrants_config:HideExpressonJsonForApprovalAction|ADAC-0012                                                 |
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation -  SA mode only - Not approved"
+	When I click on "Edit" icon of status "Created" for "Test program for automation -  SA mode only - Not approved" program in flex table
+	And I complete submit for approval
+	When I re-login as "Automation-PM" with "QA" url
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	And I navigate to "Tasks" to reach "Pending" side bar content
+	When I search for "Test program for automation -  SA mode only - Not approved"
+	When I start the approval with subject "Test program for automation -  SA mode only - Not approved"
+	Then I see "Send to Owner" is disabled
+	
+	@41060 @all @validateCommentedTextInsideHistoryTabForReassignAction-Programs
+	Scenario: Validating commented text inside history tab for reassign approval action at program detail page
+	Given I setup test configuration as below:
+	|configurationCategory                |fieldName                     |fieldNewValue                            |coreComponentField                                        |
+	|Program	                          |Status                        |Created                                  |Test program for automation -  SA mode only - Not approved|
+	When I login as "Automation" User 
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I search for "Test program for automation -  SA mode only - Not approved"
+	When I click on "Edit" icon of status "Created" for "Test program for automation -  SA mode only - Not approved" program in flex table
+	And I complete submit for approval
+	When I re-login as "Automation-PM" with "QA" url
+	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	And I navigate to "Tasks" to reach "Pending" side bar content
+	When I search for "Test program for automation -  SA mode only - Not approved"
+	When I start the approval with subject "Test program for automation -  SA mode only - Not approved"
+	When I select "Reassign" from approval decision panel
+	When I click select dropdown
+	When I select specific user "Allen PM"
+	When I enter Approval comment
+	And I click submit
+	When I re-login as "Automation" with "QA" url
+    When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+    When I search for "Test program for automation -  SA mode only - Not approved"
+	When I click on "View Program Details" icon of status "Submitted for Approval" for "Test program for automation -  SA mode only - Not approved" program in flex table
+	When I click on "History" sub tab inside page layout
+	Then I see "Automation testing" comment for user "Allen PM"	

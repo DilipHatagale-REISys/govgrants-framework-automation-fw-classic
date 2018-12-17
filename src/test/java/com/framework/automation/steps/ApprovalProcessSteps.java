@@ -95,4 +95,9 @@ public class ApprovalProcessSteps {
 	public void assertSuccessForEmailToProgramOwner(String templateName) {
 		approvalProcesPage.assertSuccessForEmailToProgramOwner(templateName);
 	}
+
+	@Then("^I see \"([^\"]*)\" comment for user \"([^\"]*)\"$")
+	public void assertCommentedTextInsideHistoryTab(String commentText, String User) {
+		approvalProcesPage.assertCommentTextInsideHistoryTab(commentText, User);
+	}
 }

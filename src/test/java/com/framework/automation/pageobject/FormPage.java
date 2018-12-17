@@ -95,7 +95,7 @@ public class FormPage extends GovGrantsManager {
 	public void assertTextNotDisplayedInPDF(String text, int pageNumber, String fileName) {
 		Assert.assertTrue(isTextNotDisplayedInFile(text, pageNumber, fileName));
 	}
-
+	
 	/*********
 	 * "Local Methods with complete functionality - private"
 	 *****************/

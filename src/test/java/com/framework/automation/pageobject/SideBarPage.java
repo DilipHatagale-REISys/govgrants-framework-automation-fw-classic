@@ -131,8 +131,9 @@ public class SideBarPage extends GovGrantsManager {
 	private Boolean isAccordianHeaderSequence(String accordianHeaderName, int number, String headerName) {
 		if (accordianHeadersList(headerName).get(number).getText().contains(accordianHeaderName)) {
 			return true;
-		} else
+		} else {
 			return false;
+		}
 	}
 
 	/**
