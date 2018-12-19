@@ -15,6 +15,21 @@ public class EnhancedFlexGridSteps {
 		enhancedFlexGrid = new EnhancedFlexGridPage(controller, handler, govgrants);
 	}
 
+	@When("^I click on \"([^\"]*)\" icon of status \"([^\"]*)\" for \"([^\"]*)\" program in enhanced flex grid$")
+	public void clickAnyIconInFlexTable(String iconName, String statusName, String programSubject) {
+		enhancedFlexGrid.clickTableActionIconsForSpecificSubject(iconName, statusName, programSubject);
+	}
+
+	@When("^I hovering mouse on help text icon inside \"([^\"]*)\" for enhanced grid$")
+	public void getHelpTextIconsAtPageBlock(String blockTitle) {
+		enhancedFlexGrid.getHelpTextAtParentFlexTableEnhancedGrid(blockTitle);
+	}
+	
+	@When("^I hovering mouse on help text icon inside \"([^\"]*)\" for enhanced grid table column$")
+	public void getHelpTextIconsAtFlexTableColumn(String columnTitle) {
+		enhancedFlexGrid.getHelpTextAtEnhancedGridTableSpecificColumn(columnTitle);
+	}
+
 	@Then("^I see Advance Filter is disabled from planning enhanced flex grid$")
 	public void assertAdvanceFilterOptionDisabled() {
 		enhancedFlexGrid.assertDisableAdvanceFilterFromEnhancedGrid();
@@ -55,10 +70,23 @@ public class EnhancedFlexGridSteps {
 		enhancedFlexGrid.assertEditOpenInSameTabForEnhancedGrid();
 	}
 
-	@When("^I click on \"([^\"]*)\" icon of status \"([^\"]*)\" for \"([^\"]*)\" program in enhanced flex grid$")
-	public void clickAnyIconInFlexTable(String iconName, String statusName, String programSubject) {
-		//enhancedFlexGrid.clickTableActionIconsForSpecificSubjectInsideEnhancedGrid(programSubject, statusName,
-				//iconName);
-	    enhancedFlexGrid.clickTableActionIconsForSpecificSubject(iconName, statusName, programSubject);
+	@Then("^I see \"([^\"]*)\" with page size dropdown at bottom in enhanced grid$")
+	public void assertFlexTablePageSizeEnabled(String text) {
+		enhancedFlexGrid.assertEnhancedGridPageSizeEnabled(text);
+	}
+
+	@Then("^I see \"([^\"]*)\" records inside enhanced grid$")
+	public void assertFlexTableNoOfRecords(int rowCount) {
+		enhancedFlexGrid.assertEnhancedGridNumberOfRecordsPresent(rowCount);
+	}
+	
+	@Then("^I see \"([^\"]*)\" shown as enhanced grid table column title$")
+	public void assertEnhancedGridtableColumnName(String columnTitleName) {
+		enhancedFlexGrid.assertCorrectEnhancedGridTableColumnTitleDisplayed(columnTitleName);
+	}
+	
+	@Then("^I see \"([^\"]*)\" shown inside enhanced grid table for specified record \"([^\"]*)\"$")
+	public void assertEnhancedGridSpecificCellValue(String cellValue, String colName) {
+		enhancedFlexGrid.assertCellValueOfEnhancedGridForSpecificRecordDisplayed(cellValue, colName);
 	}
 }

@@ -52,19 +52,26 @@ public class FlexTable {
 									String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c), filterClause),
 							String.valueOf(SObjectAPIs.GNT__EnableTotal__c), value);
 			break;
-		case "ACTIVE ?":
+		case "HIDE CELL JSON":
 			finalPayload = String
-					.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__FlexTableFilterListViewConfig__c),
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c),
 							apiUtilities.getComponentCoreFieldId(
-									String.valueOf(SObjectAPIs.GNT__FlexTableFilterListViewConfig__c), filterClause),
-							String.valueOf(SObjectAPIs.GNT__IsActive__c), value);
+									String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__HideCellJSON__c), value);
+			break;
+		case "ACTIVE ?":
+			finalPayload = String.format(payloadForIntValue,
+					String.valueOf(SObjectAPIs.GNT__FlexTableFilterListViewConfig__c),
+					apiUtilities.getComponentCoreFieldId(
+							String.valueOf(SObjectAPIs.GNT__FlexTableFilterListViewConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__IsActive__c), value);
 			break;
 		case "SHOW IN PDF":
-			finalPayload = String
-					.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__FlexTableFilterListViewConfig__c),
-							apiUtilities.getComponentCoreFieldId(
-									String.valueOf(SObjectAPIs.GNT__FlexTableFilterListViewConfig__c), filterClause),
-							String.valueOf(SObjectAPIs.GNT__ShowInPDF__c), value);
+			finalPayload = String.format(payloadForIntValue,
+					String.valueOf(SObjectAPIs.GNT__FlexTableFilterListViewConfig__c),
+					apiUtilities.getComponentCoreFieldId(
+							String.valueOf(SObjectAPIs.GNT__FlexTableFilterListViewConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__ShowInPDF__c), value);
 			break;
 		}
 		System.out.println(finalPayload);
@@ -295,6 +302,24 @@ public class FlexTable {
 					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableAction__c), apiUtilities
 							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableAction__c), filterClause),
 					String.valueOf(SObjectAPIs.GNT__HideExpressionJSON__c), value);
+			break;
+		case "ACTION URL LONG":
+			finalPayload = String.format(
+					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableAction__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableAction__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__ActionURLLong__c), value);
+			break;
+		case "EDITABLE ROWS":
+			finalPayload = String.format(
+					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableAction__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableAction__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__EditableRows__c), value);
+			break;
+		case "SINGLE ROW EDIT BEHAVIOR":
+			finalPayload = String.format(
+					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableAction__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableAction__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__SingleRowEditBehavior__c), value);
 			break;
 		}
 		System.out.println(finalPayload);

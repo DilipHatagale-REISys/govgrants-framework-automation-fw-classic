@@ -359,7 +359,7 @@ Feature: Flex Table Component Scenarios
 	Then I see "Page" with pagination arrow at bottom in flex table
 	
 	@39302 @all @defaultPageSizeFieldAtFlexTable-gPlanning
-	Scenario: validate enabling of page size dropdown at bottom in flex table of programs-planning
+	Scenario: validate change of default page size inside dropdown at bottom in flex table of programs-planning
 	Given I have default configuration as below:
 	|configurationCategory |fieldName        |fieldOrignalValue|filterId        |
 	|Flex Table            |Default Page Size|10               |ApiGeneratedId:0|

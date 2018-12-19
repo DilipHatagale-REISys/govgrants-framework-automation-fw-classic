@@ -52,6 +52,7 @@ public class ProjectWebServices {
 			assertStatusCode(postConfigCall(configurationCategory, fieldName,
 					readProp.ReadPropertyFile("govgrants_Config.properties", splittedValue[1]), filterClause));
 		} else {
+			System.out.println("configuration for field value is" + fieldValue);
 			assertStatusCode(postConfigCall(configurationCategory, fieldName, fieldValue, filterClause));
 		}
 	}
@@ -73,6 +74,7 @@ public class ProjectWebServices {
 							storeAllIds.get(Integer.parseInt(getValueAt[1])).getId(), filterClause),
 					endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
 		} else {
+			System.out.println("post call value is==========" + value);
 			response = apiCall.postCall(null,
 					configPostCall.getConfigJson(handleConfigCategory(configCategory), fieldName, value, filterClause),
 					endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);

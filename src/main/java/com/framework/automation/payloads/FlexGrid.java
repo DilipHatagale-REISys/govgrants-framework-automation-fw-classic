@@ -95,6 +95,30 @@ public class FlexGrid {
 							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__FlexGridConfig__c), filterClause),
 					String.valueOf(SObjectAPIs.Name), value);
 			break;
+		case "HEADER HELP TEXT":
+			finalPayload = String.format(
+					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__HeaderDescription__c), value);
+			break;
+		case "ENABLE PAGE SIZE":
+			finalPayload = String.format(
+					payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__EnablePageSize__c), value);
+			break;
+		case "DEFAULT PAGE SIZE":
+			finalPayload = String.format(
+					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__DefaultPageSizeEnhanced__c), value);
+			break;
+		case "ENABLE HELP":
+			finalPayload = String.format(
+					payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__EnableHelp__c), value);
+			break;
 		}
 		System.out.println(finalPayload);
 		return finalPayload;
