@@ -1,5 +1,7 @@
 package com.framework.automation.runner;
 
+import com.automation.rei.controller.CucumberRunnerManager;
+
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 
@@ -10,12 +12,12 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
  * @author nauman.shahid
  *
  */
-@CucumberOptions(features = { "classpath:features" }, tags = { "@validateGrantsData-msp" }, glue = {
+@CucumberOptions(features = { "classpath:features" }, tags = { "@locationFieldAtEnhancedGridActionItem-gPlanning" }, glue = {
         "com.framework.automation.steps" }, plugin = { "com.cucumber.listener.ExtentCucumberFormatter:" })
 
 public class IDERunner extends AbstractTestNGCucumberTests {
     static {
-       // new CucumberRunnerManager();
+       new CucumberRunnerManager();
     }
 
 }

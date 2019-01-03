@@ -29,6 +29,11 @@ public class EnhancedFlexGridSteps {
 	public void getHelpTextIconsAtFlexTableColumn(String columnTitle) {
 		enhancedFlexGrid.getHelpTextAtEnhancedGridTableSpecificColumn(columnTitle);
 	}
+		
+	@When("^I click on \"([^\"]*)\" icon of status \"([^\"]*)\" for \"([^\"]*)\" program in enhanced grid table without processing$")
+	public void clickTableActionIconsWithoutProcessing(String iconName, String programSubject, String statusName) {
+		enhancedFlexGrid.clickTableActionIconsForSpecificSubjectWithoutProcessing(iconName, programSubject, statusName);
+	}
 
 	@Then("^I see Advance Filter is disabled from planning enhanced flex grid$")
 	public void assertAdvanceFilterOptionDisabled() {
@@ -80,11 +85,6 @@ public class EnhancedFlexGridSteps {
 		enhancedFlexGrid.assertEnhancedGridNumberOfRecordsPresent(rowCount);
 	}
 
-	@Then("^I see \"([^\"]*)\" shown as enhanced grid table column title$")
-	public void assertEnhancedGridtableColumnName(String columnTitleName) {
-		enhancedFlexGrid.assertCorrectEnhancedGridTableColumnTitleDisplayed(columnTitleName);
-	}
-
 	@Then("^I see \"([^\"]*)\" shown inside enhanced grid table for specified record \"([^\"]*)\"$")
 	public void assertEnhancedGridSpecificCellValue(String cellValue, String colName) {
 		enhancedFlexGrid.assertCellValueOfEnhancedGridForSpecificRecordDisplayed(cellValue, colName);
@@ -98,5 +98,10 @@ public class EnhancedFlexGridSteps {
 	@Then("^I see \"([^\"]*)\" not displayed in enhanced grid table column title$")
 	public void assertEnhancedGridtableColumnNotDisplayed(String columnTitleName) {
 		enhancedFlexGrid.assertSpecificColumnOfEnhancedGridTableNotDisplayed(columnTitleName);
+	}
+	
+	@Then("^I see \"([^\"]*)\" shown inside flex table with id \"([^\"]*)\"$")
+	public void assertEnhancedGridtableColumnName(String columnTitleName, String tableId) {
+		enhancedFlexGrid.assertCorrectEnhancedGridTableColumnTitleDisplayed(columnTitleName, tableId);
 	}
 }

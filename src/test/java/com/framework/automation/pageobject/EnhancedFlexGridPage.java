@@ -15,8 +15,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	/******* "Variables and Locators" *****************/
 	private final By advanceFilterButtonForEnhancedGrid, reachOutToEnhancedGridCollapse, menuIconForEnhancedGrid,
 			searchInputEnhancedGrid, completeTableRowOfEnhancedGrid, totalRowCountInsideEnhancedGrid,
-			selectRecordCheckBoxForEnhancedGrid, scrollToActionColumn, completeTableRowEnhancedGrid,
-			currentBudgetPeriodEndDate;
+			selectRecordCheckBoxForEnhancedGrid, completeTableRowEnhancedGrid, currentBudgetPeriodEndDate;
 
 	/**
 	 * Constructor to handle dependency injection and framework library
@@ -34,7 +33,6 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 		totalRowCountInsideEnhancedGrid = By.xpath("//span[@ng-bind='totalRecords']");
 		selectRecordCheckBoxForEnhancedGrid = By
 				.xpath("//div[@id='Enhanced1grid']//input[@aria-label='Select Record']");
-		scrollToActionColumn = By.xpath("//div[@id='Enhanced1grid']//th[contains(text(),'Actions')]");
 		completeTableRowEnhancedGrid = By
 				.xpath("//div[@id='flexGridEnhanced1']//div[contains(@class,'panel-body')]//div/table/tbody/tr");
 		currentBudgetPeriodEndDate = By.xpath("//field[@field-name='BudgetPeriodEndDate__c']//input[@type='text']");
@@ -217,10 +215,10 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	 * 
 	 * @param columnTitleName
 	 */
-	public void assertCorrectEnhancedGridTableColumnTitleDisplayed(String columnTitleName) {
-		Assert.assertTrue(isChangedEnhancedFlexGridColumnHeaderName(columnTitleName));
+	public void assertCorrectEnhancedGridTableColumnTitleDisplayed(String columnTitleName, String tableId) {
+		Assert.assertTrue(isChangedEnhancedFlexGridColumnHeaderName(columnTitleName, tableId));
 	}
-	
+
 	/**
 	 * assert specific column inside enhanced grid table column not displayed
 	 * 
@@ -417,30 +415,31 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	}
 
 	/**
-	 * click flex table item based on program name/subject , status and icon name
+	 * click flex table item based on program name/subject , status and iconName
 	 * 
 	 * @param programSubject
 	 * @param statusName
 	 * @param iconName
 	 */
-	public void clickTableActionIconsForSpecificSubjectInsideEnhancedGrid(String programSubject, String statusName,
-			String iconName) {
-		try {
-			reiDriver.JavaScript().scrollpageToSpecificElement(scrollToActionColumn);
-			reiDriver.WaitFor()
-					.WaitForElementToBePresent(By.xpath("//td//span[contains(text(),'" + programSubject
-							+ "')]/./../../../../../td//span[contains(text(),'" + statusName
-							+ "')]/../../../..//td//span//a[@title='" + iconName + "']//i"))
-					.click();
+	public void clickTableActionIconsForSpecificSubject(String iconName, String statusName, String programSubject) {
+		govgrants.mainPage().waitForNavigationLogoToDisappear();
+		govgrants.flexTable().clickTableActionIcons(iconName, programSubject, statusName);
+	}
 
-		} catch (Exception e) {
-			reiDriver.JavaScript().scrollpageToSpecificElement(scrollToActionColumn);
-			reiDriver.WaitFor().makeThreadSleep(1000);
-			reiDriver.JavaScript()
-					.clickByJS(By.xpath("//td//span[contains(text(),'" + programSubject
-							+ "')]/./../../../../../td//span[contains(text(),'" + statusName
-							+ "')]/../../../..//td//span//a[@title='" + iconName + "']//i"));
-		}
+	/**
+	 * click enhanced grid table item program name/subject , status and iconName
+	 * without processing any operation on modal/confirmation box
+	 * 
+	 * @param anyUniqueColumnValues
+	 * @param flexTableId
+	 * @param iconName
+	 */
+	public void clickTableActionIconsForSpecificSubjectWithoutProcessing(String iconName, String programSubject,
+			String statusName) {
+		reiDriver.JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
+		govgrants.mainPage().waitForNavigationLogoToDisappear();
+		reiDriver.findMyElement()
+				.getElement(govgrants.flexTable().getTableActionIcon(iconName, programSubject, statusName)).click();
 	}
 
 	/**
@@ -488,6 +487,22 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 
 	/**
 	 * 
+	 * @return true if changed column name is displayed for enhaced grid
+	 */
+	private Boolean isChangedEnhancedFlexGridColumnHeaderName(String columnTitleName, String tableId) {
+		boolean flag = false;
+		try {
+			if (govgrants.flexTable().getSpecificElementFromTableHeader(tableId, columnTitleName).getText()
+					.equalsIgnoreCase(columnTitleName)) {
+				flag = true;
+			}
+		} catch (Exception e) {
+		}
+		return flag;
+	}
+
+	/**
+	 * 
 	 * @return true if changed cell value for specific record is displayed for
 	 *         enhaced grid
 	 */
@@ -512,7 +527,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	private Boolean isInputTextBoxIsDisplayedForSpecificColumnOfEnhancedFlexGrid() {
 		boolean flag = false;
 		try {
-			//reiDriver.JavaScript().scrollpageToSpecificElement(currentBudgetPeriodEndDate);
+			reiDriver.JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
 			govgrants.flexTable().slideNestedFlexTable("TmpActiveGrantsGridFlexToggle", 150);
 			if (reiDriver.findMyElement().getElement(currentBudgetPeriodEndDate).isDisplayed()) {
 				flag = true;

@@ -280,16 +280,6 @@ public class GovGrantsManager extends ProjectWebServices {
 	}
 
 	/**
-	 * click on sub header content
-	 * 
-	 * @param AccordianHeader
-	 * @param subHeaderContentName
-	 */
-	public void clickAccordiansubHeaderContent(String subHeader, String subHeaderDetailTabs) {
-		govgrants.sideBar().getSideBarContent(subHeader, subHeaderDetailTabs).click();
-	}
-
-	/**
 	 * Assert for page title
 	 * 
 	 * @param pageTitle
@@ -493,7 +483,7 @@ public class GovGrantsManager extends ProjectWebServices {
 		return reiDriver.adobeReader().readFromAdobeFileOnLocalAtUserDirectory(
 				directory.getAbsolutePath().toString() + "\\" + fileName + ".pdf", pageNumber);
 	}
-	
+
 	/******* "Local Methods with Limited functionality " **********/
 
 	/**

@@ -52,14 +52,6 @@ public class StepProgressBarPage extends GovGrantsManager {
 	}
 
 	/**
-	 * assert if step progress bar is displayed in different color
-	 * 
-	 */
-	public void assertStepProgressBarAppearence(String colorName, String statusName) {
-		Assert.assertTrue(govgrants.pageDetails().isStepProgressBarStatusInSpecifiedColor(statusName, colorName));
-	}
-
-	/**
 	 * assert if changed display name for specific status of step progress bar is
 	 * displayed
 	 * 

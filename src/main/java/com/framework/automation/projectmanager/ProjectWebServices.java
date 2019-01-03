@@ -52,7 +52,6 @@ public class ProjectWebServices {
 			assertStatusCode(postConfigCall(configurationCategory, fieldName,
 					readProp.ReadPropertyFile("govgrants_Config.properties", splittedValue[1]), filterClause));
 		} else {
-			System.out.println("configuration for field value is" + fieldValue);
 			assertStatusCode(postConfigCall(configurationCategory, fieldName, fieldValue, filterClause));
 		}
 	}

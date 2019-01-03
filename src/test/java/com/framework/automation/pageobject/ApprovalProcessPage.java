@@ -122,10 +122,6 @@ public class ApprovalProcessPage extends GovGrantsManager {
 	 * @param message
 	 */
 	public void assertMessageOfConfirmationBoxPopUp(String message) {
-		reiDriver.WaitFor().makeThreadSleep(6000);
-		System.out.println("Message====="+reiDriver.WaitFor().WaitForElementToBePresent(confirmationBoxMessage)
-				.getAttribute("innerText").equalsIgnoreCase(message));
-		System.out.println("-----------------------"+message);
 		Assert.assertTrue(reiDriver.WaitFor().WaitForElementToBePresent(confirmationBoxMessage)
 				.getAttribute("innerText").equalsIgnoreCase(message));
 	}

@@ -1124,7 +1124,7 @@ Feature: Page Layout Component Scenarios
 	And I complete submit for approval
 	When I re-login as "Automation-PM" with "QA" url 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	And I navigate to "Tasks" to reach "Pending" side bar content
+	When I navigate to "Pending" content inside "Tasks" subheader on left panel
 	When I search for "Test program for automation -  SA mode only - Can be Approved"
 	When I start the approval with subject "Test program for automation -  SA mode only - Can be Approved"
 	Then I see "Approve" is disabled

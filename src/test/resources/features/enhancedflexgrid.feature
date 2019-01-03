@@ -107,8 +107,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
 	When I click on "Financials" sub tab inside page layout
-	#Then I see "#" in enhanced flex grid header
-	Then I see " #" in flex table header	
+	Then I see "#" in enhanced flex grid header
 	
 	@35442 @all @enableRecordSelectionForFlexForEnhancedGrid-gPlanning
 	Scenario: validate enabling of record selection check boxes in enhanced flex grid planning-Program enhanced flex grid
@@ -303,8 +302,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
 	When I click on "Financials" sub tab inside page layout
-	#Then I see "Test Automation" shown as enhanced grid table column title
-	Then I see "Test Automation" shown as flex table column title
+	Then I see "Test Automation" shown inside flex table with id "TmpActiveGrantsGridFlexToggle"
 	
 	@41319 @all @hideCellJsonfieldAtEnhancedGrid-gPlanning
 	Scenario: Hiding specific cell value of enhanced grid from config and validating it inside enhanced grid of programs-planning
@@ -398,25 +396,5 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
 	When I click on "Financials" sub tab inside page layout
-	When I click on "Edit" icon of status "Active" for "Demo_Title" program in enhanced flex grid
+	When I click on "Edit" icon of status "Active" for "Demo_Title" program in enhanced grid table without processing
 	Then I see confirmation box with body "Automation" is displayed
-	
-	@41468 @all @locationFieldAtEnhancedGridActionItem-gPlanning
-	Scenario: Changing location of Monitoring Schedule For All Active Grants enhanced grid table view action from row to top from config anf validating it inside enhanced of program-planning
-	#Given I have default configuration as below:
-	#|configurationCategory |fieldName                 |fieldOrignalValue    |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
-	#|Flex Table Action     |Location                  |Row                  |TmpActiveGrantsGrid   |Name                     |View                      |
-	#|Flex Table Action     |Header Action Display Type|                     |TmpActiveGrantsGrid   |Name                     |View                      |
-	#Given I setup test configuration as below:
-	#|configurationCategory|fieldName                  |fieldNewValue        |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
-	#|Flex Table Action    |Location                   |Top                  |TmpActiveGrantsGrid   |Name                     |View                      |
-	#|Flex Table Action    |Header Action Display Type |Button               |TmpActiveGrantsGrid   |Name                     |View                      |
-	When I login as "Automation" User 
-    When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-    When I search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
-	When I click on "Financials" sub tab inside page layout
-	Then I see "View" button inside "Monitoring Schedule For All Active Grants" flex table
-	
-	
-	
