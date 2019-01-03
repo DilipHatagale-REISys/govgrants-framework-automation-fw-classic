@@ -12,7 +12,8 @@ import com.framework.automation.projectmanager.GovGrantsManager;
 public class FlexTablePage extends GovGrantsManager {
 	/******* "Variables and Locators" *****************/
 
-	private final By overLayFrame, innerFlexTableActionIframe, programFlexTableActionItems, programFlexTableDropdown;
+	private final By overLayFrame, innerFlexTableActionIframe, programFlexTableActionItems, programFlexTableDropdown,
+			currentBudgetPeriodEndDate, scrollToActionColumn;
 
 	/**
 	 * Constructor to handle dependency injection and framework library
@@ -24,6 +25,8 @@ public class FlexTablePage extends GovGrantsManager {
 		programFlexTableActionItems = By.xpath("//span[@class='focusActionItem ng-scope']//a");
 		programFlexTableDropdown = By
 				.xpath("//div[contains(@class,'panel-title')]//div[@id='dropdownListView']/ul/li/a");
+		currentBudgetPeriodEndDate = By.xpath("//field[@field-name='BudgetPeriodEndDate__c']//input[@type='text']");
+		scrollToActionColumn = By.xpath("//div[@id='Enhanced1grid']//th[contains(text(),'Actions')]");
 	}
 
 	/******* "Key Methods with complete functionality - public" *****************/
@@ -757,6 +760,7 @@ public class FlexTablePage extends GovGrantsManager {
 				flag = true;
 			}
 		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		return flag;
 	}

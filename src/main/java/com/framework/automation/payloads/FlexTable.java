@@ -59,6 +59,13 @@ public class FlexTable {
 									String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c), filterClause),
 							String.valueOf(SObjectAPIs.GNT__HideCellJSON__c), value);
 			break;
+		case "READ ONLY CELL JSON":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__ReadOnlyCellJSON__c), value);
+			break;
 		case "ACTIVE ?":
 			finalPayload = String.format(payloadForIntValue,
 					String.valueOf(SObjectAPIs.GNT__FlexTableFilterListViewConfig__c),
@@ -72,6 +79,20 @@ public class FlexTable {
 					apiUtilities.getComponentCoreFieldId(
 							String.valueOf(SObjectAPIs.GNT__FlexTableFilterListViewConfig__c), filterClause),
 					String.valueOf(SObjectAPIs.GNT__ShowInPDF__c), value);
+			break;
+		case "HIDE COLUMN JSON":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__HideColumnJSON__c), value);
+			break;
+		case "READ ONLY COLUMN JSON":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__ReadOnlyColumnJSON__c), value);
 			break;
 		}
 		System.out.println(finalPayload);

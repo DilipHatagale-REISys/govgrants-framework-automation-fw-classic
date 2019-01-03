@@ -24,7 +24,7 @@ public class EnhancedFlexGridSteps {
 	public void getHelpTextIconsAtPageBlock(String blockTitle) {
 		enhancedFlexGrid.getHelpTextAtParentFlexTableEnhancedGrid(blockTitle);
 	}
-	
+
 	@When("^I hovering mouse on help text icon inside \"([^\"]*)\" for enhanced grid table column$")
 	public void getHelpTextIconsAtFlexTableColumn(String columnTitle) {
 		enhancedFlexGrid.getHelpTextAtEnhancedGridTableSpecificColumn(columnTitle);
@@ -79,14 +79,24 @@ public class EnhancedFlexGridSteps {
 	public void assertFlexTableNoOfRecords(int rowCount) {
 		enhancedFlexGrid.assertEnhancedGridNumberOfRecordsPresent(rowCount);
 	}
-	
+
 	@Then("^I see \"([^\"]*)\" shown as enhanced grid table column title$")
 	public void assertEnhancedGridtableColumnName(String columnTitleName) {
 		enhancedFlexGrid.assertCorrectEnhancedGridTableColumnTitleDisplayed(columnTitleName);
 	}
-	
+
 	@Then("^I see \"([^\"]*)\" shown inside enhanced grid table for specified record \"([^\"]*)\"$")
 	public void assertEnhancedGridSpecificCellValue(String cellValue, String colName) {
 		enhancedFlexGrid.assertCellValueOfEnhancedGridForSpecificRecordDisplayed(cellValue, colName);
+	}
+
+	@Then("^I see input box is not displayed for budget period end date$")
+	public void assertTextInputBoxForSpecificColumn() {
+		enhancedFlexGrid.assertTextInputBoxForSpecificColumnNotDisplayed();
+	}
+
+	@Then("^I see \"([^\"]*)\" not displayed in enhanced grid table column title$")
+	public void assertEnhancedGridtableColumnNotDisplayed(String columnTitleName) {
+		enhancedFlexGrid.assertSpecificColumnOfEnhancedGridTableNotDisplayed(columnTitleName);
 	}
 }

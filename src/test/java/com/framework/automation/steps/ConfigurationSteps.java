@@ -31,9 +31,6 @@ public class ConfigurationSteps {
     public void setupTestCofniguration(DataTable testConfigParameters) throws IOException {
     	System.out.println("size is "+testConfigParameters.asMaps(String.class, String.class).size());
         for (Map<String, String> parameters : testConfigParameters.asMaps(String.class, String.class)) {
-        	System.out.println("field values are "+parameters.get("fieldNewValue"));
-        	System.out.println("field values are "+parameters.get("fieldName"));
-        	System.out.println("loop RUNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNING");
             projectAPI.setupConfigurationForTest(parameters.get("configurationCategory"), parameters.get("fieldName"),
                     parameters.get("fieldNewValue"), parameters.get("coreComponentField"),
                     parameters.get("coreCOmponentSubFieldName"), parameters.get("coreComponentSubFieldValue"));

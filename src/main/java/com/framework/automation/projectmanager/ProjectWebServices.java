@@ -74,7 +74,6 @@ public class ProjectWebServices {
 							storeAllIds.get(Integer.parseInt(getValueAt[1])).getId(), filterClause),
 					endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
 		} else {
-			System.out.println("post call value is==========" + value);
 			response = apiCall.postCall(null,
 					configPostCall.getConfigJson(handleConfigCategory(configCategory), fieldName, value, filterClause),
 					endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);

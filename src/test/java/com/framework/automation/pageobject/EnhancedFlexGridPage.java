@@ -15,7 +15,8 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	/******* "Variables and Locators" *****************/
 	private final By advanceFilterButtonForEnhancedGrid, reachOutToEnhancedGridCollapse, menuIconForEnhancedGrid,
 			searchInputEnhancedGrid, completeTableRowOfEnhancedGrid, totalRowCountInsideEnhancedGrid,
-			selectRecordCheckBoxForEnhancedGrid, scrollToActionColumn, completeTableRowEnhancedGrid;
+			selectRecordCheckBoxForEnhancedGrid, scrollToActionColumn, completeTableRowEnhancedGrid,
+			currentBudgetPeriodEndDate;
 
 	/**
 	 * Constructor to handle dependency injection and framework library
@@ -36,6 +37,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 		scrollToActionColumn = By.xpath("//div[@id='Enhanced1grid']//th[contains(text(),'Actions')]");
 		completeTableRowEnhancedGrid = By
 				.xpath("//div[@id='flexGridEnhanced1']//div[contains(@class,'panel-body')]//div/table/tbody/tr");
+		currentBudgetPeriodEndDate = By.xpath("//field[@field-name='BudgetPeriodEndDate__c']//input[@type='text']");
 	}
 
 	/******* "Key Methods with complete functionality - public" *****************/
@@ -218,6 +220,15 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	public void assertCorrectEnhancedGridTableColumnTitleDisplayed(String columnTitleName) {
 		Assert.assertTrue(isChangedEnhancedFlexGridColumnHeaderName(columnTitleName));
 	}
+	
+	/**
+	 * assert specific column inside enhanced grid table column not displayed
+	 * 
+	 * @param columnTitleName
+	 */
+	public void assertSpecificColumnOfEnhancedGridTableNotDisplayed(String columnTitleName) {
+		Assert.assertFalse(isChangedEnhancedFlexGridColumnHeaderName(columnTitleName));
+	}
 
 	/**
 	 * assert enhanced grid cell value for particular record is displayed
@@ -226,6 +237,15 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	 */
 	public void assertCellValueOfEnhancedGridForSpecificRecordDisplayed(String columnTitleName, String colName) {
 		Assert.assertTrue(isSpecificCellValueOfEnhancedFlexGrid(columnTitleName, colName));
+	}
+
+	/**
+	 * assert text input box for current project period end date column inside
+	 * enhanced grid is not displayed
+	 * 
+	 */
+	public void assertTextInputBoxForSpecificColumnNotDisplayed() {
+		Assert.assertFalse(isInputTextBoxIsDisplayedForSpecificColumnOfEnhancedFlexGrid());
 	}
 
 	/*********
@@ -477,6 +497,24 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 			reiDriver.JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
 			if (getSpecificRecordCellValueFromEnhancedGridHeader(cellValue, colName).getText()
 					.equalsIgnoreCase(cellValue)) {
+				flag = true;
+			}
+		} catch (Exception e) {
+		}
+		return flag;
+	}
+
+	/**
+	 * 
+	 * @return true if changed cell value for specific record is displayed for
+	 *         enhaced grid
+	 */
+	private Boolean isInputTextBoxIsDisplayedForSpecificColumnOfEnhancedFlexGrid() {
+		boolean flag = false;
+		try {
+			//reiDriver.JavaScript().scrollpageToSpecificElement(currentBudgetPeriodEndDate);
+			govgrants.flexTable().slideNestedFlexTable("TmpActiveGrantsGridFlexToggle", 150);
+			if (reiDriver.findMyElement().getElement(currentBudgetPeriodEndDate).isDisplayed()) {
 				flag = true;
 			}
 		} catch (Exception e) {

@@ -107,7 +107,8 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
 	When I click on "Financials" sub tab inside page layout
-	Then I see "#" in enhanced flex grid header	
+	#Then I see "#" in enhanced flex grid header
+	Then I see " #" in flex table header	
 	
 	@35442 @all @enableRecordSelectionForFlexForEnhancedGrid-gPlanning
 	Scenario: validate enabling of record selection check boxes in enhanced flex grid planning-Program enhanced flex grid
@@ -125,13 +126,19 @@ Feature: Enhanced Flex Grid Component Scenarios
 	Then I see select check box enabled in enhanced flex grid
 	
 	@35441 @all @editActionOpensInSameWindowForEnhancedGrid-gPlanning
-	Scenario: validate enhanced flex grid action field Edit opens in same window planning-Program enhanced flex grid
+	Scenario Outline: validate enhanced flex grid action field Edit opens in same window planning-Program enhanced flex grid
 	Given I have default configuration as below:
-	|configurationCategory |fieldName         |fieldOrignalValue|filterId        |
-	|Flex Table Action     |Where To Open ?   |same window      |ApiGeneratedId:0|
+	|configurationCategory |fieldName               |fieldOrignalValue   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table Action     |Single Row Edit Behavior|Inline              |TmpActiveGrantsGrid   |Name                     |Edit                      |
+	|Flex Table Action     |Editable Rows           |SingleRows          |TmpActiveGrantsGrid   |Name                     |Edit                      |
+	|Flex Table Action     |Action Behavior         |EditRecord          |TmpActiveGrantsGrid   |Name                     |Edit                      |
+	|Flex Table Action     |Action URL Long         |<actionUrlLongValue>|TmpActiveGrantsGrid   |Name                     |Edit                      |
+	|Flex Table Action     |Where To Open ?         |                    |TmpActiveGrantsGrid   |Name                     |Edit                      |
 	Given I setup test configuration as below:
-	|configurationCategory |fieldName         |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
-	|Flex Table Action     |Where To Open ?   |same window  |TmpActiveGrantsGrid   |Name                     |Edit                      |
+	|configurationCategory |fieldName               |fieldNewValue       |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table Action     |Action Behavior         |OpenURL             |TmpActiveGrantsGrid   |Name                     |Edit                      |
+	|Flex Table Action     |Action URL Long         |<actionUrlLongValue>|TmpActiveGrantsGrid   |Name                     |Edit                      |
+	|Flex Table Action     |Where To Open ?         |SameWindow          |TmpActiveGrantsGrid   |Name                     |Edit                      |
 	When I login as "Automation" User 
     When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
     When I search for "Test program for automation - Created mode only"
@@ -139,6 +146,10 @@ Feature: Enhanced Flex Grid Component Scenarios
 	When I click on "Financials" sub tab inside page layout
 	When I click on "Edit" icon of status "Active" for "Demo_Title" program in enhanced flex grid
 	Then I see no new tab is opened for action item in enhanced flex grid
+	
+	Examples:
+	|actionUrlLongValue|
+	|/apex/GrantEdit?id={!rowId}|
 	
 	@35440 @all @editActionOpensInOverLayWindowForEnhancedGrid-gPlanning
 	Scenario Outline: validate flex table action field- Edit opens in overlay window
@@ -151,8 +162,6 @@ Feature: Enhanced Flex Grid Component Scenarios
 	|Flex Table Action     |Where To Open ?         |                    |TmpActiveGrantsGrid   |Name                     |Edit                      |
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName               |fieldNewValue       |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
-	|Flex Table Action     |Single Row Edit Behavior|                    |TmpActiveGrantsGrid   |Name                     |Edit                      |
-	|Flex Table Action     |Editable Rows           |                    |TmpActiveGrantsGrid   |Name                     |Edit                      |
 	|Flex Table Action     |Action Behavior         |OpenURL             |TmpActiveGrantsGrid   |Name                     |Edit                      |
 	|Flex Table Action     |Action URL Long         |<actionUrlLongValue>|TmpActiveGrantsGrid   |Name                     |Edit                      |
 	|Flex Table Action     |Where To Open ?         |Modal               |TmpActiveGrantsGrid   |Name                     |Edit                      |
@@ -294,10 +303,11 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
 	When I click on "Financials" sub tab inside page layout
-	Then I see "Test Automation" shown as enhanced grid table column title
+	#Then I see "Test Automation" shown as enhanced grid table column title
+	Then I see "Test Automation" shown as flex table column title
 	
 	@41319 @all @hideCellJsonfieldAtEnhancedGrid-gPlanning
-	Scenario: Hiding specific column value of enhanced grid from config and validating it inside enhanced grid of programs-planning
+	Scenario: Hiding specific cell value of enhanced grid from config and validating it inside enhanced grid of programs-planning
 	Given I have default configuration as below:
 	|configurationCategory |fieldName       |fieldOrignalValue    |filterId        |
 	|Flex Table List       |Hide Cell JSON  |                     |ApiGeneratedId:0|
@@ -310,3 +320,103 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
 	When I click on "Financials" sub tab inside page layout
 	Then I see "*****" shown inside enhanced grid table for specified record "Demo_Title"
+	
+	@41370 @all @readOnlyCellJSONFieldAtEnhancedGrid-gPlanning
+	Scenario: Changing specific cell value to read only of enhanced grid from config and validating it inside enhanced grid of programs-planning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName            |fieldOrignalValue    |filterId        |
+	|Flex Table List       |Read Only Cell JSON  |                     |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName            |fieldNewValue                                   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table List       |Read Only Cell JSON  |govgrants_config:ReadOnlyCellJsonForEnhancedGrid|TmpActiveGrantsGrid   |Name                     |FTC-1489                  |
+	When I login as "Automation" User 
+    When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+    When I search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I click on "Financials" sub tab inside page layout
+	When I click on "Edit" icon of status "Active" for "Demo_Title" program in enhanced flex grid
+	Then I see input box is not displayed for budget period end date
+	
+	@41375 @all @hideColumnJSONfieldAtEnhancedGrid-gPlanning
+	Scenario: Hiding specific column value of enhanced grid from config and validating it inside enhanced grid of programs-planning
+    Given I have default configuration as below:
+	|configurationCategory |fieldName       |fieldOrignalValue    |filterId        |
+	|Flex Table List       |Hide Column JSON|                     |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName       |fieldNewValue                                 |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table List       |Hide Column JSON|govgrants_config:HideColumnJsonForEnhancedGrid|TmpActiveGrantsGrid   |Name                     |FTC-1488                  |
+	When I login as "Automation" User 
+    When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+    When I search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I click on "Financials" sub tab inside page layout
+	Then I see "Project Period" not displayed in enhanced grid table column title
+	
+	@41376 @all @readOnlyColumnJSONFieldAtEnhancedGrid-gPlanning
+	Scenario: Changing specific cell value to read only of enhanced grid from config and validating it inside enhanced grid of programs-planning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName            |fieldOrignalValue    |filterId        |
+	|Flex Table List       |Read Only Column JSON|                     |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName            |fieldNewValue                                     |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table List       |Read Only Column JSON|govgrants_config:ReadOnlyColumnJsonForEnhancedGrid|TmpActiveGrantsGrid   |Name                     |FTC-1489                  |
+	When I login as "Automation" User 
+    When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+    When I search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I click on "Financials" sub tab inside page layout
+	When I click on "Edit" icon of status "Active" for "Demo_Title" program in enhanced flex grid
+	Then I see input box is not displayed for budget period end date
+	
+	@41465 @all @iconCssFieldAtEnhancedGridActionItem-gPlanning @check
+	Scenario: Setup icon for enhanced grid table edit action from config and validating it inside enhanced grid of programs-planning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName    |fieldOrignalValue                                  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table Action     |Icon CSS     |govgrants_config:FlexTableEditActionDefaultIconCss |TmpActiveGrantsGrid   |Name                     |Edit                      |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName    |fieldNewValue                                      |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table Action     |Icon CSS     |govgrants_config:FlexTableEditActionNewIconCss     |TmpActiveGrantsGrid   |Name                     |Edit                      |
+	When I login as "Automation" User 
+    When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+    When I search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I click on "Financials" sub tab inside page layout
+	Then I see external link icon as "Demo_Title" for "Edit" inside flex table action
+	
+	@41466 @all @ConfirmationMessageFieldAtEnhancedGridActionItem-gPlanning
+	Scenario: Setup confirmation message for enhanced grid table edit action from configuration and validating it inside enhanced grid of program-planning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName                 |fieldOrignalValue    |coreComponentField |coreCOmponentSubFieldName|coreComponentSubFieldValue |
+	|Flex Table Action     |Show Confirmation Box     |false                |TmpActiveGrantsGrid|Name                     |Edit                       |
+	|Flex Table Action     |Confirmation Message      |                     |TmpActiveGrantsGrid|Name                     |Edit                       |
+	Given I setup test configuration as below:
+	|configurationCategory|fieldName                  |fieldNewValue        |coreComponentField |coreCOmponentSubFieldName|coreComponentSubFieldValue |
+	|Flex Table Action     |Confirmation Message      |Automation           |TmpActiveGrantsGrid|Name                     |Edit                       |
+	|Flex Table Action     |Show Confirmation Box     |true                 |TmpActiveGrantsGrid|Name                     |Edit                       |
+	When I login as "Automation" User 
+    When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+    When I search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I click on "Financials" sub tab inside page layout
+	When I click on "Edit" icon of status "Active" for "Demo_Title" program in enhanced flex grid
+	Then I see confirmation box with body "Automation" is displayed
+	
+	@41468 @all @locationFieldAtEnhancedGridActionItem-gPlanning
+	Scenario: Changing location of Monitoring Schedule For All Active Grants enhanced grid table view action from row to top from config anf validating it inside enhanced of program-planning
+	#Given I have default configuration as below:
+	#|configurationCategory |fieldName                 |fieldOrignalValue    |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	#|Flex Table Action     |Location                  |Row                  |TmpActiveGrantsGrid   |Name                     |View                      |
+	#|Flex Table Action     |Header Action Display Type|                     |TmpActiveGrantsGrid   |Name                     |View                      |
+	#Given I setup test configuration as below:
+	#|configurationCategory|fieldName                  |fieldNewValue        |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	#|Flex Table Action    |Location                   |Top                  |TmpActiveGrantsGrid   |Name                     |View                      |
+	#|Flex Table Action    |Header Action Display Type |Button               |TmpActiveGrantsGrid   |Name                     |View                      |
+	When I login as "Automation" User 
+    When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+    When I search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I click on "Financials" sub tab inside page layout
+	Then I see "View" button inside "Monitoring Schedule For All Active Grants" flex table
+	
+	
+	
