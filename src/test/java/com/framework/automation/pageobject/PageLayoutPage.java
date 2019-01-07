@@ -54,15 +54,6 @@ public class PageLayoutPage extends GovGrantsManager {
 	/******* "Key Methods with complete functionality - public" *****************/
 
 	/**
-	 * click on the sub tab after clicking flex table icon
-	 * 
-	 * @param subTab
-	 */
-	public void clickSubTab(String tabName) {
-		govgrants.pageDetails().clickSubTabsInsideTableView(tabName);
-	}
-
-	/**
 	 * assert true if correct overview header is displayed
 	 * 
 	 * @param overViewTitle

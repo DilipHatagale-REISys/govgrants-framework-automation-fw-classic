@@ -20,11 +20,6 @@ public class FlexTableSteps {
 		flexTablePage.clickRightHeaderBars(title);
 	}
 
-	@When("^I click on \"([^\"]*)\" icon of status \"([^\"]*)\" for \"([^\"]*)\" program in flex table$")
-	public void clickTableActionIcons(String iconName, String statusName, String programSubject) {
-		flexTablePage.clickTableActionIconsForSpecificSubject(iconName, statusName, programSubject);
-	}
-
 	@When("^I click on \"([^\"]*)\" icon for \"([^\"]*)\" to save inside subtab$")
 	public void clickAnyIconInFlexTable(String iconName, String programRole) {
 		flexTablePage.clickRowLevelActionIconsInsideSubTab(iconName, programRole);
@@ -39,11 +34,6 @@ public class FlexTableSteps {
 	@When("^I hovering mouse on help text icon inside \"([^\"]*)\" for flex table column$")
 	public void getHelpTextIconsAtFlexTableColumn(String columnTitle) {
 		flexTablePage.getHelpTextAtFlexTableSpecificColumn(columnTitle);
-	}
-
-	@When("^I click on \"([^\"]*)\" icon of status \"([^\"]*)\" for \"([^\"]*)\" program in flex table without processing$")
-	public void clickTableActionIconsWithoutProcessing(String iconName, String statusName, String programSubject) {
-		flexTablePage.clickTableActionIconsForSpecificSubjectWithoutProcessing(iconName, statusName, programSubject);
 	}
 
 	@When("^I click toggle button for \"([^\"]*)\"$")

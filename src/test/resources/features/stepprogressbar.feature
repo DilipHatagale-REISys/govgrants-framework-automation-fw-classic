@@ -13,8 +13,8 @@ Feature: Step Progress Bar Component Scenarios
 	|Step Progressbar Header Config:General   |Render for Application |             |PB-0016               |                         |                          |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see step progress bar is not displayed
 	
 	Examples:
@@ -31,8 +31,8 @@ Feature: Step Progress Bar Component Scenarios
 	|Step Progressbar Header Config:General   |Render for User |             |PB-0016               |                         |                          |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see step progress bar is not displayed
 	
 	Examples:
@@ -49,8 +49,8 @@ Feature: Step Progress Bar Component Scenarios
 	|Step Progressbar Detail |Hide For Users  |<changedUser>|Program Progress Bar  |Name                     |Submitted for Approval    |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Submitted for Approval" is not displayed inside step progress bar
 	
 	Examples:
@@ -67,8 +67,8 @@ Feature: Step Progress Bar Component Scenarios
 	|Step Progressbar Detail |Sequence        |0            |Program Progress Bar  |Name                     |Submitted for Approval    |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Submitted for Approval" status shown at number "0" in step progress bar	
 	
 	@34351 @all @colorFieldOfStepProgressBar-gPlanning
@@ -81,8 +81,8 @@ Feature: Step Progress Bar Component Scenarios
 	|Step Progressbar Header Config:General   |Complete Color  |#0b0ba0      |PB-0016               |                         |                          |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see status in Progress-bar is "Created" and is "Blue"
 	
 	@34593 @all @negativeFieldOfStepProgressBar-gPlanning
@@ -96,8 +96,8 @@ Feature: Step Progress Bar Component Scenarios
 	|Step Progressbar Detail |Negative Path   |true         |Program Progress Bar                                      |Name                     |Submitted for Approval    |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation -  SA mode only - Not approved"
-	When I click on "Edit" icon of status "Created" for "Test program for automation -  SA mode only - Not approved" program in flex table
+	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+	When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	And I complete submit for approval
 	Then I see status in Progress-bar is "Submitted for Approval" and is "Red"
 	
@@ -112,8 +112,8 @@ Feature: Step Progress Bar Component Scenarios
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I select "Rejected Programs" from double headed dropdown inside admin portal
-	When I search for "Test Program For Automation Reject"
-	When I click on "View Program Details" icon of status "Rejected" for "Test Program For Automation Reject" program in flex table
+	When I perform quick search for "Test Program For Automation Reject"
+	When I click on "View Program Details" icon for "Test Program For Automation Reject" inside table
 	Then I see status in Progress-bar is "Rejected" and is "Blue"
 	
 	@37318 @all @incompleteColorFieldAtStepProgressBar-gPlanning
@@ -127,8 +127,8 @@ Feature: Step Progress Bar Component Scenarios
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I select "Draft Programs" from double headed dropdown inside admin portal
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see status in Progress-bar is "Submitted for Approval" and is "Blue"
 	
 	@37324 @all @displayValueFieldAtStepProgressBAr-gPlanning
@@ -141,8 +141,8 @@ Feature: Step Progress Bar Component Scenarios
 	|Step Progressbar Detail |Display Value   |Automation   |Program Progress Bar  |Name                     |Created                   |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see changed display name as "Automation" inside step progress bar
 	
 	@37328 @all @isCreatedFieldAtStepProgressBar-gPlanning
@@ -156,8 +156,8 @@ Feature: Step Progress Bar Component Scenarios
 	|Step Progressbar Detail |IsCreated       |true         |Program Progress Bar                                      |Name                     |Submitted for Approval    |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation -  SA mode only - Not approved"
-	When I click on "Edit" icon of status "Created" for "Test program for automation -  SA mode only - Not approved" program in flex table
+	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+	When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	And I complete submit for approval
 	When I hovering mouse on Status inside step progress bar "Submitted for Approval"
 	Then I see "<textInsideStatus>" shown as help text

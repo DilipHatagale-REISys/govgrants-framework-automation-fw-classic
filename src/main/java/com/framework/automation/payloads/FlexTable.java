@@ -94,6 +94,13 @@ public class FlexTable {
 									String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c), filterClause),
 							String.valueOf(SObjectAPIs.GNT__ReadOnlyColumnJSON__c), value);
 			break;
+		case "FORMULA":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__Formula__c), value);
+			break;
 		}
 		System.out.println(finalPayload);
 		return finalPayload;

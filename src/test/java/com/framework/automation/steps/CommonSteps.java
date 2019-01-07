@@ -29,11 +29,6 @@ public class CommonSteps {
 		govGrantsManager.clickPhasesNaveBar(phaseTabName);
 	}
 
-	@When("^I search for \"([^\"]*)\"$")
-	public void performQuickSearch(String searchTerm) {
-		govGrantsManager.performQuickSearch(searchTerm);
-	}
-
 	@When("^I click \"([^\"]*)\" on modal content$")
 	public void clickModalContentSpecificButton(String buttonName) {
 		govGrantsManager.clickModalContentSpecificButton(buttonName);

@@ -13,8 +13,8 @@ Feature: Forms Component Scenarios
 	|Forms:General          |Skip Form Download  |true         |General Application Budget Form|                         |                          |
 	When I login as "Automation" User
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Applications" tab
-	When I search for "AP-755-198"
-	When I click on "View" icon of status "Review Initiated" for "Test announcement for program 2" program in flex table
+	When I perform quick search for "AP-755-198"
+	When I click on "View" icon for "Test announcement for program 2" inside table
 	When I click on "Menu" button inside detail page
 	And I select "Download As PDF" from dropdown
 	And I download the file
@@ -30,9 +30,9 @@ Feature: Forms Component Scenarios
 	|Page Block:Page Block Detail           |Is Active     |false           |ApplicationView       |GNT__PageBlockTitle__c   |Business Forms            |
 	When I login as "Automation" User
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Applications" tab
-	When I search for "AP-755-198"
-	When I click on "View" icon of status "Review Initiated" for "Test announcement for program 2" program in flex table
-	When I click on "Attachments" sub tab inside page layout
+	When I perform quick search for "AP-755-198"
+	When I click on "View" icon for "Test announcement for program 2" inside table
+	When I navigate to "Attachments" sub tab
 	Then I see Business Form section is not displayed
 	
 	@35189 @all @hidingPreviewActionItemForUsersInsideBusinessForms-gApplication
@@ -45,9 +45,9 @@ Feature: Forms Component Scenarios
 	|Page Block Rule:Page Block Rule Detail |Hide For User |Internal        |ApplicationView       |Name                     |preview rule              |
 	When I login as "Automation" User
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Applications" tab
-	When I search for "AP-755-198"
-	When I click on "View" icon of status "Review Initiated" for "Test announcement for program 2" program in flex table
-	When I click on "Attachments" sub tab inside page layout
+	When I perform quick search for "AP-755-198"
+	When I click on "View" icon for "Test announcement for program 2" inside table
+	When I navigate to "Attachments" sub tab
 	Then I see "Preview" action item is not displayed inside business form
 	
 	@35193 @all @hidingViewActionItemForUsersInsideBusinessForms-gApplication
@@ -60,9 +60,9 @@ Feature: Forms Component Scenarios
 	|Page Block Rule:Page Block Rule Detail |Hide For User |Internal        |ApplicationView       |Name                     |View                      |
 	When I login as "Automation" User
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Applications" tab
-	When I search for "AP-755-198"
-	When I click on "View" icon of status "Review Initiated" for "Test announcement for program 2" program in flex table
-	When I click on "Attachments" sub tab inside page layout
+	When I perform quick search for "AP-755-198"
+	When I click on "View" icon for "Test announcement for program 2" inside table
+	When I navigate to "Attachments" sub tab
 	Then I see "View" action item is not displayed inside business form
 	
 	@35271 @all @changeLabelOfEditFormPageLayoutActionItem-gApplication
@@ -75,9 +75,9 @@ Feature: Forms Component Scenarios
 	|Page Layout Action     |Action Name   |Edit Automation |Application Cover Page|Name                         |Edit                  |
 	When I login as "Automation" User
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Applications" tab
-	When I search for "AP-755-198"
-	When I click on "View" icon of status "Review Initiated" for "Test announcement for program 2" program in flex table
-	When I click on "Attachments" sub tab inside page layout
+	When I perform quick search for "AP-755-198"
+	When I click on "View" icon for "Test announcement for program 2" inside table
+	When I navigate to "Attachments" sub tab
 	When I click on "View" icon of form "General Application Cover Page" program in flex table
 	Then I see changed label as "Edit Automation" of action item inside form page layout
 	
@@ -91,9 +91,9 @@ Feature: Forms Component Scenarios
 	|Page Layout Action     |Hide For User |Internal      |Application Cover Page|Name                         |Edit                  |
 	When I login as "Automation" User
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Applications" tab
-	When I search for "AP-755-198"
-	When I click on "View" icon of status "Review Initiated" for "Test announcement for program 2" program in flex table
-	When I click on "Attachments" sub tab inside page layout
+	When I perform quick search for "AP-755-198"
+	When I click on "View" icon for "Test announcement for program 2" inside table
+	When I navigate to "Attachments" sub tab
 	When I click on "View" icon of form "General Application Cover Page" program in flex table
 	Then I see "Edit" of action item inside form page layout is not displayed
 	
@@ -107,9 +107,9 @@ Feature: Forms Component Scenarios
 	|Forms:General          |Version    |2.0          |General Application Form|                         |                          |	
 	When I login as "Automation" User
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Applications" tab
-	When I search for "AP-755-198"
-	When I click on "View" icon of status "Review Initiated" for "Test announcement for program 2" program in flex table
-	When I click on "Attachments" sub tab inside page layout
+	When I perform quick search for "AP-755-198"
+	When I click on "View" icon for "Test announcement for program 2" inside table
+	When I navigate to "Attachments" sub tab
 	When I click on "View" icon of form "General Application Form" program in flex table
 	Then I see "Form Version 2.0" inside Form Version
 	
@@ -123,9 +123,9 @@ Feature: Forms Component Scenarios
 	|Page Layout:General   |Header             |Test Automation       |Application - Simple  |                         |                             |
 	When I login as "Automation" User
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Applications" tab
-	When I search for "AP-755-198"
-	When I click on "View" icon of status "Review Initiated" for "Test announcement for program 2" program in flex table
-	When I click on "Attachments" sub tab inside page layout
+	When I perform quick search for "AP-755-198"
+	When I click on "View" icon for "Test announcement for program 2" inside table
+	When I navigate to "Attachments" sub tab
 	When I click on "View" icon of form "General Application Form" program in flex table
 	Then I see "Test Automation" shown as over view header
 	

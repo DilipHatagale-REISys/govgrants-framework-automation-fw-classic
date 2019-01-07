@@ -12,7 +12,7 @@ import com.framework.automation.projectmanager.GovGrantsManager;
 public class FlexGridPage extends GovGrantsManager {
 
     /******* "Variables and Locators" *****************/
-    private final By programPerformanceMgmtGridViewMenuBars, ppmgvFlexTableHeader;
+    private final By programPerformanceMgmtGridViewMenuBars ;
 
     /**
      * Constructor to handle dependency injection and framework library
@@ -21,8 +21,6 @@ public class FlexGridPage extends GovGrantsManager {
         super(controller, reiDriver, govgrants);
         programPerformanceMgmtGridViewMenuBars = By.xpath(
                 "//div[@id='flexGridHeaderButtonsProgramPerformanceMgmtGridView']//span[contains(@class,'fa fa-bars')]");
-        ppmgvFlexTableHeader = By.xpath(
-                "//div[@class='panel-heading']/following-sibling::div[contains(@class,'panel-body')]//div/table/thead/tr[@class='n2gheader']");
     }
 
 	/******* "Key Methods with complete functionality - public" *****************/
