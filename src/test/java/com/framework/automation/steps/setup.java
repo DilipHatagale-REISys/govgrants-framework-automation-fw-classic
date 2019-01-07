@@ -1,5 +1,6 @@
 package com.framework.automation.steps;
 
+import java.awt.AWTException;
 import java.io.IOException;
 
 import org.testng.asserts.SoftAssert;
@@ -34,12 +35,12 @@ public class setup {
     }
 
     @Before
-    public void startUp() throws IOException {
+    public void startUp() throws IOException, AWTException {
         setupController.initializer();
     }
 
     @After
-    public void wrapUp(Scenario scenario) {
+    public void wrapUp(Scenario scenario) throws IOException {
         try {
             projectAPI.postDefaultConfigCall();
         } catch (Exception e) {

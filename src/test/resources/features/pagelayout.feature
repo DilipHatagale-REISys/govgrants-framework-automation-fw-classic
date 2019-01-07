@@ -13,8 +13,8 @@ Feature: Page Layout Component Scenarios
 	|Page Layout:General   |Header             |Program - {!FederalProgramCFDA__c}  |Grantee State Program |                         |                             |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "Edit" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
 	Then I see "TPA01" shown as over view title in header "Program"
 	
 	@34047 @all @setUpPageInstructionText-gPlanning
@@ -27,8 +27,8 @@ Feature: Page Layout Component Scenarios
 	|Page Layout:General   |Page Instruction Text|Automation Instruction Text         |Grantee State Program |                         |                             |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "Edit" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Automation Instruction Text" shown as page instruction text
 	
 	@34049 @all @setUpHeaderOverRideField-gPlanning
@@ -54,8 +54,8 @@ Feature: Page Layout Component Scenarios
 	|Page Layout Action    |Hide Decision Expression|<new_hide_config>  |Grantee State Program |Name                     |Submit For Approval          |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Submit For Approval" button is not displayed
 	
 	Examples:
@@ -72,8 +72,8 @@ Feature: Page Layout Component Scenarios
 	|Page Layout Action    |Hide Expression JSON|govgrants_config:HideExpressionJson  |Grantee State Program |Name                     |Submit For Approval          |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Submit For Approval" button is not displayed
 	
 	@34069 @all @hideForProfile-gPlanning
@@ -86,8 +86,8 @@ Feature: Page Layout Component Scenarios
 	|Page Layout Action    |Hide for profile    |System Administrator       |Grantee State Program |Name                     |Submit For Approval          |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Submit For Approval" button is not displayed
 	
 	@34043 @all @HidePdfDownloadFromMenuForMainPageLayout-gPlanning
@@ -100,8 +100,8 @@ Feature: Page Layout Component Scenarios
 	|Page Layout:General   |Hide Pdf Download   |true           |Grantee State Program |                         |                             |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I click on "Menu" button inside detail page
 	Then I see Download as PDF options disabled
 	
@@ -115,8 +115,8 @@ Feature: Page Layout Component Scenarios
 	|Page Layout:General   |Hide On Demand Snapshot   |true           |Grantee State Program |                         |                             |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I click on "Menu" button inside detail page
 	Then I see "Take Snapshot" options disabled
 	
@@ -134,8 +134,8 @@ Feature: Page Layout Component Scenarios
 	|Page Layout Action    |Enable Prompt Input Dialog|true                 |Grantee State Program |Name                     |Submit For Approval          |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I click on "Submit For Approval" button in right header
 	Then I see prompt For automation is displayed
 	
@@ -149,8 +149,8 @@ Feature: Page Layout Component Scenarios
 	|Page Layout Action    |Hide For Context          |view           |Grantee State Program |Name                     |Submit For Approval          |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Submit For Approval" button is not displayed at view detail page
 	
 	@35814 @all @labelChangeOfCancelButtonAtMainPageLayout-gPlanning
@@ -163,8 +163,8 @@ Feature: Page Layout Component Scenarios
 	|Page Layout:General   |Cancel Button Label       |Auto Cancel    |Grantee State Program |                         |                             |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I click on "Edit" button inside detail page
 	Then I see "Auto Cancel" button is displayed at edit detail page
 	
@@ -178,8 +178,8 @@ Feature: Page Layout Component Scenarios
 	|Page Layout:General   |Save Button Label         |Auto Save      |Grantee State Program |                         |                             |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I click on "Edit" button inside detail page
 	Then I see "Auto Save" button is displayed at edit detail page
 	
@@ -193,8 +193,8 @@ Feature: Page Layout Component Scenarios
 	|Page Tabs Config:Page Layout Action   |Hide For Context          |view           |Grantee State Program |Name                     |TAB-029                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Overview" sub tab is not displayed at view detail page
 	
 	@34354 @all @sortOrderForFieldAtPageTab-gPlanning
@@ -207,8 +207,8 @@ Feature: Page Layout Component Scenarios
 	|Page Tabs Config:Page Layout Action   |Sort Order    |6              |Grantee State Program |Name                     |TAB-029                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Overview" shown at number "5" inside subtabs
 	
 	@34355 @all @headerInstructionTextFieldAtPageTab-gPlanning
@@ -221,8 +221,8 @@ Feature: Page Layout Component Scenarios
 	|Page Tabs Config:Page Layout Action   |Header Instruction Text   |Automation Header Text|Grantee State Program |Name                     |TAB-029                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Automation Header Text" shown as header instruction text
 	
 	@34357 @all @tabTitleFieldAtPagePageTab-gPlanning
@@ -235,8 +235,8 @@ Feature: Page Layout Component Scenarios
 	|Page Tabs Config:Page Layout Action   |Tab Title   |Automation Overview   |Grantee State Program |Name                     |TAB-029                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Automation Overview" sub tab is displayed at view detail page
 	
 	@34359 @all @tabIconFieldAtPageTab-gPlanning
@@ -249,8 +249,8 @@ Feature: Page Layout Component Scenarios
 	|Page Tabs Config:Page Layout Action   |Tab Icon    |govgrants_config:TabIconNewCss|Grantee State Program |Name                     |TAB-029                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see pencil icon as "Overview" sub tab
 		
 	@35949 @all @isActiveFieldAtPageTab-gPlanning
@@ -263,8 +263,8 @@ Feature: Page Layout Component Scenarios
 	|Page Tabs Config:Page Layout Action   |Is Active   |false        |Grantee State Program |Name                     |TAB-029                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Overview" sub tab is not displayed at view detail page
 	
 	@35955 @all @hideForUserAtPageTab-gPlanning
@@ -277,8 +277,8 @@ Feature: Page Layout Component Scenarios
 	|Page Tabs Config:Page Layout Action   |Hide for User|Internal     |Grantee State Program |Name                     |TAB-029                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Overview" sub tab is not displayed at view detail page
 	
 	@35956 @all @hideForProfileAtPageTab-gPlanning
@@ -291,8 +291,8 @@ Feature: Page Layout Component Scenarios
 	|Page Tabs Config:Page Layout Action   |Hide for Profile|System Administrator|Grantee State Program |Name                     |TAB-029                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Overview" sub tab is not displayed at view detail page
 	
 	@35959 @all @hideDecisionFieldAtPageTab-gPlanning
@@ -305,8 +305,8 @@ Feature: Page Layout Component Scenarios
 	|Page Tabs Config:Page Layout Action   |Hide Decision Field|ShowActiveProgram__c|Grantee State Program |Name                     |TAB-029                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Overview" sub tab is not displayed at view detail page
 	
 	@35962 @all @highlightsPanelFeildAtPageTab-gPlanning
@@ -319,8 +319,8 @@ Feature: Page Layout Component Scenarios
 	|Page Tabs Config:Page Layout Action   |Highlights Panel?  |true                |Grantee State Program |Name                     |TAB-409                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see complete header overview tab is displayed at view detail page
 	
 	@35976 @all @hideExpressionJsonFieldAtPageTab-gPlanning
@@ -333,8 +333,8 @@ Feature: Page Layout Component Scenarios
 	|Page Tabs Config:Page Layout Action   |Hide Expression JSON  |govgrants_config:HideExpressionJsonForPageTab|Grantee State Program |Name                     |TAB-029                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Overview" sub tab is not displayed at view detail page
 	
 	@35979 @all @pageBlockTitleFieldAtPageBlock-gPlanning
@@ -347,8 +347,8 @@ Feature: Page Layout Component Scenarios
 	|Page Block:Page Block Detail |Page Block Title|Program Information Automation|Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Program Information Automation" page block title
 	
 	@35980 @all @isActiveFieldAtPageBlock-gPlanning
@@ -361,8 +361,8 @@ Feature: Page Layout Component Scenarios
 	|Page Block:Page Block Detail |Is Active       |false         |Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Program Information" page block is not displayed
 	
 	@35981 @all @sortOrderFieldAtPageBlock-gPlanning
@@ -375,8 +375,8 @@ Feature: Page Layout Component Scenarios
 	|Page Block:Page Block Detail |Sort Order|10            |Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Program Information" shown at number "5" inside page block
 		
 	@35984 @all @headerInstructionTextFieldAtPageBlock-gPlanning
@@ -389,8 +389,8 @@ Feature: Page Layout Component Scenarios
 	|Page Block:Page Block Detail |Header Instruction Text       |Header for Automation|Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Header for Automation" shown as header instruction text for page block
 	
 	@35986 @all @skipForExportFieldAtPageBlock-gPlanning
@@ -403,8 +403,8 @@ Feature: Page Layout Component Scenarios
 	|Page Block:Page Block Detail |Skip for Export               |true                 |Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I click on "Menu" button inside detail page
 	And I select "Download As PDF" from dropdown
 	And I download the file
@@ -420,8 +420,8 @@ Feature: Page Layout Component Scenarios
 	|Page Block:Page Block Detail |Hide for Context |View                 |Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Program Information" page block is not displayed
 	
 	@36038 @all @hideForUserFieldAtPageBlock-gPlanning
@@ -434,8 +434,8 @@ Feature: Page Layout Component Scenarios
 	|Page Block:Page Block Detail |Hide for User    |Internal             |Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Program Information" page block is not displayed
 	
 	@35957 @all @hideOperatorFieldUsingANDOperatorAtPageTab-gPlanning
@@ -452,8 +452,8 @@ Feature: Page Layout Component Scenarios
     |Page Tabs Config:Page Layout Action   |Hide for User   |Internal            |Grantee State Program |Name                     |TAB-029                   |
     When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Overview" sub tab is not displayed at view detail page
 	
 	@35958 @all @hideOperatorFieldUsingOROperatorAtPageTab-gPlanning
@@ -470,8 +470,8 @@ Feature: Page Layout Component Scenarios
     |Page Tabs Config:Page Layout Action   |Hide for User   |Internal            |Grantee State Program |Name                     |TAB-029                   |
     When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Overview" sub tab is not displayed at view detail page
 	
 	@36039 @all @hideForProfileAtPageBlock-gPlanning
@@ -484,8 +484,8 @@ Feature: Page Layout Component Scenarios
 	|Page Block:Page Block Detail |Hide for Profile |System Administrator |Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Program Information" page block is not displayed
 		
 	@36040 @all @hideOperatorFieldUsingANDOperatorAtPageBlock-gPlanning
@@ -502,8 +502,8 @@ Feature: Page Layout Component Scenarios
     |Page Block:Page Block Detail      |Hide for User   |Internal            |Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
     When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Program Information" page block is not displayed
 	
 	@36036 @all @totalFieldsPerRowFieldAtPageBlock-gPlanning
@@ -516,8 +516,8 @@ Feature: Page Layout Component Scenarios
 	|Page Block:Page Block Detail |Total Fields per Row  |3                    |Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
     When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
   	Then I see "Program Information" page block contains "3" elements
   	
   	@36041 @all @hideOperatorFieldUsingOROperatorAtPageBlock-gPlanning
@@ -534,8 +534,8 @@ Feature: Page Layout Component Scenarios
     |Page Block:Page Block Detail      |Hide for User   |Internal            |Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
     When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Program Information" page block is not displayed
 	
 	@36042 @all @hideDecisionFieldAtPageBlock-gPlanning
@@ -548,8 +548,8 @@ Feature: Page Layout Component Scenarios
 	|Page Block:Page Block Detail |Hide Decision Field|ShowActiveProgram__c|Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Program Information" page block is not displayed
 	
 	@36045 @all @flexTableNameFieldAtPageBlock-gPlanning
@@ -564,9 +564,9 @@ Feature: Page Layout Component Scenarios
 	|Page Block:Page Block Detail|Flex Table Name   |ApiGeneratedId:1           |Grantee State Program          |GNT__PageBlockTitle__c    |Contacts                   |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
-	When I click on "Overview" sub tab inside page layout
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	When I navigate to "Overview" sub tab
 	Then I see Roles And Responsibilities flex table inside page block
 	
 	@36046 @all @flexGridNameFieldAtPageBlock-gPlanning
@@ -581,9 +581,9 @@ Feature: Page Layout Component Scenarios
 	|Page Block:Page Block Detail|Flex Grid Name       |ApiGeneratedId:1           |Grantee State Program          |GNT__PageBlockTitle__c    |Out Comes                  |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
-	When I click on "Plan" sub tab inside page layout
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	When I navigate to "Plan" sub tab
 	Then I see Monitoring Schedule For All Active Grants flex grid inside page block
 		
 	@36051 @all @hideDisableAttachmentRowActionsFieldWithDisableOptionAtPageBlock-gPlanning
@@ -597,10 +597,10 @@ Feature: Page Layout Component Scenarios
 	|Page Block:Page Block Detail |Hide/Disable attachment Row actions|Disable           |Grantee State Program                                     |GNT__PageBlockTitle__c   |Attachments               |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation -  SA mode only - Not approved"
-	When I click on "Edit" icon of status "Created" for "Test program for automation -  SA mode only - Not approved" program in flex table
+	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+	When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	And I complete submit for approval
-	When I click on "Attachments" sub tab inside page layout
+	When I navigate to "Attachments" sub tab
 	Then I see edit icon is disabled inside "Attachments" page block
 	
 	@36053 @all @hideDisableAttachmentRowActionsFieldWithHideOptionAtPageBlock-gPlanning
@@ -614,10 +614,10 @@ Feature: Page Layout Component Scenarios
 	|Page Block:Page Block Detail |Hide/Disable attachment Row actions|Hide              |Grantee State Program                                     |GNT__PageBlockTitle__c   |Attachments               |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation -  SA mode only - Not approved"
-	When I click on "Edit" icon of status "Created" for "Test program for automation -  SA mode only - Not approved" program in flex table
+	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+	When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	And I complete submit for approval
-	When I click on "Attachments" sub tab inside page layout
+	When I navigate to "Attachments" sub tab
 	Then I see edit icon is not visible inside "Attachments" page block
 	
 	@36094 @all @feildAPINAmeFieldAtPageBlockDetail-gPlanning
@@ -630,8 +630,8 @@ Feature: Page Layout Component Scenarios
 	|Page Block Config:Page Block Rule Detail |Field API Name  |BudgetingPreference__c  |Grantee State Program |Name                     |PBD-3107                  |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Budgeting Preference" inside page block details
 	
 	@36099 @all @isActiveFieldAtPageBlockDetail-gPlanning
@@ -644,8 +644,8 @@ Feature: Page Layout Component Scenarios
 	|Page Block Config:Page Block Rule Detail |Is Active       |false             |Grantee State Program |Name                     |PBD-3107                  |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Program Name" is not displayed inside page block detail
 	
 	@36100 @all @sortOrderFieldAtPageBlockDetail-gPlanning
@@ -658,8 +658,8 @@ Feature: Page Layout Component Scenarios
 	|Page Block Config:Page Block Rule Detail |Sort Order      |10                |Grantee State Program |Name                     |PBD-3107                  |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Program Name" shown at number "7" inside page block detail
 	
 	@36101 @all @fieldLabelOverrideFieldAtPageBlockDetail-gPlanning
@@ -672,8 +672,8 @@ Feature: Page Layout Component Scenarios
 	|Page Block Config:Page Block Rule Detail |Field Label Override|Automation Title  |Grantee State Program |Name                     |PBD-3107                  |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Automation Title" inside page block details
 	
 	@36106 @all @readOnlyFieldAtPageBlockDetail-gPlanning
@@ -686,8 +686,8 @@ Feature: Page Layout Component Scenarios
 	|Page Block Config:Page Block Rule Detail |Read Only           |true              |Grantee State Program |Name                     |PBD-3107                  |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "Edit" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
 	Then I see Program Name rendered in view mode only
 	
 	@36109 @all @hideForContextFieldAtPageBlockDetail-gPlanning
@@ -700,8 +700,8 @@ Feature: Page Layout Component Scenarios
 	|Page Block Config:Page Block Rule Detail |Hide for Context    |View              |Grantee State Program |Name                     |PBD-3107                  |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Program Name" is not displayed inside page block detail
 	
 	@36110 @all @hideForUserFieldAtPageBlockDetail-gPlanning
@@ -714,8 +714,8 @@ Feature: Page Layout Component Scenarios
 	|Page Block Config:Page Block Rule Detail |Hide for User       |Internal          |Grantee State Program |Name                     |PBD-3107                  |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Program Name" is not displayed inside page block detail
 	
 	@36111 @all @hideForProfileFieldAtPageBlockDetail-gPlanning
@@ -728,8 +728,8 @@ Feature: Page Layout Component Scenarios
 	|Page Block Config:Page Block Rule Detail |Hide For Profile    |System Administrator|Grantee State Program |Name                     |PBD-3107                  |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Program Name" is not displayed inside page block detail
 	
 	@36113 @all @hideOperatorFieldUsingANDOperatorAtPageBlockDetail-gPlanning
@@ -746,8 +746,8 @@ Feature: Page Layout Component Scenarios
 	|Page Block Config:Page Block Rule Detail |Hide For User       |Internal            |Grantee State Program |Name                     |PBD-3107                  |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Program Name" is not displayed inside page block detail
 	
 	@36114 @all @hideOperatorFieldUsingOROperatorAtPageBlockDetail-gPlanning
@@ -764,8 +764,8 @@ Feature: Page Layout Component Scenarios
 	|Page Block Config:Page Block Rule Detail |Hide For User       |Internal            |Grantee State Program |Name                     |PBD-3107                  |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Program Name" is not displayed inside page block detail
 	
 	@36126 @all @readOnlyForContextFieldAtPageBlockDetail-gPlanning
@@ -778,8 +778,8 @@ Feature: Page Layout Component Scenarios
 	|Page Block Config:Page Block Rule Detail |Read Only For Context|Edit                |Grantee State Program |Name                     |PBD-3107                  |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "Edit" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
 	Then I see Program Name rendered in view mode only
 	
 	@36127 @all @readOnlyForProfileFieldAtPageBlockDetail-gPlanning
@@ -792,8 +792,8 @@ Feature: Page Layout Component Scenarios
 	|Page Block Config:Page Block Rule Detail |Read Only For Profile|System Administrator|Grantee State Program |Name                     |PBD-3107                  |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "Edit" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
 	Then I see Program Name rendered in view mode only
 	
 	@36107 @all @requiredForSaveBehaviourAtPageBlockDetail-gPlanning
@@ -806,8 +806,8 @@ Feature: Page Layout Component Scenarios
 	|Page Block Config:Page Block Rule Detail |Required Behavior    |Required for Save   |Grantee State Program |Name                     |PBD-2600                  |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "Edit" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
 	When I click on "Save" button inside detail page
 	Then I see "Program Sub Type is Required to save under Overview." error is displayed
 	
@@ -821,9 +821,9 @@ Feature: Page Layout Component Scenarios
 	|Page Block:Page Block Detail |Attachment Classifications|AnnouncementArtifacts1;AnnouncementArtifacts2;  |Grantee State Program |GNT__PageBlockTitle__c   |Attachments               |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
-	When I click on "Attachments" sub tab inside page layout
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	When I navigate to "Attachments" sub tab
 	When I click Add button inside attachments page block
 	When I click select dropdown inside add attachment iframe
 	Then I see "AnnouncementArtifacts1 AnnouncementArtifacts2" inside Type selectbox
@@ -838,8 +838,8 @@ Feature: Page Layout Component Scenarios
 	|Page Block Config:Page Block Rule Detail |Is Hidden Field     |true              |Grantee State Program |Name                     |PBD-3107                  |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Program Name" is not displayed inside page block detail
 	
 	@36115 @all @hideDecisionFieldAtPageBlockDetail-gPlanning
@@ -854,8 +854,8 @@ Feature: Page Layout Component Scenarios
 	|Page Block Config:Page Block Rule Detail |Operator            |                    |Grantee State Program |Name                     |PBD-3107                  |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Program Name" is not displayed inside page block detail
 	
 	@36129 @all @readOnlyForUserFieldAtPageDetail-gPlanning
@@ -868,8 +868,8 @@ Feature: Page Layout Component Scenarios
 	|Page Block Config:Page Block Rule Detail |Read Only For User  |Internal          |Grantee State Program |Name                     |PBD-3107                  |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "Edit" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
 	Then I see Program Name rendered in view mode only
 	
 	@36131 @all @readDecisionFieldAtPageBlockDetail-gPlanning
@@ -882,8 +882,8 @@ Feature: Page Layout Component Scenarios
 	|Page Block Config:Page Block Rule Detail |Read Decision Field |ShowActiveProgram__c|Grantee State Program |Name                     |PBD-3107                  |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "Edit" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
 	Then I see Program Name rendered in view mode only
 	
 	@36136 @all @hideLabelFieldAtPageBlockDetail-gPlanning
@@ -896,8 +896,8 @@ Feature: Page Layout Component Scenarios
 	|Page Block Config:Page Block Rule Detail |Hide Label          |true                |Grantee State Program |Name                     |PBD-3107                  |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Program Name" is not displayed inside page block detail
 	
 	@36169 @all @lookUpHeaderTextFieldAtPageBlockDetail-gPlanning
@@ -910,8 +910,8 @@ Feature: Page Layout Component Scenarios
 	|Page Block Config:Page Block Rule Detail |Lookup Header Text  |Organization Automation|Grantee State Program |Name                     |PBD-3178                  |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "Edit" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
 	When I click search icon for owner organization
 	Then I see modal box with body "Organization Automation" is displayed
 	
@@ -925,8 +925,8 @@ Feature: Page Layout Component Scenarios
 	|Page Block Config:Page Block Rule Detail |Lookup Display Field Names |Code__c           |Grantee State Program |Name                     |PBD-3178                  |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "Edit" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
 	When I click search icon for owner organization and swithing to frame "iframeCustomLookupModalId"
 	Then I see "Code" in table header on lookup Modal
 	
@@ -942,8 +942,8 @@ Feature: Page Layout Component Scenarios
 	|Page Block Config:Page Block Rule Detail |Lookup Filter Criteria     |<newLookupFilter>     |Grantee State Program |Name                     |PBD-3178                  |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "Edit" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
 	When I click search icon for owner organization and swithing to frame "iframeCustomLookupModalId"
 	Then I see "Created" status in lookup modal table
 	
@@ -962,9 +962,9 @@ Feature: Page Layout Component Scenarios
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Announcements" tab
 	When I select "Draft Announcements" from double headed dropdown inside admin portal
-	When I search for "Test Announcement For Automation"
-	When I click on "View" icon of status "Created" for "Test Announcement For Automation" program in flex table
-	When I click on "Overview" sub tab inside page layout
+	When I perform quick search for "Test Announcement For Automation"
+	When I click on "View" icon for "Test Announcement For Automation" inside table
+	When I navigate to "Overview" sub tab
 	When I click on Manage Attachments inside page block details
 	When I click select dropdown inside add attachment iframe
 	Then I see "Test1 Test2" inside Type selectbox
@@ -979,8 +979,8 @@ Feature: Page Layout Component Scenarios
 	|Page Layout Action    |Submit Warning Message|Test message for Automation|Grantee State Program |Name                     |Submit For Approval          |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Test message for Automation" message inside confirmation box is displayed on click "Submit For Approval"
     
     @36198 @all @isActiveFieldAtPageLayoutAction-gPlanning
@@ -993,8 +993,8 @@ Feature: Page Layout Component Scenarios
 	|Page Layout Action    |Is Active    |false             |Grantee State Program |Name                     |Edit                         |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Edit" button is not displayed
 	
 	@36200 @all @editButtonActionOpensInOverLayWindowAtPageLayoutAction-gPlanning
@@ -1007,8 +1007,8 @@ Feature: Page Layout Component Scenarios
 	|Page Layout Action    |Action Behavior|Open in overlay   |Grantee State Program |Name                     |Edit                         |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I click on "Edit" button in right header
 	Then I see Edit opens in overlay window with "Cancel" button
 	
@@ -1022,8 +1022,8 @@ Feature: Page Layout Component Scenarios
 	|Page Layout Action    |Action Behavior|Open in new window |Grantee State Program |Name                     |Edit                         |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I click on "Edit" button in right header
 	Then I see new tab is opened
 	
@@ -1037,8 +1037,8 @@ Feature: Page Layout Component Scenarios
 	|Page Layout Action    |Display Area   |Page Header        |Grantee State Program |Name                     |Create Campaign              |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Create Campaign" button is displayed
 	
 	@36205 @all @displayAreaFieldForEditAtPageLayoutAction-gPlanning
@@ -1051,8 +1051,8 @@ Feature: Page Layout Component Scenarios
 	|Page Layout Action    |Display Area   |Menu               |Grantee State Program |Name                     |Edit                         |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I click on "Menu" button inside detail page
 	Then I see Edit options inside Menu Dropdown
 	
@@ -1068,8 +1068,8 @@ Feature: Page Layout Component Scenarios
 	|Page Layout Action    |Header Sequence|2                 |Grantee State Program |Name                     |Submit For Approval          |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Edit" Button at position "0"
 	
 	@35982 @all @helpTextFieldAtPageBlock-gPlanning
@@ -1082,8 +1082,8 @@ Feature: Page Layout Component Scenarios
 	|Page Block:Page Block Detail |Help Text       |<new_helpText>   |Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I hovering mouse on help text icon inside "Program Information"
 	Then I see "<new_helpText>" shown as help text 
 	Examples:
@@ -1100,8 +1100,8 @@ Feature: Page Layout Component Scenarios
 	|Page Block Config:Page Block Rule Detail |Help Text Long  |<new_helpText>    |Grantee State Program |Name                     |PBD-3107                  |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I hovering mouse on help text icon inside page block detail "Program Name"
 	Then I see "<new_helpText>" shown as help text 
 	Examples:
@@ -1119,13 +1119,13 @@ Feature: Page Layout Component Scenarios
 	|Page Layout:General   |Hide Approval Decision comp|true                |Grantee State Program                                        |                         |                             |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation -  SA mode only - Can be Approved"
-	When I click on "Edit" icon of status "Created" for "Test program for automation -  SA mode only - Can be Approved" program in flex table
+	When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
+	When I click on "Edit" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
 	And I complete submit for approval
 	When I re-login as "Automation-PM" with "QA" url 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	And I navigate to "Tasks" to reach "Pending" side bar content
-	When I search for "Test program for automation -  SA mode only - Can be Approved"
+	When I navigate to "Pending" content inside "Tasks" subheader on left panel
+	When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
 	When I start the approval with subject "Test program for automation -  SA mode only - Can be Approved"
 	Then I see "Approve" is disabled
 	
@@ -1139,8 +1139,8 @@ Feature: Page Layout Component Scenarios
 	|Page Block:Page Block Detail |Hide Expression JSON|govgrants_config:HideExpressionJsonForPageBlock|Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Program Information" page block is not displayed
 	
 	@36116 @all @hideExpressionJsonFieldAtPageBlockDetail-gPlanning
@@ -1153,8 +1153,8 @@ Feature: Page Layout Component Scenarios
 	|Page Block Config:Page Block Rule Detail |Hide Expression JSON|govgrants_config:HideExpressionJsonForPageBlockDetail |Grantee State Program |Name                     |PBD-3107                         |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Program Name" is not displayed inside page block detail
 	
 	@36134 @all @readOnlyExpressionJSONFieldAtPageBlockDetail-gPlanning
@@ -1167,7 +1167,7 @@ Feature: Page Layout Component Scenarios
 	|Page Block Config:Page Block Rule Detail |Read Only Expression JSON|govgrants_config:ReadOnlyExpressionJsonForPageBlockDetail |Grantee State Program |Name                     |PBD-3107                         |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "Edit" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
 	Then I see Program Name rendered in view mode only
 	

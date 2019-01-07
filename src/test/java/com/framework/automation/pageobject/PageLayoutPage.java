@@ -19,8 +19,7 @@ public class PageLayoutPage extends GovGrantsManager {
 			headerInstructionTextForPageBlock, rolesAndResponsibilitiesFlexTableTitle, monitoringFlexGridTitle,
 			addButtonUnderAttachments, selectTypeDropdown, addAttachmentIframe, lookupSearchInputBox,
 			lookupSearchButton, ownerOrganizationModalTitle, completeTableRowInsideLookupModal,
-			manageAttachmentInsidePageBlockDetail, manageAttachmentIframe, editActionModalIframe, pageLayoutButton,
-			textInsideHelpText;
+			manageAttachmentInsidePageBlockDetail, manageAttachmentIframe, editActionModalIframe, pageLayoutButton;
 
 	/**
 	 * Constructor to handle dependency injection and framework library
@@ -50,20 +49,9 @@ public class PageLayoutPage extends GovGrantsManager {
 		manageAttachmentIframe = By.xpath("//iframe[@id='iframeviewFieldAttContentIdField']");
 		editActionModalIframe = By.xpath("//iframe[@id='iframeActionModalIdViewLayout']");
 		pageLayoutButton = By.xpath("//div[@id='headerButtonsPanel']/span/button");
-		textInsideHelpText = By
-				.xpath("//div[@class='tooltipster-base tooltipster-noir tooltipster-fade tooltipster-fade-show']");
 	}
 
 	/******* "Key Methods with complete functionality - public" *****************/
-
-	/**
-	 * click on the sub tab after clicking flex table icon
-	 * 
-	 * @param subTab
-	 */
-	public void clickSubTab(String tabName) {
-		govgrants.pageDetails().clickSubTabsInsideTableView(tabName);
-	}
 
 	/**
 	 * assert true if correct overview header is displayed
@@ -402,7 +390,7 @@ public class PageLayoutPage extends GovGrantsManager {
 	 * assert true if mentioned help text displayed
 	 */
 	public void assertHelpTextAtPageBlock(String helptext) {
-		Assert.assertTrue(isHelpTextDisplayed(helptext));
+		Assert.assertTrue(govgrants.pageDetails().isHelpTextDisplayed(helptext));
 	}
 
 	/**
@@ -1075,20 +1063,5 @@ public class PageLayoutPage extends GovGrantsManager {
 			return true;
 		} else
 			return false;
-	}
-
-	/**
-	 * return true if text is displayed
-	 * 
-	 * @param text
-	 * @return
-	 */
-	private boolean isHelpTextDisplayed(String helpText) {
-		boolean flag = false;
-		if (reiDriver.findMyElement().getElement(textInsideHelpText).getText().contains(helpText)
-				|| reiDriver.findMyElement().getElement(textInsideHelpText).getText().equalsIgnoreCase(helpText)) {
-			flag = true;
-		}
-		return flag;
 	}
 }

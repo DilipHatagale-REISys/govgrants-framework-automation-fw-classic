@@ -29,6 +29,7 @@ public class ConfigurationSteps {
 
     @Given("^I setup test configuration as below:$")
     public void setupTestCofniguration(DataTable testConfigParameters) throws IOException {
+    	System.out.println("size is "+testConfigParameters.asMaps(String.class, String.class).size());
         for (Map<String, String> parameters : testConfigParameters.asMaps(String.class, String.class)) {
             projectAPI.setupConfigurationForTest(parameters.get("configurationCategory"), parameters.get("fieldName"),
                     parameters.get("fieldNewValue"), parameters.get("coreComponentField"),

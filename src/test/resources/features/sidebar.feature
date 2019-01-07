@@ -112,7 +112,7 @@ Feature: Side bar Component Scenarios
 	|Accordian Content    |Open in new window    |true         |GrantorHome           |Name                     |Completed                 |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app 
-	When I navigate to "Tasks" to reach "Completed" side bar content 
+	When I navigate to "Completed" content inside "Tasks" subheader on left panel 
 	Then I see "<Page title>" in new tab
 	Examples:
 	|Page title|
@@ -128,7 +128,7 @@ Feature: Side bar Component Scenarios
 	|Accordian Content      |Target Url    |<New-TargetUrl>|GrantorHome           |Name                     |Completed                 |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app 
-	When I navigate to "My Tasks" to reach "Completed" side bar content
+	When I navigate to "Completed" content inside "My Tasks" subheader on left panel
 	Then I see page title "Pending Registrations"
 	Examples:
 	|New-TargetUrl             |Old-TargetUrl|

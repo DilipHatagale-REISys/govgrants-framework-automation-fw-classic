@@ -25,11 +25,6 @@ public class PageLayoutSteps {
 		pageLayoutPage.clickRightHeaderButtonInsideDetailPage(button);
 	}
 
-	@When("^I click on \"([^\"]*)\" sub tab inside page layout$")
-	public void clickSubTabAfterSelectingFlexTableIcons(String subTabName) {
-		pageLayoutPage.clickSubTab(subTabName);
-	}
-
 	@When("^I select \"([^\"]*)\" from dropdown$")
 	public void selectFromDropdown(String itemName) {
 		pageLayoutPage.getItemFromTopRightHeaderBars(itemName).click();

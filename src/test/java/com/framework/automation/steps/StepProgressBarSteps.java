@@ -35,11 +35,6 @@ public class StepProgressBarSteps {
 		stepProgressBarPage.assertStatusSequenceInsideProgressBar(statusName, Integer.parseInt(sequenceNumber));
 	}
 
-	@Then("^I see step progress bar displayed in \"([^\"]*)\" color for status \"([^\"]*)\"$")
-	public void assertStepProgressBarColor(String colorName, String statusName) {
-		stepProgressBarPage.assertStepProgressBarAppearence(colorName, statusName);
-	}
-
 	@Then("^I see changed display name as \"([^\"]*)\" inside step progress bar$")
 	public void assertChangedDisplayNameOfStatusInsideStepProgressBar(String statusName) {
 		stepProgressBarPage.assertChangedDisplayNameInsideStepProgressBarForUser(statusName);

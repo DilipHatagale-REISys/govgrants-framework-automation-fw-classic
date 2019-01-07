@@ -280,16 +280,6 @@ public class GovGrantsManager extends ProjectWebServices {
 	}
 
 	/**
-	 * click on sub header content
-	 * 
-	 * @param AccordianHeader
-	 * @param subHeaderContentName
-	 */
-	public void clickAccordiansubHeaderContent(String subHeader, String subHeaderDetailTabs) {
-		govgrants.sideBar().getSideBarContent(subHeader, subHeaderDetailTabs).click();
-	}
-
-	/**
 	 * Assert for page title
 	 * 
 	 * @param pageTitle
@@ -325,33 +315,6 @@ public class GovGrantsManager extends ProjectWebServices {
 	}
 
 	/**
-	 * click flex table item based on program name/subject , status and iconName
-	 * 
-	 * @param programSubject
-	 * @param statusName
-	 * @param iconName
-	 */
-	public void clickTableActionIconsForSpecificSubject(String iconName, String statusName, String programSubject) {
-		govgrants.mainPage().waitForNavigationLogoToDisappear();
-		govgrants.flexTable().clickTableActionIcons(iconName, programSubject, statusName);
-	}
-
-	/**
-	 * click flex table item based on program name/subject , status and iconName
-	 * without processing any operation on modal/confirmation box
-	 * 
-	 * @param programSubject
-	 * @param statusName
-	 * @param iconName
-	 */
-	public void clickTableActionIconsForSpecificSubjectWithoutProcessing(String iconName, String statusName,
-			String programSubject) {
-		govgrants.mainPage().waitForNavigationLogoToDisappear();
-		reiDriver.findMyElement()
-				.getElement(govgrants.flexTable().getTableActionIcon(iconName, programSubject, statusName)).click();
-	}
-
-	/**
 	 * click on right header bars
 	 */
 	public void clickRightHeaderBars(String title) {
@@ -360,15 +323,6 @@ public class GovGrantsManager extends ProjectWebServices {
 		} catch (Exception e) {
 		}
 		govgrants.phasePannel().clickParallelMenuBars(title);
-	}
-
-	/**
-	 * perform complete quick search in flex
-	 * 
-	 * @return
-	 */
-	public void performQuickSearch(String searchTerm) {
-		govgrants.quickSearch().performQuickSearch(searchTerm);
 	}
 
 	/**
@@ -493,7 +447,7 @@ public class GovGrantsManager extends ProjectWebServices {
 		return reiDriver.adobeReader().readFromAdobeFileOnLocalAtUserDirectory(
 				directory.getAbsolutePath().toString() + "\\" + fileName + ".pdf", pageNumber);
 	}
-	
+
 	/******* "Local Methods with Limited functionality " **********/
 
 	/**

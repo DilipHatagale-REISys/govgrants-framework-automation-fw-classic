@@ -12,15 +12,13 @@ import com.framework.automation.projectmanager.GovGrantsManager;
 public class FlexTablePage extends GovGrantsManager {
 	/******* "Variables and Locators" *****************/
 
-	private final By overLayFrame, innerFlexTableActionIframe, programFlexTableActionItems, programFlexTableDropdown;
+	private final By programFlexTableActionItems, programFlexTableDropdown ;
 
 	/**
 	 * Constructor to handle dependency injection and framework library
 	 */
 	public FlexTablePage(Controller controller, CoreHandlers reiDriver, GovGrantsHandler govgrants) {
 		super(controller, reiDriver, govgrants);
-		overLayFrame = By.xpath("//iframe[@id='ProgramsiframeContentId']");
-		innerFlexTableActionIframe = By.xpath("//iframe[@id='ProgramRolesAndResponsibilitiesiframeContentId']");
 		programFlexTableActionItems = By.xpath("//span[@class='focusActionItem ng-scope']//a");
 		programFlexTableDropdown = By
 				.xpath("//div[contains(@class,'panel-title')]//div[@id='dropdownListView']/ul/li/a");
@@ -166,9 +164,9 @@ public class FlexTablePage extends GovGrantsManager {
 	 */
 	public void assertActionIconNotDisplayedInsideflexTable(String iconName, String uniqueColumnValue) {
 		reiDriver.WaitFor()
-				.WaitForElementToBePresent(govgrants.flexTable().getTableActionIcon(iconName, uniqueColumnValue));
+				.WaitForElementToBePresent(govgrants.flexTable().getTableActionIconWithoutTableId(iconName, uniqueColumnValue));
 		Assert.assertFalse(reiDriver.findMyElement()
-				.getElement(govgrants.flexTable().getTableActionIcon(iconName, uniqueColumnValue)).isDisplayed());
+				.getElement(govgrants.flexTable().getTableActionIconWithoutTableId(iconName, uniqueColumnValue)).isDisplayed());
 	}
 
 	/**
@@ -275,7 +273,7 @@ public class FlexTablePage extends GovGrantsManager {
 	 * @param blockTitle
 	 */
 	public void getHelpTextAtEditActionOfFlexTable(String iconName, String columnName) {
-		reiDriver.WaitFor().WaitForElementToBePresent(govgrants.flexTable().getTableActionIcon(iconName, columnName))
+		reiDriver.WaitFor().WaitForElementToBePresent(govgrants.flexTable().getTableActionIconWithoutTableId(iconName, columnName))
 				.getAttribute("title").equalsIgnoreCase(iconName);
 	}
 
@@ -335,7 +333,7 @@ public class FlexTablePage extends GovGrantsManager {
 	 */
 	public void assertActionIconDisplayedInsideflexTable(String iconName, String uniqueColumnValue) {
 		Assert.assertTrue(reiDriver.findMyElement()
-				.getElement(govgrants.flexTable().getTableActionIcon(iconName, uniqueColumnValue)).isDisplayed());
+				.getElement(govgrants.flexTable().getTableActionIconWithoutTableId(iconName, uniqueColumnValue)).isDisplayed());
 	}
 
 	/**
@@ -757,6 +755,7 @@ public class FlexTablePage extends GovGrantsManager {
 				flag = true;
 			}
 		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		return flag;
 	}

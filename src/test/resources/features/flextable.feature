@@ -174,8 +174,8 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action    |Action Behavior|Open in new window |Programs              |Name                     |Edit                      | 
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "Edit" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
 	Then I see new tab is opened
 	
 	@34038 @all @editActionOpensInSameWindow-gPlanning
@@ -188,8 +188,8 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action    |Action Behavior|Open in same window |Programs              |Name                     |Edit                      | 
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "Edit" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
 	Then I see no new tab is opened
 	
 	@34039 @all @editActionOpensInOverLayWindow-gPlanning
@@ -202,8 +202,8 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action    |Action Behavior|Open in overlay     |Programs              |Name                     |Edit                      | 
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "Edit" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Edit" opens in overLay window
 	
 	@34292 @all @refreshBehaviourFieldAtRolesAndResponsilitiesFlexTableAsRefreshEntirePage-gPlanning
@@ -216,9 +216,9 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action    |Refresh Behavior|Refresh the entire page |ProgramRolesAndResponsibilities|Name                     |Edit                      | 
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
-	When I click on "Roles" sub tab inside page layout 
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	When I navigate to "Roles" sub tab 
 	When I click on "Edit" icon for "Owner" to save inside subtab
 	Then I see entire page is refreshing
 	
@@ -232,9 +232,9 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action Sobject     |Hide For Profile |System Administrator   |ProgramRolesAndResponsibilities|Name                       |Edit                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
-	When I click on "Roles" sub tab inside page layout
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	When I navigate to "Roles" sub tab 
 	Then I see "Edit" icon for "Owner" is not displayed inside flex table
 	
 	@34298 @all @hideForUserFieldAtRolesAndResponsibilitiesFlexTableAction-gPlanning
@@ -247,9 +247,9 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action Sobject    |Hide For User   |Internal             |ProgramRolesAndResponsibilities|Name                       |Edit                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
-	When I click on "Roles" sub tab inside page layout
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	When I navigate to "Roles" sub tab 
 	Then I see "Edit" icon for "Owner" is not displayed inside flex table
 	
 	@34299 @all @hideForContextFieldAtRolesAndResponsibilitiesFlexTableAction-gPlanning
@@ -262,9 +262,9 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action Sobject    |Hide For Context  |Edit                 |ProgramRolesAndResponsibilities|Name                       |Edit                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "Edit" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
-	When I click on "Roles" sub tab inside page layout
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+	When I navigate to "Roles" sub tab 
 	Then I see "Edit" icon for "Owner" is not displayed inside flex table
 	
 	@34300 @all @hideOperatorFieldUsingANDOperatorAtRolesAndResponsibilitiesFlexTAbleAction-gPlanning
@@ -281,9 +281,9 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action Sobject   |Hide Operator    |AND                  |ProgramRolesAndResponsibilities|Name                       |Edit                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "Edit" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
-	When I click on "Roles" sub tab inside page layout
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+	When I navigate to "Roles" sub tab 
 	Then I see "Edit" icon for "Owner" is not displayed inside flex table
 	
 	@34302 @all @hideOperatorFieldUsingOROperatorAtRolesAndResponsibilitiesFlexTAbleAction-gPlanning
@@ -300,9 +300,9 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action Sobject    |Hide Operator    |OR                   |ProgramRolesAndResponsibilities|Name                       |Edit                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "Edit" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
-	When I click on "Roles" sub tab inside page layout
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+	When I navigate to "Roles" sub tab 
 	Then I see "Edit" icon for "Owner" is not displayed inside flex table
 	
 	@39287 @all @headerHelpTextFieldAtFlexTable-gPlanning
@@ -359,7 +359,7 @@ Feature: Flex Table Component Scenarios
 	Then I see "Page" with pagination arrow at bottom in flex table
 	
 	@39302 @all @defaultPageSizeFieldAtFlexTable-gPlanning
-	Scenario: validate enabling of page size dropdown at bottom in flex table of programs-planning
+	Scenario: validate change of default page size inside dropdown at bottom in flex table of programs-planning
 	Given I have default configuration as below:
 	|configurationCategory |fieldName        |fieldOrignalValue|filterId        |
 	|Flex Table            |Default Page Size|10               |ApiGeneratedId:0|
@@ -436,7 +436,7 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action    |Sequence       |2                  |Programs              |Name                     |Edit                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
+	When I perform quick search for "Test program for automation - Created mode only"
 	Then I see "Edit" row action Button at position "1"
 	
 	@40014 @all @buttonHelpTextFieldAtFlexTableAction-gPlanning
@@ -449,7 +449,7 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action    |Button Help Text|Automation Help    |Programs              |Name                     |Edit                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
+	When I perform quick search for "Test program for automation - Created mode only"
 	Then I see "Automation Help" as title for "Test program for automation - Created mode only" inside flex table action
 		
 	@40015 @all @actionURLFieldAtFlexTableAction-gPlanning
@@ -462,8 +462,8 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action    |Action URL      |<newActionUrl>     |Programs              |Name                     |Edit                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "Edit" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
 	Then I see edit opens with "<newActionUrl>"
 	
 	Examples:
@@ -480,7 +480,7 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action    |Icon CSS        |govgrants_config:FlexTableEditActionNewIconCss|Programs              |Name                     |Edit                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
+	When I perform quick search for "Test program for automation - Created mode only"
 	Then I see external link icon as "Test program for automation - Created mode only" for "Edit" inside flex table action
 	
 	@40079 @all @locationFieldAtFlexTableRowLevelEditAction-gPlanning
@@ -495,9 +495,9 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action    |Header Action Display Type |Button                  |ProgramRolesAndResponsibilities|Name                     |Edit                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
-	When I click on "Roles" sub tab inside page layout
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	When I navigate to "Roles" sub tab 
 	Then I see "Edit" button inside "Roles And Responsibilities" flex table
 	
 	@40080 @all @locationFieldAtFlexTableTopLevelNewAction-gPlanning
@@ -511,9 +511,9 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action    |Location                   |Row                     |ProgramRolesAndResponsibilities|Name                     |New                       |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
-	When I click on "Roles" sub tab inside page layout
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	When I navigate to "Roles" sub tab 
 	Then I see "New" icon for "Owner" is displayed inside flex table
 	
 	@40087 @all @headerActionDisplayTypeFieldAtFlexTableTopLevelNewActionAsMenu-gPlanning
@@ -526,9 +526,9 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action     |Header Action Display Type|Menu                    |ProgramRolesAndResponsibilities|Name                     |New                       |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
-	When I click on "Roles" sub tab inside page layout
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	When I navigate to "Roles" sub tab 
 	When I click on top right parallel lines bar for "Roles And Responsibilities"
 	Then I see "New" options inside "Roles And Responsibilities" enabled
 	
@@ -542,9 +542,9 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action     |Header Action Display Type|link                    |ProgramRolesAndResponsibilities|Name                     |New                       |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
-	When I click on "Roles" sub tab inside page layout
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	When I navigate to "Roles" sub tab 
 	Then I see "New" button inside "Roles And Responsibilities" flex table
 	
 	@40096 @all @headerActionDisplayTypeFieldAtFlexTableTopLevelViewSubmittedApplicationsAsLink-gPlanning
@@ -569,8 +569,8 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action     |Show Confirmation Box     |true                    |Programs          |Name                     |View                       |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table without processing
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table with table id "toggleFlexTablePrograms" without processing
 	Then I see confirmation box with body "null" is displayed
 	
 	@40102 @all @ConfirmationMessageFieldForProgramFlexTAbleViewAction-gPlanning
@@ -585,8 +585,8 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action     |Confirmation Message      |Automation              |Programs          |Name                     |View                       |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table without processing
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table with table id "toggleFlexTablePrograms" without processing
 	Then I see confirmation box with body "Automation" is displayed
 	
 	@40103 @all @modalTitleFieldForProgramFlexTAbleViewAction-gPlanning
@@ -601,8 +601,8 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action     |Modal Title               |Automation Title        |Programs          |Name                     |View                       |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon of status "Created" for "Test program for automation - Created mode only" program in flex table
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Automation Title" displayed in flex table Action modal
 	
 	@40106 @all @hideForProfileFieldAtProgramFlexTableEditAction-gPlanning
@@ -619,7 +619,7 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action Sobject    |Hide Decision Field     |                      |Programs                       |Name                       |Edit                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
+	When I perform quick search for "Test program for automation - Created mode only"
 	Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
 	
 	Examples:
@@ -640,7 +640,7 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action Sobject     |Hide Decision Field     |                      |Programs                       |Name                       |Edit                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
+	When I perform quick search for "Test program for automation - Created mode only"
 	Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
 	
 	Examples:
@@ -661,7 +661,7 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action Sobject     |Hide Decision Field     |                      |Programs                       |Name                       |Edit                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
+	When I perform quick search for "Test program for automation - Created mode only"
 	Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
 	
 	Examples:
@@ -681,20 +681,20 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action Sobject     |Hide Decision Field     |<defaultHideDecisionField>|Programs                                                     |Name                       |Edit                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation -  SA mode only - Can be Approved"
-	When I click on "Edit" icon of status "Created" for "Test program for automation -  SA mode only - Can be Approved" program in flex table
+	When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
+	When I click on "Edit" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
 	And I complete submit for approval
 	When I re-login as "Automation-PM" with "QA" url 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	And I navigate to "Tasks" to reach "Pending" side bar content
-	When I search for "Test program for automation -  SA mode only - Can be Approved"
+	When I navigate to "Pending" content inside "Tasks" subheader on left panel
+	When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
 	When I start the approval with subject "Test program for automation -  SA mode only - Can be Approved"
 	When I select "Approve" from approval decision panel
 	When I enter Approval comment
     And I click submit
 	And I re-login as "Automation" with "QA" url
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation -  SA mode only - Can be Approved"
+	When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
 	Then I see "Edit" icon for "Test program for automation -  SA mode only - Can be Approved" is not displayed inside flex table
 	
 	Examples:
@@ -718,7 +718,7 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action Sobject    |Hide Decision Field     |                     |Programs                       |Name                       |Edit                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
+	When I perform quick search for "Test program for automation - Created mode only"
 	Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
 	
 	Examples:
@@ -743,7 +743,7 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action Sobject    |Hide Decision Field     |                     |Programs                       |Name                       |Edit                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
+	When I perform quick search for "Test program for automation - Created mode only"
 	Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
 	
 	Examples:
@@ -760,7 +760,7 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action Sobject     |Hide Expression JSON|govgrants_config:ProgramFlexTableExpressionJson  |Programs              |Name                     |Edit                      |
 	When I login as "Automation" User 
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
-	When I search for "Test program for automation - Created mode only"
+	When I perform quick search for "Test program for automation - Created mode only"
 	Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
 	
 	@40128 @all @hideForProfileFieldAtActiveFundingOpprtunityFlexTableCreateAction-gAnnouncement
