@@ -396,8 +396,8 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Financials" sub tab
-	When I click on "Edit" icon of status "Active" for "Demo_Title" program in enhanced grid table without processing
-	#When I click on "Edit" icon for "Demo_Title" inside table with table id "TmpActiveGrantsGridFlexToggle" without processing
+	#When I click on "Edit" icon of status "Active" for "Demo_Title" program in enhanced grid table without processing
+	When I click on "Edit" icon for "Demo_Title" inside table with table id "TmpActiveGrantsGridFlexToggle" without processing
 	Then I see confirmation box with body "Automation" is displayed
 	
 	@41468 @all @locationFieldAtEnhancedGridActionItem-gPlanning
