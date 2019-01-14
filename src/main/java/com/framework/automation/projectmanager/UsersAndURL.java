@@ -1,19 +1,19 @@
 package com.framework.automation.projectmanager;
 
-
 import java.io.IOException;
 
+import com.automation.rei.controller.UsersController;
 import com.automation.rei.corelib.Properties_Logs;
 import com.cucumber.listener.Reporter;
 
-public class UsersAndURL {
-    
+public class UsersAndURL implements UsersController {
+
     /**
      * @REI-Systems
      * @author nauman.shahid
      * @category Handles users based on different environments
-     */    
-    
+     */
+    @Override
     public String handleUsersForEnv(String userLevel) {
         String userName = null;
         if (System.getProperty("env").equalsIgnoreCase("qa")) {
@@ -22,6 +22,11 @@ public class UsersAndURL {
             userName = performLoginUATEnvironment(userLevel);
         }
         return userName;
+    }
+
+    @Override
+    public String getAutomationPassword(String userLevel) {
+        return "Automation@12345";
     }
 
     public String performLoginQAEnvironment(String userLevel) {
@@ -53,15 +58,16 @@ public class UsersAndURL {
         }
         return username;
     }
-    
+
     public String navigateToAnyUrl(String urlName) throws IOException {
-        String url=null;
-        switch(urlName.toUpperCase()) {
+        String url = null;
+        switch (urlName.toUpperCase()) {
         case "QA":
             url = new Properties_Logs().ReadPropertyFile("environment.properties", "QA");
             Reporter.addScenarioLog("Scenario is running using External Link" + " & Url is " + url);
             break;
         }
         return url;
-            }
+    }
+
 }
