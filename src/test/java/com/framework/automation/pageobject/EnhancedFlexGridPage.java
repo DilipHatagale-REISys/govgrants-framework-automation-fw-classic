@@ -17,7 +17,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	private final By advanceFilterButtonForEnhancedGrid, reachOutToEnhancedGridCollapse, menuIconForEnhancedGrid,
 			searchInputEnhancedGrid, completeTableRowOfEnhancedGrid, totalRowCountInsideEnhancedGrid,
 			selectRecordCheckBoxForEnhancedGrid, completeTableRowEnhancedGrid, currentBudgetPeriodEndDate,
-			scrollToActionColumn, obligatedAmountSpecificCells;
+			scrollToActionColumn, obligatedAmountSpecificCells, reachOutToEnhancedGrid;
 
 	/**
 	 * Constructor to handle dependency injection and framework library
@@ -40,6 +40,8 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 		currentBudgetPeriodEndDate = By.xpath("//field[@field-name='BudgetPeriodEndDate__c']//input[@type='text']");
 		scrollToActionColumn = By.xpath("//div[@id='Enhanced1grid']//th[contains(text(),'Actions')]");
 		obligatedAmountSpecificCells = By.xpath("//table/tbody/tr/td//*[@field-name='TotalAwardObligatedAmount__c']");
+		reachOutToEnhancedGrid = By.xpath(
+				"//a[@id='TmpActiveGrantsGridFlexCollapse']/following-sibling::span[contains(text(),'Monitoring Schedule For All Active Grants')]");
 	}
 
 	/******* "Key Methods with complete functionality - public" *****************/
@@ -104,10 +106,8 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	 * @param columnTitle
 	 */
 	public void getHelpTextAtEnhancedGridTableSpecificColumn(String columnTitle) {
-
 		reiDriver.JavaScript()
 				.scrollpageToSpecificElement(By.xpath("//a[@data-target='#toggleFlexTableProgramBudgetCategory']"));
-
 		reiDriver.Clickers().moveMouseToSpecificLocation(
 				reiDriver.findMyElement().getElement(By.xpath("//th//span[@title='" + columnTitle + "' or text()='"
 						+ columnTitle + "']/../../..//span[contains(@class,'fa-info')]")));
@@ -149,6 +149,30 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 						+ "']/ancestor::tr[1]//td//a[@title = '" + iconTitle
 						+ "']//i[contains(@class,'fa fa-external-link')]"))
 				.isDisplayed());
+	}
+
+	/**
+	 * Either expands or collapses a sub table in a nested flex grid
+	 *
+	 * @param uniqueColumnValue
+	 * @param isExpand
+	 */
+	public void expandOrCollapseNestedTable(String uniqueColumnValue, boolean isExpand) {
+		reiDriver.JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
+		By circleIconSelector = By.xpath("//td//*[text()='" + uniqueColumnValue
+				+ "']//ancestor::tr[1]//i[contains(@class, 'plus')] | //td//*[text()='" + uniqueColumnValue
+				+ "']//ancestor::tr[1]//i[contains(@class, 'fa-plus')]");
+		try {
+			reiDriver.WaitFor().WaitForElementToBePresent(circleIconSelector);
+			reiDriver.JavaScript().scrollElementToPageDetailCenter(circleIconSelector);
+		} catch (Exception e) {
+		}
+		if ((isExpand
+				&& reiDriver.findMyElement().getElement(circleIconSelector).getAttribute("class").contains("fa-plus"))
+				|| (!isExpand && reiDriver.findMyElement().getElement(circleIconSelector).getAttribute("class")
+						.contains("fa-minus"))) {
+			reiDriver.WaitFor().WaitForElementClickAble(circleIconSelector).click();
+		}
 	}
 
 	/**

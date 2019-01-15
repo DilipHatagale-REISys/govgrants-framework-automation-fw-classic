@@ -396,8 +396,8 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Financials" sub tab
-	When I click on "Edit" icon of status "Active" for "Demo_Title" program in enhanced grid table without processing
-	#When I click on "Edit" icon for "Demo_Title" inside table with table id "TmpActiveGrantsGridFlexToggle" without processing
+	#When I click on "Edit" icon of status "Active" for "Demo_Title" program in enhanced grid table without processing
+	When I click on "Edit" icon for "Demo_Title" inside table with table id "TmpActiveGrantsGridFlexToggle" without processing
 	Then I see confirmation box with body "Automation" is displayed
 	
 	@41468 @all @locationFieldAtEnhancedGridActionItem-gPlanning
@@ -417,7 +417,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 	When I navigate to "Financials" sub tab
 	Then I see "View" button inside "Monitoring Schedule For All Active Grants" enhanced grid
 	
-	@41358 @all @formulaFieldAtEnhancedGrid-gPlanning
+	@41385 @all @formulaFieldAtEnhancedGrid-gPlanning
 	Scenario: Validating subtotal of cell value of total obligated amount by entering formula at config validating it inside enhanced of program-planning
 	Given I have default configuration as below:
 	|configurationCategory |fieldName   |fieldOrignalValue    |filterId        |
@@ -445,9 +445,50 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Financials" sub tab
-	When I expand nested table containing column value "Demo_Title"
+	#When I expand nested table containing column value "Demo_Title"
+	When I expand nested table containing column value "Demo_Title" inside enhanced grid
 	When I hovering mouse on help text icon inside "Active Awards" for enhanced grid
 	Then I see "<new_helpText>" shown as help text
 	Examples:
 	|new_helpText            |old_helpText |
 	|Help Text for Automation|Active Awards|
+	
+	@42030 @all @enableHelpFieldAtChildFlexTableForEnhancedGrid-gPlanning
+	Scenario: validate enabling of help inside menu option inside child table of enhanced flex grid planning-Program enhanced flex grid
+	Given I have default configuration as below:
+	|configurationCategory |fieldName       |fieldOrignalValue|filterId        |
+	|Flex Grid             |Enable Help     |false            |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName       |fieldNewValue    |coreComponentField           |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Grid:General     |Enable Help     |true             |TmpGrantorActiveAwardsGrid   |                         |                          |
+	When I login as "Automation" User 
+    When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	When I navigate to "Financials" sub tab
+	#When I expand nested table containing column value "Demo_Title"
+	When I expand nested table containing column value "Demo_Title" inside enhanced grid
+	When I click on top right parallel lines bar for "Active Awards"
+	Then I see "Help" options inside "Active Awards" enabled
+	
+	@42024 @all @helpTextFieldAtChildTableEnhancedGridColumnHeader-gPlanning @check
+	Scenario Outline: Changing content of help text field at enhanced grid column header from config and validating it inside enhanced grid of programs-planning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName       |fieldOrignalValue    |filterId        |
+	|Flex Table List       |Help Text       |                     |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory|fieldName        |fieldNewValue       |coreComponentField        |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table List      |Help Text        |<new_helpText>      |TmpGrantorActiveAwardsGrid|Name                     |FTC-1492                  |
+	When I login as "Automation" User 
+    When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	When I navigate to "Financials" sub tab
+	#When I expand nested table containing column value "Demo_Title"
+	When I expand nested table containing column value "Demo_Title" inside enhanced grid
+	When I hovering mouse on help text icon inside "ID" for enhanced grid table column
+	Then I see "<new_helpText>" shown as help text
+	Examples:
+	|new_helpText            |
+	|Help Text for Automation|
+	

@@ -36,6 +36,12 @@ public class UsersAndURL {
         case "AUTOMATION-PM":
             username = "automationpm@reisystems.com";
             break;
+        case "AUTOMATION-REVIEWER":
+            username = "monukumar.mr20@gmail.com";
+            break;
+        case "AUTOMATION-APPLICANT":
+            username = "automation-applicant@ggptest5.com";
+            break;
         default:
             username = "qa_automation@ggp.test5";
         }

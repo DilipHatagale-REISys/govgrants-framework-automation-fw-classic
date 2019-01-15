@@ -31,6 +31,11 @@ public class EnhancedFlexGridSteps {
 	public void clickTableActionIconsWithoutProcessing(String iconName, String programSubject, String statusName) {
 		enhancedFlexGrid.clickTableActionIconsForSpecificSubjectWithoutProcessing(iconName, programSubject, statusName);
 	}
+    
+    @When("^I expand nested table containing column value \"([^\"]*)\" inside enhanced grid$")
+    public void expandNestedTable(String uniqueColumnValue) {
+    	enhancedFlexGrid.expandOrCollapseNestedTable(uniqueColumnValue, true);
+    }
 
 	@Then("^I see Advance Filter is disabled from planning enhanced flex grid$")
 	public void assertAdvanceFilterOptionDisabled() {

@@ -34,7 +34,7 @@ public class GovGrantsManager extends ProjectWebServices {
 			menuIcon, selectRecordCheckBox, totalRowsCalc, totalRowCount, flexTablelastRowNameAsTotal,
 			editIconForProgramFlexTable, pendingTasksTableRef, dangerAlert, confirmationBoxMessage, selectDropdown,
 			specificUserInsideDropdown, quickSearchButton, doubleArrowDropDown, navProfile_CurrentApp, saveButton,
-			allPhases, chartsContainer, containerFluid_PageWrapperList, reachOutToEnhancedGridCollapse;
+			allPhases, chartsContainer, containerFluid_PageWrapperList, reachOutToEnhancedGridCollapse, reachOutToTmpActiveGrantsGrid;
 
 	/**
 	 * Super Constructor
@@ -86,6 +86,7 @@ public class GovGrantsManager extends ProjectWebServices {
 		containerFluid_PageWrapperList = By.cssSelector("div#page-content-wrapper>div.container-fluid>div>div>div");
 		reachOutToEnhancedGridCollapse = By.xpath(
 				"//div[@class='panel-heading']//div[contains(@class,'panel-title')]//*[text()='Budget Category ']");
+		reachOutToTmpActiveGrantsGrid = By.xpath("//*[@id='TmpGrantorActiveAwardsGridFlexToggle']");
 
 	}
 
@@ -319,7 +320,7 @@ public class GovGrantsManager extends ProjectWebServices {
 	 */
 	public void clickRightHeaderBars(String title) {
 		try {
-			reiDriver.JavaScript().scrollElementToPageDetailCenter(reachOutToEnhancedGridCollapse);
+			reiDriver.JavaScript().scrollElementToPageDetailCenter(reachOutToTmpActiveGrantsGrid);
 		} catch (Exception e) {
 		}
 		govgrants.phasePannel().clickParallelMenuBars(title);

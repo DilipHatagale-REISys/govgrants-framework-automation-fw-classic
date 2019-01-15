@@ -565,7 +565,7 @@ Feature: Approval Process Component Scenarios
 	When I select "Queued Emails" from double headed dropdown inside admin portal
 	Then I see email is generated with template "Program_Approved_Email_Template"
 	
-	@37656 @all @sendToOwnerEmailSentWithApproveTemplateToProgramOwner-Programs
+	@37666 @all @sendToOwnerEmailSentWithApproveTemplateToProgramOwner-Programs
 	Scenario: Setup email setting in configuration and validate that program owner receiving email for reassign with approve email template for program approval
 	Given I have default configuration as below:
 	|configurationCategory               |fieldName                    |fieldOrignalValue              |filterId        |
