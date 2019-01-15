@@ -28,7 +28,8 @@ Feature: Approval Process Component Scenarios
 	And I navigate to "Planning" tab
 	When I navigate to "Pending" content inside "Tasks" subheader on left panel
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-	When I start the approval with subject "Test program for automation -  SA mode only - Not approved"
+	#When I start the approval with subject "Test program for automation -  SA mode only - Not approved"
+	When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table	
 	Then I see "Approve" is disabled
 	
 	@34307 @all @changeApproveOptionSequence-Programs
