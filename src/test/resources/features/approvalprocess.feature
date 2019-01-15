@@ -22,7 +22,7 @@ Feature: Approval Process Component Scenarios
 	When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	And I complete submit for approval
 	#When I re-login as "Automation-PM" with "QA" url
-	When I re-login as "Automation-PM" user with environment "QA"
+	When I re-login as "Automation-PM" user with portal "QA"
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
