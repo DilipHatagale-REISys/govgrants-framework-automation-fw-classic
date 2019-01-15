@@ -1,18 +1,13 @@
 package com.framework.automation.steps;
 
-import java.io.IOException;
-
 import org.springframework.context.annotation.Description;
 
 import com.automation.rei.controller.Controller;
-import com.automation.rei.exception.ReiFrameworkCustomException;
 import com.automation.rei.handlers.CoreHandlers;
 import com.automation.rei.handlers.GovGrantsHandler;
 import com.framework.automation.pageobject.LoginPage;
 
-import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
 
 public class LoginSteps {
     LoginPage loginPage;
@@ -20,7 +15,7 @@ public class LoginSteps {
     public LoginSteps(Controller controller, CoreHandlers handler, GovGrantsHandler govgrants) {
         loginPage = new LoginPage(controller, handler, govgrants);
     }
-
+/*
     @Description("Enter user name to login")
     @Given("^I enter my user \"([^\"]*)\"$")
     public void enterUserName(String userName) {
@@ -61,7 +56,7 @@ public class LoginSteps {
         loginPage.enterAsUser(user);
         loginPage.getToAdminPage();
     }
-    
+    */
     @Description("Assert login is successful and landed on login page")
     @Then("^I am on the homepage$")
     public void assertHomepage() {
