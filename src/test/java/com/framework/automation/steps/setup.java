@@ -3,11 +3,10 @@ package com.framework.automation.steps;
 import java.awt.AWTException;
 import java.io.IOException;
 
-import org.testng.asserts.SoftAssert;
-
 import com.automation.rei.controller.Controller;
 import com.automation.rei.controller.SetupController;
 import com.framework.automation.projectmanager.ProjectWebServices;
+import com.framework.automation.projectmanager.UsersAndURL;
 
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
@@ -37,6 +36,7 @@ public class setup {
     @Before
     public void startUp() throws IOException, AWTException {
         setupController.initializer();
+        setupController.usersController(new UsersAndURL());
     }
 
     @After

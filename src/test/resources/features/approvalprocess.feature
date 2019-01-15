@@ -12,12 +12,14 @@ Feature: Approval Process Component Scenarios
 	|configurationCategory            |fieldName     |fieldNewValue|coreComponentField                                        |
 	|Program	                      |Status        |Created      |Test program for automation -  SA mode only - Not approved|
 	|Approval Decision Action:General |Hide Action   |true         |ADAC-0009                                                 |
-	When I login as "Automation" User 
+	When I login as "Automation" User
+	#When I login to "As a Grantor" app as "Automation" User
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	And I complete submit for approval
-	When I re-login as "Automation-PM" with "QA" url
+	#When I re-login as "Automation-PM" with "QA" url
+	When I re-login to "As a Grantor" app as "Automation-PM" User with environment "QA"
 	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
 	When I navigate to "Pending" content inside "Tasks" subheader on left panel
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
