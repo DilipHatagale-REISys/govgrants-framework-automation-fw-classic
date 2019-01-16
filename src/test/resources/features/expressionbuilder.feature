@@ -11,8 +11,10 @@ Feature: Expression Builder Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName            |fieldNewValue                                               |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
 	|Flex Table Action     |Hide Expression JSON |govgrants_config:FlexTableHideExpressionBuilderJsonForPMUser|ActiveFundingOpportunities|Name                       |Create                    |
-	When I login as "Automation-PM" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Announcements" tab
+	When I login as "Automation-PM" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Announcements" tab
 	When I select "Draft Announcements" from double headed dropdown inside admin portal
 	Then I see "Create" button inside "Draft Announcements" flex table not displayed
 	
@@ -24,8 +26,10 @@ Feature: Expression Builder Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName            |fieldNewValue                                                  |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
 	|Flex Table Action     |Hide Expression JSON |govgrants_config:FlexTableHideExpressionBuilderJsonForAdminUser|ActiveFundingOpportunities|Name                       |Create                    |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Announcements" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Announcements" tab
 	When I select "Draft Announcements" from double headed dropdown inside admin portal
 	Then I see "Create" button inside "Draft Announcements" flex table not displayed
 	
@@ -37,8 +41,10 @@ Feature: Expression Builder Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName            |fieldNewValue                                                             |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
 	|Flex Table Action     |Hide Expression JSON |govgrants_config:FlexTableHideExpressionBuilderJsonForAdministratorProfile|ActiveFundingOpportunities|Name                       |Create                    |
-	When I login as "Automation-PM" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Announcements" tab
+	When I login as "Automation-PM" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Announcements" tab
 	When I select "Draft Announcements" from double headed dropdown inside admin portal
 	Then I see "Create" button inside "Draft Announcements" flex table not displayed
 	
@@ -50,12 +56,16 @@ Feature: Expression Builder Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName            |fieldNewValue                                                             |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
 	|Flex Table Action     |Hide Expression JSON |govgrants_config:FlexTableHideExpressionBuilderJsonForAdministratorProfile|ActiveFundingOpportunities|Name                       |Create                    |
-	When I login as "Automation-PM" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Announcements" tab
+	When I login as "Automation-PM" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Announcements" tab
 	When I select "Draft Announcements" from double headed dropdown inside admin portal
 	Then I see "Create" button inside "Draft Announcements" flex table not displayed
-	When I re-login as "Automation" with "QA" url
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Announcements" tab
+	When I re-login as "Automation" user with portal "QA"
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Announcements" tab
 	When I select "Draft Announcements" from double headed dropdown inside admin portal
 	Then I see "Create" button inside "Draft Announcements" flex table not displayed
 	
@@ -67,8 +77,10 @@ Feature: Expression Builder Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName            |fieldNewValue                                                                     |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
 	|Flex Table Action     |Hide Expression JSON |govgrants_config:HideExpressionBuilderJsonForAdministratorProfileWithNotInOperator|ActiveFundingOpportunities|Name                       |Create                    |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Announcements" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Announcements" tab
 	When I select "Draft Announcements" from double headed dropdown inside admin portal
 	Then I see "Create" button inside "Draft Announcements" flex table not displayed
 	
@@ -80,8 +92,10 @@ Feature: Expression Builder Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName            |fieldNewValue                                                                     |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
 	|Flex Table Action     |Hide Expression JSON |govgrants_config:HideExpressionBuilderJsonForAdministratorProfileWithNotInOperator|ActiveFundingOpportunities|Name                       |Create                    |
-	When I login as "Automation-PM" User
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Announcements" tab
+	When I login as "Automation-PM" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Announcements" tab
 	When I select "Draft Announcements" from double headed dropdown inside admin portal
 	Then I see "Create" button inside "Draft Announcements" flex table
 	
@@ -93,8 +107,10 @@ Feature: Expression Builder Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName            |fieldNewValue                                                          |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
 	|Flex Table Action     |Hide Expression JSON |govgrants_config:HideExpressionBuilderJsonForInternalUserWithInOperator|ActiveFundingOpportunities|Name                       |Create                    |
-	When I login as "Automation" User
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Announcements" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Announcements" tab
 	When I select "Draft Announcements" from double headed dropdown inside admin portal
 	Then I see "Create" button inside "Draft Announcements" flex table not displayed
 	
@@ -106,8 +122,10 @@ Feature: Expression Builder Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName            |fieldNewValue                                                             |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
 	|Flex Table Action     |Hide Expression JSON |govgrants_config:HideExpressionBuilderJsonForInternalUserWithNotInOperator|ActiveFundingOpportunities|Name                       |Create                    |
-	When I login as "Automation" User
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Announcements" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Announcements" tab
 	When I select "Draft Announcements" from double headed dropdown inside admin portal
 	Then I see "Create" button inside "Draft Announcements" flex table
 	
@@ -119,8 +137,10 @@ Feature: Expression Builder Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName            |fieldNewValue                                                             |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
 	|Flex Table Action     |Hide Expression JSON |govgrants_config:HideExpressionBuilderJsonForInternalUserWithNotInOperator|ActiveFundingOpportunities|Name                       |Create                    |
-	When I login as "Automation-Reviewer" User
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Announcements" tab
+	When I login as "Automation-Reviewer" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Announcements" tab
 	When I select "Draft Announcements" from double headed dropdown inside admin portal
 	Then I see "Create" button inside "Draft Announcements" flex table not displayed
 	
@@ -132,8 +152,10 @@ Feature: Expression Builder Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName            |fieldNewValue                                                                         |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
 	|Flex Table Action     |Hide Expression JSON |govgrants_config:HideExpressionBuilderJsonForInternalUserTypeInternalApplicantReviewer|ActiveFundingOpportunities|Name                       |Create                    |
-	When I login as "Automation" User
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Announcements" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Announcements" tab
 	When I select "Draft Announcements" from double headed dropdown inside admin portal
 	Then I see "Create" button inside "Draft Announcements" flex table not displayed
 	
@@ -145,8 +167,10 @@ Feature: Expression Builder Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName            |fieldNewValue                                                                         |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
 	|Flex Table Action     |Hide Expression JSON |govgrants_config:HideExpressionBuilderJsonForInternalUserTypeInternalApplicantReviewer|ActiveFundingOpportunities|Name                       |Create                    |
-	When I login as "Automation-Applicant" User
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Announcements" tab
+	When I login as "Automation-Applicant" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Announcements" tab
 	When I select "Draft Announcements" from double headed dropdown inside admin portal
 	Then I see "Create" button inside "Draft Announcements" flex table not displayed
 	
@@ -158,8 +182,10 @@ Feature: Expression Builder Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName            |fieldNewValue                                                                         |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
 	|Flex Table Action     |Hide Expression JSON |govgrants_config:HideExpressionBuilderJsonForInternalUserTypeInternalApplicantReviewer|ActiveFundingOpportunities|Name                       |Create                    |
-	When I login as "Automation-Reviewer" User
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Announcements" tab
+	When I login as "Automation-Reviewer" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Announcements" tab
 	When I select "Draft Announcements" from double headed dropdown inside admin portal
 	Then I see "Create" button inside "Draft Announcements" flex table not displayed
 	
@@ -171,8 +197,10 @@ Feature: Expression Builder Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName            |fieldNewValue                                                         |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
 	|Flex Table Action     |Hide Expression JSON |govgrants_config:HideExpressionBuilderJsonForContextViewWithOperatorIn|ProgramFundingAccount     |Name                       |Associate                 |
-	When I login as "Automation" User 
-    When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+    When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Financials" sub tab
@@ -186,8 +214,10 @@ Feature: Expression Builder Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName            |fieldNewValue                                                         |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
 	|Flex Table Action     |Hide Expression JSON |govgrants_config:HideExpressionBuilderJsonForContextEditWithOperatorIn|ProgramFundingAccount     |Name                       |Associate                 |
-	When I login as "Automation" User 
-    When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+    When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Financials" sub tab
@@ -201,8 +231,10 @@ Feature: Expression Builder Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName            |fieldNewValue                                                            |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
 	|Flex Table Action     |Hide Expression JSON |govgrants_config:HideExpressionBuilderJsonForContextViewWithOperatorNotIn|ProgramFundingAccount     |Name                       |Associate                 |
-	When I login as "Automation" User 
-    When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+    When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Financials" sub tab
@@ -216,8 +248,10 @@ Feature: Expression Builder Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName            |fieldNewValue                                                            |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
 	|Flex Table Action     |Hide Expression JSON |govgrants_config:HideExpressionBuilderJsonForContextEditWithOperatorNotIn|ProgramFundingAccount     |Name                       |Associate                 |
-	When I login as "Automation" User 
-    When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+    When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Financials" sub tab
@@ -231,8 +265,10 @@ Feature: Expression Builder Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName            |fieldNewValue                                                              |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
 	|Flex Table Action     |Hide Expression JSON |govgrants_config:HideExpressionBuilderJsonForUserAppSAGrantorWithOperatorIn|ProgramFundingAccount     |Name                       |Associate                 |
-	When I login as "Automation" User 
-    When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+    When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Financials" sub tab
@@ -246,8 +282,10 @@ Feature: Expression Builder Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName            |fieldNewValue                                                              |coreComponentField          |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
 	|Flex Table Action     |Hide Expression JSON |govgrants_config:HideExpressionBuilderJsonForUserAppSAGranteeWithOperatorIn|OpporunityGranteeServiceArea|Name                       |Associate                 |
-	When I login as "Automation" User 
-    When I access the "GovGrants Launcher Tab" for "As a Grantee" app to reach "Opportunities" tab
+    When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantee"
+	And I navigate to "Opportunities" tab
     When I perform quick search for "ROSES 2018: Rapid Response and Novel Research in Earth Science"
     When I click on "View" icon for "ROSES 2018: Rapid Response and Novel Research in Earth Science" inside table
 	When I navigate to "Overview" sub tab
@@ -261,8 +299,10 @@ Feature: Expression Builder Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName            |fieldNewValue                                                                    |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
 	|Flex Table Action     |Hide Expression JSON |govgrants_config:HideExpressionBuilderJsonForUserAppSAAdministratorWithOperatorIn|CreatedandInactiveOrganizations|Name                       |New                       |
-	When I login as "Automation" User 
-    When I access the "GovGrants Launcher Tab" for "As an Administrator" app to reach "Setup" tab
+    When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As an Administrator"
+	And I navigate to "Setup" tab
 	Then I see "New" button inside "Draft Internal Organizations" flex table not displayed
 	
 	@42701 @all @hideExpressioJsonForRightOperandForFieldWithOperatorEquals-gPlanning
@@ -273,8 +313,10 @@ Feature: Expression Builder Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName            |fieldNewValue                                                       |coreComponentField      |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
 	|Flex Table Action     |Hide Expression JSON |govgrants_config:HideExpressionBuilderJsonForFieldWithOperatorEquals|ProgramFundingAccount   |Name                       |Associate                 |
-	When I login as "Automation" User 
-    When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+    When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Financials" sub tab
@@ -288,8 +330,10 @@ Feature: Expression Builder Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName            |fieldNewValue                                                             |coreComponentField      |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
 	|Flex Table Action     |Hide Expression JSON |govgrants_config:HideExpressionBuilderJsonForUseAppRecipientWithOperatorIn|GrantProjectAreas       |Name                       |View                      |
-	When I login as "Automation" User 
-    When I access the "GovGrants Launcher Tab" for "As a Sub-Recipient" app to reach "Planning" tab
+    When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Sub-Recipient"
+	And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Financials" sub tab
@@ -303,8 +347,10 @@ Feature: Expression Builder Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName            |fieldNewValue                                                                         |coreComponentField      |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
 	|Flex Table Action     |Hide Expression JSON |govgrants_config:HideExpressionBuilderJsonForProfileSystemAdministratorWithOperatorAnd|ProgramFundingAccount   |Name                       |Associate                 |
-	When I login as "Automation" User 
-    When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+     When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Financials" sub tab
@@ -318,8 +364,10 @@ Feature: Expression Builder Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName            |fieldNewValue                                                                         |coreComponentField      |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
 	|Flex Table Action     |Hide Expression JSON |govgrants_config:HideExpressionBuilderJsonForProfileSystemAdministratorWithOperatorOR |ProgramFundingAccount   |Name                       |Associate                 |
-	When I login as "Automation" User 
-    When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+    When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Financials" sub tab
@@ -333,8 +381,10 @@ Feature: Expression Builder Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName            |fieldNewValue                                                                              |coreComponentField      |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
 	|Flex Table Action     |Hide Expression JSON |govgrants_config:HideExpressionBuilderJsonForUserTypeInternalAndContextViewWithOperatorAND |ProgramFundingAccount   |Name                       |Associate                 |
-	When I login as "Automation" User 
-    When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+    When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Financials" sub tab
@@ -348,8 +398,10 @@ Feature: Expression Builder Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName            |fieldNewValue                                                                              |coreComponentField      |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
 	|Flex Table Action     |Hide Expression JSON |govgrants_config:HideExpressionBuilderJsonForUserTypeInternalAndContextViewWithOperatorOR  |ProgramFundingAccount   |Name                       |Associate                 |
-	When I login as "Automation" User 
-    When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+    When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Financials" sub tab
@@ -363,8 +415,10 @@ Feature: Expression Builder Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName            |fieldNewValue                                                                                  |coreComponentField      |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
 	|Flex Table Action     |Hide Expression JSON |govgrants_config:HideExpressionBuilderJsonForUserTypeInternalAndUserAppSAGrantorWithOperatorAND|ProgramFundingAccount   |Name                       |Associate                 |
-	When I login as "Automation" User 
-    When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+    When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Financials" sub tab
@@ -378,8 +432,10 @@ Feature: Expression Builder Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName            |fieldNewValue                                                                                  |coreComponentField      |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
 	|Flex Table Action     |Hide Expression JSON |govgrants_config:HideExpressionBuilderJsonForUserTypeInternalAndUserAppSAGrantorWithOperatorOR |ProgramFundingAccount   |Name                       |Associate                 |
-	When I login as "Automation" User 
-    When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+    When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Financials" sub tab
@@ -393,8 +449,10 @@ Feature: Expression Builder Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName            |fieldNewValue                                                                                            |coreComponentField      |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
 	|Flex Table Action     |Hide Expression JSON |govgrants_config:HideExpressionBuilderJsonForProfileSystemAdministratorAndUserAppSAGrantorWithOperatorAND|ProgramFundingAccount   |Name                       |Associate                 |
-	When I login as "Automation" User 
-    When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+    When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Financials" sub tab
@@ -408,8 +466,10 @@ Feature: Expression Builder Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName            |fieldNewValue                                                                                            |coreComponentField      |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
 	|Flex Table Action     |Hide Expression JSON |govgrants_config:HideExpressionBuilderJsonForProfileSystemAdministratorAndUserAppSAGrantorWithOperatorOR |ProgramFundingAccount   |Name                       |Associate                 |
-	When I login as "Automation" User 
-    When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+    When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Financials" sub tab
@@ -423,8 +483,10 @@ Feature: Expression Builder Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName            |fieldNewValue                                                                                        |coreComponentField      |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
 	|Flex Table Action     |Hide Expression JSON |govgrants_config:HideExpressionBuilderJsonForProfileSystemAdministratorAndContextViewWithOperatorAND |ProgramFundingAccount   |Name                       |Associate                 |
-	When I login as "Automation" User 
-    When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+    When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Financials" sub tab
@@ -438,8 +500,10 @@ Feature: Expression Builder Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName            |fieldNewValue                                                                                        |coreComponentField      |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
 	|Flex Table Action     |Hide Expression JSON |govgrants_config:HideExpressionBuilderJsonForProfileSystemAdministratorAndContextViewWithOperatorOR  |ProgramFundingAccount   |Name                       |Associate                 |
-	When I login as "Automation" User 
-    When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+    When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Financials" sub tab
@@ -453,8 +517,10 @@ Feature: Expression Builder Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName            |fieldNewValue                                                                              |coreComponentField      |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
 	|Flex Table Action     |Hide Expression JSON |govgrants_config:HideExpressionBuilderJsonForContextViewAndUserTypeSAGrantorWithOperatorAND|ProgramFundingAccount   |Name                       |Associate                 |
-	When I login as "Automation" User 
-    When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+    When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Financials" sub tab
@@ -468,9 +534,11 @@ Feature: Expression Builder Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName            |fieldNewValue                                                                              |coreComponentField      |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
 	|Flex Table Action     |Hide Expression JSON |govgrants_config:HideExpressionBuilderJsonForContextViewAndUserTypeSAGrantorWithOperatorOR |ProgramFundingAccount   |Name                       |Associate                 |
-	When I login as "Automation" User 
-    When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+    When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Financials" sub tab
-	Then I see "Associate" button inside "Funding Account Information" flex table not displayed	
+	Then I see "Associate" button inside "Funding Account Information" flex table not displayed

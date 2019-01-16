@@ -23,12 +23,6 @@ public class CommonSteps {
 		govGrantsManager.clickAdminNavBar(tabName, appName);
 	}
 
-	@When("^I access the \"([^\"]*)\" for \"([^\"]*)\" app to reach \"([^\"]*)\" tab$")
-	public void reachOutToSpecificPhasesTab(String adminTabName, String appName, String phaseTabName) {
-		govGrantsManager.clickAdminNavBar(adminTabName, appName);
-		govGrantsManager.clickPhasesNaveBar(phaseTabName);
-	}
-
 	@When("^I click \"([^\"]*)\" on modal content$")
 	public void clickModalContentSpecificButton(String buttonName) {
 		govGrantsManager.clickModalContentSpecificButton(buttonName);

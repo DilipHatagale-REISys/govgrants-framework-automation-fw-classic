@@ -11,8 +11,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory     |fieldName     |fieldNewValue   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Flex Table List           |Label         |Automation      |Programs              |Name                     |FLV-1837                  |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	Then I see "Automation" shown as flex table title
 	
 	@34024 @all @disablingExportFile-gPlanning
@@ -23,8 +25,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory     |fieldName     |fieldNewValue   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Flex Table:General        |Enable Export |false           |Programs              |                         |                          |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I click on top right parallel lines bar for "Draft Programs"
 	Then I see "Download as PDF""Download as CSV" options inside "Draft Programs" disabled
 	
@@ -36,8 +40,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory     |fieldName           |fieldNewValue   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Flex Table:General        |Enable Quick Search |false           |Programs              |                         |                          |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	Then I see quick search option disabled
 	
 	@34027 @all @disablingAdvanceFilter-gPlanning
@@ -48,8 +54,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory     |fieldName           |fieldNewValue   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Flex Table:General        |Enable Filter       |false           |Programs              |                         |                          |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
     Then I see Advance filter is disabled from planning flex table
         
     @34028 @all @disablingMenuIcon-gPlanning
@@ -60,8 +68,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory     |fieldName           |fieldNewValue   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Flex Table:General        |Disable Menu        |true            |Programs              |                         |                          |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	Then I see Menu icon is disabled from planning flex table
 	
 	@34029 @all @enableRecordSelectionForFlex-gPlanning
@@ -72,8 +82,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory     |fieldName                |fieldNewValue   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Flex Table:General        |Enable Record Selection  |true            |Programs              |                         |                          |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	Then I see select check box enabled in flex table
 	
 	@34030 @all @disablingAmountTotalForFlex-gPlanning
@@ -84,8 +96,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory     |fieldName                |fieldNewValue   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Flex Table:General        |Enable Total Row         |false           |Programs              |                         |                          |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	Then I see no total amount row in flex table
 	
 	@34031 @all @disablingTotalRowCount-gPlanning
@@ -96,8 +110,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory     |fieldName                 |fieldNewValue   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Flex Table:General        |Enable Total Records Count|false           |Programs              |                         |                          |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	Then I see no total row count in flex table
 	
 	@34032 @all @additionOfLabelForRowNamedTotal-gPlanning
@@ -108,8 +124,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory|fieldName       |fieldNewValue   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Flex Table:General   |Total Row Label |Automation Total|Programs              |                         |Total                     |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	Then I see changed label as "Automation Total" of last row name
 	
 	@34033 @all @enableAutoIndex-gPlanning
@@ -120,8 +138,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory|fieldName         |fieldNewValue   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Flex Table:General   |Enable Auto Index |true            |Programs              |                         |                          |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	Then I see " #" in flex table header
 
 	@34034 @all @addingfieldNamesOfDifferentDataTypes-gPlanning
@@ -132,8 +152,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory|fieldName           |fieldNewValue   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Flex Table:General   |Display Field Names |<newFieldsApi>  |Programs              |                         |                          |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	Then I see "<fieldDisplayNames>" in flex table header
 	
 	Examples:
@@ -156,8 +178,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory|fieldName     |fieldNewValue   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Flex Table List      |Filter Clause |<newSoqlFilter> |Programs              |Name                     |FLV-1837                  |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	Then I see no "Created" status in flex table
 	
 	Examples:
@@ -172,8 +196,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory|fieldName      |fieldNewValue      |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Flex Table Action    |Action Behavior|Open in new window |Programs              |Name                     |Edit                      | 
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
 	Then I see new tab is opened
@@ -186,8 +212,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory|fieldName      |fieldNewValue       |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Flex Table Action    |Action Behavior|Open in same window |Programs              |Name                     |Edit                      | 
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
 	Then I see no new tab is opened
@@ -200,8 +228,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory|fieldName      |fieldNewValue       |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Flex Table Action    |Action Behavior|Open in overlay     |Programs              |Name                     |Edit                      | 
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Edit" opens in overLay window
@@ -214,8 +244,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory|fieldName       |fieldNewValue           |coreComponentField             |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Flex Table Action    |Refresh Behavior|Refresh the entire page |ProgramRolesAndResponsibilities|Name                     |Edit                      | 
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Roles" sub tab 
@@ -230,8 +262,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory         |fieldName        |fieldNewValue          |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
 	|Flex Table Action Sobject     |Hide For Profile |System Administrator   |ProgramRolesAndResponsibilities|Name                       |Edit                      |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Roles" sub tab 
@@ -245,8 +279,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory        |fieldName       |fieldNewValue        |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
 	|Flex Table Action Sobject    |Hide For User   |Internal             |ProgramRolesAndResponsibilities|Name                       |Edit                      |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Roles" sub tab 
@@ -260,8 +296,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory        |fieldName         |fieldNewValue        |coreComponentField             |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
 	|Flex Table Action Sobject    |Hide For Context  |Edit                 |ProgramRolesAndResponsibilities|Name                       |Edit                      |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Roles" sub tab 
@@ -279,8 +317,10 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action Sobject   |Hide For Profile |System Administrator |ProgramRolesAndResponsibilities|Name                       |Edit                      |
 	|Flex Table Action Sobject   |Hide For Context |Edit                 |ProgramRolesAndResponsibilities|Name                       |Edit                      |
 	|Flex Table Action Sobject   |Hide Operator    |AND                  |ProgramRolesAndResponsibilities|Name                       |Edit                      |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Roles" sub tab 
@@ -298,8 +338,10 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action Sobject    |Hide For Profile |System Administrator |ProgramRolesAndResponsibilities|Name                       |Edit                      |
 	|Flex Table Action Sobject    |Hide For Context |Edit                 |ProgramRolesAndResponsibilities|Name                       |Edit                      |
 	|Flex Table Action Sobject    |Hide Operator    |OR                   |ProgramRolesAndResponsibilities|Name                       |Edit                      |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Roles" sub tab 
@@ -313,8 +355,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory     |fieldName           |fieldNewValue   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Flex Table:General        |Header Help Text    |<new_helpText>  |Programs              |                         |                          |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I hovering mouse on help text icon inside "Draft Programs" for flex table
 	Then I see "<new_helpText>" shown as help text
 	Examples:
@@ -329,8 +373,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory     |fieldName     |fieldNewValue   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Flex Table:General        |Enable Help   |true            |Programs              |                         |                          |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I click on top right parallel lines bar for "Draft Programs"
 	Then I see "Help" options inside "Draft Programs" enabled
 	
@@ -342,8 +388,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory     |fieldName       |fieldNewValue   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Flex Table:General        |Enable Page Size|true            |Programs              |                         |                          |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	Then I see "Show" with page size dropdown at bottom in flex table
 	
 	@39299 @all @enablePaginationFieldAtFlexTable-gPlanning
@@ -354,8 +402,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory     |fieldName        |fieldNewValue   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Flex Table:General        |Enable Pagination|true            |Programs              |                         |                          |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	Then I see "Page" with pagination arrow at bottom in flex table
 	
 	@39302 @all @defaultPageSizeFieldAtFlexTable-gPlanning
@@ -366,8 +416,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory     |fieldName        |fieldNewValue   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Flex Table:General        |Default Page Size|20              |Programs              |                         |                          |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	Then I see "20" records inside flex table
 	
 	@40002 @all @helpTextFieldAtFlexTableColumnHeader-gPlanning
@@ -378,8 +430,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory|fieldName        |fieldNewValue       |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Flex Table List      |Help Text        |<new_helpText>      |Programs              |Name                     |FTC-1016                  |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I hovering mouse on help text icon inside "ID" for flex table column
 	Then I see "<new_helpText>" shown as help text
 	
@@ -395,8 +449,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory|fieldName           |fieldNewValue       |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Flex Table List      |Field Label Override|Test                |Programs              |Name                     |FTC-1016                  |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	Then I see "Test" shown as flex table column title
 	
 	@39294 @all @skipFieldForExportFieldAtFlexTable-gPlanning
@@ -407,8 +463,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory     |fieldName              |fieldNewValue   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Flex Table:General        |Skip Fields For Export |Status__c       |Programs              |                         |                          |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I click on top right parallel lines bar for "Draft Programs"
 	And I select "Download As PDF" from dropdown
 	And I download the file
@@ -422,8 +480,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory|fieldName           |fieldNewValue       |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Flex Table List      |Enable Total        |true                |Programs              |Name                     |FTC-1018                  |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	Then I see total amount in flex table
 	
 	@40012 @all @sequenceFieldAtFlexTableAction-gPlanning
@@ -434,8 +494,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory|fieldName      |fieldNewValue      |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Flex Table Action    |Sequence       |2                  |Programs              |Name                     |Edit                      |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	Then I see "Edit" row action Button at position "1"
 	
@@ -447,8 +509,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory|fieldName       |fieldNewValue      |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Flex Table Action    |Button Help Text|Automation Help    |Programs              |Name                     |Edit                      |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	Then I see "Automation Help" as title for "Test program for automation - Created mode only" inside flex table action
 		
@@ -460,8 +524,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory|fieldName       |fieldNewValue      |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Flex Table Action    |Action URL      |<newActionUrl>     |Programs              |Name                     |Edit                      |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
 	Then I see edit opens with "<newActionUrl>"
@@ -478,8 +544,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory|fieldName       |fieldNewValue                                 |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Flex Table Action    |Icon CSS        |govgrants_config:FlexTableEditActionNewIconCss|Programs              |Name                     |Edit                      |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	Then I see external link icon as "Test program for automation - Created mode only" for "Edit" inside flex table action
 	
@@ -493,8 +561,10 @@ Feature: Flex Table Component Scenarios
 	|configurationCategory|fieldName                  |fieldNewValue           |coreComponentField             |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Flex Table Action    |Location                   |Top                     |ProgramRolesAndResponsibilities|Name                     |Edit                      |
 	|Flex Table Action    |Header Action Display Type |Button                  |ProgramRolesAndResponsibilities|Name                     |Edit                      |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Roles" sub tab 
@@ -509,8 +579,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory|fieldName                  |fieldNewValue           |coreComponentField             |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Flex Table Action    |Location                   |Row                     |ProgramRolesAndResponsibilities|Name                     |New                       |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Roles" sub tab 
@@ -524,8 +596,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory|fieldName                  |fieldNewValue           |coreComponentField             |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Flex Table Action     |Header Action Display Type|Menu                    |ProgramRolesAndResponsibilities|Name                     |New                       |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Roles" sub tab 
@@ -540,8 +614,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory|fieldName                  |fieldNewValue           |coreComponentField             |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Flex Table Action     |Header Action Display Type|link                    |ProgramRolesAndResponsibilities|Name                     |New                       |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Roles" sub tab 
@@ -555,8 +631,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory|fieldName                  |fieldNewValue           |coreComponentField|coreCOmponentSubFieldName|coreComponentSubFieldValue |
 	|Flex Table Action     |Header Action Display Type|Button                  |Programs          |Name                     |View Submitted Applications|
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	Then I see "View Submitted Applications" options inside "Draft Programs" enabled
 	
 	@40100 @all @showConfirmationBoxFieldForProgramFlexTAbleViewAction-gPlanning
@@ -567,8 +645,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory|fieldName                  |fieldNewValue           |coreComponentField|coreCOmponentSubFieldName|coreComponentSubFieldValue |
 	|Flex Table Action     |Show Confirmation Box     |true                    |Programs          |Name                     |View                       |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table with table id "toggleFlexTablePrograms" without processing
 	Then I see confirmation box with body "null" is displayed
@@ -583,8 +663,10 @@ Feature: Flex Table Component Scenarios
 	|configurationCategory|fieldName                  |fieldNewValue           |coreComponentField|coreCOmponentSubFieldName|coreComponentSubFieldValue |
 	|Flex Table Action     |Show Confirmation Box     |true                    |Programs          |Name                     |View                       |
 	|Flex Table Action     |Confirmation Message      |Automation              |Programs          |Name                     |View                       |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table with table id "toggleFlexTablePrograms" without processing
 	Then I see confirmation box with body "Automation" is displayed
@@ -599,8 +681,10 @@ Feature: Flex Table Component Scenarios
 	|configurationCategory |fieldName                 |fieldNewValue           |coreComponentField|coreCOmponentSubFieldName|coreComponentSubFieldValue |
 	|Flex Table Action     |Action Behavior           |Open in overlay         |Programs          |Name                     |View                       |
 	|Flex Table Action     |Modal Title               |Automation Title        |Programs          |Name                     |View                       |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Automation Title" displayed in flex table Action modal
@@ -617,8 +701,10 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action Sobject    |Hide For Profile        |System Administrator  |Programs                       |Name                       |Edit                      |
 	|Flex Table Action Sobject    |Hide Decision Expression|                      |Programs                       |Name                       |Edit                      |
 	|Flex Table Action Sobject    |Hide Decision Field     |                      |Programs                       |Name                       |Edit                      |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
 	
@@ -638,8 +724,10 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action Sobject     |Hide For User           |Internal              |Programs                       |Name                       |Edit                      |
 	|Flex Table Action Sobject     |Hide Decision Expression|                      |Programs                       |Name                       |Edit                      |
 	|Flex Table Action Sobject     |Hide Decision Field     |                      |Programs                       |Name                       |Edit                      |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
 	
@@ -659,8 +747,10 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action Sobject     |Hide For Context        |View                  |Programs                       |Name                       |Edit                      |
 	|Flex Table Action Sobject     |Hide Decision Expression|                      |Programs                       |Name                       |Edit                      |
 	|Flex Table Action Sobject     |Hide Decision Field     |                      |Programs                       |Name                       |Edit                      |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
 	
@@ -679,21 +769,27 @@ Feature: Flex Table Component Scenarios
 	|Program                       |Status                  |Created                   |Test program for automation -  SA mode only - Can be Approved|                           |                          |
 	|Flex Table Action Sobject     |Hide Decision Expression|                          |Programs                                                     |Name                       |Edit                      |
 	|Flex Table Action Sobject     |Hide Decision Field     |<defaultHideDecisionField>|Programs                                                     |Name                       |Edit                      |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
 	When I click on "Edit" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
 	And I complete submit for approval
-	When I re-login as "Automation-PM" with "QA" url 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I re-login as "Automation-PM" user with portal "QA"
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I navigate to "Pending" content inside "Tasks" subheader on left panel
 	When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
-	When I start the approval with subject "Test program for automation -  SA mode only - Can be Approved"
+	When I click on "Start" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
 	When I select "Approve" from approval decision panel
 	When I enter Approval comment
     And I click submit
-	And I re-login as "Automation" with "QA" url
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I re-login as "Automation" user with portal "QA"
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
 	Then I see "Edit" icon for "Test program for automation -  SA mode only - Can be Approved" is not displayed inside flex table
 	
@@ -716,8 +812,10 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action Sobject    |Hide Operator           |AND                  |Programs                       |Name                       |Edit                      |
 	|Flex Table Action Sobject    |Hide Decision Expression|                     |Programs                       |Name                       |Edit                      |
 	|Flex Table Action Sobject    |Hide Decision Field     |                     |Programs                       |Name                       |Edit                      |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
 	
@@ -741,8 +839,10 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action Sobject    |Hide Operator           |OR                   |Programs                       |Name                       |Edit                      |
 	|Flex Table Action Sobject    |Hide Decision Expression|                     |Programs                       |Name                       |Edit                      |
 	|Flex Table Action Sobject    |Hide Decision Field     |                     |Programs                       |Name                       |Edit                      |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
 	
@@ -758,8 +858,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory         |fieldName           |fieldNewValue                                    |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Flex Table Action Sobject     |Hide Expression JSON|govgrants_config:ProgramFlexTableExpressionJson  |Programs              |Name                     |Edit                      |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
 	
@@ -771,8 +873,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName         |fieldNewValue         |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
 	|Flex Table Action     |Hide For Profile  |System Administrator  |ActiveFundingOpportunities|Name                       |Create                    |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Announcements" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Announcements" tab
 	When I select "Draft Announcements" from double headed dropdown inside admin portal
 	Then I see "Create" button inside "Draft Announcements" flex table not displayed
 	
@@ -784,8 +888,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName         |fieldNewValue         |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
 	|Flex Table Action     |Hide For User     |Internal              |ActiveFundingOpportunities|Name                       |Create                    |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Announcements" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Announcements" tab
 	When I select "Draft Announcements" from double headed dropdown inside admin portal
 	Then I see "Create" button inside "Draft Announcements" flex table not displayed
 	
@@ -800,8 +906,10 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action     |Hide For User     |Internal              |ActiveFundingOpportunities|Name                       |Create                    |
 	|Flex Table Action     |Hide For Profile  |System Administrator  |ActiveFundingOpportunities|Name                       |Create                    |
 	|Flex Table Action     |Hide Operator     |AND                   |ActiveFundingOpportunities|Name                       |Create                    |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Announcements" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Announcements" tab
 	When I select "Draft Announcements" from double headed dropdown inside admin portal
 	Then I see "Create" button inside "Draft Announcements" flex table not displayed
 	
@@ -817,8 +925,10 @@ Feature: Flex Table Component Scenarios
 	|Flex Table Action     |Hide For User     |Internal              |ActiveFundingOpportunities|Name                       |Create                    |
 	|Flex Table Action     |Hide For Profile  |System Administrator  |ActiveFundingOpportunities|Name                       |Create                    |
 	|Flex Table Action     |Hide Operator     |OR                    |ActiveFundingOpportunities|Name                       |Create                    |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Announcements" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Announcements" tab
 	When I select "Draft Announcements" from double headed dropdown inside admin portal
 	Then I see "Create" button inside "Draft Announcements" flex table not displayed
 	
@@ -830,8 +940,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName            |fieldNewValue                                                     |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
 	|Flex Table Action     |Hide Expression JSON |govgrants_config:ActiveFundingOpportunitiesFlexTableExpressionJson|ActiveFundingOpportunities|Name                       |Create                    |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Announcements" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Announcements" tab
 	When I select "Draft Announcements" from double headed dropdown inside admin portal
 	Then I see "Create" button inside "Draft Announcements" flex table not displayed
 	
@@ -843,8 +955,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName     |fieldNewValue    |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Flex Table List       |Active ?      |false            |Programs              |Name                     |FLV-1835                  |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I click toggle button for "Draft Programs"
 	Then I see "Active Programs" is not displayed inside program flex table dropdown	
 	
@@ -856,8 +970,10 @@ Feature: Flex Table Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName     |fieldNewValue    |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Flex Table List       |Show in PDF   |true             |Programs              |Name                     |FLV-1835                  |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I click on top right parallel lines bar for "Draft Programs"
 	And I select "Download As PDF" from dropdown
 	And I download the file

@@ -11,8 +11,10 @@ Feature: Forms Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory  |fieldName           |fieldNewValue|coreComponentField             |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Forms:General          |Skip Form Download  |true         |General Application Budget Form|                         |                          |
-	When I login as "Automation" User
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Applications" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Applications" tab
 	When I perform quick search for "AP-755-198"
 	When I click on "View" icon for "Test announcement for program 2" inside table
 	When I click on "Menu" button inside detail page
@@ -28,8 +30,10 @@ Feature: Forms Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                  |fieldName     |fieldNewValue   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block:Page Block Detail           |Is Active     |false           |ApplicationView       |GNT__PageBlockTitle__c   |Business Forms            |
-	When I login as "Automation" User
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Applications" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Applications" tab
 	When I perform quick search for "AP-755-198"
 	When I click on "View" icon for "Test announcement for program 2" inside table
 	When I navigate to "Attachments" sub tab
@@ -43,8 +47,10 @@ Feature: Forms Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                  |fieldName     |fieldNewValue   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block Rule:Page Block Rule Detail |Hide For User |Internal        |ApplicationView       |Name                     |preview rule              |
-	When I login as "Automation" User
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Applications" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Applications" tab
 	When I perform quick search for "AP-755-198"
 	When I click on "View" icon for "Test announcement for program 2" inside table
 	When I navigate to "Attachments" sub tab
@@ -58,8 +64,10 @@ Feature: Forms Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                  |fieldName     |fieldNewValue   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block Rule:Page Block Rule Detail |Hide For User |Internal        |ApplicationView       |Name                     |View                      |
-	When I login as "Automation" User
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Applications" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Applications" tab
 	When I perform quick search for "AP-755-198"
 	When I click on "View" icon for "Test announcement for program 2" inside table
 	When I navigate to "Attachments" sub tab
@@ -73,8 +81,10 @@ Feature: Forms Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory  |fieldName     |fieldNewValue   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Layout Action     |Action Name   |Edit Automation |Application Cover Page|Name                         |Edit                  |
-	When I login as "Automation" User
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Applications" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Applications" tab
 	When I perform quick search for "AP-755-198"
 	When I click on "View" icon for "Test announcement for program 2" inside table
 	When I navigate to "Attachments" sub tab
@@ -89,8 +99,10 @@ Feature: Forms Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory  |fieldName     |fieldNewValue |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Layout Action     |Hide For User |Internal      |Application Cover Page|Name                         |Edit                  |
-	When I login as "Automation" User
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Applications" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Applications" tab
 	When I perform quick search for "AP-755-198"
 	When I click on "View" icon for "Test announcement for program 2" inside table
 	When I navigate to "Attachments" sub tab
@@ -105,8 +117,10 @@ Feature: Forms Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory  |fieldName  |fieldNewValue|coreComponentField      |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Forms:General          |Version    |2.0          |General Application Form|                         |                          |	
-	When I login as "Automation" User
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Applications" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Applications" tab
 	When I perform quick search for "AP-755-198"
 	When I click on "View" icon for "Test announcement for program 2" inside table
 	When I navigate to "Attachments" sub tab
@@ -121,8 +135,10 @@ Feature: Forms Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName          |fieldNewValue         |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Layout:General   |Header             |Test Automation       |Application - Simple  |                         |                             |
-	When I login as "Automation" User
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Applications" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Applications" tab
 	When I perform quick search for "AP-755-198"
 	When I click on "View" icon for "Test announcement for program 2" inside table
 	When I navigate to "Attachments" sub tab

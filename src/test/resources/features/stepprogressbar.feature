@@ -11,8 +11,10 @@ Feature: Step Progress Bar Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                    |fieldName              |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Step Progressbar Header Config:General   |Render for Application |             |PB-0016               |                         |                          |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see step progress bar is not displayed
@@ -29,8 +31,10 @@ Feature: Step Progress Bar Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                    |fieldName       |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Step Progressbar Header Config:General   |Render for User |             |PB-0016               |                         |                          |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see step progress bar is not displayed
@@ -47,8 +51,10 @@ Feature: Step Progress Bar Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory   |fieldName       |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Step Progressbar Detail |Hide For Users  |<changedUser>|Program Progress Bar  |Name                     |Submitted for Approval    |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Submitted for Approval" is not displayed inside step progress bar
@@ -65,8 +71,10 @@ Feature: Step Progress Bar Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory   |fieldName       |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Step Progressbar Detail |Sequence        |0            |Program Progress Bar  |Name                     |Submitted for Approval    |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Submitted for Approval" status shown at number "0" in step progress bar	
@@ -79,8 +87,10 @@ Feature: Step Progress Bar Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                    |fieldName       |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Step Progressbar Header Config:General   |Complete Color  |#0b0ba0      |PB-0016               |                         |                          |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see status in Progress-bar is "Created" and is "Blue"
@@ -94,8 +104,10 @@ Feature: Step Progress Bar Component Scenarios
 	|configurationCategory   |fieldName       |fieldNewValue|coreComponentField                                        |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Program	             |Status          |Created      |Test program for automation -  SA mode only - Not approved|                         |                          |
 	|Step Progressbar Detail |Negative Path   |true         |Program Progress Bar                                      |Name                     |Submitted for Approval    |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	And I complete submit for approval
@@ -109,8 +121,10 @@ Feature: Step Progress Bar Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                    |fieldName       |fieldNewValue|coreComponentField         |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Step Progressbar Header Config:General   |Reject Color    |#0b0ba0      |PB-0016                    |                         |                          | 
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I select "Rejected Programs" from double headed dropdown inside admin portal
 	When I perform quick search for "Test Program For Automation Reject"
 	When I click on "View Program Details" icon for "Test Program For Automation Reject" inside table
@@ -124,8 +138,10 @@ Feature: Step Progress Bar Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                    |fieldName       |fieldNewValue|coreComponentField         |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Step Progressbar Header Config:General   |Incomplete Color|#0b0ba0      |PB-0016                    |                         |                          |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I select "Draft Programs" from double headed dropdown inside admin portal
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
@@ -139,8 +155,10 @@ Feature: Step Progress Bar Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory   |fieldName       |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Step Progressbar Detail |Display Value   |Automation   |Program Progress Bar  |Name                     |Created                   |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see changed display name as "Automation" inside step progress bar
@@ -154,8 +172,10 @@ Feature: Step Progress Bar Component Scenarios
 	|configurationCategory   |fieldName       |fieldNewValue|coreComponentField                                        |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Program	             |Status          |Created      |Test program for automation -  SA mode only - Not approved|                         |                          |
 	|Step Progressbar Detail |IsCreated       |true         |Program Progress Bar                                      |Name                     |Submitted for Approval    |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	And I complete submit for approval
