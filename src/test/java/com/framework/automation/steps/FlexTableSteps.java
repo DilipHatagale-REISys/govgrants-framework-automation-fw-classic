@@ -61,9 +61,9 @@ public class FlexTableSteps {
 		flexTablePage.assertDisableAdvanceFilter();
 	}
 
-	@Then("^I see Menu icon is disabled from planning flex table$")
-	public void assertDisableMenuIcon() {
-		flexTablePage.assertDisableMenuIcon();
+	@Then("^I see Menu icon is disabled from planning flex table \"([^\"]*)\"$")
+	public void assertDisableMenuIcon(String panelTitleName) {
+		flexTablePage.assertDisableMenuIcon(panelTitleName);
 	}
 
 	@Then("^I see select check box enabled in flex table$")

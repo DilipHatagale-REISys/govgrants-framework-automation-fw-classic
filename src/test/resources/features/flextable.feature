@@ -56,7 +56,7 @@ Feature: Flex Table Component Scenarios
 	|Flex Table:General        |Enable Filter       |false           |Programs              |                         |                          |
 	When I login as "Automation" user
 	When I navigate to "GovGrants Launcher Tab" tab
-	When I setup my app as "As a Grantor"
+	#When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
     Then I see Advance filter is disabled from planning flex table
         
@@ -72,7 +72,8 @@ Feature: Flex Table Component Scenarios
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
-	Then I see Menu icon is disabled from planning flex table
+	#Then I see Menu icon is disabled from planning flex table
+	Then I see Menu icon is disabled from planning flex table "Draft Programs"
 	
 	@34029 @all @enableRecordSelectionForFlex-gPlanning
 	Scenario: validate enabling of record selection check boxes in flex table of programs-planning

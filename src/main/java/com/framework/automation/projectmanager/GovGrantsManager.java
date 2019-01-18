@@ -2,7 +2,6 @@ package com.framework.automation.projectmanager;
 
 import java.awt.AWTException;
 import java.io.File;
-import java.io.IOException;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -26,15 +25,10 @@ public class GovGrantsManager extends ProjectWebServices {
 	public GovGrantsHandler govgrants;
 	public String standardPassword = "Automation@12345";
 	public String defaultComment = "Automation testing";
-	public String defaultQaUrl = "https://ggptest5-dev-ed.my.salesforce.com";
-	private int urlOpeningNumber = 0;
-	private final String completeTableRowString;
-	public final By navigationLogo, loginDropDown, searchInput, rightHeaderBars, topRightDropDown, egmsHeader,
-			secondTopRightFilter, completeTableHeader, completeTableRow, sideBarHeadersList, advanceFilterButton,
-			menuIcon, selectRecordCheckBox, totalRowsCalc, totalRowCount, flexTablelastRowNameAsTotal,
-			editIconForProgramFlexTable, pendingTasksTableRef, dangerAlert, confirmationBoxMessage, selectDropdown,
-			specificUserInsideDropdown, quickSearchButton, doubleArrowDropDown, navProfile_CurrentApp, saveButton,
-			allPhases, chartsContainer, containerFluid_PageWrapperList, reachOutToEnhancedGridCollapse, reachOutToTmpActiveGrantsGrid;
+	public final By navigationLogo, searchInput, rightHeaderBars, egmsHeader, completeTableRow, sideBarHeadersList,
+			advanceFilterButton, menuIcon, selectRecordCheckBox, totalRowsCalc, totalRowCount,
+			flexTablelastRowNameAsTotal, pendingTasksTableRef, dangerAlert, confirmationBoxMessage, selectDropdown,
+			allPhases, chartsContainer, containerFluid_PageWrapperList, reachOutToTmpActiveGrantsGrid;
 
 	/**
 	 * Super Constructor
@@ -43,20 +37,10 @@ public class GovGrantsManager extends ProjectWebServices {
 	 * @param reiDriver
 	 */
 	public GovGrantsManager(Controller controller, CoreHandlers reiDriver, GovGrantsHandler govgrants) {
-		this.controller = controller;
-		this.reiDriver = reiDriver;
-		this.govgrants = govgrants;
 		navigationLogo = By.cssSelector("div#holdon-overlay>div>div>div>img.nav-logo");
 		searchInput = By.cssSelector("div>div.quick-search>div>input");
 		rightHeaderBars = By.xpath("//div[@class='panel-heading']//div[contains(@class,'header-bars')]");
-		doubleArrowDropDown = By
-				.cssSelector("div[class*='panel-title'] div#dropdownListView span[class*='fa fa-angle-double-down']");
-		loginDropDown = By.xpath("//div/ul/li[@class='dropdown userDropdown']");
-		topRightDropDown = By.cssSelector("div>ul>li.dropdown.appDropdown>a");
 		egmsHeader = By.xpath("//div[@class='navbar-header']/span[text()='Enterprise Grants Management System']");
-		secondTopRightFilter = By.xpath("//div[contains(@class,'panel-body')]//div/button");
-		completeTableHeader = By.xpath(
-				"//div[@class='panel-heading']/following-sibling::div[contains(@class,'panel-body')]//div/table/thead/tr");
 		completeTableRow = By.xpath(
 				"//div[@class='panel-heading']/following-sibling::div[contains(@class,'panel-body')]//div/table/tbody/tr");
 		sideBarHeadersList = By.xpath(
@@ -69,46 +53,20 @@ public class GovGrantsManager extends ProjectWebServices {
 		totalRowsCalc = By.xpath("//td/b/span[contains(@ng-bind,'calculateTotalRowValues')]");
 		totalRowCount = By.xpath("//span[@ng-bind='totalRecords']");
 		flexTablelastRowNameAsTotal = By.xpath("//td/b/span[contains(@ng-bind-html,'TotalRowLabel')]");
-		editIconForProgramFlexTable = By.xpath("//a[contains(@title,'Edit')]");
 		pendingTasksTableRef = By
 				.xpath("//div[@class='table-responsive']/table/thead/tr/th/a/span/span[contains(text(),'Ref. ID')]");
 		dangerAlert = By.cssSelector("div.alert-danger");
 		confirmationBoxMessage = By.xpath("//div[@class='modal-dialog']//div[contains(@class, 'bootbox-body')]");
 		selectDropdown = By.xpath(
 				"//div/span/input[@name='myRadio' and @value='Approve']/../../following-sibling::div//span[@class='select2-chosen']");
-		specificUserInsideDropdown = By.xpath("//div[@id='select2-drop']//ul//li/div[@class='select2-result-label']");
-		quickSearchButton = By.cssSelector("div.input-group-btn>a>i.fa.fa-search");
-		completeTableRowString = "//div[@class='panel-heading']/following-sibling::div[contains(@class,'panel-body')]//div/table/tbody/tr";
-		navProfile_CurrentApp = By.cssSelector("div#myNavbarProfile>ul>li>a>span");
-		saveButton = By.xpath("//input[ @value='Save' and @type='submit']");
 		allPhases = By.xpath("//div/ul[@class='nav navbar-nav']/li/a");
 		chartsContainer = By.cssSelector("div#charts span[id*='chartPageId'] div[class*='chartcontainer']");
 		containerFluid_PageWrapperList = By.cssSelector("div#page-content-wrapper>div.container-fluid>div>div>div");
-		reachOutToEnhancedGridCollapse = By.xpath(
-				"//div[@class='panel-heading']//div[contains(@class,'panel-title')]//*[text()='Budget Category ']");
 		reachOutToTmpActiveGrantsGrid = By.xpath("//*[@id='TmpGrantorActiveAwardsGridFlexToggle']");
 
 	}
 
 	/******* "Key Methods with complete functionality - Public" *****************/
-
-	/**
-	 * navigate to a url
-	 * 
-	 * @param env Name
-	 * @throws IOException
-	 */
-	public void navigateToURL(String envName) throws IOException {
-		urlOpeningNumber++;
-		if (urlOpeningNumber > 0) {
-			System.out.println("entered navigation");
-			System.err.println("current url" + reiDriver.get().getCurretnURL());
-			clearCookies();
-			reiDriver.get().getRefresh();
-		}
-		reiDriver.get().openURL(new UsersAndURL().navigateToAnyUrl(envName.toUpperCase()));
-	}
-
 	/**
 	 * click on navigation bar item inside app. e.g; planning,announcements etc
 	 * 

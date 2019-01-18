@@ -23,11 +23,6 @@ public class CommonSteps {
 		govGrantsManager.clickAdminNavBar(tabName, appName);
 	}
 
-	@When("^I click \"([^\"]*)\" on modal content$")
-	public void clickModalContentSpecificButton(String buttonName) {
-		govGrantsManager.clickModalContentSpecificButton(buttonName);
-	}
-
 	@When("^I download the file$")
 	public void saveTheFileToProjectRoot() throws Throwable {
 		govGrantsManager.saveFile();

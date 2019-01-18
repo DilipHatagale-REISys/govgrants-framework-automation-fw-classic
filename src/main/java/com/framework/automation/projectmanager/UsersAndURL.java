@@ -2,78 +2,114 @@ package com.framework.automation.projectmanager;
 
 import java.io.IOException;
 
+import com.automation.rei.controller.EnvironmentFetcher;
 import com.automation.rei.controller.UsersController;
 import com.automation.rei.corelib.Properties_Logs;
-import com.cucumber.listener.Reporter;
 
 public class UsersAndURL implements UsersController {
 
-    /**
-     * @REI-Systems
-     * @author nauman.shahid
-     * @category Handles users based on different environments
-     */
-    @Override
-    public String handleUsersForEnv(String userLevel) {
-        String userName = null;
-        if (System.getProperty("env").equalsIgnoreCase("qa")) {
-            userName = performLoginQAEnvironment(userLevel);
-        } else if (System.getProperty("env").equalsIgnoreCase("uat")) {
-            userName = performLoginUATEnvironment(userLevel);
-        }
-        return userName;
-    }
+	/**
+	 * @REI-Systems
+	 * @author nauman.shahid
+	 * @category Handles users based on different environments
+	 */
+	@Override
+	public String getUserName(String userLevel) {
+		String userName = null;
+		if (EnvironmentFetcher.environmentName.contains("QA")) {
+			userName = getQAEnvironmentUser(userLevel);
+		} else if (EnvironmentFetcher.environmentName.contains("UAT")) {
+			// To be implemented
+		}
 
-    @Override
-    public String getAutomationPassword(String userLevel) {
-        return "Automation@12345";
-    }
+		return userName;
+	}
 
-    public String performLoginQAEnvironment(String userLevel) {
-        String username;
-        switch (userLevel.toUpperCase()) {
-        case "AUTOMATION":
-            username = "qa_automation@ggp.test5";
-            break;
-        case "AUTOMATION-EXE":
-            username = "automationexe@reisystems.com";
-            break;
-        case "AUTOMATION-PM":
-            username = "automationpm@reisystems.com";
-            break;
-        case "AUTOMATION-REVIEWER":
-            username = "monukumar.mr20@gmail.com";
-            break;
-        case "AUTOMATION-APPLICANT":
-            username = "automation-applicant@ggptest5.com";
-            break;
-        default:
-            username = "qa_automation@ggp.test5";
-        }
-        return username;
-    }
+	@Override
+	public String getPassword(String userLevel) {
+		String password = null;
+		if (EnvironmentFetcher.environmentName.contains("QA")) {
+			password = getQAEnvironmentPassword(userLevel);
+		} else if (EnvironmentFetcher.environmentName.contains("UAT")) {
+			// To be implemented
+		}
+		return password;
+	}
 
-    private String performLoginUATEnvironment(String userLevel) {
-        String username;
-        switch ("") {
-        case "EXE":
-            username = "To be implemented";
-        default:
-            username = "To be implemented";
-            break;
-        }
-        return username;
-    }
+	@Override
+	public String getPortalUrl(String portalType) {
+		String url = null;
+		try {
+			url = new Properties_Logs().ReadPropertyFile("environment.properties",
+					EnvironmentFetcher.environmentName + portalType);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return url;
+	}
 
-    public String navigateToAnyUrl(String urlName) throws IOException {
-        String url = null;
-        switch (urlName.toUpperCase()) {
-        case "QA":
-            url = new Properties_Logs().ReadPropertyFile("environment.properties", "QA");
-            Reporter.addScenarioLog("Scenario is running using External Link" + " & Url is " + url);
-            break;
-        }
-        return url;
-    }
+	/**
+	 * Switches based on the user type passed.
+	 *
+	 * @param userType
+	 * @return the password for the passed in user type.
+	 */
+	private String getQAEnvironmentPassword(String userType) {
+		String password;
+		switch (userType.toUpperCase()) {
+		case "AUTOMATION":
+			password = "Automation@12345";
+			break;
+		case "AUTOMATION-EXE":
+			password = "Automation@12345";
+			break;
+		case "AUTOMATION-PM":
+			password = "Automation@12345";
+			break;
+		case "AUTOMATION-REVIEWER":
+			password = "Automation@12345";
+			break;
+		case "AUTOMATION-APPLICANT":
+			password = "Automation@12345";
+			break;
+		default:
+			password = "Automation@12345";
+		}
+
+		return password;
+	}
+
+	/**
+	 * Switches based on the user type passed in and returns the username for the
+	 * type. Used for the SPQA environment.
+	 * 
+	 * @param userLevel
+	 * @return
+	 */
+	private String getQAEnvironmentUser(String userLevel) {
+		String username;
+
+		switch (userLevel.toUpperCase()) {
+		case "AUTOMATION":
+			username = "qa_automation@ggp.test5";
+			break;
+		case "AUTOMATION-EXE":
+			username = "automationexe@reisystems.com";
+			break;
+		case "AUTOMATION-PM":
+			username = "automationpm@reisystems.com";
+			break;
+		case "AUTOMATION-REVIEWER":
+			username = "monukumar.mr20@gmail.com";
+			break;
+		case "AUTOMATION-APPLICANT":
+			username = "automation-applicant@ggptest5.com";
+			break;
+		default:
+			username = "qa_automation@ggp.test5";
+		}
+		return username;
+	}
 
 }

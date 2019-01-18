@@ -542,3 +542,71 @@ Feature: Expression Builder Component Scenarios
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Financials" sub tab
 	Then I see "Associate" button inside "Funding Account Information" flex table not displayed
+	
+	@42808 @all @hideExpressioJsonForRightOperandForFieldAndUserTypeInternalWithOperatorAND-gPlanning
+	Scenario: validate disabling of Associate button for Field and user type internal with operator AND -gPlanning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName            |fieldOrignalValue     |coreComponentField   |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action     |Hide Expression JSON |                      |ProgramFundingAccount|Name                       |Associate                 |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName            |fieldNewValue                                                                            |coreComponentField      |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action     |Hide Expression JSON |govgrants_config:HideExpressionBuilderJsonForFieldAndUserTypeInternalWithOperatorAND     |ProgramFundingAccount   |Name                       |Associate                 |
+    When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	When I navigate to "Financials" sub tab
+	Then I see "Associate" button inside "Funding Account Information" flex table not displayed
+	
+	@42833 @all @hideExpressioJsonForRightOperandForFieldAndProfileSystemAdministratorWithOperatorAND-gPlanning
+	Scenario: validate disabling of Associate button for Field and profile system administrator with operator AND -gPlanning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName            |fieldOrignalValue     |coreComponentField   |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action     |Hide Expression JSON |                      |ProgramFundingAccount|Name                       |Associate                 |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName            |fieldNewValue                                                                                 |coreComponentField      |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action     |Hide Expression JSON |govgrants_config:HideExpressionBuilderJsonForFieldAndProfileSystemAdministratorWithOperatorAND|ProgramFundingAccount   |Name                       |Associate                 |
+    When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	When I navigate to "Financials" sub tab
+	Then I see "Associate" button inside "Funding Account Information" flex table not displayed
+	
+	@42835 @all @hideExpressioJsonForRightOperandForFieldAndProfileSystemAdministratorWithOperatorOR-gPlanning
+	Scenario: validate disabling of Associate button for Field and profile system administrator with operator OR -gPlanning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName            |fieldOrignalValue     |coreComponentField   |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action     |Hide Expression JSON |                      |ProgramFundingAccount|Name                       |Associate                 |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName            |fieldNewValue                                                                                 |coreComponentField      |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action     |Hide Expression JSON |govgrants_config:HideExpressionBuilderJsonForFieldAndProfileSystemAdministratorWithOperatorOR |ProgramFundingAccount   |Name                       |Associate                 |
+    When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	When I navigate to "Financials" sub tab
+	Then I see "Associate" button inside "Funding Account Information" flex table not displayed
+	
+	@42836 @all @hideExpressioJsonForRightOperandForFieldAndContextEditWithOperatorOR-gPlanning
+	Scenario: validate disabling of Associate button for Field and context edit with operator AND -gPlanning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName            |fieldOrignalValue     |coreComponentField   |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action     |Hide Expression JSON |                      |ProgramFundingAccount|Name                       |Associate                 |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName            |fieldNewValue                                                                   |coreComponentField      |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action     |Hide Expression JSON |govgrants_config:HideExpressionBuilderJsonForFieldAndContextEditWithOperatorAND |ProgramFundingAccount   |Name                       |Associate                 |
+    When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+	When I navigate to "Financials" sub tab
+	Then I see "Associate" button inside "Funding Account Information" flex table not displayed

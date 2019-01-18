@@ -18,7 +18,8 @@ Feature: Enhanced Flex Grid Component Scenarios
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Financials" sub tab
-    Then I see Advance Filter is disabled from planning enhanced flex grid
+    #Then I see Advance Filter is disabled from planning enhanced flex grid
+    Then I see Advance Filter is disabled from table "flexGridEnhanced1"
     
     @35433 @all @disablingMenuIconForEnhancedGrid-gPlanning
     Scenario: validate disabling of menu icon from Planning- Program enhanced flex grid

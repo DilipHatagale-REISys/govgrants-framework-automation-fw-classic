@@ -56,6 +56,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	}
 
 	/**
+	 * get menu icon specific to enhanced grid
 	 * @param menuicon
 	 * @return
 	 */
@@ -235,8 +236,8 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	/**
 	 * assert if advance filter is disabled from planning enhanced flex grid
 	 */
-	public void assertDisableAdvanceFilterFromEnhancedGrid() {
-		Assert.assertTrue(isAdvanceFilterDisabledFromEnhancedGrid());
+	public void assertDisableAdvanceFilterFromEnhancedGrid(String tableId) {
+		Assert.assertTrue(isAdvanceFilterDisabledFromEnhancedGrid(tableId));
 	}
 
 	/**
@@ -318,10 +319,11 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	 * 
 	 * @param status
 	 */
-	private Boolean isAdvanceFilterDisabledFromEnhancedGrid() {
+	private Boolean isAdvanceFilterDisabledFromEnhancedGrid(String tableId) {
 		boolean flag = false;
 		try {
-			if (getAdvanceFilterItemFromEnhancedGrid().isDisplayed()) {
+			//if (getAdvanceFilterItemFromEnhancedGrid().isDisplayed()) {
+				if (govgrants.phasePannel().getAdvanceFilterItem(tableId).isDisplayed()) {
 				flag = false;
 			}
 		} catch (org.openqa.selenium.NoSuchElementException e) {

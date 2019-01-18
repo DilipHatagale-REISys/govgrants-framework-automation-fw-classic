@@ -37,9 +37,14 @@ public class EnhancedFlexGridSteps {
     	enhancedFlexGrid.expandOrCollapseNestedTable(uniqueColumnValue, true);
     }
 
-	@Then("^I see Advance Filter is disabled from planning enhanced flex grid$")
+	/*@Then("^I see Advance Filter is disabled from planning enhanced flex grid$")
 	public void assertAdvanceFilterOptionDisabled() {
 		enhancedFlexGrid.assertDisableAdvanceFilterFromEnhancedGrid();
+	}*/
+    
+    @Then("^I see Advance Filter is disabled from table \"([^\"]*)\"$")
+	public void assertAdvanceFilterOptionDisabled(String tableId) {
+		enhancedFlexGrid.assertDisableAdvanceFilterFromEnhancedGrid(tableId);
 	}
 
 	@Then("^I see Menu Icon is disabled from planning enhanced flex grid$")

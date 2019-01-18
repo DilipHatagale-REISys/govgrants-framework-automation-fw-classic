@@ -63,8 +63,8 @@ public class FlexTablePage extends GovGrantsManager {
 	/**
 	 * assert if menu icon is disabled from planning flex table
 	 */
-	public void assertDisableMenuIcon() {
-		Assert.assertTrue(isMenuIconDisabled());
+	public void assertDisableMenuIcon(String panelTitleName) {
+		Assert.assertTrue(isMenuIconDisabled(panelTitleName));
 	}
 
 	/***
@@ -459,10 +459,11 @@ public class FlexTablePage extends GovGrantsManager {
 	 * 
 	 * @param status
 	 */
-	private Boolean isMenuIconDisabled() {
+	private Boolean isMenuIconDisabled(String panelTitleName) {
 		boolean flag = false;
 		try {
-			if (getMenuIcon().isDisplayed()) {
+			//if (getMenuIcon().isDisplayed()) {
+			if (govgrants.phasePannel().getParallelMenuBars(panelTitleName).isDisplayed()) {
 				flag = false;
 			}
 		} catch (org.openqa.selenium.NoSuchElementException e) {
