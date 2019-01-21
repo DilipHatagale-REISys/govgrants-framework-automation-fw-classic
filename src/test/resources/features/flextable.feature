@@ -56,9 +56,9 @@ Feature: Flex Table Component Scenarios
 	|Flex Table:General        |Enable Filter       |false           |Programs              |                         |                          |
 	When I login as "Automation" user
 	When I navigate to "GovGrants Launcher Tab" tab
-	#When I setup my app as "As a Grantor"
+	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
-    Then I see Advance filter is disabled from planning flex table
+    Then I see Advance Filter is disabled from table "toggleFlexTablePrograms"
         
     @34028 @all @disablingMenuIcon-gPlanning
     Scenario: validate disabling of menu icon from Program flex table
@@ -72,7 +72,6 @@ Feature: Flex Table Component Scenarios
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
-	#Then I see Menu icon is disabled from planning flex table
 	Then I see Menu icon is disabled from planning flex table "Draft Programs"
 	
 	@34029 @all @enableRecordSelectionForFlex-gPlanning
@@ -777,7 +776,7 @@ Feature: Flex Table Component Scenarios
 	When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
 	When I click on "Edit" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
 	And I complete submit for approval
-	When I re-login as "Automation-PM" user with portal "QA"
+	When I re-login as "Automation-PM" user on "QA" portal
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
@@ -787,7 +786,7 @@ Feature: Flex Table Component Scenarios
 	When I select "Approve" from approval decision panel
 	When I enter Approval comment
     And I click submit
-	When I re-login as "Automation" user with portal "QA"
+	When I re-login as "Automation-PM" user on "QA" portal
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab

@@ -18,7 +18,6 @@ Feature: Enhanced Flex Grid Component Scenarios
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Financials" sub tab
-    #Then I see Advance Filter is disabled from planning enhanced flex grid
     Then I see Advance Filter is disabled from table "flexGridEnhanced1"
     
     @35433 @all @disablingMenuIconForEnhancedGrid-gPlanning
@@ -36,7 +35,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Financials" sub tab 
-    Then I see Menu Icon is disabled from planning enhanced flex grid
+    Then I see Menu icon is disabled from planning flex table "Monitoring Schedule For All Active Grants"
     
     @35436 @all @changeOfFlexTableTitleForEnhancedGrid-gPlanning
     Scenario: validate after changing name of enhanced flex grid title inside planning-program enhanced flex grid
@@ -443,7 +442,6 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Financials" sub tab
-	#When I click on "Edit" icon of status "Active" for "Demo_Title" program in enhanced grid table without processing
 	When I click on "Edit" icon for "Demo_Title" inside table with table id "TmpActiveGrantsGridFlexToggle" without processing
 	Then I see confirmation box with body "Automation" is displayed
 	
@@ -498,8 +496,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Financials" sub tab
-	#When I expand nested table containing column value "Demo_Title"
-	When I expand nested table containing column value "Demo_Title" inside enhanced grid
+	When I expand nested table containing column value "Demo_Title"
 	When I hovering mouse on help text icon inside "Active Awards" for enhanced grid
 	Then I see "<new_helpText>" shown as help text
 	Examples:
@@ -521,8 +518,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Financials" sub tab
-	#When I expand nested table containing column value "Demo_Title"
-	When I expand nested table containing column value "Demo_Title" inside enhanced grid
+	When I expand nested table containing column value "Demo_Title"
 	When I click on top right parallel lines bar for "Active Awards"
 	Then I see "Help" options inside "Active Awards" enabled
 	
@@ -541,8 +537,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Financials" sub tab
-	#When I expand nested table containing column value "Demo_Title"
-	When I expand nested table containing column value "Demo_Title" inside enhanced grid
+	When I expand nested table containing column value "Demo_Title"
 	When I hovering mouse on help text icon inside "ID" for enhanced grid table column
 	Then I see "<new_helpText>" shown as help text
 	Examples:

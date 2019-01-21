@@ -14,57 +14,28 @@ import com.framework.automation.projectmanager.GovGrantsManager;
 
 public class EnhancedFlexGridPage extends GovGrantsManager {
 	/******* "Variables and Locators" *****************/
-	private final By advanceFilterButtonForEnhancedGrid, reachOutToEnhancedGridCollapse, menuIconForEnhancedGrid,
-			searchInputEnhancedGrid, completeTableRowOfEnhancedGrid, totalRowCountInsideEnhancedGrid,
-			selectRecordCheckBoxForEnhancedGrid, completeTableRowEnhancedGrid, currentBudgetPeriodEndDate,
-			scrollToActionColumn, obligatedAmountSpecificCells, reachOutToEnhancedGrid;
+	private final By reachOutToEnhancedGridCollapse, searchInputEnhancedGrid, completeTableRowOfEnhancedGrid,
+			totalRowCountInsideEnhancedGrid, selectRecordCheckBoxForEnhancedGrid, currentBudgetPeriodEndDate,
+			scrollToActionColumn, obligatedAmountSpecificCells;
 
 	/**
 	 * Constructor to handle dependency injection and framework library
 	 */
 	public EnhancedFlexGridPage(Controller controller, CoreHandlers reiDriver, GovGrantsHandler govgrants) {
 		super(controller, reiDriver, govgrants);
-		advanceFilterButtonForEnhancedGrid = By
-				.xpath("//div[@id='flexGridEnhanced1']//span[contains(text(),'Advance Filter')]");
 		reachOutToEnhancedGridCollapse = By.id("ProgramBudgetCategoryflexTable");
-		menuIconForEnhancedGrid = By
-				.xpath("//div[@id='flexGridEnhanced1']//a[@title='Menu']//span[contains(@class,'fa fa-bars')]");
 		searchInputEnhancedGrid = By.cssSelector("div>grid>div>div>div>div>div>input.form-control");
 		completeTableRowOfEnhancedGrid = By
 				.xpath("//div[@class='panel ng-scope']/div[@class='panel-body collapse in']//table/tbody/tr");
 		totalRowCountInsideEnhancedGrid = By.xpath("//span[@ng-bind='totalRecords']");
 		selectRecordCheckBoxForEnhancedGrid = By
 				.xpath("//div[@id='Enhanced1grid']//input[@aria-label='Select Record']");
-		completeTableRowEnhancedGrid = By
-				.xpath("//div[@id='flexGridEnhanced1']//div[contains(@class,'panel-body')]//div/table/tbody/tr");
 		currentBudgetPeriodEndDate = By.xpath("//field[@field-name='BudgetPeriodEndDate__c']//input[@type='text']");
 		scrollToActionColumn = By.xpath("//div[@id='Enhanced1grid']//th[contains(text(),'Actions')]");
 		obligatedAmountSpecificCells = By.xpath("//table/tbody/tr/td//*[@field-name='TotalAwardObligatedAmount__c']");
-		reachOutToEnhancedGrid = By.xpath(
-				"//a[@id='TmpActiveGrantsGridFlexCollapse']/following-sibling::span[contains(text(),'Monitoring Schedule For All Active Grants')]");
 	}
 
 	/******* "Key Methods with complete functionality - public" *****************/
-
-	/**
-	 * @param advancefilter
-	 * @return
-	 */
-	public WebElement getAdvanceFilterItemFromEnhancedGrid() {
-		reiDriver.JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
-		return reiDriver.findMyElement().getElement(advanceFilterButtonForEnhancedGrid);
-	}
-
-	/**
-	 * get menu icon specific to enhanced grid
-	 * @param menuicon
-	 * @return
-	 */
-
-	public WebElement getMenuIconFromEnhancedGrid() {
-		reiDriver.JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
-		return reiDriver.findMyElement().getElement(menuIconForEnhancedGrid);
-	}
 
 	/**
 	 * click on help text inside flex enhanced grid
@@ -115,29 +86,6 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	}
 
 	/**
-	 * get any element from enhanced flex grid title table bar except Action
-	 * 
-	 * @param titleName
-	 * @return
-	 */
-	public WebElement getSpecificElementFromEnhancedGridHeader(String titleName) {
-		return reiDriver.findMyElement().getElement(By.xpath(
-				"//div[@class='panel ng-scope']/div[@class='panel-body collapse in']//table/thead/tr/th//span[contains(text(),'"
-						+ titleName + "')]"));
-	}
-
-	/**
-	 * get any cell for respective record from enhanced flex grid
-	 * 
-	 * @param cellValue
-	 * @return
-	 */
-	public WebElement getSpecificRecordCellValueFromEnhancedGridHeader(String cellValue, String colName) {
-		return reiDriver.findMyElement().getElement(By.xpath("//td//*[@title = '" + colName + "' or text() = '"
-				+ colName + "']/ancestor::tr[1]//td//span[contains(text(),'" + cellValue + "')]"));
-	}
-
-	/**
 	 * assert true if changed icon css of enhanced grid table edit action is
 	 * displayed
 	 * 
@@ -150,30 +98,6 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 						+ "']/ancestor::tr[1]//td//a[@title = '" + iconTitle
 						+ "']//i[contains(@class,'fa fa-external-link')]"))
 				.isDisplayed());
-	}
-
-	/**
-	 * Either expands or collapses a sub table in a nested flex grid
-	 *
-	 * @param uniqueColumnValue
-	 * @param isExpand
-	 */
-	public void expandOrCollapseNestedTable(String uniqueColumnValue, boolean isExpand) {
-		reiDriver.JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
-		By circleIconSelector = By.xpath("//td//*[text()='" + uniqueColumnValue
-				+ "']//ancestor::tr[1]//i[contains(@class, 'plus')] | //td//*[text()='" + uniqueColumnValue
-				+ "']//ancestor::tr[1]//i[contains(@class, 'fa-plus')]");
-		try {
-			reiDriver.WaitFor().WaitForElementToBePresent(circleIconSelector);
-			reiDriver.JavaScript().scrollElementToPageDetailCenter(circleIconSelector);
-		} catch (Exception e) {
-		}
-		if ((isExpand
-				&& reiDriver.findMyElement().getElement(circleIconSelector).getAttribute("class").contains("fa-plus"))
-				|| (!isExpand && reiDriver.findMyElement().getElement(circleIconSelector).getAttribute("class")
-						.contains("fa-minus"))) {
-			reiDriver.WaitFor().WaitForElementClickAble(circleIconSelector).click();
-		}
 	}
 
 	/**
@@ -238,13 +162,6 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	 */
 	public void assertDisableAdvanceFilterFromEnhancedGrid(String tableId) {
 		Assert.assertTrue(isAdvanceFilterDisabledFromEnhancedGrid(tableId));
-	}
-
-	/**
-	 * assert if menu icon is disabled from planning enhanced flex grid
-	 */
-	public void assertDisableMenuIconFromEnhancedGrid() {
-		Assert.assertTrue(isMenuIconDisabledForEnhancedFlexGrid());
 	}
 
 	/**
@@ -315,35 +232,17 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	 *****************/
 
 	/**
-	 * Boolean status of advance filter option from program enhanced flex grid
+	 * Boolean status of advance filter option from program/enhanced flex grid
 	 * 
 	 * @param status
 	 */
 	private Boolean isAdvanceFilterDisabledFromEnhancedGrid(String tableId) {
 		boolean flag = false;
 		try {
-			//if (getAdvanceFilterItemFromEnhancedGrid().isDisplayed()) {
-				if (govgrants.phasePannel().getAdvanceFilterItem(tableId).isDisplayed()) {
+			if (govgrants.phasePannel().getAdvanceFilterItem(tableId).isDisplayed()) {
 				flag = false;
 			}
-		} catch (org.openqa.selenium.NoSuchElementException e) {
-			flag = true;
-		}
-		return flag;
-	}
-
-	/**
-	 * Boolean status of menu icon from program enhanced flex grid
-	 * 
-	 * @param status
-	 */
-	private Boolean isMenuIconDisabledForEnhancedFlexGrid() {
-		boolean flag = false;
-		try {
-			if (getMenuIconFromEnhancedGrid().isDisplayed()) {
-				flag = false;
-			}
-		} catch (org.openqa.selenium.NoSuchElementException e) {
+		} catch (Exception e) {
 			flag = true;
 		}
 		return flag;
@@ -408,8 +307,8 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 		boolean flag = false;
 		try {
 			reiDriver.JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
-			if (getSpecificElementFromEnhancedGridHeader(titleName).isDisplayed()
-					|| getSpecificElementFromEnhancedGridHeader(titleName).isEnabled()) {
+			if (govgrants.flexTable().getSpecificElementFromTableHeader(titleName).isDisplayed()
+					|| govgrants.flexTable().getSpecificElementFromTableHeader(titleName).isEnabled()) {
 				flag = true;
 			}
 		} catch (org.openqa.selenium.NoSuchElementException e) {
@@ -480,24 +379,6 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	}
 
 	/**
-	 * click enhanced grid table item program name/subject , status and iconName
-	 * without processing any operation on modal/confirmation box
-	 * 
-	 * @param anyUniqueColumnValues
-	 * @param flexTableId
-	 * @param iconName
-	 */
-	public void clickTableActionIconsForSpecificSubjectWithoutProcessing(String iconName, String programSubject,
-			String statusName) {
-		reiDriver.JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
-		govgrants.mainPage().waitForNavigationLogoToDisappear();
-		reiDriver.findMyElement()
-				.getElement(
-						govgrants.flexTable().getTableActionIconWithoutTableId(iconName, programSubject, statusName))
-				.click();
-	}
-
-	/**
 	 * 
 	 * @return true if expected count of records is present inside enhanced grid
 	 */
@@ -522,7 +403,11 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 		boolean flag = false;
 		try {
 			reiDriver.JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
-			if (getSpecificElementFromEnhancedGridHeader(titleName).getText().equalsIgnoreCase(titleName)) {
+			// if
+			// (getSpecificElementFromEnhancedGridHeader(titleName).getText().equalsIgnoreCase(titleName))
+			// {
+			if (govgrants.flexTable().getSpecificElementFromTableHeader(titleName).getText()
+					.equalsIgnoreCase(titleName)) {
 				flag = true;
 			}
 		} catch (Exception e) {
@@ -555,7 +440,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 		boolean flag = false;
 		try {
 			reiDriver.JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
-			if (getSpecificRecordCellValueFromEnhancedGridHeader(cellValue, colName).getText()
+			if (reiDriver.findMyElement().getElement(govgrants.flexTable().getFlexTableColumn(cellValue)).getText()
 					.equalsIgnoreCase(cellValue)) {
 				flag = true;
 			}
@@ -616,7 +501,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	private boolean isExpectedSumValueAtEnhancedGridTableDisplayed(BigDecimal value) {
 		boolean flag = false;
 		try {
-			reiDriver.JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
+			reiDriver.JavaScript().scrollpageToSpecificElement(obligatedAmountSpecificCells);
 			List<WebElement> rows_table = reiDriver.findMyElement().getElements(obligatedAmountSpecificCells);
 			String str = "";
 			String strNew = "";

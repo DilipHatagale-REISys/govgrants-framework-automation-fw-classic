@@ -37,6 +37,9 @@ public class GovGrantsManager extends ProjectWebServices {
 	 * @param reiDriver
 	 */
 	public GovGrantsManager(Controller controller, CoreHandlers reiDriver, GovGrantsHandler govgrants) {
+		this.controller = controller;
+		this.reiDriver = reiDriver;
+		this.govgrants = govgrants;
 		navigationLogo = By.cssSelector("div#holdon-overlay>div>div>div>img.nav-logo");
 		searchInput = By.cssSelector("div>div.quick-search>div>input");
 		rightHeaderBars = By.xpath("//div[@class='panel-heading']//div[contains(@class,'header-bars')]");
@@ -245,22 +248,6 @@ public class GovGrantsManager extends ProjectWebServices {
 	 */
 	public void assertPageTitle(String pageTitle) {
 		Assert.assertEquals(reiDriver.get().getPageTitle(), pageTitle);
-	}
-
-	/**
-	 * @param advancefilter .........................need to check
-	 * @return
-	 */
-	public WebElement getAdvanceFilterItem() {
-		return reiDriver.findMyElement().getElement(advanceFilterButton);
-	}
-
-	/**
-	 * @param menuicon
-	 * @return
-	 */
-	public WebElement getMenuIcon() {
-		return reiDriver.findMyElement().getElement(menuIcon);
 	}
 
 	/**

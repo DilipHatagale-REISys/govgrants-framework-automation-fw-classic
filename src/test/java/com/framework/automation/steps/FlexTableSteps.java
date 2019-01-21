@@ -56,11 +56,6 @@ public class FlexTableSteps {
 		flexTablePage.assertquickSearchDisabled();
 	}
 
-	@Then("^I see Advance filter is disabled from planning flex table$")
-	public void assertAdvanceFilterOptionDisabled() {
-		flexTablePage.assertDisableAdvanceFilter();
-	}
-
 	@Then("^I see Menu icon is disabled from planning flex table \"([^\"]*)\"$")
 	public void assertDisableMenuIcon(String panelTitleName) {
 		flexTablePage.assertDisableMenuIcon(panelTitleName);

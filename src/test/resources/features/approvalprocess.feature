@@ -19,8 +19,7 @@ Feature: Approval Process Component Scenarios
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	And I complete submit for approval
-	When I re-login as "Automation-PM" user with portal "QA"
-	#When I re-login as "Automation-PM" user on "QA" portal 
+	When I re-login as "Automation-PM" user on "QA" portal 
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
@@ -45,7 +44,7 @@ Feature: Approval Process Component Scenarios
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	And I complete submit for approval
-	When I re-login as "Automation-PM" user with portal "QA"
+	When I re-login as "Automation-PM" user on "QA" portal
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
@@ -70,7 +69,7 @@ Feature: Approval Process Component Scenarios
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	And I complete submit for approval
-	When I re-login as "Automation-PM" user with portal "QA"
+	When I re-login as "Automation-PM" user on "QA" portal
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
@@ -97,7 +96,7 @@ Feature: Approval Process Component Scenarios
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	And I complete submit for approval
-	When I re-login as "Automation-PM" user with portal "QA"
+	When I re-login as "Automation-PM" user on "QA" portal
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
@@ -123,7 +122,7 @@ Feature: Approval Process Component Scenarios
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	And I complete submit for approval
-	When I re-login as "Automation-PM" user with portal "QA"
+	When I re-login as "Automation-PM" user on "QA" portal
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
@@ -151,7 +150,7 @@ Feature: Approval Process Component Scenarios
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	And I complete submit for approval
-	When I re-login as "Automation-PM" user with portal "QA"
+	When I re-login as "Automation-PM" user on "QA" portal
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
@@ -181,7 +180,7 @@ Feature: Approval Process Component Scenarios
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	And I complete submit for approval
-	When I re-login as "Automation-PM" user with portal "QA"
+	When I re-login as "Automation-PM" user on "QA" portal
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
@@ -205,7 +204,7 @@ Feature: Approval Process Component Scenarios
 	When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
 	When I click on "Edit" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
 	And I complete submit for approval
-	When I re-login as "Automation-PM" user with portal "QA" 
+	When I re-login as "Automation-PM" user on "QA" portal
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
@@ -215,7 +214,7 @@ Feature: Approval Process Component Scenarios
 	When I select "Approve" from approval decision panel
 	When I enter Approval comment
     And I click submit
-	When I re-login as "Automation" user with portal "QA"
+	When I re-login as "Automation" user on "QA" portal
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As an Administrator"
 	And I navigate to "Operate" tab
@@ -241,7 +240,7 @@ Feature: Approval Process Component Scenarios
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	And I complete submit for approval
-	When I re-login as "Automation-PM" user with portal "QA"
+	When I re-login as "Automation-PM" user on "QA" portal
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
@@ -269,7 +268,7 @@ Feature: Approval Process Component Scenarios
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	And I complete submit for approval
-	When I re-login as "Automation" user with portal "QA"
+	When I re-login as "Automation" user on "QA" portal
     When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As an Administrator"
 	And I navigate to "Operate" tab
@@ -293,7 +292,7 @@ Feature: Approval Process Component Scenarios
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	And I complete submit for approval
-	When I re-login as "Automation-PM" user with portal "QA"
+	When I re-login as "Automation-PM" user on "QA" portal
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
@@ -303,7 +302,7 @@ Feature: Approval Process Component Scenarios
 	When I select "Send to Owner" from approval decision panel
 	When I enter Approval comment
 	And I click submit
-	When I re-login as "Automation" user with portal "QA"
+	When I re-login as "Automation" user on "QA" portal
     When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
@@ -330,7 +329,7 @@ Feature: Approval Process Component Scenarios
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	And I complete submit for approval
-	When I re-login as "Automation-PM" user with portal "QA"
+	When I re-login as "Automation-PM" user on "QA" portal
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
@@ -361,7 +360,7 @@ Feature: Approval Process Component Scenarios
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	And I complete submit for approval
-	When I re-login as "Automation-PM" user with portal "QA"
+	When I re-login as "Automation-PM" user on "QA" portal
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
@@ -392,7 +391,7 @@ Feature: Approval Process Component Scenarios
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	And I complete submit for approval
-	When I re-login as "Automation-PM" user with portal "QA"
+	When I re-login as "Automation-PM" user on "QA" portal
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
@@ -422,7 +421,7 @@ Feature: Approval Process Component Scenarios
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	And I complete submit for approval
-	When I re-login as "Automation-PM" user with portal "QA"
+	When I re-login as "Automation-PM" user on "QA" portal
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
@@ -453,7 +452,7 @@ Feature: Approval Process Component Scenarios
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	And I complete submit for approval
-	When I re-login as "Automation-PM" user with portal "QA"
+	When I re-login as "Automation-PM" user on "QA" portal
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
@@ -482,7 +481,7 @@ Feature: Approval Process Component Scenarios
 	When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
 	When I click on "Edit" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
 	And I complete submit for approval
-	When I re-login as "Automation-PM" user with portal "QA"
+	When I re-login as "Automation-PM" user on "QA" portal
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
@@ -492,7 +491,7 @@ Feature: Approval Process Component Scenarios
 	When I select "Approve" from approval decision panel
 	When I enter Approval comment
 	And I click submit
-	When I re-login as "Automation" user with portal "QA"
+	When I re-login as "Automation" user on "QA" portal
     When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
@@ -518,7 +517,7 @@ Feature: Approval Process Component Scenarios
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	And I complete submit for approval
-	When I re-login as "Automation-PM" user with portal "QA"
+	When I re-login as "Automation-PM" user on "QA" portal
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
@@ -546,7 +545,7 @@ Feature: Approval Process Component Scenarios
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	And I complete submit for approval
-	When I re-login as "Automation-PM" user with portal "QA"
+	When I re-login as "Automation-PM" user on "QA" portal
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
@@ -576,7 +575,7 @@ Feature: Approval Process Component Scenarios
 	When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
 	When I click on "Edit" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
 	And I complete submit for approval
-	When I re-login as "Automation-PM" user with portal "QA" 
+	When I re-login as "Automation-PM" user on "QA" portal 
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
@@ -586,7 +585,7 @@ Feature: Approval Process Component Scenarios
 	When I select "Approve" from approval decision panel
 	When I enter Approval comment
     And I click submit
-	When I re-login as "Automation" user with portal "QA" 
+	When I re-login as "Automation" user on "QA" portal 
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As an Administrator"
 	And I navigate to "Operate" tab
@@ -612,7 +611,7 @@ Feature: Approval Process Component Scenarios
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	And I complete submit for approval
-	When I re-login as "Automation-PM" user with portal "QA"
+	When I re-login as "Automation-PM" user on "QA" portal 
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
@@ -622,7 +621,7 @@ Feature: Approval Process Component Scenarios
 	When I select "Disapprove" from approval decision panel
 	When I enter Approval comment
 	And I click submit
-	When I re-login as "Automation" user with portal "QA"
+	When I re-login as "Automation" user on "QA" portal
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As an Administrator"
 	And I navigate to "Operate" tab
@@ -647,7 +646,7 @@ Feature: Approval Process Component Scenarios
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	And I complete submit for approval
-	When I re-login as "Automation-PM" user with portal "QA"
+	When I re-login as "Automation-PM" user on "QA" portal
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
@@ -658,7 +657,7 @@ Feature: Approval Process Component Scenarios
 	When I click select dropdown
 	When I select specific user "Allen PM"
 	And I click submit
-	When I re-login as "Automation" user with portal "QA"
+	When I re-login as "Automation" user on "QA" portal
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As an Administrator"
 	And I navigate to "Operate" tab
@@ -683,7 +682,7 @@ Feature: Approval Process Component Scenarios
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	And I complete submit for approval
-	When I re-login as "Automation-PM" user with portal "QA"
+	When I re-login as "Automation-PM" user on "QA" portal
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
@@ -693,7 +692,7 @@ Feature: Approval Process Component Scenarios
 	When I select "Send to Owner" from approval decision panel
 	When I enter Approval comment
 	And I click submit
-	When I re-login as "Automation" user with portal "QA"
+	When I re-login as "Automation" user on "QA" portal
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As an Administrator"
 	And I navigate to "Operate" tab
@@ -718,7 +717,7 @@ Feature: Approval Process Component Scenarios
 	When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
 	When I click on "Edit" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
 	And I complete submit for approval
-	When I re-login as "Automation-PM" user with portal "QA" 
+	When I re-login as "Automation-PM" user on "QA" portal 
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
@@ -728,7 +727,7 @@ Feature: Approval Process Component Scenarios
 	When I select "Approve" from approval decision panel
 	When I enter Approval comment
     And I click submit
-	When I re-login as "Automation" user with portal "QA" 
+	When I re-login as "Automation" user on "QA" portal 
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As an Administrator"
 	And I navigate to "Operate" tab
@@ -752,7 +751,7 @@ Feature: Approval Process Component Scenarios
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	And I complete submit for approval
-	When I re-login as "Automation-PM" user with portal "QA"
+	When I re-login as "Automation-PM" user on "QA" portal
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
@@ -779,7 +778,7 @@ Feature: Approval Process Component Scenarios
 	When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
 	When I click on "Edit" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
 	And I complete submit for approval
-	When I re-login as "Automation-PM" user with portal "QA"
+	When I re-login as "Automation-PM" user on "QA" portal
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
@@ -791,7 +790,7 @@ Feature: Approval Process Component Scenarios
 	When I select specific user "Allen PM"
 	When I enter Approval comment
 	And I click submit
-	When I re-login as "Automation" user with portal "QA"
+	When I re-login as "Automation" user on "QA" portal
     When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
@@ -815,7 +814,7 @@ Feature: Approval Process Component Scenarios
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	And I complete submit for approval
-	When I re-login as "Automation-PM" user with portal "QA"
+	When I re-login as "Automation-PM" user on "QA" portal
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
@@ -840,7 +839,7 @@ Feature: Approval Process Component Scenarios
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	And I complete submit for approval
-	When I re-login as "Automation-PM" user with portal "QA"
+	When I re-login as "Automation-PM" user on "QA" portal
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
@@ -865,7 +864,7 @@ Feature: Approval Process Component Scenarios
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	And I complete submit for approval
-	When I re-login as "Automation-PM" user with portal "QA"
+	When I re-login as "Automation-PM" user on "QA" portal
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
@@ -890,7 +889,7 @@ Feature: Approval Process Component Scenarios
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	And I complete submit for approval
-	When I re-login as "Automation-PM" user with portal "QA"
+	When I re-login as "Automation-PM" user on "QA" portal
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
@@ -911,7 +910,7 @@ Feature: Approval Process Component Scenarios
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	And I complete submit for approval
-	When I re-login as "Automation-PM" user with portal "QA"
+	When I re-login as "Automation-PM" user on "QA" portal
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
@@ -923,7 +922,7 @@ Feature: Approval Process Component Scenarios
 	When I select specific user "Allen PM"
 	When I enter Approval comment
 	And I click submit
-	When I re-login as "Automation" user with portal "QA"
+	When I re-login as "Automation" user on "QA" portal
     When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab

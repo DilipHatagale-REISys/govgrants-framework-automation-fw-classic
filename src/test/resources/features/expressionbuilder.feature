@@ -18,7 +18,7 @@ Feature: Expression Builder Component Scenarios
 	When I select "Draft Announcements" from double headed dropdown inside admin portal
 	Then I see "Create" button inside "Draft Announcements" flex table not displayed
 	
-	@42233 @all @hideExpressioJsonForRightOperandForAdminUser-gAnnouncement
+	@42369 @all @hideExpressioJsonForRightOperandForAdminUser-gAnnouncement
 	Scenario: validate disabling of create button for Admin user from Announcement-Program 
 	Given I have default configuration as below:
 	|configurationCategory |fieldName            |fieldOrignalValue     |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
@@ -62,7 +62,7 @@ Feature: Expression Builder Component Scenarios
 	And I navigate to "Announcements" tab
 	When I select "Draft Announcements" from double headed dropdown inside admin portal
 	Then I see "Create" button inside "Draft Announcements" flex table not displayed
-	When I re-login as "Automation" user with portal "QA"
+	When I re-login as "Automation" user on "QA" portal
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Announcements" tab
@@ -99,7 +99,7 @@ Feature: Expression Builder Component Scenarios
 	When I select "Draft Announcements" from double headed dropdown inside admin portal
 	Then I see "Create" button inside "Draft Announcements" flex table
 	
-	@42379 @all @hideExpressioJsonForRightOperandForUserTypeInternalWithOperatorIn-gAnnouncement
+	@42479 @all @hideExpressioJsonForRightOperandForUserTypeInternalWithOperatorIn-gAnnouncement
 	Scenario: validate disabling of create button for user type Internal with Operator In from Announcement-Program 
 	Given I have default configuration as below:
 	|configurationCategory |fieldName            |fieldOrignalValue     |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|

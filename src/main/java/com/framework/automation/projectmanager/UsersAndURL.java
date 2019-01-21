@@ -13,13 +13,20 @@ public class UsersAndURL implements UsersController {
 	 * @author nauman.shahid
 	 * @category Handles users based on different environments
 	 */
+	/**
+	 * @REI-Systems
+	 * @author nauman.shahid
+	 * @category Handles users based on different environments
+	 */
 	@Override
 	public String getUserName(String userLevel) {
 		String userName = null;
-		if (EnvironmentFetcher.environmentName.contains("QA")) {
+		if ((EnvironmentFetcher.environmentName != null) && (EnvironmentFetcher.environmentName.contains("QA"))) {
 			userName = getQAEnvironmentUser(userLevel);
-		} else if (EnvironmentFetcher.environmentName.contains("UAT")) {
+		} else if ((EnvironmentFetcher.environmentName != null) && (EnvironmentFetcher.environmentName.contains("UAT"))) {
 			// To be implemented
+		} else {
+		    userName = getQAEnvironmentUser(userLevel);
 		}
 
 		return userName;
@@ -27,21 +34,21 @@ public class UsersAndURL implements UsersController {
 
 	@Override
 	public String getPassword(String userLevel) {
-		String password = null;
-		if (EnvironmentFetcher.environmentName.contains("QA")) {
-			password = getQAEnvironmentPassword(userLevel);
-		} else if (EnvironmentFetcher.environmentName.contains("UAT")) {
-			// To be implemented
-		}
-		return password;
+		return "Automation@12345";
 	}
 
 	@Override
 	public String getPortalUrl(String portalType) {
 		String url = null;
 		try {
-			url = new Properties_Logs().ReadPropertyFile("environment.properties",
-					EnvironmentFetcher.environmentName + portalType);
+			if(EnvironmentFetcher.environmentName != null && !(EnvironmentFetcher.environmentName.contentEquals(portalType))) {
+				url = new Properties_Logs().ReadPropertyFile("environment.properties",
+						EnvironmentFetcher.environmentName + portalType);
+			} else {
+				url = new Properties_Logs().ReadPropertyFile("environment.properties",
+						portalType);
+			}
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -111,5 +118,4 @@ public class UsersAndURL implements UsersController {
 		}
 		return username;
 	}
-
 }
