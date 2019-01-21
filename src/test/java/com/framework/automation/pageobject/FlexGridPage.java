@@ -11,23 +11,22 @@ import com.framework.automation.projectmanager.GovGrantsManager;
 
 public class FlexGridPage extends GovGrantsManager {
 
-    /******* "Variables and Locators" *****************/
-    private final By programPerformanceMgmtGridViewMenuBars ;
+	/******* "Variables and Locators" *****************/
+	private final By programPerformanceMgmtGridViewMenuBars;
 
-    /**
-     * Constructor to handle dependency injection and framework library
-     */
-    public FlexGridPage(Controller controller, CoreHandlers reiDriver, GovGrantsHandler govgrants) {
-        super(controller, reiDriver, govgrants);
-        programPerformanceMgmtGridViewMenuBars = By.xpath(
-                "//div[@id='flexGridHeaderButtonsProgramPerformanceMgmtGridView']//span[contains(@class,'fa fa-bars')]");
-    }
+	/**
+	 * Constructor to handle dependency injection and framework library
+	 */
+	public FlexGridPage(Controller controller, CoreHandlers reiDriver, GovGrantsHandler govgrants) {
+		super(controller, reiDriver, govgrants);
+		programPerformanceMgmtGridViewMenuBars = By.xpath(
+				"//div[@id='flexGridHeaderButtonsProgramPerformanceMgmtGridView']//span[contains(@class,'fa fa-bars')]");
+	}
 
 	/******* "Key Methods with complete functionality - public" *****************/
 
 	public void clickPPMGParallelLinesMenuBar() {
-		reiDriver.JavaScript().scrollpageToSpecificElement(
-				By.xpath("//div[@id='flexGridHeaderButtonsSampleGrid']"));
+		reiDriver.JavaScript().scrollpageToSpecificElement(By.xpath("//div[@id='flexGridHeaderButtonsSampleGrid']"));
 		reiDriver.WaitFor().WaitForElementToBePresent(programPerformanceMgmtGridViewMenuBars).click();
 	}
 

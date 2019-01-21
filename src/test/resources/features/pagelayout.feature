@@ -11,8 +11,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName          |fieldNewValue                       |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Layout:General   |Header             |Program - {!FederalProgramCFDA__c}  |Grantee State Program |                         |                             |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
 	Then I see "TPA01" shown as over view title in header "Program"
@@ -25,8 +27,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName            |fieldNewValue                       |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Layout:General   |Page Instruction Text|Automation Instruction Text         |Grantee State Program |                         |                             |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Automation Instruction Text" shown as page instruction text
@@ -39,8 +43,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName             |fieldNewValue                       |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Layout:General   |Create Header Override|Creating New Program for Automation |Grantee State Program |                         |                             |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I click on "New" button in right header
 	Then I see "Creating New Program for Automation" shown as over view header
 	
@@ -52,8 +58,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName               |fieldNewValue      |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Layout Action    |Hide Decision Expression|<new_hide_config>  |Grantee State Program |Name                     |Submit For Approval          |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Submit For Approval" button is not displayed
@@ -70,8 +78,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName           |fieldNewValue                        |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Layout Action    |Hide Expression JSON|govgrants_config:HideExpressionJson  |Grantee State Program |Name                     |Submit For Approval          |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Submit For Approval" button is not displayed
@@ -84,8 +94,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName           |fieldNewValue              |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Layout Action    |Hide for profile    |System Administrator       |Grantee State Program |Name                     |Submit For Approval          |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Submit For Approval" button is not displayed
@@ -98,8 +110,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName           |fieldNewValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Layout:General   |Hide Pdf Download   |true           |Grantee State Program |                         |                             |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I click on "Menu" button inside detail page
@@ -113,8 +127,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName                 |fieldNewValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Layout:General   |Hide On Demand Snapshot   |true           |Grantee State Program |                         |                             |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I click on "Menu" button inside detail page
@@ -132,8 +148,10 @@ Feature: Page Layout Component Scenarios
 	|Page Layout Action    |Prompt Dailogue Header    |Automation Header    |Grantee State Program |Name                     |Submit For Approval          |
 	|Page Layout Action    |Prompt Dialogue Text      |Automation Text      |Grantee State Program |Name                     |Submit For Approval          |
 	|Page Layout Action    |Enable Prompt Input Dialog|true                 |Grantee State Program |Name                     |Submit For Approval          |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I click on "Submit For Approval" button in right header
@@ -147,8 +165,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName                 |fieldNewValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Layout Action    |Hide For Context          |view           |Grantee State Program |Name                     |Submit For Approval          |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Submit For Approval" button is not displayed at view detail page
@@ -161,8 +181,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName                 |fieldNewValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Layout:General   |Cancel Button Label       |Auto Cancel    |Grantee State Program |                         |                             |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I click on "Edit" button inside detail page
@@ -176,8 +198,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName                 |fieldNewValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Layout:General   |Save Button Label         |Auto Save      |Grantee State Program |                         |                             |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I click on "Edit" button inside detail page
@@ -191,8 +215,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                 |fieldName                 |fieldNewValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Tabs Config:Page Layout Action   |Hide For Context          |view           |Grantee State Program |Name                     |TAB-029                      |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Overview" sub tab is not displayed at view detail page
@@ -205,8 +231,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                 |fieldName     |fieldNewValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Tabs Config:Page Layout Action   |Sort Order    |6              |Grantee State Program |Name                     |TAB-029                      |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Overview" shown at number "5" inside subtabs
@@ -219,8 +247,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                 |fieldName                 |fieldNewValue         |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Tabs Config:Page Layout Action   |Header Instruction Text   |Automation Header Text|Grantee State Program |Name                     |TAB-029                      |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Automation Header Text" shown as header instruction text
@@ -233,8 +263,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                 |fieldName   |fieldNewValue         |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Tabs Config:Page Layout Action   |Tab Title   |Automation Overview   |Grantee State Program |Name                     |TAB-029                      |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Automation Overview" sub tab is displayed at view detail page
@@ -247,8 +279,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                 |fieldName   |fieldNewValue                 |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Tabs Config:Page Layout Action   |Tab Icon    |govgrants_config:TabIconNewCss|Grantee State Program |Name                     |TAB-029                      |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see pencil icon as "Overview" sub tab
@@ -261,8 +295,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                 |fieldName   |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Tabs Config:Page Layout Action   |Is Active   |false        |Grantee State Program |Name                     |TAB-029                      |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Overview" sub tab is not displayed at view detail page
@@ -275,8 +311,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                 |fieldName    |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Tabs Config:Page Layout Action   |Hide for User|Internal     |Grantee State Program |Name                     |TAB-029                      |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Overview" sub tab is not displayed at view detail page
@@ -289,8 +327,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                 |fieldName       |fieldNewValue       |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Tabs Config:Page Layout Action   |Hide for Profile|System Administrator|Grantee State Program |Name                     |TAB-029                      |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Overview" sub tab is not displayed at view detail page
@@ -303,8 +343,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                 |fieldName          |fieldNewValue       |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Tabs Config:Page Layout Action   |Hide Decision Field|ShowActiveProgram__c|Grantee State Program |Name                     |TAB-029                      |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Overview" sub tab is not displayed at view detail page
@@ -317,8 +359,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                 |fieldName          |fieldNewValue       |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Tabs Config:Page Layout Action   |Highlights Panel?  |true                |Grantee State Program |Name                     |TAB-409                      |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see complete header overview tab is displayed at view detail page
@@ -331,8 +375,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                 |fieldName             |fieldNewValue                                |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Tabs Config:Page Layout Action   |Hide Expression JSON  |govgrants_config:HideExpressionJsonForPageTab|Grantee State Program |Name                     |TAB-029                      |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Overview" sub tab is not displayed at view detail page
@@ -345,8 +391,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory        |fieldName       |fieldNewValue                 |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block:Page Block Detail |Page Block Title|Program Information Automation|Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Program Information Automation" page block title
@@ -359,8 +407,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory        |fieldName       |fieldNewValue |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block:Page Block Detail |Is Active       |false         |Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Program Information" page block is not displayed
@@ -373,8 +423,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory        |fieldName |fieldNewValue |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block:Page Block Detail |Sort Order|10            |Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Program Information" shown at number "5" inside page block
@@ -387,8 +439,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory        |fieldName                     |fieldNewValue        |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block:Page Block Detail |Header Instruction Text       |Header for Automation|Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Header for Automation" shown as header instruction text for page block
@@ -401,8 +455,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory        |fieldName                     |fieldNewValue        |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block:Page Block Detail |Skip for Export               |true                 |Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I click on "Menu" button inside detail page
@@ -418,8 +474,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory        |fieldName        |fieldNewValue        |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block:Page Block Detail |Hide for Context |View                 |Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Program Information" page block is not displayed
@@ -432,8 +490,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory        |fieldName        |fieldNewValue        |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block:Page Block Detail |Hide for User    |Internal             |Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Program Information" page block is not displayed
@@ -450,8 +510,10 @@ Feature: Page Layout Component Scenarios
 	|Page Tabs Config:Page Layout Action   |Operator        |AND                 |Grantee State Program |Name                     |TAB-029                   |
     |Page Tabs Config:Page Layout Action   |Hide for Profile|System Administrator|Grantee State Program |Name                     |TAB-029                   |
     |Page Tabs Config:Page Layout Action   |Hide for User   |Internal            |Grantee State Program |Name                     |TAB-029                   |
-    When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Overview" sub tab is not displayed at view detail page
@@ -468,8 +530,10 @@ Feature: Page Layout Component Scenarios
 	|Page Tabs Config:Page Layout Action   |Operator        |OR                  |Grantee State Program |Name                     |TAB-029                   |
     |Page Tabs Config:Page Layout Action   |Hide for Profile|System Administrator|Grantee State Program |Name                     |TAB-029                   |
     |Page Tabs Config:Page Layout Action   |Hide for User   |Internal            |Grantee State Program |Name                     |TAB-029                   |
-    When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Overview" sub tab is not displayed at view detail page
@@ -482,8 +546,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory        |fieldName        |fieldNewValue        |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block:Page Block Detail |Hide for Profile |System Administrator |Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Program Information" page block is not displayed
@@ -500,8 +566,10 @@ Feature: Page Layout Component Scenarios
 	|Page Block:Page Block Detail      |Operator        |AND                 |Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
     |Page Block:Page Block Detail      |Hide for Profile|System Administrator|Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
     |Page Block:Page Block Detail      |Hide for User   |Internal            |Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
-    When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Program Information" page block is not displayed
@@ -514,8 +582,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory        |fieldName             |fieldNewValue        |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block:Page Block Detail |Total Fields per Row  |3                    |Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
-    When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
   	Then I see "Program Information" page block contains "3" elements
@@ -532,8 +602,10 @@ Feature: Page Layout Component Scenarios
 	|Page Block:Page Block Detail      |Operator        |OR                  |Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
     |Page Block:Page Block Detail      |Hide for Profile|System Administrator|Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
     |Page Block:Page Block Detail      |Hide for User   |Internal            |Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
-    When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Program Information" page block is not displayed
@@ -546,8 +618,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory        |fieldName          |fieldNewValue       |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block:Page Block Detail |Hide Decision Field|ShowActiveProgram__c|Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Program Information" page block is not displayed
@@ -562,8 +636,10 @@ Feature: Page Layout Component Scenarios
 	|Flex Grid:General           |Header            |Program Contacts           |ProgramContacts                |                                                      |                                                      |
 	|Flex Grid:General           |Header            |Roles And Responsibilities |ProgramRolesAndResponsibilities|                                                      |                                                       |
 	|Page Block:Page Block Detail|Flex Table Name   |ApiGeneratedId:1           |Grantee State Program          |GNT__PageBlockTitle__c    |Contacts                   |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Overview" sub tab
@@ -579,8 +655,10 @@ Feature: Page Layout Component Scenarios
 	|Flex Grid:General           |Flex Grid Config Name|ProgramOutcomes            |ProgramOutcomes                |                                                      |                                                      |
 	|Flex Grid:General           |Flex Grid Config Name|MonitoringGridView         |MonitoringGridView             |                                                      |                                                       |
 	|Page Block:Page Block Detail|Flex Grid Name       |ApiGeneratedId:1           |Grantee State Program          |GNT__PageBlockTitle__c    |Out Comes                  |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Plan" sub tab
@@ -595,8 +673,10 @@ Feature: Page Layout Component Scenarios
 	|configurationCategory        |fieldName                          |fieldNewValue     |coreComponentField                                        |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Program	                  |Status                             |Created           |Test program for automation -  SA mode only - Not approved|                         |                          |
 	|Page Block:Page Block Detail |Hide/Disable attachment Row actions|Disable           |Grantee State Program                                     |GNT__PageBlockTitle__c   |Attachments               |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	And I complete submit for approval
@@ -612,8 +692,10 @@ Feature: Page Layout Component Scenarios
 	|configurationCategory        |fieldName                          |fieldNewValue     |coreComponentField                                        |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Program	                  |Status                             |Created           |Test program for automation -  SA mode only - Not approved|                         |                          |
 	|Page Block:Page Block Detail |Hide/Disable attachment Row actions|Hide              |Grantee State Program                                     |GNT__PageBlockTitle__c   |Attachments               |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	And I complete submit for approval
@@ -628,8 +710,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                    |fieldName       |fieldNewValue           |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block Config:Page Block Rule Detail |Field API Name  |BudgetingPreference__c  |Grantee State Program |Name                     |PBD-3107                  |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Budgeting Preference" inside page block details
@@ -642,8 +726,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                    |fieldName       |fieldNewValue     |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block Config:Page Block Rule Detail |Is Active       |false             |Grantee State Program |Name                     |PBD-3107                  |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Program Name" is not displayed inside page block detail
@@ -656,8 +742,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                    |fieldName       |fieldNewValue     |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block Config:Page Block Rule Detail |Sort Order      |10                |Grantee State Program |Name                     |PBD-3107                  |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Program Name" shown at number "7" inside page block detail
@@ -670,8 +758,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                    |fieldName           |fieldNewValue     |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block Config:Page Block Rule Detail |Field Label Override|Automation Title  |Grantee State Program |Name                     |PBD-3107                  |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Automation Title" inside page block details
@@ -684,8 +774,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                    |fieldName           |fieldNewValue     |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block Config:Page Block Rule Detail |Read Only           |true              |Grantee State Program |Name                     |PBD-3107                  |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
 	Then I see Program Name rendered in view mode only
@@ -698,8 +790,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                    |fieldName           |fieldNewValue     |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block Config:Page Block Rule Detail |Hide for Context    |View              |Grantee State Program |Name                     |PBD-3107                  |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Program Name" is not displayed inside page block detail
@@ -712,8 +806,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                    |fieldName           |fieldNewValue     |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block Config:Page Block Rule Detail |Hide for User       |Internal          |Grantee State Program |Name                     |PBD-3107                  |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Program Name" is not displayed inside page block detail
@@ -726,8 +822,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                    |fieldName           |fieldNewValue       |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block Config:Page Block Rule Detail |Hide For Profile    |System Administrator|Grantee State Program |Name                     |PBD-3107                  |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Program Name" is not displayed inside page block detail
@@ -744,8 +842,10 @@ Feature: Page Layout Component Scenarios
 	|Page Block Config:Page Block Rule Detail |Operator            |AND                 |Grantee State Program |Name                     |PBD-3107                  |
 	|Page Block Config:Page Block Rule Detail |Hide For Profile    |System Administrator|Grantee State Program |Name                     |PBD-3107                  |
 	|Page Block Config:Page Block Rule Detail |Hide For User       |Internal            |Grantee State Program |Name                     |PBD-3107                  |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Program Name" is not displayed inside page block detail
@@ -762,8 +862,10 @@ Feature: Page Layout Component Scenarios
 	|Page Block Config:Page Block Rule Detail |Operator            |OR                  |Grantee State Program |Name                     |PBD-3107                  |
 	|Page Block Config:Page Block Rule Detail |Hide For Profile    |System Administrator|Grantee State Program |Name                     |PBD-3107                  |
 	|Page Block Config:Page Block Rule Detail |Hide For User       |Internal            |Grantee State Program |Name                     |PBD-3107                  |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Program Name" is not displayed inside page block detail
@@ -776,8 +878,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                    |fieldName            |fieldNewValue       |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block Config:Page Block Rule Detail |Read Only For Context|Edit                |Grantee State Program |Name                     |PBD-3107                  |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
 	Then I see Program Name rendered in view mode only
@@ -790,8 +894,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                    |fieldName            |fieldNewValue       |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block Config:Page Block Rule Detail |Read Only For Profile|System Administrator|Grantee State Program |Name                     |PBD-3107                  |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
 	Then I see Program Name rendered in view mode only
@@ -804,8 +910,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                    |fieldName            |fieldNewValue       |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block Config:Page Block Rule Detail |Required Behavior    |Required for Save   |Grantee State Program |Name                     |PBD-2600                  |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
 	When I click on "Save" button inside detail page
@@ -819,8 +927,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory        |fieldName                 |fieldNewValue                                   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block:Page Block Detail |Attachment Classifications|AnnouncementArtifacts1;AnnouncementArtifacts2;  |Grantee State Program |GNT__PageBlockTitle__c   |Attachments               |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Attachments" sub tab
@@ -836,8 +946,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                    |fieldName           |fieldNewValue     |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block Config:Page Block Rule Detail |Is Hidden Field     |true              |Grantee State Program |Name                     |PBD-3107                  |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Program Name" is not displayed inside page block detail
@@ -852,8 +964,10 @@ Feature: Page Layout Component Scenarios
 	|configurationCategory                    |fieldName           |fieldNewValue       |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block Config:Page Block Rule Detail |Hide Decision Field |ShowActiveProgram__c|Grantee State Program |Name                     |PBD-3107                  |
 	|Page Block Config:Page Block Rule Detail |Operator            |                    |Grantee State Program |Name                     |PBD-3107                  |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Program Name" is not displayed inside page block detail
@@ -866,8 +980,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                    |fieldName           |fieldNewValue     |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block Config:Page Block Rule Detail |Read Only For User  |Internal          |Grantee State Program |Name                     |PBD-3107                  |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
 	Then I see Program Name rendered in view mode only
@@ -880,8 +996,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                    |fieldName           |fieldNewValue       |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block Config:Page Block Rule Detail |Read Decision Field |ShowActiveProgram__c|Grantee State Program |Name                     |PBD-3107                  |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
 	Then I see Program Name rendered in view mode only
@@ -894,8 +1012,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                    |fieldName           |fieldNewValue       |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block Config:Page Block Rule Detail |Hide Label          |true                |Grantee State Program |Name                     |PBD-3107                  |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Program Name" is not displayed inside page block detail
@@ -908,8 +1028,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                    |fieldName           |fieldNewValue          |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block Config:Page Block Rule Detail |Lookup Header Text  |Organization Automation|Grantee State Program |Name                     |PBD-3178                  |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
 	When I click search icon for owner organization
@@ -923,8 +1045,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                    |fieldName                  |fieldNewValue     |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block Config:Page Block Rule Detail |Lookup Display Field Names |Code__c           |Grantee State Program |Name                     |PBD-3178                  |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
 	When I click search icon for owner organization and swithing to frame "iframeCustomLookupModalId"
@@ -940,8 +1064,10 @@ Feature: Page Layout Component Scenarios
 	|configurationCategory                    |fieldName                  |fieldNewValue         |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block Config:Page Block Rule Detail |Lookup Display Field Names |<newLookupDisplayName>|Grantee State Program |Name                     |PBD-3178                  |
 	|Page Block Config:Page Block Rule Detail |Lookup Filter Criteria     |<newLookupFilter>     |Grantee State Program |Name                     |PBD-3178                  |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
 	When I click search icon for owner organization and swithing to frame "iframeCustomLookupModalId"
@@ -959,8 +1085,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                    |fieldName                  |fieldNewValue        |coreComponentField      |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block Config:Page Block Rule Detail |Attachment Classifications |Test1;Test2;         |Annoucement Profile-FOA |Name                     |PBD-5205                  |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Announcements" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Announcements" tab
 	When I select "Draft Announcements" from double headed dropdown inside admin portal
 	When I perform quick search for "Test Announcement For Automation"
 	When I click on "View" icon for "Test Announcement For Automation" inside table
@@ -977,8 +1105,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName             |fieldNewValue              |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Layout Action    |Submit Warning Message|Test message for Automation|Grantee State Program |Name                     |Submit For Approval          |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Test message for Automation" message inside confirmation box is displayed on click "Submit For Approval"
@@ -991,8 +1121,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName    |fieldNewValue     |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Layout Action    |Is Active    |false             |Grantee State Program |Name                     |Edit                         |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Edit" button is not displayed
@@ -1005,8 +1137,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName      |fieldNewValue     |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Layout Action    |Action Behavior|Open in overlay   |Grantee State Program |Name                     |Edit                         |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I click on "Edit" button in right header
@@ -1020,8 +1154,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName      |fieldNewValue      |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Layout Action    |Action Behavior|Open in new window |Grantee State Program |Name                     |Edit                         |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I click on "Edit" button in right header
@@ -1035,8 +1171,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName      |fieldNewValue      |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Layout Action    |Display Area   |Page Header        |Grantee State Program |Name                     |Create Campaign              |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Create Campaign" button is displayed
@@ -1049,8 +1187,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory |fieldName      |fieldNewValue      |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Layout Action    |Display Area   |Menu               |Grantee State Program |Name                     |Edit                         |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I click on "Menu" button inside detail page
@@ -1066,8 +1206,10 @@ Feature: Page Layout Component Scenarios
 	|configurationCategory |fieldName      |fieldNewValue     |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Layout Action    |Header Sequence|1                 |Grantee State Program |Name                     |Edit                         |
 	|Page Layout Action    |Header Sequence|2                 |Grantee State Program |Name                     |Submit For Approval          |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Edit" Button at position "0"
@@ -1080,8 +1222,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory        |fieldName       |fieldNewValue    |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block:Page Block Detail |Help Text       |<new_helpText>   |Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I hovering mouse on help text icon inside "Program Information"
@@ -1098,8 +1242,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                    |fieldName       |fieldNewValue     |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block Config:Page Block Rule Detail |Help Text Long  |<new_helpText>    |Grantee State Program |Name                     |PBD-3107                  |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I hovering mouse on help text icon inside page block detail "Program Name"
@@ -1117,16 +1263,20 @@ Feature: Page Layout Component Scenarios
 	|configurationCategory |fieldName                  |fieldNewValue       |coreComponentField                                           |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Program               |Status                     |Created             |Test program for automation -  SA mode only - Can be Approved|                         |                             |
 	|Page Layout:General   |Hide Approval Decision comp|true                |Grantee State Program                                        |                         |                             |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
 	When I click on "Edit" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
 	And I complete submit for approval
-	When I re-login as "Automation-PM" with "QA" url 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I re-login as "Automation-PM" user on "QA" portal
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I navigate to "Pending" content inside "Tasks" subheader on left panel
 	When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
-	When I start the approval with subject "Test program for automation -  SA mode only - Can be Approved"
+	When I click on "Start" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
 	Then I see "Approve" is disabled
 	
 	@36043 @all @hideExpressionJsonFieldAtPageBlock-gPlanning
@@ -1137,8 +1287,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory        |fieldName           |fieldNewValue                                  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Page Block:Page Block Detail |Hide Expression JSON|govgrants_config:HideExpressionJsonForPageBlock|Grantee State Program |GNT__PageBlockTitle__c   |Program Information       |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Program Information" page block is not displayed
@@ -1151,8 +1303,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                    |fieldName           |fieldNewValue                                         |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue       |
 	|Page Block Config:Page Block Rule Detail |Hide Expression JSON|govgrants_config:HideExpressionJsonForPageBlockDetail |Grantee State Program |Name                     |PBD-3107                         |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Program Name" is not displayed inside page block detail
@@ -1165,8 +1319,10 @@ Feature: Page Layout Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory                    |fieldName                |fieldNewValue                                             |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue       |
 	|Page Block Config:Page Block Rule Detail |Read Only Expression JSON|govgrants_config:ReadOnlyExpressionJsonForPageBlockDetail |Grantee State Program |Name                     |PBD-3107                         |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app to reach "Planning" tab
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
 	Then I see Program Name rendered in view mode only

@@ -79,14 +79,6 @@ public class LoginPage extends GovGrantsManager {
 	}
 
 	/**
-	 * login according to user level i.e: exe , gm etc.
-	 */
-	public void enterAsUser(String userLevel) {
-		enterUserName(new UsersAndURL().handleUsersForEnv(userLevel));
-		enterPassword(standardPassword);
-	}
-
-	/**
 	 * Complete login till reached home page
 	 */
 	public void getToAdminPage() {

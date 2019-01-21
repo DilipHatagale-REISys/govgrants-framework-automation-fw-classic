@@ -12,7 +12,7 @@ import com.framework.automation.projectmanager.GovGrantsManager;
 public class FlexTablePage extends GovGrantsManager {
 	/******* "Variables and Locators" *****************/
 
-	private final By programFlexTableActionItems, programFlexTableDropdown ;
+	private final By programFlexTableActionItems, programFlexTableDropdown;
 
 	/**
 	 * Constructor to handle dependency injection and framework library
@@ -54,17 +54,10 @@ public class FlexTablePage extends GovGrantsManager {
 	}
 
 	/**
-	 * assert if advance filter is disabled from planning flex table
-	 */
-	public void assertDisableAdvanceFilter() {
-		Assert.assertTrue(isAdvanceFilterDisabled());
-	}
-
-	/**
 	 * assert if menu icon is disabled from planning flex table
 	 */
-	public void assertDisableMenuIcon() {
-		Assert.assertTrue(isMenuIconDisabled());
+	public void assertDisableMenuIcon(String panelTitleName) {
+		Assert.assertTrue(isMenuIconDisabled(panelTitleName));
 	}
 
 	/***
@@ -163,10 +156,11 @@ public class FlexTablePage extends GovGrantsManager {
 	 * @param actionIcon
 	 */
 	public void assertActionIconNotDisplayedInsideflexTable(String iconName, String uniqueColumnValue) {
-		reiDriver.WaitFor()
-				.WaitForElementToBePresent(govgrants.flexTable().getTableActionIconWithoutTableId(iconName, uniqueColumnValue));
+		reiDriver.WaitFor().WaitForElementToBePresent(
+				govgrants.flexTable().getTableActionIconWithoutTableId(iconName, uniqueColumnValue));
 		Assert.assertFalse(reiDriver.findMyElement()
-				.getElement(govgrants.flexTable().getTableActionIconWithoutTableId(iconName, uniqueColumnValue)).isDisplayed());
+				.getElement(govgrants.flexTable().getTableActionIconWithoutTableId(iconName, uniqueColumnValue))
+				.isDisplayed());
 	}
 
 	/**
@@ -273,7 +267,8 @@ public class FlexTablePage extends GovGrantsManager {
 	 * @param blockTitle
 	 */
 	public void getHelpTextAtEditActionOfFlexTable(String iconName, String columnName) {
-		reiDriver.WaitFor().WaitForElementToBePresent(govgrants.flexTable().getTableActionIconWithoutTableId(iconName, columnName))
+		reiDriver.WaitFor()
+				.WaitForElementToBePresent(govgrants.flexTable().getTableActionIconWithoutTableId(iconName, columnName))
 				.getAttribute("title").equalsIgnoreCase(iconName);
 	}
 
@@ -333,7 +328,8 @@ public class FlexTablePage extends GovGrantsManager {
 	 */
 	public void assertActionIconDisplayedInsideflexTable(String iconName, String uniqueColumnValue) {
 		Assert.assertTrue(reiDriver.findMyElement()
-				.getElement(govgrants.flexTable().getTableActionIconWithoutTableId(iconName, uniqueColumnValue)).isDisplayed());
+				.getElement(govgrants.flexTable().getTableActionIconWithoutTableId(iconName, uniqueColumnValue))
+				.isDisplayed());
 	}
 
 	/**
@@ -438,31 +434,15 @@ public class FlexTablePage extends GovGrantsManager {
 	}
 
 	/**
-	 * Boolean status of advance filter option from program flex table
-	 * 
-	 * @param status
-	 */
-	private Boolean isAdvanceFilterDisabled() {
-		boolean flag = false;
-		try {
-			if (getAdvanceFilterItem().isDisplayed()) {
-				flag = false;
-			}
-		} catch (org.openqa.selenium.NoSuchElementException e) {
-			flag = true;
-		}
-		return flag;
-	}
-
-	/**
 	 * Boolean status of menu icon from program flex table
 	 * 
 	 * @param status
 	 */
-	private Boolean isMenuIconDisabled() {
+	private Boolean isMenuIconDisabled(String panelTitleName) {
 		boolean flag = false;
 		try {
-			if (getMenuIcon().isDisplayed()) {
+			if (reiDriver.findMyElement().getElement(govgrants.phasePannel().getParallelBarsLocator(panelTitleName))
+					.isDisplayed()) {
 				flag = false;
 			}
 		} catch (org.openqa.selenium.NoSuchElementException e) {

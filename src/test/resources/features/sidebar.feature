@@ -11,8 +11,9 @@ Feature: Side bar Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory  |fieldName                 |fieldNewValue                                                     |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Side Bar Header:General|Sidebar Component Sequence|Search,ActivityMenu,TaskMenu,RecentlyViewed,TechnicalSupport,Links|GrantorHome           |                         |                          |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app 
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor" 
 	Then i see "Tasks" shown at number "4" in sideBar  
 	
 	@33876	 @all @validateSidebarTaskMenuRemoval-gHome
@@ -23,8 +24,9 @@ Feature: Side bar Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory  |fieldName                 |fieldNewValue                                            |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Side Bar Header:General|Sidebar Component Sequence|Search,ActivityMenu,RecentlyViewed,TechnicalSupport,Links|GrantorHome           |                         |                          |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app 
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
 	Then I see "Tasks" as disabled from sidebar 
 	
 	@33879 @all @validateSidebarActivityMenuRemoval-gHome 
@@ -35,8 +37,9 @@ Feature: Side bar Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory  |fieldName                 |fieldNewValue                                        |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Side Bar Header:General|Sidebar Component Sequence|Search,TaskMenu,RecentlyViewed,TechnicalSupport,Links|GrantorHome           |                         |                          |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app 
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor" 
 	Then I see "Activities" as disabled from sidebar 
 	
 	@33881 @all @validateLabelChangeOfAccordionContent-gHome 
@@ -47,8 +50,9 @@ Feature: Side bar Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory  |fieldName |fieldNewValue |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Accordian Content      |Name      |Automation    |GrantorHome           |Name                         |Completed             |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app 
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
 	Then I see changed label as "Automation" inside "Tasks" in side bar sub menu
 	
 	@33880 @all @validateChangeAccordianHeaderSeq-gHome 
@@ -59,8 +63,9 @@ Feature: Side bar Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory  |fieldName   |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Accordian Header       |Sequence    |1            |GrantorHome           |Name                     |Manage Forms              |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app 
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor" 
 	Then i see "Manage Forms" shown at number "1" inside "Activities" 
 	
 	@33883 @all @validateAccordionContentAllowedProfile-gHome @pankaj-blocked @wip
@@ -71,8 +76,9 @@ Feature: Side bar Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory  |fieldName                 |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Accordian Content      |Available for Profiles    |<New-Profile>|GrantorHome           |Name                     |Reassign                  |
-	When I login as "Automation-PM" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app 
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor" 
 	Then I see changed label as "Reassign" inside "Tasks" in side bar sub menu
 	Examples:
 	|New-Profile|Old-Profile|
@@ -86,8 +92,9 @@ Feature: Side bar Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory  |fieldName |fieldNewValue |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Accordian Header       |Name      |Automation    |GrantorHome           |Name                     |My Tasks                  |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app 
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor" 
 	Then I see changed label as "Automation" inside "Tasks" in side accordion header menu
 	
 	@33885 @all @validateChangeAccordianContentSeq-gHome
@@ -98,8 +105,9 @@ Feature: Side bar Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory|fieldName   |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Accordian Content    |Sequence    |3            |GrantorHome           |Name                     |Completed                 |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
 	Then I see "Completed" shown at number "2" inside "Tasks"
 	
 	@33886 @all @validateAccordionContentOpensInNewWindow-gHome
@@ -110,8 +118,9 @@ Feature: Side bar Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory|fieldName             |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Accordian Content    |Open in new window    |true         |GrantorHome           |Name                     |Completed                 |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app 
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
 	When I navigate to "Completed" content inside "Tasks" subheader on left panel 
 	Then I see "<Page title>" in new tab
 	Examples:
@@ -126,8 +135,9 @@ Feature: Side bar Component Scenarios
 	Given I setup test configuration as below:
 	|configurationCategory  |fieldName     |fieldNewValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
 	|Accordian Content      |Target Url    |<New-TargetUrl>|GrantorHome           |Name                     |Completed                 |
-	When I login as "Automation" User 
-	When I access the "GovGrants Launcher Tab" for "As a Grantor" app 
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
 	When I navigate to "Completed" content inside "My Tasks" subheader on left panel
 	Then I see page title "Pending Registrations"
 	Examples:

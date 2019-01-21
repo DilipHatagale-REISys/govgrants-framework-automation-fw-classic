@@ -12,8 +12,8 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
  * @author nauman.shahid
  *
  */
-@CucumberOptions(features = { "classpath:features" }, tags = { "@locationFieldAtEnhancedGridActionItem-gPlanning" }, glue = {
-        "com.framework.automation.steps" }, plugin = { "com.cucumber.listener.ExtentCucumberFormatter:" })
+@CucumberOptions(features = { "classpath:features" }, tags = { "@34027" }, glue = {
+		"com.framework.automation.steps","com.automation.rei.govgrantsSteps"}, plugin = { "com.cucumber.listener.ExtentCucumberFormatter:" })
 
 public class IDERunner extends AbstractTestNGCucumberTests {
     static {

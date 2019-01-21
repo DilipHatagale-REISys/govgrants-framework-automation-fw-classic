@@ -26,20 +26,10 @@ public class EnhancedFlexGridSteps {
 	public void getHelpTextIconsAtFlexTableColumn(String columnTitle) {
 		enhancedFlexGrid.getHelpTextAtEnhancedGridTableSpecificColumn(columnTitle);
 	}
-		
-    @When("^I click on \"([^\"]*)\" icon of status \"([^\"]*)\" for \"([^\"]*)\" program in enhanced grid table without processing$")
-	public void clickTableActionIconsWithoutProcessing(String iconName, String programSubject, String statusName) {
-		enhancedFlexGrid.clickTableActionIconsForSpecificSubjectWithoutProcessing(iconName, programSubject, statusName);
-	}
 
-	@Then("^I see Advance Filter is disabled from planning enhanced flex grid$")
-	public void assertAdvanceFilterOptionDisabled() {
-		enhancedFlexGrid.assertDisableAdvanceFilterFromEnhancedGrid();
-	}
-
-	@Then("^I see Menu Icon is disabled from planning enhanced flex grid$")
-	public void assertDisableMenuIcon() {
-		enhancedFlexGrid.assertDisableMenuIconFromEnhancedGrid();
+	@Then("^I see Advance Filter is disabled from table \"([^\"]*)\"$")
+	public void assertAdvanceFilterOptionDisabled(String tableId) {
+		enhancedFlexGrid.assertDisableAdvanceFilterFromEnhancedGrid(tableId);
 	}
 
 	@Then("^I see \"([^\"]*)\" shown as enhanced flex grid title$")
@@ -96,22 +86,22 @@ public class EnhancedFlexGridSteps {
 	public void assertEnhancedGridtableColumnNotDisplayed(String columnTitleName) {
 		enhancedFlexGrid.assertSpecificColumnOfEnhancedGridTableNotDisplayed(columnTitleName);
 	}
-	
+
 	@Then("^I see \"([^\"]*)\" shown inside flex table with id \"([^\"]*)\"$")
 	public void assertEnhancedGridtableColumnName(String columnTitleName, String tableId) {
 		enhancedFlexGrid.assertCorrectEnhancedGridTableColumnTitleDisplayed(columnTitleName, tableId);
 	}
-	
+
 	@Then("^I see external link icon as \"([^\"]*)\" for \"([^\"]*)\" inside enhanced grid table action$")
 	public void assertPencilIconAsSubTab(String columnTitle, String iconTitle) {
 		enhancedFlexGrid.assertEnhancedGridTableEditActionIconDisplayed(columnTitle, iconTitle);
 	}
-	
+
 	@Then("^I see \"([^\"]*)\" button inside \"([^\"]*)\" enhanced grid$")
 	public void assertEditButtonInsideFlexTable(String buttonName, String headerName) {
 		enhancedFlexGrid.assertActionButtonInsideEnhancedGridTableIsDisplayed(buttonName, headerName);
 	}
-	
+
 	@Then("^I see cell subtotal as \"([^\"]*)\"$")
 	public void assertCellValue(BigDecimal value) {
 		enhancedFlexGrid.assertCellValueAtEnhancedGrid(value);
