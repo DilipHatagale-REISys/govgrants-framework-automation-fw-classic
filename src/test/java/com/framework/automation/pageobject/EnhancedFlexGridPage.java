@@ -50,7 +50,9 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	}
 
 	/**
-	 * get complete rows of enhanced flex grid
+	 * get complete rows of enhanced flex grid- This method is used to return parent
+	 * enhanced grid table rows so created separately-It is different from flex
+	 * table
 	 * 
 	 * @return
 	 */
@@ -290,7 +292,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	private Boolean isEnhancedFlexGridRowsCountDisabled() {
 		boolean flag = true;
 		try {
-			if (getCompleteTableRowOfEnhancedGrid().stream()
+			if (getCompleteTableRow().stream()
 					.anyMatch(item -> item.findElement(totalRowCountInsideEnhancedGrid).isDisplayed())) {
 				flag = false;
 			}
@@ -386,7 +388,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 		reiDriver.JavaScript().scrollPageDocumentJS("PageDown", 0, 0);
 		boolean flag = false;
 		try {
-			int listSize = getCompleteTableRowOfEnhancedGrid().size();
+			int listSize = getCompleteTableRow().size();
 			if (listSize == rowCount) {
 				flag = true;
 			}
@@ -403,9 +405,6 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 		boolean flag = false;
 		try {
 			reiDriver.JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
-			// if
-			// (getSpecificElementFromEnhancedGridHeader(titleName).getText().equalsIgnoreCase(titleName))
-			// {
 			if (govgrants.flexTable().getSpecificElementFromTableHeader(titleName).getText()
 					.equalsIgnoreCase(titleName)) {
 				flag = true;
