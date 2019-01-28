@@ -71,9 +71,9 @@ public class FlexTableSteps {
 		flexTablePage.assertFlexTabelTotalCalulationRowDisabled();
 	}
 
-	@Then("^I see no total row count in flex table$")
-	public void assertFlexTableRowCountDisabled() {
-		flexTablePage.assertFlexTabelRowCountDisabled();
+	@Then("^I see \"([^\"]*)\" count in \"([^\"]*)\"$")
+	public void assertFlexTableRowCountDisabled(String text, String tableId) {
+		flexTablePage.assertFlexTabelRowCountDisabled(text, tableId);
 	}
 
 	@Then("^I see changed label as \"([^\"]*)\" of last row name$")
@@ -121,14 +121,14 @@ public class FlexTableSteps {
 		flexTablePage.assertTopRightParallelLinesBarSpecificOptionsEnabled(menuOption, pannelTitleName);
 	}
 
-	@Then("^I see \"([^\"]*)\" with page size dropdown at bottom in flex table$")
-	public void assertFlexTablePageSizeEnabled(String text) {
-		flexTablePage.assertFlexTabelPageSizeEnabled(text);
+	@Then("^I see \"([^\"]*)\" with page size dropdown at \"([^\"]*)\"$")
+	public void assertFlexTablePageSizeEnabled(String text, String tableId) {
+		flexTablePage.assertFlexTabelPageSizeEnabled(text, tableId);
 	}
 
-	@Then("^I see \"([^\"]*)\" with pagination arrow at bottom in flex table$")
-	public void assertFlexTablePaginationEnabled(String text) {
-		flexTablePage.assertFlexTabelPageSizeEnabled(text);
+	@Then("^I see \"([^\"]*)\" with pagination arrow at \"([^\"]*)\"$")
+	public void assertFlexTablePaginationEnabled(String text, String tableId) {
+		flexTablePage.assertFlexTabelPaginationEnabled(text, tableId);
 	}
 
 	@Then("^I see \"([^\"]*)\" records inside flex table$")

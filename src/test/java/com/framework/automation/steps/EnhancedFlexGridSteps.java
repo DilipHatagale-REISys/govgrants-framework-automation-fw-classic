@@ -32,9 +32,9 @@ public class EnhancedFlexGridSteps {
 		enhancedFlexGrid.assertDisableAdvanceFilterFromEnhancedGrid(tableId);
 	}
 
-	@Then("^I see \"([^\"]*)\" shown as enhanced flex grid title$")
-	public void assertEnhancedFlexGridTitle(String titleName) {
-		enhancedFlexGrid.assertEnhancedFlexGridTitleDisplayed(titleName);
+	@Then("^I see \"([^\"]*)\" shown as inside \"([^\"]*)\"$")
+	public void assertEnhancedFlexGridTitle(String titleName, String tableId) {
+		enhancedFlexGrid.assertEnhancedFlexGridTitleDisplayed(titleName, tableId);
 	}
 
 	@Then("^I see quick search option disabled from enhanced grid$")
@@ -42,9 +42,9 @@ public class EnhancedFlexGridSteps {
 		enhancedFlexGrid.assertquickSearchDisabledForEnhancedGrid();
 	}
 
-	@Then("^I see no total row count in enhanced flex grid$")
-	public void assertFlexTableRowCountDisabled() {
-		enhancedFlexGrid.assertEnhancedFlexGridTabelRowCountDisabled();
+	@Then("^I see \"([^\"]*)\" count in enhanced grid \"([^\"]*)\"$")
+	public void assertFlexTableRowCountDisabled(String text, String tableId) {
+		enhancedFlexGrid.assertEnhancedFlexGridTabelRowCountDisabled(text, tableId);
 	}
 
 	@Then("^I see \"([^\"]*)\" in enhanced flex grid header$")
@@ -62,9 +62,9 @@ public class EnhancedFlexGridSteps {
 		enhancedFlexGrid.assertEditOpenInSameTabForEnhancedGrid();
 	}
 
-	@Then("^I see \"([^\"]*)\" with page size dropdown at bottom in enhanced grid$")
-	public void assertFlexTablePageSizeEnabled(String text) {
-		enhancedFlexGrid.assertEnhancedGridPageSizeEnabled(text);
+	@Then("^I see \"([^\"]*)\" with page size dropdown in enhanced grid \"([^\"]*)\"$")
+	public void assertFlexTablePageSizeEnabled(String text, String tableId) {
+		enhancedFlexGrid.assertEnhancedGridPageSizeEnabled(text, tableId);
 	}
 
 	@Then("^I see \"([^\"]*)\" records inside enhanced grid$")

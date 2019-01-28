@@ -114,7 +114,7 @@ Feature: Flex Table Component Scenarios
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
-	Then I see no total row count in flex table
+	Then I see "Total Records" count in "flexTableDivId"
 	
 	@34032 @all @additionOfLabelForRowNamedTotal-gPlanning
 	Scenario: validate addition of label for row named as total of programs-planning
@@ -392,7 +392,7 @@ Feature: Flex Table Component Scenarios
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
-	Then I see "Show" with page size dropdown at bottom in flex table
+	Then I see "Show" with page size dropdown at "flexTableDivId"
 	
 	@39299 @all @enablePaginationFieldAtFlexTable-gPlanning
 	Scenario: validate enabling of page size dropdown at bottom in flex table of programs-planning
@@ -406,7 +406,7 @@ Feature: Flex Table Component Scenarios
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
-	Then I see "Page" with pagination arrow at bottom in flex table
+	Then I see "Page" with pagination arrow at "flexTableDivId"
 	
 	@39302 @all @defaultPageSizeFieldAtFlexTable-gPlanning
 	Scenario: validate change of default page size inside dropdown at bottom in flex table of programs-planning
