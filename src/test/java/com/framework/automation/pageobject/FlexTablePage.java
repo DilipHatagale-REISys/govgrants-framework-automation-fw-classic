@@ -81,13 +81,13 @@ public class FlexTablePage extends GovGrantsManager {
 	/**
 	 * assert true if total row calculation is disabled
 	 */
-	public void assertFlexTabelRowCountDisabled() {
+	public void assertFlexTabelRowCountDisabled(String text, String tableId) {
 		try {
 			reiDriver.JavaScript().scrollPageDocumentJS("PageDown", 0, 0);
 		} catch (Exception e) {
 
 		}
-		Assert.assertTrue(isFlexTableRowsCountDisabled());
+		Assert.assertTrue(isFlexTableRowsCountDisabled(text, tableId));
 	}
 
 	/**
@@ -202,15 +202,15 @@ public class FlexTablePage extends GovGrantsManager {
 	/**
 	 * assert true if page size is enabled at program flex table
 	 */
-	public void assertFlexTabelPageSizeEnabled(String text) {
-		Assert.assertTrue(isFlexTableBottomElementEnabled(text));
+	public void assertFlexTabelPageSizeEnabled(String text, String tableId) {
+		Assert.assertTrue(isFlexTableBottomElementEnabled(text, tableId));
 	}
 
 	/**
 	 * assert true if pagination is enabled at program flex table
 	 */
-	public void assertFlexTabelPaginationEnabled(String text) {
-		Assert.assertTrue(isFlexTableBottomElementEnabled(text));
+	public void assertFlexTabelPaginationEnabled(String text, String tableId) {
+		Assert.assertTrue(isFlexTableBottomElementEnabled(text, tableId));
 	}
 
 	/**
@@ -489,13 +489,13 @@ public class FlexTablePage extends GovGrantsManager {
 	 * 
 	 * @return true if element is not displayed
 	 */
-	private Boolean isFlexTableRowsCountDisabled() {
+	private Boolean isFlexTableRowsCountDisabled(String text, String tableId) {
 		boolean flag = true;
 		try {
-			if (getCompleteTableRow().stream().anyMatch(item -> item.findElement(totalRowCount).isDisplayed())) {
+			if (govgrants.flexTable().getFooterElementsFromTable(text, tableId).isDisplayed()) {
 				flag = false;
 			}
-		} catch (org.openqa.selenium.NoSuchElementException e) {
+		} catch (Exception e) {
 		}
 		return flag;
 	}
@@ -618,28 +618,17 @@ public class FlexTablePage extends GovGrantsManager {
 	 * 
 	 * @return true if bottom element is displayed at flex table
 	 */
-	private boolean isFlexTableBottomElementEnabled(String text) {
+	private boolean isFlexTableBottomElementEnabled(String text, String tableId) {
 		reiDriver.JavaScript().scrollPageDocumentJS("PageDown", 0, 0);
 		boolean flag = false;
 		try {
-			if (getBottomFlexTableElement(text).isDisplayed() || getBottomFlexTableElement(text).isEnabled()) {
+			if (govgrants.flexTable().getFooterElementsFromTable(text, tableId).isDisplayed()
+					|| govgrants.flexTable().getFooterElementsFromTable(text, tableId).isEnabled()) {
 				flag = true;
 			}
 		} catch (Exception e) {
 		}
 		return flag;
-	}
-
-	/**
-	 * get webelemnt with text inside bottom of flex table
-	 * 
-	 * @param text
-	 * @return
-	 */
-	private WebElement getBottomFlexTableElement(String text) {
-		return reiDriver.WaitFor().WaitForElementToBePresent(By.xpath(
-				"//div[@class='panel-heading']/following-sibling::div[contains(@class,'panel-body')]//following-sibling::span[contains(text(),'"
-						+ text + "')]"));
 	}
 
 	/**

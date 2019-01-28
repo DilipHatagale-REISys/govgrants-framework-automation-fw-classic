@@ -52,7 +52,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Financials" sub tab
-	Then I see "Automation Enhanced Grid" shown as enhanced flex grid title
+	Then I see "Automation Enhanced Grid" shown as inside "Enhanced1grid"
 	
 	@35438 @all @disablingExportFileForEnhancedGrid-gPlanning
 	Scenario: validate disabling of PDF/Excel download from menu option in enhanced flex grid planning- Program enhanced flex grid
@@ -104,7 +104,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Financials" sub tab
-	Then I see no total row count in enhanced flex grid
+	Then I see "Total Records" count in enhanced grid "Enhanced1grid"
 	
 	@35434 @all @enableAutoIndexForEnhancedGrid-gPlanning
 	Scenario: validate enable auto index for details inside enhanced flex grid planning-Program enhanced flex grid
@@ -263,7 +263,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Financials" sub tab
-	Then I see "Show" with page size dropdown at bottom in enhanced grid
+	Then I see "Entries" with page size dropdown in enhanced grid "Enhanced1grid"
 	
 	@41304 @all @defaultPageSizeFieldAtParentFlexTableForEnhancedGrid-gPlanning
 	Scenario: validate change of default page size inside dropdown at bottom enhanced flex grid planning-Program enhanced flex grid
@@ -543,4 +543,3 @@ Feature: Enhanced Flex Grid Component Scenarios
 	Examples:
 	|new_helpText            |
 	|Help Text for Automation|
-	

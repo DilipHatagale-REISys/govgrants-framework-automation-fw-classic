@@ -15,8 +15,8 @@ import com.framework.automation.projectmanager.GovGrantsManager;
 public class EnhancedFlexGridPage extends GovGrantsManager {
 	/******* "Variables and Locators" *****************/
 	private final By reachOutToEnhancedGridCollapse, searchInputEnhancedGrid, completeTableRowOfEnhancedGrid,
-			totalRowCountInsideEnhancedGrid, selectRecordCheckBoxForEnhancedGrid, currentBudgetPeriodEndDate,
-			scrollToActionColumn, obligatedAmountSpecificCells;
+			selectRecordCheckBoxForEnhancedGrid, currentBudgetPeriodEndDate, scrollToActionColumn,
+			obligatedAmountSpecificCells;
 
 	/**
 	 * Constructor to handle dependency injection and framework library
@@ -27,7 +27,6 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 		searchInputEnhancedGrid = By.cssSelector("div>grid>div>div>div>div>div>input.form-control");
 		completeTableRowOfEnhancedGrid = By
 				.xpath("//div[@class='panel ng-scope']/div[@class='panel-body collapse in']//table/tbody/tr");
-		totalRowCountInsideEnhancedGrid = By.xpath("//span[@ng-bind='totalRecords']");
 		selectRecordCheckBoxForEnhancedGrid = By
 				.xpath("//div[@id='Enhanced1grid']//input[@aria-label='Select Record']");
 		currentBudgetPeriodEndDate = By.xpath("//field[@field-name='BudgetPeriodEndDate__c']//input[@type='text']");
@@ -59,18 +58,6 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	public List<WebElement> getCompleteTableRowOfEnhancedGrid() {
 		reiDriver.WaitFor().WaitForElementToBePresent(completeTableRowOfEnhancedGrid);
 		return reiDriver.findMyElement().getElements(completeTableRowOfEnhancedGrid);
-	}
-
-	/**
-	 * select item from enhanced flex grid header
-	 * 
-	 * @param dropdownoption
-	 * @return
-	 */
-	public WebElement getElementFromEnhancedGridHeader(String titleName) {
-		reiDriver.JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
-		return reiDriver.WaitFor().FluentWaitForClick(
-				By.xpath("//div[@id='flexGridEnhanced1']//span[contains(text(),'" + titleName + "')]"));
 	}
 
 	/**
@@ -106,9 +93,10 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	 * assert correct title name of enhanced flex grid is displayed
 	 * 
 	 * @param titleName
+	 * @param tableId
 	 */
-	public void assertEnhancedFlexGridTitleDisplayed(String titleName) {
-		Assert.assertTrue(isTitleDisplayedForEnhancedGrid(titleName));
+	public void assertEnhancedFlexGridTitleDisplayed(String titleName, String tableId) {
+		Assert.assertTrue(isTitleDisplayedForEnhancedGrid(titleName, tableId));
 	}
 
 	/**
@@ -121,12 +109,12 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	/**
 	 * assert true if total row calculation is disabled in enhanced grid
 	 */
-	public void assertEnhancedFlexGridTabelRowCountDisabled() {
+	public void assertEnhancedFlexGridTabelRowCountDisabled(String text, String tableId) {
 		try {
 			reiDriver.JavaScript().scrollpageToSpecificElement(completeTableRowOfEnhancedGrid);
 		} catch (Exception e) {
 		}
-		Assert.assertTrue(isEnhancedFlexGridRowsCountDisabled());
+		Assert.assertTrue(isEnhancedFlexGridRowsCountDisabled(text, tableId));
 	}
 
 	/**
@@ -155,8 +143,8 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	/**
 	 * assert true if page size is enabled at bottom of enhanced grid
 	 */
-	public void assertEnhancedGridPageSizeEnabled(String text) {
-		Assert.assertTrue(isEnhancedGridBottomElementEnabled(text));
+	public void assertEnhancedGridPageSizeEnabled(String text, String tableId) {
+		Assert.assertTrue(isEnhancedGridBottomElementEnabled(text, tableId));
 	}
 
 	/**
@@ -254,11 +242,12 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	 * validate if tile is displayed
 	 * 
 	 * @param titleName
+	 * @param tableId
 	 * @return
 	 */
-	private boolean isTitleDisplayedForEnhancedGrid(String titleName) {
+	private boolean isTitleDisplayedForEnhancedGrid(String titleName, String tableId) {
 		try {
-			if (getElementFromEnhancedGridHeader(titleName).isDisplayed()) {
+			if (govgrants.phasePannel().getPanelTitleWithTableId(tableId, titleName).isDisplayed()) {
 				return true;
 			} else {
 				return false;
@@ -289,14 +278,13 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	 * 
 	 * @return true if element is not displayed inside enhanced grid
 	 */
-	private Boolean isEnhancedFlexGridRowsCountDisabled() {
+	private Boolean isEnhancedFlexGridRowsCountDisabled(String text, String tableId) {
 		boolean flag = true;
 		try {
-			if (getCompleteTableRow().stream()
-					.anyMatch(item -> item.findElement(totalRowCountInsideEnhancedGrid).isDisplayed())) {
+			if (govgrants.flexTable().getFooterElementsFromTable(text, tableId).isDisplayed()) {
 				flag = false;
 			}
-		} catch (org.openqa.selenium.NoSuchElementException e) {
+		} catch (Exception e) {
 		}
 		return flag;
 	}
@@ -356,28 +344,18 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	 * 
 	 * @return true if bottom element is displayed at enhanced grid
 	 */
-	private boolean isEnhancedGridBottomElementEnabled(String text) {
+	private boolean isEnhancedGridBottomElementEnabled(String text, String tableId) {
 		reiDriver.JavaScript().scrollPageDocumentJS("PageDown", 0, 0);
 		boolean flag = false;
 		try {
-			if (getBottomEnhancedGridTableElement(text).isDisplayed()
-					|| getBottomEnhancedGridTableElement(text).isEnabled()) {
+			if (govgrants.flexTable().getFooterElementsFromTable(text, tableId).isDisplayed()
+					|| govgrants.flexTable().getFooterElementsFromTable(text, tableId).isEnabled()) {
+
 				flag = true;
 			}
 		} catch (Exception e) {
 		}
 		return flag;
-	}
-
-	/**
-	 * get webelemnt with text inside bottom of flex table
-	 * 
-	 * @param text
-	 * @return
-	 */
-	private WebElement getBottomEnhancedGridTableElement(String text) {
-		return reiDriver.WaitFor().WaitForElementToBePresent(
-				By.xpath("//div[@id='flexGridEnhanced1']//tfoot//span[contains(text(),'" + text + "')]"));
 	}
 
 	/**

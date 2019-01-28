@@ -26,9 +26,9 @@ public class GovGrantsManager extends ProjectWebServices {
 	public String standardPassword = "Automation@12345";
 	public String defaultComment = "Automation testing";
 	public final By navigationLogo, searchInput, rightHeaderBars, egmsHeader, completeTableRow, sideBarHeadersList,
-			advanceFilterButton, menuIcon, selectRecordCheckBox, totalRowsCalc, totalRowCount,
-			flexTablelastRowNameAsTotal, pendingTasksTableRef, dangerAlert, confirmationBoxMessage, selectDropdown,
-			allPhases, chartsContainer, containerFluid_PageWrapperList, reachOutToTmpActiveGrantsGrid;
+			advanceFilterButton, menuIcon, selectRecordCheckBox, totalRowsCalc, flexTablelastRowNameAsTotal,
+			pendingTasksTableRef, dangerAlert, confirmationBoxMessage, selectDropdown, allPhases, chartsContainer,
+			containerFluid_PageWrapperList, reachOutToTmpActiveGrantsGrid;
 
 	/**
 	 * Super Constructor
@@ -54,7 +54,6 @@ public class GovGrantsManager extends ProjectWebServices {
 		menuIcon = By.xpath(
 				"//div[@class='panel-heading']//div[contains(@class,'header-bars')]//a[@title='Menu']//span[contains(@class,'fa fa-bars')]");
 		totalRowsCalc = By.xpath("//td/b/span[contains(@ng-bind,'calculateTotalRowValues')]");
-		totalRowCount = By.xpath("//span[@ng-bind='totalRecords']");
 		flexTablelastRowNameAsTotal = By.xpath("//td/b/span[contains(@ng-bind-html,'TotalRowLabel')]");
 		pendingTasksTableRef = By
 				.xpath("//div[@class='table-responsive']/table/thead/tr/th/a/span/span[contains(text(),'Ref. ID')]");
