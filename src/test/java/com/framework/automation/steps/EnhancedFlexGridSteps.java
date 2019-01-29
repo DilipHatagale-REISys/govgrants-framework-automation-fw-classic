@@ -67,9 +67,9 @@ public class EnhancedFlexGridSteps {
 		enhancedFlexGrid.assertEnhancedGridPageSizeEnabled(text, tableId);
 	}
 
-	@Then("^I see \"([^\"]*)\" records inside enhanced grid$")
-	public void assertFlexTableNoOfRecords(int rowCount) {
-		enhancedFlexGrid.assertEnhancedGridNumberOfRecordsPresent(rowCount);
+	@Then("^I see \"([^\"]*)\" records inside enhanced grid id \"([^\"]*)\"$")
+	public void assertFlexTableNoOfRecords(int rowCount, String tableId) {
+		enhancedFlexGrid.assertEnhancedGridNumberOfRecordsPresent(rowCount, tableId);
 	}
 
 	@Then("^I see \"([^\"]*)\" shown inside enhanced grid table for specified record \"([^\"]*)\"$")

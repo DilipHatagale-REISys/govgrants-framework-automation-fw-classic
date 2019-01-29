@@ -66,7 +66,7 @@ public class FlexTableSteps {
 		flexTablePage.assertFlexTabelRecordSelectionEnabled();
 	}
 
-	@Then("^I see no total amount row in flex table$")
+	@Then("^I see total amount row in flex table is not displayed$")
 	public void assertNoTotalAmountInFlexTable() {
 		flexTablePage.assertFlexTabelTotalCalulationRowDisabled();
 	}
@@ -86,9 +86,9 @@ public class FlexTableSteps {
 		flexTablePage.assertFlexTableHeaderColumnName(headerColumnName);
 	}
 
-	@Then("^I see no \"([^\"]*)\" status in flex table$")
-	public void assertSpecificStatusCategoryNotDisplayed(String statusCategory) {
-		flexTablePage.assertFlexTableStatusDisabled(statusCategory);
+	@Then("^I see no \"([^\"]*)\" status in flex table id \"([^\"]*)\"$")
+	public void assertSpecificStatusCategoryNotDisplayed(String statusCategory, String tableId) {
+		flexTablePage.assertFlexTableStatusDisabled(statusCategory, tableId);
 	}
 
 	@Then("^I see new tab is opened$")
@@ -131,9 +131,9 @@ public class FlexTableSteps {
 		flexTablePage.assertFlexTabelPaginationEnabled(text, tableId);
 	}
 
-	@Then("^I see \"([^\"]*)\" records inside flex table$")
-	public void assertFlexTableNoOfRecords(int rowCount) {
-		flexTablePage.assertFlexTabelNumberOfRecordsPresent(rowCount);
+	@Then("^I see \"([^\"]*)\" records inside flex table id \"([^\"]*)\"$")
+	public void assertFlexTableNoOfRecords(int rowCount, String tableId) {
+		flexTablePage.assertFlexTabelNumberOfRecordsPresent(rowCount, tableId);
 	}
 
 	@Then("^I see \"([^\"]*)\" shown as flex table column title$")

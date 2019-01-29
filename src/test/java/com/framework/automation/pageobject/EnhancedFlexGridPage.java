@@ -157,8 +157,8 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	/**
 	 * assert true if 10 records present inside enhanced grid
 	 */
-	public void assertEnhancedGridNumberOfRecordsPresent(int rowCount) {
-		Assert.assertTrue(isNoOfRecordsInsideEnhancedGridPresent(rowCount));
+	public void assertEnhancedGridNumberOfRecordsPresent(int rowCount, String tableId) {
+		Assert.assertTrue(isNoOfRecordsInsideEnhancedGridPresent(rowCount, tableId));
 	}
 
 	/**
@@ -362,11 +362,11 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	 * 
 	 * @return true if expected count of records is present inside enhanced grid
 	 */
-	private boolean isNoOfRecordsInsideEnhancedGridPresent(int rowCount) {
+	private boolean isNoOfRecordsInsideEnhancedGridPresent(int rowCount, String tableId) {
 		reiDriver.JavaScript().scrollPageDocumentJS("PageDown", 0, 0);
 		boolean flag = false;
 		try {
-			int listSize = getCompleteTableRow().size();
+			int listSize = govgrants.flexTable().getCompleteTableRow(tableId).size();
 			if (listSize == rowCount) {
 				flag = true;
 			}
