@@ -833,4 +833,172 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "Test Announcement For Automation"
     When I click on "View" icon for "Test Announcement For Automation" inside table
 	When I navigate to "Financials" sub tab
-	Then I see "Associate" button inside "Funding Accounts" flex table not displayed	
+	Then I see "Associate" button inside "Funding Accounts" flex table not displayed
+	
+	@43886 @all @hideExpressioJsonForLeftOperandForFieldUsingOperatorGreaterThanEqualsWithDifferentAnnouncement-gAnnouncement
+	Scenario: validate disabling of Associate button for field with operator euuals(greater than equals) -gAnnouncement
+	Given I have default configuration as below:
+	|configurationCategory |fieldName            |fieldOrignalValue     |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action     |Hide Expression JSON |                      |AnnouncementFundingAccount|Name                       |Associate                 |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName            |fieldNewValue                                                          |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action     |Hide Expression JSON |govgrants_config:HideExpressionBuilderJsonForFieldWithGreaterThanEquals|AnnouncementFundingAccount|Name                       |Associate                 |
+    When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Announcements" tab
+	When I select "Draft Announcements" from double headed dropdown inside admin portal
+    When I perform quick search for "Non-NC-Sole Source"
+    When I click on "View" icon for "Non-NC-Sole Source" inside table
+	When I navigate to "Financials" sub tab
+	Then I see "Associate" button inside "Funding Accounts" flex table not displayed
+	
+	@43887 @all @hideExpressioJsonForLeftOperandForFieldUsingOperatorLessThan-gAnnouncement
+	Scenario: validate disabling of Associate button for field with operator less than -gAnnouncement
+	Given I have default configuration as below:
+	|configurationCategory |fieldName            |fieldOrignalValue     |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action     |Hide Expression JSON |                      |AnnouncementFundingAccount|Name                       |Associate                 |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName            |fieldNewValue                                                         |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action     |Hide Expression JSON |govgrants_config:HideExpressionBuilderJsonForFieldWithOperatorLessThan|AnnouncementFundingAccount|Name                       |Associate                 |
+    When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Announcements" tab
+	When I select "Draft Announcements" from double headed dropdown inside admin portal
+    When I perform quick search for "Test Announcement For Automation"
+    When I click on "View" icon for "Test Announcement For Automation" inside table
+	When I navigate to "Financials" sub tab
+	Then I see "Associate" button inside "Funding Accounts" flex table not displayed
+	
+	@43888 @all @hideExpressioJsonForLeftOperandForFieldUsingOperatorGreaterThan-gAnnouncement
+	Scenario: validate disabling of Associate button for field with operator greater than -gAnnouncement
+	Given I have default configuration as below:
+	|configurationCategory |fieldName            |fieldOrignalValue     |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action     |Hide Expression JSON |                      |AnnouncementFundingAccount|Name                       |Associate                 |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName            |fieldNewValue                                                            |coreComponentField        |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action     |Hide Expression JSON |govgrants_config:HideExpressionBuilderJsonForFieldWithOperatorGreaterThan|AnnouncementFundingAccount|Name                       |Associate                 |
+    When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Announcements" tab
+	When I select "Draft Announcements" from double headed dropdown inside admin portal
+    When I perform quick search for "Non-NC-Sole Source"
+    When I click on "View" icon for "Non-NC-Sole Source" inside table
+	When I navigate to "Financials" sub tab
+	Then I see "Associate" button inside "Funding Accounts" flex table not displayed
+	
+	@43889 @all @hideExpressioJsonForLeftOperandForFieldUsingOperatorNotIn-gPlanning
+	Scenario: validate Associate button is present for Field using lookup with operator Not In -gPlanning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName            |fieldOrignalValue     |coreComponentField   |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action     |Hide Expression JSON |                      |ProgramFundingAccount|Name                       |Associate                 |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName            |fieldNewValue                                                      |coreComponentField   |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
+	|Flex Table Action     |Hide Expression JSON |govgrants_config:HideExpressionBuilderJsonForFieldWithOperatorNotIn|ProgramFundingAccount|Name                       |Associate                 |
+    When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	When I navigate to "Financials" sub tab
+	Then I see "Associate" button inside "Funding Account Information" flex table
+	
+	@43890 @all @hideExpressioJsonForLeftOperandForProfilePMAtPageLayout-gPlanning
+	Scenario: Hide Submit for approval button for Profile PM using hide expression Json -gPlanning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName           |fieldOrignalValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Hide Expression JSON|                   |Grantee State Program |Name                     |Submit For Approval          |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName           |fieldNewValue                                                   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Hide Expression JSON|govgrants_config:PageLayoutHideExpressionBuilderJsonForProfilePM|Grantee State Program |Name                     |Submit For Approval          |
+	When I login as "Automation-PM" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	Then I see "Submit For Approval" button is not displayed
+	
+	@43891 @all @hideExpressioJsonForLeftOperandForProfilePMAndSystemAdminAtPageLayout-gPlanning
+	Scenario: Hide Submit for approval button for Profile PM (PM and System Admin)using hide expression Json -gPlanning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName           |fieldOrignalValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Hide Expression JSON|                   |Grantee State Program |Name                     |Submit For Approval          |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName           |fieldNewValue                                                              |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Hide Expression JSON|govgrants_config:PageLayoutHideExpressionBuilderJsonForProfilePMAndSysAdmin|Grantee State Program |Name                     |Submit For Approval          |
+	When I login as "Automation-PM" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	Then I see "Submit For Approval" button is not displayed
+	
+	@43892 @all @hideExpressioJsonForLeftOperandForProfileSystemAdminAndPMAtPageLayout-gPlanning
+	Scenario: Hide Submit for approval button for Profile PM (System Admin and PM)using hide expression Json -gPlanning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName           |fieldOrignalValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Hide Expression JSON|                   |Grantee State Program |Name                     |Submit For Approval          |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName           |fieldNewValue                                                              |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Hide Expression JSON|govgrants_config:PageLayoutHideExpressionBuilderJsonForProfilePMAndSysAdmin|Grantee State Program |Name                     |Submit For Approval          |
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	Then I see "Submit For Approval" button is not displayed
+	
+	@43893 @all @hideExpressioJsonForLeftOperandForProfilePMWithOperatorNotInAtPageLayout-gPlanning
+	Scenario: Hide Submit for approval button for Profile PM with operator Not In using hide expression Json -gPlanning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName           |fieldOrignalValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Hide Expression JSON|                   |Grantee State Program |Name                     |Submit For Approval          |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName           |fieldNewValue                                                                    |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Hide Expression JSON|govgrants_config:PageLayoutHideExpressionBuilderJsonForProfilePMWithNotInOperator|Grantee State Program |Name                     |Submit For Approval          |
+	When I login as "Automation-PM" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	Then I see "Submit For Approval" button is displayed
+	
+	@44158 @all @hideExpressioJsonForLeftOperandForProfilePMWithOperatorNotInLoggingAsAdmminAtPageLayout-gPlanning
+	Scenario: Hide Submit for approval button for system admin using Profile PM with operator Not In -gPlanning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName           |fieldOrignalValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Hide Expression JSON|                   |Grantee State Program |Name                     |Submit For Approval          |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName           |fieldNewValue                                                                    |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Hide Expression JSON|govgrants_config:PageLayoutHideExpressionBuilderJsonForProfilePMWithNotInOperator|Grantee State Program |Name                     |Submit For Approval          |
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	Then I see "Submit For Approval" button is not displayed
+	
+	@44160 @all @hideExpressioJsonForLeftOperandForUserTypeInternalWithOperatorInAtPageLayout-gPlanning
+	Scenario: Hide Submit for approval button for internal user using user type internal and operator In -gPlanning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName           |fieldOrignalValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Hide Expression JSON|                   |Grantee State Program |Name                     |Submit For Approval          |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName           |fieldNewValue                                                                        |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Hide Expression JSON|govgrants_config:PageLayoutHideExpressionBuilderJsonForUserTypeInternalWithOperatorIn|Grantee State Program |Name                     |Submit For Approval          |
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	Then I see "Submit For Approval" button is not displayed
+		

@@ -113,8 +113,8 @@ public class FlexTablePage extends GovGrantsManager {
 	 * 
 	 * @param statusName
 	 */
-	public void assertFlexTableStatusDisabled(String statusName) {
-		Assert.assertTrue(isStatusCategoryDisabled(statusName));
+	public void assertFlexTableStatusDisabled(String statusName, String tableId) {
+		Assert.assertTrue(isStatusCategoryDisabled(statusName, tableId));
 	}
 
 	/**
@@ -216,8 +216,8 @@ public class FlexTablePage extends GovGrantsManager {
 	/**
 	 * assert true if 20 records present inside program flex table
 	 */
-	public void assertFlexTabelNumberOfRecordsPresent(int rowCount) {
-		Assert.assertTrue(isNoOfRecordsInsideFlexTablePresent(rowCount));
+	public void assertFlexTabelNumberOfRecordsPresent(int rowCount, String tableId) {
+		Assert.assertTrue(isNoOfRecordsInsideFlexTablePresent(rowCount, tableId));
 	}
 
 	/**
@@ -523,10 +523,10 @@ public class FlexTablePage extends GovGrantsManager {
 	 * @param statusName
 	 * @return
 	 */
-	private Boolean isStatusCategoryDisabled(String statusName) {
+	private Boolean isStatusCategoryDisabled(String statusName, String tableId) {
 		boolean flag = true;
 		try {
-			if (getCompleteTableRow().stream()
+			if (govgrants.flexTable().getCompleteTableRow(tableId).stream()
 					.anyMatch(item -> item.findElement(flexTableStatusColumn(statusName)).isDisplayed())) {
 				flag = false;
 			}
@@ -635,11 +635,11 @@ public class FlexTablePage extends GovGrantsManager {
 	 * 
 	 * @return true if expected count of records is present inside flex table
 	 */
-	private boolean isNoOfRecordsInsideFlexTablePresent(int rowCount) {
+	private boolean isNoOfRecordsInsideFlexTablePresent(int rowCount, String tableId) {
 		reiDriver.JavaScript().scrollPageDocumentJS("PageDown", 0, 0);
 		boolean flag = false;
 		try {
-			int listSize = govgrants.flexTable().getCompleteTableRow().size() - 1;
+			int listSize = govgrants.flexTable().getCompleteTableRow(tableId).size() - 1;
 			if (listSize == rowCount) {
 				flag = true;
 			}

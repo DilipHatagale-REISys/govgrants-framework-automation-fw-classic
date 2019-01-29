@@ -100,7 +100,8 @@ Feature: Flex Table Component Scenarios
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
-	Then I see no total amount row in flex table
+	Then I see total amount row in flex table is not displayed
+	
 	
 	@34031 @all @disablingTotalRowCount-gPlanning
 	Scenario: validate disbaling of total row count in flex table of programs-planning
@@ -182,7 +183,7 @@ Feature: Flex Table Component Scenarios
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
-	Then I see no "Created" status in flex table
+	Then I see no "Created" status in flex table id "flexTableDivId"
 	
 	Examples:
 	|newSoqlFilter|oldSoqlFilter|
@@ -420,7 +421,7 @@ Feature: Flex Table Component Scenarios
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
-	Then I see "20" records inside flex table
+	Then I see "20" records inside flex table id "flexTableDivId"
 	
 	@40002 @all @helpTextFieldAtFlexTableColumnHeader-gPlanning
 	Scenario Outline: Changing content of help text field at flex table column header from config and validating it inside flex table of programs-planning
