@@ -274,7 +274,7 @@ Feature: Expression Builder Component Scenarios
 	When I navigate to "Financials" sub tab
 	Then I see "Associate" button inside "Funding Account Information" flex table not displayed
 	
-	@42691 @all @hideExpressioJsonForRightOperandForUserAppStateAsGranteeWithOperatorIn-gOpportunities
+	@42691 @all @hideExpressioJsonForRightOperandForUserAppStateAsGranteeWithOperatorInAtFlexTableAction-gOpportunities
 	Scenario: validate disabling of Associate button for user app state as grantee with operator IN-gOpportuities 
 	Given I have default configuration as below:
 	|configurationCategory |fieldName            |fieldOrignalValue     |coreComponentField          |coreCOmponentSubFieldName  |coreComponentSubFieldValue|
@@ -955,7 +955,7 @@ Feature: Expression Builder Component Scenarios
 	Then I see "Submit For Approval" button is not displayed
 	
 	@43893 @all @hideExpressioJsonForLeftOperandForProfilePMWithOperatorNotInAtPageLayout-gPlanning
-	Scenario: Hide Submit for approval button for Profile PM with operator Not In using hide expression Json -gPlanning
+	Scenario: Validate submit for approval button is present for Profile PM with operator Not In using hide expression Json -gPlanning
 	Given I have default configuration as below:
 	|configurationCategory |fieldName           |fieldOrignalValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
 	|Page Layout Action    |Hide Expression JSON|                   |Grantee State Program |Name                     |Submit For Approval          |
@@ -1001,4 +1001,261 @@ Feature: Expression Builder Component Scenarios
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	Then I see "Submit For Approval" button is not displayed
-		
+	
+	@44210 @all @hideExpressioJsonForLeftOperandForUserTypeInternalWithOperatorNotInAtPageLayout-gPlanning
+	Scenario: Validate submit for approval button is present for internal user using user type internal and operator NotIn -gPlanning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName           |fieldOrignalValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Hide Expression JSON|                   |Grantee State Program |Name                     |Submit For Approval          |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName           |fieldNewValue                                                                           |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Hide Expression JSON|govgrants_config:PageLayoutHideExpressionBuilderJsonForUserTypeInternalWithOperatorNotIn|Grantee State Program |Name                     |Submit For Approval          |
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	Then I see "Submit For Approval" button is displayed
+	
+	@44211 @all @hideExpressioJsonForLeftOperandForUserTypeInternalWithOperatorNotInAtPageLayout-Reviewer-gPlanning
+	Scenario: Hide submit for approval button for different user like reviewer except internal user using user type internal and operator NotIn -gPlanning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName           |fieldOrignalValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Hide Expression JSON|                   |Grantee State Program |Name                     |Submit For Approval          |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName           |fieldNewValue                                                                           |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Hide Expression JSON|govgrants_config:PageLayoutHideExpressionBuilderJsonForUserTypeInternalWithOperatorNotIn|Grantee State Program |Name                     |Submit For Approval          |
+	When I login as "Automation-Reviewer" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	Then I see "Submit For Approval" button is not displayed
+	
+	@44212 @all @hideExpressioJsonForLeftOperandForUserTypeInternalAndReviewerAndApplicantWithOPeratorInAtPageLayout-Internal-gPlanning
+	Scenario: Hide submit for approval button for user like intenal and applicant and reviewer using user type internal Applicant and reviewer and operator In -Internal-gPlanning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName           |fieldOrignalValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Hide Expression JSON|                   |Grantee State Program |Name                     |Submit For Approval          |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName           |fieldNewValue                                                                                         |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Hide Expression JSON|govgrants_config:PageLayoutHideExpressionBuilderJsonForUserTypeInternalApplicantReviewerWithOperatorIn|Grantee State Program |Name                     |Submit For Approval          |
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	Then I see "Submit For Approval" button is not displayed
+	
+	@44213 @all @hideExpressioJsonForLeftOperandForUserTypeInternalAndReviewerAndApplicantWithOPeratorInAtPageLayout-Reviewer-gPlanning
+	Scenario: Hide submit for approval button for user like intenal and applicant and reviewer using user type internal Applicant and reviewer and operator In -Reviewer-gPlanning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName           |fieldOrignalValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Hide Expression JSON|                   |Grantee State Program |Name                     |Submit For Approval          |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName           |fieldNewValue                                                                                         |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Hide Expression JSON|govgrants_config:PageLayoutHideExpressionBuilderJsonForUserTypeInternalApplicantReviewerWithOperatorIn|Grantee State Program |Name                     |Submit For Approval          |
+	When I login as "Automation-Reviewer" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	Then I see "Submit For Approval" button is not displayed
+	
+	@44214 @all @hideExpressioJsonForLeftOperandForUserTypeInternalAndReviewerAndApplicantWithOPeratorInAtPageLayout-Applicant-gPlanning
+	Scenario: Hide submit for approval button for user like intenal and applicant and reviewer using user type internal Applicant and reviewer and operator In -Applicant-gPlanning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName           |fieldOrignalValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Hide Expression JSON|                   |Grantee State Program |Name                     |Submit For Approval          |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName           |fieldNewValue                                                                                         |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Hide Expression JSON|govgrants_config:PageLayoutHideExpressionBuilderJsonForUserTypeInternalApplicantReviewerWithOperatorIn|Grantee State Program |Name                     |Submit For Approval          |
+	When I login as "Automation-Applicant" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	Then I see "Submit For Approval" button is not displayed
+	
+	@44215 @all @hideExpressioJsonForLeftOperandForContextViewWithOperatorInAtPageLayout-gPlanning
+	Scenario: Hide submit for approval button for context view with operator IN-gPlanning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName           |fieldOrignalValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Hide Expression JSON|                   |Grantee State Program |Name                     |Submit For Approval          |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName           |fieldNewValue                                                                   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Hide Expression JSON|govgrants_config:PageLayoutHideExpressionBuilderJsonForContextViewWithOperatorIn|Grantee State Program |Name                     |Submit For Approval          |
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	Then I see "Submit For Approval" button is not displayed
+	
+	@44216 @all @hideExpressioJsonForLeftOperandForContextViewWithOperatorNotInAtPageLayout-gPlanning
+	Scenario: Validate submit for approval button is present for context view with operator Not IN-gPlanning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName           |fieldOrignalValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Hide Expression JSON|                   |Grantee State Program |Name                     |Submit For Approval          |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName           |fieldNewValue                                                                      |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Hide Expression JSON|govgrants_config:PageLayoutHideExpressionBuilderJsonForContextViewWithOperatorNotIn|Grantee State Program |Name                     |Submit For Approval          |
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	Then I see "Submit For Approval" button is displayed
+	
+	@44222 @all @hideExpressioJsonForLeftOperandForUserTypeStateAsGrantorWithOperatorInAtPageLayout-gPlanning
+	Scenario: Hide submit for approval button for user type state as grantor with operator IN-gPlanning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName           |fieldOrignalValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Hide Expression JSON|                   |Grantee State Program |Name                     |Submit For Approval          |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName           |fieldNewValue                                                                         |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Hide Expression JSON|govgrants_config:PageLayoutHideExpressionBuilderJsonForUserTypeSAGrantorWithOperatorIn|Grantee State Program |Name                     |Submit For Approval          |
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	Then I see "Submit For Approval" button is not displayed
+	
+	@44223 @all @hideExpressioJsonForLeftOperandForUserTypeStateAsGranteeWithOperatorInAtPageLayout-gAnnouncement
+	Scenario: Hide submit for approval button for user type state as grantee with operator IN-gOpportunities
+	Given I have default configuration as below:
+	|configurationCategory |fieldName           |fieldOrignalValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Hide Expression JSON|                   |AnnouncementGrantee   |Name                     |Submit For Approval          |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName           |fieldNewValue                                                                         |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Hide Expression JSON|govgrants_config:PageLayoutHideExpressionBuilderJsonForUserTypeSAGranteeWithOperatorIn|AnnouncementGrantee   |Name                     |Submit For Approval          |
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantee"
+	And I navigate to "Opportunities" tab
+    When I perform quick search for "ROSES 2018: Rapid Response and Novel Research in Earth Science"
+    When I click on "View" icon for "ROSES 2018: Rapid Response and Novel Research in Earth Science" inside table
+	When I navigate to "Overview" sub tab
+	Then I see "Submit For Approval" button is not displayed
+	
+	@44282 @all @hideExpressioJsonForLeftOperandForUserAppStateAsAdministratorWithOperatorInAtPageLayout-gPlanning
+	Scenario: Hide Activate button for user type state as Administrator with operator IN-gSetup
+	Given I have default configuration as below:
+	|configurationCategory |fieldName           |fieldOrignalValue  |coreComponentField          |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Layout Action    |Hide Expression JSON|                   |GranteeOrganizationInternal |Name                     |Activate                  |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName           |fieldNewValue                                                                               |coreComponentField         |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Page Layout Action    |Hide Expression JSON|govgrants_config:PageLayoutHideExpressionBuilderJsonForUserTypeSAAdministratorWithOperatorIn|GranteeOrganizationInternal|Name                     |Activate                  |
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As an Administrator"
+	And I navigate to "Setup" tab
+	When I select "Draft Internal Organizations" from double headed dropdown inside admin portal
+	When I click on "View" icon for "Automation test organization" inside table
+	When I navigate to "Overview" sub tab
+	Then I see "Activate" button is not displayed
+	
+	@44284 @all @hideExpressioJsonForLeftOperandForFieldWithOperatorEqualsAtPageLayout-gPlanning
+	Scenario: Hide submit for approval button for field with operator Equals-gPlanning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName           |fieldOrignalValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Hide Expression JSON|                   |Grantee State Program |Name                     |Submit For Approval          |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName           |fieldNewValue                                                                 |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Hide Expression JSON|govgrants_config:PageLayoutHideExpressionBuilderJsonForFieldWithOperatorEquals|Grantee State Program |Name                     |Submit For Approval          |
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	Then I see "Submit For Approval" button is not displayed
+	
+	@44285 @all @hideExpressioJsonForLeftOperandForProfileSystemAdministratorAndUserTypeInternalInternalWithOperatorANDAtPageLayout-gPlanning
+	Scenario: Hide Submit for approval button for profile system administrator and user type internal with operator AND-gPlanning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName           |fieldOrignalValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Hide Expression JSON|                   |Grantee State Program |Name                     |Submit For Approval          |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName           |fieldNewValue                                                                                           |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Hide Expression JSON|govgrants_config:PageLayoutHideExpressionBuilderJsonForProfileSysAdminAndUserTypeInternalWithOperatorAND|Grantee State Program |Name                     |Submit For Approval          |
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	Then I see "Submit For Approval" button is not displayed
+	
+	@44286 @all @hideExpressioJsonForLeftOperandForProfileSystemAdministratorAndUserTypeInternalInternalWithOperatorORAtPageLayout-gPlanning
+	Scenario: Hide Submit for approval button for profile system administrator and user type internal with operator OR-gPlanning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName           |fieldOrignalValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Hide Expression JSON|                   |Grantee State Program |Name                     |Submit For Approval          |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName           |fieldNewValue                                                                                          |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Hide Expression JSON|govgrants_config:PageLayoutHideExpressionBuilderJsonForProfileSysAdminAndUserTypeInternalWithOperatorOR|Grantee State Program |Name                     |Submit For Approval          |
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	Then I see "Submit For Approval" button is not displayed
+	
+	@44316 @all @hideExpressioJsonForLeftOperandForUserTypeInternalContextViewWithOperatorANDAtPageLayout-gPlanning
+	Scenario: Hide Submit for approval button for user type internal and context view with operator AND-gPlanning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName           |fieldOrignalValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Hide Expression JSON|                   |Grantee State Program |Name                     |Submit For Approval          |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName           |fieldNewValue                                                                                    |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Hide Expression JSON|govgrants_config:PageLayoutHideExpressionBuilderJsonForUserTypeInternalContextViewWithOperatorAND|Grantee State Program |Name                     |Submit For Approval          |
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	Then I see "Submit For Approval" button is not displayed
+	
+	@44317 @all @hideExpressioJsonForLeftOperandForUserTypeInternalContextViewWithOperatorORAtPageLayout-gPlanning
+	Scenario: Hide Submit for approval button for user type internal and context view with operator OR-gPlanning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName           |fieldOrignalValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Hide Expression JSON|                   |Grantee State Program |Name                     |Submit For Approval          |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName           |fieldNewValue                                                                                    |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Hide Expression JSON|govgrants_config:PageLayoutHideExpressionBuilderJsonForUserTypeInternalContextViewWithOperatorOR |Grantee State Program |Name                     |Submit For Approval          |
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	Then I see "Submit For Approval" button is not displayed
+	
+	@44318 @all @hideExpressioJsonForLeftOperandForUserTypeInternalUserAppSAGrantorWithOperatorANDAtPageLayout-gPlanning
+	Scenario: Hide Submit for approval button for user type internal and user app state as grantor with operator AND-gPlanning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName           |fieldOrignalValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Hide Expression JSON|                   |Grantee State Program |Name                     |Submit For Approval          |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName           |fieldNewValue                                                                                         |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue   |
+	|Page Layout Action    |Hide Expression JSON|govgrants_config:PageLayoutHideExpressionBuilderJsonForUserTypeInternalUserAppSAGrantorWithOperatorAND|Grantee State Program |Name                     |Submit For Approval          |
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	Then I see "Submit For Approval" button is not displayed    	
