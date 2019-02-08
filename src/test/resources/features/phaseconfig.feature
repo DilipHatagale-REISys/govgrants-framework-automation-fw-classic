@@ -127,3 +127,49 @@ Feature: Phase Config Component Scenarios
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
 	Then I see "1" charts are displayed
+	
+	@44735 @all @highlightPhaseFieldInSobjectPhaseConfig-gplanning
+	Scenario: validate highlighting of planning tab by making changes at sobject phase config and validate inside planning-gPlanning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName       |fieldOrignalValue    |filterId        |
+	|Phase Config Sobject  |Highlight Phase?|false                |ApiGeneratedId:0|                    
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName       |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Phase Config Sobject  |Highlight Phase?|true         |GrantorPlanning       |Name                     |SPC-0086                  |
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Announcements" tab
+	When I perform quick search for "Test Announcement For Automation"
+	When I click on "PG-343-0056" icon for "Test Announcement For Automation" inside table
+	Then I see "Planning" tab is highlighted for particular program
+	
+	@44736 @all @globalsearchlabelfieldAtphaseConfigSobject-gplanning
+	Scenario: Setup label change of program at sobject phase config and validating changed label for program inside global search at planning phase
+	Given I have default configuration as below: 
+	|configurationCategory |fieldName           |fieldOrignalValue | filterId         |
+	|Phase Config Sobject  |Global Search Label | Program           | ApiGeneratedId:0 |
+	Given I setup test configuration as below: 
+	|configurationCategory |fieldName           |fieldNewValue      |coreComponentField |coreCOmponentSubFieldName |coreComponentSubFieldValue |
+	|Phase Config Sobject  |Global Search Label |Program Automation |GrantorPlanning    |Name                      |SPC-0086                   |
+	When I login as "Automation" user 
+	When I navigate to "GovGrants Launcher Tab" tab 
+	When I setup my app as "As a Grantor" 
+	And I navigate to "Planning" tab 
+	When I click on global search All 
+	Then I see "Program Automation" in search dropdown 
+		
+    @44737 @all @addToGlobalSearchfieldAtphaseConfigSobject-gplanning
+    Scenario: Disabling program inside global search and validating it inside global search of planning tab-gPlanning
+    Given I have default configuration as below:
+    |configurationCategory | fieldName             |fieldOrignalValue | filterId         |
+    |Phase Config Sobject  | Add to Global Search? |true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+    |configurationCategory |fieldName             |fieldNewValue |coreComponentField |coreCOmponentSubFieldName |coreComponentSubFieldValue |
+    |Phase Config Sobject  |Add to Global Search? |false         |GrantorPlanning    |Name                      |SPC-0086                   |
+    When I login as "Automation" user
+    When I navigate to "GovGrants Launcher Tab" tab
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I click on global search All
+    Then I see "Program" is not displayed in global search All dropdown    
