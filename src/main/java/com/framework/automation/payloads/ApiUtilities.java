@@ -116,6 +116,10 @@ public class ApiUtilities {
 					+ String.valueOf(SObjectAPIs.GNT__PhaseConfig__r) + ".Name=" + "'" + ComponentCoreFieldName
 					+ "' and" + " " + fieldName + "=" + "'" + value + "'";
 			break;
+		case "PHASE CONFIG SOBJECT":
+			filterClause = String.valueOf(SObjectAPIs.GNT__PhaseConfig__r) +".Name=" + "'" + ComponentCoreFieldName
+					+ "' and" + " " + fieldName + "=" + "'" + value + "'";
+			break;
 		case "FLEX TABLE LIST":
 			filterClause = String.valueOf(SObjectAPIs.GNT__FlexTableConfig__r) + ".Name=" + "'" + ComponentCoreFieldName
 					+ "' and" + " " + fieldName + "=" + "'" + value + "'";

@@ -26,7 +26,7 @@ public class EnhancedFlexGridSteps {
 	public void getHelpTextIconsAtFlexTableColumn(String columnTitle) {
 		enhancedFlexGrid.getHelpTextAtEnhancedGridTableSpecificColumn(columnTitle);
 	}
-
+	
 	@Then("^I see Advance Filter is disabled from table \"([^\"]*)\"$")
 	public void assertAdvanceFilterOptionDisabled(String tableId) {
 		enhancedFlexGrid.assertDisableAdvanceFilterFromEnhancedGrid(tableId);
@@ -105,5 +105,15 @@ public class EnhancedFlexGridSteps {
 	@Then("^I see cell subtotal as \"([^\"]*)\"$")
 	public void assertCellValue(BigDecimal value) {
 		enhancedFlexGrid.assertCellValueAtEnhancedGrid(value);
+	}
+	
+	@Then("^I see column \"([^\"]*)\" value is in \"([^\"]*)\" order$")
+	public void assertColumnValueInAscendingOrder(String text, String order) {
+		enhancedFlexGrid.assertAscendingOrderOfEnhancedGridColumnValue(text, order);
+	}
+	
+	@Then("^I see \"([^\"]*)\" icon for \"([^\"]*)\" is at position \"([^\"]*)\" inside flex table$")
+	public void assertActionIconNotDisplayedForflexTable(String iconName, String tableId, String sequenceNumber) {
+		enhancedFlexGrid.assertSequenceOfEditActionOfEnhancedGrid(iconName, tableId, Integer.parseInt(sequenceNumber));
 	}
 }

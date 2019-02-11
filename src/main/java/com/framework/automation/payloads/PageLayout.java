@@ -127,11 +127,11 @@ public class PageLayout {
 							String.valueOf(SObjectAPIs.GNT__HideForProfile__c), value);
 			break;
 		case "ENABLE PROMPT INPUT DIALOG":
-				finalPayload = String
-						.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PageLayoutActionConfig__c),
-								apiUtilities.getComponentCoreFieldId(
-										String.valueOf(SObjectAPIs.GNT__PageLayoutActionConfig__c), filterClause),
-								String.valueOf(SObjectAPIs.GNT__EnablePromptInputDialog__c), value);
+			finalPayload = String
+					.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PageLayoutActionConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__PageLayoutActionConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__EnablePromptInputDialog__c), value);
 			break;
 		case "PROMPT DAILOGUE HEADER":
 			finalPayload = String

@@ -119,6 +119,18 @@ public class FlexGrid {
 							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
 					String.valueOf(SObjectAPIs.GNT__EnableHelp__c), value);
 			break;
+		case "ORDER BY":
+			finalPayload = String.format(
+					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__OrderBy__c), value);
+			break;
+		case "SORT DIRECTION":
+			finalPayload = String.format(
+					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__Sort_Direction__c), value);
+			break;
 		}
 		System.out.println(finalPayload);
 		return finalPayload;

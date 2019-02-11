@@ -246,7 +246,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 	Then I see "<new_helpText>" shown as help text
 	Examples:
 	|new_helpText            |old_helpText                                                                                                                                                            |
-	|Help Text for Automation|The following table is a comprehensive list of all active grants.Â to view or edit a specific grant select the grant id hyperlink for the grant you would like to access|
+	|Help Text for Automation|The following table is a comprehensive list of all active grants.Ã‚ to view or edit a specific grant select the grant id hyperlink for the grant you would like to access|
 	
 	@41299 @all @enablePageSizeFieldAtParentFlexTableForEnhancedGrid-gPlanning
 	Scenario: validate enabling of page size dropdown at bottom inside enhanced flex grid planning-Program enhanced flex grid
@@ -522,7 +522,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 	When I click on top right parallel lines bar for "Active Awards"
 	Then I see "Help" options inside "Active Awards" enabled
 	
-	@42024 @all @helpTextFieldAtChildTableEnhancedGridColumnHeader-gPlanning @check
+	@42024 @all @helpTextFieldAtChildTableEnhancedGridColumnHeader-gPlanning
 	Scenario Outline: Changing content of help text field at enhanced grid column header from config and validating it inside enhanced grid of programs-planning
 	Given I have default configuration as below:
 	|configurationCategory |fieldName       |fieldOrignalValue    |filterId        |
@@ -543,3 +543,156 @@ Feature: Enhanced Flex Grid Component Scenarios
 	Examples:
 	|new_helpText            |
 	|Help Text for Automation|
+	
+	@42021 @all @fieldLabelOverrideFieldAtEnhancedGridChildColumnHeader-gPlanning
+	Scenario: Changing specific column name of enhanced grid child column header from config and validating it inside enhanced grid of programs-planning
+	Given I have default configuration as below:
+	|configurationCategory|fieldName           |fieldOrignalValue    |filterId        |
+	|Flex Table List      |Field Label Override|                     |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory|fieldName           |fieldNewValue       |coreComponentField        |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table List      |Field Label Override|Test Automation     |TmpGrantorActiveAwardsGrid|Name                     |FTC-1492                  |
+    When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	When I navigate to "Financials" sub tab
+	When I expand nested table containing column value "Demo_Title"
+	Then I see "Test Automation" shown inside flex table with id "TmpGrantorActiveAwardsGridFlexToggle"
+	
+	@44533 @all @orderBySortByFieldAtParentDataTableEnhancedGridForAscendingOrder-gPlanning
+	Scenario: Changing specific column value in ascending order with order by and sort by field from config and validating it inside enhanced grid of programs-planning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName       |fieldOrignalValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Grid:General     |Order By        |                 |TmpActiveGrantsGrid   |                         |                          |
+	|Flex Grid:General     |Sort Direction  |                 |TmpActiveGrantsGrid   |                         |                          |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName       |fieldNewValue    |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Grid:General     |Order By        |ProjectTitle__c  |TmpActiveGrantsGrid   |                         |                          |
+	|Flex Grid:General     |Sort Direction  |ASC              |TmpActiveGrantsGrid   |                         |                          |
+    When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	When I navigate to "Financials" sub tab
+	Then I see column "ProjectTitle__c" value is in "Ascending" order
+	
+	@44534 @all @orderBySortByFieldAtParentDataTableEnhancedGridForDescendingOrder-gPlanning
+	Scenario: Changing specific column value in descending order with order by and sort by field from config and validating it inside enhanced grid of programs-planning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName       |fieldOrignalValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Grid:General     |Order By        |                 |TmpActiveGrantsGrid   |                         |                          |
+	|Flex Grid:General     |Sort Direction  |                 |TmpActiveGrantsGrid   |                         |                          |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName       |fieldNewValue    |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Grid:General     |Order By        |ProjectTitle__c  |TmpActiveGrantsGrid   |                         |                          |
+	|Flex Grid:General     |Sort Direction  |DESC             |TmpActiveGrantsGrid   |                         |                          |
+    When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	When I navigate to "Financials" sub tab
+	Then I see column "ProjectTitle__c" value is in "Descending" order
+	
+	@44535 @all @orderBySortByFieldAtChildDataTableEnhancedGridForAscendingOrder-gPlanning
+	Scenario: Changing specific column value in ascending order with order by and sort by field from config at child table and validating it inside enhanced grid of programs-planning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName       |fieldOrignalValue|coreComponentField        |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Grid:General     |Order By        |                 |TmpGrantorActiveAwardsGrid|                         |                          |
+	|Flex Grid:General     |Sort Direction  |                 |TmpGrantorActiveAwardsGrid|                         |                          |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName       |fieldNewValue    |coreComponentField        |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Grid:General     |Order By        |Name             |TmpGrantorActiveAwardsGrid|                         |                          |
+	|Flex Grid:General     |Sort Direction  |ASC              |TmpGrantorActiveAwardsGrid|                         |                          |
+    When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	When I navigate to "Financials" sub tab
+	When I perform quick search for "GT-VT-001" in "flexGridEnhanced1" panel
+	When I expand nested table containing column value "GT-VT-001"
+	Then I see column "TotalGrantAwardAmount__c" value is in "Ascending" order
+	
+	@44536 @all @orderBySortByFieldAtChildDataTableEnhancedGridForDescendingOrder-gPlanning
+	Scenario: Changing specific column value in Descending order with order by and sort by field from config at child table and validating it inside enhanced grid of programs-planning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName       |fieldOrignalValue|coreComponentField        |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Grid:General     |Order By        |                 |TmpGrantorActiveAwardsGrid|                         |                          |
+	|Flex Grid:General     |Sort Direction  |                 |TmpGrantorActiveAwardsGrid|                         |                          |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName       |fieldNewValue    |coreComponentField        |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Grid:General     |Order By        |Name             |TmpGrantorActiveAwardsGrid|                         |                          |
+	|Flex Grid:General     |Sort Direction  |DESC             |TmpGrantorActiveAwardsGrid|                         |                          |
+    When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	When I navigate to "Financials" sub tab
+	When I perform quick search for "GT-VT-001" in "flexGridEnhanced1" panel
+	When I expand nested table containing column value "GT-VT-001"
+	Then I see column "TotalGrantAwardAmount__c" value is in "Descending" order
+	
+	@44628 @all @filterClauseFieldForEnhancedGrid-gPlanning
+    Scenario Outline: validate removing draft status category from flex table of planning-program enhanced flex grid
+    Given I have default configuration as below:
+	|configurationCategory    |fieldName         |fieldOrignalValue |filterId        |
+	|Flex Table List          |Filter Clause     |<oldSoqlFilter>   |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory    |fieldName      |fieldNewValue  |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table List          |Filter Clause  |<newSoqlFilter>|TmpActiveGrantsGrid   |Name                     |FLV-2539                  | 
+    When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	When I navigate to "Financials" sub tab
+	Then I see no "Active" status in flex table id "Enhanced1grid"
+	
+	Examples:
+	|newSoqlFilter|oldSoqlFilter|
+	|RecordType.Name='Grantor' and status__c='Draft'|RecordType.Name='Grantor' and status__c='Active'|
+	
+	@44728 @all @sequenceFieldAtParentflexTableActionForEnhancedGrid-gPlanning
+    Scenario: Changing sequence of edit row level action item at enhanced grid parent table from config and validating it inside enhanced grid table of programs-planning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName       |fieldOrignalValue    |filterId            |
+	|Flex Table Action     |Sequence        |1                    |ApiGeneratedId:0    |
+	Given I setup test configuration as below:
+	|configurationCategory |fieldName       |fieldNewValue        |coreComponentField  |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table Action     |Sequence        |3                    |TmpActiveGrantsGrid |Name                     |Edit                      |
+    When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	When I navigate to "Financials" sub tab
+	Then I see "Edit" icon for "TmpActiveGrantsGridFlexToggle" is at position "2" inside flex table
+	
+	@44731 @all @buttonHelpTextFieldAtParentFlexTableActionForEnhancedGrid-gPlanning
+	Scenario: Changing content of button help text field at enhanced grid parent table action from config and validating it inside enhanced grid table of programs-planning
+	Given I have default configuration as below:
+	|configurationCategory |fieldName       |fieldOrignalValue    |filterId        |
+	|Flex Table Action     |Button Help Text|                     |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	|configurationCategory|fieldName       |fieldNewValue      |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	|Flex Table Action    |Button Help Text|Test Automation    |TmpActiveGrantsGrid   |Name                     |Edit                      |
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	When I navigate to "Financials" sub tab
+	Then I see "Test Automation" as title for "Demo_Title" inside flex table action

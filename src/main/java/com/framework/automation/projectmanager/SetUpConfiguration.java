@@ -102,6 +102,9 @@ public class SetUpConfiguration {
 		case "PAGE BLOCK CONFIG":
 			stringPayload = new PageBlock().setPageBlockDetailConfig(fieldLabel, value, filterClause);
 			break;
+		case "PHASE CONFIG SOBJECT":
+			stringPayload = new PhaseConfig().setPhaseSobjectFieldConfig(fieldLabel, value, filterClause);
+			break;
 		}
 		System.out.println("final payload is " + stringPayload);
 		return stringPayload;

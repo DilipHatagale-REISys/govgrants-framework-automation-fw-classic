@@ -1,6 +1,8 @@
 package com.framework.automation.pageobject;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -215,6 +217,25 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	 */
 	public void assertCellValueAtEnhancedGrid(BigDecimal value) {
 		Assert.assertTrue(isExpectedSumValueAtEnhancedGridTableDisplayed(value));
+	}
+
+	/**
+	 * return true if particular column value is in ascending order
+	 * 
+	 */
+	public void assertAscendingOrderOfEnhancedGridColumnValue(String text, String order) {
+		Assert.assertTrue(isColumnValueInExectedOrder(text, order));
+	}
+
+	/**
+	 * assert if specific action item appears at a specific position for
+	 * enhancedgrid table
+	 * 
+	 * @param iconName
+	 * @param tableId
+	 */
+	public void assertSequenceOfEditActionOfEnhancedGrid(String iconName, String tableId, int sequenceNumber) {
+		Assert.assertTrue(isEditActionIconSequenceAtEnhancedGridTable(iconName, tableId, sequenceNumber));
 	}
 
 	/*********
@@ -510,5 +531,76 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 			e.printStackTrace();
 		}
 		return flag;
+	}
+
+	/**
+	 * return true if particular column value of enhanced grid table is in
+	 * ascending/descending order
+	 *
+	 * @return
+	 */
+	private boolean isColumnValueInExectedOrder(String text, String order) {
+		boolean flag = false;
+		try {
+			reiDriver.JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
+			ArrayList<String> obtainedList = new ArrayList<>();
+			List<WebElement> rows_table = getTableColumnCompleteContent(text);
+			for (WebElement we : rows_table) {
+				obtainedList.add(we.getText().toLowerCase());
+			}
+			ArrayList<String> sortedList = new ArrayList<>();
+			for (String s : obtainedList) {
+				sortedList.add(s.toLowerCase());
+			}
+			if (order.equals("Ascending")) {
+				Collections.sort(sortedList);
+			} else if (order.equals("Descending")) {
+				Collections.sort(sortedList, Collections.reverseOrder());
+			}
+			if (sortedList.equals(obtainedList)) {
+				flag = true;
+			} else {
+				flag = false;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return flag;
+	}
+
+	/**
+	 * get particular table column complete content
+	 * 
+	 * @param text
+	 * @return
+	 */
+	public List<WebElement> getTableColumnCompleteContent(String text) {
+		return reiDriver.findMyElement().getElements(By.xpath("//table/tbody/tr/td//*[@field-name='" + text + "']"));
+	}
+
+	/**
+	 * check the sequence of the edit action at enhanced grid table
+	 * 
+	 * @param buttonName
+	 * @param sequenceNumber
+	 * @return true/false
+	 */
+	private boolean isEditActionIconSequenceAtEnhancedGridTable(String iconName, String tableId, int sequenceNumber) {
+		if (getCompleteTableAction(iconName, tableId).get(sequenceNumber).getAttribute("title").contains(iconName)) {
+			return true;
+		} else
+			return false;
+	}
+
+	/**
+	 * get complete action of table Flex/Enhanced
+	 * 
+	 * @param tableId
+	 * @param iconName
+	 * @return
+	 */
+	public List<WebElement> getCompleteTableAction(String iconName, String tableId) {
+		By actionItem = By.xpath("//div[@id='" + tableId + "']//div/table/tbody//td//a[@title='" + iconName + "']");
+		return reiDriver.findMyElement().getElements(actionItem);
 	}
 }
