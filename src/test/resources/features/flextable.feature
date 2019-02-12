@@ -986,6 +986,6 @@ Feature: Flex Table Component Scenarios
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
-	When I perform sequence of actions on flex table for "10" minute
+	When I perform sequence of actions on flex table for "120" minute
 	Then I do not see "Bad Message 431" error
 	
