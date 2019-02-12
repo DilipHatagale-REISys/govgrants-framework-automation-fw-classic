@@ -979,3 +979,13 @@ Feature: Flex Table Component Scenarios
 	And I select "Download As PDF" from dropdown
 	And I download the file
 	Then I see "Active Programs" on page "1" of "govgrants" pdf file
+	
+	@flextablebug-test
+	Scenario: Run flex table specific steps for specific time continuosly to ensure no error is displayed
+	When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
+	When I perform sequence of actions on flex table for "120" minute
+	Then I do not see "Bad Message 431" error
+	
