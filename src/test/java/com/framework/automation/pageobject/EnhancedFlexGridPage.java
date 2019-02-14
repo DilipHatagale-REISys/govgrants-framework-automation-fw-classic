@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import com.framework.automation.projectmanager.ObjectTypes;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -18,7 +19,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	/******* "Variables and Locators" *****************/
 	private final By reachOutToEnhancedGridCollapse, searchInputEnhancedGrid, completeTableRowOfEnhancedGrid,
 			selectRecordCheckBoxForEnhancedGrid, currentBudgetPeriodEndDate, scrollToActionColumn,
-			obligatedAmountSpecificCells;
+			obligatedAmountSpecificCells,searchInputForChildFlexTable;
 
 	/**
 	 * Constructor to handle dependency injection and framework library
@@ -34,6 +35,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 		currentBudgetPeriodEndDate = By.xpath("//field[@field-name='BudgetPeriodEndDate__c']//input[@type='text']");
 		scrollToActionColumn = By.xpath("//div[@id='Enhanced1grid']//th[contains(text(),'Actions')]");
 		obligatedAmountSpecificCells = By.xpath("//table/tbody/tr/td//*[@field-name='TotalAwardObligatedAmount__c']");
+		searchInputForChildFlexTable = By.xpath("//div[@id='TmpGrantorActiveAwardsGridFlexToggle']/div[1]//input");
 	}
 
 	/******* "Key Methods with complete functionality - public" *****************/
@@ -237,6 +239,22 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	public void assertSequenceOfEditActionOfEnhancedGrid(String iconName, String tableId, int sequenceNumber) {
 		Assert.assertTrue(isEditActionIconSequenceAtEnhancedGridTable(iconName, tableId, sequenceNumber));
 	}
+
+	/**
+	 * assert true if Menu Field is not present in child flex table (flex grid) for enhancedgrid
+	 * @param panelTitleName
+	 */
+	public void assertThatMenuFieldIsDisabledOnChildFlexTable(String panelTitleName){
+		Assert.assertTrue(isMenuIconDisabledInChildFlexTable(panelTitleName));
+	}
+
+	/**
+	 *  assert true if quick search is not available for child flex table under enhanced grid.
+	 */
+	public void assertThatQuickSearchIsDisabledOnChildFlexTable(){
+		Assert.assertTrue(isQuickSearchDisabledForChildFlexTableInEnhancedGrid());
+	}
+
 
 	/*********
 	 * "Local Methods with complete functionality - private"
@@ -602,5 +620,39 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	public List<WebElement> getCompleteTableAction(String iconName, String tableId) {
 		By actionItem = By.xpath("//div[@id='" + tableId + "']//div/table/tbody//td//a[@title='" + iconName + "']");
 		return reiDriver.findMyElement().getElements(actionItem);
+	}
+
+	/**
+	 * Boolean status of menu icon from program child flex table(Grid)
+	 *
+	 * @param panelTitleName
+	 */
+	private Boolean isMenuIconDisabledInChildFlexTable(String panelTitleName) {
+		boolean flag = false;
+		try {
+			if (reiDriver.findMyElement().getElement(govgrants.phasePannel().getParallelBarsLocator(panelTitleName))
+					.isDisplayed()) {
+				flag = false;
+			}
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			flag = true;
+		}
+		return flag;
+	}
+
+	/**
+	 *
+	 * @return true if Quick Search is not available in child flex table.
+	 */
+	private Boolean isQuickSearchDisabledForChildFlexTableInEnhancedGrid(){
+		boolean flag = true;
+		try {
+			reiDriver.JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
+			if (reiDriver.findMyElement().getElement(searchInputForChildFlexTable).isDisplayed()) {
+				flag = false;
+			}
+		} catch (Exception e) {
+		}
+		return flag;
 	}
 }

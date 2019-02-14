@@ -1,5 +1,6 @@
 package com.framework.automation.pageobject;
 
+import com.framework.automation.projectmanager.ObjectTypes;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
@@ -122,6 +123,16 @@ public class PhaseConfigPage extends GovGrantsManager {
 	public void assertSearchedItemIsNotDisplayedInGlobalSearchAll(String searchItem) {
 		Assert.assertTrue(isSearchedItemNotPresentInGlobalSearchAll(searchItem));
 	}
+
+	/**
+	 * Assert true for not showing passed objectType related entities in Recently Viewed option which is present in
+	 * sidebar of phase Planning
+	 * @param objectType = program or announcement or related entity
+	 */
+	public void assertThatObjectIsNotShowingInRecentlyViewedSideBarOption(String objectType){
+		Assert.assertTrue(isObjectNotShowingInRecentlyViewedSideBar(objectType));
+	}
+
 
 	/********* "Local Methods with complete functionality - private" *********/
 
@@ -247,6 +258,27 @@ public class PhaseConfigPage extends GovGrantsManager {
 			if (reiDriver.WaitFor()
 					.WaitForElementToBePresent(
 							By.xpath("//select[@id='selectSearchId']//option[text()='" + searchItem + "']"))
+					.isDisplayed()) {
+				flag = false;
+			}
+		} catch (Exception e) {
+		}
+		return flag;
+	}
+
+	/**
+	 * Boolean true if the given object type such as program or announcement or any other relating
+	 * entity is not present in Recently Viewed Side Bar option
+	 * @param objectType this could be program or announcement or other relating entity
+	 * @return true or false
+	 */
+	private boolean isObjectNotShowingInRecentlyViewedSideBar(String objectType){
+		String acronym = ObjectTypes.valueOf(objectType.toUpperCase()).getAcronymForObjectType();
+		boolean flag = true;
+		try {
+			if (reiDriver.WaitFor()
+					.WaitForElementToBePresent(
+							By.xpath(".//span[text()='Recently Viewed']/parent::a/following-sibling::ul//li//span[starts-with(text(),'"+acronym+"')]"))
 					.isDisplayed()) {
 				flag = false;
 			}
