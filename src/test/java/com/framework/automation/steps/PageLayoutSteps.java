@@ -1,12 +1,12 @@
 package com.framework.automation.steps;
 
-import com.automation.rei.controller.Controller;
-import com.automation.rei.handlers.CoreHandlers;
 import com.automation.rei.handlers.GovGrantsHandler;
 import com.framework.automation.pageobject.PageLayoutPage;
 
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import eyethink.automation.bots.controller.Controller;
+import eyethink.automation.bots.controller.CoreHandlers;
 
 public class PageLayoutSteps {
 	PageLayoutPage pageLayoutPage;

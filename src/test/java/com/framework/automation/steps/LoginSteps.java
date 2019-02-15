@@ -2,12 +2,12 @@ package com.framework.automation.steps;
 
 import org.springframework.context.annotation.Description;
 
-import com.automation.rei.controller.Controller;
-import com.automation.rei.handlers.CoreHandlers;
 import com.automation.rei.handlers.GovGrantsHandler;
 import com.framework.automation.pageobject.LoginPage;
 
 import cucumber.api.java.en.Then;
+import eyethink.automation.bots.controller.Controller;
+import eyethink.automation.bots.controller.CoreHandlers;
 
 public class LoginSteps {
     LoginPage loginPage;
@@ -15,48 +15,7 @@ public class LoginSteps {
     public LoginSteps(Controller controller, CoreHandlers handler, GovGrantsHandler govgrants) {
         loginPage = new LoginPage(controller, handler, govgrants);
     }
-/*
-    @Description("Enter user name to login")
-    @Given("^I enter my user \"([^\"]*)\"$")
-    public void enterUserName(String userName) {
-        loginPage.enterUserName(userName);
-    }
 
-    @Description("Enter password to login")
-    @Given("^I enter my password \"([^\"]*)\"$")
-    public void enterPassword(String password) {
-        loginPage.enterPassword(password);
-    }
-
-    @Description("Complete login process based on user category")
-    @Given("^I login as \"([^\"]*)\" User$")
-    public void login(String user) {
-        loginPage.enterAsUser(user);
-        loginPage.clickLogin();
-    }
-
-    @Description("Log out and login again according to user type")
-    @When("^I re-login as \"([^\"]*)\"$")
-    public void reLogin(String user) throws ReiFrameworkCustomException {
-        loginPage.clickLogOut();
-        loginPage.enterAsUser(user);
-        loginPage.getToAdminPage();
-    }
-
-    @Description("Click on Login button")
-    @When("^I login$")
-    public void clickLogin() {
-        loginPage.clickLogin();
-    }
-
-    @When("^I re-login as \"([^\"]*)\" with \"([^\"]*)\" url$")
-    public void reLoginWithUrl(String user,String envName) throws ReiFrameworkCustomException, IOException  {
-        loginPage.clickLogOut();
-        loginPage.navigateToURL(envName);
-        loginPage.enterAsUser(user);
-        loginPage.getToAdminPage();
-    }
-    */
     @Description("Assert login is successful and landed on login page")
     @Then("^I am on the homepage$")
     public void assertHomepage() {

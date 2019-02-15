@@ -1,10 +1,8 @@
 package com.framework.automation.projectmanager;
 
-import java.io.IOException;
-
-import com.automation.rei.controller.EnvironmentFetcher;
 import com.automation.rei.controller.UsersController;
-import com.automation.rei.corelib.Properties_Logs;
+
+import eyethink.automation.bots.controller.EnvironmentFetcher;
 
 public class UsersAndURL implements UsersController {
 

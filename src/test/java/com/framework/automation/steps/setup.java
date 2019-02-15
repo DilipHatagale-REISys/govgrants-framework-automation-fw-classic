@@ -3,7 +3,6 @@ package com.framework.automation.steps;
 import java.awt.AWTException;
 import java.io.IOException;
 
-import com.automation.rei.controller.Controller;
 import com.automation.rei.controller.SetupController;
 import com.framework.automation.projectmanager.ProjectWebServices;
 import com.framework.automation.projectmanager.UsersAndURL;
@@ -11,6 +10,7 @@ import com.framework.automation.projectmanager.UsersAndURL;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
+import eyethink.automation.bots.controller.Controller;
 
 /**
  * @for REI-Systems
@@ -30,12 +30,12 @@ public class setup {
 
     @Before(order = 1)
     public void beforeAll() {
-        setupController.callDocker();
+        setupController.getAccessToSetup().callDocker();
     }
 
     @Before
     public void startUp() throws IOException, AWTException {
-        setupController.initializer();
+        setupController.getAccessToSetup().initializer();
         setupController.usersController(new UsersAndURL());
     }
 
@@ -44,9 +44,9 @@ public class setup {
         try {
             projectAPI.postDefaultConfigCall();
         } catch (Exception e) {
-            System.out.println("Exception is "+e.getStackTrace());
+            System.out.println("Exception is " + e.getStackTrace());
         }
-        setupController.theEnd(scenario);
+        setupController.getAccessToSetup().theEnd(scenario);
     }
 
 }
