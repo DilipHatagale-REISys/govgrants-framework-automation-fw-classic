@@ -3,8 +3,6 @@ package com.framework.automation.steps;
 import java.io.IOException;
 import java.util.Map;
 
-import com.automation.rei.controller.Controller;
-import com.automation.rei.handlers.CoreHandlers;
 import com.automation.rei.handlers.GovGrantsHandler;
 import com.framework.automation.projectmanager.ConfigurationParameters;
 import com.framework.automation.projectmanager.GovGrantsManager;
@@ -12,6 +10,8 @@ import com.framework.automation.projectmanager.ProjectWebServices;
 
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
+import eyethink.automation.bots.controller.Controller;
+import eyethink.automation.bots.controller.CoreHandlers;
 
 public class ConfigurationSteps {
 	GovGrantsManager govGrantsManager;

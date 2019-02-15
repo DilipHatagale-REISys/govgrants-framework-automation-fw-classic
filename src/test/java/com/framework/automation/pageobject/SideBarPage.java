@@ -5,10 +5,11 @@ import java.util.ArrayList;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
-import com.automation.rei.controller.Controller;
-import com.automation.rei.handlers.CoreHandlers;
 import com.automation.rei.handlers.GovGrantsHandler;
 import com.framework.automation.projectmanager.GovGrantsManager;
+
+import eyethink.automation.bots.controller.Controller;
+import eyethink.automation.bots.controller.CoreHandlers;
 
 public class SideBarPage extends GovGrantsManager {
 

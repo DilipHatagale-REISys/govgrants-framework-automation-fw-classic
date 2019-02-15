@@ -1,9 +1,8 @@
 package com.framework.automation.runner;
 
-import com.automation.rei.controller.CucumberRunnerManager;
-
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
+import eyethink.automation.bots.controller.CucumberRunnerManager;
 
 /**
  * IDE runner class. Place any tag name in tags and it will run the specific tag

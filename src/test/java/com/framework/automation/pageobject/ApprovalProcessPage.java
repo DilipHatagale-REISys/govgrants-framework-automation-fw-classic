@@ -6,11 +6,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
-import com.automation.rei.controller.Controller;
-import com.automation.rei.exception.ReiFrameworkCustomException;
-import com.automation.rei.handlers.CoreHandlers;
 import com.automation.rei.handlers.GovGrantsHandler;
 import com.framework.automation.projectmanager.GovGrantsManager;
+
+import eyethink.automation.bots.controller.Controller;
+import eyethink.automation.bots.controller.CoreHandlers;
+import eyethink.automation.bots.exception.EyeThinkBotsCustomException;
 
 public class ApprovalProcessPage extends GovGrantsManager {
 	/******* "Variables and Locators" *****************/
@@ -56,7 +57,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
 	 * @param programType
 	 * @throws ReiFrameworkCustomException
 	 */
-	public void clickStartApprovalButton(String programSubject) throws ReiFrameworkCustomException {
+	public void clickStartApprovalButton(String programSubject) throws EyeThinkBotsCustomException {
 		govgrants.flexTable().clickTableActionIcons("Start", programSubject);
 	}
 

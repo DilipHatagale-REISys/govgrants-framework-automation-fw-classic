@@ -1,13 +1,13 @@
 package com.framework.automation.steps;
 
-import com.automation.rei.controller.Controller;
-import com.automation.rei.exception.ReiFrameworkCustomException;
-import com.automation.rei.handlers.CoreHandlers;
 import com.automation.rei.handlers.GovGrantsHandler;
 import com.framework.automation.pageobject.ApprovalProcessPage;
 
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import eyethink.automation.bots.controller.Controller;
+import eyethink.automation.bots.controller.CoreHandlers;
+import eyethink.automation.bots.exception.EyeThinkBotsCustomException;
 
 public class ApprovalProcessSteps {
 	ApprovalProcessPage approvalProcesPage;
@@ -17,7 +17,7 @@ public class ApprovalProcessSteps {
 	}
 
 	@When("^I start the approval with subject \"([^\"]*)\"$")
-	public void startApproval(String programSubject) throws ReiFrameworkCustomException {
+	public void startApproval(String programSubject) throws EyeThinkBotsCustomException {
 		approvalProcesPage.clickStartApprovalButton(programSubject);
 	}
 

@@ -4,12 +4,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Map;
 
-import com.automation.rei.controller.EnvironmentFetcher;
-import com.automation.rei.corelib.Properties_Logs;
-import com.automation.rei.webservices.RestfulWebServices;
 import com.framework.automation.objects.IdBucket;
 import com.framework.automation.payloads.ApiUtilities;
 import com.jayway.restassured.response.Response;
+
+import eyethink.automation.bots.controller.EnvironmentFetcher;
+import eyethink.automation.bots.corelib.Properties_Logs;
+import eyethink.automation.bots.webservices.RestfulWebServices;
 
 public class ProjectWebServices {
 	RestfulWebServices apiCall = new RestfulWebServices();

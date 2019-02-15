@@ -3,10 +3,11 @@ package com.framework.automation.pageobject;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
-import com.automation.rei.controller.Controller;
-import com.automation.rei.handlers.CoreHandlers;
 import com.automation.rei.handlers.GovGrantsHandler;
 import com.framework.automation.projectmanager.GovGrantsManager;
+
+import eyethink.automation.bots.controller.Controller;
+import eyethink.automation.bots.controller.CoreHandlers;
 
 public class ChartsPage extends GovGrantsManager {
 	/******* "Variables and Locators" *****************/
