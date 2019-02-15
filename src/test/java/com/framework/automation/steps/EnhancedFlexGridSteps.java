@@ -126,4 +126,14 @@ public class EnhancedFlexGridSteps {
 	public void iSeeQuickSearchOptionDisabledFromEnhancedGridForChildFlexTable(String flexTableID) {
 		enhancedFlexGrid.assertThatQuickSearchIsDisabledOnChildFlexTable(flexTableID);
 	}
+
+	@Then("^I see \"([^\"]*)\" for Child Flex table \"([^\"]*)\" count in enhanced grid$")
+	public void iSeeForChildFlexTableCountInEnhancedGrid(String childFlexFooter, String childFlexTableId){
+		enhancedFlexGrid.assertThatTotalRecordIsPresentOnChildFlexTable(childFlexFooter,childFlexTableId);
+	}
+
+	@Then("^I see select check box enabled for child flex table in enhanced flex grid$")
+	public void iSeeSelectCheckBoxEnabledForChildFlexTableInEnhancedFlexGrid() {
+		enhancedFlexGrid.assertIfSelectRecordIsEnabledOnChildFlexTable();
+	}
 }

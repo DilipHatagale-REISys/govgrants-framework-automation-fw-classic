@@ -253,6 +253,22 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 		Assert.assertTrue(isQuickSearchDisabledForChildFlexTableInEnhancedGrid(childTableId));
 	}
 
+	/**
+	 * assert true if total record is present on child flex table.
+	 * @param footerName
+	 * @param tableId
+	 */
+	public void assertThatTotalRecordIsPresentOnChildFlexTable(String footerName, String tableId){
+		Assert.assertTrue(isTotalRecordsEnabledForChildFlexTable(footerName,tableId));
+	}
+
+	/**
+	 * Assert for Record Selection Enable.
+	 */
+	public void assertIfSelectRecordIsEnabledOnChildFlexTable(){
+		Assert.assertTrue(isRecordSelectionEnabledOnChildFlexTable());
+	}
+
 
 	/*********
 	 * "Local Methods with complete functionality - private"
@@ -652,5 +668,24 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 		} catch (Exception e) {
 		}
 		return flag;
+	}
+
+	/**
+	 * check if total record are enabled for child flex table or not.
+	 * @param footerName
+	 * @param tableId
+	 * @return
+	 */
+	private Boolean isTotalRecordsEnabledForChildFlexTable(String footerName, String tableId){
+			reiDriver.JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
+			return reiDriver.WaitFor().WaitForElementToBePresent(By.xpath("//div[@id='"+tableId+"']//span[contains(text(),'"+footerName+"')]")).isDisplayed();
+	}
+
+	/**
+	 * check if Record Selection option is Enabled or not
+	 * @return
+	 */
+	private Boolean isRecordSelectionEnabledOnChildFlexTable(){
+		return reiDriver.WaitFor().WaitForElementToBePresent(By.xpath("//input[@id='TmpGrantorActiveAwardsGridcheckBox']")).isDisplayed();
 	}
 }

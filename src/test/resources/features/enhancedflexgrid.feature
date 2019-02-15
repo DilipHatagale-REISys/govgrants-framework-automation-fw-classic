@@ -769,3 +769,45 @@ Feature: Enhanced Flex Grid Component Scenarios
 		When I navigate to "Financials" sub tab
 		When I expand nested table containing column value "Demo_Title"
 		Then I see quick search option disabled from enhanced grid for child flex table "TmpGrantorActiveAwardsGridFlexToggle"
+
+	@44997 @all @enableTotalRecordCountForChildFlexTableForEnhancedGrid-gPlanning
+	Scenario: validate total row count in child flex table for enhanced grid.
+		When I login as "Automation" user
+		When I navigate to "GovGrants Launcher Tab" tab
+		When I setup my app as "As a Grantor"
+		And I navigate to "Planning" tab
+		When I perform quick search for "Test program for automation - Created mode only"
+		When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+		When I navigate to "Financials" sub tab
+		When I expand nested table containing column value "Demo_Title"
+		Then I see "Total Records" for Child Flex table "TmpGrantorActiveAwardsGridFlexToggle" count in enhanced grid
+
+	@44998 @all @enableAutoIndexForChildFlexTableOnEnhancedGrid-gPlanning
+	Scenario: validate auto index for details inside child flex table for enhanced grid.
+		When I login as "Automation" user
+		When I navigate to "GovGrants Launcher Tab" tab
+		When I setup my app as "As a Grantor"
+		And I navigate to "Planning" tab
+		When I perform quick search for "Test program for automation - Created mode only"
+		When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+		When I navigate to "Financials" sub tab
+		When I expand nested table containing column value "Demo_Title"
+		Then I see "#" in enhanced flex grid header
+
+	@45001 @all @enableRecordSelectionForChildFlexForEnhancedGrid-gPlanning
+	Scenario: validate enabling of record selection check boxes in enhanced flex grid planning-Program enhanced flex grid
+		Given I have default configuration as below:
+			|configurationCategory |fieldName              |fieldOrignalValue|filterId        |
+			|Flex Grid             |Enable Record Selection|false            |ApiGeneratedId:0|
+		Given I setup test configuration as below:
+			|configurationCategory |fieldName              |fieldNewValue|coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+			|Flex Grid:General     |Enable Record Selection|true         |TmpGrantorActiveAwardsGrid   |                         |                          |
+		When I login as "Automation" user
+		When I navigate to "GovGrants Launcher Tab" tab
+		When I setup my app as "As a Grantor"
+		And I navigate to "Planning" tab
+		When I perform quick search for "Test program for automation - Created mode only"
+		When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+		When I navigate to "Financials" sub tab
+		When I expand nested table containing column value "Demo_Title"
+		Then I see select check box enabled for child flex table in enhanced flex grid
