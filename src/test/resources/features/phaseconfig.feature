@@ -172,4 +172,19 @@ Feature: Phase Config Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I click on global search All
-    Then I see "Program" is not displayed in global search All dropdown    
+    Then I see "Program" is not displayed in global search All dropdown
+
+
+	@44738 @all @disableProgramInRecentViewedLinkInSideBar-gplanning
+	Scenario: Disabling the programs in Recent Viewed Link in Sidebar inside planning-gplanning
+		Given I have default configuration as below:
+			| configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+			| Phase Config Sobject  | Add to Recently Viewed? | true              | ApiGeneratedId:0 |
+		Given I setup test configuration as below:
+			| configurationCategory | fieldName             | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+			| Phase Config Sobject  | Add to Recently Viewed? | false         | GrantorPlanning    | Name                      | SPC-0086                   |
+		When I login as "Automation" user
+		When I navigate to "GovGrants Launcher Tab" tab
+		When I setup my app as "As a Grantor"
+		And I navigate to "Planning" tab
+		Then I see "PG" records are not present in Recently Viewed link in Sidebar

@@ -70,4 +70,8 @@ public class PhaseConfigSteps {
 		phaseConfigPage.assertSearchedItemIsNotDisplayedInGlobalSearchAll(searchItem);
 	}
 
+	@Then("^I see \"([^\"]*)\" records are not present in Recently Viewed link in Sidebar$")
+	public void iSeeRecordsAreNotPresentInRecentlyViewedLinkInSidebar(String acronym) {
+		phaseConfigPage.assertThatObjectIsNotShowingInRecentlyViewedSideBarOption(acronym);
+	}
 }

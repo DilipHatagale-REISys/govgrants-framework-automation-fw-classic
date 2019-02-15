@@ -116,4 +116,24 @@ public class EnhancedFlexGridSteps {
 	public void assertActionIconNotDisplayedForflexTable(String iconName, String tableId, String sequenceNumber) {
 		enhancedFlexGrid.assertSequenceOfEditActionOfEnhancedGrid(iconName, tableId, Integer.parseInt(sequenceNumber));
 	}
+
+	@Then("^Then I see Menu icon is disabled from planning child flex table \"([^\"]*)\" under Monitoring Schedule For All Active Grants table$")
+	public void thenISeeMenuIconIsDisabledFromPlanningChildFlexTableUnderMonitoringScheduleForAllActiveGrantsTable(String tableName) {
+		enhancedFlexGrid.assertThatMenuFieldIsDisabledOnChildFlexTable(tableName);
+	}
+
+	@Then("^I see quick search option disabled from enhanced grid for child flex table \"([^\"]*)\"$")
+	public void iSeeQuickSearchOptionDisabledFromEnhancedGridForChildFlexTable(String flexTableID) {
+		enhancedFlexGrid.assertThatQuickSearchIsDisabledOnChildFlexTable(flexTableID);
+	}
+
+	@Then("^I see \"([^\"]*)\" for Child Flex table \"([^\"]*)\" count in enhanced grid$")
+	public void iSeeForChildFlexTableCountInEnhancedGrid(String childFlexFooter, String childFlexTableId){
+		enhancedFlexGrid.assertThatTotalRecordIsPresentOnChildFlexTable(childFlexFooter,childFlexTableId);
+	}
+
+	@Then("^I see select check box enabled for child flex table in enhanced flex grid$")
+	public void iSeeSelectCheckBoxEnabledForChildFlexTableInEnhancedFlexGrid() {
+		enhancedFlexGrid.assertIfSelectRecordIsEnabledOnChildFlexTable();
+	}
 }

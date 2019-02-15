@@ -74,24 +74,30 @@ public class PhaseConfig {
 	public String setPhaseSobjectFieldConfig(String fieldLabel, String value, String filterClause) {
 		String finalPayload = null;
 		switch (fieldLabel.toUpperCase()) {
-		case "HIGHLIGHT PHASE?":
-			finalPayload = String.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__SObjectPhaseConfig__c),
-					apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__SObjectPhaseConfig__c),
-							filterClause),
-					String.valueOf(SObjectAPIs.GNT__HighlightPhase__c), value);
-			break;
-		case "GLOBAL SEARCH LABEL":
-			finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__SObjectPhaseConfig__c),
-					apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__SObjectPhaseConfig__c),
-							filterClause),
-					String.valueOf(SObjectAPIs.GNT__GlobalSearchLabel__c), value);
-			break;
-		case "ADD TO GLOBAL SEARCH?":
-			finalPayload = String.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__SObjectPhaseConfig__c),
-					apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__SObjectPhaseConfig__c),
-							filterClause),
-					String.valueOf(SObjectAPIs.GNT__GlobalSearchVisibility__c), value);
-			break;
+			case "HIGHLIGHT PHASE?":
+				finalPayload = String.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__SObjectPhaseConfig__c),
+						apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__SObjectPhaseConfig__c),
+								filterClause),
+						String.valueOf(SObjectAPIs.GNT__HighlightPhase__c), value);
+				break;
+			case "GLOBAL SEARCH LABEL":
+				finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__SObjectPhaseConfig__c),
+						apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__SObjectPhaseConfig__c),
+								filterClause),
+						String.valueOf(SObjectAPIs.GNT__GlobalSearchLabel__c), value);
+				break;
+			case "ADD TO GLOBAL SEARCH?":
+				finalPayload = String.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__SObjectPhaseConfig__c),
+						apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__SObjectPhaseConfig__c),
+								filterClause),
+						String.valueOf(SObjectAPIs.GNT__GlobalSearchVisibility__c), value);
+				break;
+			case "ADD TO RECENTLY VIEWED?":
+				finalPayload = String.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__SObjectPhaseConfig__c),
+						apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__SObjectPhaseConfig__c),
+								filterClause),
+						String.valueOf(SObjectAPIs.GNT__RecentlyViewedVisibility__c), value);
+				break;
 
 		}
 		System.out.println("method for finalpayload " + finalPayload);

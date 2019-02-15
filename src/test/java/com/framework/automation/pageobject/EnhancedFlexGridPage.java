@@ -238,6 +238,38 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 		Assert.assertTrue(isEditActionIconSequenceAtEnhancedGridTable(iconName, tableId, sequenceNumber));
 	}
 
+	/**
+	 * assert true if Menu Field is not present in child flex table (flex grid) for enhancedgrid
+	 * @param panelTitleName
+	 */
+	public void assertThatMenuFieldIsDisabledOnChildFlexTable(String panelTitleName){
+		Assert.assertTrue(isMenuIconDisabledInChildFlexTable(panelTitleName));
+	}
+
+	/**
+	 *  assert true if quick search is not available for child flex table under enhanced grid.
+	 */
+	public void assertThatQuickSearchIsDisabledOnChildFlexTable(String childTableId){
+		Assert.assertTrue(isQuickSearchDisabledForChildFlexTableInEnhancedGrid(childTableId));
+	}
+
+	/**
+	 * assert true if total record is present on child flex table.
+	 * @param footerName
+	 * @param tableId
+	 */
+	public void assertThatTotalRecordIsPresentOnChildFlexTable(String footerName, String tableId){
+		Assert.assertTrue(isTotalRecordsEnabledForChildFlexTable(footerName,tableId));
+	}
+
+	/**
+	 * Assert for Record Selection Enable.
+	 */
+	public void assertIfSelectRecordIsEnabledOnChildFlexTable(){
+		Assert.assertTrue(isRecordSelectionEnabledOnChildFlexTable());
+	}
+
+
 	/*********
 	 * "Local Methods with complete functionality - private"
 	 *****************/
@@ -602,5 +634,58 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	public List<WebElement> getCompleteTableAction(String iconName, String tableId) {
 		By actionItem = By.xpath("//div[@id='" + tableId + "']//div/table/tbody//td//a[@title='" + iconName + "']");
 		return reiDriver.findMyElement().getElements(actionItem);
+	}
+
+	/**
+	 * Boolean status of menu icon from program child flex table(Grid)
+	 *
+	 * @param panelTitleName
+	 */
+	private Boolean isMenuIconDisabledInChildFlexTable(String panelTitleName) {
+		boolean flag = false;
+		try {
+			if (reiDriver.findMyElement().getElement(govgrants.phasePannel().getParallelBarsLocator(panelTitleName))
+					.isDisplayed()) {
+				flag = false;
+			}
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			flag = true;
+		}
+		return flag;
+	}
+
+	/**
+	 *
+	 * @return true if Quick Search is not available in child flex table.
+	 */
+	private Boolean isQuickSearchDisabledForChildFlexTableInEnhancedGrid(String childTableId){
+		boolean flag = true;
+		try {
+			reiDriver.JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
+			if (reiDriver.findMyElement().getElement(By.xpath("//div[@id='"+childTableId+"']/div[1]//input")).isDisplayed()) {
+				flag = false;
+			}
+		} catch (Exception e) {
+		}
+		return flag;
+	}
+
+	/**
+	 * check if total record are enabled for child flex table or not.
+	 * @param footerName
+	 * @param tableId
+	 * @return
+	 */
+	private Boolean isTotalRecordsEnabledForChildFlexTable(String footerName, String tableId){
+			reiDriver.JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
+			return reiDriver.WaitFor().WaitForElementToBePresent(By.xpath("//div[@id='"+tableId+"']//span[contains(text(),'"+footerName+"')]")).isDisplayed();
+	}
+
+	/**
+	 * check if Record Selection option is Enabled or not
+	 * @return
+	 */
+	private Boolean isRecordSelectionEnabledOnChildFlexTable(){
+		return reiDriver.WaitFor().WaitForElementToBePresent(By.xpath("//input[@id='TmpGrantorActiveAwardsGridcheckBox']")).isDisplayed();
 	}
 }
