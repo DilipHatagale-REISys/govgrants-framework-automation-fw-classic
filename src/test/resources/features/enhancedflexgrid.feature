@@ -811,3 +811,21 @@ Feature: Enhanced Flex Grid Component Scenarios
 		When I navigate to "Financials" sub tab
 		When I expand nested table containing column value "Demo_Title"
 		Then I see select check box enabled for child flex table in enhanced flex grid
+
+	@45096 @all @OpenNewTabAtParentFlexTableForViewAction-gPlanning
+	Scenario: validate open new tab for view at parent flex table
+		Given I have default configuration as below:
+			|configurationCategory |fieldName               |fieldOrignalValue   |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+			|Flex Table Action     |Where To Open ?         | SameWindow                   |TmpActiveGrantsGrid   |Name                     |View                      |
+		Given I setup test configuration as below:
+			|configurationCategory |fieldName               |fieldNewValue       |coreComponentField    |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+			|Flex Table Action     |Where To Open ?         |NewTab               |TmpActiveGrantsGrid   |Name                     |View                      |
+		When I login as "Automation" user
+		When I navigate to "GovGrants Launcher Tab" tab
+		When I setup my app as "As a Grantor"
+		And I navigate to "Planning" tab
+		When I perform quick search for "Test program for automation - Created mode only"
+		When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+		When I navigate to "Financials" sub tab
+		When I click on "View" icon for "Demo_Title" inside table
+		Then I see new tab is opened
