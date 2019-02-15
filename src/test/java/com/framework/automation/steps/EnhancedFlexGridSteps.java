@@ -122,8 +122,8 @@ public class EnhancedFlexGridSteps {
 		enhancedFlexGrid.assertThatMenuFieldIsDisabledOnChildFlexTable(tableName);
 	}
 
-	@Then("^I see quick search option disabled from enhanced grid for child flex table$")
-	public void iSeeQuickSearchOptionDisabledFromEnhancedGridForChildFlexTable() {
-		enhancedFlexGrid.assertThatQuickSearchIsDisabledOnChildFlexTable();
+	@Then("^I see quick search option disabled from enhanced grid for child flex table \"([^\"]*)\"$")
+	public void iSeeQuickSearchOptionDisabledFromEnhancedGridForChildFlexTable(String flexTableID) {
+		enhancedFlexGrid.assertThatQuickSearchIsDisabledOnChildFlexTable(flexTableID);
 	}
 }

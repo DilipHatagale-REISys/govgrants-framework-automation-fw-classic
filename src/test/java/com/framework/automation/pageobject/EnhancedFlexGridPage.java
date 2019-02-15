@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import com.framework.automation.projectmanager.ObjectTypes;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -19,7 +18,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	/******* "Variables and Locators" *****************/
 	private final By reachOutToEnhancedGridCollapse, searchInputEnhancedGrid, completeTableRowOfEnhancedGrid,
 			selectRecordCheckBoxForEnhancedGrid, currentBudgetPeriodEndDate, scrollToActionColumn,
-			obligatedAmountSpecificCells,searchInputForChildFlexTable;
+			obligatedAmountSpecificCells;
 
 	/**
 	 * Constructor to handle dependency injection and framework library
@@ -35,7 +34,6 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 		currentBudgetPeriodEndDate = By.xpath("//field[@field-name='BudgetPeriodEndDate__c']//input[@type='text']");
 		scrollToActionColumn = By.xpath("//div[@id='Enhanced1grid']//th[contains(text(),'Actions')]");
 		obligatedAmountSpecificCells = By.xpath("//table/tbody/tr/td//*[@field-name='TotalAwardObligatedAmount__c']");
-		searchInputForChildFlexTable = By.xpath("//div[@id='TmpGrantorActiveAwardsGridFlexToggle']/div[1]//input");
 	}
 
 	/******* "Key Methods with complete functionality - public" *****************/
@@ -251,8 +249,8 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	/**
 	 *  assert true if quick search is not available for child flex table under enhanced grid.
 	 */
-	public void assertThatQuickSearchIsDisabledOnChildFlexTable(){
-		Assert.assertTrue(isQuickSearchDisabledForChildFlexTableInEnhancedGrid());
+	public void assertThatQuickSearchIsDisabledOnChildFlexTable(String childTableId){
+		Assert.assertTrue(isQuickSearchDisabledForChildFlexTableInEnhancedGrid(childTableId));
 	}
 
 
@@ -644,11 +642,11 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	 *
 	 * @return true if Quick Search is not available in child flex table.
 	 */
-	private Boolean isQuickSearchDisabledForChildFlexTableInEnhancedGrid(){
+	private Boolean isQuickSearchDisabledForChildFlexTableInEnhancedGrid(String childTableId){
 		boolean flag = true;
 		try {
 			reiDriver.JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
-			if (reiDriver.findMyElement().getElement(searchInputForChildFlexTable).isDisplayed()) {
+			if (reiDriver.findMyElement().getElement(By.xpath("//div[@id='"+childTableId+"']/div[1]//input")).isDisplayed()) {
 				flag = false;
 			}
 		} catch (Exception e) {

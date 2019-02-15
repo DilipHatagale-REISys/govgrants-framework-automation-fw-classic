@@ -71,7 +71,7 @@ public class PhaseConfigSteps {
 	}
 
 	@Then("^I see \"([^\"]*)\" records are not present in Recently Viewed link in Sidebar$")
-	public void iSeeRecordsAreNotPresentInRecentlyViewedLinkInSidebar(String objectType) {
-		phaseConfigPage.assertThatObjectIsNotShowingInRecentlyViewedSideBarOption(objectType);
+	public void iSeeRecordsAreNotPresentInRecentlyViewedLinkInSidebar(String acronym) {
+		phaseConfigPage.assertThatObjectIsNotShowingInRecentlyViewedSideBarOption(acronym);
 	}
 }

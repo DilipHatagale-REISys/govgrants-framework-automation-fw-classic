@@ -768,4 +768,4 @@ Feature: Enhanced Flex Grid Component Scenarios
 		When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 		When I navigate to "Financials" sub tab
 		When I expand nested table containing column value "Demo_Title"
-		Then I see quick search option disabled from enhanced grid for child flex table
+		Then I see quick search option disabled from enhanced grid for child flex table "TmpGrantorActiveAwardsGridFlexToggle"

@@ -1,6 +1,5 @@
 package com.framework.automation.pageobject;
 
-import com.framework.automation.projectmanager.ObjectTypes;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
@@ -129,8 +128,8 @@ public class PhaseConfigPage extends GovGrantsManager {
 	 * sidebar of phase Planning
 	 * @param objectType = program or announcement or related entity
 	 */
-	public void assertThatObjectIsNotShowingInRecentlyViewedSideBarOption(String objectType){
-		Assert.assertTrue(isObjectNotShowingInRecentlyViewedSideBar(objectType));
+	public void assertThatObjectIsNotShowingInRecentlyViewedSideBarOption(String acronym){
+		Assert.assertTrue(isObjectNotShowingInRecentlyViewedSideBar(acronym));
 	}
 
 
@@ -272,8 +271,7 @@ public class PhaseConfigPage extends GovGrantsManager {
 	 * @param objectType this could be program or announcement or other relating entity
 	 * @return true or false
 	 */
-	private boolean isObjectNotShowingInRecentlyViewedSideBar(String objectType){
-		String acronym = ObjectTypes.valueOf(objectType.toUpperCase()).getAcronymForObjectType();
+	private boolean isObjectNotShowingInRecentlyViewedSideBar(String acronym){
 		boolean flag = true;
 		try {
 			if (reiDriver.WaitFor()

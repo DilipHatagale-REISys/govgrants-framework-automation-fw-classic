@@ -187,4 +187,4 @@ Feature: Phase Config Component Scenarios
 		When I navigate to "GovGrants Launcher Tab" tab
 		When I setup my app as "As a Grantor"
 		And I navigate to "Planning" tab
-		Then I see "program" records are not present in Recently Viewed link in Sidebar
+		Then I see "PG" records are not present in Recently Viewed link in Sidebar
