@@ -1274,7 +1274,7 @@ Feature: Page Layout Component Scenarios
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
-	When I navigate to "Pending" content inside "Tasks" subheader on left panel
+	When I navigate to "Pending" content inside "My Tasks" subheader on left panel
 	When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
 	When I click on "Start" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
 	Then I see "Approve" is disabled

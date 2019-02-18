@@ -48,7 +48,7 @@ Feature: Approval Process Component Scenarios
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
-	When I navigate to "Pending" content inside "Tasks" subheader on left panel
+	When I navigate to "Pending" content inside "My Tasks" subheader on left panel
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	Then i see "Approve" shown at number "3" in Approve Decision panel
@@ -73,7 +73,7 @@ Feature: Approval Process Component Scenarios
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
-	When I navigate to "Pending" content inside "Tasks" subheader on left panel
+	When I navigate to "Pending" content inside "My Tasks" subheader on left panel
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	When I select "Approve" from approval decision panel
@@ -100,7 +100,7 @@ Feature: Approval Process Component Scenarios
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
-	When I navigate to "Pending" content inside "Tasks" subheader on left panel
+	When I navigate to "Pending" content inside "My Tasks" subheader on left panel
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	Then I see "Approved" inside approval decision box
@@ -126,7 +126,7 @@ Feature: Approval Process Component Scenarios
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
-	When I navigate to "Pending" content inside "Tasks" subheader on left panel
+	When I navigate to "Pending" content inside "My Tasks" subheader on left panel
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	When I select "Approve" from approval decision panel
@@ -154,7 +154,7 @@ Feature: Approval Process Component Scenarios
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
-	When I navigate to "Pending" content inside "Tasks" subheader on left panel
+	When I navigate to "Pending" content inside "My Tasks" subheader on left panel
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	When I select "Reassign" from approval decision panel
@@ -184,7 +184,7 @@ Feature: Approval Process Component Scenarios
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
-	When I navigate to "Pending" content inside "Tasks" subheader on left panel
+	When I navigate to "Pending" content inside "My Tasks" subheader on left panel
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	Then I see approval with subject as "Test program for automation -  SA mode only - Not approved" is not displayed
 	
@@ -208,7 +208,7 @@ Feature: Approval Process Component Scenarios
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
-	When I navigate to "Pending" content inside "Tasks" subheader on left panel
+	When I navigate to "Pending" content inside "My Tasks" subheader on left panel
 	When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
 	When I click on "Start" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
 	When I select "Approve" from approval decision panel
@@ -244,7 +244,7 @@ Feature: Approval Process Component Scenarios
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
-	When I navigate to "Pending" content inside "Tasks" subheader on left panel
+	When I navigate to "Pending" content inside "My Tasks" subheader on left panel
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	When I select "Approve" from approval decision panel
@@ -296,7 +296,7 @@ Feature: Approval Process Component Scenarios
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
-	When I navigate to "Pending" content inside "Tasks" subheader on left panel
+	When I navigate to "Pending" content inside "My Tasks" subheader on left panel
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	When I select "Send to Owner" from approval decision panel
@@ -306,9 +306,9 @@ Feature: Approval Process Component Scenarios
     When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
-	When I navigate to "Pending" content inside "Tasks" subheader on left panel
+	When I navigate to "Pending" content inside "My Tasks" subheader on left panel
 	When I click on "Start" icon for "Program Sent To Owner" inside table
-	When I navigate to "Pending" content inside "Tasks" subheader on left panel  
+	When I navigate to "Pending" content inside "My Tasks" subheader on left panel
 	Then I see approval with subject as "Program Sent To Owner" is not displayed
 	
 	@37348 @all @rejectConfirmationMessageFieldAtApprovalProcess-Programs
@@ -333,7 +333,7 @@ Feature: Approval Process Component Scenarios
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
-	When I navigate to "Pending" content inside "Tasks" subheader on left panel
+	When I navigate to "Pending" content inside "My Tasks" subheader on left panel
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	When I select "Disapprove" from approval decision panel
@@ -364,7 +364,7 @@ Feature: Approval Process Component Scenarios
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
-	When I navigate to "Pending" content inside "Tasks" subheader on left panel
+	When I navigate to "Pending" content inside "My Tasks" subheader on left panel
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	When I select "Reassign" from approval decision panel
@@ -395,7 +395,7 @@ Feature: Approval Process Component Scenarios
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
-	When I navigate to "Pending" content inside "Tasks" subheader on left panel
+	When I navigate to "Pending" content inside "My Tasks" subheader on left panel
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	When I select "Send to Owner" from approval decision panel
@@ -425,7 +425,7 @@ Feature: Approval Process Component Scenarios
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
-	When I navigate to "Pending" content inside "Tasks" subheader on left panel
+	When I navigate to "Pending" content inside "My Tasks" subheader on left panel
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	When I select "Disapprove" from approval decision panel
@@ -456,7 +456,7 @@ Feature: Approval Process Component Scenarios
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
-	When I navigate to "Pending" content inside "Tasks" subheader on left panel
+	When I navigate to "Pending" content inside "My Tasks" subheader on left panel
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	When I select "Reassign" from approval decision panel
@@ -485,7 +485,7 @@ Feature: Approval Process Component Scenarios
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
-	When I navigate to "Pending" content inside "Tasks" subheader on left panel
+	When I navigate to "Pending" content inside "My Tasks" subheader on left panel
 	When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
 	When I select "Approve" from approval decision panel
@@ -521,7 +521,7 @@ Feature: Approval Process Component Scenarios
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
-	When I navigate to "Pending" content inside "Tasks" subheader on left panel
+	When I navigate to "Pending" content inside "My Tasks" subheader on left panel
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	When I select "Send to Owner" from approval decision panel
@@ -549,7 +549,7 @@ Feature: Approval Process Component Scenarios
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
-	When I navigate to "Pending" content inside "Tasks" subheader on left panel
+	When I navigate to "Pending" content inside "My Tasks" subheader on left panel
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	Then I see approval with subject as "Test program for automation -  SA mode only - Not approved" is not displayed
 	
@@ -579,7 +579,7 @@ Feature: Approval Process Component Scenarios
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
-	When I navigate to "Pending" content inside "Tasks" subheader on left panel
+	When I navigate to "Pending" content inside "My Tasks" subheader on left panel
 	When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
 	When I click on "Start" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
 	When I select "Approve" from approval decision panel
@@ -615,7 +615,7 @@ Feature: Approval Process Component Scenarios
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
-	When I navigate to "Pending" content inside "Tasks" subheader on left panel
+	When I navigate to "Pending" content inside "My Tasks" subheader on left panel
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	When I select "Disapprove" from approval decision panel
@@ -650,7 +650,7 @@ Feature: Approval Process Component Scenarios
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
-	When I navigate to "Pending" content inside "Tasks" subheader on left panel
+	When I navigate to "Pending" content inside "My Tasks" subheader on left panel
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	When I select "Reassign" from approval decision panel
@@ -686,7 +686,7 @@ Feature: Approval Process Component Scenarios
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
-	When I navigate to "Pending" content inside "Tasks" subheader on left panel
+	When I navigate to "Pending" content inside "My Tasks" subheader on left panel
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	When I select "Send to Owner" from approval decision panel
@@ -721,7 +721,7 @@ Feature: Approval Process Component Scenarios
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
-	When I navigate to "Pending" content inside "Tasks" subheader on left panel
+	When I navigate to "Pending" content inside "My Tasks" subheader on left panel
 	When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
 	When I click on "Start" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
 	When I select "Approve" from approval decision panel
@@ -755,7 +755,7 @@ Feature: Approval Process Component Scenarios
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
-	When I navigate to "Pending" content inside "Tasks" subheader on left panel
+	When I navigate to "Pending" content inside "My Tasks" subheader on left panel
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	When I select "Reassign" from approval decision panel
@@ -782,7 +782,7 @@ Feature: Approval Process Component Scenarios
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
-	When I navigate to "Pending" content inside "Tasks" subheader on left panel
+	When I navigate to "Pending" content inside "My Tasks" subheader on left panel
 	When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
 	When I select "Reassign" from approval decision panel
@@ -818,7 +818,7 @@ Feature: Approval Process Component Scenarios
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
-	When I navigate to "Pending" content inside "Tasks" subheader on left panel
+	When I navigate to "Pending" content inside "My Tasks" subheader on left panel
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	Then I see "Approve" is disabled
@@ -843,7 +843,7 @@ Feature: Approval Process Component Scenarios
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
-	When I navigate to "Pending" content inside "Tasks" subheader on left panel
+	When I navigate to "Pending" content inside "My Tasks" subheader on left panel
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	Then I see "Disapprove" is disabled
@@ -868,7 +868,7 @@ Feature: Approval Process Component Scenarios
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
-	When I navigate to "Pending" content inside "Tasks" subheader on left panel
+	When I navigate to "Pending" content inside "My Tasks" subheader on left panel
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	Then I see "Reassign" is disabled
@@ -893,7 +893,7 @@ Feature: Approval Process Component Scenarios
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
-	When I navigate to "Pending" content inside "Tasks" subheader on left panel
+	When I navigate to "Pending" content inside "My Tasks" subheader on left panel
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	Then I see "Send to Owner" is disabled
@@ -914,7 +914,7 @@ Feature: Approval Process Component Scenarios
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
-	When I navigate to "Pending" content inside "Tasks" subheader on left panel
+	When I navigate to "Pending" content inside "My Tasks" subheader on left panel
 	When I perform quick search for "Test program for automation -  SA mode only - Not approved"
 	When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
 	When I select "Reassign" from approval decision panel
