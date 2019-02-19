@@ -121,7 +121,7 @@ Feature: Side bar Component Scenarios
 	When I login as "Automation" user
 	When I navigate to "GovGrants Launcher Tab" tab
 	When I setup my app as "As a Grantor"
-	When I navigate to "Completed" content inside "Tasks" subheader on left panel 
+	When I navigate to "Completed" content inside "My Tasks" subheader on left panel 
 	Then I see "<Page title>" in new tab
 	Examples:
 	|Page title|

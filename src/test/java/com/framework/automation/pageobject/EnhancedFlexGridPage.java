@@ -19,7 +19,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	/******* "Variables and Locators" *****************/
 	private final By reachOutToEnhancedGridCollapse, searchInputEnhancedGrid, completeTableRowOfEnhancedGrid,
 			selectRecordCheckBoxForEnhancedGrid, currentBudgetPeriodEndDate, scrollToActionColumn,
-			obligatedAmountSpecificCells;
+			obligatedAmountSpecificCells, idColumnForChildFlexTable;
 
 	/**
 	 * Constructor to handle dependency injection and framework library
@@ -35,6 +35,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 		currentBudgetPeriodEndDate = By.xpath("//field[@field-name='BudgetPeriodEndDate__c']//input[@type='text']");
 		scrollToActionColumn = By.xpath("//div[@id='Enhanced1grid']//th[contains(text(),'Actions')]");
 		obligatedAmountSpecificCells = By.xpath("//table/tbody/tr/td//*[@field-name='TotalAwardObligatedAmount__c']");
+		idColumnForChildFlexTable = By.xpath("//field[@field-name='Name']//input[@type='text']");
 	}
 
 	/******* "Key Methods with complete functionality - public" *****************/
@@ -268,6 +269,14 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	 */
 	public void assertIfSelectRecordIsEnabledOnChildFlexTable(){
 		Assert.assertTrue(isRecordSelectionEnabledOnChildFlexTable());
+	}
+	
+	/**
+	 * assert text input box for ID column inside child flex table of enhanced grid is not displayed
+	 * 
+	 */
+	public void assertTextInputBoxForIdColumnNotDisplayed() {
+		Assert.assertFalse(isInputTextBoxIsDisplayedForIdColumnOfChildFlexTableAtEnhancedGrid());
 	}
 
 
@@ -688,5 +697,22 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	 */
 	private Boolean isRecordSelectionEnabledOnChildFlexTable(){
 		return reiDriver.WaitFor().WaitForElementToBePresent(By.xpath("//input[@id='TmpGrantorActiveAwardsGridcheckBox']")).isDisplayed();
+	}
+	
+	/**
+	 * 
+	 * @return true if changed cell value for Id column is displayed for enhaced grid child flex table
+	 */
+	private Boolean isInputTextBoxIsDisplayedForIdColumnOfChildFlexTableAtEnhancedGrid() {
+		boolean flag = false;
+		try {
+			reiDriver.JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
+			//govgrants.flexTable().slideNestedFlexTable("TmpActiveGrantsGridFlexToggle", 150);
+			if (reiDriver.findMyElement().getElement(idColumnForChildFlexTable).isDisplayed()) {
+				flag = true;
+			}
+		} catch (Exception e) {
+		}
+		return flag;
 	}
 }
