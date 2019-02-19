@@ -1,6 +1,6 @@
 @login
-Feature: Login Scenarios 
-	Test all login based scenarios
+Feature: Login Scenarios
+  Test all login based scenarios
 
   @validlogin @smoke
   Scenario Outline: User enters correct username and password to login and reaches homepage
@@ -9,9 +9,9 @@ Feature: Login Scenarios
     #When I login
     #Then I am on the homepage
     Examples:
-    | username | password |
-    | qaadmin@ut.test | test@12345 |
+      | username        | password   |
+      | qaadmin@ut.test | test@12345 |
 
-    @defaultstep @wip
-    Scenario: one step for default configuration. To be remove once used anywhere
+  @defaultstep @wip
+  Scenario: one step for default configuration. To be remove once used anywhere
     Given I have default configuration for "Program" field "Status" as "Submitted for Approval" with filter "Automation Program -SA to C"
