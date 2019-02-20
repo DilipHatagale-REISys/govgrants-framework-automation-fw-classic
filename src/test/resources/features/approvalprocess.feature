@@ -13,14 +13,12 @@ Feature: Approval Process Component Scenarios
       | Program                          | Status      | Created       | Test program for automation -  SA mode only - Not approved |
       | Approval Decision Action:General | Hide Action | true          | ADAC-0009                                                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     And I complete submit for approval
     When I re-login as "Automation-PM" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -38,14 +36,12 @@ Feature: Approval Process Component Scenarios
       | Program                          | Status    | Created       | Test program for automation -  SA mode only - Not approved |
       | Approval Decision Action:General | Sequence  | 5             | ADAC-0009                                                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     And I complete submit for approval
     When I re-login as "Automation-PM" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -63,14 +59,12 @@ Feature: Approval Process Component Scenarios
       | Program                          | Status            | Created       | Test program for automation -  SA mode only - Not approved |
       | Approval Decision Action:General | Comments Required | true          | ADAC-0009                                                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     And I complete submit for approval
     When I re-login as "Automation-PM" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -90,14 +84,12 @@ Feature: Approval Process Component Scenarios
       | Program                          | Status                | Created       | Test program for automation -  SA mode only - Not approved |
       | Approval Decision Action:General | Action Label Override | Approved      | ADAC-0009                                                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     And I complete submit for approval
     When I re-login as "Automation-PM" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -116,14 +108,12 @@ Feature: Approval Process Component Scenarios
       | Approval Decision Action:General | Confirmation Title   | Automation Approval             | ADAC-0009                                                  |
       | Approval Decision Action:General | Confirmation Message | Confirmation box for automation | ADAC-0009                                                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     And I complete submit for approval
     When I re-login as "Automation-PM" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -144,14 +134,12 @@ Feature: Approval Process Component Scenarios
       | Program                          | Status                            | Created                  | Test program for automation -  SA mode only - Not approved |
       | Approval Decision Action:General | Filter Criteria for User Reassign | <newFilterCriteriaValue> | ADAC-0011                                                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     And I complete submit for approval
     When I re-login as "Automation-PM" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -174,14 +162,12 @@ Feature: Approval Process Component Scenarios
       | Program                              | Status         | Created       | Test program for automation -  SA mode only - Not approved |
       | Approval Process Steps Cache:General | Field API Name |               | Program_Manager_Approver                                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     And I complete submit for approval
     When I re-login as "Automation-PM" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -198,14 +184,12 @@ Feature: Approval Process Component Scenarios
       | Program                              | Status               | Created       | Test program for automation -  SA mode only - Can be Approved |
       | Approval Process Steps Cache:General | Email Field API Name | OwnerId       | Program_Manager_Approver                                      |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
     And I complete submit for approval
     When I re-login as "Automation-PM" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -215,7 +199,6 @@ Feature: Approval Process Component Scenarios
     When I enter Approval comment
     And I click submit
     When I re-login as "Automation" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As an Administrator"
     And I navigate to "Operate" tab
     When I navigate to "Email Logs" content inside "Activities" subheader on left panel
@@ -234,14 +217,12 @@ Feature: Approval Process Component Scenarios
       | Approval Process Steps Cache:General | Approve Confirmation Title   | Automation Approval             | Program_Manager_Approver                                   |
       | Approval Process Steps Cache:General | Approve Confirmation Message | Confirmation box for automation | Program_Manager_Approver                                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     And I complete submit for approval
     When I re-login as "Automation-PM" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -262,14 +243,12 @@ Feature: Approval Process Component Scenarios
       | Program                 | Status                             | Created       | Test program for automation -  SA mode only - Not approved |
       | Task Config:Task Action | Send Task Assignment Notification? | true          | Approve Program                                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     And I complete submit for approval
     When I re-login as "Automation" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As an Administrator"
     And I navigate to "Operate" tab
     When I navigate to "Email Logs" content inside "Activities" subheader on left panel
@@ -286,14 +265,12 @@ Feature: Approval Process Component Scenarios
       | Program                 | Status            | Created       | Test program for automation -  SA mode only - Not approved |
       | Task Config:Task Action | Complete On View? | true          | Approve Program                                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     And I complete submit for approval
     When I re-login as "Automation-PM" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -303,7 +280,6 @@ Feature: Approval Process Component Scenarios
     When I enter Approval comment
     And I click submit
     When I re-login as "Automation" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -323,14 +299,12 @@ Feature: Approval Process Component Scenarios
       | Approval Process Steps Cache:General | Reject Confirmation Title   | Automation Reject                      | Program_Manager_Approver                                   |
       | Approval Process Steps Cache:General | Reject Confirmation Message | Reject Confirmation box for automation | Program_Manager_Approver                                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     And I complete submit for approval
     When I re-login as "Automation-PM" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -354,14 +328,12 @@ Feature: Approval Process Component Scenarios
       | Approval Process Steps Cache:General | Reassign Confirmation Title   | Automation Reassign                      | Program_Manager_Approver                                   |
       | Approval Process Steps Cache:General | Reassign Confirmation Message | Reassign Confirmation box for automation | Program_Manager_Approver                                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     And I complete submit for approval
     When I re-login as "Automation-PM" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -385,14 +357,12 @@ Feature: Approval Process Component Scenarios
       | Approval Process Steps Cache:General | Send To Owner Confirmation Title   | Automation Send to Owner                      | Program_Manager_Approver                                   |
       | Approval Process Steps Cache:General | Send To Owner Confirmation Message | Send to Owner Confirmation box for automation | Program_Manager_Approver                                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     And I complete submit for approval
     When I re-login as "Automation-PM" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -415,14 +385,12 @@ Feature: Approval Process Component Scenarios
       | Approval Decision Action:General | Confirmation Title   | Automation for Rejection      | ADAC-0010                                                  |
       | Approval Decision Action:General | Confirmation Message | Test Automation for Rejection | ADAC-0010                                                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     And I complete submit for approval
     When I re-login as "Automation-PM" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -446,14 +414,12 @@ Feature: Approval Process Component Scenarios
       | Approval Decision Action:General | Confirmation Title   | Automation for Forward      | ADAC-0011                                                  |
       | Approval Decision Action:General | Confirmation Message | Test Automation for Forward | ADAC-0011                                                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     And I complete submit for approval
     When I re-login as "Automation-PM" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -475,14 +441,12 @@ Feature: Approval Process Component Scenarios
       | Program                          | Status                  | Created               | Test program for automation -  SA mode only - Can be Approved |
       | Approval Decision Action:General | Comments Field API Name | FederalProgramCFDA__c | ADAC-0009                                                     |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
     And I complete submit for approval
     When I re-login as "Automation-PM" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -492,7 +456,6 @@ Feature: Approval Process Component Scenarios
     When I enter Approval comment
     And I click submit
     When I re-login as "Automation" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
@@ -511,14 +474,12 @@ Feature: Approval Process Component Scenarios
       | Approval Decision Action:General | Confirmation Title   | Automation for Sendback      | ADAC-0012                                                  |
       | Approval Decision Action:General | Confirmation Message | Test Automation for Sendback | ADAC-0012                                                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     And I complete submit for approval
     When I re-login as "Automation-PM" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -539,14 +500,12 @@ Feature: Approval Process Component Scenarios
       | Program                 | Status             | Created       | Test program for automation -  SA mode only - Not approved |
       | Task Config:Task Action | View Page Profiles | <newProfiles> | Approve Program                                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     And I complete submit for approval
     When I re-login as "Automation-PM" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -569,14 +528,12 @@ Feature: Approval Process Component Scenarios
       | Approval Process Steps Cache:General | Email Template Name    | Program Rejected Email Template | Program Rejected Email Template                               |                           |                            |
       | Approval Process Steps Cache:General | Approve Email Template | ApiGeneratedId:2                | Program_Manager_Approver                                      |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
     And I complete submit for approval
     When I re-login as "Automation-PM" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -586,7 +543,6 @@ Feature: Approval Process Component Scenarios
     When I enter Approval comment
     And I click submit
     When I re-login as "Automation" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As an Administrator"
     And I navigate to "Operate" tab
     When I navigate to "Email Logs" content inside "Activities" subheader on left panel
@@ -605,14 +561,12 @@ Feature: Approval Process Component Scenarios
       | Approval Process Steps Cache:General | Email Template Name   | Program Approved Email Template | Program Approved Email Template                            |                           |                            |
       | Approval Process Steps Cache:General | Reject Email Template | ApiGeneratedId:2                | Program_Manager_Approver                                   |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     And I complete submit for approval
     When I re-login as "Automation-PM" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -622,7 +576,6 @@ Feature: Approval Process Component Scenarios
     When I enter Approval comment
     And I click submit
     When I re-login as "Automation" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As an Administrator"
     And I navigate to "Operate" tab
     When I navigate to "Email Logs" content inside "Activities" subheader on left panel
@@ -640,14 +593,12 @@ Feature: Approval Process Component Scenarios
       | Approval Process Steps Cache:General | Email Template Name       | Program Approved Email Template | Program Approved Email Template                            |                           |                            |
       | Approval Process Steps Cache:General | Reassigned Email Template | ApiGeneratedId:1                | Program_Manager_Approver                                   |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     And I complete submit for approval
     When I re-login as "Automation-PM" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -658,7 +609,6 @@ Feature: Approval Process Component Scenarios
     When I select specific user "Allen PM"
     And I click submit
     When I re-login as "Automation" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As an Administrator"
     And I navigate to "Operate" tab
     When I navigate to "Email Logs" content inside "Activities" subheader on left panel
@@ -676,14 +626,12 @@ Feature: Approval Process Component Scenarios
       | Approval Process Steps Cache:General | Email Template Name          | Program Approved Email Template | Program Approved Email Template                            |                           |                            |
       | Approval Process Steps Cache:General | Send To Owner Email Template | ApiGeneratedId:1                | Program_Manager_Approver                                   |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     And I complete submit for approval
     When I re-login as "Automation-PM" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -693,7 +641,6 @@ Feature: Approval Process Component Scenarios
     When I enter Approval comment
     And I click submit
     When I re-login as "Automation" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As an Administrator"
     And I navigate to "Operate" tab
     When I navigate to "Email Logs" content inside "Activities" subheader on left panel
@@ -710,7 +657,6 @@ Feature: Approval Process Component Scenarios
       | Program                              | Status                   | Created       | Test program for automation -  SA mode only - Can be Approved |
       | Approval Process Steps Cache:General | Notify Additional People | true          | Program_Manager_Approver                                      |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I select "Draft Programs" from double headed dropdown inside admin portal
@@ -718,7 +664,6 @@ Feature: Approval Process Component Scenarios
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
     And I complete submit for approval
     When I re-login as "Automation-PM" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -728,7 +673,6 @@ Feature: Approval Process Component Scenarios
     When I enter Approval comment
     And I click submit
     When I re-login as "Automation" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As an Administrator"
     And I navigate to "Operate" tab
     When I navigate to "Email Logs" content inside "Activities" subheader on left panel
@@ -745,14 +689,12 @@ Feature: Approval Process Component Scenarios
       | Program                          | Status            | Created       | Test program for automation -  SA mode only - Not approved |
       | Approval Decision Action:General | Comments Required | true          | ADAC-0011                                                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     And I complete submit for approval
     When I re-login as "Automation-PM" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -772,14 +714,12 @@ Feature: Approval Process Component Scenarios
       | Program                          | Status                  | Created               | Test program for automation -  SA mode only - Can be Approved |
       | Approval Decision Action:General | Comments Field API Name | FederalProgramCFDA__c | ADAC-0011                                                     |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
     And I complete submit for approval
     When I re-login as "Automation-PM" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -791,7 +731,6 @@ Feature: Approval Process Component Scenarios
     When I enter Approval comment
     And I click submit
     When I re-login as "Automation" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
@@ -808,14 +747,12 @@ Feature: Approval Process Component Scenarios
       | Program                          | Status               | Created                                             | Test program for automation -  SA mode only - Not approved |
       | Approval Decision Action:General | Hide Expression JSON | govgrants_config:HideExpressonJsonForApprovalAction | ADAC-0009                                                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     And I complete submit for approval
     When I re-login as "Automation-PM" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -833,14 +770,12 @@ Feature: Approval Process Component Scenarios
       | Program                          | Status               | Created                                             | Test program for automation -  SA mode only - Not approved |
       | Approval Decision Action:General | Hide Expression JSON | govgrants_config:HideExpressonJsonForApprovalAction | ADAC-0010                                                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     And I complete submit for approval
     When I re-login as "Automation-PM" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -858,14 +793,12 @@ Feature: Approval Process Component Scenarios
       | Program                          | Status               | Created                                             | Test program for automation -  SA mode only - Not approved |
       | Approval Decision Action:General | Hide Expression JSON | govgrants_config:HideExpressonJsonForApprovalAction | ADAC-0011                                                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     And I complete submit for approval
     When I re-login as "Automation-PM" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -883,14 +816,12 @@ Feature: Approval Process Component Scenarios
       | Program                          | Status               | Created                                             | Test program for automation -  SA mode only - Not approved |
       | Approval Decision Action:General | Hide Expression JSON | govgrants_config:HideExpressonJsonForApprovalAction | ADAC-0012                                                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     And I complete submit for approval
     When I re-login as "Automation-PM" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -904,14 +835,12 @@ Feature: Approval Process Component Scenarios
       | configurationCategory | fieldName | fieldNewValue | coreComponentField                                         |
       | Program               | Status    | Created       | Test program for automation -  SA mode only - Not approved |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     And I complete submit for approval
     When I re-login as "Automation-PM" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -923,7 +852,6 @@ Feature: Approval Process Component Scenarios
     When I enter Approval comment
     And I click submit
     When I re-login as "Automation" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
