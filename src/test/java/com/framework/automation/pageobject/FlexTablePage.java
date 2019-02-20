@@ -328,6 +328,7 @@ public class FlexTablePage extends GovGrantsManager {
      * @param uniqueColumnValue
      */
     public void assertActionIconDisplayedInsideflexTable(String iconName, String uniqueColumnValue) {
+    	reiDriver.WaitFor().WaitForElementToBePresent(govgrants.flexTable().getTableActionIconWithoutTableId(iconName, uniqueColumnValue));
         Assert.assertTrue(reiDriver.findMyElement()
                 .getElement(govgrants.flexTable().getTableActionIconWithoutTableId(iconName, uniqueColumnValue))
                 .isDisplayed());
