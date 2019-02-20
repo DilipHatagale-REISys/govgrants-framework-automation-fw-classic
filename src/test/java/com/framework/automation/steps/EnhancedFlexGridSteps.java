@@ -136,4 +136,9 @@ public class EnhancedFlexGridSteps {
 	public void iSeeSelectCheckBoxEnabledForChildFlexTableInEnhancedFlexGrid() {
 		enhancedFlexGrid.assertIfSelectRecordIsEnabledOnChildFlexTable();
 	}
+	
+	@Then("^I see input box is not displayed for ID inside child Flex table$")
+	public void assertTextInputBoxForIdColumn() {
+		enhancedFlexGrid.assertTextInputBoxForIdColumnNotDisplayed();
+	}
 }

@@ -201,7 +201,7 @@ Feature: Approval Process Component Scenarios
     When I re-login as "Automation" user on "QA" portal
     When I setup my app as "As an Administrator"
     And I navigate to "Operate" tab
-    When I navigate to "Email Logs" content inside "Activities" subheader on left panel
+    When I navigate to "Email Logs" content inside "Logs" subheader on left panel
     When I select "Queued Emails" from double headed dropdown inside admin portal
     Then I see email is generated with template "Program_Approved_Email_Template"
 
@@ -251,7 +251,7 @@ Feature: Approval Process Component Scenarios
     When I re-login as "Automation" user on "QA" portal
     When I setup my app as "As an Administrator"
     And I navigate to "Operate" tab
-    When I navigate to "Email Logs" content inside "Activities" subheader on left panel
+    When I navigate to "Email Logs" content inside "Logs" subheader on left panel
     When I select "Queued Emails" from double headed dropdown inside admin portal
     Then I see email is generated with template "TaskReminderTemplateMultiple"
 
@@ -545,7 +545,7 @@ Feature: Approval Process Component Scenarios
     When I re-login as "Automation" user on "QA" portal
     When I setup my app as "As an Administrator"
     And I navigate to "Operate" tab
-    When I navigate to "Email Logs" content inside "Activities" subheader on left panel
+    When I navigate to "Email Logs" content inside "Logs" subheader on left panel
     When I select "Queued Emails" from double headed dropdown inside admin portal
     Then I see email is generated with template "Program_Rejected_Email_Template"
 
@@ -578,7 +578,7 @@ Feature: Approval Process Component Scenarios
     When I re-login as "Automation" user on "QA" portal
     When I setup my app as "As an Administrator"
     And I navigate to "Operate" tab
-    When I navigate to "Email Logs" content inside "Activities" subheader on left panel
+    When I navigate to "Email Logs" content inside "Logs" subheader on left panel
     When I select "Queued Emails" from double headed dropdown inside admin portal
     Then I see email is generated with template "Program_Approved_Email_Template"
 
@@ -611,7 +611,7 @@ Feature: Approval Process Component Scenarios
     When I re-login as "Automation" user on "QA" portal
     When I setup my app as "As an Administrator"
     And I navigate to "Operate" tab
-    When I navigate to "Email Logs" content inside "Activities" subheader on left panel
+    When I navigate to "Email Logs" content inside "Logs" subheader on left panel
     When I select "Queued Emails" from double headed dropdown inside admin portal
     Then I see email is generated with template "Program_Approved_Email_Template"
 
@@ -643,7 +643,7 @@ Feature: Approval Process Component Scenarios
     When I re-login as "Automation" user on "QA" portal
     When I setup my app as "As an Administrator"
     And I navigate to "Operate" tab
-    When I navigate to "Email Logs" content inside "Activities" subheader on left panel
+    When I navigate to "Email Logs" content inside "Logs" subheader on left panel
     When I select "Queued Emails" from double headed dropdown inside admin portal
     Then I see email is generated with template "Program_Approved_Email_Template"
 
@@ -669,13 +669,13 @@ Feature: Approval Process Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
-    When I select "Approve" from approval decision panel
-    When I enter Approval comment
+	When I select "Approve" from approval decision panel
+	When I enter Approval comment
     And I click submit
     When I re-login as "Automation" user on "QA" portal
     When I setup my app as "As an Administrator"
     And I navigate to "Operate" tab
-    When I navigate to "Email Logs" content inside "Activities" subheader on left panel
+    When I navigate to "Email Logs" content inside "Logs" subheader on left panel
     When I select "Queued Emails" from double headed dropdown inside admin portal
     Then I see email is generated with template "Program_Approved_Email_Template"
 

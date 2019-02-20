@@ -34,7 +34,104 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
     Then I see Menu icon is disabled from planning flex table "Monitoring Schedule For All Active Grants"
-
+	
+  @45281 @all @hideCellJsonfieldForChildFlexTableAtEnhancedGrid-gPlanning
+  Scenario: Hiding specific cell value of child flex table at enhanced grid from config and validating it inside enhanced grid of programs-planning
+	Given I have default configuration as below:
+	  |configurationCategory |fieldName       |fieldOrignalValue    |filterId        |
+	  |Flex Table List       |Hide Cell JSON  |                     |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	  |configurationCategory |fieldName       |fieldNewValue                                               |coreComponentField           |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	  |Flex Table List       |Hide Cell JSON  |govgrants_config:HideCellJsonForChildFlexTableAtEnhancedGrid|TmpGrantorActiveAwardsGrid   |Name                     |FTC-1492                  |
+    When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	When I navigate to "Financials" sub tab
+	When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+	When I expand nested table containing column value "Demo_Title"
+	Then I see "*****" shown inside enhanced grid table for specified record "Demo_Title"
+	
+  @45284 @all @readOnlyCellJSONFieldForChildFlexTableAtEnhancedGrid-gPlanning
+  Scenario: Changing specific cell value to read only for child flex table of enhanced grid from config and validating it inside enhanced grid of programs-planning
+	Given I have default configuration as below:
+	  |configurationCategory |fieldName            |fieldOrignalValue    |filterId        |
+	  |Flex Table List       |Read Only Cell JSON  |                     |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	  |configurationCategory |fieldName            |fieldNewValue                                                   |coreComponentField           |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	  |Flex Table List       |Read Only Cell JSON  |govgrants_config:ReadOnlyCellJsonForChildFlexTableAtEnhancedGrid|TmpGrantorActiveAwardsGrid   |Name                     |FTC-1492                  |
+    When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	When I navigate to "Financials" sub tab
+	When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+	When I expand nested table containing column value "Demo_Title"
+	When I click on "Edit" icon for "AD-GG PJ--00" inside table
+	Then I see input box is not displayed for ID inside child Flex table
+	
+  @45285 @all @hideColumnJSONfieldForChildFlexTableAtEnhancedGrid-gPlanning
+  Scenario: Hiding specific column value for child flex table of enhanced grid from config and validating it inside enhanced grid of programs-planning
+    Given I have default configuration as below:
+	  |configurationCategory |fieldName       |fieldOrignalValue    |filterId        |
+	  |Flex Table List       |Hide Column JSON|                     |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	  |configurationCategory |fieldName       |fieldNewValue                                                 |coreComponentField           |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	  |Flex Table List       |Hide Column JSON|govgrants_config:HideColumnJsonForChildFlexTableAtEnhancedGrid|TmpGrantorActiveAwardsGrid   |Name                     |FTC-1495                  |
+    When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	When I navigate to "Financials" sub tab
+	When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+	When I expand nested table containing column value "Demo_Title"
+	Then I see "Award Title" not displayed in enhanced grid table column title
+	
+  @45287 @all @readOnlyColumnJSONFieldForChildFlexTableAtEnhancedGrid-gPlanning
+  Scenario: Changing specific cell value to read only for child flex table of enhanced grid from config and validating it inside enhanced grid of programs-planning
+	Given I have default configuration as below:
+	  |configurationCategory |fieldName            |fieldOrignalValue    |filterId        |
+	  |Flex Table List       |Read Only Column JSON|                     |ApiGeneratedId:0|
+	Given I setup test configuration as below:
+	  |configurationCategory |fieldName            |fieldNewValue                                                     |coreComponentField           |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	  |Flex Table List       |Read Only Column JSON|govgrants_config:ReadOnlyColumnJsonForChildFlexTableAtEnhancedGrid|TmpGrantorActiveAwardsGrid   |Name                     |FTC-1492                  |
+    When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	When I navigate to "Financials" sub tab
+	When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+	When I expand nested table containing column value "Demo_Title"
+	When I click on "Edit" icon for "AD-GG PJ--00" inside table
+	Then I see input box is not displayed for ID inside child Flex table
+	
+  @45290 @all @iconCssFieldForChildFlexTableAtEnhancedGridActionItem-gPlanning
+  Scenario: Setup icon css of child flex table for enhanced grid table edit action from config and validating it inside enhanced grid of programs-planning
+	Given I have default configuration as below:
+	  |configurationCategory |fieldName    |fieldOrignalValue                                  |coreComponentField           |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	  |Flex Table Action     |Icon CSS     |govgrants_config:FlexTableEditActionDefaultIconCss |TmpGrantorActiveAwardsGrid   |Name                     |Edit                      |
+	Given I setup test configuration as below:
+	  |configurationCategory |fieldName    |fieldNewValue                                      |coreComponentField           |coreCOmponentSubFieldName|coreComponentSubFieldValue|
+	  |Flex Table Action     |Icon CSS     |govgrants_config:FlexTableEditActionNewIconCss     |TmpGrantorActiveAwardsGrid   |Name                     |Edit                      |
+    When I login as "Automation" user
+	When I navigate to "GovGrants Launcher Tab" tab
+	When I setup my app as "As a Grantor"
+	And I navigate to "Planning" tab
+	When I perform quick search for "Test program for automation - Created mode only"
+	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+	When I navigate to "Financials" sub tab
+	When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+	When I expand nested table containing column value "Demo_Title"
+	Then I see external link icon as "AD-GG PJ--00" for "Edit" inside enhanced grid table action
+	
   @35436 @all @changeOfFlexTableTitleForEnhancedGrid-gPlanning
   Scenario: validate after changing name of enhanced flex grid title inside planning-program enhanced flex grid
     Given I have default configuration as below:
@@ -422,7 +519,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on "Edit" icon for "Demo_Title" inside table with table id "TmpActiveGrantsGridFlexToggle" without processing
     Then I see confirmation box with body "Automation" is displayed
 
-  @41468 @all @locationFieldAtEnhancedGridActionItem-gPlanning
+  @41468 @all @locationFieldAtEnhancedGridActionItemFromRowToTop-gPlanning
   Scenario: Changing location of Monitoring Schedule For All Active Grants enhanced grid table view action from row to top from config anf validating it inside enhanced of program-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -886,4 +983,81 @@ Feature: Enhanced Flex Grid Component Scenarios
       | Total Obligated Amount | TotalObligateAmount__c,Name,GrantAwardName__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,Status__c                     | Name,GrantAwardName__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,Status__c |
       | Status                 | Status__c,Name,GrantAwardName__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c                     | Name,GrantAwardName__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,Status__c |
       | Active Budget Year     | ActiveBudgetYear__c,Name,GrantAwardName__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,Status__c | Name,GrantAwardName__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,Status__c |
-		
+      
+  @45293 @all @ConfirmationMessageFieldForChildFlexTableAtEnhancedGridActionItem-gPlanning 
+  Scenario: Setup confirmation message for child flex table action item at enhanced grid table view action from configuration and validating it inside enhanced grid of program-planning 
+	Given I have default configuration as below: 
+	  | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+	  | Flex Table Action     | Show Confirmation Box | false             | TmpGrantorActiveAwardsGrid | Name                      | View                       |
+	  | Flex Table Action     | Confirmation Message  |                   | TmpGrantorActiveAwardsGrid | Name                      | View                       |
+	Given I setup test configuration as below: 
+	  | configurationCategory | fieldName             | fieldNewValue      | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+	  | Flex Table Action     | Confirmation Message  | Test Automation    | TmpGrantorActiveAwardsGrid | Name                      | View                       |
+	  | Flex Table Action     | Show Confirmation Box | true               | TmpGrantorActiveAwardsGrid | Name                      | View                       |
+	When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I expand nested table containing column value "Demo_Title"
+	When I click on "View" icon for "AD-GG PJ--00" inside table with table id "TmpGrantorActiveAwardsGridFlexToggle" without processing 
+	Then I see confirmation box with body "Test Automation" is displayed 
+    
+   @45297 @all @locationFieldForChildFlexTableAtEnhancedGridActionItem-gPlanning
+   Scenario: Changing location of Active awards child flex table view action from row to top from config anf validating it inside enhanced of program-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row               | TmpGrantorActiveAwardsGrid | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type |                   | TmpGrantorActiveAwardsGrid | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Top           | TmpGrantorActiveAwardsGrid | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | Button        | TmpGrantorActiveAwardsGrid | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I expand nested table containing column value "Demo_Title"
+    Then I see "View" button inside "Active Awards" enhanced grid
+    
+   @45300 @all @locationFieldAtEnhancedGridActionItemFromTopToRow-gPlanning
+   Scenario: Changing location of enhanced grid flex table Test action button from top to row from config anf validating it inside enhanced grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField     | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Top               | TmpActiveGrantsGrid    | Name                      | Test                       |
+      | Flex Table Action     | Header Action Display Type | Button            | TmpActiveGrantsGrid    | Name                      | Test                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue     | coreComponentField     | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row               | TmpActiveGrantsGrid    | Name                      | Test                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    Then I see "Test" icon for "Demo_Title" is displayed inside flex table
+    
+   @45304 @all @locationFieldForChildFlexTableAtEnhancedGridActionItemFromTopToRow-gPlanning
+   Scenario: Changing location of child flex table of enhanced grid test action button from top to row from config and validating it inside enhanced grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Top               | TmpGrantorActiveAwardsGrid    | Name                      | test                       |
+      | Flex Table Action     | Header Action Display Type | Button            | TmpGrantorActiveAwardsGrid    | Name                      | test                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue     | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row               | TmpGrantorActiveAwardsGrid    | Name                      | test                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I expand nested table containing column value "Demo_Title"
+    Then I see "test" icon for "AD-GG PJ--00" is displayed inside flex table
+    
