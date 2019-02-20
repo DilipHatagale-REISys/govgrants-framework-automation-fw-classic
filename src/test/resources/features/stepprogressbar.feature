@@ -12,7 +12,6 @@ Feature: Step Progress Bar Component Scenarios
       | configurationCategory                  | fieldName              | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Header Config:General | Render for Application |               | PB-0016            |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -32,7 +31,6 @@ Feature: Step Progress Bar Component Scenarios
       | configurationCategory                  | fieldName       | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Header Config:General | Render for User |               | PB-0016            |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -52,7 +50,6 @@ Feature: Step Progress Bar Component Scenarios
       | configurationCategory   | fieldName      | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Detail | Hide For Users | <changedUser> | Program Progress Bar | Name                      | Submitted for Approval     |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -72,7 +69,6 @@ Feature: Step Progress Bar Component Scenarios
       | configurationCategory   | fieldName | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Detail | Sequence  | 0             | Program Progress Bar | Name                      | Submitted for Approval     |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -88,7 +84,6 @@ Feature: Step Progress Bar Component Scenarios
       | configurationCategory                  | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Header Config:General | Complete Color | #0b0ba0       | PB-0016            |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -105,7 +100,6 @@ Feature: Step Progress Bar Component Scenarios
       | Program                 | Status        | Created       | Test program for automation -  SA mode only - Not approved |                           |                            |
       | Step Progressbar Detail | Negative Path | true          | Program Progress Bar                                       | Name                      | Submitted for Approval     |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
@@ -122,7 +116,6 @@ Feature: Step Progress Bar Component Scenarios
       | configurationCategory                  | fieldName    | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Header Config:General | Reject Color | #0b0ba0       | PB-0016            |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I select "Rejected Programs" from double headed dropdown inside admin portal
@@ -139,7 +132,6 @@ Feature: Step Progress Bar Component Scenarios
       | configurationCategory                  | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Header Config:General | Incomplete Color | #0b0ba0       | PB-0016            |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I select "Draft Programs" from double headed dropdown inside admin portal
@@ -156,7 +148,6 @@ Feature: Step Progress Bar Component Scenarios
       | configurationCategory   | fieldName     | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Detail | Display Value | Automation    | Program Progress Bar | Name                      | Created                    |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -173,7 +164,6 @@ Feature: Step Progress Bar Component Scenarios
       | Program                 | Status    | Created       | Test program for automation -  SA mode only - Not approved |                           |                            |
       | Step Progressbar Detail | IsCreated | true          | Program Progress Bar                                       | Name                      | Submitted for Approval     |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"

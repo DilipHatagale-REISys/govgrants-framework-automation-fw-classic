@@ -12,7 +12,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:FlexTableHideExpressionBuilderJsonForPMUser | ActiveFundingOpportunities | Name                      | Create                     |
     When I login as "Automation-PM" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     When I select "Draft Announcements" from double headed dropdown inside admin portal
@@ -27,7 +26,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                   | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:FlexTableHideExpressionBuilderJsonForAdminUser | ActiveFundingOpportunities | Name                      | Create                     |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     When I select "Draft Announcements" from double headed dropdown inside admin portal
@@ -42,7 +40,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                              | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:FlexTableHideExpressionBuilderJsonForAdministratorProfile | ActiveFundingOpportunities | Name                      | Create                     |
     When I login as "Automation-PM" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     When I select "Draft Announcements" from double headed dropdown inside admin portal
@@ -57,13 +54,11 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                              | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:FlexTableHideExpressionBuilderJsonForAdministratorProfile | ActiveFundingOpportunities | Name                      | Create                     |
     When I login as "Automation-PM" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     When I select "Draft Announcements" from double headed dropdown inside admin portal
     Then I see "Create" button inside "Draft Announcements" flex table not displayed
     When I re-login as "Automation" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     When I select "Draft Announcements" from double headed dropdown inside admin portal
@@ -78,7 +73,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                      | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForAdministratorProfileWithNotInOperator | ActiveFundingOpportunities | Name                      | Create                     |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     When I select "Draft Announcements" from double headed dropdown inside admin portal
@@ -93,7 +87,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                      | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForAdministratorProfileWithNotInOperator | ActiveFundingOpportunities | Name                      | Create                     |
     When I login as "Automation-PM" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     When I select "Draft Announcements" from double headed dropdown inside admin portal
@@ -108,7 +101,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                           | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForInternalUserWithInOperator | ActiveFundingOpportunities | Name                      | Create                     |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     When I select "Draft Announcements" from double headed dropdown inside admin portal
@@ -123,7 +115,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                              | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForInternalUserWithNotInOperator | ActiveFundingOpportunities | Name                      | Create                     |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     When I select "Draft Announcements" from double headed dropdown inside admin portal
@@ -138,7 +129,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                              | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForInternalUserWithNotInOperator | ActiveFundingOpportunities | Name                      | Create                     |
     When I login as "Automation-Reviewer" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     When I select "Draft Announcements" from double headed dropdown inside admin portal
@@ -153,7 +143,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                          | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForInternalUserTypeInternalApplicantReviewer | ActiveFundingOpportunities | Name                      | Create                     |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     When I select "Draft Announcements" from double headed dropdown inside admin portal
@@ -168,7 +157,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                          | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForInternalUserTypeInternalApplicantReviewer | ActiveFundingOpportunities | Name                      | Create                     |
     When I login as "Automation-Applicant" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     When I select "Draft Announcements" from double headed dropdown inside admin portal
@@ -183,7 +171,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                          | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForInternalUserTypeInternalApplicantReviewer | ActiveFundingOpportunities | Name                      | Create                     |
     When I login as "Automation-Reviewer" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     When I select "Draft Announcements" from double headed dropdown inside admin portal
@@ -198,7 +185,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForContextViewWithOperatorIn | ProgramFundingAccount | Name                      | Associate                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -215,7 +201,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForContextEditWithOperatorIn | ProgramFundingAccount | Name                      | Associate                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -232,7 +217,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                             | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForContextViewWithOperatorNotIn | ProgramFundingAccount | Name                      | Associate                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -249,7 +233,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                             | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForContextEditWithOperatorNotIn | ProgramFundingAccount | Name                      | Associate                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -266,7 +249,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForUserAppSAGrantorWithOperatorIn | ProgramFundingAccount | Name                      | Associate                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -283,7 +265,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                               | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForUserAppSAGranteeWithOperatorIn | OpporunityGranteeServiceArea | Name                      | Associate                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantee"
     And I navigate to "Opportunities" tab
     When I perform quick search for "ROSES 2018: Rapid Response and Novel Research in Earth Science"
@@ -300,7 +281,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                     | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForUserAppSAAdministratorWithOperatorIn | CreatedandInactiveOrganizations | Name                      | New                        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As an Administrator"
     And I navigate to "Setup" tab
     Then I see "New" button inside "Draft Internal Organizations" flex table not displayed
@@ -314,7 +294,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForFieldWithOperatorEquals | ProgramFundingAccount | Name                      | Associate                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -331,7 +310,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                              | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForUseAppRecipientWithOperatorIn | GrantProjectAreas  | Name                      | View                       |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Sub-Recipient"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -348,7 +326,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForProfileSystemAdministratorWithOperatorAnd | ProgramFundingAccount | Name                      | Associate                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -365,7 +342,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForProfileSystemAdministratorWithOperatorOR | ProgramFundingAccount | Name                      | Associate                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -382,7 +358,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForUserTypeInternalAndContextViewWithOperatorAND | ProgramFundingAccount | Name                      | Associate                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -399,7 +374,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                             | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForUserTypeInternalAndContextViewWithOperatorOR | ProgramFundingAccount | Name                      | Associate                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -416,7 +390,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                                   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForUserTypeInternalAndUserAppSAGrantorWithOperatorAND | ProgramFundingAccount | Name                      | Associate                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -433,7 +406,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForUserTypeInternalAndUserAppSAGrantorWithOperatorOR | ProgramFundingAccount | Name                      | Associate                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -450,7 +422,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                                             | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForProfileSystemAdministratorAndUserAppSAGrantorWithOperatorAND | ProgramFundingAccount | Name                      | Associate                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -467,7 +438,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForProfileSystemAdministratorAndUserAppSAGrantorWithOperatorOR | ProgramFundingAccount | Name                      | Associate                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -484,7 +454,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForProfileSystemAdministratorAndContextViewWithOperatorAND | ProgramFundingAccount | Name                      | Associate                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -501,7 +470,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForProfileSystemAdministratorAndContextViewWithOperatorOR | ProgramFundingAccount | Name                      | Associate                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -518,7 +486,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForContextViewAndUserTypeSAGrantorWithOperatorAND | ProgramFundingAccount | Name                      | Associate                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -535,7 +502,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForContextViewAndUserTypeSAGrantorWithOperatorOR | ProgramFundingAccount | Name                      | Associate                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -552,7 +518,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForFieldAndUserTypeInternalWithOperatorAND | ProgramFundingAccount | Name                      | Associate                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -569,7 +534,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForFieldAndProfileSystemAdministratorWithOperatorAND | ProgramFundingAccount | Name                      | Associate                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -586,7 +550,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForFieldAndProfileSystemAdministratorWithOperatorOR | ProgramFundingAccount | Name                      | Associate                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -603,7 +566,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForFieldAndContextEditWithOperatorAND | ProgramFundingAccount | Name                      | Associate                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -620,7 +582,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForFieldAndContextEditWithOperatorOR | ProgramFundingAccount | Name                      | Associate                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -637,7 +598,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForFieldAndUserAppSAGrantorWithOperatorAND | ProgramFundingAccount | Name                      | Associate                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -654,7 +614,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForFieldAndUserAppSAGrantorWithOperatorOR | ProgramFundingAccount | Name                      | Associate                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -671,7 +630,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForFieldWithOperatorNotEquals | ProgramFundingAccount | Name                      | Associate                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -688,7 +646,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForFieldWithOperatorNotEquals | ProgramFundingAccount | Name                      | Associate                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation-SA to C"
@@ -705,7 +662,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForFieldUsingPicklistWithOperatorEqualsTo | ProgramFundingAccount | Name                      | Associate                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -722,7 +678,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForFieldUsingLookupWithOperatorEqualsTo | ProgramFundingAccount | Name                      | Associate                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -739,7 +694,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForFieldUsingPicklistWithOperatorNotEqualsTo | ProgramFundingAccount | Name                      | Associate                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -756,7 +710,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForFieldUsingLookupWithOperatorNotEqualsTo | ProgramFundingAccount | Name                      | Associate                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -773,7 +726,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForFieldWithOperatorContains | ProgramFundingAccount | Name                      | Associate                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -790,7 +742,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                        | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForFieldWithLessThanEquals | AnnouncementFundingAccount | Name                      | Associate                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     When I select "Draft Announcements" from double headed dropdown inside admin portal
@@ -808,7 +759,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                        | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForFieldWithLessThanEquals | AnnouncementFundingAccount | Name                      | Associate                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     When I select "Draft Announcements" from double headed dropdown inside admin portal
@@ -826,7 +776,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                           | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForFieldWithGreaterThanEquals | AnnouncementFundingAccount | Name                      | Associate                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     When I select "Draft Announcements" from double headed dropdown inside admin portal
@@ -844,7 +793,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                           | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForFieldWithGreaterThanEquals | AnnouncementFundingAccount | Name                      | Associate                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     When I select "Draft Announcements" from double headed dropdown inside admin portal
@@ -862,7 +810,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                          | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForFieldWithOperatorLessThan | AnnouncementFundingAccount | Name                      | Associate                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     When I select "Draft Announcements" from double headed dropdown inside admin portal
@@ -880,7 +827,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                             | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForFieldWithOperatorGreaterThan | AnnouncementFundingAccount | Name                      | Associate                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     When I select "Draft Announcements" from double headed dropdown inside admin portal
@@ -898,7 +844,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForFieldWithOperatorNotIn | ProgramFundingAccount | Name                      | Associate                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -915,7 +860,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForProfilePM | Grantee State Program | Name                      | Submit For Approval        |
     When I login as "Automation-PM" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -931,7 +875,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForProfilePMAndSysAdmin | Grantee State Program | Name                      | Submit For Approval        |
     When I login as "Automation-PM" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -947,7 +890,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForProfilePMAndSysAdmin | Grantee State Program | Name                      | Submit For Approval        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -963,7 +905,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForProfilePMWithNotInOperator | Grantee State Program | Name                      | Submit For Approval        |
     When I login as "Automation-PM" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -979,7 +920,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForProfilePMWithNotInOperator | Grantee State Program | Name                      | Submit For Approval        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -995,7 +935,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForUserTypeInternalWithOperatorIn | Grantee State Program | Name                      | Submit For Approval        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -1011,7 +950,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForUserTypeInternalWithOperatorNotIn | Grantee State Program | Name                      | Submit For Approval        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -1027,7 +965,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForUserTypeInternalWithOperatorNotIn | Grantee State Program | Name                      | Submit For Approval        |
     When I login as "Automation-Reviewer" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -1043,7 +980,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForUserTypeInternalApplicantReviewerWithOperatorIn | Grantee State Program | Name                      | Submit For Approval        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -1059,7 +995,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForUserTypeInternalApplicantReviewerWithOperatorIn | Grantee State Program | Name                      | Submit For Approval        |
     When I login as "Automation-Reviewer" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -1075,7 +1010,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForUserTypeInternalApplicantReviewerWithOperatorIn | Grantee State Program | Name                      | Submit For Approval        |
     When I login as "Automation-Applicant" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -1091,7 +1025,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForContextViewWithOperatorIn | Grantee State Program | Name                      | Submit For Approval        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -1107,7 +1040,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForContextViewWithOperatorNotIn | Grantee State Program | Name                      | Submit For Approval        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -1123,7 +1055,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForUserTypeSAGrantorWithOperatorIn | Grantee State Program | Name                      | Submit For Approval        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -1139,7 +1070,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                          | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForUserTypeSAGranteeWithOperatorIn | AnnouncementGrantee | Name                      | Submit For Approval        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantee"
     And I navigate to "Opportunities" tab
     When I perform quick search for "ROSES 2018: Rapid Response and Novel Research in Earth Science"
@@ -1156,7 +1086,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                                | coreComponentField          | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForUserTypeSAAdministratorWithOperatorIn | GranteeOrganizationInternal | Name                      | Activate                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As an Administrator"
     And I navigate to "Setup" tab
     When I select "Draft Internal Organizations" from double headed dropdown inside admin portal
@@ -1173,7 +1102,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForFieldWithOperatorEquals | Grantee State Program | Name                      | Submit For Approval        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -1189,7 +1117,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForProfileSysAdminAndUserTypeInternalWithOperatorAND | Grantee State Program | Name                      | Submit For Approval        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -1205,7 +1132,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                                           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForProfileSysAdminAndUserTypeInternalWithOperatorOR | Grantee State Program | Name                      | Submit For Approval        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -1221,7 +1147,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForUserTypeInternalContextViewWithOperatorAND | Grantee State Program | Name                      | Submit For Approval        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -1237,7 +1162,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForUserTypeInternalContextViewWithOperatorOR | Grantee State Program | Name                      | Submit For Approval        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -1253,7 +1177,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForUserTypeInternalUserAppSAGrantorWithOperatorAND | Grantee State Program | Name                      | Submit For Approval        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -1269,7 +1192,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForLeftOperandsUsingOROperator | Grantee State Program | Name                      | Submit For Approval        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -1285,7 +1207,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForLeftOperandsUsingANDOperator | Grantee State Program | Name                      | Submit For Approval        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -1301,7 +1222,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForLeftOperandsAllDataTypeOfFieldUsingANDOperator | Grantee State Program | Name                      | Submit For Approval        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -1317,7 +1237,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutActionHideExpressionLeftOperandOROperator | Grantee State Program | Name                      | Submit For Approval        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -1333,7 +1252,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutActionHideExpressionForAllFiledsWithANDOperatorUsingGroupExpression | Grantee State Program | Name                      | Submit For Approval        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -1349,7 +1267,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutActionHideExpressionForGroupExpressionWithOROperator | Grantee State Program | Name                      | Submit For Approval        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -1365,7 +1282,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory               | fieldName            | fieldNewValue                                                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabsConfigOverviewHideExpressionWithOperatorIN | Grantee State Program | Name                      | TAB-029                    |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -1381,7 +1297,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory               | fieldName            | fieldNewValue                                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabsConfigOveriviewHideExpressionWithOperatorINAndUserPM | Grantee State Program | Name                      | TAB-029                    |
     When I login as "Automation-PM" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -1397,7 +1312,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory               | fieldName            | fieldNewValue                                                                      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabsConfigOveriviewHideExpressionWithOperatorORAndUserAdminPM | Grantee State Program | Name                      | TAB-029                    |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -1413,7 +1327,6 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory               | fieldName            | fieldNewValue                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabsConfigOveriviewHideExpressionWithOperatorINAndOperandUSERTYPE | Grantee State Program | Name                      | TAB-029                    |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -1429,7 +1342,111 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory               | fieldName            | fieldNewValue                                                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabsConfigOveriviewHideExpressionWithOperatorANDAndOperandUSERTYPEAsInternal | Grantee State Program | Name                      | TAB-029                    |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Overview" sub tab is not displayed at view detail page
+
+  @45320 @all @hide_expression_Overview_Tab_using_IN_operator_and_Left_Operand_AS_Context_View
+  Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with IN operator and Left Operand AS Context View
+    Given I have default configuration as below:
+      | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantee State Program | Name                      | TAB-029                    |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName            | fieldNewValue                                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandAsViewAndOperatorIN | Grantee State Program | Name                      | TAB-029                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Overview" sub tab is not displayed at view detail page
+
+  @45322 @all @hide_expression_Overview_Tab_using_NOTIN_operator_and_Left_Operand_AS_Context
+  Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with NOTIN operator and Left Operand AS Context
+    Given I have default configuration as below:
+      | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantee State Program | Name                      | TAB-029                    |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName            | fieldNewValue                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandASContextAndOperatorNOTIN | Grantee State Program | Name                      | TAB-029                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Overview" sub tab is not displayed at view detail page
+
+  @45323 @all @hide_expression_Overview_Tab_using_AND_operator_and_Left_Operand_AS_Context_View_And_Admin_Profile
+  Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with AND operator and Left Operand AS Context View and Admin Profile
+    Given I have default configuration as below:
+      | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantee State Program | Name                      | TAB-029                    |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName            | fieldNewValue                                                                                           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandASContextViewAndAdminProfileAndOperatorAND | Grantee State Program | Name                      | TAB-029                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Overview" sub tab is not displayed at view detail page
+
+  @45324 @all @hide_expression_Overview_Tab_using_OR_operator_and_Left_Operand_AS_Context_And_Profile
+  Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with OR operator and Left Operand AS Context And Profile
+    Given I have default configuration as below:
+      | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantee State Program | Name                      | TAB-029                    |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName            | fieldNewValue                                                                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandASContextAndProfileWithOperatorOR | Grantee State Program | Name                      | TAB-029                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Overview" sub tab is not displayed at view detail page
+
+  @45325 @all @hide_expression_Overview_Tab_using_OR_operator_and_Left_Operand_AS_Context_View_And_Admin_Profile
+  Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with OR operator and Left Operand AS Context View and Admin Profile
+    Given I have default configuration as below:
+      | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantee State Program | Name                      | TAB-029                    |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName            | fieldNewValue                                                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandASContextAsViewAndProfileAsAdminWithOperatorOR | Grantee State Program | Name                      | TAB-029                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Overview" sub tab is not displayed at view detail page
+
+  @45327 @all @hide_expression_Overview_Tab_using_AND_operator_and_Left_Operand_AS_Context_And_UserType
+  Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with AND operator and Left Operand AS Context and UserType
+    Given I have default configuration as below:
+      | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantee State Program | Name                      | TAB-029                    |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName            | fieldNewValue                                                                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandContextAndUserTypeWithOperatorAND | Grantee State Program | Name                      | TAB-029                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Overview" sub tab is not displayed at view detail page
+
+  @45329 @all @hide_expression_Overview_Tab_using_OR_operator_and_Left_Operand_AS_Context_And_UserType
+  Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with OR operator and Left Operand AS Context and UserType
+    Given I have default configuration as below:
+      | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantee State Program | Name                      | TAB-029                    |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName            | fieldNewValue                                                                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandContextEditCreateWithNOTINOperatorUserTypeWithINOperatorUsingOROperator | Grantee State Program | Name                      | TAB-029                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"

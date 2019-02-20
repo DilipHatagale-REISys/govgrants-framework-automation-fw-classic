@@ -12,7 +12,6 @@ Feature: Charts Component Scenarios
       | configurationCategory | fieldName | fieldNewValue                        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue    |
       | Charts Config         | Title     | Funding Opportunities for Automation | GrantorPlanning    | Name                      | AnnouncementByAdminBureauUnit |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "Funding Opportunities for Automation" displayed as chart title
@@ -28,7 +27,6 @@ Feature: Charts Component Scenarios
       | Phase Config:General  | Tab Display Label | Planning         | GrantorPlanning    |                           |                               |
       | Charts Config         | Phase Config      | ApiGeneratedId:0 | GrantorPlanning    | Name                      | AnnouncementByAdminBureauUnit |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     Then I see "AnnouncementByAdminBureauUnit" displayed as chart title
@@ -42,7 +40,6 @@ Feature: Charts Component Scenarios
       | configurationCategory | fieldName             | fieldNewValue                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Charts Details Config | All data table header | Funding Opportunity Automation | GrantorPlanning    | Name                      | CD-0147                    |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on menu icon of chart "AnnouncementByAdminBureauUnit"
@@ -58,7 +55,6 @@ Feature: Charts Component Scenarios
       | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Charts Details Config | Disable Legend | true          | GrantorPlanning    | Name                      | CD-0147                    |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see chart legends are not displayed for chart "AnnouncementByAdminBureauUnit"
@@ -72,7 +68,6 @@ Feature: Charts Component Scenarios
       | configurationCategory | fieldName    | fieldNewValue                     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Charts Details Config | X-Axis Label | Total Allocated Amount Automation | GrantorPlanning    | Name                      | CD-0159                    |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "Total Allocated Amount Automation" for chart "FundingSourcesbyTotalAmount"
@@ -86,7 +81,6 @@ Feature: Charts Component Scenarios
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Charts Details Config | X-Axis Prefix | $             | GrantorPlanning    | Name                      | CD-0159                    |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "$" for chart "FundingSourcesbyTotalAmount"
@@ -100,7 +94,6 @@ Feature: Charts Component Scenarios
       | configurationCategory | fieldName          | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Charts Details Config | X Formatted Number | true          | GrantorPlanning    | Name                      | CD-0159                    |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see ",000" for chart "FundingSourcesbyTotalAmount"
@@ -114,7 +107,6 @@ Feature: Charts Component Scenarios
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Charts Details Config | X Axis Suffix | $             | GrantorPlanning    | Name                      | CD-0159                    |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "$" for chart "FundingSourcesbyTotalAmount"

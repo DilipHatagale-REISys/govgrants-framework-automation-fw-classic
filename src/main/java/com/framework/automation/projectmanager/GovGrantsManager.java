@@ -148,7 +148,7 @@ public class GovGrantsManager extends ProjectWebServices {
 	 * @return
 	 */
 	public WebElement getSideBarAccordianSubHeaderContent(String sideBarCategory, String accordianSubHeaderDetail) {
-		return govgrants.sideBar().getSideBarSubHeaderContent(sideBarCategory, accordianSubHeaderDetail);
+		return govgrants.sideBar().getSideBarContent(sideBarCategory, accordianSubHeaderDetail);
 	}
 
 	/**

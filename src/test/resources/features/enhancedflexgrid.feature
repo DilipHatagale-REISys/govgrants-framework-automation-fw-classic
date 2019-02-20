@@ -12,7 +12,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Enable Filter | false         | TmpActiveGrantsGrid |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -29,7 +28,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | configurationCategory | fieldName    | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Disable Menu | true          | TmpActiveGrantsGrid |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -143,7 +141,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | configurationCategory     | fieldName | fieldNewValue            | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:Flex Table List | Label     | Automation Enhanced Grid | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -160,7 +157,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Enable Export | false         | TmpActiveGrantsGrid |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -178,7 +174,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Quick Search | false         | TmpActiveGrantsGrid |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -195,7 +190,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | configurationCategory | fieldName                  | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Enable Total Records Count | false         | TmpActiveGrantsGrid |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -212,7 +206,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Enable Auto Index | true          | TmpActiveGrantsGrid |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -229,7 +222,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | configurationCategory | fieldName               | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Enable Record Selection | true          | TmpActiveGrantsGrid |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -252,7 +244,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | Flex Table Action     | Action URL Long | <actionUrlLongValue> | TmpActiveGrantsGrid | Name                      | Edit                       |
       | Flex Table Action     | Where To Open ? | SameWindow           | TmpActiveGrantsGrid | Name                      | Edit                       |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -280,7 +271,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | Flex Table Action     | Action URL Long | <actionUrlLongValue> | TmpActiveGrantsGrid | Name                      | Edit                       |
       | Flex Table Action     | Where To Open ? | Modal                | TmpActiveGrantsGrid | Name                      | Edit                       |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -302,7 +292,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -333,7 +322,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | configurationCategory | fieldName        | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Header Help Text | <new_helpText> | TmpActiveGrantsGrid |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -354,7 +342,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | configurationCategory | fieldName        | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Enable Page Size | true          | TmpActiveGrantsGrid |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -371,7 +358,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Default Page Size | 10            | TmpActiveGrantsGrid |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -388,7 +374,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | configurationCategory | fieldName   | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Enable Help | true          | TmpActiveGrantsGrid |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -406,7 +391,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | configurationCategory | fieldName | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Help Text | <new_helpText> | TmpActiveGrantsGrid | Name                      | FTC-1486                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -427,7 +411,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue   | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Field Label Override | Test Automation | TmpActiveGrantsGrid | Name                      | FTC-1486                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -444,7 +427,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | configurationCategory | fieldName      | fieldNewValue                                | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1488                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -461,7 +443,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | configurationCategory | fieldName           | fieldNewValue                                    | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Read Only Cell JSON | govgrants_config:ReadOnlyCellJsonForEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1489                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -479,7 +460,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Hide Column JSON | govgrants_config:HideColumnJsonForEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1488                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -496,7 +476,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | configurationCategory | fieldName             | fieldNewValue                                      | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Read Only Column JSON | govgrants_config:ReadOnlyColumnJsonForEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1489                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -514,7 +493,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableEditActionNewIconCss | TmpActiveGrantsGrid | Name                      | Edit                       |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -533,7 +511,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | Flex Table Action     | Confirmation Message  | Automation    | TmpActiveGrantsGrid | Name                      | Edit                       |
       | Flex Table Action     | Show Confirmation Box | true          | TmpActiveGrantsGrid | Name                      | Edit                       |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -553,7 +530,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | Flex Table Action     | Location                   | Top           | TmpActiveGrantsGrid | Name                      | View                       |
       | Flex Table Action     | Header Action Display Type | Button        | TmpActiveGrantsGrid | Name                      | View                       |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -570,7 +546,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | configurationCategory | fieldName | fieldNewValue                               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1491                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -587,7 +562,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | configurationCategory | fieldName        | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Header Help Text | <new_helpText> | TmpGrantorActiveAwardsGrid |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -609,7 +583,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | configurationCategory | fieldName   | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Enable Help | true          | TmpGrantorActiveAwardsGrid |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -628,7 +601,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | configurationCategory | fieldName | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Help Text | <new_helpText> | TmpGrantorActiveAwardsGrid | Name                      | FTC-1492                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -650,7 +622,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue   | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Field Label Override | Test Automation | TmpGrantorActiveAwardsGrid | Name                      | FTC-1492                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -670,7 +641,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | Flex Grid:General     | Order By       | ProjectTitle__c | TmpActiveGrantsGrid |                           |                            |
       | Flex Grid:General     | Sort Direction | ASC             | TmpActiveGrantsGrid |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -689,7 +659,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | Flex Grid:General     | Order By       | ProjectTitle__c | TmpActiveGrantsGrid |                           |                            |
       | Flex Grid:General     | Sort Direction | DESC            | TmpActiveGrantsGrid |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -708,7 +677,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | Flex Grid:General     | Order By       | Name          | TmpGrantorActiveAwardsGrid |                           |                            |
       | Flex Grid:General     | Sort Direction | ASC           | TmpGrantorActiveAwardsGrid |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -729,7 +697,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | Flex Grid:General     | Order By       | Name          | TmpGrantorActiveAwardsGrid |                           |                            |
       | Flex Grid:General     | Sort Direction | DESC          | TmpGrantorActiveAwardsGrid |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -748,7 +715,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | configurationCategory | fieldName     | fieldNewValue   | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Filter Clause | <newSoqlFilter> | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -769,7 +735,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | configurationCategory | fieldName | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Sequence  | 3             | TmpActiveGrantsGrid | Name                      | Edit                       |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -786,7 +751,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | configurationCategory | fieldName        | fieldNewValue   | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Button Help Text | Test Automation | TmpActiveGrantsGrid | Name                      | Edit                       |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -803,7 +767,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Enable Filter | false         | TmpGrantorActiveAwardsGrid |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -821,7 +784,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | configurationCategory | fieldName    | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Disable Menu | true          | TmpGrantorActiveAwardsGrid |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -839,7 +801,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Enable Export | false         | TmpGrantorActiveAwardsGrid |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -858,7 +819,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Enable Quick Search | false         | TmpGrantorActiveAwardsGrid |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -870,7 +830,6 @@ Feature: Enhanced Flex Grid Component Scenarios
   @44997 @all @enableTotalRecordCountForChildFlexTableForEnhancedGrid-gPlanning
   Scenario: validate total row count in child flex table for enhanced grid.
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -882,7 +841,6 @@ Feature: Enhanced Flex Grid Component Scenarios
   @44998 @all @enableAutoIndexForChildFlexTableOnEnhancedGrid-gPlanning
   Scenario: validate auto index for details inside child flex table for enhanced grid.
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -900,7 +858,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | configurationCategory | fieldName               | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Enable Record Selection | true          | TmpGrantorActiveAwardsGrid |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -918,7 +875,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | configurationCategory | fieldName       | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Where To Open ? | NewTab        | TmpActiveGrantsGrid | Name                      | View                       |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -936,7 +892,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | configurationCategory | fieldName       | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Where To Open ? | NewWindow     | TmpActiveGrantsGrid | Name                      | View                       |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -954,7 +909,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | configurationCategory | fieldName       | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Where To Open ? | NewTab        | TmpGrantorActiveAwardsGrid | Name                      | View                       |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -974,7 +928,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | configurationCategory | fieldName       | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Where To Open ? | NewWindow     | TmpGrantorActiveAwardsGrid | Name                      | View                       |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -994,7 +947,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | configurationCategory | fieldName       | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Where To Open ? | SameWindow    | TmpGrantorActiveAwardsGrid | Name                      | View                       |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -1014,7 +966,6 @@ Feature: Enhanced Flex Grid Component Scenarios
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpGrantorActiveAwardsGrid |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"

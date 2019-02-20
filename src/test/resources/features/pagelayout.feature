@@ -12,7 +12,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory | fieldName | fieldNewValue                      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Header    | Program - {!FederalProgramCFDA__c} | Grantee State Program |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -28,7 +27,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory | fieldName             | fieldNewValue               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Page Instruction Text | Automation Instruction Text | Grantee State Program |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -44,7 +42,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory | fieldName              | fieldNewValue                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Create Header Override | Creating New Program for Automation | Grantee State Program |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I click on "New" button in right header
@@ -59,7 +56,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory | fieldName                | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Decision Expression | <new_hide_config> | Grantee State Program | Name                      | Submit For Approval        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -79,7 +75,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:HideExpressionJson | Grantee State Program | Name                      | Submit For Approval        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -95,7 +90,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide for profile | System Administrator | Grantee State Program | Name                      | Submit For Approval        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -111,7 +105,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Hide Pdf Download | true          | Grantee State Program |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -128,7 +121,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory | fieldName               | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Hide On Demand Snapshot | true          | Grantee State Program |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -149,7 +141,6 @@ Feature: Page Layout Component Scenarios
       | Page Layout Action    | Prompt Dialogue Text       | Automation Text   | Grantee State Program | Name                      | Submit For Approval        |
       | Page Layout Action    | Enable Prompt Input Dialog | true              | Grantee State Program | Name                      | Submit For Approval        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -166,7 +157,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide For Context | view          | Grantee State Program | Name                      | Submit For Approval        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -182,7 +172,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Cancel Button Label | Auto Cancel   | Grantee State Program |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -199,7 +188,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Save Button Label | Auto Save     | Grantee State Program |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -216,7 +204,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory               | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide For Context | view          | Grantee State Program | Name                      | TAB-029                    |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -232,7 +219,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory               | fieldName  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Sort Order | 6             | Grantee State Program | Name                      | TAB-029                    |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -248,7 +234,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory               | fieldName               | fieldNewValue          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Header Instruction Text | Automation Header Text | Grantee State Program | Name                      | TAB-029                    |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -264,7 +249,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory               | fieldName | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Tab Title | Automation Overview | Grantee State Program | Name                      | TAB-029                    |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -280,7 +264,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory               | fieldName | fieldNewValue                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Tab Icon  | govgrants_config:TabIconNewCss | Grantee State Program | Name                      | TAB-029                    |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -296,7 +279,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | false         | Grantee State Program | Name                      | TAB-029                    |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -312,7 +294,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory               | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide for User | Internal      | Grantee State Program | Name                      | TAB-029                    |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -328,7 +309,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory               | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide for Profile | System Administrator | Grantee State Program | Name                      | TAB-029                    |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -344,7 +324,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory               | fieldName           | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Decision Field | ShowActiveProgram__c | Grantee State Program | Name                      | TAB-029                    |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -360,7 +339,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -376,7 +354,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory               | fieldName            | fieldNewValue                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideExpressionJsonForPageTab | Grantee State Program | Name                      | TAB-029                    |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -392,7 +369,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory        | fieldName        | fieldNewValue                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Page Block Title | Program Information Automation | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -408,7 +384,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory        | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Is Active | false         | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -424,7 +399,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory        | fieldName  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Sort Order | 10            | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -440,7 +414,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory        | fieldName               | fieldNewValue         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Header Instruction Text | Header for Automation | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -456,7 +429,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory        | fieldName       | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Skip for Export | true          | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -475,7 +447,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory        | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Hide for Context | View          | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -491,7 +462,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory        | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Hide for User | Internal      | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -511,7 +481,6 @@ Feature: Page Layout Component Scenarios
       | Page Tabs Config:Page Layout Action | Hide for Profile | System Administrator | Grantee State Program | Name                      | TAB-029                    |
       | Page Tabs Config:Page Layout Action | Hide for User    | Internal             | Grantee State Program | Name                      | TAB-029                    |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -531,7 +500,6 @@ Feature: Page Layout Component Scenarios
       | Page Tabs Config:Page Layout Action | Hide for Profile | System Administrator | Grantee State Program | Name                      | TAB-029                    |
       | Page Tabs Config:Page Layout Action | Hide for User    | Internal             | Grantee State Program | Name                      | TAB-029                    |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -547,7 +515,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory        | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Hide for Profile | System Administrator | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -567,7 +534,6 @@ Feature: Page Layout Component Scenarios
       | Page Block:Page Block Detail | Hide for Profile | System Administrator | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
       | Page Block:Page Block Detail | Hide for User    | Internal             | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -583,7 +549,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory        | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Total Fields per Row | 3             | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -603,7 +568,6 @@ Feature: Page Layout Component Scenarios
       | Page Block:Page Block Detail | Hide for Profile | System Administrator | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
       | Page Block:Page Block Detail | Hide for User    | Internal             | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -619,7 +583,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory        | fieldName           | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Hide Decision Field | ShowActiveProgram__c | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -637,7 +600,6 @@ Feature: Page Layout Component Scenarios
       | Flex Grid:General            | Header          | Roles And Responsibilities | ProgramRolesAndResponsibilities |                           |                            |
       | Page Block:Page Block Detail | Flex Table Name | ApiGeneratedId:1           | Grantee State Program           | GNT__PageBlockTitle__c    | Contacts                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -656,7 +618,6 @@ Feature: Page Layout Component Scenarios
       | Flex Grid:General            | Flex Grid Config Name | MonitoringGridView | MonitoringGridView    |                           |                            |
       | Page Block:Page Block Detail | Flex Grid Name        | ApiGeneratedId:1   | Grantee State Program | GNT__PageBlockTitle__c    | Out Comes                  |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -674,7 +635,6 @@ Feature: Page Layout Component Scenarios
       | Program                      | Status                              | Created       | Test program for automation -  SA mode only - Not approved |                           |                            |
       | Page Block:Page Block Detail | Hide/Disable attachment Row actions | Disable       | Grantee State Program                                      | GNT__PageBlockTitle__c    | Attachments                |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
@@ -693,7 +653,6 @@ Feature: Page Layout Component Scenarios
       | Program                      | Status                              | Created       | Test program for automation -  SA mode only - Not approved |                           |                            |
       | Page Block:Page Block Detail | Hide/Disable attachment Row actions | Hide          | Grantee State Program                                      | GNT__PageBlockTitle__c    | Attachments                |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
@@ -711,7 +670,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory                    | fieldName      | fieldNewValue          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Field API Name | BudgetingPreference__c | Grantee State Program | Name                      | PBD-3107                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -727,7 +685,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Is Active | false         | Grantee State Program | Name                      | PBD-3107                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -743,7 +700,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory                    | fieldName  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Sort Order | 10            | Grantee State Program | Name                      | PBD-3107                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -759,7 +715,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory                    | fieldName            | fieldNewValue    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Field Label Override | Automation Title | Grantee State Program | Name                      | PBD-3107                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -775,7 +730,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Read Only | true          | Grantee State Program | Name                      | PBD-3107                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -791,7 +745,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory                    | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide for Context | View          | Grantee State Program | Name                      | PBD-3107                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -807,7 +760,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory                    | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide for User | Internal      | Grantee State Program | Name                      | PBD-3107                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -823,7 +775,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory                    | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide For Profile | System Administrator | Grantee State Program | Name                      | PBD-3107                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -843,7 +794,6 @@ Feature: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide For Profile | System Administrator | Grantee State Program | Name                      | PBD-3107                   |
       | Page Block Config:Page Block Rule Detail | Hide For User    | Internal             | Grantee State Program | Name                      | PBD-3107                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -863,7 +813,6 @@ Feature: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide For Profile | System Administrator | Grantee State Program | Name                      | PBD-3107                   |
       | Page Block Config:Page Block Rule Detail | Hide For User    | Internal             | Grantee State Program | Name                      | PBD-3107                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -879,7 +828,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory                    | fieldName             | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Read Only For Context | Edit          | Grantee State Program | Name                      | PBD-3107                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -895,7 +843,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory                    | fieldName             | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Read Only For Profile | System Administrator | Grantee State Program | Name                      | PBD-3107                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -911,7 +858,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantee State Program | Name                      | PBD-2600                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -928,7 +874,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory        | fieldName                  | fieldNewValue                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Attachment Classifications | AnnouncementArtifacts1;AnnouncementArtifacts2; | Grantee State Program | GNT__PageBlockTitle__c    | Attachments                |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -947,7 +892,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory                    | fieldName       | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Is Hidden Field | true          | Grantee State Program | Name                      | PBD-3107                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -965,7 +909,6 @@ Feature: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Decision Field | ShowActiveProgram__c | Grantee State Program | Name                      | PBD-3107                   |
       | Page Block Config:Page Block Rule Detail | Operator            |                      | Grantee State Program | Name                      | PBD-3107                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -981,7 +924,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory                    | fieldName          | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Read Only For User | Internal      | Grantee State Program | Name                      | PBD-3107                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -997,7 +939,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory                    | fieldName           | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Read Decision Field | ShowActiveProgram__c | Grantee State Program | Name                      | PBD-3107                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -1013,7 +954,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory                    | fieldName  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Label | true          | Grantee State Program | Name                      | PBD-3107                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -1029,7 +969,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory                    | fieldName          | fieldNewValue           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Lookup Header Text | Organization Automation | Grantee State Program | Name                      | PBD-3178                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -1046,7 +985,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory                    | fieldName                  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Code__c       | Grantee State Program | Name                      | PBD-3178                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -1065,7 +1003,6 @@ Feature: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | <newLookupDisplayName> | Grantee State Program | Name                      | PBD-3178                   |
       | Page Block Config:Page Block Rule Detail | Lookup Filter Criteria     | <newLookupFilter>      | Grantee State Program | Name                      | PBD-3178                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -1086,7 +1023,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory                    | fieldName                  | fieldNewValue | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Attachment Classifications | Test1;Test2;  | Annoucement Profile-FOA | Name                      | PBD-5205                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     When I select "Draft Announcements" from double headed dropdown inside admin portal
@@ -1106,7 +1042,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory | fieldName              | fieldNewValue               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Submit Warning Message | Test message for Automation | Grantee State Program | Name                      | Submit For Approval        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -1122,7 +1057,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Is Active | false         | Grantee State Program | Name                      | Edit                       |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -1138,7 +1072,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory | fieldName       | fieldNewValue   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Action Behavior | Open in overlay | Grantee State Program | Name                      | Edit                       |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -1155,7 +1088,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory | fieldName       | fieldNewValue      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Action Behavior | Open in new window | Grantee State Program | Name                      | Edit                       |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -1172,7 +1104,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory | fieldName    | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Display Area | Page Header   | Grantee State Program | Name                      | Create Campaign            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -1188,7 +1119,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory | fieldName    | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Display Area | Menu          | Grantee State Program | Name                      | Edit                       |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -1207,7 +1137,6 @@ Feature: Page Layout Component Scenarios
       | Page Layout Action    | Header Sequence | 1             | Grantee State Program | Name                      | Edit                       |
       | Page Layout Action    | Header Sequence | 2             | Grantee State Program | Name                      | Submit For Approval        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -1223,7 +1152,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory        | fieldName | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Help Text | <new_helpText> | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -1243,7 +1171,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory                    | fieldName      | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText> | Grantee State Program | Name                      | PBD-3107                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -1264,14 +1191,12 @@ Feature: Page Layout Component Scenarios
       | Program               | Status                      | Created       | Test program for automation -  SA mode only - Can be Approved |                           |                            |
       | Page Layout:General   | Hide Approval Decision comp | true          | Grantee State Program                                         |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
     And I complete submit for approval
     When I re-login as "Automation-PM" user on "QA" portal
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -1288,7 +1213,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory        | fieldName            | fieldNewValue                                   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideExpressionJsonForPageBlock | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -1304,7 +1228,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory                    | fieldName            | fieldNewValue                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HideExpressionJsonForPageBlockDetail | Grantee State Program | Name                      | PBD-3107                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -1320,7 +1243,6 @@ Feature: Page Layout Component Scenarios
       | configurationCategory                    | fieldName                 | fieldNewValue                                             | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Read Only Expression JSON | govgrants_config:ReadOnlyExpressionJsonForPageBlockDetail | Grantee State Program | Name                      | PBD-3107                   |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
