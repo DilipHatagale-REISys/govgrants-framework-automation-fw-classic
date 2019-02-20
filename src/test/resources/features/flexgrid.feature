@@ -13,7 +13,6 @@ Feature: Flex Grid Component Scenarios
       | configurationCategory | fieldName | fieldNewValue               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Header    | Automation Goals Objectives | ProgramStrategicGoals |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -30,7 +29,6 @@ Feature: Flex Grid Component Scenarios
       | configurationCategory | fieldName    | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Disable Menu | true          | ProgramStrategicGoals |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -47,7 +45,6 @@ Feature: Flex Grid Component Scenarios
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Enable Quick Search | false         | ProgramStrategicGoals |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -64,7 +61,6 @@ Feature: Flex Grid Component Scenarios
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Enable Export | false         | ProgramStrategicGoals |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -82,7 +78,6 @@ Feature: Flex Grid Component Scenarios
       | configurationCategory | fieldName           | fieldNewValue                             | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | Type__c,Title__c,Description__c,Status__c | ProgramStrategicGoals |                           |                            |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
@@ -99,7 +94,6 @@ Feature: Flex Grid Component Scenarios
       | configurationCategory              | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid Action:Flex Table Action | Hide For Context | View          | ProgramStrategicGoals | Name                      | View                       |
     When I login as "Automation" user
-    When I navigate to "GovGrants Launcher Tab" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
