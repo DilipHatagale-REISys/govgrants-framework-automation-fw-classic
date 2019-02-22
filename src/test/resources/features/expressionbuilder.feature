@@ -1497,3 +1497,48 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed
+
+  @45709 @all @hide_expression_Program_Information_Page_Block_(UserTypeIN(Internal)ANDProfileIN(SystemAdministrator))
+  Scenario: Hide Program Information from Overview Tab for ADMIN User type internal using (UserTypeIN(Internal)ANDProfileIN(SystemAdministrator))
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionLeftOperands(UserTypeIN(Internal)ANDProfileIN(SystemAdministrator)) | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Program Information" page block is not displayed
+
+  @45707 @all @hide_expression_Program_Information_Page_Block_LeftOperandsprofileNOTINoperator_ADMIN_PM
+  Scenario: Hide Program Information from Overview Tab for ADMIN PM User type internal using LeftOperandsprofileNOTINoperator(ADMIN,PM)
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                                      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionLeftOperandsprofileNOTINoperator(ADMIN,PM) | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Program Information" page block title
+
+  @45708 @all @hide_expression_Program_Information_Page_Block_LeftOperands_UserTypeIN_Internal
+  Scenario: Hide Program Information from Overview Tab for ADMIN User type internal using LeftOperands(UserTypeIN(Internal))
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionLeftOperands(UserTypeIN(Internal)) | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Program Information" page block is not displayed
