@@ -720,8 +720,6 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 		boolean flag = false;
 		try {
 			reiDriver.JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
-			// govgrants.flexTable().slideNestedFlexTable("TmpActiveGrantsGridFlexToggle",
-			// 150);
 			if (reiDriver.findMyElement().getElement(idColumnForChildFlexTable).isDisplayed()) {
 				flag = true;
 			}
