@@ -241,44 +241,48 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	}
 
 	/**
-	 * assert true if Menu Field is not present in child flex table (flex grid) for enhancedgrid
+	 * assert true if Menu Field is not present in child flex table (flex grid) for
+	 * enhancedgrid
+	 * 
 	 * @param panelTitleName
 	 */
-	public void assertThatMenuFieldIsDisabledOnChildFlexTable(String panelTitleName){
+	public void assertThatMenuFieldIsDisabledOnChildFlexTable(String panelTitleName) {
 		Assert.assertTrue(isMenuIconDisabledInChildFlexTable(panelTitleName));
 	}
 
 	/**
-	 *  assert true if quick search is not available for child flex table under enhanced grid.
+	 * assert true if quick search is not available for child flex table under
+	 * enhanced grid.
 	 */
-	public void assertThatQuickSearchIsDisabledOnChildFlexTable(String childTableId){
+	public void assertThatQuickSearchIsDisabledOnChildFlexTable(String childTableId) {
 		Assert.assertTrue(isQuickSearchDisabledForChildFlexTableInEnhancedGrid(childTableId));
 	}
 
 	/**
 	 * assert true if total record is present on child flex table.
+	 * 
 	 * @param footerName
 	 * @param tableId
 	 */
-	public void assertThatTotalRecordIsPresentOnChildFlexTable(String footerName, String tableId){
-		Assert.assertTrue(isTotalRecordsEnabledForChildFlexTable(footerName,tableId));
+	public void assertThatTotalRecordIsPresentOnChildFlexTable(String footerName, String tableId) {
+		Assert.assertTrue(isTotalRecordsEnabledForChildFlexTable(footerName, tableId));
 	}
 
 	/**
 	 * Assert for Record Selection Enable.
 	 */
-	public void assertIfSelectRecordIsEnabledOnChildFlexTable(){
+	public void assertIfSelectRecordIsEnabledOnChildFlexTable() {
 		Assert.assertTrue(isRecordSelectionEnabledOnChildFlexTable());
 	}
-	
+
 	/**
-	 * assert text input box for ID column inside child flex table of enhanced grid is not displayed
+	 * assert text input box for ID column inside child flex table of enhanced grid
+	 * is not displayed
 	 * 
 	 */
 	public void assertTextInputBoxForIdColumnNotDisplayed() {
 		Assert.assertFalse(isInputTextBoxIsDisplayedForIdColumnOfChildFlexTableAtEnhancedGrid());
 	}
-
 
 	/*********
 	 * "Local Methods with complete functionality - private"
@@ -642,7 +646,8 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	 * @return
 	 */
 	public List<WebElement> getCompleteTableAction(String iconName, String tableId) {
-		By actionItem = By.xpath("//div[@id='" + tableId + "']//div/table/tbody//td//a[@title='" + iconName + "']");
+		reiDriver.WaitFor().WaitForElementListToBePresent(By.xpath("//div[@id='" + tableId + "']//action/span//a"));
+		By actionItem = By.xpath("//div[@id='" + tableId + "']//action/span//a");
 		return reiDriver.findMyElement().getElements(actionItem);
 	}
 
@@ -668,11 +673,12 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	 *
 	 * @return true if Quick Search is not available in child flex table.
 	 */
-	private Boolean isQuickSearchDisabledForChildFlexTableInEnhancedGrid(String childTableId){
+	private Boolean isQuickSearchDisabledForChildFlexTableInEnhancedGrid(String childTableId) {
 		boolean flag = true;
 		try {
 			reiDriver.JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
-			if (reiDriver.findMyElement().getElement(By.xpath("//div[@id='"+childTableId+"']/div[1]//input")).isDisplayed()) {
+			if (reiDriver.findMyElement().getElement(By.xpath("//div[@id='" + childTableId + "']/div[1]//input"))
+					.isDisplayed()) {
 				flag = false;
 			}
 		} catch (Exception e) {
@@ -682,32 +688,40 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 
 	/**
 	 * check if total record are enabled for child flex table or not.
+	 * 
 	 * @param footerName
 	 * @param tableId
 	 * @return
 	 */
-	private Boolean isTotalRecordsEnabledForChildFlexTable(String footerName, String tableId){
-			reiDriver.JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
-			return reiDriver.WaitFor().WaitForElementToBePresent(By.xpath("//div[@id='"+tableId+"']//span[contains(text(),'"+footerName+"')]")).isDisplayed();
+	private Boolean isTotalRecordsEnabledForChildFlexTable(String footerName, String tableId) {
+		reiDriver.JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
+		return reiDriver.WaitFor()
+				.WaitForElementToBePresent(
+						By.xpath("//div[@id='" + tableId + "']//span[contains(text(),'" + footerName + "')]"))
+				.isDisplayed();
 	}
 
 	/**
 	 * check if Record Selection option is Enabled or not
+	 * 
 	 * @return
 	 */
-	private Boolean isRecordSelectionEnabledOnChildFlexTable(){
-		return reiDriver.WaitFor().WaitForElementToBePresent(By.xpath("//input[@id='TmpGrantorActiveAwardsGridcheckBox']")).isDisplayed();
+	private Boolean isRecordSelectionEnabledOnChildFlexTable() {
+		return reiDriver.WaitFor()
+				.WaitForElementToBePresent(By.xpath("//input[@id='TmpGrantorActiveAwardsGridcheckBox']")).isDisplayed();
 	}
-	
+
 	/**
 	 * 
-	 * @return true if changed cell value for Id column is displayed for enhaced grid child flex table
+	 * @return true if changed cell value for Id column is displayed for enhaced
+	 *         grid child flex table
 	 */
 	private Boolean isInputTextBoxIsDisplayedForIdColumnOfChildFlexTableAtEnhancedGrid() {
 		boolean flag = false;
 		try {
 			reiDriver.JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
-			//govgrants.flexTable().slideNestedFlexTable("TmpActiveGrantsGridFlexToggle", 150);
+			// govgrants.flexTable().slideNestedFlexTable("TmpActiveGrantsGridFlexToggle",
+			// 150);
 			if (reiDriver.findMyElement().getElement(idColumnForChildFlexTable).isDisplayed()) {
 				flag = true;
 			}

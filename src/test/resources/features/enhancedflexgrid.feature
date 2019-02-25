@@ -132,7 +132,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 	When I expand nested table containing column value "Demo_Title"
 	Then I see external link icon as "AD-GG PJ--00" for "Edit" inside enhanced grid table action
 	
-  @35436 @all @changeOfFlexTableTitleForEnhancedGrid-gPlanning
+  @35436 @all @changeOfParentFlexTableTitleForEnhancedGrid-gPlanning
   Scenario: validate after changing name of enhanced flex grid title inside planning-program enhanced flex grid
     Given I have default configuration as below:
       | configurationCategory     | fieldName | fieldOrignalValue                         | filterId         |
@@ -706,7 +706,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I expand nested table containing column value "GT-VT-001"
     Then I see column "TotalGrantAwardAmount__c" value is in "Descending" order
 
-  @44628 @all @filterClauseFieldForEnhancedGrid-gPlanning
+  @44628 @all @filterClauseFieldOfParentFlexTableAtEnhancedGrid-gPlanning
   Scenario Outline: validate removing draft status category from flex table of planning-program enhanced flex grid
     Given I have default configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -740,7 +740,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
-    Then I see "Edit" icon for "TmpActiveGrantsGridFlexToggle" is at position "2" inside flex table
+    Then I see "Edit" icon for "TmpActiveGrantsGridFlexToggle" is at position "1" inside flex table
 
   @44731 @all @buttonHelpTextFieldAtParentFlexTableActionForEnhancedGrid-gPlanning
   Scenario: Changing content of button help text field at enhanced grid parent table action from config and validating it inside enhanced grid table of programs-planning
@@ -1061,3 +1061,58 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I expand nested table containing column value "Demo_Title"
     Then I see "test" icon for "AD-GG PJ--00" is displayed inside flex table
     
+   @45308 @all @sequenceFieldAtChildflexTableActionForEnhancedGrid-gPlanning
+   Scenario: Changing sequence of edit row level action item of child flex table at enhanced grid from config and validating it inside enhanced grid table of programs-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Sequence  | 1                 | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Sequence  | 3             | TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I expand nested table containing column value "Demo_Title"
+    Then I see "Edit" icon for "TmpGrantorActiveAwardsGridFlexToggle" is at position "1" inside flex table
+    
+   @45309 @all @buttonHelpTextFieldAtChildFlexTableActionForEnhancedGrid-gPlanning
+   Scenario: Changing content of button help text field at enhanced grid child flex table action from config and validating it inside enhanced grid table of programs-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Button Help Text |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue   | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Button Help Text | Test Automation | TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I expand nested table containing column value "Demo_Title"
+    Then I see "Test Automation" as title for "AD-GG PJ--00" inside flex table action
+    
+   @35436 @all @changeOfChildFlexTableTitleForEnhancedGrid-gPlanning
+   Scenario: validate after changing name of child flex table title at enhanced grid inside planning-program enhanced flex grid
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName | fieldOrignalValue | filterId         |
+      | Flex Grid:Flex Table List | Label     | Active Awards     | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName | fieldNewValue            | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Label     | Automation Enhanced Grid | TmpGrantorActiveAwardsGrid | Name                      | FLV-2541                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I expand nested table containing column value "Demo_Title"
+    Then I see "Automation Enhanced Grid" shown as inside "Enhanced1grid"
+    
+  
