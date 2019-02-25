@@ -1097,7 +1097,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I expand nested table containing column value "Demo_Title"
     Then I see "Test Automation" as title for "AD-GG PJ--00" inside flex table action
     
-   @35436 @all @changeOfChildFlexTableTitleForEnhancedGrid-gPlanning
+   @45310 @all @changeOfChildFlexTableTitleForEnhancedGrid-gPlanning
    Scenario: validate after changing name of child flex table title at enhanced grid inside planning-program enhanced flex grid
     Given I have default configuration as below:
       | configurationCategory     | fieldName | fieldOrignalValue | filterId         |
