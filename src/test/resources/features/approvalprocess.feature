@@ -702,7 +702,7 @@ Feature: Approval Process Component Scenarios
     When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I select "Reassign" from approval decision panel
     And I click submit
-    Then I see "Please Select User." error is displayed
+    Then I see "Comments are Required." error is displayed
 
   @41059 @all @commentsFieldAPINameFieldForReassignAction-Programs
   Scenario: Setup comments as FederalProgramCFDA__c inside comments field API field using Approval decision action config from config and validating it at program detail page
