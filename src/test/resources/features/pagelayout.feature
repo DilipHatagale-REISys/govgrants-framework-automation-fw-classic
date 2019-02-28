@@ -689,7 +689,7 @@ Feature: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-    Then I see "Program Name" is not displayed inside page block detail
+    Then I see "Title" is not displayed inside page block detail
 
   @36100 @all @sortOrderFieldAtPageBlockDetail-gPlanning
   Scenario: Changing sort order of program name page block detail from config and validating it at program detail page
@@ -704,13 +704,13 @@ Feature: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-    Then I see "Program Name" shown at number "7" inside page block detail
+    Then I see "Title" shown at number "7" inside page block detail
 
   @36101 @all @fieldLabelOverrideFieldAtPageBlockDetail-gPlanning
   Scenario: Changing label of program name page block detail fom config and validating it at program detail page
     Given I have default configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Field Label Override |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Title             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Field Label Override | Automation Title | Grantee State Program | Name                      | PBD-9162                   |
@@ -749,7 +749,7 @@ Feature: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-    Then I see "Program Name" is not displayed inside page block detail
+    Then I see "Title" is not displayed inside page block detail
 
   @36110 @all @hideForUserFieldAtPageBlockDetail-gPlanning
   Scenario: Hiding of program name page block detail for internal user from config and validating it at program detail page
@@ -764,7 +764,7 @@ Feature: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-    Then I see "Program Name" is not displayed inside page block detail
+    Then I see "Title" is not displayed inside page block detail
 
   @36111 @all @hideForProfileFieldAtPageBlockDetail-gPlanning
   Scenario: Hide program name page block detail for specific profile from configuration and validating it at program detail page
@@ -779,7 +779,7 @@ Feature: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-    Then I see "Program Name" is not displayed inside page block detail
+    Then I see "Title" is not displayed inside page block detail
 
   @36113 @all @hideOperatorFieldUsingANDOperatorAtPageBlockDetail-gPlanning
   Scenario: Hide program name page block detail from config using AND operator and validating it at program detail page
@@ -798,7 +798,7 @@ Feature: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-    Then I see "Program Name" is not displayed inside page block detail
+    Then I see "Title" is not displayed inside page block detail
 
   @36114 @all @hideOperatorFieldUsingOROperatorAtPageBlockDetail-gPlanning
   Scenario: Hide program name page block detail from config using OR operator and validating it at program detail page
@@ -817,7 +817,7 @@ Feature: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-    Then I see "Program Name" is not displayed inside page block detail
+    Then I see "Title" is not displayed inside page block detail
 
   @36126 @all @readOnlyForContextFieldAtPageBlockDetail-gPlanning
   Scenario: changing rendering behaviour of program name read only for context from config and validaying it at program detail page
@@ -896,7 +896,7 @@ Feature: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-    Then I see "Program Name" is not displayed inside page block detail
+    Then I see "Title" is not displayed inside page block detail
 
   @36115 @all @hideDecisionFieldAtPageBlockDetail-gPlanning
   Scenario: Hiding of program name at pege block detail by making change  inside hide decision field from config and validating it at program detail page
@@ -913,7 +913,7 @@ Feature: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-    Then I see "Program Name" is not displayed inside page block detail
+    Then I see "Title" is not displayed inside page block detail
 
   @36129 @all @readOnlyForUserFieldAtPageDetail-gPlanning
   Scenario: changing rendering behaviour of program name while making change for is hidden field as false from config and validaying it at program detail page
@@ -958,7 +958,7 @@ Feature: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-    Then I see "Program Name" is not displayed inside page block detail
+    Then I see "Title" is not displayed inside page block detail
 
   @36169 @all @lookUpHeaderTextFieldAtPageBlockDetail-gPlanning
   Scenario: Hiding program name label at page block detail from config and validating it at program detail page
@@ -1232,7 +1232,7 @@ Feature: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-    Then I see "Program Name" is not displayed inside page block detail
+    Then I see "Title" is not displayed inside page block detail
 
   @36134 @all @readOnlyExpressionJSONFieldAtPageBlockDetail-gPlanning
   Scenario: changing rendering behaviour of program name read only with read only expression json field from config and validaying it at program detail page

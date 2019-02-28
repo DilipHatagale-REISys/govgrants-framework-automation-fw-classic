@@ -1109,5 +1109,3 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "Automation Enhanced Grid" shown as inside "Enhanced1grid"
-    
-  

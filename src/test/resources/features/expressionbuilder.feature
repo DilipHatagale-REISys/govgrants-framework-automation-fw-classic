@@ -1917,3 +1917,258 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed
+    
+    @45854 @all @hide_expression_Program_Information_Page_Block_Title_LeftOperandField_Account__r.Name_IN_DepartmentofCommunityHealth_OR_StartDate__c_greaterthan_11/30/2020
+  Scenario: Hide Program Information from Overview Tab using field Account__r.Name IN Department of Community Health OR StartDate__c > 11/30/2020 ) at program view page
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                                                                                                      | coreComponentField    | coreCOmponentSubFieldName| coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperandField(Account__r_Name_IN_DepartmentofCommunityHealth_OR_StartDate__c_greaterthan_11/30/2020)| Grantee State Program | GNT__PageBlockTitle__c   | Program Information        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Program Information" page block is not displayed
+    
+  @45855 @all @hide_expression_Program_Information_Page_Block_Title_LeftOperandField_UserApp_IN_StateasGrantor_for_AND
+  Scenario: Hide Program Information from Overview Tab using field (UserApp IN (StateasGrantor)) for AND at program view page
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                                                                           | coreComponentField    | coreCOmponentSubFieldName| coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:hide_expression_Program_Information_Page_Block_Title_LeftOperandField_UserApp_IN_StateasGrantor_for_AND| Grantee State Program | GNT__PageBlockTitle__c   | Program Information        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Program Information" page block is not displayed  
+    
+  @45859 @all @hide_expression_Program_Information_Page_Block_Title_LeftOperandField_FunderType__c_CONTAINS_Federal
+  Scenario: Set up configuration for Hide Program Information from Overview Tab using Field (FunderType__c CONTAINS Federal) program view page
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                                                                        | coreComponentField    | coreCOmponentSubFieldName| coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:hide_expression_Program_Information_Page_Block_Title_LeftOperandField_FunderType__c_CONTAINS_Federal| Grantee State Program | GNT__PageBlockTitle__c   | Program Information        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Program Information" page block is not displayed
+    
+  @45879 @all @hide_expression_Program_Information_Page_Block_Title_LeftOperandField_CFDA_Data__c_equalto_true_for_OR
+  Scenario: Set up configuration for Hide Program Information from Overview Tab using Field Field ( CFDA_Data__c = true ) for OR program view page
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                                                                          | coreComponentField    | coreCOmponentSubFieldName| coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:hide_expression_Program_Information_Page_Block_Title_LeftOperandField_CFDA_Data__c_equalto_true_for_OR| Grantee State Program | GNT__PageBlockTitle__c   | Program Information        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Program Information" page block is not displayed
+    
+  @45917 @all @hide_expression_ProgramCode_With_UserType_Internal
+  Scenario: Set up configuration for Hide Program code from Overview page block using user type internal at program view page
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetail_hide_expression_Program_Code_with_UserType_Internal| Grantee State Program | Name                      | PBD-3098                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Program Code" is not displayed inside page block detail
+    
+  @45918 @all @hide_expression_ProgramCode_With_UserType_NotIn_Internal
+  Scenario: Set up configuration for Hide Program code from Overview page block using user type Not In Internal at program view page
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                             | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetail_hide_expression_Program_Code_with_UserType_NotIn_Internal| Grantee State Program | Name                      | PBD-3098                   |
+    When I login as "Automation-Reviewer" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Program Code" is not displayed inside page block detail
+    
+  @45919 @all @hide_expression_ProgramCode_With_Profile_In_SystemAdministrator
+  Scenario: Set up configuration for Hide Program code from Overview page block using profile In system administrator at program view page
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetail_hide_expression_Program_Code_with_Profile_In_SystemAdministrator| Grantee State Program | Name                      | PBD-3098                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Program Code" is not displayed inside page block detail
+    
+  @45920 @all @hide_expression_ProgramCode_With_Context_In_View
+  Scenario: Set up configuration for Hide Program code from Overview page block using context In view at program view page
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetail_hide_expression_Program_Code_with_Context_In_View| Grantee State Program | Name                      | PBD-3098                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Program Code" is not displayed inside page block detail
+    
+  @45921 @all @hide_expression_ProgramCode_With_Context_In_Edit
+  Scenario: Set up configuration for Hide Program code from Overview page block using context In edit at program view page
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetail_hide_expression_Program_Code_with_Context_In_Edit| Grantee State Program | Name                      | PBD-3098                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Program Code" is not displayed inside page block detail
+    
+  @45923 @all @hide_expression_ProgramCode_With_Context_NotIn_View
+  Scenario: Set up configuration for Hide Program code from Overview page block using context Not In View at program view page
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetail_hide_expression_Program_Code_with_Context_NotIn_View| Grantee State Program | Name                      | PBD-3098                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Program Code" is not displayed inside page block detail
+    
+  @45924 @all @hide_expression_ProgramCode_With_Context_NotIn_Edit
+  Scenario: Set up configuration for Hide Program code from Overview page block using context Not In Edit at program view page
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetail_hide_expression_Program_Code_with_Context_NotIn_Edit| Grantee State Program | Name                      | PBD-3098                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Program Code" is not displayed inside page block detail
+    
+  @45925 @all @hide_expression_ProgramCode_With_UserApp_In_StateAsGrantor
+  Scenario: Set up configuration for Hide Program code from Overview page block using UserApp In State As Grantor at program edit page
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetail_hide_expression_Program_Code_with_UseApp_In_StateAsGrantor| Grantee State Program | Name                      | PBD-3098                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Program Code" is not displayed inside page block detail
+    
+  @45926 @all @hide_expression_ProgramCode_With_UserApp_NotIn_StateAsGrantor
+  Scenario: Set up configuration for Hide Program code from Overview page block using UserApp NotIn State As Grantor at program view page
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetail_hide_expression_Program_Code_with_UseApp_NotIn_StateAsGrantor| Grantee State Program | Name                      | PBD-3098                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Program Code" inside page block details
+    
+  @45930 @all @hide_expression_ProgramCode_With_UserType_Internal_Profile_Admin_Operator_AND
+  Scenario: Set up configuration for Hide Program code from Overview page block using UserType Internal and profile Admin with operator AND at program edit page
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                                                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetail_hide_expression_Program_Code_with_UserType_Internal_profile_Admin_With_Operator_AND| Grantee State Program | Name                      | PBD-3098                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Program Code" is not displayed inside page block detail
+    
+  @45932 @all @hide_expression_ProgramCode_With_UserType_Internal_Profile_Admin_Operator_OR
+  Scenario: Set up configuration for Hide Program code from Overview page block using UserType Internal and profile Admin with operator OR at program edit page
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                                                      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetail_hide_expression_Program_Code_with_UserType_Internal_profile_Admin_With_Operator_OR| Grantee State Program | Name                      | PBD-3098                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Program Code" is not displayed inside page block detail
+    
+  @45933 @all @hide_expression_ProgramCode_With_Context_AND_UserApp_StateAsGrantor
+  Scenario: Set up configuration for Hide Program code from Overview page block using Context AND and UserApp State As Grantor at program view page
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetail_hide_expression_Program_Code_with_Context_AND_UserApp_StateAsGrantor| Grantee State Program | Name                      | PBD-3098                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Program Code" is not displayed inside page block detail
+    
+  @45934 @all @hide_expression_ProgramCode_With_Context_OR_UserApp_StateAsGrantor
+  Scenario: Set up configuration for Hide Program code from Overview page block using Context OR and UserApp State As Grantor at program view page
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetail_hide_expression_Program_Code_with_Context_OR_UserApp_StateAsGrantor| Grantee State Program | Name                      | PBD-3098                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Program Code" is not displayed inside page block detail
