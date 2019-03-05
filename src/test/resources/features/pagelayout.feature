@@ -1175,7 +1175,7 @@ Feature: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-    When I hovering mouse on help text icon inside page block detail "Program Name"
+    When I hovering mouse on help text icon inside page block detail "Title"
     Then I see "<new_helpText>" shown as help text
     Examples:
       | new_helpText             | old_helpText                                       |
