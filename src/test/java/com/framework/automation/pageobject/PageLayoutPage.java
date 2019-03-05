@@ -767,7 +767,11 @@ public class PageLayoutPage extends GovGrantsManager {
 	private boolean isPageBlockTitleDisplayed(String titleName) {
 		boolean flag = false;
 		try {
-			if (reiDriver.findMyElement().getElement(By.xpath("//h3//a[contains(text(),'" + titleName + "')]"))
+			reiDriver.JavaScript().scrollElementToPageDetailCenter(
+					By.xpath("//h3//a[contains(text(),'" + titleName + "')] | //a[@title='" + titleName + "']"));
+			if (reiDriver.findMyElement()
+					.getElement(
+							By.xpath("//h3//a[contains(text(),'" + titleName + "')] | //a[@title='" + titleName + "']"))
 					.isDisplayed()) {
 				flag = true;
 			}
