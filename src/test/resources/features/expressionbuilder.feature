@@ -2249,7 +2249,7 @@ Feature: Expression Builder Component Scenarios
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed
     
-  @45962 @all @hide_expression_Program_Information_Page_Block_LeftOperand_Profile_NotIN_SystemAdmin_PM_SPI
+  @45962 @all @hide_expression_Budget_Period_Details_Page_Block_LeftOperand_Profile_NotIN_SystemAdmin_PM_SPI
   Scenario: Set up configuration to display Budget Period Details from Overview Tab for ADMIN SPI PM User using Profile NotIn
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -2264,7 +2264,7 @@ Feature: Expression Builder Component Scenarios
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Budget Period Details" page block title
     
-  @45959 @all @hide_expression_Program_Information_Page_Block_LeftOperand_UserType_IN_Internal
+  @45959 @all @hide_expression_Budget_Period_Details_Page_Block_LeftOperand_UserType_IN_Internal
   Scenario: Set up configuration to hide Budget Period Details from Overview Tab using user type IN Internal
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -2279,7 +2279,7 @@ Feature: Expression Builder Component Scenarios
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Budget Period Details" page block is not displayed
     
-  @45960 @all @hide_expression_Program_Information_Page_Block_LeftOperand_UserType_NotIN_Internal
+  @45960 @all @hide_expression_Budget_Period_Details_Page_Block_LeftOperand_UserType_NotIN_Internal
   Scenario: Set up configuration to display Budget Period Details inside Overview Tab using user type NOTIN for Internal
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -2294,7 +2294,7 @@ Feature: Expression Builder Component Scenarios
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Budget Period Details" page block title
     
-  @45963 @all @hide_expression_Program_Information_Page_Block_LeftOperand_UserType_NotIN_Internal_Applicant_Reviewer
+  @45963 @all @hide_expression_Budget_Period_Details_Page_Block_LeftOperand_UserType_NotIN_Internal_Applicant_Reviewer
   Scenario: Set up configuration to display Budget Period Details inside Overview Tab using user type NOTIN for Internal and Applicant and Reviewer
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -2309,7 +2309,7 @@ Feature: Expression Builder Component Scenarios
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Budget Period Details" page block title
     
-  @45964 @all @hide_expression_Program_Information_Page_Block_LeftOperand_Profile_IN_or_UserType_IN
+  @45964 @all @hide_expression_Budget_Period_Details_Page_Block_LeftOperand_Profile_IN_or_UserType_IN
   Scenario: Set up configuration to hide Budget Period Details inside Overview Tab using profile IN or user type IN
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -2324,7 +2324,7 @@ Feature: Expression Builder Component Scenarios
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Budget Period Details" page block is not displayed
     
-  @45965 @all @hide_expression_Program_Information_Page_Block_LeftOperand_Profile_IN_PM_SystemAdmin_SPI
+  @45965 @all @hide_expression_Program_Contacts_Page_Block_LeftOperand_Profile_IN_PM_SystemAdmin_SPI
   Scenario: Set up configuration to hide Program contacts inside Overview Tab using profile IN for PM System Admin and Spi user
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -2339,7 +2339,7 @@ Feature: Expression Builder Component Scenarios
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Contacts" page block is not displayed   
     
-  @45966 @all @hide_expression_Program_Information_Page_Block_LeftOperand_Context_NotIN__Create_Edit
+  @45966 @all @hide_expression_Program_Contacts_Page_Block_LeftOperand_Context_NotIN__Create_Edit
   Scenario: Set up configuration to display Program contacts inside Overview Tab using context NOTIN (Create,Edit)
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -2354,7 +2354,7 @@ Feature: Expression Builder Component Scenarios
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Contacts" page block title
     
-  @45967 @all @hide_expression_Program_Information_Page_Block_LeftOperand_UserApp_NotIN_StateAsGrantor
+  @45967 @all @hide_expression_Program_Contacts_Page_Block_LeftOperand_UserApp_NotIN_StateAsGrantor
   Scenario: Set up configuration to display Program contacts inside Overview Tab using UserApp NOTIN (StateAsGrantor)
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -2369,7 +2369,7 @@ Feature: Expression Builder Component Scenarios
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Contacts" page block title
     
-  @45969 @all @hide_expression_Program_Information_Page_Block_LeftOperand_UserApp_IN
+  @45969 @all @hide_expression_Program_Contacts_Page_Block_LeftOperand_UserApp_IN
   Scenario: Set up configuration to hide Program contacts inside Overview Tab using UserApp IN
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -2427,4 +2427,169 @@ Feature: Expression Builder Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-    Then I see "Program Information" page block is not displayed 
+    Then I see "Program Information" page block is not displayed
+    
+  @45988 @all @hide_expression_Program_Information_Page_Block_LeftOperand_Profile_IN_SystemAdministrator_OR_PM
+  Scenario: Set up configuration to hide Program Information inside Overview Tab using Profile IN System Administrator OR PM
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_Profile_IN_SystemAdministrator_OR_PM| Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Program Information" page block is not displayed
+    
+  @45989 @all @hide_expression_Program_Information_Page_Block_LeftOperand_UserType_NOTIN__Internal_Applicant
+  Scenario: Set up configuration to display Program Information inside Overview Tab using (UserType NOT IN( Internal,Applicant ))
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_UserType_NOTIN_Internal_Applicant| Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Program Information" page block title
+    
+  @45991 @all @hide_expression_Program_Information_Page_Block_LeftOperand_UserType_IN_Internal_Applicant_Reviewer
+  Scenario: Set up configuration to hide Program Information inside Overview Tab using (UserType IN(Internal,Applicant,Reviewer ))
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_UserType_IN_Internal_Applicant_Reviewer| Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+    When I login as "Automation-Reviewer" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Program Information" page block is not displayed
+    
+  @45993 @all @hide_expression_Program_Information_Page_Block_LeftOperand_Federal_OR_StartDate
+  Scenario: Set up configuration to hide Program Information inside Overview Tab using Field Federal OR StartDate
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_Federal_OR_StartDate| Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Program Information" page block is not displayed
+    
+  @46051 @all @hide_expression_Program_Information_Page_Block_LeftOperand_Funder_OR_UserApp
+  Scenario: Set up configuration to hide Program Information inside Overview Tab using Field Funder OR UserApp
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_Funder_OR_UserApp| Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Program Information" page block is not displayed
+    
+  @46064 @all @hide_expression_Program_Information_Page_Block_LeftOperand_ExpectedFunding_OR_UserApp
+  Scenario: Set up configuration to hide Program Information inside Overview Tab using Field ExpectedFunding OR UserApp
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_ExpectedFunding_OR_UserApp| Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Program Information" page block is not displayed
+    
+  @46065 @all @hide_expression_Program_Information_Page_Block_LeftOperand_UserApp_IN
+  Scenario: Set up configuration to hide Program Information inside Overview Tab using UserApp In
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_UserApp_IN| Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Program Information" page block is not displayed
+    
+  @46370 @all @hide_expression_Website_Address_Page_Block_Details_With_FunderType_c_Contains_Federal
+  Scenario: Set up configuration for Hide Website address from Overview page block details using Field (FunderType__c CONTAINS Federal) at program view page
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_FunderType_c_CONTAINS_Federal| Grantee State Program | Name                      | PBD-4719                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Website Address" is not displayed inside page block detail
+    
+  @46371 @all @hide_expression_Website_Address_Page_Block_Details_With_FunderAccount_c_equalto_40000
+  Scenario: Set up configuration for Hide Website address from Overview page block details using Field (FundedAmount__c = 400000) at program view page
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_FundedAmount_c_equalsto_40000| Grantee State Program | Name                      | PBD-4719                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Website Address" is not displayed inside page block detail
+    
+  @46372 @all @hide_expression_Website_Address_Page_Block_Details_With_FunderAccount_c_notequalto_40000
+  Scenario: Set up configuration for display Website address from Overview page block details using Field (FundedAmount__c != 400000) at program view page
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_FundedAmount_c_notequalsto_40000| Grantee State Program | Name                      | PBD-4719                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Website Address" inside page block details
+    
+  @46373 @all @hide_expression_Website_Address_Page_Block_Details_With_StartDate_c_greaterequalto_11_30_2020
+  Scenario: Set up configuration for display Website address from Overview page block details using Field (StartDate__c >= 11/30/2020) at program view page
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_StartDate_c_greaterequalto_11_30_2020| Grantee State Program | Name                      | PBD-4719                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Website Address" is not displayed inside page block detail
