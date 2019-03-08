@@ -2580,7 +2580,7 @@ Feature: Expression Builder Component Scenarios
     Then I see "Website Address" inside page block details
     
   @46373 @all @hide_expression_Website_Address_Page_Block_Details_With_StartDate_c_greaterequalto_11_30_2020
-  Scenario: Set up configuration for display Website address from Overview page block details using Field (StartDate__c >= 11/30/2020) at program view page
+  Scenario: Set up configuration for hide Website address from Overview page block details using Field (StartDate__c >= 11/30/2020) at program view page
     Given I have default configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
@@ -2593,3 +2593,93 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Website Address" is not displayed inside page block detail
+    
+  @46375 @all @hide_expression_Website_Address_Page_Block_Details_With_StartDate_c_lessequalto_11_30_2020
+  Scenario: Set up configuration for hide Website address from Overview page block details using Field (StartDate__c <= 11/30/2020) at program view page
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_StartDate_c_lessequalto_11_30_2020| Grantee State Program | Name                      | PBD-4719                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Website Address" is not displayed inside page block detail
+    
+  @46376 @all @hide_expression_Website_Address_Page_Block_Details_With_Number_c_greaterthan_5678
+  Scenario: Set up configuration for display Website address from Overview page block details using Field (Number__c > 5678) at program view page
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_Number_c_greaterthan_5678| Grantee State Program | Name                      | PBD-4719                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Website Address" inside page block details
+    
+  @46377 @all @hide_expression_Website_Address_Page_Block_Details_With_Number_c_lessthan_5678
+  Scenario: Set up configuration for display Website address from Overview page block details using Field (Number__c < 5678) at program view page
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_Number_c_lessthan_5678| Grantee State Program | Name                      | PBD-4719                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Website Address" inside page block details
+    
+  @46378 @all @hide_expression_Website_Address_Page_Block_Details_With_CFDA_Data_c_equalto_true
+  Scenario: Set up configuration for hide Website address from Overview page block details using Field (CFDA_Data__c = true) at program view page
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_CFDA_Data_c_equalto_true| Grantee State Program | Name                      | PBD-4719                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Website Address" is not displayed inside page block detail    
+    
+  @46379 @all @hide_expression_Website_Address_Page_Block_Details_With_CFDA_Data_c_notequalto_true
+  Scenario: Set up configuration for display Website address from Overview page block details using Field (CFDA_Data__c != true) at program view page
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                             | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_CFDA_Data_c_notequalto_true| Grantee State Program | Name                      | PBD-4719                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Website Address" inside page block details
+    
+  @46380 @all @hide_expression_Website_Address_Page_Block_Details_With_Number_c_greaterequalto_5678
+  Scenario: Set up configuration for display Website address from Overview page block details using Field (Number__c >= 5678) at program view page
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_Number_c_greaterequalto_5678| Grantee State Program | Name                      | PBD-4719                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Website Address" is not displayed inside page block detail   
