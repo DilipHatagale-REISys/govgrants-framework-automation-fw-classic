@@ -54,4 +54,14 @@ public class SideBarSteps {
 	public void assertNewTabOpensForAccordionContent(String pageTitle) {
 		sidebarPage.assertAccordionContentWithNewTab(pageTitle);
 	}
+
+	@Then("^I see \"([^\"]*)\" inside \"([^\"]*)\" is displayed$")
+	public void assertSubHeaderContentNameDisplayed(String sideBarCategory, String accordianSubHeaderDetail) {
+		sidebarPage.assertSubHeaderContentDisplayed(sideBarCategory, accordianSubHeaderDetail);
+	}
+	
+	@Then("^I see \"([^\"]*)\" inside \"([^\"]*)\" is not displayed$")
+	public void assertSubHeaderContentNameNotDisplayed(String sideBarCategory, String accordianSubHeaderDetail) {
+		sidebarPage.assertSubHeaderContentNotDisplayed(sideBarCategory, accordianSubHeaderDetail);
+	}
 }

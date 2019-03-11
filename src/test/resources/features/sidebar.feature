@@ -15,7 +15,7 @@ Feature: Side bar Component Scenarios
     When I setup my app as "As a Grantor"
     Then i see "Tasks" shown at number "4" in sideBar
 
-  @33876     @all @validateSidebarTaskMenuRemoval-gHome
+  @33876 @all @validateSidebarTaskMenuRemoval-gHome
   Scenario: validate disabling of task menu from side bar
     Given I have default configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue                                                  | filterId         |
