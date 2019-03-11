@@ -2670,7 +2670,7 @@ Feature: Expression Builder Component Scenarios
     Then I see "Website Address" inside page block details
     
   @46380 @all @hide_expression_Website_Address_Page_Block_Details_With_Number_c_greaterequalto_5678
-  Scenario: Set up configuration for display Website address from Overview page block details using Field (Number__c >= 5678) at program view page
+  Scenario: Set up configuration for hide Website address from Overview page block details using Field (Number__c >= 5678) at program view page
     Given I have default configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
@@ -2682,4 +2682,148 @@ Feature: Expression Builder Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-    Then I see "Website Address" is not displayed inside page block detail   
+    Then I see "Website Address" is not displayed inside page block detail
+    
+  @46386 @all @hide_expression_Website_Address_Page_Block_Details_With_CONTAINS_OR_Number
+  Scenario: Set up configuration for hide Website address from Overview page block details using Field CONTAINS OR Number at program view page
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_CONTAINS_OR_Number| Grantee State Program | Name                      | PBD-4719                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Website Address" is not displayed inside page block detail
+    
+  @45302 @all @hide_expression_SubmitForApproval_Page_Layout_Using_GROUP_EXPRESSION_With_AND_Operator
+  Scenario: Set up configuration for hide Submit For Approval action from page layout GROUP EXPRESSION with AND operator at program view page -gPlanning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | Hide Expression JSON |                   | Grantee State Program | Name                      | Submit For Approval        |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionWithLeftOperand_GROUP_EXPRESSION_With_AND_Operator| Grantee State Program | Name                      | Submit For Approval        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Submit For Approval" button is not displayed
+    
+  @46381 @all @hide_expression_Website_Address_Page_Block_Details_With_Number_c_lessequalto_5678
+  Scenario: Set up configuration for hide Website address from Overview page block details using Field (Number__c <= 5678) at program view page
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_Number_c_lessequalto_5678| Grantee State Program | Name                      | PBD-4719                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Website Address" is not displayed inside page block detail
+    
+  @46383 @all @hide_expression_Website_Address_Page_Block_Details_With_Account_r_Name_equalto_DepartmentOfCommunityHealth
+  Scenario: Set up configuration for hide Website address from Overview page block details using Field (Account__r.Name = Department of Community Health) at program view page
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_Account_r_Name_equalto_DepartmentOfCommunityHealth| Grantee State Program | Name                      | PBD-4719                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Website Address" is not displayed inside page block detail
+    
+  @46384 @all @hide_expression_Website_Address_Page_Block_Details_With_Account_r_Name_notequalto_DepartmentOfCommunityHealth
+  Scenario: Set up configuration for display Website address from Overview page block details using Field (Account__r.Name != Department of Community Health) at program view page
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                                                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_Account_r_Name_notequalto_DepartmentOfCommunityHealth| Grantee State Program | Name                      | PBD-4719                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Website Address" inside page block details
+    
+  @46388 @all @hide_expression_Website_Address_Page_Block_Details_With_ExpectedFunding_AND_FunderType_CONTAINS
+  Scenario: Set up configuration for hide Website address from Overview page block details using Field ExpectedFunding AND FunderType CONTAINS at program view page
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_ExpectedFunding_AND_FunderType_CONTAINS| Grantee State Program | Name                      | PBD-4719                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Website Address" is not displayed inside page block detail
+    
+  @46389 @all @hide_expression_Website_Address_Page_Block_Details_With_ExpectedFunding_OR_FunderType_CONTAINS
+  Scenario: Set up configuration for hide Website address from Overview page block details using Field ExpectedFunding OR FunderType CONTAINS at program view page
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_ExpectedFunding_OR_FunderType_CONTAINS| Grantee State Program | Name                      | PBD-4719                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Website Address" is not displayed inside page block detail
+    
+  @46392 @all @render_expression_SideBar_ManageFundingSource_With_UserType_IN_Internal
+  Scenario: Set up configuration for display Manage funding source from side bar using (UserType IN(Internal) -gPlanning
+    Given I have default configuration as below:
+      | configurationCategory| fieldName              | fieldOrignalValue | coreComponentField    | filterId         |
+      | Accordian Header     | Render Expression JSON |                   | GrantorPlanning       | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory| fieldName              | fieldNewValue                                                                         | coreComponentField| coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Accordian Header     | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_UserType_IN_Internal| GrantorPlanning   | Name                      | Manage Funding Source      |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "Activities" inside "Manage Funding Source" is displayed
+    
+  @46393 @all @render_expression_SideBar_ManageFundingSource_With_UserType_NOTIN_Internal
+  Scenario: Set up configuration for hide Manage funding source from side bar using (UserType NOTIN(Internal) -gPlanning
+    Given I have default configuration as below:
+      | configurationCategory| fieldName              | fieldOrignalValue | coreComponentField    | filterId         |
+      | Accordian Header     | Render Expression JSON |                   | GrantorPlanning       | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory| fieldName              | fieldNewValue                                                                            | coreComponentField| coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Accordian Header     | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_UserType_NOTIN_Internal| GrantorPlanning   | Name                      | Manage Funding Source      |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "Activities" inside "Manage Funding Source" is not displayed
+    
+  @46395 @all @render_expression_SideBar_ManageFundingSource_With_Profile_IN_SystemAdministrator
+  Scenario: Set up configuration for display Manage funding source from side bar using Profile IN (System Administrator) -gPlanning
+    Given I have default configuration as below:
+      | configurationCategory| fieldName              | fieldOrignalValue | coreComponentField    | filterId         |
+      | Accordian Header     | Render Expression JSON |                   | GrantorPlanning       | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory| fieldName              | fieldNewValue                                                                                   | coreComponentField| coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Accordian Header     | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_Profile_IN_SystemAdministrator| GrantorPlanning   | Name                      | Manage Funding Source      |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "Activities" inside "Manage Funding Source" is displayed

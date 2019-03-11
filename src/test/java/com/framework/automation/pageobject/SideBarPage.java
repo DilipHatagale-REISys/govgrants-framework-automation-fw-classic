@@ -63,8 +63,10 @@ public class SideBarPage extends GovGrantsManager {
 	}
 
 	/**
-	 * @param subTabName: Accordion header
-	 * @param mainTabName: Changed Accordion header label/Name
+	 * @param subTabName:
+	 *            Accordion header
+	 * @param mainTabName:
+	 *            Changed Accordion header label/Name
 	 */
 	public void assertnewAccordionHeaderLabel(String subTabName, String mainTabName) {
 		Assert.assertEquals(getSideBarAccordianHeader(mainTabName, subTabName).getText(), subTabName);
@@ -90,14 +92,36 @@ public class SideBarPage extends GovGrantsManager {
 		Assert.assertTrue(isNewTabOpens(Pagetitle));
 	}
 
+	/**
+	 * assert if accordion sub header is displayed
+	 * 
+	 * @param sideBarCategory
+	 * @param accordianSubHeaderDetail
+	 */
+	public void assertSubHeaderContentDisplayed(String sideBarCategory, String accordianSubHeaderDetail) {
+		Assert.assertTrue(isSideBarAccordionSubHeaderDisplayed(sideBarCategory, accordianSubHeaderDetail));
+	}
+	
+	/**
+	 * assert if accordion sub header is not displayed
+	 * 
+	 * @param sideBarCategory
+	 * @param accordianSubHeaderDetail
+	 */
+	public void assertSubHeaderContentNotDisplayed(String sideBarCategory, String accordianSubHeaderDetail) {
+		Assert.assertFalse(isSideBarAccordionSubHeaderDisplayed(sideBarCategory, accordianSubHeaderDetail));
+	}
+
 	/*********
 	 * "Local Methods with Limited functionality - Private"
 	 *****************/
 
 	/**
 	 * 
-	 * @param headerName: Header name in sidebar
-	 * @param sequenceNumber: item number in side bar
+	 * @param headerName:
+	 *            Header name in sidebar
+	 * @param sequenceNumber:
+	 *            item number in side bar
 	 * @return
 	 */
 	private Boolean isHeaderSequence(String headerName, int sequenceNumber) {
@@ -152,7 +176,8 @@ public class SideBarPage extends GovGrantsManager {
 	/**
 	 * Boolean status of Accordion Content opens in another tab
 	 * 
-	 * @param accordionContentName: Content name in sidebar
+	 * @param accordionContentName:
+	 *            Content name in sidebar
 	 * @param pageTitle:
 	 * @return
 	 */
@@ -167,5 +192,23 @@ public class SideBarPage extends GovGrantsManager {
 			}
 		}
 		return myNewTabFound;
+	}
+
+	/**
+	 * 
+	 * @param sideBarCategory
+	 * @param accordianSubHeaderDetail
+	 * @return true if accordion sub header is displayed
+	 */
+	private boolean isSideBarAccordionSubHeaderDisplayed(String sideBarCategory, String accordianSubHeaderDetail) {
+		boolean flag = false;
+		try {
+			if (getSideBarAccordianSubHeaderContent(sideBarCategory, accordianSubHeaderDetail).isDisplayed()) {
+				flag = true;
+			}
+		} catch (Exception e) {
+
+		}
+		return flag;
 	}
 }

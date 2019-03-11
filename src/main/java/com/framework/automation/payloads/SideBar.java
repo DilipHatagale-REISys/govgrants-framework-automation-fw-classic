@@ -11,10 +11,14 @@ public class SideBar {
 	/**
 	 * Handles Accordian Content level configuration
 	 * 
-	 * @param fieldLabel : Name of the field. Name of the API.
-	 * @param            ComponentCoreFieldName: Main phase name: eg; GrantorHome
-	 * @param            value: Parameter that we want to change
-	 * @param            filterClause: filter clause to get the specific id
+	 * @param fieldLabel
+	 *            : Name of the field. Name of the API.
+	 * @param ComponentCoreFieldName:
+	 *            Main phase name: eg; GrantorHome
+	 * @param value:
+	 *            Parameter that we want to change
+	 * @param filterClause:
+	 *            filter clause to get the specific id
 	 * @return: payload
 	 */
 	public String setAccordianContentFieldConfig(String fieldLabel, String value, String filterClause) {
@@ -68,10 +72,14 @@ public class SideBar {
 	/**
 	 * Handles Side Bar Header level configuration
 	 * 
-	 * @param fieldLabel : Name of the field. Name of the API.
-	 * @param            ComponentCoreFieldName: Main phase name: eg; GrantorHome
-	 * @param            value: Parameter that we want to change
-	 * @param            filterClause: filter clause to get the specific id
+	 * @param fieldLabel
+	 *            : Name of the field. Name of the API.
+	 * @param ComponentCoreFieldName:
+	 *            Main phase name: eg; GrantorHome
+	 * @param value:
+	 *            Parameter that we want to change
+	 * @param filterClause:
+	 *            filter clause to get the specific id
 	 * @return: payload
 	 */
 	public String setSideBarFieldConfig(String fieldLabel, String value, String filterClause) {
@@ -110,10 +118,14 @@ public class SideBar {
 	/**
 	 * Handles Accordian configuration
 	 * 
-	 * @param fieldLabel : Name of the field. Name of the API.
-	 * @param            ComponentCoreFieldName: Main phase name: eg; GrantorHome
-	 * @param            value: Parameter that we want to change
-	 * @param            filterClause: filter clause to get the specific id
+	 * @param fieldLabel
+	 *            : Name of the field. Name of the API.
+	 * @param ComponentCoreFieldName:
+	 *            Main phase name: eg; GrantorHome
+	 * @param value:
+	 *            Parameter that we want to change
+	 * @param filterClause:
+	 *            filter clause to get the specific id
 	 * @return: payload
 	 */
 	public String setAccordianHeaderConfig(String fieldLabel, String value, String filterClause) {
@@ -150,6 +162,12 @@ public class SideBar {
 					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__AccordionHeader__c), apiUtilities
 							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__AccordionHeader__c), filterClause),
 					String.valueOf(SObjectAPIs.GNT__Type__c), value);
+			break;
+		case "RENDER EXPRESSION JSON":
+			finalPayload = String.format(
+					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__AccordionHeader__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__AccordionHeader__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__HideExpressionJSON__c), value);
 			break;
 		}
 		System.out.println("final payload is " + finalPayload);
