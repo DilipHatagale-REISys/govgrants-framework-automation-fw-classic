@@ -2827,3 +2827,194 @@ Feature: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "Activities" inside "Manage Funding Source" is displayed
+    
+  @46396 @all @render_expression_SideBar_ManageFundingSource_With_Profile_NOTIN_SystemAdministrator
+  Scenario: Set up configuration for Hide Manage funding source from side bar using Profile NOTIN (System Administrator) -gPlanning
+    Given I have default configuration as below:
+      | configurationCategory| fieldName              | fieldOrignalValue | coreComponentField    | filterId         |
+      | Accordian Header     | Render Expression JSON |                   | GrantorPlanning       | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory| fieldName              | fieldNewValue                                                                                      | coreComponentField| coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Accordian Header     | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_Profile_NOTIN_SystemAdministrator| GrantorPlanning   | Name                      | Manage Funding Source      |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "Activities" inside "Manage Funding Source" is not displayed
+    
+  @46397 @all @render_expression_SideBar_ManageFundingSource_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal
+  Scenario: Set up configuration for display Manage funding source from side bar using Profile IN (System Administrator ) AND UserType IN (Internal) -gPlanning
+    Given I have default configuration as below:
+      | configurationCategory| fieldName              | fieldOrignalValue | coreComponentField    | filterId         |
+      | Accordian Header     | Render Expression JSON |                   | GrantorPlanning       | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory| fieldName              | fieldNewValue                                                                                                            | coreComponentField| coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Accordian Header     | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal| GrantorPlanning   | Name                      | Manage Funding Source      |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "Activities" inside "Manage Funding Source" is displayed
+    
+  @46398 @all @render_expression_SideBar_ManageFundingSource_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal
+  Scenario: Set up configuration for display Manage funding source from side bar using (Profile IN (System Administrator) OR UserType IN (Internal) -gPlanning
+    Given I have default configuration as below:
+      | configurationCategory| fieldName              | fieldOrignalValue | coreComponentField    | filterId         |
+      | Accordian Header     | Render Expression JSON |                   | GrantorPlanning       | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory| fieldName              | fieldNewValue                                                                                                           | coreComponentField| coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Accordian Header     | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal| GrantorPlanning   | Name                      | Manage Funding Source      |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "Activities" inside "Manage Funding Source" is displayed
+    
+  @46415 @all @render_expression_SideBar_ManageFundingSource_With_Profile_IN_SystemAdministrator_AND_Profile_IN_PM
+  Scenario: Set up configuration for hide Manage funding source from side bar using (Profile IN (System Administrator) AND Profile IN PM) -gPlanning
+    Given I have default configuration as below:
+      | configurationCategory| fieldName              | fieldOrignalValue | coreComponentField    | filterId         |
+      | Accordian Header     | Render Expression JSON |                   | GrantorPlanning       | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory| fieldName              | fieldNewValue                                                                                                     | coreComponentField| coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Accordian Header     | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_Profile_IN_SystemAdministrator_AND_Profile_IN_PM| GrantorPlanning   | Name                      | Manage Funding Source      |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "Activities" inside "Manage Funding Source" is not displayed
+    
+  @46416 @all @render_expression_SideBar_ManageFundingSource_With_Profile_IN_SystemAdministrator_OR_Profile_IN_PM
+  Scenario: Set up configuration for display Manage funding source from side bar using (Profile IN (System Administrator) OR Profile IN PM) -gPlanning
+    Given I have default configuration as below:
+      | configurationCategory| fieldName              | fieldOrignalValue | coreComponentField    | filterId         |
+      | Accordian Header     | Render Expression JSON |                   | GrantorPlanning       | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory| fieldName              | fieldNewValue                                                                                                    | coreComponentField| coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Accordian Header     | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_Profile_IN_SystemAdministrator_OR_Profile_IN_PM| GrantorPlanning   | Name                      | Manage Funding Source      |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "Activities" inside "Manage Funding Source" is displayed
+    
+  @46399 @all @render_expression_SideBar_ManageFundingSource_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator
+  Scenario: Set up configuration for hide Manage funding source from side bar using (UserType NOT IN (Internal) AND Profile NOT IN (System Administrator) -gPlanning
+    Given I have default configuration as below:
+      | configurationCategory| fieldName              | fieldOrignalValue | coreComponentField    | filterId         |
+      | Accordian Header     | Render Expression JSON |                   | GrantorPlanning       | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory| fieldName              | fieldNewValue                                                                                     | coreComponentField| coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Accordian Header     | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_UserType_NOTIN_AND_Profile_NOTIN| GrantorPlanning   | Name                      | Manage Funding Source      |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "Activities" inside "Manage Funding Source" is not displayed
+    
+  @46400 @all @render_expression_SideBar_ManageFundingSource_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator
+  Scenario: Set up configuration for hide Manage funding source from side bar using (UserType NOT IN (Internal) OR Profile NOT IN (System Administrator) -gPlanning
+    Given I have default configuration as below:
+      | configurationCategory| fieldName              | fieldOrignalValue | coreComponentField    | filterId         |
+      | Accordian Header     | Render Expression JSON |                   | GrantorPlanning       | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory| fieldName              | fieldNewValue                                                                                    | coreComponentField| coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Accordian Header     | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_UserType_NOTIN_OR_Profile_NOTIN| GrantorPlanning   | Name                      | Manage Funding Source      |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "Activities" inside "Manage Funding Source" is not displayed
+    
+  @46417 @all @render_expression_SideBar_ManageFundingSource_With_UserType_IN_Applicant_Reviewer
+  Scenario: Set up configuration for hide Manage funding source from side bar using UserType IN Applicant, Reviewer -gPlanning
+    Given I have default configuration as below:
+      | configurationCategory| fieldName              | fieldOrignalValue | coreComponentField    | filterId         |
+      | Accordian Header     | Render Expression JSON |                   | GrantorPlanning       | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory| fieldName              | fieldNewValue                                                                                   | coreComponentField| coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Accordian Header     | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_UserType_IN_Applicant_Reviewer| GrantorPlanning   | Name                      | Manage Funding Source      |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "Activities" inside "Manage Funding Source" is not displayed
+    
+  @46418 @all @render_expression_SideBar_ManageFundingSource_With_UserType_NOTIN_Applicant_Reviewer
+  Scenario: Set up configuration for display Manage funding source from side bar using UserType NOTIN Applicant, Reviewer -gPlanning
+    Given I have default configuration as below:
+      | configurationCategory| fieldName              | fieldOrignalValue | coreComponentField    | filterId         |
+      | Accordian Header     | Render Expression JSON |                   | GrantorPlanning       | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory| fieldName              | fieldNewValue                                                                                      | coreComponentField| coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Accordian Header     | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_UserType_NOTIN_Applicant_Reviewer| GrantorPlanning   | Name                      | Manage Funding Source      |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "Activities" inside "Manage Funding Source" is displayed
+    
+  @46401 @all @render_expression_SideBar_ManageFundingSource_With_UserType_IN_Applicant_Internal_Reviewer
+  Scenario: Set up configuration for display Manage funding source from side bar using (UserType IN (Applicant, Internal, Reviewer) -gPlanning
+    Given I have default configuration as below:
+      | configurationCategory| fieldName              | fieldOrignalValue | coreComponentField    | filterId         |
+      | Accordian Header     | Render Expression JSON |                   | GrantorPlanning       | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory| fieldName              | fieldNewValue                                                                                            | coreComponentField| coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Accordian Header     | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_UserType_IN_Applicant_Internal_Reviewer| GrantorPlanning   | Name                      | Manage Funding Source      |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "Activities" inside "Manage Funding Source" is displayed
+    
+  @46402 @all @render_expression_SideBar_ManageFundingSource_With_UserType_NOTIN_Applicant_Internal_Reviewer
+  Scenario: Set up configuration for hide Manage funding source from side bar using (UserType NOT IN (Applicant, Internal, Reviewer) -gPlanning
+    Given I have default configuration as below:
+      | configurationCategory| fieldName              | fieldOrignalValue | coreComponentField    | filterId         |
+      | Accordian Header     | Render Expression JSON |                   | GrantorPlanning       | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory| fieldName              | fieldNewValue                                                                                               | coreComponentField| coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Accordian Header     | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_UserType_NOTIN_Applicant_Internal_Reviewer| GrantorPlanning   | Name                      | Manage Funding Source      |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "Activities" inside "Manage Funding Source" is not displayed
+    
+  @46403 @all @render_expression_CustomApp_With_UserType_IN_Internal
+  Scenario: Set up configuration for display state as grantor custom app using User Type IN Internal -gHome
+    Given I have default configuration as below:
+      | configurationCategory| fieldName              | fieldOrignalValue | filterId         |
+      | Custom App Config    | Render Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory    | fieldName              | fieldNewValue                                                                                  | coreComponentField| 
+      | Custom App Config:General| Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_Custom_App_UserType_IN_Internal| StateasGrantor    |
+    When I login as "Automation" user
+    When I click CustomApp select dropdown
+    Then I see "As a Grantor" inside CustomApp dropDown
+    
+  @46404 @all @render_expression_CustomApp_With_UserType_NOTIN_Internal
+  Scenario: Set up configuration for hide state as grantor custom app using User Type NOTIN Internal -gHome
+    Given I have default configuration as below:
+      | configurationCategory| fieldName              | fieldOrignalValue | filterId         |
+      | Custom App Config    | Render Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory    | fieldName              | fieldNewValue                                                                                     | coreComponentField| 
+      | Custom App Config:General| Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_Custom_App_UserType_NOTIN_Internal| StateasGrantor    |
+    When I login as "Automation" user
+    When I click CustomApp select dropdown
+    Then I see "As a Grantor" inside CustomApp dropDown not displayed
+    
+  @46405 @all @render_expression_CustomApp_With_Profile_IN_SystemAdministrator
+  Scenario: Set up configuration for display state as grantor custom app using profile IN system administrator -gHome
+    Given I have default configuration as below:
+      | configurationCategory| fieldName              | fieldOrignalValue | filterId         |
+      | Custom App Config    | Render Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory    | fieldName              | fieldNewValue                                                                                 | coreComponentField| 
+      | Custom App Config:General| Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_Profile_IN_SystemAdministrator| StateasGrantor    |
+    When I login as "Automation" user
+    When I click CustomApp select dropdown
+    Then I see "As a Grantor" inside CustomApp dropDown
+    
+  @46406 @all @render_expression_CustomApp_With_Profile_NOTIN_SystemAdministrator
+  Scenario: Set up configuration for hide state as grantor custom app using profile NOTIN system administrator -gHome
+    Given I have default configuration as below:
+      | configurationCategory| fieldName              | fieldOrignalValue | filterId         |
+      | Custom App Config    | Render Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory    | fieldName              | fieldNewValue                                                                                    | coreComponentField| 
+      | Custom App Config:General| Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_Profile_NOTIN_SystemAdministrator| StateasGrantor    |
+    When I login as "Automation" user
+    When I click CustomApp select dropdown
+    Then I see "As a Grantor" inside CustomApp dropDown not displayed
