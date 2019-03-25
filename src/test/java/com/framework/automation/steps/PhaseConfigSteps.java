@@ -20,6 +20,11 @@ public class PhaseConfigSteps {
 		phaseConfigPage.clickOnGlobalSearchAll();
 	}
 
+	@When("^I click CustomApp select dropdown$")
+	public void clickCustomAppSelectDropdown() {
+		phaseConfigPage.clickOnCustomAppSelectDropdown();
+	}
+
 	@Then("^I do not see \"([^\"]*)\" phase$")
 	public void assertPhaseNotDisplayed(String phaseName) {
 		phaseConfigPage.assertSpecificPhaseNotDisplayed(phaseName);
@@ -73,5 +78,15 @@ public class PhaseConfigSteps {
 	@Then("^I see \"([^\"]*)\" records are not present in Recently Viewed link in Sidebar$")
 	public void iSeeRecordsAreNotPresentInRecentlyViewedLinkInSidebar(String acronym) {
 		phaseConfigPage.assertThatObjectIsNotShowingInRecentlyViewedSideBarOption(acronym);
+	}
+
+	@Then("^I see \"([^\"]*)\" inside CustomApp dropDown$")
+	public void assertCustomAppInsideDropdownDisplayed(String dropDownValue) {
+		phaseConfigPage.assertCustomAppValueInsideDropdownDisplayed(dropDownValue);
+	}
+	
+	@Then("^I see \"([^\"]*)\" inside CustomApp dropDown not displayed$")
+	public void assertCustomAppInsideDropdownNotDisplayed(String dropDownValue) {
+		phaseConfigPage.assertCustomAppValueInsideDropdownNotDisplayed(dropDownValue);
 	}
 }

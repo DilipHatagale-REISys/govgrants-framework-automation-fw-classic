@@ -1,6 +1,7 @@
 package com.framework.automation.pageobject;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import com.automation.rei.handlers.GovGrantsHandler;
@@ -10,6 +11,7 @@ import eyethink.automation.bots.controller.Controller;
 import eyethink.automation.bots.controller.CoreHandlers;
 
 public class PhaseConfigPage extends GovGrantsManager {
+	public final By customAppDropdown;
 
 	/******* "Variables and Locators" *****************/
 
@@ -18,6 +20,7 @@ public class PhaseConfigPage extends GovGrantsManager {
 	 */
 	public PhaseConfigPage(Controller controller, CoreHandlers reiDriver, GovGrantsHandler govgrants) {
 		super(controller, reiDriver, govgrants);
+		customAppDropdown = By.xpath("//div/ul/li[contains(@class,'dropdown appDropdown')]");
 	}
 
 	/******* "Key Methods with complete functionality - public" *****************/
@@ -27,6 +30,13 @@ public class PhaseConfigPage extends GovGrantsManager {
 	 */
 	public void clickOnGlobalSearchAll() {
 		reiDriver.findMyElement().getElement(By.xpath("//select[@id='selectSearchId']")).click();
+	}
+
+	/**
+	 * click on CustomApp Select dropdown inside grantor Home/Planning main page
+	 */
+	public void clickOnCustomAppSelectDropdown() {
+		reiDriver.WaitFor().WaitForElementToBePresent(customAppDropdown).click();
 	}
 
 	/**
@@ -125,14 +135,44 @@ public class PhaseConfigPage extends GovGrantsManager {
 	}
 
 	/**
-	 * Assert true for not showing passed objectType related entities in Recently Viewed option which is present in
-	 * sidebar of phase Planning
-	 * @param objectType = program or announcement or related entity
+	 * Assert true for not showing passed objectType related entities in Recently
+	 * Viewed option which is present in sidebar of phase Planning
+	 * 
+	 * @param objectType
+	 *            = program or announcement or related entity
 	 */
-	public void assertThatObjectIsNotShowingInRecentlyViewedSideBarOption(String acronym){
+	public void assertThatObjectIsNotShowingInRecentlyViewedSideBarOption(String acronym) {
 		Assert.assertTrue(isObjectNotShowingInRecentlyViewedSideBar(acronym));
 	}
 
+	/**
+	 * assert if custom App is displayed inside custom app dropdown list
+	 * 
+	 * @param dropDownValue
+	 */
+	public void assertCustomAppValueInsideDropdownDisplayed(String dropDownValue) {
+		Assert.assertTrue(isSpecificCustomAppDisplayed(dropDownValue));
+	}
+
+	/**
+	 * assert if custom App is not displayed inside custom app dropdown list
+	 * 
+	 * @param dropDownValue
+	 */
+	public void assertCustomAppValueInsideDropdownNotDisplayed(String dropDownValue) {
+		Assert.assertFalse(isSpecificCustomAppDisplayed(dropDownValue));
+	}
+
+	/**
+	 * get item from custom App Dropdown
+	 * 
+	 * @param dropDownValue
+	 * @return
+	 */
+	public WebElement getCustomAppFromCustomAppDropdown(String dropDownValue) {
+		return reiDriver.findMyElement().getElement(By
+				.xpath("//div/ul/li[contains(@class,'dropdown appDropdown')]/ul/li/a[@title='" + dropDownValue + "']"));
+	}
 
 	/********* "Local Methods with complete functionality - private" *********/
 
@@ -267,21 +307,42 @@ public class PhaseConfigPage extends GovGrantsManager {
 	}
 
 	/**
-	 * Boolean true if the given object type such as program or announcement or any other relating
-	 * entity is not present in Recently Viewed Side Bar option
-	 * @param objectType this could be program or announcement or other relating entity
+	 * Boolean true if the given object type such as program or announcement or any
+	 * other relating entity is not present in Recently Viewed Side Bar option
+	 * 
+	 * @param objectType
+	 *            this could be program or announcement or other relating entity
 	 * @return true or false
 	 */
-	private boolean isObjectNotShowingInRecentlyViewedSideBar(String acronym){
+	private boolean isObjectNotShowingInRecentlyViewedSideBar(String acronym) {
 		boolean flag = true;
 		try {
-			if (reiDriver.WaitFor()
-					.WaitForElementToBePresent(
-							By.xpath(".//span[text()='Recently Viewed']/parent::a/following-sibling::ul//li//span[starts-with(text(),'"+acronym+"')]"))
+			if (reiDriver.WaitFor().WaitForElementToBePresent(By.xpath(
+					".//span[text()='Recently Viewed']/parent::a/following-sibling::ul//li//span[starts-with(text(),'"
+							+ acronym + "')]"))
 					.isDisplayed()) {
 				flag = false;
 			}
 		} catch (Exception e) {
+		}
+		return flag;
+	}
+
+	/**
+	 * return true if specific custom App displayed
+	 * 
+	 * @param dropDownValue
+	 * @return
+	 */
+	private boolean isSpecificCustomAppDisplayed(String dropDownValue) {
+		boolean flag = false;
+		try {
+			if (getCustomAppFromCustomAppDropdown(dropDownValue).getAttribute("innerText").trim()
+					.equalsIgnoreCase(dropDownValue)) {
+				flag = true;
+			}
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+
 		}
 		return flag;
 	}

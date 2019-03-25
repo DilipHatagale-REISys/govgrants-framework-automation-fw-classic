@@ -2,6 +2,7 @@ package com.framework.automation.projectmanager;
 
 import com.framework.automation.payloads.ApprovalProcess;
 import com.framework.automation.payloads.Charts;
+import com.framework.automation.payloads.CustomAppConfig;
 import com.framework.automation.payloads.FlexGrid;
 import com.framework.automation.payloads.FlexTable;
 import com.framework.automation.payloads.Forms;
@@ -104,6 +105,9 @@ public class SetUpConfiguration {
 			break;
 		case "PHASE CONFIG SOBJECT":
 			stringPayload = new PhaseConfig().setPhaseSobjectFieldConfig(fieldLabel, value, filterClause);
+			break;
+		case "CUSTOM APP CONFIG":
+			stringPayload = new CustomAppConfig().setCustomAppConfig(fieldLabel, value, filterClause);
 			break;
 		}
 		System.out.println("final payload is " + stringPayload);
