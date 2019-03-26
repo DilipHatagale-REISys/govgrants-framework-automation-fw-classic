@@ -3018,3 +3018,451 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I click CustomApp select dropdown
     Then I see "As a Grantor" inside CustomApp dropDown not displayed
+    
+    @46407 @all @render_expression_CustomApp_With_Profile_IN_SystemAdministrator_AND_UserType_In_Internal
+  Scenario: Set up configuration for display state as grantor custom app using(Profile IN (System Administrator) AND UserType IN (Internal) -gHome
+    Given I have default configuration as below:
+      | configurationCategory| fieldName              | fieldOrignalValue | filterId         |
+      | Custom App Config    | Render Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory    | fieldName              | fieldNewValue                                                                                                          | coreComponentField| 
+      | Custom App Config:General| Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal| StateasGrantor    |
+    When I login as "Automation" user
+    When I click CustomApp select dropdown
+    Then I see "As a Grantor" inside CustomApp dropDown
+   
+  @46408 @all @render_expression_CustomApp_With_Profile_IN_SystemAdministrator_OR_UserType_In_Internal
+  Scenario: Set up configuration for display state as grantor custom app using(Profile IN (System Administrator) OR UserType IN (Internal) -gHome
+    Given I have default configuration as below:
+      | configurationCategory| fieldName              | fieldOrignalValue | filterId         |
+      | Custom App Config    | Render Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory    | fieldName              | fieldNewValue                                                                                                          | coreComponentField| 
+      | Custom App Config:General| Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal| StateasGrantor    |
+    When I login as "Automation" user
+    When I click CustomApp select dropdown
+    Then I see "As a Grantor" inside CustomApp dropDown
+    
+  @46410 @all @render_expression_CustomApp_With_Profile_IN_SystemAdministrator_AND_Profile_IN_PM
+  Scenario: Set up configuration for hide state as grantor custom app using Profile IN System Administrator AND Profile IN PM -gHome
+    Given I have default configuration as below:
+      | configurationCategory| fieldName              | fieldOrignalValue | filterId         |
+      | Custom App Config    | Render Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory    | fieldName              | fieldNewValue                                                                                                   | coreComponentField| 
+      | Custom App Config:General| Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_Profile_IN_SystemAdministrator_AND_Profile_IN_PM| StateasGrantor    |
+    When I login as "Automation" user
+    When I click CustomApp select dropdown
+    Then I see "As a Grantor" inside CustomApp dropDown not displayed
+    
+  @46413 @all @render_expression_CustomApp_With_Profile_IN_SystemAdministrator_OR_Profile_IN_PM
+  Scenario: Set up configuration for display state as grantor custom app using Profile IN System Administrator OR Profile IN PM -gHome
+    Given I have default configuration as below:
+      | configurationCategory| fieldName              | fieldOrignalValue | filterId         |
+      | Custom App Config    | Render Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory    | fieldName              | fieldNewValue                                                                                                  | coreComponentField| 
+      | Custom App Config:General| Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_Profile_IN_SystemAdministrator_OR_Profile_IN_PM| StateasGrantor    |
+    When I login as "Automation" user
+    When I click CustomApp select dropdown
+    Then I see "As a Grantor" inside CustomApp dropDown
+    
+  @47284 @all @render_expression_CustomApp_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator
+  Scenario: Set up configuration for hide state as grantor custom app using (UserType NOT IN (Internal) OR Profile NOT IN (System Administrator) -gHome
+    Given I have default configuration as below:
+      | configurationCategory| fieldName              | fieldOrignalValue | filterId         |
+      | Custom App Config    | Render Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory    | fieldName              | fieldNewValue                                                                                                               | coreComponentField| 
+      | Custom App Config:General| Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator| StateasGrantor    |
+    When I login as "Automation" user
+    When I click CustomApp select dropdown
+    Then I see "As a Grantor" inside CustomApp dropDown not displayed
+    
+  @46414 @all @render_expression_CustomApp_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator
+  Scenario: Set up configuration for hide state as grantor custom app using (UserType NOT IN (Internal) AND Profile NOT IN (System Administrator) -gHome
+    Given I have default configuration as below:
+      | configurationCategory| fieldName              | fieldOrignalValue | filterId         |
+      | Custom App Config    | Render Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory    | fieldName              | fieldNewValue                                                                                                                | coreComponentField| 
+      | Custom App Config:General| Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator| StateasGrantor    |
+    When I login as "Automation" user
+    When I click CustomApp select dropdown
+    Then I see "As a Grantor" inside CustomApp dropDown not displayed
+    
+  @46420 @all @render_expression_SideBar_ManageFundingSource_With_Profile_NOTIN_PM
+  Scenario: Set up configuration for display Manage funding source from side bar using Profile NOTIN PM -gPlanning
+    Given I have default configuration as below:
+      | configurationCategory| fieldName              | fieldOrignalValue | coreComponentField    | filterId         |
+      | Accordian Header     | Render Expression JSON |                   | GrantorPlanning       | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory| fieldName              | fieldNewValue                                                                     | coreComponentField| coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Accordian Header     | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_Profile_NOTIN_PM| GrantorPlanning   | Name                      | Manage Funding Source      |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "Activities" inside "Manage Funding Source" is displayed
+    
+  @47285 @all @render_expression_CustomApp_With_UserType_IN_Applicant_Reviewer
+  Scenario: Set up configuration for hide state as grantor custom app using UserType IN Applicant, Reviewer -gHome
+    Given I have default configuration as below:
+      | configurationCategory| fieldName              | fieldOrignalValue | filterId         |
+      | Custom App Config    | Render Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory    | fieldName              | fieldNewValue                                                                                 | coreComponentField| 
+      | Custom App Config:General| Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_UserType_IN_Applicant_Reviewer| StateasGrantor    |
+    When I login as "Automation" user
+    When I click CustomApp select dropdown
+    Then I see "As a Grantor" inside CustomApp dropDown not displayed
+    
+  @47286 @all @render_expression_CustomApp_With_UserType_NOTIN_Applicant_Reviewer
+  Scenario: Set up configuration for hide state as grantor custom app using UserType NOTIN Applicant, Reviewer -gHome
+    Given I have default configuration as below:
+      | configurationCategory| fieldName              | fieldOrignalValue | filterId         |
+      | Custom App Config    | Render Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory    | fieldName              | fieldNewValue                                                                                    | coreComponentField| 
+      | Custom App Config:General| Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_UserType_NOTIN_Applicant_Reviewer| StateasGrantor    |
+    When I login as "Automation" user
+    When I click CustomApp select dropdown
+    Then I see "As a Grantor" inside CustomApp dropDown    
+    
+  @47287 @all @render_expression_CustomApp_With_UserType_IN_Applicant_Internal_Reviewer
+  Scenario: Set up configuration for display state as grantor custom app using UserType IN Applicant,Internal,Reviewer -gHome
+    Given I have default configuration as below:
+      | configurationCategory| fieldName              | fieldOrignalValue | filterId         |
+      | Custom App Config    | Render Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory    | fieldName              | fieldNewValue                                                                                          | coreComponentField| 
+      | Custom App Config:General| Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_UserType_IN_Applicant_Internal_Reviewer| StateasGrantor    |
+    When I login as "Automation" user
+    When I click CustomApp select dropdown
+    Then I see "As a Grantor" inside CustomApp dropDown
+    
+  @47291 @all @render_expression_CustomApp_With_UserType_NOTIN_Applicant_Internal_Reviewer
+  Scenario: Set up configuration for hide state as grantor custom app using UserType NOTIN Applicant,Internal,Reviewer -gHome
+    Given I have default configuration as below:
+      | configurationCategory| fieldName              | fieldOrignalValue | filterId         |
+      | Custom App Config    | Render Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory    | fieldName              | fieldNewValue                                                                                             | coreComponentField| 
+      | Custom App Config:General| Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_UserType_NOTIN_Applicant_Internal_Reviewer| StateasGrantor    |
+    When I login as "Automation" user
+    When I click CustomApp select dropdown
+    Then I see "As a Grantor" inside CustomApp dropDown not displayed
+    
+  @47292 @all @render_expression_CustomApp_With_Profile_NOTIN_PM
+  Scenario: Set up configuration for display state as grantor custom app using Profile NOT IN PM -gHome
+    Given I have default configuration as below:
+      | configurationCategory| fieldName              | fieldOrignalValue | filterId         |
+      | Custom App Config    | Render Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory    | fieldName              | fieldNewValue                                                                   | coreComponentField| 
+      | Custom App Config:General| Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_Profile_NOTIN_PM| StateasGrantor    |
+    When I login as "Automation" user
+    When I click CustomApp select dropdown
+    Then I see "As a Grantor" inside CustomApp dropDown
+    
+  @47293 @all @render_expression_CustomApp_With_UserType_IN_Applicant
+  Scenario: Set up configuration for hide state as grantor custom app using UserType IN Applicant -gHome
+    Given I have default configuration as below:
+      | configurationCategory| fieldName              | fieldOrignalValue | filterId         |
+      | Custom App Config    | Render Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory    | fieldName              | fieldNewValue                                                                        | coreComponentField| 
+      | Custom App Config:General| Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_UserType_IN_Applicant| StateasGrantor    |
+    When I login as "Automation" user
+    When I click CustomApp select dropdown
+    Then I see "As a Grantor" inside CustomApp dropDown not displayed
+    
+  @47294 @all @render_expression_CustomApp_With_Profile_IN_PM
+  Scenario: Set up configuration for hide state as grantor custom app using Profile IN PM -gHome
+    Given I have default configuration as below:
+      | configurationCategory| fieldName              | fieldOrignalValue | filterId         |
+      | Custom App Config    | Render Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory    | fieldName              | fieldNewValue                                                                | coreComponentField| 
+      | Custom App Config:General| Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_Profile_IN_PM| StateasGrantor    |
+    When I login as "Automation" user
+    When I click CustomApp select dropdown
+    Then I see "As a Grantor" inside CustomApp dropDown not displayed
+    
+  @47296 @all @render_expression_CustomApp_With_Profile_IN_PM_OR_UserType_IN_Internal
+  Scenario: Set up configuration for display state as grantor custom app using Profile IN PM OR UserType IN Internal -gHome
+    Given I have default configuration as below:
+      | configurationCategory| fieldName              | fieldOrignalValue | filterId         |
+      | Custom App Config    | Render Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory    | fieldName              | fieldNewValue                                                                                        | coreComponentField| 
+      | Custom App Config:General| Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_Profile_IN_PM_OR_UserType_IN_Internal| StateasGrantor    |
+    When I login as "Automation" user
+    When I click CustomApp select dropdown
+    Then I see "As a Grantor" inside CustomApp dropDown
+    
+  @47297 @all @render_expression_CustomApp_With_UserType_IN_Internal_AND_Profile_IN_PM
+  Scenario: Set up configuration for hide state as grantor custom app using UserType IN Internal AND Profile IN PM -gHome
+    Given I have default configuration as below:
+      | configurationCategory| fieldName              | fieldOrignalValue | filterId         |
+      | Custom App Config    | Render Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory    | fieldName              | fieldNewValue                                                                                         | coreComponentField| 
+      | Custom App Config:General| Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_UserType_IN_Internal_AND_Profile_IN_PM| StateasGrantor    |
+    When I login as "Automation" user
+    When I click CustomApp select dropdown
+    Then I see "As a Grantor" inside CustomApp dropDown not displayed
+    
+  @47302 @all @hide_Expression_Enhancedgrid_ViewAction_With_UserType_IN_Internal
+  Scenario: Set up configuration to hide view action of parent enhanced grid using UserType IN Internal and validating it inside enhanced of program-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                      | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_UserType_IN_Internal | TmpActiveGrantsGrid | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    Then I see "View" icon for "Demo_Title" is not displayed inside flex table
+    
+  @47304 @all @hide_Expression_Enhancedgrid_ViewAction_With_UserType_NOTIN_Internal
+  Scenario: Set up configuration to display view action of parent enhanced grid using UserType NOTIN Internal and validating it inside enhanced of program-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                        | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_UserType_NOTIN_Internal| TmpActiveGrantsGrid | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    Then I see "View" icon for "Demo_Title" is displayed inside flex table
+    
+  @47305 @all @hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator
+  Scenario: Set up configuration to hide view action of parent enhanced grid using Profile IN System Administrator and validating it inside enhanced of program-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator| TmpActiveGrantsGrid | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    Then I see "View" icon for "Demo_Title" is not displayed inside flex table
+    
+  @47306 @all @hide_Expression_Enhancedgrid_ViewAction_With_Profile_NOTIN_SystemAdministrator
+  Scenario: Set up configuration to hide view action of parent enhanced grid using Profile NOTIN System Administrator and validating it inside enhanced of program-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_Profile_NOTIN_SystemAdministrator| TmpActiveGrantsGrid | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    Then I see "View" icon for "Demo_Title" is displayed inside flex table
+    
+  @47307 @all @hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal
+  Scenario: Set up configuration to hide view action of parent enhanced grid using Profile IN System Administrator AND UserType IN Internal and validating it inside enhanced of program-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                        | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal| TmpActiveGrantsGrid | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    Then I see "View" icon for "Demo_Title" is not displayed inside flex table
+    
+  @47308 @all @hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal
+  Scenario: Set up configuration to hide view action of parent enhanced grid using Profile IN System Administrator OR UserType IN Internal and validating it inside enhanced of program-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                       | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal| TmpActiveGrantsGrid | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    Then I see "View" icon for "Demo_Title" is not displayed inside flex table
+    
+  @47309 @all @hide_Expression_Enhancedgrid_ViewAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator
+  Scenario: Set up configuration to display view action of parent enhanced grid using UserType NOT IN Internal AND Profile NOT IN System Administrator and validating it inside enhanced of program-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                              | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator| TmpActiveGrantsGrid | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    Then I see "View" icon for "Demo_Title" is displayed inside flex table
+    
+  @47310 @all @hide_Expression_Enhancedgrid_ViewAction_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator
+  Scenario: Set up configuration to display view action of parent enhanced grid using UserType NOT IN Internal OR Profile NOT IN System Administrator and validating it inside enhanced of program-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                             | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator| TmpActiveGrantsGrid | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    Then I see "View" icon for "Demo_Title" is displayed inside flex table
+    
+  @47312 @all @hide_Expression_Enhancedgrid_ViewAction_With_UserType_IN_Internal_OR_Profile_IN_PM
+  Scenario: Set up configuration to hide view action of parent enhanced grid using UserType IN Internal OR Profile IN PM and validating it inside enhanced of program-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                      | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_UserType_IN_Internal_OR_Profile_IN_PM| TmpActiveGrantsGrid | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    Then I see "View" icon for "Demo_Title" is not displayed inside flex table
+    
+  @47313 @all @hide_Expression_Enhancedgrid_ViewAction_With_UserType_IN_Internal_AND_Profile_IN_PM
+  Scenario: Set up configuration to display view action of parent enhanced grid using UserType IN Internal AND Profile IN PM and validating it inside enhanced of program-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                       | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_UserType_IN_Internal_AND_Profile_IN_PM| TmpActiveGrantsGrid | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    Then I see "View" icon for "Demo_Title" is displayed inside flex table
+    
+  @47315 @all @hide_Expression_Enhancedgrid_EditAction_With_UserApp_IN_StateAsGrantor
+  Scenario: Set up configuration to hide edit action of parent enhanced grid using UserApp IN State As grantor and validating it inside enhanced of program-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                          | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_EditAction_With_UserApp_IN_StateAsGrantor| TmpActiveGrantsGrid | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    Then I see "Edit" icon for "Demo_Title" is not displayed inside flex table
+    
+  @47316 @all @hide_Expression_Enhancedgrid_EditAction_With_UserApp_NOTIN_StateAsGrantor
+  Scenario: Set up configuration to display edit action of parent enhanced grid using UserApp NOTIN State As grantor and validating it inside enhanced of program-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                             | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_EditAction_With_UserApp_NOTIN_StateAsGrantor| TmpActiveGrantsGrid | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    Then I see "Edit" icon for "Demo_Title" is displayed inside flex table
+
+  @47318 @all @hide_Expression_Enhancedgrid_EditAction_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor
+  Scenario: Set up configuration to hide edit action of parent enhanced grid using UserType IN Internal AND UserApp IN StateasGrantor and validating it inside enhanced of program-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                   | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_EditAction_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor| TmpActiveGrantsGrid | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    Then I see "Edit" icon for "Demo_Title" is not displayed inside flex table
+    
+  @47319 @all @hide_Expression_Enhancedgrid_EditAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor
+  Scenario: Set up configuration to hide edit action of parent enhanced grid using UserType IN Internal OR UserApp IN StateasGrantor and validating it inside enhanced of program-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_EditAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor| TmpActiveGrantsGrid | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    Then I see "Edit" icon for "Demo_Title" is not displayed inside flex table
+    
+  @47320 @all @hide_Expression_Enhancedgrid_EditAction_With_UserType_IN_Applicant_Internal_Reviewer
+  Scenario: Set up configuration to hide edit action of parent enhanced grid using UserType IN Applicant Internal Reviewer and validating it inside enhanced of program-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                        | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_EditAction_With_UserType_IN_Applicant_Internal_Reviewer| TmpActiveGrantsGrid | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    Then I see "Edit" icon for "Demo_Title" is not displayed inside flex table
