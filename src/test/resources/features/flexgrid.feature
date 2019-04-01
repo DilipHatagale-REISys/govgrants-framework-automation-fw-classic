@@ -52,7 +52,7 @@ Feature: Flex Grid Component Scenarios
     When I navigate to "Plan" sub tab
     Then I see quick search option disabled for "Program Performance Mgmt Grid View"
 
-  @34325 @all @disableExport-ProgramStrategicGoals @wip
+  @34325 @all @disableExport-ProgramStrategicGoals
   Scenario: Disable download PDF/Excel from for Goal Objective menu flex grid in configuratin and validating inside planning-programs view icon - plan subtab
     Given I have default configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |

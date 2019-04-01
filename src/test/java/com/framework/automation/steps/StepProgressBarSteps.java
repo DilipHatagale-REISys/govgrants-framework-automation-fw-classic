@@ -29,6 +29,11 @@ public class StepProgressBarSteps {
 	public void assertStepInsideStepProgressBar(String statusName) {
 		stepProgressBarPage.assertStepInsideStepProgressBarForUser(statusName);
 	}
+	
+	@Then("^I see \"([^\"]*)\" is displayed inside step progress bar$")
+	public void assertStepInsideStepProgressBarIsDisplayed(String statusName) {
+		stepProgressBarPage.assertStepInsideStepProgressBarIsDisplayedForUser(statusName);
+	}
 
 	@Then("^I see \"([^\"]*)\" status shown at number \"([^\"]*)\" in step progress bar$")
 	public void assertSequenceOfAccordianSideBarHeader(String statusName, String sequenceNumber) {

@@ -301,7 +301,7 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Financials" sub tab
     Then I see "Associate" button inside "Funding Account Information" flex table not displayed
 
-  @42704 @all @hideExpressioJsonForRightOperandForUserAppRecipientWithOperatorIn-gPlanning @check
+  @42704 @all @hideExpressioJsonForRightOperandForUserAppRecipientWithOperatorIn-gPlanning @check @wip
   Scenario: validate disabling of Associate button for user app Recipient with operator In -gOpportunities
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -3466,3 +3466,386 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     Then I see "Edit" icon for "Demo_Title" is not displayed inside flex table
+    
+  @47322 @all @hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_IN_Internal
+  Scenario: Set up configuration to hide view action of child enhanced grid using UserType IN Internal and validating it inside enhanced of program-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                          | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_IN_Internal| TmpGrantorActiveAwardsGrid | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I expand nested table containing column value "Demo_Title"
+    Then I see "View" icon for "AD-GG PJ--00" is not displayed inside flex table
+    
+  @47323 @all @hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_NOTIN_Internal
+  Scenario: Set up configuration to display view action of child enhanced grid using UserType NOTIN Internal and validating it inside enhanced of program-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                             | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_NOTIN_Internal| TmpGrantorActiveAwardsGrid | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I expand nested table containing column value "Demo_Title"
+    Then I see "View" icon for "AD-GG PJ--00" is displayed inside flex table
+    
+  @47324 @all @hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator
+  Scenario: Set up configuration to hide view action of child enhanced grid using profile IN system Administrator and validating it inside enhanced of program-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                    | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator| TmpGrantorActiveAwardsGrid | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I expand nested table containing column value "Demo_Title"
+    Then I see "View" icon for "AD-GG PJ--00" is not displayed inside flex table
+    
+  @47326 @all @hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_NOTIN_SystemAdministrator
+  Scenario: Set up configuration to display view action of child enhanced grid using profile NOTIN system Administrator and validating it inside enhanced of program-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                       | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_NOTIN_SystemAdministrator| TmpGrantorActiveAwardsGrid | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I expand nested table containing column value "Demo_Title"
+    Then I see "View" icon for "AD-GG PJ--00" is displayed inside flex table
+    
+  @47329 @all @hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal
+  Scenario: Set up configuration to hide view action of child enhanced grid using profile IN system Administrator AND User type IN Internal and validating it inside enhanced of program-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                             | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal| TmpGrantorActiveAwardsGrid | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I expand nested table containing column value "Demo_Title"
+    Then I see "View" icon for "AD-GG PJ--00" is not displayed inside flex table
+    
+  @47330 @all @hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal
+  Scenario: Set up configuration to hide view action of child enhanced grid using profile IN system Administrator OR User type IN Internal and validating it inside enhanced of program-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                            | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal| TmpGrantorActiveAwardsGrid | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I expand nested table containing column value "Demo_Title"
+    Then I see "View" icon for "AD-GG PJ--00" is not displayed inside flex table
+    
+  @47331 @all @hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator
+  Scenario: Set up configuration to display view action of child enhanced grid using UserType NOT IN Internal AND Profile NOT IN System Administrator and validating it inside enhanced of program-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                                   | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator| TmpGrantorActiveAwardsGrid | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I expand nested table containing column value "Demo_Title"
+    Then I see "View" icon for "AD-GG PJ--00" is displayed inside flex table
+    
+  @47332 @all @hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator
+  Scenario: Set up configuration to display view action of child enhanced grid using UserType NOT IN Internal OR Profile NOT IN System Administrator and validating it inside enhanced of program-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                                  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator| TmpGrantorActiveAwardsGrid | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I expand nested table containing column value "Demo_Title"
+    Then I see "View" icon for "AD-GG PJ--00" is displayed inside flex table
+    
+  @47333 @all @hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_IN_Internal_OR_Profile_IN_PM
+  Scenario: Set up configuration to hide view action of child enhanced grid using user type IN internal OR profile IN PM and validating it inside enhanced of program-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                           | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_IN_Internal_OR_Profile_IN_PM| TmpGrantorActiveAwardsGrid | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I expand nested table containing column value "Demo_Title"
+    Then I see "View" icon for "AD-GG PJ--00" is not displayed inside flex table
+    
+  @47334 @all @hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_IN_Internal_AND_Profile_IN_PM
+  Scenario: Set up configuration to display view action of child enhanced grid using user type IN internal AND profile IN PM and validating it inside enhanced of program-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                            | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_IN_Internal_AND_Profile_IN_PM| TmpGrantorActiveAwardsGrid | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I expand nested table containing column value "Demo_Title"
+    Then I see "View" icon for "AD-GG PJ--00" is displayed inside flex table
+    
+  @47335 @all @hide_Expression_ChildEnhancedgrid_EditAction_With_UserApp_IN_StateAsGrantor
+  Scenario: Set up configuration to hide Edit action of child enhanced grid using userApp IN State As Grantor and validating it inside enhanced of program-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                               | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_EditAction_With_UserApp_IN_StateAsGrantor| TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I expand nested table containing column value "Demo_Title"
+    Then I see "Edit" icon for "AD-GG PJ--00" is not displayed inside flex table
+    
+  @47336 @all @hide_Expression_ChildEnhancedgrid_EditAction_With_UserApp_NOTIN_StateAsGrantor
+  Scenario: Set up configuration to display Edit action of child enhanced grid using userApp NOTIN State As Grantor and validating it inside enhanced of program-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_EditAction_With_UserApp_NOTIN_StateAsGrantor| TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I expand nested table containing column value "Demo_Title"
+    Then I see "Edit" icon for "AD-GG PJ--00" is displayed inside flex table
+    
+  @47337 @all @hide_Expression_ChildEnhancedgrid_EditAction_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor
+  Scenario: Set up configuration to hide Edit action of child enhanced grid using  UserType IN Internal AND UserApp IN StateasGrantor and validating it inside enhanced of program-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                        | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_EditAction_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor| TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I expand nested table containing column value "Demo_Title"
+    Then I see "Edit" icon for "AD-GG PJ--00" is not displayed inside flex table
+    
+  @47338 @all @hide_Expression_ChildEnhancedgrid_EditAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor
+  Scenario: Set up configuration to hide Edit action of child enhanced grid using UserType IN Internal OR UserApp IN StateasGrantor and validating it inside enhanced of program-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                       | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_EditAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor| TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I expand nested table containing column value "Demo_Title"
+    Then I see "Edit" icon for "AD-GG PJ--00" is not displayed inside flex table
+    
+  @47339 @all @hide_Expression_ChildEnhancedgrid_EditAction_With_UserType_IN_Applicant_Internal_Reviewer
+  Scenario: Set up configuration to hide Edit action of child enhanced grid using UserType IN Applicant, Internal, Reviewer and validating it inside enhanced of program-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                             | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_EditAction_With_UserType_IN_Applicant_Internal_Reviewer| TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I expand nested table containing column value "Demo_Title"
+    Then I see "Edit" icon for "AD-GG PJ--00" is not displayed inside flex table
+    
+  @48480 @all @hide_Expression_ProgramFlexTable_ViewAction_With_UserType_IN_Internal
+  Scenario: Set up configuration to hide view action of program flex table using UserType IN Internal and validating it inside flex table of program-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON  |                            | Programs           | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory      | fieldName            | fieldNewValue                                                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject  | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_ViewAction_With_UserType_IN_Internal| Programs           | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    Then I see "View Program Details" icon for "Test program for automation - Created mode only" is not displayed inside flex table
+    
+  @48481 @all @hide_Expression_ProgramFlexTable_ViewAction_With_UserType_NOTIN_Internal
+  Scenario: Set up configuration to display view action of program flex table using UserType NOTIN Internal and validating it inside flex table of program-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON  |                            | Programs           | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory      | fieldName            | fieldNewValue                                                                     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject  | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_ViewAction_With_UserType_NOTIN_Internal| Programs           | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    Then I see "View Program Details" icon for "Test program for automation - Created mode only" is displayed inside flex table
+    
+  @48482 @all @hide_Expression_ProgramFlexTable_ViewAction_With_Profile_IN_SystemAdministrator
+  Scenario: Set up configuration to hide view action of program flex table using profile IN system administrator and validating it inside flex table of program-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON  |                            | Programs           | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory      | fieldName            | fieldNewValue                                                                            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject  | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_ViewAction_With_Profile_IN_SystemAdministrator| Programs           | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    Then I see "View Program Details" icon for "Test program for automation - Created mode only" is not displayed inside flex table
+    
+  @48483 @all @hide_Expression_ProgramFlexTable_ViewAction_With_Profile_NOTIN_SystemAdministrator
+  Scenario: Set up configuration to display view action of program flex table using profile NOTIN system administrator and validating it inside flex table of program-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON  |                            | Programs           | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory      | fieldName            | fieldNewValue                                                                               | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject  | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_ViewAction_With_Profile_NOTIN_SystemAdministrator| Programs           | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    Then I see "View Program Details" icon for "Test program for automation - Created mode only" is displayed inside flex table
+    
+  @48484 @all @hide_Expression_ProgramFlexTable_ViewAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal
+  Scenario: Set up configuration to hide view action of program flex table using profile IN system administrator AND UserType IN Internal and validating it inside flex table of program-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON  |                            | Programs           | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory      | fieldName            | fieldNewValue                                                                                                     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject  | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_ViewAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal| Programs           | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    Then I see "View Program Details" icon for "Test program for automation - Created mode only" is not displayed inside flex table
+    
+  @48485 @all @hide_Expression_ProgramFlexTable_ViewAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal
+  Scenario: Set up configuration to hide view action of program flex table using profile IN system administrator OR UserType IN Internal and validating it inside flex table of program-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON  |                            | Programs           | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory      | fieldName            | fieldNewValue                                                                                                    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject  | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_ViewAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal| Programs           | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    Then I see "View Program Details" icon for "Test program for automation - Created mode only" is not displayed inside flex table
+    
+  @48486 @all @hide_Expression_ProgramFlexTable_ViewAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator
+  Scenario: Set up configuration to display view action of program flex table using user type NOTIN Internal AND profile NOTIN system administrator and validating it inside flex table of program-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON  |                            | Programs           | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory      | fieldName            | fieldNewValue                                                                                                       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject  | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_ViewAction_With_UserType_NOTIN_Internal_Profile_NOTIN_SystemAdministrator| Programs           | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    Then I see "View Program Details" icon for "Test program for automation - Created mode only" is displayed inside flex table
+    
+  @48597 @all @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Internal
+  Scenario: Set up configuration to hide submit for approval status of program from step progress bar using user type IN Internal and validating it inside program detail page-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             |fieldOrignalValue | filterId         |
+      | Step Progressbar Detail   | Hide Expression JSON  |                  | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory      | fieldName            | fieldNewValue                                                                               | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail    | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Internal| Program Progress Bar | Name                      | Submitted for Approval     |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Submitted for Approval" is not displayed inside step progress bar
+    
+  @48598 @all @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_NOTIN_Internal
+  Scenario: Set up configuration to display submit for approval status of program from step progress bar using user type IN Internal and validating it inside program detail page-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             |fieldOrignalValue | filterId         |
+      | Step Progressbar Detail   | Hide Expression JSON  |                  | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory      | fieldName            | fieldNewValue                                                                                  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail    | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_NOTIN_Internal| Program Progress Bar | Name                      | Submitted for Approval     |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Submitted for Approval" is displayed inside step progress bar

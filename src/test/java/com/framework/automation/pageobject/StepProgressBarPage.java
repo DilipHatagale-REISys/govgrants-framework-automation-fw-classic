@@ -42,6 +42,14 @@ public class StepProgressBarPage extends GovGrantsManager {
 	}
 
 	/**
+	 * assert if step progress bar is displayed
+	 * 
+	 */
+	public void assertStepInsideStepProgressBarIsDisplayedForUser(String statusName) {
+		Assert.assertFalse(isStatusStepInsideProgressBarIsNotDisplayed(statusName));
+	}
+
+	/**
 	 * assert if status item submit for approval is on correct sequence in step
 	 * progress bar
 	 * 
