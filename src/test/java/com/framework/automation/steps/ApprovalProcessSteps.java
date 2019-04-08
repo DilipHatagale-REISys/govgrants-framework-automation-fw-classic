@@ -40,6 +40,11 @@ public class ApprovalProcessSteps {
 	public void assertRadioButtondisabled(String radioButtonName) {
 		approvalProcesPage.assertRadioButtonNotDisplayed(radioButtonName);
 	}
+	
+	@Then("^I see \"([^\"]*)\" is enabled$")
+	public void assertRadioButtondisEnabled(String radioButtonName) {
+		approvalProcesPage.assertRadioButtonDisplayed(radioButtonName);
+	}
 
 	@Then("^i see \"([^\"]*)\" shown at number \"([^\"]*)\" in Approve Decision panel$")
 	public void assertApprovalDecisionPannelRadioSequence(String radioName, String sequenceNumber) {

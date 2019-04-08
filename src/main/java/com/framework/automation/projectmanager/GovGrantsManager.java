@@ -170,8 +170,7 @@ public class GovGrantsManager extends ProjectWebServices {
 	 * @param buttonName
 	 */
 	public void getRightHeaderButton(String buttonName) {
-		govgrants.pageDetails().clickAnyTopRightButtonWithoutSwitching(buttonName);
-		reiDriver.switchTo().acceptAlert();
+		govgrants.pageDetails().clickAnyTopRightButton(buttonName);
 	}
 
 	/**
@@ -433,5 +432,12 @@ public class GovGrantsManager extends ProjectWebServices {
 	public List<WebElement> getListPageBlockInsideMainDetailPage() {
 		return reiDriver.findMyElement()
 				.getElements(By.xpath("//div[@class='tab-pane active']//div[@class='panel-heading']"));
+	}
+
+	/**
+	 * get BootBox confirmation message box
+	 */
+	public WebElement getBootBoxConfirmationText() {
+		return reiDriver.findMyElement().getElement(By.xpath("//div[@class='bootbox-body']"));
 	}
 }

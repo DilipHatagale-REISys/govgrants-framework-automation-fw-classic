@@ -348,8 +348,7 @@ public class PageLayoutPage extends GovGrantsManager {
 	 */
 	public void assertMessageOfAcceptAlertBox(String message, String buttonName) {
 		govgrants.pageDetails().clickAnyTopRightButtonWithoutSwitching(buttonName);
-		Assert.assertTrue(reiDriver.switchTo().getAlertText().equalsIgnoreCase(message));
-		reiDriver.switchTo().rejectAlert();
+		Assert.assertTrue(getBootBoxConfirmationText().getText().equalsIgnoreCase(message));
 	}
 
 	/**

@@ -80,6 +80,15 @@ public class ApprovalProcessPage extends GovGrantsManager {
 	}
 
 	/**
+	 * Assert specific approce radio button is displayed
+	 * 
+	 * @param radioButtonName
+	 */
+	public void assertRadioButtonDisplayed(String radioButtonName) {
+		Assert.assertFalse(isApprovalDecisionRadioButtonDisplayed(radioButtonName));
+	}
+
+	/**
 	 * assert true if sequence is correct as per provided name
 	 * 
 	 * @param radioName

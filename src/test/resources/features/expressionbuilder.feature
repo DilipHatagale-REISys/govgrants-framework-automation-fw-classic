@@ -3813,7 +3813,7 @@ Feature: Expression Builder Component Scenarios
       | Flex Table Action Sobject | Hide Expression JSON  |                            | Programs           | Name                      | View                       |
     Given I setup test configuration as below:
       | configurationCategory      | fieldName            | fieldNewValue                                                                                                       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject  | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_ViewAction_With_UserType_NOTIN_Internal_Profile_NOTIN_SystemAdministrator| Programs           | Name                      | View                       |
+      | Flex Table Action Sobject  | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_ViewAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator| Programs           | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3849,3 +3849,570 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submitted for Approval" is displayed inside step progress bar
+    
+  @48601 @all @hide_Expression_ProgramFlexTable_EditAction_With_UserApp_IN_StateAsGrantor
+  Scenario: Set up configuration to hide Edit action of program flex table using User App IN State As grantor and validating it inside flex table of program-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON  |                            | Programs           | Name                      | Edit                       |
+    Given I setup test configuration as below:
+      | configurationCategory      | fieldName            | fieldNewValue                                                                       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject  | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_EditAction_With_UserApp_IN_StateAsGrantor| Programs           | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
+    
+  @48602 @all @hide_Expression_ProgramFlexTable_EditAction_With_UserApp_NOTIN_StateAsGrantor
+  Scenario: Set up configuration to display Edit action of program flex table using User App NOTIN State As grantor and validating it inside flex table of program-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON  |                            | Programs           | Name                      | Edit                       |
+    Given I setup test configuration as below:
+      | configurationCategory      | fieldName            | fieldNewValue                                                                          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject  | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_EditAction_With_UserApp_NOTIN_StateAsGrantor| Programs           | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    Then I see "Edit" icon for "Test program for automation - Created mode only" is displayed inside flex table
+    
+  @48600 @all @hide_Expression_ProgramFlexTable_ViewAction_With_UserType_IN_Internal_AND_Profile_IN_PM
+  Scenario: Set up configuration to display view action of program flex table using UserType IN Internal AND Profile IN PM and validating it inside flex table of program-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON  |                            | Programs           | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory      | fieldName            | fieldNewValue                                                                          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject  | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_EditAction_With_UserApp_NOTIN_StateAsGrantor| Programs           | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    Then I see "View Program Details" icon for "Test program for automation - Created mode only" is displayed inside flex table
+    
+  @48603 @all @hide_Expression_ProgramFlexTable_EditAction_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor
+  Scenario: Set up configuration to hide Edit action of program flex table using UserType IN Internal AND UserApp IN StateAsGrantor and validating it inside flex table of program-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON  |                            | Programs           | Name                      | Edit                       |
+    Given I setup test configuration as below:
+      | configurationCategory      | fieldName            | fieldNewValue                                                                                               | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject  | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_EdiAction_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor| Programs           | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
+
+  @48604 @all @hide_Expression_ProgramFlexTable_EditAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor
+  Scenario: Set up configuration to hide Edit action of program flex table using UserType IN Internal OR UserApp IN StateAsGrantor and validating it inside flex table of program-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON  |                            | Programs           | Name                      | Edit                       |
+    Given I setup test configuration as below:
+      | configurationCategory      | fieldName            | fieldNewValue                                                                                              | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject  | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_EdiAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor| Programs           | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
+    
+  @48605 @all @hide_Expression_ProgramFlexTable_EditAction_With_UserType_IN_Applicant_Internal_Reviewer
+  Scenario: Set up configuration to hide Edit action of program flex table using UserType IN Applicant Internal Reviewer and validating it inside flex table of program-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON  |                            | Programs           | Name                      | Edit                       |
+    Given I setup test configuration as below:
+      | configurationCategory      | fieldName            | fieldNewValue                                                                                    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject  | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_EdiAction_With_UserType_IN_Applicant_Internal_Reviewer| Programs           | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
+    
+  @48606 @all @hide_Expression_ProgramFlexTable_EditAction_With_UserApp_IN_StateAsGrantor_Admin_Recipient
+  Scenario: Set up configuration to hide Edit action of program flex table using UserApp IN StateasGrantor, Admin, Recipient and validating it inside flex table of program-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON  |                            | Programs           | Name                      | Edit                       |
+    Given I setup test configuration as below:
+      | configurationCategory      | fieldName            | fieldNewValue                                                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject  | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_EdiAction_With_UserApp_IN_StateAsGrantor_Admin_Recipient| Programs           | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
+    
+  @48607 @all @hide_Expression_ProgramFlexTable_EditAction_With_UserApp_NOTIN_Admin
+  Scenario: Set up configuration to hide Edit action of program flex table using UserApp NOTIN Admin and validating it inside flex table of program-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON  |                            | Programs           | Name                      | Edit                       |
+    Given I setup test configuration as below:
+      | configurationCategory      | fieldName            | fieldNewValue                                                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject  | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_EdiAction_With_UserApp_NOTIN_Admin| Programs           | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
+    
+  @48608 @all @hide_Expression_ProgramFlexTable_EditAction_With_UserApp_NOTIN_Recipient
+  Scenario: Set up configuration to hide Edit action of program flex table using UserApp NOTIN Recipient and validating it inside flex table of program-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON  |                            | Programs           | Name                      | Edit                       |
+    Given I setup test configuration as below:
+      | configurationCategory      | fieldName            | fieldNewValue                                                                    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject  | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_EdiAction_With_UserApp_NOTIN_Recipient| Programs           | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
+    
+  @48609 @all @hide_Expression_ProgramFlexTable_EditAction_With_Profile_IN_SystemAdministrator_OR_UserApp_IN_StateAsGrantor
+  Scenario: Set up configuration to hide Edit action of program flex table using Profile IN System Administrator OR UserApp IN StateasGrantor and validating it inside flex table of program-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON  |                            | Programs           | Name                      | Edit                       |
+    Given I setup test configuration as below:
+      | configurationCategory      | fieldName            | fieldNewValue                                                                                                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject  | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_EdiAction_With_UserApp_Profile_IN_SystemAdministrator_OR_UserApp_IN_StateAsGrantor| Programs           | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
+    
+  @48610 @all @hide_Expression_ProgramFlexTable_EditAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator
+  Scenario: Set up configuration to hide Edit action of program flex table using UserType NOT IN Internal AND Profile NOT IN System Administrator and validating it inside flex table of program-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON  |                            | Programs           | Name                      | Edit                       |
+    Given I setup test configuration as below:
+      | configurationCategory      | fieldName            | fieldNewValue                                                                                                          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject  | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_EdiAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator| Programs           | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    Then I see "Edit" icon for "Test program for automation - Created mode only" is displayed inside flex table
+    
+  @48611 @all @hide_Expression_ProgramFlexTable_ViewAction_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator
+  Scenario: Set up configuration to display view action of program flex table using user type NOTIN Internal OR profile NOTIN system administrator and validating it inside flex table of program-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON  |                            | Programs           | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory      | fieldName            | fieldNewValue                                                                                                          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject  | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_ViewAction_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator| Programs           | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    Then I see "View Program Details" icon for "Test program for automation - Created mode only" is displayed inside flex table
+    
+  @48612 @all @hide_Expression_ProgramFlexTable_ViewAction_With_UserType_IN_Internal_OR_Profile_IN_PM
+  Scenario: Set up configuration to hide view action of program flex table using User type IN Internal OR Profile IN PM and validating it inside flex table of program-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON  |                            | Programs           | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory      | fieldName            | fieldNewValue                                                                                   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject  | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_ViewAction_With_UserType_IN_Internal_OR_Profile_IN_PM| Programs           | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    Then I see "View Program Details" icon for "Test program for automation - Created mode only" is not displayed inside flex table 
+    
+  @48613 @all @hide_Expression_StepProgressBar_SubmitForApproval_With_Profile_IN_SystemAdministrator
+  Scenario: Set up configuration to hide submit for approval status of program from step progress bar using Profile IN System Administrator and validating it inside program detail page-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             |fieldOrignalValue | filterId         |
+      | Step Progressbar Detail   | Hide Expression JSON  |                  | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory      | fieldName            | fieldNewValue                                                                                         | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail    | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_Profile_IN_SystemAdministrator| Program Progress Bar | Name                      | Submitted for Approval     |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Submitted for Approval" is not displayed inside step progress bar
+    
+  @48614 @all @hide_Expression_StepProgressBar_SubmitForApproval_With_Profile_NOTIN_SystemAdministrator
+  Scenario: Set up configuration to display submit for approval status of program from step progress bar using Profile NOTIN System Administrator and validating it inside program detail page-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             |fieldOrignalValue | filterId         |
+      | Step Progressbar Detail   | Hide Expression JSON  |                  | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory      | fieldName            | fieldNewValue                                                                                            | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail    | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_Profile_NOTIN_SystemAdministrator| Program Progress Bar | Name                      | Submitted for Approval     |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Submitted for Approval" is displayed inside step progress bar
+    
+  @48615 @all @hide_Expression_StepProgressBar_SubmitForApproval_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal
+  Scenario: Set up configuration to hide submit for approval status of program from step progress bar using Profile IN System Administrator AND User Type IN Internal and validating it inside program detail page-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             |fieldOrignalValue | filterId         |
+      | Step Progressbar Detail   | Hide Expression JSON  |                  | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory      | fieldName            | fieldNewValue                                                                                                                  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail    | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal| Program Progress Bar | Name                      | Submitted for Approval     |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Submitted for Approval" is not displayed inside step progress bar
+    
+  @48616 @all @hide_Expression_StepProgressBar_SubmitForApproval_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal
+  Scenario: Set up configuration to hide submit for approval status of program from step progress bar using Profile IN System Administrator OR User Type IN Internal and validating it inside program detail page-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             |fieldOrignalValue | filterId         |
+      | Step Progressbar Detail   | Hide Expression JSON  |                  | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory      | fieldName            | fieldNewValue                                                                                                                 | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail    | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal| Program Progress Bar | Name                      | Submitted for Approval     |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Submitted for Approval" is not displayed inside step progress bar
+    
+  @48617 @all @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator
+  Scenario: Set up configuration to display submit for approval status of program from step progress bar using User Type NOTIN Internal AND Profile NOTIN System Administrator and validating it inside program detail page-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             |fieldOrignalValue | filterId         |
+      | Step Progressbar Detail   | Hide Expression JSON  |                  | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory      | fieldName            | fieldNewValue                                                                                                                        | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail    | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator| Program Progress Bar | Name                      | Submitted for Approval     |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Submitted for Approval" is displayed inside step progress bar
+    
+  @48618 @all @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator
+  Scenario: Set up configuration to display submit for approval status of program from step progress bar using User Type NOTIN Internal OR Profile NOTIN System Administrator and validating it inside program detail page-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             |fieldOrignalValue | filterId         |
+      | Step Progressbar Detail   | Hide Expression JSON  |                  | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory      | fieldName            | fieldNewValue                                                                                                                       | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail    | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator| Program Progress Bar | Name                      | Submitted for Approval     |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Submitted for Approval" is displayed inside step progress bar
+    
+  @48619 @all @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Internal_OR_Profile_IN_PM
+  Scenario: Set up configuration to hide submit for approval status of program from step progress bar using User Type IN Internal OR Profile IN PM and validating it inside program detail page-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             |fieldOrignalValue | filterId         |
+      | Step Progressbar Detail   | Hide Expression JSON  |                  | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory      | fieldName            | fieldNewValue                                                                                                | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail    | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Internal_OR_Profile_IN_PM| Program Progress Bar | Name                      | Submitted for Approval     |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Submitted for Approval" is not displayed inside step progress bar
+    
+  @48620 @all @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Internal_AND_Profile_IN_PM
+  Scenario: Set up configuration to display submit for approval status of program from step progress bar using User Type IN Internal AND Profile IN PM and validating it inside program detail page-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             |fieldOrignalValue | filterId         |
+      | Step Progressbar Detail   | Hide Expression JSON  |                  | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory      | fieldName            | fieldNewValue                                                                                                 | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail    | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Internal_AND_Profile_IN_PM| Program Progress Bar | Name                      | Submitted for Approval     |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Submitted for Approval" is displayed inside step progress bar
+    
+  @48621 @all @hide_Expression_StepProgressBar_SubmitForApproval_With_UserApp_IN_StateAsGrantor
+  Scenario: Set up configuration to hide submit for approval status of program from step progress bar using User App IN State AS Grantor and validating it inside program detail page-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             |fieldOrignalValue | filterId         |
+      | Step Progressbar Detail   | Hide Expression JSON  |                  | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory      | fieldName            | fieldNewValue                                                                                    | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail    | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserApp_IN_StateAsGrantor| Program Progress Bar | Name                      | Submitted for Approval     |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Submitted for Approval" is not displayed inside step progress bar
+    
+  @48622 @all @hide_Expression_StepProgressBar_SubmitForApproval_With_UserApp_NOTIN_StateAsGrantor
+  Scenario: Set up configuration to display submit for approval status of program from step progress bar using User App NOTIN State AS Grantor and validating it inside program detail page-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             |fieldOrignalValue | filterId         |
+      | Step Progressbar Detail   | Hide Expression JSON  |                  | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory      | fieldName            | fieldNewValue                                                                                       | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail    | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserApp_NOTIN_StateAsGrantor| Program Progress Bar | Name                      | Submitted for Approval     |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Submitted for Approval" is displayed inside step progress bar
+    
+  @48623 @all @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor
+  Scenario: Set up configuration to hide submit for approval status of program from step progress bar using User Type IN Internal AND UserApp IN StateAsGrantor and validating it inside program detail page-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             |fieldOrignalValue | filterId         |
+      | Step Progressbar Detail   | Hide Expression JSON  |                  | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory      | fieldName            | fieldNewValue                                                                                                             | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail    | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor| Program Progress Bar | Name                      | Submitted for Approval     |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Submitted for Approval" is not displayed inside step progress bar
+    
+  @48624 @all @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor
+  Scenario: Set up configuration to hide submit for approval status of program from step progress bar using User Type IN Internal OR UserApp IN StateAsGrantor and validating it inside program detail page-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             |fieldOrignalValue | filterId         |
+      | Step Progressbar Detail   | Hide Expression JSON  |                  | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory      | fieldName            | fieldNewValue                                                                                                            | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail    | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor| Program Progress Bar | Name                      | Submitted for Approval     |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Submitted for Approval" is not displayed inside step progress bar
+    
+  @48625 @all @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Applicant_Internal_Reviewer
+  Scenario: Set up configuration to hide submit for approval status of program from step progress bar using User Type IN Applicant Internal Reviewer and validating it inside program detail page-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             |fieldOrignalValue | filterId         |
+      | Step Progressbar Detail   | Hide Expression JSON  |                  | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory      | fieldName            | fieldNewValue                                                                                                  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail    | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Applicant_Internal_Reviewer| Program Progress Bar | Name                      | Submitted for Approval     |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Submitted for Approval" is not displayed inside step progress bar
+    
+  @48626 @all @hide_Expression_StepProgressBar_SubmitForApproval_With_UserApp_IN_StateAsGrantor_Admin_Recipient
+  Scenario: Set up configuration to hide submit for approval status of program from step progress bar using UserApp IN State As grantor, Admin, Recipient and validating it inside program detail page-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             |fieldOrignalValue | filterId         |
+      | Step Progressbar Detail   | Hide Expression JSON  |                  | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory      | fieldName            | fieldNewValue                                                                                                    | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail    | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserApp_IN_StateAsGrantor_Admin_Recipient| Program Progress Bar | Name                      | Submitted for Approval     |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Submitted for Approval" is not displayed inside step progress bar
+    
+  @48627 @all @hide_Expression_StepProgressBar_SubmitForApproval_With_UserApp_NOTIN_Admin
+  Scenario: Set up configuration to hide submit for approval status of program from step progress bar using UserApp NOTIN Admin and validating it inside program detail page-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             |fieldOrignalValue | filterId         |
+      | Step Progressbar Detail   | Hide Expression JSON  |                  | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory      | fieldName            | fieldNewValue                                                                              | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail    | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserApp_NOTIN_Admin| Program Progress Bar | Name                      | Submitted for Approval     |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Submitted for Approval" is not displayed inside step progress bar
+    
+  @48628 @all @hide_Expression_StepProgressBar_SubmitForApproval_With_UserApp_NOTIN_Recipient
+  Scenario: Set up configuration to hide submit for approval status of program from step progress bar using UserApp NOTIN Recipient and validating it inside program detail page-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             |fieldOrignalValue | filterId         |
+      | Step Progressbar Detail   | Hide Expression JSON  |                  | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory      | fieldName            | fieldNewValue                                                                                  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail    | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserApp_NOTIN_Recipient| Program Progress Bar | Name                      | Submitted for Approval     |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Submitted for Approval" is not displayed inside step progress bar
+    
+  @48629 @all @hide_Expression_StepProgressBar_SubmitForApproval_With_Profile_IN_SystemAdministrator_OR_UserApp_IN_StateAsGrantor
+  Scenario: Set up configuration to hide submit for approval status of program from step progress bar using Profile IN System Administrator OR UserApp IN StateasGrantor and validating it inside program detail page-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             |fieldOrignalValue | filterId         |
+      | Step Progressbar Detail   | Hide Expression JSON  |                  | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory      | fieldName            | fieldNewValue                                                                                                                      | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail    | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_Profile_IN_SystemAdministrator_OR_UserApp_IN_StateAsGrantor| Program Progress Bar | Name                      | Submitted for Approval     |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Submitted for Approval" is not displayed inside step progress bar
+   
+  @48630 @all @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_NOTIN_Internal_OR_Profile_IN_SystemAdministratror_EXE
+  Scenario: Set up configuration to display submit for approval status of program from step progress bar using UserType NOT IN Internal OR Profile IN System Administrator, EXE and validating it inside program detail page-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             |fieldOrignalValue | filterId         |
+      | Step Progressbar Detail   | Hide Expression JSON  |                  | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory      | fieldName            | fieldNewValue                                                                                                                         | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail    | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_NOTIN_Internal_OR_Profile_IN_SystemAdministratror_EXE| Program Progress Bar | Name                      | Submitted for Approval     |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    Then I see "Submitted for Approval" is not displayed inside step progress bar
+    
+  @48634 @all @hide_Expression_ApprovalDecisionAction_Forward_With_UserType_IN_Internal
+  Scenario: Setup configuration to hide forward option from configuration for approval decision using User Type IN Internal and validating its content in pending tasks approval decision
+    Given I have default configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                            | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                  | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_UserType_IN_Internal| ADAC-0011                                                  |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    And I complete submit for approval
+    When I re-login as "Automation-PM" user on "QA" portal
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    Then I see "Reassign" is disabled
+    
+  @48637 @all @hide_Expression_ApprovalDecisionAction_Forward_With_UserType_NOTIN_Internal
+  Scenario: Setup configuration to display forward option from configuration for approval decision using User Type NotIN Internal and validating its content in pending tasks approval decision
+    Given I have default configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                               | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                     | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_UserType_NOTIN_Internal| ADAC-0011                                                  |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    And I complete submit for approval
+    When I re-login as "Automation-PM" user on "QA" portal
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    Then I see "Reassign" is enabled
+    
+  @48638 @all @hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator
+  Scenario: Setup configuration to display forward option from configuration for approval decision using Profile IN System Administrator and validating its content in pending tasks approval decision
+    Given I have default configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                      | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                            | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator| ADAC-0011                                                  |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    And I complete submit for approval
+    When I re-login as "Automation-PM" user on "QA" portal
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    Then I see "Reassign" is enabled
+    
+  @48639 @all @hide_Expression_ApprovalDecisionAction_Forward_With_Profile_NOTIN_SystemAdministrator
+  Scenario: Setup configuration to hide forward option from configuration for approval decision using Profile NOTIN System Administrator and validating its content in pending tasks approval decision
+    Given I have default configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                         | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                               | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_Profile_NOTIN_SystemAdministrator| ADAC-0011                                                  |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    And I complete submit for approval
+    When I re-login as "Automation-PM" user on "QA" portal
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    Then I see "Reassign" is disabled
+    
+  @48640 @all @hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal
+  Scenario: Setup configuration to display forward option from configuration for approval decision using  Profile IN System Administrator AND UserType IN Internal and validating its content in pending tasks approval decision
+    Given I have default configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                                               | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                                                     | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal| ADAC-0011                                                  |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    And I complete submit for approval
+    When I re-login as "Automation-PM" user on "QA" portal
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    Then I see "Reassign" is enabled 

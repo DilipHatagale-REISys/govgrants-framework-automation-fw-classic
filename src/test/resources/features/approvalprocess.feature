@@ -554,12 +554,14 @@ Feature: Approval Process Component Scenarios
     Given I have default configuration as below:
       | configurationCategory        | fieldName             | fieldOrignalValue | filterId         |
       | Approval Process Steps Cache | Reject Email Template | ApiGeneratedId:1  | ApiGeneratedId:3 |
+      | Page Tabs Config             | Is Active             | true              | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory                | fieldName             | fieldNewValue                   | coreComponentField                                         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Program                              | Status                | Created                         | Test program for automation -  SA mode only - Not approved |                           |                            |
       | Approval Process Steps Cache:General | Email Template Name   | Program Rejected Email Template | Program Rejected Email Template                            |                           |                            |
       | Approval Process Steps Cache:General | Email Template Name   | Program Approved Email Template | Program Approved Email Template                            |                           |                            |
       | Approval Process Steps Cache:General | Reject Email Template | ApiGeneratedId:2                | Program_Manager_Approver                                   |                           |                            |
+      | Page Tabs Config:Page Layout Action  | Is Active             | false                           | Grantee State Program                                      | Name                      | TAB-027                    |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -587,11 +589,13 @@ Feature: Approval Process Component Scenarios
     Given I have default configuration as below:
       | configurationCategory        | fieldName                 | fieldOrignalValue | filterId         |
       | Approval Process Steps Cache | Reassigned Email Template |                   | ApiGeneratedId:2 |
+      | Page Tabs Config             | Is Active                 | true              | ApiGeneratedId:3 |
     Given I setup test configuration as below:
       | configurationCategory                | fieldName                 | fieldNewValue                   | coreComponentField                                         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Program                              | Status                    | Created                         | Test program for automation -  SA mode only - Not approved |                           |                            |
       | Approval Process Steps Cache:General | Email Template Name       | Program Approved Email Template | Program Approved Email Template                            |                           |                            |
       | Approval Process Steps Cache:General | Reassigned Email Template | ApiGeneratedId:1                | Program_Manager_Approver                                   |                           |                            |
+      | Page Tabs Config:Page Layout Action  | Is Active                 | false                           | Grantee State Program                                      | Name                      | TAB-027                    |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -620,11 +624,13 @@ Feature: Approval Process Component Scenarios
     Given I have default configuration as below:
       | configurationCategory        | fieldName                    | fieldOrignalValue | filterId         |
       | Approval Process Steps Cache | Send To Owner Email Template |                   | ApiGeneratedId:2 |
+      | Page Tabs Config             | Is Active                    | true              | ApiGeneratedId:3 |
     Given I setup test configuration as below:
       | configurationCategory                | fieldName                    | fieldNewValue                   | coreComponentField                                         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Program                              | Status                       | Created                         | Test program for automation -  SA mode only - Not approved |                           |                            |
       | Approval Process Steps Cache:General | Email Template Name          | Program Approved Email Template | Program Approved Email Template                            |                           |                            |
       | Approval Process Steps Cache:General | Send To Owner Email Template | ApiGeneratedId:1                | Program_Manager_Approver                                   |                           |                            |
+      | Page Tabs Config:Page Layout Action  | Is Active                    | false                           | Grantee State Program                                      | Name                      | TAB-027                    |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -831,21 +837,21 @@ Feature: Approval Process Component Scenarios
 
   @41060 @all @validateCommentedTextInsideHistoryTabForReassignAction-Programs
   Scenario: Validating commented text inside history tab for reassign approval action at program detail page
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue | coreComponentField                                         |
-      | Program               | Status    | Created       | Test program for automation -  SA mode only - Not approved |
+      Given I setup test configuration as below:
+      | configurationCategory                | fieldName                    | fieldNewValue                   | coreComponentField                                                              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Program                              | Status                       | Created                         | Test program for automation - SA mode only - Not approved - History Tab Scenario|                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "Test program for automation - SA mode only - Not approved - History Tab Scenario"
+    When I click on "Edit" icon for "Test program for automation - SA mode only - Not approved - History Tab Scenario" inside table
     And I complete submit for approval
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "Test program for automation - SA mode only - Not approved - History Tab Scenario"
+    When I click on "Start" icon for "Test program for automation - SA mode only - Not approved - History Tab Scenario" inside table
     When I select "Reassign" from approval decision panel
     When I click select dropdown
     When I select specific user "Allen PM"
@@ -854,7 +860,7 @@ Feature: Approval Process Component Scenarios
     When I re-login as "Automation" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "View Program Details" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "Test program for automation - SA mode only - Not approved - History Tab Scenario"
+    When I click on "View Program Details" icon for "Test program for automation - SA mode only - Not approved - History Tab Scenario" inside table
     When I navigate to "History" sub tab
     Then I see "Automation testing" comment for user "Allen PM"
