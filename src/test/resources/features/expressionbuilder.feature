@@ -4415,4 +4415,464 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    Then I see "Reassign" is enabled 
+    Then I see "Reassign" is enabled
+    
+  @48641 @all @hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal
+  Scenario: Setup configuration to hide forward option from configuration for approval decision using  Profile IN System Administrator OR UserType IN Internal and validating its content in pending tasks approval decision
+    Given I have default configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                                              | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                                                    | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal| ADAC-0011                                                  |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    And I complete submit for approval
+    When I re-login as "Automation-PM" user on "QA" portal
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    Then I see "Reassign" is disabled
+    
+  @48646 @all @hide_Expression_ApprovalDecisionAction_Reject_With_UserType_NotIN_Internal_AND_Profile_NOTIN_SystemAdministrator
+  Scenario: Setup configuration to display Reject option from configuration for approval decision using User Type NOTIN Internal AND Profile NOTIN System Administrator and validating its content in pending tasks approval decision
+    Given I have default configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                                                    | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                                                          | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator| ADAC-0010                                                  |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    And I complete submit for approval
+    When I re-login as "Automation-PM" user on "QA" portal
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    Then I see "Disapprove" is enabled
+    
+  @48647 @all @hide_Expression_ApprovalDecisionAction_Reject_With_UserType_NotIN_Internal_OR_Profile_NOTIN_SystemAdministrator
+  Scenario: Setup configuration to hide Reject option from configuration for approval decision using UserType NOT IN Internal OR Profile NOT IN System Administrator and validating its content in pending tasks approval decision
+    Given I have default configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                                                   | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                                                         | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator| ADAC-0010                                                  |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    And I complete submit for approval
+    When I re-login as "Automation-PM" user on "QA" portal
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    Then I see "Disapprove" is disabled
+    
+  @48648 @all @hide_Expression_ApprovalDecisionAction_Reject_With_UserType_IN_Internal_OR_Profile_IN_PM
+  Scenario: Setup configuration to hide Reject option from configuration for approval decision using UserType IN Internal OR Profile IN PM and validating its content in pending tasks approval decision
+    Given I have default configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                            | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                                  | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject_With_UserType_IN_Internal_OR_Profile_IN_PM| ADAC-0010                                                  |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    And I complete submit for approval
+    When I re-login as "Automation-PM" user on "QA" portal
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    Then I see "Disapprove" is disabled
+    
+  @48649 @all @hide_Expression_ApprovalDecisionAction_Reject_With_UserType_IN_Internal_AND_Profile_IN_PM
+  Scenario: Setup configuration to hide Reject option from configuration for approval decision using UserType IN Internal AND Profile IN PM and validating its content in pending tasks approval decision
+    Given I have default configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                             | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                                   | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject_With_UserType_IN_Internal_AND_Profile_IN_PM| ADAC-0010                                                  |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    And I complete submit for approval
+    When I re-login as "Automation-PM" user on "QA" portal
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    Then I see "Disapprove" is disabled
+    
+  @48650 @all @hide_Expression_ApprovalDecisionAction_Reject_With_UserApp_IN_StateAsGrantor
+  Scenario: Setup configuration to hide Reject option from configuration for approval decision using userApp IN StateAs Grantor and validating its content in pending tasks approval decision
+    Given I have default configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                      | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject_With_UserApp_IN_StateAsGrantor| ADAC-0010                                                  |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    And I complete submit for approval
+    When I re-login as "Automation-PM" user on "QA" portal
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    Then I see "Disapprove" is disabled
+    
+  @48651 @all @hide_Expression_ApprovalDecisionAction_Reject_With_UserApp_NOTIN_StateAsGrantor
+  Scenario: Setup configuration to display Reject option from configuration for approval decision using userApp NOTIN State As Grantor and validating its content in pending tasks approval decision
+    Given I have default configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                   | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                         | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject_With_UserApp_NOTIN_StateAsGrantor| ADAC-0010                                                  |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    And I complete submit for approval
+    When I re-login as "Automation-PM" user on "QA" portal
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    Then I see "Disapprove" is enabled
+    
+  @48652 @all @hide_Expression_ApprovalDecisionAction_SendBack_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor
+  Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserType IN Internal AND UserApp IN StateasGrantor and validating its content in pending tasks approval decision
+    Given I have default configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                                            | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                                                  | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor | ADAC-0012                                                  |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    And I complete submit for approval
+    When I re-login as "Automation-PM" user on "QA" portal
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    Then I see "Send to Owner" is disabled
+    
+  @48654 @all @hide_Expression_ApprovalDecisionAction_SendBack_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor
+  Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserType IN Internal OR UserApp IN StateasGrantor and validating its content in pending tasks approval decision
+    Given I have default configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                                          | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                                                | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor| ADAC-0012                                                  |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    And I complete submit for approval
+    When I re-login as "Automation-PM" user on "QA" portal
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    Then I see "Send to Owner" is disabled
+    
+  @48655 @all @hide_Expression_ApprovalDecisionAction_SendBack_With_UserType_IN_Applicant_Internal_Reviewer
+  Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserType IN Applicant Internal Reviewer and validating its content in pending tasks approval decision
+    Given I have default configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                                | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                                      | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserType_IN_Applicant_Internal_Reviewer| ADAC-0012                                                  |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    And I complete submit for approval
+    When I re-login as "Automation-PM" user on "QA" portal
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    Then I see "Send to Owner" is disabled
+    
+  @48656 @all @hide_Expression_ApprovalDecisionAction_SendBack_With_UserApp_IN_StateAsGrantee
+  Scenario: Setup configuration to display Send back option from configuration for approval decision using UserApp IN State As Grantee and validating its content in pending tasks approval decision
+    Given I have default configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                  | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                        | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserApp_IN_StateAsGrantee| ADAC-0012                                                  |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    And I complete submit for approval
+    When I re-login as "Automation-PM" user on "QA" portal
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    Then I see "Send to Owner" is enabled
+    
+  @48657 @all @hide_Expression_ApprovalDecisionAction_SendBack_With_UserApp_NOTIN_Admin
+  Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserApp NOTIN Admin and validating its content in pending tasks approval decision
+    Given I have default configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                            | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                  | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserApp_NOTIN_Admin| ADAC-0012                                                  |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    And I complete submit for approval
+    When I re-login as "Automation-PM" user on "QA" portal
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    Then I see "Send to Owner" is disabled
+    
+  @48658 @all @hide_Expression_ApprovalDecisionAction_SendBack_With_UserApp_NOTIN_Recipient
+  Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserApp NOTIN Recipient and validating its content in pending tasks approval decision
+    Given I have default configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                      | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserApp_NOTIN_Recipient| ADAC-0012                                                  |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    And I complete submit for approval
+    When I re-login as "Automation-PM" user on "QA" portal
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    Then I see "Send to Owner" is disabled
+    
+  @48659 @all @hide_Expression_ApprovalDecisionAction_SendBack_With_UserApp_IN_StateAsGrantor_StateAsGrantee_Recipient_Admin
+  Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserApp IN StateasGrantor, StateasGrantee, Recipient, Admin and validating its content in pending tasks approval decision
+    Given I have default configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                                                 | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                                                       | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserApp_IN_StateAsGrantor_StateAsGrantee_Recipient_Admin| ADAC-0012                                                  |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    And I complete submit for approval
+    When I re-login as "Automation-PM" user on "QA" portal
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    Then I see "Send to Owner" is disabled
+    
+  @48662 @all @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_SystemAdministrator_OR_UserApp_IN_StateAsGrantor
+  Scenario: Setup configuration to hide Approve option from configuration for approval decision using Profile IN System Administrator OR UserApp IN StateasGrantor and validating its content in pending tasks approval decision
+    Given I have default configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                                                   | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                                                         | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_SystemAdministrator_OR_UserApp_IN_StateAsGrantor| ADAC-0009                                                  |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    And I complete submit for approval
+    When I re-login as "Automation-PM" user on "QA" portal
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    Then I see "Approve" is disabled
+    
+  @48663 @all @hide_Expression_ApprovalDecisionAction_Approve_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_Admin
+  Scenario: Setup configuration to display Approve option from configuration for approval decision using UserType NOT IN Internal AND Profile NOT IN  Admin and validating its content in pending tasks approval decision
+    Given I have default configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                                       | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                                             | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_Admin| ADAC-0009                                                  |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    And I complete submit for approval
+    When I re-login as "Automation-PM" user on "QA" portal
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    Then I see "Approve" is enabled
+    
+  @48666 @all @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_PM_OR_UserApp_NOTIN_Admin
+  Scenario: Setup configuration to hide Approve option from configuration for approval decision using Profile IN PM OR UserApp NOT IN Admin and validating its content in pending tasks approval decision
+    Given I have default configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                            | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                                  | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_PM_OR_UserApp_NOTIN_Admin| ADAC-0009                                                  |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    And I complete submit for approval
+    When I re-login as "Automation-PM" user on "QA" portal
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    Then I see "Approve" is disabled
+    
+  @48667 @all @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_PM_AND_UserApp_NOTIN_Admin
+  Scenario: Setup configuration to hide Approve option from configuration for approval decision using Profile IN PM AND UserApp NOT IN Admin and validating its content in pending tasks approval decision
+    Given I have default configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                             | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                                   | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_PM_AND_UserApp_NOTIN_Admin| ADAC-0009                                                  |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    And I complete submit for approval
+    When I re-login as "Automation-PM" user on "QA" portal
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    Then I see "Approve" is disabled
+    
+  @48668 @all @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_NOTIN_SystemAdministrator_OR_UserType_IN_Internal
+  Scenario: Setup configuration to hide Approve option from configuration for approval decision using Profile NOT IN System Administrator OR UserType IN Internal and validating its content in pending tasks approval decision
+    Given I have default configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                                                 | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                                                       | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_Profile_NOTIN_SystemAdministrator_OR_UserType_IN_Internal| ADAC-0009                                                  |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    And I complete submit for approval
+    When I re-login as "Automation-PM" user on "QA" portal
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    Then I see "Approve" is disabled
+    
+  @48670 @all @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_NOTIN_SystemAdministrator_AND_UserType_IN_Internal
+  Scenario: Setup configuration to hide Approve option from configuration for approval decision using Profile NOT IN System Administrator AND UserType IN Internal and validating its content in pending tasks approval decision
+    Given I have default configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                                                  | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                                                        | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_Profile_NOTIN_SystemAdministrator_AND_UserType_IN_Internal| ADAC-0009                                                  |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    And I complete submit for approval
+    When I re-login as "Automation-PM" user on "QA" portal
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    Then I see "Approve" is disabled
