@@ -1109,3 +1109,234 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "Automation Enhanced Grid" shown as inside "Enhanced1grid"
+    
+  @49252 @all @showInPDFFieldAtParentFlexTable-gPlanning
+  Scenario: validate Activated status in downloaded pdf file after checking check box of show in pdf at config and validating it inside enhanced grid of programs-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Grid:Flex Table List | Show in PDF | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName   | fieldNewValue     | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Show in PDF | true              | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I click on top right parallel lines bar for "Monitoring Schedule For All Active Grants"
+    And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
+    And I download the file
+    Then I see "Activated" on page "1" of "govgrants" pdf file
+    
+  @49243 @all @enableGroupingFieldAtParentFlexTableForEnhancedGrid-gPlanning
+  Scenario: validate same value rows getting grouped and shown in sequence after checking checkbox true of Enable Row Grouping from config and validating it inside enhanced grid of programs-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table List       | Enable Row Grouping  | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue   | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Row Grouping  | true            | TmpActiveGrantsGrid | Name                      | FTC-1497                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    Then I see "Number of Awards : 1" inside rows of enhanced grid id "Enhanced1grid"
+    
+  @49244 @all @hideGroupingColumnFieldAtParentFlexTableForEnhancedGrid-gPlanning
+  Scenario: validate hide of particular column after checking checkbox true of Hide Grouping Column from config and validating it inside enhanced grid of programs-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Grouping Column | false             | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Row Grouping  | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue   | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Grouping Column | true            | TmpActiveGrantsGrid | Name                      | FTC-1497                   |
+      | Flex Table List       | Enable Row Grouping  | true            | TmpActiveGrantsGrid | Name                      | FTC-1497                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    Then I see "Number of Awards" not displayed in enhanced grid table column title
+    
+  @49250 @all @enableSubTotalFieldAtParentFlexTableForEnhancedGrid-gPlanning
+  Scenario: validate total of number of awards after checking checkbox true of Enable Sub Total field from config and validating it inside enhanced grid of programs-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Flex Table List       | Enable Row Grouping   | false             | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Sub Total      | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue   | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Row Grouping   | true            | TmpActiveGrantsGrid | Name                      | FTC-1490                   |
+      | Flex Table List       | Enable Sub Total      | true            | TmpActiveGrantsGrid | Name                      | FTC-1497                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    Then I see cell subtotal for number of awards at enhanced grid    
+    
+  @49254 @all @showInPDFFieldToVerifyFlexTableNotContainAnyListViewAtParentFlexTable-gPlanning
+  Scenario: validate Activated status in downloaded pdf file after checking check box of Is Master View Field at config and validating it inside enhanced grid of programs-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
+      | Flex Grid:Flex Table List | Is Master View | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName      | fieldNewValue     | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Is Master View | true              | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I click on top right parallel lines bar for "Monitoring Schedule For All Active Grants"
+    And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
+    And I download the file
+    Then I see "Activated" on page "1" of "govgrants" pdf file
+    
+  @49256 @all @showInPDFFieldToVerifyFlexTableContainMoreThanOneListViewAtParentFlexTable-gPlanning
+  Scenario Outline: validate Activated status in downloaded pdf file after checking check box of Is Master View Field at config and validating it inside enhanced grid of programs-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Grid:Flex Table List | Is Master View      | false             | ApiGeneratedId:0 |
+      | Flex Grid:Flex Table List | Show in PDF         | false             | ApiGeneratedId:1 |
+      | Flex Grid                 | Display Field Names | <defaultFieldsApi>| ApiGeneratedId:2 |
+      | Flex Grid:Flex Table List | Show in PDF         | false             | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName           | fieldNewValue     | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Is Master View      | true              | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Grid:Flex Table List | Show in PDF         | true              | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Grid:General         | Display Field Names | <newFieldsApi>    | TmpActiveGrantsGrid |                           |                            |
+      | Flex Grid:Flex Table List | Show in PDF         | true              | TmpActiveGrantsGrid | Name                      | FLV-2545                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I click on top right parallel lines bar for "Monitoring Schedule For All Active Grants"
+    And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
+    And I download the file
+    Then I see "Active" on page "1" of "govgrants" pdf file
+    
+    Examples:
+      | fieldDisplayNames | newFieldsApi                                                                                                                                                                                                                                              | defaultFieldsApi                                                                                                                                                                                                                                          |
+      | Project Title     | Status__c,Name,ProjectTitle__c,BudgetPeriodEndDate__c,TotalAdjustedAmount__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,TotalAdjustedAmount__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+      
+  @49251 @all @isMasterViewFieldUncheckedForAllFlexListViewAtParentFlexTable-gPlanning
+  Scenario: validate error message at enhanced grid after Unchecking check box of Is Master View Field for both list view at config and validating it inside enhanced grid of programs-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Grid:Flex Table List | Is Master View      | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName           | fieldNewValue     | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Is Master View      | false             | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Grid:Flex Table List | Is Master View      | false             | TmpActiveGrantsGrid | Name                      | FLV-2545                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    Then I see "Atleast one list view should be marked as a Master List View" error is displayed at enhanced grid
+    
+  @49264 @all @isMasterViewFieldcheckedForAtleastOneFlexListViewAtParentFlexTable-gPlanning
+  Scenario: validate error message at enhanced grid after Unchecking check box of Is Master View Field for both list view at config and validating it inside enhanced grid of programs-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Grid:Flex Table List | Is Master View      | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName           | fieldNewValue     | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Is Master View      | true              | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Grid:Flex Table List | Is Master View      | false             | TmpActiveGrantsGrid | Name                      | FLV-2545                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    Then I see "Atleast one list view should be marked as a Master List View" error is not displayed at enhanced grid
+    
+  @49270 @all @styleAttributeFieldAtParentFlexTableForEnhancedGrid-gPlanning
+  Scenario Outline: validate color change of total adjusted amount cloumn content after making changes at style attribute from config and validating it inside enhanced grid of programs-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table List       | Style Attribute  |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue        | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Style Attribute  | <styleAttributeValue>| TmpActiveGrantsGrid | Name                      | FTC-1500                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    Then I see "($1.00)" inside enhanced grid table for specified record "Road Construction Annoumsment" in "Red" colour
+    
+    Examples:
+    |styleAttributeValue|
+    |color: 'red'       |
+    
+  @49271 @all @styleClassFieldAtParentFlexTableForEnhancedGrid-gPlanning
+  Scenario Outline: validate color change of number of awards cells content after making changes at style class from config and validating it inside enhanced grid of programs-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table List       | StyleClass       |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue        | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | StyleClass       | <styleClassValue>    | TmpActiveGrantsGrid | Name                      | FTC-1502                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    Then I see "Road Construction Annoumsment" inside enhanced grid table for specified record "GT-12132-001" in "Red" colour
+    
+    Examples:
+    |styleClassValue                                               |
+    |{negativeValue:row[column]='Road Construction Annoumsment'}   |
+    
+  @49352 @all @enableGroupingFieldAtChildFlexTableForEnhancedGrid-gPlanning
+  Scenario: validate same value rows getting grouped and shown in sequence after checking checkbox true of Enable Row Grouping from config and validating it inside enhanced grid of programs-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table List       | Enable Row Grouping  | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue   | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Row Grouping  | true            | TmpGrantorActiveAwardsGrid | Name                      | FTC-1498                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+	When I expand nested table containing column value "Demo_Title"
+    Then I see "Total Obligated Amount : 72000" inside rows of enhanced grid id "Enhanced1grid"
+    
+  @49353 @all @hideGroupingColumnFieldAtChildFlexTableForEnhancedGrid-gPlanning
+  Scenario: validate hide of particular column after checking checkbox true of Hide Grouping Column from config and validating it inside enhanced grid of programs-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Grouping Column | false             | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Row Grouping  | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue   | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Grouping Column | true            | TmpGrantorActiveAwardsGrid | Name                      | FTC-1498                   |
+      | Flex Table List       | Enable Row Grouping  | true            | TmpGrantorActiveAwardsGrid | Name                      | FTC-1498                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+	When I expand nested table containing column value "Demo_Title"
+    Then I see "Total Obligated Amount" not displayed in enhanced grid table column title

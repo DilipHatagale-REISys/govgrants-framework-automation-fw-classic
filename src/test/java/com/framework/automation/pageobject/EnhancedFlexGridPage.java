@@ -19,7 +19,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	/******* "Variables and Locators" *****************/
 	private final By reachOutToEnhancedGridCollapse, searchInputEnhancedGrid, completeTableRowOfEnhancedGrid,
 			selectRecordCheckBoxForEnhancedGrid, currentBudgetPeriodEndDate, scrollToActionColumn,
-			obligatedAmountSpecificCells, idColumnForChildFlexTable;
+			obligatedAmountSpecificCells, idColumnForChildFlexTable, numberOfAwardscells;
 
 	/**
 	 * Constructor to handle dependency injection and framework library
@@ -36,6 +36,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 		scrollToActionColumn = By.xpath("//div[@id='Enhanced1grid']//th[contains(text(),'Actions')]");
 		obligatedAmountSpecificCells = By.xpath("//table/tbody/tr/td//*[@field-name='TotalAwardObligatedAmount__c']");
 		idColumnForChildFlexTable = By.xpath("//field[@field-name='Name']//input[@type='text']");
+		numberOfAwardscells = By.xpath("//table/tbody/tr/td//*[@field-name='NumberofAwards__c']");
 	}
 
 	/******* "Key Methods with complete functionality - public" *****************/
@@ -282,6 +283,56 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	 */
 	public void assertTextInputBoxForIdColumnNotDisplayed() {
 		Assert.assertFalse(isInputTextBoxIsDisplayedForIdColumnOfChildFlexTableAtEnhancedGrid());
+	}
+
+	/**
+	 * assert true if row having expected text in enhanced grid
+	 */
+	public void assertTextContainingRowAtParentFlexTabel(String text, String tableId) {
+		try {
+			reiDriver.JavaScript().scrollpageToSpecificElement(completeTableRowOfEnhancedGrid);
+		} catch (Exception e) {
+		}
+		Assert.assertTrue(isExpectedTextIsDisplayedAtParentFlexTabledRow(text, tableId));
+	}
+
+	/**
+	 * return true if cell sum value is as expected for number of award column
+	 * 
+	 * @param value
+	 */
+	public void assertCellValueForNumberOfAwardsAtEnhancedGrid() {
+		Assert.assertTrue(isExpectedSumValueForNumberOfAwardsAtEnhancedGridTableDisplayed());
+	}
+
+	/**
+	 * assert if error message is displayed at enhanced grid
+	 * 
+	 * @param error
+	 */
+	public void assertIsMasterViewErrorMessageIsDisplayed(String error) {
+		Assert.assertTrue(isErrorMessageAtEnhancedGridIsDisplayed(error));
+	}
+
+	/**
+	 * assert if error message is not displayed at enhanced grid
+	 * 
+	 * @param error
+	 */
+	public void assertIsMasterViewErrorMessageIsNotDisplayed(String error) {
+		Assert.assertFalse(isErrorMessageAtEnhancedGridIsDisplayed(error));
+	}
+
+	/**
+	 * assert enhanced grid cell value colour for particular record is displayed
+	 * 
+	 * @param cellValue
+	 * @param colName
+	 * @param colour
+	 */
+	public void assertCellValueColourOfEnhancedGridForSpecificRecordDisplayed(String cellValue, String colName,
+			String colour) {
+		Assert.assertTrue(isSpecificCellValueColourOfEnhancedFlexGrid(cellValue, colName, colour));
 	}
 
 	/*********
@@ -724,6 +775,100 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 				flag = true;
 			}
 		} catch (Exception e) {
+		}
+		return flag;
+	}
+
+	/**
+	 * 
+	 * @return true if expected text is displayed inside enhanced grid rows
+	 */
+	private Boolean isExpectedTextIsDisplayedAtParentFlexTabledRow(String text, String tableId) {
+		boolean flag = false;
+		try {
+			ArrayList<String> obtainedList = new ArrayList<>();
+			List<WebElement> rows_table = govgrants.flexTable().getCompleteTableRow(tableId);
+			for (WebElement we : rows_table) {
+				obtainedList.add(we.getText());
+			}
+			if (obtainedList.contains(text)) {
+				flag = true;
+			} else {
+				flag = false;
+			}
+		} catch (Exception e) {
+		}
+		return flag;
+	}
+
+	/**
+	 * return true if expected amount at particular cell inside Number of awards
+	 * column at enhanced grid table is displayed
+	 * 
+	 * @param value
+	 * @return
+	 */
+	private boolean isExpectedSumValueForNumberOfAwardsAtEnhancedGridTableDisplayed() {
+		boolean flag = false;
+		try {
+			reiDriver.JavaScript().scrollpageToSpecificElement(numberOfAwardscells);
+			List<WebElement> rows_table = reiDriver.findMyElement().getElements(numberOfAwardscells);
+			String sumStr = "";
+			double sum = 0.00;
+			for (int row = 0; row <= rows_table.size(); row++) {
+				if (row <= 4) {
+					if (rows_table.get(row).getText() != null) {
+						sum += Double.valueOf(rows_table.get(row).getText());
+					}
+				}
+				if (rows_table.size() == row) {
+					sumStr = rows_table.get(row - 2).getText();
+				}
+			}
+			String numberAsString = String.format("%.2f", sum);
+			if (sumStr.equals(numberAsString)) {
+				flag = true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return flag;
+	}
+
+	/**
+	 * 
+	 * @return true if error message for Is master view is displayed enhanced grid
+	 *         flex table
+	 * @param error
+	 */
+	private Boolean isErrorMessageAtEnhancedGridIsDisplayed(String error) {
+		boolean flag = false;
+		try {
+			if (reiDriver.findMyElement().getElement(By.xpath(
+					"//div[contains(@class, 'alert alert-warning displayFlexOnly alertMessage')]/span[contains(text(),'"
+							+ error + "')]"))
+					.isDisplayed()) {
+				flag = true;
+			}
+		} catch (Exception e) {
+		}
+		return flag;
+	}
+
+	/**
+	 * 
+	 * @return true if changed colour of cell value for specific record is displayed
+	 *         for enhaced grid
+	 */
+	private Boolean isSpecificCellValueColourOfEnhancedFlexGrid(String cellValue, String colName, String colour) {
+		boolean flag = false;
+		reiDriver.JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
+		WebElement cellContent = reiDriver.findMyElement().getElement(
+				By.xpath("//td//span[@title='" + cellValue + "' or text()='" + cellValue + "']/ancestor::td"));
+		if (cellContent.getCssValue("color").contains("rgba(255, 0, 0, 1)")
+				|| cellContent.getCssValue("color").contains("rgb(255, 0, 0)")
+				|| cellContent.getAttribute("style").contains("rgb(255, 0, 0)")) {
+			flag = true;
 		}
 		return flag;
 	}

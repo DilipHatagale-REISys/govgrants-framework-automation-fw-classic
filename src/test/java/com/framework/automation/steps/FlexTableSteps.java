@@ -37,13 +37,13 @@ public class FlexTableSteps {
 	public void getHelpTextIconsAtFlexTableColumn(String columnTitle) {
 		flexTablePage.getHelpTextAtFlexTableSpecificColumn(columnTitle);
 	}
-	
+
 	@Description("Step to validate a bug which results in error if a certain sequnce is followed for a certain period of time continuosly")
 	@When("^I perform sequence of actions on flex table for \"([^\"]*)\" minute$")
 	public void performSequenceOfActionsOnFlexTable(String durationOfRun) {
-	    flexTablePage.performSequenceOfActionsOnFlexTable(durationOfRun);
+		flexTablePage.performSequenceOfActionsOnFlexTable(durationOfRun);
 	}
-	
+
 	@When("^I click toggle button for \"([^\"]*)\"$")
 	public void clickToggleButtonAndSelect(String menuItemName) {
 		flexTablePage.clickToggleButtonAndSelect(menuItemName);
@@ -203,9 +203,9 @@ public class FlexTableSteps {
 	public void assertTExtNotDisplayed(String text, String pageNumber, String fileName) {
 		flexTablePage.assertTextDisplayedInPDF(text, Integer.parseInt(pageNumber), fileName);
 	}
-	
+
 	@Then("^I do not see \"([^\"]*)\" error$")
 	public void assertNoError(String errorMessage) {
-	    flexTablePage.assertErrorMessageNotDisplayed(errorMessage);
+		flexTablePage.assertErrorMessageNotDisplayed(errorMessage);
 	}
 }

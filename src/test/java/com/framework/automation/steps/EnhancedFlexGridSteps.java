@@ -26,7 +26,7 @@ public class EnhancedFlexGridSteps {
 	public void getHelpTextIconsAtFlexTableColumn(String columnTitle) {
 		enhancedFlexGrid.getHelpTextAtEnhancedGridTableSpecificColumn(columnTitle);
 	}
-	
+
 	@Then("^I see Advance Filter is disabled from table \"([^\"]*)\"$")
 	public void assertAdvanceFilterOptionDisabled(String tableId) {
 		enhancedFlexGrid.assertDisableAdvanceFilterFromEnhancedGrid(tableId);
@@ -106,19 +106,20 @@ public class EnhancedFlexGridSteps {
 	public void assertCellValue(BigDecimal value) {
 		enhancedFlexGrid.assertCellValueAtEnhancedGrid(value);
 	}
-	
+
 	@Then("^I see column \"([^\"]*)\" value is in \"([^\"]*)\" order$")
 	public void assertColumnValueInAscendingOrder(String text, String order) {
 		enhancedFlexGrid.assertAscendingOrderOfEnhancedGridColumnValue(text, order);
 	}
-	
+
 	@Then("^I see \"([^\"]*)\" icon for \"([^\"]*)\" is at position \"([^\"]*)\" inside flex table$")
 	public void assertActionIconNotDisplayedForflexTable(String iconName, String tableId, String sequenceNumber) {
 		enhancedFlexGrid.assertSequenceOfEditActionOfEnhancedGrid(iconName, tableId, Integer.parseInt(sequenceNumber));
 	}
 
 	@Then("^Then I see Menu icon is disabled from planning child flex table \"([^\"]*)\" under Monitoring Schedule For All Active Grants table$")
-	public void thenISeeMenuIconIsDisabledFromPlanningChildFlexTableUnderMonitoringScheduleForAllActiveGrantsTable(String tableName) {
+	public void thenISeeMenuIconIsDisabledFromPlanningChildFlexTableUnderMonitoringScheduleForAllActiveGrantsTable(
+			String tableName) {
 		enhancedFlexGrid.assertThatMenuFieldIsDisabledOnChildFlexTable(tableName);
 	}
 
@@ -128,17 +129,42 @@ public class EnhancedFlexGridSteps {
 	}
 
 	@Then("^I see \"([^\"]*)\" for Child Flex table \"([^\"]*)\" count in enhanced grid$")
-	public void iSeeForChildFlexTableCountInEnhancedGrid(String childFlexFooter, String childFlexTableId){
-		enhancedFlexGrid.assertThatTotalRecordIsPresentOnChildFlexTable(childFlexFooter,childFlexTableId);
+	public void iSeeForChildFlexTableCountInEnhancedGrid(String childFlexFooter, String childFlexTableId) {
+		enhancedFlexGrid.assertThatTotalRecordIsPresentOnChildFlexTable(childFlexFooter, childFlexTableId);
 	}
 
 	@Then("^I see select check box enabled for child flex table in enhanced flex grid$")
 	public void iSeeSelectCheckBoxEnabledForChildFlexTableInEnhancedFlexGrid() {
 		enhancedFlexGrid.assertIfSelectRecordIsEnabledOnChildFlexTable();
 	}
-	
+
 	@Then("^I see input box is not displayed for ID inside child Flex table$")
 	public void assertTextInputBoxForIdColumn() {
 		enhancedFlexGrid.assertTextInputBoxForIdColumnNotDisplayed();
+	}
+
+	@Then("^I see \"([^\"]*)\" inside rows of enhanced grid id \"([^\"]*)\"$")
+	public void assertNewRowsWithTextAtParentFlexTable(String text, String tableId) {
+		enhancedFlexGrid.assertTextContainingRowAtParentFlexTabel(text, tableId);
+	}
+
+	@Then("^I see cell subtotal for number of awards at enhanced grid$")
+	public void assertCellValueAtNumberOfAwardsColumn() {
+		enhancedFlexGrid.assertCellValueForNumberOfAwardsAtEnhancedGrid();
+	}
+
+	@Then("^I see \"([^\"]*)\" error is displayed at enhanced grid$")
+	public void assertApprovalDecisionMandatoryErrorDisplayed(String error) {
+		enhancedFlexGrid.assertIsMasterViewErrorMessageIsDisplayed(error);
+	}
+
+	@Then("^I see \"([^\"]*)\" error is not displayed at enhanced grid$")
+	public void assertApprovalDecisionMandatoryErrorNotDisplayed(String error) {
+		enhancedFlexGrid.assertIsMasterViewErrorMessageIsNotDisplayed(error);
+	}
+	
+	@Then("^I see \"([^\"]*)\" inside enhanced grid table for specified record \"([^\"]*)\" in \"([^\"]*)\" colour$")
+	public void assertEnhancedGridSpecificCellValue(String cellValue, String colName, String colour) {
+		enhancedFlexGrid.assertCellValueColourOfEnhancedGridForSpecificRecordDisplayed(cellValue, colName, colour);
 	}
 }

@@ -29,7 +29,7 @@ public class PageLayoutSteps {
 	public void selectFromDropdown(String itemName) {
 		pageLayoutPage.getItemFromTopRightHeaderBars(itemName).click();
 	}
-
+	
 	@When("^I click Add button inside attachments page block$")
 	public void clickAddButton() {
 		pageLayoutPage.clickAddUnderAttachmentsPageBlock();

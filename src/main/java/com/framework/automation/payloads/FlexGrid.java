@@ -71,6 +71,20 @@ public class FlexGrid {
 						String.valueOf(SObjectAPIs.GNT__Label__c), value);
 			}
 			break;
+		case "SHOW IN PDF":
+			finalPayload = String.format(payloadForIntValue,
+					String.valueOf(SObjectAPIs.GNT__FlexTableFilterListViewConfig__c),
+					apiUtilities.getComponentCoreFieldId(
+							String.valueOf(SObjectAPIs.GNT__FlexTableFilterListViewConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__ShowInPDF__c), value);
+			break;
+		case "IS MASTER VIEW":
+			finalPayload = String.format(payloadForIntValue,
+					String.valueOf(SObjectAPIs.GNT__FlexTableFilterListViewConfig__c),
+					apiUtilities.getComponentCoreFieldId(
+							String.valueOf(SObjectAPIs.GNT__FlexTableFilterListViewConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__IsMasterView__c), value);
+			break;
 		case "ENABLE TOTAL RECORDS COUNT":
 			finalPayload = String.format(
 					payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), apiUtilities

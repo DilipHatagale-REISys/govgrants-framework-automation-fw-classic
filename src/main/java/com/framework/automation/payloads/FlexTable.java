@@ -8,10 +8,14 @@ public class FlexTable {
 	/**
 	 * Handles Accordian Content level configuration
 	 * 
-	 * @param fieldLabel : Name of the field. Name of the API.
-	 * @param            ComponentCoreFieldName: Main phase name: eg; GrantorHome
-	 * @param            value: Parameter that we want to change
-	 * @param            filterClause: filter clause to get the specific id
+	 * @param fieldLabel
+	 *            : Name of the field. Name of the API.
+	 * @param ComponentCoreFieldName:
+	 *            Main phase name: eg; GrantorHome
+	 * @param value:
+	 *            Parameter that we want to change
+	 * @param filterClause:
+	 *            filter clause to get the specific id
 	 * @return: payload
 	 */
 	public String setFlexTableListFieldConfig(String fieldLabel, String value, String filterClause) {
@@ -65,6 +69,48 @@ public class FlexTable {
 							apiUtilities.getComponentCoreFieldId(
 									String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c), filterClause),
 							String.valueOf(SObjectAPIs.GNT__ReadOnlyCellJSON__c), value);
+			break;
+		case "ENABLE ROW GROUPING":
+			finalPayload = String
+					.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__EnableRowGrouping__c), value);
+			break;
+		case "HIDE GROUPING COLUMN":
+			finalPayload = String
+					.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__HideGroupingColumn__c), value);
+			break;
+		case "ENABLE OVER ALL TOTAL":
+			finalPayload = String
+					.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__EnableOverAllTotal__c), value);
+			break;
+		case "ENABLE SUB TOTAL":
+			finalPayload = String
+					.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__EnableSubTotal__c), value);
+			break;
+		case "STYLE ATTRIBUTE":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__StyleAttribute__c), value);
+			break;
+		case "STYLECLASS":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__StyleClass__c), value);
 			break;
 		case "ACTIVE ?":
 			finalPayload = String.format(payloadForIntValue,

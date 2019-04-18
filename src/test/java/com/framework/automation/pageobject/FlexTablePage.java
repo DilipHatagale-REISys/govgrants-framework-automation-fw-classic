@@ -365,7 +365,7 @@ public class FlexTablePage extends GovGrantsManager {
 	public void assertTextDisplayedInPDF(String text, int pageNumber, String fileName) {
 		Assert.assertFalse(isTextNotDisplayedInFile(text, pageNumber, fileName));
 	}
-
+	
 	/**
 	 * Click on toggle button inside program flex table
 	 */

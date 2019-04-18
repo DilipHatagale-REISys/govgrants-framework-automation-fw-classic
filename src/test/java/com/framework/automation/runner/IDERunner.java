@@ -11,7 +11,7 @@ import eyethink.automation.bots.controller.CucumberRunnerManager;
  * @author nauman.shahid
  *
  */
-@CucumberOptions(features = { "classpath:features" }, tags = { "@34027" }, glue = {
+@CucumberOptions(features = { "classpath:features" }, tags = { "@49253" }, glue = {
 		"com.framework.automation.steps","com.automation.rei.govgrantsSteps"}, plugin = { "com.cucumber.listener.ExtentCucumberFormatter:" })
 
 public class IDERunner extends AbstractTestNGCucumberTests {
