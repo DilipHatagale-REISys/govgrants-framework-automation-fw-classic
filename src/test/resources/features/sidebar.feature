@@ -1,9 +1,9 @@
-@sidebar-component
+@sidebar-component @regression
 Feature: Side bar Component Scenarios
   Test all sidebar component based scenarios
   As a configuration manager i make different configurational changes in side bar component and will validate them.
 
-  @33877 @all @validateChangeinTaskMenuSequence-gHome
+  @33877    @validateChangeinTaskMenuSequence-gHome
   Scenario: validate after changing sequence of task menu from second to third in side bar
     Given I have default configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue                                                  | filterId         |
@@ -15,7 +15,7 @@ Feature: Side bar Component Scenarios
     When I setup my app as "As a Grantor"
     Then i see "Tasks" shown at number "4" in sideBar
 
-  @33876 @all @validateSidebarTaskMenuRemoval-gHome
+  @33876    @validateSidebarTaskMenuRemoval-gHome @smoke
   Scenario: validate disabling of task menu from side bar
     Given I have default configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue                                                  | filterId         |
@@ -27,7 +27,7 @@ Feature: Side bar Component Scenarios
     When I setup my app as "As a Grantor"
     Then I see "Tasks" as disabled from sidebar
 
-  @33879 @all @validateSidebarActivityMenuRemoval-gHome
+  @33879    @validateSidebarActivityMenuRemoval-gHome @smoke
   Scenario: validate disabling of activity menu from side bar
     Given I have default configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue                                                  | filterId         |
@@ -39,7 +39,7 @@ Feature: Side bar Component Scenarios
     When I setup my app as "As a Grantor"
     Then I see "Activities" as disabled from sidebar
 
-  @33881 @all @validateLabelChangeOfAccordionContent-gHome
+  @33881    @validateLabelChangeOfAccordionContent-gHome @smoke
   Scenario: validate change of label in My tasks accordion content
     Given I have default configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -51,7 +51,7 @@ Feature: Side bar Component Scenarios
     When I setup my app as "As a Grantor"
     Then I see changed label as "Automation" inside "Tasks" in side bar sub menu
 
-  @33880 @all @validateChangeAccordianHeaderSeq-gHome
+  @33880    @validateChangeAccordianHeaderSeq-gHome @smoke
   Scenario: validate after changing accordian header sequence for activities
     Given I have default configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -63,7 +63,7 @@ Feature: Side bar Component Scenarios
     When I setup my app as "As a Grantor"
     Then i see "Manage Forms" shown at number "1" inside "Activities"
 
-  @33883 @all @validateAccordionContentAllowedProfile-gHome @pankaj-blocked @wip
+  @33883    @validateAccordionContentAllowedProfile-gHome @pankaj-blocked @wip
   Scenario Outline: validate accordion content Pending in My tasks is available for a specific added profile
     Given I have default configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
@@ -78,7 +78,7 @@ Feature: Side bar Component Scenarios
       | New-Profile                                                                                                  | Old-Profile                                                                                      |
       | Automation; DT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PD; PM; PO; SME; SPA; SPI; TR1; TR2; TR3; VND; EPOC | DT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PD; PM; PO; SME; SPA; SPI; TR1; TR2; TR3; VND; EPOC |
 
-  @33884 @all @validateLabelChangeOfAccordionHeader-gHome
+  @33884    @validateLabelChangeOfAccordionHeader-gHome
   Scenario: Changing label of accordion Header
     Given I have default configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -90,7 +90,7 @@ Feature: Side bar Component Scenarios
     When I setup my app as "As a Grantor"
     Then I see changed label as "Automation" inside "Tasks" in side accordion header menu
 
-  @33885 @all @validateChangeAccordianContentSeq-gHome
+  @33885    @validateChangeAccordianContentSeq-gHome @smoke
   Scenario: validate after changing accordion content sequence for completed inside my tasks
     Given I have default configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -102,7 +102,7 @@ Feature: Side bar Component Scenarios
     When I setup my app as "As a Grantor"
     Then I see "Completed" shown at number "2" inside "Tasks"
 
-  @33886 @all @validateAccordionContentOpensInNewWindow-gHome
+  @33886    @validateAccordionContentOpensInNewWindow-gHome @smoke
   Scenario Outline: validate accordion content opens in new window
     Given I have default configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -118,7 +118,7 @@ Feature: Side bar Component Scenarios
       | Page title   |
       | My Task Page |
 
-  @33887 @all @validateTargetUrlForAccordionContent-gHome
+  @33887    @validateTargetUrlForAccordionContent-gHome
   Scenario Outline: validate accordion content opens with provided target url
     Given I have default configuration as below:
       | configurationCategory | fieldName  | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |

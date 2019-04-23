@@ -1,9 +1,9 @@
-@charts-component
+@charts-component @regression
 Feature: Charts Component Scenarios
   Test all charts component based scenarios
   As a configuration manager i make different configurational changes in charts component and will validate them.
 
-  @34666 @all @validateTitleField-gplanning
+  @34666    @validateTitleField-gplanning
   Scenario: Changing chart title for 'AnnouncementByAdminBureauUnit' chart in configuration and validating inside planning-programs
     Given I have default configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue             | filterId         |
@@ -16,7 +16,7 @@ Feature: Charts Component Scenarios
     And I navigate to "Planning" tab
     Then I see "Funding Opportunities for Automation" displayed as chart title
 
-  @34667 @all @validateChartDisplayedInCorrectPhase-gAnnouncement
+  @34667    @validateChartDisplayedInCorrectPhase-gAnnouncement
   Scenario: Changing chart phase config to Annoucnement for 'AnnouncementByAdminBureauUnit' chart in configuratin and validating inside annoucenment
     Given I have default configuration as below:
       | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
@@ -31,7 +31,7 @@ Feature: Charts Component Scenarios
     And I navigate to "Announcements" tab
     Then I see "AnnouncementByAdminBureauUnit" displayed as chart title
 
-  @34668 @all @validateAllDataHeaders-gPlannging
+  @34668    @validateAllDataHeaders-gPlannging
   Scenario: Changing chart menu button config to "Funding Opportunity Automation" for 'AnnouncementByAdminBureauUnit' chart  in configuratin and validating inside planning
     Given I have default configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue    | filterId         |
@@ -46,7 +46,7 @@ Feature: Charts Component Scenarios
     When I select "Show All Data" from chart menu of chart "AnnouncementByAdminBureauUnit"
     Then I see "Funding Opportunity Automation" displayed in modal
 
-  @34977 @all @validateDisablingChartLegends-gPlannging
+  @34977    @validateDisablingChartLegends-gPlannging @smoke
   Scenario: Disable chart legends for 'AnnouncementByAdminBureauUnit' chart in configuratin and validating inside planning
     Given I have default configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
@@ -59,7 +59,7 @@ Feature: Charts Component Scenarios
     And I navigate to "Planning" tab
     Then I see chart legends are not displayed for chart "AnnouncementByAdminBureauUnit"
 
-  @34981 @all @validateX-axisLabel-gPlannging
+  @34981    @validateX-axisLabel-gPlannging @smoke
   Scenario: Change chart x-axis label for 'Funding Sources by Total Amount' chart in configuratin and validating inside planning
     Given I have default configuration as below:
       | configurationCategory | fieldName    | fieldOrignalValue      | filterId         |
@@ -72,7 +72,7 @@ Feature: Charts Component Scenarios
     And I navigate to "Planning" tab
     Then I see "Total Allocated Amount Automation" for chart "FundingSourcesbyTotalAmount"
 
-  @34985 @all @validateX-axisPrefix-gPlannging
+  @34985    @validateX-axisPrefix-gPlannging
   Scenario: Change chart x-axis prefix as $ for 'Funding Sources by Total Amount' chart in configuratin and validating inside planning
     Given I have default configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -85,7 +85,7 @@ Feature: Charts Component Scenarios
     And I navigate to "Planning" tab
     Then I see "$" for chart "FundingSourcesbyTotalAmount"
 
-  @35086 @all @validateXFormattedNubers-gPlannging
+  @35086    @validateXFormattedNubers-gPlannging
   Scenario: Enable x-formatted numbers for 'Funding Sources by Total Amount' chart in configuratin and validating inside planning
     Given I have default configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
@@ -98,7 +98,7 @@ Feature: Charts Component Scenarios
     And I navigate to "Planning" tab
     Then I see ",000" for chart "FundingSourcesbyTotalAmount"
 
-  @34984 @all @validateX-axisSuffix-gPlannging
+  @34984    @validateX-axisSuffix-gPlannging
   Scenario: Change chart x-axis suffix as $ for 'Funding Sources by Total Amount' chart in configuratin and validating inside planning
     Given I have default configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |

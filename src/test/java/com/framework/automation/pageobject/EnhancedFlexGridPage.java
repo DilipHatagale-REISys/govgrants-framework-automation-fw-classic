@@ -19,7 +19,8 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	/******* "Variables and Locators" *****************/
 	private final By reachOutToEnhancedGridCollapse, searchInputEnhancedGrid, completeTableRowOfEnhancedGrid,
 			selectRecordCheckBoxForEnhancedGrid, currentBudgetPeriodEndDate, scrollToActionColumn,
-			obligatedAmountSpecificCells, idColumnForChildFlexTable, numberOfAwardscells;
+			obligatedAmountSpecificCells, idColumnForChildFlexTable, numberOfAwardscells,
+			obligatedAmountSpecificCellsAtChildTable;
 
 	/**
 	 * Constructor to handle dependency injection and framework library
@@ -37,6 +38,8 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 		obligatedAmountSpecificCells = By.xpath("//table/tbody/tr/td//*[@field-name='TotalAwardObligatedAmount__c']");
 		idColumnForChildFlexTable = By.xpath("//field[@field-name='Name']//input[@type='text']");
 		numberOfAwardscells = By.xpath("//table/tbody/tr/td//*[@field-name='NumberofAwards__c']");
+		obligatedAmountSpecificCellsAtChildTable = By
+				.xpath("//table/tbody/tr/td//*[@field-name='TotalObligateAmount__c']");
 	}
 
 	/******* "Key Methods with complete functionality - public" *****************/
@@ -330,9 +333,19 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	 * @param colName
 	 * @param colour
 	 */
-	public void assertCellValueColourOfEnhancedGridForSpecificRecordDisplayed(String cellValue, String colName,
-			String colour) {
-		Assert.assertTrue(isSpecificCellValueColourOfEnhancedFlexGrid(cellValue, colName, colour));
+	public void assertCellValueColourOfEnhancedGridForSpecificRecordDisplayed(String cellValue, String tableId,
+			String colorName) {
+		Assert.assertTrue(isSpecificCellValueColourOfEnhancedFlexGrid(cellValue, tableId, colorName));
+	}
+
+	/**
+	 * return true if cell sum value is as expected for obligated amount column at
+	 * child flex table
+	 * 
+	 * @param value
+	 */
+	public void assertCellValueForObligatedAmountAtChildFlexTableOfEnhancedGrid() {
+		Assert.assertTrue(isExpectedSumValueOfObligatedAmountAtChildTableDisplayed());
 	}
 
 	/*********
@@ -577,6 +590,9 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 					+ "']/ancestor::div[contains(@class,'header-title') or 1]/following-sibling::div/div[contains(@class,'header-buttons')]//*[text()='"
 					+ buttonName + "'] |//*[@title='" + headerName + "' or text()='" + headerName
 					+ "']/ancestor::div[contains(@class,'header-title') or 1]/following-sibling::div/action//button[contains(@title,'"
+					+ buttonName + "') or @text()='" + buttonName + "']|//*[@title='" + headerName + "' or text()='"
+					+ headerName
+					+ "']/ancestor::div[contains(@class,'header-title') or 1]/following-sibling::div//button[contains(@title,'"
 					+ buttonName + "') or @text()='" + buttonName + "']")).isDisplayed()) {
 				flag = true;
 			}
@@ -860,15 +876,63 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	 * @return true if changed colour of cell value for specific record is displayed
 	 *         for enhaced grid
 	 */
-	private Boolean isSpecificCellValueColourOfEnhancedFlexGrid(String cellValue, String colName, String colour) {
+	private Boolean isSpecificCellValueColourOfEnhancedFlexGrid(String cellValue, String tableId, String colorName) {
 		boolean flag = false;
 		reiDriver.JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
-		WebElement cellContent = reiDriver.findMyElement().getElement(
-				By.xpath("//td//span[@title='" + cellValue + "' or text()='" + cellValue + "']/ancestor::td"));
-		if (cellContent.getCssValue("color").contains("rgba(255, 0, 0, 1)")
-				|| cellContent.getCssValue("color").contains("rgb(255, 0, 0)")
-				|| cellContent.getAttribute("style").contains("rgb(255, 0, 0)")) {
-			flag = true;
+		WebElement cellContent = reiDriver.findMyElement()
+				.getElement(By.xpath("//div[@id='" + tableId + "']//span[@title='" + cellValue + "' or text()='"
+						+ cellValue + "']/ancestor::td[contains(@class,'ng-scope')]"));
+		switch (colorName.toUpperCase()) {
+		case "RED":
+			if (cellContent.getCssValue("color").contains("rgba(255, 0, 0, 1)")
+					|| cellContent.getCssValue("color").contains("rgb(255, 0, 0)")
+					|| cellContent.getAttribute("style").contains("rgb(255, 0, 0)")) {
+				flag = true;
+			}
+			break;
+		case "BLUE":
+			if (cellContent.getCssValue("color").contains("rgba(11, 11, 160, 1)")
+					|| cellContent.getCssValue("color").contains("rgba(11, 11, 160)")
+					|| cellContent.getAttribute("style").contains("rgb(11, 11, 160)")) {
+				flag = true;
+			}
+			break;
+		case "GREEN":
+			if (cellContent.getCssValue("color").contains("rgba(59, 161, 11, 1")
+					|| cellContent.getCssValue("color").contains("rgb(59, 161, 11")
+					|| cellContent.getAttribute("style").contains("rgb(59, 161, 11)")) {
+				flag = true;
+			}
+			break;
+		}
+		return flag;
+	}
+
+	/**
+	 * return true if expected amount at particular cell inside child flex table of
+	 * enhanced grid table is displayed
+	 * 
+	 * @return
+	 */
+	private boolean isExpectedSumValueOfObligatedAmountAtChildTableDisplayed() {
+		boolean flag = false;
+		reiDriver.WaitFor().makeThreadSleep(4000);
+		try {
+			reiDriver.JavaScript().scrollpageToSpecificElement(obligatedAmountSpecificCellsAtChildTable);
+			List<WebElement> rows_table = reiDriver.findMyElement()
+					.getElements(obligatedAmountSpecificCellsAtChildTable);
+			double sum = 0.00;
+			double totalVal = Double.valueOf(rows_table.get(rows_table.size() - 1).getText().replaceAll("[$|,|']", ""));
+			for (int row = 0; row < rows_table.size() - 1; row++) {
+				if (rows_table.get(row).getText() != null) {
+					sum += Double.valueOf(rows_table.get(row).getText().replaceAll("[$|,|']", ""));
+				}
+			}
+			if (totalVal == sum) {
+				flag = true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		return flag;
 	}

@@ -1,9 +1,9 @@
-@flextable-component
+@flextable-component @regression
 Feature: Flex Table Component Scenarios
   Test all flex table component based scenarios
   As a configuration manager i make different configurational changes in flex table component and will validate them.
 
-  @34022 @all @changeOfFlexTableTitle-gPlanning
+  @34022    @changeOfFlexTableTitle-gPlanning
   Scenario: validate after changing name of flex table title inside planning-programs
     Given I have default configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -16,7 +16,7 @@ Feature: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     Then I see "Automation" shown as flex table title
 
-  @34024 @all @disablingExportFile-gPlanning
+  @34024    @disablingExportFile-gPlanning
   Scenario: validate disabling of PDF/Excel download from menu option in flex table of programs-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -30,7 +30,7 @@ Feature: Flex Table Component Scenarios
     When I click on top right parallel lines bar for "Draft Programs"
     Then I see "Download as PDF""Download as CSV" options inside "Draft Programs" disabled
 
-  @34026 @all @disblingQuickSearch-gPlanning
+  @34026    @disblingQuickSearch-gPlanning
   Scenario: validate disabling of quick search in flex table of programs-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -43,7 +43,7 @@ Feature: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     Then I see quick search option disabled
 
-  @34027 @all @disablingAdvanceFilter-gPlanning
+  @34027    @disablingAdvanceFilter-gPlanning
   Scenario: validate disabling of advance filter from planning-Program flex table
     Given I have default configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -56,7 +56,7 @@ Feature: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     Then I see Advance Filter is disabled from table "toggleFlexTablePrograms"
 
-  @34028 @all @disablingMenuIcon-gPlanning
+  @34028    @disablingMenuIcon-gPlanning
   Scenario: validate disabling of menu icon from Program flex table
     Given I have default configuration as below:
       | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
@@ -69,7 +69,7 @@ Feature: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     Then I see Menu icon is disabled from planning flex table "Draft Programs"
 
-  @34029 @all @enableRecordSelectionForFlex-gPlanning
+  @34029    @enableRecordSelectionForFlex-gPlanning
   Scenario: validate enabling of record selection check boxes in flex table of programs-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -82,7 +82,7 @@ Feature: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     Then I see select check box enabled in flex table
 
-  @34030 @all @disablingAmountTotalForFlex-gPlanning
+  @34030    @disablingAmountTotalForFlex-gPlanning
   Scenario: validate disbaling of total amount in flex table of programs-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -96,7 +96,7 @@ Feature: Flex Table Component Scenarios
     Then I see total amount row in flex table is not displayed
 
 
-  @34031 @all @disablingTotalRowCount-gPlanning
+  @34031    @disablingTotalRowCount-gPlanning
   Scenario: validate disbaling of total row count in flex table of programs-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -109,7 +109,7 @@ Feature: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     Then I see "Total Records" count in "flexTableDivId"
 
-  @34032 @all @additionOfLabelForRowNamedTotal-gPlanning
+  @34032    @additionOfLabelForRowNamedTotal-gPlanning
   Scenario: validate addition of label for row named as total of programs-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField | filterId         |
@@ -122,7 +122,7 @@ Feature: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     Then I see changed label as "Automation Total" of last row name
 
-  @34033 @all @enableAutoIndex-gPlanning
+  @34033    @enableAutoIndex-gPlanning
   Scenario: validate enable auto index for details inside flex table of programs-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -135,7 +135,7 @@ Feature: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     Then I see " #" in flex table header
 
-  @34034 @all @addingfieldNamesOfDifferentDataTypes-gPlanning
+  @34034    @addingfieldNamesOfDifferentDataTypes-gPlanning @smoke
   Scenario Outline: validate adding field names for different data types in flex table of programs-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -160,7 +160,7 @@ Feature: Flex Table Component Scenarios
       | Is Federal Program     | IsFederalProgram__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById   | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
       | Number                 | Number__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById             | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
-  @34035 @all @disableSpecificStatusCategory-gPlanning
+  @34035    @disableSpecificStatusCategory-gPlanning @smoke
   Scenario Outline: validate removing Created status category from flex table of programs-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -177,7 +177,7 @@ Feature: Flex Table Component Scenarios
       | newSoqlFilter                                                                                                   | oldSoqlFilter                                                                                                             |
       | RecordType.Name = 'Internal Program' and Status__c IN ( 'Change Requested','Submitted for Approval','Approved') | RecordType.Name = 'Internal Program' and Status__c IN ( 'Created','Change Requested','Submitted for Approval','Approved') |
 
-  @34037 @all @editActionOpensInNewWindow-gPlanning
+  @34037    @editActionOpensInNewWindow-gPlanning
   Scenario: validate flex table action field- Edit opens in new window
     Given I have default configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue   | filterId         |
@@ -192,7 +192,7 @@ Feature: Flex Table Component Scenarios
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
     Then I see new tab is opened
 
-  @34038 @all @editActionOpensInSameWindow-gPlanning
+  @34038    @editActionOpensInSameWindow-gPlanning @smoke
   Scenario: validate flex table action field- Edit opens in same window
     Given I have default configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue   | filterId         |
@@ -207,7 +207,7 @@ Feature: Flex Table Component Scenarios
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
     Then I see no new tab is opened
 
-  @34039 @all @editActionOpensInOverLayWindow-gPlanning
+  @34039    @editActionOpensInOverLayWindow-gPlanning
   Scenario: validate flex table action field- Edit opens in overlay window
     Given I have default configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue   | filterId         |
@@ -222,7 +222,7 @@ Feature: Flex Table Component Scenarios
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
     Then I see "Edit" opens in overLay window
 
-  @34292 @all @refreshBehaviourFieldAtRolesAndResponsilitiesFlexTableAsRefreshEntirePage-gPlanning
+  @34292    @refreshBehaviourFieldAtRolesAndResponsilitiesFlexTableAsRefreshEntirePage-gPlanning
   Scenario: validate flex table action field- refresh entire page
     Given I have default configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -239,7 +239,7 @@ Feature: Flex Table Component Scenarios
     When I click on "Edit" icon for "Owner" to save inside subtab
     Then I see entire page is refreshing
 
-  @34297 @all @hideForProfileFieldAtRolesAndResponsibilitiesFlexTableAction-gPlanning
+  @34297    @hideForProfileFieldAtRolesAndResponsibilitiesFlexTableAction-gPlanning @smoke
   Scenario: Hide edit row level action for specific profile from configuration and validating it at under roles and responibilities flex table- gPlanning
     Given I have default configuration as below:
       | configurationCategory     | fieldName        | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -255,7 +255,7 @@ Feature: Flex Table Component Scenarios
     When I navigate to "Roles" sub tab
     Then I see "Edit" icon for "Owner" is not displayed inside flex table
 
-  @34298 @all @hideForUserFieldAtRolesAndResponsibilitiesFlexTableAction-gPlanning
+  @34298    @hideForUserFieldAtRolesAndResponsibilitiesFlexTableAction-gPlanning @smoke
   Scenario: Hide edit row level action for specific profile from configuration and validating it at under roles and responibilities flex table- gPlanning
     Given I have default configuration as below:
       | configurationCategory     | fieldName     | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -271,7 +271,7 @@ Feature: Flex Table Component Scenarios
     When I navigate to "Roles" sub tab
     Then I see "Edit" icon for "Owner" is not displayed inside flex table
 
-  @34299 @all @hideForContextFieldAtRolesAndResponsibilitiesFlexTableAction-gPlanning
+  @34299    @hideForContextFieldAtRolesAndResponsibilitiesFlexTableAction-gPlanning @smoke
   Scenario: Hide edit row level action for edit layout from configuration and validating it at under roles and responibilities flex table- gPlanning
     Given I have default configuration as below:
       | configurationCategory     | fieldName        | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -287,7 +287,7 @@ Feature: Flex Table Component Scenarios
     When I navigate to "Roles" sub tab
     Then I see "Edit" icon for "Owner" is not displayed inside flex table
 
-  @34300 @all @hideOperatorFieldUsingANDOperatorAtRolesAndResponsibilitiesFlexTAbleAction-gPlanning
+  @34300    @hideOperatorFieldUsingANDOperatorAtRolesAndResponsibilitiesFlexTAbleAction-gPlanning
   Scenario: Hide edit row level action using AND operator from configuration and validating it at under roles and responibilities flex table- gPlanning
     Given I have default configuration as below:
       | configurationCategory     | fieldName        | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -307,7 +307,7 @@ Feature: Flex Table Component Scenarios
     When I navigate to "Roles" sub tab
     Then I see "Edit" icon for "Owner" is not displayed inside flex table
 
-  @34302 @all @hideOperatorFieldUsingOROperatorAtRolesAndResponsibilitiesFlexTAbleAction-gPlanning
+  @34302    @hideOperatorFieldUsingOROperatorAtRolesAndResponsibilitiesFlexTAbleAction-gPlanning
   Scenario: Hide edit row level action using OR operator from configuration and validating it at under roles and responibilities flex table- gPlanning
     Given I have default configuration as below:
       | configurationCategory     | fieldName        | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -327,7 +327,7 @@ Feature: Flex Table Component Scenarios
     When I navigate to "Roles" sub tab
     Then I see "Edit" icon for "Owner" is not displayed inside flex table
 
-  @39287 @all @headerHelpTextFieldAtFlexTable-gPlanning
+  @39287    @headerHelpTextFieldAtFlexTable-gPlanning
   Scenario Outline: Changing content of header help text field at flex table and validating it at draft program flex table
     Given I have default configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -344,7 +344,7 @@ Feature: Flex Table Component Scenarios
       | new_helpText             | old_helpText                                                                                                       |
       | Help Text for Automation | 'internal program' represents all the programs that the user has access to and are presented as a list or a table. |
 
-  @39296 @all @enableHelpFieldAtFlexTable-gPlanning
+  @39296    @enableHelpFieldAtFlexTable-gPlanning
   Scenario: validate enabling of help inside menu option in flex table of programs-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
@@ -358,7 +358,7 @@ Feature: Flex Table Component Scenarios
     When I click on top right parallel lines bar for "Draft Programs"
     Then I see "Help" options inside "Draft Programs" enabled
 
-  @39298 @all @enablePageSizeFieldAtFlexTable-gPlanning
+  @39298    @enablePageSizeFieldAtFlexTable-gPlanning
   Scenario: validate enabling of page size dropdown at bottom in flex table of programs-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -371,7 +371,7 @@ Feature: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     Then I see "Show" with page size dropdown at "flexTableDivId"
 
-  @39299 @all @enablePaginationFieldAtFlexTable-gPlanning
+  @39299    @enablePaginationFieldAtFlexTable-gPlanning
   Scenario: validate enabling of page size dropdown at bottom in flex table of programs-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -384,7 +384,7 @@ Feature: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     Then I see "Page" with pagination arrow at "flexTableDivId"
 
-  @39302 @all @defaultPageSizeFieldAtFlexTable-gPlanning
+  @39302    @defaultPageSizeFieldAtFlexTable-gPlanning
   Scenario: validate change of default page size inside dropdown at bottom in flex table of programs-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -397,7 +397,7 @@ Feature: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     Then I see "20" records inside flex table id "flexTableDivId"
 
-  @40002 @all @helpTextFieldAtFlexTableColumnHeader-gPlanning
+  @40002    @helpTextFieldAtFlexTableColumnHeader-gPlanning
   Scenario Outline: Changing content of help text field at flex table column header from config and validating it inside flex table of programs-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -415,7 +415,7 @@ Feature: Flex Table Component Scenarios
       | new_helpText             |
       | Help Text for Automation |
 
-  @40004 @all @fieldLabelOverrideFieldAtFlexTableColumnHeader-gPlanning
+  @40004    @fieldLabelOverrideFieldAtFlexTableColumnHeader-gPlanning
   Scenario: Changing specific column name of program flex table from config and validating it inside flex table of programs-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -428,7 +428,7 @@ Feature: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     Then I see "Test" shown as flex table column title
 
-  @39294 @all @skipFieldForExportFieldAtFlexTable-gPlanning
+  @39294    @skipFieldForExportFieldAtFlexTable-gPlanning
   Scenario: Setup skip form export for 'Status_c' in configuration and validating inside program flex table
     Given I have default configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
@@ -440,11 +440,11 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I click on top right parallel lines bar for "Draft Programs"
-    And I select "Download As PDF" from dropdown
+    And I select "Download as PDF" from parallel lines dropdown of "Draft Programs"
     And I download the file
     Then I do not see "Status" on page "1" of "govgrants" pdf file
 
-  @40005 @all @enableTotalFieldAtFlexTable-gPlanning
+  @40005    @enableTotalFieldAtFlexTable-gPlanning
   Scenario: Enabling total amount inside funded amount columb for all records config and validating it inside flex table of programs-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
@@ -457,7 +457,7 @@ Feature: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     Then I see total amount in flex table
 
-  @40012 @all @sequenceFieldAtFlexTableAction-gPlanning
+  @40012    @sequenceFieldAtFlexTableAction-gPlanning
   Scenario: Changing sequence of edit row level action item at flex table from config and validating it inside flex table of programs-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -471,7 +471,7 @@ Feature: Flex Table Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     Then I see "Edit" row action Button at position "1"
 
-  @40014 @all @buttonHelpTextFieldAtFlexTableAction-gPlanning
+  @40014    @buttonHelpTextFieldAtFlexTableAction-gPlanning
   Scenario: Changing content of button help text field at flex table action from config and validating it inside flex table of programs-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -485,7 +485,7 @@ Feature: Flex Table Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     Then I see "Automation Help" as title for "Test program for automation - Created mode only" inside flex table action
 
-  @40015 @all @actionURLFieldAtFlexTableAction-gPlanning
+  @40015    @actionURLFieldAtFlexTableAction-gPlanning
   Scenario Outline: Changing action url of action url field for edit action from config and validating it at flex table of program-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName  | fieldOrignalValue | filterId         |
@@ -504,7 +504,7 @@ Feature: Flex Table Component Scenarios
       | oldActionUrl                                                     | newActionUrl            |
       | /apex/ProgramEdit?id={!Program__c.Id}&RecordType=InternalProgram | https://www.google.com/ |
 
-  @40020 @all @iconCSSFieldAtFlexTableAction-gPlanning
+  @40020    @iconCSSFieldAtFlexTableAction-gPlanning
   Scenario: Setup icon for flex table edit action from config and validating it at flex table of program-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue                                  | filterId         |
@@ -518,7 +518,7 @@ Feature: Flex Table Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     Then I see external link icon as "Test program for automation - Created mode only" for "Edit" inside flex table action
 
-  @40079 @all @locationFieldAtFlexTableRowLevelEditAction-gPlanning
+  @40079    @locationFieldAtFlexTableRowLevelEditAction-gPlanning @smoke
   Scenario: Changing location of roles and responsibilities flex table edit action from row to top from config anf validating it inside Roles and Responsibilities flex table
     Given I have default configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -536,7 +536,7 @@ Feature: Flex Table Component Scenarios
     When I navigate to "Roles" sub tab
     Then I see "Edit" button inside "Roles And Responsibilities" flex table
 
-  @40080 @all @locationFieldAtFlexTableTopLevelNewAction-gPlanning
+  @40080    @locationFieldAtFlexTableTopLevelNewAction-gPlanning
   Scenario: Changing location of roles and responsibilities flex table new action button from top to row from config anf validating it inside Roles and Responsibilities flex table
     Given I have default configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -553,7 +553,7 @@ Feature: Flex Table Component Scenarios
     When I navigate to "Roles" sub tab
     Then I see "New" icon for "Owner" is displayed inside flex table
 
-  @40087 @all @headerActionDisplayTypeFieldAtFlexTableTopLevelNewActionAsMenu-gPlanning
+  @40087    @headerActionDisplayTypeFieldAtFlexTableTopLevelNewActionAsMenu-gPlanning
   Scenario: Changing display type of roles and responsibilities flex table new action button from button to menu from config anf validating it inside Roles and Responsibilities flex table
     Given I have default configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -570,7 +570,7 @@ Feature: Flex Table Component Scenarios
     When I click on top right parallel lines bar for "Roles And Responsibilities"
     Then I see "New" options inside "Roles And Responsibilities" enabled
 
-  @40088 @all @headerActionDisplayTypeFieldAtFlexTableTopLevelNewActionAsLink-gPlanning
+  @40088    @headerActionDisplayTypeFieldAtFlexTableTopLevelNewActionAsLink-gPlanning
   Scenario: Changing display type of roles and responsibilities flex table new action button from button to menu from config anf validating it inside Roles and Responsibilities flex table
     Given I have default configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -586,7 +586,7 @@ Feature: Flex Table Component Scenarios
     When I navigate to "Roles" sub tab
     Then I see "New" button inside "Roles And Responsibilities" flex table
 
-  @40096 @all @headerActionDisplayTypeFieldAtFlexTableTopLevelViewSubmittedApplicationsAsLink-gPlanning
+  @40096    @headerActionDisplayTypeFieldAtFlexTableTopLevelViewSubmittedApplicationsAsLink-gPlanning @smoke
   Scenario: Changing display type of roles and responsibilities flex table new action button from button to menu from config anf validating it at flex table of program-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue  |
@@ -599,7 +599,7 @@ Feature: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     Then I see "View Submitted Applications" options inside "Draft Programs" enabled
 
-  @40100 @all @showConfirmationBoxFieldForProgramFlexTAbleViewAction-gPlanning
+  @40100    @showConfirmationBoxFieldForProgramFlexTAbleViewAction-gPlanning
   Scenario: Setup confirmation box for program flex table view action configuration and validating it at flex table of program-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -614,7 +614,7 @@ Feature: Flex Table Component Scenarios
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table with table id "toggleFlexTablePrograms" without processing
     Then I see confirmation box with body "null" is displayed
 
-  @40102 @all @ConfirmationMessageFieldForProgramFlexTAbleViewAction-gPlanning
+  @40102    @ConfirmationMessageFieldForProgramFlexTAbleViewAction-gPlanning
   Scenario: Setup confirmation message for program flex table view action from configuration and validating it at flex table of program-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -631,7 +631,7 @@ Feature: Flex Table Component Scenarios
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table with table id "toggleFlexTablePrograms" without processing
     Then I see confirmation box with body "Automation" is displayed
 
-  @40103 @all @modalTitleFieldForProgramFlexTAbleViewAction-gPlanning
+  @40103    @modalTitleFieldForProgramFlexTAbleViewAction-gPlanning
   Scenario: Setup modal title for program flex table view action from configuration and validating it at flex table of program-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -648,7 +648,7 @@ Feature: Flex Table Component Scenarios
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Automation Title" displayed in flex table Action modal
 
-  @40106 @all @hideForProfileFieldAtProgramFlexTableEditAction-gPlanning
+  @40106    @hideForProfileFieldAtProgramFlexTableEditAction-gPlanning @smoke
   Scenario Outline: Hide edit row level action for specific profile from configuration and validating it at under program flex table- gPlanning
     Given I have default configuration as below:
       | configurationCategory     | fieldName                | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -670,7 +670,7 @@ Feature: Flex Table Component Scenarios
       | defaultExpression                                      | defaultHideDecisionField |
       | Status__c <> 'Created' AND Status__c<> 'Being Amended' | HideEditDeleteBtn__c     |
 
-  @40109 @all @hideForUserFieldAtProgramFlexTableEditAction-gPlanning
+  @40109    @hideForUserFieldAtProgramFlexTableEditAction-gPlanning @smoke
   Scenario Outline: Hide edit row level action for specific user from configuration and validating it at under program flex table- gPlanning
     Given I have default configuration as below:
       | configurationCategory     | fieldName                | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -692,7 +692,7 @@ Feature: Flex Table Component Scenarios
       | defaultExpression                                      | defaultHideDecisionField |
       | Status__c <> 'Created' AND Status__c<> 'Being Amended' | HideEditDeleteBtn__c     |
 
-  @40112 @all @hideForContextFieldAtProgramFlexTableEditAction-gPlanning
+  @40112    @hideForContextFieldAtProgramFlexTableEditAction-gPlanning @smoke
   Scenario Outline: Hide edit row level action for view layout from configuration and validating it at under program flex table- gPlanning
     Given I have default configuration as below:
       | configurationCategory     | fieldName                | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -714,7 +714,7 @@ Feature: Flex Table Component Scenarios
       | defaultExpression                                      | defaultHideDecisionField |
       | Status__c <> 'Created' AND Status__c<> 'Being Amended' | HideEditDeleteBtn__c     |
 
-  @40115 @all @hideDecisionFieldAtProgramFlexTableEditAction-gPlanning
+  @40115    @hideDecisionFieldAtProgramFlexTableEditAction-gPlanning @smoke
   Scenario Outline: Hide edit row level action for view layout from configuration and validating it at under program flex table- gPlanning
     Given I have default configuration as below:
       | configurationCategory     | fieldName                | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -750,7 +750,7 @@ Feature: Flex Table Component Scenarios
       | defaultExpression                                      | defaultHideDecisionField |
       | Status__c <> 'Created' AND Status__c<> 'Being Amended' | HideEditDeleteBtn__c     |
 
-  @40119 @all @hideOperatorFieldUsingANDOperatorAtProgramFlexTAbleAction-gPlanning
+  @40119    @hideOperatorFieldUsingANDOperatorAtProgramFlexTAbleAction-gPlanning
   Scenario Outline: Hide edit row level action using AND operator for program flex table from configuration and validating it at under programs flex table- gPlanning
     Given I have default configuration as below:
       | configurationCategory     | fieldName                | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -775,7 +775,7 @@ Feature: Flex Table Component Scenarios
       | defaultExpression                                      | defaultHideDecisionField |
       | Status__c <> 'Created' AND Status__c<> 'Being Amended' | HideEditDeleteBtn__c     |
 
-  @40121 @all @hideOperatorFieldUsingOROperatorAtProgramFlexTAbleAction-gPlanning
+  @40121    @hideOperatorFieldUsingOROperatorAtProgramFlexTAbleAction-gPlanning
   Scenario Outline: Hide edit row level action using AND operator for program flex table from configuration and validating it at under programs flex table- gPlanning
     Given I have default configuration as below:
       | configurationCategory     | fieldName                | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -801,7 +801,7 @@ Feature: Flex Table Component Scenarios
       | defaultExpression                                      | defaultHideDecisionField |
       | Status__c <> 'Created' AND Status__c<> 'Being Amended' | HideEditDeleteBtn__c     |
 
-  @40124 @all @hideExpressionJSONFieldAtProgramFlexTable-gPlanning
+  @40124    @hideExpressionJSONFieldAtProgramFlexTable-gPlanning @smoke
   Scenario: Hide edit row level action for program flex table from json configuration and validating it under program flex table-gPlanning
     Given I have default configuration as below:
       | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -815,7 +815,7 @@ Feature: Flex Table Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
 
-  @40128 @all @hideForProfileFieldAtActiveFundingOpprtunityFlexTableCreateAction-gAnnouncement
+  @40128    @hideForProfileFieldAtActiveFundingOpprtunityFlexTableCreateAction-gAnnouncement @smoke
   Scenario: Hide create top level action for specific profile from configuration and validating it at under active funding opprtunities flex table- gPlanning
     Given I have default configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -829,7 +829,7 @@ Feature: Flex Table Component Scenarios
     When I select "Draft Announcements" from double headed dropdown inside admin portal
     Then I see "Create" button inside "Draft Announcements" flex table not displayed
 
-  @40129 @all @hideForUserFieldAtActiveFundingOpprtunityFlexTableCreateAction-gAnnouncement
+  @40129    @hideForUserFieldAtActiveFundingOpprtunityFlexTableCreateAction-gAnnouncement @smoke
   Scenario: Hide create top level action for specific profile from configuration and validating it at under active funding opprtunities flex table- gPlanning
     Given I have default configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -843,7 +843,7 @@ Feature: Flex Table Component Scenarios
     When I select "Draft Announcements" from double headed dropdown inside admin portal
     Then I see "Create" button inside "Draft Announcements" flex table not displayed
 
-  @40217 @all @hideOperatorFieldUsingANDOperatorAtActiveFundingOpprtunityFlexTableCreateAction-gAnnouncement
+  @40217    @hideOperatorFieldUsingANDOperatorAtActiveFundingOpprtunityFlexTableCreateAction-gAnnouncement
   Scenario: Hide create top level action for specific profile from configuration and validating it at under active funding opprtunities flex table- gPlanning
     Given I have default configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -860,7 +860,7 @@ Feature: Flex Table Component Scenarios
     When I select "Draft Announcements" from double headed dropdown inside admin portal
     Then I see "Create" button inside "Draft Announcements" flex table not displayed
 
-  @40219 @all @hideOperatorFieldUsingOROperatorAtActiveFundingOpprtunityFlexTableCreateAction-gAnnouncement
+  @40219    @hideOperatorFieldUsingOROperatorAtActiveFundingOpprtunityFlexTableCreateAction-gAnnouncement
   Scenario: Hide create top level action for specific profile from configuration and validating it at under active funding opprtunities flex table- gPlanning
     Given I have default configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -878,7 +878,7 @@ Feature: Flex Table Component Scenarios
     When I select "Draft Announcements" from double headed dropdown inside admin portal
     Then I see "Create" button inside "Draft Announcements" flex table not displayed
 
-  @40220 @all @hideExpressionJSONFieldAtActiveFundingOpprtunityFlexTableCreateAction-gAnnouncement
+  @40220    @hideExpressionJSONFieldAtActiveFundingOpprtunityFlexTableCreateAction-gAnnouncement @smoke
   Scenario: Hide create top level action for specific profile from configuration and validating it at under active funding opprtunities flex table- gPlanning
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -892,7 +892,7 @@ Feature: Flex Table Component Scenarios
     When I select "Draft Announcements" from double headed dropdown inside admin portal
     Then I see "Create" button inside "Draft Announcements" flex table not displayed
 
-  @40225 @all @activeFieldAtFlexTable-gPlanning
+  @40225    @activeFieldAtFlexTable-gPlanning @smoke
   Scenario: Disabling active programs from list view of program flex table from config and validating it at program flex table-programs
     Given I have default configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -906,7 +906,7 @@ Feature: Flex Table Component Scenarios
     When I click toggle button for "Draft Programs"
     Then I see "Active Programs" is not displayed inside program flex table dropdown
 
-  @40233 @all @showInPdfFieldAtFlexTable-gPlanning
+  @40233    @showInPdfFieldAtFlexTable-gPlanning
   Scenario: Disabling active programs from list view of program flex table from config and validating it at program flex table-programs
     Given I have default configuration as below:
       | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
@@ -918,7 +918,7 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I click on top right parallel lines bar for "Draft Programs"
-    And I select "Download As PDF" from dropdown
+    And I select "Download as PDF" from parallel lines dropdown of "Draft Programs"
     And I download the file
     Then I see "Active Programs" on page "1" of "govgrants" pdf file
 

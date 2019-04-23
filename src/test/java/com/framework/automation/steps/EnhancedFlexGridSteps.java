@@ -162,9 +162,14 @@ public class EnhancedFlexGridSteps {
 	public void assertApprovalDecisionMandatoryErrorNotDisplayed(String error) {
 		enhancedFlexGrid.assertIsMasterViewErrorMessageIsNotDisplayed(error);
 	}
-	
-	@Then("^I see \"([^\"]*)\" inside enhanced grid table for specified record \"([^\"]*)\" in \"([^\"]*)\" colour$")
-	public void assertEnhancedGridSpecificCellValue(String cellValue, String colName, String colour) {
-		enhancedFlexGrid.assertCellValueColourOfEnhancedGridForSpecificRecordDisplayed(cellValue, colName, colour);
+
+	@Then("^I see \"([^\"]*)\" inside enhanced grid table id \"([^\"]*)\" in \"([^\"]*)\" colour$")
+	public void assertEnhancedGridSpecificCellValueWithColor(String cellValue, String tableId, String colorName) {
+		enhancedFlexGrid.assertCellValueColourOfEnhancedGridForSpecificRecordDisplayed(cellValue, tableId, colorName);
+	}
+
+	@Then("^I see cell subtotal for obligated amount at child table of enhanced grid$")
+	public void assertCellValueAtObligatedAmountForChildTable() {
+		enhancedFlexGrid.assertCellValueForObligatedAmountAtChildFlexTableOfEnhancedGrid();
 	}
 }

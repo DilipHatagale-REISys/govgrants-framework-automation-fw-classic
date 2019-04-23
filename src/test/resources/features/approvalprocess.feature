@@ -1,9 +1,9 @@
-@approvalprocess-component
+@approvalprocess-component @regression
 Feature: Approval Process Component Scenarios
   Test all approval process component based scenarios
   As a configuration manager i make different configurational changes in approval process component and will validate them.
 
-  @34305 @all @hideApproveOption-Programs
+  @34305    @hideApproveOption-Programs @smoke
   Scenario: Hiding approve option from configuration and validating its content in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory    | fieldName   | fieldOrignalValue | filterId         |
@@ -26,7 +26,7 @@ Feature: Approval Process Component Scenarios
     When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
     Then I see "Approve" is disabled
 
-  @34307 @all @changeApproveOptionSequence-Programs
+  @34307    @changeApproveOptionSequence-Programs @smoke
   Scenario: Changing sequence of Approve option from configuration and validating its sequence in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory    | fieldName | fieldOrignalValue | filterId         |
@@ -49,7 +49,7 @@ Feature: Approval Process Component Scenarios
     When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
     Then i see "Approve" shown at number "3" in Approve Decision panel
 
-  @34308 @all @mandatoryCommentsReqForApproveAction-Programs
+  @34308    @mandatoryCommentsReqForApproveAction-Programs
   Scenario: Setup comments requried as mandatory for approval from configuration and in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory    | fieldName         | fieldOrignalValue | filterId         |
@@ -74,7 +74,7 @@ Feature: Approval Process Component Scenarios
     And I click submit
     Then I see "Comments are Required." error is displayed
 
-  @34306 @all @labelChangeOfApprovalDecision-Programs
+  @34306    @labelChangeOfApprovalDecision-Programs
   Scenario: Changing label of approve radio button text from configuration and validating its changed label in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory    | fieldName             | fieldOrignalValue | filterId         |
@@ -97,7 +97,7 @@ Feature: Approval Process Component Scenarios
     When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
     Then I see "Approved" inside approval decision box
 
-  @34309 @all @confirmationMessageBoxPopupForApproveApprovalDecisionAction-Programs
+  @34309    @confirmationMessageBoxPopupForApproveApprovalDecisionAction-Programs
   Scenario: Setup confirmation message inside confirmation message box from configuration and validating it in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory    | fieldName          | fieldOrignalValue | filterId         |
@@ -124,7 +124,7 @@ Feature: Approval Process Component Scenarios
     And I click submit
     Then I see confirmation box with body "Confirmation box for automation" is displayed
 
-  @34310 @all @filterCriteriaForUserReassignForApprovalDecisionAction-Programs
+  @34310    @filterCriteriaForUserReassignForApprovalDecisionAction-Programs
   Scenario Outline: Entering filter criteria for user reassign using forward action from configuration and validating it in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory    | fieldName                         | fieldOrignalValue | filterId         |
@@ -152,7 +152,7 @@ Feature: Approval Process Component Scenarios
       | newFilterCriteriaValue |
       | Name='Allen PM'        |
 
-  @34311 @wip @automationNotRequired @approverTaskNotCreatedPrograms-Programs
+  @34311 @wip @automationNotRequired @approverTaskNotCreatedPrograms-Programs @smoke
   Scenario: Change approver setting for not receiveing approve task in configuration and validate that pending approver task is not displayed
     Given I have default configuration as below:
       | configurationCategory        | fieldName      | fieldOrignalValue  | filterId         |
@@ -174,7 +174,7 @@ Feature: Approval Process Component Scenarios
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     Then I see approval with subject as "Test program for automation -  SA mode only - Not approved" is not displayed
 
-  @34313 @all @successEmailSentToProgramOwner-Programs
+  @34313    @successEmailSentToProgramOwner-Programs
   Scenario: Setup email setting in configuration and validate that program owner receiving email for program approval
     Given I have default configuration as below:
       | configurationCategory        | fieldName            | fieldOrignalValue | filterId         |
@@ -205,7 +205,7 @@ Feature: Approval Process Component Scenarios
     When I select "Queued Emails" from double headed dropdown inside admin portal
     Then I see email is generated with template "Program_Approved_Email_Template"
 
-  @34314 @all @confirmationMessageBoxPopupForApprovalDecisionUsingApprovalCache-Programs
+  @34314    @confirmationMessageBoxPopupForApprovalDecisionUsingApprovalCache-Programs @smoke
   Scenario: Setup confirmation message inside confirmation message box from approval process step cache configuration and validating it in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory        | fieldName                    | fieldOrignalValue | filterId         |
@@ -233,7 +233,7 @@ Feature: Approval Process Component Scenarios
     And I click submit
     Then I see confirmation box with body "Confirmation box for automation" is displayed
 
-  @34317 @all @taskAssignmentNotificationForProgramSubmissionThroughMail-Programs
+  @34317    @taskAssignmentNotificationForProgramSubmissionThroughMail-Programs
   Scenario: Setup email setting in configuration and validate that program owner receiving email for program submitted for approval
     Given I have default configuration as below:
       | configurationCategory | fieldName                          | fieldOrignalValue | filterId         |
@@ -255,15 +255,17 @@ Feature: Approval Process Component Scenarios
     When I select "Queued Emails" from double headed dropdown inside admin portal
     Then I see email is generated with template "TaskReminderTemplateMultiple"
 
-  @34316 @all @completeOnViewForSendToOwnerTaskConfig-Programs
+  @34316    @completeOnViewForSendToOwnerTaskConfig-Programs
   Scenario: Setup complete on view checkbox to true from send to owner task configuration and validating it by owner user
     Given I have default configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Task Config           | Complete On View? | false             | ApiGeneratedId:1 |
+      | Page Tabs Config      | Is Active         | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory   | fieldName         | fieldNewValue | coreComponentField                                         |
-      | Program                 | Status            | Created       | Test program for automation -  SA mode only - Not approved |
-      | Task Config:Task Action | Complete On View? | true          | Approve Program                                            |
+      | configurationCategory                | fieldName         | fieldNewValue | coreComponentField                                         | coreCOmponentSubFieldName | coreComponentSubFieldValue |                   
+      | Program                              | Status            | Created       | Test program for automation -  SA mode only - Not approved |                           |                            |
+      | Task Config:Task Action              | Complete On View? | true          | Approve Program                                            |                           |                            |
+      | Page Tabs Config:Page Layout Action  | Is Active         | false         | Grantee State Program                                      | Name                      | TAB-027                    |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -287,7 +289,7 @@ Feature: Approval Process Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     Then I see approval with subject as "Program Sent To Owner" is not displayed
 
-  @37348 @all @rejectConfirmationMessageFieldAtApprovalProcess-Programs
+  @37348    @rejectConfirmationMessageFieldAtApprovalProcess-Programs @smoke
   Scenario: Setup confirmation message inside confirmation message box for reject from configuration and validating it in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory        | fieldName                   | fieldOrignalValue | filterId         |
@@ -315,7 +317,7 @@ Feature: Approval Process Component Scenarios
     And I click submit
     Then I see confirmation box with body "Reject Confirmation box for automation" is displayed
 
-  @37431 @all @reassignConfirmationMessageFieldAtApprovalProcess-Programs
+  @37431    @reassignConfirmationMessageFieldAtApprovalProcess-Programs
   Scenario: Setup confirmation message inside confirmation message box for reassign from configuration and validating it in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory        | fieldName                     | fieldOrignalValue | filterId         |
@@ -345,7 +347,7 @@ Feature: Approval Process Component Scenarios
     And I click submit
     Then I see confirmation box with body "Reassign Confirmation box for automation" is displayed
 
-  @37433 @all @sendToOwnerConfirmationMessageFieldAtApprovalProcess-Programs
+  @37433    @sendToOwnerConfirmationMessageFieldAtApprovalProcess-Programs
   Scenario: Setup confirmation message inside confirmation message box for reassign from configuration and validating it in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory        | fieldName                          | fieldOrignalValue | filterId         |
@@ -373,7 +375,7 @@ Feature: Approval Process Component Scenarios
     And I click submit
     Then I see confirmation box with body "Send to Owner Confirmation box for automation" is displayed
 
-  @37506 @all @confirmationMessageBoxPopupForRejectApprovalDecisionAction-Programs
+  @37506    @confirmationMessageBoxPopupForRejectApprovalDecisionAction-Programs
   Scenario: Setup confirmation message inside confirmation message box for reject approval decision action using Approval Decision Action from configuration and validating it in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -401,7 +403,7 @@ Feature: Approval Process Component Scenarios
     And I click submit
     Then I see confirmation box with body "Test Automation for Rejection" is displayed
 
-  @37523 @all @confirmationMessageBoxPopupForReassignApprovalDecisionAction-Programs
+  @37523    @confirmationMessageBoxPopupForReassignApprovalDecisionAction-Programs
   Scenario: Setup confirmation message inside confirmation message box for reassign approval decision action using Approval Decision Action from configuration and validating it in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -431,7 +433,7 @@ Feature: Approval Process Component Scenarios
     And I click submit
     Then I see confirmation box with body "Test Automation for Forward" is displayed
 
-  @37539 @all @commentsFieldAPINameFieldForApproveAction-Programs
+  @37539    @commentsFieldAPINameFieldForApproveAction-Programs
   Scenario: Setup comments as FederalProgramCFDA__c inside comments field API field using Approval decision action config from config and validating it at program detail page
     Given I have default configuration as below:
       | configurationCategory    | fieldName               | fieldOrignalValue | filterId         |
@@ -462,7 +464,7 @@ Feature: Approval Process Component Scenarios
     When I click on "View Program Details" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
     Then I see "Automation testing" inside page block details
 
-  @38847 @all @confirmationMessageBoxPopupForSendToOwnerApprovalDecisionAction-Programs
+  @38847    @confirmationMessageBoxPopupForSendToOwnerApprovalDecisionAction-Programs @smoke
   Scenario: Setup confirmation message inside confirmation message box for send back approval decision action using Approval Decision Action from configuration and validating it in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -490,7 +492,7 @@ Feature: Approval Process Component Scenarios
     And I click submit
     Then I see confirmation box with body "Test Automation for Sendback" is displayed
 
-  @37540 @all @viewPageProfileFieldForApprovalProcess-Programs @AutomationNotRequired @wip
+  @37540    @viewPageProfileFieldForApprovalProcess-Programs @AutomationNotRequired @wip
   Scenario Outline: Changing user inside profile field inside task config from config validating it at program approval page
     Given I have default configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
@@ -516,7 +518,7 @@ Feature: Approval Process Component Scenarios
       | oldProfiles                                                                                                         | newProfiles                                                                                                     |
       | ADT; CON; CTR; DA; DEV; EPOC; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND | ADT; CON; CTR; DA; DEV; EPOC; EXE; FD; FO; GA; GMO; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND |
 
-  @37645 @all @successEmailSentWithRejectTemplateToProgramOwner-Programs
+  @37645    @successEmailSentWithRejectTemplateToProgramOwner-Programs @smoke
   Scenario: Setup email setting in configuration and validate that program owner receiving email with reject email template for program approval
     Given I have default configuration as below:
       | configurationCategory        | fieldName              | fieldOrignalValue | filterId         |
@@ -549,7 +551,7 @@ Feature: Approval Process Component Scenarios
     When I select "Queued Emails" from double headed dropdown inside admin portal
     Then I see email is generated with template "Program_Rejected_Email_Template"
 
-  @37646 @all @rejectEmailSentWithApproveTemplateToProgramOwner-Programs
+  @37646    @rejectEmailSentWithApproveTemplateToProgramOwner-Programs
   Scenario: Setup email setting in configuration and validate that program owner receiving email for rejection with approve email template for program approval
     Given I have default configuration as below:
       | configurationCategory        | fieldName             | fieldOrignalValue | filterId         |
@@ -584,7 +586,7 @@ Feature: Approval Process Component Scenarios
     When I select "Queued Emails" from double headed dropdown inside admin portal
     Then I see email is generated with template "Program_Approved_Email_Template"
 
-  @37656 @all @reassignedEmailSentWithApproveTemplateToProgramOwner-Programs
+  @37656    @reassignedEmailSentWithApproveTemplateToProgramOwner-Programs
   Scenario: Setup email setting in configuration and validate that program owner receiving email for reassign with approve email template for program approval
     Given I have default configuration as below:
       | configurationCategory        | fieldName                 | fieldOrignalValue | filterId         |
@@ -619,7 +621,7 @@ Feature: Approval Process Component Scenarios
     When I select "Queued Emails" from double headed dropdown inside admin portal
     Then I see email is generated with template "Program_Approved_Email_Template"
 
-  @37666 @all @sendToOwnerEmailSentWithApproveTemplateToProgramOwner-Programs
+  @37666    @sendToOwnerEmailSentWithApproveTemplateToProgramOwner-Programs
   Scenario: Setup email setting in configuration and validate that program owner receiving email for reassign with approve email template for program approval
     Given I have default configuration as below:
       | configurationCategory        | fieldName                    | fieldOrignalValue | filterId         |
@@ -653,7 +655,7 @@ Feature: Approval Process Component Scenarios
     When I select "Queued Emails" from double headed dropdown inside admin portal
     Then I see email is generated with template "Program_Approved_Email_Template"
 
-  @37667 @all @notifyAdditionalPeopleThroughEmailWithApproveTemplateToProgramOwner-Programs
+  @37667    @notifyAdditionalPeopleThroughEmailWithApproveTemplateToProgramOwner-Programs
   Scenario: Setup email setting in configuration and validate that program owner receiving email for program approval
     Given I have default configuration as below:
       | configurationCategory        | fieldName                | fieldOrignalValue | filterId         |
@@ -685,7 +687,7 @@ Feature: Approval Process Component Scenarios
     When I select "Queued Emails" from double headed dropdown inside admin portal
     Then I see email is generated with template "Program_Approved_Email_Template"
 
-  @41058 @all @mandatoryCommentsReqForReassignAction-Programs
+  @41058    @mandatoryCommentsReqForReassignAction-Programs
   Scenario: Setup comments requried as mandatory for reassign from configuration and in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory    | fieldName         | fieldOrignalValue | filterId         |
@@ -710,7 +712,7 @@ Feature: Approval Process Component Scenarios
     And I click submit
     Then I see "Comments are Required." error is displayed
 
-  @41059 @all @commentsFieldAPINameFieldForReassignAction-Programs
+  @41059    @commentsFieldAPINameFieldForReassignAction-Programs
   Scenario: Setup comments as FederalProgramCFDA__c inside comments field API field using Approval decision action config from config and validating it at program detail page
     Given I have default configuration as below:
       | configurationCategory    | fieldName               | fieldOrignalValue | filterId         |
@@ -743,7 +745,7 @@ Feature: Approval Process Component Scenarios
     When I click on "View Program Details" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
     Then I see "Automation testing" inside page block details
 
-  @41063 @all @hideApproveOptionFromHideExpressionJSONField-Programs
+  @41063    @hideApproveOptionFromHideExpressionJSONField-Programs @smoke
   Scenario: Hiding approve option from configuration and validating its content in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -766,7 +768,7 @@ Feature: Approval Process Component Scenarios
     When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
     Then I see "Approve" is disabled
 
-  @41064 @all @hideDisapproveOptionFromHideExpressionJSONField-Programs
+  @41064    @hideDisapproveOptionFromHideExpressionJSONField-Programs
   Scenario: Hiding reject option from configuration and validating its content in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -789,7 +791,7 @@ Feature: Approval Process Component Scenarios
     When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
     Then I see "Disapprove" is disabled
 
-  @41065 @all @hideReassignOptionFromHideExpressionJSONField-Programs
+  @41065    @hideReassignOptionFromHideExpressionJSONField-Programs
   Scenario: Hiding forward option from configuration and validating its content in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -812,7 +814,7 @@ Feature: Approval Process Component Scenarios
     When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
     Then I see "Reassign" is disabled
 
-  @41067 @all @hideSendToOwnerOptionFromHideExpressionJSONField-Programs
+  @41067    @hideSendToOwnerOptionFromHideExpressionJSONField-Programs 
   Scenario: Hiding send back option from configuration and validating its content in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -835,7 +837,7 @@ Feature: Approval Process Component Scenarios
     When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
     Then I see "Send to Owner" is disabled
 
-  @41060 @all @validateCommentedTextInsideHistoryTabForReassignAction-Programs
+  @41060    @validateCommentedTextInsideHistoryTabForReassignAction-Programs @smoke
   Scenario: Validating commented text inside history tab for reassign approval action at program detail page
       Given I setup test configuration as below:
       | configurationCategory                | fieldName                    | fieldNewValue                   | coreComponentField                                                              | coreCOmponentSubFieldName | coreComponentSubFieldValue |

@@ -204,6 +204,11 @@ public class FlexTableSteps {
 		flexTablePage.assertTextDisplayedInPDF(text, Integer.parseInt(pageNumber), fileName);
 	}
 
+	@Then("^I see \"([^\"]*)\" in xls file \"([^\"]*)\"$")
+	public void assertTExtNotDisplayedInXLS(String text, String fileName) {
+		flexTablePage.assertTextDisplayedInXLS(text, fileName);
+	}
+
 	@Then("^I do not see \"([^\"]*)\" error$")
 	public void assertNoError(String errorMessage) {
 		flexTablePage.assertErrorMessageNotDisplayed(errorMessage);

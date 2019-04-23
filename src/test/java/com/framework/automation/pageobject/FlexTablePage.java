@@ -1,5 +1,9 @@
 package com.framework.automation.pageobject;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -365,7 +369,7 @@ public class FlexTablePage extends GovGrantsManager {
 	public void assertTextDisplayedInPDF(String text, int pageNumber, String fileName) {
 		Assert.assertFalse(isTextNotDisplayedInFile(text, pageNumber, fileName));
 	}
-	
+
 	/**
 	 * Click on toggle button inside program flex table
 	 */
@@ -383,6 +387,14 @@ public class FlexTablePage extends GovGrantsManager {
 			}
 
 		} while (executionTime > System.currentTimeMillis() / 1000);
+	}
+
+	/**
+	 * assert if specified text is displayed inside downloaded xls file
+	 * 
+	 */
+	public void assertTextDisplayedInXLS(String text, String fileName) {
+		Assert.assertFalse(isTextNotDisplayedInXLSFile(text, fileName));
 	}
 
 	/**
@@ -636,7 +648,11 @@ public class FlexTablePage extends GovGrantsManager {
 	private WebElement getOverLayTitle(String titleName) {
 		return reiDriver.WaitFor().WaitForElementToBePresent(By.xpath(
 				"//iframe[contains(@ng-src,'apex') or contains(@src,'apex')]//ancestor::div[contains(@class,'modal-content')][1]//p[text()='"
-						+ titleName + "']"));
+						+ titleName
+						+ "']|//iframe[contains(@ng-src,'apex') or contains(@src,'apex')]//ancestor::div[contains(@class,'modal-content')][1]//p[text()='"
+						+ titleName
+						+ "']| //iframe[contains(@ng-src,'apex') or contains(@src,'apex')]//ancestor::div[contains(@class,'modal-content')][1]//div[contains(text(),'"
+						+ titleName + "')]"));
 	}
 
 	/**
@@ -800,6 +816,25 @@ public class FlexTablePage extends GovGrantsManager {
 		boolean flag = true;
 		if (readPDF(pageNumber, fileName).contains(text)) {
 			flag = false;
+		}
+		return flag;
+	}
+
+	/**
+	 * return true if expected text is not displayed inside downloaded xls file
+	 * 
+	 * @param text
+	 * @param fileName
+	 * @return
+	 */
+	private boolean isTextNotDisplayedInXLSFile(String text, String fileName) {
+		boolean flag = true;
+		List<String> strContents = readXLS(fileName);
+		for (String content : strContents) {
+			if (content.contains(text)) {
+				flag = false;
+				break;
+			}
 		}
 		return flag;
 	}

@@ -27,7 +27,6 @@ public class FlexGridPage extends GovGrantsManager {
 	/******* "Key Methods with complete functionality - public" *****************/
 
 	public void clickPPMGParallelLinesMenuBar() {
-		reiDriver.JavaScript().scrollpageToSpecificElement(programPerformanceMgmtGridViewMenuBars);
 		reiDriver.WaitFor().WaitForElementToBePresent(programPerformanceMgmtGridViewMenuBars).click();
 	}
 
@@ -224,5 +223,4 @@ public class FlexGridPage extends GovGrantsManager {
 		}
 		return flag;
 	}
-
 }
