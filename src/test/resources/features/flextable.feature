@@ -450,8 +450,9 @@ Feature: Flex Table Component Scenarios
       | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
       | Flex Table List       | Enable Total | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName    | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Total | true          | Programs           | Name                      | FTC-1018                   |
+      | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Total     | true          | Programs           | Name                      | FTC-1018                   |
+      | Flex Table:General    | Enable Total Row | true          | Programs           |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab

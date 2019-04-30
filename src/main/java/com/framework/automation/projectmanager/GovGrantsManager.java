@@ -97,7 +97,7 @@ public class GovGrantsManager extends ProjectWebServices {
 	 */
 	public void waitForNavigationLogo() {
 		try {
-			if (reiDriver.is().elementDispalyed(navigationLogo)) {
+			if (reiDriver.is().isDispalyed(navigationLogo)) {
 				reiDriver.WaitFor().WaitForElementToDisapear(navigationLogo);
 			}
 		} catch (Exception e) {

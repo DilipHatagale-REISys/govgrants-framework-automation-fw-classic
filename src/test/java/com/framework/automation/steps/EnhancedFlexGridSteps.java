@@ -172,4 +172,14 @@ public class EnhancedFlexGridSteps {
 	public void assertCellValueAtObligatedAmountForChildTable() {
 		enhancedFlexGrid.assertCellValueForObligatedAmountAtChildFlexTableOfEnhancedGrid();
 	}
+
+	@Then("^I see over all total for number of awards at enhanced grid$")
+	public void assertOverAllTotalCellValueAtNumberOfAwardsColumn() {
+		enhancedFlexGrid.assertOverAllTotalCellValueForNumberOfAwardsAtEnhancedGrid();
+	}
+
+	@Then("^I see edited value inside textarea is \"([^\"]*)\" for column value \"([^\"]*)\" of table \"([^\"]*)\"$")
+	public void assertEditedTextAreaValue(String enteredValue, String columnValue, String tableId) {
+		enhancedFlexGrid.assertEditedValueForTextAreaField(enteredValue, columnValue, tableId);
+	}
 }

@@ -1657,4 +1657,95 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on top right parallel lines bar for "Active Awards"
     And I select "Download as XLS" from parallel lines dropdown of "Active Awards"
     Then I see "Being Amended" in xls file "govgrants"
-      
+    
+  @49249    @enableOverallTotalFieldAtParentFlexTableForEnhancedGrid-gPlanning
+  Scenario Outline: validate enabling of overall total field after checking checkbox true of Enable Over All Total from config and validating it inside enhanced grid of programs-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             | fieldOrignalValue              | filterId         |
+      | Flex Table List           | Enable Over All Total | false                          | ApiGeneratedId:0 |
+      | Flex Grid:Flex Table List | Is Master View        | true                           | ApiGeneratedId:1 |
+      | Flex Grid:Flex Table List | Filter Clause         | <defaultFilterClauseForFLV2539>| ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName             | fieldNewValue              | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List           | Enable Over All Total | true                       | TmpActiveGrantsGrid| Name                      | FTC-1497                   |
+      | Flex Grid:Flex Table List | Is Master View        | true                       | TmpActiveGrantsGrid| Name                      | FLV-2539                   |
+      | Flex Grid:Flex Table List | Filter Clause         | <newFilterClauseForFLV2539>| TmpActiveGrantsGrid| Name                      | FLV-2539                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    Then I see over all total for number of awards at enhanced grid
+    Examples:
+    |defaultFilterClauseForFLV2539                   |newFilterClauseForFLV2539                                                        |
+    |RecordType.Name='Grantor' and status__c='Active'|RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c like 'Road%'|
+    
+  @49354     @enableOverallTotalFieldAtChildFlexTableForEnhancedGrid-gPlanning
+  Scenario: validate enabling of overall total field after checking checkbox true of Enable Over All Total for child flex tablefrom config and validating it inside enhanced grid of programs-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             | fieldOrignalValue              | filterId         |
+      | Flex Table List           | Enable Row Grouping   | false                          | ApiGeneratedId:0 |
+      | Flex Table List           | Enable Over All Total | false                          | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName             | fieldNewValue              | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List           | Enable Row Grouping   | true                       | TmpGrantorActiveAwardsGrid | Name                      | FTC-1498                   |
+      | Flex Table List           | Enable Over All Total | true                       | TmpGrantorActiveAwardsGrid | Name                      | FTC-1498                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "GT-VT-001" in "flexGridEnhanced1" panel
+	When I expand nested table containing column value "GT-VT-001"
+    Then I see cell subtotal for obligated amount at child table of enhanced grid
+    
+  @49361      @verifyEditSelectedAtParentFlexTableForEnhancedGrid-gPlanning
+  Scenario Outline: validate Edit selected functionality for parent flex table at enhanced grid of programs-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName               | fieldOrignalValue              | filterId         |
+      | Flex Grid:Flex Table List | Is Master View          | true                           | ApiGeneratedId:0 |
+      | Flex Grid:Flex Table List | Filter Clause           | <defaultFilterClauseForFLV2539>| ApiGeneratedId:1 |
+      | Flex Table                | Enable Record Selection | false                          | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName               | fieldNewValue              | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Is Master View          | true                       | TmpActiveGrantsGrid| Name                      | FLV-2539                   |
+      | Flex Grid:Flex Table List | Filter Clause           | <newFilterClauseForFLV2539>| TmpActiveGrantsGrid| Name                      | FLV-2539                   |
+      | Flex Table:General        | Enable Record Selection | true                       | TmpActiveGrantsGrid|                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I check "Road Construction Annoumsment" boxes in flex table with id "flexGridEnhanced1"
+    When I click on top right button "Edit Selected" in flex table with id "flexGridEnhanced1"
+    When I enter value "Test Automation" into field "AddressProgramContact__c"
+    When I click on top right button "Save" in flex table with id "flexGridEnhanced1"
+    Then I see edited value inside textarea is "Test Automation" for column value "Road Construction Annoumsment" of table "flexGridEnhanced1"
+    Examples:
+    |defaultFilterClauseForFLV2539                   |newFilterClauseForFLV2539                                                        |
+    |RecordType.Name='Grantor' and status__c='Active'|RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c like 'Road%'|
+
+  @49364      @verifyEditSelectedAtChildFlexTableForEnhancedGrid-gPlanning
+  Scenario: validate Edit selected functionality for child flex table at enhanced grid of programs-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Flex Table:General    | Enable Record Selection | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Record Selection | true          | TmpGrantorActiveAwardsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "GT-FIN.1-001" in "flexGridEnhanced1" panel
+    When I expand nested table containing column value "GT-FIN.1-001"
+    When I check "AD-FIN.1-BP01-00" boxes in flex table with id "Enhanced1grid"
+    When I click on top right button "Edit Selected" in flex table with id "Enhanced1grid"
+    When I enter value "10" into field "AmountDirectAssistance__c"
+    When I click on top right button "Save" in flex table with id "Enhanced1grid"
+    Then I see edited value inside textarea is "$10.00" for column value "AD-FIN.1-BP01-00" of table "Enhanced1grid"

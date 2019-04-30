@@ -49,4 +49,19 @@ public class FlexGridSteps {
 	public void assertActionIconNotDisplayedInsidePPMGVflexTable(String actionIcon) {
 		flexGridPage.assertActionIconNotDisplayedInsidePPMGVflexTable(actionIcon);
 	}
+	
+	@Then("^I see inline edit options is displayed for flex grid$")
+	public void assertTextInputBoxForIdColumn() {
+		flexGridPage.assertActionOpensInInlineMode();
+	}
+	
+	@Then("^I see enable total sum for target column at program outcomes flex grid$")
+	public void assertOverAllTotalCellValueAtNumberOfAwardsColumn() {
+		flexGridPage.assertTotalSumValueForTargetColumnOfProgramOutcomesFlexGrid();
+	}
+
+	@Then("^I see quick search option disabled for table \"([^\"]*)\"$")
+	public void assertQuickSearchOptionDisabledForSpecifiedTable(String tableId) {
+		flexGridPage.assertquickSearchDisabledForSpecificTable(tableId);
+	}
 }

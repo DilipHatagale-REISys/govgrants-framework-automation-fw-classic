@@ -265,6 +265,12 @@ public class FlexTable {
 							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
 					String.valueOf(SObjectAPIs.GNT__SkipFieldsForExport__c), value);
 			break;
+		case "HEADER":
+			finalPayload = String.format(
+					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__Header__c), value);
+			break;
 		}
 		System.out.println(finalPayload);
 		return finalPayload;

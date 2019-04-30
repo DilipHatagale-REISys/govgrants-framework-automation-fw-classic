@@ -19,7 +19,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	/******* "Variables and Locators" *****************/
 	private final By reachOutToEnhancedGridCollapse, searchInputEnhancedGrid, completeTableRowOfEnhancedGrid,
 			selectRecordCheckBoxForEnhancedGrid, currentBudgetPeriodEndDate, scrollToActionColumn,
-			obligatedAmountSpecificCells, idColumnForChildFlexTable, numberOfAwardscells,
+			awardObligatedAmountSpecificCells, idColumnForChildFlexTable, numberOfAwardscells,
 			obligatedAmountSpecificCellsAtChildTable;
 
 	/**
@@ -35,7 +35,8 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 				.xpath("//div[@id='Enhanced1grid']//input[@aria-label='Select Record']");
 		currentBudgetPeriodEndDate = By.xpath("//field[@field-name='BudgetPeriodEndDate__c']//input[@type='text']");
 		scrollToActionColumn = By.xpath("//div[@id='Enhanced1grid']//th[contains(text(),'Actions')]");
-		obligatedAmountSpecificCells = By.xpath("//table/tbody/tr/td//*[@field-name='TotalAwardObligatedAmount__c']");
+		awardObligatedAmountSpecificCells = By
+				.xpath("//table/tbody/tr/td//*[@field-name='TotalAwardObligatedAmount__c']");
 		idColumnForChildFlexTable = By.xpath("//field[@field-name='Name']//input[@type='text']");
 		numberOfAwardscells = By.xpath("//table/tbody/tr/td//*[@field-name='NumberofAwards__c']");
 		obligatedAmountSpecificCellsAtChildTable = By
@@ -190,7 +191,8 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	/**
 	 * assert enhanced grid cell value for particular record is displayed
 	 * 
-	 * @param cellValue
+	 * @param columnTitleName
+	 * @param colName
 	 */
 	public void assertCellValueOfEnhancedGridForSpecificRecordDisplayed(String columnTitleName, String colName) {
 		Assert.assertTrue(isSpecificCellValueOfEnhancedFlexGrid(columnTitleName, colName));
@@ -302,7 +304,6 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	/**
 	 * return true if cell sum value is as expected for number of award column
 	 * 
-	 * @param value
 	 */
 	public void assertCellValueForNumberOfAwardsAtEnhancedGrid() {
 		Assert.assertTrue(isExpectedSumValueForNumberOfAwardsAtEnhancedGridTableDisplayed());
@@ -330,8 +331,8 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	 * assert enhanced grid cell value colour for particular record is displayed
 	 * 
 	 * @param cellValue
-	 * @param colName
-	 * @param colour
+	 * @param tableId
+	 * @param colorName
 	 */
 	public void assertCellValueColourOfEnhancedGridForSpecificRecordDisplayed(String cellValue, String tableId,
 			String colorName) {
@@ -340,12 +341,31 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 
 	/**
 	 * return true if cell sum value is as expected for obligated amount column at
-	 * child flex table
+	 * child flex table of enhanced grid
 	 * 
-	 * @param value
 	 */
 	public void assertCellValueForObligatedAmountAtChildFlexTableOfEnhancedGrid() {
 		Assert.assertTrue(isExpectedSumValueOfObligatedAmountAtChildTableDisplayed());
+	}
+
+	/**
+	 * return true if cell over all total sum value is as expected for number of
+	 * award column
+	 * 
+	 */
+	public void assertOverAllTotalCellValueForNumberOfAwardsAtEnhancedGrid() {
+		Assert.assertTrue(isExpectedOverAllTotalSumValueForNumberOfAwardsAtEnhancedGridTableDisplayed());
+	}
+
+	/**
+	 * return true if entered text area value at enhanced grid is displayed
+	 *
+	 * @param enteredValue
+	 * @param columnValue
+	 * @param tableId
+	 */
+	public void assertEditedValueForTextAreaField(String enteredValue, String columnValue, String tableId) {
+		Assert.assertTrue(isExpectedEnteredValueInsideTextAreaFieldDisplayed(enteredValue, columnValue, tableId));
 	}
 
 	/*********
@@ -355,7 +375,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	/**
 	 * Boolean status of advance filter option from program/enhanced flex grid
 	 * 
-	 * @param status
+	 * @param tableId
 	 */
 	private Boolean isAdvanceFilterDisabledFromEnhancedGrid(String tableId) {
 		boolean flag = false;
@@ -612,8 +632,8 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	private boolean isExpectedSumValueAtEnhancedGridTableDisplayed(BigDecimal value) {
 		boolean flag = false;
 		try {
-			reiDriver.JavaScript().scrollpageToSpecificElement(obligatedAmountSpecificCells);
-			List<WebElement> rows_table = reiDriver.findMyElement().getElements(obligatedAmountSpecificCells);
+			reiDriver.JavaScript().scrollpageToSpecificElement(awardObligatedAmountSpecificCells);
+			List<WebElement> rows_table = reiDriver.findMyElement().getElements(awardObligatedAmountSpecificCells);
 			String str = "";
 			String strNew = "";
 			BigDecimal bd = new BigDecimal(0);
@@ -693,8 +713,9 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 
 	/**
 	 * check the sequence of the edit action at enhanced grid table
-	 * 
-	 * @param buttonName
+	 *
+	 * @param iconName
+	 * @param tableId
 	 * @param sequenceNumber
 	 * @return true/false
 	 */
@@ -821,7 +842,6 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	 * return true if expected amount at particular cell inside Number of awards
 	 * column at enhanced grid table is displayed
 	 * 
-	 * @param value
 	 * @return
 	 */
 	private boolean isExpectedSumValueForNumberOfAwardsAtEnhancedGridTableDisplayed() {
@@ -838,7 +858,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 					}
 				}
 				if (rows_table.size() == row) {
-					sumStr = rows_table.get(row - 2).getText();
+					sumStr = rows_table.get(row - 1).getText();
 				}
 			}
 			String numberAsString = String.format("%.2f", sum);
@@ -933,6 +953,58 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
+		}
+		return flag;
+	}
+
+	/**
+	 * return true if over all total amount for number of awards column cells at
+	 * enhanced grid parent table is displayed
+	 * 
+	 * @return
+	 */
+	private boolean isExpectedOverAllTotalSumValueForNumberOfAwardsAtEnhancedGridTableDisplayed() {
+		boolean flag = false;
+		try {
+			reiDriver.JavaScript().scrollpageToSpecificElement(numberOfAwardscells);
+			List<WebElement> rows_table = reiDriver.findMyElement().getElements(numberOfAwardscells);
+			String sumStr = rows_table.get(rows_table.size() - 1).getText();
+			double sum = 0.00;
+			for (int row = 0; row < rows_table.size() - 1; row++) {
+				if (rows_table.get(row).getText() != null) {
+					sum += Double.valueOf(rows_table.get(row).getText());
+				}
+			}
+			String numberAsString = String.format("%.2f", sum);
+			if (sumStr.equals(numberAsString)) {
+				flag = true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return flag;
+	}
+
+	/**
+	 * return true if expected/entered text area value is displayed inside Text Area field
+	 *
+	 * @param enteredValue
+	 * @param columnValue
+	 * @param tableId
+	 * @return
+	 */
+	private boolean isExpectedEnteredValueInsideTextAreaFieldDisplayed(String enteredValue, String columnValue,
+			String tableId) {
+		boolean flag = false;
+		WebElement editedContent = reiDriver.findMyElement()
+				.getElement(By.xpath("//div[@id='" + tableId + "']//td//*[@title = '" + columnValue + "' or text() = '"
+						+ columnValue + "']/ancestor::tr[1]//td//span[contains(text(),'" + enteredValue + "')]"));
+		try {
+			if (editedContent.getText().equals(enteredValue)) {
+				flag = true;
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
 		}
 		return flag;
 	}

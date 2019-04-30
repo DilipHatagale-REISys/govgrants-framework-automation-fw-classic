@@ -1,5 +1,9 @@
 package com.framework.automation.pageobject;
 
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -13,7 +17,8 @@ import eyethink.automation.bots.controller.CoreHandlers;
 public class FlexGridPage extends GovGrantsManager {
 
 	/******* "Variables and Locators" *****************/
-	private final By programPerformanceMgmtGridViewMenuBars;
+	private final By programPerformanceMgmtGridViewMenuBars, programOutcomesRowsInlineMode,
+			enableTotalSumValueForTargetColumn;
 
 	/**
 	 * Constructor to handle dependency injection and framework library
@@ -22,6 +27,9 @@ public class FlexGridPage extends GovGrantsManager {
 		super(controller, reiDriver, govgrants);
 		programPerformanceMgmtGridViewMenuBars = By.xpath(
 				"//div[@id='flexGridHeaderButtonsProgramPerformanceMgmtGridView']//span[contains(@class,'fa fa-bars')]");
+		programOutcomesRowsInlineMode = By
+				.xpath("//div[@id='toggleFGridProgramOutcomes']//table/tbody/tr//*[@mode='edit']");
+		enableTotalSumValueForTargetColumn = By.xpath("//b[@class='totalFullDisplayFlex']//span");
 	}
 
 	/******* "Key Methods with complete functionality - public" *****************/
@@ -39,6 +47,32 @@ public class FlexGridPage extends GovGrantsManager {
 		reiDriver.JavaScript().scrollpageToSpecificElement(By.xpath(
 				"//div[@class='panel-heading']//div[contains(@class,'panel-title')]/a[text()='" + headerName + "']"));
 		Assert.assertTrue(getFlexGridPanels(headerName).isDisplayed());
+	}
+
+	/**
+	 *
+	 * @return true if expected sum is displayed for particular column at flex grid
+	 */
+	public Boolean isExpectedOverAllTotalSumValueForNumberOfAwardsAtEnhancedGridTableDisplayed() {
+		WebElement targetColumnSum = reiDriver.findMyElement().getElement(enableTotalSumValueForTargetColumn);
+		String sumValueInString = String.format("%.2f", getFlexGridSpecificColumnTotalSum());
+		boolean flag = true;
+		if (targetColumnSum.getText().equals(sumValueInString)) {
+			flag = true;
+		}
+		return flag;
+	}
+
+	/**
+	 * get any item from PPMGV MENU bar inside phases without waiting for presence.
+	 * 
+	 * @param headerItem
+	 * @return
+	 */
+	public WebElement getPPMGVLinesBarMenuSpecificOptions(String headerItem) {
+		return reiDriver.findMyElement().getElement(By.xpath(
+				" //div[@id='flexGridHeaderButtonsProgramPerformanceMgmtGridView']//span[contains(@class,'fa fa-bars')]/../../ul//span[text()='"
+						+ headerItem + "']"));
 	}
 
 	/**
@@ -83,6 +117,31 @@ public class FlexGridPage extends GovGrantsManager {
 	 */
 	public void assertActionIconNotDisplayedInsidePPMGVflexTable(String actionIcon) {
 		Assert.assertTrue(isActionIconNotDisplayedInsidePPMGVflexTable(actionIcon));
+	}
+
+	/**
+	 * assert edit action open in inline mode
+	 */
+	public void assertActionOpensInInlineMode() {
+		Assert.assertTrue(isActionOpensInInlineMode());
+	}
+
+	/**
+	 * return true if enable total will return sum value is as expected for target
+	 * column
+	 * 
+	 */
+	public void assertTotalSumValueForTargetColumnOfProgramOutcomesFlexGrid() {
+		Assert.assertTrue(isExpectedOverAllTotalSumValueForNumberOfAwardsAtEnhancedGridTableDisplayed());
+	}
+
+	/**
+	 * assert if quick search is not displayed as per table id
+	 * 
+	 * @param tableId
+	 */
+	public void assertquickSearchDisabledForSpecificTable(String tableId) {
+		Assert.assertTrue(isQuickSearchDisabledForTableId(tableId));
 	}
 
 	/*********
@@ -158,18 +217,6 @@ public class FlexGridPage extends GovGrantsManager {
 	}
 
 	/**
-	 * get any item from PPMGV MENU bar inside phases without waiting for presence.
-	 * 
-	 * @param headerItem
-	 * @return
-	 */
-	public WebElement getPPMGVLinesBarMenuSpecificOptions(String headerItem) {
-		return reiDriver.findMyElement().getElement(By.xpath(
-				" //div[@id='flexGridHeaderButtonsProgramPerformanceMgmtGridView']//span[contains(@class,'fa fa-bars')]/../../ul//span[text()='"
-						+ headerItem + "']"));
-	}
-
-	/**
 	 * get specific column in PPMGV flex table header
 	 * 
 	 * @param headerName
@@ -202,7 +249,7 @@ public class FlexGridPage extends GovGrantsManager {
 	/**
 	 * get specific column in PPMGV flex table action item present
 	 * 
-	 * @param headerName
+	 * @param actionName
 	 * @return
 	 */
 	private WebElement getPPMGVFlexTableSpecificColumnActions(String actionName) {
@@ -217,6 +264,65 @@ public class FlexGridPage extends GovGrantsManager {
 				By.xpath("//div[@id='flexGridHeaderButtonsProgramPerformanceMgmtGridView']"));
 		try {
 			if (getPPMGVFlexTableSpecificColumnActions(actionIcon).isDisplayed()) {
+				flag = false;
+			}
+		} catch (Exception e) {
+		}
+		return flag;
+	}
+
+	/**
+	 * 
+	 * @return true if inline mode is displayed for actions at flex grid
+	 */
+	private Boolean isActionOpensInInlineMode() {
+		boolean flag = false;
+		try {
+			if (reiDriver.findMyElement().getElement(programOutcomesRowsInlineMode).isDisplayed()) {
+				flag = true;
+			}
+		} catch (Exception e) {
+		}
+		return flag;
+	}
+
+	/**
+	 *
+	 * @return total sum value for specific target column inside flex grid
+	 */
+	private double getFlexGridSpecificColumnTotalSum() {
+		WebElement row = reiDriver.findMyElement()
+				.getElement(By.xpath("//td[descendant-or-self::*[text()='Citizen']]//ancestor::tr[1]"));
+		Set<String> headerTitles = new HashSet<String>();
+		headerTitles.add("Target");
+		Map<String, Integer> columnMapping = govgrants.flexTable().constructColumnMapping(row, headerTitles);
+		System.out.println("The column number was: " + columnMapping.get("Target"));
+		By columnSelector = By
+				.xpath("//div[@id='toggleFGridProgramOutcomes']//table//tr" + "//td[not(contains(@class, 'ng-hide'))]["
+						+ columnMapping.get("Target") + "]" + "//span[contains(@ng-bind, 'viewValue')]");
+		double total = 0;
+		for (WebElement columnValue : reiDriver.findMyElement().getElements(columnSelector)) {
+			try {
+				total += Double.parseDouble(columnValue.getText());
+			} catch (Exception e) {
+				System.out.println("An exception occured with column value '" + columnValue.getText() + "'");
+				throw e;
+			}
+		}
+		System.out.println("Total : " + total);
+
+		return total;
+	}
+
+	/**
+	 * validate if quick search is displayed or not specific to table
+	 *
+	 * @return: true if it is not displayed
+	 */
+	private boolean isQuickSearchDisabledForTableId(String tableId) {
+		boolean flag = true;
+		try {
+			if (govgrants.quickSearch().getTableSpecificQuickSearch(tableId).isDisplayed()) {
 				flag = false;
 			}
 		} catch (Exception e) {

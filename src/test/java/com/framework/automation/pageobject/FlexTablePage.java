@@ -96,7 +96,7 @@ public class FlexTablePage extends GovGrantsManager {
 	}
 
 	/**
-	 * @param lastRowName
+	 * @param flexTablelastRowName
 	 */
 	public void assertnewAddedLastRowLabelName(String flexTablelastRowName) {
 		reiDriver.WaitFor().WaitForElementToBePresent(flexTablelastRowNameAsTotal);
@@ -158,7 +158,8 @@ public class FlexTablePage extends GovGrantsManager {
 	/**
 	 * assert if specific action icon is not displayed for flex table
 	 * 
-	 * @param actionIcon
+	 * @param iconName
+	 * @param uniqueColumnValue
 	 */
 	public void assertActionIconNotDisplayedInsideflexTable(String iconName, String uniqueColumnValue) {
 		try {
@@ -201,7 +202,8 @@ public class FlexTablePage extends GovGrantsManager {
 	/**
 	 * assert specific items are displayed in top righ parallel lines bar
 	 * 
-	 * @param option1
+	 * @param menuOption
+	 * @param pannelTitleName
 	 */
 	public void assertTopRightParallelLinesBarSpecificOptionsEnabled(String menuOption, String pannelTitleName) {
 		Assert.assertTrue(isTopRightParallelLinesBarSpecificOptionsEnabled(menuOption, pannelTitleName));
@@ -234,9 +236,10 @@ public class FlexTablePage extends GovGrantsManager {
 	 * @param columnTitle
 	 */
 	public void getHelpTextAtFlexTableSpecificColumn(String columnTitle) {
-		reiDriver.Clickers().moveMouseToSpecificLocation(
-				reiDriver.findMyElement().getElement(By.xpath("//th//span[@title='" + columnTitle + "' or text()='"
-						+ columnTitle + "']/../../following-sibling::span//span[contains(@class,'fa-info')]")));
+		reiDriver.Clickers().moveMouseToSpecificLocation(reiDriver.findMyElement()
+				.getElement(By.xpath("//th//span[@title='" + columnTitle + "' or text()='" + columnTitle
+						+ "']/../../following-sibling::span//span[contains(@class,'fa-info')]|//th//span[@title='"
+						+ columnTitle + "' or text()='" + columnTitle + "']/..//span[contains(@class,'fa-info')]")));
 	}
 
 	/**
@@ -272,7 +275,8 @@ public class FlexTablePage extends GovGrantsManager {
 	/**
 	 * hovering mouse on edit action icon inside draft program flex table
 	 * 
-	 * @param blockTitle
+	 * @param iconName
+	 * @param columnName
 	 */
 	public void getHelpTextAtEditActionOfFlexTable(String iconName, String columnName) {
 		reiDriver.WaitFor()
@@ -283,7 +287,7 @@ public class FlexTablePage extends GovGrantsManager {
 	/**
 	 * assert if program flex table edit action opened with specified url
 	 * 
-	 * @param buttonName
+	 * @param newActionUrl
 	 */
 	public void assertSpecifiedUrlForEditActionOfProgramFlexTable(String newActionUrl) {
 		Assert.assertTrue(isEditActionOpenedWithSpecifiedUrl(newActionUrl));
@@ -305,7 +309,7 @@ public class FlexTablePage extends GovGrantsManager {
 	/**
 	 * return false if specified item is displayed
 	 * 
-	 * @param itemName
+	 * @param dropDownValue
 	 * @return
 	 */
 	public boolean isValuePresentInsideDropDown(String dropDownValue) {
@@ -515,7 +519,7 @@ public class FlexTablePage extends GovGrantsManager {
 	/**
 	 * Boolean status of menu icon from program flex table
 	 * 
-	 * @param status
+	 * @param panelTitleName
 	 */
 	private Boolean isMenuIconDisabled(String panelTitleName) {
 		boolean flag = false;
@@ -682,7 +686,8 @@ public class FlexTablePage extends GovGrantsManager {
 	/**
 	 * validate if options are displayed in top right parallel line bar
 	 * 
-	 * @param option1
+	 * @param menuOption
+	 * @param pannelTitleName
 	 * @return: true if it is displayed
 	 */
 	private boolean isTopRightParallelLinesBarSpecificOptionsEnabled(String menuOption, String pannelTitleName) {
@@ -734,7 +739,7 @@ public class FlexTablePage extends GovGrantsManager {
 	/**
 	 * validate if changed column name of program flex table is displayed
 	 * 
-	 * @param columnTitleName
+	 * @param columnValueName
 	 * @return
 	 */
 	private boolean isFlexTableColumnTitleDisplayed(String columnValueName) {

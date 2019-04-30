@@ -276,4 +276,167 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Environment" in "toggleFGridProgramOutcomes" panel
     When I click on "View" icon for "Environment" inside table
     Then I see "View" opens in overLay window
+    
+  @49459    @editActionOpensInInlineModeAtProgramOutcomesFlexTable-gPlanning
+  Scenario: validate program outcomes flex table action field- edit opens in inline window
+    Given I have default configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue   | filterId         |
+      | Flex Table Action     | Action Behavior | Open in Inline mode | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action Behavior | Open in Inline mode | ProgramOutcomes    | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Plan" sub tab
+    When I perform quick search for "Environment" in "toggleFGridProgramOutcomes" panel
+    When I click on "Edit" icon for "Environment" inside table
+    Then I see inline edit options is displayed for flex grid
+    
+  @49460    @actionURLLongFieldAtProgramOutcomesFlexTableViewAction-gPlanning
+  Scenario Outline: Changing action url of action url field for view action from config and validating it at program outcomes flex table of program-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action URL      |  <oldActionUrl>   | ApiGeneratedId:0 |
+      | Flex Table Action     | Action URL Long |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      |                | ProgramOutcomes    | Name                      | View                       |
+      | Flex Table Action     | Action URL Long | <newActionUrl> | ProgramOutcomes    | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Plan" sub tab
+    When I perform quick search for "Environment" in "toggleFGridProgramOutcomes" panel
+    When I click on "View" icon for "Environment" inside table
+    Then I see edit opens with "<newActionUrl>"
+
+    Examples:
+      | oldActionUrl                                | newActionUrl            |
+      | /apex/KeyOutcomeView?id={!KeyOutcome__c.id} | https://www.google.com/ |
    
+  @49462    @helpTextFieldAtProgramOutcomesFlexTableColumnHeader-gPlanning
+  Scenario Outline: Changing content of help text field at program outcomes flex table column header from config and validating it inside program outcomes flex table of programs-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Help Text |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Help Text | <new_helpText> | ProgramOutcomes    | Name                      | FTC-1188                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Plan" sub tab
+    When I hovering mouse on help text icon inside "Target" for flex table column
+    Then I see "<new_helpText>" shown as help text
+
+    Examples:
+      | new_helpText    |
+      | Test Automation |
+      
+  @49539    @hideForProfileFieldAtProgramOutcomesParentFlexTableEditAction-gPlanning
+  Scenario: Hide edit row level action for specific profile from configuration and validating it at under program outcomes parent flex table- gPlanning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide For Profile|                      | ProgramOutcomes    | Name                      | Edit                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide For Profile| System Administrator | ProgramOutcomes    | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Plan" sub tab
+    When I perform quick search for "Environment" in "toggleFGridProgramOutcomes" panel
+    Then I see "Edit" icon for "Environment" is not displayed inside flex table
+    
+  @49546    @hideForUserFieldAtProgramOutcomesParentFlexTableEditAction-gPlanning
+  Scenario: Hide edit row level action for specific user from configuration and validating it at under program outcomes parent flex table- gPlanning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide For User   |                      | ProgramOutcomes    | Name                      | Edit                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide For User   | Internal             | ProgramOutcomes    | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Plan" sub tab
+    When I perform quick search for "Environment" in "toggleFGridProgramOutcomes" panel
+    Then I see "Edit" icon for "Environment" is not displayed inside flex table
+    
+  @50210    @headerFieldAtProgramOutcomesParentFlexTable-gPlanning
+  Scenario: validate after changing name of program Outcomes flex table title inside plan sub tab-programs
+    Given I have default configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Header           | Key Outcomes      | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header           | Test Automation   | ProgramOutcomes    |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Plan" sub tab
+    Then I see "Test Automation" shown as inside "toggleFGridProgramOutcomes"
+    
+  @50211    @disablingExportFileAtProgramOutcomesParentFlexTable-gPlanning
+  Scenario: validate disabling of PDF/Excel download from menu option in program outcomes flex table of programs-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export | false         | ProgramOutcomes    |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Plan" sub tab
+    When I click on top right parallel lines bar for "Key Outcomes"
+    Then I see "Download as PDF""Download as CSV" options inside "Key Outcomes" disabled
+    
+  @49461    @enableTotalFieldAtProgramOutcomesFlexTable-gPlanning
+  Scenario: Changing content of help text field at program outcomes flex table column header from config and validating it inside program outcomes flex table of programs-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table List       | Enable Total     |   false           | ApiGeneratedId:0 |
+      | Flex Table:General    | Enable Total Row |   false           | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Total     | true           | ProgramOutcomes    | Name                      | FTC-1188                   |
+      | Flex Table:General    | Enable Total Row | true           | ProgramOutcomes    |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Plan" sub tab
+    Then I see enable total sum for target column at program outcomes flex grid
+
+  @50212    @disblingQuickSearchFieldAtProgramOutcomesFlexTable-gPlanning
+  Scenario: validate disabling of quick search in flex table of programs-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Quick Search | false         | ProgramOutcomes    |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Plan" sub tab
+    Then I see quick search option disabled for table "toggleFGridProgramOutcomes "

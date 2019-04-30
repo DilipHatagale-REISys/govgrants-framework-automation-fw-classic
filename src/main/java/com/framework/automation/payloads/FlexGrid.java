@@ -92,6 +92,13 @@ public class FlexGrid {
 							String.valueOf(SObjectAPIs.GNT__FlexTableFilterListViewConfig__c), filterClause),
 					String.valueOf(SObjectAPIs.GNT__IsActive__c), value);
 			break;
+		case "FILTER CLAUSE":
+			finalPayload = String.format(payloadForStringValue,
+					String.valueOf(SObjectAPIs.GNT__FlexTableFilterListViewConfig__c),
+					apiUtilities.getComponentCoreFieldId(
+							String.valueOf(SObjectAPIs.GNT__FlexTableFilterListViewConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__FilterClause__c), value);
+			break;
 		case "ENABLE TOTAL RECORDS COUNT":
 			finalPayload = String.format(
 					payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), apiUtilities
