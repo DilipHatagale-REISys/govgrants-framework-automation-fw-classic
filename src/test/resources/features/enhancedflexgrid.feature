@@ -176,7 +176,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     Then I see quick search option disabled from enhanced grid
 
-  @35437    @disablingTotalRecordCountForFlexForEnhancedGrid-gPlanning @smoke
+  @35437    @disablingEnableTotalRecordCountFieldForParentFlexTableAtEnhancedGrid-gPlanning @smoke
   Scenario: validate disbaling of total row count in enhanced flex grid planning-Program enhanced flex grid
     Given I have default configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -190,7 +190,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
-    Then I see "Total Records" count in enhanced grid "Enhanced1grid"
+    Then I see no "Total Records" count in enhanced grid "Enhanced1grid"
 
   @35434    @enableAutoIndexForEnhancedGrid-gPlanning
   Scenario: validate enable auto index for details inside enhanced flex grid planning-Program enhanced flex grid

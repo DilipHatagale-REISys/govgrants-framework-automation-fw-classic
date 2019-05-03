@@ -79,9 +79,14 @@ public class FlexTableSteps {
 		flexTablePage.assertFlexTabelTotalCalulationRowDisabled();
 	}
 
-	@Then("^I see \"([^\"]*)\" count in \"([^\"]*)\"$")
+	@Then("^I see no \"([^\"]*)\" count in \"([^\"]*)\"$")
 	public void assertFlexTableRowCountDisabled(String text, String tableId) {
 		flexTablePage.assertFlexTabelRowCountDisabled(text, tableId);
+	}
+
+	@Then("^I see \"([^\"]*)\" count in \"([^\"]*)\"$")
+	public void assertFlexTableRowCountEnabled(String text, String tableId) {
+		flexTablePage.assertFlexTabelRowCountEnabled(text, tableId);
 	}
 
 	@Then("^I see changed label as \"([^\"]*)\" of last row name$")

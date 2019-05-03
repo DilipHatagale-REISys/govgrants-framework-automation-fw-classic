@@ -123,7 +123,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 			reiDriver.JavaScript().scrollpageToSpecificElement(completeTableRowOfEnhancedGrid);
 		} catch (Exception e) {
 		}
-		Assert.assertTrue(isEnhancedFlexGridRowsCountDisabled(text, tableId));
+		Assert.assertFalse(isEnhancedFlexGridRowsCountDisabled(text, tableId));
 	}
 
 	/**
@@ -430,10 +430,10 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	 * @return true if element is not displayed inside enhanced grid
 	 */
 	private Boolean isEnhancedFlexGridRowsCountDisabled(String text, String tableId) {
-		boolean flag = true;
+		boolean flag = false;
 		try {
 			if (govgrants.flexTable().getFooterElementsFromTable(text, tableId).isDisplayed()) {
-				flag = false;
+				flag = true;
 			}
 		} catch (Exception e) {
 		}
@@ -605,8 +605,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	private boolean isActionButtonInsideTopOfEnhancedGridTableDisplayed(String buttonName, String headerName) {
 		boolean flag = false;
 		try {
-			reiDriver.JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
-			if (reiDriver.findMyElement().getElement(By.xpath("//*[@title='" + headerName + "' or text()='" + headerName
+			if (reiDriver.WaitFor().WaitForElementToBePresent(By.xpath("//*[@title='" + headerName + "' or text()='" + headerName
 					+ "']/ancestor::div[contains(@class,'header-title') or 1]/following-sibling::div/div[contains(@class,'header-buttons')]//*[text()='"
 					+ buttonName + "'] |//*[@title='" + headerName + "' or text()='" + headerName
 					+ "']/ancestor::div[contains(@class,'header-title') or 1]/following-sibling::div/action//button[contains(@title,'"

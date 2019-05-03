@@ -42,7 +42,7 @@ public class EnhancedFlexGridSteps {
 		enhancedFlexGrid.assertquickSearchDisabledForEnhancedGrid();
 	}
 
-	@Then("^I see \"([^\"]*)\" count in enhanced grid \"([^\"]*)\"$")
+	@Then("^I see no \"([^\"]*)\" count in enhanced grid \"([^\"]*)\"$")
 	public void assertFlexTableRowCountDisabled(String text, String tableId) {
 		enhancedFlexGrid.assertEnhancedFlexGridTabelRowCountDisabled(text, tableId);
 	}

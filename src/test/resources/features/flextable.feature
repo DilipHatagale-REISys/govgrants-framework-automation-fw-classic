@@ -96,7 +96,7 @@ Feature: Flex Table Component Scenarios
     Then I see total amount row in flex table is not displayed
 
 
-  @34031    @disablingTotalRowCount-gPlanning
+  @34031    @disablingEnableTotalRecordsCountFieldAtProgramFlexTable-gPlanning
   Scenario: validate disbaling of total row count in flex table of programs-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -107,7 +107,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    Then I see "Total Records" count in "flexTableDivId"
+    Then I see no "Total Records" count in "flexTableDivId"
 
   @34032    @additionOfLabelForRowNamedTotal-gPlanning
   Scenario: validate addition of label for row named as total of programs-planning

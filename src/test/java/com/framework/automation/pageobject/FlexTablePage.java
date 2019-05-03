@@ -92,6 +92,18 @@ public class FlexTablePage extends GovGrantsManager {
 		} catch (Exception e) {
 
 		}
+		Assert.assertFalse(isFlexTableRowsCountDisabled(text, tableId));
+	}
+
+	/**
+	 * assert true if total row calculation is enabled
+	 */
+	public void assertFlexTabelRowCountEnabled(String text, String tableId) {
+		try {
+			reiDriver.JavaScript().scrollPageDocumentJS("PageDown", 0, 0);
+		} catch (Exception e) {
+
+		}
 		Assert.assertTrue(isFlexTableRowsCountDisabled(text, tableId));
 	}
 
@@ -106,7 +118,7 @@ public class FlexTablePage extends GovGrantsManager {
 
 	/**
 	 * assert true if header column name is present
-	 * 
+	 *
 	 * @param headerColumnName
 	 */
 	public void assertFlexTableHeaderColumnName(String headerColumnName) {
@@ -195,8 +207,11 @@ public class FlexTablePage extends GovGrantsManager {
 	 * @param blockTitle
 	 */
 	public void getHelpTextAtDraftProgramFlexTable(String blockTitle) {
-		reiDriver.Clickers().moveMouseToSpecificLocation(reiDriver.findMyElement()
-				.getElement(By.xpath("//div[text()='" + blockTitle + "']/../../..//span[contains(@class,'fa-info')]")));
+		reiDriver.Clickers()
+				.moveMouseToSpecificLocation(reiDriver.findMyElement()
+						.getElement(By.xpath("//div[text()='" + blockTitle
+								+ "']/../../..//span[contains(@class,'fa-info')] |//div/a[@title='" + blockTitle
+								+ "']/..//span[contains(@class,'fa-info')]")));
 	}
 
 	/**
@@ -573,10 +588,10 @@ public class FlexTablePage extends GovGrantsManager {
 	 * @return true if element is not displayed
 	 */
 	private Boolean isFlexTableRowsCountDisabled(String text, String tableId) {
-		boolean flag = true;
+		boolean flag = false;
 		try {
 			if (govgrants.flexTable().getFooterElementsFromTable(text, tableId).isDisplayed()) {
-				flag = false;
+				flag = true;
 			}
 		} catch (Exception e) {
 		}

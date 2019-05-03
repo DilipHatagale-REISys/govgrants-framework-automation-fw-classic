@@ -1,5 +1,7 @@
 package com.framework.automation.pageobject;
 
+import java.util.*;
+
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
@@ -144,6 +146,54 @@ public class FlexGridPage extends GovGrantsManager {
 		Assert.assertTrue(isQuickSearchDisabledForTableId(tableId));
 	}
 
+	/**
+	 * return true if particular column value is in ascending order for flex grid
+	 *
+	 */
+	public void assertAscendingOrderOfFlexGridColumnValue(String text, String order) {
+		Assert.assertTrue(isColumnValueInExectedOrderForFlexGrid(text, order));
+	}
+
+	/**
+	 * assert true if header column name for program outcomes flex table is present -Mass Editable grid
+	 *
+	 * @param columnTitleName
+	 * @param tableId
+	 */
+	public void assertProgramOutcomesFlexTableHeaderColumnName(String columnTitleName, String tableId) {
+		Assert.assertTrue(isProgramOutcomesFlexTableColumnHeaderName(columnTitleName, tableId));
+	}
+
+	/**
+	 * assert enhanced grid cell value colour for particular record is displayed
+	 *
+	 * @param columnName
+	 * @param tableId
+	 * @param widthSize
+	 */
+	public void assertColumnWidthOfFlexGridSpecificColumn(String columnName, String tableId,
+														  String widthSize) {
+		Assert.assertTrue(isSpecificWidthOfColumnOfFlexGrid(columnName, tableId, widthSize));
+	}
+
+	/**
+	 * assert if specific action is not displayed at budget period flex table
+	 *
+	 * @param iconName
+	 * @param tableId
+	 * @param colValue
+	 */
+	public void assertActionIconNotDisplayedInsideForGrantorBudgetPeriodflexTable(String iconName,String colValue, String tableId) {
+		try {
+			reiDriver.WaitFor().WaitForElementToBePresent(
+					govgrants.flexTable().getTableActionIcon(iconName, colValue,tableId ));
+			Assert.assertFalse(reiDriver.findMyElement()
+					.getElement(govgrants.flexTable().getTableActionIcon(iconName, colValue,tableId ))
+					.isDisplayed());
+		} catch (Exception e) {
+		}
+	}
+
 	/*********
 	 * "Local Methods with complete functionality - private"
 	 *****************/
@@ -165,7 +215,6 @@ public class FlexGridPage extends GovGrantsManager {
 			flag = true;
 		}
 		return flag;
-
 	}
 
 	/**
@@ -326,6 +375,86 @@ public class FlexGridPage extends GovGrantsManager {
 				flag = false;
 			}
 		} catch (Exception e) {
+		}
+		return flag;
+	}
+
+	/**
+	 * return true if particular column value of flex grid table is in
+	 * ascending/descending order
+	 *
+	 * @return
+	 */
+	private boolean isColumnValueInExectedOrderForFlexGrid(String text, String order) {
+		boolean flag = false;
+		try {
+			ArrayList<String> obtainedList = new ArrayList<>();
+			List<WebElement> rows_table = getFlexGridSpecificColumnValues(text);
+			for (WebElement we : rows_table) {
+				obtainedList.add(we.getText().toLowerCase());
+			}
+			ArrayList<String> sortedList = new ArrayList<>();
+			for (String s : obtainedList) {
+				sortedList.add(s.toLowerCase());
+			}
+			if (order.equals("Ascending")) {
+				Collections.sort(sortedList);
+			} else if (order.equals("Descending")) {
+				Collections.sort(sortedList, Collections.reverseOrder());
+			}
+			if (sortedList.equals(obtainedList)) {
+				flag = true;
+			} else {
+				flag = false;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return flag;
+	}
+
+	/**
+	 * @return specific target column inside flex grid
+	 */
+	private List<WebElement> getFlexGridSpecificColumnValues(String text) {
+		WebElement row = reiDriver.findMyElement()
+				.getElement(By.xpath("//td[descendant-or-self::*[text()='Citizen']]//ancestor::tr[1]"));
+		Set<String> headerTitles = new HashSet<String>();
+		headerTitles.add("Target");
+		Map<String, Integer> columnMapping = govgrants.flexTable().constructColumnMapping(row, headerTitles);
+		System.out.println("The column number was: " + columnMapping.get("Target"));
+		By columnSelector = By
+				.xpath("//div[@id='toggleFGridProgramOutcomes']//table//tr" + "//td[not(contains(@class, 'ng-hide'))]["
+						+ columnMapping.get("Target") + "]" + "//span[contains(@ng-bind, 'viewValue')]");
+		return reiDriver.findMyElement().getElements(columnSelector);
+	}
+
+	/**
+	 *
+	 * @return false if element is not displayed for Program outcomes flex table
+	 */
+	private Boolean isProgramOutcomesFlexTableColumnHeaderName(String columnTitleName, String tableId) {
+		boolean flag = false;
+		try {
+			if (govgrants.flexTable().getSpecificElementFromTableHeader(tableId, columnTitleName).isDisplayed()
+					|| govgrants.flexTable().getSpecificElementFromTableHeader(tableId, columnTitleName).isEnabled()) {
+				flag = true;
+			}
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			flag = false;
+		}
+		return flag;
+	}
+
+	/**
+	 * @return true if expected width of specified column is displayed for flex grid
+	 */
+	private Boolean isSpecificWidthOfColumnOfFlexGrid(String columnName, String tableId, String widthSize) {
+		boolean flag = false;
+		WebElement columnWidth = reiDriver.findMyElement()
+				.getElement(By.xpath("//div[@id='" + tableId + "']//tr//th//span[contains(text(),'" + columnName + "')]/ancestor::th"));
+		if (columnWidth.getAttribute("style").contains(widthSize)) {
+			flag = true;
 		}
 		return flag;
 	}

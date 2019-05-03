@@ -54,7 +54,7 @@ public class FlexGridSteps {
 	public void assertTextInputBoxForIdColumn() {
 		flexGridPage.assertActionOpensInInlineMode();
 	}
-	
+
 	@Then("^I see enable total sum for target column at program outcomes flex grid$")
 	public void assertOverAllTotalCellValueAtNumberOfAwardsColumn() {
 		flexGridPage.assertTotalSumValueForTargetColumnOfProgramOutcomesFlexGrid();
@@ -63,5 +63,25 @@ public class FlexGridSteps {
 	@Then("^I see quick search option disabled for table \"([^\"]*)\"$")
 	public void assertQuickSearchOptionDisabledForSpecifiedTable(String tableId) {
 		flexGridPage.assertquickSearchDisabledForSpecificTable(tableId);
+	}
+
+	@Then("^I see column \"([^\"]*)\" value is in \"([^\"]*)\" order for flex grid$")
+	public void assertColumnValueInAscendingOrder(String text, String order) {
+		flexGridPage.assertAscendingOrderOfFlexGridColumnValue(text, order);
+	}
+
+	@Then("^I see \"([^\"]*)\" in program Outcomes flex table header with id \"([^\"]*)\"$")
+	public void assertProgramOutcomesFlexTableHeaderName(String columnTitleName, String tableId) {
+		flexGridPage.assertProgramOutcomesFlexTableHeaderColumnName(columnTitleName, tableId);
+	}
+
+	@Then("^I see \"([^\"]*)\" column inside Flex grid table id \"([^\"]*)\" of width \"([^\"]*)\"$")
+	public void assertWidthOfFlexGridSpecificColumn(String columnName, String tableId, String widthSize) {
+		flexGridPage.assertColumnWidthOfFlexGridSpecificColumn(columnName, tableId, widthSize);
+	}
+
+	@Then("^I see \"([^\"]*)\" icon for column value \"([^\"]*)\" is not displayed at table \"([^\"]*)\"$")
+	public void assertActionIconNotDisplayedInsideGrantorBudgetPeriodflexTable(String iconName,String colValue, String tableId) {
+		flexGridPage.assertActionIconNotDisplayedInsideForGrantorBudgetPeriodflexTable(iconName, colValue, tableId);
 	}
 }
