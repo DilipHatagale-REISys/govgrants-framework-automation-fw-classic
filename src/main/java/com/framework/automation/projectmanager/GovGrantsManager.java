@@ -367,11 +367,11 @@ public class GovGrantsManager extends ProjectWebServices {
 	 */
 	public void saveFile() throws AWTException {
 		reiDriver.switchTo().switchToWindowHandler(1);
-		reiDriver.WaitFor().makeThreadSleep(10000);
+		reiDriver.WaitFor().makeThreadSleep(20000);
 		reiDriver.RobotActions().ctrl_Save();
-		reiDriver.WaitFor().makeThreadSleep(1000);
+		reiDriver.WaitFor().makeThreadSleep(2000);
 		reiDriver.RobotActions().Robot_Enter();
-		reiDriver.WaitFor().makeThreadSleep(10000);
+		reiDriver.WaitFor().makeThreadSleep(20000);
 	}
 
 	/**

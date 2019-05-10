@@ -34,7 +34,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Plan" sub tab
-    Then I see PPMGV menu bars not displayed
+    Then I see Menu icon is disabled from planning flex table "Goals Objectives"
 
   @34323    @disableQuicksearchfromN2GFlexGrid-ProgramStrategicGoals @smoke
   Scenario: Disable quick search bar for Goal Objective flex grid in configuratin and validating inside planning-programs view icon - plan subtab
@@ -66,8 +66,8 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Plan" sub tab
-    And I click on PPMGV parallel lines bar
-    Then I see "Download as PDF""Download as CSV" options disabled in PPMGV menu
+    When I click on top right parallel lines bar for "Goals Objectives"
+    Then I see "Download as PDF""Download as CSV" options inside "Goals Objectives" disabled
 
   @34327    @disableFlexTableFieldName-ProgramStrategicGoals
   Scenario: Remove flex table header date column inside Goal Objective configuratin and validating inside planning-programs view icon - plan subtab
@@ -83,7 +83,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Plan" sub tab
-    Then I see "Due Date" column for PPMGV flex table is not displayed
+    Then I see "Due Date" not displayed in enhanced grid table column title
 
   @34332    @hideViewIconForPPMGVflexTable-Programs @smoke
   Scenario: Hide view context from PPMGV view cofniguration and validate inside planning-programs view icon - plan subtab - Goal Objectives flex table
@@ -99,7 +99,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Plan" sub tab
-    Then I see "View" icon is not displayed inside PPMGV flex table
+    Then I see "View" icon for "Goal" is not displayed inside flex table
 
   @49449    @sequenceFieldAtProgramOutcomesFlexTable-Programs
   Scenario: Changing sequence of view row level action item at program outcomes flex table from config and validating it inside flex table of programs-planning
@@ -441,7 +441,7 @@ Feature: Flex Grid Component Scenarios
     When I navigate to "Plan" sub tab
     Then I see quick search option disabled for table "toggleFGridProgramOutcomes "
 
-  @50213    @disablingMenuIconForProgramOutcomesFlexTable-gPlanning
+  @50213    @disablingMenuIconForProgramOutcomesFlexTable-gPlanning @smoke
   Scenario: validate disabling of menu icon from program outcomes flex table-gPlanning
     Given I have default configuration as below:
       | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
@@ -457,7 +457,7 @@ Feature: Flex Grid Component Scenarios
     When I navigate to "Plan" sub tab
     Then I see Menu icon is disabled from planning flex table "Key Outcomes"
 
-  @50216    @enableTotalRowFieldAtProgramOutcomesFlexTable-gPlanning
+  @50216    @enableTotalRowFieldAtProgramOutcomesFlexTable-gPlanning @smoke
   Scenario: validate enabling of total enable row in program outcomes flex table of programs-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -473,7 +473,7 @@ Feature: Flex Grid Component Scenarios
     When I navigate to "Plan" sub tab
     Then I see "Total" inside rows of enhanced grid id "toggleFGridProgramOutcomes"
 
-  @50217    @enableTotalRecordsCountFieldAtProgramOutcomesFlexTable-gPlanning
+  @50217    @enableTotalRecordsCountFieldAtProgramOutcomesFlexTable-gPlanning @smoke
   Scenario: validate disbaling of total row count in flex table of programs-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -558,7 +558,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Plan" sub tab
-    Then I see column "Target" value is in "Ascending" order for flex grid
+    Then I see column "Target" value is in "Ascending" order for table id "toggleFGridProgramOutcomes"
 
   @50231   @orderBySortByFieldAtProgramOutcomesFlexTableForDescendingOrder-gPlanning
   Scenario: Changing specific column value in Descending order with order by and sort by field from config and validating it inside program outcomes flex table of programs-planning
@@ -576,7 +576,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Plan" sub tab
-    Then I see column "Target" value is in "Descending" order for flex grid
+    Then I see column "Target" value is in "Descending" order for table id "toggleFGridProgramOutcomes"
 
   @50232    @fieldLabelOverrideFieldAtProgramOutcomesFlexTableColumnHeader-gPlanning
   Scenario: Changing specific column name of program outcomes flex table from config and validating it inside program outcomes flex table of programs-planning
@@ -594,7 +594,7 @@ Feature: Flex Grid Component Scenarios
     When I navigate to "Plan" sub tab
     Then I see "Test Automation" shown inside flex table with id "toggleFGridProgramOutcomes"
 
-  @50229    @displayFieldNameFieldWithAddingfieldNamesOfDifferentDataTypes-gPlanning
+  @50229    @displayFieldNameFieldWithAddingfieldNamesOfDifferentDataTypes-gPlanning @smoke
   Scenario Outline: validate adding field names for different data types in program outcomes flex table of programs-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -620,7 +620,7 @@ Feature: Flex Grid Component Scenarios
       | Target              | Target__c,KeyPerformanceIndicator__c,KeyPerformanceSubIndicator__c,KeyPerformanceCategory__c,KeyPerformanceSubCategory__c,Orientation__c,Unit__c,TestFieldAutomation__c               | KeyPerformanceIndicator__c,KeyPerformanceSubIndicator__c,KeyPerformanceCategory__c,KeyPerformanceSubCategory__c,Orientation__c,Unit__c,Target__c,TestFieldAutomation__c |
 
   @50233    @widthPercentageFieldAtParentProgramOutcomesFlexTable-gPlanning
-  Scenario: validate adding field names for different data types in program outcomes flex table of programs-planning
+  Scenario: validate width size of particular column at program outcomes flex table programs-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
       | Flex Table List       | Field width(%) | 20                | ApiGeneratedId:0 |
@@ -707,7 +707,7 @@ Feature: Flex Grid Component Scenarios
     When I click on "View" icon for "App 786" inside table
     Then I see "View" opens in overLay window
 
-  @50342    @actionURLLongFieldAtActiveGrantsGridParentFlexTableFlexTableViewAction-gPlanning
+  @50342    @actionURLLongFieldAtActiveGrantsGridParentFlexTableFlexTableViewAction-gPlanning @smoke
   Scenario Outline: Changing action url of action url long field for view action from config and validating it at Monitoring Schedule For All Active Grant flex table of program-gMonitoring
     Given I have default configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
@@ -727,7 +727,7 @@ Feature: Flex Grid Component Scenarios
       | oldActionUrl                      | newActionUrl            |
       | /apex/GrantView?id={!Grant__c.Id} | https://www.google.com/ |
 
-  @50343    @locationFieldAtAtActiveGrantsGridParentFlexTableFlexTableActionItemFromRowToTop-gMonitoring
+  @50343    @locationFieldAtActiveGrantsGridParentFlexTableActionItemFromRowToTop-gMonitoring @smoke
   Scenario: Changing location of Monitoring Schedule For All Active Grant flex table view action from row to top from config anf validating it inside Monitoring Schedule For All Active Grant flex table of program-gMonitoring
     Given I have default configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -742,7 +742,7 @@ Feature: Flex Grid Component Scenarios
     And I navigate to "Monitoring" tab
     Then I see "View" button inside "Monitoring Schedule For All Active Grant" enhanced grid
 
-  @50344    @locationFieldAtAtActiveGrantsGridParentFlexTableFlexTableActionItemFromTopToRow-gMonitoring
+  @50344    @locationFieldAtActiveGrantsGridParentFlexTableActionItemFromTopToRow-gMonitoring @smoke
   Scenario: Changing location of Monitoring Schedule For All Active Grant flex table view action from top to row from config anf validating it inside Monitoring Schedule For All Active Grant flex table of program-gMonitoring
     Given I have default configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -755,7 +755,7 @@ Feature: Flex Grid Component Scenarios
     And I navigate to "Monitoring" tab
     Then I see "View" icon for "App 786" is displayed inside flex table
 
-  @50345    @showConfirmationBoxFieldForActiveGrantsGridFlexTAbleViewAction-gMonitoring
+  @50345    @showConfirmationBoxFieldForActiveGrantsGridFlexTAbleViewAction-gMonitoring @smoke
   Scenario: Setup confirmation box for Monitoring Schedule For All Active Grant flex table view action configuration and validating it at Monitoring Schedule For All Active Grant flex table of program-gMonitoring
     Given I have default configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -785,7 +785,7 @@ Feature: Flex Grid Component Scenarios
     When I click on "View" icon for "App 786" inside table with table id "toggleFGridMonitoringGridView" without processing
     Then I see confirmation box with body "Test Automation" is displayed
 
-  @50347    @refreshBehaviourFieldAtGrantorBudgetPeriodFlexTableAsRefreshEntirePageForEditAction-gGrants
+  @50347    @refreshBehaviourFieldAtGrantorBudgetPeriodFlexTableAsRefreshEntirePageForEditAction-gGrants @smoke
   Scenario: validate budget period details flex table action field- refresh entire page
     Given I have default configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -818,7 +818,7 @@ Feature: Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     Then I see "Edit" icon for "toggleFGridGrantFinancials" is at position "0" inside flex table
 
-  @50352    @hideForProfileFieldAtGrantorBudgetPeriodFlexTableViewAction-gGrants
+  @50352    @hideForProfileFieldAtGrantorBudgetPeriodFlexTableViewAction-gGrants @smoke
   Scenario: Hide view row level action for specific profile from configuration and validating it at under Grantor Budget Period flex table- gPlanning
     Given I have default configuration as below:
       | configurationCategory         | fieldName        | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -834,7 +834,7 @@ Feature: Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     Then I see "View" icon for column value "Active" is not displayed at table "toggleFGridGrantFinancials"
 
-  @50353    @hideForUserFieldAtGrantorBudgetPeriodFlexTableViewAction-gGrants
+  @50353    @hideForUserFieldAtGrantorBudgetPeriodFlexTableViewAction-gGrants @smoke
   Scenario: Hide view row level action for specific User from configuration and validating it at under Grantor Budget Period flex table- gPlanning
     Given I have default configuration as below:
       | configurationCategory         | fieldName     | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -850,3 +850,321 @@ Feature: Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     Then I see "View" icon for column value "Active" is not displayed at table "toggleFGridGrantFinancials"
 
+  @50355    @iconCSSFieldAtActiveGrantsGridParentFlexTableEditActionItem-gMonitoring
+  Scenario: Setup icon for ActiveGrantsGridParent flex table edit action from config and validating it at ActiveGrantsGridParentflex table of program-gMonitoring
+    Given I have default configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue                                  | filterId         |
+      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableEditActionDefaultIconCss | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableEditActionNewIconCss | ActiveGrantsGrid   | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    Then I see external link icon as "App 786" for "Edit" inside flex table action
+
+  @50359    @actionNameFieldAtActiveGrantsGridParentFlexTableViewAction-gMonitoeing
+  Scenario: Changing action name field for view action at ActiveGrantsGridParent flex table from config and validating it inside ActiveGrantsGridParent flex table of programs-gMonitoring
+    Given I have default configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName   | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action Name | Test Automation | ActiveGrantsGrid   | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    Then I see "Test Automation" as title for "App 786" inside flex table action
+
+  @50362    @headerFieldAtActiveGrantsGridParentFlexTable-gMonitoring
+  Scenario: Changing content of header field at ActiveGrantsGridParent flex table and validating it at Monitoring schedule for all active grants flex table
+    Given I have default configuration as below:
+      | configurationCategory | fieldName  | fieldOrignalValue | filterId                |
+      | Flex Table            | Header     | Monitoring Schedule For All Active Grant    | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName  | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header     | Test Automation| ActiveGrantsGrid   |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    Then I see "Test Automation" shown as inside "toggleFGridMonitoringGridView"
+
+  @50365    @headerHelpTextFieldAtActiveGrantsGridParentFlexTable-gMonitoring
+  Scenario Outline: Changing content of help text field at parent flex table of ActiveGrantsGrid from config and validating it at Monitoring schedule for all active grant flex table
+    Given I have default configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Grid             | Header Help Text | <old_helpText>    | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Header Help Text | <new_helpText> | ActiveGrantsGrid    |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    When I hovering mouse on help text icon inside "Monitoring Schedule For All Active Grant" for flex table
+    Then I see "<new_helpText>" shown as help text
+    Examples:
+      | new_helpText             | old_helpText                                                                                                                                                             |
+      | Help Text for Automation | The following table is a comprehensive list of all active grants.Â to view or edit a specific grant select the grant id hyperlink for the grant you would like to access |
+
+  @50367    @disblingQuickSearchFieldAtActiveGrantsGridParentFlexTable-gMonitoring @smoke
+  Scenario: validate disabling of quick search in ActiveGrantsGrid flex table at program-gMonitoring
+    Given I have default configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Quick Search | false         | ActiveGrantsGrid    |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    Then I see quick search option disabled for table "toggleFGridMonitoringGridView"
+
+  @50370    @enableHelpFieldAtActiveGrantsGridParentFlexTable-gMonitoring @smoke
+  Scenario: validate enabling of help inside menu option in Monitoring schedule for all active grant flex table at Monitoring phase
+    Given I have default configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Help | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName   | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Help | true          | ActiveGrantsGrid   |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    When I click on top right parallel lines bar for "Monitoring Schedule For All Active Grant"
+    Then I see "Help" options inside "Monitoring Schedule For All Active Grant" enabled
+
+  @50371    @enablePaginationFieldAtActiveGrantsGridParentFlexTable-gMonitoring
+  Scenario: validate enabling of page size dropdown at bottom in Monitoring schedule for all active grant flex table at Monitoring phase
+    Given I have default configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination | true          | ActiveGrantsGrid   |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    Then I see "Page" with pagination arrow at "toggleFGridMonitoringGridView"
+
+  @50377    @disablingMenuFieldAtActiveGrantsGridParentFlexTable-gMonitoring @smoke
+  Scenario: validate disabling of menu icon from Monitoring schedule for all active grant flex table at Monitoring phase
+    Given I have default configuration as below:
+      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
+      | Flex Table            | Disable Menu | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName    | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Disable Menu | true          | ActiveGrantsGrid   |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    Then I see Menu icon is disabled from planning flex table "Monitoring Schedule For All Active Grant"
+
+  @50379    @enableAutoIndexFieldAtActiveGrantsGridParentFlexTable-gMonitoring
+  Scenario: validate enable auto index for Monitoring schedule for all active grant flex table at Monitoring phase
+    Given I have default configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index | true          | ActiveGrantsGrid   |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    Then I see "#" in flex table header
+
+  @50380    @disablingEnableTotalRecordsCountFieldAtActiveGrantsGridParentFlexTable-gMonitoring @smoke
+  Scenario: validate disbaling of total row count for Monitoring schedule for all active grant flex table at Monitoring phase
+    Given I have default configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Total Records Count | false         | ActiveGrantsGrid   |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    Then I see no "Total Records" count in "toggleFGridMonitoringGridView"
+
+  @50383    @orderBySortByFieldAtActiveGrantsGridParentFlexTableForAscendingOrder-gMonitoring
+  Scenario: Changing specific column value in ascending order with order by and sort by field At ActiveGrantsGridParentFlexTable from config and validating it inside Monitoring schedule for all active grant
+    Given I have default configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Order By       |                   | ActiveGrantsGrid    |                           |                            |
+      | Flex Grid:General     | Sort Direction |                   | ActiveGrantsGrid    |                           |                            |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue     | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Order By       | NumberofAwards__c | ActiveGrantsGrid    |                           |                            |
+      | Flex Grid:General     | Sort Direction | ASC               | ActiveGrantsGrid    |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    Then I see column "# Awards" value is in "Ascending" order for table id "toggleFGridMonitoringGridView"
+
+  @50386    @orderBySortByFieldAtActiveGrantsGridParentFlexTableForDescendingOrder-gMonitoring
+  Scenario: Changing specific column value in ascending order with order by and sort by field At ActiveGrantsGridParentFlexTable from config and validating it inside Monitoring schedule for all active grant flex table
+    Given I have default configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Order By       |                   | ActiveGrantsGrid    |                           |                            |
+      | Flex Grid:General     | Sort Direction |                   | ActiveGrantsGrid    |                           |                            |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue     | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Order By       | NumberofAwards__c | ActiveGrantsGrid    |                           |                            |
+      | Flex Grid:General     | Sort Direction | DESC              | ActiveGrantsGrid    |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    Then I see column "# Awards" value is in "Descending" order for table id "toggleFGridMonitoringGridView"
+
+  @50389    @pdfRenderTypeFieldAtActiveGrantsGridParentFlexTableForContentInBlock-gMonitoring
+  Scenario: validate Activated status in downloaded pdf file after checking check box of show in pdf at config and validating it inside enhanced grid of programs-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName       | fieldOrignalValue | filterId         |
+      | Flex Table                | PDF Render Type | Block             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName       | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General        | PDF Render Type | Block         | ActiveGrantsGrid   |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    When I click on top right parallel lines bar for "Monitoring Schedule For All Active Grant"
+    And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grant"
+    And I download the file
+    Then I see no "ID Title" on page "1" of "govgrants" pdf file for Block Content
+
+  @50390    @pdfRenderTypeFieldAtActiveGrantsGridParentFlexTableForContentInTable-gMonitoring
+  Scenario: validate Activated status in downloaded pdf file after checking check box of show in pdf at config and validating it inside enhanced grid of programs-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName       | fieldOrignalValue | filterId         |
+      | Flex Table                | PDF Render Type | Block             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName       | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General        | PDF Render Type | Table         | ActiveGrantsGrid   |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    When I click on top right parallel lines bar for "Monitoring Schedule For All Active Grant"
+    And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grant"
+    And I download the file
+    Then I see "ID Title" on page "1" of "govgrants" pdf file for Table Content
+
+  @50391    @disablingEnableExportFieldAtActiveGrantsGridParentFlexTable-gMonitoring
+  Scenario: validate disabling of PDF/Excel download from menu option at inside Monitoring schedule for all active grant flex table
+    Given I have default configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export | false         | ActiveGrantsGrid   |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    When I click on top right parallel lines bar for "Monitoring Schedule For All Active Grant"
+    Then I see "Download as PDF""Download as CSV" options inside "Monitoring Schedule For All Active Grant" disabled
+
+  @50393    @helpTextFieldAtActiveGrantsGridParentFlexTable-gMonitoring
+  Scenario Outline: Changing content of help text field at ActiveGrantsGridParent flex table column header from config and validating it inside Monitoring schedule for all active grant flex table
+    Given I have default configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Help Text |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Help Text | <new_helpText> | ActiveGrantsGrid   | Name                      | FTC-1020                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    When I hovering mouse on help text icon inside "# Awards" for flex table column
+    Then I see "<new_helpText>" shown as help text
+
+    Examples:
+      | new_helpText             |
+      | Help Text for Automation |
+
+  @50394    @widthPercentageFieldAtActiveGrantsGridFlexTable-gMonitoring
+  Scenario: validate width size of particular column at ActiveGrantsGrid flex table
+    Given I have default configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Flex Table List       | Field width(%) | 10                | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue  |
+      | Flex Table List       | Field width(%) | 50            | ActiveGrantsGrid   | Name                      | FTC-1020                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    Then I see "# Awards" column inside Flex grid table id "toggleFGridMonitoringGridView" contains width "50%"
+
+  @50397    @fieldLabelOverrideFieldAtActiveGrantsGridFlexTable-gMonitoring
+  Scenario: Changing specific column name of ActiveGrantsGrid flex table from config and validating it inside Monitoring schedule for all active grant flex table at Monitoring phase
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table List       | Field Label Override | # Awards          | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Field Label Override | Test          | ActiveGrantsGrid   | Name                      | FTC-1020                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    Then I see "Test" shown as flex table column title
+
+  @50395    @labelFieldAtActiveGrantsGridFlexTable-gMonitoring
+  Scenario: validate after changing name of ActiveGrantsGrid flex table title inside Monitoring phase
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName | fieldOrignalValue                         | filterId         |
+      | Flex Table List           | Label     | Monitoring Schedule For All Active Grant  | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName | fieldNewValue            | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List           | Label     | Automation N2G Grid      | ActiveGrantsGrid    | Name                      | FLV-1836                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    Then I see "Automation N2G Grid" shown as inside "toggleFGridMonitoringGridView"
+
+  @50399    @filterClauseFieldAtActiveGrantsGridFlexTable-gMonitoring @smoke
+  Scenario Outline: validate removing draft status category from ActiveGrantsGrid flex table of Monitoring Phase
+    Given I have default configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table List       | Filter Clause |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Filter Clause | <newFilter>     | ActiveGrantsGrid   | Name                      | FLV-1836                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    Then I see no "Draft" status in flex table id "toggleFGridMonitoringGridView"
+
+    Examples:
+      |newFilter                                        |
+      |RecordType.Name='Grantor' and status__c='Active' |
+
+  @50275    @refreshBehaviourFieldAtApplicationBudgetPeriodsFlexTableAsRefreshParentPageForEditAction-gGrants
+  Scenario: validate budget period details flex table action field- refresh parent page
+    Given I have default configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Refresh Behavior |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue       | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Refresh Behavior | Refresh parent page | ApplicationBudgetPeriods | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "AP-755-198"
+    When I click on "View" icon for "Test announcement for program 2" inside table
+    When I navigate to "Budget" sub tab
+    When I click on "Edit" icon for "BP-01" to save inside subtab
+    Then I see parent page is refreshing
+
+  @50350    @refreshBehaviourFieldAtGrantorBudgetPeriodFlexTableAsRefreshParentPageForEditAction-gGrants
+  Scenario: validate flex table action field- refresh entire page
+    Given I have default configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Refresh Behavior |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue    | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Refresh Behavior | Refresh the Grid | GrantorBudgetPeriod | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Financials" sub tab
+    When I click on "Edit" icon for "2019" to save inside subtab
+    Then I see parent page is refreshing

@@ -124,6 +124,11 @@ public class FlexTableSteps {
 		flexTablePage.asserEntirePageRefreshOnButtonClick();
 	}
 
+	@Then("^I see parent page is refreshing$")
+	public void assertParentPageRefresh() {
+		flexTablePage.asserEntirePageRefreshOnButtonClick();
+	}
+	
 	@Then("^I see \"([^\"]*)\" icon for \"([^\"]*)\" is not displayed inside flex table$")
 	public void assertActionIconNotDisplayedForflexTable(String iconName, String uniqueColumnValue) {
 		flexTablePage.assertActionIconNotDisplayedInsideflexTable(iconName, uniqueColumnValue);
@@ -209,6 +214,16 @@ public class FlexTableSteps {
 		flexTablePage.assertTextDisplayedInPDF(text, Integer.parseInt(pageNumber), fileName);
 	}
 
+	@Then("^I see no \"([^\"]*)\" on page \"([^\"]*)\" of \"([^\"]*)\" pdf file for Block Content$")
+	public void assertTExtNotDisplayedForBlockContent(String text, String pageNumber, String fileName) {
+		flexTablePage.assertTextDisplayedInPDFForBlockContent(text, Integer.parseInt(pageNumber), fileName);
+	}
+
+	@Then("^I see \"([^\"]*)\" on page \"([^\"]*)\" of \"([^\"]*)\" pdf file for Table Content$")
+	public void assertTExtNotDisplayedForTableContent(String text, String pageNumber, String fileName) {
+		flexTablePage.assertTextDisplayedInPDFForTableContent(text, Integer.parseInt(pageNumber), fileName);
+	}
+
 	@Then("^I see \"([^\"]*)\" in xls file \"([^\"]*)\"$")
 	public void assertTExtNotDisplayedInXLS(String text, String fileName) {
 		flexTablePage.assertTextDisplayedInXLS(text, fileName);
@@ -217,5 +232,10 @@ public class FlexTableSteps {
 	@Then("^I do not see \"([^\"]*)\" error$")
 	public void assertNoError(String errorMessage) {
 		flexTablePage.assertErrorMessageNotDisplayed(errorMessage);
+	}
+	
+	@Then("^I see \"([^\"]*)\" inside Application Budget flex table for specified record \"([^\"]*)\"$")
+	public void assertGridRefreshedWithEnteredText(String columnTitleName, String colName) {
+		flexTablePage.asserGridRefreshOnButtonClick(columnTitleName, colName);
 	}
 }

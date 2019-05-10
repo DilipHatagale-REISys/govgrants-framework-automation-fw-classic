@@ -84,6 +84,23 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	}
 
 	/**
+	 * click on text area and enter values for multiple rows for particular column
+	 * at enhanced grid
+	 * 
+	 * @param tableId
+	 * @param enteredValue
+	 */
+	public void enterValueForTextareaAtEnhancedGridColumn(String enteredValue, String tableId) {
+		List<WebElement> textField = reiDriver.findMyElement()
+				.getElements(By.xpath("//div[@id='" + tableId + "']//tbody//td//textarea"));
+		for (WebElement inputField : textField) {
+			System.out.println(inputField.getTagName());
+			inputField.clear();
+			inputField.sendKeys(enteredValue);
+		}
+	}
+
+	/**
 	 * assert true if changed icon css of enhanced grid table edit action is
 	 * displayed
 	 * 
@@ -368,6 +385,17 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 		Assert.assertTrue(isExpectedEnteredValueInsideTextAreaFieldDisplayed(enteredValue, columnValue, tableId));
 	}
 
+	/**
+	 * return true if entered text area value for multiple cells at enhanced grid is
+	 * displayed
+	 *
+	 * @param enteredValue
+	 */
+	public void assertEditedValueForTextAreaFieldForMultipleCells(String enteredValue, String columnValue) {
+		Assert.assertTrue(
+				isExpectedEnteredValueInsideTextAreaFieldDisplayedForMultipleCells(enteredValue, columnValue));
+	}
+
 	/*********
 	 * "Local Methods with complete functionality - private"
 	 *****************/
@@ -605,7 +633,8 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	private boolean isActionButtonInsideTopOfEnhancedGridTableDisplayed(String buttonName, String headerName) {
 		boolean flag = false;
 		try {
-			if (reiDriver.WaitFor().WaitForElementToBePresent(By.xpath("//*[@title='" + headerName + "' or text()='" + headerName
+			if (reiDriver.WaitFor().WaitForElementToBePresent(By.xpath("//*[@title='" + headerName + "' or text()='"
+					+ headerName
 					+ "']/ancestor::div[contains(@class,'header-title') or 1]/following-sibling::div/div[contains(@class,'header-buttons')]//*[text()='"
 					+ buttonName + "'] |//*[@title='" + headerName + "' or text()='" + headerName
 					+ "']/ancestor::div[contains(@class,'header-title') or 1]/following-sibling::div/action//button[contains(@title,'"
@@ -985,7 +1014,8 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	}
 
 	/**
-	 * return true if expected/entered text area value is displayed inside Text Area field
+	 * return true if expected/entered text area value is displayed inside Text Area
+	 * field
 	 *
 	 * @param enteredValue
 	 * @param columnValue
@@ -1004,6 +1034,31 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
+		}
+		return flag;
+	}
+
+	/**
+	 * return true if expected/entered text area value is displayed inside Text Area
+	 * field for multiple cells
+	 *
+	 * @param enteredValue
+	 * @return
+	 */
+	private boolean isExpectedEnteredValueInsideTextAreaFieldDisplayedForMultipleCells(String enteredValue,
+			String columnValue) {
+		boolean flag = false;
+		try {
+			List<WebElement> cellsValue = reiDriver.findMyElement()
+					.getElements(By.xpath("//table/tbody/tr/td//*[@field-name='" + columnValue + "']//span//span"));
+			for (WebElement el : cellsValue) {
+				String valueFound = el.getText().trim();
+				if (enteredValue.equals(valueFound)) {
+					flag = true;
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		return flag;
 	}

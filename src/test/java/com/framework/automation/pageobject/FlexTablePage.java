@@ -1,7 +1,5 @@
 package com.framework.automation.pageobject;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -166,7 +164,7 @@ public class FlexTablePage extends GovGrantsManager {
 		String state = isPageRefreshOnButtonClick();
 		Assert.assertTrue(state.equalsIgnoreCase("Complete"));
 	}
-
+	
 	/**
 	 * assert if specific action icon is not displayed for flex table
 	 * 
@@ -208,8 +206,8 @@ public class FlexTablePage extends GovGrantsManager {
 	 */
 	public void getHelpTextAtDraftProgramFlexTable(String blockTitle) {
 		reiDriver.Clickers()
-				.moveMouseToSpecificLocation(reiDriver.findMyElement()
-						.getElement(By.xpath("//div[text()='" + blockTitle
+				.moveMouseToSpecificLocation(reiDriver.WaitFor()
+						.WaitForElementToBePresent(By.xpath("//div[text()='" + blockTitle
 								+ "']/../../..//span[contains(@class,'fa-info')] |//div/a[@title='" + blockTitle
 								+ "']/..//span[contains(@class,'fa-info')]")));
 	}
@@ -390,6 +388,24 @@ public class FlexTablePage extends GovGrantsManager {
 	}
 
 	/**
+	 * assert if specified name/text is displayed inside downloaded pdf file in
+	 * block content
+	 *
+	 */
+	public void assertTextDisplayedInPDFForBlockContent(String text, int pageNumber, String fileName) {
+		Assert.assertTrue(isTextNotDisplayedInFile(text, pageNumber, fileName));
+	}
+
+	/**
+	 * assert if specified name/text is displayed inside downloaded pdf file in
+	 * Table content
+	 *
+	 */
+	public void assertTextDisplayedInPDFForTableContent(String text, int pageNumber, String fileName) {
+		Assert.assertFalse(isTextNotDisplayedInFile(text, pageNumber, fileName));
+	}
+
+	/**
 	 * Click on toggle button inside program flex table
 	 */
 	public void clickToggleButtonAndSelect(String menuItemName) {
@@ -424,6 +440,14 @@ public class FlexTablePage extends GovGrantsManager {
 	public void assertErrorMessageNotDisplayed(String errorMessage) {
 		Assert.assertFalse(isErrorMessageNotDisplayed(errorMessage));
 
+	}
+	
+	/**
+	 * assert if grid is refreshing with entered text
+	 * 
+	 */
+	public void asserGridRefreshOnButtonClick(String columnTitleName, String colName) {
+		Assert.assertTrue(isSpecificCellValueOfApplicationBudgetFlexTable(columnTitleName, colName));
 	}
 
 	/*********
@@ -855,6 +879,21 @@ public class FlexTablePage extends GovGrantsManager {
 				flag = false;
 				break;
 			}
+		}
+		return flag;
+	}
+
+	/**
+	 * @return true if grid is refreshed and coming up with changed text is displayed
+	 */
+	private Boolean isSpecificCellValueOfApplicationBudgetFlexTable(String cellValue, String colName) {
+		boolean flag = false;
+		try {
+			if (reiDriver.findMyElement().getElement(govgrants.flexTable().getFlexTableColumn(cellValue)).getText()
+					.equalsIgnoreCase(cellValue)) {
+				flag = true;
+			}
+		} catch (Exception e) {
 		}
 		return flag;
 	}

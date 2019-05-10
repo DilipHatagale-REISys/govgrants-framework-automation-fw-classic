@@ -278,6 +278,12 @@ public class FlexTable {
 							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
 					String.valueOf(SObjectAPIs.GNT__Header__c), value);
 			break;
+		case "PDF RENDER TYPE":
+			finalPayload = String.format(
+					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__PDFRenderType__c), value);
+			break;
 		}
 		System.out.println(finalPayload);
 		return finalPayload;
@@ -407,6 +413,12 @@ public class FlexTable {
 					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableAction__c), apiUtilities
 							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableAction__c), filterClause),
 					String.valueOf(SObjectAPIs.GNT__SingleRowEditBehavior__c), value);
+			break;
+		case "ACTION NAME":
+			finalPayload = String.format(
+					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableAction__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableAction__c), filterClause),
+					String.valueOf(SObjectAPIs.Name), value);
 			break;
 		}
 		System.out.println(finalPayload);

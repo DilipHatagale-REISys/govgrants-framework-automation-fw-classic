@@ -26,6 +26,11 @@ public class EnhancedFlexGridSteps {
 	public void getHelpTextIconsAtFlexTableColumn(String columnTitle) {
 		enhancedFlexGrid.getHelpTextAtEnhancedGridTableSpecificColumn(columnTitle);
 	}
+	
+	@When("^I enter values \"([^\"]*)\" into textarea for table id \"([^\"]*)\"$")
+	public void textAreaFieldAtEnhancedGrid(String enteredValue, String tableId) {
+		enhancedFlexGrid.enterValueForTextareaAtEnhancedGridColumn(enteredValue, tableId);
+	}
 
 	@Then("^I see Advance Filter is disabled from table \"([^\"]*)\"$")
 	public void assertAdvanceFilterOptionDisabled(String tableId) {
@@ -181,5 +186,10 @@ public class EnhancedFlexGridSteps {
 	@Then("^I see edited value inside textarea is \"([^\"]*)\" for column value \"([^\"]*)\" of table \"([^\"]*)\"$")
 	public void assertEditedTextAreaValue(String enteredValue, String columnValue, String tableId) {
 		enhancedFlexGrid.assertEditedValueForTextAreaField(enteredValue, columnValue, tableId);
+	}
+
+	@Then("^I see value \"([^\"]*)\" for multiple cells at column \"([^\"]*)\"$")
+	public void assertEditedTextAreaValueForMultipleCells(String enteredValue, String columnValue) {
+		enhancedFlexGrid.assertEditedValueForTextAreaFieldForMultipleCells(enteredValue, columnValue);
 	}
 }

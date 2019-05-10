@@ -1749,3 +1749,43 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I enter value "10" into field "AmountDirectAssistance__c"
     When I click on top right button "Save" in flex table with id "Enhanced1grid"
     Then I see edited value inside textarea is "$10.00" for column value "AD-FIN.1-BP01-00" of table "Enhanced1grid"
+    
+  @49360      @verifyEditAllAtParentFlexTableForEnhancedGrid-gPlanning
+  Scenario Outline: validate Edit selected functionality for parent flex table at enhanced grid of programs-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName               | fieldOrignalValue              | filterId         |
+      | Flex Grid:Flex Table List | Is Master View          | true                           | ApiGeneratedId:0 |
+      | Flex Grid:Flex Table List | Filter Clause           | <defaultFilterClauseForFLV2539>| ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName               | fieldNewValue              | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Is Master View          | true                       | TmpActiveGrantsGrid| Name                      | FLV-2539                   |
+      | Flex Grid:Flex Table List | Filter Clause           | <newFilterClauseForFLV2539>| TmpActiveGrantsGrid| Name                      | FLV-2539                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I click on top right button "Edit All" in flex table with id "flexGridEnhanced1"
+    When I enter values "Test Automation" into textarea for table id "flexGridEnhanced1"
+    When I click on top right button "Save" in flex table with id "flexGridEnhanced1"
+    Then I see value "Test Automation" for multiple cells at column "AddressProgramContact__c"
+    Examples:
+    |defaultFilterClauseForFLV2539                   |newFilterClauseForFLV2539                                                        |
+    |RecordType.Name='Grantor' and status__c='Active'|RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c like 'Road%'|
+
+  @49362      @verifyEditAllAtChildFlexTableForEnhancedGrid-gPlanning
+  Scenario: validate Edit selected functionality for parent flex table at enhanced grid of programs-planning
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "GT-FIN.1-001" in "flexGridEnhanced1" panel
+    When I expand nested table containing column value "GT-FIN.1-001"
+    When I click on top right button "Edit All" in flex table with id "TmpGrantorActiveAwardsGridFlexToggle"
+    When I enter values "Test Automation" into textarea for table id "TmpGrantorActiveAwardsGridFlexToggle"
+    When I click on top right button "Save" in flex table with id "flexGridEnhanced1"
+    Then I see value "Test Automation" for multiple cells at column "Agreement1__c"
+    
