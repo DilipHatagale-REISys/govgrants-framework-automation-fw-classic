@@ -128,7 +128,7 @@ public class FlexTableSteps {
 	public void assertParentPageRefresh() {
 		flexTablePage.asserEntirePageRefreshOnButtonClick();
 	}
-	
+
 	@Then("^I see \"([^\"]*)\" icon for \"([^\"]*)\" is not displayed inside flex table$")
 	public void assertActionIconNotDisplayedForflexTable(String iconName, String uniqueColumnValue) {
 		flexTablePage.assertActionIconNotDisplayedInsideflexTable(iconName, uniqueColumnValue);
@@ -233,9 +233,14 @@ public class FlexTableSteps {
 	public void assertNoError(String errorMessage) {
 		flexTablePage.assertErrorMessageNotDisplayed(errorMessage);
 	}
-	
+
 	@Then("^I see \"([^\"]*)\" inside Application Budget flex table for specified record \"([^\"]*)\"$")
 	public void assertGridRefreshedWithEnteredText(String columnTitleName, String colName) {
 		flexTablePage.asserGridRefreshOnButtonClick(columnTitleName, colName);
+	}
+
+	@Then("^I see record \"([^\"]*)\" having action \"([^\"]*)\" donot contain icon css \"([^\"]*)\"$")
+	public void assertPencilIconAtFlexTable(String columnTitle, String iconTitle, String cssValue) {
+		flexTablePage.assertFlexTableViewActionIconDisplayed(columnTitle, iconTitle, cssValue);
 	}
 }

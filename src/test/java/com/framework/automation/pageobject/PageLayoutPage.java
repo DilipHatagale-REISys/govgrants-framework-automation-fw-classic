@@ -36,7 +36,7 @@ public class PageLayoutPage extends GovGrantsManager {
 		rolesAndResponsibilitiesFlexTableTitle = By.xpath(
 				"//div[@class='panel-heading']//div[contains(@class,'panel-title')]//a//span[contains(text(),'Roles And Responsibilities')]");
 		monitoringFlexGridTitle = By.xpath(
-				"//div[@class='panel-heading']//div[contains(@class,'panel-title')]//a[@title='Monitoring Schedule For All Active Grants']");
+				"//div[@class='panel-heading']//div[contains(@class,'panel-title')]//a[@title='Monitoring Schedule For All Active Grant']");
 		addButtonUnderAttachments = By.xpath("//button[@title='AddAttachments']");
 		selectTypeDropdown = By.xpath("//select[@title='Classification']");
 		addAttachmentIframe = By.cssSelector("#addmodaldialog iframe");

@@ -4,6 +4,7 @@ import com.automation.rei.handlers.GovGrantsHandler;
 import com.framework.automation.pageobject.FlexGridPage;
 
 import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import eyethink.automation.bots.controller.Controller;
 import eyethink.automation.bots.controller.CoreHandlers;
 
@@ -12,6 +13,11 @@ public class FlexGridSteps {
 
 	public FlexGridSteps(Controller controller, CoreHandlers handler, GovGrantsHandler govgrants) {
 		flexGridPage = new FlexGridPage(controller, handler, govgrants);
+	}
+
+	@When("^I record webelement for column \"([^\"]*)\" in table \"([^\"]*)\"$")
+	public void getRecordOfTableColumn(String columnName, String tableId) {
+		flexGridPage.recordWebElement(columnName, tableId);
 	}
 
 	@Then("^I see \"([^\"]*)\" as header$")
@@ -40,8 +46,7 @@ public class FlexGridSteps {
 	}
 
 	@Then("^I see column \"([^\"]*)\" value is in \"([^\"]*)\" order for table id \"([^\"]*)\"$")
-	public void assertColumnValueOfTableInAscendingORDescendingOrder(String text, String order,
-			String tableId) {
+	public void assertColumnValueOfTableInAscendingORDescendingOrder(String text, String order, String tableId) {
 		flexGridPage.assertAscendingORDescendingOrderOfTableColumnValue(text, order, tableId);
 	}
 
@@ -65,5 +70,10 @@ public class FlexGridSteps {
 	public void assertActionIconNotDisplayedInsideGrantorBudgetPeriodflexTable(String iconName, String colValue,
 			String tableId) {
 		flexGridPage.assertActionIconNotDisplayedInsideForGrantorBudgetPeriodflexTable(iconName, colValue, tableId);
+	}
+
+	@Then("^I see Nested Table \"([^\"]*)\" with changed header name as \"([^\"]*)\"$")
+	public void assertChangedHeaderNameForNestedTable(String tableId, String changedText) {
+		flexGridPage.assertNestedTableHeaderName(tableId, changedText);
 	}
 }

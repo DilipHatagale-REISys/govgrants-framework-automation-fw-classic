@@ -26,7 +26,7 @@ public class EnhancedFlexGridSteps {
 	public void getHelpTextIconsAtFlexTableColumn(String columnTitle) {
 		enhancedFlexGrid.getHelpTextAtEnhancedGridTableSpecificColumn(columnTitle);
 	}
-	
+
 	@When("^I enter values \"([^\"]*)\" into textarea for table id \"([^\"]*)\"$")
 	public void textAreaFieldAtEnhancedGrid(String enteredValue, String tableId) {
 		enhancedFlexGrid.enterValueForTextareaAtEnhancedGridColumn(enteredValue, tableId);
@@ -192,4 +192,10 @@ public class EnhancedFlexGridSteps {
 	public void assertEditedTextAreaValueForMultipleCells(String enteredValue, String columnValue) {
 		enhancedFlexGrid.assertEditedValueForTextAreaFieldForMultipleCells(enteredValue, columnValue);
 	}
+
+	@Then("^I see \"([^\"]*)\" and \"([^\"]*)\" in \"([^\"]*)\" order$")
+	public void assertColumnValueInAscendingOrderWithAnotherColumn(String text1, String text2, String order) {
+		enhancedFlexGrid.assertAscendingOrderOfEnhancedGridColumnValueWRTOtherColumn(text1, text2, order);
+	}
+
 }

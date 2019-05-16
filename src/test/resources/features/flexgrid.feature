@@ -1151,8 +1151,45 @@ Feature: Flex Grid Component Scenarios
     When I navigate to "Budget" sub tab
     When I click on "Edit" icon for "BP-01" to save inside subtab
     Then I see parent page is refreshing
+    
+  @50244    @refreshBehaviourFieldAtApplicationBudgetPeriodsFlexTableAsRefreshTheGridForEditAction-gPlanning
+  Scenario: validate flex table action field- refresh entire page
+    Given I have default configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Refresh Behavior |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue    | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Refresh Behavior | Refresh the Grid | ApplicationBudgetPeriods | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "AP-755-198"
+    When I click on "View" icon for "Test announcement for program 2" inside table
+    When I navigate to "Budget" sub tab
+    When I record webelement for column "BP-01" in table "toggleFGridApplicationBudgetCategoryFlexGrid"
+    And I click on "Edit" icon for "BP-01" inside flex table with id "toggleFGridApplicationBudgetCategoryFlexGrid" with wait for record
+    When I enter value "test" into field "fieldNotes__c"
+    And I click modal button "Save"
+    Then I see "test" inside Application Budget flex table for specified record "BP-01"
 
   @50350    @refreshBehaviourFieldAtGrantorBudgetPeriodFlexTableAsRefreshParentPageForEditAction-gGrants
+  Scenario: validate flex table action field- refresh entire page
+    Given I have default configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Refresh Behavior |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue       | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Refresh Behavior | Refresh parent page | GrantorBudgetPeriod | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Financials" sub tab
+    When I click on "Edit" icon for "2019" to save inside subtab
+    Then I see parent page is refreshing
+    
+  @50348    @refreshBehaviourFieldAtGrantorBudgetPeriodFlexTableAsRefreshTheGridForEditAction-gPlanning
   Scenario: validate flex table action field- refresh entire page
     Given I have default configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -1166,5 +1203,259 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Financials" sub tab
-    When I click on "Edit" icon for "2019" to save inside subtab
-    Then I see parent page is refreshing
+    When I record webelement for column "2019" in table "toggleFGridGrantFinancials"
+    And I click on "Edit" icon for "2019" inside flex table with id "toggleFGridGrantFinancials" with wait for record
+    When I enter value "test" into field "fieldNotes__c"
+    And I click modal button "Save"
+    Then I see "test" inside Application Budget flex table for specified record "2019"
+    
+  @51323    @sequenceFieldAtApplicationBudgetCategoryFlexTableChild-gApplications
+  Scenario: Changing sequence of view row level action item at Application Budget child flex table from config and validating it inside Application Budget child flex table of programs
+    Given I have default configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Sequence  | 1                 | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Sequence  | 0             | ApplicationBudgetCategoryFlexTable| Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I expand nested table containing column value "BP-01"
+    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    Then I see "View" icon for "toggleFGridApplicationBudgetCategoryFlexGrid" is at position "0" inside flex table
+    
+  @51328    @buttonHelpTextFieldAtApplicationBudgetCategoryFlexTableActionChild-gApplications
+  Scenario: Changing content of button help text field Application Budget child flex table action from config and validating it inside Application Budget child flex table programs
+    Given I have default configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Button Help Text |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue   | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Button Help Text | Test Automation | ApplicationBudgetCategoryFlexTable| Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I expand nested table containing column value "BP-01"
+    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    Then I see "Test Automation" as title for "Indirect Cost Rate" inside flex table action
+    
+  @51332    @viewActionOpensInNewWindowAtApplicationBudgetCategoryFlexTableActionChild-gApplications
+  Scenario: validate Application Budget child flex table action field- view opens in new window
+    Given I have default configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue  | filterId         |
+      | Flex Table Action     | Action Behavior | Open in new window | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue      | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action Behavior | Open in new window | ApplicationBudgetCategoryFlexTable| Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I expand nested table containing column value "BP-01"
+    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    When I click on "View" icon for "Proposed Uses Of Total Funds" inside table
+    Then I see new tab is opened
+    
+  @51333    @viewActionOpensInSameWindowAtApplicationBudgetCategoryFlexTableActionChild-gApplications
+  Scenario: validate Application Budget child flex table action field- view opens in same window
+    Given I have default configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue  | filterId         |
+      | Flex Table Action     | Action Behavior | Open in new window | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue       | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action Behavior | Open in same window | ApplicationBudgetCategoryFlexTable| Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I expand nested table containing column value "BP-01"
+    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    When I click on "View" icon for "Proposed Uses Of Total Funds" inside table
+    Then I see no new tab is opened
+    
+  @51334    @viewActionOpensInOverlayWindowAtApplicationBudgetCategoryFlexTableActionChild-gApplications
+  Scenario: validate Application Budget child flex table action field- view opens in overlay
+    Given I have default configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue  | filterId         |
+      | Flex Table Action     | Action Behavior | Open in new window | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue   | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action Behavior | Open in overlay | ApplicationBudgetCategoryFlexTable| Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I expand nested table containing column value "BP-01"
+    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    When I click on "View" icon for "Proposed Uses Of Total Funds" inside table
+    Then I see "View" opens in overLay window
+    
+  @51335    @showConfirmationBoxFieldAtApplicationBudgetCategoryFlexTableActionChild-gApplications
+  Scenario: Setup confirmation box for Application Budget child flex table view action from configuration and validating it at Application Budget child flex table view action of program
+    Given I have default configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Show Confirmation Box | false             | ApplicationBudgetCategoryFlexTable| Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Show Confirmation Box | true          | ApplicationBudgetCategoryFlexTable| Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I expand nested table containing column value "BP-01"
+    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    When I click on "View" icon for "Proposed Uses Of Total Funds" inside table with table id "toggleFGridApplicationBudgetCategoryFlexGrid" without processing
+    Then I see confirmation box with body "null" is displayed 
+    
+  @51343    @ConfirmationMessageFieldAtApplicationBudgetCategoryFlexTableActionChild-gApplications
+  Scenario: Setup confirmation message for Application Budget child flex table view action from configuration and validating it at Application Budget child flex table view action of program
+    Given I have default configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Show Confirmation Box | false             | ApplicationBudgetCategoryFlexTable| Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                   | ApplicationBudgetCategoryFlexTable| Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Show Confirmation Box | true          | ApplicationBudgetCategoryFlexTable| Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  | Automation    | ApplicationBudgetCategoryFlexTable| Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I expand nested table containing column value "BP-01"
+    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    When I click on "View" icon for "Proposed Uses Of Total Funds" inside table with table id "toggleFGridApplicationBudgetCategoryFlexGrid" without processing
+    Then I see confirmation box with body "Automation" is displayed
+    
+  @51345    @hideForProfileFieldAtApplicationBudgetCategoryFlexTableViewActionChild-gApplications
+  Scenario: Hide edit row level action for specific profile from configuration and validating it at under Application Budget child flex table
+    Given I have default configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide For Profile |                   | ApplicationBudgetCategoryFlexTable| Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue        | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide For Profile | System Administrator | ApplicationBudgetCategoryFlexTable | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I expand nested table containing column value "BP-01"
+    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    Then I see "View" icon for "Proposed Uses Of Total Funds" is not displayed inside flex table 
+    
+  @51358    @hideForUserFieldAtApplicationBudgetCategoryFlexTableViewActionChild-gApplications
+  Scenario: Hide edit row level action for specific user from configuration and validating it at under Application Budget child flex table
+    Given I have default configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide For User |                   | ApplicationBudgetCategoryFlexTable| Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue  | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide For User | Internal       | ApplicationBudgetCategoryFlexTable | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I expand nested table containing column value "BP-01"
+    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    Then I see "View" icon for "Proposed Uses Of Total Funds" is not displayed inside flex table
+    
+  @51368    @actionURLLongFieldAtApplicationBudgetCategoryFlexTableViewActionChild-gApplications
+  Scenario Outline: Changing action url long of action url long field for view action from config and validating it at under Application Budget child flex table
+    Given I have default configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action URL      | <oldActionUrl>    | ApiGeneratedId:0 |
+      | Flex Table Action     | Action URL Long |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue  | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      |                | ApplicationBudgetCategoryFlexTable| Name                      | View                       |
+      | Flex Table Action     | Action URL Long | <newActionUrl> | ApplicationBudgetCategoryFlexTable| Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I expand nested table containing column value "BP-01"
+    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    When I click on "View" icon for "Proposed Uses Of Total Funds" inside table
+    Then I see edit opens with "<newActionUrl>"
+
+    Examples:
+      | oldActionUrl                                                               | newActionUrl            |
+      | /apex/ApplicationBudgetCategoryView?id={!ApplicationBudgetCategory2__c.id} | https://www.google.com/ |
+      
+  @51375    @iconCSSFieldAtApplicationBudgetCategoryFlexTableViewActionChild-gApplications
+  Scenario: Removing icon for ApplicationBudgetCategoryFlexTable view action from config and validating it at Application Budget child flex table
+    Given I have default configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue                              | filterId         |
+      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableViewActionNewIconCss | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  |                                                | ApplicationBudgetCategoryFlexTable| Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I expand nested table containing column value "BP-01"
+    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    Then I see record "Indirect Cost Rate" having action "View" donot contain icon css "fa fa-eye"
+      
+  @51384    @actionNameFieldAtApplicationBudgetCategoryFlexTableViewActionChild-gApplications
+  Scenario: Changing action name field for view action at ApplicationBudgetCategoryFlexTable from config and validating it at Application Budget child flex table
+    Given I have default configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName   | fieldNewValue   | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action Name | Test Automation | ApplicationBudgetCategoryFlexTable| Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I expand nested table containing column value "BP-01"
+    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    Then I see "Test Automation" as title for "Indirect Cost Rate" inside flex table action
+    
+  @51400    @headerFieldAtApplicationBudgetCategoryFlexTable-gApplications
+  Scenario: Changing content of header field at ApplicationBudgetCategoryFlexTable and validating it at Application Budget child flex table
+    Given I have default configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue           | filterId         |
+      | Flex Table            | Header    | Proposed Uses Of Total Funds| ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue   | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header    | Test Automation | ApplicationBudgetCategoryFlexTable|                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I expand nested table containing column value "BP-01"
+    When I expand nested table containing column value "Test Automation"
+    Then I see Nested Table "toggleFGridApplicationBudgetCategoryFlexGrid" with changed header name as "Test Automation"
+    
+    
+    

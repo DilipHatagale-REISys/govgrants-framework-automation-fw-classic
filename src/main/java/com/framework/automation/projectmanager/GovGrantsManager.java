@@ -26,6 +26,7 @@ public class GovGrantsManager extends ProjectWebServices {
 	public GovGrantsHandler govgrants;
 	public String standardPassword = "Automation@12345";
 	public String defaultComment = "Automation testing";
+	public WebElement recordElement;
 	public final By navigationLogo, searchInput, rightHeaderBars, egmsHeader, completeTableRow, sideBarHeadersList,
 			advanceFilterButton, menuIcon, selectRecordCheckBox, totalRowsCalc, flexTablelastRowNameAsTotal,
 			pendingTasksTableRef, dangerAlert, confirmationBoxMessage, selectDropdown, allPhases, chartsContainer,
@@ -73,7 +74,7 @@ public class GovGrantsManager extends ProjectWebServices {
 	/**
 	 * click on navigation bar item inside app. e.g; planning,announcements etc
 	 * 
-	 * @param menuItem
+	 * @param tabName
 	 */
 	public void clickPhasesNaveBar(String tabName) {
 		govgrants.mainPage().clickMainMenuBar(tabName);
@@ -413,6 +414,15 @@ public class GovGrantsManager extends ProjectWebServices {
 
 	}
 
+	/**
+	 * Record column content of table
+	 * @param tableId
+	 * @paran columnName
+	 */
+	public void recordWebElement(String tableId, String columnName){
+		recordElement= govgrants.flexTable().getSpecificTableColumn(tableId, columnName);
+	}
+
 	/******* "Local Methods with Limited functionality " **********/
 
 	/**
@@ -432,7 +442,7 @@ public class GovGrantsManager extends ProjectWebServices {
 	/**
 	 * get sub tab inside detail each main detail page like overview etc.
 	 * 
-	 * @param tabName
+	 * @param SubTabName
 	 */
 	public WebElement getSubTabsInsideMainDetailPage(String SubTabName) {
 		return reiDriver.findMyElement()
@@ -451,7 +461,7 @@ public class GovGrantsManager extends ProjectWebServices {
 	 */
 	public List<WebElement> getListPageBlockInsideMainDetailPage() {
 		return reiDriver.findMyElement()
-				.getElements(By.xpath("//div[@class='tab-pane active']//div[@class='panel-heading']"));
+				.getElements(By.xpath("//div[@class='tab-pane fade active in']//div[@class='panel-heading']"));
 	}
 
 	/**

@@ -34,7 +34,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
 	 */
 	public void clickSubmitButton() {
 		reiDriver.WaitFor().WaitForElementToBePresent(submitButton).click();
-		reiDriver.WaitFor().makeThreadSleep(5000);
+		reiDriver.WaitFor().makeThreadSleep(9000);
 	}
 
 	/**

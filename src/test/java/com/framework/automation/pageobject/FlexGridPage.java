@@ -154,6 +154,14 @@ public class FlexGridPage extends GovGrantsManager {
 		}
 	}
 
+	/**
+	 * assert true if Nested table is displayed with changes header name
+	 *
+	 */
+	public void assertNestedTableHeaderName(String tableId, String changedText) {
+		Assert.assertTrue(isNestedTableHeaderChanged(tableId, changedText));
+	}
+
 	/*********
 	 * "Local Methods with complete functionality - private"
 	 *****************/
@@ -294,5 +302,18 @@ public class FlexGridPage extends GovGrantsManager {
 				.xpath("//div[@id='" + tableId + "']//table//tr" + "//td[not(contains(@class, 'ng-hide'))]["
 						+ columnMapping.get(text) + "]" + "//span[contains(@ng-bind, 'viewValue')]");
 		return reiDriver.findMyElement().getElements(columnSelector);
+	}
+
+	/**
+	 * @return true if Nested table is displayed with changed header name
+	 */
+	private Boolean isNestedTableHeaderChanged(String tableId, String changedText) {
+		boolean flag = false;
+		WebElement changedHeader = reiDriver.findMyElement()
+				.getElement(By.xpath("//div[@id='" + tableId + "']//td//*[text()='" + changedText + "']"));
+		if (changedHeader.isDisplayed()) {
+			flag = true;
+		}
+		return flag;
 	}
 }

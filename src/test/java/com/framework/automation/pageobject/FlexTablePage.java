@@ -164,7 +164,7 @@ public class FlexTablePage extends GovGrantsManager {
 		String state = isPageRefreshOnButtonClick();
 		Assert.assertTrue(state.equalsIgnoreCase("Complete"));
 	}
-	
+
 	/**
 	 * assert if specific action icon is not displayed for flex table
 	 * 
@@ -441,13 +441,24 @@ public class FlexTablePage extends GovGrantsManager {
 		Assert.assertFalse(isErrorMessageNotDisplayed(errorMessage));
 
 	}
-	
+
 	/**
 	 * assert if grid is refreshing with entered text
 	 * 
 	 */
 	public void asserGridRefreshOnButtonClick(String columnTitleName, String colName) {
 		Assert.assertTrue(isSpecificCellValueOfApplicationBudgetFlexTable(columnTitleName, colName));
+	}
+
+	/**
+	 * assert true if icon css of flex table view action is not displayed
+	 * 
+	 * @param columnTitle
+	 * @param iconTitle
+	 * @param cssValue
+	 */
+	public void assertFlexTableViewActionIconDisplayed(String columnTitle, String iconTitle, String cssValue) {
+		Assert.assertFalse(isCSSIconForSpecificActionOfFlexTable(columnTitle, iconTitle, cssValue));
 	}
 
 	/*********
@@ -884,13 +895,36 @@ public class FlexTablePage extends GovGrantsManager {
 	}
 
 	/**
-	 * @return true if grid is refreshed and coming up with changed text is displayed
+	 * @return true if grid is refreshed with checking stale element and coming up
+	 *         with changed text is displayed
 	 */
 	private Boolean isSpecificCellValueOfApplicationBudgetFlexTable(String cellValue, String colName) {
 		boolean flag = false;
 		try {
-			if (reiDriver.findMyElement().getElement(govgrants.flexTable().getFlexTableColumn(cellValue)).getText()
-					.equalsIgnoreCase(cellValue)) {
+			if (reiDriver.is().isStale(recordElement)
+					|| reiDriver.findMyElement().getElement(govgrants.flexTable().getFlexTableColumn(cellValue))
+							.getText().equalsIgnoreCase(cellValue)) {
+				flag = true;
+			}
+		} catch (Exception e) {
+		}
+		return flag;
+	}
+
+	/**
+	 * @return true if passed icon css is not displayed for view action item at
+	 *         table
+	 */
+	private Boolean isCSSIconForSpecificActionOfFlexTable(String columnTitle, String iconTitle, String cssValue) {
+		boolean flag = false;
+		try {
+			if (reiDriver.findMyElement()
+					.getElement(By.xpath("//td//*[@title = '" + columnTitle + "' or text() = '" + columnTitle
+							+ "']/ancestor::tr[1]//td//a[@title = '" + iconTitle + "']//i[contains(@class,'" + cssValue
+							+ "')]"))
+					.isDisplayed())
+				;
+			{
 				flag = true;
 			}
 		} catch (Exception e) {

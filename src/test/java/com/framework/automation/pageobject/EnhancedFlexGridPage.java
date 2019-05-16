@@ -3,7 +3,9 @@ package com.framework.automation.pageobject;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -394,6 +396,14 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	public void assertEditedValueForTextAreaFieldForMultipleCells(String enteredValue, String columnValue) {
 		Assert.assertTrue(
 				isExpectedEnteredValueInsideTextAreaFieldDisplayedForMultipleCells(enteredValue, columnValue));
+	}
+
+	/**
+	 * return true if particular column value is in ascending order with respect to
+	 * other Column
+	 */
+	public void assertAscendingOrderOfEnhancedGridColumnValueWRTOtherColumn(String text1, String text2, String order) {
+		Assert.assertTrue(isMultipleColumnValueInExepctedOrder(text1, text2, order));
 	}
 
 	/*********
@@ -1061,5 +1071,31 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 			e.printStackTrace();
 		}
 		return flag;
+	}
+
+	/**
+	 * return true if particular column value of enhanced grid table is in
+	 * ascending/descending order
+	 *
+	 * @return
+	 */
+	private boolean isMultipleColumnValueInExepctedOrder(String text1, String text2, String order) {
+		return reiDriver.compare().sortAndCompareWebTableWithTwoColumns(getTableColumnCompleteContent(text1, text2),
+				order);
+	}
+
+	/**
+	 * get particular table column complete content
+	 * 
+	 * @param text
+	 * @return
+	 */
+	public Map<Integer, List<WebElement>> getTableColumnCompleteContent(String text1, String text2) {
+		Map<Integer, List<WebElement>> mapWebElements = new HashMap<Integer, List<WebElement>>();
+		mapWebElements.put(1,
+				reiDriver.findMyElement().getElements(By.xpath("//table/tbody/tr/td//*[@field-name='" + text1 + "']")));
+		mapWebElements.put(2,
+				reiDriver.findMyElement().getElements(By.xpath("//table/tbody/tr/td//*[@field-name='" + text2 + "']")));
+		return mapWebElements;
 	}
 }
