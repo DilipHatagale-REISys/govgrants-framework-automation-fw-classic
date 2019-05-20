@@ -1,5 +1,6 @@
 package com.framework.automation.steps;
 
+import eyethink.automation.bots.exception.EyeThinkBotsCustomException;
 import org.springframework.context.annotation.Description;
 
 import com.automation.rei.handlers.GovGrantsHandler;
@@ -40,7 +41,7 @@ public class FlexTableSteps {
 
 	@Description("Step to validate a bug which results in error if a certain sequnce is followed for a certain period of time continuosly")
 	@When("^I perform sequence of actions on flex table for \"([^\"]*)\" minute$")
-	public void performSequenceOfActionsOnFlexTable(String durationOfRun) {
+	public void performSequenceOfActionsOnFlexTable(String durationOfRun) throws EyeThinkBotsCustomException {
 		flexTablePage.performSequenceOfActionsOnFlexTable(durationOfRun);
 	}
 

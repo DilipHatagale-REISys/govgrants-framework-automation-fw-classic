@@ -1,16 +1,15 @@
 package com.framework.automation.steps;
 
-import java.awt.AWTException;
-import java.io.IOException;
-
 import com.automation.rei.controller.SetupController;
 import com.framework.automation.projectmanager.ProjectWebServices;
 import com.framework.automation.projectmanager.UsersAndURL;
-
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import eyethink.automation.bots.controller.Controller;
+
+import java.awt.*;
+import java.io.IOException;
 
 /**
  * @for REI-Systems
@@ -36,7 +35,7 @@ public class setup {
     @Before
     public void startUp() throws IOException, AWTException {
         setupController.getAccessToSetup().initializer();
-        setupController.usersController(new UsersAndURL());
+        setupController.getAccessToSetup().usersController(new UsersAndURL());
     }
 
     @After

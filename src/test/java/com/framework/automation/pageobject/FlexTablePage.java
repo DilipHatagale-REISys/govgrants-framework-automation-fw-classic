@@ -1,16 +1,15 @@
 package com.framework.automation.pageobject;
 
-import java.util.List;
-
+import com.automation.rei.handlers.GovGrantsHandler;
+import com.framework.automation.projectmanager.GovGrantsManager;
+import eyethink.automation.bots.controller.Controller;
+import eyethink.automation.bots.controller.CoreHandlers;
+import eyethink.automation.bots.exception.EyeThinkBotsCustomException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
-import com.automation.rei.handlers.GovGrantsHandler;
-import com.framework.automation.projectmanager.GovGrantsManager;
-
-import eyethink.automation.bots.controller.Controller;
-import eyethink.automation.bots.controller.CoreHandlers;
+import java.util.List;
 
 public class FlexTablePage extends GovGrantsManager {
 	/******* "Variables and Locators" *****************/
@@ -412,7 +411,7 @@ public class FlexTablePage extends GovGrantsManager {
 		govgrants.phasePannel().clickDoubleArrowtoggle(menuItemName);
 	}
 
-	public void performSequenceOfActionsOnFlexTable(String durationOfRun) {
+	public void performSequenceOfActionsOnFlexTable(String durationOfRun) throws EyeThinkBotsCustomException {
 		long executionTime = (System.currentTimeMillis() / 1000) + (Integer.parseInt(durationOfRun) * 60);
 		do {
 			try {
@@ -465,7 +464,7 @@ public class FlexTablePage extends GovGrantsManager {
 	 * "Local Methods with complete functionality - private"
 	 *****************/
 
-	private void handleSequenceOfActionsOnFlexTable() {
+	private void handleSequenceOfActionsOnFlexTable() throws EyeThinkBotsCustomException {
 		govgrants.phasePannel().clickTopRightButton("Draft Programs", "New");
 		govgrants.pageDetails().clickAnyTopRightButton("Cancel");
 		govgrants.quickSearch().performTableSpecificQuickSearch("toggleFlexTablePrograms", "Program for Health");
