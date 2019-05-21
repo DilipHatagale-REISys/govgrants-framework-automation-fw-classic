@@ -15,9 +15,9 @@ public class FlexGridSteps {
 		flexGridPage = new FlexGridPage(controller, handler, govgrants);
 	}
 
-	@When("^I record webelement for column \"([^\"]*)\" in table \"([^\"]*)\"$")
-	public void getRecordOfTableColumn(String columnName, String tableId) {
-		flexGridPage.recordWebElement(columnName, tableId);
+	@When("^I record webelement at table \"([^\"]*)\" for column \"([^\"]*)\"$")
+	public void getRecordOfTableColumn(String tableId, String columnName) {
+		flexGridPage.recordWebElement(tableId, columnName);
 	}
 
 	@Then("^I see \"([^\"]*)\" as header$")

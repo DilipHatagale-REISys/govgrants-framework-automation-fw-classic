@@ -1180,7 +1180,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
-    Then I see cell subtotal for number of awards at enhanced grid    
+    Then I see cell subtotal for number of awards at enhanced grid
     
   @49254    @showInPDFFieldToVerifyFlexTableNotContainAnyListViewAtParentFlexTable-gPlanning
   Scenario: validate Activated status in downloaded pdf file after checking check box of Is Master View Field at config and validating it inside enhanced grid of programs-planning
@@ -1378,11 +1378,11 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-12132-001" in "flexGridEnhanced1" panel
 	When I expand nested table containing column value "GT-12132-001"
-    Then I see "Actived" inside enhanced grid table id "TmpGrantorActiveAwardsGridFlexToggle" in "Red" colour
+    Then I see "Activated" inside enhanced grid table id "TmpGrantorActiveAwardsGridFlexToggle" in "Red" colour
     
     Examples:
-    |styleClassValue                      |
-    |{negativeValue:row[column]='Actived'}|
+    |styleClassValue                        |
+    |{negativeValue:row[column]='Activated'}|
     
   @49359    @styleAttributeFieldAtChildFlexTableForEnhancedGrid-gPlanning
   Scenario Outline: validate color change of total adjusted amount cloumn content after making changes at style attribute from config and validating it inside enhanced grid of programs-planning

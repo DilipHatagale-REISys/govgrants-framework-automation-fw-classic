@@ -1,16 +1,10 @@
 package com.framework.automation.projectmanager;
 
-
 import eyethink.automation.bots.controller.EnvironmentFetcher;
 import eyethink.automation.bots.controller.UsersController;
 
 public class UsersAndURL implements UsersController {
 
-	/**
-	 * @REI-Systems
-	 * @author nauman.shahid
-	 * @category Handles users based on different environments
-	 */
 	/**
 	 * @REI-Systems
 	 * @author nauman.shahid

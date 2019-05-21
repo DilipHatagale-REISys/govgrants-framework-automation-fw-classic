@@ -923,6 +923,64 @@ Feature: Flex Table Component Scenarios
     And I download the file
     Then I see "Active Programs" on page "1" of "govgrants" pdf file
 
+  @34295    @refreshBehaviourFieldAtRolesAndResponsilitiesFlexTableAsRefreshtheGrid-gPlanning
+  Scenario: validate flex table action field- refresh the grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Refresh Behavior |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue    | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Refresh Behavior | Refresh the grid | ProgramRolesAndResponsibilities | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Roles" sub tab
+    When I record webelement at table "ProgramRolesAndResponsibilities" for column "Owner"
+    And I click on "Edit" icon for "Owner" inside flex table with id "ProgramRolesAndResponsibilities" with wait for record
+    When I enter value "Owner Of The Record" into field "fieldResponsibility__c"
+    And I click modal button "Save"
+    Then I see "Owner Of The Record" inside Application Budget flex table for specified record "Owner"
+
+  @34294    @refreshBehaviourFieldAtRolesAndResponsilitiesFlexTableAsRefreshParentPage-gPlanning
+  Scenario: validate flex table action field- refresh parent Page
+    Given I have default configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Refresh Behavior |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue       | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Refresh Behavior | Refresh parent page | ProgramRolesAndResponsibilities | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Roles" sub tab
+    When I record webelement at table "ProgramRolesAndResponsibilities" for column "Owner"
+    When I click on "Edit" icon for "Owner" to save inside subtab
+    Then I see parent page is refreshing
+
+  @34293    @refreshBehaviourFieldAtRolesAndResponsilitiesFlexTableAsCloseModalandRefreshGrid-gPlanning
+  Scenario: validate flex table action field- close modal and refresh the grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Refresh Behavior |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Refresh Behavior | Close modal and refresh grid | ProgramRolesAndResponsibilities | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Roles" sub tab
+    When I record webelement at table "ProgramRolesAndResponsibilities" for column "Owner"
+    And I click on "Edit" icon for "Owner" inside flex table with id "ProgramRolesAndResponsibilities" with wait for record
+    When I enter value "Owner Of The Record" into field "fieldResponsibility__c"
+    And I click modal button "Save"
+    Then I see "Owner Of The Record" inside Application Budget flex table for specified record "Owner"
+
   @flextablebug-test
   Scenario: Run flex table specific steps for specific time continuosly to ensure no error is displayed
     When I login as "Automation" user

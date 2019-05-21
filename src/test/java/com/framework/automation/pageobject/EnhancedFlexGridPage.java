@@ -1014,6 +1014,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 				}
 			}
 			String numberAsString = String.format("%.2f", sum);
+			sumStr = String.format("%.2f",Double.parseDouble(sumStr));
 			if (sumStr.equals(numberAsString)) {
 				flag = true;
 			}

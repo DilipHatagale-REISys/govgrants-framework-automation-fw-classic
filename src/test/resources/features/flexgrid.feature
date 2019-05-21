@@ -1166,7 +1166,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "AP-755-198"
     When I click on "View" icon for "Test announcement for program 2" inside table
     When I navigate to "Budget" sub tab
-    When I record webelement for column "BP-01" in table "toggleFGridApplicationBudgetCategoryFlexGrid"
+    When I record webelement at table "toggleFGridApplicationBudgetCategoryFlexGrid" for column "BP-01"
     And I click on "Edit" icon for "BP-01" inside flex table with id "toggleFGridApplicationBudgetCategoryFlexGrid" with wait for record
     When I enter value "test" into field "fieldNotes__c"
     And I click modal button "Save"
@@ -1203,7 +1203,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Financials" sub tab
-    When I record webelement for column "2019" in table "toggleFGridGrantFinancials"
+    When I record webelement at table "toggleFGridGrantFinancials" for column "2019"
     And I click on "Edit" icon for "2019" inside flex table with id "toggleFGridGrantFinancials" with wait for record
     When I enter value "test" into field "fieldNotes__c"
     And I click modal button "Save"
@@ -1456,6 +1456,260 @@ Feature: Flex Grid Component Scenarios
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Test Automation"
     Then I see Nested Table "toggleFGridApplicationBudgetCategoryFlexGrid" with changed header name as "Test Automation"
+
+  @51499    @buttonHelpTextFieldAtBudgetPeriodFlexTableActionChild-gGrants
+  Scenario: Changing content of button help text field for Budget period details child flex table action from config and validating it inside Budget period details child flex table programs
+    Given I have default configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Button Help Text |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Button Help Text | Test Automation | BudgetPeriod       | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Financials" sub tab
+    When I expand nested table containing column value "2019"
+    Then I see "Test Automation" as title for "Demo_Title" inside flex table action
+
+  @51500    @viewActionOpensInNewWindowAtBudgetPeriodFlexTableActionChild-gGrants
+  Scenario: validate Budget period details child flex table action- view opens in new window
+    Given I have default configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue  | filterId         |
+      | Flex Table Action     | Action Behavior | Open in new window | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action Behavior | Open in new window | BudgetPeriod       | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Financials" sub tab
+    When I expand nested table containing column value "2019"
+    When I click on "View" icon for "Demo_Title" inside table
+    Then I see new tab is opened
+
+  @51502    @viewActionOpensInSameWindowAtBudgetPeriodFlexTableActionChild-gGrants
+  Scenario: validate Budget period details child flex table action- view opens in same window
+    Given I have default configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue   | filterId         |
+      | Flex Table Action     | Action Behavior | Open in new window  | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action Behavior | Open in same window | BudgetPeriod       | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Financials" sub tab
+    When I expand nested table containing column value "2019"
+    When I click on "View" icon for "Demo_Title" inside table
+    Then I see no new tab is opened
+
+  @51503    @viewActionOpensInOverlayAtBudgetPeriodFlexTableActionChild-gGrants
+  Scenario: validate Budget period details child flex table action- view opens in overlay
+    Given I have default configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue   | filterId         |
+      | Flex Table Action     | Action Behavior | Open in new window  | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action Behavior | Open in overlay     | BudgetPeriod       | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Financials" sub tab
+    When I expand nested table containing column value "2019"
+    When I click on "View" icon for "Demo_Title" inside table
+    Then I see "View" opens in overLay window
+
+  @51505    @actionURLLongFieldAtBudgetPeriodFlexTableActionChild-gGrants
+  Scenario Outline: Changing action url long of action url long field for view action from config and validating it at Budget period details child flex table
+    Given I have default configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action URL      | <oldActionUrl>    | ApiGeneratedId:0 |
+      | Flex Table Action     | Action URL Long |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      |                | BudgetPeriod       | Name                      | View                       |
+      | Flex Table Action     | Action URL Long | <newActionUrl> | BudgetPeriod       | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Financials" sub tab
+    When I expand nested table containing column value "2019"
+    When I click on "View" icon for "Demo_Title" inside table
+    Then I see edit opens with "<newActionUrl>"
+
+    Examples:
+      | oldActionUrl                      | newActionUrl            |
+      | /apex/AwardView?id={!Award__c.id} | https://www.google.com/ |
+      
+  @51510    @hideForProfileFieldAtBudgetPeriodFlexTableActionChild-gGrants
+  Scenario: Hide view row level action for specific profile from configuration and validating it at Budget period details child flex table
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName        | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide For Profile |                   | BudgetPeriod       | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName        | fieldNewValue        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide For Profile | System Administrator | BudgetPeriod       | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Financials" sub tab
+    When I expand nested table containing column value "2019"
+    Then I see "View" icon for "Demo_Title" is not displayed inside flex table
     
+  @51511    @hideForUserFieldAtBudgetPeriodFlexTableActionChild-gGrants
+  Scenario: Hide view row level action for specific user from configuration and validating it at Budget period details child flex table
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName     | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide For User |                   | BudgetPeriod       | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide For User | Internal      | BudgetPeriod       | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Financials" sub tab
+    When I expand nested table containing column value "2019"
+    Then I see "View" icon for "Demo_Title" is not displayed inside flex table
     
+  @51512    @iconCSSFieldAtBudgetPeriodFlexTableActionChild-gGrants
+  Scenario: Removing icon for Budget period details child flex table view action from config and validating it at Budget period details child flex table
+    Given I have default configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue                              | filterId         |
+      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableViewActionNewIconCss | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  |                                                | BudgetPeriod       | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I perform quick search for "Financials 1"
+    When I click on "View" icon for "Financials 1" inside table
+    When I navigate to "Financials" sub tab
+    When I expand nested table containing column value "2017"
+    Then I see record "	Financials_123" having action "View" donot contain icon css "fa fa-eye"
     
+  @51513    @actionNameFieldAtBudgetPeriodFlexTableActionChild-gGrants
+  Scenario: Changing action name field for view action at Budget period details child flex table from config and validating it inside Budget period details child flex table
+    Given I have default configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName   | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action Name | Test Automation | BudgetPeriod       | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Financials" sub tab
+    When I expand nested table containing column value "2019"
+    Then I see "Test Automation" as title for "Demo_Title" inside flex table action
+    
+  @51515    @enablingEnableAutoIndexFieldAtBudgetPeriodFlexTableActionChild-gGrants
+  Scenario: validate after enabling enable auto index field for Budget period details child flex table of programs
+    Given I have default configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index | true          | BudgetPeriod    |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Financials" sub tab
+    When I expand nested table containing column value "2019"
+    Then I see "#" shown inside flex table with id "toggleFGridGrantFinancials"
+    
+  @51516    @enableTotalRecordsCountFieldAtBudgetPeriodFlexTableActionChild-gGrants
+  Scenario: validate disbaling of Enable Total Records Count in Budget period details child flex table
+    Given I have default configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Total Records Count | false             | ApiGeneratedId:0 |
+      | Flex Table            | Enable Total Records Count | true             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Total Records Count | true          | BudgetPeriod       |                           |                            |
+      | Flex Table:General    | Enable Total Records Count | false         | GrantorBudgetPeriod|                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Financials" sub tab
+    When I expand nested table containing column value "2019"
+    Then I see "Total Records" count in "toggleFGridGrantFinancials"
+    
+  @51558    @displayFieldNameFieldAtBudgetPeriodFlexTableActionChild-gGrants
+  Scenario Outline: validate adding field names for different data types in Budget period details child flex table
+    Given I have default configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | BudgetPeriod       |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Financials" sub tab
+    When I expand nested table containing column value "2019"
+    Then I see "<fieldDisplayNames>" in program Outcomes flex table header with id "toggleFGridGrantFinancials"
+
+    Examples:
+      | fieldDisplayNames   | newFieldsApi                                                                                   | defaultFieldsApi                                                                                                                                                        |
+      | Award Number        | AwardNumber__c,ID,Name,AwardedAmountthisAction__c,YTDAdvancePaid__c,YTDReimbursementPaid__c    | Id,Name,GrantAwardName__c,AwardedAmountthisAction__c,YTDAdvancePaid__c,YTDReimbursementPaid__c |
+      | Audit Decision      | AuditDecision__c,ID,Name,AwardedAmountthisAction__c,YTDAdvancePaid__c,YTDReimbursementPaid__c  | Id,Name,GrantAwardName__c,AwardedAmountthisAction__c,YTDAdvancePaid__c,YTDReimbursementPaid__c |
+      | Administration      | Administration__c,ID,Name,AwardedAmountthisAction__c,YTDAdvancePaid__c,YTDReimbursementPaid__c | Id,Name,GrantAwardName__c,AwardedAmountthisAction__c,YTDAdvancePaid__c,YTDReimbursementPaid__c |
+      | Awarded Amount      | AwardedAmountthisAction__c,ID,Name,YTDAdvancePaid__c,YTDReimbursementPaid__c                   | Id,Name,GrantAwardName__c,AwardedAmountthisAction__c,YTDAdvancePaid__c,YTDReimbursementPaid__c |
+      
+  @51548    @fieldLabelOverrideFieldAtBudgetPeriodFlexTableActionChild-gGrants
+  Scenario: Changing specific column name of Budget period details child flex table from config and validating it inside Budget period details child flex table
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table List       | Field Label Override | Awarded Amount    | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Field Label Override | Test Automation | BudgetPeriod       | Name                      | FTC-532                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Financials" sub tab
+    When I expand nested table containing column value "2019"
+    Then I see "Test Automation" shown inside flex table with id "toggleFGridGrantFinancials" 
+    
+  @51550    @widthPercentageFieldAtBudgetPeriodFlexTableActionChild-gGrants
+  Scenario: validate width size of particular column at budget period details child flex table
+    Given I have default configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Flex Table List       | Field width(%) | 10                | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Field width(%) | 50            | BudgetPeriod       | Name                      | FTC-532                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Financials" sub tab
+    When I expand nested table containing column value "2019"
+    Then I see "Awarded Amount" column inside Flex grid table id "toggleFGridGrantFinancials" contains width "50%"

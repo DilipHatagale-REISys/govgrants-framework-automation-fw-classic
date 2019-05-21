@@ -419,8 +419,8 @@ public class GovGrantsManager extends ProjectWebServices {
 	 * @param tableId
 	 * @paran columnName
 	 */
-	public void recordWebElement(String tableId, String columnName){
-		recordElement= govgrants.flexTable().getSpecificTableColumn(tableId, columnName);
+	public void recordWebElement(String columnName, String tableId){
+		recordElement= govgrants.flexTable().getSpecificTableColumn(columnName, tableId);
 	}
 
 	/******* "Local Methods with Limited functionality " **********/
