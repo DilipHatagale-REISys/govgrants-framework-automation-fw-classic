@@ -1713,3 +1713,21 @@ Feature: Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I expand nested table containing column value "2019"
     Then I see "Awarded Amount" column inside Flex grid table id "toggleFGridGrantFinancials" contains width "50%"
+
+  @51482    @labelFieldAtApplicationBudgetCategoryFlexTableChild-gApplications
+  Scenario: validate after changing name of ApplicationBudgetCategoryFlexTable label inside Application budget flex table
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName | fieldOrignalValue            | filterId         |
+      | Flex Table List           | Label     | Proposed Uses Of Total Funds | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName | fieldNewValue   | coreComponentField               | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List           | Label     | Test Automation |ApplicationBudgetCategoryFlexTable| Name                      | FLV-2089                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I expand nested table containing column value "BP-01"
+    Then I see Nested Table "toggleFGridApplicationBudgetCategoryFlexGrid" with changed header name as "Test Automation"
+

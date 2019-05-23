@@ -4876,3 +4876,115 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
     Then I see "Approve" is disabled
+
+  @51604    @hide_expression_Page_Block_Profile_IN_PM_For_Notes_And_Attachment
+  Scenario: Set up configuration to display Notes and Attachment page block using expression json field
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:Hide_Expression_Page_Block_With_Profile_IN_PM| Grantee State Program | Name                      | PB-138                     |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see "Attachments" page block title
+
+  @51605    @hide_expression_Page_Block_Profile_IN_System_Administrator_For_Notes_And_Attachment
+  Scenario: Set up configuration to hide Notes and Attachment page block using expression json field for Admin
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                                   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:Hide_Expression_Page_Block_With_Profile_IN_System_Administrator| Grantee State Program | Name                      | PB-138                     |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see "Attachments" page block is not displayed
+
+  @51606    @hide_expression_Page_Block_Profile_IN_PM_and_System_Administrator_For_Notes_And_Attachment
+  Scenario: Set up configuration to hide Notes and Attachment page block using expression json field for Admin and PM
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:Hide_Expression_Page_Block_With_Profile_IN_PM_and_System_Administrator| Grantee State Program | Name                      | PB-138                     |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see "Attachments" page block is not displayed
+
+  @51607    @hide_expression_Page_Block_Profile_NOTIN_PM_For_Notes_And_Attachment
+  Scenario: Set up configuration to hide Notes and Attachment page block using expression json field for NOTIN PM
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:Hide_Expression_Page_Block_With_Profile_NOTIN_PM| Grantee State Program | Name                      | PB-138                     |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see "Attachments" page block is not displayed
+
+  @51608    @hide_expression_Page_Block_UserType_IN_Internal__For_Notes_And_Attachment
+  Scenario: Set up configuration to hide Notes and Attachment page block using expression json field as UserType IN Internal
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:Hide_Expression_Page_Block_With_UserType_IN_Internal| Grantee State Program | Name                      | PB-138                     |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see "Attachments" page block is not displayed
+
+  @51609    @hide_expression_Page_Block_UserType_NOTIN_Internal__For_Notes_And_Attachment
+  Scenario: Set up configuration to display Notes and Attachment page block using expression json field as UserType NOTIN Internal
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:Hide_Expression_Page_Block_With_UserType_NOTIN_Internal| Grantee State Program | Name                      | PB-138                     |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see "Attachments" page block title
+
+  @51610    @hide_expression_Page_Block_UserType_IN_Applicant_Internal_Reviewer__For_Notes_And_Attachment
+  Scenario: Set up configuration to hide Notes and Attachment page block using expression json field as UserType IN Applicant Internal and Reviewer
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                                           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:Hide_Expression_Page_Block_With_UserType_IN_Applicant_Internal_Reviewer| Grantee State Program | Name                      | PB-138                     |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see "Attachments" page block is not displayed
