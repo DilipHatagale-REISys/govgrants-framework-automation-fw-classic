@@ -5,18 +5,22 @@ import com.framework.automation.projectmanager.ProjectWebServices;
 import com.framework.automation.projectmanager.SetUpConfiguration;
 import com.google.gson.JsonObject;
 import com.jayway.restassured.response.Response;
-
-import eyethink.automation.bots.webservices.RestfulWebServices;
+import eyethink.automation.bots.controller.CoreHandlers;
 
 public class ApiUtilities {
 	JsonObject sObjectConfig;
-	RestfulWebServices apiCall = new RestfulWebServices();
+	CoreHandlers reiDriver;
+
+	public ApiUtilities(CoreHandlers reiDriver) {
+		System.out.println("loaded executed");
+		this.reiDriver = reiDriver;
+	}
 
 	/**
-	 * get Id based on component api and field name
-	 * 
+	 *  get Id based on component api and field name
+	 *
 	 * @param ComponentAPI
-	 * @param ComponentCoreFieldName
+	 * @param filterClause
 	 * @return
 	 */
 	public String getComponentCoreFieldId(String ComponentAPI, String filterClause) {
@@ -27,7 +31,7 @@ public class ApiUtilities {
 			String[] getFilterId = filterClause.split(":");
 			iD = getFilterId[0];
 		} else {
-			Response response = apiCall.postCall(getPayLaodForIdRetrieval(ComponentAPI, filterClause), null,
+			Response response = reiDriver.apiCall().postCall(getPayLaodForIdRetrieval(ComponentAPI, filterClause), null,
 					SetUpConfiguration.defaultRetrieveEndPoint, "Authorization",
 					"Bearer " + ProjectWebServices.tokenString, null);
 			String[] splittedStringForId = response.body().asString().split(":");
@@ -38,15 +42,16 @@ public class ApiUtilities {
 	}
 
 	/**
-	 * get Id based on component api and field name for context objects
-	 * 
+	 *  get Id based on component api and field name for context objects
+	 *
 	 * @param ComponentAPI
-	 * @param ComponentCoreFieldName
+	 * @param contextSobject
+	 * @param filterClause
 	 * @return
 	 */
 	public String getComponentCoreFieldIdForContextObjects(String ComponentAPI, String contextSobject,
 			String filterClause) {
-		Response response = apiCall.postCall(
+		Response response = reiDriver.apiCall().postCall(
 				getPayLaodForIdRetrievalForContextObjects(ComponentAPI, contextSobject, filterClause), null,
 				SetUpConfiguration.defaultRetrieveEndPoint, "Authorization", "Bearer " + ProjectWebServices.tokenString,
 				null);
@@ -57,10 +62,10 @@ public class ApiUtilities {
 	}
 
 	/**
-	 * create payload for getting ID API call
-	 * 
+	 *  create payload for getting ID API call
+	 *
 	 * @param ComponentAPI
-	 * @param ComponentCoreFieldName
+	 * @param filterClause
 	 * @return
 	 */
 	private JsonObject getPayLaodForIdRetrieval(String ComponentAPI, String filterClause) {
@@ -73,10 +78,11 @@ public class ApiUtilities {
 	}
 
 	/**
-	 * create payload for getting ID API call
-	 * 
+	 *  create payload for getting ID API call
+	 *
 	 * @param ComponentAPI
-	 * @param ComponentCoreFieldName
+	 * @param contextSobject
+	 * @param filterClause
 	 * @return
 	 */
 	private JsonObject getPayLaodForIdRetrievalForContextObjects(String ComponentAPI, String contextSobject,
@@ -90,10 +96,11 @@ public class ApiUtilities {
 	}
 
 	/**
-	 * 
-	 * @param componentName
+	 *
+	 * @param configCategory
 	 * @param ComponentCoreFieldName
-	 * @param name
+	 * @param fieldName
+	 * @param value
 	 * @return
 	 */
 	public String getFilterClause(String configCategory, String ComponentCoreFieldName, String fieldName,

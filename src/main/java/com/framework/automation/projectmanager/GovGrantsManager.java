@@ -1,17 +1,15 @@
 package com.framework.automation.projectmanager;
 
-import java.awt.AWTException;
-import java.io.File;
-import java.util.List;
-
+import com.automation.rei.handlers.GovGrantsHandler;
+import eyethink.automation.bots.controller.Controller;
+import eyethink.automation.bots.controller.CoreHandlers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
-import com.automation.rei.handlers.GovGrantsHandler;
-
-import eyethink.automation.bots.controller.Controller;
-import eyethink.automation.bots.controller.CoreHandlers;
+import java.awt.*;
+import java.io.File;
+import java.util.List;
 
 /**
  * for Rei Systems
@@ -20,10 +18,6 @@ import eyethink.automation.bots.controller.CoreHandlers;
  * 
  */
 public class GovGrantsManager extends ProjectWebServices {
-
-	public CoreHandlers reiDriver;
-	public Controller controller;
-	public GovGrantsHandler govgrants;
 	public String standardPassword = "Automation@12345";
 	public String defaultComment = "Automation testing";
 	public WebElement recordElement;
@@ -39,9 +33,7 @@ public class GovGrantsManager extends ProjectWebServices {
 	 * @param reiDriver
 	 */
 	public GovGrantsManager(Controller controller, CoreHandlers reiDriver, GovGrantsHandler govgrants) {
-		this.controller = controller;
-		this.reiDriver = reiDriver;
-		this.govgrants = govgrants;
+		super(controller, reiDriver, govgrants);
 		navigationLogo = By.cssSelector("div#holdon-overlay>div>div>div>img.nav-logo");
 		searchInput = By.cssSelector("div>div.quick-search>div>input");
 		rightHeaderBars = By.xpath("//div[@class='panel-heading']//div[contains(@class,'header-bars')]");

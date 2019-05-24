@@ -1,25 +1,28 @@
 package com.framework.automation.payloads;
 
+import eyethink.automation.bots.controller.CoreHandlers;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class SideBar {
 	private String payloadForStringValue = "{\"sObjectAPIName\" : \"%s\",\"fieldMapStr\" : \"{\\\"Id\\\":\\\"%s\\\",\\\"%s\\\":\\\"%s\\\"}\"}";
 	private String payloadForIntValue = "{\"sObjectAPIName\" : \"%s\",\"fieldMapStr\" : \"{\\\"Id\\\":\\\"%s\\\",\\\"%s\\\":%s}\"}";
-	private ApiUtilities apiUtilities = new ApiUtilities();
+	private ApiUtilities apiUtilities;
+	CoreHandlers reiDriver;
+
+	public SideBar(CoreHandlers reiDriver) {
+		this.reiDriver=reiDriver;
+		apiUtilities = new ApiUtilities(reiDriver);
+	}
 
 	/**
-	 * Handles Accordian Content level configuration
-	 * 
+	 *  Handles Accordian Content level configuration
+	 *
 	 * @param fieldLabel
-	 *            : Name of the field. Name of the API.
-	 * @param ComponentCoreFieldName:
-	 *            Main phase name: eg; GrantorHome
-	 * @param value:
-	 *            Parameter that we want to change
-	 * @param filterClause:
-	 *            filter clause to get the specific id
-	 * @return: payload
+	 * @param value
+	 * @param filterClause
+	 * @return
 	 */
 	public String setAccordianContentFieldConfig(String fieldLabel, String value, String filterClause) {
 		String finalPayload = null;
@@ -74,7 +77,6 @@ public class SideBar {
 	 * 
 	 * @param fieldLabel
 	 *            : Name of the field. Name of the API.
-	 * @param ComponentCoreFieldName:
 	 *            Main phase name: eg; GrantorHome
 	 * @param value:
 	 *            Parameter that we want to change
@@ -120,7 +122,6 @@ public class SideBar {
 	 * 
 	 * @param fieldLabel
 	 *            : Name of the field. Name of the API.
-	 * @param ComponentCoreFieldName:
 	 *            Main phase name: eg; GrantorHome
 	 * @param value:
 	 *            Parameter that we want to change

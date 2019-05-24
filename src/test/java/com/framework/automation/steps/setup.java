@@ -12,24 +12,17 @@ import java.awt.*;
 import java.io.IOException;
 
 /**
- * @for REI-Systems
  * @author nauman.shahid
+ * @for REI-Systems
  * @category Handle browser initialization , appium , hooks and environments
  */
 
 public class setup {
     private SetupController setupController;
-    private ProjectWebServices projectAPI;
+    private ProjectWebServices api;
 
-    public setup(Controller controller, ProjectWebServices projectAPI) {
+    public setup(Controller controller) {
         this.setupController = new SetupController(controller);
-        this.projectAPI = projectAPI;
-        this.projectAPI.setupIdBucket();
-    }
-
-    @Before(order = 1)
-    public void beforeAll() {
-        setupController.getAccessToSetup().callDocker();
     }
 
     @Before
@@ -41,8 +34,10 @@ public class setup {
     @After
     public void wrapUp(Scenario scenario) throws IOException {
         try {
-            projectAPI.postDefaultConfigCall();
+            ProjectWebServices.thisValue.postDefaultConfigCall();
+            ProjectWebServices.thisValue = null;
         } catch (Exception e) {
+            ProjectWebServices.thisValue = null;
             System.out.println("Exception is " + e.getStackTrace());
         }
         setupController.getAccessToSetup().theEnd(scenario);

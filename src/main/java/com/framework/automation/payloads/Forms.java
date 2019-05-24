@@ -1,18 +1,24 @@
 package com.framework.automation.payloads;
 
+import eyethink.automation.bots.controller.CoreHandlers;
+
 public class Forms {
 	private String payloadForStringValue = "{\"sObjectAPIName\" : \"%s\",\"fieldMapStr\" : \"{\\\"Id\\\":\\\"%s\\\",\\\"%s\\\":\\\"%s\\\"}\"}";
 	private String payloadForIntValue = "{\"sObjectAPIName\" : \"%s\",\"fieldMapStr\" : \"{\\\"Id\\\":\\\"%s\\\",\\\"%s\\\":%s}\"}";
-	private ApiUtilities apiUtilities = new ApiUtilities();
+	private ApiUtilities apiUtilities;
+	CoreHandlers reiDriver;
+
+	public Forms(CoreHandlers reiDriver) {
+		this.reiDriver=reiDriver;
+		apiUtilities = new ApiUtilities(reiDriver);
+	}
 
 	/**
-	 * Handles Forms level configuration
-	 * 
-	 * @param fieldLabel : Name of the field. Name of the API.
-	 * @param            ComponentCoreFieldName: Main phase name: eg; GrantorHome
-	 * @param            value: Parameter that we want to change
-	 * @param            filterClause: filter clause to get the specific id
-	 * @return: payload
+	 *   Handles Forms level configuration
+	 * @param fieldLabel
+	 * @param value
+	 * @param filterClause
+	 * @return
 	 */
 	public String setFormsFieldConfig(String fieldLabel, String value, String filterClause) {
 		String finalPayload = null;

@@ -1,15 +1,22 @@
 package com.framework.automation.payloads;
 
+import eyethink.automation.bots.controller.CoreHandlers;
+
 public class PhaseConfig {
 	private String payloadForStringValue = "{\"sObjectAPIName\" : \"%s\",\"fieldMapStr\" : \"{\\\"Id\\\":\\\"%s\\\",\\\"%s\\\":\\\"%s\\\"}\"}";
 	private String payloadForIntValue = "{\"sObjectAPIName\" : \"%s\",\"fieldMapStr\" : \"{\\\"Id\\\":\\\"%s\\\",\\\"%s\\\":%s}\"}";
-	private ApiUtilities apiUtilities = new ApiUtilities();
+	private ApiUtilities apiUtilities;
+	CoreHandlers reiDriver;
+
+	public PhaseConfig(CoreHandlers reiDriver) {
+		this.reiDriver=reiDriver;
+		apiUtilities = new ApiUtilities(reiDriver);
+	}
 
 	/**
 	 * Handles Phases Header level configuration
 	 * 
 	 * @param fieldLabel : Name of the field. Name of the API.
-	 * @param            ComponentCoreFieldName: Main phase name: eg; GrantorHome
 	 * @param            value: Parameter that we want to change
 	 * @param            filterClause: filter clause to get the specific id
 	 * @return: payload
@@ -66,7 +73,6 @@ public class PhaseConfig {
 	 * Handles Phases config Sobject configuration
 	 * 
 	 * @param fieldLabel : Name of the field. Name of the API.
-	 * @param            ComponentCoreFieldName: Main phase name: eg; GrantorHome
 	 * @param            value: Parameter that we want to change
 	 * @param            filterClause: filter clause to get the specific id
 	 * @return: payload

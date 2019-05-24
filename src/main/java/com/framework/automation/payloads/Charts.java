@@ -1,16 +1,23 @@
 package com.framework.automation.payloads;
 
+import eyethink.automation.bots.controller.CoreHandlers;
+
 public class Charts {
     private String payloadForStringValue = "{\"sObjectAPIName\" : \"%s\",\"fieldMapStr\" : \"{\\\"Id\\\":\\\"%s\\\",\\\"%s\\\":\\\"%s\\\"}\"}";
     private String payloadForIntValue = "{\"sObjectAPIName\" : \"%s\",\"fieldMapStr\" : \"{\\\"Id\\\":\\\"%s\\\",\\\"%s\\\":%s}\"}";
-    private ApiUtilities apiUtilities = new ApiUtilities();
+    private ApiUtilities apiUtilities;
+    CoreHandlers reiDriver;
+
+    public Charts(CoreHandlers reiDriver) {
+        this.reiDriver=reiDriver;
+        apiUtilities = new ApiUtilities(reiDriver);
+    }
 
     /**
      * Handles Charts level configuration
      * 
      * @param fieldLabel
      *            : Name of the field. Name of the API.
-     * @param ComponentCoreFieldName:
      *            Main phase name: eg; GrantorHome
      * @param value:
      *            Parameter that we want to change
@@ -41,7 +48,6 @@ public class Charts {
      * 
      * @param fieldLabel
      *            : Name of the field. Name of the API.
-     * @param ComponentCoreFieldName:
      *            Main phase name: eg; GrantorHome
      * @param value:
      *            Parameter that we want to change
@@ -55,42 +61,42 @@ public class Charts {
         case "ALL DATA TABLE HEADER":
             finalPayload = String
                     .format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__ChartDetailConfig__c),
-                            new ApiUtilities().getComponentCoreFieldId(
+                            apiUtilities.getComponentCoreFieldId(
                                     String.valueOf(SObjectAPIs.GNT__ChartDetailConfig__c), filterClause),
                             String.valueOf(SObjectAPIs.GNT__AllDataTableHeader__c), value);
             break;
         case "DISABLE LEGEND":
             finalPayload = String
                     .format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__ChartDetailConfig__c),
-                            new ApiUtilities().getComponentCoreFieldId(
+                            apiUtilities.getComponentCoreFieldId(
                                     String.valueOf(SObjectAPIs.GNT__ChartDetailConfig__c), filterClause),
                             String.valueOf(SObjectAPIs.GNT__DisableLegend__c), value);
             break;
         case "X-AXIS LABEL":
             finalPayload = String
                     .format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__ChartDetailConfig__c),
-                            new ApiUtilities().getComponentCoreFieldId(
+                            apiUtilities.getComponentCoreFieldId(
                                     String.valueOf(SObjectAPIs.GNT__ChartDetailConfig__c), filterClause),
                             String.valueOf(SObjectAPIs.GNT__XAxisLabel__c), value);
             break;
         case "X-AXIS PREFIX":
             finalPayload = String
                     .format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__ChartDetailConfig__c),
-                            new ApiUtilities().getComponentCoreFieldId(
+                            apiUtilities.getComponentCoreFieldId(
                                     String.valueOf(SObjectAPIs.GNT__ChartDetailConfig__c), filterClause),
                             String.valueOf(SObjectAPIs.GNT__XAxisPrefix__c), value);
             break;
         case "X FORMATTED NUMBER":
             finalPayload = String
                     .format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__ChartDetailConfig__c),
-                            new ApiUtilities().getComponentCoreFieldId(
+                            apiUtilities.getComponentCoreFieldId(
                                     String.valueOf(SObjectAPIs.GNT__ChartDetailConfig__c), filterClause),
                             String.valueOf(SObjectAPIs.GNT__XFormattedNumber__c), value);
             break;
         case "X AXIS SUFFIX":
             finalPayload = String
                     .format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__ChartDetailConfig__c),
-                            new ApiUtilities().getComponentCoreFieldId(
+                            apiUtilities.getComponentCoreFieldId(
                                     String.valueOf(SObjectAPIs.GNT__ChartDetailConfig__c), filterClause),
                             String.valueOf(SObjectAPIs.GNT__XAxisSuffix__c), value);
             break;

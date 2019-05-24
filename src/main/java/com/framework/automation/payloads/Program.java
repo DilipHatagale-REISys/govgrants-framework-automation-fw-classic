@@ -1,15 +1,23 @@
 package com.framework.automation.payloads;
 
+import eyethink.automation.bots.controller.CoreHandlers;
+
 public class Program {
     private String payloadForStringValue = "{\"sObjectAPIName\" : \"%s\",\"fieldMapStr\" : \"{\\\"Id\\\":\\\"%s\\\",\\\"%s\\\":\\\"%s\\\"}\"}";
     private String payloadForIntValue = "{\"sObjectAPIName\" : \"%s\",\"fieldMapStr\" : \"{\\\"Id\\\":\\\"%s\\\",\\\"%s\\\":%s}\"}";
-    private ApiUtilities apiUtilities =new ApiUtilities();
+    private ApiUtilities apiUtilities;
+    CoreHandlers reiDriver;
+
+    public Program(CoreHandlers reiDriver) {
+        this.reiDriver=reiDriver;
+        apiUtilities = new ApiUtilities(reiDriver);
+    }
+
     /**
      * Handles Program level configuration
      * 
      * @param fieldLabel
      *            : Name of the field. Name of the API.
-     * @param ComponentCoreFieldName:
      *            Main phase name: eg; GrantorHome
      * @param value:
      *            Parameter that we want to change
