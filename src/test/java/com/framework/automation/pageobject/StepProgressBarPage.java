@@ -72,7 +72,7 @@ public class StepProgressBarPage extends GovGrantsManager {
 	/**
 	 * click on help text inside program information page block
 	 * 
-	 * @param blockTitle
+	 * @param statusName
 	 */
 	public void getHoveringContentOfStepProgressBar(String statusName) {
 		reiDriver.WaitFor().makeThreadSleep(2000);

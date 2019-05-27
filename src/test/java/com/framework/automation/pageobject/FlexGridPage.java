@@ -280,8 +280,8 @@ public class FlexGridPage extends GovGrantsManager {
 	private Boolean isSpecificWidthOfColumnOfActiveGrantsAwardsFlexTable(String columnName, String tableId,
 			String widthSize) {
 		boolean flag = false;
-		WebElement columnWidth = reiDriver.findMyElement().getElement(By.xpath("//div[@id='" + tableId
-				+ "']//tr//th//span[contains(text(),'" + columnName + "')]/ancestor::th[@width='" + widthSize + "']"));
+		WebElement columnWidth = reiDriver.WaitFor().WaitForElementToBePresent((By.xpath("//div[@id='" + tableId
+				+ "']//tr//th//span[contains(text(),'" + columnName + "')]/ancestor::th[@width='" + widthSize + "']")));
 		if (columnWidth.isDisplayed()) {
 			flag = true;
 		}

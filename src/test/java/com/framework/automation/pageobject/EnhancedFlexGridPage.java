@@ -888,19 +888,20 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 			reiDriver.JavaScript().scrollpageToSpecificElement(numberOfAwardscells);
 			List<WebElement> rows_table = reiDriver.findMyElement().getElements(numberOfAwardscells);
 			String sumStr = "";
+			double rowTotal = 0.00;
 			double sum = 0.00;
 			for (int row = 0; row <= rows_table.size(); row++) {
-				if (row <= 4) {
+				if (row <= rows_table.size()-2) {
 					if (rows_table.get(row).getText() != null) {
 						sum += Double.valueOf(rows_table.get(row).getText());
 					}
 				}
 				if (rows_table.size() == row) {
-					sumStr = rows_table.get(row - 1).getText();
+					rowTotal = Double.valueOf(rows_table.get(row - 1).getText());
 				}
 			}
 			String numberAsString = String.format("%.2f", sum);
-			if (sumStr.equals(numberAsString)) {
+			if (rowTotal == sum ) {
 				flag = true;
 			}
 		} catch (Exception e) {
@@ -1088,7 +1089,8 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	/**
 	 * get particular table column complete content
 	 * 
-	 * @param text
+	 * @param text1
+	 * @param text2
 	 * @return
 	 */
 	public Map<Integer, List<WebElement>> getTableColumnCompleteContent(String text1, String text2) {

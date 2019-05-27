@@ -287,7 +287,7 @@ public class PageLayoutPage extends GovGrantsManager {
 	 * assert true if specific field inside page block detail as per name is not
 	 * displayed
 	 * 
-	 * @param fieldName
+	 * @param changedFieldName
 	 */
 	public void assertSpecificFieldInsidePageBlockDetailNotDisplayed(String changedFieldName) {
 		Assert.assertTrue(isSpecificFieldAtPageBlockDetailDisplayed(changedFieldName));
@@ -406,7 +406,7 @@ public class PageLayoutPage extends GovGrantsManager {
 	/**
 	 * click on help text inside program name page block details
 	 * 
-	 * @param blockDetailTitle
+	 * @param pageBlockDetailTitle
 	 */
 	public void getHelpTextAtPageBlockDetail(String pageBlockDetailTitle) {
 		reiDriver.Clickers().moveMouseToSpecificLocation(reiDriver.findMyElement().getElement(By.xpath(
@@ -595,8 +595,7 @@ public class PageLayoutPage extends GovGrantsManager {
 
 	/**
 	 * validate if options are not displayed in Detail page
-	 * 
-	 * @param option
+	 *
 	 * @return: true if it is not displayed
 	 */
 	private boolean isOptionsDownloadPDFDisabled() {
@@ -683,7 +682,7 @@ public class PageLayoutPage extends GovGrantsManager {
 	/**
 	 * return true if any header button is not displayed
 	 * 
-	 * @param buttonName
+	 * @param subTabName
 	 * @return
 	 */
 	private boolean isSubTabButtonDisplayed(String subTabName) {
@@ -701,7 +700,7 @@ public class PageLayoutPage extends GovGrantsManager {
 	/**
 	 * Boolean status of Sub tab sorting order
 	 * 
-	 * @param status
+	 * @param subTabName
 	 */
 	private boolean isSubTabSequence(String subTabName, int number) {
 		if (getListSubTabsInsideMainDetailPage().get(number).getText().contains(subTabName)) {
@@ -713,7 +712,7 @@ public class PageLayoutPage extends GovGrantsManager {
 	/**
 	 * return true if text is displayed
 	 * 
-	 * @param text
+	 * @param headerText
 	 * @return
 	 */
 	private boolean isHeaderInstructionTextDisplayed(String headerText) {
@@ -783,7 +782,7 @@ public class PageLayoutPage extends GovGrantsManager {
 	/**
 	 * Boolean status of page block sorting order
 	 * 
-	 * @param status
+	 * @param pageBlockName
 	 */
 	private Boolean isPageBlockSequence(String pageBlockName, int number) {
 		if (getListPageBlockInsideMainDetailPage().get(number).getText().contains(pageBlockName)) {
@@ -795,7 +794,7 @@ public class PageLayoutPage extends GovGrantsManager {
 	/**
 	 * return true if text is displayed
 	 * 
-	 * @param text
+	 * @param headerText
 	 * @return
 	 */
 	private boolean isHeaderInstructionTextDisplayedAtPageBlock(String headerText) {
@@ -810,7 +809,7 @@ public class PageLayoutPage extends GovGrantsManager {
 	/**
 	 * Boolean status of no of elements inside page block row
 	 * 
-	 * @param status
+	 * @param titleName
 	 */
 	private Boolean isExpectedNumberOfElementPresent(String titleName, int number) {
 		boolean flag = false;
@@ -865,7 +864,7 @@ public class PageLayoutPage extends GovGrantsManager {
 	/**
 	 * Boolean status of Edit action item inside attachment page block row
 	 * 
-	 * @param status
+	 * @param pageBlockName
 	 */
 	private boolean isEditActionItemDisabledForAttachment(String pageBlockName) {
 		boolean flag = false;
@@ -882,7 +881,7 @@ public class PageLayoutPage extends GovGrantsManager {
 	/**
 	 * get list of element in attachment table action
 	 * 
-	 * @param headerName
+	 * @param pageBlockName
 	 * @return
 	 */
 	private List<WebElement> getListAttachmentTableSpecificColumnActions(String pageBlockName) {
@@ -939,7 +938,7 @@ public class PageLayoutPage extends GovGrantsManager {
 	/**
 	 * Boolean status of page block detail element sorting order
 	 * 
-	 * @param status
+	 * @param changedFieldName
 	 */
 	private Boolean isPageBlockDetailElementSequence(String changedFieldName, int number) {
 		if (getListOfPageBlockDetailElement().get(number).getText().contains(changedFieldName)) {
@@ -1038,8 +1037,7 @@ public class PageLayoutPage extends GovGrantsManager {
 
 	/**
 	 * validate if options are not displayed in Detail page
-	 * 
-	 * @param option
+	 *
 	 * @return: true if it is not displayed
 	 */
 	private boolean isEditButtonDisplayedInsideMenuDropDown() {

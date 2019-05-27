@@ -1730,4 +1730,170 @@ Feature: Flex Grid Component Scenarios
     When I navigate to "Budget" sub tab
     When I expand nested table containing column value "BP-01"
     Then I see Nested Table "toggleFGridApplicationBudgetCategoryFlexGrid" with changed header name as "Test Automation"
+    
+  @51450    @helpTextFieldAtApplicationBudgetCategoryFlexTableChild-gApplications
+  Scenario Outline: Changing content of help text field at ApplicationBudgetCategoryFlexTable column header from config and validating it inside Application budget flex table
+    Given I have default configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Help Text |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue  | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Help Text | <new_helpText> | ApplicationBudgetCategoryFlexTable| Name                      | FTC-1397                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I expand nested table containing column value "BP-01"
+    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    When I hovering mouse on help text icon inside "Grantee Share %" for flex table column
+    Then I see "<new_helpText>" shown as help text
 
+    Examples:
+      | new_helpText    |
+      | Test Automation |
+      
+  @51449    @fieldLabelOverrideFieldAtApplicationBudgetCategoryFlexTableChild-gApplications
+  Scenario: Changing specific column name of ApplicationBudgetCategoryFlexTable from config and validating it inside inside Application budget flex table 
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table List       | Field Label Override |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue   | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Field Label Override | Test Automation | ApplicationBudgetCategoryFlexTable| Name                      | FTC-1397                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I expand nested table containing column value "BP-01"
+    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    Then I see "Test Automation" shown inside flex table with id "toggleFGridApplicationBudgetCategoryFlexGrid"
+    
+  @51556    @displayFieldNameFieldAtApplicationBudgetCategoryFlexTableChild-gApplications
+  Scenario Outline: validate adding field names for different data types in Application budget flex table
+    Given I have default configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetCategoryFlexTable|                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I expand nested table containing column value "BP-01"
+    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    Then I see "<fieldDisplayNames>" in program Outcomes flex table header with id "toggleFGridApplicationBudgetCategoryFlexGrid"
+
+    Examples:
+      | fieldDisplayNames         | newFieldsApi                                                                                                   | defaultFieldsApi                                                                                                                                                        |
+      | Service Area              | ServiceAreaTitle__c,Id,BudgetCategory__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c           | Id,ServiceAreaTitle__c,BudgetCategory__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c |
+      | Budget Category           | BudgetCategory__c,Id,ServiceAreaTitle__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c           | Id,ServiceAreaTitle__c,BudgetCategory__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c |
+      | Grantor Share             | GrantorAmount__c,Id,ServiceAreaTitle__c,BudgetCategory__c,GranteeAmount__c,Amount__c,GranteeShare__c           | Id,ServiceAreaTitle__c,BudgetCategory__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c |
+      | App Budget Category Status| AppBudgetCategoryStatus__c,Id,ServiceAreaTitle__c,BudgetCategory__c,GranteeAmount__c,Amount__c,GranteeShare__c | Id,ServiceAreaTitle__c,BudgetCategory__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c |
+    
+  @51506    @showConfirmationBoxFieldAtBudgetPeriodFlexTableActionChild-gGrants
+  Scenario: Setup confirmation box for Budget period details child flex table view action from configuration and validating it at Budget period details child flex table
+    Given I have default configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Show Confirmation Box | false             | BudgetPeriod       | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Show Confirmation Box | true          | BudgetPeriod       | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Financials" sub tab
+    When I expand nested table containing column value "2019"
+    When I expand nested table containing column value "AD-GG PJ--00"
+    When I click on "View" icon for "AD-GG PJ--00" inside table with table id "toggleFGridGrantFinancials" without processing
+    Then I see confirmation box with body "null" is displayed
+
+  @51509    @ConfirmationMessageFieldAtBudgetPeriodFlexTableActionChild-gGrants
+  Scenario: Setup confirmation message for Budget period details child flex table view action from configuration and validating it at Budget period details child flex table
+    Given I have default configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Show Confirmation Box | false             | BudgetPeriod       | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                   | BudgetPeriod       | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Show Confirmation Box | true          | BudgetPeriod       | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  | Automation    | BudgetPeriod       | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Financials" sub tab
+    When I expand nested table containing column value "2019"
+    When I expand nested table containing column value "AD-GG PJ--00"
+    When I click on "View" icon for "AD-GG PJ--00" inside table with table id "toggleFGridGrantFinancials" without processing
+    Then I see confirmation box with body "Automation" is displayed
+
+  @51547    @helpTextFieldAtBudgetPeriodFlexTableActionChild-gGrants
+  Scenario Outline: Changing content of help text field at Budget period details child flex table column header from config and validating it inside Budget period details child flex table
+    Given I have default configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Help Text |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Help Text | <new_helpText> | BudgetPeriod       | Name                      | FTC-532                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Financials" sub tab
+    When I expand nested table containing column value "2019"
+    When I expand nested table containing column value "AD-GG PJ--00"
+    When I hovering mouse on help text icon inside "Awarded Amount" for flex table column
+    Then I see "<new_helpText>" shown as help text
+
+    Examples:
+      | new_helpText    |
+      | Test Automation |
+
+  @51406    @enablingEnableAutoIndexFieldAtApplicationBudgetCategoryFlexTable-gApplications
+  Scenario: validate after enabling enable auto index field for ApplicationBudgetCategoryFlexTable of program
+    Given I have default configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:0 |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index | true          | ApplicationBudgetCategoryFlexTable|                           |                            |
+      | Flex Table:General    | Enable Auto Index | false         | ApplicationBudgetPeriods          |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I expand nested table containing column value "BP-01"
+    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    Then I see "#" shown inside flex table with id "toggleFGridApplicationBudgetCategoryFlexGrid"
+
+  @51414    @enableTotalRecordsCountFieldAtApplicationBudgetCategoryFlexTable-gApplications
+  Scenario: validate disbaling of enable otal records count in application budget category flex table
+    Given I have default configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Total Records Count | false         | ApplicationBudgetCategoryFlexTable |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I expand nested table containing column value "BP-01"
+    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    Then I see no "Total Records" count in "toggleFGridApplicationBudgetCategoryFlexGrid"

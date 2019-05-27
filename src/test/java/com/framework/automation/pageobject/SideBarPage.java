@@ -85,7 +85,6 @@ public class SideBarPage extends GovGrantsManager {
 	/**
 	 * assert if accordion content open in new tab or not
 	 * 
-	 * @param accordionContentName
 	 * @param Pagetitle
 	 */
 	public void assertAccordionContentWithNewTab(String Pagetitle) {
@@ -134,7 +133,7 @@ public class SideBarPage extends GovGrantsManager {
 	/**
 	 * Boolean status of Task menu from sidebar
 	 * 
-	 * @param status
+	 * @param headerName
 	 */
 	private Boolean isTaskMenuDisabled(String headerName) {
 		for (WebElement we : getSideBarHeadersList()) {
@@ -164,7 +163,8 @@ public class SideBarPage extends GovGrantsManager {
 	/**
 	 * Boolean status of Accordion Content sequence from sidebar
 	 * 
-	 * @param status
+	 * @param accordianHeaderName
+	 * @param headerName
 	 */
 	private Boolean isAccordianContentSequence(String accordianHeaderName, int number, String headerName) {
 		if (govgrants.sideBar().getSideBarContents(headerName).get(number).getText().contains(accordianHeaderName)) {

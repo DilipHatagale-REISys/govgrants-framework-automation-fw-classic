@@ -244,6 +244,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
     When I click on "Edit" icon for "Demo_Title" inside table
     Then I see no new tab is opened for action item in enhanced flex grid
 
@@ -271,6 +272,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
     When I click on "Edit" icon for "Demo_Title" inside table
     Then I see "TmpActiveGrantsGrid" opens in overLay window
 
@@ -427,6 +429,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
     Then I see "*****" shown inside enhanced grid table for specified record "Demo_Title"
 
   @41370    @readOnlyCellJSONFieldAtEnhancedGrid-gPlanning @smoke
@@ -443,6 +446,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
     When I click on "Edit" icon for "Demo_Title" inside table
     Then I see input box is not displayed for budget period end date
 
@@ -476,6 +480,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
     When I click on "Edit" icon for "Demo_Title" inside table
     Then I see input box is not displayed for budget period end date
 
@@ -493,6 +498,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
     Then I see external link icon as "Demo_Title" for "Edit" inside enhanced grid table action
 
   @41466    @ConfirmationMessageFieldAtEnhancedGridActionItem-gPlanning
@@ -511,6 +517,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
     When I click on "Edit" icon for "Demo_Title" inside table with table id "TmpActiveGrantsGridFlexToggle" without processing
     Then I see confirmation box with body "Automation" is displayed
 
@@ -562,6 +569,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
     When I expand nested table containing column value "Demo_Title"
     When I hovering mouse on help text icon inside "Active Awards" for enhanced grid
     Then I see "<new_helpText>" shown as help text
@@ -583,6 +591,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
     When I expand nested table containing column value "Demo_Title"
     When I click on top right parallel lines bar for "Active Awards"
     Then I see "Help" options inside "Active Awards" enabled
@@ -601,7 +610,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
     When I expand nested table containing column value "Demo_Title"
     When I hovering mouse on help text icon inside "ID" for enhanced grid table column
     Then I see "<new_helpText>" shown as help text
@@ -623,6 +632,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "Test Automation" shown inside flex table with id "TmpGrantorActiveAwardsGridFlexToggle"
 
@@ -752,6 +762,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
     Then I see "Test Automation" as title for "Demo_Title" inside flex table action
 
   @44993    @disableFilterForChildFlexTableAtEnhancedGrid-gPlanning
@@ -768,6 +779,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see Advance Filter is disabled from table "TmpGrantorActiveAwardsGridFlexToggle"
 
@@ -785,6 +797,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
     When I expand nested table containing column value "Demo_Title"
     Then Then I see Menu icon is disabled from planning child flex table "Active Awards" under Monitoring Schedule For All Active Grants table
 
@@ -802,6 +815,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
     When I expand nested table containing column value "Demo_Title"
     When I click on top right parallel lines bar for "Active Awards"
     Then I see "Download as PDF""Download as CSV" options inside "Active Awards" disabled
@@ -820,6 +834,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see quick search option disabled from enhanced grid for child flex table "TmpGrantorActiveAwardsGridFlexToggle"
 
@@ -831,6 +846,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "Total Records" for Child Flex table "TmpGrantorActiveAwardsGridFlexToggle" count in enhanced grid
 
@@ -842,6 +858,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "#" in enhanced flex grid header
 
@@ -859,6 +876,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see select check box enabled for child flex table in enhanced flex grid
 
@@ -876,6 +894,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
     When I click on "View" icon for "Demo_Title" inside table
     Then I see new tab is opened
 
@@ -893,6 +912,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
     When I click on "View" icon for "Demo_Title" inside table
     Then I see new tab is opened
 
@@ -1036,6 +1056,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     Then I see "Test" icon for "Demo_Title" is displayed inside flex table
     
    @45304    @locationFieldForChildFlexTableAtEnhancedGridActionItemFromTopToRow-gPlanning @smoke
@@ -1749,7 +1770,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on top right button "Edit Selected" in flex table with id "Enhanced1grid"
     When I enter value "10" into field "AmountDirectAssistance__c"
     When I click on top right button "Save" in flex table with id "Enhanced1grid"
-    Then I see edited value inside textarea is "$10.00" for column value "AD-FIN.1-BP01-00" of table "Enhanced1grid"
+    Then I see edited value inside textarea is "$10" for column value "AD-FIN.1-BP01-00" of table "Enhanced1grid"
     
   @49360      @verifyEditAllAtParentFlexTableForEnhancedGrid-gPlanning
   Scenario Outline: validate Edit selected functionality for parent flex table at enhanced grid of programs-planning

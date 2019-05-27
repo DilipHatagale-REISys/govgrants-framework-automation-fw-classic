@@ -61,7 +61,7 @@ public class PhaseConfigPage extends GovGrantsManager {
 	 * assert if specific phase appears at a specific position
 	 * 
 	 * @param phaseName
-	 * @param phasePoistion
+	 * @param sequenceNumber
 	 */
 	public void assertSequenceOfPhase(String phaseName, int sequenceNumber) {
 		Assert.assertTrue(isPhaseSequence(phaseName, sequenceNumber));
@@ -138,7 +138,7 @@ public class PhaseConfigPage extends GovGrantsManager {
 	 * Assert true for not showing passed objectType related entities in Recently
 	 * Viewed option which is present in sidebar of phase Planning
 	 * 
-	 * @param objectType
+	 * @param acronym
 	 *            = program or announcement or related entity
 	 */
 	public void assertThatObjectIsNotShowingInRecentlyViewedSideBarOption(String acronym) {
@@ -254,7 +254,7 @@ public class PhaseConfigPage extends GovGrantsManager {
 	/**
 	 * is specific phase not displayed in task summary on homepage
 	 * 
-	 * @param positionNumber
+	 * @param phaseName
 	 * @return
 	 */
 	private boolean isPhaseNotDisplayedInTaskSummary(String phaseName) {
@@ -310,7 +310,7 @@ public class PhaseConfigPage extends GovGrantsManager {
 	 * Boolean true if the given object type such as program or announcement or any
 	 * other relating entity is not present in Recently Viewed Side Bar option
 	 * 
-	 * @param objectType
+	 * @param acronym
 	 *            this could be program or announcement or other relating entity
 	 * @return true or false
 	 */

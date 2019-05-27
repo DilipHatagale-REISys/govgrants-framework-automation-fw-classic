@@ -139,7 +139,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
 	/**
 	 * assert if user is displayed inside select dropdown list
 	 * 
-	 * @param userName
+	 * @param dropDownValue
 	 */
 	public void assertUserInsideDropdown(String dropDownValue) {
 		Assert.assertTrue(isSpecificUserDisplayed(dropDownValue));
@@ -147,8 +147,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
 
 	/**
 	 * assert true if specific subject is not displayed for approval
-	 * 
-	 * @param approverType
+	 *
 	 * @param subject
 	 */
 	public void assertSpecificApprovalNotDisplayed(String subject) {
@@ -158,7 +157,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
 	/**
 	 * Assert success message text inside success email of admin portal
 	 * 
-	 * @param status
+	 * @param templateName
 	 */
 	public void assertSuccessForEmailToProgramOwner(String templateName) {
 		Assert.assertTrue(isSuccessForEmailToProgramOwner(templateName));
@@ -330,8 +329,6 @@ public class ApprovalProcessPage extends GovGrantsManager {
 
 	/**
 	 * get success text inside success email of email logs
-	 * 
-	 * @param status
 	 * @return
 	 */
 	private WebElement validateQueueEmail() {
@@ -342,7 +339,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
 	/**
 	 * validate success message
 	 * 
-	 * @param status
+	 * @param templateName
 	 * @return
 	 */
 	private List<WebElement> validateSuccessEmail(String templateName) {
