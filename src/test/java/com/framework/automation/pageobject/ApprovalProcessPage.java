@@ -26,7 +26,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
 		approvalDecisionPannel = By.cssSelector("div>span>input[name='myRadio']");
 		approvalCommentTextBox = By.xpath("//div[@id='ApprovalDecisionComponent']//textarea");
 		submitButton = By.xpath("//input[@type='button' and @value='Submit']");
-		saveButton = By.xpath("//input[@type='submit' and @value ='Save']");
+		saveButton = By.xpath("//div/span//input[@type='submit' and @value ='Save']");
 	}
 
 	/**
@@ -54,7 +54,6 @@ public class ApprovalProcessPage extends GovGrantsManager {
 	 * click approval start play button
 	 * 
 	 * @param programSubject
-	 * @param programType
 	 * @throws ReiFrameworkCustomException
 	 */
 	public void clickStartApprovalButton(String programSubject) throws EyeThinkBotsCustomException {

@@ -1,5 +1,7 @@
 package com.framework.automation.pageobject;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -174,6 +176,44 @@ public class PhaseConfigPage extends GovGrantsManager {
 				.xpath("//div/ul/li[contains(@class,'dropdown appDropdown')]/ul/li/a[@title='" + dropDownValue + "']"));
 	}
 
+	/**
+	 * get the top right drop down items. grntee etc
+	 *
+	 * @param dropDownItem
+	 * @return
+	 */
+	public List<WebElement> getAppDropDownItem(String dropDownItem) {
+		By appDropDown = By
+				.xpath("//div/ul/li[contains(@class,'dropdown appDropdown')]/ul/li/a");
+		return reiDriver.findMyElement().getElements(appDropDown);
+	}
+
+	/**
+	 * Assert contrast color of complete page for custom app as a grantor
+	 * 
+	 * @param contrastValue
+	 */
+	public void assertContrastColourForCustomAppAsaGrantor(String contrastValue) {
+		Assert.assertFalse(isContrastColorIsDisplayedForCustomAppAsaGrantor(contrastValue));
+	}
+
+	/**
+	 * assert if specific options appears at a specific position for custom App
+	 *
+	 * @param option
+	 * @param sequenceNumber
+	 */
+	public void assertSequenceOfSpecificOptionsOfCustomApp(String option, int sequenceNumber) {
+		Assert.assertTrue(isCustomAppOptionsSequenceAaExpected(option, sequenceNumber));
+	}
+
+	/**
+	 * Assert custom app is not displayed
+	 */
+	public void assertCustomAppOnPage() {
+		Assert.assertTrue(isCustomAppDisplayedOnPage());
+	}
+
 	/********* "Local Methods with complete functionality - private" *********/
 
 	/**
@@ -345,5 +385,50 @@ public class PhaseConfigPage extends GovGrantsManager {
 
 		}
 		return flag;
+	}
+
+	/**
+	 * return true if contrast color on page is not displayed
+	 * 
+	 * @param contrastValue
+	 * @return
+	 */
+	private boolean isContrastColorIsDisplayedForCustomAppAsaGrantor(String contrastValue) {
+		boolean flag = false;
+		List<WebElement> list = reiDriver.findMyElement().getElements(By.xpath("//body//span/link"));
+		int links = list.size();
+		for (int i = 0; i < links; i++) {
+			if (list.get(i).getAttribute("href").contains(contrastValue))
+				flag = true;
+		}
+		return flag;
+	}
+
+	/**
+	 * return true if custom app is not displayed
+	 */
+	private boolean isCustomAppDisplayedOnPage() {
+		boolean flag = false;
+		try {
+			if(reiDriver.findMyElement().getElement(customAppDropdown).isDisplayed());
+			flag = true;
+		}catch (org.openqa.selenium.NoSuchElementException e){
+
+		}
+		return flag;
+	}
+
+	/**
+	 * check the sequence of custom app options
+	 *
+	 * @param dropDownItem
+	 * @param sequenceNumber
+	 * @return true/false
+	 */
+	private boolean isCustomAppOptionsSequenceAaExpected(String dropDownItem, int sequenceNumber) {
+			if (getAppDropDownItem(dropDownItem).get(sequenceNumber).getAttribute("title").contains(dropDownItem)) {
+			return true;
+		} else
+			return false;
 	}
 }

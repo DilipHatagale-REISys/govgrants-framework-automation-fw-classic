@@ -89,4 +89,19 @@ public class PhaseConfigSteps {
 	public void assertCustomAppInsideDropdownNotDisplayed(String dropDownValue) {
 		phaseConfigPage.assertCustomAppValueInsideDropdownNotDisplayed(dropDownValue);
 	}
+	
+	@Then("^I see \"([^\"]*)\" on complete page for custom App as a Grantor$")
+	public void assertContrastColorForAsaGrantorCustomApp(String contrastValue) {
+		phaseConfigPage.assertContrastColourForCustomAppAsaGrantor(contrastValue);
+	}
+
+	@Then("^I see complete custom app is not displayed$")
+	public void assertCustomAppIsNotDisplayed() {
+		phaseConfigPage.assertCustomAppOnPage();
+	}
+
+	@Then("^I see \"([^\"]*)\" option of custom App is at position \"([^\"]*)\"$")
+	public void assertSequenceOfCustomAppOptions(String option, String sequenceNumber) {
+		phaseConfigPage.assertSequenceOfSpecificOptionsOfCustomApp(option, Integer.parseInt(sequenceNumber));
+	}
 }

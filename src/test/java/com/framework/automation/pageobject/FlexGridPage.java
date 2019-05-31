@@ -3,7 +3,6 @@ package com.framework.automation.pageobject;
 import java.util.*;
 
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 import org.openqa.selenium.By;
@@ -208,11 +207,10 @@ public class FlexGridPage extends GovGrantsManager {
 				.getElement(By.xpath("//td[descendant-or-self::*[text()='Citizen']]//ancestor::tr[1]"));
 		Set<String> headerTitles = new HashSet<String>();
 		headerTitles.add("Target");
-		Map<String, Integer> columnMapping = govgrants.flexTable().constructColumnMapping(row, headerTitles);
-		System.out.println("The column number was: " + columnMapping.get("Target"));
+		int columnMapping = govgrants.flexTable().header("Target").column("Target").columnNumber();
 		By columnSelector = By
 				.xpath("//div[@id='toggleFGridProgramOutcomes']//table//tr" + "//td[not(contains(@class, 'ng-hide'))]["
-						+ columnMapping.get("Target") + "]" + "//span[contains(@ng-bind, 'viewValue')]");
+						+ columnMapping + "]" + "//span[contains(@ng-bind, 'viewValue')]");
 		double total = 0;
 		for (WebElement columnValue : reiDriver.findMyElement().getElements(columnSelector)) {
 			try {
@@ -296,11 +294,10 @@ public class FlexGridPage extends GovGrantsManager {
 				.WaitForElementToBePresent(By.xpath("//div[@id='" + tableId + "']//table//tbody//tr"));
 		Set<String> headerTitles = new HashSet<String>();
 		headerTitles.add(text);
-		Map<String, Integer> columnMapping = govgrants.flexTable().constructColumnMapping(row, headerTitles);
-		System.out.println("The column number was: " + columnMapping.get(text));
+		int columnMapping = govgrants.flexTable().header(text).column(text).columnNumber();
 		By columnSelector = By
 				.xpath("//div[@id='" + tableId + "']//table//tr" + "//td[not(contains(@class, 'ng-hide'))]["
-						+ columnMapping.get(text) + "]" + "//span[contains(@ng-bind, 'viewValue')]");
+						+ columnMapping + "]" + "//span[contains(@ng-bind, 'viewValue')]");
 		return reiDriver.findMyElement().getElements(columnSelector);
 	}
 

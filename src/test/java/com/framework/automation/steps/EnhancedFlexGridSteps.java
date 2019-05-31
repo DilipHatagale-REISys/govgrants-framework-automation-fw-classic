@@ -107,6 +107,11 @@ public class EnhancedFlexGridSteps {
 		enhancedFlexGrid.assertActionButtonInsideEnhancedGridTableIsDisplayed(buttonName, headerName);
 	}
 
+	@Then("^I see no \"([^\"]*)\" button inside \"([^\"]*)\" enhanced grid$")
+	public void assertButtonInsideFlexTable(String buttonName, String headerName) {
+		enhancedFlexGrid.assertActionButtonInsideEnhancedGridTableIsDisplayed(buttonName, headerName);
+	}
+
 	@Then("^I see cell subtotal as \"([^\"]*)\"$")
 	public void assertCellValue(BigDecimal value) {
 		enhancedFlexGrid.assertCellValueAtEnhancedGrid(value);
@@ -197,5 +202,4 @@ public class EnhancedFlexGridSteps {
 	public void assertColumnValueInAscendingOrderWithAnotherColumn(String text1, String text2, String order) {
 		enhancedFlexGrid.assertAscendingOrderOfEnhancedGridColumnValueWRTOtherColumn(text1, text2, order);
 	}
-
 }

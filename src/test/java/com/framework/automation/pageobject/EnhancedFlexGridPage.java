@@ -238,6 +238,17 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	}
 
 	/**
+	 * return true if action button inside enhanced grid table as per name is not
+	 * displayed
+	 *
+	 * @param buttonName
+	 * @param headerName
+	 */
+	public void assertActionButtonInsideEnhancedGridTableIsNotDisplayed(String buttonName, String headerName) {
+		Assert.assertFalse(isActionButtonInsideTopOfEnhancedGridTableDisplayed(buttonName, headerName));
+	}
+
+	/**
 	 * return true if cell value is as expected
 	 * 
 	 * @param value

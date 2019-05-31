@@ -1897,3 +1897,58 @@ Feature: Flex Grid Component Scenarios
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     Then I see no "Total Records" count in "toggleFGridApplicationBudgetCategoryFlexGrid"
+
+  @34335    @hideForProfileFieldForPPMGVflexTable-Programs
+  Scenario: Hide view row level action for specific profile from configuration and validating it at under program strategic goals flex table- gPlanning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName        | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide For Profile |                   | ProgramStrategicGoals | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide For Profile | System Administrator | ProgramStrategicGoals | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Plan" sub tab
+    Then I see "View" icon for "Goal" is not displayed inside flex table
+
+  @34337    @hideOperatorFieldForPPMGVflexTable-Programs
+  Scenario: Hide edit row level action using AND operator from configuration and validating it at under roles and responibilities flex table- gPlanning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName        | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide For Profile |                   | ProgramStrategicGoals | Name                      | View                       |
+      | Flex Table Action Sobject | Hide For Context |                   | ProgramStrategicGoals | Name                      | View                       |
+      | Flex Table Action Sobject | Hide Operator    | AND               | ProgramStrategicGoals | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide For Profile | System Administrator | ProgramStrategicGoals | Name                      | View                       |
+      | Flex Table Action Sobject | Hide For Context | View                 | ProgramStrategicGoals | Name                      | View                       |
+      | Flex Table Action Sobject | Hide Operator    | AND                  | ProgramStrategicGoals | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Plan" sub tab
+    Then I see "View" icon for "Goal" is not displayed inside flex table
+
+  @34338    @ConfirmationMessageFieldForPPMGVflexTable-Programs
+  Scenario: Setup confirmation message for program strategic goals flex table delete action from configuration and validating it at program strtegic goals flex table of program-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Show Confirmation Box | false             | ProgramStrategicGoals | Name                      | Delete                     |
+      | Flex Table Action     | Confirmation Message  |                   | ProgramStrategicGoals | Name                      | Delete                     |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Show Confirmation Box | true          | ProgramStrategicGoals | Name                      | Delete                     |
+      | Flex Table Action     | Confirmation Message  | Automation    | ProgramStrategicGoals | Name                      | Delete                     |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Plan" sub tab
+    When I click on "Delete" icon for "Goal" inside table with table id "toggleFGridProgramPerformanceMgmtGridView" without processing
+    Then I see confirmation box with body "Automation" is displayed
