@@ -1,16 +1,14 @@
 package com.framework.automation.pageobject;
 
-import java.util.List;
-
+import com.automation.rei.handlers.GovGrantsHandler;
+import com.framework.automation.projectmanager.GovGrantsManager;
+import eyethink.automation.bots.controller.Controller;
+import eyethink.automation.bots.controller.CoreHandlers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
-import com.automation.rei.handlers.GovGrantsHandler;
-import com.framework.automation.projectmanager.GovGrantsManager;
-
-import eyethink.automation.bots.controller.Controller;
-import eyethink.automation.bots.controller.CoreHandlers;
+import java.util.List;
 
 public class StepProgressBarPage extends GovGrantsManager {
 	public final By stepProgressBar;
@@ -75,10 +73,10 @@ public class StepProgressBarPage extends GovGrantsManager {
 	 * @param statusName
 	 */
 	public void getHoveringContentOfStepProgressBar(String statusName) {
-		reiDriver.WaitFor().makeThreadSleep(2000);
-		reiDriver.Clickers().moveMouseToSpecificLocation(
-				reiDriver.findMyElement().getElement(By.xpath("//div[@class='container-fluid']"
-						+ "//*[@id='progressBarId']//li//span[contains(text(),'" + statusName + "')]")));
+		reiDriver.WaitFor().specialCustomWait(By.xpath("//div[@class='container-fluid']"
+				+ "//*[@id='progressBarId']//li//span[contains(text(),'" + statusName + "')]"));
+		reiDriver.JavaScript().moveToElement(By.xpath("//div[@class='container-fluid']"
+				+ "//*[@id='progressBarId']//li//span[contains(text(),'" + statusName + "')]"));
 	}
 
 	/*********

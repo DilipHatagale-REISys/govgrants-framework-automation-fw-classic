@@ -25,6 +25,11 @@ public class PhaseConfigSteps {
 		phaseConfigPage.clickOnCustomAppSelectDropdown();
 	}
 
+	@When("^I click on \"([^\"]*)\"$")
+	public void clickMyWorkSpaceItems(String myWorkspaceItem) {
+		phaseConfigPage.clickOnMyWorkSpaceSpecificItem(myWorkspaceItem);
+	}
+
 	@Then("^I do not see \"([^\"]*)\" phase$")
 	public void assertPhaseNotDisplayed(String phaseName) {
 		phaseConfigPage.assertSpecificPhaseNotDisplayed(phaseName);
@@ -103,5 +108,15 @@ public class PhaseConfigSteps {
 	@Then("^I see \"([^\"]*)\" option of custom App is at position \"([^\"]*)\"$")
 	public void assertSequenceOfCustomAppOptions(String option, String sequenceNumber) {
 		phaseConfigPage.assertSequenceOfSpecificOptionsOfCustomApp(option, Integer.parseInt(sequenceNumber));
+	}
+	
+	@Then("^I see Program record in \"([^\"]*)\" color inside my workspace$")
+	public void assertColorChangeInsideMyWorkSpace(String colorName) {
+		phaseConfigPage.assertProgramColourInsideCalenderDisplayed(colorName);
+	}
+
+	@Then("^I see all programs inside calender is not displayed$")
+	public void assertProgramsInsideCalenderDisplayed() {
+		phaseConfigPage.assertProgramIsDisplayedInsideCalender();
 	}
 }

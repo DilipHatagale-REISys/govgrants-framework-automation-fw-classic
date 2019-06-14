@@ -408,11 +408,12 @@ public class GovGrantsManager extends ProjectWebServices {
 
 	/**
 	 * Record column content of table
+	 * 
 	 * @param tableId
 	 * @paran columnName
 	 */
-	public void recordWebElement(String columnName, String tableId){
-		recordElement= govgrants.flexTable().getSpecificTableColumn(columnName, tableId);
+	public void recordWebElement(String columnName, String tableId) {
+		recordElement = govgrants.flexTable().getSpecificTableColumn(columnName, tableId);
 	}
 
 	/******* "Local Methods with Limited functionality " **********/
@@ -437,6 +438,7 @@ public class GovGrantsManager extends ProjectWebServices {
 	 * @param SubTabName
 	 */
 	public WebElement getSubTabsInsideMainDetailPage(String SubTabName) {
+		reiDriver.WaitFor().specialCustomWait(By.xpath("//div[@id='myTabs']/ul/li/a[@name='" + SubTabName + "']"));
 		return reiDriver.findMyElement()
 				.getElement(By.xpath("//div[@id='myTabs']/ul/li/a[@name='" + SubTabName + "']"));
 	}
@@ -445,6 +447,7 @@ public class GovGrantsManager extends ProjectWebServices {
 	 * get list of sub tab inside main detail page like overview etc.
 	 */
 	public List<WebElement> getListSubTabsInsideMainDetailPage() {
+		reiDriver.WaitFor().specialCustomWait(By.xpath("//div[@id='myTabs']/ul/li/a"));
 		return reiDriver.findMyElement().getElements(By.xpath("//div[@id='myTabs']/ul/li/a"));
 	}
 
@@ -452,6 +455,8 @@ public class GovGrantsManager extends ProjectWebServices {
 	 * get list of page block inside detail page like overview etc.
 	 */
 	public List<WebElement> getListPageBlockInsideMainDetailPage() {
+		reiDriver.WaitFor()
+				.specialCustomWait(By.xpath("//div[@class='tab-pane fade active in']//div[@class='panel-heading']"));
 		return reiDriver.findMyElement()
 				.getElements(By.xpath("//div[@class='tab-pane fade active in']//div[@class='panel-heading']"));
 	}

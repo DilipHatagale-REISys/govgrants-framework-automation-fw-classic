@@ -161,6 +161,28 @@ public class FlexGridPage extends GovGrantsManager {
 		Assert.assertTrue(isNestedTableHeaderChanged(tableId, changedText));
 	}
 
+	/**
+	 * return true if action button inside Mass editable grid table as per name is
+	 * displayed
+	 * 
+	 * @param buttonName
+	 * @param headerName
+	 */
+	public void assertActionButtonInsideMassEditableGridTableIsDisplayed(String buttonName, String headerName) {
+		Assert.assertTrue(isActionButtonInsideTopOfMassEditableGridTableDisplayed(buttonName, headerName));
+	}
+
+	/**
+	 * return true if action button inside Nested Navigation grid table as per name
+	 * is displayed
+	 * 
+	 * @param buttonName
+	 * @param headerName
+	 */
+	public void assertActionButtonInsideNestedNAvigationTableIsDisplayed(String buttonName, String headerName) {
+		Assert.assertTrue(isActionButtonInsideTopOfNestedNavigationTableDisplayed(buttonName, headerName));
+	}
+
 	/*********
 	 * "Local Methods with complete functionality - private"
 	 *****************/
@@ -207,10 +229,11 @@ public class FlexGridPage extends GovGrantsManager {
 				.getElement(By.xpath("//td[descendant-or-self::*[text()='Citizen']]//ancestor::tr[1]"));
 		Set<String> headerTitles = new HashSet<String>();
 		headerTitles.add("Target");
-		int columnMapping = govgrants.flexTable().header("Target").column("Target").columnNumber();
+		Map<String, Integer> columnMapping = govgrants.flexTable().constructColumnMapping(row, headerTitles);
+		System.out.println("The column number was: " + columnMapping.get("Target"));
 		By columnSelector = By
 				.xpath("//div[@id='toggleFGridProgramOutcomes']//table//tr" + "//td[not(contains(@class, 'ng-hide'))]["
-						+ columnMapping + "]" + "//span[contains(@ng-bind, 'viewValue')]");
+						+ columnMapping.get("Target") + "]" + "//span[contains(@ng-bind, 'viewValue')]");
 		double total = 0;
 		for (WebElement columnValue : reiDriver.findMyElement().getElements(columnSelector)) {
 			try {
@@ -294,10 +317,11 @@ public class FlexGridPage extends GovGrantsManager {
 				.WaitForElementToBePresent(By.xpath("//div[@id='" + tableId + "']//table//tbody//tr"));
 		Set<String> headerTitles = new HashSet<String>();
 		headerTitles.add(text);
-		int columnMapping = govgrants.flexTable().header(text).column(text).columnNumber();
+		Map<String, Integer> columnMapping = govgrants.flexTable().constructColumnMapping(row, headerTitles);
+		System.out.println("The column number was: " + columnMapping.get(text));
 		By columnSelector = By
 				.xpath("//div[@id='" + tableId + "']//table//tr" + "//td[not(contains(@class, 'ng-hide'))]["
-						+ columnMapping + "]" + "//span[contains(@ng-bind, 'viewValue')]");
+						+ columnMapping.get(text) + "]" + "//span[contains(@ng-bind, 'viewValue')]");
 		return reiDriver.findMyElement().getElements(columnSelector);
 	}
 
@@ -310,6 +334,51 @@ public class FlexGridPage extends GovGrantsManager {
 				.getElement(By.xpath("//div[@id='" + tableId + "']//td//*[text()='" + changedText + "']"));
 		if (changedHeader.isDisplayed()) {
 			flag = true;
+		}
+		return flag;
+	}
+
+	/**
+	 * return true if action button inside Mass editable table is displayed
+	 * 
+	 * @param buttonName
+	 * @param headerName
+	 * @return
+	 */
+	private boolean isActionButtonInsideTopOfMassEditableGridTableDisplayed(String buttonName, String headerName) {
+		boolean flag = false;
+		try {
+			if (reiDriver.WaitFor()
+					.WaitForElementToBePresent(By.xpath("//*[@title='" + headerName + "' or text()='" + headerName
+							+ "']//following-sibling::div//button[contains(@title,'" + buttonName + "') or @text()='"
+							+ buttonName + "']"))
+					.isDisplayed()) {
+				flag = true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return flag;
+	}
+
+	/**
+	 * return true if action button inside Nested Navigation table is displayed
+	 * 
+	 * @param buttonName
+	 * @param headerName
+	 * @return
+	 */
+	private boolean isActionButtonInsideTopOfNestedNavigationTableDisplayed(String buttonName, String headerName) {
+		boolean flag = false;
+		try {
+			if (reiDriver.WaitFor().WaitForElementToBePresent(By.xpath("//*[@title='" + headerName + "' or text()='"
+					+ headerName
+					+ "']/ancestor::div[contains(@class,'header-title') or 1]/following-sibling::div//button[contains(@title,'"
+					+ buttonName + "') or @text()='" + buttonName + "']")).isDisplayed()) {
+				flag = true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		return flag;
 	}

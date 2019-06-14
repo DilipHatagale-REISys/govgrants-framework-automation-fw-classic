@@ -186,6 +186,7 @@ public class SideBarPage extends GovGrantsManager {
 		boolean myNewTabFound = false;
 		for (int index = 0; index < tabHandles.size(); index++) {
 			reiDriver.switchTo().switchToWindowHandler(index);
+			reiDriver.WaitFor().makeThreadSleep(2000);
 			if (reiDriver.get().getPageTitle().equalsIgnoreCase(pageTitle)) {
 				myNewTabFound = true;
 				break;

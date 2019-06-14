@@ -149,6 +149,12 @@ public class PageBlock {
 							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PageBlockConfig__c), filterClause),
 					String.valueOf(SObjectAPIs.GNT__HideExpressionJSON__c), value);
 			break;
+		case "SAVE ATTACHMENT BEHAVIOUR":
+			finalPayload = String.format(
+					payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageBlockConfig__c), apiUtilities
+							.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PageBlockConfig__c), filterClause),
+					String.valueOf(SObjectAPIs.GNT__SaveAttachmentBehaviour__c), value);
+			break;
 		}
 		System.out.println(finalPayload);
 		return finalPayload;
@@ -172,6 +178,34 @@ public class PageBlock {
 									String.valueOf(SObjectAPIs.GNT__PageAttachmentConfig__c), filterClause),
 							String.valueOf(SObjectAPIs.GNT__HideForUser__c), value);
 			break;
+		case "HIDE FOR CONTEXT":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageAttachmentConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__PageAttachmentConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__HideForContext__c), value);
+			break;
+		case "HIDE FOR PROFILE":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageAttachmentConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__PageAttachmentConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__HideForProfile__c), value);
+				break;
+		case "HIDE OPERATOR":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageAttachmentConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__PageAttachmentConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__HideOperator__c), value);
+				break;
+		case "HIDE DECISION FIELD":
+			finalPayload = String
+					.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageAttachmentConfig__c),
+							apiUtilities.getComponentCoreFieldId(
+									String.valueOf(SObjectAPIs.GNT__PageAttachmentConfig__c), filterClause),
+							String.valueOf(SObjectAPIs.GNT__HideDecisionField__c), value);
+				break;
 		}
 		System.out.println(finalPayload);
 		return finalPayload;

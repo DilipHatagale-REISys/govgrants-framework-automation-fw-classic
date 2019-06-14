@@ -109,7 +109,7 @@ public class EnhancedFlexGridSteps {
 
 	@Then("^I see no \"([^\"]*)\" button inside \"([^\"]*)\" enhanced grid$")
 	public void assertButtonInsideFlexTable(String buttonName, String headerName) {
-		enhancedFlexGrid.assertActionButtonInsideEnhancedGridTableIsDisplayed(buttonName, headerName);
+		enhancedFlexGrid.assertActionButtonInsideEnhancedGridTableIsNotDisplayed(buttonName, headerName);
 	}
 
 	@Then("^I see cell subtotal as \"([^\"]*)\"$")

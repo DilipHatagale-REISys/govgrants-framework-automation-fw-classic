@@ -3481,6 +3481,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "View" icon for "AD-GG PJ--00" is not displayed inside flex table
     
@@ -3498,6 +3499,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "View" icon for "AD-GG PJ--00" is displayed inside flex table
     
@@ -3515,6 +3517,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "View" icon for "AD-GG PJ--00" is not displayed inside flex table
     
@@ -3532,6 +3535,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "View" icon for "AD-GG PJ--00" is displayed inside flex table
     
@@ -3549,6 +3553,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "View" icon for "AD-GG PJ--00" is not displayed inside flex table
     
@@ -3566,6 +3571,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "View" icon for "AD-GG PJ--00" is not displayed inside flex table
     
@@ -3583,6 +3589,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "View" icon for "AD-GG PJ--00" is displayed inside flex table
     
@@ -3600,6 +3607,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "View" icon for "AD-GG PJ--00" is displayed inside flex table
     
@@ -3617,6 +3625,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "View" icon for "AD-GG PJ--00" is not displayed inside flex table
     
@@ -3634,6 +3643,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "View" icon for "AD-GG PJ--00" is displayed inside flex table
     
@@ -3651,6 +3661,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "Edit" icon for "AD-GG PJ--00" is not displayed inside flex table
     
@@ -3668,6 +3679,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "Edit" icon for "AD-GG PJ--00" is displayed inside flex table
     
@@ -3685,6 +3697,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "Edit" icon for "AD-GG PJ--00" is not displayed inside flex table
     
@@ -3702,6 +3715,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "Edit" icon for "AD-GG PJ--00" is not displayed inside flex table
     
@@ -3719,6 +3733,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "Edit" icon for "AD-GG PJ--00" is not displayed inside flex table
     
@@ -5003,7 +5018,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
-    Then I see no "New" button inside "Monitoring Schedule For All  Draft Grants" enhanced grid
+    Then I see no "New" button inside "Monitoring Schedule For All Active Grants" enhanced grid
 
   @52911    @Hide_Expression_EnhancedGrid_TopAction_With_UserType_NOTIN_Internal
   Scenario: validate enabling of top level action button from planning-Program enhance flex grid
@@ -5019,4 +5034,392 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
-    Then I see "New" button inside "Monitoring Schedule For All  Draft Grants" enhanced grid
+    Then I see "New" button inside "Monitoring Schedule For All Active Grants" enhanced grid
+
+  @52914    @Hide_Expression_EnhancedGrid_TopAction_With_Profile_IN_SystemAdministrator
+  Scenario: validate disabling of top level action button from planning-Program enhance flex grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                              | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_Profile_IN_SystemAdministrator| TmpActiveGrantsGrid | Name                      | New                        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    Then I see no "New" button inside "Monitoring Schedule For All Active Grants" enhanced grid
+
+  @52915    @Hide_Expression_EnhancedGrid_TopAction_With_Profile_NOTIN_SystemAdministrator
+  Scenario: validate enabling of top level action button from planning-Program enhance flex grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                 | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_Profile_NOTIN_SystemAdministrator| TmpActiveGrantsGrid | Name                      | New                        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    Then I see "New" button inside "Monitoring Schedule For All Active Grants" enhanced grid
+
+  @52917    @Hide_Expression_EnhancedGrid_TopAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal
+  Scenario: validate disabling of top level action button from planning-Program enhance flex grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                       | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal| TmpActiveGrantsGrid | Name                      | New                        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    Then I see no "New" button inside "Monitoring Schedule For All Active Grants" enhanced grid
+
+  @52916    @Hide_Expression_EnhancedGrid_TopAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal
+  Scenario: validate disabling of top level action button from planning-Program enhance flex grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                      | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal| TmpActiveGrantsGrid | Name                      | New                        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    Then I see no "New" button inside "Monitoring Schedule For All Active Grants" enhanced grid
+
+  @52918    @Hide_Expression_EnhancedGrid_TopAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator
+  Scenario: validate enabling of top level action button from planning-Program enhance flex grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                             | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator| TmpActiveGrantsGrid | Name                      | New                        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    Then I see "New" button inside "Monitoring Schedule For All Active Grants" enhanced grid
+
+  @52919    @Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Internal_OR_Profile_IN_PM
+  Scenario: validate disabling of top level action button from planning-Program enhance flex grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                            | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_IN_Internal_OR_Profile_IN_PM| TmpActiveGrantsGrid | Name                      | New                        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    Then I see no "New" button inside "Monitoring Schedule For All Active Grants" enhanced grid
+
+  @52927    @Hide_Expression_EnhancedGrid_TopAction_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator
+  Scenario: validate enabling of top level action button from planning-Program enhance flex grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                            | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator| TmpActiveGrantsGrid | Name                      | New                        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    Then I see "New" button inside "Monitoring Schedule For All Active Grants" enhanced grid
+
+  @52928    @Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Internal_AND_Profile_IN_PM
+  Scenario: validate enabling of top level action button from planning-Program enhance flex grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                      | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Internal_AND_Profile_IN_PM| TmpActiveGrantsGrid | Name                      | New                        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    Then I see "New" button inside "Monitoring Schedule For All Active Grants" enhanced grid
+
+  @52929    @Hide_Expression_EnhancedGrid_TopAction_With_UserApp_IN_StateAsGrantor
+  Scenario: validate disabling of top level action button from planning-Program enhance flex grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                         | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_UserApp_IN_StateAsGrantor| TmpActiveGrantsGrid | Name                      | New                        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    Then I see no "New" button inside "Monitoring Schedule For All Active Grants" enhanced grid
+
+  @52930    @Hide_Expression_EnhancedGrid_TopAction_With_UserApp_NOTIN_StateAsGrantor
+  Scenario: validate enabling of top level action button from planning-Program enhance flex grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                            | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_UserApp_NOTIN_StateAsGrantor| TmpActiveGrantsGrid | Name                      | New                        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    Then I see "New" button inside "Monitoring Schedule For All Active Grants" enhanced grid
+
+  @52931    @Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor
+  Scenario: validate disabling of top level action button from planning-Program enhance flex grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor| TmpActiveGrantsGrid | Name                      | New                        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    Then I see no "New" button inside "Monitoring Schedule For All Active Grants" enhanced grid
+
+  @52932    @Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor
+  Scenario: validate disabling of top level action button from planning-Program enhance flex grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                 | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor| TmpActiveGrantsGrid | Name                      | New                        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    Then I see no "New" button inside "Monitoring Schedule For All Active Grants" enhanced grid
+
+  @52933    @Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Applicant_Internal_Reviewer
+  Scenario: validate disabling of top level action button from planning-Program enhance flex grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                       | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Applicant_Internal_Reviewer| TmpActiveGrantsGrid | Name                      | New                        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    Then I see no "New" button inside "Monitoring Schedule For All Active Grants" enhanced grid
+
+  @53008    @Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserType_IN_Internal
+  Scenario: validate disabling of top level action button from planning-Program child enhance flex grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                               | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserType_IN_Internal| TmpGrantorActiveAwardsGrid | Name                      | Edit All                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I expand nested table containing column value "Demo_Title"
+    Then I see no "Edit All" button inside "Active Awards" enhanced grid
+
+  @53009    @Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserType_NOTIN_Internal
+  Scenario: validate enabling of top level action button from planning-Program child enhance flex grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserType_NOTIN_Internal| TmpGrantorActiveAwardsGrid | Name                      | Edit All                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I expand nested table containing column value "Demo_Title"
+    Then I see "Edit All" button inside "Active Awards" enhanced grid
+
+  @53010    @Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_Profile_IN_SystemAdministrator
+  Scenario: validate disabling of top level action button from planning-Program child enhance flex grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                         | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_Profile_IN_SystemAdministrator| TmpGrantorActiveAwardsGrid | Name                      | Edit All                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I expand nested table containing column value "Demo_Title"
+    Then I see no "Edit All" button inside "Active Awards" enhanced grid
+
+  @53011    @Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_Profile_NOTIN_SystemAdministrator
+  Scenario: validate disabling of top level action button from planning-Program child enhance flex grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                            | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_Profile_NOTIN_SystemAdministrator| TmpGrantorActiveAwardsGrid | Name                      | Edit All                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I expand nested table containing column value "Demo_Title"
+    Then I see "Edit All" button inside "Active Awards" enhanced grid
+
+  @53012    @Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal
+  Scenario: validate disabling of top level action button from planning-Program child enhance flex grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                                  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal| TmpGrantorActiveAwardsGrid | Name                      | Edit All                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I expand nested table containing column value "Demo_Title"
+    Then I see no "Edit All" button inside "Active Awards" enhanced grid
+
+  @53013    @Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal
+  Scenario: validate disabling of top level action button from planning-Program child enhance flex grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                                 | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal| TmpGrantorActiveAwardsGrid | Name                      | Edit All                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I expand nested table containing column value "Demo_Title"
+    Then I see no "Edit All" button inside "Active Awards" enhanced grid
+
+  @53014    @Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserApp_IN_StateAsGrantor
+  Scenario: validate disabling of top level action button from planning-Program enhance flex grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                    | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserApp_IN_StateAsGrantor| TmpGrantorActiveAwardsGrid | Name                      | Edit All                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I expand nested table containing column value "Demo_Title"
+    Then I see no "Edit All" button inside "Active Awards" enhanced grid
+
+  @53015    @Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserApp_NOTIN_StateAsGrantor
+  Scenario: validate enabling of top level action button from planning-Program enhance flex grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                       | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserApp_NOTIN_StateAsGrantor| TmpGrantorActiveAwardsGrid | Name                      | Edit All                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I expand nested table containing column value "Demo_Title"
+    Then I see "Edit All" button inside "Active Awards" enhanced grid
+
+  @53017    @Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor
+  Scenario: validate disabling of top level action button from planning-Program enhance flex grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                            | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor| TmpGrantorActiveAwardsGrid | Name                      | Edit All                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I expand nested table containing column value "Demo_Title"
+    Then I see no "Edit All" button inside "Active Awards" enhanced grid
+
+  @53020    @Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserType_IN_Applicant_Internal_Reviewer
+  Scenario: validate disabling of top level action button from planning-Program enhance flex grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserType_IN_Applicant_Internal_Reviewer| TmpGrantorActiveAwardsGrid | Name                      | Edit All                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I expand nested table containing column value "Demo_Title"
+    Then I see no "Edit All" button inside "Active Awards" enhanced grid

@@ -1,16 +1,14 @@
 package com.framework.automation.pageobject;
 
-import java.util.List;
-
+import com.automation.rei.handlers.GovGrantsHandler;
+import com.framework.automation.projectmanager.GovGrantsManager;
+import eyethink.automation.bots.controller.Controller;
+import eyethink.automation.bots.controller.CoreHandlers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
-import com.automation.rei.handlers.GovGrantsHandler;
-import com.framework.automation.projectmanager.GovGrantsManager;
-
-import eyethink.automation.bots.controller.Controller;
-import eyethink.automation.bots.controller.CoreHandlers;
+import java.util.List;
 
 public class PageLayoutPage extends GovGrantsManager {
 
@@ -357,6 +355,7 @@ public class PageLayoutPage extends GovGrantsManager {
 	 * @param buttonName
 	 */
 	public void assertActionButtonOfPagrLayoutDisplayed(String buttonName) {
+		reiDriver.WaitFor().specialCustomWait(editActionModalIframe);
 		reiDriver.switchTo().switchToFrame(editActionModalIframe);
 		Assert.assertTrue(isButtonDisplayedAtOverlayWindow(buttonName));
 	}
@@ -394,12 +393,23 @@ public class PageLayoutPage extends GovGrantsManager {
 	}
 
 	/**
+	 * assert if specified button is displayed on modal
+	 *
+	 * @param buttonName
+	 */
+	public void asserButtonOnModal(String buttonName) {
+		Assert.assertTrue(isSpecificButtonOnModalDisplayed(buttonName));
+	}
+
+	/**
 	 * click on help text inside program information page block
 	 * 
 	 * @param blockTitle
 	 */
 	public void getHelpTextAtPageBlock(String blockTitle) {
-		reiDriver.Clickers().moveMouseToSpecificLocation(reiDriver.findMyElement().getElement(
+		reiDriver.WaitFor().specialCustomWait(
+				By.xpath("//h3//a[contains(text(),'" + blockTitle + "')]/..//span[contains(@class,'fa-info')]"));
+		reiDriver.JavaScript().moveToElement(reiDriver.findMyElement().getElement(
 				By.xpath("//h3//a[contains(text(),'" + blockTitle + "')]/..//span[contains(@class,'fa-info')]")));
 	}
 
@@ -409,7 +419,9 @@ public class PageLayoutPage extends GovGrantsManager {
 	 * @param pageBlockDetailTitle
 	 */
 	public void getHelpTextAtPageBlockDetail(String pageBlockDetailTitle) {
-		reiDriver.Clickers().moveMouseToSpecificLocation(reiDriver.findMyElement().getElement(By.xpath(
+		reiDriver.WaitFor().specialCustomWait(By
+				.xpath("//span[contains(text(),'" + pageBlockDetailTitle + "')]/..//span[contains(@class,'fa-info')]"));
+		reiDriver.JavaScript().moveToElement(reiDriver.findMyElement().getElement(By.xpath(
 				"//span[contains(text(),'" + pageBlockDetailTitle + "')]/..//span[contains(@class,'fa-info')]")));
 	}
 
@@ -500,6 +512,7 @@ public class PageLayoutPage extends GovGrantsManager {
 	 */
 
 	public void clickLookupModalQuickSearch() {
+		reiDriver.WaitFor().specialCustomWait(lookupSearchButton);
 		reiDriver.textInput().clearText(reiDriver.WaitFor().WaitForElementToBePresent(lookupSearchInputBox));
 		reiDriver.JavaScript().clickByJS(lookupSearchButton);
 	}
@@ -511,6 +524,7 @@ public class PageLayoutPage extends GovGrantsManager {
 	 */
 
 	public void handleLookUpSearchWithFrame(String frameId) {
+		reiDriver.WaitFor().specialCustomWait(lookupSearchButton);
 		reiDriver.textInput().clearText(reiDriver.WaitFor().WaitForElementToBePresent(lookupSearchInputBox));
 		reiDriver.JavaScript().clickByJS(lookupSearchButton);
 		reiDriver.switchTo().switchToFrame(By.xpath("//iframe[@id='" + frameId + "']"));
@@ -521,6 +535,8 @@ public class PageLayoutPage extends GovGrantsManager {
 	 * etc.
 	 */
 	public List<WebElement> getListOfPageBlockDetailElement() {
+		reiDriver.WaitFor().specialCustomWait(By
+				.xpath("//h3//a[contains(text(),'Program Information')]/ancestor::div[2]/following-sibling::div//dt"));
 		return reiDriver.findMyElement().getElements(By
 				.xpath("//h3//a[contains(text(),'Program Information')]/ancestor::div[2]/following-sibling::div//dt"));
 	}
@@ -538,6 +554,7 @@ public class PageLayoutPage extends GovGrantsManager {
 	 */
 	private boolean isOverViewTitleWithHeaderDisplayed(String overViewHeaderName, String overViewTitleName) {
 		boolean flag = false;
+		reiDriver.WaitFor().WaitForElementToBePresent(overViewHeader);
 		if ((reiDriver.findMyElement().getElement(overViewHeader).getText().contains(overViewHeaderName))
 				&& (reiDriver.findMyElement().getElement(overViewTitle).getText().contains(overViewTitleName))) {
 			flag = true;
@@ -553,6 +570,7 @@ public class PageLayoutPage extends GovGrantsManager {
 	 */
 	private boolean isPageInstructionTextDisplayed(String text) {
 		boolean flag = false;
+		reiDriver.WaitFor().specialCustomWait(pageInstructionText);
 		if (reiDriver.findMyElement().getElement(pageInstructionText).getText().equalsIgnoreCase(text)) {
 			flag = true;
 		}
@@ -575,12 +593,14 @@ public class PageLayoutPage extends GovGrantsManager {
 
 	/**
 	 * return true if any specific top right hand button is not displayed
-	 * 
+	 *
 	 * @param buttonName
 	 * @return
 	 */
 	private boolean isTopRightHeaderButtonDisplayed(String buttonName) {
 		boolean flag = true;
+		reiDriver.WaitFor().specialCustomWait(By.xpath("//div[contains(@class,'panel-heading')]//*[@title='"
+				+ buttonName + "' or text()='" + buttonName + "' or @value='" + buttonName + "']"));
 		try {
 			if (reiDriver
 					.findMyElement().getElement(By.xpath("//div[contains(@class,'panel-heading')]//*[@title='"
@@ -717,6 +737,7 @@ public class PageLayoutPage extends GovGrantsManager {
 	 */
 	private boolean isHeaderInstructionTextDisplayed(String headerText) {
 		boolean flag = false;
+		reiDriver.WaitFor().specialCustomWait(headerInstructionText);
 		if (reiDriver.findMyElement().getElement(headerInstructionText).getText().equalsIgnoreCase(headerText)) {
 			flag = true;
 		}
@@ -748,6 +769,7 @@ public class PageLayoutPage extends GovGrantsManager {
 	 */
 	private boolean isHeaderOviewTabDisplayed() {
 		boolean flag = false;
+		reiDriver.WaitFor().specialCustomWait(headerOverviewTab);
 		try {
 			if (reiDriver.findMyElement().getElement(headerOverviewTab).isDisplayed()) {
 				flag = true;
@@ -764,6 +786,8 @@ public class PageLayoutPage extends GovGrantsManager {
 	 */
 	private boolean isPageBlockTitleDisplayed(String titleName) {
 		boolean flag = false;
+		reiDriver.WaitFor().specialCustomWait(
+				By.xpath("//h3//a[contains(text(),'" + titleName + "')] | //a[@title='" + titleName + "']"));
 		try {
 			reiDriver.JavaScript().scrollElementToPageDetailCenter(
 					By.xpath("//h3//a[contains(text(),'" + titleName + "')] | //a[@title='" + titleName + "']"));
@@ -799,6 +823,7 @@ public class PageLayoutPage extends GovGrantsManager {
 	 */
 	private boolean isHeaderInstructionTextDisplayedAtPageBlock(String headerText) {
 		boolean flag = false;
+		reiDriver.WaitFor().specialCustomWait(headerInstructionTextForPageBlock);
 		if (reiDriver.findMyElement().getElement(headerInstructionTextForPageBlock).getText()
 				.equalsIgnoreCase(headerText)) {
 			flag = true;
@@ -830,6 +855,7 @@ public class PageLayoutPage extends GovGrantsManager {
 	 * @return
 	 */
 	private boolean isChangedFlexTableTitleDisplayedAtPageBlock() {
+		reiDriver.WaitFor().specialCustomWait(rolesAndResponsibilitiesFlexTableTitle);
 		reiDriver.JavaScript().scrollElementToPageDetailCenter(rolesAndResponsibilitiesFlexTableTitle);
 		try {
 			if (reiDriver.findMyElement().getElement(rolesAndResponsibilitiesFlexTableTitle).isDisplayed()) {
@@ -849,6 +875,7 @@ public class PageLayoutPage extends GovGrantsManager {
 	 * @return
 	 */
 	private boolean isChangedFlexGridTitleDisplayedAtPageBlock() {
+		reiDriver.WaitFor().specialCustomWait(monitoringFlexGridTitle);
 		reiDriver.JavaScript().scrollElementToPageDetailCenter(monitoringFlexGridTitle);
 		try {
 			if (reiDriver.findMyElement().getElement(monitoringFlexGridTitle).isDisplayed()) {
@@ -885,6 +912,8 @@ public class PageLayoutPage extends GovGrantsManager {
 	 * @return
 	 */
 	private List<WebElement> getListAttachmentTableSpecificColumnActions(String pageBlockName) {
+		reiDriver.WaitFor().specialCustomWait(By.xpath("//div[@class='panel-heading']//a[@title='" + pageBlockName
+				+ "']/../../../following-sibling::div[contains(@class,'panel-body')]//table/tbody/tr/td//a/span[contains(@class,'fa fa-pencil disable-action')]"));
 		return reiDriver.findMyElement().getElements(By.xpath("//div[@class='panel-heading']//a[@title='"
 				+ pageBlockName
 				+ "']/../../../following-sibling::div[contains(@class,'panel-body')]//table/tbody/tr/td//a/span[contains(@class,'fa fa-pencil disable-action')]"));
@@ -932,6 +961,7 @@ public class PageLayoutPage extends GovGrantsManager {
 	 * @return
 	 */
 	private WebElement getPageBlockDetailsElement(String changedFieldName) {
+		reiDriver.WaitFor().specialCustomWait(By.xpath("//span[contains(text(),'" + changedFieldName + "')]"));
 		return reiDriver.findMyElement().getElement(By.xpath("//span[contains(text(),'" + changedFieldName + "')]"));
 	}
 
@@ -954,6 +984,8 @@ public class PageLayoutPage extends GovGrantsManager {
 	 */
 	private boolean isElementAtPageBlockDetailInViewMode() {
 		boolean flag = false;
+		reiDriver.WaitFor()
+				.specialCustomWait(By.xpath("//div[@id='fieldProgramName__c']//span[@class='readonlySpan']"));
 		try {
 			if (reiDriver.findMyElement()
 					.getElement(By.xpath("//div[@id='fieldProgramName__c']//span[@class='readonlySpan']"))
@@ -979,6 +1011,7 @@ public class PageLayoutPage extends GovGrantsManager {
 	 * click on Select dropdown inside add attachment iframe
 	 */
 	public void clickOnTypeDropdown() {
+		reiDriver.WaitFor().specialCustomWait(selectTypeDropdown);
 		reiDriver.findMyElement().getElement(selectTypeDropdown).click();
 	}
 
@@ -1026,7 +1059,7 @@ public class PageLayoutPage extends GovGrantsManager {
 	private boolean isButtonDisplayedAtOverlayWindow(String buttonName) {
 		boolean flag = false;
 		try {
-			if (reiDriver.findMyElement().getElement(By.xpath("//span/a[contains(text(),'" + buttonName + "')]"))
+			if (reiDriver.WaitFor().specialCustomWait(By.xpath("//span/a[contains(text(),'" + buttonName + "')]"))
 					.isDisplayed()) {
 				flag = true;
 			}
@@ -1060,10 +1093,29 @@ public class PageLayoutPage extends GovGrantsManager {
 	 * @return true/false
 	 */
 	private boolean isEditButtonActionSequence(String buttonName, int sequenceNumber) {
+		reiDriver.WaitFor().specialCustomWait(pageLayoutButton);
 		if (reiDriver.findMyElement().getElements(pageLayoutButton).get(sequenceNumber).getAttribute("title")
 				.contains(buttonName)) {
 			return true;
 		} else
 			return false;
+	}
+
+	/**
+	 * return true if specified Button is displayed on opened modal
+	 *
+	 * @param buttonName
+	 * @return
+	 */
+	private boolean isSpecificButtonOnModalDisplayed(String buttonName) {
+		reiDriver.switchTo().switchToParentFrame();
+		govgrants.mainPage().waitForNavigationLogoToDisappear();
+		boolean flag = false;
+		if (reiDriver.findMyElement().getElement(By.xpath(
+				"//input[@value='" + buttonName + "' or @type='" + buttonName + "' or text()='" + buttonName + "']"))
+				.isDisplayed()) {
+			flag = true;
+		}
+		return flag;
 	}
 }

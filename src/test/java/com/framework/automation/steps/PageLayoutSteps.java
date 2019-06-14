@@ -29,7 +29,7 @@ public class PageLayoutSteps {
 	public void selectFromDropdown(String itemName) {
 		pageLayoutPage.getItemFromTopRightHeaderBars(itemName).click();
 	}
-	
+
 	@When("^I click Add button inside attachments page block$")
 	public void clickAddButton() {
 		pageLayoutPage.clickAddUnderAttachmentsPageBlock();
@@ -253,5 +253,10 @@ public class PageLayoutSteps {
 	@Then("^I see \"([^\"]*)\" shown as help text$")
 	public void assertHelpText(String helpText) {
 		pageLayoutPage.assertHelpTextAtPageBlock(helpText);
+	}
+
+	@Then("^I see \"([^\"]*)\" at bottom of Attachment Modal$")
+	public void assertModalButtons(String buttonName) {
+		pageLayoutPage.asserButtonOnModal(buttonName);
 	}
 }

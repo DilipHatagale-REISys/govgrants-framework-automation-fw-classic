@@ -76,4 +76,14 @@ public class FlexGridSteps {
 	public void assertChangedHeaderNameForNestedTable(String tableId, String changedText) {
 		flexGridPage.assertNestedTableHeaderName(tableId, changedText);
 	}
+	
+	@Then("^I see \"([^\"]*)\" button inside \"([^\"]*)\" Mass Editable grid$")
+	public void assertEditButtonInsideMassEditableTable(String buttonName, String headerName) {
+		flexGridPage.assertActionButtonInsideMassEditableGridTableIsDisplayed(buttonName, headerName);
+	}
+	
+	@Then("^I see \"([^\"]*)\" button inside \"([^\"]*)\" Nested Navigation grid$")
+	public void assertButtonInsideNestedNavigationTable(String buttonName, String headerName) {
+		flexGridPage.assertActionButtonInsideNestedNAvigationTableIsDisplayed(buttonName, headerName);
+	}
 }

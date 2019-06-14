@@ -169,7 +169,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Plan" sub tab
-    Then I see "View" button inside "Key Outcomes" enhanced grid
+    Then I see "View" button inside "Key Outcomes" Mass Editable grid
 
   @49453    @ConfirmationMessageFieldForProgramOutcomesFlexTAbleViewAction-gPlanning
   Scenario: Setup confirmation message for program outcomes flex table view action from configuration and validating it at Program outcomes flex table of program-planning
@@ -740,7 +740,7 @@ Feature: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
-    Then I see "View" button inside "Monitoring Schedule For All Active Grant" enhanced grid
+    Then I see "View" button inside "Monitoring Schedule For All Active Grant" Nested Navigation grid
 
   @50344    @locationFieldAtActiveGrantsGridParentFlexTableActionItemFromTopToRow-gMonitoring @smoke
   Scenario: Changing location of Monitoring Schedule For All Active Grant flex table view action from top to row from config anf validating it inside Monitoring Schedule For All Active Grant flex table of program-gMonitoring

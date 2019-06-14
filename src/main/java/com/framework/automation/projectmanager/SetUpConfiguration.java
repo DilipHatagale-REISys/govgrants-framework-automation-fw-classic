@@ -1,18 +1,7 @@
 package com.framework.automation.projectmanager;
 
-import com.framework.automation.payloads.ApprovalProcess;
-import com.framework.automation.payloads.Charts;
-import com.framework.automation.payloads.CustomAppConfig;
-import com.framework.automation.payloads.FlexGrid;
-import com.framework.automation.payloads.FlexTable;
-import com.framework.automation.payloads.Forms;
-import com.framework.automation.payloads.PageBlock;
-import com.framework.automation.payloads.PageLayout;
-import com.framework.automation.payloads.PhaseConfig;
-import com.framework.automation.payloads.Program;
+import com.framework.automation.payloads.*;
 
-import com.framework.automation.payloads.SideBar;
-import com.framework.automation.payloads.StepProgressBar;
 import eyethink.automation.bots.controller.CoreHandlers;
 
 public class SetUpConfiguration {
@@ -114,6 +103,9 @@ public class SetUpConfiguration {
 			break;
 		case "CUSTOM APP CONFIG":
 			stringPayload = new CustomAppConfig(reiDriver).setCustomAppConfig(fieldLabel, value, filterClause);
+			break;
+		case "CALENDER CONFIG":
+			stringPayload = new CalenderConfig(reiDriver).setCalenderConfig(fieldLabel, value, filterClause);
 			break;
 		}
 		System.out.println("final payload is " + stringPayload);

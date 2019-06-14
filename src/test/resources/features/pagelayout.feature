@@ -1248,4 +1248,71 @@ Feature: Page Layout Component Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
     Then I see Program Name rendered in view mode only
-	
+
+  @53094    @hideForContextFieldAtNotesAndAttachmentPageBlockForEditAction-gPlanning
+  Scenario: Hide edit action from attachment page block from config validating it at attachments table
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Rule:Page Block Rule Detail   | Hide for Context |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Rule:Page Block Rule Detail   | Hide for Context | View          | Grantee State Program | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see "Edit" icon for "Program Artifacts" is not displayed inside flex table
+
+  @53095    @hideForProfileFieldAtNotesAndAttachmentPageBlockForEditAction-gPlanning
+  Scenario: Hide edit action from attachment page block from config validating it at attachments table
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Rule:Page Block Rule Detail   | Hide for Profile |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Rule:Page Block Rule Detail   | Hide for Profile | System Administrator| Grantee State Program | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see "Edit" icon for "Program Artifacts" is not displayed inside flex table
+
+  @53096    @hideForUserFieldAtNotesAndAttachmentPageBlockForEditAction-gPlanning
+  Scenario: Hide edit action from attachment page block from config validating it at attachments table
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Rule:Page Block Rule Detail   | Hide for User    |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Rule:Page Block Rule Detail   | Hide for User    | Internal       | Grantee State Program | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see "Edit" icon for "Program Artifacts" is not displayed inside flex table
+
+  @53098    @hideOperatorFieldUsingOROperatorAtNotesAndAttachmentPageBlockForEditAction-gPlanning
+  Scenario: Hide edit row level action using OR operator from configuration and validating it at attachments table
+    Given I have default configuration as below:
+      | configurationCategory                  | fieldName        | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Rule:Page Block Rule Detail | Hide For Profile |                   | Grantee State Program | Name                      | Edit                       |
+      | Page Block Rule:Page Block Rule Detail | Hide For User    |                   | Grantee State Program | Name                      | Edit                       |
+      | Page Block Rule:Page Block Rule Detail | Hide Operator    |                   | Grantee State Program | Name                      | Edit                       |
+    Given I setup test configuration as below:
+      | configurationCategory                  | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Rule:Page Block Rule Detail | Hide For Profile | System Administrator | Grantee State Program | Name                      | Edit                       |
+      | Page Block Rule:Page Block Rule Detail | Hide For User    | Internal             | Grantee State Program | Name                      | Edit                       |
+      | Page Block Rule:Page Block Rule Detail | Hide Operator    | OR                   | Grantee State Program | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see "Edit" icon for "Program Artifacts" is not displayed inside flex table

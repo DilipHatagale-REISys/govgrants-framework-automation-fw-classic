@@ -200,15 +200,14 @@ public class FlexTablePage extends GovGrantsManager {
 
 	/**
 	 * click on help text inside draft program flex table
-	 * 
+	 *
 	 * @param blockTitle
 	 */
 	public void getHelpTextAtDraftProgramFlexTable(String blockTitle) {
-		reiDriver.Clickers()
-				.moveMouseToSpecificLocation(reiDriver.WaitFor()
-						.WaitForElementToBePresent(By.xpath("//div[text()='" + blockTitle
-								+ "']/../../..//span[contains(@class,'fa-info')] |//div/a[@title='" + blockTitle
-								+ "']/..//span[contains(@class,'fa-info')]")));
+		reiDriver.JavaScript().moveToElement(reiDriver.WaitFor()
+				.WaitForElementToBePresent(By.xpath("//div[contains(@class,'panel-title')]//div[text()='" + blockTitle
+						+ "']/../..//a[@id='Programstooltip']/span[contains(@class,'fa-info')]|//div/a[@title='"
+						+ blockTitle + "']/..//span[contains(@class,'fa-info')]")));
 	}
 
 	/**
@@ -248,8 +247,8 @@ public class FlexTablePage extends GovGrantsManager {
 	 * @param columnTitle
 	 */
 	public void getHelpTextAtFlexTableSpecificColumn(String columnTitle) {
-		reiDriver.Clickers().moveMouseToSpecificLocation(reiDriver.findMyElement()
-				.getElement(By.xpath("//th//span[@title='" + columnTitle + "' or text()='" + columnTitle
+		reiDriver.JavaScript().moveToElement(reiDriver.WaitFor()
+				.WaitForElementToBePresent(By.xpath("//th//span[@title='" + columnTitle + "' or text()='" + columnTitle
 						+ "']/../../following-sibling::span//span[contains(@class,'fa-info')]|//th//span[@title='"
 						+ columnTitle + "' or text()='" + columnTitle + "']/..//span[contains(@class,'fa-info')]")));
 	}

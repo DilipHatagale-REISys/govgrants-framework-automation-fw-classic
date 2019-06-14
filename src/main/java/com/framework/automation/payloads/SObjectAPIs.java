@@ -10,7 +10,7 @@ public enum SObjectAPIs {
     GNT__PageLayoutConfig__r,GNT__PageLayoutActionConfig__c,GNT__ApprovalDecisionActionConfig__c,GNT__FlexTableConfig__r,GNT__DataTableConfig__r,
     Program__c,GNT__ApprovalProcessStepCache__c,GNT__SobjectActionConfig__c,GNT__TaskAction__c,GNT__ProgressbarHeaderConfig__r,GNT__ChartConfig__c,GNT__ChartDetailConfig__c,
     GNT__ChartConfig__r,GNT__PageTemplate__c,GNT__PageBlockConfig__c,GNT__TabLayoutConfig__r,GNT__TabConfig__c,GNT__PageBlockDetailConfig__c,GNT__EmailTemplateConfig__c,
-    GNT__DataTableDetailConfig__c, GNT__SObjectPhaseConfig__c,GNT__CustomApp__c,
+    GNT__DataTableDetailConfig__c, GNT__SObjectPhaseConfig__c,GNT__CustomApp__c,GNT__CalendarConfig__c,
     
     //Fields
     GNT__Abbreviation__c, GNT__Active__c,GNT__AvailableForProfiles__c, GNT__DefaultThemeName__c, GNT__InternalUniqueID__c, 
@@ -33,5 +33,5 @@ public enum SObjectAPIs {
     GNT__ReadOnlyExpressionJSON__c,GNT__Version__c,GNT__SkipFieldsForExport__c,GNT__EnableTotal__c,GNT__ButtonHelpText__c,GNT__ActionURL__c,GNT__Location__c,GNT__HeaderActionDisplayType__c,GNT__ShowConfirmationBox__c,GNT__ModalTitle__c,GNT__ShowInPDF__c,GNT__DefaultPageSizeEnhanced__c,
     GNT__HideCellJSON__c,GNT__ActionURLLong__c,GNT__EditableRows__c,GNT__SingleRowEditBehavior__c,GNT__ReadOnlyCellJSON__c,GNT__HideColumnJSON__c,GNT__ReadOnlyColumnJSON__c,GNT__Formula__c,GNT__OrderBy__c,GNT__Sort_Direction__c,GNT__HighlightPhase__c,GNT__GlobalSearchLabel__c,
     GNT__GlobalSearchVisibility__c,GNT__RecentlyViewedVisibility__c,GNT__RenderExpressionJSON__c,GNT__EnableRowGrouping__c,GNT__HideGroupingColumn__c,GNT__EnableOverAllTotal__c,GNT__EnableSubTotal__c,GNT__IsMasterView__c,GNT__StyleAttribute__c,GNT__StyleClass__c,GNT__FieldWidth__c,
-    GNT__PDFRenderType__c
+    GNT__PDFRenderType__c,GNT__ColorCode__c,GNT__SaveAttachmentBehaviour__c
 }
