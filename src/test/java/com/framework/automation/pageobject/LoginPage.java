@@ -74,7 +74,7 @@ public class LoginPage extends GovGrantsManager {
 		} catch (Exception e) {
 	          reiDriver.JavaScript().clickByJS(userAvatar);
 		}
-		reiDriver.WaitFor().specialCustomWait(logOutOption);
+		reiDriver.WaitFor().magicWait(logOutOption);
 		reiDriver.Clickers().mouseClick(logOutOption);
 	}
 

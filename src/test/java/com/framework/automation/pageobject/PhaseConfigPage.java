@@ -131,7 +131,7 @@ public class PhaseConfigPage extends GovGrantsManager {
      * click on my workspace items at grantor Home main page
      */
     public void clickOnMyWorkSpaceSpecificItem(String myWorkspaceItem) {
-        reiDriver.WaitFor().specialCustomWait(By.xpath("//div//span//button[@id='" + myWorkspaceItem + "']"));
+        reiDriver.WaitFor().magicWait(By.xpath("//div//span//button[@id='" + myWorkspaceItem + "']"));
         reiDriver.WaitFor().WaitForElementToBePresent(By.xpath("//div//span//button[@id='" + myWorkspaceItem + "']")).click();
     }
 

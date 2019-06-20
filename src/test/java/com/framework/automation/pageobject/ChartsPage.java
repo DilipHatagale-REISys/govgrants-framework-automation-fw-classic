@@ -40,7 +40,7 @@ public class ChartsPage extends GovGrantsManager {
 	 * @param chartName
 	 */
 	public void assertCorrectTextDisplayed(String title, String chartName) {
-		reiDriver.WaitFor().specialCustomWait(By.xpath("//div[@id='" + chartName
+		reiDriver.WaitFor().magicWait(By.xpath("//div[@id='" + chartName
 				+ "Id']//*[contains(@class,'highcharts-container')]//*[contains(text(),'" + title + "')]"));
 		Assert.assertTrue(reiDriver.WaitFor()
 				.WaitForElementToBePresent(By.xpath("//div[@id='" + chartName

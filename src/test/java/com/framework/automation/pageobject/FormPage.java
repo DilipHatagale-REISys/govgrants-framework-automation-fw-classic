@@ -10,6 +10,8 @@ import com.framework.automation.projectmanager.GovGrantsManager;
 import eyethink.automation.bots.controller.Controller;
 import eyethink.automation.bots.controller.CoreHandlers;
 
+import javax.xml.bind.SchemaOutputResolver;
+
 public class FormPage extends GovGrantsManager {
 
 	/******* "Variables and Locators" *****************/
@@ -85,8 +87,7 @@ public class FormPage extends GovGrantsManager {
 	 * @param versionNo
 	 */
 	public void assertVersionNoInsideForm(String versionNo) {
-		reiDriver.JavaScript().scrollPageDocumentJS("PageDown", 0, 0);
-		Assert.assertTrue(reiDriver.WaitFor().WaitForElementToBePresent(versionNumber).getAttribute("innerText")
+		Assert.assertTrue(reiDriver.WaitFor().WaitForElementToBePresent(versionNumber).getAttribute("innerText").trim()
 				.equalsIgnoreCase(versionNo));
 	}
 

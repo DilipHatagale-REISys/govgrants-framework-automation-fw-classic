@@ -70,7 +70,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 	 * @param columnTitle
 	 */
 	public void getHelpTextAtEnhancedGridTableSpecificColumn(String columnTitle) {
-		reiDriver.WaitFor().specialCustomWait(By.xpath("//th//span[@title='" + columnTitle + "' or text()='"
+		reiDriver.WaitFor().magicWait(By.xpath("//th//span[@title='" + columnTitle + "' or text()='"
 				+ columnTitle + "']/../..//helpicon//span[contains(@class,'fa-info')]"));
 		reiDriver.JavaScript().moveToElement(By.xpath("//th//span[@title='" + columnTitle + "' or text()='"
 				+ columnTitle + "']/../..//helpicon//span[contains(@class,'fa-info')]"));
@@ -934,7 +934,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 				.getElement(By.xpath("//div[@id='" + tableId + "']//span[@title='" + cellValue + "' or text()='"
 						+ cellValue + "']/ancestor::td[contains(@class,'ng-scope')]"));
 		/*
-		 * reiDriver.WaitFor().specialCustomWait(By.xpath("//div[@id='" + tableId +
+		 * reiDriver.WaitFor().magicWait(By.xpath("//div[@id='" + tableId +
 		 * "']//span[@title='" + cellValue + "' or text()='" + cellValue +
 		 * "']/ancestor::td[contains(@class,'ng-scope')]"));
 		 */

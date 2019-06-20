@@ -731,7 +731,8 @@ Feature: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -981,11 +982,11 @@ Feature: Flex Table Component Scenarios
     And I click modal button "Save"
     Then I see "Owner Of The Record" inside Application Budget flex table for specified record "Owner"
 
-  @flextablebug-test
-  Scenario: Run flex table specific steps for specific time continuosly to ensure no error is displayed
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I perform sequence of actions on flex table for "120" minute
-    Then I do not see "Bad Message 431" error
+#  @flextablebug-test
+#  Scenario: Run flex table specific steps for specific time continuosly to ensure no error is displayed
+#    When I login as "Automation" user
+#    When I setup my app as "As a Grantor"
+#    And I navigate to "Planning" tab
+#    When I perform sequence of actions on flex table for "120" minute
+#    Then I do not see "Bad Message 431" error
 	

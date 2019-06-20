@@ -639,7 +639,8 @@ Feature: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I navigate to "Attachments" sub tab
     Then I see edit icon is disabled inside "Attachments" page block
 
@@ -657,7 +658,8 @@ Feature: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I navigate to "Attachments" sub tab
     Then I see edit icon is not visible inside "Attachments" page block
 
@@ -1195,7 +1197,8 @@ Feature: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1316,3 +1319,131 @@ Feature: Page Layout Component Scenarios
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Attachments" sub tab
     Then I see "Edit" icon for "Program Artifacts" is not displayed inside flex table
+
+  @53097    @hideOperatorFieldUsingANDOperatorAtNotesAndAttachmentPageBlockForEditAction-gPlanning
+  Scenario: Hide edit row level action using AND operator from configuration and validating it at attachments table
+    Given I have default configuration as below:
+      | configurationCategory                  | fieldName        | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Rule:Page Block Rule Detail | Hide For Profile |                   | Grantee State Program | Name                      | Edit                       |
+      | Page Block Rule:Page Block Rule Detail | Hide For User    |                   | Grantee State Program | Name                      | Edit                       |
+      | Page Block Rule:Page Block Rule Detail | Hide Operator    |                   | Grantee State Program | Name                      | Edit                       |
+    Given I setup test configuration as below:
+      | configurationCategory                  | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Rule:Page Block Rule Detail | Hide For Profile | System Administrator | Grantee State Program | Name                      | Edit                       |
+      | Page Block Rule:Page Block Rule Detail | Hide For User    | Internal             | Grantee State Program | Name                      | Edit                       |
+      | Page Block Rule:Page Block Rule Detail | Hide Operator    | AND                  | Grantee State Program | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see "Edit" icon for "Program Artifacts" is not displayed inside flex table
+
+  @53099    @hideForContextFieldAtNotesAndAttachmentPageBlockForEditActionWithRecordTypeNotesConfig-gPlanning
+  Scenario Outline: Hide edit row level action using AND operator from configuration and validating it at attachments table
+    Given I have default configuration as below:
+      | configurationCategory| fieldName        | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Uid Config:Uid       | Hide For Context |                   |                    | Internal Unique Id        | <value>                    |
+    Given I setup test configuration as below:
+      | configurationCategory| fieldName        | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue  |
+      | Uid Config:Uid       | Hide For Context | View            |                    | Internal Unique Id        | <value>                     |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see "Edit" icon for "Test Automation" is not displayed inside flex table
+
+    Examples:
+    |value                         |
+    |DXkA4qiwvbHfLbAaiAs6wiiVyPIp3D|
+
+  @53100    @hideForProfileFieldAtNotesAndAttachmentPageBlockForEditActionWithRecordTypeNotesConfig-gPlanning
+  Scenario Outline: Hide edit action from attachment page block from config validating it at attachments table
+    Given I have default configuration as below:
+      | configurationCategory| fieldName        | fieldOrignalValue |coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Uid Config:Uid       | Hide for Profile |                   |                      | Internal Unique Id        | <value>                    |
+    Given I setup test configuration as below:
+      | configurationCategory| fieldName        | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Uid Config:Uid       | Hide for Profile | System Administrator|                       | Internal Unique Id        | <value>                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see "Edit" icon for "Test Automation" is not displayed inside flex table
+
+    Examples:
+      |value                         |
+      |DXkA4qiwvbHfLbAaiAs6wiiVyPIp3D|
+
+  @53101    @hideForUserFieldAtNotesAndAttachmentPageBlockForEditActionWithRecordTypeNotesConfig-gPlanning
+  Scenario Outline: Hide edit action from attachment page block using Hide For User field from config validating it at attachments table
+    Given I have default configuration as below:
+      | configurationCategory| fieldName     | fieldOrignalValue |coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Uid Config:Uid       | Hide for User |                   |                      | Internal Unique Id        | <value>                    |
+    Given I setup test configuration as below:
+      | configurationCategory| fieldName     | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Uid Config:Uid       | Hide for User | Internal            |                       | Internal Unique Id        | <value>                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see "Edit" icon for "Test Automation" is not displayed inside flex table
+
+    Examples:
+      |value                         |
+      |DXkA4qiwvbHfLbAaiAs6wiiVyPIp3D|
+
+  @53102    @hideOperatorFieldUsingANDOperatorAtNotesAndAttachmentPageBlockForEditActionWithRecordTypeNotesConfig-gPlanning
+  Scenario Outline: Hide edit row level action using AND operator from configuration and validating it at attachments table
+    Given I have default configuration as below:
+      | configurationCategory| fieldName        | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Uid Config:Uid       | Hide For Profile |                   |                       | Internal Unique Id        | <value>                    |
+      | Uid Config:Uid       | Hide For User    |                   |                       | Internal Unique Id        | <value>                    |
+      | Uid Config:Uid       | Hide Operator    |                   |                       | Internal Unique Id        | <value>                    |
+    Given I setup test configuration as below:
+      | configurationCategory| fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Uid Config:Uid       | Hide For Profile | System Administrator |                       | Internal Unique Id        | <value>                    |
+      | Uid Config:Uid       | Hide For User    | Internal             |                       | Internal Unique Id        | <value>                    |
+      | Uid Config:Uid       | Hide Operator    | AND                  |                       | Internal Unique Id        | <value>                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see "Edit" icon for "Test Automation" is not displayed inside flex table
+
+    Examples:
+      |value                         |
+      |DXkA4qiwvbHfLbAaiAs6wiiVyPIp3D|
+
+  @53103    @hideOperatorFieldUsingOROperatorAtNotesAndAttachmentPageBlockForEditActionWithRecordTypeNotesConfig-gPlanning
+  Scenario Outline: Hide edit row level action using AND operator from configuration and validating it at attachments table
+    Given I have default configuration as below:
+      | configurationCategory| fieldName        | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Uid Config:Uid       | Hide For Profile |                   |                       | Internal Unique Id        | <value>                    |
+      | Uid Config:Uid       | Hide For User    |                   |                       | Internal Unique Id        | <value>                    |
+      | Uid Config:Uid       | Hide Operator    |                   |                       | Internal Unique Id        | <value>                    |
+    Given I setup test configuration as below:
+      | configurationCategory| fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Uid Config:Uid       | Hide For Profile | System Administrator |                       | Internal Unique Id        | <value>                    |
+      | Uid Config:Uid       | Hide For User    | Internal             |                       | Internal Unique Id        | <value>                    |
+      | Uid Config:Uid       | Hide Operator    | OR                   |                       | Internal Unique Id        | <value>                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see "Edit" icon for "Test Automation" is not displayed inside flex table
+
+    Examples:
+      |value                         |
+      |DXkA4qiwvbHfLbAaiAs6wiiVyPIp3D|

@@ -107,6 +107,9 @@ public class SetUpConfiguration {
 		case "CALENDER CONFIG":
 			stringPayload = new CalenderConfig(reiDriver).setCalenderConfig(fieldLabel, value, filterClause);
 			break;
+		case "UID CONFIG":
+			stringPayload = new PageBlock(reiDriver).setUid(fieldLabel, value, filterClause);
+			break;
 		}
 		System.out.println("final payload is " + stringPayload);
 		return stringPayload;

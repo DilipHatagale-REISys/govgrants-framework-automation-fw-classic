@@ -104,7 +104,8 @@ Feature: Step Progress Bar Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     Then I see status in Progress-bar is "Submitted for Approval" and is "Red"
 
   @37316    @rejectColorFieldAtStepProgressBar-gPlanning
@@ -168,7 +169,8 @@ Feature: Step Progress Bar Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I hovering mouse on Status inside step progress bar "Submitted for Approval"
     Then I see "<textInsideStatus>" shown as help text
 

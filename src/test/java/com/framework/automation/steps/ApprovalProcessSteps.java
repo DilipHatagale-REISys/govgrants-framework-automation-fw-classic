@@ -31,11 +31,6 @@ public class ApprovalProcessSteps {
 		approvalProcesPage.clickSubmitButton();
 	}
 
-	@When("^I complete submit for approval$")
-	public void clickSave() {
-		approvalProcesPage.completeSubmitForapproval();
-	}
-
 	@Then("^I see \"([^\"]*)\" is disabled$")
 	public void assertRadioButtondisabled(String radioButtonName) {
 		approvalProcesPage.assertRadioButtonNotDisplayed(radioButtonName);

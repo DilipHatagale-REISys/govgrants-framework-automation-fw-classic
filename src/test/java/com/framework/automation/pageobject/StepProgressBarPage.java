@@ -73,7 +73,7 @@ public class StepProgressBarPage extends GovGrantsManager {
 	 * @param statusName
 	 */
 	public void getHoveringContentOfStepProgressBar(String statusName) {
-		reiDriver.WaitFor().specialCustomWait(By.xpath("//div[@class='container-fluid']"
+		reiDriver.WaitFor().magicWait(By.xpath("//div[@class='container-fluid']"
 				+ "//*[@id='progressBarId']//li//span[contains(text(),'" + statusName + "')]"));
 		reiDriver.JavaScript().moveToElement(By.xpath("//div[@class='container-fluid']"
 				+ "//*[@id='progressBarId']//li//span[contains(text(),'" + statusName + "')]"));

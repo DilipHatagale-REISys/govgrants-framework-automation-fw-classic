@@ -17,7 +17,8 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -40,7 +41,8 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -63,7 +65,8 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -88,7 +91,8 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -112,7 +116,8 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -138,7 +143,8 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -166,7 +172,8 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -188,7 +195,8 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -221,7 +229,8 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -247,7 +256,8 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation" user on "QA" portal
     When I setup my app as "As an Administrator"
     And I navigate to "Operate" tab
@@ -271,7 +281,8 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -305,7 +316,8 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -334,7 +346,8 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -363,7 +376,8 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -391,7 +405,8 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -420,7 +435,8 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -447,7 +463,8 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -480,7 +497,8 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -506,7 +524,8 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -534,7 +553,8 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -569,7 +589,8 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -603,7 +624,8 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -638,7 +660,8 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -670,7 +693,8 @@ Feature: Approval Process Component Scenarios
     When I select "Draft Programs" from double headed dropdown inside admin portal
     When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -701,7 +725,8 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -726,7 +751,8 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -759,7 +785,8 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -782,7 +809,8 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -805,7 +833,8 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -828,7 +857,8 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -847,7 +877,8 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation - SA mode only - Not approved - History Tab Scenario"
     When I click on "Edit" icon for "Test program for automation - SA mode only - Not approved - History Tab Scenario" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab

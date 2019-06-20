@@ -4331,7 +4331,8 @@ Feature: Expression Builder Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4354,7 +4355,8 @@ Feature: Expression Builder Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4377,7 +4379,8 @@ Feature: Expression Builder Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4400,7 +4403,8 @@ Feature: Expression Builder Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4423,7 +4427,8 @@ Feature: Expression Builder Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4446,7 +4451,8 @@ Feature: Expression Builder Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4469,7 +4475,8 @@ Feature: Expression Builder Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4492,7 +4499,8 @@ Feature: Expression Builder Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4515,7 +4523,8 @@ Feature: Expression Builder Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4538,7 +4547,8 @@ Feature: Expression Builder Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4561,7 +4571,8 @@ Feature: Expression Builder Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4584,7 +4595,8 @@ Feature: Expression Builder Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4607,7 +4619,8 @@ Feature: Expression Builder Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4630,7 +4643,8 @@ Feature: Expression Builder Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4653,7 +4667,8 @@ Feature: Expression Builder Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4676,7 +4691,8 @@ Feature: Expression Builder Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4699,7 +4715,8 @@ Feature: Expression Builder Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4722,7 +4739,8 @@ Feature: Expression Builder Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4745,7 +4763,8 @@ Feature: Expression Builder Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4768,7 +4787,8 @@ Feature: Expression Builder Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4791,7 +4811,8 @@ Feature: Expression Builder Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4814,7 +4835,8 @@ Feature: Expression Builder Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4837,7 +4859,8 @@ Feature: Expression Builder Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4860,7 +4883,8 @@ Feature: Expression Builder Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4883,7 +4907,8 @@ Feature: Expression Builder Component Scenarios
     And I navigate to "Planning" tab
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    And I complete submit for approval
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "QA" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab

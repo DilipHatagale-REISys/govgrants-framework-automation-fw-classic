@@ -111,7 +111,7 @@ public class ApiUtilities {
 			filterClause = genericParameterFilter(ComponentCoreFieldName);
 			break;
 		case "UID":
-			filterClause = "GNT__InternalUniqueId__c=" + "'" + value;
+			filterClause = "GNT__InternalUniqueId__c=" + "'" + value+ "'";
 			break;
 		case "ACCORDIAN HEADER":
 			filterClause = String.valueOf(SObjectAPIs.GNT__PhaseConfig__r) + ".Name=" + "'" + ComponentCoreFieldName

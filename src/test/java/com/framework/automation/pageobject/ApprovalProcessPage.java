@@ -41,13 +41,8 @@ public class ApprovalProcessPage extends GovGrantsManager {
 	 * click Save
 	 */
 	public void clickSaveButton() {
+		reiDriver.WaitFor().magicWait(saveButton);
 		reiDriver.WaitFor().WaitForElementToBePresent(saveButton).click();
-	}
-
-	public void completeSubmitForapproval() {
-		clickSaveButton();
-		govgrants.pageDetails().clickAnyTopRightButton("Submit For Approval");
-		reiDriver.switchTo().acceptAlert();
 	}
 
 	/**
@@ -174,6 +169,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
 	 * click on Select dropdown inside Approval decision box
 	 */
 	public void clickOnSelectDropdown() {
+		reiDriver.WaitFor().magicWait(selectDropdown);
 		reiDriver.WaitFor().WaitForElementToBePresent(selectDropdown).click();
 	}
 
