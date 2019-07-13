@@ -21,7 +21,7 @@
 		<env/>
 		<!-- Versions -->
 		<java.version>1.8</java.version>
-		<saas.version>0.0.3</saas.version>
+		<saas.version>1.0.0</saas.version>
 		<eyeThink.version>1.0.0</eyeThink.version>
 		<selenium.version>3.10.0</selenium.version>
 		<selenium-server.version>3.10.0</selenium-server.version>
@@ -156,7 +156,6 @@
 			<artifactId>cluecumber-report-plugin</artifactId>
 			<version>${report.version}</version>
 		</dependency>
-		<!--
         <dependency>
             <groupId>eyethink</groupId>
             <artifactId>automation.bots</artifactId>
@@ -166,24 +165,7 @@
             <groupId>rei.saas</groupId>
             <artifactId>saasbusinesslayer.automation</artifactId>
             <version>${saas.version}</version>
-        </dependency> -->
-		<dependency>
-			<groupId>eyethink</groupId>
-			<artifactId>automation.bots</artifactId>
-			<version>1.0.0</version>
-			<scope>system</scope>
-			<systemPath>
-				/Users/nauman.shahid/Nauman-data/Dev_Home/eyethink.automation.bots.1/target/automation.bots-1.0.0.jar
-			</systemPath>
-		</dependency>
-		<dependency>
-			<groupId>rei.saas</groupId>
-			<artifactId>saasbusinesslayer.automation</artifactId>
-			<version>0.0.3</version>
-			<scope>system</scope>
-			<systemPath>/Users/nauman.shahid/Nauman-data/Dev_Home/REI-Automation-CoreFramework/target/saasbusinesslayer.automation-0.0.3.jar</systemPath>
-		</dependency>
-
+        </dependency>
 	</dependencies>
 	<repositories>
 		<repository>
