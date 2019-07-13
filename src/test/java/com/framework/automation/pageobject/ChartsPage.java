@@ -1,7 +1,7 @@
 package com.framework.automation.pageobject;
 
 import org.openqa.selenium.By;
-import org.testng.Assert;
+import org.junit.Assert;
 
 import com.automation.rei.handlers.GovGrantsHandler;
 import com.framework.automation.projectmanager.GovGrantsManager;

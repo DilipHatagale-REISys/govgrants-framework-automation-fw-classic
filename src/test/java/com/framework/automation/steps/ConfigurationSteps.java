@@ -1,15 +1,18 @@
 package com.framework.automation.steps;
 
+import com.framework.automation.objects.ConfigurationDataTable;
 import com.framework.automation.projectmanager.ConfigurationParameters;
 import com.framework.automation.projectmanager.ProjectWebServices;
-import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
+import io.cucumber.datatable.DataTable;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 public class ConfigurationSteps {
     ProjectWebServices projectAPI;
+    private Map<String, ConfigurationDataTable> configurationDataTableMap;
 
     public ConfigurationSteps(ProjectWebServices projectAPI) {
         this.projectAPI = projectAPI;
@@ -24,8 +27,8 @@ public class ConfigurationSteps {
     }
 
     @Given("^I setup test configuration as below:$")
-    public void setupTestCofniguration(DataTable testConfigParameters) throws IOException {
-        for (Map<String, String> parameters : testConfigParameters.asMaps(String.class, String.class)) {
+    public void setupTestCofniguration(List<Map<String, String>> testConfigParameters) throws IOException {
+        for (Map<String, String> parameters : testConfigParameters) {
             projectAPI.setupConfigurationForTest(parameters.get("configurationCategory"), parameters.get("fieldName"),
                     parameters.get("fieldNewValue"), parameters.get("coreComponentField"),
                     parameters.get("coreCOmponentSubFieldName"), parameters.get("coreComponentSubFieldValue"));
