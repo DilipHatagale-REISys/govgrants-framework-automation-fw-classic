@@ -258,6 +258,7 @@
 					<generatedRunnerDirectory>${generated.runner.directory}</generatedRunnerDirectory>
 					<parallelizationMode>scenarios</parallelizationMode>
 					<includeScenarioTags>${tags}</includeScenarioTags>
+					<logLevel>minimal</logLevel>
 				</configuration>
 			</plugin>
 			<plugin>
