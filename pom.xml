@@ -278,7 +278,7 @@
 				<configuration>
 					<sourceJsonReportDirectory>${cucumber.report.json.location}</sourceJsonReportDirectory>
 					<generatedHtmlReportDirectory>${generated.report.location}</generatedHtmlReportDirectory>
-					<customPageTitle>EyThink Automation Report</customPageTitle>
+					<customPageTitle>EyeThink Automation Report</customPageTitle>
 					<failScenariosOnPendingOrUndefinedSteps>true</failScenariosOnPendingOrUndefinedSteps>
 					<expandBeforeAfterHooks>true</expandBeforeAfterHooks>
 					<customCss>target/Automation-Report/eyethink_css/custom.css</customCss>
