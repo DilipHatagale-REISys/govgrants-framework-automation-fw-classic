@@ -1,6 +1,5 @@
 package com.framework.automation.steps;
 
-import com.framework.automation.objects.ConfigurationDataTable;
 import com.framework.automation.projectmanager.ConfigurationParameters;
 import com.framework.automation.projectmanager.ProjectWebServices;
 import cucumber.api.java.en.Given;
@@ -12,7 +11,6 @@ import java.util.Map;
 
 public class ConfigurationSteps {
     ProjectWebServices projectAPI;
-    private Map<String, ConfigurationDataTable> configurationDataTableMap;
 
     public ConfigurationSteps(ProjectWebServices projectAPI) {
         this.projectAPI = projectAPI;
