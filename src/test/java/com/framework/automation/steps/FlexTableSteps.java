@@ -2,12 +2,9 @@ package com.framework.automation.steps;
 
 import eyethink.automation.bots.exception.EyeThinkBotsCustomException;
 import org.springframework.context.annotation.Description;
-
 import com.automation.rei.handlers.GovGrantsHandler;
 import com.framework.automation.pageobject.FlexTablePage;
-
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import io.cucumber.java.en.*;
 import eyethink.automation.bots.controller.Controller;
 import eyethink.automation.bots.controller.CoreHandlers;
 

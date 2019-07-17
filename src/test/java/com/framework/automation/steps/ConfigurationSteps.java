@@ -2,8 +2,7 @@ package com.framework.automation.steps;
 
 import com.framework.automation.projectmanager.ConfigurationParameters;
 import com.framework.automation.projectmanager.ProjectWebServices;
-import cucumber.api.java.en.Given;
-
+import io.cucumber.java.en.*;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;

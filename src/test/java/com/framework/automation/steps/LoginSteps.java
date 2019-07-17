@@ -4,8 +4,7 @@ import org.springframework.context.annotation.Description;
 
 import com.automation.rei.handlers.GovGrantsHandler;
 import com.framework.automation.pageobject.LoginPage;
-
-import cucumber.api.java.en.Then;
+import io.cucumber.java.en.*;
 import eyethink.automation.bots.controller.Controller;
 import eyethink.automation.bots.controller.CoreHandlers;
 

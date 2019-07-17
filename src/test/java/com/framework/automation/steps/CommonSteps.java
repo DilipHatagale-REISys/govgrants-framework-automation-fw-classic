@@ -1,14 +1,11 @@
 package com.framework.automation.steps;
 
-import org.springframework.context.annotation.Description;
-
 import com.automation.rei.handlers.GovGrantsHandler;
 import com.framework.automation.projectmanager.GovGrantsManager;
-
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
 import eyethink.automation.bots.controller.Controller;
 import eyethink.automation.bots.controller.CoreHandlers;
+import io.cucumber.java.en.*;
+import org.springframework.context.annotation.Description;
 
 public class CommonSteps {
 	GovGrantsManager govGrantsManager;
