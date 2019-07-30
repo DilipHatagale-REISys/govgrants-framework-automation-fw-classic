@@ -1,14 +1,10 @@
 package com.framework.automation.steps;
 
 
-import com.automation.rei.controller.SetupController;
-import com.framework.automation.projectmanager.ProjectWebServices;
-import com.framework.automation.projectmanager.UsersAndURL;
+import com.automation.florida.projectmanager.UsersAndURL;
 import eyethink.automation.bots.Report.CSS;
-import eyethink.automation.bots.controller.Controller;
 import eyethink.automation.bots.controller.CoreHandlers;
-import io.cucumber.core.api.Scenario;
-import io.cucumber.java.After;
+import eyethink.automation.bots.controller.TestSetupController;
 import io.cucumber.java.Before;
 
 import java.awt.*;
