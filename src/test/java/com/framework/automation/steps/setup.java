@@ -21,27 +21,25 @@ import java.io.IOException;
  */
 
 public class setup {
-    private SetupController setupController;
     private ProjectWebServices api;
+    private TestSetupController userController;
     private static CSS report;
     private CoreHandlers eyeThink;
 
-    public setup(Controller controller, CoreHandlers eyeThink) {
-        this.setupController = new SetupController(controller);
-        this.eyeThink=eyeThink;
+    public setup(TestSetupController userController) {
+        this.userController = userController;
         if(report == null) {
             this.report = new CSS();
             report.reportConfigWriteUp(System.getProperty("user.dir"),"GovGrants Framework Test Automation");
         }
     }
 
-    @Before
-    public void startUp(Scenario scenario) throws IOException, AWTException {
-        setupController.getAccessToSetup().initializer(scenario,eyeThink);
-        setupController.getAccessToSetup().usersController(new UsersAndURL());
+    @Before(order = 1)
+    public void setUpUsers() throws IOException, AWTException {
+        userController.usersController(new UsersAndURL());
     }
 
-    @After
+    @After(order = 1)
     public void wrapUp(Scenario scenario) throws IOException {
         try {
             ProjectWebServices.thisValue.postDefaultConfigCall();
@@ -50,7 +48,5 @@ public class setup {
             ProjectWebServices.thisValue = null;
             System.out.println("Exception is " + e.getStackTrace());
         }
-        setupController.getAccessToSetup().theEnd(scenario);
     }
-
 }
