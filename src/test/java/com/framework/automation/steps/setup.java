@@ -28,7 +28,6 @@ public class setup {
     private ProjectWebServices api;
     private TestSetupController userController;
     private static CSS report;
-    private CoreHandlers eyeThink;
 
     public setup(TestSetupController userController, GovGrantsHandler saasLayer) {
         this.userController = userController;
