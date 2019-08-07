@@ -11,9 +11,8 @@ public class SideBar {
 	private ApiUtilities apiUtilities;
 	CoreHandlers reiDriver;
 
-	public SideBar(CoreHandlers reiDriver) {
-		this.reiDriver=reiDriver;
-		apiUtilities = new ApiUtilities(reiDriver);
+	public SideBar() {
+		apiUtilities = new ApiUtilities();
 	}
 
 	/**

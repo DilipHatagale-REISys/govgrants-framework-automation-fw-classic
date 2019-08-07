@@ -1,15 +1,14 @@
 package com.framework.automation.steps;
 
-import com.automation.rei.handlers.GovGrantsHandler;
 import com.framework.automation.pageobject.ChartsPage;
-import cucumber.api.java.en.*;
-import eyethink.automation.bots.controller.CoreHandlers;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 
 public class ChartsSteps {
 	ChartsPage chartsPage;
 
-	public ChartsSteps(CoreHandlers handler, GovGrantsHandler govgrants) {
-		chartsPage = new ChartsPage(handler, govgrants);
+	public ChartsSteps() {
+		chartsPage = new ChartsPage();
 	}
 
 	@When("^I click on menu icon of chart \"([^\"]*)\"$")

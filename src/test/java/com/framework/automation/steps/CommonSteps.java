@@ -1,16 +1,15 @@
 package com.framework.automation.steps;
 
-import com.automation.rei.handlers.GovGrantsHandler;
 import com.framework.automation.projectmanager.GovGrantsManager;
-import cucumber.api.java.en.*;
-import eyethink.automation.bots.controller.CoreHandlers;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import org.springframework.context.annotation.Description;
 
 public class CommonSteps {
     GovGrantsManager govGrantsManager;
 
-    public CommonSteps(CoreHandlers handler, GovGrantsHandler govgrants) {
-        govGrantsManager = new GovGrantsManager(handler, govgrants);
+    public CommonSteps() {
+        govGrantsManager = new GovGrantsManager();
     }
 
     @Description("click in admin menu to rechout to govegrants homepage")

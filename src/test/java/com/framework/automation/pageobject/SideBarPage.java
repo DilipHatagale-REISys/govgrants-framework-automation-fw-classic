@@ -1,24 +1,13 @@
 package com.framework.automation.pageobject;
 
-import com.automation.rei.handlers.GovGrantsHandler;
 import com.framework.automation.projectmanager.GovGrantsManager;
-import eyethink.automation.bots.controller.CoreHandlers;
+import eyethink.automation.bots.Register.EyeThink;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
 
 public class SideBarPage extends GovGrantsManager {
-
-    /******* "Variables and Locators" *****************/
-
-    /**
-     * Constructor to handle dependency injection and framework library
-     */
-    public SideBarPage(CoreHandlers reiDriver, GovGrantsHandler govgrants) {
-        super(reiDriver, govgrants);
-
-    }
 
     /******* "Key Methods with complete functionality - public" *****************/
 
@@ -157,7 +146,7 @@ public class SideBarPage extends GovGrantsManager {
      * @param headerName
      */
     private Boolean isAccordianContentSequence(String accordianHeaderName, int number, String headerName) {
-        if (govgrants.sideBar().getSideBarContents(headerName).get(number).getText().contains(accordianHeaderName)) {
+        if (EyeThink.saas().sideBar().getSideBarContents(headerName).get(number).getText().contains(accordianHeaderName)) {
             return true;
         } else
             return false;
@@ -170,12 +159,12 @@ public class SideBarPage extends GovGrantsManager {
      * @return
      */
     private Boolean isNewTabOpens(String pageTitle) {
-        ArrayList<String> tabHandles = new ArrayList<String>(reiDriver.switchTo().getWindowsHandlers());
+        ArrayList<String> tabHandles = new ArrayList<String>(EyeThink.core().switchTo().getWindowsHandlers());
         boolean myNewTabFound = false;
         for (int index = 0; index < tabHandles.size(); index++) {
-            reiDriver.switchTo().switchToWindowHandler(index);
-            reiDriver.WaitFor().makeThreadSleep(2000);
-            if (reiDriver.get().getPageTitle().equalsIgnoreCase(pageTitle)) {
+            EyeThink.core().switchTo().switchToWindowHandler(index);
+            EyeThink.core().WaitFor().makeThreadSleep(2000);
+            if (EyeThink.core().get().getPageTitle().equalsIgnoreCase(pageTitle)) {
                 myNewTabFound = true;
                 break;
             }

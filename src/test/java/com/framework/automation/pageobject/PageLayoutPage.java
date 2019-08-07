@@ -1,12 +1,10 @@
 package com.framework.automation.pageobject;
 
-import com.automation.rei.govgrantsSteps.GovGrantsObjects;
-import com.automation.rei.handlers.GovGrantsHandler;
 import com.framework.automation.projectmanager.GovGrantsManager;
-import eyethink.automation.bots.controller.CoreHandlers;
+import eyethink.automation.bots.Register.EyeThink;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.junit.Assert;
 
 import java.util.List;
 
@@ -23,8 +21,7 @@ public class PageLayoutPage extends GovGrantsManager {
     /**
      * Constructor to handle dependency injection and framework library
      */
-    public PageLayoutPage(CoreHandlers reiDriver, GovGrantsHandler govgrants) {
-        super(reiDriver, govgrants);
+    public PageLayoutPage() {
         overViewHeader = By.cssSelector("h2.panel-title>div>span.customLabelstyle");
         overViewTitle = By.cssSelector("h2.panel-title>div>span.overview-title");
         pageInstructionText = By.cssSelector("div.article>div");
@@ -186,7 +183,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * @param subTabName
      */
     public void assertSubTabIconDisplayed(String subTabName) {
-        Assert.assertTrue(reiDriver.WaitFor()
+        Assert.assertTrue(EyeThink.core().WaitFor()
                 .WaitForElementToBePresent(By.xpath(
                         "//div[@id='myTabs']/ul/li/a[@name='" + subTabName + "']//i[contains(@class,'fa-pencil')]"))
                 .isDisplayed());
@@ -322,7 +319,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * @param headerText
      */
     public void assertOwnerOrganizationMOdalTitle(String headerText) {
-        Assert.assertTrue(reiDriver.findMyElement().getElement(ownerOrganizationModalTitle)
+        Assert.assertTrue(EyeThink.core().findMyElement().getElement(ownerOrganizationModalTitle)
                 .getAttribute("innerText").equalsIgnoreCase(headerText));
     }
 
@@ -352,7 +349,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * @param message
      */
     public void assertMessageOfAcceptAlertBox(String message, String buttonName) {
-        govgrants.pageDetails().clickAnyTopRightButtonWithoutSwitching(buttonName);
+        EyeThink.saas().pageDetails().clickAnyTopRightButtonWithoutSwitching(buttonName);
         Assert.assertTrue(getBootBoxConfirmationText().getText().equalsIgnoreCase(message));
     }
 
@@ -362,7 +359,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * @param buttonName
      */
     public void assertActionButtonOfPagrLayoutDisplayed(String buttonName) {
-        reiDriver.switchTo().switchToFrame(editActionModalIframe);
+        EyeThink.core().switchTo().switchToFrame(editActionModalIframe);
         Assert.assertTrue(isButtonDisplayedAtOverlayWindow(buttonName));
     }
 
@@ -395,7 +392,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * assert true if mentioned help text displayed
      */
     public void assertHelpTextAtPageBlock(String helptext) {
-        Assert.assertTrue(govgrants.pageDetails().isHelpTextDisplayed(helptext));
+        Assert.assertTrue(EyeThink.saas().pageDetails().isHelpTextDisplayed(helptext));
     }
 
     /**
@@ -413,7 +410,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * @param blockTitle
      */
     public void getHelpTextAtPageBlock(String blockTitle) {
-        reiDriver.JavaScript().moveToElement(reiDriver.findMyElement().getElement(
+        EyeThink.core().JavaScript().moveToElement(EyeThink.core().findMyElement().getElement(
                 By.xpath("//h3//a[contains(text(),'" + blockTitle + "')]/..//span[contains(@class,'fa-info')]")));
     }
 
@@ -423,7 +420,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * @param pageBlockDetailTitle
      */
     public void getHelpTextAtPageBlockDetail(String pageBlockDetailTitle) {
-        reiDriver.JavaScript().moveToElement(reiDriver.findMyElement().getElement(By.xpath(
+        EyeThink.core().JavaScript().moveToElement(EyeThink.core().findMyElement().getElement(By.xpath(
                 "//span[contains(text(),'" + pageBlockDetailTitle + "')]/..//span[contains(@class,'fa-info')]")));
     }
 
@@ -433,7 +430,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * @return
      */
     public WebElement getEditButtonOptionVerification() {
-        return reiDriver.findMyElement()
+        return EyeThink.core().findMyElement()
                 .getElement(By.cssSelector(".dropdown.open>.dropdown-menu-right>li:nth-child(2)"));
     }
 
@@ -446,7 +443,7 @@ public class PageLayoutPage extends GovGrantsManager {
     public boolean isValuePresentInsidePickList(String dropDownValue) {
         String[] exp = dropDownValue.split(" ");
         int count = 0;
-        for (WebElement we : reiDriver.findMyElement().getDropDown(selectTypeDropdown).getOptions()) {
+        for (WebElement we : EyeThink.core().findMyElement().getDropDown(selectTypeDropdown).getOptions()) {
             for (int i = 0; i < exp.length; i++) {
                 if (we.getText().equals(exp[i])) {
                     count++;
@@ -466,7 +463,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * @return
      */
     public List<WebElement> getCompleteTableRowOfLookupModal() {
-        return reiDriver.findMyElement().getElements(completeTableRowInsideLookupModal);
+        return EyeThink.core().findMyElement().getElements(completeTableRowInsideLookupModal);
     }
 
     /**
@@ -483,9 +480,9 @@ public class PageLayoutPage extends GovGrantsManager {
      * click on page block detail element and switching to respective iframe
      */
     public void clickPageBlockDetailParticularElement() {
-        reiDriver.JavaScript().scrollElementToPageDetailCenter(manageAttachmentInsidePageBlockDetail);
-        reiDriver.findMyElement().getElement(manageAttachmentInsidePageBlockDetail).click();
-        reiDriver.switchTo().switchToFrame(manageAttachmentIframe);
+        EyeThink.core().JavaScript().scrollElementToPageDetailCenter(manageAttachmentInsidePageBlockDetail);
+        EyeThink.core().findMyElement().getElement(manageAttachmentInsidePageBlockDetail).click();
+        EyeThink.core().switchTo().switchToFrame(manageAttachmentIframe);
     }
 
     /**
@@ -495,7 +492,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * @return
      */
     public WebElement getPDFOptionForVerification() {
-        return reiDriver.findMyElement()
+        return EyeThink.core().findMyElement()
                 .getElement(By.cssSelector(".dropdown.open>.dropdown-menu-right>li:nth-child(8)"));
     }
 
@@ -505,7 +502,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * @return
      */
     public WebElement getPromptBoxForVerification() {
-        return reiDriver.findMyElement().getElement(By.xpath("//div[@class='modal-dialog modal-sm']/div[@class='modal-content']"));
+        return EyeThink.core().findMyElement().getElement(By.xpath("//div[@class='modal-dialog modal-sm']/div[@class='modal-content']"));
     }
 
     /**
@@ -513,9 +510,9 @@ public class PageLayoutPage extends GovGrantsManager {
      */
 
     public void clickLookupModalQuickSearch() {
-        reiDriver.WaitFor().magicWait(lookupSearchButton);
-        reiDriver.textInput().clearText(reiDriver.findMyElement().getElement(lookupSearchInputBox));
-        reiDriver.JavaScript().clickByJS(lookupSearchButton);
+        EyeThink.core().WaitFor().magicWait(lookupSearchButton);
+        EyeThink.core().textInput().clearText(EyeThink.core().findMyElement().getElement(lookupSearchInputBox));
+        EyeThink.core().JavaScript().clickByJS(lookupSearchButton);
     }
 
     /**
@@ -524,10 +521,10 @@ public class PageLayoutPage extends GovGrantsManager {
      * @param frameId
      */
     public void handleLookUpSearchWithFrame(String frameId) {
-        reiDriver.WaitFor().magicWait(lookupSearchButton);
-        reiDriver.textInput().clearText(reiDriver.findMyElement().getElement(lookupSearchInputBox));
-        reiDriver.JavaScript().clickByJS(lookupSearchButton);
-        reiDriver.switchTo().switchToFrame(By.xpath("//iframe[@id='" + frameId + "']"));
+        EyeThink.core().WaitFor().magicWait(lookupSearchButton);
+        EyeThink.core().textInput().clearText(EyeThink.core().findMyElement().getElement(lookupSearchInputBox));
+        EyeThink.core().JavaScript().clickByJS(lookupSearchButton);
+        EyeThink.core().switchTo().switchToFrame(By.xpath("//iframe[@id='" + frameId + "']"));
     }
 
     /**
@@ -535,7 +532,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * etc.
      */
     public List<WebElement> getListOfPageBlockDetailElement() {
-        return reiDriver.findMyElement().getElements(By
+        return EyeThink.core().findMyElement().getElements(By
                 .xpath("//h3//a[contains(text(),'Program Information')]/ancestor::div[2]/following-sibling::div//dt"));
     }
 
@@ -545,9 +542,9 @@ public class PageLayoutPage extends GovGrantsManager {
      * @param enteredValue
      */
     public void enterValueForTextareaDescriptionFieldUnderEditAttachment(String enteredValue) {
-        WebElement saveAndCloseButton = reiDriver.findMyElement().getElement(editAttachmentSaveButton);
-        reiDriver.textInput().clearText(By.xpath("//div[@id='modaltemp']//textarea"));
-        reiDriver.textInput().enterText(By.xpath("//div[@id='modaltemp']//textarea"), enteredValue);
+        WebElement saveAndCloseButton = EyeThink.core().findMyElement().getElement(editAttachmentSaveButton);
+        EyeThink.core().textInput().clearText(By.xpath("//div[@id='modaltemp']//textarea"));
+        EyeThink.core().textInput().enterText(By.xpath("//div[@id='modaltemp']//textarea"), enteredValue);
         saveAndCloseButton.click();
     }
 
@@ -555,7 +552,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * click on close icon to close AlertBox on notes and attachment
      */
     public void closeAlertBoxFromPage() {
-        reiDriver.findMyElement().getElement(By.xpath("//button[contains(@class,'bootbox-close-button')]")).click();
+        EyeThink.core().findMyElement().getElement(By.xpath("//button[contains(@class,'bootbox-close-button')]")).click();
     }
 
     /**
@@ -569,14 +566,14 @@ public class PageLayoutPage extends GovGrantsManager {
                 + " | //div//label[text()='File']/..//input[@type='file']"
                 + " | //div//span[text()='File']/../..//input[@type='file']");
         String defaultFilePath = System.getProperty("user.dir") + "/src/main/resources/";
-        String tableId = this.reiDriver.findMyElement().getElement(By.xpath("//*[contains(@class, 'panel-heading')]//button[text()='Add']")).getAttribute("data-target");
+        String tableId = EyeThink.core().findMyElement().getElement(By.xpath("//*[contains(@class, 'panel-heading')]//button[text()='Add']")).getAttribute("data-target");
         tableId = tableId.substring(tableId.length() - 18);
-        govgrants.flexTable().clickTableTopRightButton(tableId, "Add");
-        reiDriver.findMyElement().getDropDown(attachmentClassificationPath).selectByValue(fileType);
-        reiDriver.textInput().enterText(attachmentDescriptionPath, "Success message on second tab");
-        reiDriver.textInput().enterText(attachmentFilePath, defaultFilePath + fileName);
-        reiDriver.findMyElement().getElement(By.xpath("//input[@value='Save']")).click();
-        reiDriver.findMyElement().getElement(By.xpath("//div[@id='Attachmentadd']//span[text()='Upload file from Workspace']")).click();
+        EyeThink.saas().flexTable().clickTableTopRightButton(tableId, "Add");
+        EyeThink.core().findMyElement().getDropDown(attachmentClassificationPath).selectByValue(fileType);
+        EyeThink.core().textInput().enterText(attachmentDescriptionPath, "Success message on second tab");
+        EyeThink.core().textInput().enterText(attachmentFilePath, defaultFilePath + fileName);
+        EyeThink.core().findMyElement().getElement(By.xpath("//input[@value='Save']")).click();
+        EyeThink.core().findMyElement().getElement(By.xpath("//div[@id='Attachmentadd']//span[text()='Upload file from Workspace']")).click();
     }
 
     /**
@@ -584,7 +581,7 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public void assertMessageOnAttachmentModalDisplayed(String pageblockName, boolean assertcan) {
         By pageMessagesSelector = By.xpath("//div[@id='errorDiv']//li//descendant-or-self::*[text()]| //div[contains(@class, 'alert') and @ng-repeat]| //div[contains(@class,'alertMessages')]//div[contains(@class,'alertMessage')]//span[@class='ng-binding']");
-        List<WebElement> elements = reiDriver.findMyElement().getElements(pageMessagesSelector, false);
+        List<WebElement> elements = EyeThink.core().findMyElement().getElements(pageMessagesSelector, false);
         if (assertcan) {
             Assert.assertNotEquals(elements.size(), 0);
         } else {
@@ -596,7 +593,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * click on footer links present at bottom of any page
      */
     public void clickOnAnyFooterLinks(String footerLinks) {
-        reiDriver.findMyElement().getElement(By.xpath("//span[contains(@class,'footer-links')]//a[contains(text(),'" + footerLinks + "')]")).click();
+        EyeThink.core().findMyElement().getElement(By.xpath("//span[contains(@class,'footer-links')]//a[contains(text(),'" + footerLinks + "')]")).click();
     }
 
     /**
@@ -629,8 +626,8 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     private boolean isOverViewTitleWithHeaderDisplayed(String overViewHeaderName, String overViewTitleName) {
         boolean flag = false;
-        if ((reiDriver.findMyElement().getElement(overViewHeader).getText().contains(overViewHeaderName))
-                && (reiDriver.findMyElement().getElement(overViewTitle).getText().contains(overViewTitleName))) {
+        if ((EyeThink.core().findMyElement().getElement(overViewHeader).getText().contains(overViewHeaderName))
+                && (EyeThink.core().findMyElement().getElement(overViewTitle).getText().contains(overViewTitleName))) {
             flag = true;
         }
         return flag;
@@ -644,7 +641,7 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     private boolean isPageInstructionTextDisplayed(String text) {
         boolean flag = false;
-        if (reiDriver.findMyElement().getElement(pageInstructionText).getText().equalsIgnoreCase(text)) {
+        if (EyeThink.core().findMyElement().getElement(pageInstructionText).getText().equalsIgnoreCase(text)) {
             flag = true;
         }
         return flag;
@@ -658,7 +655,7 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     private boolean isOverViewHeaderDisplayed(String overViewHeaderName) {
         boolean flag = false;
-        if ((reiDriver.findMyElement().getElement(overViewHeader).getText().contains(overViewHeaderName))) {
+        if ((EyeThink.core().findMyElement().getElement(overViewHeader).getText().contains(overViewHeaderName))) {
             flag = true;
         }
         return flag;
@@ -673,7 +670,7 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean isTopRightHeaderButtonDisplayed(String buttonName) {
         boolean flag = true;
         try {
-            if (reiDriver
+            if (EyeThink.core()
                     .findMyElement().getElement(By.xpath("//div[contains(@class,'panel-heading')]//*[@title='"
                             + buttonName + "' or text()='" + buttonName + "' or @value='" + buttonName + "']"))
                     .isDisplayed()) {
@@ -728,7 +725,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * @return
      */
     private WebElement getTakeSnapshotOptionForVerification(String headerItem) {
-        return reiDriver.findMyElement()
+        return EyeThink.core().findMyElement()
                 .getElement(By.xpath("//div[@id='headerButtonsPanel']//ul/li//a[@title='" + headerItem + "']"));
     }
 
@@ -759,7 +756,7 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean isHeaderButtonDisplayed(String buttonName) {
         boolean flag = true;
         try {
-            if (reiDriver.findMyElement()
+            if (EyeThink.core().findMyElement()
                     .getElement(By.xpath("//div[@id='headerButtonsPanel']//*[@title='" + buttonName + "']"))
                     .isDisplayed()) {
                 flag = false;
@@ -808,7 +805,7 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     private boolean isHeaderInstructionTextDisplayed(String headerText) {
         boolean flag = false;
-        if (reiDriver.findMyElement().getElement(headerInstructionText).getText().equalsIgnoreCase(headerText)) {
+        if (EyeThink.core().findMyElement().getElement(headerInstructionText).getText().equalsIgnoreCase(headerText)) {
             flag = true;
         }
         return flag;
@@ -840,7 +837,7 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean isHeaderOviewTabDisplayed() {
         boolean flag = false;
         try {
-            if (reiDriver.findMyElement().getElement(headerOverviewTab).isDisplayed()) {
+            if (EyeThink.core().findMyElement().getElement(headerOverviewTab).isDisplayed()) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -855,9 +852,9 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean isPageBlockTitleDisplayed(String titleName) {
         boolean flag = false;
         try {
-            reiDriver.JavaScript().scrollElementToPageDetailCenter(
+            EyeThink.core().JavaScript().scrollElementToPageDetailCenter(
                     By.xpath("//h3//a[contains(text(),'" + titleName + "')] | //a[@title='" + titleName + "']"));
-            if (reiDriver.findMyElement()
+            if (EyeThink.core().findMyElement()
                     .getElement(
                             By.xpath("//h3//a[contains(text(),'" + titleName + "')] | //a[@title='" + titleName + "']"))
                     .isDisplayed()) {
@@ -889,7 +886,7 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     private boolean isHeaderInstructionTextDisplayedAtPageBlock(String headerText) {
         boolean flag = false;
-        if (reiDriver.findMyElement().getElement(headerInstructionTextForPageBlock).getText()
+        if (EyeThink.core().findMyElement().getElement(headerInstructionTextForPageBlock).getText()
                 .equalsIgnoreCase(headerText)) {
             flag = true;
         }
@@ -903,7 +900,7 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     private Boolean isExpectedNumberOfElementPresent(String titleName, int number) {
         boolean flag = false;
-        List<WebElement> firstRowElements = reiDriver.findMyElement().getElements(By.xpath("//h3//a[contains(text(),'" + titleName
+        List<WebElement> firstRowElements = EyeThink.core().findMyElement().getElements(By.xpath("//h3//a[contains(text(),'" + titleName
                 + "')]/ancestor::div[2]/following-sibling::div[contains(@id,'toggleBlock')]/div[1]/div"));
         if (firstRowElements.size() == number) {
             flag = true;
@@ -919,9 +916,9 @@ public class PageLayoutPage extends GovGrantsManager {
      * @return
      */
     private boolean isChangedFlexTableTitleDisplayedAtPageBlock() {
-        reiDriver.JavaScript().scrollElementToPageDetailCenter(rolesAndResponsibilitiesFlexTableTitle);
+        EyeThink.core().JavaScript().scrollElementToPageDetailCenter(rolesAndResponsibilitiesFlexTableTitle);
         try {
-            if (reiDriver.findMyElement().getElement(rolesAndResponsibilitiesFlexTableTitle).isDisplayed()) {
+            if (EyeThink.core().findMyElement().getElement(rolesAndResponsibilitiesFlexTableTitle).isDisplayed()) {
                 return true;
             } else {
                 return false;
@@ -938,9 +935,9 @@ public class PageLayoutPage extends GovGrantsManager {
      * @return
      */
     private boolean isChangedFlexGridTitleDisplayedAtPageBlock() {
-        reiDriver.JavaScript().scrollElementToPageDetailCenter(monitoringFlexGridTitle);
+        EyeThink.core().JavaScript().scrollElementToPageDetailCenter(monitoringFlexGridTitle);
         try {
-            if (reiDriver.findMyElement().getElement(monitoringFlexGridTitle).isDisplayed()) {
+            if (EyeThink.core().findMyElement().getElement(monitoringFlexGridTitle).isDisplayed()) {
                 return true;
             } else {
                 return false;
@@ -974,7 +971,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * @return
      */
     private List<WebElement> getListAttachmentTableSpecificColumnActions(String pageBlockName) {
-        return reiDriver.findMyElement().getElements(By.xpath("//div[@class='panel-heading']//a[@title='"
+        return EyeThink.core().findMyElement().getElements(By.xpath("//div[@class='panel-heading']//a[@title='"
                 + pageBlockName
                 + "']/../../../following-sibling::div[contains(@class,'panel-body')]//table/tbody/tr/td//a/span[contains(@class,'fa fa-pencil disable-action')]"));
     }
@@ -1020,7 +1017,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * @return
      */
     private WebElement getPageBlockDetailsElement(String changedFieldName) {
-        return reiDriver.findMyElement().getElement(By.xpath("//span[contains(text(),'" + changedFieldName + "')]"));
+        return EyeThink.core().findMyElement().getElement(By.xpath("//span[contains(text(),'" + changedFieldName + "')]"));
     }
 
     /**
@@ -1042,7 +1039,7 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean isElementAtPageBlockDetailInViewMode() {
         boolean flag = false;
         try {
-            if (reiDriver.findMyElement()
+            if (EyeThink.core().findMyElement()
                     .getElement(By.xpath("//div[@id='fieldProgramName__c']//span[@class='readonlySpan']"))
                     .isDisplayed()) {
                 flag = true;
@@ -1058,15 +1055,15 @@ public class PageLayoutPage extends GovGrantsManager {
      * frame.
      */
     public void clickAddUnderAttachmentsPageBlock() {
-        reiDriver.findMyElement().getElement(addButtonUnderAttachments).click();
-        reiDriver.switchTo().switchToFrame(addAttachmentIframe);
+        EyeThink.core().findMyElement().getElement(addButtonUnderAttachments).click();
+        EyeThink.core().switchTo().switchToFrame(addAttachmentIframe);
     }
 
     /**
      * click on Select dropdown inside add attachment iframe
      */
     public void clickOnTypeDropdown() {
-        reiDriver.findMyElement().getElement(selectTypeDropdown).click();
+        EyeThink.core().findMyElement().getElement(selectTypeDropdown).click();
     }
 
     /**
@@ -1075,8 +1072,8 @@ public class PageLayoutPage extends GovGrantsManager {
     private Boolean isTableColumnHeaderNameOnLookModal(String titleName) {
         boolean flag = false;
         try {
-            if (govgrants.flexTable().getSpecificElementFromTableHeader(titleName).isDisplayed()
-                    || govgrants.flexTable().getSpecificElementFromTableHeader(titleName).isEnabled()) {
+            if (EyeThink.saas().flexTable().getSpecificElementFromTableHeader(titleName).isDisplayed()
+                    || EyeThink.saas().flexTable().getSpecificElementFromTableHeader(titleName).isEnabled()) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -1112,7 +1109,7 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean isButtonDisplayedAtOverlayWindow(String buttonName) {
         boolean flag = false;
         try {
-            if (reiDriver.findMyElement().getElement(By.xpath("//span/a[contains(text(),'" + buttonName + "')]"))
+            if (EyeThink.core().findMyElement().getElement(By.xpath("//span/a[contains(text(),'" + buttonName + "')]"))
                     .isDisplayed()) {
                 flag = true;
             }
@@ -1146,7 +1143,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * @return true/false
      */
     private boolean isEditButtonActionSequence(String buttonName, int sequenceNumber) {
-        if (reiDriver.findMyElement().getElements(pageLayoutButton).get(sequenceNumber).getAttribute("title")
+        if (EyeThink.core().findMyElement().getElements(pageLayoutButton).get(sequenceNumber).getAttribute("title")
                 .contains(buttonName)) {
             return true;
         } else
@@ -1161,7 +1158,7 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     private boolean isSpecificButtonOnModalDisplayed(String buttonName) {
         boolean flag = false;
-        if (reiDriver.findMyElement().getElement(By.xpath(
+        if (EyeThink.core().findMyElement().getElement(By.xpath(
                 "//input[@value='" + buttonName + "' or @type='" + buttonName + "' or text()='" + buttonName + "']"))
                 .isDisplayed()) {
             flag = true;
@@ -1177,7 +1174,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * @return
      */
     public boolean isTextDisplayedInsideEditAttachmentTable(String value, String flexTableHeader) {
-        if (reiDriver.findMyElement().getElement(By.xpath("//div[@id='myTabbedContent']//a[@title='" + flexTableHeader + "']/../../../following-sibling::div//tbody//td/span[text()='" + value + "']")).isDisplayed())
+        if (EyeThink.core().findMyElement().getElement(By.xpath("//div[@id='myTabbedContent']//a[@title='" + flexTableHeader + "']/../../../following-sibling::div//tbody//td/span[text()='" + value + "']")).isDisplayed())
             return true;
         else
             return false;
@@ -1192,7 +1189,7 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean isExpectedFieldIsDisplayedOnEditPageDetails(String fieldApiName) {
         boolean flag = false;
         try {
-            if (reiDriver.findMyElement().getElement(By.xpath(
+            if (EyeThink.core().findMyElement().getElement(By.xpath(
                     "//div[@id='" + fieldApiName + "']//select[@disabled]")).isDisplayed()) {
                 flag = true;
             }

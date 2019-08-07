@@ -1,17 +1,16 @@
 package com.framework.automation.steps;
 
-import cucumber.api.java.en.*;
+import com.framework.automation.pageobject.FlexTablePage;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import eyethink.automation.bots.exception.EyeThinkBotsCustomException;
 import org.springframework.context.annotation.Description;
-import com.automation.rei.handlers.GovGrantsHandler;
-import com.framework.automation.pageobject.FlexTablePage;
-import eyethink.automation.bots.controller.CoreHandlers;
 
 public class FlexTableSteps {
 	FlexTablePage flexTablePage;
 
-	public FlexTableSteps(CoreHandlers handler, GovGrantsHandler govgrants) {
-		flexTablePage = new FlexTablePage(handler, govgrants);
+	public FlexTableSteps() {
+		flexTablePage = new FlexTablePage();
 	}
 
 	@When("^I click on top right parallel lines bar for \"([^\"]*)\"$")

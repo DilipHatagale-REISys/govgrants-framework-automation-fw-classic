@@ -1,11 +1,10 @@
 package com.framework.automation.pageobject;
 
-import com.automation.rei.handlers.GovGrantsHandler;
 import com.framework.automation.projectmanager.GovGrantsManager;
-import eyethink.automation.bots.controller.CoreHandlers;
+import eyethink.automation.bots.Register.EyeThink;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.junit.Assert;
 
 import java.util.List;
 
@@ -15,8 +14,7 @@ public class StepProgressBarPage extends GovGrantsManager {
     /**
      * Constructor to handle dependency injection and framework library
      */
-    public StepProgressBarPage(CoreHandlers reiDriver, GovGrantsHandler govgrants) {
-        super(reiDriver, govgrants);
+    public StepProgressBarPage() {
         stepProgressBar = By.xpath("//div[@class='container-fluid']//*[@id='progressBarId']//ol//li");
     }
 
@@ -68,7 +66,7 @@ public class StepProgressBarPage extends GovGrantsManager {
      * @param statusName
      */
     public void getHoveringContentOfStepProgressBar(String statusName) {
-        reiDriver.JavaScript().moveToElement(By.xpath("//div[@class='container-fluid']"
+        EyeThink.core().JavaScript().moveToElement(By.xpath("//div[@class='container-fluid']"
                 + "//*[@id='progressBarId']//li//span[contains(text(),'" + statusName + "')]"));
     }
 
@@ -84,7 +82,7 @@ public class StepProgressBarPage extends GovGrantsManager {
     private boolean isStepProgressBarIsNotDisplayed() {
         boolean flag = true;
         try {
-            if (reiDriver.findMyElement().getElement(stepProgressBar).isDisplayed()) {
+            if (EyeThink.core().findMyElement().getElement(stepProgressBar).isDisplayed()) {
                 flag = false;
             }
         } catch (Exception e) {
@@ -108,7 +106,7 @@ public class StepProgressBarPage extends GovGrantsManager {
      * @return: List of all status item of step progress bar.
      */
     private List<WebElement> getallStatusItemList() {
-        return reiDriver.findMyElement().getElements(stepProgressBar);
+        return EyeThink.core().findMyElement().getElements(stepProgressBar);
     }
 
     /**
@@ -120,7 +118,7 @@ public class StepProgressBarPage extends GovGrantsManager {
     private boolean isStatusStepInsideProgressBarIsNotDisplayed(String statusName) {
         boolean flag = false;
         try {
-            if (govgrants.pageDetails().getSpecificStatusFromProgressBar(statusName).isDisplayed()) {
+            if (EyeThink.saas().pageDetails().getSpecificStatusFromProgressBar(statusName).isDisplayed()) {
                 flag = false;
             }
         } catch (Exception e) {

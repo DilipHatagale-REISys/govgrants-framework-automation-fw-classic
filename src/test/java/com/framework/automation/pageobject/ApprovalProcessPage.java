@@ -1,8 +1,7 @@
 package com.framework.automation.pageobject;
 
-import com.automation.rei.handlers.GovGrantsHandler;
 import com.framework.automation.projectmanager.GovGrantsManager;
-import eyethink.automation.bots.controller.CoreHandlers;
+import eyethink.automation.bots.Register.EyeThink;
 import eyethink.automation.bots.exception.EyeThinkBotsCustomException;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -18,8 +17,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
     /**
      * Constructor to handle dependency injection and framework library
      */
-    public ApprovalProcessPage(CoreHandlers reiDriver, GovGrantsHandler govgrants) {
-        super(reiDriver, govgrants);
+    public ApprovalProcessPage() {
         approvalDecisionPannel = By.cssSelector("div>span>input[name='myRadio']");
         approvalCommentTextBox = By.xpath("//div[@id='ApprovalDecisionComponent']//textarea");
         submitButton = By.xpath("//input[@type='button' and @value='Submit']");
@@ -30,15 +28,15 @@ public class ApprovalProcessPage extends GovGrantsManager {
      * click Submit
      */
     public void clickSubmitButton() {
-        reiDriver.findMyElement().getElement(submitButton).click();
-        reiDriver.WaitFor().makeThreadSleep(9000);
+        EyeThink.core().findMyElement().getElement(submitButton).click();
+        EyeThink.core().WaitFor().makeThreadSleep(9000);
     }
 
     /**
      * click Save
      */
     public void clickSaveButton() {
-        reiDriver.findMyElement().getElement(saveButton).click();
+        EyeThink.core().findMyElement().getElement(saveButton).click();
     }
 
     /**
@@ -48,7 +46,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
      * @throws EyeThinkBotsCustomException
      */
     public void clickStartApprovalButton(String programSubject) throws EyeThinkBotsCustomException {
-        govgrants.flexTable().clickTableActionIcons("Start", programSubject);
+        EyeThink.saas().flexTable().clickTableActionIcons("Start", programSubject);
     }
 
     /**
@@ -94,8 +92,8 @@ public class ApprovalProcessPage extends GovGrantsManager {
      * @param error
      */
     public void assertDecisionCommentsMandatory(String error) {
-        Assert.assertTrue(reiDriver.findMyElement().getElement(dangerAlert).getText().equalsIgnoreCase(error)
-                || reiDriver.findMyElement().getElement(dangerAlert).getText().contains(error));
+        Assert.assertTrue(EyeThink.core().findMyElement().getElement(dangerAlert).getText().equalsIgnoreCase(error)
+                || EyeThink.core().findMyElement().getElement(dangerAlert).getText().contains(error));
     }
 
     /**
@@ -111,8 +109,8 @@ public class ApprovalProcessPage extends GovGrantsManager {
      * Enter input value to program approval comment box.
      */
     public void programApprovalTextBox() {
-        reiDriver.findMyElement().getElement(approvalCommentTextBox);
-        reiDriver.textInput().enterText(approvalCommentTextBox, defaultComment);
+        EyeThink.core().findMyElement().getElement(approvalCommentTextBox);
+        EyeThink.core().textInput().enterText(approvalCommentTextBox, defaultComment);
     }
 
     /**
@@ -122,7 +120,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
      * @param message
      */
     public void assertMessageOfConfirmationBoxPopUp(String message) {
-        Assert.assertTrue(reiDriver.findMyElement().getElement(confirmationBoxMessage)
+        Assert.assertTrue(EyeThink.core().findMyElement().getElement(confirmationBoxMessage)
                 .getAttribute("innerText").equalsIgnoreCase(message));
     }
 
@@ -164,7 +162,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
      * click on Select dropdown inside Approval decision box
      */
     public void clickOnSelectDropdown() {
-        reiDriver.findMyElement().getElement(selectDropdown).click();
+        EyeThink.core().findMyElement().getElement(selectDropdown).click();
     }
 
     /**
@@ -184,7 +182,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
      * @return
      */
     public WebElement getuserFromApprovalDecisionAction(String dropDownValue) {
-        return reiDriver.findMyElement().getElement(
+        return EyeThink.core().findMyElement().getElement(
                 By.xpath("//div[@id='select2-drop']//ul//li/div[contains(text(),'" + dropDownValue + "')]"));
     }
 
@@ -199,7 +197,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
      * @return
      */
     private WebElement getApprovalDecisionPannel(String radioButtonName) {
-        return reiDriver.findMyElement()
+        return EyeThink.core().findMyElement()
                 .getElement(By.xpath("//div/span/input[@name='myRadio' and @value='" + radioButtonName + "']"));
     }
 
@@ -229,7 +227,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
      * @return
      */
     private Boolean isApprovalDecisionRadioSequence(String radioName, int sequenceNumber) {
-        if (reiDriver.findMyElement().getElements(approvalDecisionPannel).get(sequenceNumber).getAttribute("value")
+        if (EyeThink.core().findMyElement().getElements(approvalDecisionPannel).get(sequenceNumber).getAttribute("value")
                 .contains(radioName)) {
             return true;
         } else
@@ -260,7 +258,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
      * @return
      */
     private WebElement getApprovedText(String radioButtonName) {
-        return reiDriver.findMyElement().getElement(By.xpath(
+        return EyeThink.core().findMyElement().getElement(By.xpath(
                 "//div/span/input[@name='myRadio' and @value='Approve']//ancestor::span[@class='approval-actions ng-scope ng-binding']"));
     }
 
@@ -271,16 +269,16 @@ public class ApprovalProcessPage extends GovGrantsManager {
         int whileHandler = 0;
         By startButton = By.xpath("//div/table/tbody/tr/td/span/span/span[text()='" + programSubject
                 + "']//following::td/div/span/span/span/span/a[@title='" + titleInLocator + "']");
-        List<WebElement> approvalStartButtonTable = reiDriver.findMyElement().getElements(startButton);
+        List<WebElement> approvalStartButtonTable = EyeThink.core().findMyElement().getElements(startButton);
         int approvalStartButtonTableSize = approvalStartButtonTable.size();
         while (approvalStartButtonTableSize == 0) {
             whileHandler++;
             if (whileHandler == 2) {
                 break;
             }
-            reiDriver.get().getRefresh();
-            reiDriver.findMyElement().getElement(pendingTasksTableRef);
-            approvalStartButtonTable = reiDriver.findMyElement().getElements(startButton);
+            EyeThink.core().get().getRefresh();
+            EyeThink.core().findMyElement().getElement(pendingTasksTableRef);
+            approvalStartButtonTable = EyeThink.core().findMyElement().getElements(startButton);
             approvalStartButtonTableSize = approvalStartButtonTable.size();
         }
         System.out.println("size of pending task " + approvalStartButtonTable.size());
@@ -295,7 +293,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
      */
     private boolean isSuccessForEmailToProgramOwner(String templateName) {
         boolean flag = false;
-        reiDriver.WaitFor().makeThreadSleep(3000);
+        EyeThink.core().WaitFor().makeThreadSleep(3000);
         try {
             if (validateQueueEmail().getAttribute("title").equalsIgnoreCase("Queued")) {
                 flag = true;
@@ -305,7 +303,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
         if (flag == false) {
             try {
                 clickAndSelectOptionFromLeftDoubleArrowDropDown("Success Emails");
-                reiDriver.WaitFor().makeThreadSleep(2500);
+                EyeThink.core().WaitFor().makeThreadSleep(2500);
                 if (validateSuccessEmail(templateName).get(0).isDisplayed()) {
                     flag = true;
                 }
@@ -322,8 +320,8 @@ public class ApprovalProcessPage extends GovGrantsManager {
      * @return
      */
     private WebElement validateQueueEmail() {
-        reiDriver.WaitFor().makeThreadSleep(200);
-        return reiDriver.findMyElement().getElement(By.xpath("//td//span[@title='Queued']"));
+        EyeThink.core().WaitFor().makeThreadSleep(200);
+        return EyeThink.core().findMyElement().getElement(By.xpath("//td//span[@title='Queued']"));
     }
 
     /**
@@ -333,7 +331,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
      * @return
      */
     private List<WebElement> validateSuccessEmail(String templateName) {
-        return reiDriver.findMyElement().getElements(By.xpath(
+        return EyeThink.core().findMyElement().getElements(By.xpath(
                 "//td//span[text()='nauman.shahid@reisystems.com']/../../../../following-sibling::td//span[text()='"
                         + templateName + "']/../../../following-sibling::td//span[text()='Success']"));
     }
@@ -346,7 +344,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
      * @return
      */
     private WebElement getCommentTextInsideHistoryTab(String commentText, String User) {
-        return reiDriver.findMyElement().getElement(By.xpath("//td/span[contains(text(),'" + User
+        return EyeThink.core().findMyElement().getElement(By.xpath("//td/span[contains(text(),'" + User
                 + "')]/../following-sibling::td/span[contains(text(),'" + commentText + "')]"));
     }
 
@@ -377,7 +375,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
      * @return
      */
     private boolean isCommentTextDisplayed(String commentText, String User) {
-        reiDriver.JavaScript().scrollPageDocumentJS("PageDown", 0, 0);
+        EyeThink.core().JavaScript().scrollPageDocumentJS("PageDown", 0, 0);
         boolean flag = false;
         try {
             if (getCommentTextInsideHistoryTab(commentText, User).getText().contains(commentText)) {

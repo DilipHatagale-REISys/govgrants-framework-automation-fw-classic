@@ -1,7 +1,6 @@
 package com.framework.automation.projectmanager;
 
-import com.automation.rei.handlers.GovGrantsHandler;
-import eyethink.automation.bots.controller.CoreHandlers;
+import eyethink.automation.bots.Register.EyeThink;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -24,13 +23,7 @@ public class GovGrantsManager extends ProjectWebServices {
             pendingTasksTableRef, dangerAlert, confirmationBoxMessage, selectDropdown, allPhases, chartsContainer,
             containerFluid_PageWrapperList, reachOutToTmpActiveGrantsGrid;
 
-    /**
-     * Super Constructor
-     *
-     * @param reiDriver
-     */
-    public GovGrantsManager(CoreHandlers reiDriver, GovGrantsHandler govgrants) {
-        super(reiDriver, govgrants);
+    public GovGrantsManager() {
         navigationLogo = By.cssSelector("div#holdon-overlay>div>div>div>img.nav-logo");
         searchInput = By.cssSelector("div>div.quick-search>div>input");
         rightHeaderBars = By.xpath("//div[@class='panel-heading']//div[contains(@class,'header-bars')]");
@@ -66,7 +59,7 @@ public class GovGrantsManager extends ProjectWebServices {
      * @param tabName
      */
     public void clickPhasesNaveBar(String tabName) {
-        govgrants.mainPage().clickMainMenuBar(tabName);
+        EyeThink.saas().mainPage().clickMainMenuBar(tabName);
     }
 
     /**
@@ -75,10 +68,10 @@ public class GovGrantsManager extends ProjectWebServices {
      * @param tabName
      */
     public void clickAdminNavBar(String tabName, String appName) {
-        reiDriver.WaitFor().makeThreadSleep(500);
-        govgrants.mainPage().clickAdminNavBar(tabName);
-        govgrants.mainPage().waitForEgmsHeader();
-        govgrants.mainPage().setUpCustomAppDropDown(appName);
+        EyeThink.core().WaitFor().makeThreadSleep(500);
+        EyeThink.saas().mainPage().clickAdminNavBar(tabName);
+        EyeThink.saas().mainPage().waitForEgmsHeader();
+        EyeThink.saas().mainPage().setUpCustomAppDropDown(appName);
     }
 
     /**
@@ -86,8 +79,8 @@ public class GovGrantsManager extends ProjectWebServices {
      */
     public void waitForNavigationLogo() {
         try {
-            if (reiDriver.is().isDisplayed(navigationLogo)) {
-                reiDriver.WaitFor().WaitForElementToDisappear(navigationLogo);
+            if (EyeThink.core().is().isDisplayed(navigationLogo)) {
+                EyeThink.core().WaitFor().WaitForElementToDisappear(navigationLogo);
             }
         } catch (Exception e) {
 
@@ -98,22 +91,22 @@ public class GovGrantsManager extends ProjectWebServices {
      * click on any button on modal content
      */
     public void clickModalContentSpecificButton(String buttonName) {
-        govgrants.modal().clickModalContentSpecificButton(buttonName);
-        govgrants.mainPage().waitForNavigationLogoToDisappear();
+        EyeThink.saas().modal().clickModalContentSpecificButton(buttonName);
+        EyeThink.saas().mainPage().waitForNavigationLogoToDisappear();
     }
 
     /**
      * @return: List of all side bar headers.
      */
     public List<WebElement> getSideBarHeadersList() {
-        return reiDriver.findMyElement().getElements(sideBarHeadersList);
+        return EyeThink.core().findMyElement().getElements(sideBarHeadersList);
     }
 
     /**
      * @return: List of all Accordian headers.
      */
     public List<WebElement> accordianHeadersList(String headerName) {
-        return govgrants.sideBar().getSideBarSubHeaders(headerName);
+        return EyeThink.saas().sideBar().getSideBarSubHeaders(headerName);
     }
 
     /**
@@ -124,7 +117,7 @@ public class GovGrantsManager extends ProjectWebServices {
      * @return
      */
     public WebElement getSideBarAccordianHeader(String sideBarCategory, String accordianSubHeader) {
-        return govgrants.sideBar().getSideBarSubHeader(sideBarCategory, accordianSubHeader);
+        return EyeThink.saas().sideBar().getSideBarSubHeader(sideBarCategory, accordianSubHeader);
     }
 
     /**
@@ -135,7 +128,7 @@ public class GovGrantsManager extends ProjectWebServices {
      * @return
      */
     public WebElement getSideBarAccordianSubHeaderContent(String sideBarCategory, String accordianSubHeaderDetail) {
-        return govgrants.sideBar().getSideBarContent(sideBarCategory, accordianSubHeaderDetail);
+        return EyeThink.saas().sideBar().getSideBarContent(sideBarCategory, accordianSubHeaderDetail);
     }
 
     /**
@@ -146,7 +139,7 @@ public class GovGrantsManager extends ProjectWebServices {
      * @return
      */
     public WebElement getFlexGridPanels(String pannelTitleName) {
-        return reiDriver.findMyElement().getElement(By.xpath("//div[@class='panel-heading']//div[contains(@class,'panel-title')]//*[text()='"
+        return EyeThink.core().findMyElement().getElement(By.xpath("//div[@class='panel-heading']//div[contains(@class,'panel-title')]//*[text()='"
                 + pannelTitleName + "']"));
     }
 
@@ -156,7 +149,7 @@ public class GovGrantsManager extends ProjectWebServices {
      * @param buttonName
      */
     public void getRightHeaderButton(String buttonName) {
-        govgrants.pageDetails().clickAnyTopRightButton(buttonName);
+        EyeThink.saas().pageDetails().clickAnyTopRightButton(buttonName);
     }
 
     /**
@@ -166,7 +159,7 @@ public class GovGrantsManager extends ProjectWebServices {
      * @return
      */
     public WebElement getItemFromTopRightHeaderBars(String headerItem) {
-        return govgrants.pageDetails().getMenuItemFromParallelLinesDropDown(headerItem);
+        return EyeThink.saas().pageDetails().getMenuItemFromParallelLinesDropDown(headerItem);
     }
 
     /**
@@ -176,11 +169,11 @@ public class GovGrantsManager extends ProjectWebServices {
      * @return
      */
     public void clickRightHeaderButtonInsideDetailPage(String buttonName) {
-        govgrants.pageDetails().clickAnyTopRightButton(buttonName);
+        EyeThink.saas().pageDetails().clickAnyTopRightButton(buttonName);
         if (buttonName.equalsIgnoreCase("Submit For Approval")) {
             try {
-                reiDriver.WaitFor().WaitForAlert();
-                reiDriver.switchTo().acceptAlert();
+                EyeThink.core().WaitFor().WaitForAlert();
+                EyeThink.core().switchTo().acceptAlert();
             } catch (Exception e) {
             }
         }
@@ -193,7 +186,7 @@ public class GovGrantsManager extends ProjectWebServices {
      * @return
      */
     public WebElement getSpecificElementFromTableHeader(String titleName) {
-        return govgrants.flexTable().getSpecificElementFromTableHeader(titleName);
+        return EyeThink.saas().flexTable().getSpecificElementFromTableHeader(titleName);
     }
 
     /**
@@ -202,8 +195,8 @@ public class GovGrantsManager extends ProjectWebServices {
      * @return
      */
     public List<WebElement> getCompleteTableRow() {
-        reiDriver.findMyElement().getElement(completeTableRow);
-        return govgrants.flexTable().getCompleteTableRow();
+        EyeThink.core().findMyElement().getElement(completeTableRow);
+        return EyeThink.saas().flexTable().getCompleteTableRow();
     }
 
     /**
@@ -212,7 +205,7 @@ public class GovGrantsManager extends ProjectWebServices {
      * @param headerName
      */
     public void clickAccordianHeader(String headerName) {
-        govgrants.sideBar().getSideBarHeader(headerName).click();
+        EyeThink.saas().sideBar().getSideBarHeader(headerName).click();
     }
 
     /**
@@ -222,7 +215,7 @@ public class GovGrantsManager extends ProjectWebServices {
      * @param subHeaderName
      */
     public void clickAccordianSubHeader(String AccordianHeader, String subHeaderName) {
-        govgrants.sideBar().getSideBarSubHeader(AccordianHeader, subHeaderName).click();
+        EyeThink.saas().sideBar().getSideBarSubHeader(AccordianHeader, subHeaderName).click();
         getSideBarAccordianHeader(AccordianHeader, subHeaderName).click();
     }
 
@@ -232,7 +225,7 @@ public class GovGrantsManager extends ProjectWebServices {
      * @param pageTitle
      */
     public void assertPageTitle(String pageTitle) {
-        Assert.assertEquals(reiDriver.get().getPageTitle(), pageTitle);
+        Assert.assertEquals(EyeThink.core().get().getPageTitle(), pageTitle);
     }
 
     /**
@@ -242,7 +235,7 @@ public class GovGrantsManager extends ProjectWebServices {
      * @return
      */
     public By flexTableStatusColumn(String statusName) {
-        return govgrants.flexTable().getFlexTableColumn(statusName);
+        return EyeThink.saas().flexTable().getFlexTableColumn(statusName);
     }
 
     /**
@@ -250,10 +243,10 @@ public class GovGrantsManager extends ProjectWebServices {
      */
     public void clickRightHeaderBars(String title) {
         try {
-            reiDriver.JavaScript().scrollElementToPageDetailCenter(reachOutToTmpActiveGrantsGrid);
+            EyeThink.core().JavaScript().scrollElementToPageDetailCenter(reachOutToTmpActiveGrantsGrid);
         } catch (Exception e) {
         }
-        govgrants.phasePannel().clickParallelMenuBars(title);
+        EyeThink.saas().phasePannel().clickParallelMenuBars(title);
     }
 
     /**
@@ -279,11 +272,11 @@ public class GovGrantsManager extends ProjectWebServices {
      * @param dropDownOption
      */
     public void clickAndSelectOptionFromLeftDoubleArrowDropDown(String dropDownOption) {
-        govgrants.phasePannel().clickDoubleArrowDropDownAndSelectItem(dropDownOption);
+        EyeThink.saas().phasePannel().clickDoubleArrowDropDownAndSelectItem(dropDownOption);
     }
 
     public void clearCookies() {
-        reiDriver.eatCookies().deleteAllCookies();
+        EyeThink.core().eatCookies().deleteAllCookies();
     }
 
     /**
@@ -293,7 +286,7 @@ public class GovGrantsManager extends ProjectWebServices {
      * @param iconName
      */
     public void clickRowLevelActionIconsInsideSubTab(String iconName, String programRole) {
-        govgrants.flexTable().clickTableActionIcons(iconName, programRole);
+        EyeThink.saas().flexTable().clickTableActionIcons(iconName, programRole);
     }
 
     /**
@@ -320,7 +313,7 @@ public class GovGrantsManager extends ProjectWebServices {
      * @param chartName
      */
     public void clickChartMenuIcon(String chartName) {
-        govgrants.charts().clickChartMenuIcon(chartName);
+        EyeThink.saas().charts().clickChartMenuIcon(chartName);
     }
 
     /**
@@ -330,7 +323,7 @@ public class GovGrantsManager extends ProjectWebServices {
      * @param valueToSelect
      */
     public void selectAnyItemFromChartsMenu(String chartName, String valueToSelect) {
-        govgrants.charts().selectAnyItemFromChartsMenu(chartName, valueToSelect);
+        EyeThink.saas().charts().selectAnyItemFromChartsMenu(chartName, valueToSelect);
     }
 
     /**
@@ -340,7 +333,7 @@ public class GovGrantsManager extends ProjectWebServices {
      * @return
      */
     public boolean isTitleOfModal(String titleName) {
-        return reiDriver.findMyElement().getElement(By.xpath("//*[@class='modal-title ng-binding'][text()='" + titleName + "']"))
+        return EyeThink.core().findMyElement().getElement(By.xpath("//*[@class='modal-title ng-binding'][text()='" + titleName + "']"))
                 .isDisplayed();
     }
 
@@ -350,13 +343,13 @@ public class GovGrantsManager extends ProjectWebServices {
      * @throws AWTException
      */
     public void saveFile() throws AWTException {
-        reiDriver.switchTo().switchToWindowHandler(1);
-        reiDriver.WaitFor().makeThreadSleep(20000);
-        reiDriver.RobotActions().ctrl_Save();
-        reiDriver.WaitFor().makeThreadSleep(2000);
-        reiDriver.RobotActions().Robot_Enter();
-        reiDriver.WaitFor().makeThreadSleep(20000);
-        reiDriver.RobotActions().Robot_Escape();
+        EyeThink.core().switchTo().switchToWindowHandler(1);
+        EyeThink.core().WaitFor().makeThreadSleep(20000);
+        EyeThink.core().RobotActions().ctrl_Save();
+        EyeThink.core().WaitFor().makeThreadSleep(2000);
+        EyeThink.core().RobotActions().Robot_Enter();
+        EyeThink.core().WaitFor().makeThreadSleep(20000);
+        EyeThink.core().RobotActions().Robot_Escape();
     }
 
     /**
@@ -366,7 +359,7 @@ public class GovGrantsManager extends ProjectWebServices {
      */
     public String readPDF(int pageNumber, String fileName) {
         File file = new File(System.getProperty("user.dir") + "\\target");
-        File[] directory = reiDriver.file().getCompleteFilesListOnLocalDirectory(file.getAbsolutePath());
+        File[] directory = EyeThink.core().file().getCompleteFilesListOnLocalDirectory(file.getAbsolutePath());
         for (File files : directory) {
             if (files.getName().endsWith(".tmp")) {
                 new File(files.getAbsolutePath().toString())
@@ -374,7 +367,7 @@ public class GovGrantsManager extends ProjectWebServices {
                 break;
             }
         }
-        return reiDriver.file().adobeReader().readFromAdobeFileOnLocalAtUserDirectory(
+        return EyeThink.core().file().adobeReader().readFromAdobeFileOnLocalAtUserDirectory(
                 file.getAbsolutePath().toString() + "\\" + fileName + ".pdf", pageNumber);
     }
 
@@ -384,9 +377,9 @@ public class GovGrantsManager extends ProjectWebServices {
      * @return
      */
     public List<String> readXLS(String fileName) {
-        reiDriver.WaitFor().makeThreadSleep(10000);
+        EyeThink.core().WaitFor().makeThreadSleep(10000);
         File file = new File(System.getProperty("user.dir") + "\\target");
-        File[] directory = reiDriver.file().getCompleteFilesListOnLocalDirectory(file.getAbsolutePath());
+        File[] directory = EyeThink.core().file().getCompleteFilesListOnLocalDirectory(file.getAbsolutePath());
         for (File files : directory) {
             if (files.getName().endsWith(".xls")) {
                 new File(files.getAbsolutePath().toString())
@@ -394,7 +387,7 @@ public class GovGrantsManager extends ProjectWebServices {
                 break;
             }
         }
-        return reiDriver.file().readAnyFile(file.getAbsolutePath() + "\\" + fileName + ".html");
+        return EyeThink.core().file().readAnyFile(file.getAbsolutePath() + "\\" + fileName + ".html");
 
     }
 
@@ -405,7 +398,7 @@ public class GovGrantsManager extends ProjectWebServices {
      * @paran columnName
      */
     public void recordWebElement(String columnName, String tableId) {
-        recordElement = govgrants.flexTable().getSpecificTableColumn(columnName, tableId);
+        recordElement = EyeThink.saas().flexTable().getSpecificTableColumn(columnName, tableId);
     }
 
     /******* "Local Methods with Limited functionality " **********/
@@ -418,7 +411,7 @@ public class GovGrantsManager extends ProjectWebServices {
      */
     private boolean isCurrentURL(String content) {
         boolean flag = false;
-        if (reiDriver.get().getCurretnURL().contains(content)) {
+        if (EyeThink.core().get().getCurretnURL().contains(content)) {
             flag = true;
         }
         return flag;
@@ -430,8 +423,8 @@ public class GovGrantsManager extends ProjectWebServices {
      * @param SubTabName
      */
     public WebElement getSubTabsInsideMainDetailPage(String SubTabName) {
-        reiDriver.WaitFor().magicWait(By.xpath("//div[@id='myTabs']/ul/li/a[@name='" + SubTabName + "']"));
-        return reiDriver.findMyElement()
+        EyeThink.core().WaitFor().magicWait(By.xpath("//div[@id='myTabs']/ul/li/a[@name='" + SubTabName + "']"));
+        return EyeThink.core().findMyElement()
                 .getElement(By.xpath("//div[@id='myTabs']/ul/li/a[@name='" + SubTabName + "']"));
     }
 
@@ -439,17 +432,17 @@ public class GovGrantsManager extends ProjectWebServices {
      * get list of sub tab inside main detail page like overview etc.
      */
     public List<WebElement> getListSubTabsInsideMainDetailPage() {
-        reiDriver.WaitFor().magicWait(By.xpath("//div[@id='myTabs']/ul/li/a"));
-        return reiDriver.findMyElement().getElements(By.xpath("//div[@id='myTabs']/ul/li/a"));
+        EyeThink.core().WaitFor().magicWait(By.xpath("//div[@id='myTabs']/ul/li/a"));
+        return EyeThink.core().findMyElement().getElements(By.xpath("//div[@id='myTabs']/ul/li/a"));
     }
 
     /**
      * get list of page block inside detail page like overview etc.
      */
     public List<WebElement> getListPageBlockInsideMainDetailPage() {
-        reiDriver.WaitFor()
+        EyeThink.core().WaitFor()
                 .magicWait(By.xpath("//div[@class='tab-pane fade active in']//div[@class='panel-heading']"));
-        return reiDriver.findMyElement()
+        return EyeThink.core().findMyElement()
                 .getElements(By.xpath("//div[@class='tab-pane fade active in']//div[@class='panel-heading']"));
     }
 
@@ -457,6 +450,6 @@ public class GovGrantsManager extends ProjectWebServices {
      * get BootBox confirmation message box
      */
     public WebElement getBootBoxConfirmationText() {
-        return reiDriver.findMyElement().getElement(By.xpath("//div[@class='bootbox-body']"));
+        return EyeThink.core().findMyElement().getElement(By.xpath("//div[@class='bootbox-body']"));
     }
 }

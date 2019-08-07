@@ -1,7 +1,5 @@
 package com.framework.automation.payloads;
 
-import eyethink.automation.bots.controller.CoreHandlers;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -9,11 +7,9 @@ public class FlexGrid {
 	private String payloadForStringValue = "{\"sObjectAPIName\" : \"%s\",\"fieldMapStr\" : \"{\\\"Id\\\":\\\"%s\\\",\\\"%s\\\":\\\"%s\\\"}\"}";
 	private String payloadForIntValue = "{\"sObjectAPIName\" : \"%s\",\"fieldMapStr\" : \"{\\\"Id\\\":\\\"%s\\\",\\\"%s\\\":%s}\"}";
 	private ApiUtilities apiUtilities;
-	CoreHandlers reiDriver;
 
-	public FlexGrid(CoreHandlers reiDriver) {
-		this.reiDriver=reiDriver;
-		apiUtilities = new ApiUtilities(reiDriver);
+	public FlexGrid() {
+		apiUtilities = new ApiUtilities();
 	}
 
 	public String setFlexGridParentFlexTableConfig(String fieldLabel, String value, String filterClause) {

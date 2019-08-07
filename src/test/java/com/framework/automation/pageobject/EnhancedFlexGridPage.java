@@ -1,11 +1,10 @@
 package com.framework.automation.pageobject;
 
-import com.automation.rei.handlers.GovGrantsHandler;
 import com.framework.automation.projectmanager.GovGrantsManager;
-import eyethink.automation.bots.controller.CoreHandlers;
+import eyethink.automation.bots.Register.EyeThink;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.junit.Assert;
 
 import java.math.BigDecimal;
 import java.util.*;
@@ -20,8 +19,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     /**
      * Constructor to handle dependency injection and framework library
      */
-    public EnhancedFlexGridPage(CoreHandlers reiDriver, GovGrantsHandler govgrants) {
-        super(reiDriver, govgrants);
+    public EnhancedFlexGridPage() {
         reachOutToEnhancedGridCollapse = By.id("ProgramBudgetCategoryflexTable");
         searchInputEnhancedGrid = By.cssSelector("div>grid>div>div>div>div>div>input.form-control");
         completeTableRowOfEnhancedGrid = By
@@ -46,7 +44,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      * @param blockTitle
      */
     public void getHelpTextAtParentFlexTableEnhancedGrid(String blockTitle) {
-        reiDriver.JavaScript().moveToElement(By.xpath("//div[@id='flexGridEnhanced1']//span[contains(text(),'"
+        EyeThink.core().JavaScript().moveToElement(By.xpath("//div[@id='flexGridEnhanced1']//span[contains(text(),'"
                 + blockTitle + "')]/../../..//span[contains(@class,'fa-info')]"));
     }
 
@@ -58,8 +56,8 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      * @return
      */
     public List<WebElement> getCompleteTableRowOfEnhancedGrid() {
-        reiDriver.findMyElement().getElement(completeTableRowOfEnhancedGrid);
-        return reiDriver.findMyElement().getElements(completeTableRowOfEnhancedGrid);
+        EyeThink.core().findMyElement().getElement(completeTableRowOfEnhancedGrid);
+        return EyeThink.core().findMyElement().getElements(completeTableRowOfEnhancedGrid);
     }
 
     /**
@@ -69,7 +67,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      * @param columnTitle
      */
     public void getHelpTextAtEnhancedGridTableSpecificColumn(String columnTitle) {
-        reiDriver.JavaScript().moveToElement(By.xpath("//th//span[@title='" + columnTitle + "' or text()='"
+        EyeThink.core().JavaScript().moveToElement(By.xpath("//th//span[@title='" + columnTitle + "' or text()='"
                 + columnTitle + "']/../..//helpicon//span[contains(@class,'fa-info')]"));
     }
 
@@ -81,7 +79,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      * @param enteredValue
      */
     public void enterValueForTextareaAtEnhancedGridColumn(String enteredValue, String tableId) {
-        List<WebElement> textField = reiDriver.findMyElement()
+        List<WebElement> textField = EyeThink.core().findMyElement()
                 .getElements(By.xpath("//div[@id='" + tableId + "']//tbody//td//textarea"));
         for (WebElement inputField : textField) {
             System.out.println(inputField.getTagName());
@@ -97,8 +95,8 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      * @param iconTitle
      */
     public void assertEnhancedGridTableEditActionIconDisplayed(String columnTitle, String iconTitle) {
-        reiDriver.JavaScript().scrollpageToSpecificElement(scrollToActionColumn);
-        Assert.assertTrue(reiDriver.findMyElement().getElement(By.xpath("//td//*[@title = '" + columnTitle + "' or text() = '" + columnTitle
+        EyeThink.core().JavaScript().scrollpageToSpecificElement(scrollToActionColumn);
+        Assert.assertTrue(EyeThink.core().findMyElement().getElement(By.xpath("//td//*[@title = '" + columnTitle + "' or text() = '" + columnTitle
                 + "']/ancestor::tr[1]//td//a[@title = '" + iconTitle
                 + "']//i[contains(@class,'fa fa-external-link')]"))
                 .isDisplayed());
@@ -126,7 +124,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      */
     public void assertEnhancedFlexGridTabelRowCountDisabled(String text, String tableId) {
         try {
-            reiDriver.JavaScript().scrollpageToSpecificElement(completeTableRowOfEnhancedGrid);
+            EyeThink.core().JavaScript().scrollpageToSpecificElement(completeTableRowOfEnhancedGrid);
         } catch (Exception e) {
         }
         Assert.assertFalse(isEnhancedFlexGridRowsCountDisabled(text, tableId));
@@ -309,7 +307,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      */
     public void assertTextContainingRowAtParentFlexTabel(String text, String tableId) {
         try {
-            reiDriver.JavaScript().scrollpageToSpecificElement(completeTableRowOfEnhancedGrid);
+            EyeThink.core().JavaScript().scrollpageToSpecificElement(completeTableRowOfEnhancedGrid);
         } catch (Exception e) {
         }
         Assert.assertTrue(isExpectedTextIsDisplayedAtParentFlexTabledRow(text, tableId));
@@ -410,7 +408,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     private Boolean isAdvanceFilterDisabledFromEnhancedGrid(String tableId) {
         boolean flag = false;
         try {
-            if (govgrants.phasePannel().getAdvanceFilterItem(tableId).isDisplayed()) {
+            if (EyeThink.saas().phasePannel().getAdvanceFilterItem(tableId).isDisplayed()) {
                 flag = false;
             }
         } catch (Exception e) {
@@ -428,7 +426,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      */
     private boolean isTitleDisplayedForEnhancedGrid(String titleName, String tableId) {
         try {
-            if (govgrants.phasePannel().getPanelTitleWithTableId(tableId, titleName).isDisplayed()) {
+            if (EyeThink.saas().phasePannel().getPanelTitleWithTableId(tableId, titleName).isDisplayed()) {
                 return true;
             } else {
                 return false;
@@ -446,8 +444,8 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     private boolean isQuickSearchDisabledForEnhancedGrid() {
         boolean flag = true;
         try {
-            reiDriver.JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
-            if (reiDriver.findMyElement().getElement(searchInputEnhancedGrid).isDisplayed()) {
+            EyeThink.core().JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
+            if (EyeThink.core().findMyElement().getElement(searchInputEnhancedGrid).isDisplayed()) {
                 flag = false;
             }
         } catch (Exception e) {
@@ -461,7 +459,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     private Boolean isEnhancedFlexGridRowsCountDisabled(String text, String tableId) {
         boolean flag = false;
         try {
-            if (govgrants.flexTable().getFooterElementsFromTable(text, tableId).isDisplayed()) {
+            if (EyeThink.saas().flexTable().getFooterElementsFromTable(text, tableId).isDisplayed()) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -475,8 +473,8 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     private Boolean isEnhancedFlexGridColumnHeaderName(String titleName) {
         boolean flag = false;
         try {
-            if (govgrants.flexTable().getSpecificElementFromTableHeader(titleName).isDisplayed()
-                    || govgrants.flexTable().getSpecificElementFromTableHeader(titleName).isEnabled()) {
+            if (EyeThink.saas().flexTable().getSpecificElementFromTableHeader(titleName).isDisplayed()
+                    || EyeThink.saas().flexTable().getSpecificElementFromTableHeader(titleName).isEnabled()) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -491,7 +489,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     private boolean isSelectRecordCheckBoxEnabledAtEnhancedGrid() {
         boolean flag = false;
         try {
-            reiDriver.JavaScript().scrollElementToPageDetailCenter(reachOutToEnhancedGridCollapse);
+            EyeThink.core().JavaScript().scrollElementToPageDetailCenter(reachOutToEnhancedGridCollapse);
             for (WebElement element : getCompleteTableRowOfEnhancedGrid()) {
                 if (element.findElement(selectRecordCheckBoxForEnhancedGrid).isDisplayed()) {
                     flag = true;
@@ -510,7 +508,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      */
     private Boolean isSameTabStaysForEditForEnhancedGrid() {
         boolean sameTabFound = false;
-        if (reiDriver.switchTo().getWindowsHandlers().size() == 1) {
+        if (EyeThink.core().switchTo().getWindowsHandlers().size() == 1) {
             sameTabFound = true;
         }
         return sameTabFound;
@@ -520,11 +518,11 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      * @return true if bottom element is displayed at enhanced grid
      */
     private boolean isEnhancedGridBottomElementEnabled(String text, String tableId) {
-        reiDriver.JavaScript().scrollPageDocumentJS("PageDown", 0, 0);
+        EyeThink.core().JavaScript().scrollPageDocumentJS("PageDown", 0, 0);
         boolean flag = false;
         try {
-            if (govgrants.flexTable().getFooterElementsFromTable(text, tableId).isDisplayed()
-                    || govgrants.flexTable().getFooterElementsFromTable(text, tableId).isEnabled()) {
+            if (EyeThink.saas().flexTable().getFooterElementsFromTable(text, tableId).isDisplayed()
+                    || EyeThink.saas().flexTable().getFooterElementsFromTable(text, tableId).isEnabled()) {
 
                 flag = true;
             }
@@ -537,10 +535,10 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      * @return true if expected count of records is present inside enhanced grid
      */
     private boolean isNoOfRecordsInsideEnhancedGridPresent(int rowCount, String tableId) {
-        reiDriver.JavaScript().scrollPageDocumentJS("PageDown", 0, 0);
+        EyeThink.core().JavaScript().scrollPageDocumentJS("PageDown", 0, 0);
         boolean flag = false;
         try {
-            int listSize = govgrants.flexTable().getCompleteTableRow(tableId).size();
+            int listSize = EyeThink.saas().flexTable().getCompleteTableRow(tableId).size();
             if (listSize == rowCount) {
                 flag = true;
             }
@@ -555,8 +553,8 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     private Boolean isChangedEnhancedFlexGridColumnHeaderName(String titleName) {
         boolean flag = false;
         try {
-            reiDriver.JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
-            if (govgrants.flexTable().getSpecificElementFromTableHeader(titleName).getText()
+            EyeThink.core().JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
+            if (EyeThink.saas().flexTable().getSpecificElementFromTableHeader(titleName).getText()
                     .equalsIgnoreCase(titleName)) {
                 flag = true;
             }
@@ -571,7 +569,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     private Boolean isChangedEnhancedFlexGridColumnHeaderName(String columnTitleName, String tableId) {
         boolean flag = false;
         try {
-            if (govgrants.flexTable().getSpecificElementFromTableHeader(tableId, columnTitleName).getText()
+            if (EyeThink.saas().flexTable().getSpecificElementFromTableHeader(tableId, columnTitleName).getText()
                     .equalsIgnoreCase(columnTitleName)) {
                 flag = true;
             }
@@ -587,7 +585,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     private Boolean isSpecificCellValueOfEnhancedFlexGrid(String cellValue, String colName) {
         boolean flag = false;
         try {
-            if (reiDriver.findMyElement().getElement(govgrants.flexTable().getFlexTableColumn(cellValue)).getText()
+            if (EyeThink.core().findMyElement().getElement(EyeThink.saas().flexTable().getFlexTableColumn(cellValue)).getText()
                     .equalsIgnoreCase(cellValue)) {
                 flag = true;
             }
@@ -603,9 +601,9 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     private Boolean isInputTextBoxIsDisplayedForSpecificColumnOfEnhancedFlexGrid() {
         boolean flag = false;
         try {
-            reiDriver.JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
-            govgrants.flexTable().slideNestedFlexTable("TmpActiveGrantsGridFlexToggle", 150);
-            if (reiDriver.findMyElement().getElement(currentBudgetPeriodEndDate).isDisplayed()) {
+            EyeThink.core().JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
+            EyeThink.saas().flexTable().slideNestedFlexTable("TmpActiveGrantsGridFlexToggle", 150);
+            if (EyeThink.core().findMyElement().getElement(currentBudgetPeriodEndDate).isDisplayed()) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -623,7 +621,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     private boolean isActionButtonInsideTopOfEnhancedGridTableDisplayed(String buttonName, String headerName) {
         boolean flag = false;
         try {
-            if (reiDriver.findMyElement().getElement(By.xpath("//*[@title='" + headerName + "' or text()='"
+            if (EyeThink.core().findMyElement().getElement(By.xpath("//*[@title='" + headerName + "' or text()='"
                     + headerName
                     + "']/ancestor::div[contains(@class,'header-title') or 1]/following-sibling::div/action//button[contains(@title,'"
                     + buttonName + "') or @text()='" + buttonName + "']")).isDisplayed()) {
@@ -645,8 +643,8 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     private boolean isExpectedSumValueAtEnhancedGridTableDisplayed(BigDecimal value) {
         boolean flag = false;
         try {
-            reiDriver.JavaScript().scrollpageToSpecificElement(awardObligatedAmountSpecificCells);
-            List<WebElement> rows_table = reiDriver.findMyElement().getElements(awardObligatedAmountSpecificCells);
+            EyeThink.core().JavaScript().scrollpageToSpecificElement(awardObligatedAmountSpecificCells);
+            List<WebElement> rows_table = EyeThink.core().findMyElement().getElements(awardObligatedAmountSpecificCells);
             String str = "";
             String strNew = "";
             BigDecimal bd = new BigDecimal(0);
@@ -720,7 +718,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      * @return
      */
     public List<WebElement> getTableColumnCompleteContent(String text) {
-        return reiDriver.findMyElement().getElements(By.xpath("//table/tbody/tr/td//*[@field-name='" + text + "']"));
+        return EyeThink.core().findMyElement().getElements(By.xpath("//table/tbody/tr/td//*[@field-name='" + text + "']"));
     }
 
     /**
@@ -746,9 +744,9 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      * @return
      */
     public List<WebElement> getCompleteTableAction(String iconName, String tableId) {
-        reiDriver.findMyElement().getElement(By.xpath("//div[@id='" + tableId + "']//action/span//a"));
+        EyeThink.core().findMyElement().getElement(By.xpath("//div[@id='" + tableId + "']//action/span//a"));
         By actionItem = By.xpath("//div[@id='" + tableId + "']//action/span//a");
-        return reiDriver.findMyElement().getElements(actionItem);
+        return EyeThink.core().findMyElement().getElements(actionItem);
     }
 
     /**
@@ -759,7 +757,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     private Boolean isMenuIconDisabledInChildFlexTable(String panelTitleName) {
         boolean flag = false;
         try {
-            if (reiDriver.findMyElement().getElement(govgrants.phasePannel().getParallelBarsLocator(panelTitleName))
+            if (EyeThink.core().findMyElement().getElement(EyeThink.saas().phasePannel().getParallelBarsLocator(panelTitleName))
                     .isDisplayed()) {
                 flag = false;
             }
@@ -775,8 +773,8 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     private Boolean isQuickSearchDisabledForChildFlexTableInEnhancedGrid(String childTableId) {
         boolean flag = true;
         try {
-            reiDriver.JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
-            if (reiDriver.findMyElement().getElement(By.xpath("//div[@id='" + childTableId + "']/div[1]//input"))
+            EyeThink.core().JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
+            if (EyeThink.core().findMyElement().getElement(By.xpath("//div[@id='" + childTableId + "']/div[1]//input"))
                     .isDisplayed()) {
                 flag = false;
             }
@@ -793,7 +791,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      * @return
      */
     private Boolean isTotalRecordsEnabledForChildFlexTable(String footerName, String tableId) {
-        return reiDriver.findMyElement().getElement(By.xpath("//div[@id='" + tableId + "']//span[contains(text(),'" + footerName + "')]"))
+        return EyeThink.core().findMyElement().getElement(By.xpath("//div[@id='" + tableId + "']//span[contains(text(),'" + footerName + "')]"))
                 .isDisplayed();
     }
 
@@ -803,7 +801,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      * @return
      */
     private Boolean isRecordSelectionEnabledOnChildFlexTable() {
-        return reiDriver.findMyElement().getElement(By.xpath("//input[@id='TmpGrantorActiveAwardsGridcheckBox']")).isDisplayed();
+        return EyeThink.core().findMyElement().getElement(By.xpath("//input[@id='TmpGrantorActiveAwardsGridcheckBox']")).isDisplayed();
     }
 
     /**
@@ -813,8 +811,8 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     private Boolean isInputTextBoxIsDisplayedForIdColumnOfChildFlexTableAtEnhancedGrid() {
         boolean flag = false;
         try {
-            reiDriver.JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
-            if (reiDriver.findMyElement().getElement(idColumnForChildFlexTable).isDisplayed()) {
+            EyeThink.core().JavaScript().scrollpageToSpecificElement(reachOutToEnhancedGridCollapse);
+            if (EyeThink.core().findMyElement().getElement(idColumnForChildFlexTable).isDisplayed()) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -829,7 +827,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         boolean flag = false;
         try {
             ArrayList<String> obtainedList = new ArrayList<>();
-            List<WebElement> rows_table = govgrants.flexTable().getCompleteTableRow(tableId);
+            List<WebElement> rows_table = EyeThink.saas().flexTable().getCompleteTableRow(tableId);
             for (WebElement we : rows_table) {
                 obtainedList.add(we.getText());
             }
@@ -852,8 +850,8 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     private boolean isExpectedSumValueForNumberOfAwardsAtEnhancedGridTableDisplayed() {
         boolean flag = false;
         try {
-            reiDriver.JavaScript().scrollpageToSpecificElement(numberOfAwardscells);
-            List<WebElement> rows_table = reiDriver.findMyElement().getElements(numberOfAwardscells);
+            EyeThink.core().JavaScript().scrollpageToSpecificElement(numberOfAwardscells);
+            List<WebElement> rows_table = EyeThink.core().findMyElement().getElements(numberOfAwardscells);
             String sumStr = "";
             double rowTotal = 0.00;
             double sum = 0.00;
@@ -885,7 +883,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     private Boolean isErrorMessageAtEnhancedGridIsDisplayed(String error) {
         boolean flag = false;
         try {
-            if (reiDriver.findMyElement().getElement(By.xpath(
+            if (EyeThink.core().findMyElement().getElement(By.xpath(
                     "//div[contains(@class, 'alert alert-warning displayFlexOnly alertMessage')]/span[contains(text(),'"
                             + error + "')]"))
                     .isDisplayed()) {
@@ -902,7 +900,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      */
     private Boolean isSpecificCellValueColourOfEnhancedFlexGrid(String cellValue, String tableId, String colorName) {
         boolean flag = false;
-        WebElement cellContent = reiDriver.findMyElement()
+        WebElement cellContent = EyeThink.core().findMyElement()
                 .getElement(By.xpath("//div[@id='" + tableId + "']//span[@title='" + cellValue + "' or text()='"
                         + cellValue + "']/ancestor::td[contains(@class,'ng-scope')]"));
         switch (colorName.toUpperCase()) {
@@ -939,10 +937,10 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      */
     private boolean isExpectedSumValueOfObligatedAmountAtChildTableDisplayed() {
         boolean flag = false;
-        reiDriver.WaitFor().makeThreadSleep(4000);
+        EyeThink.core().WaitFor().makeThreadSleep(4000);
         try {
-            reiDriver.JavaScript().scrollpageToSpecificElement(obligatedAmountSpecificCellsAtChildTable);
-            List<WebElement> rows_table = reiDriver.findMyElement()
+            EyeThink.core().JavaScript().scrollpageToSpecificElement(obligatedAmountSpecificCellsAtChildTable);
+            List<WebElement> rows_table = EyeThink.core().findMyElement()
                     .getElements(obligatedAmountSpecificCellsAtChildTable);
             double sum = 0.00;
             double totalVal = Double.valueOf(rows_table.get(rows_table.size() - 1).getText().replaceAll("[$|,|']", ""));
@@ -969,8 +967,8 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     private boolean isExpectedOverAllTotalSumValueForNumberOfAwardsAtEnhancedGridTableDisplayed() {
         boolean flag = false;
         try {
-            reiDriver.JavaScript().scrollpageToSpecificElement(numberOfAwardscells);
-            List<WebElement> rows_table = reiDriver.findMyElement().getElements(numberOfAwardscells);
+            EyeThink.core().JavaScript().scrollpageToSpecificElement(numberOfAwardscells);
+            List<WebElement> rows_table = EyeThink.core().findMyElement().getElements(numberOfAwardscells);
             String sumStr = rows_table.get(rows_table.size() - 1).getText();
             double sum = 0.00;
             for (int row = 0; row < rows_table.size() - 1; row++) {
@@ -1001,7 +999,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     private boolean isExpectedEnteredValueInsideTextAreaFieldDisplayed(String enteredValue, String columnValue,
                                                                        String tableId) {
         boolean flag = false;
-        WebElement editedContent = reiDriver.findMyElement()
+        WebElement editedContent = EyeThink.core().findMyElement()
                 .getElement(By.xpath("//div[@id='" + tableId + "']//td//*[@title = '" + columnValue + "' or text() = '"
                         + columnValue + "']/ancestor::tr[1]//td//span[contains(text(),'" + enteredValue + "')]"));
         try {
@@ -1025,7 +1023,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
                                                                                        String columnValue) {
         boolean flag = false;
         try {
-            List<WebElement> cellsValue = reiDriver.findMyElement()
+            List<WebElement> cellsValue = EyeThink.core().findMyElement()
                     .getElements(By.xpath("//table/tbody/tr/td//*[@field-name='" + columnValue + "']//span//span"));
             for (WebElement el : cellsValue) {
                 String valueFound = el.getText().trim();
@@ -1046,7 +1044,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      * @return
      */
     private boolean isMultipleColumnValueInExepctedOrder(String text1, String text2, String order) {
-        return reiDriver.compare().sortAndCompareWebTableWithTwoColumns(getTableColumnCompleteContent(text1, text2),
+        return EyeThink.core().compare().sortAndCompareWebTableWithTwoColumns(getTableColumnCompleteContent(text1, text2),
                 order);
     }
 
@@ -1060,9 +1058,9 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     public Map<Integer, List<WebElement>> getTableColumnCompleteContent(String text1, String text2) {
         Map<Integer, List<WebElement>> mapWebElements = new HashMap<Integer, List<WebElement>>();
         mapWebElements.put(1,
-                reiDriver.findMyElement().getElements(By.xpath("//table/tbody/tr/td//*[@field-name='" + text1 + "']")));
+                EyeThink.core().findMyElement().getElements(By.xpath("//table/tbody/tr/td//*[@field-name='" + text1 + "']")));
         mapWebElements.put(2,
-                reiDriver.findMyElement().getElements(By.xpath("//table/tbody/tr/td//*[@field-name='" + text2 + "']//span")));
+                EyeThink.core().findMyElement().getElements(By.xpath("//table/tbody/tr/td//*[@field-name='" + text2 + "']//span")));
         return mapWebElements;
     }
 }

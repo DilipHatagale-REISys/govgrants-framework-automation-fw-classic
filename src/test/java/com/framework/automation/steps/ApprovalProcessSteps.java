@@ -1,16 +1,15 @@
 package com.framework.automation.steps;
 
-import com.automation.rei.handlers.GovGrantsHandler;
 import com.framework.automation.pageobject.ApprovalProcessPage;
-import cucumber.api.java.en.*;
-import eyethink.automation.bots.controller.CoreHandlers;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import eyethink.automation.bots.exception.EyeThinkBotsCustomException;
 
 public class ApprovalProcessSteps {
     ApprovalProcessPage approvalProcesPage;
 
-    public ApprovalProcessSteps(CoreHandlers handler, GovGrantsHandler govgrants) {
-        approvalProcesPage = new ApprovalProcessPage(handler, govgrants);
+    public ApprovalProcessSteps() {
+        approvalProcesPage = new ApprovalProcessPage();
     }
 
     @When("^I start the approval with subject \"([^\"]*)\"$")

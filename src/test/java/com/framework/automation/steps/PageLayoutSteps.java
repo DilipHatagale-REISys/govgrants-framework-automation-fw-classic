@@ -1,17 +1,16 @@
 package com.framework.automation.steps;
 
-import com.automation.rei.handlers.GovGrantsHandler;
 import com.framework.automation.pageobject.PageLayoutPage;
-import cucumber.api.java.en.*;
-import eyethink.automation.bots.controller.CoreHandlers;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 
 import java.util.List;
 
 public class PageLayoutSteps {
     PageLayoutPage pageLayoutPage;
 
-    public PageLayoutSteps(CoreHandlers handler, GovGrantsHandler govgrants) {
-        pageLayoutPage = new PageLayoutPage(handler, govgrants);
+    public PageLayoutSteps() {
+        pageLayoutPage = new PageLayoutPage();
     }
 
     @When("^I click on \"([^\"]*)\" button in right header$")

@@ -1,15 +1,14 @@
 package com.framework.automation.steps;
 
-import com.automation.rei.handlers.GovGrantsHandler;
 import com.framework.automation.pageobject.SideBarPage;
-import cucumber.api.java.en.*;
-import eyethink.automation.bots.controller.CoreHandlers;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 
 public class SideBarSteps {
 	SideBarPage sidebarPage;
 
-	public SideBarSteps(CoreHandlers handler, GovGrantsHandler govgrants) {
-		sidebarPage = new SideBarPage(handler, govgrants);
+	public SideBarSteps() {
+		sidebarPage = new SideBarPage();
 	}
 
 	@When("^I click on  \"([^\"]*)\" inside \"([^\"]*)\" in side bar sub menu$")

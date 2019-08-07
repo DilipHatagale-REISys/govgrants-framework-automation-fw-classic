@@ -1,15 +1,14 @@
 package com.framework.automation.steps;
 
-import com.automation.rei.handlers.GovGrantsHandler;
 import com.framework.automation.pageobject.FormPage;
-import cucumber.api.java.en.*;
-import eyethink.automation.bots.controller.CoreHandlers;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 
 public class FormStep {
 	FormPage formPage;
 
-	public FormStep(CoreHandlers handler, GovGrantsHandler govgrants) {
-		formPage = new FormPage(handler, govgrants);
+	public FormStep() {
+		this.formPage = new FormPage();
 	}
 
 	@Then("^I see Business Form section is not displayed$")

@@ -1,15 +1,14 @@
 package com.framework.automation.steps;
 
-import com.automation.rei.handlers.GovGrantsHandler;
 import com.framework.automation.pageobject.PhaseConfigPage;
-import cucumber.api.java.en.*;
-import eyethink.automation.bots.controller.CoreHandlers;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 
 public class PhaseConfigSteps {
     PhaseConfigPage phaseConfigPage;
 
-    public PhaseConfigSteps(CoreHandlers handler, GovGrantsHandler govgrants) {
-        phaseConfigPage = new PhaseConfigPage(handler, govgrants);
+    public PhaseConfigSteps() {
+        phaseConfigPage = new PhaseConfigPage();
     }
 
     @When("^I click on global search All$")

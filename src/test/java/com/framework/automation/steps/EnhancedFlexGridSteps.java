@@ -1,16 +1,16 @@
 package com.framework.automation.steps;
 
-import com.automation.rei.handlers.GovGrantsHandler;
 import com.framework.automation.pageobject.EnhancedFlexGridPage;
-import cucumber.api.java.en.*;
-import eyethink.automation.bots.controller.CoreHandlers;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
 import java.math.BigDecimal;
 
 public class EnhancedFlexGridSteps {
 	EnhancedFlexGridPage enhancedFlexGrid;
 
-	public EnhancedFlexGridSteps(CoreHandlers handler, GovGrantsHandler govgrants) {
-		enhancedFlexGrid = new EnhancedFlexGridPage(handler, govgrants);
+	public EnhancedFlexGridSteps() {
+		enhancedFlexGrid = new EnhancedFlexGridPage();
 	}
 
 	@When("^I hovering mouse on help text icon inside \"([^\"]*)\" for enhanced grid$")

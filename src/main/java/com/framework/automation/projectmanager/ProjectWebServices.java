@@ -1,10 +1,9 @@
 package com.framework.automation.projectmanager;
 
-import com.automation.rei.handlers.GovGrantsHandler;
 import com.framework.automation.objects.IdBucket;
 import com.framework.automation.payloads.ApiUtilities;
 import com.jayway.restassured.response.Response;
-import eyethink.automation.bots.controller.CoreHandlers;
+import eyethink.automation.bots.Register.EyeThink;
 import eyethink.automation.bots.controller.EnvironmentFetcher;
 import eyethink.automation.bots.corelib.Properties_Logs;
 
@@ -13,8 +12,6 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class ProjectWebServices {
-    public CoreHandlers reiDriver;
-    public GovGrantsHandler govgrants;
     SetUpConfiguration configPostCall;
     Properties_Logs readProp = new Properties_Logs();
     ApiUtilities apiUtil;
@@ -25,9 +22,7 @@ public class ProjectWebServices {
     public static ArrayList<IdBucket> storeAllIds;
     public static ProjectWebServices thisValue = null;
 
-    public ProjectWebServices(CoreHandlers reiDriver, GovGrantsHandler govgrants) {
-        this.reiDriver = reiDriver;
-        this.govgrants = govgrants;
+    public ProjectWebServices() {
         setUpApiUtilAndSetupConfig();
     }
 
@@ -79,12 +74,12 @@ public class ProjectWebServices {
         Response response = null;
         if (value.contains("ApiGeneratedId")) {
             String[] getValueAt = value.split(":");
-            response = reiDriver.apiCall().postCall(null,
+            response = EyeThink.core().apiCall().postCall(null,
                     configPostCall.getConfigJson(handleConfigCategory(configCategory), fieldName,
                             storeAllIds.get(Integer.parseInt(getValueAt[1])).getId(), filterClause),
                     endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
         } else {
-            response = reiDriver.apiCall().postCall(null,
+            response = EyeThink.core().apiCall().postCall(null,
                     configPostCall.getConfigJson(handleConfigCategory(configCategory), fieldName, value, filterClause),
                     endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
         }
@@ -137,7 +132,7 @@ public class ProjectWebServices {
      * get token for authentication of Delete request
      */
     private void getAuthToken() {
-        Response response = reiDriver.apiCall().postCall(null, null, endPoint + defaultEndPointGetToken, null, null, null);
+        Response response = EyeThink.core().apiCall().postCall(null, null, endPoint + defaultEndPointGetToken, null, null, null);
         this.tokenString = response.body().jsonPath().getString("access_token");
     }
 
@@ -166,12 +161,12 @@ public class ProjectWebServices {
                     readProp.ReadPropertyFile("govgrants_Config.properties", splittedValue[1]), filterId + ":idValue");
         } else if (fieldOrignalValue.contains("ApiGeneratedId")) {
             String[] getValueAt = fieldOrignalValue.split(":");
-            response = reiDriver.apiCall().postCall(null, new SetUpConfiguration(reiDriver).getConfigJson(configurationCategory, fieldName,
+            response = EyeThink.core().apiCall().postCall(null, new SetUpConfiguration().getConfigJson(configurationCategory, fieldName,
                     storeAllIds.get(Integer.parseInt(getValueAt[1])).getId(), filterId + ":idValue"),
                     endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
         } else {
-            response = reiDriver.apiCall().postCall(null,
-                    new SetUpConfiguration(reiDriver).getConfigJson(configurationCategory, fieldName, fieldOrignalValue,
+            response = EyeThink.core().apiCall().postCall(null,
+                    new SetUpConfiguration().getConfigJson(configurationCategory, fieldName, fieldOrignalValue,
                             filterId + ":idValue"),
                     endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
         }
@@ -187,13 +182,13 @@ public class ProjectWebServices {
                     readProp.ReadPropertyFile("govgrants_Config.properties", splittedValue[1]), filterClause);
         } else if (fieldOrignalValue.contains("ApiGeneratedId")) {
             String[] getValueAt = fieldOrignalValue.split(":");
-            response = reiDriver.apiCall().postCall(null,
-                    new SetUpConfiguration(reiDriver).getConfigJson(configurationCategory, fieldName,
+            response = EyeThink.core().apiCall().postCall(null,
+                    new SetUpConfiguration().getConfigJson(configurationCategory, fieldName,
                             storeAllIds.get(Integer.parseInt(getValueAt[1])).getId(), filterClause),
                     endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
         } else {
-            response = reiDriver.apiCall().postCall(null,
-                    new SetUpConfiguration(reiDriver).getConfigJson(configurationCategory, fieldName, fieldOrignalValue,
+            response = EyeThink.core().apiCall().postCall(null,
+                    new SetUpConfiguration().getConfigJson(configurationCategory, fieldName, fieldOrignalValue,
                             filterClause),
                     endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
         }
@@ -213,10 +208,10 @@ public class ProjectWebServices {
     
     private void setUpApiUtilAndSetupConfig() {
         if (apiUtil == null) {
-            apiUtil = new ApiUtilities(reiDriver);
+            apiUtil = new ApiUtilities();
         }
         if (configPostCall == null) {
-            configPostCall = new SetUpConfiguration(reiDriver);
+            configPostCall = new SetUpConfiguration();
         }
     }
 }

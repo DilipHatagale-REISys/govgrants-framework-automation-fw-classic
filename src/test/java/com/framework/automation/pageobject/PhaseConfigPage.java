@@ -1,8 +1,7 @@
 package com.framework.automation.pageobject;
 
-import com.automation.rei.handlers.GovGrantsHandler;
 import com.framework.automation.projectmanager.GovGrantsManager;
-import eyethink.automation.bots.controller.CoreHandlers;
+import eyethink.automation.bots.Register.EyeThink;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -17,8 +16,7 @@ public class PhaseConfigPage extends GovGrantsManager {
     /**
      * Constructor to handle dependency injection and framework library
      */
-    public PhaseConfigPage(CoreHandlers reiDriver, GovGrantsHandler govgrants) {
-        super(reiDriver, govgrants);
+    public PhaseConfigPage() {
         customAppDropdown = By.xpath("//div/ul/li[contains(@class,'dropdown appDropdown')]");
     }
 
@@ -28,7 +26,7 @@ public class PhaseConfigPage extends GovGrantsManager {
      * click on global search all
      */
     public void clickOnGlobalSearchAll() {
-        reiDriver.findMyElement().getElement(By.xpath("//select[@id='selectSearchId']")).click();
+        EyeThink.core().findMyElement().getElement(By.xpath("//select[@id='selectSearchId']")).click();
     }
 
     /**
@@ -36,7 +34,7 @@ public class PhaseConfigPage extends GovGrantsManager {
      */
     public void clickOnGlobalSearchTextBox() {
         By searchInput = By.cssSelector("div.input-group>input#isTypeNotAhead");
-        reiDriver.findMyElement().getElement(searchInput).click();
+        EyeThink.core().findMyElement().getElement(searchInput).click();
     }
 
     /**
@@ -44,7 +42,7 @@ public class PhaseConfigPage extends GovGrantsManager {
      */
     public void clickOnSearchForGlobalSearchBox() {
         By quickSearchButton = By.cssSelector("div.input-group>a>i.fa.fa-search");
-        reiDriver.findMyElement().getElement(quickSearchButton).click();
+        EyeThink.core().findMyElement().getElement(quickSearchButton).click();
     }
 
     /**
@@ -52,16 +50,16 @@ public class PhaseConfigPage extends GovGrantsManager {
      */
     public void enterCompleteFieldValues(String value1, String value2, String orderType) {
         if (!"onlyDescription".equals(orderType)) {
-            reiDriver.textInput().enterText(By.xpath("//*[contains(@placeholder,'Title')]"), value1);
+            EyeThink.core().textInput().enterText(By.xpath("//*[contains(@placeholder,'Title')]"), value1);
         }
-        reiDriver.textInput().enterText(By.xpath("//*[contains(@placeholder,'Description')]"), value2);
+        EyeThink.core().textInput().enterText(By.xpath("//*[contains(@placeholder,'Description')]"), value2);
     }
 
     /**
      * click on CustomApp Select dropdown inside grantor Home/Planning main page
      */
     public void clickOnCustomAppSelectDropdown() {
-        reiDriver.findMyElement().getElement(customAppDropdown).click();
+        EyeThink.core().findMyElement().getElement(customAppDropdown).click();
     }
 
     /**
@@ -98,7 +96,7 @@ public class PhaseConfigPage extends GovGrantsManager {
      * @param numberOfCharts
      */
     public void assertNumberOfChartsDisplayed(int numberOfCharts) {
-        Assert.assertEquals(numberOfCharts, reiDriver.findMyElement().getElements(chartsContainer).size());
+        Assert.assertEquals(numberOfCharts, EyeThink.core().findMyElement().getElements(chartsContainer).size());
     }
 
     /**
@@ -110,7 +108,7 @@ public class PhaseConfigPage extends GovGrantsManager {
         switch (position.toUpperCase()) {
             case "BOTTOM":
                 Assert.assertTrue(isChartsGridAtCorrectPosition(
-                        reiDriver.findMyElement().getElements(containerFluid_PageWrapperList).size()));
+                        EyeThink.core().findMyElement().getElements(containerFluid_PageWrapperList).size()));
                 break;
         }
     }
@@ -121,12 +119,12 @@ public class PhaseConfigPage extends GovGrantsManager {
      * @param phaseName
      */
     public void assertPhaseNotDisplayedInTaskSummaryByPhase(String phaseName) {
-        reiDriver.WaitFor().makeThreadSleep(1000);
+        EyeThink.core().WaitFor().makeThreadSleep(1000);
         Assert.assertTrue(isPhaseNotDisplayedInTaskSummary(phaseName));
     }
 
     public void assertPhaseBookIconDisplayed(String phaseName) {
-        Assert.assertTrue(reiDriver.findMyElement().getElement(By.xpath(
+        Assert.assertTrue(EyeThink.core().findMyElement().getElement(By.xpath(
                 "//div/ul[@class='nav navbar-nav']/li/a[@title='" + phaseName + "']//i[contains(@class,'fa-book')]"))
                 .isDisplayed());
     }
@@ -146,7 +144,7 @@ public class PhaseConfigPage extends GovGrantsManager {
      */
     public void assertChangedLabelOfSearchedItemsInGlobalSearchAll(String searchItem) {
         String searchLocator = "//select[@id='selectSearchId']//option[text()='" + searchItem + "']";
-        Assert.assertTrue(reiDriver.findMyElement().getElement(By.xpath(searchLocator)).isDisplayed());
+        Assert.assertTrue(EyeThink.core().findMyElement().getElement(By.xpath(searchLocator)).isDisplayed());
     }
 
     /**
@@ -194,7 +192,7 @@ public class PhaseConfigPage extends GovGrantsManager {
      * @return
      */
     public WebElement getCustomAppFromCustomAppDropdown(String dropDownValue) {
-        return reiDriver.findMyElement().getElement(By
+        return EyeThink.core().findMyElement().getElement(By
                 .xpath("//div/ul/li[contains(@class,'dropdown appDropdown')]/ul/li/a[@title='" + dropDownValue + "']"));
     }
 
@@ -207,7 +205,7 @@ public class PhaseConfigPage extends GovGrantsManager {
     public List<WebElement> getAppDropDownItem(String dropDownItem) {
         By appDropDown = By
                 .xpath("//div/ul/li[contains(@class,'dropdown appDropdown')]/ul/li/a");
-        return reiDriver.findMyElement().getElements(appDropDown);
+        return EyeThink.core().findMyElement().getElements(appDropDown);
     }
 
     /**
@@ -264,7 +262,7 @@ public class PhaseConfigPage extends GovGrantsManager {
      */
     public void assertAlertPopUpBoxDisplayed() {
 
-        Assert.assertFalse(reiDriver.switchTo().popupPresent());
+        Assert.assertFalse(EyeThink.core().switchTo().popupPresent());
     }
 
     /********* "Local Methods with complete functionality - private" *********/
@@ -276,7 +274,7 @@ public class PhaseConfigPage extends GovGrantsManager {
     private boolean isPhaseNotDisplayed(String phaseName) {
         boolean flag = true;
         try {
-            if (reiDriver.findMyElement()
+            if (EyeThink.core().findMyElement()
                     .getElement(By.xpath("//div/ul[@class='nav navbar-nav']/li/a[@title='" + phaseName + "']"))
                     .isDisplayed()) {
                 flag = false;
@@ -294,7 +292,7 @@ public class PhaseConfigPage extends GovGrantsManager {
     private boolean isPhaseDisplayed(String phaseName) {
         boolean flag = false;
         try {
-            if (reiDriver.findMyElement()
+            if (EyeThink.core().findMyElement()
                     .getElement(By.xpath("//div/ul[@class='nav navbar-nav']/li/a[@title='" + phaseName + "']"))
                     .isDisplayed()) {
                 flag = true;
@@ -312,7 +310,7 @@ public class PhaseConfigPage extends GovGrantsManager {
      * @return true/false
      */
     private boolean isPhaseSequence(String phaseName, int sequenceNumber) {
-        if (reiDriver.findMyElement().getElements(allPhases).get(sequenceNumber).getAttribute("title")
+        if (EyeThink.core().findMyElement().getElements(allPhases).get(sequenceNumber).getAttribute("title")
                 .contains(phaseName)) {
             return true;
         } else
@@ -328,7 +326,7 @@ public class PhaseConfigPage extends GovGrantsManager {
     private boolean isChartsGridAtCorrectPosition(int positionNumber) {
         boolean flag = false;
         try {
-            if (reiDriver.findMyElement().getElement(By.cssSelector("div#page-content-wrapper>div.container-fluid>div>div>div:nth-of-type("
+            if (EyeThink.core().findMyElement().getElement(By.cssSelector("div#page-content-wrapper>div.container-fluid>div>div>div:nth-of-type("
                     + positionNumber + ") div#charts"))
                     .isEnabled()) {
                 flag = true;
@@ -348,7 +346,7 @@ public class PhaseConfigPage extends GovGrantsManager {
     private boolean isPhaseNotDisplayedInTaskSummary(String phaseName) {
         boolean flag = true;
         try {
-            if (reiDriver.findMyElement().getElement(getSpecificPhaseInTaskSummaryByPhase(phaseName)).isDisplayed()) {
+            if (EyeThink.core().findMyElement().getElement(getSpecificPhaseInTaskSummaryByPhase(phaseName)).isDisplayed()) {
                 flag = false;
             }
         } catch (Exception e) {
@@ -364,8 +362,8 @@ public class PhaseConfigPage extends GovGrantsManager {
      */
     private Boolean isParticularTabHighlighted(String phaseName) {
         boolean flag = false;
-        reiDriver.switchTo().getWindowsHandlers();
-        if (reiDriver.findMyElement().getElement(By.xpath("//div/ul[@class='nav navbar-nav']/li[contains(@class,'ng-scope active')]/a[@title='"
+        EyeThink.core().switchTo().getWindowsHandlers();
+        if (EyeThink.core().findMyElement().getElement(By.xpath("//div/ul[@class='nav navbar-nav']/li[contains(@class,'ng-scope active')]/a[@title='"
                 + phaseName + "']"))
                 .isDisplayed()) {
             flag = true;
@@ -381,7 +379,7 @@ public class PhaseConfigPage extends GovGrantsManager {
     private boolean isSearchedItemNotPresentInGlobalSearchAll(String searchItem) {
         boolean flag = true;
         try {
-            if (reiDriver.findMyElement().getElement(By.xpath("//select[@id='selectSearchId']//option[text()='" + searchItem + "']"))
+            if (EyeThink.core().findMyElement().getElement(By.xpath("//select[@id='selectSearchId']//option[text()='" + searchItem + "']"))
                     .isDisplayed()) {
                 flag = false;
             }
@@ -400,7 +398,7 @@ public class PhaseConfigPage extends GovGrantsManager {
     private boolean isObjectNotShowingInRecentlyViewedSideBar(String acronym) {
         boolean flag = true;
         try {
-            if (reiDriver.findMyElement().getElement(By.xpath(
+            if (EyeThink.core().findMyElement().getElement(By.xpath(
                     ".//span[text()='Recently Viewed']/parent::a/following-sibling::ul//li//span[starts-with(text(),'"
                             + acronym + "')]"))
                     .isDisplayed()) {
@@ -438,7 +436,7 @@ public class PhaseConfigPage extends GovGrantsManager {
      */
     private boolean isContrastColorIsDisplayedForCustomAppAsaGrantor(String contrastValue) {
         boolean flag = false;
-        List<WebElement> list = reiDriver.findMyElement().getElements(By.xpath("//body//span/link"));
+        List<WebElement> list = EyeThink.core().findMyElement().getElements(By.xpath("//body//span/link"));
         int links = list.size();
         for (int i = 0; i < links; i++) {
             if (list.get(i).getAttribute("href").contains(contrastValue))
@@ -453,7 +451,7 @@ public class PhaseConfigPage extends GovGrantsManager {
     private boolean isCustomAppDisplayedOnPage() {
         boolean flag = false;
         try {
-            if (reiDriver.findMyElement().getElement(customAppDropdown).isDisplayed()) ;
+            if (EyeThink.core().findMyElement().getElement(customAppDropdown).isDisplayed()) ;
             flag = true;
         } catch (org.openqa.selenium.NoSuchElementException e) {
 
@@ -480,7 +478,7 @@ public class PhaseConfigPage extends GovGrantsManager {
      */
     private Boolean isChangedProgramColorIsDisplayed(String colorName) {
         boolean flag = false;
-        List<WebElement> programColor = reiDriver.findMyElement().getElements(By.xpath("//table/tbody/tr/td//a//span[contains(text(),'PG')]//ancestor::a"));
+        List<WebElement> programColor = EyeThink.core().findMyElement().getElements(By.xpath("//table/tbody/tr/td//a//span[contains(text(),'PG')]//ancestor::a"));
         for (int i = 0; i < programColor.size(); i++) {
             switch (colorName.toUpperCase()) {
                 case "RED":
@@ -514,7 +512,7 @@ public class PhaseConfigPage extends GovGrantsManager {
      */
     private Boolean isProgramDisplayedAtCalender() {
         boolean flag = false;
-        List<WebElement> programColor = reiDriver.findMyElement().getElements(By.xpath("//table/tbody/tr/td//a//span[contains(text(),'PG')]"));
+        List<WebElement> programColor = EyeThink.core().findMyElement().getElements(By.xpath("//table/tbody/tr/td//a//span[contains(text(),'PG')]"));
         for (int i = 0; i < programColor.size(); i++) {
             if (programColor.get(i).getText().contentEquals("PG")) {
                 return true;
@@ -528,7 +526,7 @@ public class PhaseConfigPage extends GovGrantsManager {
      */
     private Boolean isTextPresentOnStickyNote(String text) {
         boolean flag = false;
-        if (reiDriver.findMyElement().getElement(By.xpath("//a//input/following-sibling::textarea")).getText().equalsIgnoreCase(text)) {
+        if (EyeThink.core().findMyElement().getElement(By.xpath("//a//input/following-sibling::textarea")).getText().equalsIgnoreCase(text)) {
             flag = true;
         }
         return flag;

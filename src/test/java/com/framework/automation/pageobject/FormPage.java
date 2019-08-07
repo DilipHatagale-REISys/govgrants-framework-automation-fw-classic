@@ -1,8 +1,7 @@
 package com.framework.automation.pageobject;
 
-import com.automation.rei.handlers.GovGrantsHandler;
 import com.framework.automation.projectmanager.GovGrantsManager;
-import eyethink.automation.bots.controller.CoreHandlers;
+import eyethink.automation.bots.Register.EyeThink;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -13,9 +12,7 @@ public class FormPage extends GovGrantsManager {
 
     private final By businessFormSection, versionNumber;
 
-    public FormPage(CoreHandlers reiDriver, GovGrantsHandler govgrants) {
-        super(reiDriver, govgrants);
-
+    public FormPage() {
         businessFormSection = By.xpath(
                 "//a//span[contains(text(),'Business Forms')]/ancestor::div[contains(@class,'panel panel-default ng-scope')]");
         versionNumber = By.xpath("//*[@class='editfooterBtnCls']/span[contains(@class,'spacer')]");
@@ -47,12 +44,12 @@ public class FormPage extends GovGrantsManager {
      */
     public void clickFormActionIconsForSpecificSubject(String programSubject, String iconName) {
         try {
-            reiDriver.findMyElement().getElement(By.xpath(
+            EyeThink.core().findMyElement().getElement(By.xpath(
                     "//td//span[@title='" + programSubject + "']/../../../td//a[@title='" + iconName + "']//i"))
                     .click();
         } catch (Exception e) {
-            reiDriver.WaitFor().makeThreadSleep(1000);
-            reiDriver.JavaScript().clickByJS(By
+            EyeThink.core().WaitFor().makeThreadSleep(1000);
+            EyeThink.core().JavaScript().clickByJS(By
                     .xpath("//td//span[@title='" + programSubject + "']/../../../td//a[@title='" + iconName + "']//i"));
         }
     }
@@ -80,7 +77,7 @@ public class FormPage extends GovGrantsManager {
      * @param versionNo
      */
     public void assertVersionNoInsideForm(String versionNo) {
-        Assert.assertTrue(reiDriver.findMyElement().getElement(versionNumber).getAttribute("innerText").trim()
+        Assert.assertTrue(EyeThink.core().findMyElement().getElement(versionNumber).getAttribute("innerText").trim()
                 .equalsIgnoreCase(versionNo));
     }
 
@@ -103,7 +100,7 @@ public class FormPage extends GovGrantsManager {
     private boolean isBusinessFormSectionNotDisplayed() {
         boolean flag = false;
         try {
-            if (reiDriver.findMyElement().getElement(businessFormSection).isDisplayed()) {
+            if (EyeThink.core().findMyElement().getElement(businessFormSection).isDisplayed()) {
                 flag = false;
             }
         } catch (Exception e) {
@@ -168,7 +165,7 @@ public class FormPage extends GovGrantsManager {
      * @return
      */
     private WebElement getAllActionItemInsideBusinessForm(String Item) {
-        return reiDriver.findMyElement().getElement(By.xpath(("//div[@id='FormComponent']//div/table/tbody/tr//td//a[@title='" + Item + "']")));
+        return EyeThink.core().findMyElement().getElement(By.xpath(("//div[@id='FormComponent']//div/table/tbody/tr//td//a[@title='" + Item + "']")));
     }
 
     private boolean isTextNotDisplayedInFile(String text, int pageNumber, String fileName) {
@@ -186,6 +183,6 @@ public class FormPage extends GovGrantsManager {
      * @return
      */
     private WebElement getAllActionItemInsideFormDetalPage(String actionButtonName) {
-        return reiDriver.findMyElement().getElement(By.xpath(("//div[@id='headerButtonsPanel']//*[@title='" + actionButtonName + "']")));
+        return EyeThink.core().findMyElement().getElement(By.xpath(("//div[@id='headerButtonsPanel']//*[@title='" + actionButtonName + "']")));
     }
 }

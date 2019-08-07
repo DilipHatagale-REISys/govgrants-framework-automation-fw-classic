@@ -8,9 +8,8 @@ public class CustomAppConfig {
 	private ApiUtilities apiUtilities;
 	CoreHandlers reiDriver;
 
-	public CustomAppConfig(CoreHandlers reiDriver) {
-		this.reiDriver = reiDriver;
-		apiUtilities = new ApiUtilities(reiDriver);
+	public CustomAppConfig() {
+		apiUtilities = new ApiUtilities();
 	}
 
 	/**

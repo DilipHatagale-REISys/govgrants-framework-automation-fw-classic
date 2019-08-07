@@ -1,16 +1,12 @@
 package com.framework.automation.payloads;
 
-import eyethink.automation.bots.controller.CoreHandlers;
-
 public class FlexTable {
 	private String payloadForStringValue = "{\"sObjectAPIName\" : \"%s\",\"fieldMapStr\" : \"{\\\"Id\\\":\\\"%s\\\",\\\"%s\\\":\\\"%s\\\"}\"}";
 	private String payloadForIntValue = "{\"sObjectAPIName\" : \"%s\",\"fieldMapStr\" : \"{\\\"Id\\\":\\\"%s\\\",\\\"%s\\\":%s}\"}";
 	private ApiUtilities apiUtilities;
-	CoreHandlers reiDriver;
 
-	public FlexTable(CoreHandlers reiDriver) {
-		this.reiDriver=reiDriver;
-		apiUtilities = new ApiUtilities(reiDriver);
+	public FlexTable() {
+		apiUtilities = new ApiUtilities();
 	}
 
 	/**

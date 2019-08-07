@@ -1,15 +1,14 @@
 package com.framework.automation.steps;
 
-import com.automation.rei.handlers.GovGrantsHandler;
 import com.framework.automation.pageobject.FlexGridPage;
-import cucumber.api.java.en.*;
-import eyethink.automation.bots.controller.CoreHandlers;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 
 public class FlexGridSteps {
 	FlexGridPage flexGridPage;
 
-	public FlexGridSteps(CoreHandlers handler, GovGrantsHandler govgrants) {
-		flexGridPage = new FlexGridPage(handler, govgrants);
+	public FlexGridSteps() {
+		flexGridPage = new FlexGridPage();
 	}
 
 	@When("^I record webelement at table \"([^\"]*)\" for column \"([^\"]*)\"$")
