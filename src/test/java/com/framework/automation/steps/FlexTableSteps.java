@@ -1,18 +1,17 @@
 package com.framework.automation.steps;
 
+import cucumber.api.java.en.*;
 import eyethink.automation.bots.exception.EyeThinkBotsCustomException;
 import org.springframework.context.annotation.Description;
 import com.automation.rei.handlers.GovGrantsHandler;
 import com.framework.automation.pageobject.FlexTablePage;
-import io.cucumber.java.en.*;
-import eyethink.automation.bots.controller.Controller;
 import eyethink.automation.bots.controller.CoreHandlers;
 
 public class FlexTableSteps {
 	FlexTablePage flexTablePage;
 
-	public FlexTableSteps(Controller controller, CoreHandlers handler, GovGrantsHandler govgrants) {
-		flexTablePage = new FlexTablePage(controller, handler, govgrants);
+	public FlexTableSteps(CoreHandlers handler, GovGrantsHandler govgrants) {
+		flexTablePage = new FlexTablePage(handler, govgrants);
 	}
 
 	@When("^I click on top right parallel lines bar for \"([^\"]*)\"$")
@@ -34,6 +33,11 @@ public class FlexTableSteps {
 	@When("^I hovering mouse on help text icon inside \"([^\"]*)\" for flex table column$")
 	public void getHelpTextIconsAtFlexTableColumn(String columnTitle) {
 		flexTablePage.getHelpTextAtFlexTableSpecificColumn(columnTitle);
+	}
+
+	@When("^I click dropdown field \"([^\"]*)\"$")
+	public void clickSelectDropdown(String fieldApiName) {
+		flexTablePage.clickSelectDropdownAtPageDetail(fieldApiName);
 	}
 
 	@Description("Step to validate a bug which results in error if a certain sequnce is followed for a certain period of time continuosly")
@@ -240,5 +244,25 @@ public class FlexTableSteps {
 	@Then("^I see record \"([^\"]*)\" having action \"([^\"]*)\" donot contain icon css \"([^\"]*)\"$")
 	public void assertPencilIconAtFlexTable(String columnTitle, String iconTitle, String cssValue) {
 		flexTablePage.assertFlexTableViewActionIconDisplayed(columnTitle, iconTitle, cssValue);
+	}
+
+	@Then("^I see record with text \"([^\"]*)\" in \"([^\"]*)\"$")
+	public void assertFlexTableContainsText(String text, String tableId) {
+		flexTablePage.assertFlexTabelRecordsContainsTextAsExpected(text, tableId);
+	}
+
+	@Then("^I see toggle button is displayed for \"([^\"]*)\"$")
+	public void assertToggleButton(String anyItemContainedInDropDown) {
+		flexTablePage.assertToogleButtonIsDisplayed(anyItemContainedInDropDown);
+	}
+
+	@Then("^I see \"([^\"]*)\" inside selectbox field \"([^\"]*)\"$")
+	public void assertValueInsideSelectDropdownValues(String dropDownValue, String fieldApiName) {
+		flexTablePage.assertValueInsideSelectDropdownAtPageDetail(dropDownValue, fieldApiName);
+	}
+
+	@Then("^I see alert message \"([^\"]*)\"$")
+	public void assertConfirmationAlertMessage(String message) {
+		flexTablePage.assertTextMessageOnConfirmationAlert(message);
 	}
 }

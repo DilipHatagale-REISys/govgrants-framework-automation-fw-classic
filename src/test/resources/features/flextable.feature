@@ -27,6 +27,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I click on top right parallel lines bar for "Draft Programs"
     Then I see "Download as PDF""Download as CSV" options inside "Draft Programs" disabled
 
@@ -41,6 +42,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     Then I see quick search option disabled
 
   @34027    @disablingAdvanceFilter-gPlanning
@@ -54,6 +56,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     Then I see Advance Filter is disabled from table "toggleFlexTablePrograms"
 
   @34028    @disablingMenuIcon-gPlanning
@@ -67,6 +70,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     Then I see Menu icon is disabled from planning flex table "Draft Programs"
 
   @34029    @enableRecordSelectionForFlex-gPlanning
@@ -80,6 +84,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     Then I see select check box enabled in flex table
 
   @34030    @disablingAmountTotalForFlex-gPlanning
@@ -93,6 +98,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     Then I see total amount row in flex table is not displayed
 
 
@@ -107,6 +113,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     Then I see no "Total Records" count in "flexTableDivId"
 
   @34032    @additionOfLabelForRowNamedTotal-gPlanning
@@ -120,6 +127,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     Then I see changed label as "Automation Total" of last row name
 
   @34033    @enableAutoIndex-gPlanning
@@ -133,6 +141,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     Then I see " #" in flex table header
 
   @34034    @addingfieldNamesOfDifferentDataTypes-gPlanning @smoke
@@ -146,6 +155,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     Then I see "<fieldDisplayNames>" in flex table header
 
     Examples:
@@ -171,6 +181,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     Then I see no "Created" status in flex table id "flexTableDivId"
 
     Examples:
@@ -188,6 +199,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
     Then I see new tab is opened
@@ -203,6 +215,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
     Then I see no new tab is opened
@@ -218,6 +231,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
     Then I see "Edit" opens in overLay window
@@ -233,6 +247,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Roles" sub tab
@@ -250,6 +265,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Roles" sub tab
@@ -266,6 +282,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Roles" sub tab
@@ -282,6 +299,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Roles" sub tab
@@ -302,6 +320,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Roles" sub tab
@@ -322,6 +341,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Roles" sub tab
@@ -338,6 +358,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I hovering mouse on help text icon inside "Draft Programs" for flex table
     Then I see "<new_helpText>" shown as help text
     Examples:
@@ -355,6 +376,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I click on top right parallel lines bar for "Draft Programs"
     Then I see "Help" options inside "Draft Programs" enabled
 
@@ -369,6 +391,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     Then I see "Show" with page size dropdown at "flexTableDivId"
 
   @39299    @enablePaginationFieldAtFlexTable-gPlanning
@@ -382,6 +405,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     Then I see "Page" with pagination arrow at "flexTableDivId"
 
   @39302    @defaultPageSizeFieldAtFlexTable-gPlanning
@@ -395,6 +419,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     Then I see "20" records inside flex table id "flexTableDivId"
 
   @40002    @helpTextFieldAtFlexTableColumnHeader-gPlanning
@@ -408,6 +433,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I hovering mouse on help text icon inside "ID" for flex table column
     Then I see "<new_helpText>" shown as help text
 
@@ -426,6 +452,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     Then I see "Test" shown as flex table column title
 
   @39294    @skipFieldForExportFieldAtFlexTable-gPlanning
@@ -439,6 +466,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I click on top right parallel lines bar for "Draft Programs"
     And I select "Download as PDF" from parallel lines dropdown of "Draft Programs"
     And I download the file
@@ -456,6 +484,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     Then I see total amount in flex table
 
   @40012    @sequenceFieldAtFlexTableAction-gPlanning
@@ -469,6 +498,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     Then I see "Edit" row action Button at position "1"
 
@@ -483,6 +513,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     Then I see "Automation Help" as title for "Test program for automation - Created mode only" inside flex table action
 
@@ -497,6 +528,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
     Then I see edit opens with "<newActionUrl>"
@@ -516,6 +548,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     Then I see external link icon as "Test program for automation - Created mode only" for "Edit" inside flex table action
 
@@ -532,6 +565,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Roles" sub tab
@@ -549,6 +583,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Roles" sub tab
@@ -565,6 +600,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Roles" sub tab
@@ -582,6 +618,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Roles" sub tab
@@ -598,6 +635,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     Then I see "View Submitted Applications" options inside "Draft Programs" enabled
 
   @40100    @showConfirmationBoxFieldForProgramFlexTAbleViewAction-gPlanning
@@ -611,6 +649,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table with table id "toggleFlexTablePrograms" without processing
     Then I see confirmation box with body "null" is displayed
@@ -628,6 +667,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table with table id "toggleFlexTablePrograms" without processing
     Then I see confirmation box with body "Automation" is displayed
@@ -645,6 +685,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Automation Title" displayed in flex table Action modal
@@ -664,6 +705,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
 
@@ -686,6 +728,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
 
@@ -708,6 +751,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
 
@@ -729,22 +773,20 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
-    When I select "Approve" from approval decision panel
-    When I enter Approval comment
-    And I click submit
-    When I re-login as "Automation-PM" user on "QA" portal
-    When I setup my app as "As a Grantor"
+    And I click on "Approve" on the approval decision box
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
     Then I see "Edit" icon for "Test program for automation -  SA mode only - Can be Approved" is not displayed inside flex table
 
@@ -770,6 +812,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
 
@@ -796,6 +839,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
 
@@ -809,11 +853,12 @@ Feature: Flex Table Component Scenarios
       | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | Edit                       |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:ProgramFlexTableExpressionJson | Programs           | Name                      | Edit                       |
+      | configurationCategory     | fieldName            | fieldNewValue                                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:ProgramFlexTableExpressionJsonForViewAction | Programs           | Name                      | Edit                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
 
@@ -828,7 +873,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    When I select "Draft Announcements" from double headed dropdown inside admin portal
+    And I click toggle button to select "Draft Announcements"
     Then I see "Create" button inside "Draft Announcements" flex table not displayed
 
   @40129    @hideForUserFieldAtActiveFundingOpprtunityFlexTableCreateAction-gAnnouncement @smoke
@@ -842,7 +887,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    When I select "Draft Announcements" from double headed dropdown inside admin portal
+    And I click toggle button to select "Draft Announcements"
     Then I see "Create" button inside "Draft Announcements" flex table not displayed
 
   @40217    @hideOperatorFieldUsingANDOperatorAtActiveFundingOpprtunityFlexTableCreateAction-gAnnouncement
@@ -859,7 +904,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    When I select "Draft Announcements" from double headed dropdown inside admin portal
+    And I click toggle button to select "Draft Announcements"
     Then I see "Create" button inside "Draft Announcements" flex table not displayed
 
   @40219    @hideOperatorFieldUsingOROperatorAtActiveFundingOpprtunityFlexTableCreateAction-gAnnouncement
@@ -877,7 +922,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    When I select "Draft Announcements" from double headed dropdown inside admin portal
+    And I click toggle button to select "Draft Announcements"
     Then I see "Create" button inside "Draft Announcements" flex table not displayed
 
   @40220    @hideExpressionJSONFieldAtActiveFundingOpprtunityFlexTableCreateAction-gAnnouncement @smoke
@@ -891,7 +936,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    When I select "Draft Announcements" from double headed dropdown inside admin portal
+    And I click toggle button to select "Draft Announcements"
     Then I see "Create" button inside "Draft Announcements" flex table not displayed
 
   @40225    @activeFieldAtFlexTable-gPlanning @smoke
@@ -905,6 +950,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I click toggle button for "Draft Programs"
     Then I see "Active Programs" is not displayed inside program flex table dropdown
 
@@ -919,6 +965,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I click on top right parallel lines bar for "Draft Programs"
     And I select "Download as PDF" from parallel lines dropdown of "Draft Programs"
     And I download the file
@@ -935,6 +982,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Roles" sub tab
@@ -955,6 +1003,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Roles" sub tab
@@ -973,6 +1022,7 @@ Feature: Flex Table Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Roles" sub tab

@@ -86,6 +86,9 @@ public class UsersAndURL implements UsersController {
 		case "AUTOMATION-APPLICANT":
 			username = "automation-applicant@ggptest5.com";
 			break;
+		case "AUTOMATION-SPI":
+			username = "Monu.Kumar@ggp.test5.com";
+				break;
 		default:
 			username = "qa_automation@ggp.test5";
 		}

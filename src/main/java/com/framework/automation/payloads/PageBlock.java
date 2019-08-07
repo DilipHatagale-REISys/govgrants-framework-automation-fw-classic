@@ -434,6 +434,13 @@ public class PageBlock {
                                         String.valueOf(SObjectAPIs.GNT__PageAttachmentConfig__c), filterClause),
                                 String.valueOf(SObjectAPIs.GNT__HideOperator__c), value);
                 break;
+            case "HIDE DECISION FIELD":
+                finalPayload = String
+                        .format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageAttachmentConfig__c),
+                                apiUtilities.getComponentCoreFieldId(
+                                        String.valueOf(SObjectAPIs.GNT__PageAttachmentConfig__c), filterClause),
+                                String.valueOf(SObjectAPIs.GNT__HideDecisionField__c), value);
+                break;
         }
         System.out.println(finalPayload);
         return finalPayload;

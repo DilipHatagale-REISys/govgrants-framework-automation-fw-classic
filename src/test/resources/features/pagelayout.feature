@@ -14,6 +14,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
     Then I see "TPA01" shown as over view title in header "Program"
@@ -29,6 +30,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
     Then I see "Automation Instruction Text" shown as page instruction text
@@ -44,6 +46,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I click on "New" button in right header
     Then I see "Creating New Program for Automation" shown as over view header
 
@@ -58,6 +61,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submit For Approval" button is not displayed
@@ -77,6 +81,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submit For Approval" button is not displayed
@@ -92,6 +97,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submit For Approval" button is not displayed
@@ -107,6 +113,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I click on "Menu" button inside detail page
@@ -123,6 +130,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I click on "Menu" button inside detail page
@@ -143,6 +151,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I click on "Submit For Approval" button in right header
@@ -159,6 +168,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submit For Approval" button is not displayed at view detail page
@@ -174,6 +184,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I click on "Edit" button inside detail page
@@ -190,6 +201,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I click on "Edit" button inside detail page
@@ -206,9 +218,10 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-    Then I see "Overview" sub tab is not displayed at view detail page
+    Then I cannot see "Overview" sub tab at view detail page
 
   @34354    @sortOrderForFieldAtPageTab-gPlanning
   Scenario: Changing sort order for overview page tab from config and validating it at program detail page
@@ -221,6 +234,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Overview" shown at number "5" inside subtabs
@@ -236,6 +250,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Automation Header Text" shown as header instruction text
@@ -251,6 +266,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Automation Overview" sub tab is displayed at view detail page
@@ -266,6 +282,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see pencil icon as "Overview" sub tab
@@ -281,9 +298,10 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-    Then I see "Overview" sub tab is not displayed at view detail page
+    Then I cannot see "Overview" sub tab at view detail page
 
   @35955    @hideForUserAtPageTab-gPlanning @smoke
   Scenario: Hiding of overview page tab for internal user from config and validating it at program detail page
@@ -296,9 +314,10 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-    Then I see "Overview" sub tab is not displayed at view detail page
+    Then I cannot see "Overview" sub tab at view detail page
 
   @35956    @hideForProfileAtPageTab-gPlanning @smoke
   Scenario: Hiding of overview page tab for specific profile from config and validating it at program detail page
@@ -311,9 +330,10 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-    Then I see "Overview" sub tab is not displayed at view detail page
+    Then I cannot see "Overview" sub tab at view detail page
 
   @35959    @hideDecisionFieldAtPageTab-gPlanning @smoke
   Scenario: Hiding of overview page tab for created state from config and validating it at program detail page
@@ -326,9 +346,10 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-    Then I see "Overview" sub tab is not displayed at view detail page
+    Then I cannot see "Overview" sub tab at view detail page
 
   @35962    @highlightsPanelFeildAtPageTab-gPlanning
   Scenario: Setup of header overview page tab from config and validating it at program detail page
@@ -341,6 +362,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see complete header overview tab is displayed at view detail page
@@ -356,9 +378,10 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-    Then I see "Overview" sub tab is not displayed at view detail page
+    Then I cannot see "Overview" sub tab at view detail page
 
   @35979    @pageBlockTitleFieldAtPageBlock-gPlanning
   Scenario: Changing page block title from config and validating it at program detail page
@@ -371,6 +394,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information Automation" page block title
@@ -386,6 +410,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed
@@ -401,6 +426,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" shown at number "5" inside page block
@@ -416,6 +442,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Header for Automation" shown as header instruction text for page block
@@ -431,6 +458,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I click on "Menu" button inside detail page
@@ -449,6 +477,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed
@@ -464,6 +493,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed
@@ -483,9 +513,10 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-    Then I see "Overview" sub tab is not displayed at view detail page
+    Then I cannot see "Overview" sub tab at view detail page
 
   @35958    @hideOperatorFieldUsingOROperatorAtPageTab-gPlanning
   Scenario: Hide overview for program view page from config using OR operator and validating it at program detail page
@@ -502,9 +533,10 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-    Then I see "Overview" sub tab is not displayed at view detail page
+    Then I cannot see "Overview" sub tab at view detail page
 
   @36039    @hideForProfileAtPageBlock-gPlanning @smoke
   Scenario: Hide program information page block for particular user from config and validating it at program detail page
@@ -517,6 +549,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed
@@ -536,6 +569,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed
@@ -551,6 +585,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block contains "3" elements
@@ -570,6 +605,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed
@@ -585,6 +621,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed
@@ -602,6 +639,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Overview" sub tab
@@ -620,6 +658,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Plan" sub tab
@@ -628,15 +667,18 @@ Feature: Page Layout Component Scenarios
   @36051    @hideDisableAttachmentRowActionsFieldWithDisableOptionAtPageBlock-gPlanning @smoke
   Scenario: Hiding edit action item at row level inside attachments page block from config using disable option and validating it at program-submitted for approval detail page
     Given I have default configuration as below:
-      | configurationCategory        | fieldName                           | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block:Page Block Detail | Hide/Disable attachment Row actions |                   | Grantee State Program | ApiGeneratedId:0 |
+      | configurationCategory                  | fieldName                           | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail           | Hide/Disable attachment Row actions |                   | Grantee State Program | GNT__PageBlockTitle__c    | Attachments                |
+      | Page Block Rule:Page Block Rule Detail | Hide For Profile                    |                   | Grantee State Program | Name                      | Edit                       |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName                           | fieldNewValue | coreComponentField                                         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Program                      | Status                              | Created       | Test program for automation -  SA mode only - Not approved |                           |                            |
-      | Page Block:Page Block Detail | Hide/Disable attachment Row actions | Disable       | Grantee State Program                                      | GNT__PageBlockTitle__c    | Attachments                |
+      | configurationCategory                  | fieldName                           | fieldNewValue        | coreComponentField                                         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Program                                | Status                              | Created              | Test program for automation -  SA mode only - Not approved |                           |                            |
+      | Page Block:Page Block Detail           | Hide/Disable attachment Row actions | Disable              | Grantee State Program                                      | GNT__PageBlockTitle__c    | Attachments                |
+      | Page Block Rule:Page Block Rule Detail | Hide For Profile                    | System Administrator | Grantee State Program                                      | Name                      | Edit                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
@@ -647,21 +689,24 @@ Feature: Page Layout Component Scenarios
   @36053    @hideDisableAttachmentRowActionsFieldWithHideOptionAtPageBlock-gPlanning
   Scenario: Hiding edit action item at row level inside attachments page block from config using hide option and validating it at program-submitted for approval detail page
     Given I have default configuration as below:
-      | configurationCategory        | fieldName                           | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block:Page Block Detail | Hide/Disable attachment Row actions | Disable           | Grantee State Program | ApiGeneratedId:0 |
+      | configurationCategory                  | fieldName                           | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail           | Hide/Disable attachment Row actions | Disable           | Grantee State Program | GNT__PageBlockTitle__c    | Attachments                |
+      | Page Block Rule:Page Block Rule Detail | Hide For Profile                    |                   | Grantee State Program | Name                      | Edit                       |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName                           | fieldNewValue | coreComponentField                                         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Program                      | Status                              | Created       | Test program for automation -  SA mode only - Not approved |                           |                            |
-      | Page Block:Page Block Detail | Hide/Disable attachment Row actions | Hide          | Grantee State Program                                      | GNT__PageBlockTitle__c    | Attachments                |
+      | configurationCategory                  | fieldName                           | fieldNewValue        | coreComponentField                                         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Program                                | Status                              | Created              | Test program for automation -  SA mode only - Not approved |                           |                            |
+      | Page Block:Page Block Detail           | Hide/Disable attachment Row actions | Hide                 | Grantee State Program                                      | GNT__PageBlockTitle__c    | Attachments                |
+      | Page Block Rule:Page Block Rule Detail | Hide For Profile                    | System Administrator | Grantee State Program                                      | Name                      | Edit                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
     When I navigate to "Attachments" sub tab
-    Then I see edit icon is not visible inside "Attachments" page block
+    Then I see "Edit" icon for "Award Letter" is not displayed inside flex table
 
   @36094    @feildAPINAmeFieldAtPageBlockDetail-gPlanning @smoke
   Scenario: Changing field api name for page block detail from config and validating it on program detail page
@@ -674,6 +719,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Budgeting Preference" inside page block details
@@ -689,6 +735,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Title" is not displayed inside page block detail
@@ -704,6 +751,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Title" shown at number "7" inside page block detail
@@ -719,6 +767,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Automation Title" inside page block details
@@ -734,6 +783,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
     Then I see Program Name rendered in view mode only
@@ -749,6 +799,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Title" is not displayed inside page block detail
@@ -764,6 +815,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Title" is not displayed inside page block detail
@@ -779,6 +831,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Title" is not displayed inside page block detail
@@ -798,6 +851,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Title" is not displayed inside page block detail
@@ -817,6 +871,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Title" is not displayed inside page block detail
@@ -832,6 +887,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
     Then I see Program Name rendered in view mode only
@@ -847,6 +903,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
     Then I see Program Name rendered in view mode only
@@ -862,6 +919,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
     When I click on "Save" button inside detail page
@@ -878,6 +936,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Attachments" sub tab
@@ -896,6 +955,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Title" is not displayed inside page block detail
@@ -913,6 +973,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Title" is not displayed inside page block detail
@@ -928,6 +989,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
     Then I see Program Name rendered in view mode only
@@ -943,6 +1005,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
     Then I see Program Name rendered in view mode only
@@ -958,6 +1021,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Title" is not displayed inside page block detail
@@ -973,6 +1037,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
     When I click search icon for owner organization
@@ -989,6 +1054,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
     When I click search icon for owner organization and swithing to frame "iframeCustomLookupModalId"
@@ -1007,6 +1073,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
     When I click search icon for owner organization and swithing to frame "iframeCustomLookupModalId"
@@ -1027,7 +1094,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    When I select "Draft Announcements" from double headed dropdown inside admin portal
+    And I click toggle button to select "Draft Announcements"
     When I perform quick search for "Test Announcement For Automation"
     When I click on "View" icon for "Test Announcement For Automation" inside table
     When I navigate to "Overview" sub tab
@@ -1046,6 +1113,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Test message for Automation" message inside confirmation box is displayed on click "Submit For Approval"
@@ -1061,6 +1129,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Edit" button is not displayed
@@ -1076,6 +1145,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I click on "Edit" button in right header
@@ -1092,6 +1162,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I click on "Edit" button in right header
@@ -1108,6 +1179,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Create Campaign" button is displayed
@@ -1123,6 +1195,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I click on "Menu" button inside detail page
@@ -1141,6 +1214,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Edit" Button at position "0"
@@ -1156,6 +1230,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I hovering mouse on help text icon inside "Program Information"
@@ -1175,6 +1250,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I hovering mouse on help text icon inside page block detail "Title"
@@ -1195,13 +1271,15 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
@@ -1218,6 +1296,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed
@@ -1233,6 +1312,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Title" is not displayed inside page block detail
@@ -1248,6 +1328,7 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
     Then I see Program Name rendered in view mode only
@@ -1263,10 +1344,11 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Attachments" sub tab
-    Then I see "Edit" icon for "Program Artifacts" is not displayed inside flex table
+    Then I see edit icon is disabled inside "Attachments" page block
 
   @53095    @hideForProfileFieldAtNotesAndAttachmentPageBlockForEditAction-gPlanning
   Scenario: Hide edit action from attachment page block from config validating it at attachments table
@@ -1279,10 +1361,11 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Attachments" sub tab
-    Then I see "Edit" icon for "Program Artifacts" is not displayed inside flex table
+    Then I see edit icon is disabled inside "Attachments" page block
 
   @53096    @hideForUserFieldAtNotesAndAttachmentPageBlockForEditAction-gPlanning
   Scenario: Hide edit action from attachment page block from config validating it at attachments table
@@ -1295,10 +1378,12 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Attachments" sub tab
-    Then I see "Edit" icon for "Program Artifacts" is not displayed inside flex table
+    Then I see edit icon is disabled inside "Attachments" page block
+
 
   @53098    @hideOperatorFieldUsingOROperatorAtNotesAndAttachmentPageBlockForEditAction-gPlanning
   Scenario: Hide edit row level action using OR operator from configuration and validating it at attachments table
@@ -1315,10 +1400,11 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Attachments" sub tab
-    Then I see "Edit" icon for "Program Artifacts" is not displayed inside flex table
+    Then I see edit icon is disabled inside "Attachments" page block
 
   @53097    @hideOperatorFieldUsingANDOperatorAtNotesAndAttachmentPageBlockForEditAction-gPlanning
   Scenario: Hide edit row level action using AND operator from configuration and validating it at attachments table
@@ -1335,10 +1421,11 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Attachments" sub tab
-    Then I see "Edit" icon for "Program Artifacts" is not displayed inside flex table
+    Then I see edit icon is disabled inside "Attachments" page block
 
   @53099    @hideForContextFieldAtNotesAndAttachmentPageBlockForEditActionWithRecordTypeNotesConfig-gPlanning
   Scenario Outline: Hide edit row level action using AND operator from configuration and validating it at attachments table
@@ -1351,10 +1438,11 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Attachments" sub tab
-    Then I see "Edit" icon for "Test Automation" is not displayed inside flex table
+    Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside flex table
 
     Examples:
     |value                         |
@@ -1371,10 +1459,11 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Attachments" sub tab
-    Then I see "Edit" icon for "Test Automation" is not displayed inside flex table
+    Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside flex table
 
     Examples:
       |value                         |
@@ -1391,10 +1480,11 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Attachments" sub tab
-    Then I see "Edit" icon for "Test Automation" is not displayed inside flex table
+    Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside flex table
 
     Examples:
       |value                         |
@@ -1415,10 +1505,11 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Attachments" sub tab
-    Then I see "Edit" icon for "Test Automation" is not displayed inside flex table
+    Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside flex table
 
     Examples:
       |value                         |
@@ -1439,11 +1530,87 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Attachments" sub tab
-    Then I see "Edit" icon for "Test Automation" is not displayed inside flex table
+    Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside flex table
 
     Examples:
       |value                         |
       |DXkA4qiwvbHfLbAaiAs6wiiVyPIp3D|
+
+  @53260    @hideDecisionFieldAtNotesAndAttachmentPageBlockForEditAction-gPlanning
+  Scenario: Hide edit action from attachment page block from config validating it at attachments table
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName          | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Rule:Page Block Rule Detail   | Hide Decision Field|                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName          | fieldNewValue    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Rule:Page Block Rule Detail   | Hide Decision Field| HideDeleteBtn__c | Grantee State Program | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Active Programs"
+    When I perform quick search for "Test Demo"
+    When I click on "View Program Details" icon for "Test Demo" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see edit icon is disabled inside "Attachments" page block
+
+  @53261    @hideDecisionFieldAtNotesAndAttachmentPageBlockForEditActionWithRecordTypeNotesConfig-gPlanning
+  Scenario Outline: Hide edit action from attachment page block from config validating it at attachments table
+    Given I have default configuration as below:
+      | configurationCategory| fieldName           | fieldOrignalValue |coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Uid Config:Uid       | Hide Decision Field |                   |                      | Internal Unique Id        | <value>                    |
+    Given I setup test configuration as below:
+      | configurationCategory| fieldName           | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Uid Config:Uid       | Hide Decision Field | HideDeleteBtn__c  |                       | Internal Unique Id        | <value>                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Active Programs"
+    When I perform quick search for "Test Demo"
+    When I click on "View Program Details" icon for "Test Demo" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside flex table
+
+    Examples:
+      |value                         |
+      |DXkA4qiwvbHfLbAaiAs6wiiVyPIp3D|
+
+  @53092    @saveAttachementBehaviourFieldAtNotesAndAttachmentPageBlockAsSaveAndCloseModal-gPlanning
+  Scenario: Changing save attachment behaviour at attachment modal from config and validating it at attachment modal
+    Given I have default configuration as below:
+      | configurationCategory        | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block:Page Block Detail | Save Attachment Behaviour  | Save              | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName                  | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Save Attachment Behaviour  | Save and Close Modal | Grantee State Program | GNT__PageBlockTitle__c    | Attachments                |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "Edit" icon for "Program Artifacts" inside table
+    Then I see "Save and Close Modal" at bottom of Attachment Modal
+
+  @53093    @saveAttachementBehaviourFieldAtNotesAndAttachmentPageBlockAsSaveAndSaveAndCloseModal-gPlanning
+  Scenario: Changing save attachment behaviour at attachment modal from config and validating it at attachment modal
+    Given I have default configuration as below:
+      | configurationCategory        | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block:Page Block Detail | Save Attachment Behaviour  | Save              | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName                  | fieldNewValue                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Save Attachment Behaviour  | Save and Save and Close Modal  | Grantee State Program | GNT__PageBlockTitle__c    | Attachments                |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "Edit" icon for "Program Artifacts" inside table
+    And I see "Save" at bottom of Attachment Modal
+    Then I see "Save and Close Modal" at bottom of Attachment Modal

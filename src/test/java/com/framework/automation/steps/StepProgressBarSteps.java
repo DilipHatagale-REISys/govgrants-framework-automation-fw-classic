@@ -2,15 +2,14 @@ package com.framework.automation.steps;
 
 import com.automation.rei.handlers.GovGrantsHandler;
 import com.framework.automation.pageobject.StepProgressBarPage;
-import io.cucumber.java.en.*;
-import eyethink.automation.bots.controller.Controller;
+import cucumber.api.java.en.*;
 import eyethink.automation.bots.controller.CoreHandlers;
 
 public class StepProgressBarSteps {
 	StepProgressBarPage stepProgressBarPage;
 
-	public StepProgressBarSteps(Controller controller, CoreHandlers handler, GovGrantsHandler govgrants) {
-		stepProgressBarPage = new StepProgressBarPage(controller, handler, govgrants);
+	public StepProgressBarSteps(CoreHandlers handler, GovGrantsHandler govgrants) {
+		stepProgressBarPage = new StepProgressBarPage(handler, govgrants);
 	}
 
 	@When("^I hovering mouse on Status inside step progress bar \"([^\"]*)\"$")

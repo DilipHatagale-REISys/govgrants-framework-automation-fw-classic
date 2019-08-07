@@ -2,15 +2,14 @@ package com.framework.automation.steps;
 
 import com.automation.rei.handlers.GovGrantsHandler;
 import com.framework.automation.pageobject.FlexGridPage;
-import io.cucumber.java.en.*;
-import eyethink.automation.bots.controller.Controller;
+import cucumber.api.java.en.*;
 import eyethink.automation.bots.controller.CoreHandlers;
 
 public class FlexGridSteps {
 	FlexGridPage flexGridPage;
 
-	public FlexGridSteps(Controller controller, CoreHandlers handler, GovGrantsHandler govgrants) {
-		flexGridPage = new FlexGridPage(controller, handler, govgrants);
+	public FlexGridSteps(CoreHandlers handler, GovGrantsHandler govgrants) {
+		flexGridPage = new FlexGridPage(handler, govgrants);
 	}
 
 	@When("^I record webelement at table \"([^\"]*)\" for column \"([^\"]*)\"$")
@@ -48,6 +47,11 @@ public class FlexGridSteps {
 		flexGridPage.assertAscendingORDescendingOrderOfTableColumnValue(text, order, tableId);
 	}
 
+	@Then("^I see column \"([^\"]*)\" value is in \"([^\"]*)\" order for table id \"([^\"]*)\" for MEGrid$")
+	public void assertColumnValueOfTableInAscendingORDescendingOrderForMEGrid(String text, String order, String tableId) {
+		flexGridPage.assertAscendingORDescendingOrderOfTableColumnValueForMEGrid(text, order, tableId);
+	}
+
 	@Then("^I see \"([^\"]*)\" in program Outcomes flex table header with id \"([^\"]*)\"$")
 	public void assertProgramOutcomesFlexTableHeaderName(String columnTitleName, String tableId) {
 		flexGridPage.assertProgramOutcomesFlexTableHeaderColumnName(columnTitleName, tableId);
@@ -83,5 +87,10 @@ public class FlexGridSteps {
 	@Then("^I see \"([^\"]*)\" button inside \"([^\"]*)\" Nested Navigation grid$")
 	public void assertButtonInsideNestedNavigationTable(String buttonName, String headerName) {
 		flexGridPage.assertActionButtonInsideNestedNAvigationTableIsDisplayed(buttonName, headerName);
+	}
+
+	@Then("^I see \"([^\"]*)\" in Monitoring Schedule For All Active Grant flex table header with id \"([^\"]*)\" comes only once$")
+	public void assertMonitoringScheduleForAllActiveGrantflextableheaderName(String columnTitleName, String tableId) {
+		flexGridPage.assertActiveGrantsGridHeaderColumnName(columnTitleName, tableId);
 	}
 }

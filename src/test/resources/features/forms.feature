@@ -136,4 +136,3 @@ Feature: Forms Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on "View" icon of form "General Application Form" program in flex table
     Then I see "Test Automation" shown as over view header
-	

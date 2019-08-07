@@ -14,7 +14,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    When I select "Draft Announcements" from double headed dropdown inside admin portal
+    And I click toggle button to select "Draft Announcements"
     Then I see "Create" button inside "Draft Announcements" flex table not displayed
 
   @42369    @hideExpressioJsonForRightOperandForAdminUser-gAnnouncement
@@ -28,7 +28,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    When I select "Draft Announcements" from double headed dropdown inside admin portal
+    And I click toggle button to select "Draft Announcements"
     Then I see "Create" button inside "Draft Announcements" flex table not displayed
 
   @42475    @hideExpressioJsonForRightOperandForProfilePM-gAnnouncement
@@ -42,7 +42,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    When I select "Draft Announcements" from double headed dropdown inside admin portal
+    And I click toggle button to select "Draft Announcements"
     Then I see "Create" button inside "Draft Announcements" flex table not displayed
 
   @42370    @hideExpressioJsonForRightOperandForProfileSystemAdministrator-gAnnouncement
@@ -56,12 +56,12 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    When I select "Draft Announcements" from double headed dropdown inside admin portal
+    And I click toggle button to select "Draft Announcements"
     Then I see "Create" button inside "Draft Announcements" flex table not displayed
-    When I re-login as "Automation" user on "QA" portal
+    When I re-login as "Automation" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    When I select "Draft Announcements" from double headed dropdown inside admin portal
+    And I click toggle button to select "Draft Announcements"
     Then I see "Create" button inside "Draft Announcements" flex table not displayed
 
   @42476    @hideExpressioJsonForRightOperandForProfilePMWithOperatorNotIn-gAnnouncement
@@ -75,7 +75,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    When I select "Draft Announcements" from double headed dropdown inside admin portal
+    And I click toggle button to select "Draft Announcements"
     Then I see "Create" button inside "Draft Announcements" flex table not displayed
 
   @42371    @hideExpressioJsonForRightOperandForProfileAdministratorWithOperatorNotIn-gAnnouncement
@@ -89,7 +89,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    When I select "Draft Announcements" from double headed dropdown inside admin portal
+    And I click toggle button to select "Draft Announcements"
     Then I see "Create" button inside "Draft Announcements" flex table
 
   @42479    @hideExpressioJsonForRightOperandForUserTypeInternalWithOperatorIn-gAnnouncement @smoke
@@ -103,7 +103,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    When I select "Draft Announcements" from double headed dropdown inside admin portal
+    And I click toggle button to select "Draft Announcements"
     Then I see "Create" button inside "Draft Announcements" flex table not displayed
 
   @42480    @hideExpressioJsonForRightOperandForUserTypeInternalWithOperatorNotIn-gAnnouncement
@@ -117,7 +117,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    When I select "Draft Announcements" from double headed dropdown inside admin portal
+    And I click toggle button to select "Draft Announcements"
     Then I see "Create" button inside "Draft Announcements" flex table
 
   @42483    @hideExpressioJsonForRightOperandForUserTypeInternalWithOperatorNotIn-Reviewer-gAnnouncement
@@ -131,7 +131,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation-Reviewer" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    When I select "Draft Announcements" from double headed dropdown inside admin portal
+    And I click toggle button to select "Draft Announcements"
     Then I see "Create" button inside "Draft Announcements" flex table not displayed
 
   @42490    @hideExpressioJsonForRightOperandForUserType-Internal-gAnnouncement
@@ -145,7 +145,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    When I select "Draft Announcements" from double headed dropdown inside admin portal
+    And I click toggle button to select "Draft Announcements"
     Then I see "Create" button inside "Draft Announcements" flex table not displayed
 
   @42491    @hideExpressioJsonForRightOperandForUserType-Applicant-gAnnouncement
@@ -159,7 +159,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation-Applicant" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    When I select "Draft Announcements" from double headed dropdown inside admin portal
+    And I click toggle button to select "Draft Announcements"
     Then I see "Create" button inside "Draft Announcements" flex table not displayed
 
   @42492    @hideExpressioJsonForRightOperandForUserType-Reviewer-gAnnouncement
@@ -173,7 +173,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation-Reviewer" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    When I select "Draft Announcements" from double headed dropdown inside admin portal
+    And I click toggle button to select "Draft Announcements"
     Then I see "Create" button inside "Draft Announcements" flex table not displayed
 
   @42499    @hideExpressioJsonForRightOperandForContextViewWithOperatorIn-gPlanning @smoke
@@ -187,6 +187,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -203,6 +204,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -219,6 +221,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -235,6 +238,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -251,6 +255,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -296,6 +301,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -312,6 +318,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Sub-Recipient"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -328,6 +335,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -344,6 +352,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -360,6 +369,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -376,6 +386,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -392,6 +403,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -408,6 +420,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -424,6 +437,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -440,6 +454,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -456,6 +471,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -472,6 +488,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -488,6 +505,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -504,6 +522,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -520,6 +539,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -536,6 +556,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -552,6 +573,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -568,6 +590,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -584,6 +607,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -600,6 +624,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -616,6 +641,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -632,6 +658,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -648,6 +675,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation-SA to C"
     When I click on "View Program Details" icon for "Test program for automation-SA to C" inside table
     When I navigate to "Financials" sub tab
@@ -664,6 +692,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -680,6 +709,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -696,6 +726,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -712,6 +743,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -728,6 +760,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -744,7 +777,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    When I select "Draft Announcements" from double headed dropdown inside admin portal
+    And I click toggle button to select "Draft Announcements"
     When I perform quick search for "Test Announcement For Automation"
     When I click on "View" icon for "Test Announcement For Automation" inside table
     When I navigate to "Financials" sub tab
@@ -761,7 +794,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    When I select "Draft Announcements" from double headed dropdown inside admin portal
+    And I click toggle button to select "Draft Announcements"
     When I perform quick search for "Test 11-Jul"
     When I click on "View" icon for "Test 11-Jul" inside table
     When I navigate to "Financials" sub tab
@@ -778,7 +811,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    When I select "Draft Announcements" from double headed dropdown inside admin portal
+    And I click toggle button to select "Draft Announcements"
     When I perform quick search for "Test Announcement For Automation"
     When I click on "View" icon for "Test Announcement For Automation" inside table
     When I navigate to "Financials" sub tab
@@ -795,7 +828,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    When I select "Draft Announcements" from double headed dropdown inside admin portal
+    And I click toggle button to select "Draft Announcements"
     When I perform quick search for "Non-NC-Sole Source"
     When I click on "View" icon for "Non-NC-Sole Source" inside table
     When I navigate to "Financials" sub tab
@@ -812,7 +845,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    When I select "Draft Announcements" from double headed dropdown inside admin portal
+    And I click toggle button to select "Draft Announcements"
     When I perform quick search for "Test Announcement For Automation"
     When I click on "View" icon for "Test Announcement For Automation" inside table
     When I navigate to "Financials" sub tab
@@ -829,7 +862,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    When I select "Draft Announcements" from double headed dropdown inside admin portal
+    And I click toggle button to select "Draft Announcements"
     When I perform quick search for "Non-NC-Sole Source"
     When I click on "View" icon for "Non-NC-Sole Source" inside table
     When I navigate to "Financials" sub tab
@@ -846,6 +879,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -862,6 +896,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submit For Approval" button is not displayed
@@ -877,6 +912,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submit For Approval" button is not displayed
@@ -892,6 +928,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submit For Approval" button is not displayed
@@ -907,6 +944,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submit For Approval" button is displayed
@@ -922,6 +960,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submit For Approval" button is not displayed
@@ -937,6 +976,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submit For Approval" button is not displayed
@@ -952,6 +992,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submit For Approval" button is displayed
@@ -967,6 +1008,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation-Reviewer" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submit For Approval" button is not displayed
@@ -982,6 +1024,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submit For Approval" button is not displayed
@@ -997,6 +1040,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation-Reviewer" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submit For Approval" button is not displayed
@@ -1012,6 +1056,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation-Applicant" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submit For Approval" button is not displayed
@@ -1027,6 +1072,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submit For Approval" button is not displayed
@@ -1042,6 +1088,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submit For Approval" button is displayed
@@ -1057,6 +1104,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submit For Approval" button is not displayed
@@ -1088,7 +1136,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As an Administrator"
     And I navigate to "Setup" tab
-    When I select "Draft Internal Organizations" from double headed dropdown inside admin portal
+    And I click toggle button to select "Draft Internal Organizations"
     When I click on "View" icon for "Automation test organization" inside table
     When I navigate to "Overview" sub tab
     Then I see "Activate" button is not displayed
@@ -1104,6 +1152,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submit For Approval" button is not displayed
@@ -1119,6 +1168,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submit For Approval" button is not displayed
@@ -1134,6 +1184,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submit For Approval" button is not displayed
@@ -1149,6 +1200,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submit For Approval" button is not displayed
@@ -1164,6 +1216,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submit For Approval" button is not displayed
@@ -1179,6 +1232,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submit For Approval" button is not displayed
@@ -1194,6 +1248,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submit For Approval" button is not displayed
@@ -1209,6 +1264,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submit For Approval" button is not displayed
@@ -1224,6 +1280,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submit For Approval" button is not displayed
@@ -1239,6 +1296,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submit For Approval" button is not displayed
@@ -1254,6 +1312,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submit For Approval" button is not displayed
@@ -1269,6 +1328,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submit For Approval" button is not displayed
@@ -1284,9 +1344,11 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-    Then I see "Overview" sub tab is not displayed at view detail page
+    Then I cannot see "Overview" sub tab at view detail page
+
 
   @45313    @hide_expression_Overview_Tab_using_IN_operator_and_Left_Operand=Profile_As_PM @smoke
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with IN operand and Left operator as Profile PM -gPlanning
@@ -1299,9 +1361,10 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-    Then I see "Overview" sub tab is not displayed at view detail page
+    Then I cannot see "Overview" sub tab at view detail page
 
   @45316    @hide_expression_Overview_Tab_using_OR_operator_and_Left_Operand=Profile_As_Admin_PM
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with OR operand and Left operator as Profile Admin PM -gPlanning
@@ -1314,9 +1377,10 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-    Then I see "Overview" sub tab is not displayed at view detail page
+    Then I cannot see "Overview" sub tab at view detail page
 
   @45317    @hide_expression_Overview_Tab_using_IN_operator_and_Left_Operand_USERTYPE=Internal
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with IN operator and Left Operand USERTYPE
@@ -1329,9 +1393,10 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-    Then I see "Overview" sub tab is not displayed at view detail page
+    Then I cannot see "Overview" sub tab at view detail page
 
   @45319    @hide_expression_Overview_Tab_using_AND_operator_and_Left_Operand_USERTYPE=Internal @smoke
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with AND operator and Left Operand USERTYPE
@@ -1344,9 +1409,10 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-    Then I see "Overview" sub tab is not displayed at view detail page
+    Then I cannot see "Overview" sub tab at view detail page
 
   @45320    @hide_expression_Overview_Tab_using_IN_operator_and_Left_Operand_AS_Context_View
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with IN operator and Left Operand AS Context View
@@ -1359,9 +1425,10 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-    Then I see "Overview" sub tab is not displayed at view detail page
+    Then I cannot see "Overview" sub tab at view detail page
 
   @45322    @hide_expression_Overview_Tab_using_NOTIN_operator_and_Left_Operand_AS_Context
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with NOTIN operator and Left Operand AS Context
@@ -1374,9 +1441,10 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-    Then I see "Overview" sub tab is not displayed at view detail page
+    Then I cannot see "Overview" sub tab at view detail page
 
   @45323    @hide_expression_Overview_Tab_using_AND_operator_and_Left_Operand_AS_Context_View_And_Admin_Profile @smoke
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with AND operator and Left Operand AS Context View and Admin Profile
@@ -1389,9 +1457,10 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-    Then I see "Overview" sub tab is not displayed at view detail page
+    Then I cannot see "Overview" sub tab at view detail page
 
   @45324    @hide_expression_Overview_Tab_using_OR_operator_and_Left_Operand_AS_Context_And_Profile
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with OR operator and Left Operand AS Context And Profile
@@ -1404,9 +1473,10 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-    Then I see "Overview" sub tab is not displayed at view detail page
+    Then I cannot see "Overview" sub tab at view detail page
 
   @45325    @hide_expression_Overview_Tab_using_OR_operator_and_Left_Operand_AS_Context_View_And_Admin_Profile @smoke
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with OR operator and Left Operand AS Context View and Admin Profile
@@ -1419,9 +1489,10 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-    Then I see "Overview" sub tab is not displayed at view detail page
+    Then I cannot see "Overview" sub tab at view detail page
 
   @45327    @hide_expression_Overview_Tab_using_AND_operator_and_Left_Operand_AS_Context_And_UserType
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with AND operator and Left Operand AS Context and UserType
@@ -1434,9 +1505,10 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-    Then I see "Overview" sub tab is not displayed at view detail page
+    Then I cannot see "Overview" sub tab at view detail page
 
   @45329    @hide_expression_Overview_Tab_using_OR_operator_and_Left_Operand_AS_Context_And_UserType
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with OR operator and Left Operand AS Context and UserType
@@ -1449,9 +1521,10 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-    Then I see "Overview" sub tab is not displayed at view detail page
+    Then I cannot see "Overview" sub tab at view detail page
 
   @45702    @hide_expression_Program_Information_Page_Block_IN_Operator_SysAdmin_Profile
   Scenario: Hide Program Information from Overview Tab for user type internal using IN operator System Admin
@@ -1464,6 +1537,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed
@@ -1479,6 +1553,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed
@@ -1494,6 +1569,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed  
@@ -1509,6 +1585,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed
@@ -1524,6 +1601,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block title
@@ -1539,6 +1617,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed
@@ -1554,6 +1633,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed
@@ -1569,6 +1649,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed
@@ -1584,6 +1665,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block title
@@ -1599,6 +1681,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed
@@ -1614,6 +1697,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block title
@@ -1629,6 +1713,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed
@@ -1644,6 +1729,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed
@@ -1659,6 +1745,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block title
@@ -1674,6 +1761,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed
@@ -1689,6 +1777,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block title
@@ -1704,6 +1793,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block title
@@ -1719,6 +1809,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block title
@@ -1734,6 +1825,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed
@@ -1749,6 +1841,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block title
@@ -1764,6 +1857,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block title
@@ -1779,6 +1873,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed
@@ -1794,6 +1889,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block title
@@ -1809,6 +1905,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed
@@ -1824,6 +1921,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block title
@@ -1839,6 +1937,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed
@@ -1854,6 +1953,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed
@@ -1869,6 +1969,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed
@@ -1884,6 +1985,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block title
@@ -1899,6 +2001,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block title
@@ -1914,6 +2017,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed
@@ -1929,6 +2033,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed
@@ -1944,6 +2049,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed  
@@ -1959,6 +2065,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed
@@ -1974,6 +2081,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed
@@ -1989,6 +2097,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Code" is not displayed inside page block detail
@@ -2004,6 +2113,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation-Reviewer" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Code" is not displayed inside page block detail
@@ -2019,6 +2129,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Code" is not displayed inside page block detail
@@ -2034,6 +2145,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Code" is not displayed inside page block detail
@@ -2049,6 +2161,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Code" is not displayed inside page block detail
@@ -2064,6 +2177,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Code" is not displayed inside page block detail
@@ -2079,6 +2193,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Code" is not displayed inside page block detail
@@ -2094,6 +2209,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Code" is not displayed inside page block detail
@@ -2109,6 +2225,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Code" inside page block details
@@ -2124,6 +2241,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Code" is not displayed inside page block detail
@@ -2139,6 +2257,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Code" is not displayed inside page block detail
@@ -2154,6 +2273,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Code" is not displayed inside page block detail
@@ -2169,6 +2289,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Code" is not displayed inside page block detail
@@ -2200,6 +2321,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed
@@ -2215,6 +2337,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block title
@@ -2230,6 +2353,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed
@@ -2245,6 +2369,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed
@@ -2260,6 +2385,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Budget Period Details" page block title
@@ -2275,6 +2401,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Budget Period Details" page block is not displayed
@@ -2290,6 +2417,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Budget Period Details" page block title
@@ -2305,6 +2433,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Budget Period Details" page block title
@@ -2320,6 +2449,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Budget Period Details" page block is not displayed
@@ -2335,6 +2465,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Contacts" page block is not displayed   
@@ -2350,6 +2481,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Contacts" page block title
@@ -2365,6 +2497,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Contacts" page block title
@@ -2380,6 +2513,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Contacts" page block is not displayed
@@ -2395,6 +2529,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed
@@ -2410,6 +2545,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed  
@@ -2425,6 +2561,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed
@@ -2440,6 +2577,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed
@@ -2455,6 +2593,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block title
@@ -2470,6 +2609,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation-Reviewer" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed
@@ -2485,6 +2625,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed
@@ -2500,6 +2641,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed
@@ -2515,6 +2657,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed
@@ -2530,6 +2673,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Program Information" page block is not displayed
@@ -2545,6 +2689,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Website Address" is not displayed inside page block detail
@@ -2560,6 +2705,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Website Address" is not displayed inside page block detail
@@ -2575,6 +2721,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Website Address" inside page block details
@@ -2590,6 +2737,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Website Address" is not displayed inside page block detail
@@ -2605,6 +2753,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Website Address" is not displayed inside page block detail
@@ -2620,6 +2769,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Website Address" inside page block details
@@ -2635,6 +2785,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Website Address" inside page block details
@@ -2650,6 +2801,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Website Address" is not displayed inside page block detail    
@@ -2665,6 +2817,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Website Address" inside page block details
@@ -2680,6 +2833,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Website Address" is not displayed inside page block detail
@@ -2695,6 +2849,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Website Address" is not displayed inside page block detail
@@ -2710,6 +2865,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submit For Approval" button is not displayed
@@ -2725,6 +2881,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Website Address" is not displayed inside page block detail
@@ -2740,6 +2897,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Website Address" is not displayed inside page block detail
@@ -2755,6 +2913,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Website Address" inside page block details
@@ -2770,6 +2929,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Website Address" is not displayed inside page block detail
@@ -2785,6 +2945,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Website Address" is not displayed inside page block detail
@@ -2800,6 +2961,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     Then I see "Activities" inside "Manage Funding Source" is displayed
     
   @46393    @render_expression_SideBar_ManageFundingSource_With_UserType_NOTIN_Internal
@@ -2813,6 +2975,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     Then I see "Activities" inside "Manage Funding Source" is not displayed
     
   @46395    @render_expression_SideBar_ManageFundingSource_With_Profile_IN_SystemAdministrator @smoke
@@ -2826,6 +2989,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     Then I see "Activities" inside "Manage Funding Source" is displayed
     
   @46396    @render_expression_SideBar_ManageFundingSource_With_Profile_NOTIN_SystemAdministrator
@@ -2839,6 +3003,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     Then I see "Activities" inside "Manage Funding Source" is not displayed
     
   @46397    @render_expression_SideBar_ManageFundingSource_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal
@@ -2852,6 +3017,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     Then I see "Activities" inside "Manage Funding Source" is displayed
     
   @46398    @render_expression_SideBar_ManageFundingSource_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal
@@ -2865,6 +3031,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     Then I see "Activities" inside "Manage Funding Source" is displayed
     
   @46415    @render_expression_SideBar_ManageFundingSource_With_Profile_IN_SystemAdministrator_AND_Profile_IN_PM
@@ -2878,6 +3045,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     Then I see "Activities" inside "Manage Funding Source" is not displayed
     
   @46416    @render_expression_SideBar_ManageFundingSource_With_Profile_IN_SystemAdministrator_OR_Profile_IN_PM
@@ -2891,6 +3059,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     Then I see "Activities" inside "Manage Funding Source" is displayed
     
   @46399    @render_expression_SideBar_ManageFundingSource_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator @smoke
@@ -2904,6 +3073,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     Then I see "Activities" inside "Manage Funding Source" is not displayed
     
   @46400    @render_expression_SideBar_ManageFundingSource_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator
@@ -2917,6 +3087,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     Then I see "Activities" inside "Manage Funding Source" is not displayed
     
   @46417    @render_expression_SideBar_ManageFundingSource_With_UserType_IN_Applicant_Reviewer
@@ -2930,6 +3101,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     Then I see "Activities" inside "Manage Funding Source" is not displayed
     
   @46418    @render_expression_SideBar_ManageFundingSource_With_UserType_NOTIN_Applicant_Reviewer
@@ -2943,6 +3115,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     Then I see "Activities" inside "Manage Funding Source" is displayed
     
   @46401    @render_expression_SideBar_ManageFundingSource_With_UserType_IN_Applicant_Internal_Reviewer
@@ -2956,6 +3129,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     Then I see "Activities" inside "Manage Funding Source" is displayed
     
   @46402    @render_expression_SideBar_ManageFundingSource_With_UserType_NOTIN_Applicant_Internal_Reviewer
@@ -2969,6 +3143,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     Then I see "Activities" inside "Manage Funding Source" is not displayed
     
   @46403    @render_expression_CustomApp_With_UserType_IN_Internal @smoke
@@ -3102,6 +3277,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     Then I see "Activities" inside "Manage Funding Source" is displayed
     
   @47285    @render_expression_CustomApp_With_UserType_IN_Applicant_Reviewer
@@ -3223,6 +3399,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -3240,6 +3417,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -3257,6 +3435,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -3274,6 +3453,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -3291,6 +3471,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -3308,6 +3489,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -3325,6 +3507,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -3342,6 +3525,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -3359,6 +3543,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -3376,6 +3561,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -3393,6 +3579,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -3410,6 +3597,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -3427,6 +3615,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -3444,6 +3633,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -3461,6 +3651,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -3478,6 +3669,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -3496,6 +3688,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -3514,6 +3707,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -3532,6 +3726,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -3550,6 +3745,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -3568,6 +3764,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -3586,6 +3783,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -3604,6 +3802,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -3622,6 +3821,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -3640,6 +3840,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -3658,6 +3859,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -3676,6 +3878,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -3694,6 +3897,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -3712,6 +3916,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -3730,6 +3935,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -3748,6 +3954,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     Then I see "View Program Details" icon for "Test program for automation - Created mode only" is not displayed inside flex table
     
@@ -3762,6 +3969,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     Then I see "View Program Details" icon for "Test program for automation - Created mode only" is displayed inside flex table
     
@@ -3776,6 +3984,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     Then I see "View Program Details" icon for "Test program for automation - Created mode only" is not displayed inside flex table
     
@@ -3790,6 +3999,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     Then I see "View Program Details" icon for "Test program for automation - Created mode only" is displayed inside flex table
     
@@ -3804,6 +4014,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     Then I see "View Program Details" icon for "Test program for automation - Created mode only" is not displayed inside flex table
     
@@ -3818,6 +4029,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     Then I see "View Program Details" icon for "Test program for automation - Created mode only" is not displayed inside flex table
     
@@ -3832,6 +4044,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     Then I see "View Program Details" icon for "Test program for automation - Created mode only" is displayed inside flex table
     
@@ -3846,6 +4059,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
@@ -3861,6 +4075,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submitted for Approval" is displayed inside step progress bar
@@ -3876,6 +4091,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
     
@@ -3890,6 +4106,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     Then I see "Edit" icon for "Test program for automation - Created mode only" is displayed inside flex table
     
@@ -3904,6 +4121,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     Then I see "View Program Details" icon for "Test program for automation - Created mode only" is displayed inside flex table
     
@@ -3918,6 +4136,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
 
@@ -3932,6 +4151,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
     
@@ -3946,6 +4166,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
     
@@ -3960,6 +4181,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
     
@@ -3974,6 +4196,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
     
@@ -3988,6 +4211,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
     
@@ -4002,6 +4226,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
     
@@ -4016,6 +4241,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     Then I see "Edit" icon for "Test program for automation - Created mode only" is displayed inside flex table
     
@@ -4030,6 +4256,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     Then I see "View Program Details" icon for "Test program for automation - Created mode only" is displayed inside flex table
     
@@ -4044,6 +4271,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     Then I see "View Program Details" icon for "Test program for automation - Created mode only" is not displayed inside flex table 
     
@@ -4058,6 +4286,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
@@ -4073,6 +4302,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submitted for Approval" is displayed inside step progress bar
@@ -4088,6 +4318,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
@@ -4103,6 +4334,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
@@ -4118,6 +4350,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submitted for Approval" is displayed inside step progress bar
@@ -4133,6 +4366,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submitted for Approval" is displayed inside step progress bar
@@ -4148,6 +4382,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
@@ -4163,6 +4398,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submitted for Approval" is displayed inside step progress bar
@@ -4178,6 +4414,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
@@ -4193,6 +4430,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submitted for Approval" is displayed inside step progress bar
@@ -4208,6 +4446,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
@@ -4223,6 +4462,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
@@ -4238,6 +4478,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
@@ -4253,6 +4494,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
@@ -4268,6 +4510,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
@@ -4283,6 +4526,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
@@ -4298,6 +4542,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
@@ -4313,6 +4558,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
@@ -4329,13 +4575,15 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
@@ -4353,13 +4601,15 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
@@ -4377,13 +4627,15 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
@@ -4401,13 +4653,15 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
@@ -4425,13 +4679,15 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
@@ -4449,13 +4705,15 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
@@ -4473,13 +4731,15 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
@@ -4497,13 +4757,15 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
@@ -4521,13 +4783,15 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
@@ -4545,13 +4809,15 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
@@ -4569,13 +4835,15 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
@@ -4593,13 +4861,15 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
@@ -4617,13 +4887,15 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
@@ -4641,13 +4913,15 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
@@ -4665,13 +4939,15 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
@@ -4689,13 +4965,15 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
@@ -4713,13 +4991,15 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
@@ -4737,13 +5017,15 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
@@ -4761,13 +5043,15 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
@@ -4785,13 +5069,15 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
@@ -4809,13 +5095,15 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
@@ -4833,13 +5121,15 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
@@ -4857,13 +5147,15 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
@@ -4881,13 +5173,15 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
@@ -4905,13 +5199,15 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
@@ -4928,6 +5224,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Attachments" sub tab
@@ -4944,6 +5241,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Attachments" sub tab
@@ -4960,6 +5258,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Attachments" sub tab
@@ -4976,6 +5275,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Attachments" sub tab
@@ -4992,6 +5292,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Attachments" sub tab
@@ -5008,6 +5309,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Attachments" sub tab
@@ -5024,6 +5326,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Attachments" sub tab
@@ -5040,6 +5343,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -5056,6 +5360,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -5072,6 +5377,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -5088,6 +5394,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -5104,6 +5411,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -5120,6 +5428,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -5136,6 +5445,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -5152,6 +5462,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -5168,6 +5479,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -5184,6 +5496,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -5200,6 +5513,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -5216,6 +5530,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -5232,6 +5547,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -5248,6 +5564,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -5264,6 +5581,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -5280,6 +5598,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -5298,6 +5617,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -5316,6 +5636,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -5334,6 +5655,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -5352,6 +5674,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -5370,6 +5693,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -5388,6 +5712,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -5406,6 +5731,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -5424,6 +5750,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -5442,6 +5769,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab

@@ -14,6 +14,7 @@ Feature: Step Progress Bar Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see step progress bar is not displayed
@@ -33,6 +34,7 @@ Feature: Step Progress Bar Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see step progress bar is not displayed
@@ -52,6 +54,7 @@ Feature: Step Progress Bar Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
@@ -71,6 +74,7 @@ Feature: Step Progress Bar Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see "Submitted for Approval" status shown at number "0" in step progress bar
@@ -86,6 +90,7 @@ Feature: Step Progress Bar Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see status in Progress-bar is "Created" and is "Blue"
@@ -102,6 +107,7 @@ Feature: Step Progress Bar Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
@@ -119,7 +125,7 @@ Feature: Step Progress Bar Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I select "Rejected Programs" from double headed dropdown inside admin portal
+    And I click toggle button to select "Rejected Programs"
     When I perform quick search for "Test Program For Automation Reject"
     When I click on "View Program Details" icon for "Test Program For Automation Reject" inside table
     Then I see status in Progress-bar is "Rejected" and is "Blue"
@@ -135,7 +141,7 @@ Feature: Step Progress Bar Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I select "Draft Programs" from double headed dropdown inside admin portal
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see status in Progress-bar is "Submitted for Approval" and is "Blue"
@@ -151,6 +157,7 @@ Feature: Step Progress Bar Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     Then I see changed display name as "Automation" inside step progress bar
@@ -167,6 +174,7 @@ Feature: Step Progress Bar Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page

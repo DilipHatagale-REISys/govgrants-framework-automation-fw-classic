@@ -4,7 +4,6 @@ import com.automation.rei.handlers.GovGrantsHandler;
 import com.framework.automation.objects.IdBucket;
 import com.framework.automation.payloads.ApiUtilities;
 import com.jayway.restassured.response.Response;
-import eyethink.automation.bots.controller.Controller;
 import eyethink.automation.bots.controller.CoreHandlers;
 import eyethink.automation.bots.controller.EnvironmentFetcher;
 import eyethink.automation.bots.corelib.Properties_Logs;
@@ -15,7 +14,6 @@ import java.util.Map;
 
 public class ProjectWebServices {
     public CoreHandlers reiDriver;
-    public Controller controller;
     public GovGrantsHandler govgrants;
     SetUpConfiguration configPostCall;
     Properties_Logs readProp = new Properties_Logs();
@@ -27,8 +25,7 @@ public class ProjectWebServices {
     public static ArrayList<IdBucket> storeAllIds;
     public static ProjectWebServices thisValue = null;
 
-    public ProjectWebServices(Controller controller, CoreHandlers reiDriver, GovGrantsHandler govgrants) {
-        this.controller = controller;
+    public ProjectWebServices(CoreHandlers reiDriver, GovGrantsHandler govgrants) {
         this.reiDriver = reiDriver;
         this.govgrants = govgrants;
         setUpApiUtilAndSetupConfig();

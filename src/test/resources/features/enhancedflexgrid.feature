@@ -14,6 +14,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -30,6 +31,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -46,6 +48,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Financials" sub tab
@@ -64,6 +67,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Financials" sub tab
@@ -83,6 +87,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Financials" sub tab
@@ -101,6 +106,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Financials" sub tab
@@ -120,6 +126,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
 	When I setup my app as "As a Grantor"
 	And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
 	When I perform quick search for "Test program for automation - Created mode only"
 	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
 	When I navigate to "Financials" sub tab
@@ -138,6 +145,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -154,6 +162,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -171,6 +180,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -187,6 +197,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -203,6 +214,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -219,6 +231,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -229,7 +242,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     Given I have default configuration as below:
       | configurationCategory | fieldName                | fieldOrignalValue    | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Single Row Edit Behavior | Inline               | TmpActiveGrantsGrid | Name                      | Edit                       |
-      | Flex Table Action     | Editable Rows            | SingleRows           | TmpActiveGrantsGrid | Name                      | Edit                       |
+      | Flex Table Action     | Editable Rows            | SingleRow            | TmpActiveGrantsGrid | Name                      | Edit                       |
       | Flex Table Action     | Action Behavior          | EditRecord           | TmpActiveGrantsGrid | Name                      | Edit                       |
       | Flex Table Action     | Action URL Long          | <actionUrlLongValue> | TmpActiveGrantsGrid | Name                      | Edit                       |
       | Flex Table Action     | Where To Open ?          |                      | TmpActiveGrantsGrid | Name                      | Edit                       |
@@ -241,6 +254,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -257,7 +271,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     Given I have default configuration as below:
       | configurationCategory | fieldName                | fieldOrignalValue    | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Single Row Edit Behavior | Inline               | TmpActiveGrantsGrid | Name                      | Edit                       |
-      | Flex Table Action     | Editable Rows            | SingleRows           | TmpActiveGrantsGrid | Name                      | Edit                       |
+      | Flex Table Action     | Editable Rows            | SingleRow            | TmpActiveGrantsGrid | Name                      | Edit                       |
       | Flex Table Action     | Action Behavior          | EditRecord           | TmpActiveGrantsGrid | Name                      | Edit                       |
       | Flex Table Action     | Action URL Long          | <actionUrlLongValue> | TmpActiveGrantsGrid | Name                      | Edit                       |
       | Flex Table Action     | Where To Open ?          |                      | TmpActiveGrantsGrid | Name                      | Edit                       |
@@ -269,6 +283,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -291,6 +306,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -321,6 +337,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -341,6 +358,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -357,6 +375,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -373,6 +392,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -390,6 +410,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -410,6 +431,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -426,6 +448,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -443,6 +466,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -461,6 +485,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -477,6 +502,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -495,6 +521,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -514,6 +541,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -534,6 +562,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -550,6 +579,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -566,6 +596,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -588,6 +619,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -607,6 +639,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -629,6 +662,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -649,6 +683,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -667,6 +702,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -685,6 +721,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -705,6 +742,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -723,6 +761,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -743,6 +782,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -759,6 +799,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -776,6 +817,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -794,6 +836,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -812,6 +855,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -831,6 +875,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -843,6 +888,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -855,6 +901,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -873,6 +920,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -891,6 +939,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -909,6 +958,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -927,6 +977,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -946,6 +997,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -965,6 +1017,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -984,6 +1037,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -992,7 +1046,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     Then I see "<fieldDisplayNames>" in enhanced flex grid header
 
     Examples:
-      | fieldDisplayNames      | newFieldsApi                                                                                                               | defaultFieldsApi                                                                                       |
+      | fieldDisplayNames      | newFieldsApi                                                                                                               | defaultFieldsApi                                                                                                                               |
       | Award Title            | GrantAwardName__c,Name,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,Status__c                     | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
       | Budget Period          | BudgetStartEndDate__c,Name,GrantAwardName__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,Status__c                     | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
       | Total Awarded Amount   | TotalGrantAwardAmount__c,Name,GrantAwardName__c,BudgetStartEndDate__c,TotalObligateAmount__c,Status__c                     | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
@@ -1013,6 +1067,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 	When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -1034,6 +1089,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -1053,6 +1109,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -1071,6 +1128,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -1089,6 +1147,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -1107,6 +1166,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -1125,6 +1185,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -1143,6 +1204,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -1162,6 +1224,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -1180,6 +1243,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -1198,6 +1262,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -1214,6 +1279,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -1239,6 +1305,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -1263,6 +1330,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -1280,6 +1348,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -1296,6 +1365,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -1316,6 +1386,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -1336,6 +1407,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -1356,6 +1428,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -1376,6 +1449,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -1394,6 +1468,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -1416,6 +1491,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -1439,6 +1515,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -1460,6 +1537,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -1483,6 +1561,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -1513,6 +1592,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -1542,6 +1622,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -1567,6 +1648,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -1585,6 +1667,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -1607,6 +1690,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -1625,6 +1709,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -1647,6 +1732,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -1671,6 +1757,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -1695,6 +1782,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -1716,6 +1804,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -1738,6 +1827,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -1761,6 +1851,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -1785,6 +1876,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -1797,10 +1889,17 @@ Feature: Enhanced Flex Grid Component Scenarios
     |RecordType.Name='Grantor' and status__c='Active'|RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c like 'Road%'|
 
   @49362      @verifyEditAllAtChildFlexTableForEnhancedGrid-gPlanning
-  Scenario: validate Edit selected functionality for parent flex table at enhanced grid of programs-planning
+  Scenario Outline: validate Edit selected functionality for parent flex table at enhanced grid of programs-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpGrantorActiveAwardsGrid |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
@@ -1810,6 +1909,10 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I enter values "Test Automation" into textarea for table id "TmpGrantorActiveAwardsGridFlexToggle"
     When I click on top right button "Save" in flex table with id "flexGridEnhanced1"
     Then I see value "Test Automation" for multiple cells at column "Agreement1__c"
+
+    Examples:
+     | newFieldsApi  | defaultFieldsApi                                                                                                                               |
+     | Agreement1__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
     
  @48901    @orderByFieldAtParentDataTableEnhancedGridForAscendingOrderForMultipleField-gPlanning
  Scenario Outline: Changing specific columns values in ascending order with order by field from config and validating it inside enhanced grid of programs-planning
@@ -1822,6 +1925,7 @@ Feature: Enhanced Flex Grid Component Scenarios
   When I login as "Automation" user
   When I setup my app as "As a Grantor"
   And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
   When I perform quick search for "Test program for automation - Created mode only"
   When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
   When I navigate to "Financials" sub tab
@@ -1842,6 +1946,7 @@ Feature: Enhanced Flex Grid Component Scenarios
   When I login as "Automation" user
   When I setup my app as "As a Grantor"
   And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
   When I perform quick search for "Test program for automation - Created mode only"
   When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
   When I navigate to "Financials" sub tab
@@ -1850,3 +1955,53 @@ Feature: Enhanced Flex Grid Component Scenarios
    Examples:
   |fieldNewValue                              |
   |ProjectTitle__c DESC,NumberofAwards__c DESC|
+
+  @48903    @orderByFieldAtChildDataTableEnhancedGridForAscendingOrderForMultipleField-gPlanning @Smoke
+  Scenario Outline: Changing specific column value in ascending order with order by and sort by field from config and validating it inside enhanced grid of programs-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | TmpGrantorActiveAwardsGrid |                           |                            |
+      | Flex Grid:General     | Order By            |                    | TmpGrantorActiveAwardsGrid |                           |                            |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue   | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi>  | TmpGrantorActiveAwardsGrid |                           |                            |
+      | Flex Grid:General     | Order By            | <fieldNewValue> | TmpGrantorActiveAwardsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Financials 1" in "flexGridEnhanced1" panel
+    When I expand nested table containing column value "Financials 1"
+    Then I see "GrantAwardName__c" and "ActiveBudgetYear__c" in "Ascending" order
+
+    Examples:
+      | fieldNewValue                                 | newFieldsApi                               | defaultFieldsApi                                                                                                                               |
+      | ActiveBudgetYear__c ASC,GrantAwardName__c ASC | Name,GrantAwardName__c,ActiveBudgetYear__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
+
+  @48905    @orderByFieldAtChildDataTableEnhancedGridDescendingOrderForMultipleField-gPlanning @Smoke
+  Scenario Outline: Changing specific column value in ascending order with order by and sort by field from config and validating it inside enhanced grid of programs-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | TmpGrantorActiveAwardsGrid |                           |                            |
+      | Flex Grid:General     | Order By            |                    | TmpGrantorActiveAwardsGrid |                           |                            |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue   | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi>  | TmpGrantorActiveAwardsGrid |                           |                            |
+      | Flex Grid:General     | Order By            | <fieldNewValue> | TmpGrantorActiveAwardsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Financials 1" in "flexGridEnhanced1" panel
+    When I expand nested table containing column value "Financials 1"
+    Then I see "GrantAwardName__c" and "ActiveBudgetYear__c" in "Descending" order
+
+    Examples:
+      | fieldNewValue                                   | newFieldsApi                               | defaultFieldsApi                                                                                                                               |
+      | GrantAwardName__c DESC,ActiveBudgetYear__c DESC | Name,GrantAwardName__c,ActiveBudgetYear__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |

@@ -15,11 +15,12 @@ Feature: Approval Process Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    When I click on "Save" in the page details
+    When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -39,11 +40,12 @@ Feature: Approval Process Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -63,11 +65,12 @@ Feature: Approval Process Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -89,11 +92,12 @@ Feature: Approval Process Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -114,11 +118,12 @@ Feature: Approval Process Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -141,11 +146,12 @@ Feature: Approval Process Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -170,11 +176,12 @@ Feature: Approval Process Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -193,24 +200,23 @@ Feature: Approval Process Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
-    When I select "Approve" from approval decision panel
-    When I enter Approval comment
-    And I click submit
-    When I re-login as "Automation" user on "QA" portal
+    And I click on "Approve" on the approval decision box
+    When I re-login as "Automation" user on "default" portal
     When I setup my app as "As an Administrator"
     And I navigate to "Operate" tab
     When I navigate to "Email Logs" content inside "Logs" subheader on left panel
-    When I select "Queued Emails" from double headed dropdown inside admin portal
+    And I click toggle button to select "Queued Emails"
     Then I see email is generated with template "Program_Approved_Email_Template"
 
   @34314    @confirmationMessageBoxPopupForApprovalDecisionUsingApprovalCache-Programs @smoke
@@ -227,11 +233,12 @@ Feature: Approval Process Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -254,15 +261,16 @@ Feature: Approval Process Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation" user on "QA" portal
+    When I re-login as "Automation" user on "default" portal
     When I setup my app as "As an Administrator"
     And I navigate to "Operate" tab
     When I navigate to "Email Logs" content inside "Logs" subheader on left panel
-    When I select "Queued Emails" from double headed dropdown inside admin portal
+    And I click toggle button to select "Queued Emails"
     Then I see email is generated with template "TaskReminderTemplateMultiple"
 
   @34316    @completeOnViewForSendToOwnerTaskConfig-Programs
@@ -279,20 +287,19 @@ Feature: Approval Process Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    When I select "Send to Owner" from approval decision panel
-    When I enter Approval comment
-    And I click submit
-    When I re-login as "Automation" user on "QA" portal
+    And I click on "Send to Owner" on the approval decision box
+    When I re-login as "Automation" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -314,11 +321,12 @@ Feature: Approval Process Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -344,11 +352,12 @@ Feature: Approval Process Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -374,11 +383,12 @@ Feature: Approval Process Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -403,11 +413,12 @@ Feature: Approval Process Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -433,11 +444,12 @@ Feature: Approval Process Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -461,25 +473,25 @@ Feature: Approval Process Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
-    When I select "Approve" from approval decision panel
-    When I enter Approval comment
-    And I click submit
-    When I re-login as "Automation" user on "QA" portal
+    And I click on "Approve" on the approval decision box
+    When I re-login as "Automation" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
     When I click on "View Program Details" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
-    Then I see "Automation testing" inside page block details
+    Then I see "Automation Testing" inside page block details
 
   @38847    @confirmationMessageBoxPopupForSendToOwnerApprovalDecisionAction-Programs @smoke
   Scenario: Setup confirmation message inside confirmation message box for send back approval decision action using Approval Decision Action from configuration and validating it in pending tasks approval decision
@@ -495,11 +507,12 @@ Feature: Approval Process Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -522,11 +535,12 @@ Feature: Approval Process Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -551,24 +565,23 @@ Feature: Approval Process Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
-    When I select "Approve" from approval decision panel
-    When I enter Approval comment
-    And I click submit
-    When I re-login as "Automation" user on "QA" portal
+    And I click on "Approve" on the approval decision box
+    When I re-login as "Automation" user on "default" portal
     When I setup my app as "As an Administrator"
     And I navigate to "Operate" tab
     When I navigate to "Email Logs" content inside "Logs" subheader on left panel
-    When I select "Queued Emails" from double headed dropdown inside admin portal
+    And I click toggle button to select "Queued Emails"
     Then I see email is generated with template "Program_Rejected_Email_Template"
 
   @37646    @rejectEmailSentWithApproveTemplateToProgramOwner-Programs
@@ -587,24 +600,23 @@ Feature: Approval Process Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    When I select "Disapprove" from approval decision panel
-    When I enter Approval comment
-    And I click submit
-    When I re-login as "Automation" user on "QA" portal
+    And I click on "Disapprove" on the approval decision box
+    When I re-login as "Automation" user on "default" portal
     When I setup my app as "As an Administrator"
     And I navigate to "Operate" tab
     When I navigate to "Email Logs" content inside "Logs" subheader on left panel
-    When I select "Queued Emails" from double headed dropdown inside admin portal
+    And I click toggle button to select "Queued Emails"
     Then I see email is generated with template "Program_Approved_Email_Template"
 
   @37656    @reassignedEmailSentWithApproveTemplateToProgramOwner-Programs
@@ -622,11 +634,12 @@ Feature: Approval Process Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -636,11 +649,11 @@ Feature: Approval Process Component Scenarios
     When I click select dropdown
     When I select specific user "Allen PM"
     And I click submit
-    When I re-login as "Automation" user on "QA" portal
+    When I re-login as "Automation" user on "default" portal
     When I setup my app as "As an Administrator"
     And I navigate to "Operate" tab
     When I navigate to "Email Logs" content inside "Logs" subheader on left panel
-    When I select "Queued Emails" from double headed dropdown inside admin portal
+    And I click toggle button to select "Queued Emails"
     Then I see email is generated with template "Program_Approved_Email_Template"
 
   @37666    @sendToOwnerEmailSentWithApproveTemplateToProgramOwner-Programs
@@ -658,24 +671,23 @@ Feature: Approval Process Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
-    When I select "Send to Owner" from approval decision panel
-    When I enter Approval comment
-    And I click submit
-    When I re-login as "Automation" user on "QA" portal
+    And I click on "Send to Owner" on the approval decision box
+    When I re-login as "Automation" user on "default" portal
     When I setup my app as "As an Administrator"
     And I navigate to "Operate" tab
     When I navigate to "Email Logs" content inside "Logs" subheader on left panel
-    When I select "Queued Emails" from double headed dropdown inside admin portal
+    And I click toggle button to select "Queued Emails"
     Then I see email is generated with template "Program_Approved_Email_Template"
 
   @37667    @notifyAdditionalPeopleThroughEmailWithApproveTemplateToProgramOwner-Programs
@@ -690,25 +702,23 @@ Feature: Approval Process Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I select "Draft Programs" from double headed dropdown inside admin portal
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
-	When I select "Approve" from approval decision panel
-	When I enter Approval comment
-    And I click submit
-    When I re-login as "Automation" user on "QA" portal
+    And I click on "Approve" on the approval decision box
+    When I re-login as "Automation" user on "default" portal
     When I setup my app as "As an Administrator"
     And I navigate to "Operate" tab
     When I navigate to "Email Logs" content inside "Logs" subheader on left panel
-    When I select "Queued Emails" from double headed dropdown inside admin portal
+    And I click toggle button to select "Queued Emails"
     Then I see email is generated with template "Program_Approved_Email_Template"
 
   @41058    @mandatoryCommentsReqForReassignAction-Programs
@@ -723,11 +733,12 @@ Feature: Approval Process Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -749,27 +760,25 @@ Feature: Approval Process Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
-    When I select "Reassign" from approval decision panel
-    When I click select dropdown
-    When I select specific user "Allen PM"
-    When I enter Approval comment
-    And I click submit
-    When I re-login as "Automation" user on "QA" portal
+    And I click on "Reassign,Allen PM" on the approval decision box
+    When I re-login as "Automation" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
     When I click on "View Program Details" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
-    Then I see "Automation testing" inside page block details
+    Then I see "Automation Testing" inside page block details
 
   @41063    @hideApproveOptionFromHideExpressionJSONField-Programs @smoke
   Scenario: Hiding approve option from configuration and validating its content in pending tasks approval decision
@@ -783,11 +792,12 @@ Feature: Approval Process Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -807,11 +817,12 @@ Feature: Approval Process Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -831,11 +842,12 @@ Feature: Approval Process Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -855,11 +867,12 @@ Feature: Approval Process Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -875,11 +888,12 @@ Feature: Approval Process Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - SA mode only - Not approved - History Tab Scenario"
     When I click on "Edit" icon for "Test program for automation - SA mode only - Not approved - History Tab Scenario" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
-    When I re-login as "Automation-PM" user on "QA" portal
+    When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -890,9 +904,10 @@ Feature: Approval Process Component Scenarios
     When I select specific user "Allen PM"
     When I enter Approval comment
     And I click submit
-    When I re-login as "Automation" user on "QA" portal
+    When I re-login as "Automation" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - SA mode only - Not approved - History Tab Scenario"
     When I click on "View Program Details" icon for "Test program for automation - SA mode only - Not approved - History Tab Scenario" inside table
     When I navigate to "History" sub tab

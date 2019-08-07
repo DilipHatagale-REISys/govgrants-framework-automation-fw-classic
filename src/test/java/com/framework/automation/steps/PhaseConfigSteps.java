@@ -2,119 +2,138 @@ package com.framework.automation.steps;
 
 import com.automation.rei.handlers.GovGrantsHandler;
 import com.framework.automation.pageobject.PhaseConfigPage;
-import io.cucumber.java.en.*;
-import eyethink.automation.bots.controller.Controller;
+import cucumber.api.java.en.*;
 import eyethink.automation.bots.controller.CoreHandlers;
 
 public class PhaseConfigSteps {
-	PhaseConfigPage phaseConfigPage;
+    PhaseConfigPage phaseConfigPage;
 
-	public PhaseConfigSteps(Controller controller, CoreHandlers handler, GovGrantsHandler govgrants) {
-		phaseConfigPage = new PhaseConfigPage(controller, handler, govgrants);
-	}
+    public PhaseConfigSteps(CoreHandlers handler, GovGrantsHandler govgrants) {
+        phaseConfigPage = new PhaseConfigPage(handler, govgrants);
+    }
 
-	@When("^I click on global search All$")
-	public void iClickOnGlobalSearchAll() {
-		phaseConfigPage.clickOnGlobalSearchAll();
-	}
+    @When("^I click on global search All$")
+    public void iClickOnGlobalSearchAll() {
+        phaseConfigPage.clickOnGlobalSearchAll();
+    }
 
-	@When("^I click CustomApp select dropdown$")
-	public void clickCustomAppSelectDropdown() {
-		phaseConfigPage.clickOnCustomAppSelectDropdown();
-	}
+    @When("^I click CustomApp select dropdown$")
+    public void clickCustomAppSelectDropdown() {
+        phaseConfigPage.clickOnCustomAppSelectDropdown();
+    }
 
-	@When("^I click on \"([^\"]*)\"$")
-	public void clickMyWorkSpaceItems(String myWorkspaceItem) {
-		phaseConfigPage.clickOnMyWorkSpaceSpecificItem(myWorkspaceItem);
-	}
+    @When("^I enter details as \"([^\"]*)\"\"([^\"]*)\" on Add New Notes Modal for \"([^\"]*)\"$")
+    public void enterValuesForAddNotesModal(String value1, String value2, String orderType) {
+        phaseConfigPage.enterCompleteFieldValues(value1, value2, orderType);
+    }
 
-	@Then("^I do not see \"([^\"]*)\" phase$")
-	public void assertPhaseNotDisplayed(String phaseName) {
-		phaseConfigPage.assertSpecificPhaseNotDisplayed(phaseName);
-	}
+    @When("^I click on search button for global search$")
+    public void clickPerformSearchOnGlobalSearchBox() {
+        phaseConfigPage.clickOnSearchForGlobalSearchBox();
+    }
 
-	@Then("^I see \"([^\"]*)\" phase$")
-	public void asserPhaseDisplayed(String phaseName) {
-		phaseConfigPage.assertSpecificPhaseDisplayed(phaseName);
-	}
+    @When("^I click on textbox for global search$")
+    public void clickOnGlobalSearchTextBoxBox() {
+        phaseConfigPage.clickOnGlobalSearchTextBox();
+    }
 
-	@Then("^I see \"([^\"]*)\" phase at position \"([^\"]*)\"$")
-	public void i_see_phase_at_position(String phaseName, String sequenceNumber) {
-		phaseConfigPage.assertSequenceOfPhase(phaseName, Integer.parseInt(sequenceNumber));
-	}
+    @Then("^I do not see \"([^\"]*)\" phase$")
+    public void assertPhaseNotDisplayed(String phaseName) {
+        phaseConfigPage.assertSpecificPhaseNotDisplayed(phaseName);
+    }
 
-	@Then("^I see \"([^\"]*)\" charts are displayed$")
-	public void assertNumberOfChartsDisplayed(String numberOfCharts) {
-		phaseConfigPage.assertNumberOfChartsDisplayed(Integer.parseInt(numberOfCharts));
-	}
+    @Then("^I see \"([^\"]*)\" phase$")
+    public void asserPhaseDisplayed(String phaseName) {
+        phaseConfigPage.assertSpecificPhaseDisplayed(phaseName);
+    }
 
-	@Then("^I charts are displayed at \"([^\"]*)\"$")
-	public void assertPostionOfChartsDisplayedAt(String position) {
-		phaseConfigPage.assertPostionOfChartsDisplayed(position);
-	}
+    @Then("^I see \"([^\"]*)\" phase at position \"([^\"]*)\"$")
+    public void i_see_phase_at_position(String phaseName, String sequenceNumber) {
+        phaseConfigPage.assertSequenceOfPhase(phaseName, Integer.parseInt(sequenceNumber));
+    }
 
-	@Then("^I do not see \"([^\"]*)\" in task summary by phase$")
-	public void assertSpecificPhaseNotDisplayedInTaskSummaryByPhase(String phaseName) {
-		phaseConfigPage.assertPhaseNotDisplayedInTaskSummaryByPhase(phaseName);
-	}
+    @Then("^I see \"([^\"]*)\" charts are displayed$")
+    public void assertNumberOfChartsDisplayed(String numberOfCharts) {
+        phaseConfigPage.assertNumberOfChartsDisplayed(Integer.parseInt(numberOfCharts));
+    }
 
-	@Then("^I see book icon as \"([^\"]*)\" tab$")
-	public void i_see_book_icon_as_tab(String phaseName) {
-		phaseConfigPage.assertPhaseBookIconDisplayed(phaseName);
-	}
+    @Then("^I charts are displayed at \"([^\"]*)\"$")
+    public void assertPostionOfChartsDisplayedAt(String position) {
+        phaseConfigPage.assertPostionOfChartsDisplayed(position);
+    }
 
-	@Then("^I see \"([^\"]*)\" tab is highlighted for particular program$")
-	public void assertHighlightedPhaseTab(String phaseName) {
-		phaseConfigPage.assertTabHighlightedInsideNewTab(phaseName);
-	}
+    @Then("^I do not see \"([^\"]*)\" in task summary by phase$")
+    public void assertSpecificPhaseNotDisplayedInTaskSummaryByPhase(String phaseName) {
+        phaseConfigPage.assertPhaseNotDisplayedInTaskSummaryByPhase(phaseName);
+    }
 
-	@Then("^I see \"([^\"]*)\" in search dropdown$")
-	public void assertGlobalSearchDropdownItems(String searchName) {
-		phaseConfigPage.assertChangedLabelOfSearchedItemsInGlobalSearchAll(searchName);
-	}
+    @Then("^I see book icon as \"([^\"]*)\" tab$")
+    public void i_see_book_icon_as_tab(String phaseName) {
+        phaseConfigPage.assertPhaseBookIconDisplayed(phaseName);
+    }
 
-	@Then("^I see \"([^\"]*)\" is not displayed in global search All dropdown$")
-	public void assertItemsNotDisplayedInGlobalSearchAllDropdown(String searchItem) {
-		phaseConfigPage.assertSearchedItemIsNotDisplayedInGlobalSearchAll(searchItem);
-	}
+    @Then("^I see \"([^\"]*)\" tab is highlighted for particular program$")
+    public void assertHighlightedPhaseTab(String phaseName) {
+        phaseConfigPage.assertTabHighlightedInsideNewTab(phaseName);
+    }
 
-	@Then("^I see \"([^\"]*)\" records are not present in Recently Viewed link in Sidebar$")
-	public void iSeeRecordsAreNotPresentInRecentlyViewedLinkInSidebar(String acronym) {
-		phaseConfigPage.assertThatObjectIsNotShowingInRecentlyViewedSideBarOption(acronym);
-	}
+    @Then("^I see \"([^\"]*)\" in search dropdown$")
+    public void assertGlobalSearchDropdownItems(String searchName) {
+        phaseConfigPage.assertChangedLabelOfSearchedItemsInGlobalSearchAll(searchName);
+    }
 
-	@Then("^I see \"([^\"]*)\" inside CustomApp dropDown$")
-	public void assertCustomAppInsideDropdownDisplayed(String dropDownValue) {
-		phaseConfigPage.assertCustomAppValueInsideDropdownDisplayed(dropDownValue);
-	}
-	
-	@Then("^I see \"([^\"]*)\" inside CustomApp dropDown not displayed$")
-	public void assertCustomAppInsideDropdownNotDisplayed(String dropDownValue) {
-		phaseConfigPage.assertCustomAppValueInsideDropdownNotDisplayed(dropDownValue);
-	}
-	
-	@Then("^I see \"([^\"]*)\" on complete page for custom App as a Grantor$")
-	public void assertContrastColorForAsaGrantorCustomApp(String contrastValue) {
-		phaseConfigPage.assertContrastColourForCustomAppAsaGrantor(contrastValue);
-	}
+    @Then("^I see \"([^\"]*)\" is not displayed in global search All dropdown$")
+    public void assertItemsNotDisplayedInGlobalSearchAllDropdown(String searchItem) {
+        phaseConfigPage.assertSearchedItemIsNotDisplayedInGlobalSearchAll(searchItem);
+    }
 
-	@Then("^I see complete custom app is not displayed$")
-	public void assertCustomAppIsNotDisplayed() {
-		phaseConfigPage.assertCustomAppOnPage();
-	}
+    @Then("^I see \"([^\"]*)\" records are not present in Recently Viewed link in Sidebar$")
+    public void iSeeRecordsAreNotPresentInRecentlyViewedLinkInSidebar(String acronym) {
+        phaseConfigPage.assertThatObjectIsNotShowingInRecentlyViewedSideBarOption(acronym);
+    }
 
-	@Then("^I see \"([^\"]*)\" option of custom App is at position \"([^\"]*)\"$")
-	public void assertSequenceOfCustomAppOptions(String option, String sequenceNumber) {
-		phaseConfigPage.assertSequenceOfSpecificOptionsOfCustomApp(option, Integer.parseInt(sequenceNumber));
-	}
-	
-	@Then("^I see Program record in \"([^\"]*)\" color inside my workspace$")
-	public void assertColorChangeInsideMyWorkSpace(String colorName) {
-		phaseConfigPage.assertProgramColourInsideCalenderDisplayed(colorName);
-	}
+    @Then("^I see \"([^\"]*)\" inside CustomApp dropDown$")
+    public void assertCustomAppInsideDropdownDisplayed(String dropDownValue) {
+        phaseConfigPage.assertCustomAppValueInsideDropdownDisplayed(dropDownValue);
+    }
 
-	@Then("^I see all programs inside calender is not displayed$")
-	public void assertProgramsInsideCalenderDisplayed() {
-		phaseConfigPage.assertProgramIsDisplayedInsideCalender();
-	}
+    @Then("^I see \"([^\"]*)\" inside CustomApp dropDown not displayed$")
+    public void assertCustomAppInsideDropdownNotDisplayed(String dropDownValue) {
+        phaseConfigPage.assertCustomAppValueInsideDropdownNotDisplayed(dropDownValue);
+    }
+
+    @Then("^I see \"([^\"]*)\" on complete page for custom App as a Grantor$")
+    public void assertContrastColorForAsaGrantorCustomApp(String contrastValue) {
+        phaseConfigPage.assertContrastColourForCustomAppAsaGrantor(contrastValue);
+    }
+
+    @Then("^I see complete custom app is not displayed$")
+    public void assertCustomAppIsNotDisplayed() {
+        phaseConfigPage.assertCustomAppOnPage();
+    }
+
+    @Then("^I see \"([^\"]*)\" option of custom App is at position \"([^\"]*)\"$")
+    public void assertSequenceOfCustomAppOptions(String option, String sequenceNumber) {
+        phaseConfigPage.assertSequenceOfSpecificOptionsOfCustomApp(option, Integer.parseInt(sequenceNumber));
+    }
+
+    @Then("^I see Program record in \"([^\"]*)\" color inside my workspace$")
+    public void assertColorChangeInsideMyWorkSpace(String colorName) {
+        phaseConfigPage.assertProgramColourInsideCalenderDisplayed(colorName);
+    }
+
+    @Then("^I see all programs inside calender is not displayed$")
+    public void assertProgramsInsideCalenderDisplayed() {
+        phaseConfigPage.assertProgramIsDisplayedInsideCalender();
+    }
+
+    @Then("^I see sticky Notes text as \"([^\"]*)\"$")
+    public void assertStickyNotesTextIsDisplayed(String text) {
+        phaseConfigPage.assertStickyNotesText(text);
+    }
+
+    @Then("^I see alert popup box$")
+    public void assertPopUpBoxForGlobalSearch() {
+        phaseConfigPage.assertAlertPopUpBoxDisplayed();
+    }
 }

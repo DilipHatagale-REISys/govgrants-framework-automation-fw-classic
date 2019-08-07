@@ -110,4 +110,3 @@ Feature: Charts Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "$" for chart "FundingSourcesbyTotalAmount"
-	

@@ -2,15 +2,14 @@ package com.framework.automation.steps;
 
 import com.automation.rei.handlers.GovGrantsHandler;
 import com.framework.automation.pageobject.ChartsPage;
-import io.cucumber.java.en.*;
-import eyethink.automation.bots.controller.Controller;
+import cucumber.api.java.en.*;
 import eyethink.automation.bots.controller.CoreHandlers;
 
 public class ChartsSteps {
 	ChartsPage chartsPage;
 
-	public ChartsSteps(Controller controller, CoreHandlers handler, GovGrantsHandler govgrants) {
-		chartsPage = new ChartsPage(controller, handler, govgrants);
+	public ChartsSteps(CoreHandlers handler, GovGrantsHandler govgrants) {
+		chartsPage = new ChartsPage(handler, govgrants);
 	}
 
 	@When("^I click on menu icon of chart \"([^\"]*)\"$")
@@ -41,5 +40,15 @@ public class ChartsSteps {
 	@Then("^I see \"([^\"]*)\" for chart \"([^\"]*)\"$")
 	public void assertSpecificTextForChart(String label, String chartName) {
 		chartsPage.assertCorrectTextDisplayed(label, chartName);
+	}
+
+	@Then("^I see \"([^\"]*)\" for chart \"([^\"]*)\" comes only once$")
+	public void assertSpecificTextRenderedOnceForChart(String text, String chartName) {
+		chartsPage.assertExpectedTextDisplayedForOnce(text, chartName);
+	}
+
+	@Then("^I see \"([^\"]*)\" charts displayed$")
+	public void assertNoOfCharts(String number) {
+		chartsPage.assertExpectedNoOfChartsDisplayed(Integer.parseInt(number));
 	}
 }
