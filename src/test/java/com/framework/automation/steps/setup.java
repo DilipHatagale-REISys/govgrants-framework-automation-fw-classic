@@ -32,7 +32,7 @@ public class setup {
     public setup(TestSetupController userController, GovGrantsHandler saasLayer) {
         this.userController = userController;
         EyeThink.setRegister(AuthorizedProject.SAAS_GOVGRANTS_GGF);
-        InstanceRecording.record.recordInstance(GovGrantsHandler.class, saasLayer);
+        InstanceRecording.recordInstance(GovGrantsHandler.class, saasLayer);
         if(report == null) {
             this.report = new CSS();
             report.reportConfigWriteUp(System.getProperty("user.dir"),"GovGrants Framework Test Automation");
