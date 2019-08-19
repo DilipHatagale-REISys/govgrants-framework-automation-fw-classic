@@ -21,6 +21,11 @@ public class ChartsSteps {
 		chartsPage.selectAnyItemFromChartsMenu(chartName, valueToSelect);
 	}
 
+	@When("^I navigate to \"([^\"]*)\" content inside \"([^\"]*)\" charts$")
+	public void performClickOnTaskSummaryLinks(String linkName, String chartName) {
+		chartsPage.clickSpecificLinkOnTaskSummary(linkName, chartName);
+	}
+
 	@Then("^I see \"([^\"]*)\" displayed in modal$")
 	public void assertModalTitle(String titleName) {
 		chartsPage.isTitleOfModal(titleName);

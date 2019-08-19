@@ -210,11 +210,6 @@ public class FlexTableSteps {
 		flexTablePage.assertSpecificItemsInsideDropdown(itemName);
 	}
 
-	@Then("^I see \"([^\"]*)\" on page \"([^\"]*)\" of \"([^\"]*)\" pdf file$")
-	public void assertTExtNotDisplayed(String text, String pageNumber, String fileName) {
-		flexTablePage.assertTextDisplayedInPDF(text, Integer.parseInt(pageNumber), fileName);
-	}
-
 	@Then("^I see no \"([^\"]*)\" on page \"([^\"]*)\" of \"([^\"]*)\" pdf file for Block Content$")
 	public void assertTExtNotDisplayedForBlockContent(String text, String pageNumber, String fileName) {
 		flexTablePage.assertTextDisplayedInPDFForBlockContent(text, Integer.parseInt(pageNumber), fileName);

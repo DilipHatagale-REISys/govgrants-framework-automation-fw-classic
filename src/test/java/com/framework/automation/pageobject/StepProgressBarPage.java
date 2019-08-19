@@ -61,13 +61,19 @@ public class StepProgressBarPage extends GovGrantsManager {
     }
 
     /**
+     * assert if expected color of chevron bar is displayed
+     */
+    public void assertExpectedColorOfChevronStatusBar(String colorName, String status) {
+        Assert.assertFalse(isExpectedColorDisplayedAtChevronBarForStaus(colorName, status));
+    }
+
+    /**
      * click on help text inside program information page block
      *
      * @param statusName
      */
     public void getHoveringContentOfStepProgressBar(String statusName) {
-        EyeThink.core().JavaScript().moveToElement(By.xpath("//div[@class='container-fluid']"
-                + "//*[@id='progressBarId']//li//span[contains(text(),'" + statusName + "')]"));
+        EyeThink.core().JavaScript().moveToElement(EyeThink.core().findMyElement().getElement(By.xpath("//div[@class='container-fluid']//*[@id='progressBarId']//li//span[contains(text(),'" + statusName + "')]"), false));
     }
 
     /*********
@@ -126,4 +132,31 @@ public class StepProgressBarPage extends GovGrantsManager {
         }
         return flag;
     }
+
+    /**
+     * @return true if expected changed colour of chevron status bar is displayed
+     */
+    private Boolean isExpectedColorDisplayedAtChevronBarForStaus(String colorName, String status) {
+        boolean flag = false;
+        WebElement chevronBar = EyeThink.core().findMyElement()
+                .getElement(By.xpath("//div[@id='chevronBarId']/ul/li/a[contains(@class,'" + status + "')]"));
+        switch (colorName.toUpperCase()) {
+            case "Red":
+                if (chevronBar.getCssValue("color").contains("255, 255, 255, 1")
+                        || chevronBar.getCssValue("color").contains("rgb(255, 255, 255)")
+                        || chevronBar.getAttribute("style").contains("rgb(2255, 255, 255)")) {
+                    flag = true;
+                }
+                break;
+            case "BLUE":
+                if (chevronBar.getCssValue("color").contains("rgba(11, 11, 160, 1)")
+                        || chevronBar.getCssValue("color").contains("rgba(11, 11, 160)")
+                        || chevronBar.getAttribute("style").contains("rgb(11, 11, 160)")) {
+                    flag = true;
+                }
+                break;
+        }
+        return flag;
+    }
+
 }

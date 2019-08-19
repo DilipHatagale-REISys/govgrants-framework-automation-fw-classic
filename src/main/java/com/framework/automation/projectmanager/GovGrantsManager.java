@@ -327,6 +327,16 @@ public class GovGrantsManager extends ProjectWebServices {
     }
 
     /**
+     * click on specific link of Task Summary  chart
+     *
+     * @param linkName
+     * @param chartName
+     */
+    public void clickSpecificLinkOnTaskSummary(String linkName, String chartName) {
+        EyeThink.saas().charts().clickOnExpectedLinkInsideTaskSummary(linkName,chartName);
+    }
+
+    /**
      * check title of any modal
      *
      * @param titleName
@@ -335,40 +345,6 @@ public class GovGrantsManager extends ProjectWebServices {
     public boolean isTitleOfModal(String titleName) {
         return EyeThink.core().findMyElement().getElement(By.xpath("//*[@class='modal-title ng-binding'][text()='" + titleName + "']"))
                 .isDisplayed();
-    }
-
-    /**
-     * save file using robot class
-     *
-     * @throws AWTException
-     */
-    public void saveFile() throws AWTException {
-        EyeThink.core().switchTo().switchToWindowHandler(1);
-        EyeThink.core().WaitFor().makeThreadSleep(20000);
-        EyeThink.core().RobotActions().ctrl_Save();
-        EyeThink.core().WaitFor().makeThreadSleep(2000);
-        EyeThink.core().RobotActions().Robot_Enter();
-        EyeThink.core().WaitFor().makeThreadSleep(20000);
-        EyeThink.core().RobotActions().Robot_Escape();
-    }
-
-    /**
-     * Rename the file and change it from temp to pdf. Read from pdf file
-     *
-     * @return
-     */
-    public String readPDF(int pageNumber, String fileName) {
-        File file = new File(System.getProperty("user.dir") + "\\target");
-        File[] directory = EyeThink.core().file().getCompleteFilesListOnLocalDirectory(file.getAbsolutePath());
-        for (File files : directory) {
-            if (files.getName().endsWith(".tmp")) {
-                new File(files.getAbsolutePath().toString())
-                        .renameTo(new File(file.getAbsolutePath() + "\\" + fileName + ".pdf"));
-                break;
-            }
-        }
-        return EyeThink.core().file().adobeReader().readFromAdobeFileOnLocalAtUserDirectory(
-                file.getAbsolutePath().toString() + "\\" + fileName + ".pdf", pageNumber);
     }
 
     /**

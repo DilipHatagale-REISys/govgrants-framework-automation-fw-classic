@@ -84,13 +84,6 @@ public class FormPage extends GovGrantsManager {
     /*********
      * "Local Methods with complete functionality - private"
      *****************/
-    public void assertTextNotDisplayedInPDF(String text, int pageNumber, String fileName) {
-        Assert.assertTrue(isTextNotDisplayedInFile(text, pageNumber, fileName));
-    }
-
-    /*********
-     * "Local Methods with complete functionality - private"
-     *****************/
 
     /**
      * validate if options are not displayed
@@ -168,15 +161,7 @@ public class FormPage extends GovGrantsManager {
         return EyeThink.core().findMyElement().getElement(By.xpath(("//div[@id='FormComponent']//div/table/tbody/tr//td//a[@title='" + Item + "']")));
     }
 
-    private boolean isTextNotDisplayedInFile(String text, int pageNumber, String fileName) {
-        boolean flag = true;
-        if (readPDF(pageNumber, fileName).contains(text)) {
-            flag = false;
-        }
-        return flag;
-    }
-
-    /**
+   /**
      * check all page layout action item inside form detail page
      *
      * @param actionButtonName

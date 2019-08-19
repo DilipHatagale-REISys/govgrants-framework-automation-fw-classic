@@ -6,7 +6,10 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class PhaseConfigPage extends GovGrantsManager {
     public final By customAppDropdown;
@@ -168,6 +171,13 @@ public class PhaseConfigPage extends GovGrantsManager {
     }
 
     /**
+     * Assert true if only program related records displayed inside table
+     */
+    public void assertTableContainsOnlyProgramRecords(String recordIdText) {
+        Assert.assertTrue(isProgramRecordsPresentInsideTable(recordIdText));
+    }
+
+    /**
      * assert if custom App is displayed inside custom app dropdown list
      *
      * @param dropDownValue
@@ -253,8 +263,22 @@ public class PhaseConfigPage extends GovGrantsManager {
     /**
      * assert sticky notes text
      */
-    public void assertStickyNotesText(String text) {
-        Assert.assertFalse(isTextPresentOnStickyNote(text));
+    public void assertStickyNotesText(String stickyTitle, String text) {
+        Assert.assertTrue(isTextPresentOnStickyNote(stickyTitle, text));
+    }
+
+    /**
+     * assert sticky notes text
+     */
+    public void assertStickyNotesTextNotDisplayed(String stickyTitle, String text) {
+        Assert.assertFalse(isTextPresentOnStickyNote(stickyTitle, text));
+    }
+
+    /**
+     * assert sticky notes date
+     */
+    public void assertStickyNotesCurrentDate() {
+        Assert.assertTrue(isCurrentDateDisplayedOnStickyNote());
     }
 
     /**
@@ -263,6 +287,13 @@ public class PhaseConfigPage extends GovGrantsManager {
     public void assertAlertPopUpBoxDisplayed() {
 
         Assert.assertFalse(EyeThink.core().switchTo().popupPresent());
+    }
+
+    /**
+     * assert govgrants logo and name
+     */
+    public void assertGovGrantsLogoAndNAme(String logo, String logoName) {
+        Assert.assertTrue(isGovGrantsLogoAndNameDisplayedOnPage(logo, logoName));
     }
 
     /********* "Local Methods with complete functionality - private" *********/
@@ -524,11 +555,100 @@ public class PhaseConfigPage extends GovGrantsManager {
     /**
      * @return true if expected text is displayed on sticky note
      */
-    private Boolean isTextPresentOnStickyNote(String text) {
+    private Boolean isTextPresentOnStickyNote(String stickyTitle, String text) {
         boolean flag = false;
-        if (EyeThink.core().findMyElement().getElement(By.xpath("//a//input/following-sibling::textarea")).getText().equalsIgnoreCase(text)) {
+        try {
+            if (EyeThink.core().findMyElement().getElement(By.xpath("//a[contains(@aria-label,'" + stickyTitle + "')]/textarea")).getAttribute("value").equalsIgnoreCase(text)) {
+                flag = true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return flag;
+    }
+
+    /**
+     * @return true if expected current date is displayed on sticky note
+     */
+    private Boolean isCurrentDateDisplayedOnStickyNote() {
+        WebElement stickyDate = EyeThink.core().findMyElement().getElement(By.xpath("//div[contains(@class,'dateFieldNotes ng-binding')]"));
+        String sDate = stickyDate.getText().split(" ")[0];
+        String currentDate = EyeThink.core().get().getCurrentDate_MMDDYYYY();
+        boolean flag = false;
+        if (sDate.equals(currentDate)) {
             flag = true;
         }
         return flag;
     }
+
+    /**
+     * return true if product logo and its name is displayed
+     *
+     * @param logo
+     * @param logoName
+     */
+    private boolean isGovGrantsLogoAndNameDisplayedOnPage(String logo, String logoName) {
+        boolean flag = false;
+        try {
+            if (EyeThink.core().findMyElement().getElement(By.xpath("//img[@alt='" + logo + "']/../following-sibling::span[text()='" + logoName + "']")).isDisplayed())
+                ;
+            flag = true;
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    /**
+     * Boolean true if Program related records present only inside pending tasks table
+     *
+     * @return
+     */
+    private boolean isProgramRecordsPresentInsideTable(String recordIdText) {
+        List<WebElement> recordList = EyeThink.core().findMyElement().getElements(By.xpath("//table/tbody/tr//td//span[contains(text(),'" + recordIdText + "')]"));
+        boolean flag = false;
+        try {
+            if (recordList.size() > 0) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+
+    public void assertTaskCount(String tabName, String tableID) {
+        String finalCount = EyeThink.core().findMyElement().getElement(By.xpath("//div[@class='container-fluid']//li//span[text()='" + tabName + "']/../..//span[contains(@ng-bind,'taskCount')]")).getText();
+        Assert.assertEquals(findTaskCount(tabName, tableID), finalCount);
+    }
+
+    /**
+     * @param tabName - Main tab name
+     * @param tableID - pending task table ID
+     * @return - count of total records available in pending task
+     * @author - Mahadev.hanme
+     */
+    public String findTaskCount(String tabName, String tableID) {
+        EyeThink.saas().mainPage().clickMainMenuBar(tabName);
+        String pendingTaskCount = "";
+        EyeThink.saas().sideBar().clickSideBarContent("My Tasks", "Pending");
+        try {
+            pendingTaskCount = totalRecordsCount(tableID);
+            Pattern p = Pattern.compile("\\d+");
+            Matcher m = p.matcher(pendingTaskCount);
+            if (m.find())
+                pendingTaskCount = m.group(0);
+        } catch (Exception e) {
+            pendingTaskCount = "0";
+        }
+
+        EyeThink.saas().mainPage().clickMainMenuBar("HOME");
+        return pendingTaskCount;
+    }
+
+    /* handles to veify total records present in flex table */
+    public String totalRecordsCount(String tableId) {
+        return (EyeThink.core().findMyElement().getElement(By.xpath("//div[@id='" + tableId + "']//following-sibling::span[contains(text(),'Total Records')]"))).getText();
+    }
+
+
 }

@@ -464,7 +464,7 @@ Feature: Page Layout Component Scenarios
     When I click on "Menu" button inside detail page
     And I select "Download As PDF" from dropdown
     And I download the file
-    Then I do not see "Program Information" on page "1" of "govgrants" pdf file
+    Then I cannot see "Program Information" on page "1" of "govgrants" pdf file
 
   @36037    @hideForContextFieldAtPageBlock-gPlanning @smoke
   Scenario: Hide program information page block from config and validating it at program detail page
@@ -1057,7 +1057,7 @@ Feature: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
-    When I click search icon for owner organization and swithing to frame "iframeCustomLookupModalId"
+    When I click search icon for "Organization Lookup (New Window)" lookup modal and swithing to frame "iframeCustomLookupModalId"
     Then I see "Code" in table header on lookup Modal
 
   @36172    @lookupFilterCriteriaFieldAtPAgeBlockDetail-gPlanning @smoke
@@ -1076,7 +1076,7 @@ Feature: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
-    When I click search icon for owner organization and swithing to frame "iframeCustomLookupModalId"
+    When I click search icon for "Organization Lookup (New Window)" lookup modal and swithing to frame "iframeCustomLookupModalId"
     Then I see "Created" status in lookup modal table
 
     Examples:

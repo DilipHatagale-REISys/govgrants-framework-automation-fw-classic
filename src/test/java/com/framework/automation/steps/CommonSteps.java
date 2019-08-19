@@ -3,6 +3,7 @@ package com.framework.automation.steps;
 import com.framework.automation.projectmanager.GovGrantsManager;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import eyethink.automation.bots.Register.EyeThink;
 import org.springframework.context.annotation.Description;
 
 public class CommonSteps {
@@ -16,11 +17,6 @@ public class CommonSteps {
     @When("^I access the \"([^\"]*)\" for \"([^\"]*)\" app$")
     public void accessthehomepage(String tabName, String appName) {
         govGrantsManager.clickAdminNavBar(tabName, appName);
-    }
-
-    @When("^I download the file$")
-    public void saveTheFileToProjectRoot() throws Throwable {
-        govGrantsManager.saveFile();
     }
 
     @Then("^I see page title \"([^\"]*)\"$")

@@ -190,6 +190,18 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * assert navigation hold on logo disappeared and modal closes properly
+     */
+    public void assertHoldOnLogoDisappeared() {
+        waitForNavigationLogo();
+        try {
+            Assert.assertFalse(EyeThink.core().findMyElement().getElement(navigationLogo).isDisplayed());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
      * assert true if header overview tab inside detail page is displayed
      */
     public void assertHeaderOverviewTabDisplayed() {
@@ -411,7 +423,7 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public void getHelpTextAtPageBlock(String blockTitle) {
         EyeThink.core().JavaScript().moveToElement(EyeThink.core().findMyElement().getElement(
-                By.xpath("//h3//a[contains(text(),'" + blockTitle + "')]/..//span[contains(@class,'fa-info')]")));
+                By.xpath("//h3//a[contains(text(),'" + blockTitle + "')]/..//span[contains(@class,'fa-info')]"),false));
     }
 
     /**
@@ -421,7 +433,7 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public void getHelpTextAtPageBlockDetail(String pageBlockDetailTitle) {
         EyeThink.core().JavaScript().moveToElement(EyeThink.core().findMyElement().getElement(By.xpath(
-                "//span[contains(text(),'" + pageBlockDetailTitle + "')]/..//span[contains(@class,'fa-info')]")));
+                "//span[contains(text(),'" + pageBlockDetailTitle + "')]/..//span[contains(@class,'fa-info')]"),false));
     }
 
     /**
@@ -473,7 +485,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * @return
      */
     public By getTableColumnOfLookupModal(String columnValueName) {
-        return By.xpath("//td//span[@title='" + columnValueName + "' or text()='" + columnValueName + "']");
+        return By.xpath("//td//span/a[@title='" + columnValueName + "' or text()='" + columnValueName + "']");
     }
 
     /**
@@ -520,11 +532,14 @@ public class PageLayoutPage extends GovGrantsManager {
      *
      * @param frameId
      */
-    public void handleLookUpSearchWithFrame(String frameId) {
-        EyeThink.core().WaitFor().magicWait(lookupSearchButton);
-        EyeThink.core().textInput().clearText(EyeThink.core().findMyElement().getElement(lookupSearchInputBox));
-        EyeThink.core().JavaScript().clickByJS(lookupSearchButton);
-        EyeThink.core().switchTo().switchToFrame(By.xpath("//iframe[@id='" + frameId + "']"));
+    public void handleLookUpSearchWithFrame(String lookupText, String frameId) {
+        By lookupButton = By.xpath("//img[@title='" + lookupText + "']");
+        By lookupInputBox = By.xpath("//img[@title='" + lookupText + "']/../../input[@type='text']");
+        By lookupFrame = By.xpath("//iframe[@id='" + frameId + "']");
+        EyeThink.core().WaitFor().magicWait(lookupButton);
+        EyeThink.core().textInput().clearText(lookupInputBox);
+        EyeThink.core().JavaScript().clickByJS(lookupButton);
+        EyeThink.core().switchTo().switchToFrame(lookupFrame);
     }
 
     /**

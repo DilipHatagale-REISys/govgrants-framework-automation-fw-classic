@@ -126,13 +126,39 @@ public class PhaseConfigSteps {
         phaseConfigPage.assertProgramIsDisplayedInsideCalender();
     }
 
-    @Then("^I see sticky Notes text as \"([^\"]*)\"$")
-    public void assertStickyNotesTextIsDisplayed(String text) {
-        phaseConfigPage.assertStickyNotesText(text);
+    @Then("^I see sticky Notes \"([^\"]*)\" contains text as \"([^\"]*)\"$")
+    public void assertStickyNotesTextIsDisplayed(String stickyTitle, String text) {
+        phaseConfigPage.assertStickyNotesText(stickyTitle, text);
+    }
+
+    @Then("^I donot see sticky Notes \"([^\"]*)\" contains text as \"([^\"]*)\"$")
+    public void assertStickyNotesTextIsNotDisplayed(String stickyTitle, String text) {
+        phaseConfigPage.assertStickyNotesTextNotDisplayed(stickyTitle, text);
     }
 
     @Then("^I see alert popup box$")
     public void assertPopUpBoxForGlobalSearch() {
         phaseConfigPage.assertAlertPopUpBoxDisplayed();
     }
+
+    @Then("^I see current date on sticky Notes$")
+    public void assertStickyNotesDateIsDiplayed() {
+        phaseConfigPage.assertStickyNotesCurrentDate();
+    }
+
+    @Then("^I see govgrants logo \"([^\"]*)\" is displayed with name \"([^\"]*)\"$")
+    public void assertProductLogoWithNameIsDiplayed(String logo, String logoName) {
+        phaseConfigPage.assertGovGrantsLogoAndNAme(logo, logoName);
+    }
+
+    @Then("^I see \"([^\"]*)\" records are present in pending task table$")
+    public void assertExpectedRecordListPresentInPendingTasksTable(String recordIdText) {
+        phaseConfigPage.assertTableContainsOnlyProgramRecords(recordIdText);
+    }
+
+    @Then("^I see task count for \"([^\"]*)\" phase with the total records of flex table id \"([^\"]*)\"$")
+    public void assetTaskCountForPhaseWithTheTotalRecordsOfFlexTableId(String phaseName, String tableID) {
+        phaseConfigPage.assertTaskCount(phaseName,tableID);
+    }
+
 }

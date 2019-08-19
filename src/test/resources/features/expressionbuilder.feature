@@ -58,8 +58,7 @@ Feature: Expression Builder Component Scenarios
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
     Then I see "Create" button inside "Draft Announcements" flex table not displayed
-    When I re-login as "Automation" user on "default" portal
-    When I setup my app as "As a Grantor"
+    When I re-login to "As a Grantor" app as "Automation" user on "default" portal
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
     Then I see "Create" button inside "Draft Announcements" flex table not displayed

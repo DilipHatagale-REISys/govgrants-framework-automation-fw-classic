@@ -201,7 +201,7 @@ public class FlexTablePage extends GovGrantsManager {
     public void getHelpTextAtDraftProgramFlexTable(String blockTitle) {
         EyeThink.core().JavaScript().moveToElement(EyeThink.core().findMyElement().getElement(By.xpath("//div[contains(@class,'panel-title')]//div[text()='" + blockTitle
                 + "']/../..//a[@id='Programstooltip']/span[contains(@class,'fa-info')]|//div/a[@title='"
-                + blockTitle + "']/..//span[contains(@class,'fa-info')]")));
+                + blockTitle + "']/..//span[contains(@class,'fa-info')]"),false));
     }
 
     /**
@@ -243,7 +243,7 @@ public class FlexTablePage extends GovGrantsManager {
     public void getHelpTextAtFlexTableSpecificColumn(String columnTitle) {
         EyeThink.core().JavaScript().moveToElement(EyeThink.core().findMyElement().getElement(By.xpath("//th//span[@title='" + columnTitle + "' or text()='" + columnTitle
                 + "']/../../following-sibling::span//span[contains(@class,'fa-info')]|//th//span[@title='"
-                + columnTitle + "' or text()='" + columnTitle + "']/..//span[contains(@class,'fa-info')]")));
+                + columnTitle + "' or text()='" + columnTitle + "']/..//span[contains(@class,'fa-info')]"),false));
     }
 
     /**
@@ -364,13 +364,6 @@ public class FlexTablePage extends GovGrantsManager {
      */
     public void assertSpecificItemsInsideDropdown(String itemName) {
         Assert.assertFalse(isValuePresentInsideDropDown(itemName));
-    }
-
-    /**
-     * assert if specified name is displayed inside downloaded pdf file
-     */
-    public void assertTextDisplayedInPDF(String text, int pageNumber, String fileName) {
-        Assert.assertFalse(isTextNotDisplayedInFile(text, pageNumber, fileName));
     }
 
     /**
@@ -882,9 +875,9 @@ public class FlexTablePage extends GovGrantsManager {
         return flag;
     }
 
-    private boolean isTextNotDisplayedInFile(String text, int pageNumber, String fileName) {
+   private boolean isTextNotDisplayedInFile(String text, int pageNumber, String fileName) {
         boolean flag = true;
-        if (readPDF(pageNumber, fileName).contains(text)) {
+        if (EyeThink.core().file().adobeReader().readFromAdobeFileFromResources(fileName,pageNumber).contains(text)){
             EyeThink.core().report().write(LogLevel.PROJECT_LAYER_INFO,"validated text inside Downloaded pdf file");
             flag = false;
         }
