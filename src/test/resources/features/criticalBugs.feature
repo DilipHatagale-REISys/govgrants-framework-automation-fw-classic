@@ -46,7 +46,7 @@ Feature: Logged Issues Scenarios
     When I navigate to "Attachments" sub tab
     When I click on "Edit" icon for "Program Artifacts" inside table
     When I enter values "Test Automation" into textarea description field for Edit Attachment
-    And I switch to Parent iframe
+    When I close modal by clicking the top right x button
     Then I see "Test Automation" has been added in "Attachments" flex table
 
   @54847    @validateAttachmentDeleteActionWorkingOrNot
@@ -128,7 +128,7 @@ Feature: Logged Issues Scenarios
     When I navigate to "Attachments" sub tab
     When I click on "Delete" icon for "Success message on second tab" inside table
     When I close alertbox
-    When I upload attachment "Attachment Testing.pdf" of type "Program Artifacts" and move on second tab
+    When I upload attachment "AttachmentTesting.pdf" of type "Program Artifacts" and move on second tab
     Then I cannot see the following messages is not displayed in the page details contains:
       | Attachment added Successfully. |
 
@@ -333,7 +333,7 @@ Feature: Logged Issues Scenarios
       | Account View ~ As a Grantee |
 
   @56394     @verifyActionsButtonNotDisplayedUnderFormsAttachmentBlockAtPreviewPage @check
-  Scenario: validate Budget preference should be disabled after selecting Multiple Service Area as NO
+  Scenario: validate Add button should be displayed on at attachment page block at forms preview page
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
@@ -472,11 +472,11 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I click on "My_Workspace_Notes"
-    When I delete stickey notes by clicking on "x"
+    When I delete specific Sticky Notes with title "Notes Title" on clicking "x"
     When I click on user notes content with icon name "fa fa-plus"
     When I enter details as "<titleValue>""<descriptionValue>" on Add New Notes Modal for ""
     When I click modal button "Save and Close"
-    Then I see sticky Notes text as "<descriptionValue>"
+    Then I see sticky Notes "Notes Title" contains text as "<descriptionValue>"
 
     Examples:
       | descriptionValue                                                                                                                                                                                    | titleValue  |
@@ -570,7 +570,7 @@ Feature: Logged Issues Scenarios
     Then I see "Edit" icon for "Data visibility program" is not displayed inside flex table
 
   @56416    @snapShotErrorMessageShouldPopulateProperlyAtGranteePage
-  Scenario Outline: validate flex table is refreshing or not from menu option Refresh in flex table of programs-planning
+  Scenario Outline: validate confirmation message for take snapshot is coming properly.
     When I login as "Automation" user
     When I setup my app as "As a Grantee"
     And I navigate to "Opportunities" tab
@@ -672,7 +672,7 @@ Feature: Logged Issues Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantee"
     And I navigate to "Grants" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Draft Grants"
     When I perform quick search for "Silvio O. Conte Centers for Basic Neuroscience or Translational Mental Health Research (P50 Clinical Trial Optional)"
     When I click on "View" icon for "Silvio O. Conte Centers for Basic Neuroscience or Translational Mental Health Research (P50 Clinical Trial Optional)" inside table
     When I navigate to "Awards" sub tab
@@ -692,3 +692,215 @@ Feature: Logged Issues Scenarios
     And I select "Download as PDF" from dropdown
     And I download the file
     Then I see "Opportunity Overview" on page "1" of "govgrants" pdf file
+
+  @57265  @dateShouldDisplayeOnStickyNotesUnderMyWorkSpaceNotes
+  Scenario Outline: validate current date is displayed on sticky notes
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_Notes"
+    When I delete stickey notes by clicking on "x"
+    When I click on user notes content with icon name "fa fa-plus"
+    When I enter details as "<titleValue>""<descriptionValue>" on Add New Notes Modal for ""
+    When I click modal button "Save and Close"
+    Then I see current date on sticky Notes
+
+    Examples:
+      | descriptionValue                                                                                                                                                                                    | titleValue  |
+      | Testing purpose Notes 123 243&^%   Testing purpose Notes 123 243&^%Testing purpose Notes 123 243&^%Testing purpose Notes 123 243&^%Testing purpose Notes 123 243&^%Testing purpose Notes 123 243&^% | Notes Title |
+
+  @57249    @PlanningPhaseShouldBeDisplayedInHighlightedMode
+  Scenario: validate planning phase is displayed in highlighted Mode
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I perform quick search for "Test Announcement For Automation"
+    When I click on "View" icon for "Test Announcement For Automation" inside table
+    When I click "program__c" lookup link
+    Then I see "Planning" tab is highlighted for particular program
+
+  @57156    @validateColorOfChevronBarForRejectedStatus
+  Scenario: Validating rejected program status is in salmon color inside chevron staus bar
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField                                                               | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Program               | Status    | Created       | Test program for automation - SA mode only - Not approved - History Tab Scenario |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Test program for automation - SA mode only - Not approved - History Tab Scenario"
+    When I click on "Edit" icon for "Test program for automation - SA mode only - Not approved - History Tab Scenario" inside table
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
+    When I re-login as "Automation-PM" user on "default" portal
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Test program for automation - SA mode only - Not approved - History Tab Scenario"
+    When I click on "Start" icon for "Test program for automation - SA mode only - Not approved - History Tab Scenario" inside table
+    When I select "Disapprove" from approval decision panel
+    When I enter Approval comment
+    And I click submit
+    When I navigate to "History" sub tab
+    Then I see chevron bar is in "Red" color for "rejected" status
+
+  @57148    @validateGoveGrantLogoAndNameDisplayedProperly
+  Scenario: validate govgrants logo and name is displayed properly on UI
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see govgrants logo "GovGrants Logo expanded" is displayed with name "Enterprise Grants Management System"
+
+  @57143    @pdfFileShouldGetDownloadedProperlyForFundingAccount @checkFileNotGettingDownloaded
+  Scenario: validate downloaded pdf file should get downloaded properly with content of funding account
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I click on top right button "Associate" in flex table with id "ProgramFundingAccount"
+    When I click on "Menu" in the page details
+    And I select "Download as PDF" from parallel lines dropdown of "Funding Accounts "
+    And I download the file
+    Then I cannot see "Funding Accounts" on page "1" of "govgrants" pdf file
+
+  @56840    @budgetCategoryShouldGetAddedProperly
+  Scenario: validate budget category getting added properly
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I click on "Delete" icon for "SBC-A-209" inside table
+    When I click on top right button "Associate" in flex table with id "ProgramBudgetCategory"
+    When I click "Add" after selection of "SBC-A-209" in the table "SelectBudgetCategory"
+    When I navigate to "Financials" sub tab
+    Then I see that "SBC-A-209" has been added in flextable with Id "ProgramBudgetCategory"
+
+  @56836    @programServiceAreaModalShouldGetClosesProperly
+  Scenario: validate program service area modal getting closed after clicking on close icon on modal
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Log" sub tab
+    When I click on top right button "Associate" in flex table with id "RelatedProgramServiceAreas"
+    When I close modal by clicking the top right x button
+    Then I donot see navigation logo on page
+
+  @56853    @lookupShouldWorkProperlyForPrimaryFundingOrganization
+  Scenario: Validate lookup field is working properly at primary funding organization field
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I perform quick search for "Test Announcement For Automation"
+    When I click on "Edit" icon for "Test Announcement For Automation" inside table
+    When I click search icon for "Awarding Federal Agency Lookup (New Window)" lookup modal and swithing to frame "iframeCustomLookupModalId"
+    Then I see "ty" status in lookup modal table
+
+  @56837    @pdfFileShouldGetDownloadedProperlyForDefaultApplicationReviewStep @check
+  Scenario: validate downloaded pdf file should get downloaded properly with text containing default application review step
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Roles" sub tab
+    When I click on top right parallel lines bar for "Default Application Review Steps"
+    And I select "Download as PDF" from parallel lines dropdown of "Default Application Review Steps"
+    And I download the file
+    Then I see "Default Application Review Steps" on page "1" of "govgrants" pdf file
+
+  @56833    @pdfFileShouldGetDownloadedProperlyForProgramServiceArea @check
+  Scenario: validate downloaded pdf file should get downloaded properly with text containing program servicearea
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Log" sub tab
+    When I click on top right parallel lines bar for "Program Service Areas"
+    And I select "Download as PDF" from parallel lines dropdown of "Program Service Areas"
+    And I download the file
+    Then I see "Program Service Areas" on page "1" of "govgrants" pdf file
+
+  @56479    @pdfFileShouldGetDownloadedProperlyForApplicationBudget
+  Scenario: validate pdf file should get downloaded properly with text containing Application budget
+    When I login as "Automation" user
+    When I setup my app as "As a Grantee"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Draft Applications"
+    When I perform quick search for "APP-HHS-082"
+    When I click on "View" icon for "APP-HHS-082" inside table
+    When I navigate to "Budget" sub tab
+    When I click on top right parallel lines bar for "Application Budget"
+    And I select "Download as PDF" from parallel lines dropdown of "Application Budget"
+    When I pause execution
+    And I download the file
+    Then I see "Application Budget" on page "1" of "govgrants" pdf file
+
+  @56752  @pdfFileShouldGetDownloadedProperlyForTaskSummaryByDueDate @checkwithmenuClick
+  Scenario: validate pdf file getting downloaded properly for Task Summary By Due Date Chart with content My Late Tasks
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Late" content inside "Task Summary By Due Date" charts
+    When I click on top right parallel lines bar for "My Late Tasks"
+    And I select "Download as PDF" from parallel lines dropdown of "My Late Tasks"
+    And I download the file
+    Then I see "My Late Tasks" on page "1" of "govgrants" pdf file
+
+  @56945  @NotesShouldGetDeletedAfterClinkOnAcceptingDeleteConfirmation
+  Scenario Outline: validate Sticky Notes should get deleted properly after accepting action from delete confirmation popup
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_Notes"
+    When I click on user notes content with icon name "fa fa-plus"
+    When I enter details as "<titleValue>""<descriptionValue>" on Add New Notes Modal for ""
+    When I click modal button "Save and Close"
+    When I delete specific Sticky Notes with title "Sticky Notes Title" on clicking "x"
+    Then I donot see sticky Notes "Sticky Notes Title" contains text as "<descriptionValue>"
+
+    Examples:
+      | descriptionValue   | titleValue         |
+      | Automation Testing | Sticky Notes Title |
+
+  @56849  @tableContainsOnlyProgramRelatedRecordsInsidePendingTasks
+  Scenario: validate table inside pending tasks contains only program related records
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Planning" content inside "Task Summary By Phase" charts
+    Then I see "PG" records are present in pending task table
+
+  @56944  @pendingTaskContainSameNoOfRecordAsDisplayedInTaskSummaryByPhase
+  Scenario: validate table inside pending tasks contains only program related records
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see task count for "Announcements" phase with the total records of flex table id "PhasePendingTasks"
+
+  @56403    @queueLookUpModalShouldContainsExpectedUserList
+  Scenario: Validate queue lookup modal contains expected queued related record at roles and responsibilities flex table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Roles" sub tab
+    When I click on top right button "New" in flex table with id "ProgramRolesAndResponsibilities"
+    When I enter value "Queue" into field "fieldUserType__c"
+    When I click search icon for "User Lookup (New Window)" lookup modal and swithing to frame "iframeCustomLookupModalId"
+    Then I see "TmpQueue" status in lookup modal table

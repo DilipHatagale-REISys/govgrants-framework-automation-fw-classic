@@ -23,11 +23,6 @@ public class PageLayoutSteps {
         pageLayoutPage.clickRightHeaderButtonInsideDetailPage(button);
     }
 
-    @When("^I select \"([^\"]*)\" from dropdown$")
-    public void selectFromDropdown(String itemName) {
-        pageLayoutPage.getItemFromTopRightHeaderBars(itemName).click();
-    }
-
     @When("^I click Add button inside attachments page block$")
     public void clickAddButton() {
         pageLayoutPage.clickAddUnderAttachmentsPageBlock();
@@ -38,9 +33,9 @@ public class PageLayoutSteps {
         pageLayoutPage.clickOnTypeDropdown();
     }
 
-    @When("^I click search icon for owner organization and swithing to frame \"([^\"]*)\"$")
-    public void searchLookUpModal(String frameId) {
-        pageLayoutPage.handleLookUpSearchWithFrame(frameId);
+    @When("^I click search icon for \"([^\"]*)\" lookup modal and swithing to frame \"([^\"]*)\"$")
+    public void searchLookUpModal(String lookupText,String frameId) {
+        pageLayoutPage.handleLookUpSearchWithFrame(lookupText, frameId);
     }
 
     @When("^I click search icon for owner organization$")
@@ -298,5 +293,10 @@ public class PageLayoutSteps {
     @Then("^I see \"([^\"]*)\" options disabled from menu dropdown$")
     public void assertSpecificMenuBarOptionsDisabled(String option) {
         pageLayoutPage.assertSubmitForApprovalOptionDisabled(option);
+    }
+
+    @Then("^I donot see navigation logo on page$")
+    public void assertModalClosedProperly() {
+        pageLayoutPage.assertHoldOnLogoDisappeared();
     }
 }

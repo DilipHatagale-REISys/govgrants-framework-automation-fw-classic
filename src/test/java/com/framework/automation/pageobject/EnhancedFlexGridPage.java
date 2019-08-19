@@ -44,8 +44,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      * @param blockTitle
      */
     public void getHelpTextAtParentFlexTableEnhancedGrid(String blockTitle) {
-        EyeThink.core().JavaScript().moveToElement(By.xpath("//div[@id='flexGridEnhanced1']//span[contains(text(),'"
-                + blockTitle + "')]/../../..//span[contains(@class,'fa-info')]"));
+        EyeThink.core().JavaScript().moveToElement(EyeThink.core().findMyElement().getElement(By.xpath("//div[@id='flexGridEnhanced1']//span[contains(text(),'" + blockTitle + "')]/../../..//span[contains(@class,'fa-info')]"), false));
     }
 
     /**
@@ -67,8 +66,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      * @param columnTitle
      */
     public void getHelpTextAtEnhancedGridTableSpecificColumn(String columnTitle) {
-        EyeThink.core().JavaScript().moveToElement(By.xpath("//th//span[@title='" + columnTitle + "' or text()='"
-                + columnTitle + "']/../..//helpicon//span[contains(@class,'fa-info')]"));
+        EyeThink.core().JavaScript().moveToElement(EyeThink.core().findMyElement().getElement(By.xpath("//th//span[@title='" + columnTitle + "' or text()='" + columnTitle + "']/../..//helpicon//span[contains(@class,'fa-info')]"),false));
     }
 
     /**

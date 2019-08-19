@@ -40,4 +40,9 @@ public class StepProgressBarSteps {
 	public void assertChangedDisplayNameOfStatusInsideStepProgressBar(String statusName) {
 		stepProgressBarPage.assertChangedDisplayNameInsideStepProgressBarForUser(statusName);
 	}
+
+	@Then("^I see chevron bar is in \"([^\"]*)\" color for \"([^\"]*)\" status$")
+	public void assertChavronStatusBarColor(String colorName, String status) {
+		stepProgressBarPage.assertExpectedColorOfChevronStatusBar(colorName, status);
+	}
 }
