@@ -16,7 +16,7 @@ public class PageLayoutPage extends GovGrantsManager {
             addButtonUnderAttachments, selectTypeDropdown, addAttachmentIframe, lookupSearchInputBox,
             lookupSearchButton, ownerOrganizationModalTitle, completeTableRowInsideLookupModal,
             manageAttachmentInsidePageBlockDetail, manageAttachmentIframe, editActionModalIframe, pageLayoutButton,
-            editAttachmentDescription, editAttachmentSaveButton;
+            editAttachmentDescription, editAttachmentSaveButton, textInsideMiniPageLayout;
 
     /**
      * Constructor to handle dependency injection and framework library
@@ -47,6 +47,7 @@ public class PageLayoutPage extends GovGrantsManager {
         pageLayoutButton = By.xpath("//div[@id='headerButtonsPanel']/span/button");
         editAttachmentDescription = By.xpath("//div[@id='modaltemp']//textarea");
         editAttachmentSaveButton = By.xpath("//div[@id='modaltemp']//input[@type='submit' or @value='Save and Close Modal']");
+        textInsideMiniPageLayout = By.xpath("//div[@class='tooltipster-base tooltipster-shadow tooltipster-fade tooltipster-fade-show']//div[@class='tooltipster-content']");
     }
 
     /******* "Key Methods with complete functionality - public" *****************/
@@ -408,6 +409,13 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * assert true if mentioned text displayed on mini page layout while hover
+     */
+    public void assertTextAtMiniPageLayoutAtPageBlockDetail(String text) {
+        Assert.assertTrue(isTextDisplayedOnMiniPageLayout(text));
+    }
+
+    /**
      * assert if specified button is displayed on modal
      *
      * @param buttonName
@@ -423,17 +431,27 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public void getHelpTextAtPageBlock(String blockTitle) {
         EyeThink.core().JavaScript().moveToElement(EyeThink.core().findMyElement().getElement(
-                By.xpath("//h3//a[contains(text(),'" + blockTitle + "')]/..//span[contains(@class,'fa-info')]"),false));
+                By.xpath("//h3//a[contains(text(),'" + blockTitle + "')]/..//span[contains(@class,'fa-info')]"), false));
     }
 
     /**
-     * click on help text inside program name page block details
+     * hover on help text inside program name page block details
      *
      * @param pageBlockDetailTitle
      */
     public void getHelpTextAtPageBlockDetail(String pageBlockDetailTitle) {
         EyeThink.core().JavaScript().moveToElement(EyeThink.core().findMyElement().getElement(By.xpath(
-                "//span[contains(text(),'" + pageBlockDetailTitle + "')]/..//span[contains(@class,'fa-info')]"),false));
+                "//span[contains(text(),'" + pageBlockDetailTitle + "')]/..//span[contains(@class,'fa-info')]"), false));
+    }
+
+    /**
+     * hover on look up link at page block details
+     *
+     * @param lookUpLink
+     */
+    public void getLookUpLinkToHover(String lookUpLink) {
+        EyeThink.core().JavaScript().moveToElement(EyeThink.core().findMyElement().getElement(By.xpath(
+                "//dl//dd//a[contains(text(),'" + lookUpLink + "') or @class='tooltipstered']"), false));
     }
 
     /**
@@ -590,6 +608,23 @@ public class PageLayoutPage extends GovGrantsManager {
         EyeThink.core().findMyElement().getElement(By.xpath("//input[@value='Save']")).click();
         EyeThink.core().findMyElement().getElement(By.xpath("//div[@id='Attachmentadd']//span[text()='Upload file from Workspace']")).click();
     }
+
+    /**
+     * Handles to upload the file from workspace
+     * @param fileNameFromWorkSpace - file which is to be upload
+     */
+    public void uploadAttachmentFromWorkspace(String... fileNameFromWorkSpace) {
+        EyeThink.core().WaitFor().makeThreadSleep(3000);
+        EyeThink.core().findMyElement().getElement(By.xpath("//div[@id='myTabbedContent']//span[contains(text(),'Attachment')]/..//div[@class='panel-heading']//*[text()='Add']")).click();
+        EyeThink.core().switchTo().switchToFrame(By.xpath("//iframe[contains(@ng-src, 'apex') or contains(@src,'apex')]"));
+        EyeThink.core().findMyElement().getElement(By.xpath("//div[@id='Attachmentadd']//span[text()='Upload file from Workspace']")).click();
+        for (String uniqueColumn : fileNameFromWorkSpace) {
+            EyeThink.core().findMyElement().getElement(By.xpath("//div[@id='Attachmentadd']//td[text()='" + uniqueColumn + "']/..//input")).click();
+        }
+        EyeThink.saas().modal().clickModalContentSpecificButton("Attach");
+        EyeThink.saas().modal().closeModalByClickingTopRightCloseButton();
+    }
+
 
     /**
      * assert true/false for success messages on attachment modal
@@ -1210,6 +1245,23 @@ public class PageLayoutPage extends GovGrantsManager {
             }
         } catch (Exception e) {
             e.printStackTrace();
+        }
+        return flag;
+    }
+
+    /**
+     * return true if help text is displayed
+     *
+     * @param text
+     * @return
+     */
+    private boolean isTextDisplayedOnMiniPageLayout(String text) {
+        boolean flag = false;
+        EyeThink.core().WaitFor().makeThreadSleep(2000);
+        System.out.println("=========================" + EyeThink.core().findMyElement().getElement(textInsideMiniPageLayout).getText());
+        if (EyeThink.core().findMyElement().getElement(textInsideMiniPageLayout).getText().contains(text)
+                || EyeThink.core().findMyElement().getElement(textInsideMiniPageLayout).getText().equalsIgnoreCase(text)) {
+            flag = true;
         }
         return flag;
     }

@@ -845,7 +845,6 @@ Feature: Logged Issues Scenarios
     When I navigate to "Budget" sub tab
     When I click on top right parallel lines bar for "Application Budget"
     And I select "Download as PDF" from parallel lines dropdown of "Application Budget"
-    When I pause execution
     And I download the file
     Then I see "Application Budget" on page "1" of "govgrants" pdf file
 
@@ -904,3 +903,58 @@ Feature: Logged Issues Scenarios
     When I enter value "Queue" into field "fieldUserType__c"
     When I click search icon for "User Lookup (New Window)" lookup modal and swithing to frame "iframeCustomLookupModalId"
     Then I see "TmpQueue" status in lookup modal table
+
+  @56550    @remainingGrantsAmountShouldDisplayInCorrectFormat
+  Scenario: Validate remaining grants amount coming with correct format not with minus sign
+    When I login as "Automation" user
+    When I setup my app as "As a Grantee"
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Active Grants"
+    When I perform quick search for "FGT-gt786-001"
+    When I click on "View" icon for "FGT-gt786-001" inside table
+    When I navigate to "Financials" sub tab
+    Then I see field "Remaining Grant Amount" as "($100,000.00)"
+
+  @57519    @attachmentPageBlockShouldRenderedProperly
+  Scenario: Validate page blocks of attachment should rendered properly on UI on grantee portal
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "App2-FO for DCP" in "flexTableDivId" panel
+    When I click on "View" icon for "App2-FO for DCP" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see the text :
+      | Business Forms |
+      | Attachments    |
+      | Notes          |
+      | All Forms      |
+
+  @57513    @miniPageLayoutShouldDisplayProperlyOnMouseHoverForSPIUser
+  Scenario Outline: Validate mini page layout is displayed properly on mouse hovering at SPI portal
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "App2-FO for DCP" in "flexTableDivId" panel
+    When I click on "View" icon for "App2-FO for DCP" inside table
+    When I hover mouse on lookup link "AN-603-051"
+    Then I see "<miniPageLayout_Text>" shown inside mini page layout on hover
+
+    Examples:
+      | miniPageLayout_Text |
+      | Announcement        |
+
+  @57511    @validateMultipleAttachmentGettingAddedProperly
+  Scenario: validate s-planning
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "Delete" icon for "ContactUs.png" inside table
+    When I close alertbox
+    When I click on "Delete" icon for "DynamicLayoutExport.pdf" inside table
+    When I close alertbox
+    And I upload attachment "ContactUs.png,DynamicLayoutExport.pdf" from workspace
+    Then I see table with header "Attachments" contains records "DynamicLayoutExport.pdf,ContactUs.png"

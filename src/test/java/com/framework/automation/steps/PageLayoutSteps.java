@@ -58,6 +58,11 @@ public class PageLayoutSteps {
         pageLayoutPage.getHelpTextAtPageBlockDetail(pageBlockDetailTitle);
     }
 
+    @When("^I hover mouse on lookup link \"([^\"]*)\"$")
+    public void hoverOnLookUpLinkAtPageBlockDetail(String lookUpLink) {
+        pageLayoutPage.getLookUpLinkToHover(lookUpLink);
+    }
+
     @When("^I enter values \"([^\"]*)\" into textarea description field for Edit Attachment$")
     public void textAreaFieldAtEditAttachment(String enteredValue) {
         pageLayoutPage.enterValueForTextareaDescriptionFieldUnderEditAttachment(enteredValue);
@@ -71,6 +76,11 @@ public class PageLayoutSteps {
     @When("^I upload attachment \"([^\"]*)\" of type \"([^\"]*)\" and move on second tab$")
     public void uploadAttachment(String fileName, String fileType) {
         pageLayoutPage.uploadAttachmentAndMoveOnSecondTab(fileName, fileType);
+    }
+
+    @When("^I upload attachment \"([^\"]*)\" from workspace$")
+    public void iUploadAttachmentFromWorkspace(String fileNameToBeUpload) {
+        pageLayoutPage.uploadAttachmentFromWorkspace(fileNameToBeUpload.split(","));
     }
 
     @When("^I click on footer links \"([^\"]*)\"$")
@@ -298,5 +308,10 @@ public class PageLayoutSteps {
     @Then("^I donot see navigation logo on page$")
     public void assertModalClosedProperly() {
         pageLayoutPage.assertHoldOnLogoDisappeared();
+    }
+
+    @Then("^I see \"([^\"]*)\" shown inside mini page layout on hover$")
+    public void assertMiniPageLayoutTextOnHover(String text) {
+        pageLayoutPage.assertTextAtMiniPageLayoutAtPageBlockDetail(text);
     }
 }
