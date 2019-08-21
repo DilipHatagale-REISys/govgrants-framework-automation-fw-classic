@@ -201,7 +201,7 @@ public class FlexTablePage extends GovGrantsManager {
     public void getHelpTextAtDraftProgramFlexTable(String blockTitle) {
         EyeThink.core().JavaScript().moveToElement(EyeThink.core().findMyElement().getElement(By.xpath("//div[contains(@class,'panel-title')]//div[text()='" + blockTitle
                 + "']/../..//a[@id='Programstooltip']/span[contains(@class,'fa-info')]|//div/a[@title='"
-                + blockTitle + "']/..//span[contains(@class,'fa-info')]"),false));
+                + blockTitle + "']/..//span[contains(@class,'fa-info')]"), false));
     }
 
     /**
@@ -243,7 +243,7 @@ public class FlexTablePage extends GovGrantsManager {
     public void getHelpTextAtFlexTableSpecificColumn(String columnTitle) {
         EyeThink.core().JavaScript().moveToElement(EyeThink.core().findMyElement().getElement(By.xpath("//th//span[@title='" + columnTitle + "' or text()='" + columnTitle
                 + "']/../../following-sibling::span//span[contains(@class,'fa-info')]|//th//span[@title='"
-                + columnTitle + "' or text()='" + columnTitle + "']/..//span[contains(@class,'fa-info')]"),false));
+                + columnTitle + "' or text()='" + columnTitle + "']/..//span[contains(@class,'fa-info')]"), false));
     }
 
     /**
@@ -472,9 +472,18 @@ public class FlexTablePage extends GovGrantsManager {
      * @param message
      */
     public void assertTextMessageOnConfirmationAlert(String message) {
-        String popupMessage= EyeThink.core().switchTo().getAlertText();
+        String popupMessage = EyeThink.core().switchTo().getAlertText();
         Assert.assertTrue(popupMessage.equalsIgnoreCase(message));
         EyeThink.core().switchTo().acceptAlert();
+    }
+
+    /**
+     * assert if expected multiple record inside table is displayed
+     *
+     * @param recordsName
+     */
+    public void assertExpectedRecordsInsideTable(String flexTableHeader, String recordsName) {
+        Assert.assertTrue(isExpectedRecordsDisplayedInsideTable(flexTableHeader, recordsName.split(",")));
     }
 
     /*********
@@ -875,10 +884,10 @@ public class FlexTablePage extends GovGrantsManager {
         return flag;
     }
 
-   private boolean isTextNotDisplayedInFile(String text, int pageNumber, String fileName) {
+    private boolean isTextNotDisplayedInFile(String text, int pageNumber, String fileName) {
         boolean flag = true;
-        if (EyeThink.core().file().adobeReader().readFromAdobeFileFromResources(fileName,pageNumber).contains(text)){
-            EyeThink.core().report().write(LogLevel.PROJECT_LAYER_INFO,"validated text inside Downloaded pdf file");
+        if (EyeThink.core().file().adobeReader().readFromAdobeFileFromResources(fileName, pageNumber).contains(text)) {
+            EyeThink.core().report().write(LogLevel.PROJECT_LAYER_INFO, "validated text inside Downloaded pdf file");
             flag = false;
         }
         EyeThink.core().switchTo().popupPresent();
@@ -978,5 +987,20 @@ public class FlexTablePage extends GovGrantsManager {
             }
         }
         return isValuePresent;
+    }
+
+    /**
+     * return true if expected records displayed inside table
+     *
+     * @param recordsName
+     * @return
+     */
+    private boolean isExpectedRecordsDisplayedInsideTable(String flexTableHeader, String... recordsName) {
+        Boolean isRecordsDisplayed = false;
+        for (String expectedRecords : recordsName) {
+            EyeThink.core().findMyElement().getElement(By.xpath("//div[@id='myTabbedContent']//a[@title='" + flexTableHeader + "']/../../../following-sibling::div//tbody//td//span[text()='" + expectedRecords + "'] ")).isDisplayed();
+            isRecordsDisplayed = true;
+        }
+        return isRecordsDisplayed;
     }
 }

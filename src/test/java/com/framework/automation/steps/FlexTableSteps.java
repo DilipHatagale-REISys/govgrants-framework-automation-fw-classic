@@ -259,4 +259,9 @@ public class FlexTableSteps {
 	public void assertConfirmationAlertMessage(String message) {
 		flexTablePage.assertTextMessageOnConfirmationAlert(message);
 	}
+
+	@Then("^I see table with header \"([^\"]*)\" contains records \"([^\"]*)\"$")
+	public void assertMultipleRecordsInsideTable(String flexTableHeader, String recordsName) {
+		flexTablePage.assertExpectedRecordsInsideTable(flexTableHeader, recordsName);
+	}
 }
