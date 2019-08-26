@@ -1336,11 +1336,11 @@ Feature: Page Layout Component Scenarios
   @53094    @hideForContextFieldAtNotesAndAttachmentPageBlockForEditAction-gPlanning
   Scenario: Hide edit action from attachment page block from config validating it at attachments table
     Given I have default configuration as below:
-      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Rule:Page Block Rule Detail   | Hide for Context |                   | Grantee State Program | ApiGeneratedId:0 |
+      | configurationCategory                  | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Rule:Page Block Rule Detail | Hide for Context |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Rule:Page Block Rule Detail   | Hide for Context | View          | Grantee State Program | Name                      | Edit                       |
+      | configurationCategory                  | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Rule:Page Block Rule Detail | Hide for Context | View          | Grantee State Program | Name                      | Edit                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1353,11 +1353,11 @@ Feature: Page Layout Component Scenarios
   @53095    @hideForProfileFieldAtNotesAndAttachmentPageBlockForEditAction-gPlanning
   Scenario: Hide edit action from attachment page block from config validating it at attachments table
     Given I have default configuration as below:
-      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Rule:Page Block Rule Detail   | Hide for Profile |                   | Grantee State Program | ApiGeneratedId:0 |
+      | configurationCategory                  | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Rule:Page Block Rule Detail | Hide for Profile |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName        | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Rule:Page Block Rule Detail   | Hide for Profile | System Administrator| Grantee State Program | Name                      | Edit                       |
+      | configurationCategory                  | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Rule:Page Block Rule Detail | Hide for Profile | System Administrator | Grantee State Program | Name                      | Edit                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1370,11 +1370,11 @@ Feature: Page Layout Component Scenarios
   @53096    @hideForUserFieldAtNotesAndAttachmentPageBlockForEditAction-gPlanning
   Scenario: Hide edit action from attachment page block from config validating it at attachments table
     Given I have default configuration as below:
-      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Rule:Page Block Rule Detail   | Hide for User    |                   | Grantee State Program | ApiGeneratedId:0 |
+      | configurationCategory                  | fieldName     | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Rule:Page Block Rule Detail | Hide for User |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName        | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Rule:Page Block Rule Detail   | Hide for User    | Internal       | Grantee State Program | Name                      | Edit                       |
+      | configurationCategory                  | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Rule:Page Block Rule Detail | Hide for User | Internal      | Grantee State Program | Name                      | Edit                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1430,11 +1430,11 @@ Feature: Page Layout Component Scenarios
   @53099    @hideForContextFieldAtNotesAndAttachmentPageBlockForEditActionWithRecordTypeNotesConfig-gPlanning
   Scenario Outline: Hide edit row level action using AND operator from configuration and validating it at attachments table
     Given I have default configuration as below:
-      | configurationCategory| fieldName        | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Uid Config:Uid       | Hide For Context |                   |                    | Internal Unique Id        | <value>                    |
+      | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Uid Config:Uid        | Hide For Context |                   |                    | Internal Unique Id        | <value>                    |
     Given I setup test configuration as below:
-      | configurationCategory| fieldName        | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue  |
-      | Uid Config:Uid       | Hide For Context | View            |                    | Internal Unique Id        | <value>                     |
+      | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Uid Config:Uid        | Hide For Context | View          |                    | Internal Unique Id        | <value>                    |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1445,17 +1445,17 @@ Feature: Page Layout Component Scenarios
     Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside flex table
 
     Examples:
-    |value                         |
-    |DXkA4qiwvbHfLbAaiAs6wiiVyPIp3D|
+      | value                          |
+      | DXkA4qiwvbHfLbAaiAs6wiiVyPIp3D |
 
   @53100    @hideForProfileFieldAtNotesAndAttachmentPageBlockForEditActionWithRecordTypeNotesConfig-gPlanning
   Scenario Outline: Hide edit action from attachment page block from config validating it at attachments table
     Given I have default configuration as below:
-      | configurationCategory| fieldName        | fieldOrignalValue |coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Uid Config:Uid       | Hide for Profile |                   |                      | Internal Unique Id        | <value>                    |
+      | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Uid Config:Uid        | Hide for Profile |                   |                    | Internal Unique Id        | <value>                    |
     Given I setup test configuration as below:
-      | configurationCategory| fieldName        | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Uid Config:Uid       | Hide for Profile | System Administrator|                       | Internal Unique Id        | <value>                    |
+      | configurationCategory | fieldName        | fieldNewValue        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Uid Config:Uid        | Hide for Profile | System Administrator |                    | Internal Unique Id        | <value>                    |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1466,17 +1466,17 @@ Feature: Page Layout Component Scenarios
     Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside flex table
 
     Examples:
-      |value                         |
-      |DXkA4qiwvbHfLbAaiAs6wiiVyPIp3D|
+      | value                          |
+      | DXkA4qiwvbHfLbAaiAs6wiiVyPIp3D |
 
   @53101    @hideForUserFieldAtNotesAndAttachmentPageBlockForEditActionWithRecordTypeNotesConfig-gPlanning
   Scenario Outline: Hide edit action from attachment page block using Hide For User field from config validating it at attachments table
     Given I have default configuration as below:
-      | configurationCategory| fieldName     | fieldOrignalValue |coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Uid Config:Uid       | Hide for User |                   |                      | Internal Unique Id        | <value>                    |
+      | configurationCategory | fieldName     | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Uid Config:Uid        | Hide for User |                   |                    | Internal Unique Id        | <value>                    |
     Given I setup test configuration as below:
-      | configurationCategory| fieldName     | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Uid Config:Uid       | Hide for User | Internal            |                       | Internal Unique Id        | <value>                    |
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Uid Config:Uid        | Hide for User | Internal      |                    | Internal Unique Id        | <value>                    |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1487,21 +1487,21 @@ Feature: Page Layout Component Scenarios
     Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside flex table
 
     Examples:
-      |value                         |
-      |DXkA4qiwvbHfLbAaiAs6wiiVyPIp3D|
+      | value                          |
+      | DXkA4qiwvbHfLbAaiAs6wiiVyPIp3D |
 
   @53102    @hideOperatorFieldUsingANDOperatorAtNotesAndAttachmentPageBlockForEditActionWithRecordTypeNotesConfig-gPlanning
   Scenario Outline: Hide edit row level action using AND operator from configuration and validating it at attachments table
     Given I have default configuration as below:
-      | configurationCategory| fieldName        | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Uid Config:Uid       | Hide For Profile |                   |                       | Internal Unique Id        | <value>                    |
-      | Uid Config:Uid       | Hide For User    |                   |                       | Internal Unique Id        | <value>                    |
-      | Uid Config:Uid       | Hide Operator    |                   |                       | Internal Unique Id        | <value>                    |
+      | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Uid Config:Uid        | Hide For Profile |                   |                    | Internal Unique Id        | <value>                    |
+      | Uid Config:Uid        | Hide For User    |                   |                    | Internal Unique Id        | <value>                    |
+      | Uid Config:Uid        | Hide Operator    |                   |                    | Internal Unique Id        | <value>                    |
     Given I setup test configuration as below:
-      | configurationCategory| fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Uid Config:Uid       | Hide For Profile | System Administrator |                       | Internal Unique Id        | <value>                    |
-      | Uid Config:Uid       | Hide For User    | Internal             |                       | Internal Unique Id        | <value>                    |
-      | Uid Config:Uid       | Hide Operator    | AND                  |                       | Internal Unique Id        | <value>                    |
+      | configurationCategory | fieldName        | fieldNewValue        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Uid Config:Uid        | Hide For Profile | System Administrator |                    | Internal Unique Id        | <value>                    |
+      | Uid Config:Uid        | Hide For User    | Internal             |                    | Internal Unique Id        | <value>                    |
+      | Uid Config:Uid        | Hide Operator    | AND                  |                    | Internal Unique Id        | <value>                    |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1512,21 +1512,21 @@ Feature: Page Layout Component Scenarios
     Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside flex table
 
     Examples:
-      |value                         |
-      |DXkA4qiwvbHfLbAaiAs6wiiVyPIp3D|
+      | value                          |
+      | DXkA4qiwvbHfLbAaiAs6wiiVyPIp3D |
 
   @53103    @hideOperatorFieldUsingOROperatorAtNotesAndAttachmentPageBlockForEditActionWithRecordTypeNotesConfig-gPlanning
   Scenario Outline: Hide edit row level action using AND operator from configuration and validating it at attachments table
     Given I have default configuration as below:
-      | configurationCategory| fieldName        | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Uid Config:Uid       | Hide For Profile |                   |                       | Internal Unique Id        | <value>                    |
-      | Uid Config:Uid       | Hide For User    |                   |                       | Internal Unique Id        | <value>                    |
-      | Uid Config:Uid       | Hide Operator    |                   |                       | Internal Unique Id        | <value>                    |
+      | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Uid Config:Uid        | Hide For Profile |                   |                    | Internal Unique Id        | <value>                    |
+      | Uid Config:Uid        | Hide For User    |                   |                    | Internal Unique Id        | <value>                    |
+      | Uid Config:Uid        | Hide Operator    |                   |                    | Internal Unique Id        | <value>                    |
     Given I setup test configuration as below:
-      | configurationCategory| fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Uid Config:Uid       | Hide For Profile | System Administrator |                       | Internal Unique Id        | <value>                    |
-      | Uid Config:Uid       | Hide For User    | Internal             |                       | Internal Unique Id        | <value>                    |
-      | Uid Config:Uid       | Hide Operator    | OR                   |                       | Internal Unique Id        | <value>                    |
+      | configurationCategory | fieldName        | fieldNewValue        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Uid Config:Uid        | Hide For Profile | System Administrator |                    | Internal Unique Id        | <value>                    |
+      | Uid Config:Uid        | Hide For User    | Internal             |                    | Internal Unique Id        | <value>                    |
+      | Uid Config:Uid        | Hide Operator    | OR                   |                    | Internal Unique Id        | <value>                    |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1537,17 +1537,17 @@ Feature: Page Layout Component Scenarios
     Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside flex table
 
     Examples:
-      |value                         |
-      |DXkA4qiwvbHfLbAaiAs6wiiVyPIp3D|
+      | value                          |
+      | DXkA4qiwvbHfLbAaiAs6wiiVyPIp3D |
 
   @53260    @hideDecisionFieldAtNotesAndAttachmentPageBlockForEditAction-gPlanning
   Scenario: Hide edit action from attachment page block from config validating it at attachments table
     Given I have default configuration as below:
-      | configurationCategory                    | fieldName          | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Rule:Page Block Rule Detail   | Hide Decision Field|                   | Grantee State Program | ApiGeneratedId:0 |
+      | configurationCategory                  | fieldName           | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Rule:Page Block Rule Detail | Hide Decision Field |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName          | fieldNewValue    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Rule:Page Block Rule Detail   | Hide Decision Field| HideDeleteBtn__c | Grantee State Program | Name                      | Edit                       |
+      | configurationCategory                  | fieldName           | fieldNewValue    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Rule:Page Block Rule Detail | Hide Decision Field | HideDeleteBtn__c | Grantee State Program | Name                      | Edit                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1560,11 +1560,11 @@ Feature: Page Layout Component Scenarios
   @53261    @hideDecisionFieldAtNotesAndAttachmentPageBlockForEditActionWithRecordTypeNotesConfig-gPlanning
   Scenario Outline: Hide edit action from attachment page block from config validating it at attachments table
     Given I have default configuration as below:
-      | configurationCategory| fieldName           | fieldOrignalValue |coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Uid Config:Uid       | Hide Decision Field |                   |                      | Internal Unique Id        | <value>                    |
+      | configurationCategory | fieldName           | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Uid Config:Uid        | Hide Decision Field |                   |                    | Internal Unique Id        | <value>                    |
     Given I setup test configuration as below:
-      | configurationCategory| fieldName           | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Uid Config:Uid       | Hide Decision Field | HideDeleteBtn__c  |                       | Internal Unique Id        | <value>                    |
+      | configurationCategory | fieldName           | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Uid Config:Uid        | Hide Decision Field | HideDeleteBtn__c |                    | Internal Unique Id        | <value>                    |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1575,17 +1575,17 @@ Feature: Page Layout Component Scenarios
     Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside flex table
 
     Examples:
-      |value                         |
-      |DXkA4qiwvbHfLbAaiAs6wiiVyPIp3D|
+      | value                          |
+      | DXkA4qiwvbHfLbAaiAs6wiiVyPIp3D |
 
   @53092    @saveAttachementBehaviourFieldAtNotesAndAttachmentPageBlockAsSaveAndCloseModal-gPlanning
   Scenario: Changing save attachment behaviour at attachment modal from config and validating it at attachment modal
     Given I have default configuration as below:
-      | configurationCategory        | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block:Page Block Detail | Save Attachment Behaviour  | Save              | Grantee State Program | ApiGeneratedId:0 |
+      | configurationCategory        | fieldName                 | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block:Page Block Detail | Save Attachment Behaviour | Save              | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName                  | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Save Attachment Behaviour  | Save and Close Modal | Grantee State Program | GNT__PageBlockTitle__c    | Attachments                |
+      | configurationCategory        | fieldName                 | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Save Attachment Behaviour | Save and Close Modal | Grantee State Program | GNT__PageBlockTitle__c    | Attachments                |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1599,11 +1599,11 @@ Feature: Page Layout Component Scenarios
   @53093    @saveAttachementBehaviourFieldAtNotesAndAttachmentPageBlockAsSaveAndSaveAndCloseModal-gPlanning
   Scenario: Changing save attachment behaviour at attachment modal from config and validating it at attachment modal
     Given I have default configuration as below:
-      | configurationCategory        | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block:Page Block Detail | Save Attachment Behaviour  | Save              | Grantee State Program | ApiGeneratedId:0 |
+      | configurationCategory        | fieldName                 | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block:Page Block Detail | Save Attachment Behaviour | Save              | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName                  | fieldNewValue                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Save Attachment Behaviour  | Save and Save and Close Modal  | Grantee State Program | GNT__PageBlockTitle__c    | Attachments                |
+      | configurationCategory        | fieldName                 | fieldNewValue                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Save Attachment Behaviour | Save and Save and Close Modal | Grantee State Program | GNT__PageBlockTitle__c    | Attachments                |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1614,3 +1614,61 @@ Feature: Page Layout Component Scenarios
     When I click on "Edit" icon for "Program Artifacts" inside table
     And I see "Save" at bottom of Attachment Modal
     Then I see "Save and Close Modal" at bottom of Attachment Modal
+
+  @53388    @requiredForSubmitBehaviourAtPageBlockDetailForTitleField-gPlanning
+  Scenario: changing value of required behaviour and removing program title and validating error message while submitting program for approval
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantee State Program | Name                      | PBD-9162                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Test Program For Automation - Created - Required Behaviour"
+    When I click on "Edit" icon for "Test Program For Automation - Created - Required Behaviour" inside table
+    When I enter value "   " into field "fieldProgramName__c"
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
+    Then I see "Title is Required to submit under Overview." error is displayed
+
+  @53389    @requiredForSubmitBehaviourAtPageBlockDetailForOwnerOrganizationField-gPlanning
+  Scenario: changing value of required behaviour and removing owner organization value and validating error message while submitting program for approval
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantee State Program | Name                      | PBD-3178                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "PG-755-0222"
+    When I click on "Edit" icon for "PG-755-0222" inside table
+    When I enter value "Test Program For Automation - Created - Required Behaviour" into field "fieldProgramName__c"
+    When I enter value "" into field "fieldAccount__c"
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
+    Then I see "Owner Organization is Required to submit under Overview." error is displayed
+
+  @53390    @requiredForSubmitBehaviourAtPageBlockDetailForNumberField-gPlanning
+  Scenario: changing value of required behaviour and removing Number Field and validating error message while submitting program for approval
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantee State Program | Name                      | PBD-9161                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "PG-755-0222"
+    When I click on "Edit" icon for "PG-755-0222" inside table
+    When I enter value "" into field "fieldNumber__c"
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
+    Then I see "Number is Required to submit under Overview." error is displayed

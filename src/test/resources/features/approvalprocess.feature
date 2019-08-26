@@ -269,10 +269,10 @@ Feature: Approval Process Component Scenarios
       | Task Config           | Complete On View? | false             | ApiGeneratedId:1 |
       | Page Tabs Config      | Is Active         | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory                | fieldName         | fieldNewValue | coreComponentField                                         | coreCOmponentSubFieldName | coreComponentSubFieldValue |                   
-      | Program                              | Status            | Created       | Test program for automation -  SA mode only - Not approved |                           |                            |
-      | Task Config:Task Action              | Complete On View? | true          | Approve Program                                            |                           |                            |
-      | Page Tabs Config:Page Layout Action  | Is Active         | false         | Grantee State Program                                      | Name                      | TAB-027                    |
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField                                         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Program                             | Status            | Created       | Test program for automation -  SA mode only - Not approved |                           |                            |
+      | Task Config:Task Action             | Complete On View? | true          | Approve Program                                            |                           |                            |
+      | Page Tabs Config:Page Layout Action | Is Active         | false         | Grantee State Program                                      | Name                      | TAB-027                    |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -287,7 +287,7 @@ Feature: Approval Process Component Scenarios
     When I perform quick search for "Test program for automation -  SA mode only - Not approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
     And I click on "Send to Owner" on the approval decision box
-    When I re-login to "As an Grantor" app as "Automation" user on "default" portal
+    When I re-login to "As a Grantor" app as "Automation" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I click on "Start" icon for "Program Sent To Owner" inside table
@@ -466,7 +466,7 @@ Feature: Approval Process Component Scenarios
     When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
     And I click on "Approve" on the approval decision box
-    When I re-login to "As an Grantor" app as "Automation" user on "default" portal
+    When I re-login to "As a Grantor" app as "Automation" user on "default" portal
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
@@ -738,7 +738,7 @@ Feature: Approval Process Component Scenarios
     When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
     When I click on "Start" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
     And I click on "Reassign,Allen PM" on the approval decision box
-    When I re-login to "As an Grantor" app as "Automation" user on "default" portal
+    When I re-login to "As a Grantor" app as "Automation" user on "default" portal
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
@@ -817,7 +817,7 @@ Feature: Approval Process Component Scenarios
     When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
     Then I see "Reassign" is disabled
 
-  @41067    @hideSendToOwnerOptionFromHideExpressionJSONField-Programs 
+  @41067    @hideSendToOwnerOptionFromHideExpressionJSONField-Programs
   Scenario: Hiding send back option from configuration and validating its content in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -843,9 +843,9 @@ Feature: Approval Process Component Scenarios
 
   @41060    @validateCommentedTextInsideHistoryTabForReassignAction-Programs @smoke
   Scenario: Validating commented text inside history tab for reassign approval action at program detail page
-      Given I setup test configuration as below:
-      | configurationCategory                | fieldName                    | fieldNewValue                   | coreComponentField                                                              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Program                              | Status                       | Created                         | Test program for automation - SA mode only - Not approved - History Tab Scenario|                           |                            |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField                                                               | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Program               | Status    | Created       | Test program for automation - SA mode only - Not approved - History Tab Scenario |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -864,7 +864,7 @@ Feature: Approval Process Component Scenarios
     When I select specific user "Allen PM"
     When I enter Approval comment
     And I click submit
-    When I re-login to "As an Grantor" app as "Automation" user on "default" portal
+    When I re-login to "As a Grantor" app as "Automation" user on "default" portal
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test program for automation - SA mode only - Not approved - History Tab Scenario"

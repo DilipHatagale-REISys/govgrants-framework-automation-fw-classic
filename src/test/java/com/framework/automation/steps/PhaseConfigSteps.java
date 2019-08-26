@@ -1,8 +1,7 @@
 package com.framework.automation.steps;
 
 import com.framework.automation.pageobject.PhaseConfigPage;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import io.cucumber.java.en.*;
 
 public class PhaseConfigSteps {
     PhaseConfigPage phaseConfigPage;

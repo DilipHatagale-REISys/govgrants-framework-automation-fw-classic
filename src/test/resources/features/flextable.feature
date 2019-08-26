@@ -384,7 +384,7 @@ Feature: Flex Table Component Scenarios
   Scenario: validate enabling of page size dropdown at bottom in flex table of programs-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Page Size | false             | ApiGeneratedId:0 |
+      | Flex Table            | Enable Page Size | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Page Size | true          | Programs           |                           |                            |

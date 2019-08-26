@@ -1,9 +1,9 @@
 package com.framework.automation.steps;
 
 import com.framework.automation.pageobject.ApprovalProcessPage;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
 import eyethink.automation.bots.exception.EyeThinkBotsCustomException;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
 public class ApprovalProcessSteps {
     ApprovalProcessPage approvalProcesPage;

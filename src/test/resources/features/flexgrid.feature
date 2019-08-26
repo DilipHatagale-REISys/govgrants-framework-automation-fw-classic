@@ -712,6 +712,7 @@ Feature: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
+    When I perform quick search for "App 786" in "inlineEditGridMonitoringGridView" panel
     When I click on "View" icon for "App 786" inside table
     Then I see new tab is opened
 

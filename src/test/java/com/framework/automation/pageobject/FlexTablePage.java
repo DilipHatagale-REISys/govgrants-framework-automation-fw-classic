@@ -8,6 +8,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.io.File;
 import java.util.List;
 
 public class FlexTablePage extends GovGrantsManager {
@@ -1003,4 +1004,36 @@ public class FlexTablePage extends GovGrantsManager {
         }
         return isRecordsDisplayed;
     }
+
+    public void assertTextNotDisplayedInPDF(String shouldBeDisplayed, String text, int pageNumber, String fileName) {
+        Assert.assertEquals("see".equalsIgnoreCase(shouldBeDisplayed), isTextNotDisplayedInFiles(text, pageNumber, fileName));
+    }
+
+    private boolean isTextNotDisplayedInFiles(String text, int pageNumber, String fileName) {
+        boolean flag = false;
+        if (readAndRenamePDFFile(pageNumber, fileName).contains(text)) {
+            flag = true;
+        }
+        return flag;
+    }
+
+    /**
+     * Rename the file and change it from temp to pdf. Read from pdf file
+     *
+     * @return
+     */
+    public String readAndRenamePDFFile(int pageNumber, String fileName) {
+        File file = new File(System.getProperty("user.dir") + "\\target");
+        File[] directory = EyeThink.core().file().getCompleteFilesListOnLocalDirectory(file.getAbsolutePath());
+        for (File files : directory) {
+            if (files.getName().endsWith(".tmp")) {
+                new File(files.getAbsolutePath().toString())
+                        .renameTo(new File(file.getAbsolutePath() + "\\" + fileName + ".pdf"));
+                break;
+            }
+        }
+        return EyeThink.core().file().adobeReader().readFromAdobeFileOnLocalAtUserDirectory(
+                file.getAbsolutePath().toString() + "\\" + fileName + ".pdf", pageNumber);
+    }
+
 }

@@ -161,6 +161,7 @@ Feature: Logged Issues Scenarios
     When I click on "Edit" icon for "GT-test-003" inside table
     When I enter values "Test Automation" into textarea for table id "flexGridEnhanced1"
     When I click on top right button "Save" in flex table with id "flexGridEnhanced1"
+    When I perform quick search for "GT-test-003" in "flexGridEnhancedDivId" panel
     Then I see value "Test Automation" for multiple cells at column "AddressProgramContact__c"
 
   @56273  @inlineEditShouldWorkProperlyAtChildTableOfEnhancedGrid
@@ -944,7 +945,7 @@ Feature: Logged Issues Scenarios
       | Announcement        |
 
   @57511    @validateMultipleAttachmentGettingAddedProperly
-  Scenario: validate s-planning
+  Scenario: validate user is able to add multiple attachment from workspace to attachment page block.
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -958,3 +959,10 @@ Feature: Logged Issues Scenarios
     When I close alertbox
     And I upload attachment "ContactUs.png,DynamicLayoutExport.pdf" from workspace
     Then I see table with header "Attachments" contains records "DynamicLayoutExport.pdf,ContactUs.png"
+
+  @56762    @validateChartDisplayedProperlyAtCorrectPhaseForUserAppAsGrantee
+  Scenario: Financial report by grant due in 90 days chart should displayed or rendered properly on monitoring phase for user app as grantee
+    When I login as "Automation" user
+    When I setup my app as "As a Grantee"
+    And I navigate to "Monitoring" tab
+    Then I see "Financial Report By Grants Due In 90 Days" displayed as chart title

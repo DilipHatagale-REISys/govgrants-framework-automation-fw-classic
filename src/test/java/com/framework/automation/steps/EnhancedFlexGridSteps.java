@@ -1,8 +1,10 @@
 package com.framework.automation.steps;
 
 import com.framework.automation.pageobject.EnhancedFlexGridPage;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import eyethink.automation.bots.Register.EyeThink;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
 
 import java.math.BigDecimal;
 
@@ -69,8 +71,8 @@ public class EnhancedFlexGridSteps {
 	}
 
 	@Then("^I see \"([^\"]*)\" records inside enhanced grid id \"([^\"]*)\"$")
-	public void assertFlexTableNoOfRecords(int rowCount, String tableId) {
-		enhancedFlexGrid.assertEnhancedGridNumberOfRecordsPresent(rowCount, tableId);
+	public void assertFlexTableNoOfRecords(String rowCount, String tableId) {
+		enhancedFlexGrid.assertEnhancedGridNumberOfRecordsPresent(Integer.parseInt(rowCount), tableId);
 	}
 
 	@Then("^I see \"([^\"]*)\" shown inside enhanced grid table for specified record \"([^\"]*)\"$")

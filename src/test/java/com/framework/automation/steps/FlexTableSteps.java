@@ -1,9 +1,9 @@
 package com.framework.automation.steps;
 
 import com.framework.automation.pageobject.FlexTablePage;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
 import eyethink.automation.bots.exception.EyeThinkBotsCustomException;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.springframework.context.annotation.Description;
 
 public class FlexTableSteps {
@@ -263,5 +263,10 @@ public class FlexTableSteps {
 	@Then("^I see table with header \"([^\"]*)\" contains records \"([^\"]*)\"$")
 	public void assertMultipleRecordsInsideTable(String flexTableHeader, String recordsName) {
 		flexTablePage.assertExpectedRecordsInsideTable(flexTableHeader, recordsName);
+	}
+
+	@Then("^I (see|cannot see) \"([^\"]*)\" on page \"([^\"]*)\" of \"([^\"]*)\" pdf file$")
+	public void assertTExtNotDisplayed(String shouldBeDisplayed,String text, String pageNumber, String fileName) {
+		flexTablePage.assertTextNotDisplayedInPDF(shouldBeDisplayed, text, Integer.parseInt(pageNumber), fileName);
 	}
 }

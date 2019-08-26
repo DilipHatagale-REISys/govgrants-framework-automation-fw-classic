@@ -333,7 +333,7 @@ public class GovGrantsManager extends ProjectWebServices {
      * @param chartName
      */
     public void clickSpecificLinkOnTaskSummary(String linkName, String chartName) {
-        EyeThink.saas().charts().clickOnExpectedLinkInsideTaskSummary(linkName,chartName);
+        EyeThink.saas().charts().clickOnExpectedLinkInsideTaskSummary(linkName, chartName);
     }
 
     /**
@@ -427,5 +427,20 @@ public class GovGrantsManager extends ProjectWebServices {
      */
     public WebElement getBootBoxConfirmationText() {
         return EyeThink.core().findMyElement().getElement(By.xpath("//div[@class='bootbox-body']"));
+    }
+
+    /**
+     * save file using robot class
+     *
+     * @throws AWTException
+     */
+    public void saveFile() throws AWTException {
+        EyeThink.core().switchTo().switchToWindowHandler(1);
+        EyeThink.core().WaitFor().makeThreadSleep(20000);
+        EyeThink.core().RobotActions().ctrl_Save();
+        EyeThink.core().WaitFor().makeThreadSleep(2000);
+        EyeThink.core().RobotActions().Robot_Enter();
+        EyeThink.core().WaitFor().makeThreadSleep(20000);
+        EyeThink.core().RobotActions().Robot_Escape();
     }
 }
