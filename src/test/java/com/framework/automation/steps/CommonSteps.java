@@ -29,9 +29,4 @@ public class CommonSteps {
         govGrantsManager.assertCurrentURL(content);
         ;
     }
-
-    @When("^I download the file$")
-    public void saveTheFileToProjectRoot() throws Throwable {
-        govGrantsManager.saveFile();
-    }
 }

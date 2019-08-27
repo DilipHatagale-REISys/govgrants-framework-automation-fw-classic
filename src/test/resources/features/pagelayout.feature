@@ -1672,3 +1672,23 @@ Feature: Page Layout Component Scenarios
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
     Then I see "Number is Required to submit under Overview." error is displayed
+
+  @53391    @requiredForSubmitBehaviourAtPageBlockDetailForKPIRequiredField-gPlanning
+  Scenario: changing value of required behaviour and keeping none at kpi required Field and validating error message while submitting program for approval
+    Given I have default configuration as below:
+      | configurationCategory                     | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |Required for Save| Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantee State Program | Name                      | PBD-6440                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "PG-755-0222"
+    When I click on "Edit" icon for "PG-755-0222" inside table
+    When I enter value "--None--" into field "fieldKPIsRequired__c"
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
+    Then I see "KPI's Required? is Required to submit under Overview." error is displayed
+    
