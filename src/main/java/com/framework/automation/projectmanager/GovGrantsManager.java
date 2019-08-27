@@ -333,7 +333,7 @@ public class GovGrantsManager extends ProjectWebServices {
      * @param chartName
      */
     public void clickSpecificLinkOnTaskSummary(String linkName, String chartName) {
-        EyeThink.saas().charts().clickOnExpectedLinkInsideTaskSummary(linkName,chartName);
+        EyeThink.saas().charts().clickOnExpectedLinkInsideTaskSummary(linkName, chartName);
     }
 
     /**

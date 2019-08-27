@@ -36,104 +36,104 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
     Then I see Menu icon is disabled from planning flex table "Monitoring Schedule For All Active Grants"
-	
+
   @45281    @hideCellJsonfieldForChildFlexTableAtEnhancedGrid-gPlanning @smoke
   Scenario: Hiding specific cell value of child flex table at enhanced grid from config and validating it inside enhanced grid of programs-planning
-	Given I have default configuration as below:
-	  |configurationCategory |fieldName       |fieldOrignalValue    |filterId        |
-	  |Flex Table List       |Hide Cell JSON  |                     |ApiGeneratedId:0|
-	Given I setup test configuration as below:
-	  |configurationCategory |fieldName       |fieldNewValue                                               |coreComponentField           |coreCOmponentSubFieldName|coreComponentSubFieldValue|
-	  |Flex Table List       |Hide Cell JSON  |govgrants_config:HideCellJsonForChildFlexTableAtEnhancedGrid|TmpGrantorActiveAwardsGrid   |Name                     |FTC-1492                  |
+    Given I have default configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue                                                | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForChildFlexTableAtEnhancedGrid | TmpGrantorActiveAwardsGrid | Name                      | FTC-1492                   |
     When I login as "Automation" user
-	When I setup my app as "As a Grantor"
-	And I navigate to "Planning" tab
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-	When I perform quick search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-	When I navigate to "Financials" sub tab
-	When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
-	When I expand nested table containing column value "Demo_Title"
-	Then I see "*****" shown inside enhanced grid table for specified record "Demo_Title"
-	
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I expand nested table containing column value "Demo_Title"
+    Then I see "*****" shown inside enhanced grid table for specified record "Demo_Title"
+
   @45284    @readOnlyCellJSONFieldForChildFlexTableAtEnhancedGrid-gPlanning @smoke
   Scenario: Changing specific cell value to read only for child flex table of enhanced grid from config and validating it inside enhanced grid of programs-planning
-	Given I have default configuration as below:
-	  |configurationCategory |fieldName            |fieldOrignalValue    |filterId        |
-	  |Flex Table List       |Read Only Cell JSON  |                     |ApiGeneratedId:0|
-	Given I setup test configuration as below:
-	  |configurationCategory |fieldName            |fieldNewValue                                                   |coreComponentField           |coreCOmponentSubFieldName|coreComponentSubFieldValue|
-	  |Flex Table List       |Read Only Cell JSON  |govgrants_config:ReadOnlyCellJsonForChildFlexTableAtEnhancedGrid|TmpGrantorActiveAwardsGrid   |Name                     |FTC-1492                  |
+    Given I have default configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table List       | Read Only Cell JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                                    | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Read Only Cell JSON | govgrants_config:ReadOnlyCellJsonForChildFlexTableAtEnhancedGrid | TmpGrantorActiveAwardsGrid | Name                      | FTC-1492                   |
     When I login as "Automation" user
-	When I setup my app as "As a Grantor"
-	And I navigate to "Planning" tab
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-	When I perform quick search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-	When I navigate to "Financials" sub tab
-	When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
-	When I expand nested table containing column value "Demo_Title"
-	When I click on "Edit" icon for "AD-GG PJ--00" inside table
-	Then I see input box is not displayed for ID inside child Flex table
-	
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I expand nested table containing column value "Demo_Title"
+    When I click on "Edit" icon for "AD-GG PJ--00" inside table
+    Then I see input box is not displayed for ID inside child Flex table
+
   @45285    @hideColumnJSONfieldForChildFlexTableAtEnhancedGrid-gPlanning @smoke
   Scenario: Hiding specific column value for child flex table of enhanced grid from config and validating it inside enhanced grid of programs-planning
     Given I have default configuration as below:
-	  |configurationCategory |fieldName       |fieldOrignalValue    |filterId        |
-	  |Flex Table List       |Hide Column JSON|                     |ApiGeneratedId:0|
-	Given I setup test configuration as below:
-	  |configurationCategory |fieldName       |fieldNewValue                                                 |coreComponentField           |coreCOmponentSubFieldName|coreComponentSubFieldValue|
-	  |Flex Table List       |Hide Column JSON|govgrants_config:HideColumnJsonForChildFlexTableAtEnhancedGrid|TmpGrantorActiveAwardsGrid   |Name                     |FTC-1495                  |
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Column JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                                  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Column JSON | govgrants_config:HideColumnJsonForChildFlexTableAtEnhancedGrid | TmpGrantorActiveAwardsGrid | Name                      | FTC-1495                   |
     When I login as "Automation" user
-	When I setup my app as "As a Grantor"
-	And I navigate to "Planning" tab
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-	When I perform quick search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-	When I navigate to "Financials" sub tab
-	When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
-	When I expand nested table containing column value "Demo_Title"
-	Then I see "Award Title" not displayed in enhanced grid table column title
-	
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I expand nested table containing column value "Demo_Title"
+    Then I see "Award Title" not displayed in enhanced grid table column title
+
   @45287    @readOnlyColumnJSONFieldForChildFlexTableAtEnhancedGrid-gPlanning @smoke
   Scenario: Changing specific cell value to read only for child flex table of enhanced grid from config and validating it inside enhanced grid of programs-planning
-	Given I have default configuration as below:
-	  |configurationCategory |fieldName            |fieldOrignalValue    |filterId        |
-	  |Flex Table List       |Read Only Column JSON|                     |ApiGeneratedId:0|
-	Given I setup test configuration as below:
-	  |configurationCategory |fieldName            |fieldNewValue                                                     |coreComponentField           |coreCOmponentSubFieldName|coreComponentSubFieldValue|
-	  |Flex Table List       |Read Only Column JSON|govgrants_config:ReadOnlyColumnJsonForChildFlexTableAtEnhancedGrid|TmpGrantorActiveAwardsGrid   |Name                     |FTC-1492                  |
+    Given I have default configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Flex Table List       | Read Only Column JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue                                                      | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Read Only Column JSON | govgrants_config:ReadOnlyColumnJsonForChildFlexTableAtEnhancedGrid | TmpGrantorActiveAwardsGrid | Name                      | FTC-1492                   |
     When I login as "Automation" user
-	When I setup my app as "As a Grantor"
-	And I navigate to "Planning" tab
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-	When I perform quick search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-	When I navigate to "Financials" sub tab
-	When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
-	When I expand nested table containing column value "Demo_Title"
-	When I click on "Edit" icon for "AD-GG PJ--00" inside table
-	Then I see input box is not displayed for ID inside child Flex table
-	
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I expand nested table containing column value "Demo_Title"
+    When I click on "Edit" icon for "AD-GG PJ--00" inside table
+    Then I see input box is not displayed for ID inside child Flex table
+
   @45290    @iconCssFieldForChildFlexTableAtEnhancedGridActionItem-gPlanning
   Scenario: Setup icon css of child flex table for enhanced grid table edit action from config and validating it inside enhanced grid of programs-planning
-	Given I have default configuration as below:
-	  |configurationCategory |fieldName    |fieldOrignalValue                                  |coreComponentField           |coreCOmponentSubFieldName|coreComponentSubFieldValue|
-	  |Flex Table Action     |Icon CSS     |govgrants_config:FlexTableEditActionDefaultIconCss |TmpGrantorActiveAwardsGrid   |Name                     |Edit                      |
-	Given I setup test configuration as below:
-	  |configurationCategory |fieldName    |fieldNewValue                                      |coreComponentField           |coreCOmponentSubFieldName|coreComponentSubFieldValue|
-	  |Flex Table Action     |Icon CSS     |govgrants_config:FlexTableEditActionNewIconCss     |TmpGrantorActiveAwardsGrid   |Name                     |Edit                      |
+    Given I have default configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue                                  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableEditActionDefaultIconCss | TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableEditActionNewIconCss | TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
     When I login as "Automation" user
-	When I setup my app as "As a Grantor"
-	And I navigate to "Planning" tab
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-	When I perform quick search for "Test program for automation - Created mode only"
-	When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-	When I navigate to "Financials" sub tab
-	When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
-	When I expand nested table containing column value "Demo_Title"
-	Then I see external link icon as "AD-GG PJ--00" for "Edit" inside enhanced grid table action
-	
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I expand nested table containing column value "Demo_Title"
+    Then I see external link icon as "AD-GG PJ--00" for "Edit" inside enhanced grid table action
+
   @35436    @changeOfParentFlexTableTitleForEnhancedGrid-gPlanning
   Scenario: validate after changing name of enhanced flex grid title inside planning-program enhanced flex grid
     Given I have default configuration as below:
@@ -263,7 +263,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     Then I see no new tab is opened for action item in enhanced flex grid
 
     Examples:
-      | actionUrlLongValue          |
+      | actionUrlLongValue            |
       | /apex/GrantEdit?id={!rowId} |
 
   @35440    @editActionOpensInOverLayWindowForEnhancedGrid-gPlanning
@@ -1053,18 +1053,18 @@ Feature: Enhanced Flex Grid Component Scenarios
       | Total Obligated Amount | TotalObligateAmount__c,Name,GrantAwardName__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,Status__c                     | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
       | Status                 | Status__c,Name,GrantAwardName__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c                     | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
       | Active Budget Year     | ActiveBudgetYear__c,Name,GrantAwardName__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,Status__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
-      
-  @45293    @ConfirmationMessageFieldForChildFlexTableAtEnhancedGridActionItem-gPlanning 
-  Scenario: Setup confirmation message for child flex table action item at enhanced grid table view action from configuration and validating it inside enhanced grid of program-planning 
-	Given I have default configuration as below: 
-	  | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-	  | Flex Table Action     | Show Confirmation Box | false             | TmpGrantorActiveAwardsGrid | Name                      | View                       |
-	  | Flex Table Action     | Confirmation Message  |                   | TmpGrantorActiveAwardsGrid | Name                      | View                       |
-	Given I setup test configuration as below: 
-	  | configurationCategory | fieldName             | fieldNewValue      | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-	  | Flex Table Action     | Confirmation Message  | Test Automation    | TmpGrantorActiveAwardsGrid | Name                      | View                       |
-	  | Flex Table Action     | Show Confirmation Box | true               | TmpGrantorActiveAwardsGrid | Name                      | View                       |
-	When I login as "Automation" user
+
+  @45293    @ConfirmationMessageFieldForChildFlexTableAtEnhancedGridActionItem-gPlanning
+  Scenario: Setup confirmation message for child flex table action item at enhanced grid table view action from configuration and validating it inside enhanced grid of program-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Show Confirmation Box | false             | TmpGrantorActiveAwardsGrid | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                   | TmpGrantorActiveAwardsGrid | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue   | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Confirmation Message  | Test Automation | TmpGrantorActiveAwardsGrid | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | true            | TmpGrantorActiveAwardsGrid | Name                      | View                       |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -1073,11 +1073,11 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "Demo_Title"
-	When I click on "View" icon for "AD-GG PJ--00" inside table with table id "TmpGrantorActiveAwardsGridFlexToggle" without processing 
-	Then I see confirmation box with body "Test Automation" is displayed 
-    
-   @45297    @locationFieldForChildFlexTableAtEnhancedGridActionItem-gPlanning
-   Scenario: Changing location of Active awards child flex table view action from row to top from config anf validating it inside enhanced of program-planning
+    When I click on "View" icon for "AD-GG PJ--00" inside table with table id "TmpGrantorActiveAwardsGridFlexToggle" without processing
+    Then I see confirmation box with body "Test Automation" is displayed
+
+  @45297    @locationFieldForChildFlexTableAtEnhancedGridActionItem-gPlanning
+  Scenario: Changing location of Active awards child flex table view action from row to top from config anf validating it inside enhanced of program-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Location                   | Row               | TmpGrantorActiveAwardsGrid | Name                      | View                       |
@@ -1096,16 +1096,16 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "View" button inside "Active Awards" enhanced grid
-    
-   @45300    @locationFieldAtEnhancedGridActionItemFromTopToRow-gPlanning @smoke
-   Scenario: Changing location of enhanced grid flex table Test action button from top to row from config anf validating it inside enhanced grid
+
+  @45300    @locationFieldAtEnhancedGridActionItemFromTopToRow-gPlanning @smoke
+  Scenario: Changing location of enhanced grid flex table Test action button from top to row from config anf validating it inside enhanced grid
     Given I have default configuration as below:
-      | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField     | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Location                   | Top               | TmpActiveGrantsGrid    | Name                      | Test                       |
-      | Flex Table Action     | Header Action Display Type | Button            | TmpActiveGrantsGrid    | Name                      | Test                       |
+      | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Top               | TmpActiveGrantsGrid | Name                      | Test                       |
+      | Flex Table Action     | Header Action Display Type | Button            | TmpActiveGrantsGrid | Name                      | Test                       |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue     | coreComponentField     | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Location                   | Row               | TmpActiveGrantsGrid    | Name                      | Test                       |
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location  | Row           | TmpActiveGrantsGrid | Name                      | Test                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1115,16 +1115,16 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     Then I see "Test" icon for "Demo_Title" is displayed inside flex table
-    
-   @45304    @locationFieldForChildFlexTableAtEnhancedGridActionItemFromTopToRow-gPlanning @smoke
-   Scenario: Changing location of child flex table of enhanced grid test action button from top to row from config and validating it inside enhanced grid
+
+  @45304    @locationFieldForChildFlexTableAtEnhancedGridActionItemFromTopToRow-gPlanning @smoke
+  Scenario: Changing location of child flex table of enhanced grid test action button from top to row from config and validating it inside enhanced grid
     Given I have default configuration as below:
-      | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Location                   | Top               | TmpGrantorActiveAwardsGrid    | Name                      | test                       |
-      | Flex Table Action     | Header Action Display Type | Button            | TmpGrantorActiveAwardsGrid    | Name                      | test                       |
+      | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Top               | TmpGrantorActiveAwardsGrid | Name                      | test                       |
+      | Flex Table Action     | Header Action Display Type | Button            | TmpGrantorActiveAwardsGrid | Name                      | test                       |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue     | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Location                   | Row               | TmpGrantorActiveAwardsGrid    | Name                      | test                       |
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location  | Row           | TmpGrantorActiveAwardsGrid | Name                      | test                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1135,9 +1135,9 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "test" icon for "AD-GG PJ--00" is displayed inside flex table
-    
-   @45308    @sequenceFieldAtChildflexTableActionForEnhancedGrid-gPlanning @smoke
-   Scenario: Changing sequence of edit row level action item of child flex table at enhanced grid from config and validating it inside enhanced grid table of programs-planning
+
+  @45308    @sequenceFieldAtChildflexTableActionForEnhancedGrid-gPlanning @smoke
+  Scenario: Changing sequence of edit row level action item of child flex table at enhanced grid from config and validating it inside enhanced grid table of programs-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Flex Table Action     | Sequence  | 1                 | ApiGeneratedId:0 |
@@ -1154,9 +1154,9 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "Edit" icon for "TmpGrantorActiveAwardsGridFlexToggle" is at position "1" inside flex table
-    
-   @45309    @buttonHelpTextFieldAtChildFlexTableActionForEnhancedGrid-gPlanning
-   Scenario: Changing content of button help text field at enhanced grid child flex table action from config and validating it inside enhanced grid table of programs-planning
+
+  @45309    @buttonHelpTextFieldAtChildFlexTableActionForEnhancedGrid-gPlanning
+  Scenario: Changing content of button help text field at enhanced grid child flex table action from config and validating it inside enhanced grid table of programs-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table Action     | Button Help Text |                   | ApiGeneratedId:0 |
@@ -1173,9 +1173,9 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "Test Automation" as title for "AD-GG PJ--00" inside flex table action
-    
-   @45310    @changeOfChildFlexTableTitleForEnhancedGrid-gPlanning
-   Scenario: validate after changing name of child flex table title at enhanced grid inside planning-program enhanced flex grid
+
+  @45310    @changeOfChildFlexTableTitleForEnhancedGrid-gPlanning
+  Scenario: validate after changing name of child flex table title at enhanced grid inside planning-program enhanced flex grid
     Given I have default configuration as below:
       | configurationCategory     | fieldName | fieldOrignalValue | filterId         |
       | Flex Grid:Flex Table List | Label     | Active Awards     | ApiGeneratedId:0 |
@@ -1192,15 +1192,15 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "Automation Enhanced Grid" shown as inside "Enhanced1grid"
-    
+
   @49252    @showInPDFFieldAtParentFlexTable-gPlanning
   Scenario: validate Activated status in downloaded pdf file after checking check box of show in pdf at config and validating it inside enhanced grid of programs-planning
     Given I have default configuration as below:
       | configurationCategory     | fieldName   | fieldOrignalValue | filterId         |
       | Flex Grid:Flex Table List | Show in PDF | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName   | fieldNewValue     | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Show in PDF | true              | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | configurationCategory     | fieldName   | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Show in PDF | true          | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1212,15 +1212,15 @@ Feature: Enhanced Flex Grid Component Scenarios
     And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
     And I download the file
     Then I see "Activated" on page "1" of "govgrants" pdf file
-    
+
   @49243    @enableGroupingFieldAtParentFlexTableForEnhancedGrid-gPlanning @smoke
   Scenario: validate same value rows getting grouped and shown in sequence after checking checkbox true of Enable Row Grouping from config and validating it inside enhanced grid of programs-planning
     Given I have default configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Flex Table List       | Enable Row Grouping  | false             | ApiGeneratedId:0 |
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue   | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Row Grouping  | true            | TmpActiveGrantsGrid | Name                      | FTC-1497                   |
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Row Grouping | true          | TmpActiveGrantsGrid | Name                      | FTC-1497                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1229,7 +1229,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
     Then I see "Number of Awards : 1" inside rows of enhanced grid id "Enhanced1grid"
-    
+
   @49244    @hideGroupingColumnFieldAtParentFlexTableForEnhancedGrid-gPlanning
   Scenario: validate hide of particular column after checking checkbox true of Hide Grouping Column from config and validating it inside enhanced grid of programs-planning
     Given I have default configuration as below:
@@ -1237,9 +1237,9 @@ Feature: Enhanced Flex Grid Component Scenarios
       | Flex Table List       | Hide Grouping Column | false             | ApiGeneratedId:0 |
       | Flex Table List       | Enable Row Grouping  | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue   | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Grouping Column | true            | TmpActiveGrantsGrid | Name                      | FTC-1497                   |
-      | Flex Table List       | Enable Row Grouping  | true            | TmpActiveGrantsGrid | Name                      | FTC-1497                   |
+      | configurationCategory | fieldName            | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Grouping Column | true          | TmpActiveGrantsGrid | Name                      | FTC-1497                   |
+      | Flex Table List       | Enable Row Grouping  | true          | TmpActiveGrantsGrid | Name                      | FTC-1497                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1248,17 +1248,17 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
     Then I see "Number of Awards" not displayed in enhanced grid table column title
-    
+
   @49250    @enableSubTotalFieldAtParentFlexTableForEnhancedGrid-gPlanning @smoke
   Scenario: validate total of number of awards after checking checkbox true of Enable Sub Total field from config and validating it inside enhanced grid of programs-planning
     Given I have default configuration as below:
-      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
-      | Flex Table List       | Enable Row Grouping   | false             | ApiGeneratedId:0 |
-      | Flex Table List       | Enable Sub Total      | false             | ApiGeneratedId:1 |
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Sub Total    | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName             | fieldNewValue   | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Row Grouping   | true            | TmpActiveGrantsGrid | Name                      | FTC-1497                   |
-      | Flex Table List       | Enable Sub Total      | true            | TmpActiveGrantsGrid | Name                      | FTC-1497                   |
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Row Grouping | true          | TmpActiveGrantsGrid | Name                      | FTC-1497                   |
+      | Flex Table List       | Enable Sub Total    | true          | TmpActiveGrantsGrid | Name                      | FTC-1497                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1267,15 +1267,15 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
     Then I see cell subtotal for number of awards at enhanced grid
-    
+
   @49254    @showInPDFFieldToVerifyFlexTableNotContainAnyListViewAtParentFlexTable-gPlanning
   Scenario: validate Activated status in downloaded pdf file after checking check box of Is Master View Field at config and validating it inside enhanced grid of programs-planning
     Given I have default configuration as below:
       | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
       | Flex Grid:Flex Table List | Is Master View | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName      | fieldNewValue     | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View | true              | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | configurationCategory     | fieldName      | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Is Master View | true          | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1287,21 +1287,21 @@ Feature: Enhanced Flex Grid Component Scenarios
     And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
     And I download the file
     Then I see "Activated" on page "1" of "govgrants" pdf file
-    
+
   @49256    @showInPDFFieldToVerifyFlexTableContainMoreThanOneListViewAtParentFlexTable-gPlanning
   Scenario Outline: validate Activated status in downloaded pdf file after checking check box of Is Master View Field at config and validating it inside enhanced grid of programs-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Grid:Flex Table List | Is Master View      | false             | ApiGeneratedId:0 |
-      | Flex Grid:Flex Table List | Show in PDF         | false             | ApiGeneratedId:1 |
-      | Flex Grid                 | Display Field Names | <defaultFieldsApi>| ApiGeneratedId:2 |
-      | Flex Grid:Flex Table List | Show in PDF         | false             | ApiGeneratedId:3 |
+      | configurationCategory     | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:Flex Table List | Is Master View      | false              | ApiGeneratedId:0 |
+      | Flex Grid:Flex Table List | Show in PDF         | false              | ApiGeneratedId:1 |
+      | Flex Grid                 | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:2 |
+      | Flex Grid:Flex Table List | Show in PDF         | false              | ApiGeneratedId:3 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName           | fieldNewValue     | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View      | true              | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
-      | Flex Grid:Flex Table List | Show in PDF         | true              | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
-      | Flex Grid:General         | Display Field Names | <newFieldsApi>    | TmpActiveGrantsGrid |                           |                            |
-      | Flex Grid:Flex Table List | Show in PDF         | true              | TmpActiveGrantsGrid | Name                      | FLV-2545                   |
+      | configurationCategory     | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Is Master View      | true           | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Grid:Flex Table List | Show in PDF         | true           | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Grid:General         | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
+      | Flex Grid:Flex Table List | Show in PDF         | true           | TmpActiveGrantsGrid | Name                      | FLV-2545                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1313,20 +1313,20 @@ Feature: Enhanced Flex Grid Component Scenarios
     And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
     And I download the file
     Then I see "Active" on page "1" of "govgrants" pdf file
-    
+
     Examples:
       | fieldDisplayNames | newFieldsApi                                                                                                                                                                                                                                              | defaultFieldsApi                                                                                                                                                                                                                                          |
       | Project Title     | Status__c,Name,ProjectTitle__c,BudgetPeriodEndDate__c,TotalAdjustedAmount__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,TotalAdjustedAmount__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
-      
+
   @49251    @isMasterViewFieldUncheckedForAllFlexListViewAtParentFlexTable-gPlanning
   Scenario: validate error message at enhanced grid after Unchecking check box of Is Master View Field for both list view at config and validating it inside enhanced grid of programs-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Grid:Flex Table List | Is Master View      | true              | ApiGeneratedId:0 |
+      | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
+      | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName           | fieldNewValue     | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View      | false             | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
-      | Flex Grid:Flex Table List | Is Master View      | false             | TmpActiveGrantsGrid | Name                      | FLV-2545                   |
+      | configurationCategory     | fieldName      | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Is Master View | false         | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Grid:Flex Table List | Is Master View | false         | TmpActiveGrantsGrid | Name                      | FLV-2545                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1335,16 +1335,16 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
     Then I see "Atleast one list view should be marked as a Master List View" error is displayed at enhanced grid
-    
+
   @49264    @isMasterViewFieldcheckedForAtleastOneFlexListViewAtParentFlexTable-gPlanning
   Scenario: validate error message at enhanced grid after Unchecking check box of Is Master View Field for both list view at config and validating it inside enhanced grid of programs-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Grid:Flex Table List | Is Master View      | true              | ApiGeneratedId:0 |
+      | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
+      | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName           | fieldNewValue     | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View      | true              | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
-      | Flex Grid:Flex Table List | Is Master View      | false             | TmpActiveGrantsGrid | Name                      | FLV-2545                   |
+      | configurationCategory     | fieldName      | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Is Master View | true          | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Grid:Flex Table List | Is Master View | false         | TmpActiveGrantsGrid | Name                      | FLV-2545                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1353,15 +1353,15 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
     Then I see "Atleast one list view should be marked as a Master List View" error is not displayed at enhanced grid
-    
+
   @49270    @styleAttributeFieldAtParentFlexTableForEnhancedGrid-gPlanning
   Scenario Outline: validate color change of total adjusted amount cloumn content after making changes at style attribute from config and validating it inside enhanced grid of programs-planning
     Given I have default configuration as below:
-      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
-      | Flex Table List       | Style Attribute  |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
+      | Flex Table List       | Style Attribute |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue        | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Style Attribute  | <styleAttributeValue>| TmpActiveGrantsGrid | Name                      | FTC-1500                   |
+      | configurationCategory | fieldName       | fieldNewValue         | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Style Attribute | <styleAttributeValue> | TmpActiveGrantsGrid | Name                      | FTC-1500                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1370,19 +1370,19 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
     Then I see "($1.00)" inside enhanced grid table id "flexGridEnhanced1" in "Red" colour
-    
+
     Examples:
-    |styleAttributeValue|
-    |color: 'red'       |
-    
+      | styleAttributeValue |
+      | color: 'red'        |
+
   @49271    @styleClassFieldAtParentFlexTableForEnhancedGrid-gPlanning
   Scenario Outline: validate color change of number of awards cells content after making changes at style class from config and validating it inside enhanced grid of programs-planning
     Given I have default configuration as below:
-      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
-      | Flex Table List       | StyleClass       |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName  | fieldOrignalValue | filterId         |
+      | Flex Table List       | StyleClass |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue        | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | StyleClass       | <styleClassValue>    | TmpActiveGrantsGrid | Name                      | FTC-1502                   |
+      | configurationCategory | fieldName  | fieldNewValue     | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | StyleClass | <styleClassValue> | TmpActiveGrantsGrid | Name                      | FTC-1502                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1391,19 +1391,19 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
     Then I see "Road Construction Annoumsment" inside enhanced grid table id "flexGridEnhanced1" in "Red" colour
-    
+
     Examples:
-    |styleClassValue                                               |
-    |{negativeValue:row[column]='Road Construction Annoumsment'}   |
-    
+      | styleClassValue                                                 |
+      | {negativeValue:row[column]='Road Construction Annoumsment'} |
+
   @49352    @enableGroupingFieldAtChildFlexTableForEnhancedGrid-gPlanning @smoke
   Scenario: validate same value rows getting grouped and shown in sequence after checking checkbox true of Enable Row Grouping from config and validating it inside enhanced grid of programs-planning
     Given I have default configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Flex Table List       | Enable Row Grouping  | false             | ApiGeneratedId:0 |
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue   | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Row Grouping  | true            | TmpGrantorActiveAwardsGrid | Name                      | FTC-1498                   |
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Row Grouping | true          | TmpGrantorActiveAwardsGrid | Name                      | FTC-1498                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1412,9 +1412,9 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
-	When I expand nested table containing column value "Demo_Title"
+    When I expand nested table containing column value "Demo_Title"
     Then I see "Total Obligated Amount : 72000" inside rows of enhanced grid id "Enhanced1grid"
-    
+
   @49353    @hideGroupingColumnFieldAtChildFlexTableForEnhancedGrid-gPlanning
   Scenario: validate hide of particular column after checking checkbox true of Hide Grouping Column from config and validating it inside enhanced grid of programs-planning
     Given I have default configuration as below:
@@ -1422,9 +1422,9 @@ Feature: Enhanced Flex Grid Component Scenarios
       | Flex Table List       | Hide Grouping Column | false             | ApiGeneratedId:0 |
       | Flex Table List       | Enable Row Grouping  | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue   | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Grouping Column | true            | TmpGrantorActiveAwardsGrid | Name                      | FTC-1498                   |
-      | Flex Table List       | Enable Row Grouping  | true            | TmpGrantorActiveAwardsGrid | Name                      | FTC-1498                   |
+      | configurationCategory | fieldName            | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Grouping Column | true          | TmpGrantorActiveAwardsGrid | Name                      | FTC-1498                   |
+      | Flex Table List       | Enable Row Grouping  | true          | TmpGrantorActiveAwardsGrid | Name                      | FTC-1498                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1433,19 +1433,19 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
-	When I expand nested table containing column value "Demo_Title"
+    When I expand nested table containing column value "Demo_Title"
     Then I see "Total Obligated Amount" not displayed in enhanced grid table column title
-    
+
   @49355    @enableSubTotalFieldAtChildFlexTableForEnhancedGrid-gPlanning
   Scenario: validate total of number of awards after checking checkbox true of Enable Sub Total field at child flex table from config and validating it inside enhanced grid of programs-planning
     Given I have default configuration as below:
-      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
-      | Flex Table List       | Enable Row Grouping   | false             | ApiGeneratedId:0 |
-      | Flex Table List       | Enable Sub Total      | false             | ApiGeneratedId:1 |
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Sub Total    | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName             | fieldNewValue   | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Row Grouping   | true            | TmpGrantorActiveAwardsGrid | Name                      | FTC-1498                   |
-      | Flex Table List       | Enable Sub Total      | true            | TmpGrantorActiveAwardsGrid | Name                      | FTC-1498                   |
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Row Grouping | true          | TmpGrantorActiveAwardsGrid | Name                      | FTC-1498                   |
+      | Flex Table List       | Enable Sub Total    | true          | TmpGrantorActiveAwardsGrid | Name                      | FTC-1498                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1454,17 +1454,17 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-VT-001" in "flexGridEnhanced1" panel
-	When I expand nested table containing column value "GT-VT-001"
-    Then I see cell subtotal for obligated amount at child table of enhanced grid  
-    
+    When I expand nested table containing column value "GT-VT-001"
+    Then I see cell subtotal for obligated amount at child table of enhanced grid
+
   @49358    @styleClassFieldAtChildFlexTableForEnhancedGrid-gPlanning
   Scenario Outline: validate color change of number of awards cells content after making changes at style class at chile flex table from config and validating it inside enhanced grid of programs-planning
     Given I have default configuration as below:
-      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
-      | Flex Table List       | StyleClass       |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName  | fieldOrignalValue | filterId         |
+      | Flex Table List       | StyleClass |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue        | coreComponentField          | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | StyleClass       | <styleClassValue>    | TmpGrantorActiveAwardsGrid  | Name                      | FTC-1499                   |
+      | configurationCategory | fieldName  | fieldNewValue     | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | StyleClass | <styleClassValue> | TmpGrantorActiveAwardsGrid | Name                      | FTC-1499                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1473,21 +1473,21 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-12132-001" in "flexGridEnhanced1" panel
-	When I expand nested table containing column value "GT-12132-001"
+    When I expand nested table containing column value "GT-12132-001"
     Then I see "Activated" inside enhanced grid table id "TmpGrantorActiveAwardsGridFlexToggle" in "Red" colour
-    
+
     Examples:
-    |styleClassValue                        |
-    |{negativeValue:row[column]='Activated'}|
-    
+      | styleClassValue                         |
+      | {negativeValue:row[column]='Activated'} |
+
   @49359    @styleAttributeFieldAtChildFlexTableForEnhancedGrid-gPlanning
   Scenario Outline: validate color change of total adjusted amount cloumn content after making changes at style attribute from config and validating it inside enhanced grid of programs-planning
     Given I have default configuration as below:
-      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
-      | Flex Table List       | Style Attribute  |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
+      | Flex Table List       | Style Attribute |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue        | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Style Attribute  | <styleAttributeValue>| TmpGrantorActiveAwardsGrid | Name                      | FTC-1494                   |
+      | configurationCategory | fieldName       | fieldNewValue         | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Style Attribute | <styleAttributeValue> | TmpGrantorActiveAwardsGrid | Name                      | FTC-1494                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1496,22 +1496,22 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-12132-001" in "flexGridEnhanced1" panel
-	When I expand nested table containing column value "GT-12132-001"
+    When I expand nested table containing column value "GT-12132-001"
     Then I see "($1.00)" inside enhanced grid table id "TmpGrantorActiveAwardsGridFlexToggle" in "Red" colour
-    
+
     Examples:
-    |styleAttributeValue|
-    |color: 'red'       |
-    
+      | styleAttributeValue |
+      | color: 'red'        |
+
   @49240    @isMasterViewFieldUncheckedForAllFlexListViewAtChildFlexTable-gPlanning
   Scenario: validate error message at enhanced grid after Unchecking check box of Is Master View Field for both list view for child flex table at config and validating it inside enhanced grid of programs-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Grid:Flex Table List | Is Master View      | true              | ApiGeneratedId:0 |
+      | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
+      | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName           | fieldNewValue     | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View      | false             | TmpGrantorActiveAwardsGrid | Name                      | FLV-2541                   |
-      | Flex Grid:Flex Table List | Is Master View      | false             | TmpGrantorActiveAwardsGrid | Name                      | FLV-2544                   |
+      | configurationCategory     | fieldName      | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Is Master View | false         | TmpGrantorActiveAwardsGrid | Name                      | FLV-2541                   |
+      | Flex Grid:Flex Table List | Is Master View | false         | TmpGrantorActiveAwardsGrid | Name                      | FLV-2544                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1520,20 +1520,20 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-12132-001" in "flexGridEnhanced1" panel
-	When I expand nested table containing column value "GT-12132-001"
-    Then I see "Atleast one list view should be marked as a Master List View" error is displayed at enhanced grid 
-    
+    When I expand nested table containing column value "GT-12132-001"
+    Then I see "Atleast one list view should be marked as a Master List View" error is displayed at enhanced grid
+
   @49241    @isMasterViewFieldcheckedForAtleastOneFlexListViewAtChildFlexTable-gPlanning
   Scenario: validate error message at enhanced grid after Unchecking check box of Is Master View Field for both list view at config and validating it inside enhanced grid of programs-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Grid:Flex Table List | Is Master View      | true              | ApiGeneratedId:0 |
-      | Flex Grid:Flex Table List | Show in PDF         | false             | ApiGeneratedId:2 |
+      | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
+      | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:0 |
+      | Flex Grid:Flex Table List | Show in PDF    | false             | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName           | fieldNewValue     | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View      | false             | TmpGrantorActiveAwardsGrid | Name                      | FLV-2541                   |
-      | Flex Grid:Flex Table List | Is Master View      | false             | TmpGrantorActiveAwardsGrid | Name                      | FLV-2544                   |
-      | Flex Grid:Flex Table List | Show in PDF         | true              | TmpGrantorActiveAwardsGrid | Name                      | FLV-2541                   |
+      | configurationCategory     | fieldName      | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Is Master View | false         | TmpGrantorActiveAwardsGrid | Name                      | FLV-2541                   |
+      | Flex Grid:Flex Table List | Is Master View | false         | TmpGrantorActiveAwardsGrid | Name                      | FLV-2544                   |
+      | Flex Grid:Flex Table List | Show in PDF    | true          | TmpGrantorActiveAwardsGrid | Name                      | FLV-2541                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1542,22 +1542,22 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-12132-001" in "flexGridEnhanced1" panel
-	When I expand nested table containing column value "GT-12132-001"
+    When I expand nested table containing column value "GT-12132-001"
     Then I see "Atleast one list view should be marked as a Master List View" error is displayed at enhanced grid
-    
+
   @49234    @showInPDFFieldWithOneActiveListViewAndIsmasterViewCheckedAtChildFlexTable-gPlanning
   Scenario Outline: validate being amended status in downloaded pdf file after making changes at config and validating it inside enhanced grid of programs-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Grid:Flex Table List | Active ?            | true              | ApiGeneratedId:0 |
-      | Flex Grid:Flex Table List | Show in PDF         | true              | ApiGeneratedId:1 |
-      | Flex Grid                 | Display Field Names | <defaultFieldsApi>| ApiGeneratedId:2 |
+      | configurationCategory     | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:Flex Table List | Active ?            | true               | ApiGeneratedId:0 |
+      | Flex Grid:Flex Table List | Show in PDF         | true               | ApiGeneratedId:1 |
+      | Flex Grid                 | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName           | fieldNewValue     | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Active ?            | false             | TmpGrantorActiveAwardsGrid | Name                      | FLV-2544                   |
-      | Flex Grid:Flex Table List | Show in PDF         | false             | TmpGrantorActiveAwardsGrid | Name                      | FLV-2541                   |
-      | Flex Grid:General         | Display Field Names | <newFieldsApi>    | TmpGrantorActiveAwardsGrid |                           |                            |
-      | Flex Grid:Flex Table List | Is Master View      | true              | TmpGrantorActiveAwardsGrid | Name                      | FLV-2541                   |
+      | configurationCategory     | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Active ?            | false          | TmpGrantorActiveAwardsGrid | Name                      | FLV-2544                   |
+      | Flex Grid:Flex Table List | Show in PDF         | false          | TmpGrantorActiveAwardsGrid | Name                      | FLV-2541                   |
+      | Flex Grid:General         | Display Field Names | <newFieldsApi> | TmpGrantorActiveAwardsGrid |                           |                            |
+      | Flex Grid:Flex Table List | Is Master View      | true           | TmpGrantorActiveAwardsGrid | Name                      | FLV-2541                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1566,29 +1566,29 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-12132-001" in "flexGridEnhanced1" panel
-	When I expand nested table containing column value "GT-12132-001"
+    When I expand nested table containing column value "GT-12132-001"
     When I click on top right parallel lines bar for "Active Awards"
     And I select "Download as PDF" from parallel lines dropdown of "Active Awards"
     And I download the file
     Then I see "Being Amended" on page "1" of "govgrants" pdf file
-    
+
     Examples:
-      |newFieldsApi                                                                                                                     |defaultFieldsApi                                                                                                                               |
-      |Status__c,Name,GrantAwardName__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c |Name,GrantAwardName__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,Status__c,Agreement1__c,AmountDirectAssistance__c |
-      
+      | newFieldsApi                                                                                                                     | defaultFieldsApi                                                                                                                               |
+      | Status__c,Name,GrantAwardName__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c | Name,GrantAwardName__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,Status__c,Agreement1__c,AmountDirectAssistance__c |
+
   @49236    @showInPDFFieldWithMultipleActiveListViewAndShowInPDFNotCheckedAtChildFlexTable-gPlanning
   Scenario Outline: validate being amended status in downloaded pdf file after making changes at config and validating it inside enhanced grid of programs-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Grid:Flex Table List | Show in PDF         | true              | ApiGeneratedId:0 |
-      | Flex Grid                 | Display Field Names | <defaultFieldsApi>| ApiGeneratedId:4 |
+      | configurationCategory     | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:Flex Table List | Show in PDF         | true               | ApiGeneratedId:0 |
+      | Flex Grid                 | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:4 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName           | fieldNewValue     | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Show in PDF         | false             | TmpGrantorActiveAwardsGrid | Name                      | FLV-2541                   |
-      | Flex Grid:Flex Table List | Show in PDF         | false             | TmpGrantorActiveAwardsGrid | Name                      | FLV-2544                   |
-      | Flex Grid:Flex Table List | Is Master View      | false             | TmpGrantorActiveAwardsGrid | Name                      | FLV-2544                   |
-      | Flex Grid:Flex Table List | Is Master View      | true              | TmpGrantorActiveAwardsGrid | Name                      | FLV-2541                   |
-      | Flex Grid:General         | Display Field Names | <newFieldsApi>    | TmpGrantorActiveAwardsGrid |                           |                            |
+      | configurationCategory     | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Show in PDF         | false          | TmpGrantorActiveAwardsGrid | Name                      | FLV-2541                   |
+      | Flex Grid:Flex Table List | Show in PDF         | false          | TmpGrantorActiveAwardsGrid | Name                      | FLV-2544                   |
+      | Flex Grid:Flex Table List | Is Master View      | false          | TmpGrantorActiveAwardsGrid | Name                      | FLV-2544                   |
+      | Flex Grid:Flex Table List | Is Master View      | true           | TmpGrantorActiveAwardsGrid | Name                      | FLV-2541                   |
+      | Flex Grid:General         | Display Field Names | <newFieldsApi> | TmpGrantorActiveAwardsGrid |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1597,28 +1597,28 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-12132-001" in "flexGridEnhanced1" panel
-	When I expand nested table containing column value "GT-12132-001"
+    When I expand nested table containing column value "GT-12132-001"
     When I click on top right parallel lines bar for "Active Awards"
     And I select "Download as PDF" from parallel lines dropdown of "Active Awards"
     And I download the file
     Then I see "Being Amended" on page "1" of "govgrants" pdf file
-    
+
     Examples:
-      |newFieldsApi                                                                                                                     |defaultFieldsApi                                                                                                                 |
-      |Status__c,Name,GrantAwardName__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c |Name,GrantAwardName__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,Status__c,AmountDirectAssistance__c |
-      
+      | newFieldsApi                                                                                                                     | defaultFieldsApi                                                                                                                 |
+      | Status__c,Name,GrantAwardName__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c | Name,GrantAwardName__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,Status__c,AmountDirectAssistance__c |
+
   @49238    @showInPDFFieldWithMultipleActiveListViewAndShowInPDFCheckedAtChildFlexTable-gPlanning
   Scenario Outline: validate being amended status in downloaded pdf file after making changes at config and validating it inside enhanced grid of programs-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Grid                 | Display Field Names | <defaultFieldsApi>| ApiGeneratedId:4 |
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:4 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName           | fieldNewValue     | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Show in PDF         | false             | TmpGrantorActiveAwardsGrid | Name                      | FLV-2544                   |
-      | Flex Grid:Flex Table List | Is Master View      | false             | TmpGrantorActiveAwardsGrid | Name                      | FLV-2544                   |
-      | Flex Grid:Flex Table List | Is Master View      | true              | TmpGrantorActiveAwardsGrid | Name                      | FLV-2541                   |
-      | Flex Grid:Flex Table List | Show in PDF         | true              | TmpGrantorActiveAwardsGrid | Name                      | FLV-2541                   |
-      | Flex Grid:General         | Display Field Names | <newFieldsApi>    | TmpGrantorActiveAwardsGrid |                           |                            |
+      | configurationCategory     | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Show in PDF         | false          | TmpGrantorActiveAwardsGrid | Name                      | FLV-2544                   |
+      | Flex Grid:Flex Table List | Is Master View      | false          | TmpGrantorActiveAwardsGrid | Name                      | FLV-2544                   |
+      | Flex Grid:Flex Table List | Is Master View      | true           | TmpGrantorActiveAwardsGrid | Name                      | FLV-2541                   |
+      | Flex Grid:Flex Table List | Show in PDF         | true           | TmpGrantorActiveAwardsGrid | Name                      | FLV-2541                   |
+      | Flex Grid:General         | Display Field Names | <newFieldsApi> | TmpGrantorActiveAwardsGrid |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1627,24 +1627,24 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-12132-001" in "flexGridEnhanced1" panel
-	When I expand nested table containing column value "GT-12132-001"
+    When I expand nested table containing column value "GT-12132-001"
     When I click on top right parallel lines bar for "Active Awards"
     And I select "Download as PDF" from parallel lines dropdown of "Active Awards"
     And I download the file
     Then I see "Activated" on page "1" of "govgrants" pdf file
-    
+
     Examples:
-      |newFieldsApi                                                                                                                     |defaultFieldsApi                                                                                                                 |
-      |Status__c,Name,GrantAwardName__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c |Name,GrantAwardName__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,Status__c,AmountDirectAssistance__c |
-      
-  @49253   @showInPDFFieldWithFlexTableContainsOnlyOneListViewAtParentFlexTable-gPlanning 
+      | newFieldsApi                                                                                                                     | defaultFieldsApi                                                                                                                 |
+      | Status__c,Name,GrantAwardName__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c | Name,GrantAwardName__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,Status__c,AmountDirectAssistance__c |
+
+  @49253   @showInPDFFieldWithFlexTableContainsOnlyOneListViewAtParentFlexTable-gPlanning
   Scenario: validate Activated status in downloaded xls file after making changes at config and validating it inside enhanced grid of programs-planning
     Given I have default configuration as below:
       | configurationCategory     | fieldName   | fieldOrignalValue | filterId         |
       | Flex Grid:Flex Table List | Show in PDF | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName   | fieldNewValue     | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Show in PDF | true              | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | configurationCategory     | fieldName   | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Show in PDF | true          | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1655,15 +1655,15 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on top right parallel lines bar for "Monitoring Schedule For All Active Grants"
     And I select "Download as XLS" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
     Then I see "Active" in xls file "govgrants"
-    
-  @49255   @isMasterViewFieldWithFlexTableDoesNotContainAnyListViewInShowInPDF-gPlanning 
+
+  @49255   @isMasterViewFieldWithFlexTableDoesNotContainAnyListViewInShowInPDF-gPlanning
   Scenario: validate Activated status in downloaded xls file after making changes at config and validating it inside enhanced grid of programs-planning
     Given I have default configuration as below:
       | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
       | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName      | fieldNewValue     | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View | true              | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | configurationCategory     | fieldName      | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Is Master View | true          | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1674,8 +1674,8 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on top right parallel lines bar for "Monitoring Schedule For All Active Grants"
     And I select "Download as XLS" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
     Then I see "Active" in xls file "govgrants"
-    
-  @49257   @isMasterViewFieldWithFlexTableContainMOreThanOneListViewInShowInPDF-gPlanning 
+
+  @49257   @isMasterViewFieldWithFlexTableContainMOreThanOneListViewInShowInPDF-gPlanning
   Scenario: validate Activated status in downloaded xls file after making changes at config and validating it inside enhanced grid of programs-planning
     Given I have default configuration as below:
       | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
@@ -1683,10 +1683,10 @@ Feature: Enhanced Flex Grid Component Scenarios
       | Flex Grid:Flex Table List | Show in PDF    | false             | ApiGeneratedId:1 |
       | Flex Grid:Flex Table List | Show in PDF    | false             | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName      | fieldNewValue     | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View | true              | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
-      | Flex Grid:Flex Table List | Show in PDF    | true              | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
-      | Flex Grid:Flex Table List | Show in PDF    | true              | TmpActiveGrantsGrid | Name                      | FLV-2545                   |
+      | configurationCategory     | fieldName      | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Is Master View | true          | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Grid:Flex Table List | Show in PDF    | true          | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Grid:Flex Table List | Show in PDF    | true          | TmpActiveGrantsGrid | Name                      | FLV-2545                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1697,15 +1697,15 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on top right parallel lines bar for "Monitoring Schedule For All Active Grants"
     And I select "Download as XLS" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
     Then I see "Active" in xls file "govgrants"
-    
-  @49239   @showInPDFFieldWithFlexTableContainsOnlyOneListViewAtChildFlexTable-gPlanning 
+
+  @49239   @showInPDFFieldWithFlexTableContainsOnlyOneListViewAtChildFlexTable-gPlanning
   Scenario: validate Activated status in downloaded xls file after making changes at config and validating it inside enhanced grid of programs-planning
     Given I have default configuration as below:
       | configurationCategory     | fieldName   | fieldOrignalValue | filterId         |
       | Flex Grid:Flex Table List | Show in PDF | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName   | fieldNewValue     | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Show in PDF | true              | TmpGrantorActiveAwardsGrid | Name                      | FLV-2541                   |
+      | configurationCategory     | fieldName   | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Show in PDF | true          | TmpGrantorActiveAwardsGrid | Name                      | FLV-2541                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1714,21 +1714,21 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-12132-001" in "flexGridEnhanced1" panel
-	When I expand nested table containing column value "GT-12132-001"
+    When I expand nested table containing column value "GT-12132-001"
     When I click on top right parallel lines bar for "Active Awards"
     And I select "Download as XLS" from parallel lines dropdown of "Active Awards"
     Then I see "Being Amended" in xls file "govgrants"
-    
-  @49237   @isMasterViewFieldWithFlexTableDoesNotContainAnyListViewInShowInPDFAtChildFlexTable-gPlanning 
+
+  @49237   @isMasterViewFieldWithFlexTableDoesNotContainAnyListViewInShowInPDFAtChildFlexTable-gPlanning
   Scenario: validate Activated status in downloaded xls file after making changes at config and validating it inside enhanced grid of programs-planning
     Given I have default configuration as below:
       | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
       | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:0 |
       | Flex Grid:Flex Table List | Show in PDF    | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName      | fieldNewValue     | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View | true              | TmpGrantorActiveAwardsGrid| Name                      | FLV-2541                   |
-      | Flex Grid:Flex Table List | Show in PDF    | false             | TmpGrantorActiveAwardsGrid| Name                      | FLV-2541                   |
+      | configurationCategory     | fieldName      | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Is Master View | true          | TmpGrantorActiveAwardsGrid | Name                      | FLV-2541                   |
+      | Flex Grid:Flex Table List | Show in PDF    | false         | TmpGrantorActiveAwardsGrid | Name                      | FLV-2541                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1737,23 +1737,23 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-12132-001" in "flexGridEnhanced1" panel
-	When I expand nested table containing column value "GT-12132-001"
+    When I expand nested table containing column value "GT-12132-001"
     When I click on top right parallel lines bar for "Active Awards"
     And I select "Download as XLS" from parallel lines dropdown of "Active Awards"
     Then I see "Activated" in xls file "govgrants"
-    
-  @49235   @isMasterViewFieldWithFlexTableContainMOreThanOneListViewInShowInPDFAtChildFlexTable-gPlanning 
+
+  @49235   @isMasterViewFieldWithFlexTableContainMOreThanOneListViewInShowInPDFAtChildFlexTable-gPlanning
   Scenario: validate Activated status in downloaded xls file after making changes at config and validating it inside enhanced grid of programs-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
-      | Flex Grid:Flex Table List | Active ?       | true              | ApiGeneratedId:0 |
-      | Flex Grid:Flex Table List | Show in PDF    | true              | ApiGeneratedId:1 |
-      | Flex Grid:Flex Table List | Show in PDF    | false             | ApiGeneratedId:2 |
+      | configurationCategory     | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Grid:Flex Table List | Active ?    | true              | ApiGeneratedId:0 |
+      | Flex Grid:Flex Table List | Show in PDF | true              | ApiGeneratedId:1 |
+      | Flex Grid:Flex Table List | Show in PDF | false             | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName      | fieldNewValue     | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Active ?       | false             | TmpGrantorActiveAwardsGrid | Name                      | FLV-2544                   |
-      | Flex Grid:Flex Table List | Show in PDF    | true              | TmpGrantorActiveAwardsGrid | Name                      | FLV-2541                   |
-      | Flex Grid:Flex Table List | Show in PDF    | true              | TmpGrantorActiveAwardsGrid | Name                      | FLV-2544                   |
+      | configurationCategory     | fieldName   | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Active ?    | false         | TmpGrantorActiveAwardsGrid | Name                      | FLV-2544                   |
+      | Flex Grid:Flex Table List | Show in PDF | true          | TmpGrantorActiveAwardsGrid | Name                      | FLV-2541                   |
+      | Flex Grid:Flex Table List | Show in PDF | true          | TmpGrantorActiveAwardsGrid | Name                      | FLV-2544                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1762,23 +1762,23 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-12132-001" in "flexGridEnhanced1" panel
-	When I expand nested table containing column value "GT-12132-001"
+    When I expand nested table containing column value "GT-12132-001"
     When I click on top right parallel lines bar for "Active Awards"
     And I select "Download as XLS" from parallel lines dropdown of "Active Awards"
     Then I see "Being Amended" in xls file "govgrants"
-    
+
   @49249    @enableOverallTotalFieldAtParentFlexTableForEnhancedGrid-gPlanning
   Scenario Outline: validate enabling of overall total field after checking checkbox true of Enable Over All Total from config and validating it inside enhanced grid of programs-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName             | fieldOrignalValue              | filterId         |
-      | Flex Table List           | Enable Over All Total | false                          | ApiGeneratedId:0 |
-      | Flex Grid:Flex Table List | Is Master View        | true                           | ApiGeneratedId:1 |
-      | Flex Grid:Flex Table List | Filter Clause         | <defaultFilterClauseForFLV2539>| ApiGeneratedId:2 |
+      | configurationCategory     | fieldName             | fieldOrignalValue               | filterId         |
+      | Flex Table List           | Enable Over All Total | false                           | ApiGeneratedId:0 |
+      | Flex Grid:Flex Table List | Is Master View        | true                            | ApiGeneratedId:1 |
+      | Flex Grid:Flex Table List | Filter Clause         | <defaultFilterClauseForFLV2539> | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName             | fieldNewValue              | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List           | Enable Over All Total | true                       | TmpActiveGrantsGrid| Name                      | FTC-1497                   |
-      | Flex Grid:Flex Table List | Is Master View        | true                       | TmpActiveGrantsGrid| Name                      | FLV-2539                   |
-      | Flex Grid:Flex Table List | Filter Clause         | <newFilterClauseForFLV2539>| TmpActiveGrantsGrid| Name                      | FLV-2539                   |
+      | configurationCategory     | fieldName             | fieldNewValue               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List           | Enable Over All Total | true                        | TmpActiveGrantsGrid | Name                      | FTC-1497                   |
+      | Flex Grid:Flex Table List | Is Master View        | true                        | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Grid:Flex Table List | Filter Clause         | <newFilterClauseForFLV2539> | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1788,19 +1788,19 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     Then I see over all total for number of awards at enhanced grid
     Examples:
-    |defaultFilterClauseForFLV2539                   |newFilterClauseForFLV2539                                                        |
-    |RecordType.Name='Grantor' and status__c='Active'|RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c like 'Road%'|
-    
+      | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                         |
+      | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c like 'Road%' |
+
   @49354     @enableOverallTotalFieldAtChildFlexTableForEnhancedGrid-gPlanning
   Scenario: validate enabling of overall total field after checking checkbox true of Enable Over All Total for child flex tablefrom config and validating it inside enhanced grid of programs-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName             | fieldOrignalValue              | filterId         |
-      | Flex Table List           | Enable Row Grouping   | false                          | ApiGeneratedId:0 |
-      | Flex Table List           | Enable Over All Total | false                          | ApiGeneratedId:1 |
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Flex Table List       | Enable Row Grouping   | false             | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Over All Total | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName             | fieldNewValue              | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List           | Enable Row Grouping   | true                       | TmpGrantorActiveAwardsGrid | Name                      | FTC-1498                   |
-      | Flex Table List           | Enable Over All Total | true                       | TmpGrantorActiveAwardsGrid | Name                      | FTC-1498                   |
+      | configurationCategory | fieldName             | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Row Grouping   | true          | TmpGrantorActiveAwardsGrid | Name                      | FTC-1498                   |
+      | Flex Table List       | Enable Over All Total | true          | TmpGrantorActiveAwardsGrid | Name                      | FTC-1498                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1809,21 +1809,21 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-VT-001" in "flexGridEnhanced1" panel
-	When I expand nested table containing column value "GT-VT-001"
+    When I expand nested table containing column value "GT-VT-001"
     Then I see cell subtotal for obligated amount at child table of enhanced grid
-    
+
   @49361      @verifyEditSelectedAtParentFlexTableForEnhancedGrid-gPlanning
   Scenario Outline: validate Edit selected functionality for parent flex table at enhanced grid of programs-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName               | fieldOrignalValue              | filterId         |
-      | Flex Grid:Flex Table List | Is Master View          | true                           | ApiGeneratedId:0 |
-      | Flex Grid:Flex Table List | Filter Clause           | <defaultFilterClauseForFLV2539>| ApiGeneratedId:1 |
-      | Flex Table                | Enable Record Selection | false                          | ApiGeneratedId:2 |
+      | configurationCategory     | fieldName               | fieldOrignalValue               | filterId         |
+      | Flex Grid:Flex Table List | Is Master View          | true                            | ApiGeneratedId:0 |
+      | Flex Grid:Flex Table List | Filter Clause           | <defaultFilterClauseForFLV2539> | ApiGeneratedId:1 |
+      | Flex Table                | Enable Record Selection | false                           | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName               | fieldNewValue              | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View          | true                       | TmpActiveGrantsGrid| Name                      | FLV-2539                   |
-      | Flex Grid:Flex Table List | Filter Clause           | <newFilterClauseForFLV2539>| TmpActiveGrantsGrid| Name                      | FLV-2539                   |
-      | Flex Table:General        | Enable Record Selection | true                       | TmpActiveGrantsGrid|                           |                            |
+      | configurationCategory     | fieldName               | fieldNewValue               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Is Master View          | true                        | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Grid:Flex Table List | Filter Clause           | <newFilterClauseForFLV2539> | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Table:General        | Enable Record Selection | true                        | TmpActiveGrantsGrid |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1837,8 +1837,8 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on top right button "Save" in flex table with id "flexGridEnhanced1"
     Then I see edited value inside textarea is "Test Automation" for column value "Road Construction Annoumsment" of table "flexGridEnhanced1"
     Examples:
-    |defaultFilterClauseForFLV2539                   |newFilterClauseForFLV2539                                                        |
-    |RecordType.Name='Grantor' and status__c='Active'|RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c like 'Road%'|
+      | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                         |
+      | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c like 'Road%' |
 
   @49364      @verifyEditSelectedAtChildFlexTableForEnhancedGrid-gPlanning
   Scenario: validate Edit selected functionality for child flex table at enhanced grid of programs-planning
@@ -1862,17 +1862,17 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I enter value "10" into field "AmountDirectAssistance__c"
     When I click on top right button "Save" in flex table with id "Enhanced1grid"
     Then I see edited value inside textarea is "$10" for column value "AD-FIN.1-BP01-00" of table "Enhanced1grid"
-    
+
   @49360      @verifyEditAllAtParentFlexTableForEnhancedGrid-gPlanning
   Scenario Outline: validate Edit selected functionality for parent flex table at enhanced grid of programs-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName               | fieldOrignalValue              | filterId         |
-      | Flex Grid:Flex Table List | Is Master View          | true                           | ApiGeneratedId:0 |
-      | Flex Grid:Flex Table List | Filter Clause           | <defaultFilterClauseForFLV2539>| ApiGeneratedId:1 |
+      | configurationCategory     | fieldName      | fieldOrignalValue               | filterId         |
+      | Flex Grid:Flex Table List | Is Master View | true                            | ApiGeneratedId:0 |
+      | Flex Grid:Flex Table List | Filter Clause  | <defaultFilterClauseForFLV2539> | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName               | fieldNewValue              | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View          | true                       | TmpActiveGrantsGrid| Name                      | FLV-2539                   |
-      | Flex Grid:Flex Table List | Filter Clause           | <newFilterClauseForFLV2539>| TmpActiveGrantsGrid| Name                      | FLV-2539                   |
+      | configurationCategory     | fieldName      | fieldNewValue               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Is Master View | true                        | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Grid:Flex Table List | Filter Clause  | <newFilterClauseForFLV2539> | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1885,8 +1885,8 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on top right button "Save" in flex table with id "flexGridEnhanced1"
     Then I see value "Test Automation" for multiple cells at column "AddressProgramContact__c"
     Examples:
-    |defaultFilterClauseForFLV2539                   |newFilterClauseForFLV2539                                                        |
-    |RecordType.Name='Grantor' and status__c='Active'|RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c like 'Road%'|
+      | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                         |
+      | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c like 'Road%' |
 
   @49362      @verifyEditAllAtChildFlexTableForEnhancedGrid-gPlanning
   Scenario Outline: validate Edit selected functionality for parent flex table at enhanced grid of programs-planning
@@ -1911,50 +1911,50 @@ Feature: Enhanced Flex Grid Component Scenarios
     Then I see value "Test Automation" for multiple cells at column "Agreement1__c"
 
     Examples:
-     | newFieldsApi  | defaultFieldsApi                                                                                                                               |
-     | Agreement1__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
-    
- @48901    @orderByFieldAtParentDataTableEnhancedGridForAscendingOrderForMultipleField-gPlanning
- Scenario Outline: Changing specific columns values in ascending order with order by field from config and validating it inside enhanced grid of programs-planning
-  Given I have default configuration as below:
-    | configurationCategory | fieldName      | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-    | Flex Grid:General     | Order By       |                   | TmpActiveGrantsGrid |                           |                            |
-  Given I setup test configuration as below:
-    | configurationCategory | fieldName      | fieldNewValue   | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-    | Flex Grid:General     | Order By       | <fieldNewValue> | TmpActiveGrantsGrid |                           |                            |
-  When I login as "Automation" user
-  When I setup my app as "As a Grantor"
-  And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-  When I perform quick search for "Test program for automation - Created mode only"
-  When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-  When I navigate to "Financials" sub tab
-  Then I see "ProjectTitle__c" and "NumberofAwards__c" in "Ascending" order
-  
-  Examples:
-  |fieldNewValue                             |
-  |NumberofAwards__c ASC,ProjectTitle__c ASC |
-  
- @48902    @orderByFieldAtParentDataTableEnhancedGridForDescendingOrderForMultipleField-gPlanning
- Scenario Outline: Changing specific columns values in descending order with order by field from config and validating it inside enhanced grid of programs-planning
-  Given I have default configuration as below:
-    | configurationCategory | fieldName      | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-    | Flex Grid:General     | Order By       |                   | TmpActiveGrantsGrid |                           |                            |
-  Given I setup test configuration as below:
-    | configurationCategory | fieldName      | fieldNewValue   | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-    | Flex Grid:General     | Order By       | <fieldNewValue> | TmpActiveGrantsGrid |                           |                            |
-  When I login as "Automation" user
-  When I setup my app as "As a Grantor"
-  And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-  When I perform quick search for "Test program for automation - Created mode only"
-  When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
-  When I navigate to "Financials" sub tab
-  Then I see "ProjectTitle__c" and "NumberofAwards__c" in "Descending" order
+      | newFieldsApi  | defaultFieldsApi                                                                                                                               |
+      | Agreement1__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
 
-   Examples:
-  |fieldNewValue                              |
-  |ProjectTitle__c DESC,NumberofAwards__c DESC|
+  @48901    @orderByFieldAtParentDataTableEnhancedGridForAscendingOrderForMultipleField-gPlanning
+  Scenario Outline: Changing specific columns values in ascending order with order by field from config and validating it inside enhanced grid of programs-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Order By  |                   | TmpActiveGrantsGrid |                           |                            |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue   | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Order By  | <fieldNewValue> | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    Then I see "ProjectTitle__c" and "NumberofAwards__c" in "Ascending" order
+
+    Examples:
+      | fieldNewValue                             |
+      | NumberofAwards__c ASC,ProjectTitle__c ASC |
+
+  @48902    @orderByFieldAtParentDataTableEnhancedGridForDescendingOrderForMultipleField-gPlanning
+  Scenario Outline: Changing specific columns values in descending order with order by field from config and validating it inside enhanced grid of programs-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Order By  |                   | TmpActiveGrantsGrid |                           |                            |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue   | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Order By  | <fieldNewValue> | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    Then I see "ProjectTitle__c" and "NumberofAwards__c" in "Descending" order
+
+    Examples:
+      | fieldNewValue                               |
+      | ProjectTitle__c DESC,NumberofAwards__c DESC |
 
   @48903    @orderByFieldAtChildDataTableEnhancedGridForAscendingOrderForMultipleField-gPlanning @Smoke
   Scenario Outline: Changing specific column value in ascending order with order by and sort by field from config and validating it inside enhanced grid of programs-planning

@@ -533,7 +533,6 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      * @return true if expected count of records is present inside enhanced grid
      */
     private boolean isNoOfRecordsInsideEnhancedGridPresent(int rowCount, String tableId) {
-        EyeThink.core().JavaScript().scrollPageDocumentJS("PageDown", 0, 0);
         boolean flag = false;
         try {
             int listSize = EyeThink.saas().flexTable().getCompleteTableRow(tableId).size();

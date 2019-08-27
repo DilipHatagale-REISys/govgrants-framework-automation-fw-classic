@@ -8,6 +8,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.io.File;
 import java.util.List;
 
 public class FlexTablePage extends GovGrantsManager {
@@ -1002,5 +1003,17 @@ public class FlexTablePage extends GovGrantsManager {
             isRecordsDisplayed = true;
         }
         return isRecordsDisplayed;
+    }
+
+   public void assertTextNotDisplayedInPDF(String shouldBeDisplayed, String text, int pageNumber, String fileName) {
+        Assert.assertEquals("see".equalsIgnoreCase(shouldBeDisplayed), isTextNotDisplayedInFiles(text, pageNumber, fileName));
+    }
+
+    private boolean isTextNotDisplayedInFiles(String text, int pageNumber, String fileName) {
+        boolean flag = false;
+        if (EyeThink.core().file().adobeReader().readFromDownloadedFile(fileName , pageNumber).contains(text)) {
+            flag = true;
+        }
+        return flag;
     }
 }
