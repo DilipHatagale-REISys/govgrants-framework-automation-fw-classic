@@ -775,8 +775,8 @@ Feature: Approval Process Component Scenarios
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                       | coreComponentField                                         |
-      | Program                          | Status               | Created                                             | Test program for automation -  SA mode only - Not approved |
+      | configurationCategory            | fieldName             | fieldNewValue                                       | coreComponentField                                         |
+      | Program                           | Status                 | Created                                             | Test program for automation -  SA mode only - Not approved |
       | Approval Decision Action:General | Hide Expression JSON | govgrants_config:HideExpressonJsonForApprovalAction | ADAC-0010                                                  |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"

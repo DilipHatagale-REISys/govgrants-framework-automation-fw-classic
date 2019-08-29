@@ -966,3 +966,199 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantee"
     And I navigate to "Monitoring" tab
     Then I see "Financial Report By Grants Due In 90 Days" displayed as chart title
+
+  @56482    @viewActionShouldWorkProperlyAtApplicationBudgetCategoryFlexTableChild
+  Scenario: validating view action is working while checking page block and its details coming for view action at Application Budget child flex table child
+    When I login as "Automation" user
+    When I setup my app as "As a Grantee"
+    And I navigate to "Applications" tab
+    When I perform quick search for "New Technologies for Viral Hepatitis STTR (R41/R42)"
+    When I click on "View" icon for "New Technologies for Viral Hepatitis STTR (R41/R42)" inside table
+    When I navigate to "Budget" sub tab
+    When I perform quick search for "BP01"
+    When I expand nested table containing column value "BP01"
+    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    When I click on "View" icon for "Travel" inside table
+    Then I see the text containing :
+      | Narrative          |
+      | Service Area Title |
+      | Budget Category    |
+
+  @54772    @lookUpHeaderTextFieldWithNumberOfAwardsAtPageBlockDetail-gPlanning @check
+  Scenario: Adding column header with number of award Api name to lookup modal from config and validating it on program detail page
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName                  | fieldNewValue          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name,NumberofAwards__c | Grantee State Program | Name                      | PBD-3178                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    When I click search icon for "Organization Lookup (New Window)" lookup modal and swithing to frame "iframeCustomLookupModalId"
+    Then I see "# Grants" in table header on lookup Modal
+
+  @54769    @lookUpHeaderTextFieldWithGrantingAgencyAtPageBlockDetail-gPlanning @check
+  Scenario: Adding column header with granting agency Api name to lookup modal from config and validating it on program detail page
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName                  | fieldNewValue            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name,IsGrantingAgency__c | Grantee State Program | Name                      | PBD-3178                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    When I click search icon for "Organization Lookup (New Window)" lookup modal and swithing to frame "iframeCustomLookupModalId"
+    Then I see "Granting Agency" in table header on lookup Modal
+
+  @54767    @lookUpHeaderTextFieldWithDivisionAtPageBlockDetail-gPlanning @check
+  Scenario: Adding column header with Division Api name to lookup modal from config and validating it on program detail page
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName                  | fieldNewValue    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name,Division__c | Grantee State Program | Name                      | PBD-3178                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    When I click search icon for "Organization Lookup (New Window)" lookup modal and swithing to frame "iframeCustomLookupModalId"
+    Then I see "Division" in table header on lookup Modal
+
+  @54766    @lookUpHeaderTextFieldWithContactAtPageBlockDetail-gPlanning @check
+  Scenario: Adding column header with Contact Api name to lookup modal from config and validating it on program detail page
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName                  | fieldNewValue   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name,Contact__c | Grantee State Program | Name                      | PBD-3178                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    When I click search icon for "Organization Lookup (New Window)" lookup modal and swithing to frame "iframeCustomLookupModalId"
+    Then I see "Contact" in table header on lookup Modal
+
+  @54765    @lookUpHeaderTextFieldWithBillingStateAtPageBlockDetail-gPlanning @check
+  Scenario: Adding column header with Billing State Api name to lookup modal from config and validating it on program detail page
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName                  | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name,BillingState__c | Grantee State Program | Name                      | PBD-3178                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    When I click search icon for "Organization Lookup (New Window)" lookup modal and swithing to frame "iframeCustomLookupModalId"
+    Then I see "Billing State" in table header on lookup Modal
+
+  @54764    @lookUpHeaderTextFieldWithDateTimeAtPageBlockDetail-gPlanning @check
+  Scenario: Adding column header with Date Time Api name to lookup modal from config and validating it on program detail page
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName                  | fieldNewValue    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name,DateTime__c | Grantee State Program | Name                      | PBD-3178                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    When I click search icon for "Organization Lookup (New Window)" lookup modal and swithing to frame "iframeCustomLookupModalId"
+    Then I see "DateTime" in table header on lookup Modal
+
+  @54763    @lookUpHeaderTextFieldWithDateAtPageBlockDetail-gPlanning @check
+  Scenario: Adding column header with Date Api name to lookup modal from config and validating it on program detail page
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName                  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name,Date__c  | Grantee State Program | Name                      | PBD-3178                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    When I click search icon for "Organization Lookup (New Window)" lookup modal and swithing to frame "iframeCustomLookupModalId"
+    Then I see "Date" in table header on lookup Modal
+
+  @54758    @lookUpHeaderTextFieldWithMultipleFieldAPIAtPageBlockDetail-gPlanning  @check
+  Scenario Outline: Adding column header with multiple Field API to lookup modal from config and validating it on program detail page
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | <defaultApi>      | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName                  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | <newFieldApi> | Grantee State Program | Name                      | PBD-3178                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    When I click search icon for "Organization Lookup (New Window)" lookup modal and swithing to frame "iframeCustomLookupModalId"
+    Then I see "<fieldDisplayNames>" in flex table header
+
+    Examples:
+      | fieldDisplayNames | newFieldApi                                                                         | defaultApi |
+      | Account Name      | Name,Date__c,DateTime__c,BillingState__c,Contact__c,Division__c,IsGrantingAgency__c | Name       |
+      | Date              | Date__c,Name,DateTime__c,BillingState__c,Contact__c,Division__c,IsGrantingAgency__c | Name       |
+      | DateTime          | DateTime__c,Name,Date__c,BillingState__c,Contact__c,Division__c,IsGrantingAgency__c | Name       |
+      | Billing State     | BillingState__c,Name,Date__c,DateTime__c,Contact__c,Division__c,IsGrantingAgency__c | Name       |
+      | Contact           | Contact__c,Name,Date__c,DateTime__c,BillingState__c,Division__c,IsGrantingAgency__c | Name       |
+      | Division          | Division__c,Name,Date__c,DateTime__c,BillingState__c,Contact__c,IsGrantingAgency__c | Name       |
+      | Granting Agency   | IsGrantingAgency__c,Name,Date__c,DateTime__c,BillingState__c,Contact__c,Division__c | Name       |
+
+  @54704      @verifyPicklistFieldShouldBeInViewModeAfterEditingMultipleRecords
+  Scenario Outline: validate Edit selected functionality for parent flex table at enhanced grid of programs-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName     | fieldOrignalValue               | filterId         |
+      | Flex Grid:Flex Table List | Filter Clause | <defaultFilterClauseForFLV2539> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName     | fieldNewValue               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Filter Clause | <newFilterClauseForFLV2539> | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    #When I click on top right button "Edit All" in flex table with id "flexGridEnhanced1"
+    #When I enter values "Test Automation" into textarea for table id "flexGridEnhanced1"
+    #When I click on top right button "Save" in flex table with id "flexGridEnhanced1"
+    #Then I see value "Test Automation" for multiple cells at column "AddressProgramContact__c"
+    And I edit the following rows inline in flex table with id "flexGridEnhanced1" by clicking "Edit" :
+      | Project Title                 | Status |
+      | Road COnst. Ann.              | Active |
+      | Road Construction Annoumsment| Active |
+
+
+    Examples:
+      | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                         |
+      | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c like 'Road%' |
+
+
+
+

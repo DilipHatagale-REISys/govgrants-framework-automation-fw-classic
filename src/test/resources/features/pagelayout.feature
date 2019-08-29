@@ -1691,4 +1691,159 @@ Feature: Page Layout Component Scenarios
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
     Then I see "KPI's Required? is Required to submit under Overview." error is displayed
-    
+
+  @53392    @requiredForSubmitBehaviourAtPageBlockDetailForProjectPeriodStartDateField-gPlanning
+  Scenario: changing value of required behaviour and keeping none at project start period Field and validating error message while submitting program for approval
+    Given I have default configuration as below:
+      | configurationCategory                     | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |Required for Save| Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantee State Program | Name                      | PBD-584                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "PG-755-0222"
+    When I click on "Edit" icon for "PG-755-0222" inside table
+    When I enter value "No" into field "fieldKPIsRequired__c"
+    When I enter value "" into field "fieldStartDate__c"
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
+    Then I see "Project Period Start Date is Required to submit under Overview." error is displayed
+
+  @53393    @requiredForSubmitBehaviourAtPageBlockDetailForExpectedFutureFundingField-gPlanning
+  Scenario: changing value of required behaviour and keeping none at expected future funding and validating error message while submitting program for approval
+    Given I have default configuration as below:
+      | configurationCategory                     | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Required Behavior|                    | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantee State Program | Name                      | PBD-688                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "PG-755-0222"
+    When I click on "Edit" icon for "PG-755-0222" inside table
+    When I enter value "0" into field "fieldStartDate__c"
+    When I enter value "" into field "fieldExpectedFunding__c"
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
+    Then I see "Expected Future Funding is Required to submit under Overview." error is displayed
+
+  @53394    @requiredForSubmitBehaviourAtPageBlockDetailForUrlField-gPlanning
+  Scenario: changing value of required behaviour and keeping none at URL field and validating error message while submitting program for approval
+    Given I have default configuration as below:
+      | configurationCategory                     | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Required Behavior|                    | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantee State Program | Name                      | PBD-4719                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "PG-755-0222"
+    When I click on "Edit" icon for "PG-755-0222" inside table
+    When I enter value "50000" into field "fieldExpectedFunding__c"
+    When I enter value "" into field "fieldWebsiteAddress__c"
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
+    Then I see "Website Address is Required to submit under Overview." error is displayed
+
+  @53395    @requiredForSubmitBehaviourAtPageBlockDetailForProjectsGoalsField-gPlanning
+  Scenario: changing value of required behaviour and keeping none at project goals field and validating error message while submitting program for approval
+    Given I have default configuration as below:
+      | configurationCategory                     | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Required Behavior|                    | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantee State Program | Name                      | PBD-9163                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "PG-755-0222"
+    When I click on "Edit" icon for "PG-755-0222" inside table
+    When I enter value "www.google.com" into field "fieldWebsiteAddress__c"
+    When I enter value "" into field "fieldProjectGoals__c"
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
+    Then I see "Project Goals is Required to submit under Overview." error is displayed
+
+  @53396    @requiredForSubmitBehaviourAtPageBlockDetailForPercentageField-gPlanning
+  Scenario: changing value of required behaviour and keeping none at percentage field and validating error message while submitting program for approval
+    Given I have default configuration as below:
+      | configurationCategory                     | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Required Behavior|                    | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantee State Program | Name                      | PBD-9165                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "PG-755-0222"
+    When I click on "Edit" icon for "PG-755-0222" inside table
+    When I enter value "" into field "fieldPercent__c"
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
+    Then I see "Percent is Required to submit under Overview." error is displayed
+
+  @533967   @requiredForSubmitBehaviourAtPageBlockDetailForDateAndTimeField-gPlanning
+  Scenario: changing value of required behaviour and keeping none at date and time field and validating error message while submitting program for approval
+    Given I have default configuration as below:
+      | configurationCategory                     | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Required Behavior|                    | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantee State Program | Name                      | PBD-9166                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "PG-755-0222"
+    When I click on "Edit" icon for "PG-755-0222" inside table
+    When I enter value "" into field "fieldDateandTime__c"
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
+    Then I see "DateandTime is Required to submit under Overview." error is displayed
+
+  @53398   @requiredForSubmitBehaviourAtPageBlockDetailForTimeField-gPlanning
+  Scenario: changing value of required behaviour and keeping none at time field and validating error message while submitting program for approval
+    Given I have default configuration as below:
+      | configurationCategory                     | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Required Behavior|                    | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantee State Program | Name                      | PBD-9167                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "PG-755-0222"
+    When I click on "Edit" icon for "PG-755-0222" inside table
+    When I enter value "" into field "fieldTime__c"
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
+    Then I see "Time is Required to submit under Overview." error is displayed
+
+  @53399   @requiredForSubmitBehaviourAtPageBlockDetailForAuthorizationField-gPlanning
+  Scenario: changing value of required behaviour and keeping none at authorization field and validating error message while submitting program for approval
+    Given I have default configuration as below:
+      | configurationCategory                     | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Required Behavior|                    | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantee State Program | Name                      | PBD-9164                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "PG-755-0222"
+    When I click on "Edit" icon for "PG-755-0222" inside table
+    When I enter value "" into field "fieldAuthorization__c"
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
+    Then I see "Authorization is Required to submit under Overview." error is displayed
