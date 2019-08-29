@@ -967,7 +967,7 @@ Feature: Logged Issues Scenarios
     And I navigate to "Monitoring" tab
     Then I see "Financial Report By Grants Due In 90 Days" displayed as chart title
 
-  @56482    @viewActionShouldWorkProperlyAtApplicationBudgetCategoryFlexTableChild
+  @56482    @viewActionShouldWorkProperlyAtApplicationBudgetCategoryFlexTableChild @wip @check
   Scenario: validating view action is working while checking page block and its details coming for view action at Application Budget child flex table child
     When I login as "Automation" user
     When I setup my app as "As a Grantee"
@@ -1131,7 +1131,7 @@ Feature: Logged Issues Scenarios
       | Granting Agency   | IsGrantingAgency__c,Name,Date__c,DateTime__c,BillingState__c,Contact__c,Division__c | Name       |
 
   @54704      @verifyPicklistFieldShouldBeInViewModeAfterEditingMultipleRecords
-  Scenario Outline: validate Edit selected functionality for parent flex table at enhanced grid of programs-planning
+  Scenario Outline: validate picklist should visible in only view mode after Edit status field for multiple records
     Given I have default configuration as below:
       | configurationCategory     | fieldName     | fieldOrignalValue               | filterId         |
       | Flex Grid:Flex Table List | Filter Clause | <defaultFilterClauseForFLV2539> | ApiGeneratedId:0 |
@@ -1145,20 +1145,51 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "Test program for automation - Created mode only"
     When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
-    #When I click on top right button "Edit All" in flex table with id "flexGridEnhanced1"
-    #When I enter values "Test Automation" into textarea for table id "flexGridEnhanced1"
-    #When I click on top right button "Save" in flex table with id "flexGridEnhanced1"
-    #Then I see value "Test Automation" for multiple cells at column "AddressProgramContact__c"
     And I edit the following rows inline in flex table with id "flexGridEnhanced1" by clicking "Edit" :
       | Project Title                 | Status |
       | Road COnst. Ann.              | Active |
-      | Road Construction Annoumsment| Active |
-
-
+      | Road Construction Annoumsment | Active |
+    Then I see select box for picklist is not displayed for status inside table
     Examples:
       | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                         |
       | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c like 'Road%' |
 
+  @54705      @verifyCurrencyFieldGetEditedProperlyForMultipleRecord
+  Scenario Outline: validate currency field showing Edited value properly for multiple records
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName           | fieldOrignalValue               | filterId         |
+      | Flex Grid:Flex Table List | Filter Clause       | <defaultFilterClauseForFLV2539> | ApiGeneratedId:0 |
+      | Flex Grid                 | Display Field Names | <defaultFieldsApi>              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName           | fieldNewValue               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Filter Clause       | <newFilterClauseForFLV2539> | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Grid:General         | Display Field Names | <newFieldsApi>              | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Financials" sub tab
+    And I edit the following rows inline in flex table with id "flexGridEnhanced1" by clicking "Edit" :
+      | Project Title                 | Cumulative Awarded Amount |
+      | Road COnst. Ann.              | 1234                      |
+      | Road Construction Annoumsment | 1234                      |
+    Then I see value "$1,234.00" for multiple cells at column "CumulativeAwardedAmount__c"
+    Examples:
+      | defaultFieldsApi                                                                                                                                                                                                                                          | newFieldsApi                                    | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                         |
+      | Name,ProjectTitle__c,BudgetPeriodEndDate__c,TotalAdjustedAmount__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | Name,ProjectTitle__c,CumulativeAwardedAmount__c | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c like 'Road%' |
 
-
+  @54714    @historyPageBlockShouleRenderedProperlyInEditMode
+  Scenario: Validate page blocks of history sub tab should rendered properly on UI
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "History" sub tab
+    Then I see the text :
+      | Approval History |
+      | Snapshot History |
 

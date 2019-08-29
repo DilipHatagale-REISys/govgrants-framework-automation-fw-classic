@@ -14,7 +14,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     private final By reachOutToEnhancedGridCollapse, searchInputEnhancedGrid, completeTableRowOfEnhancedGrid,
             selectRecordCheckBoxForEnhancedGrid, currentBudgetPeriodEndDate, scrollToActionColumn,
             awardObligatedAmountSpecificCells, idColumnForChildFlexTable, numberOfAwardscells,
-            obligatedAmountSpecificCellsAtChildTable;
+            obligatedAmountSpecificCellsAtChildTable, selectBoxOfStatusColumnInEditMode;
 
     /**
      * Constructor to handle dependency injection and framework library
@@ -34,6 +34,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         numberOfAwardscells = By.xpath("//table/tbody/tr/td//*[@field-name='NumberofAwards__c']");
         obligatedAmountSpecificCellsAtChildTable = By
                 .xpath("//table/tbody/tr/td//*[@field-name='TotalObligateAmount__c']");
+        selectBoxOfStatusColumnInEditMode = By.xpath("//select[@ng-model='pickListValue']");
     }
 
     /******* "Key Methods with complete functionality - public" *****************/
@@ -66,7 +67,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      * @param columnTitle
      */
     public void getHelpTextAtEnhancedGridTableSpecificColumn(String columnTitle) {
-        EyeThink.core().JavaScript().moveToElement(EyeThink.core().findMyElement().getElement(By.xpath("//th//span[@title='" + columnTitle + "' or text()='" + columnTitle + "']/../..//helpicon//span[contains(@class,'fa-info')]"),false));
+        EyeThink.core().JavaScript().moveToElement(EyeThink.core().findMyElement().getElement(By.xpath("//th//span[@title='" + columnTitle + "' or text()='" + columnTitle + "']/../..//helpicon//span[contains(@class,'fa-info')]"), false));
     }
 
     /**
@@ -298,6 +299,14 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      */
     public void assertTextInputBoxForIdColumnNotDisplayed() {
         Assert.assertFalse(isInputTextBoxIsDisplayedForIdColumnOfChildFlexTableAtEnhancedGrid());
+    }
+
+    /**
+     * assert select box/picklist for status column inside table of enhanced grid
+     * is not displayed in edit mode
+     */
+    public void assertSelectBoxForStatusColumnDisplayedInViewMode() {
+        Assert.assertFalse(isSelectBoxDisplayedInViewModeForStatusColumnOfTableAtEnhancedGrid());
     }
 
     /**
@@ -1021,7 +1030,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         boolean flag = false;
         try {
             List<WebElement> cellsValue = EyeThink.core().findMyElement()
-                    .getElements(By.xpath("//table/tbody/tr/td//*[@field-name='" + columnValue + "']//span//span"));
+                    .getElements(By.xpath("//table/tbody/tr/td//*[@field-name='" + columnValue + "']//span//span | //table/tbody/tr/td//*[@field-name='" + columnValue + "']//span"));
             for (WebElement el : cellsValue) {
                 String valueFound = el.getText().trim();
                 if (enteredValue.equals(valueFound)) {
@@ -1059,5 +1068,19 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         mapWebElements.put(2,
                 EyeThink.core().findMyElement().getElements(By.xpath("//table/tbody/tr/td//*[@field-name='" + text2 + "']//span")));
         return mapWebElements;
+    }
+
+    /**
+     * @return true if select box or picklist for status column is displayed in edit mode for table
+     */
+    private Boolean isSelectBoxDisplayedInViewModeForStatusColumnOfTableAtEnhancedGrid() {
+        boolean flag = false;
+        try {
+            if (EyeThink.core().findMyElement().getElement(selectBoxOfStatusColumnInEditMode).isDisplayed()) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
     }
 }
