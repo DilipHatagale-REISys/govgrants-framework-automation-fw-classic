@@ -16,15 +16,15 @@ Feature: Approval Process Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see "Approve" is disabled
 
   @34307    @changeApproveOptionSequence-Programs @smoke
@@ -40,15 +40,15 @@ Feature: Approval Process Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then i see "Approve" shown at number "3" in Approve Decision panel
 
   @34308    @mandatoryCommentsReqForApproveAction-Programs
@@ -64,15 +64,15 @@ Feature: Approval Process Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I select "Approve" from approval decision panel
     And I click submit
     Then I see "Comments are Required." error is displayed
@@ -90,15 +90,15 @@ Feature: Approval Process Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see "Approved" inside approval decision box
 
   @34309    @confirmationMessageBoxPopupForApproveApprovalDecisionAction-Programs
@@ -115,15 +115,15 @@ Feature: Approval Process Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I select "Approve" from approval decision panel
     When I enter Approval comment
     And I click submit
@@ -142,15 +142,15 @@ Feature: Approval Process Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I select "Reassign" from approval decision panel
     When I click select dropdown
     Then I see "Allen PM" inside selectbox
@@ -171,14 +171,14 @@ Feature: Approval Process Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     Then I see approval with subject as "Test program for automation -  SA mode only - Not approved" is not displayed
 
   @34313    @successEmailSentToProgramOwner-Programs
@@ -194,15 +194,15 @@ Feature: Approval Process Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
-    When I click on "Edit" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
-    When I click on "Start" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
+    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
     And I click on "Approve" on the approval decision box
     When I re-login to "As an Administrator" app as "Automation" user on "default" portal
     And I navigate to "Operate" tab
@@ -225,15 +225,15 @@ Feature: Approval Process Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I select "Approve" from approval decision panel
     When I enter Approval comment
     And I click submit
@@ -252,8 +252,8 @@ Feature: Approval Process Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
     When I re-login to "As an Administrator" app as "Automation" user on "default" portal
@@ -277,15 +277,15 @@ Feature: Approval Process Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     And I click on "Send to Owner" on the approval decision box
     When I re-login to "As a Grantor" app as "Automation" user on "default" portal
     And I navigate to "Planning" tab
@@ -309,15 +309,15 @@ Feature: Approval Process Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I select "Disapprove" from approval decision panel
     When I enter Approval comment
     And I click submit
@@ -339,15 +339,15 @@ Feature: Approval Process Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I select "Reassign" from approval decision panel
     When I click select dropdown
     When I select specific user "Allen PM"
@@ -369,15 +369,15 @@ Feature: Approval Process Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I select "Send to Owner" from approval decision panel
     When I enter Approval comment
     And I click submit
@@ -398,15 +398,15 @@ Feature: Approval Process Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I select "Disapprove" from approval decision panel
     When I enter Approval comment
     And I click submit
@@ -428,15 +428,15 @@ Feature: Approval Process Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I select "Reassign" from approval decision panel
     When I click select dropdown
     When I select specific user "Allen PM"
@@ -456,21 +456,21 @@ Feature: Approval Process Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
-    When I click on "Edit" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
-    When I click on "Start" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
+    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
     And I click on "Approve" on the approval decision box
     When I re-login to "As a Grantor" app as "Automation" user on "default" portal
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
-    When I click on "View Program Details" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
     Then I see "Automation Testing" inside page block details
 
   @38847    @confirmationMessageBoxPopupForSendToOwnerApprovalDecisionAction-Programs @smoke
@@ -488,15 +488,15 @@ Feature: Approval Process Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I select "Send to Owner" from approval decision panel
     When I enter Approval comment
     And I click submit
@@ -515,14 +515,14 @@ Feature: Approval Process Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     Then I see approval with subject as "Test program for automation -  SA mode only - Not approved" is not displayed
 
     Examples:
@@ -544,15 +544,15 @@ Feature: Approval Process Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
-    When I click on "Edit" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
-    When I click on "Start" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
+    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
     And I click on "Approve" on the approval decision box
     When I re-login to "As an Administrator" app as "Automation" user on "default" portal
     And I navigate to "Operate" tab
@@ -577,15 +577,15 @@ Feature: Approval Process Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     And I click on "Disapprove" on the approval decision box
     When I re-login to "As an Administrator" app as "Automation" user on "default" portal
     And I navigate to "Operate" tab
@@ -609,15 +609,15 @@ Feature: Approval Process Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I select "Reassign" from approval decision panel
     When I click select dropdown
     When I select specific user "Allen PM"
@@ -644,15 +644,15 @@ Feature: Approval Process Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     And I click on "Send to Owner" on the approval decision box
     When I re-login to "As an Administrator" app as "Automation" user on "default" portal
     And I navigate to "Operate" tab
@@ -673,15 +673,15 @@ Feature: Approval Process Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
-    When I click on "Edit" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
-    When I click on "Start" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
+    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
     And I click on "Approve" on the approval decision box
     When I re-login to "As an Administrator" app as "Automation" user on "default" portal
     And I navigate to "Operate" tab
@@ -702,15 +702,15 @@ Feature: Approval Process Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I select "Reassign" from approval decision panel
     And I click submit
     Then I see "Comments are Required." error is displayed
@@ -728,21 +728,21 @@ Feature: Approval Process Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
-    When I click on "Edit" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
-    When I click on "Start" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
+    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
     And I click on "Reassign,Allen PM" on the approval decision box
     When I re-login to "As a Grantor" app as "Automation" user on "default" portal
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
-    When I click on "View Program Details" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
     Then I see "Automation Testing" inside page block details
 
   @41063    @hideApproveOptionFromHideExpressionJSONField-Programs @smoke
@@ -758,15 +758,15 @@ Feature: Approval Process Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see "Approve" is disabled
 
   @41064    @hideDisapproveOptionFromHideExpressionJSONField-Programs
@@ -782,15 +782,15 @@ Feature: Approval Process Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see "Disapprove" is disabled
 
   @41065    @hideReassignOptionFromHideExpressionJSONField-Programs
@@ -806,15 +806,15 @@ Feature: Approval Process Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see "Reassign" is disabled
 
   @41067    @hideSendToOwnerOptionFromHideExpressionJSONField-Programs
@@ -830,15 +830,15 @@ Feature: Approval Process Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Start" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see "Send to Owner" is disabled
 
   @41060    @validateCommentedTextInsideHistoryTabForReassignAction-Programs @smoke
@@ -850,15 +850,15 @@ Feature: Approval Process Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - SA mode only - Not approved - History Tab Scenario"
+    When I perform quick search for "{Framework_recordUsed:programForHistoryTabScenarios}"
     When I click on "Edit" icon for "Test program for automation - SA mode only - Not approved - History Tab Scenario" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "Test program for automation - SA mode only - Not approved - History Tab Scenario"
-    When I click on "Start" icon for "Test program for automation - SA mode only - Not approved - History Tab Scenario" inside table
+    When I perform quick search for "{Framework_recordUsed:programForHistoryTabScenarios}"
+    When I click on "Start" icon for "{Framework_recordUsed:programForHistoryTabScenarios}" inside table
     When I select "Reassign" from approval decision panel
     When I click select dropdown
     When I select specific user "Allen PM"
@@ -867,7 +867,7 @@ Feature: Approval Process Component Scenarios
     When I re-login to "As a Grantor" app as "Automation" user on "default" portal
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - SA mode only - Not approved - History Tab Scenario"
-    When I click on "View Program Details" icon for "Test program for automation - SA mode only - Not approved - History Tab Scenario" inside table
+    When I perform quick search for "{Framework_recordUsed:programForHistoryTabScenarios}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForHistoryTabScenarios}" inside table
     When I navigate to "History" sub tab
     Then I see "Automation testing" comment for user "Allen PM"

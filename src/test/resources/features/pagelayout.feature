@@ -15,8 +15,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "TPA01" shown as over view title in header "Program"
 
   @34047    @setUpPageInstructionText-gPlanning
@@ -31,8 +31,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Automation Instruction Text" shown as page instruction text
 
   @34049    @setUpHeaderOverRideField-gPlanning
@@ -62,8 +62,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Submit For Approval" button is not displayed
 
     Examples:
@@ -82,8 +82,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Submit For Approval" button is not displayed
 
   @34069    @hideForProfile-gPlanning @smoke
@@ -98,8 +98,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Submit For Approval" button is not displayed
 
   @34043    @HidePdfDownloadFromMenuForMainPageLayout-gPlanning
@@ -114,8 +114,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I click on "Menu" button inside detail page
     Then I see Download as PDF options disabled
 
@@ -131,8 +131,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I click on "Menu" button inside detail page
     Then I see "Take Snapshot" options disabled
 
@@ -152,8 +152,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I click on "Submit For Approval" button in right header
     Then I see prompt For automation is displayed
 
@@ -169,8 +169,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Submit For Approval" button is not displayed at view detail page
 
   @35814    @labelChangeOfCancelButtonAtMainPageLayout-gPlanning
@@ -185,8 +185,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I click on "Edit" button inside detail page
     Then I see "Auto Cancel" button is displayed at edit detail page
 
@@ -202,8 +202,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I click on "Edit" button inside detail page
     Then I see "Auto Save" button is displayed at edit detail page
 
@@ -219,8 +219,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @34354    @sortOrderForFieldAtPageTab-gPlanning
@@ -235,8 +235,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Overview" shown at number "5" inside subtabs
 
   @34355    @headerInstructionTextFieldAtPageTab-gPlanning
@@ -251,8 +251,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Automation Header Text" shown as header instruction text
 
   @34357    @tabTitleFieldAtPagePageTab-gPlanning
@@ -267,8 +267,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Automation Overview" sub tab is displayed at view detail page
 
   @34359    @tabIconFieldAtPageTab-gPlanning
@@ -283,8 +283,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see pencil icon as "Overview" sub tab
 
   @35949    @isActiveFieldAtPageTab-gPlanning @smoke
@@ -299,8 +299,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @35955    @hideForUserAtPageTab-gPlanning @smoke
@@ -315,8 +315,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @35956    @hideForProfileAtPageTab-gPlanning @smoke
@@ -331,8 +331,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @35959    @hideDecisionFieldAtPageTab-gPlanning @smoke
@@ -347,8 +347,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @35962    @highlightsPanelFeildAtPageTab-gPlanning
@@ -363,8 +363,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see complete header overview tab is displayed at view detail page
 
   @35976    @hideExpressionJsonFieldAtPageTab-gPlanning @smoke
@@ -379,8 +379,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @35979    @pageBlockTitleFieldAtPageBlock-gPlanning
@@ -395,8 +395,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Information Automation" page block title
 
   @35980    @isActiveFieldAtPageBlock-gPlanning @smoke
@@ -411,8 +411,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Information" page block is not displayed
 
   @35981    @sortOrderFieldAtPageBlock-gPlanning
@@ -427,8 +427,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Information" shown at number "5" inside page block
 
   @35984    @headerInstructionTextFieldAtPageBlock-gPlanning
@@ -443,8 +443,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Header for Automation" shown as header instruction text for page block
 
   @35986    @skipForExportFieldAtPageBlock-gPlanning
@@ -459,8 +459,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I click on "Menu" button inside detail page
     And I select "Download As PDF" from dropdown
     And I download the file
@@ -478,8 +478,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Information" page block is not displayed
 
   @36038    @hideForUserFieldAtPageBlock-gPlanning @smoke
@@ -494,8 +494,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Information" page block is not displayed
 
   @35957    @hideOperatorFieldUsingANDOperatorAtPageTab-gPlanning
@@ -514,8 +514,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @35958    @hideOperatorFieldUsingOROperatorAtPageTab-gPlanning
@@ -534,8 +534,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @36039    @hideForProfileAtPageBlock-gPlanning @smoke
@@ -550,8 +550,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Information" page block is not displayed
 
   @36040    @hideOperatorFieldUsingANDOperatorAtPageBlock-gPlanning
@@ -570,8 +570,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Information" page block is not displayed
 
   @36036    @totalFieldsPerRowFieldAtPageBlock-gPlanning
@@ -586,8 +586,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Information" page block contains "3" elements
 
   @36041    @hideOperatorFieldUsingOROperatorAtPageBlock-gPlanning
@@ -606,8 +606,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Information" page block is not displayed
 
   @36042    @hideDecisionFieldAtPageBlock-gPlanning @smoke
@@ -622,8 +622,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Information" page block is not displayed
 
   @36045    @flexTableNameFieldAtPageBlock-gPlanning @smoke
@@ -640,8 +640,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     Then I see Roles And Responsibilities flex table inside page block
 
@@ -659,8 +659,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see Monitoring Schedule For All Active Grants flex grid inside page block
 
@@ -679,8 +679,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
     When I navigate to "Attachments" sub tab
@@ -701,8 +701,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
     When I navigate to "Attachments" sub tab
@@ -720,8 +720,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Budgeting Preference" inside page block details
 
   @36099    @isActiveFieldAtPageBlockDetail-gPlanning @smoke
@@ -736,8 +736,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Title" is not displayed inside page block detail
 
   @36100    @sortOrderFieldAtPageBlockDetail-gPlanning
@@ -752,8 +752,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Title" shown at number "7" inside page block detail
 
   @36101    @fieldLabelOverrideFieldAtPageBlockDetail-gPlanning
@@ -768,8 +768,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Automation Title" inside page block details
 
   @36106    @readOnlyFieldAtPageBlockDetail-gPlanning
@@ -784,8 +784,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see Program Name rendered in view mode only
 
   @36109    @hideForContextFieldAtPageBlockDetail-gPlanning @smoke
@@ -800,8 +800,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Title" is not displayed inside page block detail
 
   @36110    @hideForUserFieldAtPageBlockDetail-gPlanning @smoke
@@ -816,8 +816,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Title" is not displayed inside page block detail
 
   @36111    @hideForProfileFieldAtPageBlockDetail-gPlanning @smoke
@@ -832,8 +832,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Title" is not displayed inside page block detail
 
   @36113    @hideOperatorFieldUsingANDOperatorAtPageBlockDetail-gPlanning
@@ -852,8 +852,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Title" is not displayed inside page block detail
 
   @36114    @hideOperatorFieldUsingOROperatorAtPageBlockDetail-gPlanning
@@ -872,8 +872,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Title" is not displayed inside page block detail
 
   @36126    @readOnlyForContextFieldAtPageBlockDetail-gPlanning
@@ -888,8 +888,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see Program Name rendered in view mode only
 
   @36127    @readOnlyForProfileFieldAtPageBlockDetail-gPlanning @smoke
@@ -904,8 +904,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see Program Name rendered in view mode only
 
   @36107    @requiredForSaveBehaviourAtPageBlockDetail-gPlanning @smoke
@@ -920,8 +920,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I click on "Save" button inside detail page
     Then I see "Program Sub Type is Required to save under Overview." error is displayed
 
@@ -937,8 +937,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     When I click Add button inside attachments page block
     When I click select dropdown inside add attachment iframe
@@ -956,8 +956,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Title" is not displayed inside page block detail
 
   @36115    @hideDecisionFieldAtPageBlockDetail-gPlanning @smoke
@@ -974,8 +974,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Title" is not displayed inside page block detail
 
   @36129    @readOnlyForUserFieldAtPageDetail-gPlanning @smoke
@@ -990,8 +990,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see Program Name rendered in view mode only
 
   @36131    @readDecisionFieldAtPageBlockDetail-gPlanning @smoke
@@ -1006,8 +1006,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see Program Name rendered in view mode only
 
   @36136    @hideLabelFieldAtPageBlockDetail-gPlanning
@@ -1022,8 +1022,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Title" is not displayed inside page block detail
 
   @36169    @lookUpHeaderTextFieldAtPageBlockDetail-gPlanning
@@ -1038,8 +1038,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I click search icon for owner organization
     Then I see modal box with body "Organization Automation" is displayed
 
@@ -1055,8 +1055,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I click search icon for "Organization Lookup (New Window)" lookup modal and swithing to frame "iframeCustomLookupModalId"
     Then I see "Code" in table header on lookup Modal
 
@@ -1074,8 +1074,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I click search icon for "Organization Lookup (New Window)" lookup modal and swithing to frame "iframeCustomLookupModalId"
     Then I see "Created" status in lookup modal table
 
@@ -1114,8 +1114,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Test message for Automation" message inside confirmation box is displayed on click "Submit For Approval"
 
   @36198    @isActiveFieldAtPageLayoutAction-gPlanning @smoke
@@ -1130,8 +1130,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Edit" button is not displayed
 
   @36200    @editButtonActionOpensInOverLayWindowAtPageLayoutAction-gPlanning
@@ -1146,8 +1146,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I click on "Edit" button in right header
     Then I see Edit opens in overlay window with "Cancel" button
 
@@ -1163,8 +1163,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I click on "Edit" button in right header
     Then I see new tab is opened
 
@@ -1180,8 +1180,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Create Campaign" button is displayed
 
   @36205    @displayAreaFieldForEditAtPageLayoutAction-gPlanning
@@ -1196,8 +1196,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I click on "Menu" button inside detail page
     Then I see Edit options inside Menu Dropdown
 
@@ -1215,8 +1215,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Edit" Button at position "0"
 
   @35982    @helpTextFieldAtPageBlock-gPlanning
@@ -1231,8 +1231,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I hovering mouse on help text icon inside "Program Information"
     Then I see "<new_helpText>" shown as help text
     Examples:
@@ -1251,8 +1251,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I hovering mouse on help text icon inside page block detail "Title"
     Then I see "<new_helpText>" shown as help text
     Examples:
@@ -1272,8 +1272,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
-    When I click on "Edit" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "default" portal
@@ -1281,8 +1281,8 @@ Feature: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
-    When I click on "Start" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
+    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
     Then I see "Approve" is disabled
 
   @36043    @hideExpressionJsonFieldAtPageBlock-gPlanning @smoke
@@ -1297,8 +1297,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Information" page block is not displayed
 
   @36116    @hideExpressionJsonFieldAtPageBlockDetail-gPlanning @smoke
@@ -1313,8 +1313,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Title" is not displayed inside page block detail
 
   @36134    @readOnlyExpressionJSONFieldAtPageBlockDetail-gPlanning @smoke
@@ -1329,8 +1329,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see Program Name rendered in view mode only
 
   @53094    @hideForContextFieldAtNotesAndAttachmentPageBlockForEditAction-gPlanning
@@ -1345,8 +1345,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     Then I see edit icon is disabled inside "Attachments" page block
 
@@ -1362,8 +1362,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     Then I see edit icon is disabled inside "Attachments" page block
 
@@ -1379,8 +1379,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     Then I see edit icon is disabled inside "Attachments" page block
 
@@ -1401,8 +1401,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     Then I see edit icon is disabled inside "Attachments" page block
 
@@ -1422,8 +1422,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     Then I see edit icon is disabled inside "Attachments" page block
 
@@ -1439,8 +1439,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside flex table
 
@@ -1460,8 +1460,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside flex table
 
@@ -1481,8 +1481,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside flex table
 
@@ -1506,8 +1506,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside flex table
 
@@ -1531,8 +1531,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside flex table
 
@@ -1590,8 +1590,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     When I click on "Edit" icon for "Program Artifacts" inside table
     Then I see "Save and Close Modal" at bottom of Attachment Modal
@@ -1608,8 +1608,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     When I click on "Edit" icon for "Program Artifacts" inside table
     And I see "Save" at bottom of Attachment Modal
@@ -1627,8 +1627,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test Program For Automation - Created - Required Behaviour"
-    When I click on "Edit" icon for "Test Program For Automation - Created - Required Behaviour" inside table
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "   " into field "fieldProgramName__c"
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
@@ -1646,8 +1646,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-755-0222"
-    When I click on "Edit" icon for "PG-755-0222" inside table
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "Test Program For Automation - Created - Required Behaviour" into field "fieldProgramName__c"
     When I enter value "" into field "fieldAccount__c"
     When I click on "Save" button inside detail page
@@ -1666,8 +1666,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-755-0222"
-    When I click on "Edit" icon for "PG-755-0222" inside table
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "" into field "fieldNumber__c"
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
@@ -1685,8 +1685,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-755-0222"
-    When I click on "Edit" icon for "PG-755-0222" inside table
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "--None--" into field "fieldKPIsRequired__c"
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
@@ -1704,8 +1704,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-755-0222"
-    When I click on "Edit" icon for "PG-755-0222" inside table
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "No" into field "fieldKPIsRequired__c"
     When I enter value "" into field "fieldStartDate__c"
     When I click on "Save" button inside detail page
@@ -1724,8 +1724,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-755-0222"
-    When I click on "Edit" icon for "PG-755-0222" inside table
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "0" into field "fieldStartDate__c"
     When I enter value "" into field "fieldExpectedFunding__c"
     When I click on "Save" button inside detail page
@@ -1744,8 +1744,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-755-0222"
-    When I click on "Edit" icon for "PG-755-0222" inside table
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "50000" into field "fieldExpectedFunding__c"
     When I enter value "" into field "fieldWebsiteAddress__c"
     When I click on "Save" button inside detail page
@@ -1764,8 +1764,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-755-0222"
-    When I click on "Edit" icon for "PG-755-0222" inside table
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "www.google.com" into field "fieldWebsiteAddress__c"
     When I enter value "" into field "fieldProjectGoals__c"
     When I click on "Save" button inside detail page
@@ -1784,8 +1784,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-755-0222"
-    When I click on "Edit" icon for "PG-755-0222" inside table
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "" into field "fieldPercent__c"
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
@@ -1803,8 +1803,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-755-0222"
-    When I click on "Edit" icon for "PG-755-0222" inside table
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "" into field "fieldDateandTime__c"
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
@@ -1822,8 +1822,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-755-0222"
-    When I click on "Edit" icon for "PG-755-0222" inside table
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "" into field "fieldTime__c"
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
@@ -1841,8 +1841,8 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "PG-755-0222"
-    When I click on "Edit" icon for "PG-755-0222" inside table
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "" into field "fieldAuthorization__c"
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page

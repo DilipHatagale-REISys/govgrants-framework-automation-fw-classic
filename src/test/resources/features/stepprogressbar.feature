@@ -15,8 +15,8 @@ Feature: Step Progress Bar Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see step progress bar is not displayed
 
     Examples:
@@ -35,8 +35,8 @@ Feature: Step Progress Bar Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see step progress bar is not displayed
 
     Examples:
@@ -55,8 +55,8 @@ Feature: Step Progress Bar Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
 
     Examples:
@@ -75,8 +75,8 @@ Feature: Step Progress Bar Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Submitted for Approval" status shown at number "0" in step progress bar
 
   @34351    @colorFieldOfStepProgressBar-gPlanning @smoke
@@ -91,8 +91,8 @@ Feature: Step Progress Bar Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see status in Progress-bar is "Created" and is "Blue"
 
   @34593    @negativeFieldOfStepProgressBar-gPlanning @smoke
@@ -108,8 +108,8 @@ Feature: Step Progress Bar Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
     Then I see status in Progress-bar is "Submitted for Approval" and is "Red"
@@ -142,8 +142,8 @@ Feature: Step Progress Bar Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see status in Progress-bar is "Submitted for Approval" and is "Blue"
 
   @37324    @displayValueFieldAtStepProgressBAr-gPlanning
@@ -158,8 +158,8 @@ Feature: Step Progress Bar Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see changed display name as "Automation" inside step progress bar
 
   @37328    @isCreatedFieldAtStepProgressBar-gPlanning
@@ -175,8 +175,8 @@ Feature: Step Progress Bar Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation -  SA mode only - Not approved"
-    When I click on "Edit" icon for "Test program for automation -  SA mode only - Not approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
     When I hovering mouse on Status inside step progress bar "Submitted for Approval"

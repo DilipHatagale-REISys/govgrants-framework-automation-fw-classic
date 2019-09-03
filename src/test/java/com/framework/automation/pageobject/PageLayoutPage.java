@@ -425,6 +425,13 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * return true if content of owner organisation lookup modal is in ascending order
+     */
+    public void assertAscendingOrderOfLookupModalContent(String order) {
+        Assert.assertTrue(isContentOfLookupModalInExepctedOrder(order));
+    }
+
+    /**
      * click on help text inside program information page block
      *
      * @param blockTitle
@@ -611,6 +618,7 @@ public class PageLayoutPage extends GovGrantsManager {
 
     /**
      * Handles to upload the file from workspace
+     *
      * @param fileNameFromWorkSpace - file which is to be upload
      */
     public void uploadAttachmentFromWorkspace(String... fileNameFromWorkSpace) {
@@ -625,6 +633,27 @@ public class PageLayoutPage extends GovGrantsManager {
         EyeThink.saas().modal().closeModalByClickingTopRightCloseButton();
     }
 
+    /**
+     * click on svg arrow on owner orgaisation look up modal at page block detail
+     */
+    public void clickSVGArrowElementAtOwnerOrganisationLookUpModal(String order) {
+        WebElement svgArrowElement = EyeThink.core().findMyElement().getElement(By.xpath("//div[@class='ltngDataTable']//lightning-primitive-icon/*[name()='svg' and @data-key='arrowdown']/ancestor::th[@aria-sort]"));
+        if (!svgArrowElement.getAttribute("aria-sort").equalsIgnoreCase(order)) {
+            svgArrowElement.click();
+        }
+    }
+
+    /**
+     * click on close/search for lightning look up modal at page block detail
+     */
+    public void clickOnIconsAtOwnerOrganisationLightningLookUpModal(String iconName) {
+        try {
+            EyeThink.core().findMyElement().getElement(By.xpath("//lightning-primitive-icon/*[name()='svg' and @data-key='" + iconName + "']/../parent::button[not(contains(@class,'hide'))]"));
+        } catch (Exception e) {
+        }
+        WebElement iconAtLightningLookUp1 = EyeThink.core().findMyElement().getElement(By.xpath("//lightning-primitive-icon/*[name()='svg' and @data-key='" + iconName + "']"));
+        iconAtLightningLookUp1.click();
+    }
 
     /**
      * assert true/false for success messages on attachment modal
@@ -661,6 +690,15 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public void assertExpectedFieldAtEditPageDetails(String fieldAPIName) {
         Assert.assertTrue(isExpectedFieldIsDisplayedOnEditPageDetails(fieldAPIName));
+    }
+
+    /**
+     * get owner organisation lookup modal complete content
+     *
+     * @return
+     */
+    public List<WebElement> getCompleteContentForLookupModal() {
+        return EyeThink.core().findMyElement().getElements(By.xpath("//lightning-formatted-text[text()]"));
     }
 
     /*********
@@ -1258,11 +1296,19 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean isTextDisplayedOnMiniPageLayout(String text) {
         boolean flag = false;
         EyeThink.core().WaitFor().makeThreadSleep(2000);
-        System.out.println("=========================" + EyeThink.core().findMyElement().getElement(textInsideMiniPageLayout).getText());
         if (EyeThink.core().findMyElement().getElement(textInsideMiniPageLayout).getText().contains(text)
                 || EyeThink.core().findMyElement().getElement(textInsideMiniPageLayout).getText().equalsIgnoreCase(text)) {
             flag = true;
         }
         return flag;
+    }
+
+    /**
+     * return true if content appears in Ascending/Descending order for look up modal
+     *
+     * @return
+     */
+    private boolean isContentOfLookupModalInExepctedOrder(String order) {
+        return EyeThink.core().compare().sortAndCompareOneTableColumn(getCompleteContentForLookupModal(), order);
     }
 }

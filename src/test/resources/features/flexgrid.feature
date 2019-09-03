@@ -16,8 +16,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see "Automation Goals Objectives" as header
 
@@ -33,8 +33,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see Menu icon is disabled from planning flex table "Goals Objectives"
 
@@ -50,8 +50,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see quick search option disabled for "Program Performance Mgmt Grid View"
 
@@ -67,8 +67,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     When I click on top right parallel lines bar for "Goals Objectives"
     Then I see "Download as PDF""Download as CSV" options inside "Goals Objectives" disabled
@@ -85,8 +85,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see "Due Date" not displayed in enhanced grid table column title
 
@@ -102,8 +102,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see "View" icon for "Goal" is not displayed inside flex table
 
@@ -119,8 +119,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     When I perform quick search for "Environment" in "toggleFGridProgramOutcomes" panel
     Then I see "View" icon for "toggleFGridProgramOutcomes" is at position "0" inside flex table
@@ -137,8 +137,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     When I perform quick search for "Environment" in "toggleFGridProgramOutcomes" panel
     Then I see "Test Automation" as title for "Environment" inside flex table action
@@ -155,8 +155,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     When I perform quick search for "Environment" in "toggleFGridProgramOutcomes" panel
     When I click on "View" icon for "Environment" inside table
@@ -176,8 +176,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see "View" button inside "Key Outcomes" Mass Editable grid
 
@@ -195,8 +195,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     When I click on "View" icon for "Environment" inside table with table id "toggleFGridProgramOutcomes" without processing
     Then I see confirmation box with body "Automation" is displayed
@@ -213,8 +213,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     When I perform quick search for "Environment" in "toggleFGridProgramOutcomes" panel
     Then I see "View" icon for "Environment" is not displayed inside flex table
@@ -231,8 +231,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     When I perform quick search for "Environment" in "toggleFGridProgramOutcomes" panel
     Then I see "View" icon for "Environment" is not displayed inside flex table
@@ -249,8 +249,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     When I perform quick search for "Environment" in "toggleFGridProgramOutcomes" panel
     Then I see "View" icon for "Environment" is not displayed inside flex table
@@ -267,8 +267,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     When I perform quick search for "Environment" in "toggleFGridProgramOutcomes" panel
     When I click on "View" icon for "Environment" inside table
@@ -286,8 +286,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     When I perform quick search for "Environment" in "toggleFGridProgramOutcomes" panel
     When I click on "View" icon for "Environment" inside table
@@ -305,8 +305,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     When I perform quick search for "Environment" in "toggleFGridProgramOutcomes" panel
     When I click on "Edit" icon for "Environment" inside table
@@ -326,8 +326,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     When I perform quick search for "Environment" in "toggleFGridProgramOutcomes" panel
     When I click on "View" icon for "Environment" inside table
@@ -349,8 +349,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     When I hovering mouse on help text icon inside "Target" for flex table column
     Then I see "<new_helpText>" shown as help text
@@ -371,8 +371,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     When I perform quick search for "Environment" in "toggleFGridProgramOutcomes" panel
     Then I see "Edit" icon for "Environment" is not displayed inside flex table
@@ -389,8 +389,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     When I perform quick search for "Environment" in "toggleFGridProgramOutcomes" panel
     Then I see "Edit" icon for "Environment" is not displayed inside flex table
@@ -407,8 +407,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see "Test Automation" shown as inside "toggleFGridProgramOutcomes"
 
@@ -424,8 +424,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     When I click on top right parallel lines bar for "Key Outcomes"
     Then I see "Download as PDF""Download as CSV" options inside "Key Outcomes" disabled
@@ -444,8 +444,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see enable total sum for target column at program outcomes flex grid
 
@@ -461,8 +461,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see quick search option disabled for table "toggleFGridProgramOutcomes "
 
@@ -478,8 +478,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see Menu icon is disabled from planning flex table "Key Outcomes"
 
@@ -495,8 +495,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see "Total" inside rows of enhanced grid id "toggleFGridProgramOutcomes"
 
@@ -512,8 +512,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see "Total Records" count in "inlineEditGridProgramOutcomes"
 
@@ -529,8 +529,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see "#" shown inside flex table with id "toggleFGridProgramOutcomes"
 
@@ -546,8 +546,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     When I hovering mouse on help text icon inside "Key Outcomes" for flex table
     Then I see "<new_helpText>" shown as help text
@@ -567,8 +567,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     When I click on top right parallel lines bar for "Key Outcomes"
     Then I see "Help" options inside "Key Outcomes" enabled
@@ -587,8 +587,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see column "Target" value is in "Ascending" order for table id "toggleFGridProgramOutcomes"
 
@@ -606,8 +606,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see column "Target" value is in "Descending" order for table id "toggleFGridProgramOutcomes"
 
@@ -623,8 +623,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see "Test Automation" shown inside flex table with id "toggleFGridProgramOutcomes"
 
@@ -640,8 +640,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see "<fieldDisplayNames>" in program Outcomes flex table header with id "toggleFGridProgramOutcomes"
 
@@ -666,8 +666,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see "ID" column inside Flex grid table id "toggleFGridProgramOutcomes" of width "width: 50%;"
 
@@ -1948,8 +1948,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see "View" icon for "Goal" is not displayed inside flex table
 
@@ -1969,8 +1969,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see "View" icon for "Goal" is not displayed inside flex table
 
@@ -1988,8 +1988,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     When I click on "Delete" icon for "Goal" inside table with table id "toggleFGridProgramPerformanceMgmtGridView" without processing
     Then I see confirmation box with body "Automation" is displayed

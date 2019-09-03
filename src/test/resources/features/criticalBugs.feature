@@ -41,8 +41,8 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     When I click on "Edit" icon for "Program Artifacts" inside table
     When I enter values "Test Automation" into textarea description field for Edit Attachment
@@ -55,8 +55,8 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     When I upload attachment "sbac-award-letter.pdf" of type "Program Artifacts"
     When I click on "Delete" icon for "Program Artifacts" inside table
@@ -68,8 +68,8 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     When I add notes records
     When I click on "Delete" icon for "Notes Record" inside table
@@ -81,8 +81,8 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     When I click on "Edit" icon for "Check Edit Behaviour" inside table
     When I enter values "Checked" into textarea description field for Edit Attachment
@@ -95,8 +95,8 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     When I click on "Delete" icon for "Notes Record" inside table
     When I close alertbox
@@ -110,8 +110,8 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     When I click on "Edit" attachment to upload attachment "supporting document.pdf" of type "Other Artifacts"
     Then I see the following messages in the page details contains:
@@ -123,8 +123,8 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     When I click on "Delete" icon for "Success message on second tab" inside table
     When I close alertbox
@@ -154,8 +154,8 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-test-003" in "flexGridEnhancedDivId" panel
     When I click on "Edit" icon for "GT-test-003" inside table
@@ -170,8 +170,8 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-FIN.2-001" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "GT-FIN.2-001"
@@ -271,7 +271,7 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     Then I see "View" icon for "Test program for automation - Created mode only" is not displayed inside flex table
 
   @56306    @onlyViewActionShouldhideWithMentionedExpressioJsonAtProgramFundingAccountFlexTable
@@ -316,8 +316,8 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     And I enter value "No" into field "fieldIsProjectServiceAreaneeded__c"
     Then I see field "fieldBudgetingPreference__c" is disabled
 
@@ -349,8 +349,8 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     And I enter value "www.google.com" into field "fieldWebsiteAddress__c"
     When I click on "Save" in the page details
     When I click "www.google.com" lookup link
@@ -365,8 +365,8 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I click on "Menu" button inside detail page
     And I select "Help" from dropdown
     When I switch to tab number "1"
@@ -379,8 +379,8 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Roles" sub tab
     When I click on top right button "New" in flex table with id "flexTableDivId"
     When I click dropdown field "fieldBusinessRole__c"
@@ -433,8 +433,8 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Roles" sub tab
     Then I see "New" button inside "Roles And Responsibilities " flex table not displayed
 
@@ -509,8 +509,8 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Roles" sub tab
     When I click on top right button "New" in flex table with id "flexTableDivId"
     When I click modal button "Save"
@@ -524,8 +524,8 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see the text containing :
       | Goals Objectives |
@@ -544,8 +544,8 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     Then I see "Associate" button inside "Budget Category" flex table
 
@@ -555,8 +555,8 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Program Contacts" flex table
 
@@ -730,7 +730,7 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - SA mode only - Not approved - History Tab Scenario"
+    When I perform quick search for "{Framework_recordUsed:programForHistoryTabScenarios}"
     When I click on "Edit" icon for "Test program for automation - SA mode only - Not approved - History Tab Scenario" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
@@ -738,8 +738,8 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "Test program for automation - SA mode only - Not approved - History Tab Scenario"
-    When I click on "Start" icon for "Test program for automation - SA mode only - Not approved - History Tab Scenario" inside table
+    When I perform quick search for "{Framework_recordUsed:programForHistoryTabScenarios}"
+    When I click on "Start" icon for "{Framework_recordUsed:programForHistoryTabScenarios}" inside table
     When I select "Disapprove" from approval decision panel
     When I enter Approval comment
     And I click submit
@@ -759,8 +759,8 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     When I click on top right button "Associate" in flex table with id "ProgramFundingAccount"
     When I click on "Menu" in the page details
@@ -774,8 +774,8 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     When I click on "Delete" icon for "SBC-A-209" inside table
     When I click on top right button "Associate" in flex table with id "ProgramBudgetCategory"
@@ -789,8 +789,8 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Log" sub tab
     When I click on top right button "Associate" in flex table with id "RelatedProgramServiceAreas"
     When I close modal by clicking the top right x button
@@ -813,8 +813,8 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Roles" sub tab
     When I click on top right parallel lines bar for "Default Application Review Steps"
     And I select "Download as PDF" from parallel lines dropdown of "Default Application Review Steps"
@@ -827,8 +827,8 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Log" sub tab
     When I click on top right parallel lines bar for "Program Service Areas"
     And I select "Download as PDF" from parallel lines dropdown of "Program Service Areas"
@@ -897,8 +897,8 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Roles" sub tab
     When I click on top right button "New" in flex table with id "ProgramRolesAndResponsibilities"
     When I enter value "Queue" into field "fieldUserType__c"
@@ -950,8 +950,8 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     When I click on "Delete" icon for "ContactUs.png" inside table
     When I close alertbox
@@ -996,9 +996,10 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
-    When I click search icon for "Organization Lookup (New Window)" lookup modal and swithing to frame "iframeCustomLookupModalId"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I click "close" icon for lightning lookup
+    When I click "search" icon for lightning lookup
     Then I see "# Grants" in table header on lookup Modal
 
   @54769    @lookUpHeaderTextFieldWithGrantingAgencyAtPageBlockDetail-gPlanning @check
@@ -1013,9 +1014,10 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
-    When I click search icon for "Organization Lookup (New Window)" lookup modal and swithing to frame "iframeCustomLookupModalId"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I click "close" icon for lightning lookup
+    When I click "search" icon for lightning lookup
     Then I see "Granting Agency" in table header on lookup Modal
 
   @54767    @lookUpHeaderTextFieldWithDivisionAtPageBlockDetail-gPlanning @check
@@ -1030,9 +1032,10 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
-    When I click search icon for "Organization Lookup (New Window)" lookup modal and swithing to frame "iframeCustomLookupModalId"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I click "close" icon for lightning lookup
+    When I click "search" icon for lightning lookup
     Then I see "Division" in table header on lookup Modal
 
   @54766    @lookUpHeaderTextFieldWithContactAtPageBlockDetail-gPlanning @check
@@ -1047,9 +1050,10 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
-    When I click search icon for "Organization Lookup (New Window)" lookup modal and swithing to frame "iframeCustomLookupModalId"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I click "close" icon for lightning lookup
+    When I click "search" icon for lightning lookup
     Then I see "Contact" in table header on lookup Modal
 
   @54765    @lookUpHeaderTextFieldWithBillingStateAtPageBlockDetail-gPlanning @check
@@ -1064,9 +1068,10 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
-    When I click search icon for "Organization Lookup (New Window)" lookup modal and swithing to frame "iframeCustomLookupModalId"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I click "close" icon for lightning lookup
+    When I click "search" icon for lightning lookup
     Then I see "Billing State" in table header on lookup Modal
 
   @54764    @lookUpHeaderTextFieldWithDateTimeAtPageBlockDetail-gPlanning @check
@@ -1081,9 +1086,10 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
-    When I click search icon for "Organization Lookup (New Window)" lookup modal and swithing to frame "iframeCustomLookupModalId"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I click "close" icon for lightning lookup
+    When I click "search" icon for lightning lookup
     Then I see "DateTime" in table header on lookup Modal
 
   @54763    @lookUpHeaderTextFieldWithDateAtPageBlockDetail-gPlanning @check
@@ -1098,9 +1104,10 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
-    When I click search icon for "Organization Lookup (New Window)" lookup modal and swithing to frame "iframeCustomLookupModalId"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I click "close" icon for lightning lookup
+    When I click "search" icon for lightning lookup
     Then I see "Date" in table header on lookup Modal
 
   @54758    @lookUpHeaderTextFieldWithMultipleFieldAPIAtPageBlockDetail-gPlanning  @check
@@ -1115,9 +1122,10 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
-    When I click search icon for "Organization Lookup (New Window)" lookup modal and swithing to frame "iframeCustomLookupModalId"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I click "close" icon for lightning lookup
+    When I click "search" icon for lightning lookup
     Then I see "<fieldDisplayNames>" in flex table header
 
     Examples:
@@ -1129,6 +1137,19 @@ Feature: Logged Issues Scenarios
       | Contact           | Contact__c,Name,Date__c,DateTime__c,BillingState__c,Division__c,IsGrantingAgency__c | Name       |
       | Division          | Division__c,Name,Date__c,DateTime__c,BillingState__c,Contact__c,IsGrantingAgency__c | Name       |
       | Granting Agency   | IsGrantingAgency__c,Name,Date__c,DateTime__c,BillingState__c,Contact__c,Division__c | Name       |
+
+  @54901    @validatelookupSearchModalItemSortedInAscendingOrderAtPageBlockDetail-gPlanning @check
+  Scenario: Changing column header and its data of lookup modal from config and valiodating it on program detail page
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Test Program for testing"
+    When I click on "Edit" icon for "Test Program for testing" inside table
+    When I click "close" icon for lightning lookup
+    When I click "search" icon for lightning lookup
+    When I click on svg arrow inside lookup modal for "Ascending"
+    Then I see content inside lookup modal in "Ascending" order
 
   @54704      @verifyPicklistFieldShouldBeInViewModeAfterEditingMultipleRecords
   Scenario Outline: validate picklist should visible in only view mode after Edit status field for multiple records
@@ -1142,8 +1163,8 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     And I edit the following rows inline in flex table with id "flexGridEnhanced1" by clicking "Edit" :
       | Project Title                 | Status |
@@ -1168,8 +1189,8 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     And I edit the following rows inline in flex table with id "flexGridEnhanced1" by clicking "Edit" :
       | Project Title                 | Cumulative Awarded Amount |
@@ -1186,10 +1207,35 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "History" sub tab
     Then I see the text :
       | Approval History |
       | Snapshot History |
 
+  @54742    @hide_Expression_ApprovalDecisionAction_Reject
+  Scenario: Setup configuration to hide Reject option from configuration for approval decision and validating its content in pending tasks approval decision
+    Given I have default configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                  | coreComponentField                                         |
+      | Program                          | Status               | Created                                                        | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject | ADAC-0010                                                  |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    When I click on "Save" button inside detail page
+    When I click on "Submit For Approval" button inside detail page
+    When I re-login as "Automation-PM" user on "default" portal
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    Then I see "Disapprove" is disabled

@@ -88,6 +88,16 @@ public class PageLayoutSteps {
         pageLayoutPage.clickOnAnyFooterLinks(footerLinks);
     }
 
+    @When("^I click \"([^\"]*)\" icon for lightning lookup$")
+    public void clickOnLightningLookUpIcons(String iconName) {
+        pageLayoutPage.clickOnIconsAtOwnerOrganisationLightningLookUpModal(iconName);
+    }
+
+    @When("^I click on svg arrow inside lookup modal for \"([^\"]*)\"$")
+    public void clickOnSVGArrowForOwnerOrganisatioLookUp(String order) {
+        pageLayoutPage.clickSVGArrowElementAtOwnerOrganisationLookUpModal(order);
+    }
+
     @Then("^I see \"([^\"]*)\" shown as over view title in header \"([^\"]*)\"$")
     public void assertOverViewTitleWithHeader(String overViewTitle, String overViewHeader) {
         pageLayoutPage.assertOverViewTitleWithHeader(overViewTitle, overViewHeader);
@@ -313,5 +323,10 @@ public class PageLayoutSteps {
     @Then("^I see \"([^\"]*)\" shown inside mini page layout on hover$")
     public void assertMiniPageLayoutTextOnHover(String text) {
         pageLayoutPage.assertTextAtMiniPageLayoutAtPageBlockDetail(text);
+    }
+
+    @Then("^I see content inside lookup modal in \"([^\"]*)\" order$")
+    public void assertContentOfLookUpModalInExpectedOrder(String order) {
+        pageLayoutPage.assertAscendingOrderOfLookupModalContent(order);
     }
 }

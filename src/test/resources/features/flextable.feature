@@ -200,8 +200,8 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see new tab is opened
 
   @34038    @editActionOpensInSameWindow-gPlanning @smoke
@@ -216,8 +216,8 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see no new tab is opened
 
   @34039    @editActionOpensInOverLayWindow-gPlanning
@@ -232,8 +232,8 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Edit" opens in overLay window
 
   @34292    @refreshBehaviourFieldAtRolesAndResponsilitiesFlexTableAsRefreshEntirePage-gPlanning
@@ -248,8 +248,8 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Roles" sub tab
     When I click on "Edit" icon for "Owner" to save inside subtab
     Then I see entire page is refreshing
@@ -266,8 +266,8 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Roles" sub tab
     Then I see "Edit" icon for "Owner" is not displayed inside flex table
 
@@ -283,8 +283,8 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Roles" sub tab
     Then I see "Edit" icon for "Owner" is not displayed inside flex table
 
@@ -300,8 +300,8 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Roles" sub tab
     Then I see "Edit" icon for "Owner" is not displayed inside flex table
 
@@ -321,8 +321,8 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Roles" sub tab
     Then I see "Edit" icon for "Owner" is not displayed inside flex table
 
@@ -342,8 +342,8 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Roles" sub tab
     Then I see "Edit" icon for "Owner" is not displayed inside flex table
 
@@ -499,7 +499,7 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     Then I see "Edit" row action Button at position "1"
 
   @40014    @buttonHelpTextFieldAtFlexTableAction-gPlanning
@@ -514,7 +514,7 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     Then I see "Automation Help" as title for "Test program for automation - Created mode only" inside flex table action
 
   @40015    @actionURLFieldAtFlexTableAction-gPlanning
@@ -529,8 +529,8 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "Edit" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see edit opens with "<newActionUrl>"
 
     Examples:
@@ -549,7 +549,7 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     Then I see external link icon as "Test program for automation - Created mode only" for "Edit" inside flex table action
 
   @40079    @locationFieldAtFlexTableRowLevelEditAction-gPlanning @smoke
@@ -566,8 +566,8 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Roles" sub tab
     Then I see "Edit" button inside "Roles And Responsibilities" flex table
 
@@ -584,8 +584,8 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Roles" sub tab
     Then I see "New" icon for "Owner" is displayed inside flex table
 
@@ -601,8 +601,8 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Roles" sub tab
     When I click on top right parallel lines bar for "Roles And Responsibilities"
     Then I see "New" options inside "Roles And Responsibilities" enabled
@@ -619,8 +619,8 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Roles" sub tab
     Then I see "New" button inside "Roles And Responsibilities" flex table
 
@@ -650,8 +650,8 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table with table id "toggleFlexTablePrograms" without processing
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table with table id "toggleFlexTablePrograms" without processing
     Then I see confirmation box with body "null" is displayed
 
   @40102    @ConfirmationMessageFieldForProgramFlexTAbleViewAction-gPlanning
@@ -668,8 +668,8 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table with table id "toggleFlexTablePrograms" without processing
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table with table id "toggleFlexTablePrograms" without processing
     Then I see confirmation box with body "Automation" is displayed
 
   @40103    @modalTitleFieldForProgramFlexTAbleViewAction-gPlanning
@@ -686,8 +686,8 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Automation Title" displayed in flex table Action modal
 
   @40106    @hideForProfileFieldAtProgramFlexTableEditAction-gPlanning @smoke
@@ -706,7 +706,7 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
 
     Examples:
@@ -729,7 +729,7 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
 
     Examples:
@@ -752,7 +752,7 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
 
     Examples:
@@ -774,20 +774,20 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
-    When I click on "Edit" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
     When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
-    When I click on "Start" icon for "Test program for automation -  SA mode only - Can be Approved" inside table
+    When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
+    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
     And I click on "Approve" on the approval decision box
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation -  SA mode only - Can be Approved"
+    When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
     Then I see "Edit" icon for "Test program for automation -  SA mode only - Can be Approved" is not displayed inside flex table
 
     Examples:
@@ -813,7 +813,7 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
 
     Examples:
@@ -840,7 +840,7 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
 
     Examples:
@@ -859,7 +859,7 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
 
   @40128    @hideForProfileFieldAtActiveFundingOpprtunityFlexTableCreateAction-gAnnouncement @smoke
@@ -983,8 +983,8 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Roles" sub tab
     When I record webelement at table "ProgramRolesAndResponsibilities" for column "Owner"
     And I click on "Edit" icon for "Owner" inside flex table with id "ProgramRolesAndResponsibilities" with wait for record
@@ -1004,8 +1004,8 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Roles" sub tab
     When I record webelement at table "ProgramRolesAndResponsibilities" for column "Owner"
     When I click on "Edit" icon for "Owner" to save inside subtab
@@ -1023,8 +1023,8 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Roles" sub tab
     When I record webelement at table "ProgramRolesAndResponsibilities" for column "Owner"
     And I click on "Edit" icon for "Owner" inside flex table with id "ProgramRolesAndResponsibilities" with wait for record
