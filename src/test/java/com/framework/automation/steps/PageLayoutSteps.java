@@ -1,6 +1,7 @@
 package com.framework.automation.steps;
 
 import com.framework.automation.pageobject.PageLayoutPage;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -96,6 +97,11 @@ public class PageLayoutSteps {
     @When("^I click on svg arrow inside lookup modal for \"([^\"]*)\"$")
     public void clickOnSVGArrowForOwnerOrganisatioLookUp(String order) {
         pageLayoutPage.clickSVGArrowElementAtOwnerOrganisationLookUpModal(order);
+    }
+
+    @And("^I select value \"([^\"]*)\" from lightning lookup table$")
+    public void clickOnSelectOfParticularOrganizationInsideLightningLookup(String organizationName) {
+        pageLayoutPage.clickOnSelectLinkForLookupSpecificRecord(organizationName);
     }
 
     @Then("^I see \"([^\"]*)\" shown as over view title in header \"([^\"]*)\"$")
@@ -328,5 +334,10 @@ public class PageLayoutSteps {
     @Then("^I see content inside lookup modal in \"([^\"]*)\" order$")
     public void assertContentOfLookUpModalInExpectedOrder(String order) {
         pageLayoutPage.assertAscendingOrderOfLookupModalContent(order);
+    }
+
+    @Then("^I see data table box for lookup$")
+    public void assertDataTableBoxOfLookUpModal() {
+        pageLayoutPage.assertDataTableForLookupModalContent();
     }
 }

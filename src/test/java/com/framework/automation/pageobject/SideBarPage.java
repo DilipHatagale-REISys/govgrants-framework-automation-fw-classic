@@ -2,6 +2,7 @@ package com.framework.automation.pageobject;
 
 import com.framework.automation.projectmanager.GovGrantsManager;
 import eyethink.automation.bots.Register.EyeThink;
+import eyethink.automation.bots.objects.Elements;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 
@@ -115,7 +116,7 @@ public class SideBarPage extends GovGrantsManager {
      * @param headerName
      */
     private Boolean isTaskMenuDisabled(String headerName) {
-        for (WebElement we : getSideBarHeadersList()) {
+        for (Elements we : getSideBarHeadersList()) {
             if (we.getText().equalsIgnoreCase(headerName)) {
                 return true;
             }
@@ -164,7 +165,7 @@ public class SideBarPage extends GovGrantsManager {
         for (int index = 0; index < tabHandles.size(); index++) {
             EyeThink.core().switchTo().switchToWindowHandler(index);
             EyeThink.core().WaitFor().makeThreadSleep(2000);
-            if (EyeThink.core().get().getPageTitle().equalsIgnoreCase(pageTitle)) {
+            if (EyeThink.core().get().pageTitle().equalsIgnoreCase(pageTitle)) {
                 myNewTabFound = true;
                 break;
             }

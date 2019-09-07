@@ -464,7 +464,7 @@ Feature: Page Layout Component Scenarios
     When I click on "Menu" button inside detail page
     And I select "Download As PDF" from dropdown
     And I download the file
-    Then I cannot see "Program Information" on page "1" of "govgrants" pdf file
+    Then I cannot see that "Program Information" on page "1" of "govgrants" pdf file
 
   @36037    @hideForContextFieldAtPageBlock-gPlanning @smoke
   Scenario: Hide program information page block from config and validating it at program detail page

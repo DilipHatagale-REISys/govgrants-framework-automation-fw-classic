@@ -2,6 +2,7 @@ package com.framework.automation.pageobject;
 
 import com.framework.automation.projectmanager.GovGrantsManager;
 import eyethink.automation.bots.Register.EyeThink;
+import eyethink.automation.bots.objects.Elements;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -184,10 +185,8 @@ public class PageLayoutPage extends GovGrantsManager {
      * @param subTabName
      */
     public void assertSubTabIconDisplayed(String subTabName) {
-        Assert.assertTrue(EyeThink.core().WaitFor()
-                .WaitForElementToBePresent(By.xpath(
-                        "//div[@id='myTabs']/ul/li/a[@name='" + subTabName + "']//i[contains(@class,'fa-pencil')]"))
-                .isDisplayed());
+        Assert.assertTrue(EyeThink.core().is().onWeb().isDisplayed(By.xpath(
+                "//div[@id='myTabs']/ul/li/a[@name='" + subTabName + "']//i[contains(@class,'fa-pencil')]")));
     }
 
     /**
@@ -196,7 +195,7 @@ public class PageLayoutPage extends GovGrantsManager {
     public void assertHoldOnLogoDisappeared() {
         waitForNavigationLogo();
         try {
-            Assert.assertFalse(EyeThink.core().findMyElement().getElement(navigationLogo).isDisplayed());
+            Assert.assertFalse(EyeThink.core().elementReference().onWeb(navigationLogo).isDisplayed());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -332,7 +331,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * @param headerText
      */
     public void assertOwnerOrganizationMOdalTitle(String headerText) {
-        Assert.assertTrue(EyeThink.core().findMyElement().getElement(ownerOrganizationModalTitle)
+        Assert.assertTrue(EyeThink.core().elementReference().onWeb(ownerOrganizationModalTitle)
                 .getAttribute("innerText").equalsIgnoreCase(headerText));
     }
 
@@ -432,13 +431,19 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * return true if data table box of owner organisation lookup modal is displayed
+     */
+    public void assertDataTableForLookupModalContent() {
+        Assert.assertTrue(isDataTableForLookupDisplayed());
+    }
+
+    /**
      * click on help text inside program information page block
      *
      * @param blockTitle
      */
     public void getHelpTextAtPageBlock(String blockTitle) {
-        EyeThink.core().JavaScript().moveToElement(EyeThink.core().findMyElement().getElement(
-                By.xpath("//h3//a[contains(text(),'" + blockTitle + "')]/..//span[contains(@class,'fa-info')]"), false));
+        EyeThink.core().scroll().onWeb().moveToElement(By.xpath("//h3//a[contains(text(),'" + blockTitle + "')]/..//span[contains(@class,'fa-info')]"));
     }
 
     /**
@@ -447,8 +452,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * @param pageBlockDetailTitle
      */
     public void getHelpTextAtPageBlockDetail(String pageBlockDetailTitle) {
-        EyeThink.core().JavaScript().moveToElement(EyeThink.core().findMyElement().getElement(By.xpath(
-                "//span[contains(text(),'" + pageBlockDetailTitle + "')]/..//span[contains(@class,'fa-info')]"), false));
+        EyeThink.core().scroll().onWeb().moveToElement(By.xpath("//span[contains(text(),'" + pageBlockDetailTitle + "')]/..//span[contains(@class,'fa-info')]"));
     }
 
     /**
@@ -457,8 +461,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * @param lookUpLink
      */
     public void getLookUpLinkToHover(String lookUpLink) {
-        EyeThink.core().JavaScript().moveToElement(EyeThink.core().findMyElement().getElement(By.xpath(
-                "//dl//dd//a[contains(text(),'" + lookUpLink + "') or @class='tooltipstered']"), false));
+        EyeThink.core().scroll().onWeb().moveToElement(By.xpath("//dl//dd//a[contains(text(),'" + lookUpLink + "') or @class='tooltipstered']"), false);
     }
 
     /**
@@ -467,8 +470,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * @return
      */
     public WebElement getEditButtonOptionVerification() {
-        return EyeThink.core().findMyElement()
-                .getElement(By.cssSelector(".dropdown.open>.dropdown-menu-right>li:nth-child(2)"));
+        return EyeThink.core().elementReference().onWeb(By.cssSelector(".dropdown.open>.dropdown-menu-right>li:nth-child(2)"));
     }
 
     /**
@@ -480,7 +482,7 @@ public class PageLayoutPage extends GovGrantsManager {
     public boolean isValuePresentInsidePickList(String dropDownValue) {
         String[] exp = dropDownValue.split(" ");
         int count = 0;
-        for (WebElement we : EyeThink.core().findMyElement().getDropDown(selectTypeDropdown).getOptions()) {
+        for (WebElement we : EyeThink.core().select().onWeb(selectTypeDropdown).getOptions()) {
             for (int i = 0; i < exp.length; i++) {
                 if (we.getText().equals(exp[i])) {
                     count++;
@@ -499,8 +501,8 @@ public class PageLayoutPage extends GovGrantsManager {
      *
      * @return
      */
-    public List<WebElement> getCompleteTableRowOfLookupModal() {
-        return EyeThink.core().findMyElement().getElements(completeTableRowInsideLookupModal);
+    public List<Elements> getCompleteTableRowOfLookupModal() {
+        return EyeThink.core().elementReference().listOfElements().onWeb(completeTableRowInsideLookupModal);
     }
 
     /**
@@ -517,8 +519,8 @@ public class PageLayoutPage extends GovGrantsManager {
      * click on page block detail element and switching to respective iframe
      */
     public void clickPageBlockDetailParticularElement() {
-        EyeThink.core().JavaScript().scrollElementToPageDetailCenter(manageAttachmentInsidePageBlockDetail);
-        EyeThink.core().findMyElement().getElement(manageAttachmentInsidePageBlockDetail).click();
+        EyeThink.core().scroll().onWeb().toElementCenter(manageAttachmentInsidePageBlockDetail);
+        EyeThink.core().click().onWeb(manageAttachmentInsidePageBlockDetail);
         EyeThink.core().switchTo().switchToFrame(manageAttachmentIframe);
     }
 
@@ -529,8 +531,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * @return
      */
     public WebElement getPDFOptionForVerification() {
-        return EyeThink.core().findMyElement()
-                .getElement(By.cssSelector(".dropdown.open>.dropdown-menu-right>li:nth-child(8)"));
+        return EyeThink.core().elementReference().onWeb(By.cssSelector(".dropdown.open>.dropdown-menu-right>li:nth-child(8)"));
     }
 
     /**
@@ -539,7 +540,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * @return
      */
     public WebElement getPromptBoxForVerification() {
-        return EyeThink.core().findMyElement().getElement(By.xpath("//div[@class='modal-dialog modal-sm']/div[@class='modal-content']"));
+        return EyeThink.core().elementReference().onWeb(By.xpath("//div[@class='modal-dialog modal-sm']/div[@class='modal-content']"));
     }
 
     /**
@@ -548,8 +549,8 @@ public class PageLayoutPage extends GovGrantsManager {
 
     public void clickLookupModalQuickSearch() {
         EyeThink.core().WaitFor().magicWait(lookupSearchButton);
-        EyeThink.core().textInput().clearText(EyeThink.core().findMyElement().getElement(lookupSearchInputBox));
-        EyeThink.core().JavaScript().clickByJS(lookupSearchButton);
+        EyeThink.core().enterText().onWeb().clear(EyeThink.core().elementReference().onWeb(lookupSearchInputBox));
+        EyeThink.core().click().withJavaScript(lookupSearchButton);
     }
 
     /**
@@ -562,8 +563,8 @@ public class PageLayoutPage extends GovGrantsManager {
         By lookupInputBox = By.xpath("//img[@title='" + lookupText + "']/../../input[@type='text']");
         By lookupFrame = By.xpath("//iframe[@id='" + frameId + "']");
         EyeThink.core().WaitFor().magicWait(lookupButton);
-        EyeThink.core().textInput().clearText(lookupInputBox);
-        EyeThink.core().JavaScript().clickByJS(lookupButton);
+        EyeThink.core().enterText().onWeb().clear(lookupInputBox);
+        EyeThink.core().click().withJavaScript(lookupButton);
         EyeThink.core().switchTo().switchToFrame(lookupFrame);
     }
 
@@ -571,8 +572,8 @@ public class PageLayoutPage extends GovGrantsManager {
      * get list of element inside page block detail like program name, program code
      * etc.
      */
-    public List<WebElement> getListOfPageBlockDetailElement() {
-        return EyeThink.core().findMyElement().getElements(By
+    public List<Elements> getListOfPageBlockDetailElement() {
+        return EyeThink.core().elementReference().listOfElements().onWeb(By
                 .xpath("//h3//a[contains(text(),'Program Information')]/ancestor::div[2]/following-sibling::div//dt"));
     }
 
@@ -582,9 +583,9 @@ public class PageLayoutPage extends GovGrantsManager {
      * @param enteredValue
      */
     public void enterValueForTextareaDescriptionFieldUnderEditAttachment(String enteredValue) {
-        WebElement saveAndCloseButton = EyeThink.core().findMyElement().getElement(editAttachmentSaveButton);
-        EyeThink.core().textInput().clearText(By.xpath("//div[@id='modaltemp']//textarea"));
-        EyeThink.core().textInput().enterText(By.xpath("//div[@id='modaltemp']//textarea"), enteredValue);
+        WebElement saveAndCloseButton = EyeThink.core().elementReference().onWeb(editAttachmentSaveButton);
+        EyeThink.core().enterText().onWeb().clear(By.xpath("//div[@id='modaltemp']//textarea"));
+        EyeThink.core().enterText().onWeb().enter(By.xpath("//div[@id='modaltemp']//textarea"), enteredValue);
         saveAndCloseButton.click();
     }
 
@@ -592,7 +593,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * click on close icon to close AlertBox on notes and attachment
      */
     public void closeAlertBoxFromPage() {
-        EyeThink.core().findMyElement().getElement(By.xpath("//button[contains(@class,'bootbox-close-button')]")).click();
+        EyeThink.core().click().onWeb(By.xpath("//button[contains(@class,'bootbox-close-button')]"));
     }
 
     /**
@@ -606,14 +607,14 @@ public class PageLayoutPage extends GovGrantsManager {
                 + " | //div//label[text()='File']/..//input[@type='file']"
                 + " | //div//span[text()='File']/../..//input[@type='file']");
         String defaultFilePath = System.getProperty("user.dir") + "/src/main/resources/";
-        String tableId = EyeThink.core().findMyElement().getElement(By.xpath("//*[contains(@class, 'panel-heading')]//button[text()='Add']")).getAttribute("data-target");
+        String tableId = EyeThink.core().elementReference().onWeb(By.xpath("//*[contains(@class, 'panel-heading')]//button[text()='Add']")).getAttribute("data-target");
         tableId = tableId.substring(tableId.length() - 18);
         EyeThink.saas().flexTable().clickTableTopRightButton(tableId, "Add");
-        EyeThink.core().findMyElement().getDropDown(attachmentClassificationPath).selectByValue(fileType);
-        EyeThink.core().textInput().enterText(attachmentDescriptionPath, "Success message on second tab");
-        EyeThink.core().textInput().enterText(attachmentFilePath, defaultFilePath + fileName);
-        EyeThink.core().findMyElement().getElement(By.xpath("//input[@value='Save']")).click();
-        EyeThink.core().findMyElement().getElement(By.xpath("//div[@id='Attachmentadd']//span[text()='Upload file from Workspace']")).click();
+        EyeThink.core().select().onWeb(attachmentClassificationPath).selectByValue(fileType);
+        EyeThink.core().enterText().onWeb().enter(attachmentDescriptionPath, "Success message on second tab");
+        EyeThink.core().enterText().onWeb().enter(attachmentFilePath, defaultFilePath + fileName);
+        EyeThink.core().click().onWeb(By.xpath("//input[@value='Save']"));
+        EyeThink.core().click().onWeb(By.xpath("//div[@id='Attachmentadd']//span[text()='Upload file from Workspace']"));
     }
 
     /**
@@ -623,11 +624,11 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public void uploadAttachmentFromWorkspace(String... fileNameFromWorkSpace) {
         EyeThink.core().WaitFor().makeThreadSleep(3000);
-        EyeThink.core().findMyElement().getElement(By.xpath("//div[@id='myTabbedContent']//span[contains(text(),'Attachment')]/..//div[@class='panel-heading']//*[text()='Add']")).click();
+        EyeThink.core().elementReference().onWeb(By.xpath("//div[@id='myTabbedContent']//span[contains(text(),'Attachment')]/..//div[@class='panel-heading']//*[text()='Add']")).click();
         EyeThink.core().switchTo().switchToFrame(By.xpath("//iframe[contains(@ng-src, 'apex') or contains(@src,'apex')]"));
-        EyeThink.core().findMyElement().getElement(By.xpath("//div[@id='Attachmentadd']//span[text()='Upload file from Workspace']")).click();
+        EyeThink.core().elementReference().onWeb(By.xpath("//div[@id='Attachmentadd']//span[text()='Upload file from Workspace']")).click();
         for (String uniqueColumn : fileNameFromWorkSpace) {
-            EyeThink.core().findMyElement().getElement(By.xpath("//div[@id='Attachmentadd']//td[text()='" + uniqueColumn + "']/..//input")).click();
+            EyeThink.core().elementReference().onWeb(By.xpath("//div[@id='Attachmentadd']//td[text()='" + uniqueColumn + "']/..//input")).click();
         }
         EyeThink.saas().modal().clickModalContentSpecificButton("Attach");
         EyeThink.saas().modal().closeModalByClickingTopRightCloseButton();
@@ -637,21 +638,29 @@ public class PageLayoutPage extends GovGrantsManager {
      * click on svg arrow on owner orgaisation look up modal at page block detail
      */
     public void clickSVGArrowElementAtOwnerOrganisationLookUpModal(String order) {
-        WebElement svgArrowElement = EyeThink.core().findMyElement().getElement(By.xpath("//div[@class='ltngDataTable']//lightning-primitive-icon/*[name()='svg' and @data-key='arrowdown']/ancestor::th[@aria-sort]"));
+        WebElement svgArrowElement = EyeThink.core().elementReference().onWeb(By.xpath("//div[@class='ltngDataTable']//lightning-primitive-icon/*[name()='svg' and @data-key='arrowdown']/ancestor::th[@aria-sort]"));
         if (!svgArrowElement.getAttribute("aria-sort").equalsIgnoreCase(order)) {
             svgArrowElement.click();
         }
     }
 
     /**
+     * click on svg arrow on owner orgaisation look up modal at page block detail
+     */
+    public void clickOnSelectLinkForLookupSpecificRecord(String organizationName) {
+        WebElement selectLinkWRTToOrganizationName = EyeThink.core().elementReference().onWeb(By.xpath("//lightning-formatted-text[text()='" + organizationName + "']/ancestor::td/preceding-sibling::th//button[contains(@title,'selectTitle')]"));
+        selectLinkWRTToOrganizationName.click();
+        }
+
+    /**
      * click on close/search for lightning look up modal at page block detail
      */
     public void clickOnIconsAtOwnerOrganisationLightningLookUpModal(String iconName) {
         try {
-            EyeThink.core().findMyElement().getElement(By.xpath("//lightning-primitive-icon/*[name()='svg' and @data-key='" + iconName + "']/../parent::button[not(contains(@class,'hide'))]"));
+            EyeThink.core().elementReference().onWeb(By.xpath("//lightning-primitive-icon/*[name()='svg' and @data-key='" + iconName + "']/../parent::button[not(contains(@class,'hide'))]"));
         } catch (Exception e) {
         }
-        WebElement iconAtLightningLookUp1 = EyeThink.core().findMyElement().getElement(By.xpath("//lightning-primitive-icon/*[name()='svg' and @data-key='" + iconName + "']"));
+        WebElement iconAtLightningLookUp1 = EyeThink.core().elementReference().onWeb(By.xpath("//lightning-primitive-icon/*[name()='svg' and @data-key='" + iconName + "']"));
         iconAtLightningLookUp1.click();
     }
 
@@ -660,7 +669,7 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public void assertMessageOnAttachmentModalDisplayed(String pageblockName, boolean assertcan) {
         By pageMessagesSelector = By.xpath("//div[@id='errorDiv']//li//descendant-or-self::*[text()]| //div[contains(@class, 'alert') and @ng-repeat]| //div[contains(@class,'alertMessages')]//div[contains(@class,'alertMessage')]//span[@class='ng-binding']");
-        List<WebElement> elements = EyeThink.core().findMyElement().getElements(pageMessagesSelector, false);
+        List<Elements> elements = EyeThink.core().elementReference().listOfElements().onWeb(pageMessagesSelector, false);
         if (assertcan) {
             Assert.assertNotEquals(elements.size(), 0);
         } else {
@@ -672,7 +681,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * click on footer links present at bottom of any page
      */
     public void clickOnAnyFooterLinks(String footerLinks) {
-        EyeThink.core().findMyElement().getElement(By.xpath("//span[contains(@class,'footer-links')]//a[contains(text(),'" + footerLinks + "')]")).click();
+        EyeThink.core().click().onWeb(By.xpath("//span[contains(@class,'footer-links')]//a[contains(text(),'" + footerLinks + "')]"));
     }
 
     /**
@@ -697,8 +706,8 @@ public class PageLayoutPage extends GovGrantsManager {
      *
      * @return
      */
-    public List<WebElement> getCompleteContentForLookupModal() {
-        return EyeThink.core().findMyElement().getElements(By.xpath("//lightning-formatted-text[text()]"));
+    public List<Elements> getCompleteContentForLookupModal() {
+        return EyeThink.core().elementReference().listOfElements().onWeb(By.xpath("//lightning-formatted-text[text()]"));
     }
 
     /*********
@@ -714,8 +723,8 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     private boolean isOverViewTitleWithHeaderDisplayed(String overViewHeaderName, String overViewTitleName) {
         boolean flag = false;
-        if ((EyeThink.core().findMyElement().getElement(overViewHeader).getText().contains(overViewHeaderName))
-                && (EyeThink.core().findMyElement().getElement(overViewTitle).getText().contains(overViewTitleName))) {
+        if ((EyeThink.core().get().text(overViewHeader).contains(overViewHeaderName))
+                && (EyeThink.core().get().text(overViewTitle).contains(overViewTitleName))) {
             flag = true;
         }
         return flag;
@@ -729,7 +738,7 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     private boolean isPageInstructionTextDisplayed(String text) {
         boolean flag = false;
-        if (EyeThink.core().findMyElement().getElement(pageInstructionText).getText().equalsIgnoreCase(text)) {
+        if (EyeThink.core().get().text(pageInstructionText).equalsIgnoreCase(text)) {
             flag = true;
         }
         return flag;
@@ -743,7 +752,7 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     private boolean isOverViewHeaderDisplayed(String overViewHeaderName) {
         boolean flag = false;
-        if ((EyeThink.core().findMyElement().getElement(overViewHeader).getText().contains(overViewHeaderName))) {
+        if ((EyeThink.core().get().text(overViewHeader).contains(overViewHeaderName))) {
             flag = true;
         }
         return flag;
@@ -758,10 +767,8 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean isTopRightHeaderButtonDisplayed(String buttonName) {
         boolean flag = true;
         try {
-            if (EyeThink.core()
-                    .findMyElement().getElement(By.xpath("//div[contains(@class,'panel-heading')]//*[@title='"
-                            + buttonName + "' or text()='" + buttonName + "' or @value='" + buttonName + "']"))
-                    .isDisplayed()) {
+            if (EyeThink.core().is().onWeb().isDisplayed(By.xpath("//div[contains(@class,'panel-heading')]//*[@title='"
+                    + buttonName + "' or text()='" + buttonName + "' or @value='" + buttonName + "']"))) {
                 flag = false;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -813,8 +820,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * @return
      */
     private WebElement getTakeSnapshotOptionForVerification(String headerItem) {
-        return EyeThink.core().findMyElement()
-                .getElement(By.xpath("//div[@id='headerButtonsPanel']//ul/li//a[@title='" + headerItem + "']"));
+        return EyeThink.core().elementReference().onWeb(By.xpath("//div[@id='headerButtonsPanel']//ul/li//a[@title='" + headerItem + "']"));
     }
 
     /**
@@ -844,13 +850,10 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean isHeaderButtonDisplayed(String buttonName) {
         boolean flag = true;
         try {
-            if (EyeThink.core().findMyElement()
-                    .getElement(By.xpath("//div[@id='headerButtonsPanel']//*[@title='" + buttonName + "']"))
-                    .isDisplayed()) {
+            if (EyeThink.core().is().onWeb().isDisplayed(By.xpath("//div[@id='headerButtonsPanel']//*[@title='" + buttonName + "']"))) {
                 flag = false;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
-
         }
         return flag;
     }
@@ -893,7 +896,7 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     private boolean isHeaderInstructionTextDisplayed(String headerText) {
         boolean flag = false;
-        if (EyeThink.core().findMyElement().getElement(headerInstructionText).getText().equalsIgnoreCase(headerText)) {
+        if (EyeThink.core().get().text(headerInstructionText).equalsIgnoreCase(headerText)) {
             flag = true;
         }
         return flag;
@@ -925,7 +928,7 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean isHeaderOviewTabDisplayed() {
         boolean flag = false;
         try {
-            if (EyeThink.core().findMyElement().getElement(headerOverviewTab).isDisplayed()) {
+            if (EyeThink.core().is().onWeb().isDisplayed(headerOverviewTab)) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -940,16 +943,11 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean isPageBlockTitleDisplayed(String titleName) {
         boolean flag = false;
         try {
-            EyeThink.core().JavaScript().scrollElementToPageDetailCenter(
-                    By.xpath("//h3//a[contains(text(),'" + titleName + "')] | //a[@title='" + titleName + "']"));
-            if (EyeThink.core().findMyElement()
-                    .getElement(
-                            By.xpath("//h3//a[contains(text(),'" + titleName + "')] | //a[@title='" + titleName + "']"))
-                    .isDisplayed()) {
+            EyeThink.core().scroll().onWeb().toElementCenter(By.xpath("//h3//a[contains(text(),'" + titleName + "')] | //a[@title='" + titleName + "']"));
+            if (EyeThink.core().is().onWeb().isDisplayed(By.xpath("//h3//a[contains(text(),'" + titleName + "')] | //a[@title='" + titleName + "']"))) {
                 flag = true;
             }
         } catch (Exception e) {
-
         }
         return flag;
     }
@@ -974,8 +972,7 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     private boolean isHeaderInstructionTextDisplayedAtPageBlock(String headerText) {
         boolean flag = false;
-        if (EyeThink.core().findMyElement().getElement(headerInstructionTextForPageBlock).getText()
-                .equalsIgnoreCase(headerText)) {
+        if (EyeThink.core().get().text(headerInstructionTextForPageBlock).equalsIgnoreCase(headerText)) {
             flag = true;
         }
         return flag;
@@ -988,7 +985,7 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     private Boolean isExpectedNumberOfElementPresent(String titleName, int number) {
         boolean flag = false;
-        List<WebElement> firstRowElements = EyeThink.core().findMyElement().getElements(By.xpath("//h3//a[contains(text(),'" + titleName
+        List<Elements> firstRowElements = EyeThink.core().elementReference().listOfElements().onWeb(By.xpath("//h3//a[contains(text(),'" + titleName
                 + "')]/ancestor::div[2]/following-sibling::div[contains(@id,'toggleBlock')]/div[1]/div"));
         if (firstRowElements.size() == number) {
             flag = true;
@@ -1004,9 +1001,9 @@ public class PageLayoutPage extends GovGrantsManager {
      * @return
      */
     private boolean isChangedFlexTableTitleDisplayedAtPageBlock() {
-        EyeThink.core().JavaScript().scrollElementToPageDetailCenter(rolesAndResponsibilitiesFlexTableTitle);
+        EyeThink.core().scroll().onWeb().toElementCenter(rolesAndResponsibilitiesFlexTableTitle);
         try {
-            if (EyeThink.core().findMyElement().getElement(rolesAndResponsibilitiesFlexTableTitle).isDisplayed()) {
+            if (EyeThink.core().is().onWeb().isDisplayed(rolesAndResponsibilitiesFlexTableTitle)) {
                 return true;
             } else {
                 return false;
@@ -1023,9 +1020,9 @@ public class PageLayoutPage extends GovGrantsManager {
      * @return
      */
     private boolean isChangedFlexGridTitleDisplayedAtPageBlock() {
-        EyeThink.core().JavaScript().scrollElementToPageDetailCenter(monitoringFlexGridTitle);
+        EyeThink.core().scroll().onWeb().toElementCenter(monitoringFlexGridTitle);
         try {
-            if (EyeThink.core().findMyElement().getElement(monitoringFlexGridTitle).isDisplayed()) {
+            if (EyeThink.core().is().onWeb().isDisplayed(monitoringFlexGridTitle)) {
                 return true;
             } else {
                 return false;
@@ -1058,8 +1055,8 @@ public class PageLayoutPage extends GovGrantsManager {
      * @param pageBlockName
      * @return
      */
-    private List<WebElement> getListAttachmentTableSpecificColumnActions(String pageBlockName) {
-        return EyeThink.core().findMyElement().getElements(By.xpath("//div[@class='panel-heading']//a[@title='"
+    private List<Elements> getListAttachmentTableSpecificColumnActions(String pageBlockName) {
+        return EyeThink.core().elementReference().listOfElements().onWeb(By.xpath("//div[@class='panel-heading']//a[@title='"
                 + pageBlockName
                 + "']/../../../following-sibling::div[contains(@class,'panel-body')]//table/tbody/tr/td//a/span[contains(@class,'fa fa-pencil disable-action')]"));
     }
@@ -1105,7 +1102,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * @return
      */
     private WebElement getPageBlockDetailsElement(String changedFieldName) {
-        return EyeThink.core().findMyElement().getElement(By.xpath("//span[contains(text(),'" + changedFieldName + "')]"));
+        return EyeThink.core().elementReference().onWeb(By.xpath("//span[contains(text(),'" + changedFieldName + "')]"));
     }
 
     /**
@@ -1127,9 +1124,7 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean isElementAtPageBlockDetailInViewMode() {
         boolean flag = false;
         try {
-            if (EyeThink.core().findMyElement()
-                    .getElement(By.xpath("//div[@id='fieldProgramName__c']//span[@class='readonlySpan']"))
-                    .isDisplayed()) {
+            if (EyeThink.core().is().onWeb().isDisplayed(By.xpath("//div[@id='fieldProgramName__c']//span[@class='readonlySpan']"))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -1143,7 +1138,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * frame.
      */
     public void clickAddUnderAttachmentsPageBlock() {
-        EyeThink.core().findMyElement().getElement(addButtonUnderAttachments).click();
+        EyeThink.core().click().onWeb(addButtonUnderAttachments);
         EyeThink.core().switchTo().switchToFrame(addAttachmentIframe);
     }
 
@@ -1151,7 +1146,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * click on Select dropdown inside add attachment iframe
      */
     public void clickOnTypeDropdown() {
-        EyeThink.core().findMyElement().getElement(selectTypeDropdown).click();
+        EyeThink.core().click().onWeb(selectTypeDropdown);
     }
 
     /**
@@ -1180,7 +1175,7 @@ public class PageLayoutPage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (getCompleteTableRowOfLookupModal().stream()
-                    .anyMatch(item -> item.findElement(getTableColumnOfLookupModal(statusName)).isDisplayed())) {
+                    .anyMatch(item -> EyeThink.core().elementReference().onWebNested((WebElement) item, getTableColumnOfLookupModal(statusName)).isDisplayed())) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -1197,8 +1192,7 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean isButtonDisplayedAtOverlayWindow(String buttonName) {
         boolean flag = false;
         try {
-            if (EyeThink.core().findMyElement().getElement(By.xpath("//span/a[contains(text(),'" + buttonName + "')]"))
-                    .isDisplayed()) {
+            if (EyeThink.core().is().onWeb().isDisplayed(By.xpath("//span/a[contains(text(),'" + buttonName + "')]"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -1231,8 +1225,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * @return true/false
      */
     private boolean isEditButtonActionSequence(String buttonName, int sequenceNumber) {
-        if (EyeThink.core().findMyElement().getElements(pageLayoutButton).get(sequenceNumber).getAttribute("title")
-                .contains(buttonName)) {
+        if (EyeThink.core().elementReference().listOfElements().onWeb(pageLayoutButton).get(sequenceNumber).getAttributes("title").contains(buttonName)) {
             return true;
         } else
             return false;
@@ -1246,9 +1239,8 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     private boolean isSpecificButtonOnModalDisplayed(String buttonName) {
         boolean flag = false;
-        if (EyeThink.core().findMyElement().getElement(By.xpath(
-                "//input[@value='" + buttonName + "' or @type='" + buttonName + "' or text()='" + buttonName + "']"))
-                .isDisplayed()) {
+        if (EyeThink.core().is().onWeb().isDisplayed(By.xpath(
+                "//input[@value='" + buttonName + "' or @type='" + buttonName + "' or text()='" + buttonName + "']"))) {
             flag = true;
         }
         return flag;
@@ -1262,7 +1254,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * @return
      */
     public boolean isTextDisplayedInsideEditAttachmentTable(String value, String flexTableHeader) {
-        if (EyeThink.core().findMyElement().getElement(By.xpath("//div[@id='myTabbedContent']//a[@title='" + flexTableHeader + "']/../../../following-sibling::div//tbody//td/span[text()='" + value + "']")).isDisplayed())
+        if (EyeThink.core().is().onWeb().isDisplayed(By.xpath("//div[@id='myTabbedContent']//a[@title='" + flexTableHeader + "']/../../../following-sibling::div//tbody//td/span[text()='" + value + "']")))
             return true;
         else
             return false;
@@ -1277,8 +1269,8 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean isExpectedFieldIsDisplayedOnEditPageDetails(String fieldApiName) {
         boolean flag = false;
         try {
-            if (EyeThink.core().findMyElement().getElement(By.xpath(
-                    "//div[@id='" + fieldApiName + "']//select[@disabled]")).isDisplayed()) {
+            if (EyeThink.core().is().onWeb().isDisplayed(By.xpath(
+                    "//div[@id='" + fieldApiName + "']//select[@disabled]"))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -1296,8 +1288,9 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean isTextDisplayedOnMiniPageLayout(String text) {
         boolean flag = false;
         EyeThink.core().WaitFor().makeThreadSleep(2000);
-        if (EyeThink.core().findMyElement().getElement(textInsideMiniPageLayout).getText().contains(text)
-                || EyeThink.core().findMyElement().getElement(textInsideMiniPageLayout).getText().equalsIgnoreCase(text)) {
+
+        if (EyeThink.core().get().text(textInsideMiniPageLayout).contains(text)
+                || EyeThink.core().get().text(textInsideMiniPageLayout).equalsIgnoreCase(text)) {
             flag = true;
         }
         return flag;
@@ -1310,5 +1303,17 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     private boolean isContentOfLookupModalInExepctedOrder(String order) {
         return EyeThink.core().compare().sortAndCompareOneTableColumn(getCompleteContentForLookupModal(), order);
+    }
+
+    /**
+     * return true if data table is displayed
+     * @return
+     */
+    private boolean isDataTableForLookupDisplayed() {
+        boolean flag = false;
+        if (getCompleteContentForLookupModal().size()>0) {
+            flag = true;
+        }
+        return flag;
     }
 }

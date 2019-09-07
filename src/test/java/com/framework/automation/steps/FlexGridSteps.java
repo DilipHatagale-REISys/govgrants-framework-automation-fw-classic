@@ -1,6 +1,7 @@
 package com.framework.automation.steps;
 
 import com.framework.automation.pageobject.FlexGridPage;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -15,6 +16,11 @@ public class FlexGridSteps {
 	@When("^I record webelement at table \"([^\"]*)\" for column \"([^\"]*)\"$")
 	public void getRecordOfTableColumn(String tableId, String columnName) {
 		flexGridPage.recordWebElement(tableId, columnName);
+	}
+
+	@And("^I click on page navigation arrow \"([^\"]*)\" for table id \"([^\"]*)\"$")
+	public void ClickOnPaginationArrow(String flexTableId, String NextPrevious) {
+		flexGridPage.performClickOnPaginationArrow(flexTableId, NextPrevious);
 	}
 
 	@Then("^I see \"([^\"]*)\" as header$")

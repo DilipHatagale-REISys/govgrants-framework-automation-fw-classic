@@ -1,6 +1,7 @@
 package com.framework.automation.projectmanager;
 
 import eyethink.automation.bots.Register.EyeThink;
+import eyethink.automation.bots.objects.Elements;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -79,7 +80,7 @@ public class GovGrantsManager extends ProjectWebServices {
      */
     public void waitForNavigationLogo() {
         try {
-            if (EyeThink.core().is().isDisplayed(navigationLogo)) {
+            if (EyeThink.core().is().onWeb().isDisplayed(navigationLogo)) {
                 EyeThink.core().WaitFor().WaitForElementToDisappear(navigationLogo);
             }
         } catch (Exception e) {
@@ -98,14 +99,14 @@ public class GovGrantsManager extends ProjectWebServices {
     /**
      * @return: List of all side bar headers.
      */
-    public List<WebElement> getSideBarHeadersList() {
-        return EyeThink.core().findMyElement().getElements(sideBarHeadersList);
+    public List<Elements> getSideBarHeadersList() {
+        return EyeThink.core().elementReference().listOfElements().onWeb(sideBarHeadersList);
     }
 
     /**
      * @return: List of all Accordian headers.
      */
-    public List<WebElement> accordianHeadersList(String headerName) {
+    public List<Elements> accordianHeadersList(String headerName) {
         return EyeThink.saas().sideBar().getSideBarSubHeaders(headerName);
     }
 
@@ -139,7 +140,7 @@ public class GovGrantsManager extends ProjectWebServices {
      * @return
      */
     public WebElement getFlexGridPanels(String pannelTitleName) {
-        return EyeThink.core().findMyElement().getElement(By.xpath("//div[@class='panel-heading']//div[contains(@class,'panel-title')]//*[text()='"
+        return EyeThink.core().elementReference().onWeb(By.xpath("//div[@class='panel-heading']//div[contains(@class,'panel-title')]//*[text()='"
                 + pannelTitleName + "']"));
     }
 
@@ -194,8 +195,8 @@ public class GovGrantsManager extends ProjectWebServices {
      *
      * @return
      */
-    public List<WebElement> getCompleteTableRow() {
-        EyeThink.core().findMyElement().getElement(completeTableRow);
+    public List<Elements> getCompleteTableRow() {
+        EyeThink.core().elementReference().onWeb(completeTableRow);
         return EyeThink.saas().flexTable().getCompleteTableRow();
     }
 
@@ -225,7 +226,7 @@ public class GovGrantsManager extends ProjectWebServices {
      * @param pageTitle
      */
     public void assertPageTitle(String pageTitle) {
-        Assert.assertEquals(EyeThink.core().get().getPageTitle(), pageTitle);
+        Assert.assertEquals(EyeThink.core().get().pageTitle(), pageTitle);
     }
 
     /**
@@ -243,7 +244,7 @@ public class GovGrantsManager extends ProjectWebServices {
      */
     public void clickRightHeaderBars(String title) {
         try {
-            EyeThink.core().JavaScript().scrollElementToPageDetailCenter(reachOutToTmpActiveGrantsGrid);
+            EyeThink.core().scroll().onWeb().toElementCenter(reachOutToTmpActiveGrantsGrid);
         } catch (Exception e) {
         }
         EyeThink.saas().phasePannel().clickParallelMenuBars(title);
@@ -343,8 +344,7 @@ public class GovGrantsManager extends ProjectWebServices {
      * @return
      */
     public boolean isTitleOfModal(String titleName) {
-        return EyeThink.core().findMyElement().getElement(By.xpath("//*[@class='modal-title ng-binding'][text()='" + titleName + "']"))
-                .isDisplayed();
+        return EyeThink.core().is().onWeb().isDisplayed(By.xpath("//*[@class='modal-title ng-binding'][text()='" + titleName + "']"));
     }
 
     /**
@@ -377,6 +377,16 @@ public class GovGrantsManager extends ProjectWebServices {
         recordElement = EyeThink.saas().flexTable().getSpecificTableColumn(columnName, tableId);
     }
 
+    /**
+     * perform click on page navigation arrow
+     *
+     * @param flexTableId
+     * @param NextPrevious
+     */
+    public void performClickOnPaginationArrow(String flexTableId, String NextPrevious) {
+         EyeThink.saas().flexTable().flexTablePagination(flexTableId, NextPrevious);
+    }
+
     /******* "Local Methods with Limited functionality " **********/
 
     /**
@@ -387,7 +397,7 @@ public class GovGrantsManager extends ProjectWebServices {
      */
     private boolean isCurrentURL(String content) {
         boolean flag = false;
-        if (EyeThink.core().get().getCurretnURL().contains(content)) {
+        if (EyeThink.core().get().curretnURL().contains(content)) {
             flag = true;
         }
         return flag;
@@ -400,32 +410,30 @@ public class GovGrantsManager extends ProjectWebServices {
      */
     public WebElement getSubTabsInsideMainDetailPage(String SubTabName) {
         EyeThink.core().WaitFor().magicWait(By.xpath("//div[@id='myTabs']/ul/li/a[@name='" + SubTabName + "']"));
-        return EyeThink.core().findMyElement()
-                .getElement(By.xpath("//div[@id='myTabs']/ul/li/a[@name='" + SubTabName + "']"));
+        return EyeThink.core().elementReference().onWeb(By.xpath("//div[@id='myTabs']/ul/li/a[@name='" + SubTabName + "']"));
     }
 
     /**
      * get list of sub tab inside main detail page like overview etc.
      */
-    public List<WebElement> getListSubTabsInsideMainDetailPage() {
+    public List<Elements> getListSubTabsInsideMainDetailPage() {
         EyeThink.core().WaitFor().magicWait(By.xpath("//div[@id='myTabs']/ul/li/a"));
-        return EyeThink.core().findMyElement().getElements(By.xpath("//div[@id='myTabs']/ul/li/a"));
+        return EyeThink.core().elementReference().listOfElements().onWeb(By.xpath("//div[@id='myTabs']/ul/li/a"));
     }
 
     /**
      * get list of page block inside detail page like overview etc.
      */
-    public List<WebElement> getListPageBlockInsideMainDetailPage() {
+    public List<Elements> getListPageBlockInsideMainDetailPage() {
         EyeThink.core().WaitFor()
                 .magicWait(By.xpath("//div[@class='tab-pane fade active in']//div[@class='panel-heading']"));
-        return EyeThink.core().findMyElement()
-                .getElements(By.xpath("//div[@class='tab-pane fade active in']//div[@class='panel-heading']"));
+        return EyeThink.core().elementReference().listOfElements().onWeb(By.xpath("//div[@class='tab-pane fade active in']//div[@class='panel-heading']"));
     }
 
     /**
      * get BootBox confirmation message box
      */
     public WebElement getBootBoxConfirmationText() {
-        return EyeThink.core().findMyElement().getElement(By.xpath("//div[@class='bootbox-body']"));
+        return EyeThink.core().elementReference().onWeb(By.xpath("//div[@class='bootbox-body']"));
     }
 }

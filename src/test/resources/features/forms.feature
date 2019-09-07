@@ -19,7 +19,7 @@ Feature: Forms Component Scenarios
     When I click on "Menu" button inside detail page
     And I select "Download As PDF" from dropdown
     And I download the file
-    Then I cannot see "Form - Application Budget" on page "29" of "govgrants" pdf file
+    Then I cannot see that "Form - Application Budget" on page "29" of "govgrants" pdf file
 
   @35185    @validateBusinessFormsRemoval-gApplication
   Scenario: Validate disabling of business form from config and validating inside Application view

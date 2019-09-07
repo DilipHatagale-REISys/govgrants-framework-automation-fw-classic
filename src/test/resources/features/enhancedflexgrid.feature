@@ -263,7 +263,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     Then I see no new tab is opened for action item in enhanced flex grid
 
     Examples:
-      | actionUrlLongValue            |
+      | actionUrlLongValue          |
       | /apex/GrantEdit?id={!rowId} |
 
   @35440    @editActionOpensInOverLayWindowForEnhancedGrid-gPlanning
@@ -1211,7 +1211,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on top right parallel lines bar for "Monitoring Schedule For All Active Grants"
     And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
     And I download the file
-    Then I see "Activated" on page "1" of "govgrants" pdf file
+    Then I see that "Activated" on page "1" of "govgrants" pdf file
 
   @49243    @enableGroupingFieldAtParentFlexTableForEnhancedGrid-gPlanning @smoke
   Scenario: validate same value rows getting grouped and shown in sequence after checking checkbox true of Enable Row Grouping from config and validating it inside enhanced grid of programs-planning
@@ -1286,7 +1286,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on top right parallel lines bar for "Monitoring Schedule For All Active Grants"
     And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
     And I download the file
-    Then I see "Activated" on page "1" of "govgrants" pdf file
+    Then I see that "Activated" on page "1" of "govgrants" pdf file
 
   @49256    @showInPDFFieldToVerifyFlexTableContainMoreThanOneListViewAtParentFlexTable-gPlanning
   Scenario Outline: validate Activated status in downloaded pdf file after checking check box of Is Master View Field at config and validating it inside enhanced grid of programs-planning
@@ -1312,7 +1312,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on top right parallel lines bar for "Monitoring Schedule For All Active Grants"
     And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
     And I download the file
-    Then I see "Active" on page "1" of "govgrants" pdf file
+    Then I see that "Active" on page "1" of "govgrants" pdf file
 
     Examples:
       | fieldDisplayNames | newFieldsApi                                                                                                                                                                                                                                              | defaultFieldsApi                                                                                                                                                                                                                                          |
@@ -1393,7 +1393,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     Then I see "Road Construction Annoumsment" inside enhanced grid table id "flexGridEnhanced1" in "Red" colour
 
     Examples:
-      | styleClassValue                                                 |
+      | styleClassValue                                             |
       | {negativeValue:row[column]='Road Construction Annoumsment'} |
 
   @49352    @enableGroupingFieldAtChildFlexTableForEnhancedGrid-gPlanning @smoke
@@ -1570,7 +1570,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on top right parallel lines bar for "Active Awards"
     And I select "Download as PDF" from parallel lines dropdown of "Active Awards"
     And I download the file
-    Then I see "Being Amended" on page "1" of "govgrants" pdf file
+    Then I see that "Being Amended" on page "1" of "govgrants" pdf file
 
     Examples:
       | newFieldsApi                                                                                                                     | defaultFieldsApi                                                                                                                               |
@@ -1601,7 +1601,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on top right parallel lines bar for "Active Awards"
     And I select "Download as PDF" from parallel lines dropdown of "Active Awards"
     And I download the file
-    Then I see "Being Amended" on page "1" of "govgrants" pdf file
+    Then I see that "Being Amended" on page "1" of "govgrants" pdf file
 
     Examples:
       | newFieldsApi                                                                                                                     | defaultFieldsApi                                                                                                                 |
@@ -1631,7 +1631,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on top right parallel lines bar for "Active Awards"
     And I select "Download as PDF" from parallel lines dropdown of "Active Awards"
     And I download the file
-    Then I see "Activated" on page "1" of "govgrants" pdf file
+    Then I see that "Activated" on page "1" of "govgrants" pdf file
 
     Examples:
       | newFieldsApi                                                                                                                     | defaultFieldsApi                                                                                                                 |

@@ -607,7 +607,7 @@ Feature: Logged Issues Scenarios
     When I click on "Menu" button inside detail page
     And I select "Download as PDF" from dropdown
     And I download the file
-    Then I see "Form" on page "5" of "govgrants" pdf file
+    Then I see that "Form" on page "5" of "govgrants" pdf file
 
   @56414    @globalSearchPopUpMessageShouldDisplayedProperly @check
   Scenario Outline: validate global search alert pop up box display message properly on UI
@@ -692,7 +692,7 @@ Feature: Logged Issues Scenarios
     When I click on "Menu" button inside detail page
     And I select "Download as PDF" from dropdown
     And I download the file
-    Then I see "Opportunity Overview" on page "1" of "govgrants" pdf file
+    Then I see that "Opportunity Overview" on page "1" of "govgrants" pdf file
 
   @57265  @dateShouldDisplayeOnStickyNotesUnderMyWorkSpaceNotes
   Scenario Outline: validate current date is displayed on sticky notes
@@ -766,7 +766,7 @@ Feature: Logged Issues Scenarios
     When I click on "Menu" in the page details
     And I select "Download as PDF" from parallel lines dropdown of "Funding Accounts "
     And I download the file
-    Then I cannot see "Funding Accounts" on page "1" of "govgrants" pdf file
+    Then I cannot see that "Funding Accounts" on page "1" of "govgrants" pdf file
 
   @56840    @budgetCategoryShouldGetAddedProperly
   Scenario: validate budget category getting added properly
@@ -819,7 +819,7 @@ Feature: Logged Issues Scenarios
     When I click on top right parallel lines bar for "Default Application Review Steps"
     And I select "Download as PDF" from parallel lines dropdown of "Default Application Review Steps"
     And I download the file
-    Then I see "Default Application Review Steps" on page "1" of "govgrants" pdf file
+    Then I see that "Default Application Review Steps" on page "1" of "govgrants" pdf file
 
   @56833    @pdfFileShouldGetDownloadedProperlyForProgramServiceArea @check
   Scenario: validate downloaded pdf file should get downloaded properly with text containing program servicearea
@@ -833,7 +833,7 @@ Feature: Logged Issues Scenarios
     When I click on top right parallel lines bar for "Program Service Areas"
     And I select "Download as PDF" from parallel lines dropdown of "Program Service Areas"
     And I download the file
-    Then I see "Program Service Areas" on page "1" of "govgrants" pdf file
+    Then I see that "Program Service Areas" on page "1" of "govgrants" pdf file
 
   @56479    @pdfFileShouldGetDownloadedProperlyForApplicationBudget
   Scenario: validate pdf file should get downloaded properly with text containing Application budget
@@ -847,7 +847,7 @@ Feature: Logged Issues Scenarios
     When I click on top right parallel lines bar for "Application Budget"
     And I select "Download as PDF" from parallel lines dropdown of "Application Budget"
     And I download the file
-    Then I see "Application Budget" on page "1" of "govgrants" pdf file
+    Then I see that "Application Budget" on page "1" of "govgrants" pdf file
 
   @56752  @pdfFileShouldGetDownloadedProperlyForTaskSummaryByDueDate @checkwithmenuClick
   Scenario: validate pdf file getting downloaded properly for Task Summary By Due Date Chart with content My Late Tasks
@@ -858,7 +858,7 @@ Feature: Logged Issues Scenarios
     When I click on top right parallel lines bar for "My Late Tasks"
     And I select "Download as PDF" from parallel lines dropdown of "My Late Tasks"
     And I download the file
-    Then I see "My Late Tasks" on page "1" of "govgrants" pdf file
+    Then I see that "My Late Tasks" on page "1" of "govgrants" pdf file
 
   @56945  @NotesShouldGetDeletedAfterClinkOnAcceptingDeleteConfirmation
   Scenario Outline: validate Sticky Notes should get deleted properly after accepting action from delete confirmation popup
@@ -984,173 +984,6 @@ Feature: Logged Issues Scenarios
       | Service Area Title |
       | Budget Category    |
 
-  @54772    @lookUpHeaderTextFieldWithNumberOfAwardsAtPageBlockDetail-gPlanning @check
-  Scenario: Adding column header with number of award Api name to lookup modal from config and validating it on program detail page
-    Given I have default configuration as below:
-      | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory                    | fieldName                  | fieldNewValue          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name,NumberofAwards__c | Grantee State Program | Name                      | PBD-3178                   |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click "close" icon for lightning lookup
-    When I click "search" icon for lightning lookup
-    Then I see "# Grants" in table header on lookup Modal
-
-  @54769    @lookUpHeaderTextFieldWithGrantingAgencyAtPageBlockDetail-gPlanning @check
-  Scenario: Adding column header with granting agency Api name to lookup modal from config and validating it on program detail page
-    Given I have default configuration as below:
-      | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory                    | fieldName                  | fieldNewValue            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name,IsGrantingAgency__c | Grantee State Program | Name                      | PBD-3178                   |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click "close" icon for lightning lookup
-    When I click "search" icon for lightning lookup
-    Then I see "Granting Agency" in table header on lookup Modal
-
-  @54767    @lookUpHeaderTextFieldWithDivisionAtPageBlockDetail-gPlanning @check
-  Scenario: Adding column header with Division Api name to lookup modal from config and validating it on program detail page
-    Given I have default configuration as below:
-      | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory                    | fieldName                  | fieldNewValue    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name,Division__c | Grantee State Program | Name                      | PBD-3178                   |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click "close" icon for lightning lookup
-    When I click "search" icon for lightning lookup
-    Then I see "Division" in table header on lookup Modal
-
-  @54766    @lookUpHeaderTextFieldWithContactAtPageBlockDetail-gPlanning @check
-  Scenario: Adding column header with Contact Api name to lookup modal from config and validating it on program detail page
-    Given I have default configuration as below:
-      | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory                    | fieldName                  | fieldNewValue   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name,Contact__c | Grantee State Program | Name                      | PBD-3178                   |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click "close" icon for lightning lookup
-    When I click "search" icon for lightning lookup
-    Then I see "Contact" in table header on lookup Modal
-
-  @54765    @lookUpHeaderTextFieldWithBillingStateAtPageBlockDetail-gPlanning @check
-  Scenario: Adding column header with Billing State Api name to lookup modal from config and validating it on program detail page
-    Given I have default configuration as below:
-      | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory                    | fieldName                  | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name,BillingState__c | Grantee State Program | Name                      | PBD-3178                   |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click "close" icon for lightning lookup
-    When I click "search" icon for lightning lookup
-    Then I see "Billing State" in table header on lookup Modal
-
-  @54764    @lookUpHeaderTextFieldWithDateTimeAtPageBlockDetail-gPlanning @check
-  Scenario: Adding column header with Date Time Api name to lookup modal from config and validating it on program detail page
-    Given I have default configuration as below:
-      | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory                    | fieldName                  | fieldNewValue    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name,DateTime__c | Grantee State Program | Name                      | PBD-3178                   |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click "close" icon for lightning lookup
-    When I click "search" icon for lightning lookup
-    Then I see "DateTime" in table header on lookup Modal
-
-  @54763    @lookUpHeaderTextFieldWithDateAtPageBlockDetail-gPlanning @check
-  Scenario: Adding column header with Date Api name to lookup modal from config and validating it on program detail page
-    Given I have default configuration as below:
-      | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory                    | fieldName                  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name,Date__c  | Grantee State Program | Name                      | PBD-3178                   |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click "close" icon for lightning lookup
-    When I click "search" icon for lightning lookup
-    Then I see "Date" in table header on lookup Modal
-
-  @54758    @lookUpHeaderTextFieldWithMultipleFieldAPIAtPageBlockDetail-gPlanning  @check
-  Scenario Outline: Adding column header with multiple Field API to lookup modal from config and validating it on program detail page
-    Given I have default configuration as below:
-      | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | <defaultApi>      | Grantee State Program | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory                    | fieldName                  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | <newFieldApi> | Grantee State Program | Name                      | PBD-3178                   |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click "close" icon for lightning lookup
-    When I click "search" icon for lightning lookup
-    Then I see "<fieldDisplayNames>" in flex table header
-
-    Examples:
-      | fieldDisplayNames | newFieldApi                                                                         | defaultApi |
-      | Account Name      | Name,Date__c,DateTime__c,BillingState__c,Contact__c,Division__c,IsGrantingAgency__c | Name       |
-      | Date              | Date__c,Name,DateTime__c,BillingState__c,Contact__c,Division__c,IsGrantingAgency__c | Name       |
-      | DateTime          | DateTime__c,Name,Date__c,BillingState__c,Contact__c,Division__c,IsGrantingAgency__c | Name       |
-      | Billing State     | BillingState__c,Name,Date__c,DateTime__c,Contact__c,Division__c,IsGrantingAgency__c | Name       |
-      | Contact           | Contact__c,Name,Date__c,DateTime__c,BillingState__c,Division__c,IsGrantingAgency__c | Name       |
-      | Division          | Division__c,Name,Date__c,DateTime__c,BillingState__c,Contact__c,IsGrantingAgency__c | Name       |
-      | Granting Agency   | IsGrantingAgency__c,Name,Date__c,DateTime__c,BillingState__c,Contact__c,Division__c | Name       |
-
-  @54901    @validatelookupSearchModalItemSortedInAscendingOrderAtPageBlockDetail-gPlanning @check
-  Scenario: Changing column header and its data of lookup modal from config and valiodating it on program detail page
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test Program for testing"
-    When I click on "Edit" icon for "Test Program for testing" inside table
-    When I click "close" icon for lightning lookup
-    When I click "search" icon for lightning lookup
-    When I click on svg arrow inside lookup modal for "Ascending"
-    Then I see content inside lookup modal in "Ascending" order
-
   @54704      @verifyPicklistFieldShouldBeInViewModeAfterEditingMultipleRecords
   Scenario Outline: validate picklist should visible in only view mode after Edit status field for multiple records
     Given I have default configuration as below:
@@ -1239,3 +1072,69 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see "Disapprove" is disabled
+
+  @58840    @subRecipientPortalShouldRenderedWithColour
+  Scenario: Validate page blocks of history sub tab should rendered properly on UI
+    When I login as "Automation" user
+    When I setup my app as "As a Sub-Recipient"
+    Then I see page is in "Light Blue" color
+
+  @58872    @hideExpressioJsonForEditTopLevelActionAtProgramDetailPage @smoke @wip
+  Scenario: Hide edit button for Profile and System Admin using hide expression Json -gPlanning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | Hide Expression JSON |                   | Grantee State Program | Name                      | Edit                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | Hide Expression JSON | govgrants_config:ProgramFlexTableExpressionJsonForEditAction | Grantee State Program | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    Then I see "Edit" button is not displayed
+
+  @59302    @viewActionShouldWorkProperlyAtMonitoringPhase-gMonitoring
+  Scenario: validate Monitoring Schedule For All Active Grant flex table action field- View opens in new window
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    When I perform quick search for "App 786" in "inlineEditGridMonitoringGridView" panel
+    When I click on "View" icon for "App 786" inside table
+    Then I see new tab is opened
+
+  @59292    @newActionButtonSholdWorkProperlyAtMassEditableGridForApplicationBudgetPeriod
+  Scenario: validate New action is working correctly at mass editable grid
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I click on "Delete" icon for "BP-00" inside table
+    When I enter the following values into flex table with id "inlineEditGridApplicationBudgetCategoryFlexGrid" by clicking "New" :
+      | Support Year |
+      | BP-00        |
+    Then I see that "BP-00" has been added in flextable with Id "inlineEditGridApplicationBudgetCategoryFlexGrid"
+
+  @59287    @enablePaginationShouldWorkAtApplicationBudgetPeriods-gApplications
+  Scenario: validate page navigation is working fine after enabling auto index and row grouping at ApplicationBudgetCategoryFlexTable
+    Given I have default configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index   | true              | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index   | true          | ApplicationBudgetPeriods |                           |                            |
+      | Flex Table List       | Enable Row Grouping | true          | ApplicationBudgetPeriods | Name                      | FTC-1101                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "AP-755-214"
+    When I click on "View" icon for "AP-755-214" inside table
+    When I navigate to "Budget" sub tab
+    And I click on page navigation arrow "inlineEditGridApplicationBudgetCategoryFlexGrid" for table id "Next"
+    Then I see that "BP-05" has been added in flextable with Id "inlineEditGridApplicationBudgetCategoryFlexGrid"
+
+

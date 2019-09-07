@@ -470,7 +470,7 @@ Feature: Flex Table Component Scenarios
     When I click on top right parallel lines bar for "Draft Programs"
     And I select "Download as PDF" from parallel lines dropdown of "Draft Programs"
     And I download the file
-    Then I cannot see "Status" on page "1" of "govgrants" pdf file
+    Then I cannot see that "Status" on page "1" of "govgrants" pdf file
 
   @40005    @enableTotalFieldAtFlexTable-gPlanning
   Scenario: Enabling total amount inside funded amount columb for all records config and validating it inside flex table of programs-planning
@@ -969,7 +969,7 @@ Feature: Flex Table Component Scenarios
     When I click on top right parallel lines bar for "Draft Programs"
     And I select "Download as PDF" from parallel lines dropdown of "Draft Programs"
     And I download the file
-    Then I see "Active Programs" on page "1" of "govgrants" pdf file
+    Then I see that "Active Programs" on page "1" of "govgrants" pdf file
 
   @34295    @refreshBehaviourFieldAtRolesAndResponsilitiesFlexTableAsRefreshtheGrid-gPlanning
   Scenario: validate flex table action field- refresh the grid
