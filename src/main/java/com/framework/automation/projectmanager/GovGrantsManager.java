@@ -206,7 +206,7 @@ public class GovGrantsManager extends ProjectWebServices {
      * @param headerName
      */
     public void clickAccordianHeader(String headerName) {
-        EyeThink.saas().sideBar().getSideBarHeader(headerName).click();
+        EyeThink.core().click().onWeb(EyeThink.saas().sideBar().getSideBarHeader(headerName));
     }
 
     /**
@@ -216,8 +216,8 @@ public class GovGrantsManager extends ProjectWebServices {
      * @param subHeaderName
      */
     public void clickAccordianSubHeader(String AccordianHeader, String subHeaderName) {
-        EyeThink.saas().sideBar().getSideBarSubHeader(AccordianHeader, subHeaderName).click();
-        getSideBarAccordianHeader(AccordianHeader, subHeaderName).click();
+        EyeThink.core().click().onWeb(EyeThink.saas().sideBar().getSideBarSubHeader(AccordianHeader, subHeaderName));
+        EyeThink.core().click().onWeb(getSideBarAccordianHeader(AccordianHeader, subHeaderName));
     }
 
     /**
@@ -384,7 +384,7 @@ public class GovGrantsManager extends ProjectWebServices {
      * @param NextPrevious
      */
     public void performClickOnPaginationArrow(String flexTableId, String NextPrevious) {
-         EyeThink.saas().flexTable().flexTablePagination(flexTableId, NextPrevious);
+        EyeThink.saas().flexTable().flexTablePagination(flexTableId, NextPrevious);
     }
 
     /******* "Local Methods with Limited functionality " **********/

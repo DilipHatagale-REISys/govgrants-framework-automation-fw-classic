@@ -36,7 +36,7 @@ public class FlexGridPage extends GovGrantsManager {
     public void assertHeaderNameDisplayed(String headerName) {
         EyeThink.core().scroll().onWeb().pageToSpecificElement(By.xpath(
                 "//div[@class='panel-heading']//div[contains(@class,'panel-title')]/a[text()='" + headerName + "']"));
-        Assert.assertTrue(getFlexGridPanels(headerName).isDisplayed());
+        Assert.assertTrue(EyeThink.core().is().onWeb().isDisplayed(getFlexGridPanels(headerName)));
     }
 
     /**
@@ -259,7 +259,7 @@ public class FlexGridPage extends GovGrantsManager {
     private boolean isQuickSearchDisabledForTableId(String tableId) {
         boolean flag = true;
         try {
-            if (EyeThink.saas().quickSearch().getTableSpecificQuickSearch(tableId).isDisplayed()) {
+            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().quickSearch().getTableSpecificQuickSearch(tableId))) {
                 flag = false;
             }
         } catch (Exception e) {
@@ -273,8 +273,8 @@ public class FlexGridPage extends GovGrantsManager {
     private Boolean isProgramOutcomesFlexTableColumnHeaderName(String columnTitleName, String tableId) {
         boolean flag = false;
         try {
-            if (EyeThink.saas().flexTable().getSpecificElementFromTableHeader(tableId, columnTitleName).isDisplayed()
-                    || EyeThink.saas().flexTable().getSpecificElementFromTableHeader(tableId, columnTitleName).isEnabled()) {
+            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().flexTable().getSpecificElementFromTableHeader(tableId, columnTitleName))
+                    || EyeThink.core().is().onWeb().isEnabled(EyeThink.saas().flexTable().getSpecificElementFromTableHeader(tableId, columnTitleName))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -305,7 +305,7 @@ public class FlexGridPage extends GovGrantsManager {
         boolean flag = false;
         WebElement columnWidth = EyeThink.core().elementReference().onWeb((By.xpath("//div[@id='" + tableId
                 + "']//tr//th//span[contains(text(),'" + columnName + "')]/ancestor::th[@width='" + widthSize + "']")));
-        if (columnWidth.isDisplayed()) {
+        if (EyeThink.core().is().onWeb().isDisplayed(columnWidth)) {
             flag = true;
         }
         return flag;
@@ -332,7 +332,7 @@ public class FlexGridPage extends GovGrantsManager {
     private Boolean isNestedTableHeaderChanged(String tableId, String changedText) {
         boolean flag = false;
         WebElement changedHeader = EyeThink.core().elementReference().onWeb(By.xpath("//div[@id='" + tableId + "']//td//*[text()='" + changedText + "']"));
-        if (changedHeader.isDisplayed()) {
+        if (EyeThink.core().is().onWeb().isDisplayed(changedHeader)) {
             flag = true;
         }
         return flag;

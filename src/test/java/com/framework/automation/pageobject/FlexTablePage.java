@@ -59,8 +59,7 @@ public class FlexTablePage extends GovGrantsManager {
      * assert if menu icon is disabled from planning flex table
      */
     public void assertDisableMenuIcon(String panelTitleName) {
-       Assert.assertTrue(isMenuIconDisabled(panelTitleName));
-       // Assert.assertFalse(EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().phasePannel().getParallelBarsLocator(panelTitleName)));
+        Assert.assertTrue(isMenuIconDisabled(panelTitleName));
     }
 
     /***
@@ -172,8 +171,7 @@ public class FlexTablePage extends GovGrantsManager {
      */
     public void assertActionIconNotDisplayedInsideflexTable(String iconName, String uniqueColumnValue) {
         try {
-            Assert.assertFalse(EyeThink.core().elementReference().onWeb(EyeThink.saas().flexTable().getTableActionIconWithoutTableId(iconName, uniqueColumnValue))
-                    .isDisplayed());
+            Assert.assertFalse(EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().flexTable().getTableActionIconWithoutTableId(iconName, uniqueColumnValue)));
         } catch (Exception e) {
         }
     }
@@ -453,7 +451,7 @@ public class FlexTablePage extends GovGrantsManager {
      * assert true if flex table toggle button is displayed
      */
     public void assertToogleButtonIsDisplayed(String anyItemContainedInDropDown) {
-        Assert.assertTrue(EyeThink.saas().phasePannel().getDoubleArrowtoggle(anyItemContainedInDropDown).isDisplayed());
+        Assert.assertTrue(EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().phasePannel().getDoubleArrowtoggle(anyItemContainedInDropDown)));
     }
 
     /**
@@ -510,9 +508,9 @@ public class FlexTablePage extends GovGrantsManager {
         EyeThink.core().get().refresh();
         EyeThink.core().WaitFor().makeThreadSleep(1000);
         EyeThink.saas().mainPage().waitForNavigationLogoToDisappear();
-        EyeThink.saas().flexTable().getSpecificElementFromTableHeader("ID").click();
+        EyeThink.core().click().onWeb(EyeThink.saas().flexTable().getSpecificElementFromTableHeader("ID"));
         EyeThink.saas().mainPage().waitForNavigationLogoToDisappear();
-        EyeThink.saas().flexTable().getSpecificElementFromTableHeader("Program Name").click();
+        EyeThink.core().click().onWeb(EyeThink.saas().flexTable().getSpecificElementFromTableHeader("Program Name"));
         EyeThink.saas().mainPage().waitForNavigationLogoToDisappear();
         EyeThink.core().get().refresh();
         EyeThink.core().WaitFor().makeThreadSleep(1000);
@@ -537,7 +535,7 @@ public class FlexTablePage extends GovGrantsManager {
     private boolean isTitleDisplayed(String titleName) {
         EyeThink.saas().phasePannel().clickDoubleArrowtoggle(titleName);
         try {
-            if (EyeThink.saas().phasePannel().getDoubleArrowtoggle(titleName).isDisplayed()) {
+            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().phasePannel().getDoubleArrowtoggle(titleName))) {
                 return true;
             } else {
                 return false;
@@ -558,14 +556,14 @@ public class FlexTablePage extends GovGrantsManager {
                                                                       String pannelTitleName) {
         boolean flag = false;
         try {
-            if (EyeThink.saas().phasePannel().getItemFromParallelMenuBars(pannelTitleName, option1).isDisplayed()) {
+            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().phasePannel().getItemFromParallelMenuBars(pannelTitleName, option1))) {
                 flag = false;
             }
         } catch (Exception e) {
             flag = true;
         }
         try {
-            if (EyeThink.saas().phasePannel().getItemFromParallelMenuBars(pannelTitleName, option2).isDisplayed()) {
+            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().phasePannel().getItemFromParallelMenuBars(pannelTitleName, option2))) {
                 flag = false;
             }
         } catch (Exception e) {
@@ -598,8 +596,7 @@ public class FlexTablePage extends GovGrantsManager {
     private Boolean isMenuIconDisabled(String panelTitleName) {
         boolean flag = false;
         try {
-           if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().phasePannel().getParallelBarsLocator(panelTitleName))) {
-                //if (EyeThink.core().elementReference().onWeb(EyeThink.saas().phasePannel().getParallelBarsLocator(panelTitleName)).isDisplayed()) {
+            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().phasePannel().getParallelBarsLocator(panelTitleName))) {
                 flag = false;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -615,7 +612,7 @@ public class FlexTablePage extends GovGrantsManager {
         boolean flag = false;
         try {
             for (Elements element : getCompleteTableRow()) {
-                if (element.nestedElement(selectRecordCheckBox).isDisplayed()) {
+                if (EyeThink.core().is().onWeb().isDisplayed(element.nestedElement(selectRecordCheckBox))) {
                     flag = true;
                     break;
                 }
@@ -632,7 +629,7 @@ public class FlexTablePage extends GovGrantsManager {
     private Boolean isFlexTableRowsTotalDisabled() {
         boolean flag = true;
         try {
-            if (getCompleteTableRow().stream().anyMatch(item -> EyeThink.core().elementReference().onWebNested((WebElement) item,totalRowsCalc).isDisplayed())) {
+            if (getCompleteTableRow().stream().anyMatch(item -> EyeThink.core().elementReference().onWebNested((WebElement) item, totalRowsCalc).isDisplayed())) {
                 flag = false;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -646,7 +643,7 @@ public class FlexTablePage extends GovGrantsManager {
     private Boolean isFlexTableRowsCountDisabled(String text, String tableId) {
         boolean flag = false;
         try {
-            if (EyeThink.saas().flexTable().getFooterElementsFromTable(text, tableId).isDisplayed()) {
+            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().flexTable().getFooterElementsFromTable(text, tableId))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -660,8 +657,8 @@ public class FlexTablePage extends GovGrantsManager {
     private Boolean isFlexTableColumnHeaderName(String titleName) {
         boolean flag = false;
         try {
-            if (getSpecificElementFromTableHeader(titleName).isDisplayed()
-                    || getSpecificElementFromTableHeader(titleName).isEnabled()) {
+            if (EyeThink.core().is().onWeb().isDisplayed(getSpecificElementFromTableHeader(titleName))
+                    || EyeThink.core().is().onWeb().isEnabled(getSpecificElementFromTableHeader(titleName))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -739,7 +736,7 @@ public class FlexTablePage extends GovGrantsManager {
         EyeThink.core().switchTo().switchToParentFrame();
         EyeThink.saas().mainPage().waitForNavigationLogoToDisappear();
         boolean flag = false;
-        if (getOverLayTitle(titleName).isDisplayed()) {
+        if (EyeThink.core().is().onWeb().isDisplayed(getOverLayTitle(titleName))) {
             flag = true;
         }
         return flag;
@@ -762,7 +759,7 @@ public class FlexTablePage extends GovGrantsManager {
     private boolean isTopRightParallelLinesBarSpecificOptionsEnabled(String menuOption, String pannelTitleName) {
         boolean flag = false;
         try {
-            if (EyeThink.saas().phasePannel().getItemFromParallelMenuBars(pannelTitleName, menuOption).isDisplayed()) {
+            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().phasePannel().getItemFromParallelMenuBars(pannelTitleName, menuOption))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -778,8 +775,8 @@ public class FlexTablePage extends GovGrantsManager {
         EyeThink.core().scroll().onWeb().pageDocument("PageDown", 0, 0);
         boolean flag = false;
         try {
-            if (EyeThink.saas().flexTable().getFooterElementsFromTable(text, tableId).isDisplayed()
-                    || EyeThink.saas().flexTable().getFooterElementsFromTable(text, tableId).isEnabled()) {
+            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().flexTable().getFooterElementsFromTable(text, tableId))
+                    || EyeThink.core().is().onWeb().isEnabled(EyeThink.saas().flexTable().getFooterElementsFromTable(text, tableId))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -811,7 +808,7 @@ public class FlexTablePage extends GovGrantsManager {
      */
     private boolean isFlexTableColumnTitleDisplayed(String columnValueName) {
         try {
-            if (EyeThink.saas().flexTable().getSpecificElementFromTableHeader(columnValueName).isDisplayed()) {
+            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().flexTable().getSpecificElementFromTableHeader(columnValueName))) {
                 return true;
             } else {
                 return false;
@@ -827,7 +824,7 @@ public class FlexTablePage extends GovGrantsManager {
     private Boolean isTotalAmountFieldAtFlexTableDisplayed() {
         boolean flag = false;
         try {
-            if (getCompleteTableRow().stream().anyMatch(item -> EyeThink.core().elementReference().onWebNested((WebElement) item,totalRowsCalc).isDisplayed())) {
+            if (getCompleteTableRow().stream().anyMatch(item -> EyeThink.core().elementReference().onWebNested((WebElement) item, totalRowsCalc).isDisplayed())) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -874,7 +871,7 @@ public class FlexTablePage extends GovGrantsManager {
     private boolean isActionButtonInsideTopOfFlexTableDisplayed(String buttonName, String headerName) {
         boolean flag = false;
         try {
-            if (EyeThink.saas().phasePannel().getTopRightButton(headerName, buttonName).isDisplayed()) {
+            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().phasePannel().getTopRightButton(headerName, buttonName))) {
                 flag = true;
             }
         } catch (Exception e) {

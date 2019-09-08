@@ -49,7 +49,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
      * @param radioName
      */
     public void selectApproveDecisionOption(String radioName) {
-        getApprovalDecisionPannel(radioName).click();
+        EyeThink.core().click().onWeb(getApprovalDecisionPannel(radioName));
     }
 
     /**
@@ -114,7 +114,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
      * @param message
      */
     public void assertMessageOfConfirmationBoxPopUp(String message) {
-        Assert.assertTrue(EyeThink.core().get().attribute(confirmationBoxMessage,"innerText").equalsIgnoreCase(message));
+        Assert.assertTrue(EyeThink.core().get().attribute(confirmationBoxMessage, "innerText").equalsIgnoreCase(message));
     }
 
     /**
@@ -155,7 +155,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
      * click on Select dropdown inside Approval decision box
      */
     public void clickOnSelectDropdown() {
-        EyeThink.core().elementReference().onWeb(selectDropdown).click();
+        EyeThink.core().click().onWeb(selectDropdown);
     }
 
     /**
@@ -165,7 +165,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
      * @param dropDownValue
      */
     public void selectUserFromApproveDecisionOptionDropdown(String dropDownValue) {
-        getuserFromApprovalDecisionAction(dropDownValue).click();
+        EyeThink.core().click().onWeb(getuserFromApprovalDecisionAction(dropDownValue));
     }
 
     /**
@@ -201,7 +201,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
     private boolean isApprovalDecisionRadioButtonDisplayed(String radioButtonName) {
         boolean flag = true;
         try {
-            if (getApprovalDecisionPannel(radioButtonName).isDisplayed()) {
+            if (EyeThink.core().is().onWeb().isDisplayed(getApprovalDecisionPannel(radioButtonName))) {
                 flag = false;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {

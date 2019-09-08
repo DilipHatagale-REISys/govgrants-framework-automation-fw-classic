@@ -125,7 +125,7 @@ public class StepProgressBarPage extends GovGrantsManager {
     private boolean isStatusStepInsideProgressBarIsNotDisplayed(String statusName) {
         boolean flag = false;
         try {
-            if (EyeThink.saas().pageDetails().getSpecificStatusFromProgressBar(statusName).isDisplayed()) {
+            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().pageDetails().getSpecificStatusFromProgressBar(statusName))) {
                 flag = false;
             }
         } catch (Exception e) {

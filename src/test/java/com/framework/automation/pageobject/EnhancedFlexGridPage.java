@@ -82,7 +82,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         List<Elements> textField = EyeThink.core().elementReference().listOfElements().onWeb(By.xpath("//div[@id='" + tableId + "']//tbody//td//textarea"));
         for (Elements inputField : textField) {
             EyeThink.core().enterText().onWeb().clear((WebElement) inputField);
-            EyeThink.core().enterText().onWeb().enter((WebElement) inputField,enteredValue);
+            EyeThink.core().enterText().onWeb().enter((WebElement) inputField, enteredValue);
         }
     }
 
@@ -413,7 +413,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     private Boolean isAdvanceFilterDisabledFromEnhancedGrid(String tableId) {
         boolean flag = false;
         try {
-            if (EyeThink.saas().phasePannel().getAdvanceFilterItem(tableId).isDisplayed()) {
+            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().phasePanel().getAdvanceFilterItem(tableId))) {
                 flag = false;
             }
         } catch (Exception e) {
@@ -431,7 +431,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      */
     private boolean isTitleDisplayedForEnhancedGrid(String titleName, String tableId) {
         try {
-            if (EyeThink.saas().phasePannel().getPanelTitleWithTableId(tableId, titleName).isDisplayed()) {
+            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().phasePannel().getPanelTitleWithTableId(tableId, titleName))) {
                 return true;
             } else {
                 return false;
@@ -464,7 +464,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     private Boolean isEnhancedFlexGridRowsCountDisabled(String text, String tableId) {
         boolean flag = false;
         try {
-            if (EyeThink.saas().flexTable().getFooterElementsFromTable(text, tableId).isDisplayed()) {
+            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().flexTable().getFooterElementsFromTable(text, tableId))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -478,8 +478,8 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     private Boolean isEnhancedFlexGridColumnHeaderName(String titleName) {
         boolean flag = false;
         try {
-            if (EyeThink.saas().flexTable().getSpecificElementFromTableHeader(titleName).isDisplayed()
-                    || EyeThink.saas().flexTable().getSpecificElementFromTableHeader(titleName).isEnabled()) {
+            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().flexTable().getSpecificElementFromTableHeader(titleName))
+                    || EyeThink.core().is().onWeb().isEnabled(EyeThink.saas().flexTable().getSpecificElementFromTableHeader(titleName))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -496,7 +496,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         try {
             EyeThink.core().scroll().onWeb().pageToSpecificElement(reachOutToEnhancedGridCollapse);
             for (Elements element : getCompleteTableRowOfEnhancedGrid()) {
-                if (element.nestedElement(selectRecordCheckBoxForEnhancedGrid).isDisplayed()) {
+                if (EyeThink.core().is().onWeb().isDisplayed(element.nestedElement(selectRecordCheckBoxForEnhancedGrid))) {
                     flag = true;
                     break;
                 }
@@ -526,8 +526,8 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         EyeThink.core().scroll().onWeb().pageDocument("PageDown", 0, 0);
         boolean flag = false;
         try {
-            if (EyeThink.saas().flexTable().getFooterElementsFromTable(text, tableId).isDisplayed()
-                    || EyeThink.saas().flexTable().getFooterElementsFromTable(text, tableId).isEnabled()) {
+            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().flexTable().getFooterElementsFromTable(text, tableId))
+                    || EyeThink.core().is().onWeb().isEnabled(EyeThink.saas().flexTable().getFooterElementsFromTable(text, tableId))) {
 
                 flag = true;
             }
@@ -761,8 +761,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     private Boolean isMenuIconDisabledInChildFlexTable(String panelTitleName) {
         boolean flag = false;
         try {
-            if (EyeThink.core().elementReference().onWeb(EyeThink.saas().phasePannel().getParallelBarsLocator(panelTitleName))
-                    .isDisplayed()) {
+            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().phasePannel().getParallelBarsLocator(panelTitleName))) {
                 flag = false;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -902,7 +901,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     private Boolean isSpecificCellValueColourOfEnhancedFlexGrid(String cellValue, String tableId, String colorName) {
         boolean flag = false;
         WebElement cellContent = EyeThink.core().elementReference().onWeb(By.xpath("//div[@id='" + tableId + "']//span[@title='" + cellValue + "' or text()='"
-                        + cellValue + "']/ancestor::td[contains(@class,'ng-scope')]"));
+                + cellValue + "']/ancestor::td[contains(@class,'ng-scope')]"));
         switch (colorName.toUpperCase()) {
             case "RED":
                 if (cellContent.getCssValue("color").contains("rgba(255, 0, 0, 1)")
@@ -999,7 +998,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
                                                                        String tableId) {
         boolean flag = false;
         WebElement editedContent = EyeThink.core().elementReference().onWeb(By.xpath("//div[@id='" + tableId + "']//td//*[@title = '" + columnValue + "' or text() = '"
-                        + columnValue + "']/ancestor::tr[1]//td//span[contains(text(),'" + enteredValue + "')]"));
+                + columnValue + "']/ancestor::tr[1]//td//span[contains(text(),'" + enteredValue + "')]"));
         try {
             if (editedContent.getText().equals(enteredValue)) {
                 flag = true;

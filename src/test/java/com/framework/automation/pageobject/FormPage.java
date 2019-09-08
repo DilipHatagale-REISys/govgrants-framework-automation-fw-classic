@@ -75,7 +75,7 @@ public class FormPage extends GovGrantsManager {
      * @param versionNo
      */
     public void assertVersionNoInsideForm(String versionNo) {
-        Assert.assertTrue(EyeThink.core().get().attribute(versionNumber,"innerText").trim()
+        Assert.assertTrue(EyeThink.core().get().attribute(versionNumber, "innerText").trim()
                 .equalsIgnoreCase(versionNo));
     }
 
@@ -107,7 +107,7 @@ public class FormPage extends GovGrantsManager {
     private boolean isChangedButtonNameDisplayed(String actionButtonName) {
         boolean flag = false;
         try {
-            if (getAllActionItemInsideFormDetalPage(actionButtonName).isDisplayed()) {
+            if (EyeThink.core().is().onWeb().isDisplayed(getAllActionItemInsideFormDetalPage(actionButtonName))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -123,7 +123,7 @@ public class FormPage extends GovGrantsManager {
     private boolean isEditButtonDisplayed(String actionButtonName) {
         boolean flag = false;
         try {
-            if (getAllActionItemInsideFormDetalPage(actionButtonName).isDisplayed()) {
+            if (EyeThink.core().is().onWeb().isDisplayed(getAllActionItemInsideFormDetalPage(actionButtonName))) {
                 flag = false;
             }
         } catch (Exception e) {
@@ -140,7 +140,7 @@ public class FormPage extends GovGrantsManager {
     private boolean isPreviewActionItemNotDisplayForInternalUser(String Item) {
         boolean flag = false;
         try {
-            if (getAllActionItemInsideBusinessForm(Item).isDisplayed()) {
+            if (EyeThink.core().is().onWeb().isDisplayed(getAllActionItemInsideBusinessForm(Item))) {
                 flag = false;
             }
         } catch (Exception e) {
