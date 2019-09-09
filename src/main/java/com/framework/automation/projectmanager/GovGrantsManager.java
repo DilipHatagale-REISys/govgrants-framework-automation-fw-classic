@@ -76,19 +76,6 @@ public class GovGrantsManager extends ProjectWebServices {
     }
 
     /**
-     * waits for navigation logo to get disappeared
-     */
-    public void waitForNavigationLogo() {
-        try {
-            if (EyeThink.core().is().onWeb().isDisplayed(navigationLogo)) {
-                EyeThink.core().WaitFor().WaitForElementToDisappear(navigationLogo);
-            }
-        } catch (Exception e) {
-
-        }
-    }
-
-    /**
      * click on any button on modal content
      */
     public void clickModalContentSpecificButton(String buttonName) {
@@ -274,10 +261,6 @@ public class GovGrantsManager extends ProjectWebServices {
      */
     public void clickAndSelectOptionFromLeftDoubleArrowDropDown(String dropDownOption) {
         EyeThink.saas().phasePannel().clickDoubleArrowDropDownAndSelectItem(dropDownOption);
-    }
-
-    public void clearCookies() {
-        EyeThink.core().eatCookies().deleteAllCookies();
     }
 
     /**

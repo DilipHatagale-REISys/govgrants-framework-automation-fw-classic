@@ -29,9 +29,8 @@ public class ChartsPage extends GovGrantsManager {
      * @param chartName
      */
     public void assertCorrectTextDisplayed(String title, String chartName) {
-        Assert.assertTrue(EyeThink.core().elementReference().onWeb(By.xpath("//div[@id='" + chartName
-                + "Id']//*[contains(@class,'highcharts-container')]//*[contains(text(),'" + title + "')]"))
-                .getText().contains(title));
+        Assert.assertTrue(EyeThink.core().get().text(By.xpath("//div[@id='" + chartName
+                + "Id']//*[contains(@class,'highcharts-container')]//*[contains(text(),'" + title + "')]")).contains(title));
     }
 
     /**

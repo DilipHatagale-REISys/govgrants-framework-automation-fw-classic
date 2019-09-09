@@ -21,7 +21,6 @@ public class FlexTableSteps {
 	@When("^I click on \"([^\"]*)\" icon for \"([^\"]*)\" to save inside subtab$")
 	public void clickAnyIconInFlexTable(String iconName, String programRole) {
 		flexTablePage.clickRowLevelActionIconsInsideSubTab(iconName, programRole);
-		flexTablePage.clickSaveInModal();
 	}
 
 	@When("^I hovering mouse on help text icon inside \"([^\"]*)\" for flex table$")

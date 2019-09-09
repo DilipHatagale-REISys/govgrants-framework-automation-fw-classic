@@ -558,8 +558,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         boolean flag = false;
         try {
             EyeThink.core().scroll().onWeb().pageToSpecificElement(reachOutToEnhancedGridCollapse);
-            if (EyeThink.saas().flexTable().getSpecificElementFromTableHeader(titleName).getText()
-                    .equalsIgnoreCase(titleName)) {
+            if (EyeThink.core().get().text(EyeThink.saas().flexTable().getSpecificElementFromTableHeader(titleName)).equalsIgnoreCase(titleName)) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -573,8 +572,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     private Boolean isChangedEnhancedFlexGridColumnHeaderName(String columnTitleName, String tableId) {
         boolean flag = false;
         try {
-            if (EyeThink.saas().flexTable().getSpecificElementFromTableHeader(tableId, columnTitleName).getText()
-                    .equalsIgnoreCase(columnTitleName)) {
+            if (EyeThink.core().get().text(EyeThink.saas().flexTable().getSpecificElementFromTableHeader(tableId, columnTitleName)).equalsIgnoreCase(columnTitleName)) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -589,8 +587,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     private Boolean isSpecificCellValueOfEnhancedFlexGrid(String cellValue, String colName) {
         boolean flag = false;
         try {
-            if (EyeThink.core().elementReference().onWeb(EyeThink.saas().flexTable().getFlexTableColumn(cellValue)).getText()
-                    .equalsIgnoreCase(cellValue)) {
+            if (EyeThink.core().get().text(EyeThink.saas().flexTable().getFlexTableColumn(cellValue)).equalsIgnoreCase(cellValue)) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -1000,7 +997,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         WebElement editedContent = EyeThink.core().elementReference().onWeb(By.xpath("//div[@id='" + tableId + "']//td//*[@title = '" + columnValue + "' or text() = '"
                 + columnValue + "']/ancestor::tr[1]//td//span[contains(text(),'" + enteredValue + "')]"));
         try {
-            if (editedContent.getText().equals(enteredValue)) {
+            if (EyeThink.core().get().text(editedContent).equals(enteredValue)) {
                 flag = true;
             }
         } catch (Exception ex) {

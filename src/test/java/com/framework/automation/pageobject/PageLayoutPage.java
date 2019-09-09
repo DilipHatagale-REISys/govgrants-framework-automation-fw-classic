@@ -193,7 +193,6 @@ public class PageLayoutPage extends GovGrantsManager {
      * assert navigation hold on logo disappeared and modal closes properly
      */
     public void assertHoldOnLogoDisappeared() {
-        waitForNavigationLogo();
         try {
             Assert.assertFalse(EyeThink.core().is().onWeb().isDisplayed(EyeThink.core().elementReference().onWeb(navigationLogo)));
         } catch (Exception e) {

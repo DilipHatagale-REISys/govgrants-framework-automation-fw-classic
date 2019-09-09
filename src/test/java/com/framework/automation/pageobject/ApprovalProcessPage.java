@@ -86,8 +86,8 @@ public class ApprovalProcessPage extends GovGrantsManager {
      * @param error
      */
     public void assertDecisionCommentsMandatory(String error) {
-        Assert.assertTrue(EyeThink.core().elementReference().onWeb(dangerAlert).getText().equalsIgnoreCase(error)
-                || EyeThink.core().elementReference().onWeb(dangerAlert).getText().contains(error));
+        Assert.assertTrue(EyeThink.core().get().text(dangerAlert).equalsIgnoreCase(error)
+                || EyeThink.core().get().text(dangerAlert).contains(error));
     }
 
     /**
@@ -369,7 +369,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
         EyeThink.core().scroll().onWeb().pageDocument("PageDown", 0, 0);
         boolean flag = false;
         try {
-            if (getCommentTextInsideHistoryTab(commentText, User).getText().contains(commentText)) {
+            if (EyeThink.core().get().text(getCommentTextInsideHistoryTab(commentText, User)).contains(commentText)) {
                 flag = true;
             }
         } catch (Exception e) {

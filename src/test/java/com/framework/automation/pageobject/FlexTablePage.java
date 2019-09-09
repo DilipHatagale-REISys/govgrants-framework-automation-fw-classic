@@ -110,7 +110,7 @@ public class FlexTablePage extends GovGrantsManager {
     public void assertnewAddedLastRowLabelName(String flexTablelastRowName) {
         EyeThink.core().elementReference().onWeb(flexTablelastRowNameAsTotal);
         EyeThink.core().scroll().onWeb().pageToSpecificElement(flexTablelastRowNameAsTotal);
-        Assert.assertEquals(getLastRowLabelContent().getText(), flexTablelastRowName);
+        Assert.assertEquals(EyeThink.core().get().text(getLastRowLabelContent()), flexTablelastRowName);
     }
 
     /**
@@ -158,7 +158,6 @@ public class FlexTablePage extends GovGrantsManager {
      * assert if entire page is refreshing
      */
     public void asserEntirePageRefreshOnButtonClick() {
-        waitForNavigationLogo();
         String state = isPageRefreshOnButtonClick();
         Assert.assertTrue(state.equalsIgnoreCase("Complete"));
     }
@@ -174,14 +173,6 @@ public class FlexTablePage extends GovGrantsManager {
             Assert.assertFalse(EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().flexTable().getTableActionIconWithoutTableId(iconName, uniqueColumnValue)));
         } catch (Exception e) {
         }
-    }
-
-    /**
-     * click on save button and after clicking on save button switching to iframe
-     * for row level action item
-     */
-    public void clickSaveInModal() {
-        EyeThink.saas().modal().clickModalContentSpecificButton("Save");
     }
 
     /**
@@ -917,8 +908,7 @@ public class FlexTablePage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (EyeThink.core().is().onWeb().isStale(recordElement)
-                    || EyeThink.core().elementReference().onWeb(EyeThink.saas().flexTable().getFlexTableColumn(cellValue))
-                    .getText().equalsIgnoreCase(cellValue)) {
+                    || EyeThink.core().get().text(EyeThink.saas().flexTable().getFlexTableColumn(cellValue)).equalsIgnoreCase(cellValue)) {
                 flag = true;
             }
         } catch (Exception e) {

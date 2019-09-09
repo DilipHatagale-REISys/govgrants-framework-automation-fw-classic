@@ -252,6 +252,7 @@ Feature: Flex Table Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Roles" sub tab
     When I click on "Edit" icon for "Owner" to save inside subtab
+    And I click modal button "Save"
     Then I see entire page is refreshing
 
   @34297    @hideForProfileFieldAtRolesAndResponsibilitiesFlexTableAction-gPlanning @smoke
@@ -1009,6 +1010,7 @@ Feature: Flex Table Component Scenarios
     When I navigate to "Roles" sub tab
     When I record webelement at table "ProgramRolesAndResponsibilities" for column "Owner"
     When I click on "Edit" icon for "Owner" to save inside subtab
+    And I click modal button "Save"
     Then I see parent page is refreshing
 
   @34293    @refreshBehaviourFieldAtRolesAndResponsilitiesFlexTableAsCloseModalandRefreshGrid-gPlanning

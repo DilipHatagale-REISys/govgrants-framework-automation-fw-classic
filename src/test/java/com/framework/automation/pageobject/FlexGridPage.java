@@ -2,6 +2,7 @@ package com.framework.automation.pageobject;
 
 import com.framework.automation.projectmanager.GovGrantsManager;
 import eyethink.automation.bots.Register.EyeThink;
+import eyethink.automation.bots.Report.LogLevel;
 import eyethink.automation.bots.objects.Elements;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -46,7 +47,7 @@ public class FlexGridPage extends GovGrantsManager {
         WebElement targetColumnSum = EyeThink.core().elementReference().onWeb(enableTotalSumValueForTargetColumn);
         String sumValueInString = String.format("%.2f", getFlexGridSpecificColumnTotalSum());
         boolean flag = true;
-        if (targetColumnSum.getText().equals(sumValueInString)) {
+        if (EyeThink.core().get().text(targetColumnSum).equalsIgnoreCase(sumValueInString)) {
             flag = true;
         }
         return flag;
@@ -242,7 +243,7 @@ public class FlexGridPage extends GovGrantsManager {
             try {
                 total += Double.parseDouble(columnValue.getText());
             } catch (Exception e) {
-                System.out.println("An exception occured with column value '" + columnValue.getText() + "'");
+                EyeThink.core().report().write(LogLevel.PROJECT_LAYER_ERROR,"An exception occured with column value '" + columnValue.getText() + "'");
                 throw e;
             }
         }
