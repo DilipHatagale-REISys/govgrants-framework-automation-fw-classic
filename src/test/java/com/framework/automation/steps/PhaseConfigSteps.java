@@ -160,4 +160,9 @@ public class PhaseConfigSteps {
         phaseConfigPage.assertTaskCount(phaseName,tableID);
     }
 
+    @Then("^I see page is in \"([^\"]*)\" color$")
+    public void assertCustomAppColor(String colorName) {
+        phaseConfigPage.assertPageColorForCustomApp(colorName);
+    }
+
 }

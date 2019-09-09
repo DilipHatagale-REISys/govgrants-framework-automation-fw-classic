@@ -2,6 +2,7 @@ package com.framework.automation.pageobject;
 
 import com.framework.automation.projectmanager.GovGrantsManager;
 import eyethink.automation.bots.Register.EyeThink;
+import eyethink.automation.bots.objects.Elements;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -29,7 +30,7 @@ public class PhaseConfigPage extends GovGrantsManager {
      * click on global search all
      */
     public void clickOnGlobalSearchAll() {
-        EyeThink.core().findMyElement().getElement(By.xpath("//select[@id='selectSearchId']")).click();
+        EyeThink.core().click().onWeb(By.xpath("//select[@id='selectSearchId']"));
     }
 
     /**
@@ -37,7 +38,7 @@ public class PhaseConfigPage extends GovGrantsManager {
      */
     public void clickOnGlobalSearchTextBox() {
         By searchInput = By.cssSelector("div.input-group>input#isTypeNotAhead");
-        EyeThink.core().findMyElement().getElement(searchInput).click();
+        EyeThink.core().click().onWeb(searchInput);
     }
 
     /**
@@ -45,7 +46,7 @@ public class PhaseConfigPage extends GovGrantsManager {
      */
     public void clickOnSearchForGlobalSearchBox() {
         By quickSearchButton = By.cssSelector("div.input-group>a>i.fa.fa-search");
-        EyeThink.core().findMyElement().getElement(quickSearchButton).click();
+        EyeThink.core().click().onWeb(quickSearchButton);
     }
 
     /**
@@ -53,16 +54,16 @@ public class PhaseConfigPage extends GovGrantsManager {
      */
     public void enterCompleteFieldValues(String value1, String value2, String orderType) {
         if (!"onlyDescription".equals(orderType)) {
-            EyeThink.core().textInput().enterText(By.xpath("//*[contains(@placeholder,'Title')]"), value1);
+            EyeThink.core().enterText().onWeb().enter(By.xpath("//*[contains(@placeholder,'Title')]"), value1);
         }
-        EyeThink.core().textInput().enterText(By.xpath("//*[contains(@placeholder,'Description')]"), value2);
+        EyeThink.core().enterText().onWeb().enter(By.xpath("//*[contains(@placeholder,'Description')]"), value2);
     }
 
     /**
      * click on CustomApp Select dropdown inside grantor Home/Planning main page
      */
     public void clickOnCustomAppSelectDropdown() {
-        EyeThink.core().findMyElement().getElement(customAppDropdown).click();
+        EyeThink.core().click().onWeb(customAppDropdown);
     }
 
     /**
@@ -99,7 +100,7 @@ public class PhaseConfigPage extends GovGrantsManager {
      * @param numberOfCharts
      */
     public void assertNumberOfChartsDisplayed(int numberOfCharts) {
-        Assert.assertEquals(numberOfCharts, EyeThink.core().findMyElement().getElements(chartsContainer).size());
+        Assert.assertEquals(numberOfCharts, EyeThink.core().elementReference().listOfElements().onWeb(chartsContainer).size());
     }
 
     /**
@@ -111,7 +112,7 @@ public class PhaseConfigPage extends GovGrantsManager {
         switch (position.toUpperCase()) {
             case "BOTTOM":
                 Assert.assertTrue(isChartsGridAtCorrectPosition(
-                        EyeThink.core().findMyElement().getElements(containerFluid_PageWrapperList).size()));
+                        EyeThink.core().elementReference().listOfElements().onWeb(containerFluid_PageWrapperList).size()));
                 break;
         }
     }
@@ -127,9 +128,7 @@ public class PhaseConfigPage extends GovGrantsManager {
     }
 
     public void assertPhaseBookIconDisplayed(String phaseName) {
-        Assert.assertTrue(EyeThink.core().findMyElement().getElement(By.xpath(
-                "//div/ul[@class='nav navbar-nav']/li/a[@title='" + phaseName + "']//i[contains(@class,'fa-book')]"))
-                .isDisplayed());
+        Assert.assertTrue(EyeThink.core().is().onWeb().isDisplayed(By.xpath("//div/ul[@class='nav navbar-nav']/li/a[@title='" + phaseName + "']//i[contains(@class,'fa-book')]")));
     }
 
     /**
@@ -147,7 +146,7 @@ public class PhaseConfigPage extends GovGrantsManager {
      */
     public void assertChangedLabelOfSearchedItemsInGlobalSearchAll(String searchItem) {
         String searchLocator = "//select[@id='selectSearchId']//option[text()='" + searchItem + "']";
-        Assert.assertTrue(EyeThink.core().findMyElement().getElement(By.xpath(searchLocator)).isDisplayed());
+        Assert.assertTrue(EyeThink.core().is().onWeb().isDisplayed(By.xpath(searchLocator)));
     }
 
     /**
@@ -202,8 +201,7 @@ public class PhaseConfigPage extends GovGrantsManager {
      * @return
      */
     public WebElement getCustomAppFromCustomAppDropdown(String dropDownValue) {
-        return EyeThink.core().findMyElement().getElement(By
-                .xpath("//div/ul/li[contains(@class,'dropdown appDropdown')]/ul/li/a[@title='" + dropDownValue + "']"));
+        return EyeThink.core().elementReference().onWeb(By.xpath("//div/ul/li[contains(@class,'dropdown appDropdown')]/ul/li/a[@title='" + dropDownValue + "']"));
     }
 
     /**
@@ -212,10 +210,10 @@ public class PhaseConfigPage extends GovGrantsManager {
      * @param dropDownItem
      * @return
      */
-    public List<WebElement> getAppDropDownItem(String dropDownItem) {
+    public List<Elements> getAppDropDownItem(String dropDownItem) {
         By appDropDown = By
                 .xpath("//div/ul/li[contains(@class,'dropdown appDropdown')]/ul/li/a");
-        return EyeThink.core().findMyElement().getElements(appDropDown);
+        return EyeThink.core().elementReference().listOfElements().onWeb(appDropDown);
     }
 
     /**
@@ -296,6 +294,16 @@ public class PhaseConfigPage extends GovGrantsManager {
         Assert.assertTrue(isGovGrantsLogoAndNameDisplayedOnPage(logo, logoName));
     }
 
+    /**
+     * assert cutom app color
+     *
+     * @param colorName
+     */
+    public void assertPageColorForCustomApp(String colorName) {
+        Assert.assertTrue(isCustomAppColorChanged(colorName));
+    }
+
+
     /********* "Local Methods with complete functionality - private" *********/
 
     /**
@@ -305,9 +313,7 @@ public class PhaseConfigPage extends GovGrantsManager {
     private boolean isPhaseNotDisplayed(String phaseName) {
         boolean flag = true;
         try {
-            if (EyeThink.core().findMyElement()
-                    .getElement(By.xpath("//div/ul[@class='nav navbar-nav']/li/a[@title='" + phaseName + "']"))
-                    .isDisplayed()) {
+            if (EyeThink.core().is().onWeb().isDisplayed(By.xpath("//div/ul[@class='nav navbar-nav']/li/a[@title='" + phaseName + "']"))) {
                 flag = false;
             }
         } catch (Exception e) {
@@ -323,9 +329,7 @@ public class PhaseConfigPage extends GovGrantsManager {
     private boolean isPhaseDisplayed(String phaseName) {
         boolean flag = false;
         try {
-            if (EyeThink.core().findMyElement()
-                    .getElement(By.xpath("//div/ul[@class='nav navbar-nav']/li/a[@title='" + phaseName + "']"))
-                    .isDisplayed()) {
+            if (EyeThink.core().is().onWeb().isDisplayed(By.xpath("//div/ul[@class='nav navbar-nav']/li/a[@title='" + phaseName + "']"))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -341,8 +345,7 @@ public class PhaseConfigPage extends GovGrantsManager {
      * @return true/false
      */
     private boolean isPhaseSequence(String phaseName, int sequenceNumber) {
-        if (EyeThink.core().findMyElement().getElements(allPhases).get(sequenceNumber).getAttribute("title")
-                .contains(phaseName)) {
+        if (EyeThink.core().elementReference().listOfElements().onWeb(allPhases).get(sequenceNumber).getAttributes("title").contains(phaseName)) {
             return true;
         } else
             return false;
@@ -357,9 +360,8 @@ public class PhaseConfigPage extends GovGrantsManager {
     private boolean isChartsGridAtCorrectPosition(int positionNumber) {
         boolean flag = false;
         try {
-            if (EyeThink.core().findMyElement().getElement(By.cssSelector("div#page-content-wrapper>div.container-fluid>div>div>div:nth-of-type("
-                    + positionNumber + ") div#charts"))
-                    .isEnabled()) {
+            if (EyeThink.core().is().onWeb().isEnabled(By.cssSelector("div#page-content-wrapper>div.container-fluid>div>div>div:nth-of-type("
+                    + positionNumber + ") div#charts"))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -377,7 +379,7 @@ public class PhaseConfigPage extends GovGrantsManager {
     private boolean isPhaseNotDisplayedInTaskSummary(String phaseName) {
         boolean flag = true;
         try {
-            if (EyeThink.core().findMyElement().getElement(getSpecificPhaseInTaskSummaryByPhase(phaseName)).isDisplayed()) {
+            if (EyeThink.core().is().onWeb().isDisplayed(getSpecificPhaseInTaskSummaryByPhase(phaseName))) {
                 flag = false;
             }
         } catch (Exception e) {
@@ -394,9 +396,8 @@ public class PhaseConfigPage extends GovGrantsManager {
     private Boolean isParticularTabHighlighted(String phaseName) {
         boolean flag = false;
         EyeThink.core().switchTo().getWindowsHandlers();
-        if (EyeThink.core().findMyElement().getElement(By.xpath("//div/ul[@class='nav navbar-nav']/li[contains(@class,'ng-scope active')]/a[@title='"
-                + phaseName + "']"))
-                .isDisplayed()) {
+        if (EyeThink.core().is().onWeb().isDisplayed(By.xpath("//div/ul[@class='nav navbar-nav']/li[contains(@class,'ng-scope active')]/a[@title='"
+                + phaseName + "']"))) {
             flag = true;
         }
         return flag;
@@ -410,8 +411,7 @@ public class PhaseConfigPage extends GovGrantsManager {
     private boolean isSearchedItemNotPresentInGlobalSearchAll(String searchItem) {
         boolean flag = true;
         try {
-            if (EyeThink.core().findMyElement().getElement(By.xpath("//select[@id='selectSearchId']//option[text()='" + searchItem + "']"))
-                    .isDisplayed()) {
+            if (EyeThink.core().is().onWeb().isDisplayed(By.xpath("//select[@id='selectSearchId']//option[text()='" + searchItem + "']"))) {
                 flag = false;
             }
         } catch (Exception e) {
@@ -429,10 +429,9 @@ public class PhaseConfigPage extends GovGrantsManager {
     private boolean isObjectNotShowingInRecentlyViewedSideBar(String acronym) {
         boolean flag = true;
         try {
-            if (EyeThink.core().findMyElement().getElement(By.xpath(
+            if (EyeThink.core().is().onWeb().isDisplayed(By.xpath(
                     ".//span[text()='Recently Viewed']/parent::a/following-sibling::ul//li//span[starts-with(text(),'"
-                            + acronym + "')]"))
-                    .isDisplayed()) {
+                            + acronym + "')]"))) {
                 flag = false;
             }
         } catch (Exception e) {
@@ -467,10 +466,10 @@ public class PhaseConfigPage extends GovGrantsManager {
      */
     private boolean isContrastColorIsDisplayedForCustomAppAsaGrantor(String contrastValue) {
         boolean flag = false;
-        List<WebElement> list = EyeThink.core().findMyElement().getElements(By.xpath("//body//span/link"));
+        List<Elements> list = EyeThink.core().elementReference().listOfElements().onWeb(By.xpath("//body//span/link"));
         int links = list.size();
         for (int i = 0; i < links; i++) {
-            if (list.get(i).getAttribute("href").contains(contrastValue))
+            if (list.get(i).getAttributes("href").contains(contrastValue))
                 flag = true;
         }
         return flag;
@@ -482,7 +481,7 @@ public class PhaseConfigPage extends GovGrantsManager {
     private boolean isCustomAppDisplayedOnPage() {
         boolean flag = false;
         try {
-            if (EyeThink.core().findMyElement().getElement(customAppDropdown).isDisplayed()) ;
+            if (EyeThink.core().is().onWeb().isDisplayed(customAppDropdown)) ;
             flag = true;
         } catch (org.openqa.selenium.NoSuchElementException e) {
 
@@ -498,7 +497,7 @@ public class PhaseConfigPage extends GovGrantsManager {
      * @return true/false
      */
     private boolean isCustomAppOptionsSequenceAaExpected(String dropDownItem, int sequenceNumber) {
-        if (getAppDropDownItem(dropDownItem).get(sequenceNumber).getAttribute("title").contains(dropDownItem)) {
+        if (getAppDropDownItem(dropDownItem).get(sequenceNumber).getAttributes("title").contains(dropDownItem)) {
             return true;
         } else
             return false;
@@ -509,27 +508,27 @@ public class PhaseConfigPage extends GovGrantsManager {
      */
     private Boolean isChangedProgramColorIsDisplayed(String colorName) {
         boolean flag = false;
-        List<WebElement> programColor = EyeThink.core().findMyElement().getElements(By.xpath("//table/tbody/tr/td//a//span[contains(text(),'PG')]//ancestor::a"));
+        List<Elements> programColor = EyeThink.core().elementReference().listOfElements().onWeb(By.xpath("//table/tbody/tr/td//a//span[contains(text(),'PG')]//ancestor::a"));
         for (int i = 0; i < programColor.size(); i++) {
             switch (colorName.toUpperCase()) {
                 case "RED":
                     if (programColor.get(i).getCssValue("background-color").contains("rgba(255, 0, 0, 1)")
                             || programColor.get(i).getCssValue("color").contains("rgb(255, 0, 0)")
-                            || programColor.get(i).getAttribute("style").contains("rgb(255, 0, 0)")) {
+                            || programColor.get(i).getAttributes("style").contains("rgb(255, 0, 0)")) {
                         flag = true;
                     }
                     break;
                 case "BLUE":
                     if (programColor.get(i).getCssValue("background-color").contains("rgba(11, 11, 160, 1)")
                             || programColor.get(i).getCssValue("color").contains("rgba(11, 11, 160)")
-                            || programColor.get(i).getAttribute("style").contains("rgb(11, 11, 160)")) {
+                            || programColor.get(i).getAttributes("style").contains("rgb(11, 11, 160)")) {
                         flag = true;
                     }
                     break;
                 case "GREEN":
                     if (programColor.get(i).getCssValue("background-color").contains("rgba(59, 161, 11, 1")
                             || programColor.get(i).getCssValue("color").contains("rgb(59, 161, 11")
-                            || programColor.get(i).getAttribute("style").contains("rgb(59, 161, 11)")) {
+                            || programColor.get(i).getAttributes("style").contains("rgb(59, 161, 11)")) {
                         flag = true;
                     }
                     break;
@@ -543,7 +542,7 @@ public class PhaseConfigPage extends GovGrantsManager {
      */
     private Boolean isProgramDisplayedAtCalender() {
         boolean flag = false;
-        List<WebElement> programColor = EyeThink.core().findMyElement().getElements(By.xpath("//table/tbody/tr/td//a//span[contains(text(),'PG')]"));
+        List<Elements> programColor = EyeThink.core().elementReference().listOfElements().onWeb(By.xpath("//table/tbody/tr/td//a//span[contains(text(),'PG')]"));
         for (int i = 0; i < programColor.size(); i++) {
             if (programColor.get(i).getText().contentEquals("PG")) {
                 return true;
@@ -558,7 +557,7 @@ public class PhaseConfigPage extends GovGrantsManager {
     private Boolean isTextPresentOnStickyNote(String stickyTitle, String text) {
         boolean flag = false;
         try {
-            if (EyeThink.core().findMyElement().getElement(By.xpath("//a[contains(@aria-label,'" + stickyTitle + "')]/textarea")).getAttribute("value").equalsIgnoreCase(text)) {
+            if (EyeThink.core().get().attribute(By.xpath("//a[contains(@aria-label,'" + stickyTitle + "')]/textarea"), "value").equalsIgnoreCase(text)) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -571,9 +570,9 @@ public class PhaseConfigPage extends GovGrantsManager {
      * @return true if expected current date is displayed on sticky note
      */
     private Boolean isCurrentDateDisplayedOnStickyNote() {
-        WebElement stickyDate = EyeThink.core().findMyElement().getElement(By.xpath("//div[contains(@class,'dateFieldNotes ng-binding')]"));
+        WebElement stickyDate = EyeThink.core().elementReference().onWeb(By.xpath("//div[contains(@class,'dateFieldNotes ng-binding')]"));
         String sDate = stickyDate.getText().split(" ")[0];
-        String currentDate = EyeThink.core().get().getCurrentDate_MMDDYYYY();
+        String currentDate = EyeThink.core().get().currentDate_MMDDYYYY();
         boolean flag = false;
         if (sDate.equals(currentDate)) {
             flag = true;
@@ -590,7 +589,7 @@ public class PhaseConfigPage extends GovGrantsManager {
     private boolean isGovGrantsLogoAndNameDisplayedOnPage(String logo, String logoName) {
         boolean flag = false;
         try {
-            if (EyeThink.core().findMyElement().getElement(By.xpath("//img[@alt='" + logo + "']/../following-sibling::span[text()='" + logoName + "']")).isDisplayed())
+            if (EyeThink.core().is().onWeb().isDisplayed(By.xpath("//img[@alt='" + logo + "']/../following-sibling::span[text()='" + logoName + "']")))
                 ;
             flag = true;
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -604,7 +603,7 @@ public class PhaseConfigPage extends GovGrantsManager {
      * @return
      */
     private boolean isProgramRecordsPresentInsideTable(String recordIdText) {
-        List<WebElement> recordList = EyeThink.core().findMyElement().getElements(By.xpath("//table/tbody/tr//td//span[contains(text(),'" + recordIdText + "')]"));
+        List<Elements> recordList = EyeThink.core().elementReference().listOfElements().onWeb(By.xpath("//table/tbody/tr//td//span[contains(text(),'" + recordIdText + "')]"));
         boolean flag = false;
         try {
             if (recordList.size() > 0) {
@@ -617,7 +616,7 @@ public class PhaseConfigPage extends GovGrantsManager {
 
 
     public void assertTaskCount(String tabName, String tableID) {
-        String finalCount = EyeThink.core().findMyElement().getElement(By.xpath("//div[@class='container-fluid']//li//span[text()='" + tabName + "']/../..//span[contains(@ng-bind,'taskCount')]")).getText();
+        String finalCount = EyeThink.core().get().text(By.xpath("//div[@class='container-fluid']//li//span[text()='" + tabName + "']/../..//span[contains(@ng-bind,'taskCount')]"));
         Assert.assertEquals(findTaskCount(tabName, tableID), finalCount);
     }
 
@@ -647,8 +646,29 @@ public class PhaseConfigPage extends GovGrantsManager {
 
     /* handles to veify total records present in flex table */
     public String totalRecordsCount(String tableId) {
-        return (EyeThink.core().findMyElement().getElement(By.xpath("//div[@id='" + tableId + "']//following-sibling::span[contains(text(),'Total Records')]"))).getText();
+        return (EyeThink.core().get().text(By.xpath("//div[@id='" + tableId + "']//following-sibling::span[contains(text(),'Total Records')]")));
     }
 
-
+    /**
+     * @return true if changed color of program is displayed inside My workspace
+     */
+    private Boolean isCustomAppColorChanged(String colorName) {
+        boolean flag = false;
+        WebElement pageColor = EyeThink.core().elementReference().onWeb(By.xpath("//nav[@id='mainTabsId']"));
+        switch (colorName.toUpperCase()) {
+            case "LIGHT BLUE":
+                if (pageColor.getCssValue("background-color").contains("rgba(107, 172, 208, 1)")
+                        || pageColor.getCssValue("color").contains("rgb(107, 172, 208)")) {
+                    flag = true;
+                }
+                break;
+            case "DARK BLUE":
+                if (pageColor.getCssValue("background-color").contains("rgba(75, 141, 177, 1)")
+                        || pageColor.getCssValue("color").contains("rgb(75, 141, 177)")) {
+                    flag = true;
+                }
+                break;
+        }
+        return flag;
+    }
 }

@@ -44,12 +44,10 @@ public class FormPage extends GovGrantsManager {
      */
     public void clickFormActionIconsForSpecificSubject(String programSubject, String iconName) {
         try {
-            EyeThink.core().findMyElement().getElement(By.xpath(
-                    "//td//span[@title='" + programSubject + "']/../../../td//a[@title='" + iconName + "']//i"))
-                    .click();
+            EyeThink.core().click().onWeb(By.xpath("//td//span[@title='" + programSubject + "']/../../../td//a[@title='" + iconName + "']//i"));
         } catch (Exception e) {
             EyeThink.core().WaitFor().makeThreadSleep(1000);
-            EyeThink.core().JavaScript().clickByJS(By
+            EyeThink.core().click().withJavaScript(By
                     .xpath("//td//span[@title='" + programSubject + "']/../../../td//a[@title='" + iconName + "']//i"));
         }
     }
@@ -77,7 +75,7 @@ public class FormPage extends GovGrantsManager {
      * @param versionNo
      */
     public void assertVersionNoInsideForm(String versionNo) {
-        Assert.assertTrue(EyeThink.core().findMyElement().getElement(versionNumber).getAttribute("innerText").trim()
+        Assert.assertTrue(EyeThink.core().get().attribute(versionNumber, "innerText").trim()
                 .equalsIgnoreCase(versionNo));
     }
 
@@ -93,7 +91,7 @@ public class FormPage extends GovGrantsManager {
     private boolean isBusinessFormSectionNotDisplayed() {
         boolean flag = false;
         try {
-            if (EyeThink.core().findMyElement().getElement(businessFormSection).isDisplayed()) {
+            if (EyeThink.core().is().onWeb().isDisplayed(businessFormSection)) {
                 flag = false;
             }
         } catch (Exception e) {
@@ -109,7 +107,7 @@ public class FormPage extends GovGrantsManager {
     private boolean isChangedButtonNameDisplayed(String actionButtonName) {
         boolean flag = false;
         try {
-            if (getAllActionItemInsideFormDetalPage(actionButtonName).isDisplayed()) {
+            if (EyeThink.core().is().onWeb().isDisplayed(getAllActionItemInsideFormDetalPage(actionButtonName))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -125,7 +123,7 @@ public class FormPage extends GovGrantsManager {
     private boolean isEditButtonDisplayed(String actionButtonName) {
         boolean flag = false;
         try {
-            if (getAllActionItemInsideFormDetalPage(actionButtonName).isDisplayed()) {
+            if (EyeThink.core().is().onWeb().isDisplayed(getAllActionItemInsideFormDetalPage(actionButtonName))) {
                 flag = false;
             }
         } catch (Exception e) {
@@ -142,7 +140,7 @@ public class FormPage extends GovGrantsManager {
     private boolean isPreviewActionItemNotDisplayForInternalUser(String Item) {
         boolean flag = false;
         try {
-            if (getAllActionItemInsideBusinessForm(Item).isDisplayed()) {
+            if (EyeThink.core().is().onWeb().isDisplayed(getAllActionItemInsideBusinessForm(Item))) {
                 flag = false;
             }
         } catch (Exception e) {
@@ -158,16 +156,16 @@ public class FormPage extends GovGrantsManager {
      * @return
      */
     private WebElement getAllActionItemInsideBusinessForm(String Item) {
-        return EyeThink.core().findMyElement().getElement(By.xpath(("//div[@id='FormComponent']//div/table/tbody/tr//td//a[@title='" + Item + "']")));
+        return EyeThink.core().elementReference().onWeb(By.xpath(("//div[@id='FormComponent']//div/table/tbody/tr//td//a[@title='" + Item + "']")));
     }
 
-   /**
+    /**
      * check all page layout action item inside form detail page
      *
      * @param actionButtonName
      * @return
      */
     private WebElement getAllActionItemInsideFormDetalPage(String actionButtonName) {
-        return EyeThink.core().findMyElement().getElement(By.xpath(("//div[@id='headerButtonsPanel']//*[@title='" + actionButtonName + "']")));
+        return EyeThink.core().elementReference().onWeb(By.xpath(("//div[@id='headerButtonsPanel']//*[@title='" + actionButtonName + "']")));
     }
 }

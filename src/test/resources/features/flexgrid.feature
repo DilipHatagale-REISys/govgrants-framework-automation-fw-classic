@@ -16,8 +16,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see "Automation Goals Objectives" as header
 
@@ -33,8 +33,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see Menu icon is disabled from planning flex table "Goals Objectives"
 
@@ -50,8 +50,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see quick search option disabled for "Program Performance Mgmt Grid View"
 
@@ -67,8 +67,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     When I click on top right parallel lines bar for "Goals Objectives"
     Then I see "Download as PDF""Download as CSV" options inside "Goals Objectives" disabled
@@ -85,8 +85,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see "Due Date" not displayed in enhanced grid table column title
 
@@ -102,8 +102,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see "View" icon for "Goal" is not displayed inside flex table
 
@@ -119,8 +119,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     When I perform quick search for "Environment" in "toggleFGridProgramOutcomes" panel
     Then I see "View" icon for "toggleFGridProgramOutcomes" is at position "0" inside flex table
@@ -137,8 +137,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     When I perform quick search for "Environment" in "toggleFGridProgramOutcomes" panel
     Then I see "Test Automation" as title for "Environment" inside flex table action
@@ -155,8 +155,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     When I perform quick search for "Environment" in "toggleFGridProgramOutcomes" panel
     When I click on "View" icon for "Environment" inside table
@@ -176,8 +176,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see "View" button inside "Key Outcomes" Mass Editable grid
 
@@ -195,8 +195,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     When I click on "View" icon for "Environment" inside table with table id "toggleFGridProgramOutcomes" without processing
     Then I see confirmation box with body "Automation" is displayed
@@ -213,8 +213,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     When I perform quick search for "Environment" in "toggleFGridProgramOutcomes" panel
     Then I see "View" icon for "Environment" is not displayed inside flex table
@@ -231,8 +231,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     When I perform quick search for "Environment" in "toggleFGridProgramOutcomes" panel
     Then I see "View" icon for "Environment" is not displayed inside flex table
@@ -249,8 +249,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     When I perform quick search for "Environment" in "toggleFGridProgramOutcomes" panel
     Then I see "View" icon for "Environment" is not displayed inside flex table
@@ -267,8 +267,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     When I perform quick search for "Environment" in "toggleFGridProgramOutcomes" panel
     When I click on "View" icon for "Environment" inside table
@@ -286,8 +286,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     When I perform quick search for "Environment" in "toggleFGridProgramOutcomes" panel
     When I click on "View" icon for "Environment" inside table
@@ -305,8 +305,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     When I perform quick search for "Environment" in "toggleFGridProgramOutcomes" panel
     When I click on "Edit" icon for "Environment" inside table
@@ -326,8 +326,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     When I perform quick search for "Environment" in "toggleFGridProgramOutcomes" panel
     When I click on "View" icon for "Environment" inside table
@@ -349,8 +349,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     When I hovering mouse on help text icon inside "Target" for flex table column
     Then I see "<new_helpText>" shown as help text
@@ -371,8 +371,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     When I perform quick search for "Environment" in "toggleFGridProgramOutcomes" panel
     Then I see "Edit" icon for "Environment" is not displayed inside flex table
@@ -389,8 +389,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     When I perform quick search for "Environment" in "toggleFGridProgramOutcomes" panel
     Then I see "Edit" icon for "Environment" is not displayed inside flex table
@@ -407,8 +407,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see "Test Automation" shown as inside "toggleFGridProgramOutcomes"
 
@@ -424,8 +424,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     When I click on top right parallel lines bar for "Key Outcomes"
     Then I see "Download as PDF""Download as CSV" options inside "Key Outcomes" disabled
@@ -444,8 +444,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see enable total sum for target column at program outcomes flex grid
 
@@ -461,8 +461,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see quick search option disabled for table "toggleFGridProgramOutcomes "
 
@@ -478,8 +478,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see Menu icon is disabled from planning flex table "Key Outcomes"
 
@@ -495,8 +495,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see "Total" inside rows of enhanced grid id "toggleFGridProgramOutcomes"
 
@@ -512,8 +512,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see "Total Records" count in "inlineEditGridProgramOutcomes"
 
@@ -529,8 +529,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see "#" shown inside flex table with id "toggleFGridProgramOutcomes"
 
@@ -546,8 +546,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     When I hovering mouse on help text icon inside "Key Outcomes" for flex table
     Then I see "<new_helpText>" shown as help text
@@ -567,8 +567,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     When I click on top right parallel lines bar for "Key Outcomes"
     Then I see "Help" options inside "Key Outcomes" enabled
@@ -587,8 +587,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see column "Target" value is in "Ascending" order for table id "toggleFGridProgramOutcomes"
 
@@ -606,8 +606,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see column "Target" value is in "Descending" order for table id "toggleFGridProgramOutcomes"
 
@@ -623,8 +623,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see "Test Automation" shown inside flex table with id "toggleFGridProgramOutcomes"
 
@@ -640,8 +640,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see "<fieldDisplayNames>" in program Outcomes flex table header with id "toggleFGridProgramOutcomes"
 
@@ -666,19 +666,21 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see "ID" column inside Flex grid table id "toggleFGridProgramOutcomes" of width "width: 50%;"
 
   @50239    @refreshBehaviourFieldAtApplicationBudgetPeriodsFlexTableAsRefreshEntirePageForEditAction-gPlanning
   Scenario: validate flex table action field- refresh entire page
     Given I have default configuration as below:
-      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
-      | Flex Table Action     | Refresh Behavior |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName        | fieldOrignalValue   | filterId         |
+      | Flex Table Action     | Refresh Behavior |                     | ApiGeneratedId:0 |
+      | Flex Table Action     | Action Behavior  | Open in inline mode | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue           | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Refresh Behavior | Refresh the entire page | ApplicationBudgetPeriods | Name                      | Edit                       |
+      | Flex Table Action     | Action Behavior  | Open in overlay         | ApplicationBudgetPeriods | Name                      | Edit                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -686,6 +688,8 @@ Feature: Flex Grid Component Scenarios
     When I click on "View" icon for "Test announcement for program 2" inside table
     When I navigate to "Budget" sub tab
     When I click on "Edit" icon for "BP-01" to save inside subtab
+    When I enter value "test" into field "fieldNotes__c"
+    And I click modal button "Save"
     Then I see entire page is refreshing
 
   @50337    @buttonHelpTextFieldAtActiveGrantsGridParentFlexTableAction-gMonitoring
@@ -827,9 +831,11 @@ Feature: Flex Grid Component Scenarios
     Given I have default configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table Action     | Refresh Behavior |                   | ApiGeneratedId:0 |
+      | Flex Table Action     | Action Behavior  | Open in overlay   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue           | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Refresh Behavior | Refresh the entire page | GrantorBudgetPeriod | Name                      | Edit                       |
+      | Flex Table Action     | Action Behavior  | Open in overlay         | GrantorBudgetPeriod | Name                      | Edit                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
@@ -837,6 +843,7 @@ Feature: Flex Grid Component Scenarios
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Financials" sub tab
     When I click on "Edit" icon for "2019" to save inside subtab
+    And I click modal button "Save"
     Then I see entire page is refreshing
 
   @50351    @sequenceFieldAtGrantorBudgetPeriodFlexTableAction-gGrants
@@ -845,8 +852,8 @@ Feature: Flex Grid Component Scenarios
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Flex Table Action     | Sequence  | 2                 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Sequence  | 0             | GrantorBudgetPeriod| Name                      | Edit                       |
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Sequence  | 0             | GrantorBudgetPeriod | Name                      | Edit                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
@@ -858,11 +865,11 @@ Feature: Flex Grid Component Scenarios
   @50352    @hideForProfileFieldAtGrantorBudgetPeriodFlexTableViewAction-gGrants @smoke
   Scenario: Hide view row level action for specific profile from configuration and validating it at under Grantor Budget Period flex table- gPlanning
     Given I have default configuration as below:
-      | configurationCategory         | fieldName        | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject     | Hide For Profile |                   | GrantorBudgetPeriod | Name                      | View                       |
+      | configurationCategory     | fieldName        | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide For Profile |                   | GrantorBudgetPeriod | Name                      | View                       |
     Given I setup test configuration as below:
-      | configurationCategory         | fieldName        | fieldNewValue        | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject     | Hide For Profile | System Administrator | GrantorBudgetPeriod | Name                      | View                       |
+      | configurationCategory     | fieldName        | fieldNewValue        | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide For Profile | System Administrator | GrantorBudgetPeriod | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
@@ -874,11 +881,11 @@ Feature: Flex Grid Component Scenarios
   @50353    @hideForUserFieldAtGrantorBudgetPeriodFlexTableViewAction-gGrants @smoke
   Scenario: Hide view row level action for specific User from configuration and validating it at under Grantor Budget Period flex table- gPlanning
     Given I have default configuration as below:
-      | configurationCategory         | fieldName     | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject     | Hide For User |                   | GrantorBudgetPeriod | Name                      | View                       |
+      | configurationCategory     | fieldName     | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide For User |                   | GrantorBudgetPeriod | Name                      | View                       |
     Given I setup test configuration as below:
-      | configurationCategory         | fieldName     | fieldNewValue        | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject     | Hide For User | Internal             | GrantorBudgetPeriod | Name                      | View                       |
+      | configurationCategory     | fieldName     | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide For User | Internal      | GrantorBudgetPeriod | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
@@ -916,11 +923,11 @@ Feature: Flex Grid Component Scenarios
   @50362    @headerFieldAtActiveGrantsGridParentFlexTable-gMonitoring
   Scenario: Changing content of header field at ActiveGrantsGridParent flex table and validating it at Monitoring schedule for all active grants flex table
     Given I have default configuration as below:
-      | configurationCategory | fieldName  | fieldOrignalValue | filterId                |
-      | Flex Table            | Header     | Monitoring Schedule For All Active Grant    | ApiGeneratedId:0 |
+      | configurationCategory | fieldName | fieldOrignalValue                        | filterId         |
+      | Flex Table            | Header    | Monitoring Schedule For All Active Grant | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName  | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Header     | Test Automation| ActiveGrantsGrid   |                           |                            |
+      | configurationCategory | fieldName | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header    | Test Automation | ActiveGrantsGrid   |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
@@ -932,8 +939,8 @@ Feature: Flex Grid Component Scenarios
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Grid             | Header Help Text | <old_helpText>    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Header Help Text | <new_helpText> | ActiveGrantsGrid    |                           |                            |
+      | configurationCategory | fieldName        | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Header Help Text | <new_helpText> | ActiveGrantsGrid   |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
@@ -950,7 +957,7 @@ Feature: Flex Grid Component Scenarios
       | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Quick Search | false         | ActiveGrantsGrid    |                           |                            |
+      | Flex Table:General    | Enable Quick Search | false         | ActiveGrantsGrid   |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
@@ -1025,13 +1032,13 @@ Feature: Flex Grid Component Scenarios
   @50383    @orderBySortByFieldAtActiveGrantsGridParentFlexTableForAscendingOrder-gMonitoring
   Scenario: Changing specific column value in ascending order with order by and sort by field At ActiveGrantsGridParentFlexTable from config and validating it inside Monitoring schedule for all active grant
     Given I have default configuration as below:
-      | configurationCategory | fieldName      | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Order By       |                   | ActiveGrantsGrid    |                           |                            |
-      | Flex Grid:General     | Sort Direction |                   | ActiveGrantsGrid    |                           |                            |
+      | configurationCategory | fieldName      | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Order By       |                   | ActiveGrantsGrid   |                           |                            |
+      | Flex Grid:General     | Sort Direction |                   | ActiveGrantsGrid   |                           |                            |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName      | fieldNewValue     | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Order By       | NumberofAwards__c | ActiveGrantsGrid    |                           |                            |
-      | Flex Grid:General     | Sort Direction | ASC               | ActiveGrantsGrid    |                           |                            |
+      | configurationCategory | fieldName      | fieldNewValue     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Order By       | NumberofAwards__c | ActiveGrantsGrid   |                           |                            |
+      | Flex Grid:General     | Sort Direction | ASC               | ActiveGrantsGrid   |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
@@ -1040,13 +1047,13 @@ Feature: Flex Grid Component Scenarios
   @50386    @orderBySortByFieldAtActiveGrantsGridParentFlexTableForDescendingOrder-gMonitoring
   Scenario: Changing specific column value in ascending order with order by and sort by field At ActiveGrantsGridParentFlexTable from config and validating it inside Monitoring schedule for all active grant flex table
     Given I have default configuration as below:
-      | configurationCategory | fieldName      | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Order By       |                   | ActiveGrantsGrid    |                           |                            |
-      | Flex Grid:General     | Sort Direction |                   | ActiveGrantsGrid    |                           |                            |
+      | configurationCategory | fieldName      | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Order By       |                   | ActiveGrantsGrid   |                           |                            |
+      | Flex Grid:General     | Sort Direction |                   | ActiveGrantsGrid   |                           |                            |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName      | fieldNewValue     | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Order By       | NumberofAwards__c | ActiveGrantsGrid    |                           |                            |
-      | Flex Grid:General     | Sort Direction | DESC              | ActiveGrantsGrid    |                           |                            |
+      | configurationCategory | fieldName      | fieldNewValue     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Order By       | NumberofAwards__c | ActiveGrantsGrid   |                           |                            |
+      | Flex Grid:General     | Sort Direction | DESC              | ActiveGrantsGrid   |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
@@ -1055,11 +1062,11 @@ Feature: Flex Grid Component Scenarios
   @50389    @pdfRenderTypeFieldAtActiveGrantsGridParentFlexTableForContentInBlock-gMonitoring
   Scenario: validate Activated status in downloaded pdf file after checking check box of show in pdf at config and validating it inside enhanced grid of programs-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName       | fieldOrignalValue | filterId         |
-      | Flex Table                | PDF Render Type | Block             | ApiGeneratedId:0 |
+      | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
+      | Flex Table            | PDF Render Type | Block             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName       | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General        | PDF Render Type | Block         | ActiveGrantsGrid   |                           |                            |
+      | configurationCategory | fieldName       | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | PDF Render Type | Block         | ActiveGrantsGrid   |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
@@ -1071,11 +1078,11 @@ Feature: Flex Grid Component Scenarios
   @50390    @pdfRenderTypeFieldAtActiveGrantsGridParentFlexTableForContentInTable-gMonitoring
   Scenario: validate Activated status in downloaded pdf file after checking check box of show in pdf at config and validating it inside enhanced grid of programs-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName       | fieldOrignalValue | filterId         |
-      | Flex Table                | PDF Render Type | Block             | ApiGeneratedId:0 |
+      | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
+      | Flex Table            | PDF Render Type | Block             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName       | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General        | PDF Render Type | Table         | ActiveGrantsGrid   |                           |                            |
+      | configurationCategory | fieldName       | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | PDF Render Type | Table         | ActiveGrantsGrid   |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
@@ -1122,8 +1129,8 @@ Feature: Flex Grid Component Scenarios
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
       | Flex Table List       | Field width(%) | 10                | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue  |
-      | Flex Table List       | Field width(%) | 50            | ActiveGrantsGrid   | Name                      | FTC-1020                    |
+      | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Field width(%) | 50            | ActiveGrantsGrid   | Name                      | FTC-1020                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
@@ -1145,11 +1152,11 @@ Feature: Flex Grid Component Scenarios
   @50395    @labelFieldAtActiveGrantsGridFlexTable-gMonitoring
   Scenario: validate after changing name of ActiveGrantsGrid flex table title inside Monitoring phase
     Given I have default configuration as below:
-      | configurationCategory     | fieldName | fieldOrignalValue                         | filterId         |
-      | Flex Table List           | Label     | Monitoring Schedule For All Active Grant  | ApiGeneratedId:0 |
+      | configurationCategory | fieldName | fieldOrignalValue                        | filterId         |
+      | Flex Table List       | Label     | Monitoring Schedule For All Active Grant | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName | fieldNewValue            | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List           | Label     | Automation N2G Grid      | ActiveGrantsGrid    | Name                      | FLV-1836                   |
+      | configurationCategory | fieldName | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Label     | Automation N2G Grid | ActiveGrantsGrid   | Name                      | FLV-1836                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
@@ -1161,25 +1168,27 @@ Feature: Flex Grid Component Scenarios
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Flex Table List       | Filter Clause |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Filter Clause | <newFilter>     | ActiveGrantsGrid   | Name                      | FLV-1836                   |
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Filter Clause | <newFilter>   | ActiveGrantsGrid   | Name                      | FLV-1836                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
     Then I see no "Draft" status in flex table id "toggleFGridMonitoringGridView"
 
     Examples:
-      |newFilter                                        |
-      |RecordType.Name='Grantor' and status__c='Active' |
+      | newFilter                                        |
+      | RecordType.Name='Grantor' and status__c='Active' |
 
   @50275    @refreshBehaviourFieldAtApplicationBudgetPeriodsFlexTableAsRefreshParentPageForEditAction-gGrants
   Scenario: validate budget period details flex table action field- refresh parent page
     Given I have default configuration as below:
-      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
-      | Flex Table Action     | Refresh Behavior |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName        | fieldOrignalValue   | filterId         |
+      | Flex Table Action     | Refresh Behavior |                     | ApiGeneratedId:0 |
+      | Flex Table Action     | Action Behavior  | Open in inline mode | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue       | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Refresh Behavior | Refresh parent page | ApplicationBudgetPeriods | Name                      | Edit                       |
+      | Flex Table Action     | Action Behavior  | Open in overlay     | ApplicationBudgetPeriods | Name                      | Edit                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -1187,16 +1196,21 @@ Feature: Flex Grid Component Scenarios
     When I click on "View" icon for "Test announcement for program 2" inside table
     When I navigate to "Budget" sub tab
     When I click on "Edit" icon for "BP-01" to save inside subtab
+    When I click on "Edit" icon for "BP-01" to save inside subtab
+    When I enter value "Test Automation" into field "fieldNotes__c"
+    And I click modal button "Save"
     Then I see parent page is refreshing
-    
+
   @50244    @refreshBehaviourFieldAtApplicationBudgetPeriodsFlexTableAsRefreshTheGridForEditAction-gPlanning
   Scenario: validate flex table action field- refresh entire page
     Given I have default configuration as below:
-      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
-      | Flex Table Action     | Refresh Behavior |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName        | fieldOrignalValue   | filterId         |
+      | Flex Table Action     | Refresh Behavior |                     | ApiGeneratedId:0 |
+      | Flex Table Action     | Action Behavior  | Open in inline mode | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue    | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Refresh Behavior | Refresh the Grid | ApplicationBudgetPeriods | Name                      | Edit                       |
+      | Flex Table Action     | Action Behavior  | Open in overlay  | ApplicationBudgetPeriods | Name                      | Edit                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -1224,8 +1238,9 @@ Feature: Flex Grid Component Scenarios
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Financials" sub tab
     When I click on "Edit" icon for "2019" to save inside subtab
+    And I click modal button "Save"
     Then I see parent page is refreshing
-    
+
   @50348    @refreshBehaviourFieldAtGrantorBudgetPeriodFlexTableAsRefreshTheGridForEditAction-gPlanning
   Scenario: validate flex table action field- refresh entire page
     Given I have default configuration as below:
@@ -1245,15 +1260,15 @@ Feature: Flex Grid Component Scenarios
     When I enter value "test" into field "fieldNotes__c"
     And I click modal button "Save"
     Then I see "test" inside Application Budget flex table for specified record "2019"
-    
+
   @51323    @sequenceFieldAtApplicationBudgetCategoryFlexTableChild-gApplications
   Scenario: Changing sequence of view row level action item at Application Budget child flex table from config and validating it inside Application Budget child flex table of programs
     Given I have default configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Flex Table Action     | Sequence  | 1                 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Sequence  | 0             | ApplicationBudgetCategoryFlexTable| Name                      | View                       |
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Sequence  | 0             | ApplicationBudgetCategoryFlexTable | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -1263,15 +1278,15 @@ Feature: Flex Grid Component Scenarios
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     Then I see "View" icon for "toggleFGridApplicationBudgetCategoryFlexGrid" is at position "0" inside flex table
-    
+
   @51328    @buttonHelpTextFieldAtApplicationBudgetCategoryFlexTableActionChild-gApplications
   Scenario: Changing content of button help text field Application Budget child flex table action from config and validating it inside Application Budget child flex table programs
     Given I have default configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table Action     | Button Help Text |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue   | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Button Help Text | Test Automation | ApplicationBudgetCategoryFlexTable| Name                      | View                       |
+      | configurationCategory | fieldName        | fieldNewValue   | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Button Help Text | Test Automation | ApplicationBudgetCategoryFlexTable | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -1281,15 +1296,15 @@ Feature: Flex Grid Component Scenarios
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     Then I see "Test Automation" as title for "Indirect Cost Rate" inside flex table action
-    
+
   @51332    @viewActionOpensInNewWindowAtApplicationBudgetCategoryFlexTableActionChild-gApplications
   Scenario: validate Application Budget child flex table action field- view opens in new window
     Given I have default configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue  | filterId         |
       | Flex Table Action     | Action Behavior | Open in new window | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName       | fieldNewValue      | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Action Behavior | Open in new window | ApplicationBudgetCategoryFlexTable| Name                      | View                       |
+      | configurationCategory | fieldName       | fieldNewValue      | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action Behavior | Open in new window | ApplicationBudgetCategoryFlexTable | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -1300,15 +1315,15 @@ Feature: Flex Grid Component Scenarios
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     When I click on "View" icon for "Proposed Uses Of Total Funds" inside table
     Then I see new tab is opened
-    
+
   @51333    @viewActionOpensInSameWindowAtApplicationBudgetCategoryFlexTableActionChild-gApplications
   Scenario: validate Application Budget child flex table action field- view opens in same window
     Given I have default configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue  | filterId         |
       | Flex Table Action     | Action Behavior | Open in new window | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName       | fieldNewValue       | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Action Behavior | Open in same window | ApplicationBudgetCategoryFlexTable| Name                      | View                       |
+      | configurationCategory | fieldName       | fieldNewValue       | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action Behavior | Open in same window | ApplicationBudgetCategoryFlexTable | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -1319,15 +1334,15 @@ Feature: Flex Grid Component Scenarios
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     When I click on "View" icon for "Proposed Uses Of Total Funds" inside table
     Then I see no new tab is opened
-    
+
   @51334    @viewActionOpensInOverlayWindowAtApplicationBudgetCategoryFlexTableActionChild-gApplications
   Scenario: validate Application Budget child flex table action field- view opens in overlay
     Given I have default configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue  | filterId         |
       | Flex Table Action     | Action Behavior | Open in new window | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName       | fieldNewValue   | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Action Behavior | Open in overlay | ApplicationBudgetCategoryFlexTable| Name                      | View                       |
+      | configurationCategory | fieldName       | fieldNewValue   | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action Behavior | Open in overlay | ApplicationBudgetCategoryFlexTable | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -1338,15 +1353,15 @@ Feature: Flex Grid Component Scenarios
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     When I click on "View" icon for "Proposed Uses Of Total Funds" inside table
     Then I see "View" opens in overLay window
-    
+
   @51335    @showConfirmationBoxFieldAtApplicationBudgetCategoryFlexTableActionChild-gApplications
   Scenario: Setup confirmation box for Application Budget child flex table view action from configuration and validating it at Application Budget child flex table view action of program
     Given I have default configuration as below:
-      | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Show Confirmation Box | false             | ApplicationBudgetCategoryFlexTable| Name                      | View                       |
+      | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Show Confirmation Box | false             | ApplicationBudgetCategoryFlexTable | Name                      | View                       |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName             | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Show Confirmation Box | true          | ApplicationBudgetCategoryFlexTable| Name                      | View                       |
+      | configurationCategory | fieldName             | fieldNewValue | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Show Confirmation Box | true          | ApplicationBudgetCategoryFlexTable | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -1356,18 +1371,18 @@ Feature: Flex Grid Component Scenarios
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     When I click on "View" icon for "Proposed Uses Of Total Funds" inside table with table id "toggleFGridApplicationBudgetCategoryFlexGrid" without processing
-    Then I see confirmation box with body "null" is displayed 
-    
+    Then I see confirmation box with body "null" is displayed
+
   @51343    @ConfirmationMessageFieldAtApplicationBudgetCategoryFlexTableActionChild-gApplications
   Scenario: Setup confirmation message for Application Budget child flex table view action from configuration and validating it at Application Budget child flex table view action of program
     Given I have default configuration as below:
-      | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Show Confirmation Box | false             | ApplicationBudgetCategoryFlexTable| Name                      | View                       |
-      | Flex Table Action     | Confirmation Message  |                   | ApplicationBudgetCategoryFlexTable| Name                      | View                       |
+      | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Show Confirmation Box | false             | ApplicationBudgetCategoryFlexTable | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                   | ApplicationBudgetCategoryFlexTable | Name                      | View                       |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName             | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Show Confirmation Box | true          | ApplicationBudgetCategoryFlexTable| Name                      | View                       |
-      | Flex Table Action     | Confirmation Message  | Automation    | ApplicationBudgetCategoryFlexTable| Name                      | View                       |
+      | configurationCategory | fieldName             | fieldNewValue | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Show Confirmation Box | true          | ApplicationBudgetCategoryFlexTable | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  | Automation    | ApplicationBudgetCategoryFlexTable | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -1378,12 +1393,12 @@ Feature: Flex Grid Component Scenarios
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     When I click on "View" icon for "Proposed Uses Of Total Funds" inside table with table id "toggleFGridApplicationBudgetCategoryFlexGrid" without processing
     Then I see confirmation box with body "Automation" is displayed
-    
+
   @51345    @hideForProfileFieldAtApplicationBudgetCategoryFlexTableViewActionChild-gApplications
   Scenario: Hide edit row level action for specific profile from configuration and validating it at under Application Budget child flex table
     Given I have default configuration as below:
-      | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide For Profile |                   | ApplicationBudgetCategoryFlexTable| Name                      | View                       |
+      | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide For Profile |                   | ApplicationBudgetCategoryFlexTable | Name                      | View                       |
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue        | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide For Profile | System Administrator | ApplicationBudgetCategoryFlexTable | Name                      | View                       |
@@ -1395,16 +1410,16 @@ Feature: Flex Grid Component Scenarios
     When I navigate to "Budget" sub tab
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
-    Then I see "View" icon for "Proposed Uses Of Total Funds" is not displayed inside flex table 
-    
+    Then I see "View" icon for "Proposed Uses Of Total Funds" is not displayed inside flex table
+
   @51358    @hideForUserFieldAtApplicationBudgetCategoryFlexTableViewActionChild-gApplications
   Scenario: Hide edit row level action for specific user from configuration and validating it at under Application Budget child flex table
     Given I have default configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide For User |                   | ApplicationBudgetCategoryFlexTable| Name                      | View                       |
+      | configurationCategory | fieldName     | fieldOrignalValue | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide For User |                   | ApplicationBudgetCategoryFlexTable | Name                      | View                       |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue  | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide For User | Internal       | ApplicationBudgetCategoryFlexTable | Name                      | View                       |
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide For User | Internal      | ApplicationBudgetCategoryFlexTable | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -1414,7 +1429,7 @@ Feature: Flex Grid Component Scenarios
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     Then I see "View" icon for "Proposed Uses Of Total Funds" is not displayed inside flex table
-    
+
   @51368    @actionURLLongFieldAtApplicationBudgetCategoryFlexTableViewActionChild-gApplications
   Scenario Outline: Changing action url long of action url long field for view action from config and validating it at under Application Budget child flex table
     Given I have default configuration as below:
@@ -1422,9 +1437,9 @@ Feature: Flex Grid Component Scenarios
       | Flex Table Action     | Action URL      | <oldActionUrl>    | ApiGeneratedId:0 |
       | Flex Table Action     | Action URL Long |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName       | fieldNewValue  | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Action URL      |                | ApplicationBudgetCategoryFlexTable| Name                      | View                       |
-      | Flex Table Action     | Action URL Long | <newActionUrl> | ApplicationBudgetCategoryFlexTable| Name                      | View                       |
+      | configurationCategory | fieldName       | fieldNewValue  | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      |                | ApplicationBudgetCategoryFlexTable | Name                      | View                       |
+      | Flex Table Action     | Action URL Long | <newActionUrl> | ApplicationBudgetCategoryFlexTable | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -1439,15 +1454,15 @@ Feature: Flex Grid Component Scenarios
     Examples:
       | oldActionUrl                                                               | newActionUrl            |
       | /apex/ApplicationBudgetCategoryView?id={!ApplicationBudgetCategory2__c.id} | https://www.google.com/ |
-      
+
   @51375    @iconCSSFieldAtApplicationBudgetCategoryFlexTableViewActionChild-gApplications
   Scenario: Removing icon for ApplicationBudgetCategoryFlexTable view action from config and validating it at Application Budget child flex table
     Given I have default configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue                              | filterId         |
       | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableViewActionNewIconCss | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Icon CSS  |                                                | ApplicationBudgetCategoryFlexTable| Name                      | View                       |
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  |               | ApplicationBudgetCategoryFlexTable | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -1457,15 +1472,15 @@ Feature: Flex Grid Component Scenarios
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     Then I see record "Indirect Cost Rate" having action "View" donot contain icon css "fa fa-eye"
-      
+
   @51384    @actionNameFieldAtApplicationBudgetCategoryFlexTableViewActionChild-gApplications
   Scenario: Changing action name field for view action at ApplicationBudgetCategoryFlexTable from config and validating it at Application Budget child flex table
     Given I have default configuration as below:
       | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
       | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName   | fieldNewValue   | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Action Name | Test Automation | ApplicationBudgetCategoryFlexTable| Name                      | View                       |
+      | configurationCategory | fieldName   | fieldNewValue   | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action Name | Test Automation | ApplicationBudgetCategoryFlexTable | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -1475,15 +1490,15 @@ Feature: Flex Grid Component Scenarios
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     Then I see "Test Automation" as title for "Indirect Cost Rate" inside flex table action
-    
+
   @51400    @headerFieldAtApplicationBudgetCategoryFlexTable-gApplications
   Scenario: Changing content of header field at ApplicationBudgetCategoryFlexTable and validating it at Application Budget child flex table
     Given I have default configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue           | filterId         |
-      | Flex Table            | Header    | Proposed Uses Of Total Funds| ApiGeneratedId:0 |
+      | configurationCategory | fieldName | fieldOrignalValue            | filterId         |
+      | Flex Table            | Header    | Proposed Uses Of Total Funds | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue   | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Header    | Test Automation | ApplicationBudgetCategoryFlexTable|                           |                            |
+      | configurationCategory | fieldName | fieldNewValue   | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header    | Test Automation | ApplicationBudgetCategoryFlexTable |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -1533,8 +1548,8 @@ Feature: Flex Grid Component Scenarios
   @51502    @viewActionOpensInSameWindowAtBudgetPeriodFlexTableActionChild-gGrants
   Scenario: validate Budget period details child flex table action- view opens in same window
     Given I have default configuration as below:
-      | configurationCategory | fieldName       | fieldOrignalValue   | filterId         |
-      | Flex Table Action     | Action Behavior | Open in new window  | ApiGeneratedId:0 |
+      | configurationCategory | fieldName       | fieldOrignalValue  | filterId         |
+      | Flex Table Action     | Action Behavior | Open in new window | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName       | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action Behavior | Open in same window | BudgetPeriod       | Name                      | View                       |
@@ -1551,11 +1566,11 @@ Feature: Flex Grid Component Scenarios
   @51503    @viewActionOpensInOverlayAtBudgetPeriodFlexTableActionChild-gGrants
   Scenario: validate Budget period details child flex table action- view opens in overlay
     Given I have default configuration as below:
-      | configurationCategory | fieldName       | fieldOrignalValue   | filterId         |
-      | Flex Table Action     | Action Behavior | Open in new window  | ApiGeneratedId:0 |
+      | configurationCategory | fieldName       | fieldOrignalValue  | filterId         |
+      | Flex Table Action     | Action Behavior | Open in new window | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName       | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Action Behavior | Open in overlay     | BudgetPeriod       | Name                      | View                       |
+      | configurationCategory | fieldName       | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action Behavior | Open in overlay | BudgetPeriod       | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
@@ -1589,7 +1604,7 @@ Feature: Flex Grid Component Scenarios
     Examples:
       | oldActionUrl                      | newActionUrl            |
       | /apex/AwardView?id={!Award__c.id} | https://www.google.com/ |
-      
+
   @51510    @hideForProfileFieldAtBudgetPeriodFlexTableActionChild-gGrants
   Scenario: Hide view row level action for specific profile from configuration and validating it at Budget period details child flex table
     Given I have default configuration as below:
@@ -1606,7 +1621,7 @@ Feature: Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I expand nested table containing column value "2019"
     Then I see "View" icon for "Demo_Title" is not displayed inside flex table
-    
+
   @51511    @hideForUserFieldAtBudgetPeriodFlexTableActionChild-gGrants
   Scenario: Hide view row level action for specific user from configuration and validating it at Budget period details child flex table
     Given I have default configuration as below:
@@ -1623,15 +1638,15 @@ Feature: Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I expand nested table containing column value "2019"
     Then I see "View" icon for "Demo_Title" is not displayed inside flex table
-    
+
   @51512    @iconCSSFieldAtBudgetPeriodFlexTableActionChild-gGrants
   Scenario: Removing icon for Budget period details child flex table view action from config and validating it at Budget period details child flex table
     Given I have default configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue                              | filterId         |
       | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableViewActionNewIconCss | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Icon CSS  |                                                | BudgetPeriod       | Name                      | View                       |
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  |               | BudgetPeriod       | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
@@ -1640,7 +1655,7 @@ Feature: Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I expand nested table containing column value "2017"
     Then I see record "	Financials_123" having action "View" donot contain icon css "fa fa-eye"
-    
+
   @51513    @actionNameFieldAtBudgetPeriodFlexTableActionChild-gGrants
   Scenario: Changing action name field for view action at Budget period details child flex table from config and validating it inside Budget period details child flex table
     Given I have default configuration as below:
@@ -1657,7 +1672,7 @@ Feature: Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I expand nested table containing column value "2019"
     Then I see "Test Automation" as title for "Demo_Title" inside flex table action
-    
+
   @51515    @enablingEnableAutoIndexFieldAtBudgetPeriodFlexTableActionChild-gGrants
   Scenario: validate after enabling enable auto index field for Budget period details child flex table of programs
     Given I have default configuration as below:
@@ -1665,7 +1680,7 @@ Feature: Flex Grid Component Scenarios
       | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Auto Index | true          | BudgetPeriod    |                           |                            |
+      | Flex Table:General    | Enable Auto Index | true          | BudgetPeriod       |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
@@ -1674,17 +1689,17 @@ Feature: Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I expand nested table containing column value "2019"
     Then I see "#" shown inside flex table with id "toggleFGridGrantFinancials"
-    
+
   @51516    @enableTotalRecordsCountFieldAtBudgetPeriodFlexTableActionChild-gGrants
   Scenario: validate disbaling of Enable Total Records Count in Budget period details child flex table
     Given I have default configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Total Records Count | false             | ApiGeneratedId:0 |
-      | Flex Table            | Enable Total Records Count | true             | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Total Records Count | true          | BudgetPeriod       |                           |                            |
-      | Flex Table:General    | Enable Total Records Count | false         | GrantorBudgetPeriod|                           |                            |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Total Records Count | true          | BudgetPeriod        |                           |                            |
+      | Flex Table:General    | Enable Total Records Count | false         | GrantorBudgetPeriod |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
@@ -1693,7 +1708,7 @@ Feature: Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I expand nested table containing column value "2019"
     Then I see "Total Records" count in "toggleFGridGrantFinancials"
-    
+
   @51558    @displayFieldNameFieldAtBudgetPeriodFlexTableActionChild-gGrants
   Scenario Outline: validate adding field names for different data types in Budget period details child flex table
     Given I have default configuration as below:
@@ -1712,12 +1727,12 @@ Feature: Flex Grid Component Scenarios
     Then I see "<fieldDisplayNames>" in program Outcomes flex table header with id "toggleFGridGrantFinancials"
 
     Examples:
-      | fieldDisplayNames   | newFieldsApi                                                                                   | defaultFieldsApi                                                                                                                                                        |
-      | Award Number        | AwardNumber__c,ID,Name,AwardedAmountthisAction__c,YTDAdvancePaid__c,YTDReimbursementPaid__c    | Id,Name,GrantAwardName__c,AwardedAmountthisAction__c,YTDAdvancePaid__c,YTDReimbursementPaid__c |
-      | Audit Decision      | AuditDecision__c,ID,Name,AwardedAmountthisAction__c,YTDAdvancePaid__c,YTDReimbursementPaid__c  | Id,Name,GrantAwardName__c,AwardedAmountthisAction__c,YTDAdvancePaid__c,YTDReimbursementPaid__c |
-      | Administration      | Administration__c,ID,Name,AwardedAmountthisAction__c,YTDAdvancePaid__c,YTDReimbursementPaid__c | Id,Name,GrantAwardName__c,AwardedAmountthisAction__c,YTDAdvancePaid__c,YTDReimbursementPaid__c |
-      | Awarded Amount      | AwardedAmountthisAction__c,ID,Name,YTDAdvancePaid__c,YTDReimbursementPaid__c                   | Id,Name,GrantAwardName__c,AwardedAmountthisAction__c,YTDAdvancePaid__c,YTDReimbursementPaid__c |
-      
+      | fieldDisplayNames | newFieldsApi                                                                                   | defaultFieldsApi                                                                               |
+      | Award Number      | AwardNumber__c,ID,Name,AwardedAmountthisAction__c,YTDAdvancePaid__c,YTDReimbursementPaid__c    | Id,Name,GrantAwardName__c,AwardedAmountthisAction__c,YTDAdvancePaid__c,YTDReimbursementPaid__c |
+      | Audit Decision    | AuditDecision__c,ID,Name,AwardedAmountthisAction__c,YTDAdvancePaid__c,YTDReimbursementPaid__c  | Id,Name,GrantAwardName__c,AwardedAmountthisAction__c,YTDAdvancePaid__c,YTDReimbursementPaid__c |
+      | Administration    | Administration__c,ID,Name,AwardedAmountthisAction__c,YTDAdvancePaid__c,YTDReimbursementPaid__c | Id,Name,GrantAwardName__c,AwardedAmountthisAction__c,YTDAdvancePaid__c,YTDReimbursementPaid__c |
+      | Awarded Amount    | AwardedAmountthisAction__c,ID,Name,YTDAdvancePaid__c,YTDReimbursementPaid__c                   | Id,Name,GrantAwardName__c,AwardedAmountthisAction__c,YTDAdvancePaid__c,YTDReimbursementPaid__c |
+
   @51548    @fieldLabelOverrideFieldAtBudgetPeriodFlexTableActionChild-gGrants
   Scenario: Changing specific column name of Budget period details child flex table from config and validating it inside Budget period details child flex table
     Given I have default configuration as below:
@@ -1733,8 +1748,8 @@ Feature: Flex Grid Component Scenarios
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Financials" sub tab
     When I expand nested table containing column value "2019"
-    Then I see "Test Automation" shown inside flex table with id "toggleFGridGrantFinancials" 
-    
+    Then I see "Test Automation" shown inside flex table with id "toggleFGridGrantFinancials"
+
   @51550    @widthPercentageFieldAtBudgetPeriodFlexTableActionChild-gGrants
   Scenario: validate width size of particular column at budget period details child flex table
     Given I have default configuration as below:
@@ -1755,11 +1770,11 @@ Feature: Flex Grid Component Scenarios
   @51482    @labelFieldAtApplicationBudgetCategoryFlexTableChild-gApplications
   Scenario: validate after changing name of ApplicationBudgetCategoryFlexTable label inside Application budget flex table
     Given I have default configuration as below:
-      | configurationCategory     | fieldName | fieldOrignalValue            | filterId         |
-      | Flex Table List           | Label     | Proposed Uses Of Total Funds | ApiGeneratedId:0 |
+      | configurationCategory | fieldName | fieldOrignalValue            | filterId         |
+      | Flex Table List       | Label     | Proposed Uses Of Total Funds | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName | fieldNewValue   | coreComponentField               | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List           | Label     | Test Automation |ApplicationBudgetCategoryFlexTable| Name                      | FLV-2089                   |
+      | configurationCategory | fieldName | fieldNewValue   | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Label     | Test Automation | ApplicationBudgetCategoryFlexTable | Name                      | FLV-2089                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -1768,15 +1783,15 @@ Feature: Flex Grid Component Scenarios
     When I navigate to "Budget" sub tab
     When I expand nested table containing column value "BP-01"
     Then I see Nested Table "toggleFGridApplicationBudgetCategoryFlexGrid" with changed header name as "Test Automation"
-    
+
   @51450    @helpTextFieldAtApplicationBudgetCategoryFlexTableChild-gApplications
   Scenario Outline: Changing content of help text field at ApplicationBudgetCategoryFlexTable column header from config and validating it inside Application budget flex table
     Given I have default configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Flex Table List       | Help Text |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue  | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Help Text | <new_helpText> | ApplicationBudgetCategoryFlexTable| Name                      | FTC-1397                   |
+      | configurationCategory | fieldName | fieldNewValue  | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Help Text | <new_helpText> | ApplicationBudgetCategoryFlexTable | Name                      | FTC-1397                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -1791,15 +1806,15 @@ Feature: Flex Grid Component Scenarios
     Examples:
       | new_helpText    |
       | Test Automation |
-      
+
   @51449    @fieldLabelOverrideFieldAtApplicationBudgetCategoryFlexTableChild-gApplications
-  Scenario: Changing specific column name of ApplicationBudgetCategoryFlexTable from config and validating it inside inside Application budget flex table 
+  Scenario: Changing specific column name of ApplicationBudgetCategoryFlexTable from config and validating it inside inside Application budget flex table
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table List       | Field Label Override |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue   | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Field Label Override | Test Automation | ApplicationBudgetCategoryFlexTable| Name                      | FTC-1397                   |
+      | configurationCategory | fieldName            | fieldNewValue   | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Field Label Override | Test Automation | ApplicationBudgetCategoryFlexTable | Name                      | FTC-1397                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -1809,15 +1824,15 @@ Feature: Flex Grid Component Scenarios
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     Then I see "Test Automation" shown inside flex table with id "toggleFGridApplicationBudgetCategoryFlexGrid"
-    
+
   @51556    @displayFieldNameFieldAtApplicationBudgetCategoryFlexTableChild-gApplications
   Scenario Outline: validate adding field names for different data types in Application budget flex table
     Given I have default configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetCategoryFlexTable|                           |                            |
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetCategoryFlexTable |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -1829,12 +1844,12 @@ Feature: Flex Grid Component Scenarios
     Then I see "<fieldDisplayNames>" in program Outcomes flex table header with id "toggleFGridApplicationBudgetCategoryFlexGrid"
 
     Examples:
-      | fieldDisplayNames         | newFieldsApi                                                                                                   | defaultFieldsApi                                                                                                                                                        |
-      | Service Area              | ServiceAreaTitle__c,Id,BudgetCategory__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c           | Id,ServiceAreaTitle__c,BudgetCategory__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c |
-      | Budget Category           | BudgetCategory__c,Id,ServiceAreaTitle__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c           | Id,ServiceAreaTitle__c,BudgetCategory__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c |
-      | Grantor Share             | GrantorAmount__c,Id,ServiceAreaTitle__c,BudgetCategory__c,GranteeAmount__c,Amount__c,GranteeShare__c           | Id,ServiceAreaTitle__c,BudgetCategory__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c |
-      | App Budget Category Status| AppBudgetCategoryStatus__c,Id,ServiceAreaTitle__c,BudgetCategory__c,GranteeAmount__c,Amount__c,GranteeShare__c | Id,ServiceAreaTitle__c,BudgetCategory__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c |
-    
+      | fieldDisplayNames          | newFieldsApi                                                                                                   | defaultFieldsApi                                                                                     |
+      | Service Area               | ServiceAreaTitle__c,Id,BudgetCategory__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c           | Id,ServiceAreaTitle__c,BudgetCategory__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c |
+      | Budget Category            | BudgetCategory__c,Id,ServiceAreaTitle__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c           | Id,ServiceAreaTitle__c,BudgetCategory__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c |
+      | Grantor Share              | GrantorAmount__c,Id,ServiceAreaTitle__c,BudgetCategory__c,GranteeAmount__c,Amount__c,GranteeShare__c           | Id,ServiceAreaTitle__c,BudgetCategory__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c |
+      | App Budget Category Status | AppBudgetCategoryStatus__c,Id,ServiceAreaTitle__c,BudgetCategory__c,GranteeAmount__c,Amount__c,GranteeShare__c | Id,ServiceAreaTitle__c,BudgetCategory__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c |
+
   @51506    @showConfirmationBoxFieldAtBudgetPeriodFlexTableActionChild-gGrants
   Scenario: Setup confirmation box for Budget period details child flex table view action from configuration and validating it at Budget period details child flex table
     Given I have default configuration as below:
@@ -1905,9 +1920,9 @@ Feature: Flex Grid Component Scenarios
       | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:0 |
       | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName         | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Auto Index | true          | ApplicationBudgetCategoryFlexTable|                           |                            |
-      | Flex Table:General    | Enable Auto Index | false         | ApplicationBudgetPeriods          |                           |                            |
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index | true          | ApplicationBudgetCategoryFlexTable |                           |                            |
+      | Flex Table:General    | Enable Auto Index | false         | ApplicationBudgetPeriods           |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -1948,8 +1963,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see "View" icon for "Goal" is not displayed inside flex table
 
@@ -1969,8 +1984,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see "View" icon for "Goal" is not displayed inside flex table
 
@@ -1988,8 +2003,8 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     When I click on "Delete" icon for "Goal" inside table with table id "toggleFGridProgramPerformanceMgmtGridView" without processing
     Then I see confirmation box with body "Automation" is displayed
@@ -1997,13 +2012,13 @@ Feature: Flex Grid Component Scenarios
   @51447   @orderBySortByFieldAtApplicationBudgetCategoryFlexTableChildForDescendingOrder-gApplications
   Scenario: Changing specific column value in ascending order with order by and sort by field from config and validating it inside Application budget flex table
     Given I have default configuration as below:
-      | configurationCategory | fieldName      | fieldOrignalValue                     | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Order By       | ServiceAreaTitle__c,BudgetCategory__c | ApplicationBudgetCategoryFlexTable|                           |                            |
-      | Flex Grid:General     | Sort Direction | ASC                                   | ApplicationBudgetCategoryFlexTable|                           |                            |
+      | configurationCategory | fieldName      | fieldOrignalValue                     | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Order By       | ServiceAreaTitle__c,BudgetCategory__c | ApplicationBudgetCategoryFlexTable |                           |                            |
+      | Flex Grid:General     | Sort Direction | ASC                                   | ApplicationBudgetCategoryFlexTable |                           |                            |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName      | fieldNewValue         | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Order By       | BudgetCategory__r.Name| ApplicationBudgetCategoryFlexTable|                           |                            |
-      | Flex Grid:General     | Sort Direction | DESC                  | ApplicationBudgetCategoryFlexTable|                           |                            |
+      | configurationCategory | fieldName      | fieldNewValue          | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Order By       | BudgetCategory__r.Name | ApplicationBudgetCategoryFlexTable |                           |                            |
+      | Flex Grid:General     | Sort Direction | DESC                   | ApplicationBudgetCategoryFlexTable |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -2018,13 +2033,13 @@ Feature: Flex Grid Component Scenarios
   @51446   @orderBySortByFieldAtApplicationBudgetCategoryFlexTableChildForAscendingOrder-gApplications
   Scenario: Changing specific column value in ascending order with order by and sort by field from config and validating it inside Application budget flex table
     Given I have default configuration as below:
-      | configurationCategory | fieldName      | fieldOrignalValue                     | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Order By       | ServiceAreaTitle__c,BudgetCategory__c | ApplicationBudgetCategoryFlexTable|                           |                            |
-      | Flex Grid:General     | Sort Direction | ASC                                   | ApplicationBudgetCategoryFlexTable|                           |                            |
+      | configurationCategory | fieldName      | fieldOrignalValue                     | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Order By       | ServiceAreaTitle__c,BudgetCategory__c | ApplicationBudgetCategoryFlexTable |                           |                            |
+      | Flex Grid:General     | Sort Direction | ASC                                   | ApplicationBudgetCategoryFlexTable |                           |                            |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName      | fieldNewValue         | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Order By       | BudgetCategory__r.Name| ApplicationBudgetCategoryFlexTable|                           |                            |
-      | Flex Grid:General     | Sort Direction | ASC                   | ApplicationBudgetCategoryFlexTable|                           |                            |
+      | configurationCategory | fieldName      | fieldNewValue          | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Order By       | BudgetCategory__r.Name | ApplicationBudgetCategoryFlexTable |                           |                            |
+      | Flex Grid:General     | Sort Direction | ASC                    | ApplicationBudgetCategoryFlexTable |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab

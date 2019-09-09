@@ -200,4 +200,9 @@ public class EnhancedFlexGridSteps {
 	public void assertColumnValueInAscendingOrderWithAnotherColumn(String text1, String text2, String order) {
 		enhancedFlexGrid.assertAscendingOrderOfEnhancedGridColumnValueWRTOtherColumn(text1, text2, order);
 	}
+
+	@Then("^I see select box for picklist is not displayed for status inside table$")
+	public void assertSelectBoxForStatusColumn() {
+		enhancedFlexGrid.assertSelectBoxForStatusColumnDisplayedInViewMode();
+	}
 }

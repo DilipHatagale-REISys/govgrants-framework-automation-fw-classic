@@ -21,7 +21,6 @@ public class FlexTableSteps {
 	@When("^I click on \"([^\"]*)\" icon for \"([^\"]*)\" to save inside subtab$")
 	public void clickAnyIconInFlexTable(String iconName, String programRole) {
 		flexTablePage.clickRowLevelActionIconsInsideSubTab(iconName, programRole);
-		flexTablePage.clickSaveInModal();
 	}
 
 	@When("^I hovering mouse on help text icon inside \"([^\"]*)\" for flex table$")
@@ -265,7 +264,7 @@ public class FlexTableSteps {
 		flexTablePage.assertExpectedRecordsInsideTable(flexTableHeader, recordsName);
 	}
 
-	@Then("^I (see|cannot see) \"([^\"]*)\" on page \"([^\"]*)\" of \"([^\"]*)\" pdf file$")
+	@Then("^I (see|cannot see) that \"([^\"]*)\" on page \"([^\"]*)\" of \"([^\"]*)\" pdf file$")
 	public void assertTExtNotDisplayed(String shouldBeDisplayed,String text, String pageNumber, String fileName) {
 		flexTablePage.assertTextNotDisplayedInPDF(shouldBeDisplayed, text, Integer.parseInt(pageNumber), fileName);
 	}
