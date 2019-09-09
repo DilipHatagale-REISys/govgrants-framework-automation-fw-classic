@@ -39,7 +39,7 @@ public class setup {
         }
     }
 
-    @Before(order = 1)
+    @Before(order = 2)
     public void setUpUsers() throws IOException, AWTException {
         userController.usersController(new UsersAndURL());
     }
