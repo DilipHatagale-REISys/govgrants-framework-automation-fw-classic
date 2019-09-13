@@ -35,8 +35,8 @@ public class PageLayoutSteps {
     }
 
     @When("^I click search icon for \"([^\"]*)\" lookup modal and swithing to frame \"([^\"]*)\"$")
-    public void searchLookUpModal(String lookupText,String frameId) {
-        pageLayoutPage.handleLookUpSearchWithFrame(lookupText, frameId);
+    public void searchLookUpModal(String lookupText, String frameId) {
+        pageLayoutPage.handleLookUpSearchWithFrame(frameId, lookupText.split(","));
     }
 
     @When("^I click search icon for owner organization$")
@@ -97,6 +97,21 @@ public class PageLayoutSteps {
     @When("^I click on svg arrow inside lookup modal for \"([^\"]*)\"$")
     public void clickOnSVGArrowForOwnerOrganisatioLookUp(String order) {
         pageLayoutPage.clickSVGArrowElementAtOwnerOrganisationLookUpModal(order);
+    }
+
+    @When("^I click on lookup link \"([^\"]*)\"$")
+    public void clickOnLookupLinkAtPage(String lookupLink) {
+        pageLayoutPage.performClickOnLookupLink(lookupLink);
+    }
+
+    @When("^I select package type from Package selection for business forms$")
+    public void selectPackageTypeAndChoosePackage() {
+        pageLayoutPage.selectPackageAndPackageType();
+    }
+
+    @And("^I click on expand collapse icon for panel heading \"([^\"]*)\"$")
+    public void clickOnExpandColapseIcon(String panelHeaderName) {
+        pageLayoutPage.clickExpandCollapseIconAtTableHeader(panelHeaderName);
     }
 
     @And("^I select value \"([^\"]*)\" from lightning lookup table$")
@@ -339,5 +354,15 @@ public class PageLayoutSteps {
     @Then("^I see data table box for lookup$")
     public void assertDataTableBoxOfLookUpModal() {
         pageLayoutPage.assertDataTableForLookupModalContent();
+    }
+
+    @Then("^I see that svg arrow is in \"([^\"]*)\" order$")
+    public void assertOrderOfSVGArrowOfLookUpModal(String order) {
+        pageLayoutPage.assertSVGArrowOrderForLightningLookUp(order);
+    }
+
+    @Then("^I see expand collapse is working as expected$")
+    public void assertExpandCollapseWorking() {
+        pageLayoutPage.assertFunctionalityOfExpandCollapse();
     }
 }

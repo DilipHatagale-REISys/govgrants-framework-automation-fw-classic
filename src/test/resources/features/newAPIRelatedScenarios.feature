@@ -175,7 +175,7 @@ Feature: New API related scenarios temporary
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName                  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | EINText__c  | Grantee State Program | Name                      | PBD-3178                   |
+      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | EINText__c    | Grantee State Program | Name                      | PBD-3178                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -205,9 +205,9 @@ Feature: New API related scenarios temporary
     Then I see "<fieldDisplayNames>" in flex table header
 
     Examples:
-      | fieldDisplayNames           | newFieldApi                              | defaultApi |
+      | fieldDisplayNames         | newFieldApi                            | defaultApi |
       | DUNS/SAMS Expiration Date | DUNSExpirationDate__c,Name,DateTime__c | Name       |
-      | DateTime                   | DUNSExpirationDate__c,Name,DateTime__c | Name       |
+      | DateTime                  | DUNSExpirationDate__c,Name,DateTime__c | Name       |
 
   @54749    @itemGettingSavedAfterSelectingFromlookUpModal-gPlanning @check
   Scenario: Validate user is able to select particular organization and it should get saved properly.
@@ -244,8 +244,8 @@ Feature: New API related scenarios temporary
     Then I see data table box for lookup
 
     Examples:
-      | oldLookupFilter                                                                          | newLookupFilter   | newLookupDisplayName  |
-      | RecordType.Name='Internal' AND GroupCode__c='{!GroupCode}' AND Status__c ='Active' |  Date__c != null | Name,Date__c         |
+      | oldLookupFilter                                                                    | newLookupFilter | newLookupDisplayName |
+      | RecordType.Name='Internal' AND GroupCode__c='{!GroupCode}' AND Status__c ='Active' | Date__c != null | Name,Date__c         |
 
   @59038    @dataTableShouldRenderedProperlyWithOrganizationNameAtLightningLookup-gPlanning @check
   Scenario: Validate after entering text inside lightning lookup search table should rendered properly with organization name while passing formula fiels at lookup dispaly field
@@ -253,8 +253,8 @@ Feature: New API related scenarios temporary
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName                  | fieldNewValue          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | OrganizationName__c  | Grantee State Program | Name                      | PBD-3178                   |
+      | configurationCategory                    | fieldName                  | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | OrganizationName__c | Grantee State Program | Name                      | PBD-3178                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -264,3 +264,32 @@ Feature: New API related scenarios temporary
     When I click "close" icon for lightning lookup
     When I enter value "Health" into field "custom_lookupAccount__c"
     Then I see data table box for lookup
+
+  @59060    @lookUpHeaderTextFieldWithoutNameAtPageBlockDetail-gPlanning @check
+  Scenario Outline: Adding column header with Api name EIN text without Name in the look up modal displaye name from config and validating it on program detail page
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Lookup Filter Criteria     | <oldLookupFilter> | Grantee State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Lookup Sort Direction      | ASC               | Grantee State Program | ApiGeneratedId:2 |
+      | Page Block Config:Page Block Rule Detail | Lookup Sort By             | Name              | Grantee State Program | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName                  | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | EINText__c        | Grantee State Program | Name                      | PBD-3178                   |
+      | Page Block Config:Page Block Rule Detail | Lookup Filter Criteria     | <newLookupFilter> | Grantee State Program | Name                      | PBD-3178                   |
+      | Page Block Config:Page Block Rule Detail | Lookup Sort Direction      | ASC               | Grantee State Program | Name                      | PBD-3178                   |
+      | Page Block Config:Page Block Rule Detail | Lookup Sort By             | EINText__c        | Grantee State Program | Name                      | PBD-3178                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I click "close" icon for lightning lookup
+    When I click "search" icon for lightning lookup
+    Then I see that svg arrow is in "ascending" order
+
+    Examples:
+      | oldLookupFilter                                                                    | newLookupFilter                                                                    |
+      | RecordType.Name='Internal' AND GroupCode__c='{!GroupCode}' AND Status__c ='Active' | RecordType.Name='Internal' AND GroupCode__c='{!GroupCode}' AND Status__c ='Active' |
+

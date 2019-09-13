@@ -358,6 +358,20 @@ public class PageBlock {
                                         String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
                                 String.valueOf(SObjectAPIs.GNT__FilterCriteria__c), value);
                 break;
+            case "LOOKUP SORT DIRECTION":
+                finalPayload = String
+                        .format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c),
+                                apiUtilities.getComponentCoreFieldId(
+                                        String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
+                                String.valueOf(SObjectAPIs.GNT__LookupSortDirection__c), value);
+                break;
+            case "LOOKUP SORT BY":
+                finalPayload = String
+                        .format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c),
+                                apiUtilities.getComponentCoreFieldId(
+                                        String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
+                                String.valueOf(SObjectAPIs.GNT__LookupSortBy__c), value);
+                break;
             case "ATTACHMENT CLASSIFICATIONS":
                 finalPayload = String
                         .format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c),

@@ -437,6 +437,22 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * return true if correct order is displayed for SVG arror at lightning lookup modal
+     *
+     * @param order
+     */
+    public void assertSVGArrowOrderForLightningLookUp(String order) {
+        Assert.assertTrue(isOrderOfSVGArrowIsInExpectedOrder(order));
+    }
+
+    /**
+     * return true if expand collapse working correctly
+     */
+    public void assertFunctionalityOfExpandCollapse() {
+        Assert.assertTrue(isExpandCollapseWorkingAsExpected());
+    }
+
+    /**
      * click on help text inside program information page block
      *
      * @param blockTitle
@@ -505,13 +521,13 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
-     * return locator for status column insise lookup modal
+     * return locator for status column inside lookup modal
      *
      * @param columnValueName
      * @return
      */
     public By getTableColumnOfLookupModal(String columnValueName) {
-        return By.xpath("//td//span/a[@title='" + columnValueName + "' or text()='" + columnValueName + "']");
+        return By.xpath("//td//span/a[@title='" + columnValueName + "' or text()='" + columnValueName + "']| //td//span[@title='" + columnValueName + "' or text()='" + columnValueName + "']");
     }
 
     /**
@@ -557,12 +573,16 @@ public class PageLayoutPage extends GovGrantsManager {
      *
      * @param frameId
      */
-    public void handleLookUpSearchWithFrame(String lookupText, String frameId) {
-        By lookupButton = By.xpath("//img[@title='" + lookupText + "']");
-        By lookupInputBox = By.xpath("//img[@title='" + lookupText + "']/../../input[@type='text']");
+    public void handleLookUpSearchWithFrame(String frameId, String... lookupText) {
+        By lookupButton = By.xpath("//img[@title='" + lookupText[0] + "']");
+        By lookupInputBox = By.xpath("//img[@title='" + lookupText[0] + "']/../../input[@type='text']");
         By lookupFrame = By.xpath("//iframe[@id='" + frameId + "']");
         EyeThink.core().WaitFor().magicWait(lookupButton);
-        EyeThink.core().enterText().onWeb().clear(lookupInputBox);
+        if (lookupText.length > 1) {
+            EyeThink.core().enterText().onWeb().enter(lookupInputBox, "Allen");
+        } else{
+            EyeThink.core().enterText().onWeb().clear(lookupInputBox);
+        }
         EyeThink.core().click().withJavaScript(lookupButton);
         EyeThink.core().switchTo().switchToFrame(lookupFrame);
     }
@@ -634,6 +654,17 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * click and select package type and package for business form
+     *
+     */
+    public void selectPackageAndPackageType() {
+        EyeThink.core().WaitFor().makeThreadSleep(3000);
+        EyeThink.core().click().onWeb(By.xpath("//select[@id='selectPackageType']"));
+        EyeThink.core().select().onWeb(By.xpath("//select[@id='selectPackageType']")).selectByVisibleText("Application");
+        EyeThink.core().click().onWeb(By.xpath("//input[@id='radio1']"));
+    }
+
+    /**
      * click on svg arrow on owner orgaisation look up modal at page block detail
      */
     public void clickSVGArrowElementAtOwnerOrganisationLookUpModal(String order) {
@@ -641,6 +672,21 @@ public class PageLayoutPage extends GovGrantsManager {
         if (!svgArrowElement.getAttribute("aria-sort").equalsIgnoreCase(order)) {
             EyeThink.core().click().onWeb(svgArrowElement);
         }
+    }
+
+    /**
+     * click on expand collapse icon at table header
+     */
+    public void clickExpandCollapseIconAtTableHeader(String panelHeaderName) {
+        WebElement expandCollapseIcon = EyeThink.core().elementReference().onWeb(By.xpath("//div[@class='panel-heading']//a[@title='" + panelHeaderName + "']"));
+            EyeThink.core().click().onWeb(expandCollapseIcon);
+    }
+
+    /**
+     * click on look up link at page
+     */
+    public void performClickOnLookupLink(String lookupLink) {
+        EyeThink.core().click().onWeb(By.xpath("//dl//dd//a[contains(text(),'" + lookupLink + "')]"));
     }
 
     /**
@@ -1172,9 +1218,9 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     private Boolean isStatusDisplayedForLookupModal(String statusName) {
         boolean flag = false;
+        EyeThink.core().WaitFor().makeThreadSleep(5000);
         try {
-            if (getCompleteTableRowOfLookupModal().stream()
-                    .anyMatch(item -> EyeThink.core().elementReference().onWebNested((WebElement) item, getTableColumnOfLookupModal(statusName)).isDisplayed())) {
+            if (EyeThink.core().is().onWeb().isDisplayed(getTableColumnOfLookupModal(statusName))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -1312,6 +1358,32 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean isDataTableForLookupDisplayed() {
         boolean flag = false;
         if (getCompleteContentForLookupModal().size() > 0) {
+            flag = true;
+        }
+        return flag;
+    }
+
+    /**
+     * return true if order of svg arrow is in expected order
+     *
+     * @param order
+     * @return
+     */
+    private boolean isOrderOfSVGArrowIsInExpectedOrder(String order) {
+        boolean flag = false;
+        if (EyeThink.core().get().attribute(By.xpath("//div[@class='ltngDataTable']//lightning-primitive-icon/*[name()='svg' and @data-key='arrowdown']/ancestor::th[@aria-sort]"), "aria-sort").equalsIgnoreCase(order)) {
+            flag = true;
+        }
+        return flag;
+    }
+
+    /**
+     * return true if order of svg arrow is in expected order
+     * @return
+     */
+    private boolean isExpandCollapseWorkingAsExpected() {
+        boolean flag = false;
+        if (EyeThink.core().get().attribute(By.xpath("//div[@class='panel-heading']//a[@title='Internal Review Panel Users']"),"class").equalsIgnoreCase("collapsed")) {
             flag = true;
         }
         return flag;

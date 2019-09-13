@@ -1079,14 +1079,14 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Sub-Recipient"
     Then I see page is in "Light Blue" color
 
-  @58872    @hideExpressioJsonForEditTopLevelActionAtProgramDetailPage @smoke @wip
+  @58872    @hideExpressioJsonForEditTopLevelActionAtProgramDetailPage @smoke
   Scenario: Hide edit button for Profile and System Admin using hide expression Json -gPlanning
     Given I have default configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Hide Expression JSON |                   | Grantee State Program | Name                      | Edit                       |
+      | configurationCategory      | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action Sobject | Hide Expression JSON |                   | Grantee State Program | Name                      | Edit                       |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Hide Expression JSON | govgrants_config:ProgramFlexTableExpressionJsonForEditAction | Grantee State Program | Name                      | Edit                       |
+      | configurationCategory      | fieldName            | fieldNewValue                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionJsonForPageTab | Grantee State Program | Name                      | Edit                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1137,4 +1137,158 @@ Feature: Logged Issues Scenarios
     And I click on page navigation arrow "inlineEditGridApplicationBudgetCategoryFlexGrid" for table id "Next"
     Then I see that "BP-05" has been added in flextable with Id "inlineEditGridApplicationBudgetCategoryFlexGrid"
 
+  @59130    @parentLevelLookupfieldOfApplicationBudgetPeriodsShouldBeInViewMode-gApplications
+  Scenario: validate page navigation is working fine after enabling auto index and row grouping at ApplicationBudgetCategoryFlexTable
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "AP-755-214"
+    When I click on "View" icon for "AP-755-214" inside table
+    When I navigate to "Budget" sub tab
+    When I click on "Edit" icon for "BP-01" inside table
+    Then I see lookup field "AP-755-214" is in view mode
 
+  @58960    @expandCollapseShouldWorkAtAssociateInternalUsers
+  Scenario: validate expand collapse of Associate internal review panel users at modal table is working correctly
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Roles" sub tab
+    And I click on "Edit" icon for "Pre-Screen Review" inside flex table with id "ProgramRelatedAppReviewStepTemplatesNew" with wait for record
+    When I click on "View" icon for "Pre-Screen Review Panel" inside table
+    And I click on top right button "Associate Internal user" in flex table with id "RelatedTemplateReviewers"
+    And I click on expand collapse icon for panel heading "Internal Review Panel Users"
+    Then I see expand collapse is working as expected
+
+  @58956    @formsPrevievLinkShouldOpensFormsCorrectly
+  Scenario: validate preview lookup link is working correctly on click at forms modal
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Roles" sub tab
+    And I click on "View" icon for "Pre-Screen Review" inside flex table with id "ProgramRelatedAppReviewStepTemplatesNew" with wait for record
+    When I click on lookup link "Preview"
+    Then I see the text :
+      | Applicant Information |
+      | Technical Screening   |
+      | Budget Screening      |
+      | Eligibility Screening |
+      | Attachments           |
+      | Additional Details    |
+      | Recommendation        |
+      | Acknowledgement       |
+
+  @58955    @programLinksShouldOpensInNewWindow
+  Scenario: validate program link at forms modal opens in new window
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Roles" sub tab
+    And I click on "View" icon for "Pre-Screen Review" inside flex table with id "ProgramRelatedAppReviewStepTemplatesNew" with wait for record
+    When I click on lookup link "PG-343-0058"
+    Then I see new tab is opened
+
+  @54744    @lookupShouldWorkProperlyAtMOdalWindow
+  Scenario: validate lookup should display expected text as user entered in text field on modal window
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Roles" sub tab
+    And I click on top right button "New" in flex table with id "ProgramRolesAndResponsibilities"
+    When I click search icon for "Assigned to User Lookup (New Window),enter" lookup modal and swithing to frame "iframeCustomLookupModalId"
+    Then I see "Allen PM" status in lookup modal table
+
+  @59145    @orderBySortByFieldAtParentDataTable
+  Scenario: Changing specific column value in ascending order with order by and sort by field from config and validating it inside enhanced grid of programs-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Order By       |                   | TmpActiveGrantsGrid |                           |                            |
+      | Flex Grid:General     | Sort Direction |                   | TmpActiveGrantsGrid |                           |                            |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue          | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Order By       | TotalAdjustedAmount__c | TmpActiveGrantsGrid |                           |                            |
+      | Flex Grid:General     | Sort Direction | DESC                   | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    Then I see currency column "TotalAdjustedAmount__c" value is in "Descending" order
+
+  @59362    @withColumnSortingNewRecordShouldNotGetAddedAtApplicationBudgetCategoryFlexGrid
+  Scenario: validate new record should not get added in case of column sorting at application budget category flex grid
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "AP-755-214"
+    When I click on "View" icon for "AP-755-214" inside table
+    When I navigate to "Budget" sub tab
+    And I click on top right button "New" in flex table with id "inlineEditGridApplicationBudgetCategoryFlexGrid"
+    When I click on "Start Date" column header inside table with id "inlineEditGridApplicationBudgetCategoryFlexGrid"
+    Then I see confirmation box with body "Please save the record before sorting." is displayed
+
+  @54719    @normalHideExpressionShouldNotWorkWithSobjectHideExpressionChanges
+  Scenario: validate normal hide Expression should not work if Sobject Hide Expression available for program flex table action
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action         | Hide Expression JSON |                   | Programs           | Name                      | New                        |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | New                        |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName            | fieldNewValue                                                    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action         | Hide Expression JSON | govgrants_config:HideExpressionJsonForPageTab                    | Programs           | Name                      | New                        |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForProfilePM | Programs           | Name                      | New                        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    Then I see "New" button inside "Draft Programs" flex table
+    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
+    And I navigate to "Planning" tab
+    Then I see "New" button inside "Draft Programs" flex table not displayed
+
+  @58750    @sidebarContactsViewPageShouldOpenedProperly
+  Scenario: validate sidebar contacts should opened properly in view page without any popup messages.
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    When I navigate to "Contacts" content inside "Activities" subheader on left panel
+    When I click on "View" icon for "Emily PO" inside table
+    And I see the text :
+      | Contact Information  |
+      | Personal Information |
+      | Address Information  |
+      | System Information   |
+    When I navigate to "Attachments" sub tab
+    Then I see the text :
+      | Attachments |
+      | Notes       |
+
+  @58754    @businessFormsCompleteInformationShouldDisplayOnPreviewPage
+  Scenario: validate business forms information displayed properly on view page
+    When I login as "Automation" user
+    When I setup my app as "As a Grantee"
+    And I navigate to "Opportunities" tab
+    And I click toggle button to select "Open Funding Opportunities"
+    When I perform quick search for "FOA--114"
+    When I click on "View" icon for "ROSES 2018: Rapid Response and Novel Research in Earth Science" inside table
+    When I navigate to "Attachments" sub tab
+    And I click on top right button "New" in flex table with id "AnnoucementPackages"
+    When I select package type from Package selection for business forms
+    When I check "application1" boxes in flex table with id "ApplicationPackage"
+    When I click modal button "Save"
+    When I click on "View" icon for "application1" inside table
+    Then I see the text :
+      | Forms |

@@ -120,6 +120,11 @@ public class EnhancedFlexGridSteps {
 		enhancedFlexGrid.assertAscendingOrderOfEnhancedGridColumnValue(text, order);
 	}
 
+	@Then("^I see currency column \"([^\"]*)\" value is in \"([^\"]*)\" order$")
+	public void assertCurrencyColumnValueInAscendingOrder(String text, String order) {
+		enhancedFlexGrid.assertAscendingOrderOfEnhancedGridCurrencyColumnValue(text, order);
+	}
+
 	@Then("^I see \"([^\"]*)\" icon for \"([^\"]*)\" is at position \"([^\"]*)\" inside flex table$")
 	public void assertActionIconNotDisplayedForflexTable(String iconName, String tableId, String sequenceNumber) {
 		enhancedFlexGrid.assertSequenceOfEditActionOfEnhancedGrid(iconName, tableId, Integer.parseInt(sequenceNumber));

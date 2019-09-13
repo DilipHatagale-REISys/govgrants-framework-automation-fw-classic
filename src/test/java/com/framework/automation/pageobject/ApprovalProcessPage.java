@@ -267,7 +267,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
             if (whileHandler == 2) {
                 break;
             }
-            EyeThink.core().get().refresh();
+            EyeThink.core().get().pageRefresh();
             EyeThink.core().elementReference().onWeb(pendingTasksTableRef);
             approvalStartButtonTable = EyeThink.core().elementReference().listOfElements().onWeb(startButton);
             approvalStartButtonTableSize = approvalStartButtonTable.size();

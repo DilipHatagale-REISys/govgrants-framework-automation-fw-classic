@@ -14,7 +14,7 @@ public class PageLayout {
 
 	/**
 	 * Set pay load for page layout main page
-	 * 
+	 *
 	 * @param fieldLabel
 	 * @param value
 	 * @param filterClause
@@ -98,7 +98,7 @@ public class PageLayout {
 
 	/**
 	 * setup configuration for page lay out action
-	 * 
+	 *
 	 * @param fieldLabel
 	 * @param value
 	 * @param filterClause
@@ -221,7 +221,7 @@ public class PageLayout {
 
 	/**
 	 * setup configuration for page tabs
-	 * 
+	 *
 	 * @param fieldLabel
 	 * @param value
 	 * @param filterClause
@@ -316,6 +316,29 @@ public class PageLayout {
 					apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__TabConfig__c), filterClause),
 					String.valueOf(SObjectAPIs.GNT__Operator__c), value);
 			break;
+		}
+		System.out.println(finalPayload);
+		return finalPayload;
+	}
+
+	/**
+	 * setup configuration for page layout action with Sobject
+	 *
+	 * @param fieldLabel
+	 * @param value
+	 * @param filterClause
+	 * @return
+	 */
+	public String setPageLayoutActionConfigSobject(String fieldLabel, String value, String filterClause) {
+		String finalPayload = null;
+		switch (fieldLabel.toUpperCase()) {
+			case "HIDE EXPRESSION JSON":
+				finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c),
+						apiUtilities.getComponentCoreFieldIdForContextObjects(
+								String.valueOf(SObjectAPIs.GNT__PageLayoutActionConfig__c),
+								String.valueOf(SObjectAPIs.GNT__SobjectActionConfig__c), filterClause),
+						String.valueOf(SObjectAPIs.GNT__HideExpressionJSON__c), value);
+				break;
 		}
 		System.out.println(finalPayload);
 		return finalPayload;
