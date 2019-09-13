@@ -18,7 +18,7 @@ import java.util.List;
 public class GovGrantsManager extends ProjectWebServices {
     public String standardPassword = "Automation@12345";
     public String defaultComment = "Automation testing";
-    public WebElement recordElement;
+    public static WebElement recordElement;
     public final By navigationLogo, searchInput, rightHeaderBars, egmsHeader, completeTableRow, sideBarHeadersList,
             advanceFilterButton, menuIcon, selectRecordCheckBox, totalRowsCalc, flexTablelastRowNameAsTotal,
             pendingTasksTableRef, dangerAlert, confirmationBoxMessage, selectDropdown, allPhases, chartsContainer,
@@ -158,12 +158,9 @@ public class GovGrantsManager extends ProjectWebServices {
      */
     public void clickRightHeaderButtonInsideDetailPage(String buttonName) {
         EyeThink.saas().pageDetails().clickAnyTopRightButton(buttonName);
-        if (buttonName.equalsIgnoreCase("Submit For Approval")) {
-            try {
-                EyeThink.core().WaitFor().WaitForAlert();
-                EyeThink.core().switchTo().acceptAlert();
-            } catch (Exception e) {
-            }
+        try {
+            EyeThink.saas().modal().acceptPopUp();
+        } catch (Exception e) {
         }
     }
 
@@ -368,6 +365,16 @@ public class GovGrantsManager extends ProjectWebServices {
      */
     public void performClickOnPaginationArrow(String flexTableId, String NextPrevious) {
         EyeThink.saas().flexTable().flexTablePagination(flexTableId, NextPrevious);
+    }
+
+    /**
+     * perform click table header column with table id and title name
+     *
+     * @param tableId
+     * @param titleName
+     */
+    public void performClickOnSpecificTableColumnHeader(String tableId, String titleName) {
+        EyeThink.core().click().onWeb(EyeThink.saas().flexTable().getSpecificElementFromTableHeader(tableId, titleName));
     }
 
     /******* "Local Methods with Limited functionality " **********/

@@ -490,20 +490,20 @@ public class FlexTablePage extends GovGrantsManager {
         EyeThink.saas().mainPage().waitForNavigationLogoToDisappear();
         EyeThink.saas().flexTable().flexTableShowEntriesDropDown("toggleFlexTablePrograms", "10");
         EyeThink.saas().mainPage().waitForNavigationLogoToDisappear();
-        EyeThink.core().get().refresh();
+        EyeThink.core().get().pageRefresh();
         EyeThink.core().WaitFor().makeThreadSleep(1000);
         EyeThink.saas().flexTable().flexTablePagination("toggleFlexTablePrograms", "Next");
         EyeThink.saas().mainPage().waitForNavigationLogoToDisappear();
         EyeThink.core().WaitFor().makeThreadSleep(500);
         EyeThink.saas().flexTable().flexTablePagination("toggleFlexTablePrograms", "Previous");
-        EyeThink.core().get().refresh();
+        EyeThink.core().get().pageRefresh();
         EyeThink.core().WaitFor().makeThreadSleep(1000);
         EyeThink.saas().mainPage().waitForNavigationLogoToDisappear();
         EyeThink.core().click().onWeb(EyeThink.saas().flexTable().getSpecificElementFromTableHeader("ID"));
         EyeThink.saas().mainPage().waitForNavigationLogoToDisappear();
         EyeThink.core().click().onWeb(EyeThink.saas().flexTable().getSpecificElementFromTableHeader("Program Name"));
         EyeThink.saas().mainPage().waitForNavigationLogoToDisappear();
-        EyeThink.core().get().refresh();
+        EyeThink.core().get().pageRefresh();
         EyeThink.core().WaitFor().makeThreadSleep(1000);
         EyeThink.saas().phasePannel().clickParallelMenuBars("Draft Programs");
         EyeThink.saas().phasePannel().selectItemFromParallelMenuBars("Draft Programs", "Refresh");
@@ -620,7 +620,7 @@ public class FlexTablePage extends GovGrantsManager {
     private Boolean isFlexTableRowsTotalDisabled() {
         boolean flag = true;
         try {
-            if (getCompleteTableRow().stream().anyMatch(item -> EyeThink.core().elementReference().onWebNested((WebElement) item, totalRowsCalc).isDisplayed())) {
+            if (getCompleteTableRow().stream().anyMatch(item -> EyeThink.core().is().onWeb().isDisplayed(item.nestedElement(totalRowsCalc)))){
                 flag = false;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {

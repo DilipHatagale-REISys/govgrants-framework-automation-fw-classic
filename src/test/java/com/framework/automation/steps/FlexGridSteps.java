@@ -23,6 +23,11 @@ public class FlexGridSteps {
 		flexGridPage.performClickOnPaginationArrow(flexTableId, NextPrevious);
 	}
 
+	@And("^I click on \"([^\"]*)\" column header inside table with id \"([^\"]*)\"$")
+	public void ClickOnSpecificTableHeaderColumn(String titleName, String tableId) {
+		flexGridPage.performClickOnSpecificTableColumnHeader(tableId, titleName);
+	}
+
 	@Then("^I see \"([^\"]*)\" as header$")
 	public void assertPPMGVPanelheader(String headerName) {
 		flexGridPage.assertHeaderNameDisplayed(headerName);
@@ -98,5 +103,10 @@ public class FlexGridSteps {
 	@Then("^I see \"([^\"]*)\" in Monitoring Schedule For All Active Grant flex table header with id \"([^\"]*)\" comes only once$")
 	public void assertMonitoringScheduleForAllActiveGrantflextableheaderName(String columnTitleName, String tableId) {
 		flexGridPage.assertActiveGrantsGridHeaderColumnName(columnTitleName, tableId);
+	}
+
+	@Then("^I see lookup field \"([^\"]*)\" is in view mode$")
+	public void assertLookupFieldRenderingMode(String lookupFieldName) {
+		flexGridPage.assertLookupFieldRenderingBehaviourInEditMode(lookupFieldName);
 	}
 }

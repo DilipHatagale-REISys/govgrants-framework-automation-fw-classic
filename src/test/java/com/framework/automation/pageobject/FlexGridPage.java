@@ -191,6 +191,15 @@ public class FlexGridPage extends GovGrantsManager {
         Assert.assertTrue(isActiveGrantsGridTableColumnHeaderName(columnTitleName, tableId));
     }
 
+    /**
+     * assert true if lookup field coming up in view mode even after editing record in inline mode inside parent table of ME grid
+     *
+     * @param lookupFieldName
+     */
+    public void assertLookupFieldRenderingBehaviourInEditMode(String lookupFieldName) {
+        Assert.assertTrue(isLookupFieldComingInViewMode(lookupFieldName));
+    }
+
     /*********
      * "Local Methods with complete functionality - private"
      *****************/
@@ -410,6 +419,20 @@ public class FlexGridPage extends GovGrantsManager {
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
             flag = false;
+        }
+        return flag;
+    }
+
+    /**
+     * @return true if lookup field at parent level of ME grid is in view mode
+     */
+    private Boolean isLookupFieldComingInViewMode(String lookupFieldNAme) {
+        boolean flag = false;
+        try {
+            if (EyeThink.core().is().onWeb().isDisplayed(By.xpath("//field//a[contains(text(),'" + lookupFieldNAme + "')]"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
         }
         return flag;
     }

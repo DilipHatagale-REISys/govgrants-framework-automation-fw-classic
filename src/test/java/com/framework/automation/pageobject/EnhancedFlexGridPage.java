@@ -242,6 +242,13 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      * return true if particular column value is in ascending order
      */
     public void assertAscendingOrderOfEnhancedGridColumnValue(String text, String order) {
+        Assert.assertTrue(EyeThink.core().compare().sortAndCompareOneTableColumn(getTableColumnCompleteContent(text), order));
+    }
+
+    /**
+     * return true if particular currency column value is in ascending order
+     */
+    public void assertAscendingOrderOfEnhancedGridCurrencyColumnValue(String text, String order) {
         Assert.assertTrue(isColumnValueInExectedOrder(text, order));
     }
 
@@ -679,7 +686,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     }
 
     /**
-     * return true if particular column value of enhanced grid table is in
+     * return true if particular currency column value of enhanced grid table is in
      * ascending/descending order
      *
      * @return
@@ -687,14 +694,23 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     private boolean isColumnValueInExectedOrder(String text, String order) {
         boolean flag = false;
         try {
-            ArrayList<String> obtainedList = new ArrayList<>();
+            ArrayList<BigDecimal> obtainedList = new ArrayList<BigDecimal>();
             List<Elements> rows_table = getTableColumnCompleteContent(text);
-            for (Elements we : rows_table) {
-                obtainedList.add(we.getText().toLowerCase());
+            if ((EyeThink.core().get().attribute(By.xpath("//table/tbody/tr/td//*[@field-name='" + text + "']"), "field-type").equalsIgnoreCase("CURRENCY"))) {
+                rows_table.remove(rows_table.size() - 1);
             }
-            ArrayList<String> sortedList = new ArrayList<>();
-            for (String s : obtainedList) {
-                sortedList.add(s.toLowerCase());
+            String strNew = "";
+            BigDecimal bd = new BigDecimal(0);
+            String str = "";
+            for (Elements we : rows_table) {
+                str = we.getText();
+                strNew = str.replaceAll("[$|,|']", "");
+                bd = new BigDecimal(strNew);
+                obtainedList.add(bd);
+            }
+            ArrayList<BigDecimal> sortedList = new ArrayList<>();
+            for (BigDecimal s : obtainedList) {
+                sortedList.add(s);
             }
             if (order.equals("Ascending")) {
                 Collections.sort(sortedList);
@@ -719,7 +735,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      * @return
      */
     public List<Elements> getTableColumnCompleteContent(String text) {
-        return EyeThink.core().elementReference().listOfElements().onWeb(By.xpath("//table/tbody/tr/td//*[@field-name='" + text + "']"));
+        return EyeThink.core().elementReference().listOfElements().onWeb(By.xpath("//table/tbody/tr/td//*[@field-name='" + text + "']/span"));
     }
 
     /**
