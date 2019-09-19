@@ -753,7 +753,7 @@ Feature: Logged Issues Scenarios
     And I navigate to "HOME" tab
     Then I see govgrants logo "GovGrants Logo expanded" is displayed with name "Enterprise Grants Management System"
 
-  @57143    @pdfFileShouldGetDownloadedProperlyForFundingAccount @checkFileNotGettingDownloaded
+  @57143    @pdfFileShouldGetDownloadedProperlyForFundingAccount @wip @checkFileNotGettingDownloaded
   Scenario: validate downloaded pdf file should get downloaded properly with content of funding account
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -1285,6 +1285,8 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "FOA--114"
     When I click on "View" icon for "ROSES 2018: Rapid Response and Novel Research in Earth Science" inside table
     When I navigate to "Attachments" sub tab
+    When I click on "Delete" icon for "application1" inside table
+    When I click "Yes" on modal confirmation box
     And I click on top right button "New" in flex table with id "AnnoucementPackages"
     When I select package type from Package selection for business forms
     When I check "application1" boxes in flex table with id "ApplicationPackage"
@@ -1292,3 +1294,213 @@ Feature: Logged Issues Scenarios
     When I click on "View" icon for "application1" inside table
     Then I see the text :
       | Forms |
+
+  @59561    @recordsShouldGetSortedWithEnableRowGrouping
+  Scenario: Row level records at enhanced grid should get sorted in ascending order while enabling row grouping column fiels
+    Given I have default configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Grid:General     | Order By            |                   | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue           | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Order By            | InternalOrganization__c | TmpActiveGrantsGrid |                           |                            |
+      | Flex Table List       | Enable Row Grouping | true                    | TmpActiveGrantsGrid | Name                      | FTC-1486                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    Then I see grouped row value is in "Ascending" order
+
+  @59651    @messageShouldDisplayedWhileWorkingWithBothTopAndRowLevelAction
+  Scenario: Validate message should displayed while working with both top and row level action and selecting any list view
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "GT-FIN.1-001" in "flexGridEnhanced1" panel
+    When I expand nested table containing column value "GT-FIN.1-001"
+    When I click on top right button "New" in flex table with id "flexGridEnhanced1"
+    And I click toggle button to select "Monitoring Schedule For All  Draft Grants"
+    Then I see confirmation box with body "Please save record before performing any action" is displayed
+
+  @59586      @verifyBudgetPeriodEndDateFieldShouldSaveProperDateForMultipleRecord
+  Scenario Outline: validate budget period end date field should save entered date correctly for multiple record at enhanced grid
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName           | fieldOrignalValue               | filterId         |
+      | Flex Grid:Flex Table List | Filter Clause       | <defaultFilterClauseForFLV2539> | ApiGeneratedId:0 |
+      | Flex Grid                 | Display Field Names | <defaultFieldsApi>              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName           | fieldNewValue               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Filter Clause       | <newFilterClauseForFLV2539> | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Grid:General         | Display Field Names | <newFieldsApi>              | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    And I edit the following rows inline in flex table with id "flexGridEnhanced1" by clicking "Edit" :
+      | Project Title                 | Current Budget Period End Date |
+      | Road COnst. Ann.              | 0                              |
+      | Road Construction Annoumsment | 0                              |
+    And I save the value from row "1" for column name "Current Budget Period End Date" as "BPdate1" from flex table "flexGridEnhanced1"
+    Then I see the Budget Period End Date field contains todays date
+    Examples:
+      | defaultFieldsApi                                                                                                                                                                                                                                          | newFieldsApi                                | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                         |
+      | Name,ProjectTitle__c,BudgetPeriodEndDate__c,TotalAdjustedAmount__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c like 'Road%' |
+
+  @59654      @duplicateRecordShouldNotGetAddedAtProgramBudgetCategoryFlexTable
+  Scenario: validate duplicate record should not get added to program budget category flex table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I click on "Delete" icon for "SBC-A-217" inside table
+    When I click "Yes" on modal confirmation box
+    And I click on top right button "Associate" in flex table with id "ProgramBudgetCategory"
+    When I check "SBC-A-217" boxes in flex table with id "SelectBudgetCategory"
+    When I click on top right button "Add" in flex table with id "SelectBudgetCategory"
+    When I navigate to "Financials" sub tab
+    And I click on top right button "Associate" in flex table with id "ProgramBudgetCategory"
+    Then I do not see value "SBC-A-217" for title "Company Code" inside table "SelectBudgetCategory"
+
+  @59821    @hideExpressioJsonForRightOperandForContextEditAtParentLevelEnhancedGrid
+  Scenario: validate disabling of edit action for context edit at enhanced grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON |                   | TmpActiveGrantsGrid | Name                      | Edit                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                              | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_Context_Edit | TmpActiveGrantsGrid | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    Then I see "Edit" icon for "Demo_Title" is not displayed inside flex table
+
+  @59822    @hideExpressioJsonForRightOperandForContextViewAtParentLevelEnhancedGrid
+  Scenario: validate disabling of view action for context edit at enhanced grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON |                   | TmpActiveGrantsGrid | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                              | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_Context_View | TmpActiveGrantsGrid | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    Then I see "View" icon for "Demo_Title" is not displayed inside flex table
+
+  @59825    @hideExpressioJsonForRightOperandForContextViewAtChildLevelEnhancedGrid
+  Scenario: validate disabling of view action for context edit at child table of enhanced grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON |                   | TmpGrantorActiveAwardsGrid | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                         | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ChildTable_ViewAction_With_Context_View | TmpGrantorActiveAwardsGrid | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I expand nested table containing column value "Demo_Title"
+    Then I see "View" icon for "AD-GG PJ--00" is not displayed inside flex table
+
+  @59826    @hideExpressioJsonForRightOperandForContextEditAtChildLevelEnhancedGrid
+  Scenario: validate disabling of edit action for context edit at child table of enhanced grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON |                   | TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                         | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ChildTable_ViewAction_With_Context_Edit | TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I expand nested table containing column value "Demo_Title"
+    Then I see "Edit" icon for "AD-GG PJ--00" is not displayed inside flex table
+
+  @59827    @numberFieldValueShouldDisplayProperlyWithEnteredMinusValue
+  Scenario: Validate entered negative value inside Number field at page block detail should displayed properly at program detail page
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I enter value "-123" into field "Number__c"
+    And I click on "Save" in the page details
+    Then I see field "Number" as "(123.00)"
+
+  @59893    @standardFieldShouldShowUserNameAtEnhancedGridParentColumn
+  Scenario Outline: validate standard field of enhanced grid column should show User Name instead of ID
+    Given I have default configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    Then I see "LastModifiedById" and "LastModifiedBy.Id" contains user names as "Nauman Shahid"
+
+    Examples:
+      | newFieldsApi                                            | defaultFieldsApi                                                                                                                                                                                                                   |
+      | Name,ProjectTitle__c,LastModifiedById,LastModifiedBy.Id | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @59909    @advanceFilterValueForNegativeValueShouldWorkProperly
+  Scenario Outline: validate Advance filter search should work correctly for negative value at enhanced grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I click on advance filter of table id "flexGridEnhanced1"
+    And I enter values into advance filter "advfTmpActiveGrantsGrid" as "Total Adjusted Amount""equals to""-1"
+    Then I see value "($1.00)" for title "Total Adjusted Amount" inside table "flexGridEnhanced1"
+
+    Examples:
+      | newFieldsApi                           | defaultFieldsApi                                                                                                                                                                                                                   |
+      | ProjectTitle__c,TotalAdjustedAmount__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |

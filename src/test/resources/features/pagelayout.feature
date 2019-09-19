@@ -1791,7 +1791,7 @@ Feature: Page Layout Component Scenarios
     When I click on "Submit For Approval" button inside detail page
     Then I see "Percent is Required to submit under Overview." error is displayed
 
-  @533967   @requiredForSubmitBehaviourAtPageBlockDetailForDateAndTimeField-gPlanning
+  @53397   @requiredForSubmitBehaviourAtPageBlockDetailForDateAndTimeField-gPlanning
   Scenario: changing value of required behaviour and keeping none at date and time field and validating error message while submitting program for approval
     Given I have default configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |

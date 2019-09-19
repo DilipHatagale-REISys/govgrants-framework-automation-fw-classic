@@ -164,5 +164,4 @@ public class PhaseConfigSteps {
     public void assertCustomAppColor(String colorName) {
         phaseConfigPage.assertPageColorForCustomApp(colorName);
     }
-
 }

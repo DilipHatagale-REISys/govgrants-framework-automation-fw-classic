@@ -18,7 +18,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    Then I see Advance Filter is disabled from table "flexGridEnhanced1"
+    Then I see Advance Filter is disabled from table "flexGridEnhanced1" with data target value "#advfTmpActiveGrantsGrid"
 
   @35433    @disablingMenuIconForEnhancedGrid-gPlanning @smoke
   Scenario: validate disabling of menu icon from Planning- Program enhanced flex grid
@@ -823,7 +823,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
     When I expand nested table containing column value "Demo_Title"
-    Then I see Advance Filter is disabled from table "TmpGrantorActiveAwardsGridFlexToggle"
+    Then I see Advance Filter is disabled from table "TmpGrantorActiveAwardsGridFlexToggle" with data target value "#advfTmpGrantorActiveAwardsGrid"
 
   @44994    @disableMenuFieldForChildFlexTableAtEnhancedGrid-gPlanning @smoke
   Scenario: Disabling the Menu Field at child flex table of enhanced grid from config and validating it at enhanced grid planning-Program enhanced flex grid
