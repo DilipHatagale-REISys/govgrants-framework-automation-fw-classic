@@ -117,20 +117,6 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     }
 
     /**
-     * select/enter values for Advance filter fields
-     */
-    public void handleDropdownInputForAdvanceFilter(String advanceFilterId, String value1, String value2, String value3) {
-        By dropDownSelector1 = By.xpath("//div[@id='" + advanceFilterId + "']//label[contains(text(),'Column')]/..//select");
-        By dropDownSelector2 = By.xpath("//div[@id='" + advanceFilterId + "']//label[contains(text(),'Operator')]/..//select");
-        By inputField = By.xpath("//div[@id='" + advanceFilterId + "']//input");
-        By filterAction = By.xpath("//div[@id='" + advanceFilterId + "']//a[@title='Add Filter']/span");
-        EyeThink.core().select().onWeb(dropDownSelector1).selectByVisibleText(value1);
-        EyeThink.core().select().onWeb(dropDownSelector2).selectByVisibleText(value2);
-        EyeThink.core().enterText().onWeb().enter(inputField, value3);
-        EyeThink.core().click().onWeb(filterAction);
-    }
-
-    /**
      * assert correct title name of enhanced flex grid is displayed
      *
      * @param titleName
@@ -458,6 +444,15 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      */
     public void assertUserNameAtStandardFieldsInsideEnhancedGridColumn(String text1, String text2, String userName) {
         Assert.assertTrue(isUserNameShownUnderStandardFieldsColumn(text1, text2, userName));
+    }
+
+    /**
+     * return true if cell value is as expected as zero for null record values
+     *
+     * @param value
+     */
+    public void assertCellValueForTotalAdjustedAmountAtEnhancedGrid(String value) {
+        Assert.assertTrue(isExpectedSumValueAtTotalAdjustedAmountEnhancedGridTableDisplayed(value));
     }
 
     /*********
@@ -1206,9 +1201,28 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         WebElement column1 = EyeThink.core().elementReference().onWeb(By.xpath("//table/tbody/tr/td//*[@field-name='" + text1 + "']//span/a[contains(text(),'" + userName + "')]"));
         WebElement column2 = EyeThink.core().elementReference().onWeb(By.xpath("//table/tbody/tr/td//*[@field-name='" + text2 + "']//span/a[contains(text(),'" + userName + "')]"));
         if (column1.getText().equalsIgnoreCase(userName)
-                && column2.getText().equalsIgnoreCase(userName)){
+                && column2.getText().equalsIgnoreCase(userName)) {
             return true;
         }
         return flag;
+    }
+
+    /**
+     * return true if expected amount at particular cell inside enhanced grid table
+     * is displayed as zero
+     *
+     * @param value
+     * @return
+     */
+    private boolean isExpectedSumValueAtTotalAdjustedAmountEnhancedGridTableDisplayed(String value) {
+        boolean flag = false;
+        String strNew = "";
+        try {
+            List<Elements> rows_table = EyeThink.core().elementReference().listOfElements().onWeb(By.xpath("//table/tbody/tr/td//*[@field-name='TotalAdjustedAmount__c']/span"));
+            strNew = rows_table.get(2).getText().replaceAll("[$|,|']", "");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return strNew.equalsIgnoreCase(value);
     }
 }

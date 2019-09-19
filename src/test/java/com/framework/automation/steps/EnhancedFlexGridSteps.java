@@ -7,6 +7,7 @@ import io.cucumber.java.en.When;
 
 
 import java.math.BigDecimal;
+import java.util.List;
 
 public class EnhancedFlexGridSteps {
 	EnhancedFlexGridPage enhancedFlexGrid;
@@ -35,14 +36,9 @@ public class EnhancedFlexGridSteps {
 		enhancedFlexGrid.saveSpecificValueFromFlexTableInsideGivenKey(columnValueFromRow, columnName, key, flexTableId);
 	}
 
-	@When("^I click on advance filter of table id \"([^\"]*)\"$")
-	public void performClickOnAnvanceFilter(String tableId, String dataTargetValue) {
+	@When("^I click on advance filter \"([^\"]*)\" of table id \"([^\"]*)\"$")
+	public void performClickOnAnvanceFilter(String dataTargetValue, String tableId) {
 		enhancedFlexGrid.performClickOnAdvanceFilterWithTableId(tableId, dataTargetValue);
-	}
-
-	@When("^I enter values into advance filter \"([^\"]*)\" as \"([^\"]*)\"\"([^\"]*)\"\"([^\"]*)\"$")
-	public void enterValuesForAdvanceFilter(String advanceFilterId, String value1, String value2, String value3) {
-		enhancedFlexGrid.handleDropdownInputForAdvanceFilter(advanceFilterId, value1, value2, value3);
 	}
 
 	@Then("^I see Advance Filter is disabled from table \"([^\"]*)\" with data target value \"([^\"]*)\"$")
@@ -239,5 +235,10 @@ public class EnhancedFlexGridSteps {
 	@Then("^I see \"([^\"]*)\" and \"([^\"]*)\" contains user names as \"([^\"]*)\"$")
 	public void assertStandardFieldsColumnValue(String text1, String text2, String userName) {
 		enhancedFlexGrid.assertUserNameAtStandardFieldsInsideEnhancedGridColumn(text1, text2, userName);
+	}
+
+	@Then("^I see subtotal value \"([^\"]*)\" for null record values$")
+	public void assertCellNullValue(String value) {
+		enhancedFlexGrid.assertCellValueForTotalAdjustedAmountAtEnhancedGrid(value);
 	}
 }

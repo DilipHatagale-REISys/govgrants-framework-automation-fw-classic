@@ -1497,9 +1497,33 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I click on advance filter of table id "flexGridEnhanced1"
-    And I enter values into advance filter "advfTmpActiveGrantsGrid" as "Total Adjusted Amount""equals to""-1"
+    When I click on advance filter "#advfTmpActiveGrantsGrid" of table id "flexGridEnhanced1"
+    When I enter advance filter values inside id "advfTmpActiveGrantsGrid"
+      | Total Adjusted Amount | equals to | -1 |
     Then I see value "($1.00)" for title "Total Adjusted Amount" inside table "flexGridEnhanced1"
+
+    Examples:
+      | newFieldsApi                           | defaultFieldsApi                                                                                                                                                                                                                   |
+      | ProjectTitle__c,TotalAdjustedAmount__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @59987    @formulaTotalShouldShowZeroValueForNullValuesRecordAtEnhanceGrid
+  Scenario Outline: Validate formula field should show zero value at expected row for Total adjusted amount having null values at records
+    Given I have default configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Formula             |                    | ApiGeneratedId:0 |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                                    | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Formula             | govgrants_config:FormulaFieldAtEnhancedGridForTotalAdjustedAount | TmpActiveGrantsGrid | Name                      | FTC-1500                   |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi>                                                   | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    Then I see subtotal value "0.00" for null record values
 
     Examples:
       | newFieldsApi                           | defaultFieldsApi                                                                                                                                                                                                                   |
