@@ -6,8 +6,10 @@ import eyethink.automation.bots.objects.Elements;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 import java.math.BigDecimal;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class EnhancedFlexGridPage extends GovGrantsManager {
@@ -87,6 +89,14 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     }
 
     /**
+     * Save the entered value of budget period date field
+     */
+    public void saveSpecificValueFromFlexTableInsideGivenKey(String columnValueFromRow, String columnName, String key, String flexTableId) {
+        EyeThink.core().Properties().saveValue(key, getValueOfSpecifiedColFromTableHavingColumnNameAs(columnValueFromRow,
+                columnName, flexTableId));
+    }
+
+    /**
      * assert true if changed icon css of enhanced grid table edit action is
      * displayed
      *
@@ -97,6 +107,13 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         Assert.assertTrue(EyeThink.core().is().onWeb().isDisplayed(By.xpath("//td//*[@title = '" + columnTitle + "' or text() = '" + columnTitle
                 + "']/ancestor::tr[1]//td//a[@title = '" + iconTitle
                 + "']//i[contains(@class,'fa fa-external-link')]")));
+    }
+
+    /**
+     * perform click on advance filter with table id
+     */
+    public void performClickOnAdvanceFilterWithTableId(String tableId, String dataTargetValue) {
+        EyeThink.core().click().onWeb(EyeThink.saas().phasePanel().getAdvanceFilterItem(tableId, dataTargetValue));
     }
 
     /**
@@ -160,8 +177,8 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     /**
      * assert if advance filter is disabled from planning enhanced flex grid
      */
-    public void assertDisableAdvanceFilterFromEnhancedGrid(String tableId) {
-        Assert.assertTrue(isAdvanceFilterDisabledFromEnhancedGrid(tableId));
+    public void assertDisableAdvanceFilterFromEnhancedGrid(String tableId, String dataTargetValue) {
+        Assert.assertTrue(isAdvanceFilterDisabledFromEnhancedGrid(tableId, dataTargetValue));
     }
 
     /**
@@ -250,6 +267,13 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      */
     public void assertAscendingOrderOfEnhancedGridCurrencyColumnValue(String text, String order) {
         Assert.assertTrue(isColumnValueInExectedOrder(text, order));
+    }
+
+    /**
+     * return true if row value is getting sorted in ascending order with row grouping
+     */
+    public void assertAscendingOrderOfRowValueWithRowGrouping(String order) {
+        Assert.assertTrue(isRowValuesGetSortedWithRowGrouping(order));
     }
 
     /**
@@ -408,6 +432,29 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         Assert.assertTrue(isMultipleColumnValueInExepctedOrder(text1, text2, order));
     }
 
+    /**
+     * To verify reported date field contains today's date
+     */
+    public void assertBugetPeriodDateField() {
+        Assert.assertEquals(EyeThink.core().Properties().getValue("BPdate1"), EyeThink.core().get().currentDateInDesiredFormat(DateTimeFormatter.ofPattern("MM/dd/yyyy")).replaceAll("^0", ""));
+    }
+
+    /**
+     * return true if standard fields at enhanced grid column contains User name as expected
+     */
+    public void assertUserNameAtStandardFieldsInsideEnhancedGridColumn(String text1, String text2, String userName) {
+        Assert.assertTrue(isUserNameShownUnderStandardFieldsColumn(text1, text2, userName));
+    }
+
+    /**
+     * return true if cell value is as expected as zero for null record values
+     *
+     * @param value
+     */
+    public void assertCellValueForTotalAdjustedAmountAtEnhancedGrid(String value) {
+        Assert.assertTrue(isExpectedSumValueAtTotalAdjustedAmountEnhancedGridTableDisplayed(value));
+    }
+
     /*********
      * "Local Methods with complete functionality - private"
      *****************/
@@ -417,10 +464,10 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      *
      * @param tableId
      */
-    private Boolean isAdvanceFilterDisabledFromEnhancedGrid(String tableId) {
+    private Boolean isAdvanceFilterDisabledFromEnhancedGrid(String tableId, String dataTargetValue) {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().phasePanel().getAdvanceFilterItem(tableId))) {
+            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().phasePanel().getAdvanceFilterItem(tableId, dataTargetValue))) {
                 flag = false;
             }
         } catch (Exception e) {
@@ -1085,5 +1132,97 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         } catch (Exception e) {
         }
         return flag;
+    }
+
+    /**
+     * return true if particular currency column value of enhanced grid table is in
+     * ascending/descending order
+     *
+     * @return
+     */
+    private boolean isRowValuesGetSortedWithRowGrouping(String order) {
+        boolean flag = false;
+        try {
+            ArrayList<String> obtainedList = new ArrayList<String>();
+            List<Elements> rows_table = EyeThink.core().elementReference().listOfElements().onWeb(By.xpath("//div[@id='TmpActiveGrantsGridFlexToggle']//table/tbody/tr/td/span[contains(text(),'Organization')]"));
+            String str = "";
+            for (Elements we : rows_table) {
+                str = we.getText().replaceAll("Internal Organization : ", "");
+                obtainedList.add(str.toLowerCase());
+            }
+            ArrayList<String> sortedList = new ArrayList<>();
+            for (String s : obtainedList) {
+                sortedList.add(s.toLowerCase());
+            }
+            if (order.equals("Ascending")) {
+                Collections.sort(sortedList);
+            } else if (order.equals("Descending")) {
+                Collections.sort(sortedList, Collections.reverseOrder());
+            }
+            if (sortedList.equals(obtainedList)) {
+                flag = true;
+            } else {
+                flag = false;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return flag;
+    }
+
+    private String getValueOfSpecifiedColFromTableHavingColumnNameAs(String rowNumber, String columnName, String flexTableId) {
+        int columnValueFromRowInInt = 0;
+        int counter = 2;
+        By columnHeaders = By.xpath("//div[@id='" + flexTableId + "']//th//span[@ng-bind='fieldLabel']");
+        List<Elements> columnList = EyeThink.core().elementReference().listOfElements().onWeb(columnHeaders);
+
+        // get the column index of required column.
+        for (Elements columnEle : columnList) {
+            if (columnEle.getText().equalsIgnoreCase(columnName)) {
+                break;
+            }
+            counter++;
+        }
+
+        List<Elements> listOfDataInColumn = EyeThink.core().elementReference().listOfElements().onWeb(By.xpath("//div[@id='" + flexTableId + "']//th//span[text()='" + columnName + "']/ancestor::thead/parent::table//tr//td[" + counter + "]/span/field/span"));
+        columnValueFromRowInInt = rowNumber.equalsIgnoreCase("last row") ? listOfDataInColumn.size()
+                : Integer.parseInt(rowNumber);
+
+        return listOfDataInColumn.get(columnValueFromRowInInt - 1).getText();
+    }
+
+    /**
+     * return true if expected User Name is displayed/rendered under standard fields  column at enhanced grid table
+     *
+     * @return
+     */
+    private boolean isUserNameShownUnderStandardFieldsColumn(String text1, String text2, String userName) {
+        boolean flag = false;
+        WebElement column1 = EyeThink.core().elementReference().onWeb(By.xpath("//table/tbody/tr/td//*[@field-name='" + text1 + "']//span/a[contains(text(),'" + userName + "')]"));
+        WebElement column2 = EyeThink.core().elementReference().onWeb(By.xpath("//table/tbody/tr/td//*[@field-name='" + text2 + "']//span/a[contains(text(),'" + userName + "')]"));
+        if (column1.getText().equalsIgnoreCase(userName)
+                && column2.getText().equalsIgnoreCase(userName)) {
+            return true;
+        }
+        return flag;
+    }
+
+    /**
+     * return true if expected amount at particular cell inside enhanced grid table
+     * is displayed as zero
+     *
+     * @param value
+     * @return
+     */
+    private boolean isExpectedSumValueAtTotalAdjustedAmountEnhancedGridTableDisplayed(String value) {
+        boolean flag = false;
+        String strNew = "";
+        try {
+            List<Elements> rows_table = EyeThink.core().elementReference().listOfElements().onWeb(By.xpath("//table/tbody/tr/td//*[@field-name='TotalAdjustedAmount__c']/span"));
+            strNew = rows_table.get(2).getText().replaceAll("[$|,|']", "");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return strNew.equalsIgnoreCase(value);
     }
 }

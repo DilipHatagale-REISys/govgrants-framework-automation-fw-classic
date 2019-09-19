@@ -114,7 +114,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
      * @param message
      */
     public void assertMessageOfConfirmationBoxPopUp(String message) {
-        Assert.assertTrue(EyeThink.core().get().attribute(confirmationBoxMessage, "innerText").equalsIgnoreCase(message));
+        Assert.assertEquals(EyeThink.core().get().attribute(confirmationBoxMessage, "innerText").replaceAll("\\u00a0"," "),message);
     }
 
     /**

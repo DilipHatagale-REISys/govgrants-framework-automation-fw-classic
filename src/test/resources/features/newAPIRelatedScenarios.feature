@@ -292,4 +292,3 @@ Feature: New API related scenarios temporary
     Examples:
       | oldLookupFilter                                                                    | newLookupFilter                                                                    |
       | RecordType.Name='Internal' AND GroupCode__c='{!GroupCode}' AND Status__c ='Active' | RecordType.Name='Internal' AND GroupCode__c='{!GroupCode}' AND Status__c ='Active' |
-

@@ -57,7 +57,7 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    Then I see Advance Filter is disabled from table "toggleFlexTablePrograms"
+    Then I see Advance Filter is disabled from table "toggleFlexTablePrograms" with data target value "#advfPrograms"
 
   @34028    @disablingMenuIcon-gPlanning
   Scenario: validate disabling of menu icon from Program flex table

@@ -76,14 +76,6 @@ public class GovGrantsManager extends ProjectWebServices {
     }
 
     /**
-     * click on any button on modal content
-     */
-    public void clickModalContentSpecificButton(String buttonName) {
-        EyeThink.saas().modal().clickModalContentSpecificButton(buttonName);
-        EyeThink.saas().mainPage().waitForNavigationLogoToDisappear();
-    }
-
-    /**
      * @return: List of all side bar headers.
      */
     public List<Elements> getSideBarHeadersList() {
@@ -182,15 +174,6 @@ public class GovGrantsManager extends ProjectWebServices {
     public List<Elements> getCompleteTableRow() {
         EyeThink.core().elementReference().onWeb(completeTableRow);
         return EyeThink.saas().flexTable().getCompleteTableRow();
-    }
-
-    /**
-     * click on main Accordian header
-     *
-     * @param headerName
-     */
-    public void clickAccordianHeader(String headerName) {
-        EyeThink.core().click().onWeb(EyeThink.saas().sideBar().getSideBarHeader(headerName));
     }
 
     /**

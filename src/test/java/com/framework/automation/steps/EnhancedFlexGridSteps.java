@@ -7,6 +7,7 @@ import io.cucumber.java.en.When;
 
 
 import java.math.BigDecimal;
+import java.util.List;
 
 public class EnhancedFlexGridSteps {
 	EnhancedFlexGridPage enhancedFlexGrid;
@@ -30,9 +31,19 @@ public class EnhancedFlexGridSteps {
 		enhancedFlexGrid.enterValueForTextareaAtEnhancedGridColumn(enteredValue, tableId);
 	}
 
-	@Then("^I see Advance Filter is disabled from table \"([^\"]*)\"$")
-	public void assertAdvanceFilterOptionDisabled(String tableId) {
-		enhancedFlexGrid.assertDisableAdvanceFilterFromEnhancedGrid(tableId);
+	@When("^I save the value from row \"([^\"]*)\" for column name \"([^\"]*)\" as \"([^\"]*)\" from flex table \"([^\"]*)\"$")
+	public void SaveTheValueFromRowForColumnNameAsFromFlexTable(String columnValueFromRow, String columnName, String key, String flexTableId) {
+		enhancedFlexGrid.saveSpecificValueFromFlexTableInsideGivenKey(columnValueFromRow, columnName, key, flexTableId);
+	}
+
+	@When("^I click on advance filter \"([^\"]*)\" of table id \"([^\"]*)\"$")
+	public void performClickOnAnvanceFilter(String dataTargetValue, String tableId) {
+		enhancedFlexGrid.performClickOnAdvanceFilterWithTableId(tableId, dataTargetValue);
+	}
+
+	@Then("^I see Advance Filter is disabled from table \"([^\"]*)\" with data target value \"([^\"]*)\"$")
+	public void assertAdvanceFilterOptionDisabled(String tableId, String dataTargetValue) {
+		enhancedFlexGrid.assertDisableAdvanceFilterFromEnhancedGrid(tableId, dataTargetValue);
 	}
 
 	@Then("^I see \"([^\"]*)\" shown as inside \"([^\"]*)\"$")
@@ -125,6 +136,11 @@ public class EnhancedFlexGridSteps {
 		enhancedFlexGrid.assertAscendingOrderOfEnhancedGridCurrencyColumnValue(text, order);
 	}
 
+	@Then("^I see grouped row value is in \"([^\"]*)\" order$")
+	public void assertRowSortingInAscendingOrderWithRowGrouping(String order) {
+		enhancedFlexGrid.assertAscendingOrderOfRowValueWithRowGrouping(order);
+	}
+
 	@Then("^I see \"([^\"]*)\" icon for \"([^\"]*)\" is at position \"([^\"]*)\" inside flex table$")
 	public void assertActionIconNotDisplayedForflexTable(String iconName, String tableId, String sequenceNumber) {
 		enhancedFlexGrid.assertSequenceOfEditActionOfEnhancedGrid(iconName, tableId, Integer.parseInt(sequenceNumber));
@@ -209,5 +225,20 @@ public class EnhancedFlexGridSteps {
 	@Then("^I see select box for picklist is not displayed for status inside table$")
 	public void assertSelectBoxForStatusColumn() {
 		enhancedFlexGrid.assertSelectBoxForStatusColumnDisplayedInViewMode();
+	}
+
+	@Then("^I see the Budget Period End Date field contains todays date$")
+	public void assertBudgetPeriodEndDateFieldContainsTodaysDate() {
+		enhancedFlexGrid.assertBugetPeriodDateField();
+	}
+
+	@Then("^I see \"([^\"]*)\" and \"([^\"]*)\" contains user names as \"([^\"]*)\"$")
+	public void assertStandardFieldsColumnValue(String text1, String text2, String userName) {
+		enhancedFlexGrid.assertUserNameAtStandardFieldsInsideEnhancedGridColumn(text1, text2, userName);
+	}
+
+	@Then("^I see subtotal value \"([^\"]*)\" for null record values$")
+	public void assertCellNullValue(String value) {
+		enhancedFlexGrid.assertCellValueForTotalAdjustedAmountAtEnhancedGrid(value);
 	}
 }
