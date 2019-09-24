@@ -13,11 +13,6 @@ public class FlexTableSteps {
 		flexTablePage = new FlexTablePage();
 	}
 
-	@When("^I click on top right parallel lines bar for \"([^\"]*)\"$")
-	public void clickTopRightParallelLinesBar(String title) {
-		flexTablePage.clickRightHeaderBars(title);
-	}
-
 	@When("^I click on \"([^\"]*)\" icon for \"([^\"]*)\" to save inside subtab$")
 	public void clickAnyIconInFlexTable(String iconName, String programRole) {
 		flexTablePage.clickRowLevelActionIconsInsideSubTab(iconName, programRole);
@@ -267,5 +262,15 @@ public class FlexTableSteps {
 	@Then("^I (see|cannot see) that \"([^\"]*)\" on page \"([^\"]*)\" of \"([^\"]*)\" pdf file$")
 	public void assertTExtNotDisplayed(String shouldBeDisplayed,String text, String pageNumber, String fileName) {
 		flexTablePage.assertTextNotDisplayedInPDF(shouldBeDisplayed, text, Integer.parseInt(pageNumber), fileName);
+	}
+
+	@Then("^I see take snap shot getting saved with \"([^\"]*)\"$")
+	public void assertTakeSnapshotGettingSaved(String text) {
+		flexTablePage.assertTakeSnapshotFunctionalityWorkingCorrectly(text);
+	}
+
+	@Then("^I see \"([^\"]*)\" is selected at program flex table$")
+	public void assertFlexTableIsDisplayed(String tableTitle) {
+		flexTablePage.assertFlexTableIsDisplayedWithTitle(tableTitle);
 	}
 }

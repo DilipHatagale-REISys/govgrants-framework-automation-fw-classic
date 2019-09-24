@@ -10,6 +10,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.io.File;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class FlexTablePage extends GovGrantsManager {
@@ -285,6 +286,21 @@ public class FlexTablePage extends GovGrantsManager {
      */
     public void assertSpecifiedUrlForEditActionOfProgramFlexTable(String newActionUrl) {
         Assert.assertTrue(isEditActionOpenedWithSpecifiedUrl(newActionUrl));
+    }
+
+    /**
+     * assert true if take snapshot option performing expected behaviour
+     */
+    public void assertTakeSnapshotFunctionalityWorkingCorrectly(String text) {
+        Assert.assertTrue(isContentGettingSavedBySanpShotOption(text));
+    }
+
+
+    /**
+     * assert true if draft programs is displayed as flex table title
+     */
+    public void assertFlexTableIsDisplayedWithTitle(String tableTitle) {
+        Assert.assertTrue(isExpectedFLexTableWithTitleIsDisplayed(tableTitle));
     }
 
     /**
@@ -620,7 +636,7 @@ public class FlexTablePage extends GovGrantsManager {
     private Boolean isFlexTableRowsTotalDisabled() {
         boolean flag = true;
         try {
-            if (getCompleteTableRow().stream().anyMatch(item -> EyeThink.core().is().onWeb().isDisplayed(item.nestedElement(totalRowsCalc)))){
+            if (getCompleteTableRow().stream().anyMatch(item -> EyeThink.core().is().onWeb().isDisplayed(item.nestedElement(totalRowsCalc)))) {
                 flag = false;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -1016,5 +1032,39 @@ public class FlexTablePage extends GovGrantsManager {
         }
         return EyeThink.core().file().adobeReader().readFromAdobeFileOnLocalAtUserDirectory(
                 file.getAbsolutePath().toString() + "\\" + fileName + ".pdf", pageNumber);
+    }
+
+    /**
+     * Return true if snapshot saving content inside snapshot history page block
+     */
+    private boolean isContentGettingSavedBySanpShotOption(String text) {
+        String filename = "";
+        if (text.equalsIgnoreCase("Todays Date")) {
+            String todaysDate = EyeThink.core().get().currentDateInDesiredFormat(DateTimeFormatter.ofPattern("M/d/yyyy")).replaceAll("^0", "");
+            filename = "SnapShot on " + todaysDate + " 12:19 AM.pdf";
+        } else
+            filename = text;
+        try {
+            EyeThink.core().elementReference().onWeb(By.xpath("//tbody//tr[1]//span[contains(text(),'" + filename + "')]"));
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    /**
+     * Return true if snapshot saving content inside snapshot history page block
+     */
+    private boolean isExpectedFLexTableWithTitleIsDisplayed(String tableTitle) {
+        boolean flag = false;
+        try {
+            if (EyeThink.core().is().onWeb().isDisplayed(By.xpath("//div[contains(@class,'panel-title')][text()='" + tableTitle + "']")))
+                ;
+            {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
     }
 }

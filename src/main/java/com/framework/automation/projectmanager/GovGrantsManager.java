@@ -207,17 +207,6 @@ public class GovGrantsManager extends ProjectWebServices {
     }
 
     /**
-     * click on right header bars
-     */
-    public void clickRightHeaderBars(String title) {
-        try {
-            EyeThink.core().scroll().onWeb().toElementCenter(reachOutToTmpActiveGrantsGrid);
-        } catch (Exception e) {
-        }
-        EyeThink.saas().phasePannel().clickParallelMenuBars(title);
-    }
-
-    /**
      * get specific quick search
      *
      * @param category

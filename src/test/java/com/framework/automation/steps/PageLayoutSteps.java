@@ -365,4 +365,9 @@ public class PageLayoutSteps {
     public void assertExpandCollapseWorking() {
         pageLayoutPage.assertFunctionalityOfExpandCollapse();
     }
+
+    @Then("^I see error message \"([^\"]*)\" for invalid input at \"([^\"]*)\"$")
+    public void assertErrorMessageAtLightningLookupSearch(String inputText, String fieldApiName) {
+        pageLayoutPage.assertErrorMessageForInvalidInputAtlightningLookup(inputText, fieldApiName);
+    }
 }

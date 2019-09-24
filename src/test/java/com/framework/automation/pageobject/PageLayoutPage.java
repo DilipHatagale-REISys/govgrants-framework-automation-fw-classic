@@ -6,6 +6,7 @@ import eyethink.automation.bots.objects.Elements;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+
 import java.util.List;
 
 public class PageLayoutPage extends GovGrantsManager {
@@ -452,6 +453,13 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * return true if error message is displpayed for invalid input at lightning lookup
+     */
+    public void assertErrorMessageForInvalidInputAtlightningLookup(String inputText, String fieldApiName) {
+        Assert.assertTrue(isErrorMessageAtLightningLookupSearch(inputText, fieldApiName));
+    }
+
+    /**
      * click on help text inside program information page block
      *
      * @param blockTitle
@@ -579,7 +587,7 @@ public class PageLayoutPage extends GovGrantsManager {
         EyeThink.core().WaitFor().magicWait(lookupButton);
         if (lookupText.length > 1) {
             EyeThink.core().enterText().onWeb().enter(lookupInputBox, "Allen");
-        } else{
+        } else {
             EyeThink.core().enterText().onWeb().clear(lookupInputBox);
         }
         EyeThink.core().click().withJavaScript(lookupButton);
@@ -654,7 +662,6 @@ public class PageLayoutPage extends GovGrantsManager {
 
     /**
      * click and select package type and package for business form
-     *
      */
     public void selectPackageAndPackageType() {
         EyeThink.core().WaitFor().makeThreadSleep(3000);
@@ -678,7 +685,7 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public void clickExpandCollapseIconAtTableHeader(String panelHeaderName) {
         WebElement expandCollapseIcon = EyeThink.core().elementReference().onWeb(By.xpath("//div[@class='panel-heading']//a[@title='" + panelHeaderName + "']"));
-            EyeThink.core().click().onWeb(expandCollapseIcon);
+        EyeThink.core().click().onWeb(expandCollapseIcon);
     }
 
     /**
@@ -1378,11 +1385,25 @@ public class PageLayoutPage extends GovGrantsManager {
 
     /**
      * return true if order of svg arrow is in expected order
+     *
      * @return
      */
     private boolean isExpandCollapseWorkingAsExpected() {
         boolean flag = false;
-        if (EyeThink.core().get().attribute(By.xpath("//div[@class='panel-heading']//a[@title='Internal Review Panel Users']"),"class").equalsIgnoreCase("collapsed")) {
+        if (EyeThink.core().get().attribute(By.xpath("//div[@class='panel-heading']//a[@title='Internal Review Panel Users']"), "class").equalsIgnoreCase("collapsed")) {
+            flag = true;
+        }
+        return flag;
+    }
+
+    /**
+     * return true if expected error messge is displayed for invalid input
+     *
+     * @return
+     */
+    private boolean isErrorMessageAtLightningLookupSearch(String inputText, String fieldApiName) {
+        boolean flag = false;
+        if (EyeThink.core().is().onWeb().isDisplayed(By.xpath("//div[@id='" + fieldApiName + "']//b[contains(text(),'" + inputText + "')]"))) {
             flag = true;
         }
         return flag;

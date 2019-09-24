@@ -166,7 +166,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I click on top right parallel lines bar for "Monitoring Schedule For All Active Grants"
+   When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     Then I see "Download as PDF""Download as CSV" options inside "Monitoring Schedule For All Active Grants" disabled
 
   @35439    @disblingQuickSearchForEnhancedGrid-gPlanning @smoke
@@ -396,7 +396,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I click on top right parallel lines bar for "Monitoring Schedule For All Active Grants"
+   When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     Then I see "Help" options inside "Monitoring Schedule For All Active Grants" enabled
 
   @41311    @helpTextFieldAtEnhancedGridColumnHeader-gPlanning
@@ -625,7 +625,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
     When I expand nested table containing column value "Demo_Title"
-    When I click on top right parallel lines bar for "Active Awards"
+    When I click on parallel lines menu bar with data target value "#TmpGrantorActiveAwardsGridFlexToggle"
     Then I see "Help" options inside "Active Awards" enabled
 
   @42024    @helpTextFieldAtChildTableEnhancedGridColumnHeader-gPlanning
@@ -861,7 +861,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
     When I expand nested table containing column value "Demo_Title"
-    When I click on top right parallel lines bar for "Active Awards"
+    When I click on parallel lines menu bar with data target value "#TmpGrantorActiveAwardsGridFlexToggle"
     Then I see "Download as PDF""Download as CSV" options inside "Active Awards" disabled
 
   @44996    @disablingQuickSearchForChildFlextTableEnhancedGrid-gPlanning
@@ -1208,7 +1208,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I click on top right parallel lines bar for "Monitoring Schedule For All Active Grants"
+   When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
     And I download the file
     Then I see that "Activated" on page "1" of "govgrants" pdf file
@@ -1283,7 +1283,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I click on top right parallel lines bar for "Monitoring Schedule For All Active Grants"
+   When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
     And I download the file
     Then I see that "Activated" on page "1" of "govgrants" pdf file
@@ -1309,7 +1309,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I click on top right parallel lines bar for "Monitoring Schedule For All Active Grants"
+   When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
     And I download the file
     Then I see that "Active" on page "1" of "govgrants" pdf file
@@ -1567,7 +1567,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-12132-001" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "GT-12132-001"
-    When I click on top right parallel lines bar for "Active Awards"
+    When I click on parallel lines menu bar with data target value "#TmpGrantorActiveAwardsGridFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Active Awards"
     And I download the file
     Then I see that "Being Amended" on page "1" of "govgrants" pdf file
@@ -1598,7 +1598,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-12132-001" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "GT-12132-001"
-    When I click on top right parallel lines bar for "Active Awards"
+    When I click on parallel lines menu bar with data target value "#TmpGrantorActiveAwardsGridFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Active Awards"
     And I download the file
     Then I see that "Being Amended" on page "1" of "govgrants" pdf file
@@ -1628,7 +1628,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-12132-001" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "GT-12132-001"
-    When I click on top right parallel lines bar for "Active Awards"
+    When I click on parallel lines menu bar with data target value "#TmpGrantorActiveAwardsGridFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Active Awards"
     And I download the file
     Then I see that "Activated" on page "1" of "govgrants" pdf file
@@ -1652,7 +1652,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I click on top right parallel lines bar for "Monitoring Schedule For All Active Grants"
+   When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
     Then I see "Active" in xls file "govgrants"
 
@@ -1671,7 +1671,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I click on top right parallel lines bar for "Monitoring Schedule For All Active Grants"
+   When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
     Then I see "Active" in xls file "govgrants"
 
@@ -1694,7 +1694,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I click on top right parallel lines bar for "Monitoring Schedule For All Active Grants"
+   When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
     Then I see "Active" in xls file "govgrants"
 
@@ -1715,7 +1715,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-12132-001" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "GT-12132-001"
-    When I click on top right parallel lines bar for "Active Awards"
+    When I click on parallel lines menu bar with data target value "#TmpGrantorActiveAwardsGridFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Active Awards"
     Then I see "Being Amended" in xls file "govgrants"
 
@@ -1738,7 +1738,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-12132-001" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "GT-12132-001"
-    When I click on top right parallel lines bar for "Active Awards"
+    When I click on parallel lines menu bar with data target value "#TmpGrantorActiveAwardsGridFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Active Awards"
     Then I see "Activated" in xls file "govgrants"
 
@@ -1763,7 +1763,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-12132-001" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "GT-12132-001"
-    When I click on top right parallel lines bar for "Active Awards"
+    When I click on parallel lines menu bar with data target value "#TmpGrantorActiveAwardsGridFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Active Awards"
     Then I see "Being Amended" in xls file "govgrants"
 
