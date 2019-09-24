@@ -28,7 +28,7 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I click on top right parallel lines bar for "Draft Programs"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
     Then I see "Download as PDF""Download as CSV" options inside "Draft Programs" disabled
 
   @34026    @disblingQuickSearch-gPlanning
@@ -378,7 +378,7 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I click on top right parallel lines bar for "Draft Programs"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
     Then I see "Help" options inside "Draft Programs" enabled
 
   @39298    @enablePageSizeFieldAtFlexTable-gPlanning
@@ -468,7 +468,7 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I click on top right parallel lines bar for "Draft Programs"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
     And I select "Download as PDF" from parallel lines dropdown of "Draft Programs"
     And I download the file
     Then I cannot see that "Status" on page "1" of "govgrants" pdf file
@@ -605,7 +605,7 @@ Feature: Flex Table Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Roles" sub tab
-    When I click on top right parallel lines bar for "Roles And Responsibilities"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTableProgramRolesAndResponsibilities"
     Then I see "New" options inside "Roles And Responsibilities" enabled
 
   @40088    @headerActionDisplayTypeFieldAtFlexTableTopLevelNewActionAsLink-gPlanning
@@ -967,7 +967,7 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I click on top right parallel lines bar for "Draft Programs"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
     And I select "Download as PDF" from parallel lines dropdown of "Draft Programs"
     And I download the file
     Then I see that "Active Programs" on page "1" of "govgrants" pdf file

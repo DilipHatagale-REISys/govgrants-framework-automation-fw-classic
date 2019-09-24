@@ -109,4 +109,9 @@ public class FlexGridSteps {
 	public void assertLookupFieldRenderingMode(String lookupFieldName) {
 		flexGridPage.assertLookupFieldRenderingBehaviourInEditMode(lookupFieldName);
 	}
+
+	@Then("^I see expected table with id \"([^\"]*)\"$")
+	public void assertTableWithId(String tableId) {
+		flexGridPage.assertTableRenderedCompletely(tableId);
+	}
 }

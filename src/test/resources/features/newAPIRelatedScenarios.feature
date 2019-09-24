@@ -292,3 +292,15 @@ Feature: New API related scenarios temporary
     Examples:
       | oldLookupFilter                                                                    | newLookupFilter                                                                    |
       | RecordType.Name='Internal' AND GroupCode__c='{!GroupCode}' AND Status__c ='Active' | RecordType.Name='Internal' AND GroupCode__c='{!GroupCode}' AND Status__c ='Active' |
+
+  @60540    @errorMessageForInvalidInputAtLookupSearch
+  Scenario: Validate lookup search throwing error message for invalid input
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I click "close" icon for lightning lookup
+    When I enter value "'''" into field "custom_lookupAccount__c"
+    Then I see error message "No Records Found" for invalid input at "custom_lookupAccount__c"

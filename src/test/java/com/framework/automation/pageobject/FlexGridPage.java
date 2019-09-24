@@ -200,6 +200,15 @@ public class FlexGridPage extends GovGrantsManager {
         Assert.assertTrue(isLookupFieldComingInViewMode(lookupFieldName));
     }
 
+    /**
+     * assert true if expected table is present/displayed
+     *
+     * @param tableId
+     */
+    public void assertTableRenderedCompletely(String tableId) {
+        Assert.assertTrue(isTableLoadedProperlyWithTableId(tableId));
+    }
+
     /*********
      * "Local Methods with complete functionality - private"
      *****************/
@@ -252,7 +261,7 @@ public class FlexGridPage extends GovGrantsManager {
             try {
                 total += Double.parseDouble(columnValue.getText());
             } catch (Exception e) {
-                EyeThink.core().report().write(LogLevel.PROJECT_LAYER_ERROR,"An exception occured with column value '" + columnValue.getText() + "'");
+                EyeThink.core().report().write(LogLevel.PROJECT_LAYER_ERROR, "An exception occured with column value '" + columnValue.getText() + "'");
                 throw e;
             }
         }
@@ -430,6 +439,20 @@ public class FlexGridPage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (EyeThink.core().is().onWeb().isDisplayed(By.xpath("//field//a[contains(text(),'" + lookupFieldNAme + "')]"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * @return true if table loaded properly
+     */
+    private Boolean isTableLoadedProperlyWithTableId(String tableId) {
+        boolean flag = false;
+        try {
+            if (EyeThink.core().is().onWeb().isDisplayed(By.xpath("//div[@class ='panel-body collapse in' and @id='" + tableId + "']"))) {
                 flag = true;
             }
         } catch (Exception e) {

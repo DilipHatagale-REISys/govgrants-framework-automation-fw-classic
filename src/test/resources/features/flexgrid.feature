@@ -70,7 +70,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
-    When I click on top right parallel lines bar for "Goals Objectives"
+    When I click on parallel lines menu bar with data target value "#toggleFGridProgramPerformanceMgmtGridView"
     Then I see "Download as PDF""Download as CSV" options inside "Goals Objectives" disabled
 
   @34327    @disableFlexTableFieldName-ProgramStrategicGoals
@@ -427,7 +427,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
-    When I click on top right parallel lines bar for "Key Outcomes"
+    When I click on parallel lines menu bar with data target value "#toggleFGridProgramOutcomes"
     Then I see "Download as PDF""Download as CSV" options inside "Key Outcomes" disabled
 
   @49461    @enableTotalFieldAtProgramOutcomesFlexTable-gPlanning
@@ -570,7 +570,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
-    When I click on top right parallel lines bar for "Key Outcomes"
+    When I click on parallel lines menu bar with data target value "#toggleFGridProgramOutcomes"
     Then I see "Help" options inside "Key Outcomes" enabled
 
   @50230   @orderBySortByFieldAtProgramOutcomesFlexTableForAscendingOrder-gPlanning
@@ -974,7 +974,7 @@ Feature: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
-    When I click on top right parallel lines bar for "Monitoring Schedule For All Active Grant"
+    When I click on parallel lines menu bar with data target value "#toggleFGridMonitoringGridView"
     Then I see "Help" options inside "Monitoring Schedule For All Active Grant" enabled
 
   @50371    @enablePaginationFieldAtActiveGrantsGridParentFlexTable-gMonitoring
@@ -1070,7 +1070,7 @@ Feature: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
-    When I click on top right parallel lines bar for "Monitoring Schedule For All Active Grant"
+    When I click on parallel lines menu bar with data target value "#toggleFGridMonitoringGridView"
     And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grant"
     And I download the file
     Then I see no "ID Title" on page "1" of "govgrants" pdf file for Block Content
@@ -1086,7 +1086,7 @@ Feature: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
-    When I click on top right parallel lines bar for "Monitoring Schedule For All Active Grant"
+    When I click on parallel lines menu bar with data target value "#toggleFGridMonitoringGridView"
     And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grant"
     And I download the file
     Then I see "ID Title" on page "1" of "govgrants" pdf file for Table Content
@@ -1102,7 +1102,7 @@ Feature: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
-    When I click on top right parallel lines bar for "Monitoring Schedule For All Active Grant"
+    When I click on parallel lines menu bar with data target value "#toggleFGridMonitoringGridView"
     Then I see "Download as PDF""Download as CSV" options inside "Monitoring Schedule For All Active Grant" disabled
 
   @50393    @helpTextFieldAtActiveGrantsGridParentFlexTable-gMonitoring
