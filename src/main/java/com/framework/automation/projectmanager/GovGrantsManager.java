@@ -371,7 +371,7 @@ public class GovGrantsManager extends ProjectWebServices {
      * @param SubTabName
      */
     public WebElement getSubTabsInsideMainDetailPage(String SubTabName) {
-        EyeThink.core().WaitFor().magicWait(By.xpath("//div[@id='myTabs']/ul/li/a[@name='" + SubTabName + "']"));
+        EyeThink.core().elementReference().onWeb(By.xpath("//div[@id='myTabs']/ul/li/a[@name='" + SubTabName + "']"));
         return EyeThink.core().elementReference().onWeb(By.xpath("//div[@id='myTabs']/ul/li/a[@name='" + SubTabName + "']"));
     }
 
@@ -379,7 +379,7 @@ public class GovGrantsManager extends ProjectWebServices {
      * get list of sub tab inside main detail page like overview etc.
      */
     public List<Elements> getListSubTabsInsideMainDetailPage() {
-        EyeThink.core().WaitFor().magicWait(By.xpath("//div[@id='myTabs']/ul/li/a"));
+        EyeThink.core().elementReference().onWeb(By.xpath("//div[@id='myTabs']/ul/li/a"));
         return EyeThink.core().elementReference().listOfElements().onWeb(By.xpath("//div[@id='myTabs']/ul/li/a"));
     }
 
@@ -387,8 +387,7 @@ public class GovGrantsManager extends ProjectWebServices {
      * get list of page block inside detail page like overview etc.
      */
     public List<Elements> getListPageBlockInsideMainDetailPage() {
-        EyeThink.core().WaitFor()
-                .magicWait(By.xpath("//div[@class='tab-pane fade active in']//div[@class='panel-heading']"));
+        EyeThink.core().elementReference().onWeb(By.xpath("//div[@class='tab-pane fade active in']//div[@class='panel-heading']"));
         return EyeThink.core().elementReference().listOfElements().onWeb(By.xpath("//div[@class='tab-pane fade active in']//div[@class='panel-heading']"));
     }
 
