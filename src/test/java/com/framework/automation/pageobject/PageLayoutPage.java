@@ -570,7 +570,7 @@ public class PageLayoutPage extends GovGrantsManager {
      */
 
     public void clickLookupModalQuickSearch() {
-        EyeThink.core().WaitFor().magicWait(lookupSearchButton);
+        EyeThink.core().elementReference().onWeb(lookupSearchButton);
         EyeThink.core().enterText().onWeb().clear(EyeThink.core().elementReference().onWeb(lookupSearchInputBox));
         EyeThink.core().click().withJavaScript(lookupSearchButton);
     }
@@ -584,7 +584,7 @@ public class PageLayoutPage extends GovGrantsManager {
         By lookupButton = By.xpath("//img[@title='" + lookupText[0] + "']");
         By lookupInputBox = By.xpath("//img[@title='" + lookupText[0] + "']/../../input[@type='text']");
         By lookupFrame = By.xpath("//iframe[@id='" + frameId + "']");
-        EyeThink.core().WaitFor().magicWait(lookupButton);
+        EyeThink.core().elementReference().onWeb(lookupButton);
         if (lookupText.length > 1) {
             EyeThink.core().enterText().onWeb().enter(lookupInputBox, "Allen");
         } else {
