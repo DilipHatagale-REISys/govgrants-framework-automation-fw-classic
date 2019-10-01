@@ -306,7 +306,7 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Financials" sub tab
     Then I see "Associate" button inside "Funding Account Information" flex table not displayed
 
-  @42704    @hideExpressioJsonForRightOperandForUserAppRecipientWithOperatorIn-gPlanning @check @wip
+  @42704    @hideExpressioJsonForRightOperandForUserAppRecipientWithOperatorIn-gPlanning
   Scenario: validate disabling of Associate button for user app Recipient with operator In -gOpportunities
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -314,14 +314,29 @@ Feature: Expression Builder Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                              | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForUseAppRecipientWithOperatorIn | GrantProjectAreas  | Name                      | View                       |
-    When I login as "Automation" user
-    When I setup my app as "As a Sub-Recipient"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I navigate to "Financials" sub tab
-    Then I see "Associate" button inside "Funding Account Information" flex table not displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Grants" tab
+    When I perform quick search for "GT-FDM18-001"
+    When I click on "View" icon for "GT-FDM18-001" inside table
+    When I navigate to "Overview" sub tab
+    Then I cannot see row level action button "View" against "Application Project Area" in flex table with id "GrantProjectAreas"
+
+  @44283    @hideExpressioJsonForRightOperandForUserAppRecipientandOperatorInAtPageLayoutAction-gPlanning
+  Scenario: validate disabling of Create button for user app Recipient with operator In -gOpportunities
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField                     | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | Hide Expression JSON |                   | Qualified Annoucement External Grantor | Name                      | Create Application         |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                             | coreComponentField                     | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForUseAppRecipientandOperatorIn | Qualified Annoucement External Grantor | Name                      | Create Application         |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Opportunities" tab
+    When I navigate to "Qualified Opportunities" content inside "Activities" subheader on left panel
+    When I perform quick search for "Announcement for Toll Plaza" in "QualifiedClosedAnnouncementsExternal" panel
+    When I click on "View" icon for "Announcement for Toll Plaza" inside table
+    Then I see "Create Application" button is not displayed at view detail page
 
   @42708    @hideExpressioJsonForRightOperandForProfileSystemAdministratorWithOperatorAND-gPlanning @smoke
   Scenario: validate disabling of Associate button for profile system adminitrator with operator AND -gPlanning
@@ -1515,7 +1530,7 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantee State Program | Name                      | TAB-029                    |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName            | fieldNewValue                                                                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory               | fieldName            | fieldNewValue                                                                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandContextEditCreateWithNOTINOperatorUserTypeWithINOperatorUsingOROperator | Grantee State Program | Name                      | TAB-029                    |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -1547,7 +1562,7 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperandProfilesPMUserAndOperatorIN | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
@@ -1571,7 +1586,7 @@ Feature: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block is not displayed  
+    Then I see "Program Information" page block is not displayed
 
   @45709    @hide_expression_Program_Information_Page_Block_UserTypeIN_Internal_AND_ProfileIN_SystemAdministrator
   Scenario: Hide Program Information from Overview Tab for ADMIN User type internal using (UserTypeIN(Internal)ANDProfileIN(SystemAdministrator))
@@ -1620,15 +1635,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Information" page block is not displayed
-    
+
   @45711    @hide_expression_Program_Information_Page_Block_Title_Context_InEdit
   Scenario: Hide Program Information from Overview Tab for ADMIN User type internal using Context IN at program edit page
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperandContextInEditForPageBlockTitle| Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperandContextInEditForPageBlockTitle | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1636,15 +1651,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Information" page block is not displayed
-    
+
   @45712    @hide_expression_Program_Information_Page_Block_Title_Context_InView
   Scenario: Hide Program Information from Overview Tab for ADMIN User type internal using context IN at program view page
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperandContextInViewForPageBlockTitle| Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperandContextInViewForPageBlockTitle | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1652,15 +1667,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Information" page block is not displayed
-    
-   @45713    @hide_expression_Program_Information_Page_Block_Title_Context_NotIn_With_Create_Edit
-   Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User type internal using context NOT IN (create,Edit)at program Edit page
+
+  @45713    @hide_expression_Program_Information_Page_Block_Title_Context_NotIn_With_Create_Edit
+  Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User type internal using context NOT IN (create,Edit)at program Edit page
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperandContextNOTInWith(create,edit)ForPageBlockTitle| Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperandContextNOTInWith(create,edit)ForPageBlockTitle | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1675,8 +1690,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperandContext_NOT_IN_Edit_Create_OR_UserType_IN_Internal| Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                                             | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperandContext_NOT_IN_Edit_Create_OR_UserType_IN_Internal | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1691,8 +1706,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperandContext_NOT_IN_Edit_Create_AND_UserType_IN_Internal| Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperandContext_NOT_IN_Edit_Create_AND_UserType_IN_Internal | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1707,8 +1722,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperandContext_IN_View_OR_Profile_IN_System_Administrator| Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                                             | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperandContext_IN_View_OR_Profile_IN_System_Administrator | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1723,8 +1738,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperandContext_IN_View_AND_Profile_IN_System_Administrator| Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperandContext_IN_View_AND_Profile_IN_System_Administrator | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1739,8 +1754,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperandContext_NOT_IN_Edit_Create_OR_Profile_IN_System_Administrator_Validate_using_PM_profile| Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                                                                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperandContext_NOT_IN_Edit_Create_OR_Profile_IN_System_Administrator_Validate_using_PM_profile | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1748,15 +1763,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Information" page block title
-    
-    @45868    @hide_expression_Program_Information_Page_Block_Title_For_Field_FundedAmount__c_EqualTo_400000 
-   Scenario: Hide Program Information from Overview Tab for ADMIN User using field (FundedAmount_c=400000) at program view page
+
+  @45868    @hide_expression_Program_Information_Page_Block_Title_For_Field_FundedAmount__c_EqualTo_400000
+  Scenario: Hide Program Information from Overview Tab for ADMIN User using field (FundedAmount_c=400000) at program view page
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                                  | coreComponentField    | coreCOmponentSubFieldName| coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand(Field(FundedAmount_c_Equals_To_400000))| Grantee State Program | GNT__PageBlockTitle__c   | Program Information        |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                                   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand(Field(FundedAmount_c_Equals_To_400000)) | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1764,15 +1779,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Information" page block is not displayed
-    
-   @45872    @hide_expression_Program_Information_Page_Block_Title_For_Field_FundedAmount__c_NotEqualTo_400000 
-   Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User using field (FundedAmount_c!=400000) at program view page
+
+  @45872    @hide_expression_Program_Information_Page_Block_Title_For_Field_FundedAmount__c_NotEqualTo_400000
+  Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User using field (FundedAmount_c!=400000) at program view page
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                                     | coreComponentField    | coreCOmponentSubFieldName| coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand(Field(FundedAmount_c_NotEquals_To_400000))| Grantee State Program | GNT__PageBlockTitle__c   | Program Information        |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                                      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand(Field(FundedAmount_c_NotEquals_To_400000)) | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1780,15 +1795,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Information" page block title
-    
-   @45875    @hide_expression_Program_Information_Page_Block_Title_For_Field_Number__c_greaterThan_5678
-   Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User using field (Number__c > 5678) at program view page
+
+  @45875    @hide_expression_Program_Information_Page_Block_Title_For_Field_Number__c_greaterThan_5678
+  Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User using field (Number__c > 5678) at program view page
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                            | coreComponentField    | coreCOmponentSubFieldName| coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand(Field(Number_c_greaterThan_5678))| Grantee State Program | GNT__PageBlockTitle__c   | Program Information        |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                             | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand(Field(Number_c_greaterThan_5678)) | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1796,15 +1811,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Information" page block title
-    
-   @45876    @hide_expression_Program_Information_Page_Block_Title_For_Field_Number__c_lessThan_5678
-   Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User using field (Number__c < 5678) at program view page
+
+  @45876    @hide_expression_Program_Information_Page_Block_Title_For_Field_Number__c_lessThan_5678
+  Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User using field (Number__c < 5678) at program view page
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                         | coreComponentField    | coreCOmponentSubFieldName| coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand(Field(Number_c_lessThan_5678))| Grantee State Program | GNT__PageBlockTitle__c   | Program Information        |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand(Field(Number_c_lessThan_5678)) | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1812,15 +1827,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Information" page block title
-    
-   @45877    @hide_expression_Program_Information_Page_Block_Title_For_Field_CFDA_Data__c_equalto_true
-   Scenario: Hide Program Information from Overview Tab for ADMIN User using field (CFDA_Data__c=true) at program view page
+
+  @45877    @hide_expression_Program_Information_Page_Block_Title_For_Field_CFDA_Data__c_equalto_true
+  Scenario: Hide Program Information from Overview Tab for ADMIN User using field (CFDA_Data__c=true) at program view page
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                           | coreComponentField    | coreCOmponentSubFieldName| coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand(Field(CFDA_Data__c_equalto_true)| Grantee State Program | GNT__PageBlockTitle__c   | Program Information        |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand(Field(CFDA_Data__c_equalto_true) | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1828,15 +1843,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Information" page block is not displayed
-    
-   @45878    @hide_expression_Program_Information_Page_Block_Title_For_Field_CFDA_Data__c_notequalto_true
-   Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User using field (CFDA_Data__c != true) at program view page
+
+  @45878    @hide_expression_Program_Information_Page_Block_Title_For_Field_CFDA_Data__c_notequalto_true
+  Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User using field (CFDA_Data__c != true) at program view page
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                              | coreComponentField    | coreCOmponentSubFieldName| coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand(Field(CFDA_Data__c_notequalto_true)| Grantee State Program | GNT__PageBlockTitle__c   | Program Information        |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand(Field(CFDA_Data__c_notequalto_true) | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1851,8 +1866,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                              | coreComponentField    | coreCOmponentSubFieldName| coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperandContext_NOT_IN_Edit_Create_OR_Profile_IN_System_Administrator_PMUser| Grantee State Program | GNT__PageBlockTitle__c   | Program Information        |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperandContext_NOT_IN_Edit_Create_OR_Profile_IN_System_Administrator_PMUser | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1867,8 +1882,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                              | coreComponentField    | coreCOmponentSubFieldName| coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperandContext_UserApp_IN_StateasGrantor| Grantee State Program | GNT__PageBlockTitle__c   | Program Information        |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperandContext_UserApp_IN_StateasGrantor | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1883,8 +1898,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                              | coreComponentField    | coreCOmponentSubFieldName| coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperandContext_UserApp_NOT_IN_StateasGrantor| Grantee State Program | GNT__PageBlockTitle__c   | Program Information        |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperandContext_UserApp_NOT_IN_StateasGrantor | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1899,8 +1914,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                              | coreComponentField    | coreCOmponentSubFieldName| coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_Equals_ProgramType__c_Grant| Grantee State Program | GNT__PageBlockTitle__c   | Program Information        |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_Equals_ProgramType__c_Grant | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1915,8 +1930,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                              | coreComponentField    | coreCOmponentSubFieldName| coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_Not_Equals_ProgramType_c_Grant| Grantee State Program | GNT__PageBlockTitle__c   | Program Information        |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_Not_Equals_ProgramType_c_Grant | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2020,15 +2035,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Information" page block is not displayed
-    
-    @45854    @hide_expression_Program_Information_Page_Block_Title_LeftOperandField_Account__r.Name_IN_DepartmentofCommunityHealth_OR_StartDate__c_greaterthan_11/30/2020
+
+  @45854    @hide_expression_Program_Information_Page_Block_Title_LeftOperandField_Account__r.Name_IN_DepartmentofCommunityHealth_OR_StartDate__c_greaterthan_11/30/2020
   Scenario: Hide Program Information from Overview Tab using field Account__r.Name IN Department of Community Health OR StartDate__c > 11/30/2020 ) at program view page
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                                                                                      | coreComponentField    | coreCOmponentSubFieldName| coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperandField(Account__r_Name_IN_DepartmentofCommunityHealth_OR_StartDate__c_greaterthan_11/30/2020)| Grantee State Program | GNT__PageBlockTitle__c   | Program Information        |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                                                                                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperandField(Account__r_Name_IN_DepartmentofCommunityHealth_OR_StartDate__c_greaterthan_11/30/2020) | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2036,31 +2051,31 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Information" page block is not displayed
-    
+
   @45855    @hide_expression_Program_Information_Page_Block_Title_LeftOperandField_UserApp_IN_StateasGrantor_for_AND
   Scenario: Hide Program Information from Overview Tab using field (UserApp IN (StateasGrantor)) for AND at program view page
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                                                           | coreComponentField    | coreCOmponentSubFieldName| coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:hide_expression_Program_Information_Page_Block_Title_LeftOperandField_UserApp_IN_StateasGrantor_for_AND| Grantee State Program | GNT__PageBlockTitle__c   | Program Information        |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:hide_expression_Program_Information_Page_Block_Title_LeftOperandField_UserApp_IN_StateasGrantor_for_AND | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block is not displayed  
-    
+    Then I see "Program Information" page block is not displayed
+
   @45859    @hide_expression_Program_Information_Page_Block_Title_LeftOperandField_FunderType__c_CONTAINS_Federal
   Scenario: Set up configuration for Hide Program Information from Overview Tab using Field (FunderType__c CONTAINS Federal) program view page
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                                                        | coreComponentField    | coreCOmponentSubFieldName| coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:hide_expression_Program_Information_Page_Block_Title_LeftOperandField_FunderType__c_CONTAINS_Federal| Grantee State Program | GNT__PageBlockTitle__c   | Program Information        |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:hide_expression_Program_Information_Page_Block_Title_LeftOperandField_FunderType__c_CONTAINS_Federal | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2068,15 +2083,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Information" page block is not displayed
-    
+
   @45879    @hide_expression_Program_Information_Page_Block_Title_LeftOperandField_CFDA_Data__c_equalto_true_for_OR
   Scenario: Set up configuration for Hide Program Information from Overview Tab using Field Field ( CFDA_Data__c = true ) for OR program view page
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                                                          | coreComponentField    | coreCOmponentSubFieldName| coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:hide_expression_Program_Information_Page_Block_Title_LeftOperandField_CFDA_Data__c_equalto_true_for_OR| Grantee State Program | GNT__PageBlockTitle__c   | Program Information        |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                                                           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:hide_expression_Program_Information_Page_Block_Title_LeftOperandField_CFDA_Data__c_equalto_true_for_OR | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2084,15 +2099,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Information" page block is not displayed
-    
+
   @45917    @hide_expression_ProgramCode_With_UserType_Internal @smoke
   Scenario: Set up configuration for Hide Program code from Overview page block using user type internal at program view page
     Given I have default configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue                                                                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetail_hide_expression_Program_Code_with_UserType_Internal| Grantee State Program | Name                      | PBD-3098                   |
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetail_hide_expression_Program_Code_with_UserType_Internal | Grantee State Program | Name                      | PBD-3098                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2100,15 +2115,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Code" is not displayed inside page block detail
-    
+
   @45918    @hide_expression_ProgramCode_With_UserType_NotIn_Internal
   Scenario: Set up configuration for Hide Program code from Overview page block using user type Not In Internal at program view page
     Given I have default configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue                                                                             | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetail_hide_expression_Program_Code_with_UserType_NotIn_Internal| Grantee State Program | Name                      | PBD-3098                   |
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetail_hide_expression_Program_Code_with_UserType_NotIn_Internal | Grantee State Program | Name                      | PBD-3098                   |
     When I login as "Automation-Reviewer" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2116,15 +2131,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Code" is not displayed inside page block detail
-    
+
   @45919    @hide_expression_ProgramCode_With_Profile_In_SystemAdministrator
   Scenario: Set up configuration for Hide Program code from Overview page block using profile In system administrator at program view page
     Given I have default configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue                                                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetail_hide_expression_Program_Code_with_Profile_In_SystemAdministrator| Grantee State Program | Name                      | PBD-3098                   |
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetail_hide_expression_Program_Code_with_Profile_In_SystemAdministrator | Grantee State Program | Name                      | PBD-3098                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2132,15 +2147,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Code" is not displayed inside page block detail
-    
+
   @45920    @hide_expression_ProgramCode_With_Context_In_View @smoke
   Scenario: Set up configuration for Hide Program code from Overview page block using context In view at program view page
     Given I have default configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue                                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetail_hide_expression_Program_Code_with_Context_In_View| Grantee State Program | Name                      | PBD-3098                   |
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetail_hide_expression_Program_Code_with_Context_In_View | Grantee State Program | Name                      | PBD-3098                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2148,15 +2163,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Code" is not displayed inside page block detail
-    
+
   @45921    @hide_expression_ProgramCode_With_Context_In_Edit
   Scenario: Set up configuration for Hide Program code from Overview page block using context In edit at program view page
     Given I have default configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue                                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetail_hide_expression_Program_Code_with_Context_In_Edit| Grantee State Program | Name                      | PBD-3098                   |
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetail_hide_expression_Program_Code_with_Context_In_Edit | Grantee State Program | Name                      | PBD-3098                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2164,15 +2179,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Code" is not displayed inside page block detail
-    
+
   @45923    @hide_expression_ProgramCode_With_Context_NotIn_View
   Scenario: Set up configuration for Hide Program code from Overview page block using context Not In View at program view page
     Given I have default configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetail_hide_expression_Program_Code_with_Context_NotIn_View| Grantee State Program | Name                      | PBD-3098                   |
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetail_hide_expression_Program_Code_with_Context_NotIn_View | Grantee State Program | Name                      | PBD-3098                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2180,15 +2195,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Code" is not displayed inside page block detail
-    
+
   @45924    @hide_expression_ProgramCode_With_Context_NotIn_Edit
   Scenario: Set up configuration for Hide Program code from Overview page block using context Not In Edit at program view page
     Given I have default configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetail_hide_expression_Program_Code_with_Context_NotIn_Edit| Grantee State Program | Name                      | PBD-3098                   |
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetail_hide_expression_Program_Code_with_Context_NotIn_Edit | Grantee State Program | Name                      | PBD-3098                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2196,15 +2211,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Code" is not displayed inside page block detail
-    
+
   @45925    @hide_expression_ProgramCode_With_UserApp_In_StateAsGrantor @smoke
   Scenario: Set up configuration for Hide Program code from Overview page block using UserApp In State As Grantor at program edit page
     Given I have default configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue                                                                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetail_hide_expression_Program_Code_with_UseApp_In_StateAsGrantor| Grantee State Program | Name                      | PBD-3098                   |
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetail_hide_expression_Program_Code_with_UseApp_In_StateAsGrantor | Grantee State Program | Name                      | PBD-3098                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2212,15 +2227,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Code" is not displayed inside page block detail
-    
+
   @45926    @hide_expression_ProgramCode_With_UserApp_NotIn_StateAsGrantor
   Scenario: Set up configuration for Hide Program code from Overview page block using UserApp NotIn State As Grantor at program view page
     Given I have default configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue                                                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetail_hide_expression_Program_Code_with_UseApp_NotIn_StateAsGrantor| Grantee State Program | Name                      | PBD-3098                   |
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetail_hide_expression_Program_Code_with_UseApp_NotIn_StateAsGrantor | Grantee State Program | Name                      | PBD-3098                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2228,15 +2243,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Code" inside page block details
-    
+
   @45930    @hide_expression_ProgramCode_With_UserType_Internal_Profile_Admin_Operator_AND
   Scenario: Set up configuration for Hide Program code from Overview page block using UserType Internal and profile Admin with operator AND at program edit page
     Given I have default configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue                                                                                                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetail_hide_expression_Program_Code_with_UserType_Internal_profile_Admin_With_Operator_AND| Grantee State Program | Name                      | PBD-3098                   |
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetail_hide_expression_Program_Code_with_UserType_Internal_profile_Admin_With_Operator_AND | Grantee State Program | Name                      | PBD-3098                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2244,15 +2259,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Code" is not displayed inside page block detail
-    
+
   @45932    @hide_expression_ProgramCode_With_UserType_Internal_Profile_Admin_Operator_OR
   Scenario: Set up configuration for Hide Program code from Overview page block using UserType Internal and profile Admin with operator OR at program edit page
     Given I have default configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue                                                                                                      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetail_hide_expression_Program_Code_with_UserType_Internal_profile_Admin_With_Operator_OR| Grantee State Program | Name                      | PBD-3098                   |
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                                                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetail_hide_expression_Program_Code_with_UserType_Internal_profile_Admin_With_Operator_OR | Grantee State Program | Name                      | PBD-3098                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2260,15 +2275,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Code" is not displayed inside page block detail
-    
+
   @45933    @hide_expression_ProgramCode_With_Context_AND_UserApp_StateAsGrantor
   Scenario: Set up configuration for Hide Program code from Overview page block using Context AND and UserApp State As Grantor at program view page
     Given I have default configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue                                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetail_hide_expression_Program_Code_with_Context_AND_UserApp_StateAsGrantor| Grantee State Program | Name                      | PBD-3098                   |
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetail_hide_expression_Program_Code_with_Context_AND_UserApp_StateAsGrantor | Grantee State Program | Name                      | PBD-3098                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2276,15 +2291,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Code" is not displayed inside page block detail
-    
+
   @45934    @hide_expression_ProgramCode_With_Context_OR_UserApp_StateAsGrantor
   Scenario: Set up configuration for Hide Program code from Overview page block using Context OR and UserApp State As Grantor at program view page
     Given I have default configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue                                                                                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetail_hide_expression_Program_Code_with_Context_OR_UserApp_StateAsGrantor| Grantee State Program | Name                      | PBD-3098                   |
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetail_hide_expression_Program_Code_with_Context_OR_UserApp_StateAsGrantor | Grantee State Program | Name                      | PBD-3098                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2315,7 +2330,7 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_FunderType__c_Federal_OR_ProgramType__c_Grant | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -2331,7 +2346,7 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                             | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperandNot_Equals_StartDate__c_11_30_2020 | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -2356,7 +2371,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Information" page block is not displayed
-    
+
   @46314    @hide_expression_Program_Information_Page_Block_LeftOperand_Profile_In_Operator
   Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User using Profile IN operator
     Given I have default configuration as below:
@@ -2372,15 +2387,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Information" page block is not displayed
-    
+
   @45962    @hide_expression_Budget_Period_Details_Page_Block_LeftOperand_Profile_NotIN_SystemAdmin_PM_SPI
   Scenario: Set up configuration to display Budget Period Details from Overview Tab for ADMIN SPI PM User using Profile NotIn
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_Profile_NOTIN_Admin_PM_SPI| Grantee State Program | Name                      | PB-1133                    |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_Profile_NOTIN_Admin_PM_SPI | Grantee State Program | Name                      | PB-1133                    |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2388,15 +2403,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Budget Period Details" page block title
-    
+
   @45959    @hide_expression_Budget_Period_Details_Page_Block_LeftOperand_UserType_IN_Internal
   Scenario: Set up configuration to hide Budget Period Details from Overview Tab using user type IN Internal
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_UserType_IN_Internal| Grantee State Program | Name                      | PB-1133                    |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_UserType_IN_Internal | Grantee State Program | Name                      | PB-1133                    |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2404,15 +2419,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Budget Period Details" page block is not displayed
-    
+
   @45960    @hide_expression_Budget_Period_Details_Page_Block_LeftOperand_UserType_NotIN_Internal
   Scenario: Set up configuration to display Budget Period Details inside Overview Tab using user type NOTIN for Internal
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_UserType_NOTIN_Internal| Grantee State Program | Name                      | PB-1133                    |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_UserType_NOTIN_Internal | Grantee State Program | Name                      | PB-1133                    |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2420,15 +2435,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Budget Period Details" page block title
-    
+
   @45963    @hide_expression_Budget_Period_Details_Page_Block_LeftOperand_UserType_NotIN_Internal_Applicant_Reviewer
   Scenario: Set up configuration to display Budget Period Details inside Overview Tab using user type NOTIN for Internal and Applicant and Reviewer
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                                   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_UserType_NOTIN_Internal_Applicant_Review| Grantee State Program | Name                      | PB-1133                    |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_UserType_NOTIN_Internal_Applicant_Review | Grantee State Program | Name                      | PB-1133                    |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2436,15 +2451,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Budget Period Details" page block title
-    
+
   @45964    @hide_expression_Budget_Period_Details_Page_Block_LeftOperand_Profile_IN_or_UserType_IN
   Scenario: Set up configuration to hide Budget Period Details inside Overview Tab using profile IN or user type IN
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_Profile_IN_or_UserType_IN| Grantee State Program | Name                      | PB-1133                    |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_Profile_IN_or_UserType_IN | Grantee State Program | Name                      | PB-1133                    |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2452,63 +2467,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Budget Period Details" page block is not displayed
-    
+
   @45965    @hide_expression_Program_Contacts_Page_Block_LeftOperand_Profile_IN_PM_SystemAdmin_SPI
   Scenario: Set up configuration to hide Program contacts inside Overview Tab using profile IN for PM System Admin and Spi user
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_Profile_IN_PM_Admin_SPI| Grantee State Program | Name                      | PB-162                     |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Contacts" page block is not displayed   
-    
-  @45966    @hide_expression_Program_Contacts_Page_Block_LeftOperand_Context_NotIN__Create_Edit @smoke
-  Scenario: Set up configuration to display Program contacts inside Overview Tab using context NOTIN (Create,Edit)
-    Given I have default configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_Context_NotIN_Create_Edit| Grantee State Program | Name                      | PB-162                     |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Contacts" page block title
-    
-  @45967    @hide_expression_Program_Contacts_Page_Block_LeftOperand_UserApp_NotIN_StateAsGrantor
-  Scenario: Set up configuration to display Program contacts inside Overview Tab using UserApp NOTIN (StateAsGrantor)
-    Given I have default configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_UserApp_NOTIN_StateAsGrantor| Grantee State Program | Name                      | PB-162                     |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Contacts" page block title
-    
-  @45969    @hide_expression_Program_Contacts_Page_Block_LeftOperand_UserApp_IN
-  Scenario: Set up configuration to hide Program contacts inside Overview Tab using UserApp IN
-    Given I have default configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_UserApp_IN| Grantee State Program | Name                      | PB-162                     |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_Profile_IN_PM_Admin_SPI | Grantee State Program | Name                      | PB-162                     |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2516,15 +2483,63 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Contacts" page block is not displayed
-    
+
+  @45966    @hide_expression_Program_Contacts_Page_Block_LeftOperand_Context_NotIN__Create_Edit @smoke
+  Scenario: Set up configuration to display Program contacts inside Overview Tab using context NOTIN (Create,Edit)
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_Context_NotIN_Create_Edit | Grantee State Program | Name                      | PB-162                     |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    Then I see "Program Contacts" page block title
+
+  @45967    @hide_expression_Program_Contacts_Page_Block_LeftOperand_UserApp_NotIN_StateAsGrantor
+  Scenario: Set up configuration to display Program contacts inside Overview Tab using UserApp NOTIN (StateAsGrantor)
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_UserApp_NOTIN_StateAsGrantor | Grantee State Program | Name                      | PB-162                     |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    Then I see "Program Contacts" page block title
+
+  @45969    @hide_expression_Program_Contacts_Page_Block_LeftOperand_UserApp_IN
+  Scenario: Set up configuration to hide Program contacts inside Overview Tab using UserApp IN
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_UserApp_IN | Grantee State Program | Name                      | PB-162                     |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    Then I see "Program Contacts" page block is not displayed
+
   @45984    @hide_expression_Program_Information_Page_Block_LeftOperand_Profile_NOTIN_SPI_PM
   Scenario: Set up configuration to hide Program Information inside Overview Tab using Profile NOTIN for PM, SPI
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_Profile_NOTIN_SPI_PM| Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_Profile_NOTIN_SPI_PM | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2532,22 +2547,22 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Information" page block is not displayed
-    
+
   @45985    @hide_expression_Program_Information_Page_Block_LeftOperand_Account_r_Name_CONTAINS_DepartmentOfCommunityHealth
   Scenario: Set up configuration to hide Program Information inside Overview Tab using (Account__r.Name CONTAINS Department of Community Health)
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_Account_r_Name_CONTAINS_DepartmentOfCommunityHealth| Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_Account_r_Name_CONTAINS_DepartmentOfCommunityHealth | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block is not displayed  
+    Then I see "Program Information" page block is not displayed
 
   @45986    @hide_expression_Program_Information_Page_Block_LeftOperand_Profile_IN_SystemAdministrator_AND_Profile_IN_PM @smoke
   Scenario: Set up configuration to hide Program Information inside Overview Tab using Profile IN System Administrator AND Profile IN PM
@@ -2555,8 +2570,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                                           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_Profile_IN_SystemAdministrator_AND_Profile_IN_PM| Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_Profile_IN_SystemAdministrator_AND_Profile_IN_PM | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2564,15 +2579,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Information" page block is not displayed
-    
+
   @45988    @hide_expression_Program_Information_Page_Block_LeftOperand_Profile_IN_SystemAdministrator_OR_PM
   Scenario: Set up configuration to hide Program Information inside Overview Tab using Profile IN System Administrator OR PM
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_Profile_IN_SystemAdministrator_OR_PM| Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_Profile_IN_SystemAdministrator_OR_PM | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2580,15 +2595,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Information" page block is not displayed
-    
+
   @45989    @hide_expression_Program_Information_Page_Block_LeftOperand_UserType_NOTIN__Internal_Applicant
   Scenario: Set up configuration to display Program Information inside Overview Tab using (UserType NOT IN( Internal,Applicant ))
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_UserType_NOTIN_Internal_Applicant| Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                             | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_UserType_NOTIN_Internal_Applicant | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2596,15 +2611,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Information" page block title
-    
+
   @45991    @hide_expression_Program_Information_Page_Block_LeftOperand_UserType_IN_Internal_Applicant_Reviewer @smoke
   Scenario: Set up configuration to hide Program Information inside Overview Tab using (UserType IN(Internal,Applicant,Reviewer ))
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_UserType_IN_Internal_Applicant_Reviewer| Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                                   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_UserType_IN_Internal_Applicant_Reviewer | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation-Reviewer" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2612,15 +2627,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Information" page block is not displayed
-    
+
   @45993    @hide_expression_Program_Information_Page_Block_LeftOperand_Federal_OR_StartDate
   Scenario: Set up configuration to hide Program Information inside Overview Tab using Field Federal OR StartDate
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_Federal_OR_StartDate| Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_Federal_OR_StartDate | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2628,15 +2643,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Information" page block is not displayed
-    
+
   @46051    @hide_expression_Program_Information_Page_Block_LeftOperand_Funder_OR_UserApp
   Scenario: Set up configuration to hide Program Information inside Overview Tab using Field Funder OR UserApp
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_Funder_OR_UserApp| Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+      | configurationCategory        | fieldName            | fieldNewValue                                                             | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_Funder_OR_UserApp | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2644,15 +2659,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Information" page block is not displayed
-    
+
   @46064    @hide_expression_Program_Information_Page_Block_LeftOperand_ExpectedFunding_OR_UserApp
   Scenario: Set up configuration to hide Program Information inside Overview Tab using Field ExpectedFunding OR UserApp
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_ExpectedFunding_OR_UserApp| Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_ExpectedFunding_OR_UserApp | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2660,15 +2675,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Information" page block is not displayed
-    
+
   @46065    @hide_expression_Program_Information_Page_Block_LeftOperand_UserApp_IN
   Scenario: Set up configuration to hide Program Information inside Overview Tab using UserApp In
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_UserApp_IN| Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+      | configurationCategory        | fieldName            | fieldNewValue                                                      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_UserApp_IN | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2676,15 +2691,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Information" page block is not displayed
-    
+
   @46370    @hide_expression_Website_Address_Page_Block_Details_With_FunderType_c_Contains_Federal @smoke
   Scenario: Set up configuration for Hide Website address from Overview page block details using Field (FunderType__c CONTAINS Federal) at program view page
     Given I have default configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue                                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_FunderType_c_CONTAINS_Federal| Grantee State Program | Name                      | PBD-4719                   |
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_FunderType_c_CONTAINS_Federal | Grantee State Program | Name                      | PBD-4719                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2692,15 +2707,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Website Address" is not displayed inside page block detail
-    
+
   @46371    @hide_expression_Website_Address_Page_Block_Details_With_FunderAccount_c_equalto_40000
   Scenario: Set up configuration for Hide Website address from Overview page block details using Field (FundedAmount__c = 400000) at program view page
     Given I have default configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue                                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_FundedAmount_c_equalsto_40000| Grantee State Program | Name                      | PBD-4719                   |
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_FundedAmount_c_equalsto_40000 | Grantee State Program | Name                      | PBD-4719                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2708,15 +2723,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Website Address" is not displayed inside page block detail
-    
+
   @46372    @hide_expression_Website_Address_Page_Block_Details_With_FunderAccount_c_notequalto_40000
   Scenario: Set up configuration for display Website address from Overview page block details using Field (FundedAmount__c != 400000) at program view page
     Given I have default configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue                                                                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_FundedAmount_c_notequalsto_40000| Grantee State Program | Name                      | PBD-4719                   |
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                                   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_FundedAmount_c_notequalsto_40000 | Grantee State Program | Name                      | PBD-4719                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2724,15 +2739,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Website Address" inside page block details
-    
+
   @46373    @hide_expression_Website_Address_Page_Block_Details_With_StartDate_c_greaterequalto_11_30_2020 @smoke
   Scenario: Set up configuration for hide Website address from Overview page block details using Field (StartDate__c >= 11/30/2020) at program view page
     Given I have default configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue                                                                                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_StartDate_c_greaterequalto_11_30_2020| Grantee State Program | Name                      | PBD-4719                   |
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_StartDate_c_greaterequalto_11_30_2020 | Grantee State Program | Name                      | PBD-4719                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2740,15 +2755,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Website Address" is not displayed inside page block detail
-    
+
   @46375    @hide_expression_Website_Address_Page_Block_Details_With_StartDate_c_lessequalto_11_30_2020
   Scenario: Set up configuration for hide Website address from Overview page block details using Field (StartDate__c <= 11/30/2020) at program view page
     Given I have default configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue                                                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_StartDate_c_lessequalto_11_30_2020| Grantee State Program | Name                      | PBD-4719                   |
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_StartDate_c_lessequalto_11_30_2020 | Grantee State Program | Name                      | PBD-4719                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2756,15 +2771,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Website Address" is not displayed inside page block detail
-    
+
   @46376    @hide_expression_Website_Address_Page_Block_Details_With_Number_c_greaterthan_5678 @smoke
   Scenario: Set up configuration for display Website address from Overview page block details using Field (Number__c > 5678) at program view page
     Given I have default configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue                                                                           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_Number_c_greaterthan_5678| Grantee State Program | Name                      | PBD-4719                   |
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_Number_c_greaterthan_5678 | Grantee State Program | Name                      | PBD-4719                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2772,15 +2787,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Website Address" inside page block details
-    
+
   @46377    @hide_expression_Website_Address_Page_Block_Details_With_Number_c_lessthan_5678
   Scenario: Set up configuration for display Website address from Overview page block details using Field (Number__c < 5678) at program view page
     Given I have default configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_Number_c_lessthan_5678| Grantee State Program | Name                      | PBD-4719                   |
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_Number_c_lessthan_5678 | Grantee State Program | Name                      | PBD-4719                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2788,31 +2803,31 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Website Address" inside page block details
-    
+
   @46378    @hide_expression_Website_Address_Page_Block_Details_With_CFDA_Data_c_equalto_true
   Scenario: Set up configuration for hide Website address from Overview page block details using Field (CFDA_Data__c = true) at program view page
     Given I have default configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_CFDA_Data_c_equalto_true| Grantee State Program | Name                      | PBD-4719                   |
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_CFDA_Data_c_equalto_true | Grantee State Program | Name                      | PBD-4719                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Website Address" is not displayed inside page block detail    
-    
+    Then I see "Website Address" is not displayed inside page block detail
+
   @46379    @hide_expression_Website_Address_Page_Block_Details_With_CFDA_Data_c_notequalto_true
   Scenario: Set up configuration for display Website address from Overview page block details using Field (CFDA_Data__c != true) at program view page
     Given I have default configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue                                                                             | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_CFDA_Data_c_notequalto_true| Grantee State Program | Name                      | PBD-4719                   |
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_CFDA_Data_c_notequalto_true | Grantee State Program | Name                      | PBD-4719                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2820,15 +2835,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Website Address" inside page block details
-    
+
   @46380    @hide_expression_Website_Address_Page_Block_Details_With_Number_c_greaterequalto_5678
   Scenario: Set up configuration for hide Website address from Overview page block details using Field (Number__c >= 5678) at program view page
     Given I have default configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue                                                                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_Number_c_greaterequalto_5678| Grantee State Program | Name                      | PBD-4719                   |
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_Number_c_greaterequalto_5678 | Grantee State Program | Name                      | PBD-4719                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2836,15 +2851,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Website Address" is not displayed inside page block detail
-    
+
   @46386    @hide_expression_Website_Address_Page_Block_Details_With_CONTAINS_OR_Number @smoke
   Scenario: Set up configuration for hide Website address from Overview page block details using Field CONTAINS OR Number at program view page
     Given I have default configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue                                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_CONTAINS_OR_Number| Grantee State Program | Name                      | PBD-4719                   |
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_CONTAINS_OR_Number | Grantee State Program | Name                      | PBD-4719                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2852,15 +2867,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Website Address" is not displayed inside page block detail
-    
+
   @45302    @hide_expression_SubmitForApproval_Page_Layout_Using_GROUP_EXPRESSION_With_AND_Operator
   Scenario: Set up configuration for hide Submit For Approval action from page layout GROUP EXPRESSION with AND operator at program view page -gPlanning
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantee State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionWithLeftOperand_GROUP_EXPRESSION_With_AND_Operator| Grantee State Program | Name                      | Submit For Approval        |
+      | configurationCategory | fieldName            | fieldNewValue                                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionWithLeftOperand_GROUP_EXPRESSION_With_AND_Operator | Grantee State Program | Name                      | Submit For Approval        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2868,15 +2883,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Submit For Approval" button is not displayed
-    
+
   @46381    @hide_expression_Website_Address_Page_Block_Details_With_Number_c_lessequalto_5678
   Scenario: Set up configuration for hide Website address from Overview page block details using Field (Number__c <= 5678) at program view page
     Given I have default configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue                                                                           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_Number_c_lessequalto_5678| Grantee State Program | Name                      | PBD-4719                   |
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_Number_c_lessequalto_5678 | Grantee State Program | Name                      | PBD-4719                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2884,15 +2899,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Website Address" is not displayed inside page block detail
-    
+
   @46383    @hide_expression_Website_Address_Page_Block_Details_With_Account_r_Name_equalto_DepartmentOfCommunityHealth
   Scenario: Set up configuration for hide Website address from Overview page block details using Field (Account__r.Name = Department of Community Health) at program view page
     Given I have default configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue                                                                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_Account_r_Name_equalto_DepartmentOfCommunityHealth| Grantee State Program | Name                      | PBD-4719                   |
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_Account_r_Name_equalto_DepartmentOfCommunityHealth | Grantee State Program | Name                      | PBD-4719                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2900,15 +2915,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Website Address" is not displayed inside page block detail
-    
+
   @46384    @hide_expression_Website_Address_Page_Block_Details_With_Account_r_Name_notequalto_DepartmentOfCommunityHealth
   Scenario: Set up configuration for display Website address from Overview page block details using Field (Account__r.Name != Department of Community Health) at program view page
     Given I have default configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue                                                                                                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_Account_r_Name_notequalto_DepartmentOfCommunityHealth| Grantee State Program | Name                      | PBD-4719                   |
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_Account_r_Name_notequalto_DepartmentOfCommunityHealth | Grantee State Program | Name                      | PBD-4719                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2916,15 +2931,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Website Address" inside page block details
-    
+
   @46388    @hide_expression_Website_Address_Page_Block_Details_With_ExpectedFunding_AND_FunderType_CONTAINS
   Scenario: Set up configuration for hide Website address from Overview page block details using Field ExpectedFunding AND FunderType CONTAINS at program view page
     Given I have default configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue                                                                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_ExpectedFunding_AND_FunderType_CONTAINS| Grantee State Program | Name                      | PBD-4719                   |
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_ExpectedFunding_AND_FunderType_CONTAINS | Grantee State Program | Name                      | PBD-4719                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2932,15 +2947,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Website Address" is not displayed inside page block detail
-    
+
   @46389    @hide_expression_Website_Address_Page_Block_Details_With_ExpectedFunding_OR_FunderType_CONTAINS
   Scenario: Set up configuration for hide Website address from Overview page block details using Field ExpectedFunding OR FunderType CONTAINS at program view page
     Given I have default configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue                                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_ExpectedFunding_OR_FunderType_CONTAINS| Grantee State Program | Name                      | PBD-4719                   |
+      | configurationCategory                    | fieldName            | fieldNewValue                                                                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_ExpectedFunding_OR_FunderType_CONTAINS | Grantee State Program | Name                      | PBD-4719                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2948,445 +2963,445 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Website Address" is not displayed inside page block detail
-    
+
   @46392    @render_expression_SideBar_ManageFundingSource_With_UserType_IN_Internal @smoke
   Scenario: Set up configuration for display Manage funding source from side bar using (UserType IN(Internal) -gPlanning
     Given I have default configuration as below:
-      | configurationCategory| fieldName              | fieldOrignalValue | coreComponentField    | filterId         |
-      | Accordian Header     | Render Expression JSON |                   | GrantorPlanning       | ApiGeneratedId:0 |
+      | configurationCategory | fieldName              | fieldOrignalValue | coreComponentField | filterId         |
+      | Accordian Header      | Render Expression JSON |                   | GrantorPlanning    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory| fieldName              | fieldNewValue                                                                         | coreComponentField| coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Accordian Header     | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_UserType_IN_Internal| GrantorPlanning   | Name                      | Manage Funding Source      |
+      | configurationCategory | fieldName              | fieldNewValue                                                                          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Accordian Header      | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_UserType_IN_Internal | GrantorPlanning    | Name                      | Manage Funding Source      |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     Then I see "Activities" inside "Manage Funding Source" is displayed
-    
+
   @46393    @render_expression_SideBar_ManageFundingSource_With_UserType_NOTIN_Internal
   Scenario: Set up configuration for hide Manage funding source from side bar using (UserType NOTIN(Internal) -gPlanning
     Given I have default configuration as below:
-      | configurationCategory| fieldName              | fieldOrignalValue | coreComponentField    | filterId         |
-      | Accordian Header     | Render Expression JSON |                   | GrantorPlanning       | ApiGeneratedId:0 |
+      | configurationCategory | fieldName              | fieldOrignalValue | coreComponentField | filterId         |
+      | Accordian Header      | Render Expression JSON |                   | GrantorPlanning    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory| fieldName              | fieldNewValue                                                                            | coreComponentField| coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Accordian Header     | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_UserType_NOTIN_Internal| GrantorPlanning   | Name                      | Manage Funding Source      |
+      | configurationCategory | fieldName              | fieldNewValue                                                                             | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Accordian Header      | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_UserType_NOTIN_Internal | GrantorPlanning    | Name                      | Manage Funding Source      |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     Then I see "Activities" inside "Manage Funding Source" is not displayed
-    
+
   @46395    @render_expression_SideBar_ManageFundingSource_With_Profile_IN_SystemAdministrator @smoke
   Scenario: Set up configuration for display Manage funding source from side bar using Profile IN (System Administrator) -gPlanning
     Given I have default configuration as below:
-      | configurationCategory| fieldName              | fieldOrignalValue | coreComponentField    | filterId         |
-      | Accordian Header     | Render Expression JSON |                   | GrantorPlanning       | ApiGeneratedId:0 |
+      | configurationCategory | fieldName              | fieldOrignalValue | coreComponentField | filterId         |
+      | Accordian Header      | Render Expression JSON |                   | GrantorPlanning    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory| fieldName              | fieldNewValue                                                                                   | coreComponentField| coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Accordian Header     | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_Profile_IN_SystemAdministrator| GrantorPlanning   | Name                      | Manage Funding Source      |
+      | configurationCategory | fieldName              | fieldNewValue                                                                                    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Accordian Header      | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_Profile_IN_SystemAdministrator | GrantorPlanning    | Name                      | Manage Funding Source      |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     Then I see "Activities" inside "Manage Funding Source" is displayed
-    
+
   @46396    @render_expression_SideBar_ManageFundingSource_With_Profile_NOTIN_SystemAdministrator
   Scenario: Set up configuration for Hide Manage funding source from side bar using Profile NOTIN (System Administrator) -gPlanning
     Given I have default configuration as below:
-      | configurationCategory| fieldName              | fieldOrignalValue | coreComponentField    | filterId         |
-      | Accordian Header     | Render Expression JSON |                   | GrantorPlanning       | ApiGeneratedId:0 |
+      | configurationCategory | fieldName              | fieldOrignalValue | coreComponentField | filterId         |
+      | Accordian Header      | Render Expression JSON |                   | GrantorPlanning    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory| fieldName              | fieldNewValue                                                                                      | coreComponentField| coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Accordian Header     | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_Profile_NOTIN_SystemAdministrator| GrantorPlanning   | Name                      | Manage Funding Source      |
+      | configurationCategory | fieldName              | fieldNewValue                                                                                       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Accordian Header      | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_Profile_NOTIN_SystemAdministrator | GrantorPlanning    | Name                      | Manage Funding Source      |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     Then I see "Activities" inside "Manage Funding Source" is not displayed
-    
+
   @46397    @render_expression_SideBar_ManageFundingSource_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal
   Scenario: Set up configuration for display Manage funding source from side bar using Profile IN (System Administrator ) AND UserType IN (Internal) -gPlanning
     Given I have default configuration as below:
-      | configurationCategory| fieldName              | fieldOrignalValue | coreComponentField    | filterId         |
-      | Accordian Header     | Render Expression JSON |                   | GrantorPlanning       | ApiGeneratedId:0 |
+      | configurationCategory | fieldName              | fieldOrignalValue | coreComponentField | filterId         |
+      | Accordian Header      | Render Expression JSON |                   | GrantorPlanning    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory| fieldName              | fieldNewValue                                                                                                            | coreComponentField| coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Accordian Header     | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal| GrantorPlanning   | Name                      | Manage Funding Source      |
+      | configurationCategory | fieldName              | fieldNewValue                                                                                                             | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Accordian Header      | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal | GrantorPlanning    | Name                      | Manage Funding Source      |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     Then I see "Activities" inside "Manage Funding Source" is displayed
-    
+
   @46398    @render_expression_SideBar_ManageFundingSource_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal
   Scenario: Set up configuration for display Manage funding source from side bar using (Profile IN (System Administrator) OR UserType IN (Internal) -gPlanning
     Given I have default configuration as below:
-      | configurationCategory| fieldName              | fieldOrignalValue | coreComponentField    | filterId         |
-      | Accordian Header     | Render Expression JSON |                   | GrantorPlanning       | ApiGeneratedId:0 |
+      | configurationCategory | fieldName              | fieldOrignalValue | coreComponentField | filterId         |
+      | Accordian Header      | Render Expression JSON |                   | GrantorPlanning    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory| fieldName              | fieldNewValue                                                                                                           | coreComponentField| coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Accordian Header     | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal| GrantorPlanning   | Name                      | Manage Funding Source      |
+      | configurationCategory | fieldName              | fieldNewValue                                                                                                            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Accordian Header      | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal | GrantorPlanning    | Name                      | Manage Funding Source      |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     Then I see "Activities" inside "Manage Funding Source" is displayed
-    
+
   @46415    @render_expression_SideBar_ManageFundingSource_With_Profile_IN_SystemAdministrator_AND_Profile_IN_PM
   Scenario: Set up configuration for hide Manage funding source from side bar using (Profile IN (System Administrator) AND Profile IN PM) -gPlanning
     Given I have default configuration as below:
-      | configurationCategory| fieldName              | fieldOrignalValue | coreComponentField    | filterId         |
-      | Accordian Header     | Render Expression JSON |                   | GrantorPlanning       | ApiGeneratedId:0 |
+      | configurationCategory | fieldName              | fieldOrignalValue | coreComponentField | filterId         |
+      | Accordian Header      | Render Expression JSON |                   | GrantorPlanning    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory| fieldName              | fieldNewValue                                                                                                     | coreComponentField| coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Accordian Header     | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_Profile_IN_SystemAdministrator_AND_Profile_IN_PM| GrantorPlanning   | Name                      | Manage Funding Source      |
+      | configurationCategory | fieldName              | fieldNewValue                                                                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Accordian Header      | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_Profile_IN_SystemAdministrator_AND_Profile_IN_PM | GrantorPlanning    | Name                      | Manage Funding Source      |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     Then I see "Activities" inside "Manage Funding Source" is not displayed
-    
+
   @46416    @render_expression_SideBar_ManageFundingSource_With_Profile_IN_SystemAdministrator_OR_Profile_IN_PM
   Scenario: Set up configuration for display Manage funding source from side bar using (Profile IN (System Administrator) OR Profile IN PM) -gPlanning
     Given I have default configuration as below:
-      | configurationCategory| fieldName              | fieldOrignalValue | coreComponentField    | filterId         |
-      | Accordian Header     | Render Expression JSON |                   | GrantorPlanning       | ApiGeneratedId:0 |
+      | configurationCategory | fieldName              | fieldOrignalValue | coreComponentField | filterId         |
+      | Accordian Header      | Render Expression JSON |                   | GrantorPlanning    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory| fieldName              | fieldNewValue                                                                                                    | coreComponentField| coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Accordian Header     | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_Profile_IN_SystemAdministrator_OR_Profile_IN_PM| GrantorPlanning   | Name                      | Manage Funding Source      |
+      | configurationCategory | fieldName              | fieldNewValue                                                                                                     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Accordian Header      | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_Profile_IN_SystemAdministrator_OR_Profile_IN_PM | GrantorPlanning    | Name                      | Manage Funding Source      |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     Then I see "Activities" inside "Manage Funding Source" is displayed
-    
+
   @46399    @render_expression_SideBar_ManageFundingSource_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator @smoke
   Scenario: Set up configuration for hide Manage funding source from side bar using (UserType NOT IN (Internal) AND Profile NOT IN (System Administrator) -gPlanning
     Given I have default configuration as below:
-      | configurationCategory| fieldName              | fieldOrignalValue | coreComponentField    | filterId         |
-      | Accordian Header     | Render Expression JSON |                   | GrantorPlanning       | ApiGeneratedId:0 |
+      | configurationCategory | fieldName              | fieldOrignalValue | coreComponentField | filterId         |
+      | Accordian Header      | Render Expression JSON |                   | GrantorPlanning    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory| fieldName              | fieldNewValue                                                                                     | coreComponentField| coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Accordian Header     | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_UserType_NOTIN_AND_Profile_NOTIN| GrantorPlanning   | Name                      | Manage Funding Source      |
+      | configurationCategory | fieldName              | fieldNewValue                                                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Accordian Header      | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_UserType_NOTIN_AND_Profile_NOTIN | GrantorPlanning    | Name                      | Manage Funding Source      |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     Then I see "Activities" inside "Manage Funding Source" is not displayed
-    
+
   @46400    @render_expression_SideBar_ManageFundingSource_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator
   Scenario: Set up configuration for hide Manage funding source from side bar using (UserType NOT IN (Internal) OR Profile NOT IN (System Administrator) -gPlanning
     Given I have default configuration as below:
-      | configurationCategory| fieldName              | fieldOrignalValue | coreComponentField    | filterId         |
-      | Accordian Header     | Render Expression JSON |                   | GrantorPlanning       | ApiGeneratedId:0 |
+      | configurationCategory | fieldName              | fieldOrignalValue | coreComponentField | filterId         |
+      | Accordian Header      | Render Expression JSON |                   | GrantorPlanning    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory| fieldName              | fieldNewValue                                                                                    | coreComponentField| coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Accordian Header     | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_UserType_NOTIN_OR_Profile_NOTIN| GrantorPlanning   | Name                      | Manage Funding Source      |
+      | configurationCategory | fieldName              | fieldNewValue                                                                                     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Accordian Header      | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_UserType_NOTIN_OR_Profile_NOTIN | GrantorPlanning    | Name                      | Manage Funding Source      |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     Then I see "Activities" inside "Manage Funding Source" is not displayed
-    
+
   @46417    @render_expression_SideBar_ManageFundingSource_With_UserType_IN_Applicant_Reviewer
   Scenario: Set up configuration for hide Manage funding source from side bar using UserType IN Applicant, Reviewer -gPlanning
     Given I have default configuration as below:
-      | configurationCategory| fieldName              | fieldOrignalValue | coreComponentField    | filterId         |
-      | Accordian Header     | Render Expression JSON |                   | GrantorPlanning       | ApiGeneratedId:0 |
+      | configurationCategory | fieldName              | fieldOrignalValue | coreComponentField | filterId         |
+      | Accordian Header      | Render Expression JSON |                   | GrantorPlanning    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory| fieldName              | fieldNewValue                                                                                   | coreComponentField| coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Accordian Header     | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_UserType_IN_Applicant_Reviewer| GrantorPlanning   | Name                      | Manage Funding Source      |
+      | configurationCategory | fieldName              | fieldNewValue                                                                                    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Accordian Header      | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_UserType_IN_Applicant_Reviewer | GrantorPlanning    | Name                      | Manage Funding Source      |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     Then I see "Activities" inside "Manage Funding Source" is not displayed
-    
+
   @46418    @render_expression_SideBar_ManageFundingSource_With_UserType_NOTIN_Applicant_Reviewer
   Scenario: Set up configuration for display Manage funding source from side bar using UserType NOTIN Applicant, Reviewer -gPlanning
     Given I have default configuration as below:
-      | configurationCategory| fieldName              | fieldOrignalValue | coreComponentField    | filterId         |
-      | Accordian Header     | Render Expression JSON |                   | GrantorPlanning       | ApiGeneratedId:0 |
+      | configurationCategory | fieldName              | fieldOrignalValue | coreComponentField | filterId         |
+      | Accordian Header      | Render Expression JSON |                   | GrantorPlanning    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory| fieldName              | fieldNewValue                                                                                      | coreComponentField| coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Accordian Header     | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_UserType_NOTIN_Applicant_Reviewer| GrantorPlanning   | Name                      | Manage Funding Source      |
+      | configurationCategory | fieldName              | fieldNewValue                                                                                       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Accordian Header      | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_UserType_NOTIN_Applicant_Reviewer | GrantorPlanning    | Name                      | Manage Funding Source      |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     Then I see "Activities" inside "Manage Funding Source" is displayed
-    
+
   @46401    @render_expression_SideBar_ManageFundingSource_With_UserType_IN_Applicant_Internal_Reviewer
   Scenario: Set up configuration for display Manage funding source from side bar using (UserType IN (Applicant, Internal, Reviewer) -gPlanning
     Given I have default configuration as below:
-      | configurationCategory| fieldName              | fieldOrignalValue | coreComponentField    | filterId         |
-      | Accordian Header     | Render Expression JSON |                   | GrantorPlanning       | ApiGeneratedId:0 |
+      | configurationCategory | fieldName              | fieldOrignalValue | coreComponentField | filterId         |
+      | Accordian Header      | Render Expression JSON |                   | GrantorPlanning    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory| fieldName              | fieldNewValue                                                                                            | coreComponentField| coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Accordian Header     | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_UserType_IN_Applicant_Internal_Reviewer| GrantorPlanning   | Name                      | Manage Funding Source      |
+      | configurationCategory | fieldName              | fieldNewValue                                                                                             | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Accordian Header      | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_UserType_IN_Applicant_Internal_Reviewer | GrantorPlanning    | Name                      | Manage Funding Source      |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     Then I see "Activities" inside "Manage Funding Source" is displayed
-    
+
   @46402    @render_expression_SideBar_ManageFundingSource_With_UserType_NOTIN_Applicant_Internal_Reviewer
   Scenario: Set up configuration for hide Manage funding source from side bar using (UserType NOT IN (Applicant, Internal, Reviewer) -gPlanning
     Given I have default configuration as below:
-      | configurationCategory| fieldName              | fieldOrignalValue | coreComponentField    | filterId         |
-      | Accordian Header     | Render Expression JSON |                   | GrantorPlanning       | ApiGeneratedId:0 |
+      | configurationCategory | fieldName              | fieldOrignalValue | coreComponentField | filterId         |
+      | Accordian Header      | Render Expression JSON |                   | GrantorPlanning    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory| fieldName              | fieldNewValue                                                                                               | coreComponentField| coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Accordian Header     | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_UserType_NOTIN_Applicant_Internal_Reviewer| GrantorPlanning   | Name                      | Manage Funding Source      |
+      | configurationCategory | fieldName              | fieldNewValue                                                                                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Accordian Header      | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_UserType_NOTIN_Applicant_Internal_Reviewer | GrantorPlanning    | Name                      | Manage Funding Source      |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     Then I see "Activities" inside "Manage Funding Source" is not displayed
-    
+
   @46403    @render_expression_CustomApp_With_UserType_IN_Internal @smoke
   Scenario: Set up configuration for display state as grantor custom app using User Type IN Internal -gHome
     Given I have default configuration as below:
-      | configurationCategory| fieldName              | fieldOrignalValue | filterId         |
-      | Custom App Config    | Render Expression JSON |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Custom App Config     | Render Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory    | fieldName              | fieldNewValue                                                                                  | coreComponentField| 
-      | Custom App Config:General| Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_Custom_App_UserType_IN_Internal| StateasGrantor    |
+      | configurationCategory     | fieldName              | fieldNewValue                                                                                   | coreComponentField |
+      | Custom App Config:General | Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_Custom_App_UserType_IN_Internal | StateasGrantor     |
     When I login as "Automation" user
     When I click CustomApp select dropdown
     Then I see "As a Grantor" inside CustomApp dropDown
-    
+
   @46404    @render_expression_CustomApp_With_UserType_NOTIN_Internal
   Scenario: Set up configuration for hide state as grantor custom app using User Type NOTIN Internal -gHome
     Given I have default configuration as below:
-      | configurationCategory| fieldName              | fieldOrignalValue | filterId         |
-      | Custom App Config    | Render Expression JSON |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Custom App Config     | Render Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory    | fieldName              | fieldNewValue                                                                                     | coreComponentField| 
-      | Custom App Config:General| Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_Custom_App_UserType_NOTIN_Internal| StateasGrantor    |
+      | configurationCategory     | fieldName              | fieldNewValue                                                                                      | coreComponentField |
+      | Custom App Config:General | Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_Custom_App_UserType_NOTIN_Internal | StateasGrantor     |
     When I login as "Automation" user
     When I click CustomApp select dropdown
     Then I see "As a Grantor" inside CustomApp dropDown not displayed
-    
+
   @46405    @render_expression_CustomApp_With_Profile_IN_SystemAdministrator
   Scenario: Set up configuration for display state as grantor custom app using profile IN system administrator -gHome
     Given I have default configuration as below:
-      | configurationCategory| fieldName              | fieldOrignalValue | filterId         |
-      | Custom App Config    | Render Expression JSON |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Custom App Config     | Render Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory    | fieldName              | fieldNewValue                                                                                 | coreComponentField| 
-      | Custom App Config:General| Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_Profile_IN_SystemAdministrator| StateasGrantor    |
+      | configurationCategory     | fieldName              | fieldNewValue                                                                                  | coreComponentField |
+      | Custom App Config:General | Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_Profile_IN_SystemAdministrator | StateasGrantor     |
     When I login as "Automation" user
     When I click CustomApp select dropdown
     Then I see "As a Grantor" inside CustomApp dropDown
-    
+
   @46406    @render_expression_CustomApp_With_Profile_NOTIN_SystemAdministrator
   Scenario: Set up configuration for hide state as grantor custom app using profile NOTIN system administrator -gHome
     Given I have default configuration as below:
-      | configurationCategory| fieldName              | fieldOrignalValue | filterId         |
-      | Custom App Config    | Render Expression JSON |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Custom App Config     | Render Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory    | fieldName              | fieldNewValue                                                                                    | coreComponentField| 
-      | Custom App Config:General| Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_Profile_NOTIN_SystemAdministrator| StateasGrantor    |
+      | configurationCategory     | fieldName              | fieldNewValue                                                                                     | coreComponentField |
+      | Custom App Config:General | Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_Profile_NOTIN_SystemAdministrator | StateasGrantor     |
     When I login as "Automation" user
     When I click CustomApp select dropdown
     Then I see "As a Grantor" inside CustomApp dropDown not displayed
-    
-    @46407    @render_expression_CustomApp_With_Profile_IN_SystemAdministrator_AND_UserType_In_Internal
+
+  @46407    @render_expression_CustomApp_With_Profile_IN_SystemAdministrator_AND_UserType_In_Internal
   Scenario: Set up configuration for display state as grantor custom app using(Profile IN (System Administrator) AND UserType IN (Internal) -gHome
     Given I have default configuration as below:
-      | configurationCategory| fieldName              | fieldOrignalValue | filterId         |
-      | Custom App Config    | Render Expression JSON |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Custom App Config     | Render Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory    | fieldName              | fieldNewValue                                                                                                          | coreComponentField| 
-      | Custom App Config:General| Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal| StateasGrantor    |
+      | configurationCategory     | fieldName              | fieldNewValue                                                                                                           | coreComponentField |
+      | Custom App Config:General | Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal | StateasGrantor     |
     When I login as "Automation" user
     When I click CustomApp select dropdown
     Then I see "As a Grantor" inside CustomApp dropDown
-   
+
   @46408    @render_expression_CustomApp_With_Profile_IN_SystemAdministrator_OR_UserType_In_Internal
   Scenario: Set up configuration for display state as grantor custom app using(Profile IN (System Administrator) OR UserType IN (Internal) -gHome
     Given I have default configuration as below:
-      | configurationCategory| fieldName              | fieldOrignalValue | filterId         |
-      | Custom App Config    | Render Expression JSON |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Custom App Config     | Render Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory    | fieldName              | fieldNewValue                                                                                                          | coreComponentField| 
-      | Custom App Config:General| Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal| StateasGrantor    |
+      | configurationCategory     | fieldName              | fieldNewValue                                                                                                          | coreComponentField |
+      | Custom App Config:General | Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal | StateasGrantor     |
     When I login as "Automation" user
     When I click CustomApp select dropdown
     Then I see "As a Grantor" inside CustomApp dropDown
-    
+
   @46410    @render_expression_CustomApp_With_Profile_IN_SystemAdministrator_AND_Profile_IN_PM
   Scenario: Set up configuration for hide state as grantor custom app using Profile IN System Administrator AND Profile IN PM -gHome
     Given I have default configuration as below:
-      | configurationCategory| fieldName              | fieldOrignalValue | filterId         |
-      | Custom App Config    | Render Expression JSON |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Custom App Config     | Render Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory    | fieldName              | fieldNewValue                                                                                                   | coreComponentField| 
-      | Custom App Config:General| Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_Profile_IN_SystemAdministrator_AND_Profile_IN_PM| StateasGrantor    |
+      | configurationCategory     | fieldName              | fieldNewValue                                                                                                    | coreComponentField |
+      | Custom App Config:General | Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_Profile_IN_SystemAdministrator_AND_Profile_IN_PM | StateasGrantor     |
     When I login as "Automation" user
     When I click CustomApp select dropdown
     Then I see "As a Grantor" inside CustomApp dropDown not displayed
-    
+
   @46413    @render_expression_CustomApp_With_Profile_IN_SystemAdministrator_OR_Profile_IN_PM @smoke
   Scenario: Set up configuration for display state as grantor custom app using Profile IN System Administrator OR Profile IN PM -gHome
     Given I have default configuration as below:
-      | configurationCategory| fieldName              | fieldOrignalValue | filterId         |
-      | Custom App Config    | Render Expression JSON |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Custom App Config     | Render Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory    | fieldName              | fieldNewValue                                                                                                  | coreComponentField| 
-      | Custom App Config:General| Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_Profile_IN_SystemAdministrator_OR_Profile_IN_PM| StateasGrantor    |
+      | configurationCategory     | fieldName              | fieldNewValue                                                                                                   | coreComponentField |
+      | Custom App Config:General | Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_Profile_IN_SystemAdministrator_OR_Profile_IN_PM | StateasGrantor     |
     When I login as "Automation" user
     When I click CustomApp select dropdown
     Then I see "As a Grantor" inside CustomApp dropDown
-    
+
   @47284    @render_expression_CustomApp_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator
   Scenario: Set up configuration for hide state as grantor custom app using (UserType NOT IN (Internal) OR Profile NOT IN (System Administrator) -gHome
     Given I have default configuration as below:
-      | configurationCategory| fieldName              | fieldOrignalValue | filterId         |
-      | Custom App Config    | Render Expression JSON |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Custom App Config     | Render Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory    | fieldName              | fieldNewValue                                                                                                               | coreComponentField| 
-      | Custom App Config:General| Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator| StateasGrantor    |
+      | configurationCategory     | fieldName              | fieldNewValue                                                                                                                | coreComponentField |
+      | Custom App Config:General | Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator | StateasGrantor     |
     When I login as "Automation" user
     When I click CustomApp select dropdown
     Then I see "As a Grantor" inside CustomApp dropDown not displayed
-    
+
   @46414    @render_expression_CustomApp_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator @smoke
   Scenario: Set up configuration for hide state as grantor custom app using (UserType NOT IN (Internal) AND Profile NOT IN (System Administrator) -gHome
     Given I have default configuration as below:
-      | configurationCategory| fieldName              | fieldOrignalValue | filterId         |
-      | Custom App Config    | Render Expression JSON |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Custom App Config     | Render Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory    | fieldName              | fieldNewValue                                                                                                                | coreComponentField| 
-      | Custom App Config:General| Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator| StateasGrantor    |
+      | configurationCategory     | fieldName              | fieldNewValue                                                                                                                 | coreComponentField |
+      | Custom App Config:General | Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator | StateasGrantor     |
     When I login as "Automation" user
     When I click CustomApp select dropdown
     Then I see "As a Grantor" inside CustomApp dropDown not displayed
-    
+
   @46420    @render_expression_SideBar_ManageFundingSource_With_Profile_NOTIN_PM
   Scenario: Set up configuration for display Manage funding source from side bar using Profile NOTIN PM -gPlanning
     Given I have default configuration as below:
-      | configurationCategory| fieldName              | fieldOrignalValue | coreComponentField    | filterId         |
-      | Accordian Header     | Render Expression JSON |                   | GrantorPlanning       | ApiGeneratedId:0 |
+      | configurationCategory | fieldName              | fieldOrignalValue | coreComponentField | filterId         |
+      | Accordian Header      | Render Expression JSON |                   | GrantorPlanning    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory| fieldName              | fieldNewValue                                                                     | coreComponentField| coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Accordian Header     | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_Profile_NOTIN_PM| GrantorPlanning   | Name                      | Manage Funding Source      |
+      | configurationCategory | fieldName              | fieldNewValue                                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Accordian Header      | Render Expression JSON | govgrants_config:SideBar_ManageFundingSource_RenderExpressionWith_Profile_NOTIN_PM | GrantorPlanning    | Name                      | Manage Funding Source      |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     Then I see "Activities" inside "Manage Funding Source" is displayed
-    
+
   @47285    @render_expression_CustomApp_With_UserType_IN_Applicant_Reviewer
   Scenario: Set up configuration for hide state as grantor custom app using UserType IN Applicant, Reviewer -gHome
     Given I have default configuration as below:
-      | configurationCategory| fieldName              | fieldOrignalValue | filterId         |
-      | Custom App Config    | Render Expression JSON |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Custom App Config     | Render Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory    | fieldName              | fieldNewValue                                                                                 | coreComponentField| 
-      | Custom App Config:General| Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_UserType_IN_Applicant_Reviewer| StateasGrantor    |
+      | configurationCategory     | fieldName              | fieldNewValue                                                                                  | coreComponentField |
+      | Custom App Config:General | Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_UserType_IN_Applicant_Reviewer | StateasGrantor     |
     When I login as "Automation" user
     When I click CustomApp select dropdown
     Then I see "As a Grantor" inside CustomApp dropDown not displayed
-    
+
   @47286    @render_expression_CustomApp_With_UserType_NOTIN_Applicant_Reviewer
   Scenario: Set up configuration for hide state as grantor custom app using UserType NOTIN Applicant, Reviewer -gHome
     Given I have default configuration as below:
-      | configurationCategory| fieldName              | fieldOrignalValue | filterId         |
-      | Custom App Config    | Render Expression JSON |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Custom App Config     | Render Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory    | fieldName              | fieldNewValue                                                                                    | coreComponentField| 
-      | Custom App Config:General| Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_UserType_NOTIN_Applicant_Reviewer| StateasGrantor    |
+      | configurationCategory     | fieldName              | fieldNewValue                                                                                     | coreComponentField |
+      | Custom App Config:General | Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_UserType_NOTIN_Applicant_Reviewer | StateasGrantor     |
     When I login as "Automation" user
     When I click CustomApp select dropdown
-    Then I see "As a Grantor" inside CustomApp dropDown    
-    
+    Then I see "As a Grantor" inside CustomApp dropDown
+
   @47287    @render_expression_CustomApp_With_UserType_IN_Applicant_Internal_Reviewer
   Scenario: Set up configuration for display state as grantor custom app using UserType IN Applicant,Internal,Reviewer -gHome
     Given I have default configuration as below:
-      | configurationCategory| fieldName              | fieldOrignalValue | filterId         |
-      | Custom App Config    | Render Expression JSON |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Custom App Config     | Render Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory    | fieldName              | fieldNewValue                                                                                          | coreComponentField| 
-      | Custom App Config:General| Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_UserType_IN_Applicant_Internal_Reviewer| StateasGrantor    |
+      | configurationCategory     | fieldName              | fieldNewValue                                                                                           | coreComponentField |
+      | Custom App Config:General | Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_UserType_IN_Applicant_Internal_Reviewer | StateasGrantor     |
     When I login as "Automation" user
     When I click CustomApp select dropdown
     Then I see "As a Grantor" inside CustomApp dropDown
-    
+
   @47291    @render_expression_CustomApp_With_UserType_NOTIN_Applicant_Internal_Reviewer
   Scenario: Set up configuration for hide state as grantor custom app using UserType NOTIN Applicant,Internal,Reviewer -gHome
     Given I have default configuration as below:
-      | configurationCategory| fieldName              | fieldOrignalValue | filterId         |
-      | Custom App Config    | Render Expression JSON |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Custom App Config     | Render Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory    | fieldName              | fieldNewValue                                                                                             | coreComponentField| 
-      | Custom App Config:General| Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_UserType_NOTIN_Applicant_Internal_Reviewer| StateasGrantor    |
+      | configurationCategory     | fieldName              | fieldNewValue                                                                                              | coreComponentField |
+      | Custom App Config:General | Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_UserType_NOTIN_Applicant_Internal_Reviewer | StateasGrantor     |
     When I login as "Automation" user
     When I click CustomApp select dropdown
     Then I see "As a Grantor" inside CustomApp dropDown not displayed
-    
+
   @47292    @render_expression_CustomApp_With_Profile_NOTIN_PM
   Scenario: Set up configuration for display state as grantor custom app using Profile NOT IN PM -gHome
     Given I have default configuration as below:
-      | configurationCategory| fieldName              | fieldOrignalValue | filterId         |
-      | Custom App Config    | Render Expression JSON |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Custom App Config     | Render Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory    | fieldName              | fieldNewValue                                                                   | coreComponentField| 
-      | Custom App Config:General| Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_Profile_NOTIN_PM| StateasGrantor    |
+      | configurationCategory     | fieldName              | fieldNewValue                                                                    | coreComponentField |
+      | Custom App Config:General | Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_Profile_NOTIN_PM | StateasGrantor     |
     When I login as "Automation" user
     When I click CustomApp select dropdown
     Then I see "As a Grantor" inside CustomApp dropDown
-    
+
   @47293    @render_expression_CustomApp_With_UserType_IN_Applicant
   Scenario: Set up configuration for hide state as grantor custom app using UserType IN Applicant -gHome
     Given I have default configuration as below:
-      | configurationCategory| fieldName              | fieldOrignalValue | filterId         |
-      | Custom App Config    | Render Expression JSON |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Custom App Config     | Render Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory    | fieldName              | fieldNewValue                                                                        | coreComponentField| 
-      | Custom App Config:General| Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_UserType_IN_Applicant| StateasGrantor    |
+      | configurationCategory     | fieldName              | fieldNewValue                                                                         | coreComponentField |
+      | Custom App Config:General | Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_UserType_IN_Applicant | StateasGrantor     |
     When I login as "Automation" user
     When I click CustomApp select dropdown
     Then I see "As a Grantor" inside CustomApp dropDown not displayed
-    
+
   @47294    @render_expression_CustomApp_With_Profile_IN_PM
   Scenario: Set up configuration for hide state as grantor custom app using Profile IN PM -gHome
     Given I have default configuration as below:
-      | configurationCategory| fieldName              | fieldOrignalValue | filterId         |
-      | Custom App Config    | Render Expression JSON |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Custom App Config     | Render Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory    | fieldName              | fieldNewValue                                                                | coreComponentField| 
-      | Custom App Config:General| Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_Profile_IN_PM| StateasGrantor    |
+      | configurationCategory     | fieldName              | fieldNewValue                                                                 | coreComponentField |
+      | Custom App Config:General | Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_Profile_IN_PM | StateasGrantor     |
     When I login as "Automation" user
     When I click CustomApp select dropdown
     Then I see "As a Grantor" inside CustomApp dropDown not displayed
-    
+
   @47296    @render_expression_CustomApp_With_Profile_IN_PM_OR_UserType_IN_Internal @smoke
   Scenario: Set up configuration for display state as grantor custom app using Profile IN PM OR UserType IN Internal -gHome
     Given I have default configuration as below:
-      | configurationCategory| fieldName              | fieldOrignalValue | filterId         |
-      | Custom App Config    | Render Expression JSON |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Custom App Config     | Render Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory    | fieldName              | fieldNewValue                                                                                        | coreComponentField| 
-      | Custom App Config:General| Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_Profile_IN_PM_OR_UserType_IN_Internal| StateasGrantor    |
+      | configurationCategory     | fieldName              | fieldNewValue                                                                                         | coreComponentField |
+      | Custom App Config:General | Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_Profile_IN_PM_OR_UserType_IN_Internal | StateasGrantor     |
     When I login as "Automation" user
     When I click CustomApp select dropdown
     Then I see "As a Grantor" inside CustomApp dropDown
-    
+
   @47297    @render_expression_CustomApp_With_UserType_IN_Internal_AND_Profile_IN_PM
   Scenario: Set up configuration for hide state as grantor custom app using UserType IN Internal AND Profile IN PM -gHome
     Given I have default configuration as below:
-      | configurationCategory| fieldName              | fieldOrignalValue | filterId         |
-      | Custom App Config    | Render Expression JSON |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Custom App Config     | Render Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory    | fieldName              | fieldNewValue                                                                                         | coreComponentField| 
-      | Custom App Config:General| Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_UserType_IN_Internal_AND_Profile_IN_PM| StateasGrantor    |
+      | configurationCategory     | fieldName              | fieldNewValue                                                                                          | coreComponentField |
+      | Custom App Config:General | Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_UserType_IN_Internal_AND_Profile_IN_PM | StateasGrantor     |
     When I login as "Automation" user
     When I click CustomApp select dropdown
     Then I see "As a Grantor" inside CustomApp dropDown not displayed
-    
+
   @47302    @hide_Expression_Enhancedgrid_ViewAction_With_UserType_IN_Internal @smoke
   Scenario: Set up configuration to hide view action of parent enhanced grid using UserType IN Internal and validating it inside enhanced of program-planning
     Given I have default configuration as below:
@@ -3404,15 +3419,15 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     Then I see "View" icon for "Demo_Title" is not displayed inside flex table
-    
+
   @47304    @hide_Expression_Enhancedgrid_ViewAction_With_UserType_NOTIN_Internal
   Scenario: Set up configuration to display view action of parent enhanced grid using UserType NOTIN Internal and validating it inside enhanced of program-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                        | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_UserType_NOTIN_Internal| TmpActiveGrantsGrid | Name                      | View                       |
+      | configurationCategory | fieldName            | fieldNewValue                                                                         | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_UserType_NOTIN_Internal | TmpActiveGrantsGrid | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3422,15 +3437,15 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     Then I see "View" icon for "Demo_Title" is displayed inside flex table
-    
+
   @47305    @hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator @smoke
   Scenario: Set up configuration to hide view action of parent enhanced grid using Profile IN System Administrator and validating it inside enhanced of program-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator| TmpActiveGrantsGrid | Name                      | View                       |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator | TmpActiveGrantsGrid | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3440,15 +3455,15 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     Then I see "View" icon for "Demo_Title" is not displayed inside flex table
-    
+
   @47306    @hide_Expression_Enhancedgrid_ViewAction_With_Profile_NOTIN_SystemAdministrator
   Scenario: Set up configuration to hide view action of parent enhanced grid using Profile NOTIN System Administrator and validating it inside enhanced of program-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_Profile_NOTIN_SystemAdministrator| TmpActiveGrantsGrid | Name                      | View                       |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                   | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_Profile_NOTIN_SystemAdministrator | TmpActiveGrantsGrid | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3458,15 +3473,15 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     Then I see "View" icon for "Demo_Title" is displayed inside flex table
-    
+
   @47307    @hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal
   Scenario: Set up configuration to hide view action of parent enhanced grid using Profile IN System Administrator AND UserType IN Internal and validating it inside enhanced of program-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                                        | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal| TmpActiveGrantsGrid | Name                      | View                       |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                         | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal | TmpActiveGrantsGrid | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3476,15 +3491,15 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     Then I see "View" icon for "Demo_Title" is not displayed inside flex table
-    
+
   @47308    @hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal
   Scenario: Set up configuration to hide view action of parent enhanced grid using Profile IN System Administrator OR UserType IN Internal and validating it inside enhanced of program-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                                       | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal| TmpActiveGrantsGrid | Name                      | View                       |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                        | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal | TmpActiveGrantsGrid | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3494,15 +3509,15 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     Then I see "View" icon for "Demo_Title" is not displayed inside flex table
-    
+
   @47309    @hide_Expression_Enhancedgrid_ViewAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator @smoke
   Scenario: Set up configuration to display view action of parent enhanced grid using UserType NOT IN Internal AND Profile NOT IN System Administrator and validating it inside enhanced of program-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                                              | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator| TmpActiveGrantsGrid | Name                      | View                       |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator | TmpActiveGrantsGrid | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3512,15 +3527,15 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     Then I see "View" icon for "Demo_Title" is displayed inside flex table
-    
+
   @47310    @hide_Expression_Enhancedgrid_ViewAction_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator
   Scenario: Set up configuration to display view action of parent enhanced grid using UserType NOT IN Internal OR Profile NOT IN System Administrator and validating it inside enhanced of program-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                                             | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator| TmpActiveGrantsGrid | Name                      | View                       |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                              | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator | TmpActiveGrantsGrid | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3530,15 +3545,15 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     Then I see "View" icon for "Demo_Title" is displayed inside flex table
-    
+
   @47312    @hide_Expression_Enhancedgrid_ViewAction_With_UserType_IN_Internal_OR_Profile_IN_PM
   Scenario: Set up configuration to hide view action of parent enhanced grid using UserType IN Internal OR Profile IN PM and validating it inside enhanced of program-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                      | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_UserType_IN_Internal_OR_Profile_IN_PM| TmpActiveGrantsGrid | Name                      | View                       |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                       | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_UserType_IN_Internal_OR_Profile_IN_PM | TmpActiveGrantsGrid | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3548,15 +3563,15 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     Then I see "View" icon for "Demo_Title" is not displayed inside flex table
-    
+
   @47313    @hide_Expression_Enhancedgrid_ViewAction_With_UserType_IN_Internal_AND_Profile_IN_PM
   Scenario: Set up configuration to display view action of parent enhanced grid using UserType IN Internal AND Profile IN PM and validating it inside enhanced of program-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                       | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_UserType_IN_Internal_AND_Profile_IN_PM| TmpActiveGrantsGrid | Name                      | View                       |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                        | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_UserType_IN_Internal_AND_Profile_IN_PM | TmpActiveGrantsGrid | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3566,15 +3581,15 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     Then I see "View" icon for "Demo_Title" is displayed inside flex table
-    
+
   @47315    @hide_Expression_Enhancedgrid_EditAction_With_UserApp_IN_StateAsGrantor @smoke
   Scenario: Set up configuration to hide edit action of parent enhanced grid using UserApp IN State As grantor and validating it inside enhanced of program-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                          | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_EditAction_With_UserApp_IN_StateAsGrantor| TmpActiveGrantsGrid | Name                      | Edit                       |
+      | configurationCategory | fieldName            | fieldNewValue                                                                           | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_EditAction_With_UserApp_IN_StateAsGrantor | TmpActiveGrantsGrid | Name                      | Edit                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3584,15 +3599,15 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     Then I see "Edit" icon for "Demo_Title" is not displayed inside flex table
-    
+
   @47316    @hide_Expression_Enhancedgrid_EditAction_With_UserApp_NOTIN_StateAsGrantor
   Scenario: Set up configuration to display edit action of parent enhanced grid using UserApp NOTIN State As grantor and validating it inside enhanced of program-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                             | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_EditAction_With_UserApp_NOTIN_StateAsGrantor| TmpActiveGrantsGrid | Name                      | Edit                       |
+      | configurationCategory | fieldName            | fieldNewValue                                                                              | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_EditAction_With_UserApp_NOTIN_StateAsGrantor | TmpActiveGrantsGrid | Name                      | Edit                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3609,8 +3624,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                                   | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_EditAction_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor| TmpActiveGrantsGrid | Name                      | Edit                       |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                    | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_EditAction_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor | TmpActiveGrantsGrid | Name                      | Edit                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3620,15 +3635,15 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     Then I see "Edit" icon for "Demo_Title" is not displayed inside flex table
-    
+
   @47319    @hide_Expression_Enhancedgrid_EditAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor
   Scenario: Set up configuration to hide edit action of parent enhanced grid using UserType IN Internal OR UserApp IN StateasGrantor and validating it inside enhanced of program-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                                  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_EditAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor| TmpActiveGrantsGrid | Name                      | Edit                       |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                   | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_EditAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor | TmpActiveGrantsGrid | Name                      | Edit                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3638,15 +3653,15 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     Then I see "Edit" icon for "Demo_Title" is not displayed inside flex table
-    
+
   @47320    @hide_Expression_Enhancedgrid_EditAction_With_UserType_IN_Applicant_Internal_Reviewer
   Scenario: Set up configuration to hide edit action of parent enhanced grid using UserType IN Applicant Internal Reviewer and validating it inside enhanced of program-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                        | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_EditAction_With_UserType_IN_Applicant_Internal_Reviewer| TmpActiveGrantsGrid | Name                      | Edit                       |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                         | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_EditAction_With_UserType_IN_Applicant_Internal_Reviewer | TmpActiveGrantsGrid | Name                      | Edit                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3656,15 +3671,15 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     Then I see "Edit" icon for "Demo_Title" is not displayed inside flex table
-    
+
   @47322    @hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_IN_Internal @smoke
   Scenario: Set up configuration to hide view action of child enhanced grid using UserType IN Internal and validating it inside enhanced of program-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                          | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_IN_Internal| TmpGrantorActiveAwardsGrid | Name                      | View                       |
+      | configurationCategory | fieldName            | fieldNewValue                                                                           | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_IN_Internal | TmpGrantorActiveAwardsGrid | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3675,15 +3690,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "View" icon for "AD-GG PJ--00" is not displayed inside flex table
-    
+
   @47323    @hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_NOTIN_Internal
   Scenario: Set up configuration to display view action of child enhanced grid using UserType NOTIN Internal and validating it inside enhanced of program-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                             | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_NOTIN_Internal| TmpGrantorActiveAwardsGrid | Name                      | View                       |
+      | configurationCategory | fieldName            | fieldNewValue                                                                              | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_NOTIN_Internal | TmpGrantorActiveAwardsGrid | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3694,15 +3709,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "View" icon for "AD-GG PJ--00" is displayed inside flex table
-    
+
   @47324    @hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator @smoke
   Scenario: Set up configuration to hide view action of child enhanced grid using profile IN system Administrator and validating it inside enhanced of program-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                    | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator| TmpGrantorActiveAwardsGrid | Name                      | View                       |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                     | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator | TmpGrantorActiveAwardsGrid | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3713,15 +3728,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "View" icon for "AD-GG PJ--00" is not displayed inside flex table
-    
+
   @47326    @hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_NOTIN_SystemAdministrator
   Scenario: Set up configuration to display view action of child enhanced grid using profile NOTIN system Administrator and validating it inside enhanced of program-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                       | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_NOTIN_SystemAdministrator| TmpGrantorActiveAwardsGrid | Name                      | View                       |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                        | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_NOTIN_SystemAdministrator | TmpGrantorActiveAwardsGrid | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3732,15 +3747,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "View" icon for "AD-GG PJ--00" is displayed inside flex table
-    
+
   @47329    @hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal
   Scenario: Set up configuration to hide view action of child enhanced grid using profile IN system Administrator AND User type IN Internal and validating it inside enhanced of program-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                                             | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal| TmpGrantorActiveAwardsGrid | Name                      | View                       |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                              | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal | TmpGrantorActiveAwardsGrid | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3751,15 +3766,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "View" icon for "AD-GG PJ--00" is not displayed inside flex table
-    
+
   @47330    @hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal
   Scenario: Set up configuration to hide view action of child enhanced grid using profile IN system Administrator OR User type IN Internal and validating it inside enhanced of program-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                                            | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal| TmpGrantorActiveAwardsGrid | Name                      | View                       |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                             | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal | TmpGrantorActiveAwardsGrid | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3770,15 +3785,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "View" icon for "AD-GG PJ--00" is not displayed inside flex table
-    
+
   @47331    @hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator @smoke
   Scenario: Set up configuration to display view action of child enhanced grid using UserType NOT IN Internal AND Profile NOT IN System Administrator and validating it inside enhanced of program-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                                                   | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator| TmpGrantorActiveAwardsGrid | Name                      | View                       |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                                    | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator | TmpGrantorActiveAwardsGrid | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3789,15 +3804,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "View" icon for "AD-GG PJ--00" is displayed inside flex table
-    
+
   @47332    @hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator
   Scenario: Set up configuration to display view action of child enhanced grid using UserType NOT IN Internal OR Profile NOT IN System Administrator and validating it inside enhanced of program-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                                                  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator| TmpGrantorActiveAwardsGrid | Name                      | View                       |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                                   | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator | TmpGrantorActiveAwardsGrid | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3808,15 +3823,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "View" icon for "AD-GG PJ--00" is displayed inside flex table
-    
+
   @47333    @hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_IN_Internal_OR_Profile_IN_PM
   Scenario: Set up configuration to hide view action of child enhanced grid using user type IN internal OR profile IN PM and validating it inside enhanced of program-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                           | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_IN_Internal_OR_Profile_IN_PM| TmpGrantorActiveAwardsGrid | Name                      | View                       |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                            | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_IN_Internal_OR_Profile_IN_PM | TmpGrantorActiveAwardsGrid | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3827,15 +3842,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "View" icon for "AD-GG PJ--00" is not displayed inside flex table
-    
+
   @47334    @hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_IN_Internal_AND_Profile_IN_PM
   Scenario: Set up configuration to display view action of child enhanced grid using user type IN internal AND profile IN PM and validating it inside enhanced of program-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                            | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_IN_Internal_AND_Profile_IN_PM| TmpGrantorActiveAwardsGrid | Name                      | View                       |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                             | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_IN_Internal_AND_Profile_IN_PM | TmpGrantorActiveAwardsGrid | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3846,15 +3861,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "View" icon for "AD-GG PJ--00" is displayed inside flex table
-    
+
   @47335    @hide_Expression_ChildEnhancedgrid_EditAction_With_UserApp_IN_StateAsGrantor @smoke
   Scenario: Set up configuration to hide Edit action of child enhanced grid using userApp IN State As Grantor and validating it inside enhanced of program-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                               | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_EditAction_With_UserApp_IN_StateAsGrantor| TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_EditAction_With_UserApp_IN_StateAsGrantor | TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3865,15 +3880,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "Edit" icon for "AD-GG PJ--00" is not displayed inside flex table
-    
+
   @47336    @hide_Expression_ChildEnhancedgrid_EditAction_With_UserApp_NOTIN_StateAsGrantor
   Scenario: Set up configuration to display Edit action of child enhanced grid using userApp NOTIN State As Grantor and validating it inside enhanced of program-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_EditAction_With_UserApp_NOTIN_StateAsGrantor| TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                   | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_EditAction_With_UserApp_NOTIN_StateAsGrantor | TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3884,15 +3899,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "Edit" icon for "AD-GG PJ--00" is displayed inside flex table
-    
+
   @47337    @hide_Expression_ChildEnhancedgrid_EditAction_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor
   Scenario: Set up configuration to hide Edit action of child enhanced grid using  UserType IN Internal AND UserApp IN StateasGrantor and validating it inside enhanced of program-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                                        | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_EditAction_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor| TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                         | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_EditAction_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor | TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3903,15 +3918,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "Edit" icon for "AD-GG PJ--00" is not displayed inside flex table
-    
+
   @47338    @hide_Expression_ChildEnhancedgrid_EditAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor
   Scenario: Set up configuration to hide Edit action of child enhanced grid using UserType IN Internal OR UserApp IN StateasGrantor and validating it inside enhanced of program-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                                       | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_EditAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor| TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                        | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_EditAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor | TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3922,15 +3937,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "Edit" icon for "AD-GG PJ--00" is not displayed inside flex table
-    
+
   @47339    @hide_Expression_ChildEnhancedgrid_EditAction_With_UserType_IN_Applicant_Internal_Reviewer
   Scenario: Set up configuration to hide Edit action of child enhanced grid using UserType IN Applicant, Internal, Reviewer and validating it inside enhanced of program-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                             | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_EditAction_With_UserType_IN_Applicant_Internal_Reviewer| TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                              | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_EditAction_With_UserType_IN_Applicant_Internal_Reviewer | TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3941,120 +3956,120 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "Edit" icon for "AD-GG PJ--00" is not displayed inside flex table
-    
+
   @48480    @hide_Expression_ProgramFlexTable_ViewAction_With_UserType_IN_Internal
   Scenario: Set up configuration to hide view action of program flex table using UserType IN Internal and validating it inside flex table of program-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName             | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON  |                            | Programs           | Name                      | View                       |
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | View                       |
     Given I setup test configuration as below:
-      | configurationCategory      | fieldName            | fieldNewValue                                                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject  | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_ViewAction_With_UserType_IN_Internal| Programs           | Name                      | View                       |
+      | configurationCategory     | fieldName            | fieldNewValue                                                                   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_ViewAction_With_UserType_IN_Internal | Programs           | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     Then I see "View Program Details" icon for "Test program for automation - Created mode only" is not displayed inside flex table
-    
+
   @48481    @hide_Expression_ProgramFlexTable_ViewAction_With_UserType_NOTIN_Internal @smoke
   Scenario: Set up configuration to display view action of program flex table using UserType NOTIN Internal and validating it inside flex table of program-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName             | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON  |                            | Programs           | Name                      | View                       |
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | View                       |
     Given I setup test configuration as below:
-      | configurationCategory      | fieldName            | fieldNewValue                                                                     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject  | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_ViewAction_With_UserType_NOTIN_Internal| Programs           | Name                      | View                       |
+      | configurationCategory     | fieldName            | fieldNewValue                                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_ViewAction_With_UserType_NOTIN_Internal | Programs           | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     Then I see "View Program Details" icon for "Test program for automation - Created mode only" is displayed inside flex table
-    
+
   @48482    @hide_Expression_ProgramFlexTable_ViewAction_With_Profile_IN_SystemAdministrator
   Scenario: Set up configuration to hide view action of program flex table using profile IN system administrator and validating it inside flex table of program-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName             | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON  |                            | Programs           | Name                      | View                       |
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | View                       |
     Given I setup test configuration as below:
-      | configurationCategory      | fieldName            | fieldNewValue                                                                            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject  | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_ViewAction_With_Profile_IN_SystemAdministrator| Programs           | Name                      | View                       |
+      | configurationCategory     | fieldName            | fieldNewValue                                                                             | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_ViewAction_With_Profile_IN_SystemAdministrator | Programs           | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     Then I see "View Program Details" icon for "Test program for automation - Created mode only" is not displayed inside flex table
-    
+
   @48483    @hide_Expression_ProgramFlexTable_ViewAction_With_Profile_NOTIN_SystemAdministrator
   Scenario: Set up configuration to display view action of program flex table using profile NOTIN system administrator and validating it inside flex table of program-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName             | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON  |                            | Programs           | Name                      | View                       |
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | View                       |
     Given I setup test configuration as below:
-      | configurationCategory      | fieldName            | fieldNewValue                                                                               | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject  | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_ViewAction_With_Profile_NOTIN_SystemAdministrator| Programs           | Name                      | View                       |
+      | configurationCategory     | fieldName            | fieldNewValue                                                                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_ViewAction_With_Profile_NOTIN_SystemAdministrator | Programs           | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     Then I see "View Program Details" icon for "Test program for automation - Created mode only" is displayed inside flex table
-    
+
   @48484    @hide_Expression_ProgramFlexTable_ViewAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal
   Scenario: Set up configuration to hide view action of program flex table using profile IN system administrator AND UserType IN Internal and validating it inside flex table of program-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName             | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON  |                            | Programs           | Name                      | View                       |
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | View                       |
     Given I setup test configuration as below:
-      | configurationCategory      | fieldName            | fieldNewValue                                                                                                     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject  | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_ViewAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal| Programs           | Name                      | View                       |
+      | configurationCategory     | fieldName            | fieldNewValue                                                                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_ViewAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal | Programs           | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     Then I see "View Program Details" icon for "Test program for automation - Created mode only" is not displayed inside flex table
-    
+
   @48485    @hide_Expression_ProgramFlexTable_ViewAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal
   Scenario: Set up configuration to hide view action of program flex table using profile IN system administrator OR UserType IN Internal and validating it inside flex table of program-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName             | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON  |                            | Programs           | Name                      | View                       |
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | View                       |
     Given I setup test configuration as below:
-      | configurationCategory      | fieldName            | fieldNewValue                                                                                                    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject  | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_ViewAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal| Programs           | Name                      | View                       |
+      | configurationCategory     | fieldName            | fieldNewValue                                                                                                     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_ViewAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal | Programs           | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     Then I see "View Program Details" icon for "Test program for automation - Created mode only" is not displayed inside flex table
-    
+
   @48486    @hide_Expression_ProgramFlexTable_ViewAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator
   Scenario: Set up configuration to display view action of program flex table using user type NOTIN Internal AND profile NOTIN system administrator and validating it inside flex table of program-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName             | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON  |                            | Programs           | Name                      | View                       |
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | View                       |
     Given I setup test configuration as below:
-      | configurationCategory      | fieldName            | fieldNewValue                                                                                                       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject  | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_ViewAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator| Programs           | Name                      | View                       |
+      | configurationCategory     | fieldName            | fieldNewValue                                                                                                            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_ViewAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator | Programs           | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     Then I see "View Program Details" icon for "Test program for automation - Created mode only" is displayed inside flex table
-    
+
   @48597    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Internal @smoke
   Scenario: Set up configuration to hide submit for approval status of program from step progress bar using user type IN Internal and validating it inside program detail page-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName             |fieldOrignalValue | filterId         |
-      | Step Progressbar Detail   | Hide Expression JSON  |                  | ApiGeneratedId:0 |
+      | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
+      | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory      | fieldName            | fieldNewValue                                                                               | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Detail    | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Internal| Program Progress Bar | Name                      | Submitted for Approval     |
+      | configurationCategory   | fieldName            | fieldNewValue                                                                                | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Internal | Program Progress Bar | Name                      | Submitted for Approval     |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4062,15 +4077,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
-    
+
   @48598    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_NOTIN_Internal
   Scenario: Set up configuration to display submit for approval status of program from step progress bar using user type IN Internal and validating it inside program detail page-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName             |fieldOrignalValue | filterId         |
-      | Step Progressbar Detail   | Hide Expression JSON  |                  | ApiGeneratedId:0 |
+      | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
+      | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory      | fieldName            | fieldNewValue                                                                                  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Detail    | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_NOTIN_Internal| Program Progress Bar | Name                      | Submitted for Approval     |
+      | configurationCategory   | fieldName            | fieldNewValue                                                                                   | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_NOTIN_Internal | Program Progress Bar | Name                      | Submitted for Approval     |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4078,60 +4093,60 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Submitted for Approval" is displayed inside step progress bar
-    
+
   @48601    @hide_Expression_ProgramFlexTable_EditAction_With_UserApp_IN_StateAsGrantor @smoke
   Scenario: Set up configuration to hide Edit action of program flex table using User App IN State As grantor and validating it inside flex table of program-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName             | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON  |                            | Programs           | Name                      | Edit                       |
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | Edit                       |
     Given I setup test configuration as below:
-      | configurationCategory      | fieldName            | fieldNewValue                                                                       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject  | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_EditAction_With_UserApp_IN_StateAsGrantor| Programs           | Name                      | Edit                       |
+      | configurationCategory     | fieldName            | fieldNewValue                                                                        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_EditAction_With_UserApp_IN_StateAsGrantor | Programs           | Name                      | Edit                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
-    
+
   @48602    @hide_Expression_ProgramFlexTable_EditAction_With_UserApp_NOTIN_StateAsGrantor
   Scenario: Set up configuration to display Edit action of program flex table using User App NOTIN State As grantor and validating it inside flex table of program-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName             | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON  |                            | Programs           | Name                      | Edit                       |
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | Edit                       |
     Given I setup test configuration as below:
-      | configurationCategory      | fieldName            | fieldNewValue                                                                          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject  | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_EditAction_With_UserApp_NOTIN_StateAsGrantor| Programs           | Name                      | Edit                       |
+      | configurationCategory     | fieldName            | fieldNewValue                                                                           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_EditAction_With_UserApp_NOTIN_StateAsGrantor | Programs           | Name                      | Edit                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     Then I see "Edit" icon for "Test program for automation - Created mode only" is displayed inside flex table
-    
+
   @48600    @hide_Expression_ProgramFlexTable_ViewAction_With_UserType_IN_Internal_AND_Profile_IN_PM
   Scenario: Set up configuration to display view action of program flex table using UserType IN Internal AND Profile IN PM and validating it inside flex table of program-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName             | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON  |                            | Programs           | Name                      | View                       |
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | View                       |
     Given I setup test configuration as below:
-      | configurationCategory      | fieldName            | fieldNewValue                                                                          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject  | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_EditAction_With_UserApp_NOTIN_StateAsGrantor| Programs           | Name                      | View                       |
+      | configurationCategory     | fieldName            | fieldNewValue                                                                           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_EditAction_With_UserApp_NOTIN_StateAsGrantor | Programs           | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     Then I see "View Program Details" icon for "Test program for automation - Created mode only" is displayed inside flex table
-    
+
   @48603    @hide_Expression_ProgramFlexTable_EditAction_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor
   Scenario: Set up configuration to hide Edit action of program flex table using UserType IN Internal AND UserApp IN StateAsGrantor and validating it inside flex table of program-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName             | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON  |                            | Programs           | Name                      | Edit                       |
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | Edit                       |
     Given I setup test configuration as below:
-      | configurationCategory      | fieldName            | fieldNewValue                                                                                               | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject  | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_EdiAction_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor| Programs           | Name                      | Edit                       |
+      | configurationCategory     | fieldName            | fieldNewValue                                                                                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_EdiAction_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor | Programs           | Name                      | Edit                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4142,146 +4157,146 @@ Feature: Expression Builder Component Scenarios
   @48604    @hide_Expression_ProgramFlexTable_EditAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor
   Scenario: Set up configuration to hide Edit action of program flex table using UserType IN Internal OR UserApp IN StateAsGrantor and validating it inside flex table of program-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName             | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON  |                            | Programs           | Name                      | Edit                       |
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | Edit                       |
     Given I setup test configuration as below:
-      | configurationCategory      | fieldName            | fieldNewValue                                                                                              | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject  | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_EdiAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor| Programs           | Name                      | Edit                       |
+      | configurationCategory     | fieldName            | fieldNewValue                                                                                               | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_EdiAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor | Programs           | Name                      | Edit                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
-    
+
   @48605    @hide_Expression_ProgramFlexTable_EditAction_With_UserType_IN_Applicant_Internal_Reviewer
   Scenario: Set up configuration to hide Edit action of program flex table using UserType IN Applicant Internal Reviewer and validating it inside flex table of program-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName             | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON  |                            | Programs           | Name                      | Edit                       |
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | Edit                       |
     Given I setup test configuration as below:
-      | configurationCategory      | fieldName            | fieldNewValue                                                                                    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject  | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_EdiAction_With_UserType_IN_Applicant_Internal_Reviewer| Programs           | Name                      | Edit                       |
+      | configurationCategory     | fieldName            | fieldNewValue                                                                                     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_EdiAction_With_UserType_IN_Applicant_Internal_Reviewer | Programs           | Name                      | Edit                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
-    
+
   @48606    @hide_Expression_ProgramFlexTable_EditAction_With_UserApp_IN_StateAsGrantor_Admin_Recipient
   Scenario: Set up configuration to hide Edit action of program flex table using UserApp IN StateasGrantor, Admin, Recipient and validating it inside flex table of program-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName             | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON  |                            | Programs           | Name                      | Edit                       |
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | Edit                       |
     Given I setup test configuration as below:
-      | configurationCategory      | fieldName            | fieldNewValue                                                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject  | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_EdiAction_With_UserApp_IN_StateAsGrantor_Admin_Recipient| Programs           | Name                      | Edit                       |
+      | configurationCategory     | fieldName            | fieldNewValue                                                                                       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_EdiAction_With_UserApp_IN_StateAsGrantor_Admin_Recipient | Programs           | Name                      | Edit                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
-    
+
   @48607    @hide_Expression_ProgramFlexTable_EditAction_With_UserApp_NOTIN_Admin
   Scenario: Set up configuration to hide Edit action of program flex table using UserApp NOTIN Admin and validating it inside flex table of program-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName             | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON  |                            | Programs           | Name                      | Edit                       |
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | Edit                       |
     Given I setup test configuration as below:
-      | configurationCategory      | fieldName            | fieldNewValue                                                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject  | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_EdiAction_With_UserApp_NOTIN_Admin| Programs           | Name                      | Edit                       |
+      | configurationCategory     | fieldName            | fieldNewValue                                                                 | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_EdiAction_With_UserApp_NOTIN_Admin | Programs           | Name                      | Edit                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
-    
+
   @48608    @hide_Expression_ProgramFlexTable_EditAction_With_UserApp_NOTIN_Recipient
   Scenario: Set up configuration to hide Edit action of program flex table using UserApp NOTIN Recipient and validating it inside flex table of program-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName             | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON  |                            | Programs           | Name                      | Edit                       |
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | Edit                       |
     Given I setup test configuration as below:
-      | configurationCategory      | fieldName            | fieldNewValue                                                                    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject  | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_EdiAction_With_UserApp_NOTIN_Recipient| Programs           | Name                      | Edit                       |
+      | configurationCategory     | fieldName            | fieldNewValue                                                                     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_EdiAction_With_UserApp_NOTIN_Recipient | Programs           | Name                      | Edit                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
-    
+
   @48609    @hide_Expression_ProgramFlexTable_EditAction_With_Profile_IN_SystemAdministrator_OR_UserApp_IN_StateAsGrantor
   Scenario: Set up configuration to hide Edit action of program flex table using Profile IN System Administrator OR UserApp IN StateasGrantor and validating it inside flex table of program-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName             | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON  |                            | Programs           | Name                      | Edit                       |
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | Edit                       |
     Given I setup test configuration as below:
-      | configurationCategory      | fieldName            | fieldNewValue                                                                                                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject  | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_EdiAction_With_UserApp_Profile_IN_SystemAdministrator_OR_UserApp_IN_StateAsGrantor| Programs           | Name                      | Edit                       |
+      | configurationCategory     | fieldName            | fieldNewValue                                                                                                                 | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_EdiAction_With_UserApp_Profile_IN_SystemAdministrator_OR_UserApp_IN_StateAsGrantor | Programs           | Name                      | Edit                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
-    
+
   @48610    @hide_Expression_ProgramFlexTable_EditAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator
   Scenario: Set up configuration to hide Edit action of program flex table using UserType NOT IN Internal AND Profile NOT IN System Administrator and validating it inside flex table of program-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName             | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON  |                            | Programs           | Name                      | Edit                       |
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | Edit                       |
     Given I setup test configuration as below:
-      | configurationCategory      | fieldName            | fieldNewValue                                                                                                          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject  | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_EdiAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator| Programs           | Name                      | Edit                       |
+      | configurationCategory     | fieldName            | fieldNewValue                                                                                                           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_EdiAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator | Programs           | Name                      | Edit                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     Then I see "Edit" icon for "Test program for automation - Created mode only" is displayed inside flex table
-    
+
   @48611    @hide_Expression_ProgramFlexTable_ViewAction_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator @smoke
   Scenario: Set up configuration to display view action of program flex table using user type NOTIN Internal OR profile NOTIN system administrator and validating it inside flex table of program-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName             | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON  |                            | Programs           | Name                      | View                       |
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | View                       |
     Given I setup test configuration as below:
-      | configurationCategory      | fieldName            | fieldNewValue                                                                                                          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject  | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_ViewAction_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator| Programs           | Name                      | View                       |
+      | configurationCategory     | fieldName            | fieldNewValue                                                                                                           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_ViewAction_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator | Programs           | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     Then I see "View Program Details" icon for "Test program for automation - Created mode only" is displayed inside flex table
-    
+
   @48612    @hide_Expression_ProgramFlexTable_ViewAction_With_UserType_IN_Internal_OR_Profile_IN_PM
   Scenario: Set up configuration to hide view action of program flex table using User type IN Internal OR Profile IN PM and validating it inside flex table of program-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName             | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON  |                            | Programs           | Name                      | View                       |
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | View                       |
     Given I setup test configuration as below:
-      | configurationCategory      | fieldName            | fieldNewValue                                                                                   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject  | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_ViewAction_With_UserType_IN_Internal_OR_Profile_IN_PM| Programs           | Name                      | View                       |
+      | configurationCategory     | fieldName            | fieldNewValue                                                                                    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTable_ViewAction_With_UserType_IN_Internal_OR_Profile_IN_PM | Programs           | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    Then I see "View Program Details" icon for "Test program for automation - Created mode only" is not displayed inside flex table 
-    
+    Then I see "View Program Details" icon for "Test program for automation - Created mode only" is not displayed inside flex table
+
   @48613    @hide_Expression_StepProgressBar_SubmitForApproval_With_Profile_IN_SystemAdministrator @smoke
   Scenario: Set up configuration to hide submit for approval status of program from step progress bar using Profile IN System Administrator and validating it inside program detail page-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName             |fieldOrignalValue | filterId         |
-      | Step Progressbar Detail   | Hide Expression JSON  |                  | ApiGeneratedId:0 |
+      | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
+      | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory      | fieldName            | fieldNewValue                                                                                         | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Detail    | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_Profile_IN_SystemAdministrator| Program Progress Bar | Name                      | Submitted for Approval     |
+      | configurationCategory   | fieldName            | fieldNewValue                                                                                          | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_Profile_IN_SystemAdministrator | Program Progress Bar | Name                      | Submitted for Approval     |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4289,15 +4304,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
-    
+
   @48614    @hide_Expression_StepProgressBar_SubmitForApproval_With_Profile_NOTIN_SystemAdministrator
   Scenario: Set up configuration to display submit for approval status of program from step progress bar using Profile NOTIN System Administrator and validating it inside program detail page-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName             |fieldOrignalValue | filterId         |
-      | Step Progressbar Detail   | Hide Expression JSON  |                  | ApiGeneratedId:0 |
+      | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
+      | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory      | fieldName            | fieldNewValue                                                                                            | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Detail    | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_Profile_NOTIN_SystemAdministrator| Program Progress Bar | Name                      | Submitted for Approval     |
+      | configurationCategory   | fieldName            | fieldNewValue                                                                                             | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_Profile_NOTIN_SystemAdministrator | Program Progress Bar | Name                      | Submitted for Approval     |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4305,15 +4320,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Submitted for Approval" is displayed inside step progress bar
-    
+
   @48615    @hide_Expression_StepProgressBar_SubmitForApproval_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal
   Scenario: Set up configuration to hide submit for approval status of program from step progress bar using Profile IN System Administrator AND User Type IN Internal and validating it inside program detail page-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName             |fieldOrignalValue | filterId         |
-      | Step Progressbar Detail   | Hide Expression JSON  |                  | ApiGeneratedId:0 |
+      | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
+      | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory      | fieldName            | fieldNewValue                                                                                                                  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Detail    | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal| Program Progress Bar | Name                      | Submitted for Approval     |
+      | configurationCategory   | fieldName            | fieldNewValue                                                                                                                   | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal | Program Progress Bar | Name                      | Submitted for Approval     |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4321,15 +4336,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
-    
+
   @48616    @hide_Expression_StepProgressBar_SubmitForApproval_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal
   Scenario: Set up configuration to hide submit for approval status of program from step progress bar using Profile IN System Administrator OR User Type IN Internal and validating it inside program detail page-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName             |fieldOrignalValue | filterId         |
-      | Step Progressbar Detail   | Hide Expression JSON  |                  | ApiGeneratedId:0 |
+      | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
+      | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory      | fieldName            | fieldNewValue                                                                                                                 | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Detail    | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal| Program Progress Bar | Name                      | Submitted for Approval     |
+      | configurationCategory   | fieldName            | fieldNewValue                                                                                                                  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal | Program Progress Bar | Name                      | Submitted for Approval     |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4337,15 +4352,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
-    
+
   @48617    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator @smoke
   Scenario: Set up configuration to display submit for approval status of program from step progress bar using User Type NOTIN Internal AND Profile NOTIN System Administrator and validating it inside program detail page-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName             |fieldOrignalValue | filterId         |
-      | Step Progressbar Detail   | Hide Expression JSON  |                  | ApiGeneratedId:0 |
+      | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
+      | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory      | fieldName            | fieldNewValue                                                                                                                        | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Detail    | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator| Program Progress Bar | Name                      | Submitted for Approval     |
+      | configurationCategory   | fieldName            | fieldNewValue                                                                                                                         | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator | Program Progress Bar | Name                      | Submitted for Approval     |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4353,15 +4368,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Submitted for Approval" is displayed inside step progress bar
-    
+
   @48618    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator
   Scenario: Set up configuration to display submit for approval status of program from step progress bar using User Type NOTIN Internal OR Profile NOTIN System Administrator and validating it inside program detail page-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName             |fieldOrignalValue | filterId         |
-      | Step Progressbar Detail   | Hide Expression JSON  |                  | ApiGeneratedId:0 |
+      | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
+      | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory      | fieldName            | fieldNewValue                                                                                                                       | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Detail    | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator| Program Progress Bar | Name                      | Submitted for Approval     |
+      | configurationCategory   | fieldName            | fieldNewValue                                                                                                                        | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator | Program Progress Bar | Name                      | Submitted for Approval     |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4369,15 +4384,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Submitted for Approval" is displayed inside step progress bar
-    
+
   @48619    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Internal_OR_Profile_IN_PM
   Scenario: Set up configuration to hide submit for approval status of program from step progress bar using User Type IN Internal OR Profile IN PM and validating it inside program detail page-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName             |fieldOrignalValue | filterId         |
-      | Step Progressbar Detail   | Hide Expression JSON  |                  | ApiGeneratedId:0 |
+      | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
+      | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory      | fieldName            | fieldNewValue                                                                                                | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Detail    | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Internal_OR_Profile_IN_PM| Program Progress Bar | Name                      | Submitted for Approval     |
+      | configurationCategory   | fieldName            | fieldNewValue                                                                                                 | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Internal_OR_Profile_IN_PM | Program Progress Bar | Name                      | Submitted for Approval     |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4385,15 +4400,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
-    
+
   @48620    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Internal_AND_Profile_IN_PM
   Scenario: Set up configuration to display submit for approval status of program from step progress bar using User Type IN Internal AND Profile IN PM and validating it inside program detail page-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName             |fieldOrignalValue | filterId         |
-      | Step Progressbar Detail   | Hide Expression JSON  |                  | ApiGeneratedId:0 |
+      | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
+      | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory      | fieldName            | fieldNewValue                                                                                                 | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Detail    | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Internal_AND_Profile_IN_PM| Program Progress Bar | Name                      | Submitted for Approval     |
+      | configurationCategory   | fieldName            | fieldNewValue                                                                                                  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Internal_AND_Profile_IN_PM | Program Progress Bar | Name                      | Submitted for Approval     |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4401,15 +4416,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Submitted for Approval" is displayed inside step progress bar
-    
+
   @48621    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserApp_IN_StateAsGrantor @smoke
   Scenario: Set up configuration to hide submit for approval status of program from step progress bar using User App IN State AS Grantor and validating it inside program detail page-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName             |fieldOrignalValue | filterId         |
-      | Step Progressbar Detail   | Hide Expression JSON  |                  | ApiGeneratedId:0 |
+      | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
+      | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory      | fieldName            | fieldNewValue                                                                                    | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Detail    | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserApp_IN_StateAsGrantor| Program Progress Bar | Name                      | Submitted for Approval     |
+      | configurationCategory   | fieldName            | fieldNewValue                                                                                     | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserApp_IN_StateAsGrantor | Program Progress Bar | Name                      | Submitted for Approval     |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4417,15 +4432,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
-    
+
   @48622    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserApp_NOTIN_StateAsGrantor
   Scenario: Set up configuration to display submit for approval status of program from step progress bar using User App NOTIN State AS Grantor and validating it inside program detail page-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName             |fieldOrignalValue | filterId         |
-      | Step Progressbar Detail   | Hide Expression JSON  |                  | ApiGeneratedId:0 |
+      | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
+      | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory      | fieldName            | fieldNewValue                                                                                       | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Detail    | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserApp_NOTIN_StateAsGrantor| Program Progress Bar | Name                      | Submitted for Approval     |
+      | configurationCategory   | fieldName            | fieldNewValue                                                                                        | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserApp_NOTIN_StateAsGrantor | Program Progress Bar | Name                      | Submitted for Approval     |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4433,15 +4448,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Submitted for Approval" is displayed inside step progress bar
-    
+
   @48623    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor
   Scenario: Set up configuration to hide submit for approval status of program from step progress bar using User Type IN Internal AND UserApp IN StateAsGrantor and validating it inside program detail page-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName             |fieldOrignalValue | filterId         |
-      | Step Progressbar Detail   | Hide Expression JSON  |                  | ApiGeneratedId:0 |
+      | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
+      | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory      | fieldName            | fieldNewValue                                                                                                             | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Detail    | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor| Program Progress Bar | Name                      | Submitted for Approval     |
+      | configurationCategory   | fieldName            | fieldNewValue                                                                                                              | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor | Program Progress Bar | Name                      | Submitted for Approval     |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4449,15 +4464,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
-    
+
   @48624    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor
   Scenario: Set up configuration to hide submit for approval status of program from step progress bar using User Type IN Internal OR UserApp IN StateAsGrantor and validating it inside program detail page-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName             |fieldOrignalValue | filterId         |
-      | Step Progressbar Detail   | Hide Expression JSON  |                  | ApiGeneratedId:0 |
+      | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
+      | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory      | fieldName            | fieldNewValue                                                                                                            | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Detail    | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor| Program Progress Bar | Name                      | Submitted for Approval     |
+      | configurationCategory   | fieldName            | fieldNewValue                                                                                                             | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor | Program Progress Bar | Name                      | Submitted for Approval     |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4465,15 +4480,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
-    
+
   @48625    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Applicant_Internal_Reviewer
   Scenario: Set up configuration to hide submit for approval status of program from step progress bar using User Type IN Applicant Internal Reviewer and validating it inside program detail page-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName             |fieldOrignalValue | filterId         |
-      | Step Progressbar Detail   | Hide Expression JSON  |                  | ApiGeneratedId:0 |
+      | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
+      | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory      | fieldName            | fieldNewValue                                                                                                  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Detail    | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Applicant_Internal_Reviewer| Program Progress Bar | Name                      | Submitted for Approval     |
+      | configurationCategory   | fieldName            | fieldNewValue                                                                                                   | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Applicant_Internal_Reviewer | Program Progress Bar | Name                      | Submitted for Approval     |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4481,15 +4496,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
-    
+
   @48626    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserApp_IN_StateAsGrantor_Admin_Recipient @smoke
   Scenario: Set up configuration to hide submit for approval status of program from step progress bar using UserApp IN State As grantor, Admin, Recipient and validating it inside program detail page-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName             |fieldOrignalValue | filterId         |
-      | Step Progressbar Detail   | Hide Expression JSON  |                  | ApiGeneratedId:0 |
+      | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
+      | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory      | fieldName            | fieldNewValue                                                                                                    | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Detail    | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserApp_IN_StateAsGrantor_Admin_Recipient| Program Progress Bar | Name                      | Submitted for Approval     |
+      | configurationCategory   | fieldName            | fieldNewValue                                                                                                     | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserApp_IN_StateAsGrantor_Admin_Recipient | Program Progress Bar | Name                      | Submitted for Approval     |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4497,15 +4512,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
-    
+
   @48627    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserApp_NOTIN_Admin
   Scenario: Set up configuration to hide submit for approval status of program from step progress bar using UserApp NOTIN Admin and validating it inside program detail page-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName             |fieldOrignalValue | filterId         |
-      | Step Progressbar Detail   | Hide Expression JSON  |                  | ApiGeneratedId:0 |
+      | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
+      | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory      | fieldName            | fieldNewValue                                                                              | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Detail    | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserApp_NOTIN_Admin| Program Progress Bar | Name                      | Submitted for Approval     |
+      | configurationCategory   | fieldName            | fieldNewValue                                                                               | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserApp_NOTIN_Admin | Program Progress Bar | Name                      | Submitted for Approval     |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4513,15 +4528,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
-    
+
   @48628    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserApp_NOTIN_Recipient
   Scenario: Set up configuration to hide submit for approval status of program from step progress bar using UserApp NOTIN Recipient and validating it inside program detail page-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName             |fieldOrignalValue | filterId         |
-      | Step Progressbar Detail   | Hide Expression JSON  |                  | ApiGeneratedId:0 |
+      | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
+      | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory      | fieldName            | fieldNewValue                                                                                  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Detail    | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserApp_NOTIN_Recipient| Program Progress Bar | Name                      | Submitted for Approval     |
+      | configurationCategory   | fieldName            | fieldNewValue                                                                                   | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserApp_NOTIN_Recipient | Program Progress Bar | Name                      | Submitted for Approval     |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4529,15 +4544,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
-    
+
   @48629    @hide_Expression_StepProgressBar_SubmitForApproval_With_Profile_IN_SystemAdministrator_OR_UserApp_IN_StateAsGrantor
   Scenario: Set up configuration to hide submit for approval status of program from step progress bar using Profile IN System Administrator OR UserApp IN StateasGrantor and validating it inside program detail page-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName             |fieldOrignalValue | filterId         |
-      | Step Progressbar Detail   | Hide Expression JSON  |                  | ApiGeneratedId:0 |
+      | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
+      | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory      | fieldName            | fieldNewValue                                                                                                                      | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Detail    | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_Profile_IN_SystemAdministrator_OR_UserApp_IN_StateAsGrantor| Program Progress Bar | Name                      | Submitted for Approval     |
+      | configurationCategory   | fieldName            | fieldNewValue                                                                                                                       | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_Profile_IN_SystemAdministrator_OR_UserApp_IN_StateAsGrantor | Program Progress Bar | Name                      | Submitted for Approval     |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4545,15 +4560,15 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
-   
+
   @48630    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_NOTIN_Internal_OR_Profile_IN_SystemAdministratror_EXE
   Scenario: Set up configuration to display submit for approval status of program from step progress bar using UserType NOT IN Internal OR Profile IN System Administrator, EXE and validating it inside program detail page-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName             |fieldOrignalValue | filterId         |
-      | Step Progressbar Detail   | Hide Expression JSON  |                  | ApiGeneratedId:0 |
+      | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
+      | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory      | fieldName            | fieldNewValue                                                                                                                         | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Detail    | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_NOTIN_Internal_OR_Profile_IN_SystemAdministratror_EXE| Program Progress Bar | Name                      | Submitted for Approval     |
+      | configurationCategory   | fieldName            | fieldNewValue                                                                                                                          | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_NOTIN_Internal_OR_Profile_IN_SystemAdministratror_EXE | Program Progress Bar | Name                      | Submitted for Approval     |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4561,16 +4576,16 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
-    
+
   @48634    @hide_Expression_ApprovalDecisionAction_Forward_With_UserType_IN_Internal @smoke
   Scenario: Setup configuration to hide forward option from configuration for approval decision using User Type IN Internal and validating its content in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                            | coreComponentField                                         |
-      | Program                          | Status               | Created                                                                                  | Test program for automation -  SA mode only - Not approved |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_UserType_IN_Internal| ADAC-0011                                                  |
+      | configurationCategory            | fieldName            | fieldNewValue                                                                             | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                   | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_UserType_IN_Internal | ADAC-0011                                                  |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4587,16 +4602,16 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see "Reassign" is disabled
-    
+
   @48637    @hide_Expression_ApprovalDecisionAction_Forward_With_UserType_NOTIN_Internal
   Scenario: Setup configuration to display forward option from configuration for approval decision using User Type NotIN Internal and validating its content in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                               | coreComponentField                                         |
-      | Program                          | Status               | Created                                                                                     | Test program for automation -  SA mode only - Not approved |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_UserType_NOTIN_Internal| ADAC-0011                                                  |
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                      | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_UserType_NOTIN_Internal | ADAC-0011                                                  |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4613,16 +4628,16 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see "Reassign" is enabled
-    
+
   @48638    @hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator @smoke
   Scenario: Setup configuration to display forward option from configuration for approval decision using Profile IN System Administrator and validating its content in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                      | coreComponentField                                         |
-      | Program                          | Status               | Created                                                                                            | Test program for automation -  SA mode only - Not approved |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator| ADAC-0011                                                  |
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                       | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                             | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator | ADAC-0011                                                  |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4639,16 +4654,16 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see "Reassign" is enabled
-    
+
   @48639    @hide_Expression_ApprovalDecisionAction_Forward_With_Profile_NOTIN_SystemAdministrator
   Scenario: Setup configuration to hide forward option from configuration for approval decision using Profile NOTIN System Administrator and validating its content in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                         | coreComponentField                                         |
-      | Program                          | Status               | Created                                                                                               | Test program for automation -  SA mode only - Not approved |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_Profile_NOTIN_SystemAdministrator| ADAC-0011                                                  |
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                          | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                                | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_Profile_NOTIN_SystemAdministrator | ADAC-0011                                                  |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4665,16 +4680,16 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see "Reassign" is disabled
-    
+
   @48640    @hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal
   Scenario: Setup configuration to display forward option from configuration for approval decision using  Profile IN System Administrator AND UserType IN Internal and validating its content in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                                               | coreComponentField                                         |
-      | Program                          | Status               | Created                                                                                                                     | Test program for automation -  SA mode only - Not approved |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal| ADAC-0011                                                  |
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                                                | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                                                      | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal | ADAC-0011                                                  |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4691,16 +4706,16 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see "Reassign" is enabled
-    
+
   @48641    @hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal
   Scenario: Setup configuration to hide forward option from configuration for approval decision using  Profile IN System Administrator OR UserType IN Internal and validating its content in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                                              | coreComponentField                                         |
-      | Program                          | Status               | Created                                                                                                                    | Test program for automation -  SA mode only - Not approved |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal| ADAC-0011                                                  |
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                                               | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                                                     | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal | ADAC-0011                                                  |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4717,16 +4732,16 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see "Reassign" is disabled
-    
+
   @48646    @hide_Expression_ApprovalDecisionAction_Reject_With_UserType_NotIN_Internal_AND_Profile_NOTIN_SystemAdministrator @smoke
   Scenario: Setup configuration to display Reject option from configuration for approval decision using User Type NOTIN Internal AND Profile NOTIN System Administrator and validating its content in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                                                    | coreComponentField                                         |
-      | Program                          | Status               | Created                                                                                                                          | Test program for automation -  SA mode only - Not approved |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator| ADAC-0010                                                  |
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                                                     | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                                                           | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator | ADAC-0010                                                  |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4743,16 +4758,16 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see "Disapprove" is enabled
-    
+
   @48647    @hide_Expression_ApprovalDecisionAction_Reject_With_UserType_NotIN_Internal_OR_Profile_NOTIN_SystemAdministrator
   Scenario: Setup configuration to hide Reject option from configuration for approval decision using UserType NOT IN Internal OR Profile NOT IN System Administrator and validating its content in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                                                   | coreComponentField                                         |
-      | Program                          | Status               | Created                                                                                                                         | Test program for automation -  SA mode only - Not approved |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator| ADAC-0010                                                  |
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                                                    | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                                                          | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator | ADAC-0010                                                  |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4769,16 +4784,16 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see "Disapprove" is disabled
-    
+
   @48648    @hide_Expression_ApprovalDecisionAction_Reject_With_UserType_IN_Internal_OR_Profile_IN_PM
   Scenario: Setup configuration to hide Reject option from configuration for approval decision using UserType IN Internal OR Profile IN PM and validating its content in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                            | coreComponentField                                         |
-      | Program                          | Status               | Created                                                                                                  | Test program for automation -  SA mode only - Not approved |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject_With_UserType_IN_Internal_OR_Profile_IN_PM| ADAC-0010                                                  |
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                             | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                                   | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject_With_UserType_IN_Internal_OR_Profile_IN_PM | ADAC-0010                                                  |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4795,16 +4810,16 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see "Disapprove" is disabled
-    
+
   @48649    @hide_Expression_ApprovalDecisionAction_Reject_With_UserType_IN_Internal_AND_Profile_IN_PM
   Scenario: Setup configuration to hide Reject option from configuration for approval decision using UserType IN Internal AND Profile IN PM and validating its content in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                             | coreComponentField                                         |
-      | Program                          | Status               | Created                                                                                                   | Test program for automation -  SA mode only - Not approved |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject_With_UserType_IN_Internal_AND_Profile_IN_PM| ADAC-0010                                                  |
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                              | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                                    | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject_With_UserType_IN_Internal_AND_Profile_IN_PM | ADAC-0010                                                  |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4821,16 +4836,16 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see "Disapprove" is disabled
-    
+
   @48650    @hide_Expression_ApprovalDecisionAction_Reject_With_UserApp_IN_StateAsGrantor
   Scenario: Setup configuration to hide Reject option from configuration for approval decision using userApp IN StateAs Grantor and validating its content in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                | coreComponentField                                         |
-      | Program                          | Status               | Created                                                                                      | Test program for automation -  SA mode only - Not approved |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject_With_UserApp_IN_StateAsGrantor| ADAC-0010                                                  |
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                 | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                       | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject_With_UserApp_IN_StateAsGrantor | ADAC-0010                                                  |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4847,16 +4862,16 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see "Disapprove" is disabled
-    
+
   @48651    @hide_Expression_ApprovalDecisionAction_Reject_With_UserApp_NOTIN_StateAsGrantor
   Scenario: Setup configuration to display Reject option from configuration for approval decision using userApp NOTIN State As Grantor and validating its content in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                   | coreComponentField                                         |
-      | Program                          | Status               | Created                                                                                         | Test program for automation -  SA mode only - Not approved |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject_With_UserApp_NOTIN_StateAsGrantor| ADAC-0010                                                  |
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                    | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                          | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject_With_UserApp_NOTIN_StateAsGrantor | ADAC-0010                                                  |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4873,7 +4888,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see "Disapprove" is enabled
-    
+
   @48652    @hide_Expression_ApprovalDecisionAction_SendBack_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor
   Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserType IN Internal AND UserApp IN StateasGrantor and validating its content in pending tasks approval decision
     Given I have default configuration as below:
@@ -4899,16 +4914,16 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see "Send to Owner" is disabled
-    
+
   @48654    @hide_Expression_ApprovalDecisionAction_SendBack_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor
   Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserType IN Internal OR UserApp IN StateasGrantor and validating its content in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                                          | coreComponentField                                         |
-      | Program                          | Status               | Created                                                                                                                | Test program for automation -  SA mode only - Not approved |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor| ADAC-0012                                                  |
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                                           | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                                                 | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor | ADAC-0012                                                  |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4925,16 +4940,16 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see "Send to Owner" is disabled
-    
+
   @48655    @hide_Expression_ApprovalDecisionAction_SendBack_With_UserType_IN_Applicant_Internal_Reviewer
   Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserType IN Applicant Internal Reviewer and validating its content in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                                | coreComponentField                                         |
-      | Program                          | Status               | Created                                                                                                      | Test program for automation -  SA mode only - Not approved |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserType_IN_Applicant_Internal_Reviewer| ADAC-0012                                                  |
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                                 | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                                       | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserType_IN_Applicant_Internal_Reviewer | ADAC-0012                                                  |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4951,16 +4966,16 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see "Send to Owner" is disabled
-    
+
   @48656    @hide_Expression_ApprovalDecisionAction_SendBack_With_UserApp_IN_StateAsGrantee
   Scenario: Setup configuration to display Send back option from configuration for approval decision using UserApp IN State As Grantee and validating its content in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                  | coreComponentField                                         |
-      | Program                          | Status               | Created                                                                                        | Test program for automation -  SA mode only - Not approved |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserApp_IN_StateAsGrantee| ADAC-0012                                                  |
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                   | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                         | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserApp_IN_StateAsGrantee | ADAC-0012                                                  |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4977,16 +4992,16 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see "Send to Owner" is enabled
-    
+
   @48657    @hide_Expression_ApprovalDecisionAction_SendBack_With_UserApp_NOTIN_Admin @smoke
   Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserApp NOTIN Admin and validating its content in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                            | coreComponentField                                         |
-      | Program                          | Status               | Created                                                                                  | Test program for automation -  SA mode only - Not approved |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserApp_NOTIN_Admin| ADAC-0012                                                  |
+      | configurationCategory            | fieldName            | fieldNewValue                                                                             | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                   | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserApp_NOTIN_Admin | ADAC-0012                                                  |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5003,16 +5018,16 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see "Send to Owner" is disabled
-    
+
   @48658    @hide_Expression_ApprovalDecisionAction_SendBack_With_UserApp_NOTIN_Recipient
   Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserApp NOTIN Recipient and validating its content in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                | coreComponentField                                         |
-      | Program                          | Status               | Created                                                                                      | Test program for automation -  SA mode only - Not approved |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserApp_NOTIN_Recipient| ADAC-0012                                                  |
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                 | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                       | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserApp_NOTIN_Recipient | ADAC-0012                                                  |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5029,16 +5044,16 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see "Send to Owner" is disabled
-    
+
   @48659    @hide_Expression_ApprovalDecisionAction_SendBack_With_UserApp_IN_StateAsGrantor_StateAsGrantee_Recipient_Admin
   Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserApp IN StateasGrantor, StateasGrantee, Recipient, Admin and validating its content in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                                                 | coreComponentField                                         |
-      | Program                          | Status               | Created                                                                                                                       | Test program for automation -  SA mode only - Not approved |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserApp_IN_StateAsGrantor_StateAsGrantee_Recipient_Admin| ADAC-0012                                                  |
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                                                  | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                                                        | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserApp_IN_StateAsGrantor_StateAsGrantee_Recipient_Admin | ADAC-0012                                                  |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5055,16 +5070,16 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see "Send to Owner" is disabled
-    
+
   @48662    @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_SystemAdministrator_OR_UserApp_IN_StateAsGrantor
   Scenario: Setup configuration to hide Approve option from configuration for approval decision using Profile IN System Administrator OR UserApp IN StateasGrantor and validating its content in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                                                   | coreComponentField                                         |
-      | Program                          | Status               | Created                                                                                                                         | Test program for automation -  SA mode only - Not approved |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_SystemAdministrator_OR_UserApp_IN_StateAsGrantor| ADAC-0009                                                  |
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                                                    | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                                                          | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_SystemAdministrator_OR_UserApp_IN_StateAsGrantor | ADAC-0009                                                  |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5081,16 +5096,16 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see "Approve" is disabled
-    
+
   @48663    @hide_Expression_ApprovalDecisionAction_Approve_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_Admin
   Scenario: Setup configuration to display Approve option from configuration for approval decision using UserType NOT IN Internal AND Profile NOT IN  Admin and validating its content in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                                       | coreComponentField                                         |
-      | Program                          | Status               | Created                                                                                                             | Test program for automation -  SA mode only - Not approved |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_Admin| ADAC-0009                                                  |
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                                        | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                                              | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_Admin | ADAC-0009                                                  |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5107,16 +5122,16 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see "Approve" is enabled
-    
+
   @48666    @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_PM_OR_UserApp_NOTIN_Admin
   Scenario: Setup configuration to hide Approve option from configuration for approval decision using Profile IN PM OR UserApp NOT IN Admin and validating its content in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                            | coreComponentField                                         |
-      | Program                          | Status               | Created                                                                                                  | Test program for automation -  SA mode only - Not approved |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_PM_OR_UserApp_NOTIN_Admin| ADAC-0009                                                  |
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                             | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                                   | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_PM_OR_UserApp_NOTIN_Admin | ADAC-0009                                                  |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5133,16 +5148,16 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see "Approve" is disabled
-    
+
   @48667    @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_PM_AND_UserApp_NOTIN_Admin
   Scenario: Setup configuration to hide Approve option from configuration for approval decision using Profile IN PM AND UserApp NOT IN Admin and validating its content in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                             | coreComponentField                                         |
-      | Program                          | Status               | Created                                                                                                   | Test program for automation -  SA mode only - Not approved |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_PM_AND_UserApp_NOTIN_Admin| ADAC-0009                                                  |
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                              | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                                    | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_PM_AND_UserApp_NOTIN_Admin | ADAC-0009                                                  |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5159,16 +5174,16 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see "Approve" is disabled
-    
+
   @48668    @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_NOTIN_SystemAdministrator_OR_UserType_IN_Internal
   Scenario: Setup configuration to hide Approve option from configuration for approval decision using Profile NOT IN System Administrator OR UserType IN Internal and validating its content in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                                                 | coreComponentField                                         |
-      | Program                          | Status               | Created                                                                                                                       | Test program for automation -  SA mode only - Not approved |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_Profile_NOTIN_SystemAdministrator_OR_UserType_IN_Internal| ADAC-0009                                                  |
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                                                  | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                                                        | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_Profile_NOTIN_SystemAdministrator_OR_UserType_IN_Internal | ADAC-0009                                                  |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5185,16 +5200,16 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see "Approve" is disabled
-    
+
   @48670    @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_NOTIN_SystemAdministrator_AND_UserType_IN_Internal
   Scenario: Setup configuration to hide Approve option from configuration for approval decision using Profile NOT IN System Administrator AND UserType IN Internal and validating its content in pending tasks approval decision
     Given I have default configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                                                  | coreComponentField                                         |
-      | Program                          | Status               | Created                                                                                                                        | Test program for automation -  SA mode only - Not approved |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_Profile_NOTIN_SystemAdministrator_AND_UserType_IN_Internal| ADAC-0009                                                  |
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                                                   | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                                                         | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_Profile_NOTIN_SystemAdministrator_AND_UserType_IN_Internal | ADAC-0009                                                  |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5218,8 +5233,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:Hide_Expression_Page_Block_With_Profile_IN_PM| Grantee State Program | Name                      | PB-138                     |
+      | configurationCategory        | fieldName            | fieldNewValue                                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:Hide_Expression_Page_Block_With_Profile_IN_PM | Grantee State Program | Name                      | PB-138                     |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5235,8 +5250,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:Hide_Expression_Page_Block_With_Profile_IN_System_Administrator| Grantee State Program | Name                      | PB-138                     |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:Hide_Expression_Page_Block_With_Profile_IN_System_Administrator | Grantee State Program | Name                      | PB-138                     |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5252,8 +5267,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:Hide_Expression_Page_Block_With_Profile_IN_PM_and_System_Administrator| Grantee State Program | Name                      | PB-138                     |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:Hide_Expression_Page_Block_With_Profile_IN_PM_and_System_Administrator | Grantee State Program | Name                      | PB-138                     |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5269,8 +5284,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:Hide_Expression_Page_Block_With_Profile_NOTIN_PM| Grantee State Program | Name                      | PB-138                     |
+      | configurationCategory        | fieldName            | fieldNewValue                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:Hide_Expression_Page_Block_With_Profile_NOTIN_PM | Grantee State Program | Name                      | PB-138                     |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5286,8 +5301,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:Hide_Expression_Page_Block_With_UserType_IN_Internal| Grantee State Program | Name                      | PB-138                     |
+      | configurationCategory        | fieldName            | fieldNewValue                                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:Hide_Expression_Page_Block_With_UserType_IN_Internal | Grantee State Program | Name                      | PB-138                     |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5303,8 +5318,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:Hide_Expression_Page_Block_With_UserType_NOTIN_Internal| Grantee State Program | Name                      | PB-138                     |
+      | configurationCategory        | fieldName            | fieldNewValue                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:Hide_Expression_Page_Block_With_UserType_NOTIN_Internal | Grantee State Program | Name                      | PB-138                     |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5320,8 +5335,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:Hide_Expression_Page_Block_With_UserType_IN_Applicant_Internal_Reviewer| Grantee State Program | Name                      | PB-138                     |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:Hide_Expression_Page_Block_With_UserType_IN_Applicant_Internal_Reviewer | Grantee State Program | Name                      | PB-138                     |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5337,8 +5352,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                    | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Internal| TmpActiveGrantsGrid | Name                      | New                        |
+      | configurationCategory | fieldName            | fieldNewValue                                                                     | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Internal | TmpActiveGrantsGrid | Name                      | New                        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5354,8 +5369,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                       | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_UserType_NOTIN_Internal| TmpActiveGrantsGrid | Name                      | New                        |
+      | configurationCategory | fieldName            | fieldNewValue                                                                        | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_UserType_NOTIN_Internal | TmpActiveGrantsGrid | Name                      | New                        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5371,8 +5386,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                              | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_Profile_IN_SystemAdministrator| TmpActiveGrantsGrid | Name                      | New                        |
+      | configurationCategory | fieldName            | fieldNewValue                                                                               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_Profile_IN_SystemAdministrator | TmpActiveGrantsGrid | Name                      | New                        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5388,8 +5403,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                 | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_Profile_NOTIN_SystemAdministrator| TmpActiveGrantsGrid | Name                      | New                        |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_Profile_NOTIN_SystemAdministrator | TmpActiveGrantsGrid | Name                      | New                        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5405,8 +5420,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                                       | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal| TmpActiveGrantsGrid | Name                      | New                        |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                        | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal | TmpActiveGrantsGrid | Name                      | New                        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5422,8 +5437,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                                      | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal| TmpActiveGrantsGrid | Name                      | New                        |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                       | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal | TmpActiveGrantsGrid | Name                      | New                        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5439,8 +5454,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                                             | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator| TmpActiveGrantsGrid | Name                      | New                        |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                              | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator | TmpActiveGrantsGrid | Name                      | New                        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5456,8 +5471,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                            | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_IN_Internal_OR_Profile_IN_PM| TmpActiveGrantsGrid | Name                      | New                        |
+      | configurationCategory | fieldName            | fieldNewValue                                                                             | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_IN_Internal_OR_Profile_IN_PM | TmpActiveGrantsGrid | Name                      | New                        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5473,8 +5488,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                                            | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator| TmpActiveGrantsGrid | Name                      | New                        |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                             | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator | TmpActiveGrantsGrid | Name                      | New                        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5490,8 +5505,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                      | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Internal_AND_Profile_IN_PM| TmpActiveGrantsGrid | Name                      | New                        |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                       | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Internal_AND_Profile_IN_PM | TmpActiveGrantsGrid | Name                      | New                        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5507,8 +5522,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                         | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_UserApp_IN_StateAsGrantor| TmpActiveGrantsGrid | Name                      | New                        |
+      | configurationCategory | fieldName            | fieldNewValue                                                                          | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_UserApp_IN_StateAsGrantor | TmpActiveGrantsGrid | Name                      | New                        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5524,8 +5539,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                            | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_UserApp_NOTIN_StateAsGrantor| TmpActiveGrantsGrid | Name                      | New                        |
+      | configurationCategory | fieldName            | fieldNewValue                                                                             | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_UserApp_NOTIN_StateAsGrantor | TmpActiveGrantsGrid | Name                      | New                        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5541,8 +5556,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                                  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor| TmpActiveGrantsGrid | Name                      | New                        |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                   | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor | TmpActiveGrantsGrid | Name                      | New                        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5558,8 +5573,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                                 | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor| TmpActiveGrantsGrid | Name                      | New                        |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor | TmpActiveGrantsGrid | Name                      | New                        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5575,8 +5590,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                       | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Applicant_Internal_Reviewer| TmpActiveGrantsGrid | Name                      | New                        |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                        | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Applicant_Internal_Reviewer | TmpActiveGrantsGrid | Name                      | New                        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5592,8 +5607,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                               | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserType_IN_Internal| TmpGrantorActiveAwardsGrid | Name                      | Edit All                   |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserType_IN_Internal | TmpGrantorActiveAwardsGrid | Name                      | Edit All                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5611,8 +5626,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserType_NOTIN_Internal| TmpGrantorActiveAwardsGrid | Name                      | Edit All                   |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                   | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserType_NOTIN_Internal | TmpGrantorActiveAwardsGrid | Name                      | Edit All                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5630,8 +5645,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                         | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_Profile_IN_SystemAdministrator| TmpGrantorActiveAwardsGrid | Name                      | Edit All                   |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                          | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_Profile_IN_SystemAdministrator | TmpGrantorActiveAwardsGrid | Name                      | Edit All                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5649,8 +5664,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                            | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_Profile_NOTIN_SystemAdministrator| TmpGrantorActiveAwardsGrid | Name                      | Edit All                   |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                             | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_Profile_NOTIN_SystemAdministrator | TmpGrantorActiveAwardsGrid | Name                      | Edit All                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5668,8 +5683,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                                                  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal| TmpGrantorActiveAwardsGrid | Name                      | Edit All                   |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                                   | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal | TmpGrantorActiveAwardsGrid | Name                      | Edit All                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5687,8 +5702,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                                                 | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal| TmpGrantorActiveAwardsGrid | Name                      | Edit All                   |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                                  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal | TmpGrantorActiveAwardsGrid | Name                      | Edit All                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5706,8 +5721,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                    | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserApp_IN_StateAsGrantor| TmpGrantorActiveAwardsGrid | Name                      | Edit All                   |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                     | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserApp_IN_StateAsGrantor | TmpGrantorActiveAwardsGrid | Name                      | Edit All                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5725,8 +5740,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                       | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserApp_NOTIN_StateAsGrantor| TmpGrantorActiveAwardsGrid | Name                      | Edit All                   |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                        | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserApp_NOTIN_StateAsGrantor | TmpGrantorActiveAwardsGrid | Name                      | Edit All                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5744,8 +5759,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                                            | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor| TmpGrantorActiveAwardsGrid | Name                      | Edit All                   |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                             | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor | TmpGrantorActiveAwardsGrid | Name                      | Edit All                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5763,8 +5778,8 @@ Feature: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                                  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserType_IN_Applicant_Internal_Reviewer| TmpGrantorActiveAwardsGrid | Name                      | Edit All                   |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                   | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserType_IN_Applicant_Internal_Reviewer | TmpGrantorActiveAwardsGrid | Name                      | Edit All                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5775,3 +5790,19 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see no "Edit All" button inside "Active Awards" enhanced grid
+
+  @45305    @hideExpressioJsonForGroupExpressionWithANDOperatorAtPageLayout-gPlanning
+  Scenario: Hide Program contacts from Overview Tab using User App Not IN operator
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperandUserApp_Not_In | Grantee State Program | GNT__PageBlockTitle__c    | Contacts                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    Then I see "Program Contacts" page block title

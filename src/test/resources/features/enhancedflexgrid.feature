@@ -166,7 +166,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-   When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
+    When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     Then I see "Download as PDF""Download as CSV" options inside "Monitoring Schedule For All Active Grants" disabled
 
   @35439    @disblingQuickSearchForEnhancedGrid-gPlanning @smoke
@@ -218,7 +218,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    Then I see "#" in enhanced flex grid header
+    Then I see "#" in enhanced flex grid header "Enhanced1grid"
 
   @35442    @enableRecordSelectionForFlexForEnhancedGrid-gPlanning
   Scenario: validate enabling of record selection check boxes in enhanced flex grid planning-Program enhanced flex grid
@@ -310,7 +310,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    Then I see "<fieldDisplayNames>" in enhanced flex grid header
+    Then I see "<fieldDisplayNames>" in enhanced flex grid header "Enhanced1grid"
 
     Examples:
       | fieldDisplayNames              | newFieldsApi                                                                                                                                                                                                                       | defaultFieldsApi                                                                                                                                                                                                                   |
@@ -396,7 +396,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-   When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
+    When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     Then I see "Help" options inside "Monitoring Schedule For All Active Grants" enabled
 
   @41311    @helpTextFieldAtEnhancedGridColumnHeader-gPlanning
@@ -583,7 +583,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    Then I see cell subtotal as "745000.00"
+    Then I see cell subtotal as expected as given formula
 
   @42027    @headerHelpTextFieldForChildFlexTableAtEnhancedGrid-gPlanning
   Scenario Outline: Changing content of help text field at child flex table of enhanced grid from config and validating it at enhanced grid planning-Program enhanced flex grid
@@ -907,7 +907,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
     When I expand nested table containing column value "Demo_Title"
-    Then I see "#" in enhanced flex grid header
+    Then I see "#" in enhanced flex grid header "Enhanced1grid"
 
   @45001    @enableRecordSelectionForChildFlexForEnhancedGrid-gPlanning
   Scenario: validate enabling of record selection check boxes in enhanced flex grid planning-Program enhanced flex grid
@@ -1043,7 +1043,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "Demo_Title"
-    Then I see "<fieldDisplayNames>" in enhanced flex grid header
+    Then I see "<fieldDisplayNames>" in enhanced flex grid header "TmpGrantorActiveAwardsGridFlexToggle"
 
     Examples:
       | fieldDisplayNames      | newFieldsApi                                                                                                               | defaultFieldsApi                                                                                                                               |
@@ -1208,7 +1208,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-   When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
+    When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
     And I download the file
     Then I see that "Activated" on page "1" of "govgrants" pdf file
@@ -1283,7 +1283,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-   When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
+    When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
     And I download the file
     Then I see that "Activated" on page "1" of "govgrants" pdf file
@@ -1309,7 +1309,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-   When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
+    When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
     And I download the file
     Then I see that "Active" on page "1" of "govgrants" pdf file
@@ -1354,14 +1354,16 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     Then I see "Atleast one list view should be marked as a Master List View" error is not displayed at enhanced grid
 
-  @49270    @styleAttributeFieldAtParentFlexTableForEnhancedGrid-gPlanning
+  @49270    @styleAttributeFieldAtParentFlexTableForEnhancedGrid-gPlanning @wip
   Scenario Outline: validate color change of total adjusted amount cloumn content after making changes at style attribute from config and validating it inside enhanced grid of programs-planning
     Given I have default configuration as below:
-      | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
-      | Flex Table List       | Style Attribute |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Style Attribute     |                    | ApiGeneratedId:0 |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName       | fieldNewValue         | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Style Attribute | <styleAttributeValue> | TmpActiveGrantsGrid | Name                      | FTC-1500                   |
+      | configurationCategory | fieldName           | fieldNewValue         | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Style Attribute     | <styleAttributeValue> | TmpActiveGrantsGrid | Name                      | FTC-1500                   |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi>        | TmpActiveGrantsGrid |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1372,8 +1374,9 @@ Feature: Enhanced Flex Grid Component Scenarios
     Then I see "($1.00)" inside enhanced grid table id "flexGridEnhanced1" in "Red" colour
 
     Examples:
-      | styleAttributeValue |
-      | color: 'red'        |
+      | styleAttributeValue | newFieldsApi                                                       | defaultFieldsApi                                                                                                                                                                                                                   |
+      | color: 'red'        | ProjectTitle__c,Name,BudgetPeriodEndDate__c,TotalAdjustedAmount__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
 
   @49271    @styleClassFieldAtParentFlexTableForEnhancedGrid-gPlanning
   Scenario Outline: validate color change of number of awards cells content after making changes at style class from config and validating it inside enhanced grid of programs-planning
@@ -1652,7 +1655,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-   When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
+    When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
     Then I see "Active" in xls file "govgrants"
 
@@ -1671,7 +1674,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-   When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
+    When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
     Then I see "Active" in xls file "govgrants"
 
@@ -1694,7 +1697,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-   When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
+    When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
     Then I see "Active" in xls file "govgrants"
 

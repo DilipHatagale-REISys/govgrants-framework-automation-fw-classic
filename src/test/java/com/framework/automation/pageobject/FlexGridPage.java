@@ -255,7 +255,7 @@ public class FlexGridPage extends GovGrantsManager {
         System.out.println("The column number was: " + columnMapping.get("Target"));
         By columnSelector = By
                 .xpath("//div[@id='toggleFGridProgramOutcomes']//table//tr" + "//td[not(contains(@class, 'ng-hide'))]["
-                        + columnMapping.get("Target") + "]" + "//span[contains(@ng-bind, 'viewValue')]");
+                        + columnMapping.get("Target") + "]" + "//span//field/span");
         double total = 0;
         for (Elements columnValue : EyeThink.core().elementReference().listOfElements().onWeb(columnSelector)) {
             try {
@@ -341,7 +341,7 @@ public class FlexGridPage extends GovGrantsManager {
         System.out.println("The column number was: " + columnMapping.get(text));
         By columnSelector = By
                 .xpath("//div[@id='" + tableId + "']//table//tr" + "//td[not(contains(@class, 'ng-hide'))]["
-                        + columnMapping.get(text) + "]" + "//span[contains(@ng-bind, 'viewValue')]");
+                        + columnMapping.get(text) + "]" + "//field/span");
         return EyeThink.core().elementReference().listOfElements().onWeb(columnSelector);
     }
 
@@ -404,14 +404,13 @@ public class FlexGridPage extends GovGrantsManager {
      * @return specific column values inside table while passing column name for MEGrid
      */
     private List<Elements> getTableSpecificColumnValuesForMEGrid(String text, String tableId) {
-        WebElement row = EyeThink.core().elementReference().onWeb(By.xpath("//td[descendant-or-self::*[text()='" + text + "']and not(descendant::td)]"));
+        WebElement row = EyeThink.core().elementReference().onWeb(By.xpath("//div[@id='" + tableId + "']//table//tbody[contains(@class,'tbody-no-border-top')]//span[text()='BP-01']/ancestor::tr[@class='table-striped']/following-sibling::tr//tbody//tr"));
         Set<String> headerTitles = new HashSet<String>();
-        headerTitles.add("Budget Category");
+        headerTitles.add(text);
         Map<String, Integer> columnMapping = EyeThink.saas().flexTable().constructColumnMapping(row, headerTitles);
-        System.out.println("The column number was: " + columnMapping.get("Budget Category"));
+        System.out.println("The column number was: " + columnMapping.get(text));
         By columnSelector = By
-                .xpath("//div[@id='" + tableId + "']//table//tbody[contains(@class,'tbody-no-border-top')]//span[text()='BP-01']["
-                        + columnMapping.get(text) + "]");
+                .xpath("//div[@id='" + tableId + "']//table//tbody[contains(@class,'tbody-no-border-top')]//span[text()='BP-01']/ancestor::tr[@class='table-striped']/following-sibling::tr//tbody//tr[not(contains(@class,'flexTableHeader'))]//td[" + columnMapping.get(text) + "]//a");
         return EyeThink.core().elementReference().listOfElements().onWeb(columnSelector);
     }
 

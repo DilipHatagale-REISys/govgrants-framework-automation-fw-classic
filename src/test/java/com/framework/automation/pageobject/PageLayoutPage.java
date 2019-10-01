@@ -738,11 +738,11 @@ public class PageLayoutPage extends GovGrantsManager {
     /**
      * return true if specific text is displayed inside Attachment flex table
      *
-     * @param text
+     * @param valueToBeSearch
      * @param flexTableHeader
      */
-    public void AssertFieldValueIsPresentInFlexTable(String text, String flexTableHeader) {
-        Assert.assertTrue(isTextDisplayedInsideEditAttachmentTable(text, flexTableHeader));
+    public void AssertFieldValueIsPresentInFlexTable(String valueToBeSearch, String flexTableHeader) {
+        Assert.assertTrue(isTextDisplayedInsideEditAttachmentTable(valueToBeSearch, flexTableHeader));
     }
 
     /**
@@ -1300,12 +1300,12 @@ public class PageLayoutPage extends GovGrantsManager {
     /**
      * To verify any value is present in specifically in attachment flex table or not
      *
-     * @param value
+     * @param valueToBeSearch
      * @param flexTableHeader
      * @return
      */
-    public boolean isTextDisplayedInsideEditAttachmentTable(String value, String flexTableHeader) {
-        if (EyeThink.core().is().onWeb().isDisplayed(By.xpath("//div[@id='myTabbedContent']//a[@title='" + flexTableHeader + "']/../../../following-sibling::div//tbody//td/span[text()='" + value + "']")))
+    public boolean isTextDisplayedInsideEditAttachmentTable(String valueToBeSearch, String flexTableHeader) {
+        if (EyeThink.core().is().onWeb().isDisplayed(By.xpath("//a[@title='" + flexTableHeader + "']/../../../following-sibling::div//tbody//td/span[text()='" + valueToBeSearch + "']")))
             return true;
         else
             return false;

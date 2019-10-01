@@ -61,9 +61,9 @@ public class EnhancedFlexGridSteps {
 		enhancedFlexGrid.assertEnhancedFlexGridTabelRowCountDisabled(text, tableId);
 	}
 
-	@Then("^I see \"([^\"]*)\" in enhanced flex grid header$")
-	public void assertFlexTableHeaderName(String headerColumnName) {
-		enhancedFlexGrid.assertEnhancedFlexGridHeaderColumnName(headerColumnName);
+	@Then("^I see \"([^\"]*)\" in enhanced flex grid header \"([^\"]*)\"$")
+	public void assertFlexTableHeaderName(String headerColumnName, String tableId) {
+		enhancedFlexGrid.assertEnhancedFlexGridHeaderColumnName(tableId ,headerColumnName);
 	}
 
 	@Then("^I see select check box enabled in enhanced flex grid$")
@@ -121,9 +121,9 @@ public class EnhancedFlexGridSteps {
 		enhancedFlexGrid.assertActionButtonInsideEnhancedGridTableIsNotDisplayed(buttonName, headerName);
 	}
 
-	@Then("^I see cell subtotal as \"([^\"]*)\"$")
-	public void assertCellValue(BigDecimal value) {
-		enhancedFlexGrid.assertCellValueAtEnhancedGrid(value);
+	@Then("^I see cell subtotal as expected as given formula$")
+	public void assertCellValueWithFormula() {
+		enhancedFlexGrid.assertCellValueAtEnhancedGridWithFormula();
 	}
 
 	@Then("^I see column \"([^\"]*)\" value is in \"([^\"]*)\" order$")
