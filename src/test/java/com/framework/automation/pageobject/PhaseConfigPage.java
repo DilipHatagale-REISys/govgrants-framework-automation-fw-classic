@@ -541,14 +541,20 @@ public class PhaseConfigPage extends GovGrantsManager {
      * @return true if changed color of program is displayed inside My workspace
      */
     private Boolean isProgramDisplayedAtCalender() {
-        boolean flag = false;
-        List<Elements> programColor = EyeThink.core().elementReference().listOfElements().onWeb(By.xpath("//table/tbody/tr/td//a//span[contains(text(),'PG')]"));
-        for (int i = 0; i < programColor.size(); i++) {
-            if (programColor.get(i).getText().contentEquals("PG")) {
-                return true;
-            }
+        List<Elements> programColor = null;
+        try {
+            programColor = EyeThink.core().elementReference().listOfElements().onWeb(By.xpath("//table/tbody/tr/td//a//span[contains(text(),'PG')]"));
+        } catch (Exception e) {
         }
-        return flag;
+        try {
+            for (int i = 0; i < programColor.size(); i++) {
+                if (programColor.get(i).getText().contentEquals("PG")) {
+                    return true;
+                }
+            }
+        } catch (Exception e) {
+        }
+        return false;
     }
 
     /**

@@ -145,8 +145,8 @@ public class FlexTableSteps {
 	}
 
 	@Then("^I see \"([^\"]*)\" records inside flex table id \"([^\"]*)\"$")
-	public void assertFlexTableNoOfRecords(int rowCount, String tableId) {
-		flexTablePage.assertFlexTabelNumberOfRecordsPresent(rowCount, tableId);
+	public void assertFlexTableNoOfRecords(String rowCount, String tableId) {
+		flexTablePage.assertFlexTabelNumberOfRecordsPresent(Integer.parseInt(rowCount), tableId);
 	}
 
 	@Then("^I see \"([^\"]*)\" shown as flex table column title$")

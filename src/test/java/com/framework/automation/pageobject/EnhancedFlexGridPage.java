@@ -6,7 +6,6 @@ import eyethink.automation.bots.objects.Elements;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 
 import java.math.BigDecimal;
 import java.time.format.DateTimeFormatter;
@@ -32,7 +31,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         currentBudgetPeriodEndDate = By.xpath("//field[@field-name='BudgetPeriodEndDate__c']//input[@type='text']");
         scrollToActionColumn = By.xpath("//div[@id='Enhanced1grid']//th[contains(text(),'Actions')]");
         awardObligatedAmountSpecificCells = By
-                .xpath("//table/tbody/tr/td//*[@field-name='TotalAwardObligatedAmount__c']");
+                .xpath("//table/tbody[contains(@ng-repeat,'row')]/tr/td//*[@field-name='TotalAwardObligatedAmount__c']/span");
         idColumnForChildFlexTable = By.xpath("//field[@field-name='Name']//input[@type='text']");
         numberOfAwardscells = By.xpath("//table/tbody/tr/td//*[@field-name='NumberofAwards__c']");
         obligatedAmountSpecificCellsAtChildTable = By
@@ -83,8 +82,8 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     public void enterValueForTextareaAtEnhancedGridColumn(String enteredValue, String tableId) {
         List<Elements> textField = EyeThink.core().elementReference().listOfElements().onWeb(By.xpath("//div[@id='" + tableId + "']//tbody//td//textarea"));
         for (Elements inputField : textField) {
-            EyeThink.core().enterText().onWeb().clear((WebElement) inputField);
-            EyeThink.core().enterText().onWeb().enter((WebElement) inputField, enteredValue);
+            inputField.clearText();
+            inputField.enterText(enteredValue);
         }
     }
 
@@ -149,8 +148,8 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      *
      * @param headerColumnName
      */
-    public void assertEnhancedFlexGridHeaderColumnName(String headerColumnName) {
-        Assert.assertTrue(isEnhancedFlexGridColumnHeaderName(headerColumnName));
+    public void assertEnhancedFlexGridHeaderColumnName(String tableId, String headerColumnName) {
+        Assert.assertTrue(isEnhancedFlexGridColumnHeaderName(tableId, headerColumnName));
     }
 
     /***
@@ -249,10 +248,9 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     /**
      * return true if cell value is as expected
      *
-     * @param value
      */
-    public void assertCellValueAtEnhancedGrid(BigDecimal value) {
-        Assert.assertTrue(isExpectedSumValueAtEnhancedGridTableDisplayed(value));
+    public void assertCellValueAtEnhancedGridWithFormula() {
+        Assert.assertTrue(isExpectedSumValueAtEnhancedGridTableDisplayed());
     }
 
     /**
@@ -526,14 +524,30 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         return flag;
     }
 
-    /**
+    /* *//**
      * @return false if element is not displayed
-     */
+     *//*
     private Boolean isEnhancedFlexGridColumnHeaderName(String titleName) {
         boolean flag = false;
         try {
             if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().flexTable().getSpecificElementFromTableHeader(titleName))
                     || EyeThink.core().is().onWeb().isEnabled(EyeThink.saas().flexTable().getSpecificElementFromTableHeader(titleName))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+            flag = false;
+        }
+        return flag;
+    }*/
+
+    /**
+     * @return false if element is not displayed
+     */
+    private Boolean isEnhancedFlexGridColumnHeaderName(String tableId, String titleName) {
+        boolean flag = false;
+        try {
+            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().flexTable().getSpecificElementFromTableHeader(tableId, titleName))
+                    || EyeThink.core().is().onWeb().isEnabled(EyeThink.saas().flexTable().getSpecificElementFromTableHeader(tableId, titleName))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -548,7 +562,6 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     private boolean isSelectRecordCheckBoxEnabledAtEnhancedGrid() {
         boolean flag = false;
         try {
-            EyeThink.core().scroll().onWeb().pageToSpecificElement(reachOutToEnhancedGridCollapse);
             for (Elements element : getCompleteTableRowOfEnhancedGrid()) {
                 if (EyeThink.core().is().onWeb().isDisplayed(element.nestedElement(selectRecordCheckBoxForEnhancedGrid))) {
                     flag = true;
@@ -596,7 +609,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     private boolean isNoOfRecordsInsideEnhancedGridPresent(int rowCount, String tableId) {
         boolean flag = false;
         try {
-            int listSize = EyeThink.saas().flexTable().getCompleteTableRow(tableId).size();
+            int listSize = EyeThink.saas().flexTable().getCompleteTableRow(tableId).size() - 1;
             if (listSize == rowCount) {
                 flag = true;
             }
@@ -692,13 +705,11 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      * return true if expected amount at particular cell inside enhanced grid table
      * is displayed
      *
-     * @param value
      * @return
      */
-    private boolean isExpectedSumValueAtEnhancedGridTableDisplayed(BigDecimal value) {
+    private boolean isExpectedSumValueAtEnhancedGridTableDisplayed() {
         boolean flag = false;
         try {
-            EyeThink.core().scroll().onWeb().pageToSpecificElement(awardObligatedAmountSpecificCells);
             List<Elements> rows_table = EyeThink.core().elementReference().listOfElements().onWeb(awardObligatedAmountSpecificCells);
             String str = "";
             String strNew = "";
@@ -709,7 +720,6 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
                 if (row <= 2) {
                     str = rows_table.get(row).getText();
                     strNew = str.replaceAll("[$|,|']", "");
-                    bd = new BigDecimal(strNew);
                     if (strNew != null) {
                         counter += new BigDecimal(strNew).intValue();
                     }
@@ -916,13 +926,13 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
             String sumStr = "";
             double rowTotal = 0.00;
             double sum = 0.00;
-            for (int row = 0; row <= rows_table.size(); row++) {
-                if (row <= rows_table.size() - 2) {
+            for (int row = 0; row < rows_table.size(); row++) {
+                if (row < rows_table.size() - 2) {
                     if (rows_table.get(row).getText() != null) {
                         sum += Double.valueOf(rows_table.get(row).getText());
                     }
                 }
-                if (rows_table.size() == row) {
+                if ((rows_table.size() - 1) == row) {
                     rowTotal = Double.valueOf(rows_table.get(row - 1).getText());
                 }
             }
@@ -1001,8 +1011,8 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
             EyeThink.core().scroll().onWeb().pageToSpecificElement(obligatedAmountSpecificCellsAtChildTable);
             List<Elements> rows_table = EyeThink.core().elementReference().listOfElements().onWeb(obligatedAmountSpecificCellsAtChildTable);
             double sum = 0.00;
-            double totalVal = Double.valueOf(rows_table.get(rows_table.size() - 1).getText().replaceAll("[$|,|']", ""));
-            for (int row = 0; row < rows_table.size() - 1; row++) {
+            double totalVal = Double.valueOf(rows_table.get(rows_table.size() - 2).getText().replaceAll("[$|,|']", ""));
+            for (int row = 0; row < rows_table.size() - 2; row++) {
                 if (rows_table.get(row).getText() != null) {
                     sum += Double.valueOf(rows_table.get(row).getText().replaceAll("[$|,|']", ""));
                 }
@@ -1116,7 +1126,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         mapWebElements.put(1,
                 EyeThink.core().elementReference().listOfElements().onWeb(By.xpath("//table/tbody/tr/td//*[@field-name='" + text1 + "']")));
         mapWebElements.put(2,
-                EyeThink.core().elementReference().listOfElements().onWeb(By.xpath("//table/tbody/tr/td//*[@field-name='" + text2 + "']//span")));
+                EyeThink.core().elementReference().listOfElements().onWeb(By.xpath("//table/tbody[contains(@ng-repeat,'row')]/tr/td//*[@field-name='" + text2 + "']//span")));
         return mapWebElements;
     }
 

@@ -5,10 +5,13 @@ import eyethink.automation.bots.Register.EyeThink;
 import eyethink.automation.bots.Report.LogLevel;
 import eyethink.automation.bots.exception.EyeThinkBotsCustomException;
 import eyethink.automation.bots.objects.Elements;
+import org.apache.poi.ss.formula.functions.T;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 
+import java.awt.event.KeyAdapter;
 import java.io.File;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -681,15 +684,20 @@ public class FlexTablePage extends GovGrantsManager {
      * @return
      */
     private Boolean isStatusCategoryDisabled(String statusName, String tableId) {
-        boolean flag = true;
+        List<Elements> elements = null;
         try {
-            if (EyeThink.saas().flexTable().getCompleteTableRow(tableId).stream()
-                    .anyMatch(item -> EyeThink.core().elementReference().onWebNested((WebElement) item, flexTableStatusColumn(statusName)).isDisplayed())) {
-                flag = false;
-            }
-        } catch (org.openqa.selenium.NoSuchElementException e) {
+            elements = EyeThink.core().elementReference().listOfElements().onWeb((By) EyeThink.saas().flexTable().getTableCellValue(tableId, statusName));
+        } catch (Exception e) {
         }
-        return flag;
+        try {
+            for (Elements element : elements) {
+                if (element.isDisplayed()) {
+                    return false;
+                }
+            }
+        } catch (Exception e) {
+        }
+        return true;
     }
 
     /**
@@ -881,8 +889,7 @@ public class FlexTablePage extends GovGrantsManager {
             if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().phasePannel().getTopRightButton(headerName, buttonName))) {
                 flag = true;
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (NoSuchElementException e) {
         }
         return flag;
     }

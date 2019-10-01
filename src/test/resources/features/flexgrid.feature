@@ -431,7 +431,7 @@ Feature: Flex Grid Component Scenarios
     Then I see "Download as PDF""Download as CSV" options inside "Key Outcomes" disabled
 
   @49461    @enableTotalFieldAtProgramOutcomesFlexTable-gPlanning
-  Scenario: Changing content of help text field at program outcomes flex table column header from config and validating it inside program outcomes flex table of programs-planning
+  Scenario: Validating total sum for Target column after making changes for Enable total and Enable Total Row from config and validating it inside program outcomes flex table of programs-planning
     Given I have default configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table List       | Enable Total     | false             | ApiGeneratedId:0 |
@@ -1030,7 +1030,7 @@ Feature: Flex Grid Component Scenarios
     Then I see no "Total Records" count in "toggleFGridMonitoringGridView"
 
   @50383    @orderBySortByFieldAtActiveGrantsGridParentFlexTableForAscendingOrder-gMonitoring
-  Scenario: Changing specific column value in ascending order with order by and sort by field At ActiveGrantsGridParentFlexTable from config and validating it inside Monitoring schedule for all active grant
+  Scenario: Changing specific column value in ascending order with order by and sort by field At ActiveGrantsGrid Parent FlexTable from config and validating it inside Monitoring schedule for all active grant
     Given I have default configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Order By       |                   | ActiveGrantsGrid   |                           |                            |
@@ -1045,7 +1045,7 @@ Feature: Flex Grid Component Scenarios
     Then I see column "# Awards" value is in "Ascending" order for table id "toggleFGridMonitoringGridView"
 
   @50386    @orderBySortByFieldAtActiveGrantsGridParentFlexTableForDescendingOrder-gMonitoring
-  Scenario: Changing specific column value in ascending order with order by and sort by field At ActiveGrantsGridParentFlexTable from config and validating it inside Monitoring schedule for all active grant flex table
+  Scenario: Changing specific column value in descending order with order by and sort by field At ActiveGrantsGrid Parent FlexTable from config and validating it inside Monitoring schedule for all active grant flex table
     Given I have default configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Order By       |                   | ActiveGrantsGrid   |                           |                            |
@@ -1195,7 +1195,6 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "AP-755-198"
     When I click on "View" icon for "Test announcement for program 2" inside table
     When I navigate to "Budget" sub tab
-    When I click on "Edit" icon for "BP-01" to save inside subtab
     When I click on "Edit" icon for "BP-01" to save inside subtab
     When I enter value "Test Automation" into field "fieldNotes__c"
     And I click modal button "Save"
@@ -1505,6 +1504,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Test Automation"
     Then I see Nested Table "toggleFGridApplicationBudgetCategoryFlexGrid" with changed header name as "Test Automation"
@@ -2028,7 +2028,7 @@ Feature: Flex Grid Component Scenarios
     And I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
-    Then I see column "Indirect Cost Rate" value is in "Descending" order for table id "toggleFGridApplicationBudgetCategoryFlexGrid" for MEGrid
+    Then I see column "Budget Category" value is in "Descending" order for table id "toggleFGridApplicationBudgetCategoryFlexGrid" for MEGrid
 
   @51446   @orderBySortByFieldAtApplicationBudgetCategoryFlexTableChildForAscendingOrder-gApplications
   Scenario: Changing specific column value in ascending order with order by and sort by field from config and validating it inside Application budget flex table
@@ -2049,4 +2049,4 @@ Feature: Flex Grid Component Scenarios
     And I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
-    Then I see column "Indirect Cost Rate" value is in "Ascending" order for table id "toggleFGridApplicationBudgetCategoryFlexGrid" for MEGrid
+    Then I see column "Budget Category" value is in "Ascending" order for table id "toggleFGridApplicationBudgetCategoryFlexGrid" for MEGrid
