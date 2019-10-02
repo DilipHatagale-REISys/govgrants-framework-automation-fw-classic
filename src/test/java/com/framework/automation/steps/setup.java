@@ -1,7 +1,5 @@
 package com.framework.automation.steps;
 
-
-import com.automation.rei.handlers.GovGrantsHandler;
 import com.framework.automation.projectmanager.ProjectWebServices;
 import com.framework.automation.projectmanager.UsersAndURL;
 import eyethink.automation.bots.Register.AuthorizedProject;
@@ -9,7 +7,6 @@ import eyethink.automation.bots.Register.EyeThink;
 import eyethink.automation.bots.Report.CSS;
 import eyethink.automation.bots.controller.CoreHandlers;
 import eyethink.automation.bots.controller.TestSetupController;
-import eyethink.automation.bots.objects.InstanceRecording;
 import io.cucumber.core.api.Scenario;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -29,10 +26,9 @@ public class setup {
     private TestSetupController userController;
     private static CSS report;
 
-    public setup(TestSetupController userController, GovGrantsHandler saasLayer) {
+    public setup(TestSetupController userController) {
         this.userController = userController;
         EyeThink.setRegister(AuthorizedProject.SAAS_GOVGRANTS_GGF);
-        InstanceRecording.recordInstance(GovGrantsHandler.class, saasLayer);
         if(report == null) {
             this.report = new CSS();
             report.reportConfigWriteUp(System.getProperty("user.dir"),"GovGrants Framework Test Automation");
