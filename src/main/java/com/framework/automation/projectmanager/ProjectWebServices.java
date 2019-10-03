@@ -3,8 +3,8 @@ package com.framework.automation.projectmanager;
 import com.framework.automation.objects.IdBucket;
 import com.framework.automation.payloads.ApiUtilities;
 import com.jayway.restassured.response.Response;
+import eyethink.automation.bots.Register.EnvironmentFetcher;
 import eyethink.automation.bots.Register.EyeThink;
-import eyethink.automation.bots.controller.EnvironmentFetcher;
 import eyethink.automation.bots.corelib.Properties_Logs;
 
 import java.io.IOException;
@@ -140,7 +140,7 @@ public class ProjectWebServices {
      * create end point based on different urls
      */
     public void createEndPoint() {
-        this.endPoint = EnvironmentFetcher.environment;
+        this.endPoint = EnvironmentFetcher.getEnvironmentUrl();
     }
 
     /**
