@@ -1847,3 +1847,26 @@ Feature: Page Layout Component Scenarios
     When I click on "Save" button inside detail page
     When I click on "Submit For Approval" button inside detail page
     Then I see "Authorization is Required to submit under Overview." error is displayed
+
+  @56947    @horizontalScrollbarNotPresentInEditMode-gPlanning @check
+  Scenario: Validate horizontal scrollbar should not be present in edit mode for Attachment record at Program detail page
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "Edit" icon for "Program Artifacts" inside table
+
+  @56756    @miniPageLayoutLinkShouldBeProperForProjectServiceAreaSideBarLink @check
+  Scenario: validate mini page layout displayed properly for lookup field at page block detail
+    When I login as "Automation" user
+    When I setup my app as "As a Grantee"
+    And I navigate to "Planning" tab
+    When I navigate to "Proj/Service Areas" content inside "Activities" subheader on left panel
+    When I perform quick search for "PSA-0147"
+    When I click on "View" icon for "PSA-0147" inside table
+    When I hovering mouse on page block detail of label "POC" lookup field "Henry PM"
+    Then I see mini page layout displayed properly
+

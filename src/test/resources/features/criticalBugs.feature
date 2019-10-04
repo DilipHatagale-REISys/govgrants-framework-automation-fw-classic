@@ -333,7 +333,7 @@ Feature: Logged Issues Scenarios
       | Page title                  |
       | Account View ~ As a Grantee |
 
-  @56394     @verifyActionsButtonNotDisplayedUnderFormsAttachmentBlockAtPreviewPage @check
+  @56394     @verifyActionsButtonNotDisplayedUnderFormsAttachmentBlockAtPreviewPage
   Scenario: validate Add button should be displayed on at attachment page block at forms preview page
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -1735,3 +1735,95 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "Draft Programs" is selected at program flex table
+
+  @60559    @numericFieldvalueShouldBeBlankAtEnhancedGrid
+  Scenario Outline: validate Number field is displaying blank after clearing the existing value at enhanced grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
+    And I edit the following rows inline in flex table with id "flexGridEnhanced1" by clicking "Edit" :
+      | Project Title | NUMBER |
+      | Demo_Title    | 2      |
+    And I refresh the page
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
+    And I edit the following rows inline in flex table with id "flexGridEnhanced1" by clicking "Edit" :
+      | Total Adjusted Amount | NUMBER |
+      | Demo_Title            |        |
+    And I refresh the page
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
+    Then I see field value is blank for "NUMBER__c" at enhanced grid
+    Examples:
+      | newFieldsApi                             | defaultFieldsApi                                                                                                                                                                                                                                          |
+      | Status__c,Name,ProjectTitle__c,NUMBER__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,TotalAdjustedAmount__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @59740    @dateAndDateTimeFieldvalueShouldSavedProperlyAtEnhancedGrid
+  Scenario Outline: validate Date and Date Time field value getting saved properly At enhanced grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
+    And I edit the following rows inline in flex table with id "flexGridEnhanced1" by clicking "Edit" :
+      | Project Title | Current Budget Period End Date |
+      | Demo_Title    | 0                              |
+    And I refresh the page
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
+    Then I see field value is current date for "BudgetPeriodEndDate__c" at enhanced grid
+
+    Examples:
+      | newFieldsApi                                          | defaultFieldsApi                                                                                                                                                                                                                                          |
+      | Status__c,Name,ProjectTitle__c,BudgetPeriodEndDate__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,TotalAdjustedAmount__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @59360    @AMPMShouldDisplayForDateTimeFieldInsidePDFFileAtEnhancedGrid
+  Scenario Outline: validate AM/PM should display inside downloaded pdf file for DateTime Field At enhanced grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
+    And I edit the following rows inline in flex table with id "flexGridEnhanced1" by clicking "Edit" :
+      | Project Title | DateTime |
+      | Demo_Title    | 0        |
+    And I refresh the page
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
+    When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
+    And I download the file
+    Then I see that "PM" on page "28" of "govgrants" pdf file
+
+    Examples:
+      | newFieldsApi                                            | defaultFieldsApi                                                                                                                                                                                                                                          |
+      | Name,ProjectTitle__c,DateTime__c,BudgetPeriodEndDate__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,TotalAdjustedAmount__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |

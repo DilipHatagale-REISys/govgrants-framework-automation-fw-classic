@@ -90,6 +90,11 @@ public class PhaseConfigSteps {
         phaseConfigPage.assertThatObjectIsNotShowingInRecentlyViewedSideBarOption(acronym);
     }
 
+    @Then("^I see \"([^\"]*)\" records are present in Recently Viewed link in Sidebar$")
+    public void iSeeRecordsArePresentInRecentlyViewedLinkInSidebar(String acronym) {
+        phaseConfigPage.assertThatObjectIsShowingInRecentlyViewedSideBarOption(acronym);
+    }
+
     @Then("^I see \"([^\"]*)\" inside CustomApp dropDown$")
     public void assertCustomAppInsideDropdownDisplayed(String dropDownValue) {
         phaseConfigPage.assertCustomAppValueInsideDropdownDisplayed(dropDownValue);

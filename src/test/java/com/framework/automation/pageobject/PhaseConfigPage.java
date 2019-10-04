@@ -170,6 +170,16 @@ public class PhaseConfigPage extends GovGrantsManager {
     }
 
     /**
+     * Assert true for showing passed objectType related entities in Recently
+     * Viewed option which is present in sidebar of phase Planning
+     *
+     * @param acronym = program related entity
+     */
+    public void assertThatObjectIsShowingInRecentlyViewedSideBarOption(String acronym) {
+        Assert.assertFalse(isObjectNotShowingInRecentlyViewedSideBar(acronym));
+    }
+
+    /**
      * Assert true if only program related records displayed inside table
      */
     public void assertTableContainsOnlyProgramRecords(String recordIdText) {

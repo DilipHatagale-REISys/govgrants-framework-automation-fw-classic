@@ -2,6 +2,7 @@ package com.framework.automation.pageobject;
 
 import com.framework.automation.projectmanager.GovGrantsManager;
 import eyethink.automation.bots.Register.EyeThink;
+import eyethink.automation.bots.actionsfactory.type.Is;
 import eyethink.automation.bots.objects.Elements;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -247,7 +248,6 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 
     /**
      * return true if cell value is as expected
-     *
      */
     public void assertCellValueAtEnhancedGridWithFormula() {
         Assert.assertTrue(isExpectedSumValueAtEnhancedGridTableDisplayed());
@@ -451,6 +451,24 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      */
     public void assertCellValueForTotalAdjustedAmountAtEnhancedGrid(String value) {
         Assert.assertTrue(isExpectedSumValueAtTotalAdjustedAmountEnhancedGridTableDisplayed(value));
+    }
+
+    /**
+     * return true if cell value is as expected as zero for null record values
+     *
+     * @param fieldApiName
+     */
+    public void assertNullValueFoeSpecificFieldAtEnhancedGrid(String fieldApiName) {
+        Assert.assertTrue(isBlankValueForNUMBERFieldAtEnhancedGridTableDisplayed(fieldApiName));
+    }
+
+    /**
+     * return true if Date/DateTime field value is current date
+     *
+     * @param fieldApiName
+     */
+    public void assertDateAndDateTimeFieldValueForSpecificFieldAtEnhancedGrid(String fieldApiName) {
+        Assert.assertTrue(isCurrentDateDisplayedAtDateAndDateTimeFIeld(fieldApiName));
     }
 
     /*********
@@ -1234,5 +1252,41 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
             e.printStackTrace();
         }
         return strNew.equalsIgnoreCase(value);
+    }
+
+    /**
+     * return true if blank is displayed at NUMBER column cell value inside enhanced grid table
+     *
+     * @param fieldApiNAme
+     * @return
+     */
+    private boolean isBlankValueForNUMBERFieldAtEnhancedGridTableDisplayed(String fieldApiNAme) {
+        boolean flag = false;
+        try {
+            WebElement numberFieldValue = EyeThink.core().elementReference().onWeb(By.xpath("//table/tbody/tr/td//*[@field-name='" + fieldApiNAme + "']/span"));
+            if (numberFieldValue.getText().equalsIgnoreCase("")) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if value is getting saved properly and current date is displayed for date/datetime field at enhanced grid table
+     *
+     * @param fieldApiNAme
+     * @return
+     */
+    private boolean isCurrentDateDisplayedAtDateAndDateTimeFIeld(String fieldApiNAme) {
+        boolean flag = false;
+        try {
+            WebElement dateAndDateTime = EyeThink.core().elementReference().onWeb(By.xpath("//table/tbody/tr/td//*[@field-name='" + fieldApiNAme + "']/span"));
+            if (dateAndDateTime.getText().equalsIgnoreCase(EyeThink.core().get().currentDateInDesiredFormat(DateTimeFormatter.ofPattern("M/d/yyyy")))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
     }
 }

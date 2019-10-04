@@ -175,3 +175,16 @@ Feature: Phase Config Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "PG" records are not present in Recently Viewed link in Sidebar
+
+  @56846    @enablingProgramInRecentViewedLinkInSideBar-gplanning @smoke
+  Scenario: Enabling the programs in Recent Viewed Link in Sidebar inside planning-gplanning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Phase Config Sobject  | Add to Recently Viewed? | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Phase Config Sobject  | Add to Recently Viewed? | true          | GrantorPlanning    | Name                      | SPC-0086                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "PG" records are present in Recently Viewed link in Sidebar
