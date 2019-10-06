@@ -5,7 +5,6 @@ import com.framework.automation.projectmanager.UsersAndURL;
 import eyethink.automation.bots.Register.AuthorizedProject;
 import eyethink.automation.bots.Register.EyeThink;
 import eyethink.automation.bots.Report.CSS;
-import eyethink.automation.bots.controller.CoreHandlers;
 import eyethink.automation.bots.controller.TestSetupController;
 import io.cucumber.core.api.Scenario;
 import io.cucumber.java.After;
