@@ -1,12 +1,9 @@
 package com.framework.automation.payloads;
 
-import eyethink.automation.bots.controller.CoreHandlers;
-
 public class CustomAppConfig {
 	private String payloadForStringValue = "{\"sObjectAPIName\" : \"%s\",\"fieldMapStr\" : \"{\\\"Id\\\":\\\"%s\\\",\\\"%s\\\":\\\"%s\\\"}\"}";
 	private String payloadForIntValue = "{\"sObjectAPIName\" : \"%s\",\"fieldMapStr\" : \"{\\\"Id\\\":\\\"%s\\\",\\\"%s\\\":%s}\"}";
 	private ApiUtilities apiUtilities;
-	CoreHandlers reiDriver;
 
 	public CustomAppConfig() {
 		apiUtilities = new ApiUtilities();

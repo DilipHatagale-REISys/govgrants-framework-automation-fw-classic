@@ -483,7 +483,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      */
     private boolean isTitleDisplayedForEnhancedGrid(String titleName, String tableId) {
         try {
-            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().phasePannel().getPanelTitleWithTableId(tableId, titleName))) {
+            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().phasePanel().getPanelTitleWithTableId(tableId, titleName))) {
                 return true;
             } else {
                 return false;
@@ -831,7 +831,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     private Boolean isMenuIconDisabledInChildFlexTable(String panelTitleName) {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().phasePannel().getParallelBarsLocator(panelTitleName))) {
+            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().phasePanel().getParallelBarsLocator(panelTitleName))) {
                 flag = false;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
