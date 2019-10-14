@@ -3,24 +3,6 @@ Feature: Forms Component Scenarios
   Test all forms component based scenarios
   As a configuration manager i make different configurational changes in forms component and will validate them.
 
-  @35095    @validateSkipFormForDownload-gapplications @smoke
-  Scenario: Setup skip form download for 'General Application Budget Form' in configuration and validating inside Applications view
-    Given I have default configuration as below:
-      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
-      | Forms                 | Skip Form Download | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName          | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Forms:General         | Skip Form Download | true          | General Application Budget Form |                           |                            |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    When I perform quick search for "AP-755-198"
-    When I click on "View" icon for "Test announcement for program 2" inside table
-    When I click on "Menu" button inside detail page
-    And I select "Download As PDF" from dropdown
-    And I download the file
-    Then I cannot see that "Form - Application Budget" on page "29" of "govgrants" pdf file
-
   @35185    @validateBusinessFormsRemoval-gApplication
   Scenario: Validate disabling of business form from config and validating inside Application view
     Given I have default configuration as below:

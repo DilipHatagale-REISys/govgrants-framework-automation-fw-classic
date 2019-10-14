@@ -101,7 +101,6 @@ Feature: Flex Table Component Scenarios
     And I click toggle button to select "Draft Programs"
     Then I see total amount row in flex table is not displayed
 
-
   @34031    @disablingEnableTotalRecordsCountFieldAtProgramFlexTable-gPlanning
   Scenario: validate disbaling of total row count in flex table of programs-planning
     Given I have default configuration as below:
@@ -455,23 +454,6 @@ Feature: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     Then I see "Test" shown as flex table column title
-
-  @39294    @skipFieldForExportFieldAtFlexTable-gPlanning
-  Scenario: Setup skip form export for 'Status_c' in configuration and validating inside program flex table
-    Given I have default configuration as below:
-      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
-      | Flex Table            | Skip Fields For Export |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName              | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Skip Fields For Export | Status__c     | Programs           |                           |                            |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
-    And I select "Download as PDF" from parallel lines dropdown of "Draft Programs"
-    And I download the file
-    Then I cannot see that "Status" on page "1" of "govgrants" pdf file
 
   @40005    @enableTotalFieldAtFlexTable-gPlanning
   Scenario: Enabling total amount inside funded amount columb for all records config and validating it inside flex table of programs-planning
@@ -954,23 +936,6 @@ Feature: Flex Table Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I click toggle button for "Draft Programs"
     Then I see "Active Programs" is not displayed inside program flex table dropdown
-
-  @40233    @showInPdfFieldAtFlexTable-gPlanning
-  Scenario: Disabling active programs from list view of program flex table from config and validating it at program flex table-programs
-    Given I have default configuration as below:
-      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
-      | Flex Table List       | Show in PDF | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName   | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Show in PDF | true          | Programs           | Name                      | FLV-1835                   |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
-    And I select "Download as PDF" from parallel lines dropdown of "Draft Programs"
-    And I download the file
-    Then I see that "Active Programs" on page "1" of "govgrants" pdf file
 
   @34295    @refreshBehaviourFieldAtRolesAndResponsilitiesFlexTableAsRefreshtheGrid-gPlanning
   Scenario: validate flex table action field- refresh the grid

@@ -109,6 +109,7 @@ public class PageLayoutSteps {
         pageLayoutPage.selectPackageAndPackageType();
     }
 
+
     @And("^I click on expand collapse icon for panel heading \"([^\"]*)\"$")
     public void clickOnExpandColapseIcon(String panelHeaderName) {
         pageLayoutPage.clickExpandCollapseIconAtTableHeader(panelHeaderName);

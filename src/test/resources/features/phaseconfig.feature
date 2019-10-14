@@ -79,7 +79,7 @@ Feature: Phase Config Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
-    Then I do not see "Planning" in task summary by phase
+    Then I donot see "Planning" in task summary by phase
 
   @34589    @validateSettingAsDefaultLandingTab-gplanning @smoke
   Scenario: Select planning as "Default landing tab" in config. and validate Planning is default landing page
@@ -175,3 +175,16 @@ Feature: Phase Config Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "PG" records are not present in Recently Viewed link in Sidebar
+
+  @56846    @enablingProgramInRecentViewedLinkInSideBar-gplanning @smoke
+  Scenario: Enabling the programs in Recent Viewed Link in Sidebar inside planning-gplanning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Phase Config Sobject  | Add to Recently Viewed? | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Phase Config Sobject  | Add to Recently Viewed? | true          | GrantorPlanning    | Name                      | SPC-0086                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "PG" records are present in Recently Viewed link in Sidebar
