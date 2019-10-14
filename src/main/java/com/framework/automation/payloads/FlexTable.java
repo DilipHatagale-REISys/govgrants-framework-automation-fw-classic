@@ -161,6 +161,13 @@ public class FlexTable {
                                 String.valueOf(SObjectAPIs.GNT__FlexTableFilterListViewConfig__c), filterClause),
                         String.valueOf(SObjectAPIs.GNT__IsMasterView__c), value);
                 break;
+            case "DEFAULT ?":
+                finalPayload = String.format(payloadForIntValue,
+                        String.valueOf(SObjectAPIs.GNT__FlexTableFilterListViewConfig__c),
+                        apiUtilities.getComponentCoreFieldId(
+                                String.valueOf(SObjectAPIs.GNT__FlexTableFilterListViewConfig__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__IsDefault__c), value);
+                break;
         }
         System.out.println(finalPayload);
         return finalPayload;

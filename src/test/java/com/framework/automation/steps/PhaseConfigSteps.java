@@ -60,10 +60,10 @@ public class PhaseConfigSteps {
         phaseConfigPage.assertPostionOfChartsDisplayed(position);
     }
 
-    @Then("^I do not see \"([^\"]*)\" in task summary by phase$")
-    public void assertSpecificPhaseNotDisplayedInTaskSummaryByPhase(String phaseName) {
-        phaseConfigPage.assertPhaseNotDisplayedInTaskSummaryByPhase(phaseName);
-    }
+   @Then("^I (see|donot see) \"([^\"]*)\" in task summary by phase$")
+   public void assertSpecificPhaseNotDisplayedInTaskSummaryByPhase(String shouldBeDisplayed, String phaseName) {
+       phaseConfigPage.assertPhaseNotDisplayedInTaskSummaryByPhase(shouldBeDisplayed, phaseName);
+   }
 
     @Then("^I see book icon as \"([^\"]*)\" tab$")
     public void i_see_book_icon_as_tab(String phaseName) {

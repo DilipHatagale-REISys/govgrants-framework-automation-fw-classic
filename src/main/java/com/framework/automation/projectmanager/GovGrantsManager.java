@@ -229,7 +229,7 @@ public class GovGrantsManager extends ProjectWebServices {
      * @param dropDownOption
      */
     public void clickAndSelectOptionFromLeftDoubleArrowDropDown(String dropDownOption) {
-        EyeThink.saas().phasePannel().clickDoubleArrowDropDownAndSelectItem(dropDownOption);
+        EyeThink.saas().phasePanel().clickDoubleArrowDropDownAndSelectItem(dropDownOption);
     }
 
     /**

@@ -34,7 +34,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         awardObligatedAmountSpecificCells = By
                 .xpath("//table/tbody[contains(@ng-repeat,'row')]/tr/td//*[@field-name='TotalAwardObligatedAmount__c']/span");
         idColumnForChildFlexTable = By.xpath("//field[@field-name='Name']//input[@type='text']");
-        numberOfAwardscells = By.xpath("//table/tbody/tr/td//*[@field-name='NumberofAwards__c']");
+        numberOfAwardscells = By.xpath("//table/tbody//*[@field-name='NumberofAwards__c']//span");
         obligatedAmountSpecificCellsAtChildTable = By
                 .xpath("//table/tbody/tr/td//*[@field-name='TotalObligateAmount__c']");
         selectBoxOfStatusColumnInEditMode = By.xpath("//select[@ng-model='pickListValue']");
@@ -501,7 +501,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      */
     private boolean isTitleDisplayedForEnhancedGrid(String titleName, String tableId) {
         try {
-            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().phasePannel().getPanelTitleWithTableId(tableId, titleName))) {
+            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().phasePanel().getPanelTitleWithTableId(tableId, titleName))) {
                 return true;
             } else {
                 return false;
@@ -810,7 +810,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      * @return
      */
     public List<Elements> getTableColumnCompleteContent(String text) {
-        return EyeThink.core().elementReference().listOfElements().onWeb(By.xpath("//table/tbody/tr/td//*[@field-name='" + text + "']/span"));
+        return EyeThink.core().elementReference().listOfElements().onWeb(By.xpath("//table/tbody//span[contains(@ng-if,'isTotal != true')]//*[@field-name='" + text + "']/span"));
     }
 
     /**
@@ -849,7 +849,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     private Boolean isMenuIconDisabledInChildFlexTable(String panelTitleName) {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().phasePannel().getParallelBarsLocator(panelTitleName))) {
+            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().phasePanel().getParallelBarsLocator(panelTitleName))) {
                 flag = false;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -920,11 +920,14 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
             for (Elements we : rows_table) {
                 obtainedList.add(we.getText());
             }
-            if (obtainedList.contains(text)) {
-                flag = true;
-            } else {
-                flag = false;
+            for (int row = 0; row < obtainedList.size(); row++) {
+                if (obtainedList.get(row).contains(text)) {
+                    flag = true;
+                } else {
+                    flag = false;
+                }
             }
+
         } catch (Exception e) {
         }
         return flag;
@@ -941,20 +944,16 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         try {
             EyeThink.core().scroll().onWeb().pageToSpecificElement(numberOfAwardscells);
             List<Elements> rows_table = EyeThink.core().elementReference().listOfElements().onWeb(numberOfAwardscells);
-            String sumStr = "";
             double rowTotal = 0.00;
             double sum = 0.00;
             for (int row = 0; row < rows_table.size(); row++) {
-                if (row < rows_table.size() - 2) {
+                rowTotal = Double.valueOf(rows_table.get(rows_table.size() - 1).getText());
+                if (row < rows_table.size() - 1) {
                     if (rows_table.get(row).getText() != null) {
                         sum += Double.valueOf(rows_table.get(row).getText());
                     }
                 }
-                if ((rows_table.size() - 1) == row) {
-                    rowTotal = Double.valueOf(rows_table.get(row - 1).getText());
-                }
             }
-            String numberAsString = String.format("%.2f", sum);
             if (rowTotal == sum) {
                 flag = true;
             }
@@ -1108,7 +1107,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
                                                                                        String columnValue) {
         boolean flag = false;
         try {
-            List<Elements> cellsValue = EyeThink.core().elementReference().listOfElements().onWeb(By.xpath("//table/tbody/tr/td//*[@field-name='" + columnValue + "']//span//span | //table/tbody/tr/td//*[@field-name='" + columnValue + "']//span"));
+            List<Elements> cellsValue = EyeThink.core().elementReference().listOfElements().onWeb(By.xpath("//table/tbody[contains(@ng-repeat,'row')]/tr/td//*[@field-name='" + columnValue + "']//span//span | //table/tbody[contains(@ng-repeat,'row')]/tr/td//*[@field-name='" + columnValue + "']//span"));
             for (Elements el : cellsValue) {
                 String valueFound = el.getText().trim();
                 if (enteredValue.equals(valueFound)) {

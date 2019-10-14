@@ -109,10 +109,6 @@ public class PageLayoutSteps {
         pageLayoutPage.selectPackageAndPackageType();
     }
 
-    @When("^I hovering mouse on page block detail of label \"([^\"]*)\" lookup field \"([^\"]*)\"$")
-    public void hoverAtPageBlockDetailLookupElement(String label, String lookupField) {
-        pageLayoutPage.hoverMouseOnExpectedLookupField(label, lookupField);
-    }
 
     @And("^I click on expand collapse icon for panel heading \"([^\"]*)\"$")
     public void clickOnExpandColapseIcon(String panelHeaderName) {
@@ -374,10 +370,5 @@ public class PageLayoutSteps {
     @Then("^I see error message \"([^\"]*)\" for invalid input at \"([^\"]*)\"$")
     public void assertErrorMessageAtLightningLookupSearch(String inputText, String fieldApiName) {
         pageLayoutPage.assertErrorMessageForInvalidInputAtlightningLookup(inputText, fieldApiName);
-    }
-
-    @Then("^I see mini page layout displayed properly$")
-    public void assertMiniPageLayoutPositioning() {
-        pageLayoutPage.assertMiniPAgeLayoutDisplayedAsExpected();
     }
 }

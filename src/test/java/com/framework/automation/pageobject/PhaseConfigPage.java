@@ -122,9 +122,9 @@ public class PhaseConfigPage extends GovGrantsManager {
      *
      * @param phaseName
      */
-    public void assertPhaseNotDisplayedInTaskSummaryByPhase(String phaseName) {
+    public void assertPhaseNotDisplayedInTaskSummaryByPhase(String shouldBeDisplayed, String phaseName) {
         EyeThink.core().WaitFor().makeThreadSleep(1000);
-        Assert.assertTrue(isPhaseNotDisplayedInTaskSummary(phaseName));
+        Assert.assertEquals("donot see".equalsIgnoreCase(shouldBeDisplayed),isPhaseNotDisplayedInTaskSummary(phaseName));
     }
 
     public void assertPhaseBookIconDisplayed(String phaseName) {

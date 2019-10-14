@@ -393,7 +393,7 @@ public class FlexTablePage extends GovGrantsManager {
      * Click on toggle button inside program flex table
      */
     public void clickToggleButtonAndSelect(String menuItemName) {
-        EyeThink.saas().phasePannel().clickDoubleArrowtoggle(menuItemName);
+        EyeThink.saas().phasePanel().clickDoubleArrowtoggle(menuItemName);
     }
 
     public void performSequenceOfActionsOnFlexTable(String durationOfRun) throws EyeThinkBotsCustomException {
@@ -461,7 +461,7 @@ public class FlexTablePage extends GovGrantsManager {
      * assert true if flex table toggle button is displayed
      */
     public void assertToogleButtonIsDisplayed(String anyItemContainedInDropDown) {
-        Assert.assertTrue(EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().phasePannel().getDoubleArrowtoggle(anyItemContainedInDropDown)));
+        Assert.assertTrue(EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().phasePanel().getDoubleArrowtoggle(anyItemContainedInDropDown)));
     }
 
     /**
@@ -498,7 +498,7 @@ public class FlexTablePage extends GovGrantsManager {
      *****************/
 
     private void handleSequenceOfActionsOnFlexTable() throws EyeThinkBotsCustomException {
-        EyeThink.saas().phasePannel().clickTopRightButton("Draft Programs", "New");
+        EyeThink.saas().phasePanel().clickTopRightButton("Draft Programs", "New");
         EyeThink.saas().pageDetails().clickAnyTopRightButton("Cancel");
         EyeThink.saas().quickSearch().performTableSpecificQuickSearch("toggleFlexTablePrograms", "Program for Health");
         EyeThink.saas().mainPage().waitForNavigationLogoToDisappear();
@@ -524,8 +524,8 @@ public class FlexTablePage extends GovGrantsManager {
         EyeThink.saas().mainPage().waitForNavigationLogoToDisappear();
         EyeThink.core().get().pageRefresh();
         EyeThink.core().WaitFor().makeThreadSleep(1000);
-        EyeThink.saas().phasePannel().clickParallelMenuBars("Draft Programs");
-        EyeThink.saas().phasePannel().selectItemFromParallelMenuBars("Draft Programs", "Refresh");
+        EyeThink.saas().phasePanel().clickParallelMenuBars("Draft Programs");
+        EyeThink.saas().phasePanel().selectItemFromParallelMenuBars("Draft Programs", "Refresh");
     }
 
     private boolean isErrorMessageNotDisplayed(String errorMessage) {
@@ -543,9 +543,9 @@ public class FlexTablePage extends GovGrantsManager {
      * @return
      */
     private boolean isTitleDisplayed(String titleName) {
-        EyeThink.saas().phasePannel().clickDoubleArrowtoggle(titleName);
+        EyeThink.saas().phasePanel().clickDoubleArrowtoggle(titleName);
         try {
-            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().phasePannel().getDoubleArrowtoggle(titleName))) {
+            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().phasePanel().getDoubleArrowtoggle(titleName))) {
                 return true;
             } else {
                 return false;
@@ -566,14 +566,14 @@ public class FlexTablePage extends GovGrantsManager {
                                                                       String pannelTitleName) {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().phasePannel().getItemFromParallelMenuBars(pannelTitleName, option1))) {
+            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().phasePanel().getItemFromParallelMenuBars(pannelTitleName, option1))) {
                 flag = false;
             }
         } catch (Exception e) {
             flag = true;
         }
         try {
-            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().phasePannel().getItemFromParallelMenuBars(pannelTitleName, option2))) {
+            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().phasePanel().getItemFromParallelMenuBars(pannelTitleName, option2))) {
                 flag = false;
             }
         } catch (Exception e) {
@@ -606,7 +606,7 @@ public class FlexTablePage extends GovGrantsManager {
     private Boolean isMenuIconDisabled(String panelTitleName) {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().phasePannel().getParallelBarsLocator(panelTitleName))) {
+            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().phasePanel().getParallelBarsLocator(panelTitleName))) {
                 flag = false;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -774,7 +774,7 @@ public class FlexTablePage extends GovGrantsManager {
     private boolean isTopRightParallelLinesBarSpecificOptionsEnabled(String menuOption, String pannelTitleName) {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().phasePannel().getItemFromParallelMenuBars(pannelTitleName, menuOption))) {
+            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().phasePanel().getItemFromParallelMenuBars(pannelTitleName, menuOption))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -839,7 +839,7 @@ public class FlexTablePage extends GovGrantsManager {
     private Boolean isTotalAmountFieldAtFlexTableDisplayed() {
         boolean flag = false;
         try {
-            if (getCompleteTableRow().stream().anyMatch(item -> EyeThink.core().elementReference().onWebNested((WebElement) item, totalRowsCalc).isDisplayed())) {
+            if (EyeThink.core().is().onWeb().isDisplayed(totalRowsCalc)) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -886,7 +886,7 @@ public class FlexTablePage extends GovGrantsManager {
     private boolean isActionButtonInsideTopOfFlexTableDisplayed(String buttonName, String headerName) {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().phasePannel().getTopRightButton(headerName, buttonName))) {
+            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().phasePanel().getTopRightButton(headerName, buttonName))) {
                 flag = true;
             }
         } catch (NoSuchElementException e) {
@@ -1047,12 +1047,12 @@ public class FlexTablePage extends GovGrantsManager {
     private boolean isContentGettingSavedBySanpShotOption(String text) {
         String filename = "";
         if (text.equalsIgnoreCase("Todays Date")) {
-            String todaysDate = EyeThink.core().get().currentDateInDesiredFormat(DateTimeFormatter.ofPattern("M/d/yyyy")).replaceAll("^0", "");
-            filename = "SnapShot on " + todaysDate + " 12:19 AM.pdf";
+            String todaysDate = EyeThink.core().get().currentDateInDesiredFormat(DateTimeFormatter.ofPattern("M/d/yyyy h:mm a")).replaceAll("^0", "");
+            filename = "SnapShot on " + todaysDate + ".pdf";
         } else
             filename = text;
         try {
-            EyeThink.core().elementReference().onWeb(By.xpath("//tbody//tr[1]//span[contains(text(),'" + filename + "')]"));
+            EyeThink.core().elementReference().onWeb(By.xpath("//tbody//tr//span[contains(text(),'" + filename + "')]"));
             return true;
         } catch (Exception e) {
             return false;

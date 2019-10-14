@@ -370,7 +370,6 @@ public class PageLayoutPage extends GovGrantsManager {
      * @param buttonName
      */
     public void assertActionButtonOfPagrLayoutDisplayed(String buttonName) {
-        EyeThink.core().switchTo().switchToFrame(editActionModalIframe);
         Assert.assertTrue(isButtonDisplayedAtOverlayWindow(buttonName));
     }
 
@@ -460,13 +459,6 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
-     * return true if mini page layout postion is displayed as expected
-     */
-    public void assertMiniPAgeLayoutDisplayedAsExpected() {
-        Assert.assertTrue(isMiniPageLayoutDisplayedProperly());
-    }
-
-    /**
      * click on help text inside program information page block
      *
      * @param blockTitle
@@ -484,15 +476,6 @@ public class PageLayoutPage extends GovGrantsManager {
         EyeThink.core().scroll().onWeb().moveToElement(By.xpath("//span[contains(text(),'" + pageBlockDetailTitle + "')]/..//span[contains(@class,'fa-info')]"));
     }
 
-    /**
-     * hover mouse on lookup field inside page block details page
-     *
-     * @param label
-     * @param lookupField
-     */
-    public void hoverMouseOnExpectedLookupField(String label, String lookupField) {
-        EyeThink.core().scroll().onWeb().moveToElement(By.xpath("//span[@class='customLabelstyle' and contains(text(),'" + label + "')]/ancestor::dl//dd//a[contains(text(),'" + lookupField + "')]"));
-    }
 
     /**
      * hover on look up link at page block details
@@ -560,7 +543,6 @@ public class PageLayoutPage extends GovGrantsManager {
     public void clickPageBlockDetailParticularElement() {
         EyeThink.core().scroll().onWeb().toElementCenter(manageAttachmentInsidePageBlockDetail);
         EyeThink.core().click().onWeb(manageAttachmentInsidePageBlockDetail);
-        EyeThink.core().switchTo().switchToFrame(manageAttachmentIframe);
     }
 
     /**
@@ -1420,18 +1402,6 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean isErrorMessageAtLightningLookupSearch(String inputText, String fieldApiName) {
         boolean flag = false;
         if (EyeThink.core().is().onWeb().isDisplayed(By.xpath("//div[@id='" + fieldApiName + "']//b[contains(text(),'" + inputText + "')]"))) {
-            flag = true;
-        }
-        return flag;
-    }
-
-    /**
-     * return true
-     * @return
-     */
-    private boolean isMiniPageLayoutDisplayedProperly() {
-        boolean flag = false;
-        if (EyeThink.core().is().onWeb().isDisplayed(By.xpath(""))) {
             flag = true;
         }
         return flag;

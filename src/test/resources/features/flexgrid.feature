@@ -1059,38 +1059,6 @@ Feature: Flex Grid Component Scenarios
     And I navigate to "Monitoring" tab
     Then I see column "# Awards" value is in "Descending" order for table id "toggleFGridMonitoringGridView"
 
-  @50389    @pdfRenderTypeFieldAtActiveGrantsGridParentFlexTableForContentInBlock-gMonitoring
-  Scenario: validate Activated status in downloaded pdf file after checking check box of show in pdf at config and validating it inside enhanced grid of programs-planning
-    Given I have default configuration as below:
-      | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
-      | Flex Table            | PDF Render Type | Block             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName       | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | PDF Render Type | Block         | ActiveGrantsGrid   |                           |                            |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Monitoring" tab
-    When I click on parallel lines menu bar with data target value "#toggleFGridMonitoringGridView"
-    And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grant"
-    And I download the file
-    Then I see no "ID Title" on page "1" of "govgrants" pdf file for Block Content
-
-  @50390    @pdfRenderTypeFieldAtActiveGrantsGridParentFlexTableForContentInTable-gMonitoring
-  Scenario: validate Activated status in downloaded pdf file after checking check box of show in pdf at config and validating it inside enhanced grid of programs-planning
-    Given I have default configuration as below:
-      | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
-      | Flex Table            | PDF Render Type | Block             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName       | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | PDF Render Type | Table         | ActiveGrantsGrid   |                           |                            |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Monitoring" tab
-    When I click on parallel lines menu bar with data target value "#toggleFGridMonitoringGridView"
-    And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grant"
-    And I download the file
-    Then I see "ID Title" on page "1" of "govgrants" pdf file for Table Content
-
   @50391    @disablingEnableExportFieldAtActiveGrantsGridParentFlexTable-gMonitoring
   Scenario: validate disabling of PDF/Excel download from menu option at inside Monitoring schedule for all active grant flex table
     Given I have default configuration as below:

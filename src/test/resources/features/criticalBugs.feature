@@ -180,69 +180,6 @@ Feature: Logged Issues Scenarios
     When I click on top right button "Save" in flex table with id "flexGridEnhanced1"
     Then I see value "Test Automation" for multiple cells at column "Agreement1__c"
 
-  @56278    @headersOfChildLevelRecordsShouldBeDisplayedInsidePDF
-  Scenario: validate downloaded pdf file should contain header of child level records after checking checkbox of Enable export and show header panel and validating inside applicationBudgetPeriod flex table
-    Given I have default configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export     | true              | ApiGeneratedId:0 |
-      | Flex Table            | Show Header Panel | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName         | fieldNewValue | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Export     | true          | ApplicationBudgetPeriods |                           |                            |
-      | Flex Table:General    | Show Header Panel | true          | ApplicationBudgetPeriods |                           |                            |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
-    When I navigate to "Budget" sub tab
-    When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
-    And I select "Download as PDF" from parallel lines dropdown of "Application Budget"
-    And I download the file
-    Then I see "Proposed Uses Of Total Funds" on page "1" of "govgrants" pdf file for Table Content
-
-  @56279    @childLevelRecordsOfMEGridShouldDisplayedInsideXLS @check
-  Scenario: validate downloaded pdf file should contain header of child level records after checking checkbox of Enable export and show header panel and validating inside applicationBudgetPeriod flex table
-    Given I have default configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export     | true              | ApiGeneratedId:0 |
-      | Flex Table            | Show Header Panel | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName         | fieldNewValue | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Export     | true          | ApplicationBudgetPeriods |                           |                            |
-      | Flex Table:General    | Show Header Panel | true          | ApplicationBudgetPeriods |                           |                            |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
-    When I navigate to "Budget" sub tab
-    When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
-    And I select "Download as XLS" from parallel lines dropdown of "Application Budget"
-    And I download the file
-    Then I see "Taxes & Government fees" on page "1" of "govgrants" pdf file for Table Content
-
-  @56280    @childLevelRecordsOfMEGridShouldDisplayedInsidePDF
-  Scenario: validate downloaded pdf file should contain header of child level records after checking checkbox of Enable export and show header panel and validating inside applicationBudgetPeriod flex table
-    Given I have default configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export     | true              | ApiGeneratedId:0 |
-      | Flex Table            | Show Header Panel | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName         | fieldNewValue | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Export     | true          | ApplicationBudgetPeriods |                           |                            |
-      | Flex Table:General    | Show Header Panel | true          | ApplicationBudgetPeriods |                           |                            |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
-    When I navigate to "Budget" sub tab
-    When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
-    And I select "Download as PDF" from parallel lines dropdown of "Application Budget"
-    And I download the file
-    Then I see "Language Development" on page "1" of "govgrants" pdf file for Table Content
-
   @56282  @errorMessageShouldComeUPForTitleFieldAfterSubmittingWithDescriptionOnly-gHome
   Scenario Outline: validate error message is coming up after submitting it with description field value only at gHome
     When I login as "Automation" user
@@ -597,18 +534,6 @@ Feature: Logged Issues Scenarios
     When I click dropdown field "fieldAnnouncementType__c"
     Then I see "Competitive:Sole Source/Directed" inside selectbox field "fieldAnnouncementType__c"
 
-  @56766    @downloadedPDFFileContainsFormDetailsOnGranteeApplication
-  Scenario: validate pdf contains form details for grantee application
-    When I login as "Automation" user
-    When I setup my app as "As a Grantee"
-    And I navigate to "Applications" tab
-    When I perform quick search for "AP-DOS-USPDPA-001"
-    When I click on "View" icon for "AP-DOS-USPDPA-001" inside table
-    When I click on "Menu" button inside detail page
-    And I select "Download as PDF" from dropdown
-    And I download the file
-    Then I see that "Form" on page "5" of "govgrants" pdf file
-
   @56414    @globalSearchPopUpMessageShouldDisplayedProperly @check
   Scenario Outline: validate global search alert pop up box display message properly on UI
     When I login as "Automation" user
@@ -681,19 +606,6 @@ Feature: Logged Issues Scenarios
     When I click on "View" icon for "FAD-GHHS-BP-01-00" inside table
     Then I see "Edit" button is not displayed
 
-  @56524    @PDFShouldGetDownlodedWithThrowingAnyErrorAtGranteeApplicationView
-  Scenario: validate pdf file getting downloaded without any error and oppotunity overview text is present
-    When I login as "Automation" user
-    When I setup my app as "As a Grantee"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Draft Applications"
-    When I perform quick search for "APP-HHS-082"
-    When I click on "View" icon for "APP-HHS-082" inside table
-    When I click on "Menu" button inside detail page
-    And I select "Download as PDF" from dropdown
-    And I download the file
-    Then I see that "Opportunity Overview" on page "1" of "govgrants" pdf file
-
   @57265  @dateShouldDisplayeOnStickyNotesUnderMyWorkSpaceNotes
   Scenario Outline: validate current date is displayed on sticky notes
     When I login as "Automation" user
@@ -753,21 +665,6 @@ Feature: Logged Issues Scenarios
     And I navigate to "HOME" tab
     Then I see govgrants logo "GovGrants Logo expanded" is displayed with name "Enterprise Grants Management System"
 
-  @57143    @pdfFileShouldGetDownloadedProperlyForFundingAccount
-  Scenario: validate downloaded pdf file should get downloaded properly with content of funding account
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I navigate to "Financials" sub tab
-    When I click on top right button "Associate" in flex table with id "ProgramFundingAccount"
-    When I click on "Menu" in the page details
-    And I select "Download as PDF" from parallel lines dropdown of "Funding Accounts "
-    And I download the file
-    Then I see that "Funding Source" on page "1" of "govgrants" pdf file
-
   @56840    @budgetCategoryShouldGetAddedProperly
   Scenario: validate budget category getting added properly
     When I login as "Automation" user
@@ -806,59 +703,6 @@ Feature: Logged Issues Scenarios
     When I click on "Edit" icon for "Test Announcement For Automation" inside table
     When I click search icon for "Awarding Federal Agency Lookup (New Window)" lookup modal and swithing to frame "iframeCustomLookupModalId"
     Then I see "ty" status in lookup modal table
-
-  @56837    @pdfFileShouldGetDownloadedProperlyForDefaultApplicationReviewStep @check
-  Scenario: validate downloaded pdf file should get downloaded properly with text containing default application review step
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I navigate to "Roles" sub tab
-    When I click on parallel lines menu bar with data target value "#toggleFlexTableProgramRelatedAppReviewStepTemplatesNew"
-    And I select "Download as PDF" from parallel lines dropdown of "Default Application Review Steps"
-    And I download the file
-    Then I see that "Default Application Review Steps" on page "1" of "govgrants" pdf file
-
-  @56833    @pdfFileShouldGetDownloadedProperlyForProgramServiceArea @check
-  Scenario: validate downloaded pdf file should get downloaded properly with text containing program servicearea
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I navigate to "Log" sub tab
-    When I click on parallel lines menu bar with data target value "#toggleFlexTableRelatedProgramServiceAreas"
-    And I select "Download as PDF" from parallel lines dropdown of "Program Service Areas"
-    And I download the file
-    Then I see that "Program Service Areas" on page "1" of "govgrants" pdf file
-
-  @56479    @pdfFileShouldGetDownloadedProperlyForApplicationBudget
-  Scenario: validate pdf file should get downloaded properly with text containing Application budget
-    When I login as "Automation" user
-    When I setup my app as "As a Grantee"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Draft Applications"
-    When I perform quick search for "APP-HHS-082"
-    When I click on "View" icon for "APP-HHS-082" inside table
-    When I navigate to "Budget" sub tab
-    When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
-    And I select "Download as PDF" from parallel lines dropdown of "Application Budget"
-    And I download the file
-    Then I see that "Application Budget" on page "1" of "govgrants" pdf file
-
-  @56752  @pdfFileShouldGetDownloadedProperlyForTaskSummaryByDueDate @checkwithmenuClick
-  Scenario: validate pdf file getting downloaded properly for Task Summary By Due Date Chart with content My Late Tasks
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
-    When I navigate to "Late" content inside "Task Summary By Due Date" charts
-    When I click on parallel lines menu bar with data target value "#toggleFlexTableTasksLate"
-    And I select "Download as PDF" from parallel lines dropdown of "My Late Tasks"
-    And I download the file
-    Then I see that "My Late Tasks" on page "1" of "govgrants" pdf file
 
   @56945  @NotesShouldGetDeletedAfterClinkOnAcceptingDeleteConfirmation
   Scenario Outline: validate Sticky Notes should get deleted properly after accepting action from delete confirmation popup
@@ -1097,6 +941,12 @@ Feature: Logged Issues Scenarios
 
   @59302    @viewActionShouldWorkProperlyAtMonitoringPhase-gMonitoring
   Scenario: validate Monitoring Schedule For All Active Grant flex table action field- View opens in new window
+    Given I have default configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue   | filterId         |
+      | Flex Table Action     | Action Behavior | Open in same window | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action Behavior | Open in new window | ActiveGrantsGrid   | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
@@ -1574,6 +1424,8 @@ Feature: Logged Issues Scenarios
     And I edit the following rows inline in flex table with id "flexGridEnhanced1" by clicking "Edit" :
       | Total Adjusted Amount | Total Adjusted Amount |
       | Demo_Title            | 20                    |
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
     Then I see value "$20.00" for title "Total Adjusted Amount" inside table "flexGridEnhanced1"
 
   @60541    @addLineItemTableShouldDisplayedAtChildTableApplicationBudgetGrid
@@ -1591,7 +1443,13 @@ Feature: Logged Issues Scenarios
     Then I see expected table with id "toggleFGridAppLineItem"
 
   @60565    @valueShouldBeSavedCorrectlyForNumberFieldAtEnhancedGrid
-  Scenario: validate value is getting save for Number field correctly at enhanced grid
+  Scenario Outline: validate value is getting save for Number field correctly at enhanced grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1606,100 +1464,9 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
     Then I see value "(1,234)" for title "NUMBER" inside table "flexGridEnhanced1"
 
-  @59061    @downloadAsPDFShouldWorkProperlyAtProgramFlexTable
-  Scenario: Validate PDF is getting downloaded correctly at program flex table
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
-    And I select "Download as PDF" from parallel lines dropdown of "Draft Programs"
-    And I download the file
-    Then I see that "Draft Programs" on page "1" of "govgrants" pdf file
-
-  @59363    @lookupFieldShouldDisplayCorrectlyOnDownloadedPDFFile @check
-  Scenario: validating ID lookup field value should get downloaded and displayed properly in Downloaded file at application budget period grid
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
-    When I navigate to "Budget" sub tab
-    When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
-    And I select "Download as PDF" from parallel lines dropdown of "Application Budget"
-    And I download the file
-    Then I see that "AP-755-213" on page "1" of "govgrants" pdf file
-
-  @59990    @hideColumnShouldNotGetListedInDowloadPDFFileAtEnhanceGrid
-  Scenario Outline: Validate external organization getting hide from PDF file after hiding it from config page
-    Given I have default configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-      | Flex Table List       | Hide Column JSON    |                    | ApiGeneratedId:0 |
-      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue                                                | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Column JSON    | govgrants_config:Hide_Column_Enhancedgrid_ParentTable_Header | TmpActiveGrantsGrid | Name                      | FTC-1487                   |
-      | Flex Grid:General     | Display Field Names | <newFieldsApi>                                               | TmpActiveGrantsGrid |                           |                            |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I navigate to "Financials" sub tab
-    When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
-    And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
-    And I download the file
-    Then I cannot see that "Account Name" on page "1" of "govgrants" pdf file
-
     Examples:
-      | newFieldsApi                                                   | defaultFieldsApi                                                                                                                                                                                                                   |
-      | ProjectTitle__c,TotalAdjustedAmount__c,ExternalOrganization__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
-
-  @59186    @numberFieldShouldDisplayedInDownloadPDFFileAtProgramFlexTable
-  Scenario Outline: validate value of Number Field should displayed correctly in downloaded pdf file
-    Given I have default configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test Program for testing"
-    When I click on "Edit" icon for "Test Program for testing" inside table
-    When I enter value "1" into field "Number__c"
-    And I click on "Save" in the page details
-    When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
-    And I select "Download as PDF" from parallel lines dropdown of "Draft Programs"
-    And I download the file
-    Then I see that "1.00" on page "19" of "govgrants" pdf file
-
-    Examples:
-      | newFieldsApi                                                                                                               | defaultFieldsApi                                                                                                 |
-      | Name,ProgramName__c,Number__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
-
-  @59974    @headersOfChildLevelRecordsShouldNotBeBeDisplayedInsidePDF
-  Scenario: validate downloaded pdf file should not contain header of child level records after unchecking checkbox of show header panel at child table of enhanced grid
-    Given I have default configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Table            | Show Header Panel | true              | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName         | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Show Header Panel | false         | TmpGrantorActiveAwardsGrid |                           |                            |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I navigate to "Financials" sub tab
-    When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
-    And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
-    And I download the file
-    Then I cannot see that "Active Awards" on page "1" of "govgrants" pdf file
+      | newFieldsApi                             | defaultFieldsApi                                                                                                                                                                                                                                          |
+      | Status__c,Name,ProjectTitle__c,NUMBER__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,TotalAdjustedAmount__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
 
   @60557    @NothingShouldBeDisplayedWithNoRecordsAtProgramFlexTable
   Scenario Outline: validate removing Created status category from flex table of programs-planning
@@ -1724,13 +1491,13 @@ Feature: Logged Issues Scenarios
   @59367    @draftProgramsShouldDisplayedAsDefaultWithIsMasterView
   Scenario: Validate only draft programs is displayed or selected if Is Master View is checked currently for FLV 1387
     Given I have default configuration as below:
-      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
-      | Flex Table List       | Is Master View | false             | ApiGeneratedId:0 |
-      | Flex Table List       | Is Master View | true              | ApiGeneratedId:1 |
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Default ? | false             | ApiGeneratedId:0 |
+      | Flex Table List       | Default ? | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Is Master View | true          | Programs           | Name                      | FLV-1835                   |
-      | Flex Table List       | Is Master View | true          | Programs           | Name                      | FLV-1837                   |
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Default ? | true          | Programs           | Name                      | FLV-1835                   |
+      | Flex Table List       | Default ? | true          | Programs           | Name                      | FLV-1837                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1797,33 +1564,23 @@ Feature: Logged Issues Scenarios
       | newFieldsApi                                          | defaultFieldsApi                                                                                                                                                                                                                                          |
       | Status__c,Name,ProjectTitle__c,BudgetPeriodEndDate__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,TotalAdjustedAmount__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
 
-  @59360    @AMPMShouldDisplayForDateTimeFieldInsidePDFFileAtEnhancedGrid
-  Scenario Outline: validate AM/PM should display inside downloaded pdf file for DateTime Field At enhanced grid
+  @61303    @validateIsPlanningShouldNotDisplayedInTaskSummary-gplanning
+  Scenario: Check IsPhase for planning in config. and validate Planning is displayed in Task Summary on home page
     Given I have default configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Phase Config          | Is Phase  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField |
+      | Phase Config:General  | Is Phase  | true          | GrantorPlanning    |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
-    And I edit the following rows inline in flex table with id "flexGridEnhanced1" by clicking "Edit" :
-      | Project Title | DateTime |
-      | Demo_Title    | 0        |
-    And I refresh the page
-    When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
-    When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
-    And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
-    And I download the file
-    Then I see that "PM" on page "28" of "govgrants" pdf file
+    And I navigate to "HOME" tab
+    Then I see "Planning" in task summary by phase
 
-    Examples:
-      | newFieldsApi                                            | defaultFieldsApi                                                                                                                                                                                                                                          |
-      | Name,ProjectTitle__c,DateTime__c,BudgetPeriodEndDate__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,TotalAdjustedAmount__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+  @61307  @phaseLinkShouldOpensWithExpectedPendingTaskTable
+  Scenario: validate pending tasks table is coming up on click of phase link on home phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Planning" content inside "Task Summary By Phase" charts
+    Then I see "PG" records are present in pending task table

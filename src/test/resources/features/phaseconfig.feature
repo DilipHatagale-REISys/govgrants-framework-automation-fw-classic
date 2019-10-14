@@ -79,7 +79,7 @@ Feature: Phase Config Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
-    Then I do not see "Planning" in task summary by phase
+    Then I donot see "Planning" in task summary by phase
 
   @34589    @validateSettingAsDefaultLandingTab-gplanning @smoke
   Scenario: Select planning as "Default landing tab" in config. and validate Planning is default landing page
