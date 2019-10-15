@@ -223,8 +223,8 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    When I perform quick search for "Test program for testing"
-    When I click on "View Program Details" icon for "Test program for testing" inside table
+    When I perform quick search for "{Framework_recordUsed:programForFundedAmountAndNumber}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForFundedAmountAndNumber}" inside table
     When I navigate to "Financials" sub tab
     Then I see "View" icon for "FA-22-56" is not displayed inside flex table
 
@@ -1584,3 +1584,86 @@ Feature: Logged Issues Scenarios
     And I navigate to "HOME" tab
     When I navigate to "Planning" content inside "Task Summary By Phase" charts
     Then I see "PG" records are present in pending task table
+
+  @61102    @searchByDateShouldWorkProperlyOnAdvanceFilter
+  Scenario Outline: validate Advance filter search should work correctly for date values at enhanced grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I click on advance filter "#advfTmpActiveGrantsGrid" of table id "flexGridEnhanced1"
+    When I enter advance filter values inside id "advfTmpActiveGrantsGrid"
+      | Project Period | contains | 10/1/2016 |
+    Then I see value "10/1/2016--12/31/2022" for title "Project Period" inside table "flexGridEnhanced1"
+
+    Examples:
+      | newFieldsApi                            | defaultFieldsApi                                                                                                                                                                                                                   |
+      | ProjectTitle__c,CurrentProjectPeriod__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @61103    @startWithOperatorShouldWorkForAdvanceFilter
+  Scenario Outline: validate Advance filter search should work correctly with operator Start With at enhanced grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I click on advance filter "#advfTmpActiveGrantsGrid" of table id "flexGridEnhanced1"
+    When I enter advance filter values inside id "advfTmpActiveGrantsGrid"
+      | Project Title | starts with | Health |
+    Then I see value "Health Program Announcement" for title "Project Title" inside table "flexGridEnhanced1"
+
+    Examples:
+      | newFieldsApi                            | defaultFieldsApi                                                                                                                                                                                                                   |
+      | ProjectTitle__c,CurrentProjectPeriod__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @61104    @endstWithOperatorShouldWorkForAdvanceFilter
+  Scenario Outline: validate Advance filter search should work correctly with ends with at enhanced grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I click on advance filter "#advfTmpActiveGrantsGrid" of table id "flexGridEnhanced1"
+    When I enter advance filter values inside id "advfTmpActiveGrantsGrid"
+      | Project Title | ends with | 11 |
+    Then I see value "Health Awaerness 11" for title "Project Title" inside table "flexGridEnhanced1"
+
+    Examples:
+      | newFieldsApi                            | defaultFieldsApi                                                                                                                                                                                                                   |
+      | ProjectTitle__c,CurrentProjectPeriod__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @61086    @quickSearchShouldWorkProperlyAtApplicationBudgetGrid
+  Scenario: validating quick search box is working properly at application budget period table - MEGrid
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "toggleFGridApplicationBudgetCategoryFlexGrid" panel
+    Then I see value "BP-01" for title "Support Year" inside table "toggleFGridApplicationBudgetCategoryFlexGrid"
