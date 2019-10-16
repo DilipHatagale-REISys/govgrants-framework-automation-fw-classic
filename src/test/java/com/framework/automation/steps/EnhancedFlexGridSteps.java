@@ -241,4 +241,14 @@ public class EnhancedFlexGridSteps {
 	public void assertCellNullValue(String value) {
 		enhancedFlexGrid.assertCellValueForTotalAdjustedAmountAtEnhancedGrid(value);
 	}
+
+	@Then("^I see field value is blank for \"([^\"]*)\" at enhanced grid")
+	public void assertNullValueForSpecificField(String fieldApiName) {
+		enhancedFlexGrid.assertNullValueFoeSpecificFieldAtEnhancedGrid(fieldApiName);
+	}
+
+	@Then("^I see field value is current date for \"([^\"]*)\" at enhanced grid")
+	public void assertDateAndDateTimeFieldValueForSpecificField(String fieldApiName) {
+		enhancedFlexGrid.assertDateAndDateTimeFieldValueForSpecificFieldAtEnhancedGrid(fieldApiName);
+	}
 }

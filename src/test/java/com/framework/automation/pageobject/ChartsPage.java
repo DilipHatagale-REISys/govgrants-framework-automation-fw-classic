@@ -116,7 +116,7 @@ public class ChartsPage extends GovGrantsManager {
     private boolean isExpectedNoOfChartsDisplayed(int number) {
         boolean flag = false;
         int chartCount = 0;
-        chartCount = EyeThink.core().elementReference().listOfElements().onWeb(By.xpath("//div[@id='charts']//div[@class='ng-scope' and not(@ng-controller)]")).size();
+        chartCount = EyeThink.core().elementReference().listOfElements().onWeb(By.xpath("//div[@id='charts']//div[@class='ng-scope' and not(@ng-controller) and not(@ng-if)]")).size();
         try {
             if (chartCount == number) {
                 flag = true;

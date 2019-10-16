@@ -370,7 +370,6 @@ public class PageLayoutPage extends GovGrantsManager {
      * @param buttonName
      */
     public void assertActionButtonOfPagrLayoutDisplayed(String buttonName) {
-        EyeThink.core().switchTo().switchToFrame(editActionModalIframe);
         Assert.assertTrue(isButtonDisplayedAtOverlayWindow(buttonName));
     }
 
@@ -477,6 +476,7 @@ public class PageLayoutPage extends GovGrantsManager {
         EyeThink.core().scroll().onWeb().moveToElement(By.xpath("//span[contains(text(),'" + pageBlockDetailTitle + "')]/..//span[contains(@class,'fa-info')]"));
     }
 
+
     /**
      * hover on look up link at page block details
      *
@@ -543,7 +543,6 @@ public class PageLayoutPage extends GovGrantsManager {
     public void clickPageBlockDetailParticularElement() {
         EyeThink.core().scroll().onWeb().toElementCenter(manageAttachmentInsidePageBlockDetail);
         EyeThink.core().click().onWeb(manageAttachmentInsidePageBlockDetail);
-        EyeThink.core().switchTo().switchToFrame(manageAttachmentIframe);
     }
 
     /**
@@ -1190,7 +1189,6 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public void clickAddUnderAttachmentsPageBlock() {
         EyeThink.core().click().onWeb(addButtonUnderAttachments);
-        EyeThink.core().switchTo().switchToFrame(addAttachmentIframe);
     }
 
     /**

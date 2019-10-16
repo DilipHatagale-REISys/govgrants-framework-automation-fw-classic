@@ -839,7 +839,7 @@ public class FlexTablePage extends GovGrantsManager {
     private Boolean isTotalAmountFieldAtFlexTableDisplayed() {
         boolean flag = false;
         try {
-            if (getCompleteTableRow().stream().anyMatch(item -> EyeThink.core().elementReference().onWebNested((WebElement) item, totalRowsCalc).isDisplayed())) {
+            if (EyeThink.core().is().onWeb().isDisplayed(totalRowsCalc)) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -1047,12 +1047,12 @@ public class FlexTablePage extends GovGrantsManager {
     private boolean isContentGettingSavedBySanpShotOption(String text) {
         String filename = "";
         if (text.equalsIgnoreCase("Todays Date")) {
-            String todaysDate = EyeThink.core().get().currentDateInDesiredFormat(DateTimeFormatter.ofPattern("M/d/yyyy")).replaceAll("^0", "");
-            filename = "SnapShot on " + todaysDate + " 12:19 AM.pdf";
+            String todaysDate = EyeThink.core().get().currentDateInDesiredFormat(DateTimeFormatter.ofPattern("M/d/yyyy h:mm a")).replaceAll("^0", "");
+            filename = "SnapShot on " + todaysDate + ".pdf";
         } else
             filename = text;
         try {
-            EyeThink.core().elementReference().onWeb(By.xpath("//tbody//tr[1]//span[contains(text(),'" + filename + "')]"));
+            EyeThink.core().elementReference().onWeb(By.xpath("//tbody//tr//span[contains(text(),'" + filename + "')]"));
             return true;
         } catch (Exception e) {
             return false;
