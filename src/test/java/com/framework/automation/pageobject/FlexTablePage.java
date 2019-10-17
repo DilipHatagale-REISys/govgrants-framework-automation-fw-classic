@@ -374,22 +374,6 @@ public class FlexTablePage extends GovGrantsManager {
     }
 
     /**
-     * assert if specified name/text is displayed inside downloaded pdf file in
-     * block content
-     */
-    public void assertTextDisplayedInPDFForBlockContent(String text, int pageNumber, String fileName) {
-        Assert.assertTrue(isTextNotDisplayedInFile(text, pageNumber, fileName));
-    }
-
-    /**
-     * assert if specified name/text is displayed inside downloaded pdf file in
-     * Table content
-     */
-    public void assertTextDisplayedInPDFForTableContent(String text, int pageNumber, String fileName) {
-        Assert.assertFalse(isTextNotDisplayedInFile(text, pageNumber, fileName));
-    }
-
-    /**
      * Click on toggle button inside program flex table
      */
     public void clickToggleButtonAndSelect(String menuItemName) {
@@ -418,12 +402,13 @@ public class FlexTablePage extends GovGrantsManager {
     /**
      * assert if specified text is displayed inside downloaded xls file
      */
-    public void assertTextDisplayedInXLS(String text, String fileName) {
-        Assert.assertFalse(isTextNotDisplayedInXLSFile(text, fileName));
+    public void assertTextInsideXLSAndCSV(String text, String fileName) {
+        Assert.assertFalse(isTextDisplayedInsideXLSAndCSVFile(text, fileName));
+        EyeThink.core().switchTo().switchToWindowHandler(0);
     }
 
     /**
-     * retur
+     * return
      *
      * @param errorMessage
      */
@@ -894,16 +879,6 @@ public class FlexTablePage extends GovGrantsManager {
         return flag;
     }
 
-    private boolean isTextNotDisplayedInFile(String text, int pageNumber, String fileName) {
-        boolean flag = true;
-        if (EyeThink.core().file().adobeReader().readFromAdobeFileFromResources(fileName, pageNumber).contains(text)) {
-            EyeThink.core().report().write(LogLevel.PROJECT_LAYER_INFO, "validated text inside Downloaded pdf file");
-            flag = false;
-        }
-        EyeThink.core().switchTo().popupPresent();
-        return flag;
-    }
-
     /**
      * return true if expected text is not displayed inside downloaded xls file
      *
@@ -911,17 +886,16 @@ public class FlexTablePage extends GovGrantsManager {
      * @param fileName
      * @return
      */
-    private boolean isTextNotDisplayedInXLSFile(String text, String fileName) {
-        boolean flag = true;
-        List<String> strContents = readXLS(fileName);
-        for (String content : strContents) {
-            if (content.contains(text)) {
-                flag = false;
-                break;
-            }
+    private boolean isTextDisplayedInsideXLSAndCSVFile(String text, String fileName) {
+        boolean flag = false;
+        EyeThink.saas().modal().acceptPopUp();
+        List<String> strContents = readXLSAndCSV(fileName);
+        if (strContents.contains(text)) {
+            flag = true;
         }
         return flag;
     }
+
 
     /**
      * @return true if grid is refreshed with checking stale element and coming up
@@ -1031,7 +1005,7 @@ public class FlexTablePage extends GovGrantsManager {
         File file = new File(System.getProperty("user.dir") + "\\target");
         File[] directory = EyeThink.core().file().getCompleteFilesListOnLocalDirectory(file.getAbsolutePath());
         for (File files : directory) {
-            if (files.getName().endsWith(".tmp")) {
+            if (files.getName().endsWith(".tmp") || files.getName().endsWith(".pdf") ) {
                 new File(files.getAbsolutePath().toString())
                         .renameTo(new File(file.getAbsolutePath() + "\\" + fileName + ".pdf"));
                 break;

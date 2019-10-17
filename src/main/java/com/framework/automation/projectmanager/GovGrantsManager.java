@@ -304,18 +304,25 @@ public class GovGrantsManager extends ProjectWebServices {
      *
      * @return
      */
-    public List<String> readXLS(String fileName) {
+    public List<String> readXLSAndCSV(String fileName) {
+        String extensionType = "";
         EyeThink.core().WaitFor().makeThreadSleep(10000);
         File file = new File(System.getProperty("user.dir") + "\\target");
         File[] directory = EyeThink.core().file().getCompleteFilesListOnLocalDirectory(file.getAbsolutePath());
         for (File files : directory) {
             if (files.getName().endsWith(".xls")) {
                 new File(files.getAbsolutePath().toString())
-                        .renameTo(new File(file.getAbsolutePath() + "\\" + fileName + ".html"));
+                        .renameTo(new File(file.getAbsolutePath() + "\\" + fileName + ".xls"));
+                extensionType = ".xls";
+                break;
+            } else if (files.getName().endsWith(".csv")) {
+                new File(files.getAbsolutePath().toString())
+                        .renameTo(new File(file.getAbsolutePath() + "\\" + fileName + ".csv"));
+                extensionType = ".csv";
                 break;
             }
         }
-        return EyeThink.core().file().readAnyFile(file.getAbsolutePath() + "\\" + fileName + ".html");
+        return EyeThink.core().file().readAnyFile(file.getAbsolutePath() + "\\" + fileName + extensionType);
 
     }
 
