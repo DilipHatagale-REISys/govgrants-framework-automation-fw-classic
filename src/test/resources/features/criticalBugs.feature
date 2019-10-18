@@ -1667,3 +1667,64 @@ Feature: Logged Issues Scenarios
     When I navigate to "Budget" sub tab
     When I perform quick search for "BP-01" in "toggleFGridApplicationBudgetCategoryFlexGrid" panel
     Then I see value "BP-01" for title "Support Year" inside table "toggleFGridApplicationBudgetCategoryFlexGrid"
+
+  @61082    @formulaAndFormulaJsonFieldAtEnhancedGridQuickSearch
+  Scenario: Validating subtotal of cell value of total obligated amount by entering formula and formula json field at config validating it inside enhanced grid with particular value of program-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Formula   |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName    | fieldNewValue                                                               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Formula      | govgrants_config:FormulaFieldAtEnhancedGridForTotalAwardObligatedAmount     | TmpActiveGrantsGrid | Name                      | FTC-1491                   |
+      | Flex Table List       | Formula Json | govgrants_config:FormulaJsonFieldAtEnhancedGridForTotalAwardObligatedAmount | TmpActiveGrantsGrid | Name                      | FTC-1491                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "test" in "flexGridEnhancedDivId" panel
+    Then I see cell subtotal as expected as given formula
+
+  @61083    @onEditOfRecordEnableOverallTotalFieldAtParentFlexTableForEnhancedGridShouldWork-gPlanning
+  Scenario Outline: validate enabling of overall total field after checking checkbox true of Enable Over All Total from config and validating it inside enhanced grid of programs with editing record value-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName             | fieldOrignalValue               | filterId         |
+      | Flex Table List           | Enable Over All Total | false                           | ApiGeneratedId:0 |
+      | Flex Grid:Flex Table List | Is Master View        | true                            | ApiGeneratedId:1 |
+      | Flex Grid:Flex Table List | Filter Clause         | <defaultFilterClauseForFLV2539> | ApiGeneratedId:2 |
+      | Flex Grid                 | Display Field Names   | <defaultFieldsApi>              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName             | fieldNewValue               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List           | Enable Over All Total | true                        | TmpActiveGrantsGrid | Name                      | FTC-1497                   |
+      | Flex Grid:Flex Table List | Is Master View        | true                        | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Grid:Flex Table List | Filter Clause         | <newFilterClauseForFLV2539> | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Grid:General         | Display Field Names   | <newFieldsApi>              | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    And I edit the following rows inline in flex table with id "flexGridEnhanced1" by clicking "Edit" :
+      | ID          | Total Adjusted Amount |
+      | GT-bvaa-001 | 10                    |
+    Then I see over all total for "TotalAdjustedAmount__c" at enhanced grid
+    Examples:
+      | newFieldsApi                                | defaultFieldsApi                                                                                                                                                                                                                                          | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                             |
+      | Name,ProjectTitle__c,TotalAdjustedAmount__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,TotalAdjustedAmount__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c = 'test Program' |
+
+  @61077    @expectedFieldShouldGetFocusedOnClickOfErrorMessage
+  Scenario: Validate KPI's Required field getting focused on page after clicking on error message for the same field
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "--None--" into field "fieldKPIsRequired__c"
+    When I click on "Save" button inside detail page
+    When I click on error message "KPI"
+    Then I see expected field getting focused

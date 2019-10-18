@@ -471,6 +471,13 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         Assert.assertTrue(isCurrentDateDisplayedAtDateAndDateTimeFIeld(fieldApiName));
     }
 
+    /**
+     * return true if cell over all total sum value is as expected for Total adjusted amount column after edit and save particular record
+     */
+    public void assertOverAllTotalCellValueForTotalAdjustedAmountAtEnhancedGrid(String fieldApiName) {
+        Assert.assertTrue(isExpectedOverAllTotalSumValueForTotalAdjustedAmountAtEnhancedGridTableDisplayed(fieldApiName));
+    }
+
     /*********
      * "Local Methods with complete functionality - private"
      *****************/
@@ -1285,6 +1292,32 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
                 flag = true;
             }
         } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if over all total amount for Total adjusted amount column cells at enhanced grid parent table is displayed
+     *
+     * @return
+     */
+    private boolean isExpectedOverAllTotalSumValueForTotalAdjustedAmountAtEnhancedGridTableDisplayed(String fieldApiName) {
+        boolean flag = false;
+        double sum = 0.00;
+        String subTotal = "";
+        try {
+            List<Elements> rows_table = EyeThink.core().elementReference().listOfElements().onWeb(By.xpath("//table/tbody//tr/td//*[@field-name='" + fieldApiName + "']/span"));
+            subTotal = (rows_table.get(rows_table.size() - 1).getText()).replaceAll("[$|,|']", "");
+            for (int row = 0; row < rows_table.size() - 1; row++) {
+                if (rows_table.get(row).getText() != null) {
+                    sum += Double.valueOf((rows_table.get(row).getText()).replaceAll("[$|,|']", ""));
+                }
+            }
+            if (String.format("%.2f", Double.valueOf(subTotal)).equals(String.format("%.2f", sum))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return flag;
     }

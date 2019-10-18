@@ -147,6 +147,13 @@ public class FlexTable {
                                         String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c), filterClause),
                                 String.valueOf(SObjectAPIs.GNT__Formula__c), value);
                 break;
+            case "FORMULA JSON":
+                finalPayload = String
+                        .format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c),
+                                apiUtilities.getComponentCoreFieldId(
+                                        String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c), filterClause),
+                                String.valueOf(SObjectAPIs.GNT__FormulaJSON__c), value);
+                break;
             case "FIELD WIDTH(%)":
                 finalPayload = String
                         .format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c),
@@ -185,6 +192,18 @@ public class FlexTable {
         String finalPayload = null;
         switch (fieldLabel.toUpperCase()) {
             case "ENABLE EXPORT":
+                finalPayload = String.format(
+                        payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), apiUtilities
+                                .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__EnableExport__c), value);
+                break;
+            case "ENABLE EXPORT (XLS/CSV)":
+                finalPayload = String.format(
+                        payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), apiUtilities
+                                .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__EnableExportXls__c), value);
+                break;
+            case "ENABLE EXPORT (PDF)":
                 finalPayload = String.format(
                         payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), apiUtilities
                                 .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),

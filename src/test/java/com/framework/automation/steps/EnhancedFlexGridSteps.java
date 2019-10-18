@@ -251,4 +251,9 @@ public class EnhancedFlexGridSteps {
 	public void assertDateAndDateTimeFieldValueForSpecificField(String fieldApiName) {
 		enhancedFlexGrid.assertDateAndDateTimeFieldValueForSpecificFieldAtEnhancedGrid(fieldApiName);
 	}
+
+	@Then("^I see over all total for \"([^\"]*)\" at enhanced grid$")
+	public void assertOverAllTotalCellValueAtTotalAdjustedAmountColumn(String fieldApiName) {
+		enhancedFlexGrid.assertOverAllTotalCellValueForTotalAdjustedAmountAtEnhancedGrid(fieldApiName);
+	}
 }
