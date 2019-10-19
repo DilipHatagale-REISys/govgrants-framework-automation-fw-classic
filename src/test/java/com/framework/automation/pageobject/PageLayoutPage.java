@@ -459,6 +459,13 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * return true if expected field on page getting focused
+     */
+    public void assertExpectedFieldGettingFocusedOnClick() {
+        Assert.assertTrue(isExpectedFieldGettingFocused());
+    }
+
+    /**
      * click on help text inside program information page block
      *
      * @param blockTitle
@@ -543,6 +550,13 @@ public class PageLayoutPage extends GovGrantsManager {
     public void clickPageBlockDetailParticularElement() {
         EyeThink.core().scroll().onWeb().toElementCenter(manageAttachmentInsidePageBlockDetail);
         EyeThink.core().click().onWeb(manageAttachmentInsidePageBlockDetail);
+    }
+
+    /**
+     * click on error message at page details
+     */
+    public void performClickOnErrorMessageAtPage(String linkName) {
+        EyeThink.core().click().onWeb(By.xpath("//a[contains(text(),'" + linkName + "')]"));
     }
 
     /**
@@ -1402,6 +1416,18 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean isErrorMessageAtLightningLookupSearch(String inputText, String fieldApiName) {
         boolean flag = false;
         if (EyeThink.core().is().onWeb().isDisplayed(By.xpath("//div[@id='" + fieldApiName + "']//b[contains(text(),'" + inputText + "')]"))) {
+            flag = true;
+        }
+        return flag;
+    }
+
+    /**
+     * return true if expected element getting focused on click of error message
+     */
+    private boolean isExpectedFieldGettingFocused() {
+        boolean flag = false;
+        double yoffSet1 = EyeThink.core().get().getPageOffSetYAxis();
+        if (yoffSet1 > 0) {
             flag = true;
         }
         return flag;

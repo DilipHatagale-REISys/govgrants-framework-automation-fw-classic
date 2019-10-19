@@ -204,19 +204,9 @@ public class FlexTableSteps {
 		flexTablePage.assertSpecificItemsInsideDropdown(itemName);
 	}
 
-	@Then("^I see no \"([^\"]*)\" on page \"([^\"]*)\" of \"([^\"]*)\" pdf file for Block Content$")
-	public void assertTExtNotDisplayedForBlockContent(String text, String pageNumber, String fileName) {
-		flexTablePage.assertTextDisplayedInPDFForBlockContent(text, Integer.parseInt(pageNumber), fileName);
-	}
-
-	@Then("^I see \"([^\"]*)\" on page \"([^\"]*)\" of \"([^\"]*)\" pdf file for Table Content$")
-	public void assertTExtNotDisplayedForTableContent(String text, String pageNumber, String fileName) {
-		flexTablePage.assertTextDisplayedInPDFForTableContent(text, Integer.parseInt(pageNumber), fileName);
-	}
-
-	@Then("^I see \"([^\"]*)\" in xls file \"([^\"]*)\"$")
-	public void assertTExtNotDisplayedInXLS(String text, String fileName) {
-		flexTablePage.assertTextDisplayedInXLS(text, fileName);
+	@Then("^I see \"([^\"]*)\" in downloaded xls or csv file \"([^\"]*)\"$")
+	public void assertTextDisplayedInXLSAndCSV(String text, String fileName) {
+		flexTablePage.assertTextInsideXLSAndCSV(text, fileName);
 	}
 
 	@Then("^I do not see \"([^\"]*)\" error$")

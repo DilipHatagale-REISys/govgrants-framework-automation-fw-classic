@@ -109,6 +109,10 @@ public class PageLayoutSteps {
         pageLayoutPage.selectPackageAndPackageType();
     }
 
+    @When("^I click on error message \"([^\"]*)\"$")
+    public void clickOnErrorMessageAtPage(String linkName) {
+        pageLayoutPage.performClickOnErrorMessageAtPage(linkName);
+    }
 
     @And("^I click on expand collapse icon for panel heading \"([^\"]*)\"$")
     public void clickOnExpandColapseIcon(String panelHeaderName) {
@@ -371,4 +375,10 @@ public class PageLayoutSteps {
     public void assertErrorMessageAtLightningLookupSearch(String inputText, String fieldApiName) {
         pageLayoutPage.assertErrorMessageForInvalidInputAtlightningLookup(inputText, fieldApiName);
     }
+
+    @Then("^I see expected field getting focused$")
+    public void assertExpectedFieldGettingFocused() {
+        pageLayoutPage.assertExpectedFieldGettingFocusedOnClick();
+    }
+
 }
