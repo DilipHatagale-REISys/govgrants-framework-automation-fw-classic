@@ -45,11 +45,9 @@ public class FlexTablePage extends GovGrantsManager {
      * assert two specific items are not displayed in top righ parallel lines bar
      *
      * @param option1
-     * @param option2
      */
-    public void assertTopRightParallelLinesBarSpecificOptionsDisabled(String option1, String option2,
-                                                                      String pannelTitleName) {
-        Assert.assertTrue(isTopRightParallelLinesBarSpecificOptionsDisabled(option1, option2, pannelTitleName));
+    public void assertTopRightParallelLinesBarSpecificOptionsDisabled(String option1, String pannelTitleName) {
+        Assert.assertTrue(isTopRightParallelLinesBarSpecificOptionsDisabled(option1, pannelTitleName));
     }
 
     /**
@@ -544,21 +542,12 @@ public class FlexTablePage extends GovGrantsManager {
      * validate if options are not displayed in top right parallel line bar
      *
      * @param option1
-     * @param option2
      * @return: true if it is not displayed
      */
-    private boolean isTopRightParallelLinesBarSpecificOptionsDisabled(String option1, String option2,
-                                                                      String pannelTitleName) {
+    private boolean isTopRightParallelLinesBarSpecificOptionsDisabled(String option1, String pannelTitleName) {
         boolean flag = false;
         try {
             if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().phasePanel().getItemFromParallelMenuBars(pannelTitleName, option1))) {
-                flag = false;
-            }
-        } catch (Exception e) {
-            flag = true;
-        }
-        try {
-            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().phasePanel().getItemFromParallelMenuBars(pannelTitleName, option2))) {
                 flag = false;
             }
         } catch (Exception e) {
