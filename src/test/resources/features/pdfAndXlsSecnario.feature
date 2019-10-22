@@ -822,3 +822,45 @@ Feature: All pdf and xls related scenario including component and completed back
     When I click on parallel lines menu bar with data target value "#toggleFlexTableTasksLate"
     And I select "Download as CSV" from parallel lines dropdown of "My Late Tasks "
     Then I see "My Late Tasks" in downloaded xls or csv file "govgrants"
+
+  @56951   @lookupFieldShouldDisplayedInDownloadedXLSFileForActiveGrantsRiskAssessment
+  Scenario Outline: validate look up  field in downloaded xls file after making changes at config and validating it inside Active grants grid risk assessment grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Enable Export (xls/csv) | false              | ApiGeneratedId:0 |
+      | Flex Grid             | Display Field Names     | <defaultFieldsApi> | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Export (xls/csv) | true           | ActiveGrantsGridRiskAssessment |                           |                            |
+      | Flex Grid:General     | Display Field Names     | <newFieldsApi> | ActiveGrantsGridRiskAssessment |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    When I navigate to "Risk Management" content inside "Activities" subheader on left panel
+    When I click on parallel lines menu bar with data target value "#toggleFGridRiskAssessmentGridView"
+    And I select "Download as XLS" from parallel lines dropdown of "Risk Management"
+    Then I see "UnitedHealth Group" in downloaded xls or csv file "govgrants"
+    Examples:
+      | newFieldsApi                                                                                                           | defaultFieldsApi                                                                                          |
+      | id,Name,IssueDate__c,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,TotalObligatedAmount__c,Status__c | id,Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,TotalObligatedAmount__c,Status__c |
+
+  @56955   @dateFieldShouldDisplayedInDownloadedXLSFileForActiveGrantsRiskAssessment
+  Scenario Outline: validate date field in downloaded xls file after making changes at config and validating it inside Active grants grid risk assessment grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Enable Export (xls/csv) | false              | ApiGeneratedId:0 |
+      | Flex Grid             | Display Field Names     | <defaultFieldsApi> | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Export (xls/csv) | true           | ActiveGrantsGridRiskAssessment |                           |                            |
+      | Flex Grid:General     | Display Field Names     | <newFieldsApi> | ActiveGrantsGridRiskAssessment |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    When I navigate to "Risk Management" content inside "Activities" subheader on left panel
+    When I click on parallel lines menu bar with data target value "#toggleFGridRiskAssessmentGridView"
+    And I select "Download as XLS" from parallel lines dropdown of "Risk Management"
+    Then I see "05/24/2017" in downloaded xls or csv file "govgrants"
+    Examples:
+      | newFieldsApi                                                                                                           | defaultFieldsApi                                                                                          |
+      | id,Name,IssueDate__c,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,TotalObligatedAmount__c,Status__c | id,Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,TotalObligatedAmount__c,Status__c |
