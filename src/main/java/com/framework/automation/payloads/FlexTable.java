@@ -197,17 +197,17 @@ public class FlexTable {
                                 .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
                         String.valueOf(SObjectAPIs.GNT__EnableExport__c), value);
                 break;
-            case "ENABLE EXPORT (XLS/CSV)":
-                finalPayload = String.format(
-                        payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), apiUtilities
-                                .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
-                        String.valueOf(SObjectAPIs.GNT__EnableExportXls__c), value);
-                break;
             case "ENABLE EXPORT (PDF)":
                 finalPayload = String.format(
                         payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), apiUtilities
                                 .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
                         String.valueOf(SObjectAPIs.GNT__EnableExport__c), value);
+                break;
+            case "ENABLE EXPORT (XLS / CSV)":
+                finalPayload = String.format(
+                        payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), apiUtilities
+                                .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__EnableExportXls__c), value);
                 break;
             case "ENABLE QUICK SEARCH":
                 finalPayload = String.format(
