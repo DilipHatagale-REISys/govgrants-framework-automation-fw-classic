@@ -49,9 +49,9 @@ public class FlexTableSteps {
 		flexTablePage.assertCorrectFlexTableTitleDisplayed(titleName);
 	}
 
-	@Then("^I see \"([^\"]*)\"\"([^\"]*)\" options inside \"([^\"]*)\" disabled$")
-	public void assertTopRightParallelLinesBarOptionsDisabled(String option1, String option2, String pannelTitleName) {
-		flexTablePage.assertTopRightParallelLinesBarSpecificOptionsDisabled(option1, option2, pannelTitleName);
+	@Then("^I see \"([^\"]*)\" options inside \"([^\"]*)\" disabled$")
+	public void assertTopRightParallelLinesBarOptionsDisabled(String option1, String pannelTitleName) {
+		flexTablePage.assertTopRightParallelLinesBarSpecificOptionsDisabled(option1, pannelTitleName);
 	}
 
 	@Then("^I see quick search option disabled$")

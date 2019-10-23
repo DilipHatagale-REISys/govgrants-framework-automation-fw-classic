@@ -55,14 +55,14 @@ Feature: Flex Grid Component Scenarios
     When I navigate to "Plan" sub tab
     Then I see quick search option disabled for "Program Performance Mgmt Grid View"
 
-  @34325    @disableExport-ProgramStrategicGoals
-  Scenario: Disable download PDF/Excel from for Goal Objective menu flex grid in configuratin and validating inside planning-programs view icon - plan subtab
+  @34325    @disablePDFExport-ProgramStrategicGoals
+  Scenario: Disable download PDF from for Goal Objective menu flex grid in configuratin and validating inside planning-programs view icon - plan subtab
     Given I have default configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Grid             | Enable Export | true              | ApiGeneratedId:0 |
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Grid             | Enable Export (PDF) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Export | false         | ProgramStrategicGoals |                           |                            |
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Export (PDF) | false         | ProgramStrategicGoals |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -71,7 +71,25 @@ Feature: Flex Grid Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFGridProgramPerformanceMgmtGridView"
-    Then I see "Download as PDF""Download as CSV" options inside "Goals Objectives" disabled
+    Then I see "Download as PDF" options inside "Goals Objectives" disabled
+
+  @62818    @disableXLSExport-ProgramStrategicGoals
+  Scenario: Disable download XLS from for Goal Objective menu flex grid in configuratin and validating inside planning-programs view icon - plan subtab
+    Given I have default configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Grid             | Enable Export (XLS / CSV) | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Export (XLS / CSV) | false         | ProgramStrategicGoals |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Plan" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFGridProgramPerformanceMgmtGridView"
+    Then I see "Download as XLS" options inside "Goals Objectives" disabled
 
   @34327    @disableFlexTableFieldName-ProgramStrategicGoals
   Scenario: Remove flex table header date column inside Goal Objective configuratin and validating inside planning-programs view icon - plan subtab
@@ -412,14 +430,14 @@ Feature: Flex Grid Component Scenarios
     When I navigate to "Plan" sub tab
     Then I see "Test Automation" shown as inside "toggleFGridProgramOutcomes"
 
-  @50211    @disablingExportFileAtProgramOutcomesParentFlexTable-gPlanning
+  @50211    @disablingPDFExportFileAtProgramOutcomesParentFlexTable-gPlanning
   Scenario: validate disabling of PDF/Excel download from menu option in program outcomes flex table of programs-planning
     Given I have default configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export | true              | ApiGeneratedId:0 |
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Export | false         | ProgramOutcomes    |                           |                            |
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF) | false         | ProgramOutcomes    |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -428,7 +446,25 @@ Feature: Flex Grid Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFGridProgramOutcomes"
-    Then I see "Download as PDF""Download as CSV" options inside "Key Outcomes" disabled
+    Then I see "Download as PDF" options inside "Key Outcomes" disabled
+
+  @62728    @disablingPDFExportFileAtProgramOutcomesParentFlexTable-gPlanning
+  Scenario: validate disabling of Excel download from menu option in program outcomes flex table of programs-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (XLS / CSV) | false         | ProgramOutcomes    |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Plan" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFGridProgramOutcomes"
+    Then I see "Download as CSV" options inside "Key Outcomes" disabled
 
   @49461    @enableTotalFieldAtProgramOutcomesFlexTable-gPlanning
   Scenario: Validating total sum for Target column after making changes for Enable total and Enable Total Row from config and validating it inside program outcomes flex table of programs-planning
@@ -1060,18 +1096,32 @@ Feature: Flex Grid Component Scenarios
     Then I see column "# Awards" value is in "Descending" order for table id "toggleFGridMonitoringGridView"
 
   @50391    @disablingEnableExportFieldAtActiveGrantsGridParentFlexTable-gMonitoring
-  Scenario: validate disabling of PDF/Excel download from menu option at inside Monitoring schedule for all active grant flex table
+  Scenario: validate disabling of PDF download from menu option at inside Monitoring schedule for all active grant flex table
     Given I have default configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export | true              | ApiGeneratedId:0 |
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Export | false         | ActiveGrantsGrid   |                           |                            |
+      | configurationCategory | fieldName            | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF)  | false         | ActiveGrantsGrid   |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
     When I click on parallel lines menu bar with data target value "#toggleFGridMonitoringGridView"
-    Then I see "Download as PDF""Download as CSV" options inside "Monitoring Schedule For All Active Grant" disabled
+    Then I see "Download as PDF" options inside "Monitoring Schedule For All Active Grant" disabled
+
+  @62730    @disablingEnableExportFieldAtActiveGrantsGridParentFlexTable-gMonitoring
+  Scenario: validate disabling of Excel download from menu option at inside Monitoring schedule for all active grant flex table
+    Given I have default configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (XLS / CSV) | false         | ActiveGrantsGrid   |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    When I click on parallel lines menu bar with data target value "#toggleFGridMonitoringGridView"
+    Then I see "Download as CSV" options inside "Monitoring Schedule For All Active Grant" disabled
 
   @50393    @helpTextFieldAtActiveGrantsGridParentFlexTable-gMonitoring
   Scenario Outline: Changing content of help text field at ActiveGrantsGridParent flex table column header from config and validating it inside Monitoring schedule for all active grant flex table

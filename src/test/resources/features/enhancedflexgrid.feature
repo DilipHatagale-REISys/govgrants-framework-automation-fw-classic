@@ -151,14 +151,14 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     Then I see "Automation Enhanced Grid" shown as inside "Enhanced1grid"
 
-  @35438    @disablingExportFileForEnhancedGrid-gPlanning @smoke
-  Scenario: validate disabling of PDF/Excel download from menu option in enhanced flex grid planning- Program enhanced flex grid
+  @35438    @disablingPDFExportFileForEnhancedGrid-gPlanning @smoke
+  Scenario: validate disabling of PDF download from menu option in enhanced flex grid planning- Program enhanced flex grid
     Given I have default configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Grid             | Enable Export | true              | ApiGeneratedId:0 |
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Grid             | Enable Export (PDF)  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Export | false         | TmpActiveGrantsGrid |                           |                            |
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Export (PDF) | false         | TmpActiveGrantsGrid |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -167,7 +167,25 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
-    Then I see "Download as PDF""Download as CSV" options inside "Monitoring Schedule For All Active Grants" disabled
+    Then I see "Download as PDF" options inside "Monitoring Schedule For All Active Grants" disabled
+
+  @62810    @disablingXLSExportFileForEnhancedGrid-gPlanning @smoke
+  Scenario: validate disabling of Excel download from menu option in enhanced flex grid planning- Program enhanced flex grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Grid             | Enable Export (XLS / CSV)  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Export (XLS / CSV) | false         | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
+    Then I see "Download as XLS" options inside "Monitoring Schedule For All Active Grants" disabled
 
   @35439    @disblingQuickSearchForEnhancedGrid-gPlanning @smoke
   Scenario: validate disabling of quick search in enhanced flex grid planning-Program enhanced flex grid
@@ -844,14 +862,14 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I expand nested table containing column value "Demo_Title"
     Then Then I see Menu icon is disabled from planning child flex table "Active Awards" under Monitoring Schedule For All Active Grants table
 
-  @44995    @disablingExportFileForChildFlextTableEnhancedGrid-gPlanning @smoke
-  Scenario: validate disabling of PDF/Excel download from menu option in enhanced flex grid planning- Program enhanced flex grid
+  @44995    @disablingPDFExportFileForChildFlextTableEnhancedGrid-gPlanning @smoke
+  Scenario: validate disabling of PDF download from menu option in enhanced flex grid planning- Program enhanced flex grid
     Given I have default configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Grid             | Enable Export | true              | ApiGeneratedId:0 |
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Grid             | Enable Export (PDF) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Export | false         | TmpGrantorActiveAwardsGrid |                           |                            |
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Export (PDF) | false         | TmpGrantorActiveAwardsGrid |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -862,7 +880,27 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
     When I expand nested table containing column value "Demo_Title"
     When I click on parallel lines menu bar with data target value "#TmpGrantorActiveAwardsGridFlexToggle"
-    Then I see "Download as PDF""Download as CSV" options inside "Active Awards" disabled
+    Then I see "Download as PDF" options inside "Active Awards" disabled
+
+  @62814    @disablingXLSExportFileForChildFlextTableEnhancedGrid-gPlanning @smoke
+  Scenario: validate disabling of XLS download from menu option in enhanced flex grid planning- Program enhanced flex grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Grid             | Enable Export (XLS / CSV) | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Export (XLS / CSV) | false         | TmpGrantorActiveAwardsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
+    When I expand nested table containing column value "Demo_Title"
+    When I click on parallel lines menu bar with data target value "#TmpGrantorActiveAwardsGridFlexToggle"
+    Then I see "Download as XLS" options inside "Active Awards" disabled
 
   @44996    @disablingQuickSearchForChildFlextTableEnhancedGrid-gPlanning
   Scenario: validate disabling of Quick Search field at Child Flex Table for Enhanced Grid - Planning phase

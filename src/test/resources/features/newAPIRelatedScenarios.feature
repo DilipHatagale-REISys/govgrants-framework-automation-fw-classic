@@ -304,4 +304,3 @@ Feature: New API related scenarios temporary
     When I click "close" icon for lightning lookup
     When I enter value "'''" into field "custom_lookupAccount__c"
     Then I see error message "No Records Found" for invalid input at "custom_lookupAccount__c"
-

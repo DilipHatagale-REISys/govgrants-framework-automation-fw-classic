@@ -16,20 +16,36 @@ Feature: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     Then I see "Automation" shown as flex table title
 
-  @34024    @disablingExportFile-gPlanning
-  Scenario: validate disabling of PDF/Excel download from menu option in flex table of programs-planning
+  @34024    @disablingPDFExportFile-gPlanning
+  Scenario: validate disabling of PDF download from menu option in flex table of programs-planning
     Given I have default configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export | true              | ApiGeneratedId:0 |
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Export | false         | Programs           |                           |                            |
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF) | false         | Programs           |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
-    Then I see "Download as PDF""Download as CSV" options inside "Draft Programs" disabled
+    Then I see "Download as PDF" options inside "Draft Programs" disabled
+
+  @62703    @disablingCSVExportFile-gPlanning
+  Scenario: validate disabling of Excel download from menu option in flex table of programs-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId          |
+      | Flex Table            | Enable Export (XLS / CSV) | true              |  ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (XLS / CSV) | false         | Programs           |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
+    Then I see "Download as CSV" options inside "Draft Programs" disabled
+
 
   @34026    @disblingQuickSearch-gPlanning
   Scenario: validate disabling of quick search in flex table of programs-planning
