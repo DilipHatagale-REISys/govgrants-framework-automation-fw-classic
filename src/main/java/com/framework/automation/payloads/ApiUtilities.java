@@ -4,8 +4,8 @@ import com.framework.automation.objects.IdBucket;
 import com.framework.automation.projectmanager.ProjectWebServices;
 import com.framework.automation.projectmanager.SetUpConfiguration;
 import com.google.gson.JsonObject;
-import com.jayway.restassured.response.Response;
 import eyethink.automation.bots.Register.EyeThink;
+import io.restassured.response.Response;
 
 public class ApiUtilities {
     JsonObject sObjectConfig;
