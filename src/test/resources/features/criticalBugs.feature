@@ -1804,3 +1804,22 @@ Feature: Logged Issues Scenarios
       | BP-01        | 0        |
     When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
     Then I see Date Time field is in view mode
+
+  @61105    @enableGroupingFieldAndHideGroupingColumnFieldAtParentFlexTableOfEnhancedGrid
+  Scenario: validate over all total should not displayed whiel making enabling row grouping and hide grouping column from config validating it inside enhanced grid of programs-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table List       | Enable Row Grouping  | false             | ApiGeneratedId:0 |
+      | Flex Table List       | Hide Grouping Column | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Row Grouping  | true          | TmpActiveGrantsGrid | Name                      | FTC-1491                   |
+      | Flex Table List       | Hide Grouping Column | true          | TmpActiveGrantsGrid | Name                      | FTC-1491                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    Then I see over all total sum is not displayed for "TotalAwardObligatedAmount__c"
