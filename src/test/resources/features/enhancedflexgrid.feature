@@ -154,8 +154,8 @@ Feature: Enhanced Flex Grid Component Scenarios
   @35438    @disablingPDFExportFileForEnhancedGrid-gPlanning @smoke
   Scenario: validate disabling of PDF download from menu option in enhanced flex grid planning- Program enhanced flex grid
     Given I have default configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Flex Grid             | Enable Export (PDF)  | true              | ApiGeneratedId:0 |
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Grid             | Enable Export (PDF) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Enable Export (PDF) | false         | TmpActiveGrantsGrid |                           |                            |
@@ -172,8 +172,8 @@ Feature: Enhanced Flex Grid Component Scenarios
   @62810    @disablingXLSExportFileForEnhancedGrid-gPlanning @smoke
   Scenario: validate disabling of Excel download from menu option in enhanced flex grid planning- Program enhanced flex grid
     Given I have default configuration as below:
-      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
-      | Flex Grid             | Enable Export (XLS / CSV)  | true              | ApiGeneratedId:0 |
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Grid             | Enable Export (XLS / CSV) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Enable Export (XLS / CSV) | false         | TmpActiveGrantsGrid |                           |                            |
@@ -1754,3 +1754,26 @@ Feature: Enhanced Flex Grid Component Scenarios
     Examples:
       | fieldNewValue                                   | newFieldsApi                               | defaultFieldsApi                                                                                                                               |
       | GrantAwardName__c DESC,ActiveBudgetYear__c DESC | Name,GrantAwardName__c,ActiveBudgetYear__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
+
+  @45312    @filterClauseFieldOfChildFlexTableAtEnhancedGrid-gPlanning @smoke
+  Scenario Outline: validate created status category from flex table of planning-program enhanced flex grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table List       | Filter Clause | <oldSoqlFilter>   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue   | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Filter Clause | <newSoqlFilter> | TmpGrantorActiveAwardsGrid | Name                      | FLV-2541                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I expand nested table containing column value "Demo_Title"
+    Then I see no "Created" status in flex table id "TmpGrantorActiveAwardsGridFlexToggle"
+
+    Examples:
+      | newSoqlFilter                                       | oldSoqlFilter                                                                                       |
+      | RecordType.Name='Grantor' and Status__c = 'Created' | Grant__c='{!parentId}' and RecordType.Name='Grantor' and Status__c IN ('Being Amended','Activated') |

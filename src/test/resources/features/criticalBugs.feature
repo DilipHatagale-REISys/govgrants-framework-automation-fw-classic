@@ -1728,3 +1728,56 @@ Feature: Logged Issues Scenarios
     When I click on "Save" button inside detail page
     When I click on error message "KPI"
     Then I see expected field getting focused
+
+  @59743      @verifyDateIsGettingSavedCorrectlyAsTodaysDate
+  Scenario Outline: validate budget period end date field should save entered date correctly for at enhanced grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "GT-final-001" in "flexGridEnhanced1" panel
+    And I edit the following rows inline in flex table with id "flexGridEnhanced1" by clicking "Edit" :
+      | Project Title | Current Budget Period End Date |
+      | GT-final-001  | 0                              |
+    And I refresh the page
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "GT-final-001" in "flexGridEnhanced1" panel
+    And I save the value from row "1" for column name "Current Budget Period End Date" as "BPdate1" from flex table "flexGridEnhanced1"
+    Then I see the Budget Period End Date field contains todays date
+    Examples:
+      | defaultFieldsApi                                                                                                                                                                                                                                          | newFieldsApi                                |
+      | Name,ProjectTitle__c,BudgetPeriodEndDate__c,TotalAdjustedAmount__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c |
+
+  @59895    @upArrowShouldAppearWithMultipleFieldSortingInAscendingOrder
+  Scenario Outline: validating up arrow is getting appear at table columns after providing multiple field sorting in Ascending order at child flex able of enhanced grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Order By  |                   | TmpGrantorActiveAwardsGrid |                           |                            |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue   | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Order By  | <fieldNewValue> | TmpGrantorActiveAwardsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I expand nested table containing column value "Demo_Title"
+    #Then I see column "TotalGrantAwardAmount__c" value is in "Ascending" order
+    Then I see upArrow for multiple field at enhanced grid
+
+    Examples:
+      | fieldNewValue                                           |
+      | TotalGrantAwardAmount__c ASC,TotalObligateAmount__c ASC |
+

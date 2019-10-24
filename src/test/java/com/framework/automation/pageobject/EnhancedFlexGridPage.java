@@ -478,6 +478,13 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         Assert.assertTrue(isExpectedOverAllTotalSumValueForTotalAdjustedAmountAtEnhancedGridTableDisplayed(fieldApiName));
     }
 
+    /**
+     * return true if arrow is displayed in ascending order for multiple field
+     */
+    public void assertUpArrowWithSortingAtMultipleField() {
+        Assert.assertTrue(isUpArrowDisplayedForMultipleField());
+    }
+
     /*********
      * "Local Methods with complete functionality - private"
      *****************/
@@ -1320,5 +1327,25 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
             e.printStackTrace();
         }
         return flag;
+    }
+
+    /**
+     * @return true if up Arrow is displayed for multiple field
+     */
+    private Boolean isUpArrowDisplayedForMultipleField() {
+        List<Elements> elements = null;
+        try {
+            elements = EyeThink.core().elementReference().listOfElements().onWeb(By.xpath("//span[contains(text(),'Amount')]/../following-sibling::span/i[contains(@class,'fa-long-arrow-up')]"));
+        } catch (Exception e) {
+        }
+        try {
+            for (Elements element : elements) {
+                if (element.isDisplayed()) {
+                    return true;
+                }
+            }
+        } catch (Exception e) {
+        }
+        return false;
     }
 }
