@@ -114,4 +114,9 @@ public class FlexGridSteps {
 	public void assertTableWithId(String tableId) {
 		flexGridPage.assertTableRenderedCompletely(tableId);
 	}
+
+	@Then("^I see Date Time field is in view mode$")
+	public void assertModeOfDateTimeField() {
+		flexGridPage.assertDateTimeFieldMode();
+	}
 }

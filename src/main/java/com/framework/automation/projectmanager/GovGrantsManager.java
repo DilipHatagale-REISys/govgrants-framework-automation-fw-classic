@@ -312,7 +312,7 @@ public class GovGrantsManager extends ProjectWebServices {
         for (File files : directory) {
             if (files.getName().endsWith(".xls")) {
                 new File(files.getAbsolutePath().toString())
-                        .renameTo(new File(file.getAbsolutePath() + "\\" + fileName + ".xls"));
+                        .renameTo(new File(file.getAbsolutePath() + "\\" + fileName.toString() + ".xls"));
                 extensionType = ".xls";
                 break;
             } else if (files.getName().endsWith(".csv")) {
