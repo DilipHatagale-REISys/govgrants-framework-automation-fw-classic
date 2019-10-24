@@ -463,7 +463,7 @@ Feature: All pdf and xls related scenario including component and completed back
     And I download the file
     Then I see that "Proposed Uses Of Total Funds" on page "1" of "govgrants" pdf file
 
-  @56279    @childLevelRecordsOfMEGridShouldDisplayedInsideXLS @check
+  @56279    @childLevelRecordsOfMEGridShouldDisplayedInsideXLS
   Scenario: validate downloaded pdf file should contain header of child level records after checking checkbox of Enable export and show header panel and validating inside applicationBudgetPeriod flex table
     Given I have default configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -530,7 +530,7 @@ Feature: All pdf and xls related scenario including component and completed back
     Then I see that "Opportunity Overview" on page "1" of "govgrants" pdf file
 
   @57143    @pdfFileShouldGetDownloadedProperlyForFundingAccount
-  Scenario: validate downloaded pdf file should get downloaded properly with content of funding accountScenario: validate CSV file should get downloaded properly with content at funding account flex table
+  Scenario: validate downloaded pdf file should get downloaded properly with content of funding account
     Given I have default configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Export (PDF) | false             | ApiGeneratedId:0 |

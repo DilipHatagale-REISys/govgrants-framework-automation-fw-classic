@@ -209,6 +209,13 @@ public class FlexGridPage extends GovGrantsManager {
         Assert.assertTrue(isTableLoadedProperlyWithTableId(tableId));
     }
 
+    /**
+     * assert true if expected field displayed in view mode
+     */
+    public void assertDateTimeFieldMode() {
+        Assert.assertTrue(isDateTimeColumnValueDisplayedInViewMode());
+    }
+
     /*********
      * "Local Methods with complete functionality - private"
      *****************/
@@ -452,6 +459,20 @@ public class FlexGridPage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (EyeThink.core().is().onWeb().isDisplayed(By.xpath("//div[@class ='panel-body collapse in' and @id='" + tableId + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * @return true if modified value of date time field is displayed in view mode
+     */
+    private Boolean isDateTimeColumnValueDisplayedInViewMode() {
+        boolean flag = false;
+        try {
+            if (EyeThink.core().is().onWeb().isDisplayed(By.xpath("//td//span//field//span[contains(@ng-bind,'getDateTime')]"))) {
                 flag = true;
             }
         } catch (Exception e) {

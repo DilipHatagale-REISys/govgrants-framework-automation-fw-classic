@@ -165,7 +165,13 @@ Feature: Logged Issues Scenarios
     Then I see value "Test Automation" for multiple cells at column "AddressProgramContact__c"
 
   @56273  @inlineEditShouldWorkProperlyAtChildTableOfEnhancedGrid
-  Scenario: validate inline edit is working properly with Editable Row as SingleEdit and Single Row Edit Behavior as inline at child table of enhanced grid
+  Scenario Outline: validate inline edit is working properly with Editable Row as SingleEdit and Single Row Edit Behavior as inline at child table of enhanced grid
+    Given I have default configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpGrantorActiveAwardsGrid |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -179,6 +185,10 @@ Feature: Logged Issues Scenarios
     When I enter values "Test Automation" into textarea for table id "TmpGrantorActiveAwardsGridFlexToggle"
     When I click on top right button "Save" in flex table with id "flexGridEnhanced1"
     Then I see value "Test Automation" for multiple cells at column "Agreement1__c"
+
+    Examples:
+      | newFieldsApi                         | defaultFieldsApi                                                                                                                               |
+      | Name,GrantAwardName__c,Agreement1__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
 
   @56282  @errorMessageShouldComeUPForTitleFieldAfterSubmittingWithDescriptionOnly-gHome
   Scenario Outline: validate error message is coming up after submitting it with description field value only at gHome
@@ -1774,10 +1784,23 @@ Feature: Logged Issues Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "Demo_Title"
-    #Then I see column "TotalGrantAwardAmount__c" value is in "Ascending" order
     Then I see upArrow for multiple field at enhanced grid
 
     Examples:
       | fieldNewValue                                           |
       | TotalGrantAwardAmount__c ASC,TotalObligateAmount__c ASC |
 
+  @59317    @dateTimeFieldShouldDisplayedInViewModeAfterEditing @check
+  Scenario: validate Date Time column field is displayed in view mode after editing the value.
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "AP-755-214"
+    When I click on "View" icon for "AP-755-214" inside table
+    When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
+    And I edit the following rows inline in flex table with id "inlineEditGridApplicationBudgetCategoryFlexGrid" by clicking "Edit" :
+      | Support Year | DateTime |
+      | BP-01        | 0        |
+    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
+    Then I see Date Time field is in view mode
