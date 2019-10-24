@@ -256,4 +256,9 @@ public class EnhancedFlexGridSteps {
 	public void assertOverAllTotalCellValueAtTotalAdjustedAmountColumn(String fieldApiName) {
 		enhancedFlexGrid.assertOverAllTotalCellValueForTotalAdjustedAmountAtEnhancedGrid(fieldApiName);
 	}
+
+	@Then("^I see upArrow for multiple field at enhanced grid")
+	public void assertUpArrowForMultipleField() {
+		enhancedFlexGrid.assertUpArrowWithSortingAtMultipleField();
+	}
 }

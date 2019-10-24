@@ -592,7 +592,7 @@ Feature: All pdf and xls related scenario including component and completed back
     And I download the file
     Then I see that "Application Budget" on page "1" of "govgrants" pdf file
 
-  @56752  @pdfFileShouldGetDownloadedProperlyForTaskSummaryByDueDate
+  @56752  @pdfFileShouldGetDownloadedProperlyForTaskSummaryByDueDate @check
   Scenario: validate pdf file getting downloaded properly for Task Summary By Due Date Chart with content My Late Tasks
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
