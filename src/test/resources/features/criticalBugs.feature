@@ -1823,3 +1823,21 @@ Feature: Logged Issues Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     Then I see over all total sum is not displayed for "TotalAwardObligatedAmount__c"
+
+  @56392    @amountShouldGetEnterAtMatchSecuredFieldOnIEBrowser
+  Scenario: validate amount should get enter at match secured field of Program budget table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I click on "Delete" icon for "Test Automation" inside table
+    And I refresh the page
+    When I navigate to "Financials" sub tab
+    When I enter the following values into flex table with id "inlineEditGridProjectCostForProgram" by clicking "New" :
+      | Financial Source | Match/Secured Amount |
+      | Test Automation  | 1234                 |
+    When I navigate to "Financials" sub tab
+    Then I see value "$1,234.00" for title "Match/Secured Amount" inside table "inlineEditGridProjectCostForProgram"
