@@ -485,6 +485,13 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         Assert.assertTrue(isUpArrowDisplayedForMultipleField());
     }
 
+    /**
+     * return true if over all total sum is not displayed for expected column
+     */
+    public void assertOverAllTotalNotDisplayed(String fieldApiNAme) {
+        Assert.assertTrue(isOverAllTotalIsDisplayed(fieldApiNAme));
+    }
+
     /*********
      * "Local Methods with complete functionality - private"
      *****************/
@@ -555,22 +562,6 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         }
         return flag;
     }
-
-    /* *//**
-     * @return false if element is not displayed
-     *//*
-    private Boolean isEnhancedFlexGridColumnHeaderName(String titleName) {
-        boolean flag = false;
-        try {
-            if (EyeThink.core().is().onWeb().isDisplayed(EyeThink.saas().flexTable().getSpecificElementFromTableHeader(titleName))
-                    || EyeThink.core().is().onWeb().isEnabled(EyeThink.saas().flexTable().getSpecificElementFromTableHeader(titleName))) {
-                flag = true;
-            }
-        } catch (org.openqa.selenium.NoSuchElementException e) {
-            flag = false;
-        }
-        return flag;
-    }*/
 
     /**
      * @return false if element is not displayed
@@ -1347,5 +1338,21 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         } catch (Exception e) {
         }
         return false;
+    }
+
+    /**
+     * @return true Over All Total is not displayed for expected column
+     * @param fieldApiName
+     */
+    private Boolean isOverAllTotalIsDisplayed(String fieldApiName) {
+        boolean flag = true;
+            EyeThink.core().scroll().onWeb().pageToSpecificElement(completeTableRowOfEnhancedGrid);
+        try {
+            if (EyeThink.core().is().onWeb().isDisplayed(By.xpath("//field[@field-name='" + fieldApiName + "' and @record='tableCommunicator.overAllTotalValue']/span"))) {
+                flag = false;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
     }
 }

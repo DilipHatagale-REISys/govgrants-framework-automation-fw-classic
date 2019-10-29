@@ -261,4 +261,9 @@ public class EnhancedFlexGridSteps {
 	public void assertUpArrowForMultipleField() {
 		enhancedFlexGrid.assertUpArrowWithSortingAtMultipleField();
 	}
+
+	@Then("^I see over all total sum is not displayed for \"([^\"]*)\"$")
+	public void assertUpArrowForMultipleField(String fieldApiName) {
+		enhancedFlexGrid.assertOverAllTotalNotDisplayed(fieldApiName);
+	}
 }
