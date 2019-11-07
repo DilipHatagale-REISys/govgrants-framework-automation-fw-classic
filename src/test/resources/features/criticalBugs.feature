@@ -654,8 +654,8 @@ Feature: Logged Issues Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForHistoryTabScenarios}"
     When I click on "Edit" icon for "Test program for automation - SA mode only - Not approved - History Tab Scenario" inside table
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -916,8 +916,8 @@ Feature: Logged Issues Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1416,8 +1416,8 @@ Feature: Logged Issues Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     When I navigate to "History" sub tab
     Then I see take snap shot getting saved with "Submit for approval snapshot.pdf"
 
@@ -1735,7 +1735,7 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "--None--" into field "fieldKPIsRequired__c"
-    When I click on "Save" button inside detail page
+    When I click on "Save" in the page details
     When I click on error message "KPI"
     Then I see expected field getting focused
 
@@ -1841,3 +1841,14 @@ Feature: Logged Issues Scenarios
       | Test Automation  | 1234                 |
     When I navigate to "Financials" sub tab
     Then I see value "$1,234.00" for title "Match/Secured Amount" inside table "inlineEditGridProjectCostForProgram"
+
+  @56756    @miniPageLayoutLinkShouldBeProperForProjectServiceAreaSideBarLink @check
+  Scenario: validate mini page layout displayed properly for lookup field at page block detail
+    When I login as "Automation" user
+    When I setup my app as "As a Grantee"
+    And I navigate to "Planning" tab
+    When I navigate to "Proj/Service Areas" content inside "Activities" subheader on left panel
+    When I perform quick search for "PSA-0147"
+    When I click on "View" icon for "PSA-0147" inside table
+    When I hovering mouse on page block detail of label "POC" lookup field "Henry PM"
+    Then I see mini page layout displayed properly

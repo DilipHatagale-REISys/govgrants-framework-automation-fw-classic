@@ -110,8 +110,8 @@ Feature: Step Progress Bar Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     Then I see status in Progress-bar is "Submitted for Approval" and is "Red"
 
   @37316    @rejectColorFieldAtStepProgressBar-gPlanning
@@ -177,8 +177,8 @@ Feature: Step Progress Bar Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     When I hovering mouse on Status inside step progress bar "Submitted for Approval"
     Then I see "<textInsideStatus>" shown as help text
 

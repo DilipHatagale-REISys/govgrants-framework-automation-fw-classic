@@ -129,7 +129,14 @@ public class GovGrantsManager extends ProjectWebServices {
      * @param buttonName
      */
     public void getRightHeaderButton(String buttonName) {
-        EyeThink.saas().pageDetails().clickAnyTopRightButton(buttonName);
+        EyeThink.core().click().onWeb(EyeThink.saas().pageDetails().getAnyTopRightButton(buttonName));
+        try {
+            if (EyeThink.core().is().onWeb().IsElementPresentQuick(By.xpath("//div[contains(@class, 'modal') and contains(@class, 'bootbox')]//div[contains(@class, 'modal-content')]"))) {
+                WebElement popup = EyeThink.core().elementReference().onWeb(By.xpath("//div[contains(@class, 'modal') and contains(@class, 'bootbox')]//div[contains(@class, 'modal-content')]"));
+                EyeThink.core().click().onWeb(EyeThink.core().elementReference().onWebNested(popup, By.xpath("//div[contains(@class, 'modal-content')]//button[text()='Yes' or text()='Continue' or text()='Ok']")));
+            }
+        } catch (Exception var3) {
+        }
     }
 
     /**
@@ -140,20 +147,6 @@ public class GovGrantsManager extends ProjectWebServices {
      */
     public WebElement getItemFromTopRightHeaderBars(String headerItem) {
         return EyeThink.saas().pageDetails().getMenuItemFromParallelLinesDropDown(headerItem);
-    }
-
-    /**
-     * click any button on right header inside detail page
-     *
-     * @param buttonName
-     * @return
-     */
-    public void clickRightHeaderButtonInsideDetailPage(String buttonName) {
-        EyeThink.saas().pageDetails().clickAnyTopRightButton(buttonName);
-        try {
-            EyeThink.saas().modal().acceptPopUp();
-        } catch (Exception e) {
-        }
     }
 
     /**

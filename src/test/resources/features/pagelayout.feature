@@ -662,8 +662,8 @@ Feature: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     When I navigate to "Attachments" sub tab
     Then I see edit icon is disabled inside "Attachments" page block
 
@@ -684,8 +684,8 @@ Feature: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     When I navigate to "Attachments" sub tab
     Then I see "Edit" icon for "Award Letter" is not displayed inside flex table
 
@@ -903,7 +903,7 @@ Feature: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click on "Save" button inside detail page
+    When I click on "Save" in the page details
     Then I see "Program Sub Type is Required to save under Overview." error is displayed
 
   @36050    @attachementClassificationFieldAtPageBlock-gPlanning @smoke
@@ -1129,7 +1129,7 @@ Feature: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click on "Edit" button in right header
+    When I click on "Edit" in the page details
     Then I see Edit opens in overlay window with "Cancel" button
 
   @36202    @editButtonActionOpensInNewWindowAtPageLayoutAction-gPlanning @smoke
@@ -1146,7 +1146,7 @@ Feature: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click on "Edit" button in right header
+    When I click on "Edit" in the page details
     Then I see new tab is opened
 
   @36204    @displayAreaFieldForCreateCampaignAtPageLayoutAction-gPlanning @smoke
@@ -1255,8 +1255,8 @@ Feature: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1610,10 +1610,10 @@ Feature: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
-    When I enter value "   " into field "fieldProgramName__c"
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
-    Then I see "Title is Required to submit under Overview." error is displayed
+    When I enter value "   " into field "ProgramNameText__c"
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
+    Then I see "Program Name Text is Required to submit under Overview." error is displayed
 
   @53389    @requiredForSubmitBehaviourAtPageBlockDetailForOwnerOrganizationField-gPlanning
   Scenario: changing value of required behaviour and removing owner organization value and validating error message while submitting program for approval
@@ -1631,8 +1631,8 @@ Feature: Page Layout Component Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "Test Program For Automation - Created - Required Behaviour" into field "fieldProgramName__c"
     When I enter value "" into field "fieldAccount__c"
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     Then I see "Owner Organization is Required to submit under Overview." error is displayed
 
   @53390    @requiredForSubmitBehaviourAtPageBlockDetailForNumberField-gPlanning
@@ -1650,8 +1650,8 @@ Feature: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "" into field "fieldNumber__c"
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     Then I see "Number is Required to submit under Overview." error is displayed
 
   @53391    @requiredForSubmitBehaviourAtPageBlockDetailForKPIRequiredField-gPlanning
@@ -1669,8 +1669,8 @@ Feature: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "--None--" into field "fieldKPIsRequired__c"
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     Then I see "KPI's Required? is Required to submit under Overview." error is displayed
 
   @53392    @requiredForSubmitBehaviourAtPageBlockDetailForProjectPeriodStartDateField-gPlanning
@@ -1689,8 +1689,8 @@ Feature: Page Layout Component Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "No" into field "fieldKPIsRequired__c"
     When I enter value "" into field "fieldStartDate__c"
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     Then I see "Project Period Start Date is Required to submit under Overview." error is displayed
 
   @53393    @requiredForSubmitBehaviourAtPageBlockDetailForExpectedFutureFundingField-gPlanning
@@ -1709,8 +1709,8 @@ Feature: Page Layout Component Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "0" into field "fieldStartDate__c"
     When I enter value "" into field "fieldExpectedFunding__c"
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     Then I see "Expected Future Funding is Required to submit under Overview." error is displayed
 
   @53394    @requiredForSubmitBehaviourAtPageBlockDetailForUrlField-gPlanning
@@ -1729,8 +1729,8 @@ Feature: Page Layout Component Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "50000" into field "fieldExpectedFunding__c"
     When I enter value "" into field "fieldWebsiteAddress__c"
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     Then I see "Website Address is Required to submit under Overview." error is displayed
 
   @53395    @requiredForSubmitBehaviourAtPageBlockDetailForProjectsGoalsField-gPlanning
@@ -1749,8 +1749,8 @@ Feature: Page Layout Component Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "www.google.com" into field "fieldWebsiteAddress__c"
     When I enter value "" into field "fieldProjectGoals__c"
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     Then I see "Project Goals is Required to submit under Overview." error is displayed
 
   @53396    @requiredForSubmitBehaviourAtPageBlockDetailForPercentageField-gPlanning
@@ -1768,8 +1768,8 @@ Feature: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "" into field "fieldPercent__c"
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     Then I see "Percent is Required to submit under Overview." error is displayed
 
   @53397   @requiredForSubmitBehaviourAtPageBlockDetailForDateAndTimeField-gPlanning
@@ -1787,8 +1787,8 @@ Feature: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "" into field "fieldDateandTime__c"
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     Then I see "DateandTime is Required to submit under Overview." error is displayed
 
   @53398   @requiredForSubmitBehaviourAtPageBlockDetailForTimeField-gPlanning
@@ -1806,8 +1806,8 @@ Feature: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "" into field "fieldTime__c"
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     Then I see "Time is Required to submit under Overview." error is displayed
 
   @53399   @requiredForSubmitBehaviourAtPageBlockDetailForAuthorizationField-gPlanning
@@ -1825,6 +1825,6 @@ Feature: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "" into field "fieldAuthorization__c"
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     Then I see "Authorization is Required to submit under Overview." error is displayed

@@ -2,16 +2,12 @@ package com.framework.automation.pageobject;
 
 import com.framework.automation.projectmanager.GovGrantsManager;
 import eyethink.automation.bots.Register.EyeThink;
-import eyethink.automation.bots.Report.LogLevel;
 import eyethink.automation.bots.exception.EyeThinkBotsCustomException;
 import eyethink.automation.bots.objects.Elements;
-import org.apache.poi.ss.formula.functions.T;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
-
-import java.awt.event.KeyAdapter;
 import java.io.File;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -994,7 +990,7 @@ public class FlexTablePage extends GovGrantsManager {
         File file = new File(System.getProperty("user.dir") + "\\target");
         File[] directory = EyeThink.core().file().getCompleteFilesListOnLocalDirectory(file.getAbsolutePath());
         for (File files : directory) {
-            if (files.getName().endsWith(".tmp") || files.getName().endsWith(".pdf") ) {
+            if (files.getName().endsWith(".tmp") || files.getName().endsWith(".pdf")) {
                 new File(files.getAbsolutePath().toString())
                         .renameTo(new File(file.getAbsolutePath() + "\\" + fileName + ".pdf"));
                 break;

@@ -5,6 +5,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import java.io.IOException;
 import java.util.List;
 
 public class PageLayoutSteps {
@@ -17,11 +18,6 @@ public class PageLayoutSteps {
     @When("^I click on \"([^\"]*)\" button in right header$")
     public void clickbuttonOnRightHeader(String buttonName) {
         pageLayoutPage.getRightHeaderButton(buttonName);
-    }
-
-    @When("^I click on \"([^\"]*)\" button inside detail page$")
-    public void clickbuttonInsideDetailPage(String button) {
-        pageLayoutPage.clickRightHeaderButtonInsideDetailPage(button);
     }
 
     @When("^I click Add button inside attachments page block$")
@@ -112,6 +108,11 @@ public class PageLayoutSteps {
     @When("^I click on error message \"([^\"]*)\"$")
     public void clickOnErrorMessageAtPage(String linkName) {
         pageLayoutPage.performClickOnErrorMessageAtPage(linkName);
+    }
+
+    @When("^I hovering mouse on page block detail of label \"([^\"]*)\" lookup field \"([^\"]*)\"$")
+    public void hoverAtPageBlockDetailLookupElement(String label, String lookupField) {
+        pageLayoutPage.hoverMouseOnExpectedLookupField(label, lookupField);
     }
 
     @And("^I click on expand collapse icon for panel heading \"([^\"]*)\"$")
@@ -381,4 +382,8 @@ public class PageLayoutSteps {
         pageLayoutPage.assertExpectedFieldGettingFocusedOnClick();
     }
 
+    @Then("^I see mini page layout displayed properly$")
+    public void assertMiniPageLayoutPositioning() throws IOException {
+        pageLayoutPage.assertMiniPAgeLayoutDisplayedAsExpected();
+    }
 }

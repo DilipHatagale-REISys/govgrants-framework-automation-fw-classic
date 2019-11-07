@@ -110,13 +110,6 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     }
 
     /**
-     * perform click on advance filter with table id
-     */
-    public void performClickOnAdvanceFilterWithTableId(String tableId, String dataTargetValue) {
-        EyeThink.core().click().onWeb(EyeThink.saas().phasePanel().getAdvanceFilterItem(tableId, dataTargetValue));
-    }
-
-    /**
      * assert correct title name of enhanced flex grid is displayed
      *
      * @param titleName
