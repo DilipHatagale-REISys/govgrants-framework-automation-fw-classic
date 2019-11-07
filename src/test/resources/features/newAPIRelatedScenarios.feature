@@ -220,7 +220,7 @@ Feature: New API related scenarios temporary
     When I click "close" icon for lightning lookup
     When I click "search" icon for lightning lookup
     And I select value "Department of Community Health" from lightning lookup table
-    When I click on "Save" button in right header
+    When I click on "Save" in the page details
     Then I see field "Owner Organization" as "Department of Community Health"
 
   @54748    @isLookupSearchIsWorkingWihDateOrDateTimeField @smoke

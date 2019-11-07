@@ -775,8 +775,8 @@ Feature: Flex Table Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab

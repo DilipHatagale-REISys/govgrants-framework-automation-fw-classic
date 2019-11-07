@@ -7,6 +7,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.io.IOException;
 import java.util.List;
 
 public class PageLayoutPage extends GovGrantsManager {
@@ -456,6 +457,24 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public void assertErrorMessageForInvalidInputAtlightningLookup(String inputText, String fieldApiName) {
         Assert.assertTrue(isErrorMessageAtLightningLookupSearch(inputText, fieldApiName));
+    }
+
+    /**
+     * return true if mini page layout postion is displayed as expected
+     */
+    public void assertMiniPAgeLayoutDisplayedAsExpected() throws IOException {
+        WebElement miniPageLayout = EyeThink.core().elementReference().onWeb(By.xpath("//div[@class='tooltipster-base tooltipster-shadow tooltipster-fade tooltipster-fade-show']//div[@class='tooltipster-content']"));
+        Assert.assertTrue(EyeThink.core().compare().image().isElementImage(miniPageLayout, "miniPageLayoutImage.png"));
+    }
+
+    /**
+     * hover mouse on lookup field inside page block details page
+     *
+     * @param label
+     * @param lookupField
+     */
+    public void hoverMouseOnExpectedLookupField(String label, String lookupField) {
+        EyeThink.core().scroll().onWeb().moveToElement(By.xpath("//span[@class='customLabelstyle' and contains(text(),'" + label + "')]/ancestor::dl//dd//a[contains(text(),'" + lookupField + "')]"));
     }
 
     /**

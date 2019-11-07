@@ -18,8 +18,8 @@ Feature: Approval Process Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -42,8 +42,8 @@ Feature: Approval Process Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -66,8 +66,8 @@ Feature: Approval Process Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -92,8 +92,8 @@ Feature: Approval Process Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -117,8 +117,8 @@ Feature: Approval Process Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -144,8 +144,8 @@ Feature: Approval Process Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -173,8 +173,8 @@ Feature: Approval Process Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -196,8 +196,8 @@ Feature: Approval Process Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -227,8 +227,8 @@ Feature: Approval Process Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -254,8 +254,8 @@ Feature: Approval Process Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     When I re-login to "As an Administrator" app as "Automation" user on "default" portal
     And I navigate to "Operate" tab
     When I navigate to "Email Logs" content inside "Logs" subheader on left panel
@@ -279,8 +279,8 @@ Feature: Approval Process Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -311,8 +311,8 @@ Feature: Approval Process Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -341,8 +341,8 @@ Feature: Approval Process Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -371,8 +371,8 @@ Feature: Approval Process Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -400,8 +400,8 @@ Feature: Approval Process Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -430,8 +430,8 @@ Feature: Approval Process Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -458,8 +458,8 @@ Feature: Approval Process Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -490,8 +490,8 @@ Feature: Approval Process Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -517,8 +517,8 @@ Feature: Approval Process Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -546,8 +546,8 @@ Feature: Approval Process Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -579,8 +579,8 @@ Feature: Approval Process Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -611,8 +611,8 @@ Feature: Approval Process Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -646,8 +646,8 @@ Feature: Approval Process Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -675,8 +675,8 @@ Feature: Approval Process Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -704,8 +704,8 @@ Feature: Approval Process Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -730,8 +730,8 @@ Feature: Approval Process Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -760,8 +760,8 @@ Feature: Approval Process Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -784,8 +784,8 @@ Feature: Approval Process Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -808,8 +808,8 @@ Feature: Approval Process Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -832,8 +832,8 @@ Feature: Approval Process Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -852,8 +852,8 @@ Feature: Approval Process Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForHistoryTabScenarios}"
     When I click on "Edit" icon for "Test program for automation - SA mode only - Not approved - History Tab Scenario" inside table
-    When I click on "Save" button inside detail page
-    When I click on "Submit For Approval" button inside detail page
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
