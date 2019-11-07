@@ -129,7 +129,7 @@ public class GovGrantsManager extends ProjectWebServices {
      * @param buttonName
      */
     public void getRightHeaderButton(String buttonName) {
-        EyeThink.core().click().onWeb(EyeThink.saas().pageDetails().getAnyTopRightButton(buttonName),true);
+        EyeThink.core().click().onWeb(EyeThink.saas().pageDetails().getAnyTopRightButton(buttonName));
         try {
             if (EyeThink.core().is().onWeb().IsElementPresentQuick(By.xpath("//div[contains(@class, 'modal') and contains(@class, 'bootbox')]//div[contains(@class, 'modal-content')]"))) {
                 WebElement popup = EyeThink.core().elementReference().onWeb(By.xpath("//div[contains(@class, 'modal') and contains(@class, 'bootbox')]//div[contains(@class, 'modal-content')]"));
