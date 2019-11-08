@@ -20,7 +20,7 @@ Feature: All pdf and xls related scenario including component and completed back
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
     And I select "Download as PDF" from parallel lines dropdown of "Draft Programs"
     And I download the file
-    Then I cannot see that "Status" on page "1" of "govgrants" pdf file
+    Then I cannot see "Status" on page "1" of "govgrants" pdf file
 
   @40233    @showInPdfFieldAtFlexTable-gPlanning
   Scenario: Disabling active programs from list view of program flex table from config and validating it at program flex table-programs
@@ -39,7 +39,7 @@ Feature: All pdf and xls related scenario including component and completed back
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
     And I select "Download as PDF" from parallel lines dropdown of "Draft Programs"
     And I download the file
-    Then I see that "Active Programs" on page "1" of "govgrants" pdf file
+    Then I see "Active Programs" on page "1" of "govgrants" pdf file
 
   @35095    @validateSkipFormForDownload-gapplications @smoke
   Scenario: Setup skip form download for 'General Application Budget Form' in configuration and validating inside Applications view
@@ -54,10 +54,10 @@ Feature: All pdf and xls related scenario including component and completed back
     And I navigate to "Applications" tab
     When I perform quick search for "AP-755-198"
     When I click on "View" icon for "Test announcement for program 2" inside table
-    When I click on "Menu" button inside detail page
+    When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
-    Then I cannot see that "Form - Application Budget" on page "29" of "govgrants" pdf file
+    Then I cannot see "Form - Application Budget" on page "29" of "govgrants" pdf file
 
   @35986    @skipForExportFieldAtPageBlock-gPlanning
   Scenario: Setup skip form export for 'Program Information' in configuration and validating inside program detail page
@@ -73,10 +73,10 @@ Feature: All pdf and xls related scenario including component and completed back
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click on "Menu" button inside detail page
+    When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
-    Then I cannot see that "Program Information" on page "1" of "govgrants" pdf file
+    Then I cannot see "Program Information" on page "1" of "govgrants" pdf file
 
   @50389    @pdfRenderTypeFieldAtActiveGrantsGridParentFlexTableForContentInBlock-gMonitoring
   Scenario: validate Activated status in downloaded pdf file after checking check box of show in pdf at config and validating it inside enhanced grid of programs-planning
@@ -94,7 +94,7 @@ Feature: All pdf and xls related scenario including component and completed back
     When I click on parallel lines menu bar with data target value "#toggleFGridMonitoringGridView"
     And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grant"
     And I download the file
-    Then I cannot see that "ID Title" on page "1" of "govgrants" pdf file
+    Then I cannot see "ID Title" on page "1" of "govgrants" pdf file
 
   @50390    @pdfRenderTypeFieldAtActiveGrantsGridParentFlexTableForContentInTable-gMonitoring
   Scenario: validate Activated status in downloaded pdf file after checking check box of show in pdf at config and validating it inside enhanced grid of programs-planning
@@ -112,7 +112,7 @@ Feature: All pdf and xls related scenario including component and completed back
     When I click on parallel lines menu bar with data target value "#toggleFGridMonitoringGridView"
     And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grant"
     And I download the file
-    Then I see that "ID Title" on page "1" of "govgrants" pdf file
+    Then I see "ID Title" on page "1" of "govgrants" pdf file
 
   @49252    @showInPDFFieldAtParentFlexTable-gPlanning
   Scenario Outline: validate Active status in downloaded pdf file after checking check box of show in pdf at config and validating it inside enhanced grid of programs-planning
@@ -136,7 +136,7 @@ Feature: All pdf and xls related scenario including component and completed back
     When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
     And I download the file
-    Then I see that "Active" on page "1" of "govgrants" pdf file
+    Then I see "Active" on page "1" of "govgrants" pdf file
 
     Examples:
       | newFieldsApi                                                                                                                                                                                                                       | defaultFieldsApi                                                                                                                                                                                                                   |
@@ -164,7 +164,7 @@ Feature: All pdf and xls related scenario including component and completed back
     When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
     And I download the file
-    Then I see that "Active" on page "1" of "govgrants" pdf file
+    Then I see "Active" on page "1" of "govgrants" pdf file
 
     Examples:
       | newFieldsApi                                                                                                                                                                                                                       | defaultFieldsApi                                                                                                                                                                                                                   |
@@ -196,7 +196,7 @@ Feature: All pdf and xls related scenario including component and completed back
     When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
     And I download the file
-    Then I see that "Active" on page "1" of "govgrants" pdf file
+    Then I see "Active" on page "1" of "govgrants" pdf file
 
     Examples:
       | newFieldsApi                                                                                                                                                                                                                                              | defaultFieldsApi                                                                                                                                                                                                                                          |
@@ -229,7 +229,7 @@ Feature: All pdf and xls related scenario including component and completed back
     When I click on parallel lines menu bar with data target value "#TmpGrantorActiveAwardsGridFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Active Awards"
     And I download the file
-    Then I see that "Activated" on page "1" of "govgrants" pdf file
+    Then I see "Activated" on page "1" of "govgrants" pdf file
 
     Examples:
       | newFieldsApi                                                                                                                     | defaultFieldsApi                                                                                                                               |
@@ -262,7 +262,7 @@ Feature: All pdf and xls related scenario including component and completed back
     When I click on parallel lines menu bar with data target value "#TmpGrantorActiveAwardsGridFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Active Awards"
     And I download the file
-    Then I see that "Activated" on page "1" of "govgrants" pdf file
+    Then I see "Activated" on page "1" of "govgrants" pdf file
 
     Examples:
       | newFieldsApi                                                                                                                     | defaultFieldsApi                                                                                                                 |
@@ -294,7 +294,7 @@ Feature: All pdf and xls related scenario including component and completed back
     When I click on parallel lines menu bar with data target value "#TmpGrantorActiveAwardsGridFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Active Awards"
     And I download the file
-    Then I see that "Activated" on page "1" of "govgrants" pdf file
+    Then I see "Activated" on page "1" of "govgrants" pdf file
 
     Examples:
       | newFieldsApi                                                                                                                     | defaultFieldsApi                                                                                                                 |
@@ -303,13 +303,13 @@ Feature: All pdf and xls related scenario including component and completed back
   @49253   @showInPDFFieldWithFlexTableContainsOnlyOneListViewAtParentFlexTable-gPlanning
   Scenario: validate Activated status in downloaded xls file after making changes at config and validating it inside enhanced grid of programs-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName               | fieldOrignalValue | filterId         |
-      | Flex Grid:Flex Table List | Show in PDF             | false             | ApiGeneratedId:0 |
-      | Flex Grid                 | Enable Export (xls/csv) | false             | ApiGeneratedId:1 |
+      | configurationCategory     | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Grid:Flex Table List | Show in PDF               | false             | ApiGeneratedId:0 |
+      | Flex Grid                 | Enable Export (xls / csv) | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName               | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Show in PDF             | true          | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
-      | Flex Grid:General         | Enable Export (xls/csv) | true          | TmpActiveGrantsGrid |                           |                            |
+      | configurationCategory     | fieldName                 | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Show in PDF               | true          | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Grid:General         | Enable Export (xls / csv) | true          | TmpActiveGrantsGrid |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -461,7 +461,7 @@ Feature: All pdf and xls related scenario including component and completed back
     When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
     And I select "Download as PDF" from parallel lines dropdown of "Application Budget"
     And I download the file
-    Then I see that "Proposed Uses Of Total Funds" on page "1" of "govgrants" pdf file
+    Then I see "Proposed Uses Of Total Funds" on page "1" of "govgrants" pdf file
 
   @56279    @childLevelRecordsOfMEGridShouldDisplayedInsideXLS
   Scenario: validate downloaded pdf file should contain header of child level records after checking checkbox of Enable export and show header panel and validating inside applicationBudgetPeriod flex table
@@ -502,7 +502,7 @@ Feature: All pdf and xls related scenario including component and completed back
     When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
     And I select "Download as PDF" from parallel lines dropdown of "Application Budget"
     And I download the file
-    Then I see that "Language Development" on page "1" of "govgrants" pdf file
+    Then I see "Language Development" on page "1" of "govgrants" pdf file
 
   @56766    @downloadedPDFFileContainsFormDetailsOnGranteeApplication
   Scenario: validate pdf contains form details for grantee application
@@ -511,10 +511,10 @@ Feature: All pdf and xls related scenario including component and completed back
     And I navigate to "Applications" tab
     When I perform quick search for "AP-DOS-USPDPA-001"
     When I click on "View" icon for "AP-DOS-USPDPA-001" inside table
-    When I click on "Menu" button inside detail page
+    When I click on "Menu" in the page details
     And I select "Download as PDF" from dropdown
     And I download the file
-    Then I see that "Form" on page "5" of "govgrants" pdf file
+    Then I see "Form" on page "5" of "govgrants" pdf file
 
   @56524    @PDFShouldGetDownlodedWithThrowingAnyErrorAtGranteeApplicationView
   Scenario: validate pdf file getting downloaded without any error and oppotunity overview text is present
@@ -524,10 +524,10 @@ Feature: All pdf and xls related scenario including component and completed back
     And I click toggle button to select "Draft Applications"
     When I perform quick search for "APP-HHS-082"
     When I click on "View" icon for "APP-HHS-082" inside table
-    When I click on "Menu" button inside detail page
+    When I click on "Menu" in the page details
     And I select "Download as PDF" from dropdown
     And I download the file
-    Then I see that "Opportunity Overview" on page "1" of "govgrants" pdf file
+    Then I see "Opportunity Overview" on page "1" of "govgrants" pdf file
 
   @57143    @pdfFileShouldGetDownloadedProperlyForFundingAccount
   Scenario: validate downloaded pdf file should get downloaded properly with content of funding account
@@ -548,7 +548,7 @@ Feature: All pdf and xls related scenario including component and completed back
     When I click on parallel lines menu bar with data target value "#toggleFlexTableSelectFundingAccounts"
     And I select "Download as PDF" from parallel lines dropdown of "Funding Accounts "
     And I download the file
-    Then I see that "Funding Source" on page "1" of "govgrants" pdf file
+    Then I see "Funding Source" on page "1" of "govgrants" pdf file
 
   @56837    @pdfFileShouldGetDownloadedProperlyForDefaultApplicationReviewStep @check
   Scenario: validate downloaded pdf file should get downloaded properly with text containing default application review step
@@ -562,7 +562,7 @@ Feature: All pdf and xls related scenario including component and completed back
     When I click on parallel lines menu bar with data target value "#toggleFlexTableProgramRelatedAppReviewStepTemplatesNew"
     And I select "Download as PDF" from parallel lines dropdown of "Default Application Review Steps"
     And I download the file
-    Then I see that "Default Application Review Steps" on page "1" of "govgrants" pdf file
+    Then I see "Default Application Review Steps" on page "1" of "govgrants" pdf file
 
   @56833    @pdfFileShouldGetDownloadedProperlyForProgramServiceArea @check
   Scenario: validate downloaded pdf file should get downloaded properly with text containing program servicearea
@@ -576,7 +576,7 @@ Feature: All pdf and xls related scenario including component and completed back
     When I click on parallel lines menu bar with data target value "#toggleFlexTableRelatedProgramServiceAreas"
     And I select "Download as PDF" from parallel lines dropdown of "Program Service Areas"
     And I download the file
-    Then I see that "Program Service Areas" on page "1" of "govgrants" pdf file
+    Then I see "Program Service Areas" on page "1" of "govgrants" pdf file
 
   @56479    @pdfFileShouldGetDownloadedProperlyForApplicationBudget
   Scenario: validate pdf file should get downloaded properly with text containing Application budget
@@ -590,7 +590,7 @@ Feature: All pdf and xls related scenario including component and completed back
     When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
     And I select "Download as PDF" from parallel lines dropdown of "Application Budget"
     And I download the file
-    Then I see that "Application Budget" on page "1" of "govgrants" pdf file
+    Then I see "Application Budget" on page "1" of "govgrants" pdf file
 
   @56752  @pdfFileShouldGetDownloadedProperlyForTaskSummaryByDueDate @check
   Scenario: validate pdf file getting downloaded properly for Task Summary By Due Date Chart with content My Late Tasks
@@ -601,7 +601,7 @@ Feature: All pdf and xls related scenario including component and completed back
     When I click on parallel lines menu bar with data target value "#toggleFlexTableTasksLate"
     And I select "Download as PDF" from parallel lines dropdown of "My Late Tasks "
     And I download the file
-    Then I see that "My Late Tasks" on page "1" of "govgrants" pdf file
+    Then I see "My Late Tasks" on page "1" of "govgrants" pdf file
 
   @59061    @downloadAsPDFShouldWorkProperlyAtProgramFlexTable
   Scenario: Validate PDF is getting downloaded correctly at program flex table
@@ -612,7 +612,7 @@ Feature: All pdf and xls related scenario including component and completed back
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
     And I select "Download as PDF" from parallel lines dropdown of "Draft Programs"
     And I download the file
-    Then I see that "Draft Programs" on page "1" of "govgrants" pdf file
+    Then I see "Draft Programs" on page "1" of "govgrants" pdf file
 
   @59363    @lookupFieldShouldDisplayCorrectlyOnDownloadedPDFFile @check
   Scenario: validating ID lookup field value should get downloaded and displayed properly in Downloaded file at application budget period grid
@@ -625,7 +625,7 @@ Feature: All pdf and xls related scenario including component and completed back
     When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
     And I select "Download as PDF" from parallel lines dropdown of "Application Budget"
     And I download the file
-    Then I see that "AP-755-213" on page "1" of "govgrants" pdf file
+    Then I see "AP-755-213" on page "1" of "govgrants" pdf file
 
   @59990    @hideColumnShouldNotGetListedInDowloadPDFFileAtEnhanceGrid
   Scenario Outline: Validate external organization getting hide from PDF file after hiding it from config page
@@ -649,7 +649,7 @@ Feature: All pdf and xls related scenario including component and completed back
     When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
     And I download the file
-    Then I cannot see that "Account Name" on page "1" of "govgrants" pdf file
+    Then I cannot see "Account Name" on page "1" of "govgrants" pdf file
 
     Examples:
       | newFieldsApi                                                   | defaultFieldsApi                                                                                                                                                                                                                   |
@@ -673,10 +673,10 @@ Feature: All pdf and xls related scenario including component and completed back
     When I click on "Edit" icon for "Test Program for testing" inside table
     When I enter value "1" into field "Number__c"
     And I click on "Save" in the page details
-    When I click on "Menu" button inside detail page
+    When I click on "Menu" in the page details
     And I select "Download as PDF" from dropdown
     And I download the file
-    Then I see that "1.00" on page "1" of "govgrants" pdf file
+    Then I see "1.00" on page "1" of "govgrants" pdf file
 
     Examples:
       | newFieldsApi                                                                                                               | defaultFieldsApi                                                                                                 |
@@ -702,7 +702,7 @@ Feature: All pdf and xls related scenario including component and completed back
     When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
     And I download the file
-    Then I cannot see that "Active Awards" on page "1" of "govgrants" pdf file
+    Then I cannot see "Active Awards" on page "1" of "govgrants" pdf file
 
   @59360    @AMPMShouldDisplayForDateTimeFieldInsidePDFFileAtEnhancedGrid
   Scenario Outline: validate AM/PM should display inside downloaded pdf file for DateTime Field At enhanced grid
@@ -731,7 +731,7 @@ Feature: All pdf and xls related scenario including component and completed back
     When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
     And I download the file
-    Then I see that "PM" on page "28" of "govgrants" pdf file
+    Then I see "PM" on page "28" of "govgrants" pdf file
 
     Examples:
       | newFieldsApi                                            | defaultFieldsApi                                                                                                                                                                                                                                          |
