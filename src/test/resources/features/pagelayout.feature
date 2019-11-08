@@ -116,7 +116,7 @@ Feature: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click on "Menu" button inside detail page
+    When I click on "Menu" in the page details
     Then I see Download as PDF options disabled
 
   @34046    @HideTakeSnapshotFromMenuForMainPageLayout-gPlanning
@@ -133,7 +133,7 @@ Feature: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click on "Menu" button inside detail page
+    When I click on "Menu" in the page details
     Then I see "Take Snapshot" options disabled
 
   @34055    @enablePromptInputDialog-gPlanning
@@ -187,7 +187,7 @@ Feature: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click on "Edit" button inside detail page
+    When I click on "Edit" in the page details
     Then I see "Auto Cancel" button is displayed at edit detail page
 
   @35813    @labelChangeOfSaveButtonAtMainPageLayout-gPlanning
@@ -204,7 +204,7 @@ Feature: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click on "Edit" button inside detail page
+    When I click on "Edit" in the page details
     Then I see "Auto Save" button is displayed at edit detail page
 
   @35817    @hideForContextFieldAtPageLayout-gPlanning @smoke
@@ -1179,7 +1179,7 @@ Feature: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click on "Menu" button inside detail page
+    When I click on "Menu" in the page details
     Then I see Edit options inside Menu Dropdown
 
   @36208    @headerSequenceFieldAtPageLayoutAction-gPlanning

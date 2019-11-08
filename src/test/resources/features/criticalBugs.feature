@@ -314,7 +314,7 @@ Feature: Logged Issues Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click on "Menu" button inside detail page
+    When I click on "Menu" in the page details
     And I select "Help" from dropdown
     When I switch to tab number "1"
     Then I see the text containing :
@@ -343,7 +343,7 @@ Feature: Logged Issues Scenarios
     When I click on "View" icon for "FGT-gt786-001" inside table
     When I navigate to "Awards" sub tab
     When I click on "View" icon for "FAD-gt786-BP-01-01" inside table
-    When I click on "Menu" button inside detail page
+    When I click on "Menu" in the page details
     Then I see "Submit For Approval" options disabled from menu dropdown
 
   @56611    @granteeFormsPreviewShouldOpensProperly
@@ -525,7 +525,7 @@ Feature: Logged Issues Scenarios
     And I click toggle button to select "Open Funding Opportunities"
     When I perform quick search for "FOA--114"
     When I click on "View" icon for "FOA--114" inside table
-    When I click on "Menu" button inside detail page
+    When I click on "Menu" in the page details
     And I select "Take Snapshot" from dropdown
     Then I see alert message "<message>"
 
@@ -821,18 +821,18 @@ Feature: Logged Issues Scenarios
     And I navigate to "Monitoring" tab
     Then I see "Financial Report By Grants Due In 90 Days" displayed as chart title
 
-  @56482    @viewActionShouldWorkProperlyAtApplicationBudgetCategoryFlexTableChild @wip @check
+  @56482    @viewActionShouldWorkProperlyAtApplicationBudgetCategoryFlexTableChild
   Scenario: validating view action is working while checking page block and its details coming for view action at Application Budget child flex table child
-    When I login as "Automation" user
-    When I setup my app as "As a Grantee"
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "New Technologies for Viral Hepatitis STTR (R41/R42)"
-    When I click on "View" icon for "New Technologies for Viral Hepatitis STTR (R41/R42)" inside table
+    When I perform quick search for "Shambhavi Application"
+    When I click on "View" icon for "Shambhavi Application" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP01"
-    When I expand nested table containing column value "BP01"
+    When I perform quick search for "BP-01" in "toggleFGridApplicationBudgetCategoryFlexGrid" panel
+    When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
-    When I click on "View" icon for "Travel" inside table
+    When I click on "View" icon for "Maintenance And Repair Costs" inside table
     Then I see the text containing :
       | Narrative          |
       | Service Area Title |
@@ -1396,7 +1396,7 @@ Feature: Logged Issues Scenarios
     And I navigate to "Applications" tab
     When I perform quick search for "APP-HHS-082"
     When I click on "View" icon for "APP-HHS-082" inside table
-    When I click on "Menu" button inside detail page
+    When I click on "Menu" in the page details
     And I select "Take Snapshot" from dropdown
     When I navigate to "History" sub tab
     Then I see take snap shot getting saved with "Todays Date"
@@ -1852,3 +1852,20 @@ Feature: Logged Issues Scenarios
     When I click on "View" icon for "PSA-0147" inside table
     When I hovering mouse on page block detail of label "POC" lookup field "Henry PM"
     Then I see mini page layout displayed properly
+
+  @61080    @verifyLabelOfNullGroupedForEnablingRowGroupingAtFlexTableForEnhancedGrid-gPlanning
+  Scenario: validate null (--) is shown in header for null grouped after checking checkbox true of Enable Row Grouping from config and validating it inside enhanced grid of programs-planning
+    Given I have default configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Row Grouping | true          | TmpActiveGrantsGrid  | Name                      | FTC-1500                  |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    Then I see "Total Adjusted Amount : --" inside rows of enhanced grid id "Enhanced1grid"

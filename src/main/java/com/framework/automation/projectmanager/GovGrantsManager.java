@@ -293,33 +293,6 @@ public class GovGrantsManager extends ProjectWebServices {
     }
 
     /**
-     * Rename the file and change it from .xls to .html Read from html file
-     *
-     * @return
-     */
-    public List<String> readXLSAndCSV(String fileName) {
-        String extensionType = "";
-        EyeThink.core().WaitFor().makeThreadSleep(10000);
-        File file = new File(System.getProperty("user.dir") + "\\target");
-        File[] directory = EyeThink.core().file().getCompleteFilesListOnLocalDirectory(file.getAbsolutePath());
-        for (File files : directory) {
-            if (files.getName().endsWith(".xls")) {
-                new File(files.getAbsolutePath().toString())
-                        .renameTo(new File(file.getAbsolutePath() + "\\" + fileName.toString() + ".xls"));
-                extensionType = ".xls";
-                break;
-            } else if (files.getName().endsWith(".csv")) {
-                new File(files.getAbsolutePath().toString())
-                        .renameTo(new File(file.getAbsolutePath() + "\\" + fileName + ".csv"));
-                extensionType = ".csv";
-                break;
-            }
-        }
-        return EyeThink.core().file().readAnyFile(file.getAbsolutePath() + "\\" + fileName + extensionType);
-
-    }
-
-    /**
      * Record column content of table
      *
      * @param tableId

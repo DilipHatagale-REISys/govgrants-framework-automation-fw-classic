@@ -921,6 +921,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
             for (int row = 0; row < obtainedList.size(); row++) {
                 if (obtainedList.get(row).contains(text)) {
                     flag = true;
+                    break;
                 } else {
                     flag = false;
                 }
