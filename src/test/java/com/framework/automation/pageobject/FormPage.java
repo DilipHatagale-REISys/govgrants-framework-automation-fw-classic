@@ -44,7 +44,7 @@ public class FormPage extends GovGrantsManager {
      */
     public void clickFormActionIconsForSpecificSubject(String programSubject, String iconName) {
         try {
-            EyeThink.core().click().onWeb(By.xpath("//td//span[@title='" + programSubject + "']/../../../td//a[@title='" + iconName + "']//i"));
+            EyeThink.core().click().on(By.xpath("//td//span[@title='" + programSubject + "']/../../../td//a[@title='" + iconName + "']//i"));
         } catch (Exception e) {
             EyeThink.core().WaitFor().makeThreadSleep(1000);
             EyeThink.core().click().withJavaScript(By
@@ -91,7 +91,7 @@ public class FormPage extends GovGrantsManager {
     private boolean isBusinessFormSectionNotDisplayed() {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().onWeb().isDisplayed(businessFormSection)) {
+            if (EyeThink.core().is().isDisplayed(businessFormSection)) {
                 flag = false;
             }
         } catch (Exception e) {
@@ -107,7 +107,7 @@ public class FormPage extends GovGrantsManager {
     private boolean isChangedButtonNameDisplayed(String actionButtonName) {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().onWeb().isDisplayed(getAllActionItemInsideFormDetalPage(actionButtonName))) {
+            if (EyeThink.core().is().isDisplayed(getAllActionItemInsideFormDetalPage(actionButtonName))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -123,7 +123,7 @@ public class FormPage extends GovGrantsManager {
     private boolean isEditButtonDisplayed(String actionButtonName) {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().onWeb().isDisplayed(getAllActionItemInsideFormDetalPage(actionButtonName))) {
+            if (EyeThink.core().is().isDisplayed(getAllActionItemInsideFormDetalPage(actionButtonName))) {
                 flag = false;
             }
         } catch (Exception e) {
@@ -140,7 +140,7 @@ public class FormPage extends GovGrantsManager {
     private boolean isPreviewActionItemNotDisplayForInternalUser(String Item) {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().onWeb().isDisplayed(getAllActionItemInsideBusinessForm(Item))) {
+            if (EyeThink.core().is().isDisplayed(getAllActionItemInsideBusinessForm(Item))) {
                 flag = false;
             }
         } catch (Exception e) {
@@ -156,7 +156,7 @@ public class FormPage extends GovGrantsManager {
      * @return
      */
     private WebElement getAllActionItemInsideBusinessForm(String Item) {
-        return EyeThink.core().elementReference().onWeb(By.xpath(("//div[@id='FormComponent']//div/table/tbody/tr//td//a[@title='" + Item + "']")));
+        return EyeThink.core().elementReference().of(By.xpath(("//div[@id='FormComponent']//div/table/tbody/tr//td//a[@title='" + Item + "']")));
     }
 
     /**
@@ -166,6 +166,6 @@ public class FormPage extends GovGrantsManager {
      * @return
      */
     private WebElement getAllActionItemInsideFormDetalPage(String actionButtonName) {
-        return EyeThink.core().elementReference().onWeb(By.xpath(("//div[@id='headerButtonsPanel']//*[@title='" + actionButtonName + "']")));
+        return EyeThink.core().elementReference().of(By.xpath(("//div[@id='headerButtonsPanel']//*[@title='" + actionButtonName + "']")));
     }
 }

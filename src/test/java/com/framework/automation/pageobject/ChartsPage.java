@@ -63,7 +63,7 @@ public class ChartsPage extends GovGrantsManager {
     private boolean isChartTitleDisplayed(String title) {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().onWeb().isDisplayed(By.cssSelector("div#charts [title='" + title + "']"))) {
+            if (EyeThink.core().is().isDisplayed(By.cssSelector("div#charts [title='" + title + "']"))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -80,7 +80,7 @@ public class ChartsPage extends GovGrantsManager {
     private boolean isChartLegendNotDisplayed(String title) {
         boolean flag = true;
         try {
-            if (EyeThink.core().is().onWeb().isDisplayed(By.cssSelector("div#" + title + "Id .highcharts-legend"))) {
+            if (EyeThink.core().is().isDisplayed(By.cssSelector("div#" + title + "Id .highcharts-legend"))) {
                 flag = false;
             }
         } catch (Exception e) {
@@ -97,7 +97,7 @@ public class ChartsPage extends GovGrantsManager {
     private boolean isExpectedTextComesOnlyOnceInChart(String title, String chartName) {
         boolean flag = false;
         int textCount = 0;
-        textCount = EyeThink.core().elementReference().listOfElements().onWeb(By.xpath("//div[@id='" + chartName + "Id']//*[contains(@class,'highcharts-container')]//*[contains(text(),'" + title + "')]")).size();
+        textCount = EyeThink.core().elementReference().listOfElements().of(By.xpath("//div[@id='" + chartName + "Id']//*[contains(@class,'highcharts-container')]//*[contains(text(),'" + title + "')]")).size();
         try {
             if (textCount == 1) {
                 flag = true;
@@ -116,7 +116,7 @@ public class ChartsPage extends GovGrantsManager {
     private boolean isExpectedNoOfChartsDisplayed(int number) {
         boolean flag = false;
         int chartCount = 0;
-        chartCount = EyeThink.core().elementReference().listOfElements().onWeb(By.xpath("//div[@id='charts']//div[@class='ng-scope' and not(@ng-controller) and not(@ng-if)]")).size();
+        chartCount = EyeThink.core().elementReference().listOfElements().of(By.xpath("//div[@id='charts']//div[@class='ng-scope' and not(@ng-controller) and not(@ng-if)]")).size();
         try {
             if (chartCount == number) {
                 flag = true;

@@ -180,7 +180,7 @@ public class SideBarPage extends GovGrantsManager {
     private boolean isSideBarAccordionSubHeaderDisplayed(String sideBarCategory, String accordianSubHeaderDetail) {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().onWeb().isDisplayed(getSideBarAccordianSubHeaderContent(sideBarCategory, accordianSubHeaderDetail))) {
+            if (EyeThink.core().is().isDisplayed(getSideBarAccordianSubHeaderContent(sideBarCategory, accordianSubHeaderDetail))) {
                 flag = true;
             }
         } catch (Exception e) {
