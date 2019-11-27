@@ -304,3 +304,109 @@ Feature: New API related scenarios temporary
     When I click "close" icon for lightning lookup
     When I enter value "'''" into field "custom_lookupAccount__c"
     Then I see error message "No Records Found" for invalid input at "custom_lookupAccount__c"
+
+  @64956    @VerifylookUpDisplayFieldNameToOverrideLabelOfFieldsAtPageBlockDetail-gPlanning
+  Scenario: Adding display field Names as Name to override the labels at lookup modal from PB config and validating it on program detail page
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName                  | fieldNewValue           | coreComponentField    | coreComponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | govgrants_config:Lookup | Grantee State Program | Name                      | PBD-3178                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I click "close" icon for lightning lookup
+    When I click "search" icon for lightning lookup
+    Then I see "Test Automation" in table header on lookup Modal
+
+  @65023    @VerifylookUpFilterCriteriaToFilterOutRecordsInLookupWindowAtPageBlockDetail-gPlanning
+  Scenario Outline: Validate lookup filter criteria is working fine by displaying all Active records in lookup window
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Lookup Filter Criteria     | <oldLookupFilter> | Grantee State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName                  | fieldNewValue          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | <newLookupDisplayName> | Grantee State Program | Name                      | PBD-3178                   |
+      | Page Block Config:Page Block Rule Detail | Lookup Filter Criteria     | <newLookupFilter>      | Grantee State Program | Name                      | PBD-3178                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I click "close" icon for lightning lookup
+    When I click "search" icon for lightning lookup
+    Then I see "Active" status in Lookup window
+
+    Examples:
+      | oldLookupFilter                                                                    | newLookupFilter     | newLookupDisplayName |
+      | RecordType.Name='Internal' AND GroupCode__c='{!GroupCode}' AND Status__c ='Active' | Status__c ='Active' | Name,Status__c       |
+
+  @65027    @VerifylookupSortByToSortRecordsUnderNameColumnInAscOrderInLookupWindowAtPageBlockDetail-gPlanning
+  Scenario: Validate lookup sort by is working fine by sorting all records in ascending order under lookup window
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName             | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Lookup Sort Direction | ASC               | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Lookup Sort By        | Name              | Grantee State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName             | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Lookup Sort Direction | ASC           | Grantee State Program | Name                      | PBD-3178                   |
+      | Page Block Config:Page Block Rule Detail | Lookup Sort By        | Name          | Grantee State Program | Name                      | PBD-3178                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I click "close" icon for lightning lookup
+    When I click "search" icon for lightning lookup
+    Then I see content inside lookup modal in "Ascending" order
+
+  @65040    @VerifylookupSortByToSortRecordsUnderNameColumnInDescOrderInLookupWindowAtPageBlockDetail-gPlanning
+  Scenario: Validate lookup sort by is working fine by sorting all records in descending order under lookup window
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName             | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Lookup Sort Direction | ASC               | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Lookup Sort By        | Name              | Grantee State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName             | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Lookup Sort Direction | DESC          | Grantee State Program | Name                      | PBD-3178                   |
+      | Page Block Config:Page Block Rule Detail | Lookup Sort By        | Name          | Grantee State Program | Name                      | PBD-3178                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I click "close" icon for lightning lookup
+    When I click "search" icon for lightning lookup
+    Then I see content inside lookup modal in "Descending" order
+
+  @65042    @VerifyHideFieldJSONToHideFieldAccordingToSelectedLookupFieldValueAtPageBlockDetail-gPlanning @check
+  Scenario: Validate Hide Fields JSON is working fine by Hiding Program SubType Field if owner organization is Department of Community Health
+    Given I have default configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:Lookup_Hide_Decision_Field | Grantee State Program | Name                      | PBD-3178                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I click "close" icon for lightning lookup
+    When I click "search" icon for lightning lookup
+    And I select value "Department of Community Health" from lightning lookup table
+    When I click on "Save" in the page details
+    When I click on "Edit" in the page details
+    Then I see "Program Sub Type" is not displayed inside page block detail
+
+
+

@@ -386,4 +386,9 @@ public class PageLayoutSteps {
     public void assertMiniPageLayoutPositioning() throws IOException {
         pageLayoutPage.assertMiniPAgeLayoutDisplayedAsExpected();
     }
+
+    @Then("^I see \"([^\"]*)\" status in Lookup window$")
+    public void assertEnhancedLookupFilterCriteria(String status) {
+        pageLayoutPage.assertEnhancedLookupRecordsGettingFilterOut(status);
+    }
 }

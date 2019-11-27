@@ -485,6 +485,13 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * return true if records with status as Active are shown in owner organisation lookup modal
+     */
+    public void assertEnhancedLookupRecordsGettingFilterOut(String status) {
+        Assert.assertTrue(isEnhancedLookupRecordsGettingFilterOut(status));
+    }
+
+    /**
      * click on help text inside program information page block
      *
      * @param blockTitle
@@ -1449,6 +1456,18 @@ public class PageLayoutPage extends GovGrantsManager {
         if (yoffSet1 > 0) {
             flag = true;
         }
+        return flag;
+    }
+
+    /**
+     * @return false if element is not displayed
+     */
+    private Boolean isEnhancedLookupRecordsGettingFilterOut(String status) {
+        boolean flag = false;
+            for (int i=0;i<getCompleteContentForLookupModal().size();i++){
+                if (getCompleteContentForLookupModal().get(i).getText().contains(status))
+                    flag = true;
+            }
         return flag;
     }
 }
