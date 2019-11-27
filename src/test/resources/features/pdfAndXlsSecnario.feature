@@ -324,17 +324,17 @@ Feature: All pdf and xls related scenario including component and completed back
   @49257   @isMasterViewFieldWithFlexTableContainMOreThanOneListViewInShowInPDF-gPlanning
   Scenario: validate Activated status in downloaded xls file after making changes at config and validating it inside enhanced grid of programs-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName               | fieldOrignalValue | filterId         |
-      | Flex Grid:Flex Table List | Is Master View          | true              | ApiGeneratedId:0 |
-      | Flex Grid:Flex Table List | Show in PDF             | false             | ApiGeneratedId:1 |
-      | Flex Grid:Flex Table List | Show in PDF             | false             | ApiGeneratedId:2 |
-      | Flex Grid                 | Enable Export (xls/csv) | false             | ApiGeneratedId:3 |
+      | configurationCategory     | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Grid:Flex Table List | Is Master View            | true              | ApiGeneratedId:0 |
+      | Flex Grid:Flex Table List | Show in PDF               | false             | ApiGeneratedId:1 |
+      | Flex Grid:Flex Table List | Show in PDF               | false             | ApiGeneratedId:2 |
+      | Flex Grid                 | Enable Export (XLS / CSV) | false             | ApiGeneratedId:3 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName               | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View          | true          | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
-      | Flex Grid:Flex Table List | Show in PDF             | true          | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
-      | Flex Grid:Flex Table List | Show in PDF             | true          | TmpActiveGrantsGrid | Name                      | FLV-2545                   |
-      | Flex Grid:General         | Enable Export (xls/csv) | true          | TmpActiveGrantsGrid |                           |                            |
+      | configurationCategory     | fieldName                 | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Is Master View            | true          | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Grid:Flex Table List | Show in PDF               | true          | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Grid:Flex Table List | Show in PDF               | true          | TmpActiveGrantsGrid | Name                      | FLV-2545                   |
+      | Flex Grid:General         | Enable Export (XLS / CSV) | true          | TmpActiveGrantsGrid |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -349,13 +349,13 @@ Feature: All pdf and xls related scenario including component and completed back
   @49239   @showInPDFFieldWithFlexTableContainsOnlyOneListViewAtChildFlexTable-gPlanning
   Scenario: validate Activated status in downloaded xls file after making changes at config and validating it inside enhanced grid of programs-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName               | fieldOrignalValue | filterId         |
-      | Flex Grid:Flex Table List | Show in PDF             | true              | ApiGeneratedId:0 |
-      | Flex Grid                 | Enable Export (xls/csv) | false             | ApiGeneratedId:1 |
+      | configurationCategory     | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Grid:Flex Table List | Show in PDF               | true              | ApiGeneratedId:0 |
+      | Flex Grid                 | Enable Export (XLS / CSV) | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName               | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Show in PDF             | true          | TmpGrantorActiveAwardsGrid | Name                      | FLV-2541                   |
-      | Flex Grid:General         | Enable Export (xls/csv) | true          | TmpGrantorActiveAwardsGrid |                           |                            |
+      | configurationCategory     | fieldName                 | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Show in PDF               | true          | TmpGrantorActiveAwardsGrid | Name                      | FLV-2541                   |
+      | Flex Grid:General         | Enable Export (XLS / CSV) | true          | TmpGrantorActiveAwardsGrid |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -372,15 +372,15 @@ Feature: All pdf and xls related scenario including component and completed back
   @49237   @isMasterViewFieldWithFlexTableDoesNotContainAnyListViewInShowInPDFAtChildFlexTable-gPlanning
   Scenario: validate Activated status in downloaded xls file after making changes at config and validating it inside enhanced grid of programs-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName               | fieldOrignalValue | filterId         |
-      | Flex Grid:Flex Table List | Is Master View          | true              | ApiGeneratedId:0 |
-      | Flex Grid:Flex Table List | Show in PDF             | true              | ApiGeneratedId:1 |
-      | Flex Grid                 | Enable Export (xls/csv) | false             | ApiGeneratedId:2 |
+      | configurationCategory     | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Grid:Flex Table List | Is Master View            | true              | ApiGeneratedId:0 |
+      | Flex Grid:Flex Table List | Show in PDF               | true              | ApiGeneratedId:1 |
+      | Flex Grid                 | Enable Export (XLS / CSV) | false             | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName               | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View          | true          | TmpGrantorActiveAwardsGrid | Name                      | FLV-2541                   |
-      | Flex Grid:Flex Table List | Show in PDF             | false         | TmpGrantorActiveAwardsGrid | Name                      | FLV-2541                   |
-      | Flex Grid:General         | Enable Export (xls/csv) | true          | TmpGrantorActiveAwardsGrid |                           |                            |
+      | configurationCategory     | fieldName                 | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Is Master View            | true          | TmpGrantorActiveAwardsGrid | Name                      | FLV-2541                   |
+      | Flex Grid:Flex Table List | Show in PDF               | false         | TmpGrantorActiveAwardsGrid | Name                      | FLV-2541                   |
+      | Flex Grid:General         | Enable Export (XLS / CSV) | true          | TmpGrantorActiveAwardsGrid |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -397,17 +397,17 @@ Feature: All pdf and xls related scenario including component and completed back
   @49235   @isMasterViewFieldWithFlexTableContainMOreThanOneListViewInShowInPDFAtChildFlexTable-gPlanning
   Scenario: validate Activated status in downloaded xls file after making changes at config and validating it inside enhanced grid of programs-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName               | fieldOrignalValue | filterId         |
-      | Flex Grid:Flex Table List | Active ?                | true              | ApiGeneratedId:0 |
-      | Flex Grid:Flex Table List | Show in PDF             | true              | ApiGeneratedId:1 |
-      | Flex Grid:Flex Table List | Show in PDF             | false             | ApiGeneratedId:2 |
-      | Flex Grid                 | Enable Export (xls/csv) | false             | ApiGeneratedId:3 |
+      | configurationCategory     | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Grid:Flex Table List | Active ?                  | true              | ApiGeneratedId:0 |
+      | Flex Grid:Flex Table List | Show in PDF               | true              | ApiGeneratedId:1 |
+      | Flex Grid:Flex Table List | Show in PDF               | false             | ApiGeneratedId:2 |
+      | Flex Grid                 | Enable Export (XLS / CSV) | false             | ApiGeneratedId:3 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName               | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Active ?                | false         | TmpGrantorActiveAwardsGrid | Name                      | FLV-2544                   |
-      | Flex Grid:Flex Table List | Show in PDF             | true          | TmpGrantorActiveAwardsGrid | Name                      | FLV-2541                   |
-      | Flex Grid:Flex Table List | Show in PDF             | true          | TmpGrantorActiveAwardsGrid | Name                      | FLV-2544                   |
-      | Flex Grid:General         | Enable Export (xls/csv) | true          | TmpGrantorActiveAwardsGrid |                           |                            |
+      | configurationCategory     | fieldName                 | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Active ?                  | false         | TmpGrantorActiveAwardsGrid | Name                      | FLV-2544                   |
+      | Flex Grid:Flex Table List | Show in PDF               | true          | TmpGrantorActiveAwardsGrid | Name                      | FLV-2541                   |
+      | Flex Grid:Flex Table List | Show in PDF               | true          | TmpGrantorActiveAwardsGrid | Name                      | FLV-2544                   |
+      | Flex Grid:General         | Enable Export (XLS / CSV) | true          | TmpGrantorActiveAwardsGrid |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -424,13 +424,13 @@ Feature: All pdf and xls related scenario including component and completed back
   @49255   @isMasterViewFieldWithFlexTableDoesNotContainAnyListViewInShowInPDF-gPlanning
   Scenario: validate Activated status in downloaded xls file after making changes at config and validating it inside enhanced grid of programs-planning
     Given I have default configuration as below:
-      | configurationCategory     | fieldName               | fieldOrignalValue | filterId         |
-      | Flex Grid:Flex Table List | Is Master View          | true              | ApiGeneratedId:0 |
-      | Flex Grid                 | Enable Export (xls/csv) | false             | ApiGeneratedId:1 |
+      | configurationCategory     | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Grid:Flex Table List | Is Master View            | true              | ApiGeneratedId:0 |
+      | Flex Grid                 | Enable Export (XLS / CSV) | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName               | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View          | true          | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
-      | Flex Grid:General         | Enable Export (xls/csv) | true          | TmpActiveGrantsGrid |                           |                            |
+      | configurationCategory     | fieldName                 | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Is Master View            | true          | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Grid:General         | Enable Export (XLS / CSV) | true          | TmpActiveGrantsGrid |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -466,13 +466,13 @@ Feature: All pdf and xls related scenario including component and completed back
   @56279    @childLevelRecordsOfMEGridShouldDisplayedInsideXLS
   Scenario: validate downloaded pdf file should contain header of child level records after checking checkbox of Enable export and show header panel and validating inside applicationBudgetPeriod flex table
     Given I have default configuration as below:
-      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (XLS/CSV) | true              | ApiGeneratedId:0 |
-      | Flex Table            | Show Header Panel       | false             | ApiGeneratedId:1 |
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:0 |
+      | Flex Table            | Show Header Panel         | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName               | fieldNewValue | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Export (XLS/CSV) | true          | ApplicationBudgetPeriods |                           |                            |
-      | Flex Table:General    | Show Header Panel       | true          | ApplicationBudgetPeriods |                           |                            |
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (XLS / CSV) | true          | ApplicationBudgetPeriods |                           |                            |
+      | Flex Table:General    | Show Header Panel         | true          | ApplicationBudgetPeriods |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -481,7 +481,7 @@ Feature: All pdf and xls related scenario including component and completed back
     When I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
     And I select "Download as XLS" from parallel lines dropdown of "Application Budget"
-    Then I see "Taxes & Government fees" in downloaded xls or csv file "govgrants"
+    Then I see "Indirect Cost Rate" in downloaded xls or csv file "govgrants"
 
   @56280    @childLevelRecordsOfMEGridShouldDisplayedInsidePDF
   Scenario: validate downloaded pdf file should contain header of child level records after checking checkbox of Enable export and show header panel and validating inside applicationBudgetPeriod flex table
@@ -752,11 +752,11 @@ Feature: All pdf and xls related scenario including component and completed back
   @57145    @csvFileShouldGetDownloadedProperlyForFundingAccount
   Scenario: validate CSV file should get downloaded properly with content at funding account flex table
     Given I have default configuration as below:
-      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (xls/csv) | false             | ApiGeneratedId:0 |
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (XLS / CSV) | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName               | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Export (xls/csv) | true          | SelectFundingAccounts |                           |                            |
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (XLS / CSV) | true          | SelectFundingAccounts |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -772,11 +772,11 @@ Feature: All pdf and xls related scenario including component and completed back
   @56838    @csvFileShouldGetDownloadedProperlyForDefaultApplicationReviewStep
   Scenario: validate download csv file should get downloaded properly with text containing default application review step
     Given I have default configuration as below:
-      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (xls/csv) | false             | ApiGeneratedId:0 |
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (XLS / CSV) | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName               | fieldNewValue | coreComponentField                      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Export (xls/csv) | true          | ProgramRelatedAppReviewStepTemplatesNew |                           |                            |
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField                      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (XLS / CSV) | true          | ProgramRelatedAppReviewStepTemplatesNew |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -791,11 +791,11 @@ Feature: All pdf and xls related scenario including component and completed back
   @56834    @csvFileShouldGetDownloadedProperlyForProgramServiceArea
   Scenario: validate download as csv file should get downloaded properly with text containing program service area
     Given I have default configuration as below:
-      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (xls/csv) | false             | ApiGeneratedId:0 |
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (XLS / CSV) | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName               | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Export (xls/csv) | true          | RelatedProgramServiceAreas |                           |                            |
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (XLS / CSV) | true          | RelatedProgramServiceAreas |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -810,11 +810,11 @@ Feature: All pdf and xls related scenario including component and completed back
   @56753  @csvFileShouldGetDownloadedProperlyForTasksLate
   Scenario: validate download as csv file should get downloaded properly with text containing My Late Tasks
     Given I have default configuration as below:
-      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (xls/csv) | false             | ApiGeneratedId:0 |
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (XLS / CSV) | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName               | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Export (xls/csv) | true          | TasksLate          |                           |                            |
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (XLS / CSV) | true          | TasksLate          |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
@@ -826,13 +826,13 @@ Feature: All pdf and xls related scenario including component and completed back
   @56951   @lookupFieldShouldDisplayedInDownloadedXLSFileForActiveGrantsRiskAssessment
   Scenario Outline: validate look up  field in downloaded xls file after making changes at config and validating it inside Active grants grid risk assessment grid
     Given I have default configuration as below:
-      | configurationCategory | fieldName               | fieldOrignalValue  | filterId         |
-      | Flex Grid             | Enable Export (xls/csv) | false              | ApiGeneratedId:0 |
-      | Flex Grid             | Display Field Names     | <defaultFieldsApi> | ApiGeneratedId:1 |
+      | configurationCategory | fieldName                 | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Enable Export (XLS / CSV) | false              | ApiGeneratedId:0 |
+      | Flex Grid             | Display Field Names       | <defaultFieldsApi> | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName               | fieldNewValue  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Export (xls/csv) | true           | ActiveGrantsGridRiskAssessment |                           |                            |
-      | Flex Grid:General     | Display Field Names     | <newFieldsApi> | ActiveGrantsGridRiskAssessment |                           |                            |
+      | configurationCategory | fieldName                 | fieldNewValue  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Export (XLS / CSV) | true           | ActiveGrantsGridRiskAssessment |                           |                            |
+      | Flex Grid:General     | Display Field Names       | <newFieldsApi> | ActiveGrantsGridRiskAssessment |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
@@ -847,13 +847,13 @@ Feature: All pdf and xls related scenario including component and completed back
   @56955   @dateFieldShouldDisplayedInDownloadedXLSFileForActiveGrantsRiskAssessment
   Scenario Outline: validate date field in downloaded xls file after making changes at config and validating it inside Active grants grid risk assessment grid
     Given I have default configuration as below:
-      | configurationCategory | fieldName               | fieldOrignalValue  | filterId         |
-      | Flex Grid             | Enable Export (xls/csv) | false              | ApiGeneratedId:0 |
-      | Flex Grid             | Display Field Names     | <defaultFieldsApi> | ApiGeneratedId:1 |
+      | configurationCategory | fieldName                 | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Enable Export (XLS / CSV) | false              | ApiGeneratedId:0 |
+      | Flex Grid             | Display Field Names       | <defaultFieldsApi> | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName               | fieldNewValue  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Export (xls/csv) | true           | ActiveGrantsGridRiskAssessment |                           |                            |
-      | Flex Grid:General     | Display Field Names     | <newFieldsApi> | ActiveGrantsGridRiskAssessment |                           |                            |
+      | configurationCategory | fieldName                 | fieldNewValue  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Export (XLS / CSV) | true           | ActiveGrantsGridRiskAssessment |                           |                            |
+      | Flex Grid:General     | Display Field Names       | <newFieldsApi> | ActiveGrantsGridRiskAssessment |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab

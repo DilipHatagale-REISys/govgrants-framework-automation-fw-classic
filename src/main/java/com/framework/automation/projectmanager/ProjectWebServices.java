@@ -17,7 +17,7 @@ public class ProjectWebServices {
     ApiUtilities apiUtil;
     private static String endPoint;
     private String defaultUpdateEndPoint = "/services/apexrest/frameworkAPIUpdate";
-    private String defaultEndPointGetToken = "/services/oauth2/token?grant_type=password&client_secret=7608231485378593656&client_id=3MVG91ftikjGaMd8E01oyLzW0qhdCcSTnpVVwmMdo3H_C6vbhroOOpEF4C.54CXCiOi5SQFyN.a6Ze8NCAcSa&username=pankaj@ggp.test5&password=test@123";
+    private String defaultEndPointGetToken = "/services/oauth2/token?grant_type=password&client_secret=7608231485378593656&client_id=3MVG91ftikjGaMd8E01oyLzW0qhdCcSTnpVVwmMdo3H_C6vbhroOOpEF4C.54CXCiOi5SQFyN.a6Ze8NCAcSa&username=qa_automation@ggp.test5&password=Automation@12345";
     public static String tokenString;
     public static ArrayList<IdBucket> storeAllIds;
     public static ProjectWebServices thisValue = null;

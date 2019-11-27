@@ -54,7 +54,7 @@ public class PhaseConfigPage extends GovGrantsManager {
      */
     public void enterCompleteFieldValues(String value1, String value2, String orderType) {
         if (!"onlyDescription".equals(orderType)) {
-            EyeThink.core().WaitFor().makeThreadSleep(200);
+            EyeThink.core().WaitFor().makeThreadSleep(2000);
             EyeThink.core().enterText().in(By.xpath("//*[contains(@placeholder,'Title')]"), value1);
         }
         EyeThink.core().enterText().in(By.xpath("//*[contains(@placeholder,'Description')]"), value2);

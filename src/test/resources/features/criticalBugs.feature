@@ -1432,7 +1432,7 @@ Feature: Logged Issues Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
     And I edit the following rows inline in flex table with id "flexGridEnhanced1" by clicking "Edit" :
-      | Total Adjusted Amount | Total Adjusted Amount |
+      | Project Title         | Total Adjusted Amount |
       | Demo_Title            | 20                    |
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
@@ -1536,7 +1536,7 @@ Feature: Logged Issues Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
     And I edit the following rows inline in flex table with id "flexGridEnhanced1" by clicking "Edit" :
-      | Total Adjusted Amount | NUMBER |
+      | Project Title         | NUMBER |
       | Demo_Title            |        |
     And I refresh the page
     When I navigate to "Financials" sub tab
@@ -1790,7 +1790,7 @@ Feature: Logged Issues Scenarios
       | fieldNewValue                                           |
       | TotalGrantAwardAmount__c ASC,TotalObligateAmount__c ASC |
 
-  @59317    @dateTimeFieldShouldDisplayedInViewModeAfterEditing @check
+  @59317    @dateTimeFieldShouldDisplayedInViewModeAfterEditing
   Scenario: validate Date Time column field is displayed in view mode after editing the value.
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
