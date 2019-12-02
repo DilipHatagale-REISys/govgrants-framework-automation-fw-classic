@@ -1101,8 +1101,8 @@ Feature: Flex Grid Component Scenarios
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Export (PDF)  | false         | ActiveGrantsGrid   |                           |                            |
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF) | false         | ActiveGrantsGrid   |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
@@ -1292,6 +1292,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     Then I see "View" icon for "toggleFGridApplicationBudgetCategoryFlexGrid" is at position "0" inside flex table
@@ -1310,6 +1311,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     Then I see "Test Automation" as title for "Indirect Cost Rate" inside flex table action
@@ -1328,6 +1330,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     When I click on "View" icon for "Proposed Uses Of Total Funds" inside table
@@ -1338,15 +1341,18 @@ Feature: Flex Grid Component Scenarios
     Given I have default configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue  | filterId         |
       | Flex Table Action     | Action Behavior | Open in new window | ApiGeneratedId:0 |
+      | Flex Table Action     | Action Behavior | Open in new window | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName       | fieldNewValue       | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action Behavior | Open in same window | ApplicationBudgetCategoryFlexTable | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window | AppReviewList                      | Name                      | View                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     When I click on "View" icon for "Proposed Uses Of Total Funds" inside table
@@ -1366,6 +1372,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     When I click on "View" icon for "Proposed Uses Of Total Funds" inside table
@@ -1385,6 +1392,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     When I click on "View" icon for "Proposed Uses Of Total Funds" inside table with table id "toggleFGridApplicationBudgetCategoryFlexGrid" without processing
@@ -1406,6 +1414,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     When I click on "View" icon for "Proposed Uses Of Total Funds" inside table with table id "toggleFGridApplicationBudgetCategoryFlexGrid" without processing
@@ -1425,6 +1434,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     Then I see "View" icon for "Proposed Uses Of Total Funds" is not displayed inside flex table
@@ -1443,6 +1453,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     Then I see "View" icon for "Proposed Uses Of Total Funds" is not displayed inside flex table
@@ -1463,6 +1474,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     When I click on "View" icon for "Proposed Uses Of Total Funds" inside table
@@ -1486,6 +1498,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     Then I see record "Indirect Cost Rate" having action "View" donot contain icon css "fa fa-eye"
@@ -1504,6 +1517,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     Then I see "Test Automation" as title for "Indirect Cost Rate" inside flex table action
@@ -1799,6 +1813,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
     When I expand nested table containing column value "BP-01"
     Then I see Nested Table "toggleFGridApplicationBudgetCategoryFlexGrid" with changed header name as "Test Automation"
 
@@ -1816,6 +1831,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     When I hovering mouse on help text icon inside "Grantee Share %" for flex table column
@@ -1839,6 +1855,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     Then I see "Test Automation" shown inside flex table with id "toggleFGridApplicationBudgetCategoryFlexGrid"
@@ -1857,6 +1874,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     Then I see "<fieldDisplayNames>" in program Outcomes flex table header with id "toggleFGridApplicationBudgetCategoryFlexGrid"
@@ -1947,6 +1965,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     Then I see "#" shown inside flex table with id "toggleFGridApplicationBudgetCategoryFlexGrid"
@@ -1965,6 +1984,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     Then I see no "Total Records" count in "toggleFGridApplicationBudgetCategoryFlexGrid"
