@@ -919,7 +919,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
                 obtainedList.add(we.getText());
             }
             for (int row = 0; row < obtainedList.size(); row++) {
-                if (obtainedList.get(row).contains(text)) {
+                if (obtainedList.get(row).equalsIgnoreCase(text)) {
                     flag = true;
                     break;
                 } else {
@@ -1340,7 +1340,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      */
     private Boolean isOverAllTotalIsDisplayed(String fieldApiName) {
         boolean flag = true;
-            EyeThink.core().scroll().pageToSpecificElement(completeTableRowOfEnhancedGrid);
+        EyeThink.core().scroll().pageToSpecificElement(completeTableRowOfEnhancedGrid);
         try {
             if (EyeThink.core().is().isDisplayed(By.xpath("//field[@field-name='" + fieldApiName + "' and @record='tableCommunicator.overAllTotalValue']/span"))) {
                 flag = false;

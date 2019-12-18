@@ -265,11 +265,6 @@ public class PageLayoutSteps {
         pageLayoutPage.assertSortingOfPageBlockDetailElementSubTab(changedFieldName, Integer.parseInt(number));
     }
 
-    @Then("^I see Program Name rendered in view mode only$")
-    public void assertViewModeOfPageBlockDetailElement() {
-        pageLayoutPage.assertPageBlockDetailElementDisplayedInViewMode();
-    }
-
     @Then("^I see modal box with body \"([^\"]*)\" is displayed$")
     public void assertOwnerOrganizationModalBoxWithMessage(String headerText) {
         pageLayoutPage.assertOwnerOrganizationMOdalTitle(headerText);

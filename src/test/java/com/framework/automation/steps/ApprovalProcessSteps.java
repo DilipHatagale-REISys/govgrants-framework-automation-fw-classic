@@ -67,11 +67,6 @@ public class ApprovalProcessSteps {
         approvalProcesPage.selectUserFromApproveDecisionOptionDropdown(dropDownValue);
     }
 
-    @Then("^I see confirmation box with body \"([^\"]*)\" is displayed$")
-    public void assertConfirmationBoxWithMessage(String message) {
-        approvalProcesPage.assertMessageOfConfirmationBoxPopUp(message);
-    }
-
     @Then("^I see \"([^\"]*)\" inside selectbox$")
     public void assertUserInsideSelectDropdown(String dropDownValue) {
         approvalProcesPage.assertUserInsideDropdown(dropDownValue);

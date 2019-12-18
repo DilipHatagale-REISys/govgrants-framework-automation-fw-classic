@@ -1777,3 +1777,31 @@ Feature: Enhanced Flex Grid Component Scenarios
     Examples:
       | newSoqlFilter                                       | oldSoqlFilter                                                                                       |
       | RecordType.Name='Grantor' and Status__c = 'Created' | Grant__c='{!parentId}' and RecordType.Name='Grantor' and Status__c IN ('Being Amended','Activated') |
+
+  @66954 @verifyRequiredFieldsAtParentFlexTableForEnhancedGrid-gPlanning
+  Scenario Outline: validate Required Fields functionality for parent flex table at enhanced grid of programs-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName       | fieldOrignalValue               | filterId         |
+      | Flex Grid:Flex Table List | Is Master View  | true                            | ApiGeneratedId:0 |
+      | Flex Grid:Flex Table List | Filter Clause   | <defaultFilterClauseForFLV2539> | ApiGeneratedId:1 |
+      | Flex Grid                 | Required Fields |                                 | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName       | fieldNewValue               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Is Master View  | true                        | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Grid:Flex Table List | Filter Clause   | <newFilterClauseForFLV2539> | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Grid:General         | Required Fields | AddressProgramContact__c    | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I click on "Edit" icon for "GT-GTRC-001" inside table
+    When I enter values "Test Automation" into textarea for table id "flexGridEnhanced1"
+    When I click on top right button "Save" in flex table with id "flexGridEnhanced1"
+    When I perform quick search for "GT-GTRC-001" in "flexGridEnhanced1" panel
+    Then I see value "Test Automation" for multiple cells at column "AddressProgramContact__c"
+    Examples:
+      | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                         |
+      | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c like 'Road%' |

@@ -253,4 +253,9 @@ public class FlexTableSteps {
     public void assertFlexTableIsDisplayed(String tableTitle) {
         flexTablePage.assertFlexTableIsDisplayedWithTitle(tableTitle);
     }
+
+    @Then("^I see \"([^\"]*)\" is displayed under total amount in flex table$")
+    public void assertCurrencyUnitInFlexTableTotalAmount(String currencyUnit) {
+        flexTablePage.assertFlexTabelCurrencyUnitInTotalAmount(currencyUnit);
+    }
 }

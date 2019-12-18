@@ -108,16 +108,6 @@ public class ApprovalProcessPage extends GovGrantsManager {
     }
 
     /**
-     * assert if message is displayed on confirmation box pop up on approve radio
-     * button
-     *
-     * @param message
-     */
-    public void assertMessageOfConfirmationBoxPopUp(String message) {
-        Assert.assertEquals(EyeThink.core().get().attribute(confirmationBoxMessage, "innerText").replaceAll("\\u00a0"," "),message);
-    }
-
-    /**
      * assert if user is displayed inside select dropdown list
      *
      * @param dropDownValue
