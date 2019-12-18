@@ -89,8 +89,8 @@ public class FlexGridPage extends GovGrantsManager {
      * return true if particular column value of table is in ascending/descending
      * order
      */
-    public void assertAscendingORDescendingOrderOfTableColumnValue(String text, String order, String tableId) {
-        Assert.assertTrue(EyeThink.core().is().isTableSorted(getTableSpecificColumnValues(text, tableId), order));
+    public void assertAscendingORDescendingOrderOfTableColumnValue(String columnName, String order, String tableId) {
+        Assert.assertTrue(EyeThink.core().is().isTableSorted(EyeThink.saas().flexTable().getTableSpecificColumnValues(columnName, tableId), order));
     }
 
     /**
@@ -216,6 +216,20 @@ public class FlexGridPage extends GovGrantsManager {
         Assert.assertTrue(isDateTimeColumnValueDisplayedInViewMode());
     }
 
+    /**
+     * assert true if currency unit is displayed under total amount at ME Grid
+     */
+    public void assertMEGridCurrencyUnitInTotalAmount(String currencyUnit, String rowLabel, String tableID) {
+        Assert.assertTrue(isCurrencyUnitDisplaysInTotalAmountAtMEGrid(currencyUnit, rowLabel, tableID));
+    }
+
+    /**
+     * assert true if row having expected text in child MEgrid
+     */
+    public void assertTextContainingRowAtChildFlexTabel(String text, String tableId) {
+        Assert.assertTrue(isExpectedTextIsDisplayedAtChildFlexTabledRow(text, tableId));
+    }
+
     /*********
      * "Local Methods with complete functionality - private"
      *****************/
@@ -335,21 +349,6 @@ public class FlexGridPage extends GovGrantsManager {
             flag = true;
         }
         return flag;
-    }
-
-    /**
-     * @return specific column values inside table while passing column name
-     */
-    private List<Elements> getTableSpecificColumnValues(String text, String tableId) {
-        WebElement row = EyeThink.core().elementReference().of(By.xpath("//div[@id='" + tableId + "']//table//tbody//tr"));
-        Set<String> headerTitles = new HashSet<String>();
-        headerTitles.add(text);
-        Map<String, Integer> columnMapping = EyeThink.saas().flexTable().constructColumnMapping(row, headerTitles);
-        System.out.println("The column number was: " + columnMapping.get(text));
-        By columnSelector = By
-                .xpath("//div[@id='" + tableId + "']//table//tr" + "//td[not(contains(@class, 'ng-hide'))]["
-                        + columnMapping.get(text) + "]" + "//field/span");
-        return EyeThink.core().elementReference().listOfElements().of(columnSelector);
     }
 
     /**
@@ -473,6 +472,38 @@ public class FlexGridPage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (EyeThink.core().is().isDisplayed(By.xpath("//td//span//field//span[contains(@ng-bind,'getDateTime')]"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * @return true if total amount contains currencyUnit in ME Grid
+     */
+    private Boolean isCurrencyUnitDisplaysInTotalAmountAtMEGrid(String currencyUnit, String rowLabel, String tableID) {
+        boolean flag = false;
+        String str = EyeThink.core().get().text(By.xpath("//div[@id='"+tableID+"']//table//tr//td//span[text()='"+rowLabel+"']/ancestor::td/following-sibling::td//b/span | //div[@id='"+ tableID +"']//table//td//span/b[text()='"+rowLabel+"']/ancestor::td/following-sibling::td//b/span"));
+        String[] part = str.split("(?<=\\D)(?=\\d)");
+        try {
+            if (part[0].contains(currencyUnit)) {
+                flag = true;
+            }
+        }
+        catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    /**
+     * @return true if expected text is displayed inside child grid rows
+     */
+    private Boolean isExpectedTextIsDisplayedAtChildFlexTabledRow(String text, String tableId) {
+        boolean flag = false;
+        String str = EyeThink.core().get().text(By.xpath("//div[@id='" + tableId + "']//div/table/tfoot"));
+        try {
+            if (str.equalsIgnoreCase(text)) {
                 flag = true;
             }
         } catch (Exception e) {

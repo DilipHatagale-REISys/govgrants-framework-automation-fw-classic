@@ -8,7 +8,6 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
-import java.io.File;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
@@ -309,6 +308,13 @@ public class FlexTablePage extends GovGrantsManager {
         Assert.assertTrue(EyeThink.core().is().isDisplayed(By.xpath("//td//*[@title = '" + columnTitle + "' or text() = '" + columnTitle
                 + "']/ancestor::tr[1]//td//a[@title = '" + iconTitle
                 + "']//i[contains(@class,'fa fa-external-link')]")));
+    }
+
+    /**
+     * assert true if currency unit is displayed under total amount of flex table
+     */
+    public void assertFlexTabelCurrencyUnitInTotalAmount(String currencyUnit) {
+        Assert.assertTrue(isCurrencyUnitDisplaysInTotalAmount(currencyUnit));
     }
 
     /**
@@ -949,13 +955,13 @@ public class FlexTablePage extends GovGrantsManager {
     private boolean isContentGettingSavedBySanpShotOption(String text) {
         String filename = "";
         if (text.equalsIgnoreCase("Todays Date")) {
-            String todaysDate = EyeThink.core().get().currentDateInDesiredFormat(DateTimeFormatter.ofPattern("M/d/yyyy h:mm a")).replaceAll("^0", "");
+            String todaysDate = EyeThink.core().get().currentDateTimeInDesiredFormat(DateTimeFormatter.ofPattern("M/d/yyyy h:mm a")).replaceAll("^0", "");
             filename = "SnapShot on " + todaysDate + ".pdf";
         } else
             filename = text;
         try {
             EyeThink.core().elementReference().of(By.xpath("//tbody//tr//span[contains(text(),'" + filename + "')]"));
-            return true;
+                return true;
         } catch (Exception e) {
             return false;
         }
@@ -973,6 +979,23 @@ public class FlexTablePage extends GovGrantsManager {
                 flag = true;
             }
         } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * @return true if total amount contains currencyUnit in Flex Table
+     */
+    private Boolean isCurrencyUnitDisplaysInTotalAmount(String currencyUnit) {
+        boolean flag = false;
+        String str = EyeThink.core().get().text(EyeThink.core().elementReference().of(totalRowsCalc));
+        String[] part = str.split("(?<=\\D)(?=\\d)");
+        try {
+            if (part[0].contains(currencyUnit)) {
+                flag = true;
+            }
+        }
+        catch (org.openqa.selenium.NoSuchElementException e) {
         }
         return flag;
     }

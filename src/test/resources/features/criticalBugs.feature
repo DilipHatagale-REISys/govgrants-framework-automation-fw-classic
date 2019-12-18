@@ -530,8 +530,8 @@ Feature: Logged Issues Scenarios
     Then I see alert message "<message>"
 
     Examples:
-      | message                                                                                                                      |
-      | You are attempting to take a snapshot of the current record which will be saved in Snapshot History. Do you want to proceed? |
+      | message                                                                                                                            |
+      | You are attempting to take a snapshot of the current record. The PDF will be attached in Snapshot History. Do you want to proceed? |
 
   @56421    @dropdownValuesShouldDisplayProperlyForAnnouncementTypeField
   Scenario: validate values coming properly for Announcement Type DropDown At Opportunities Edit page details
@@ -1432,8 +1432,8 @@ Feature: Logged Issues Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
     And I edit the following rows inline in flex table with id "flexGridEnhanced1" by clicking "Edit" :
-      | Project Title         | Total Adjusted Amount |
-      | Demo_Title            | 20                    |
+      | Project Title | Total Adjusted Amount |
+      | Demo_Title    | 20                    |
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
     Then I see value "$20.00" for title "Total Adjusted Amount" inside table "flexGridEnhanced1"
@@ -1536,8 +1536,8 @@ Feature: Logged Issues Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
     And I edit the following rows inline in flex table with id "flexGridEnhanced1" by clicking "Edit" :
-      | Project Title         | NUMBER |
-      | Demo_Title            |        |
+      | Project Title | NUMBER |
+      | Demo_Title    |        |
     And I refresh the page
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
@@ -1859,8 +1859,8 @@ Feature: Logged Issues Scenarios
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Row Grouping | true          | TmpActiveGrantsGrid  | Name                      | FTC-1500                  |
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Row Grouping | true          | TmpActiveGrantsGrid | Name                      | FTC-1500                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1869,3 +1869,60 @@ Feature: Logged Issues Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     Then I see "Total Adjusted Amount : --" inside rows of enhanced grid id "Enhanced1grid"
+
+  @66939      @verifyEditAllAtParentFlexTableForEnhancedGridForRequiredFields-gPlanning @wip @checkAfterBugFixed
+  Scenario Outline: validate Edit All functionality for parent flex table for required fields at enhanced grid of programs-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName       | fieldOrignalValue               | filterId         |
+      | Flex Grid:Flex Table List | Is Master View  | true                            | ApiGeneratedId:0 |
+      | Flex Grid:Flex Table List | Filter Clause   | <defaultFilterClauseForFLV2539> | ApiGeneratedId:1 |
+      | Flex Grid:Flex Table List | Required Fields |                                 | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName       | fieldNewValue               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Is Master View  | true                        | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Grid:Flex Table List | Filter Clause   | <newFilterClauseForFLV2539> | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Grid:Flex Table List | Required Fields | AddressProgramContact__c    | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I click on top right button "Edit All" in flex table with id "flexGridEnhanced1"
+    When I enter values "Test Automation" into textarea for table id "flexGridEnhanced1"
+    When I click on top right button "Save" in flex table with id "flexGridEnhanced1"
+    Then I see value "Test Automation" for multiple cells at column "AddressProgramContact__c"
+    Examples:
+      | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                         |
+      | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c like 'Road%' |
+
+  @66949 @verifyEditSelectedAtParentFlexTableForEnhancedGridForRequiredFields-gPlanning @wip @checkAfterBugFixed
+  Scenario Outline: validate Edit Selected functionality for parent flex table for required fields at enhanced grid of programs-planning
+    Given I have default configuration as below:
+      | configurationCategory     | fieldName               | fieldOrignalValue               | filterId         |
+      | Flex Grid:Flex Table List | Is Master View          | true                            | ApiGeneratedId:0 |
+      | Flex Grid:Flex Table List | Filter Clause           | <defaultFilterClauseForFLV2539> | ApiGeneratedId:1 |
+      | Flex Table                | Enable Record Selection | false                           | ApiGeneratedId:2 |
+      | Flex Grid                 | Required Fields         |                                 | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName               | fieldNewValue               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Is Master View          | true                        | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Grid:Flex Table List | Filter Clause           | <newFilterClauseForFLV2539> | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Table:General        | Enable Record Selection | true                        | TmpActiveGrantsGrid |                           |                            |
+      | Flex Grid:General         | Required Fields         | AddressProgramContact__c    | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I check "Road Construction Annoumsment" boxes in flex table with id "flexGridEnhanced1"
+    When I click on top right button "Edit Selected" in flex table with id "flexGridEnhanced1"
+    When I enter value "Test Automation" into field "AddressProgramContact__c"
+    When I click on top right button "Save" in flex table with id "flexGridEnhanced1"
+    Then I see edited value inside textarea is "Test Automation" for column value "Road Construction Annoumsment" of table "flexGridEnhanced1"
+    Examples:
+      | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                         |
+      | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c like 'Road%' |

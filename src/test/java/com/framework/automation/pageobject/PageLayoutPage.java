@@ -318,13 +318,6 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
-     * assert if program name field rendered in view mode inside page block detail
-     */
-    public void assertPageBlockDetailElementDisplayedInViewMode() {
-        Assert.assertTrue(isElementAtPageBlockDetailInViewMode());
-    }
-
-    /**
      * assert if expected text is displayed on owner organization lookup field modal
      * box
      *
@@ -1208,22 +1201,6 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
-     * @return true if program name field rendered in view mode only inside page
-     * block detail
-     */
-    private boolean isElementAtPageBlockDetailInViewMode() {
-        boolean flag = false;
-        try {
-            if (EyeThink.core().is().isDisplayed(By.xpath("//div[@id='fieldProgramName__c']//span[@class='readonlySpan']"))) {
-                flag = true;
-            }
-        } catch (Exception e) {
-
-        }
-        return flag;
-    }
-
-    /**
      * click add button inside attachments page block and switching to repective
      * frame.
      */
@@ -1464,10 +1441,10 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     private Boolean isEnhancedLookupRecordsGettingFilterOut(String status) {
         boolean flag = false;
-            for (int i=0;i<getCompleteContentForLookupModal().size();i++){
-                if (getCompleteContentForLookupModal().get(i).getText().contains(status))
-                    flag = true;
-            }
+        for (int i = 0; i < getCompleteContentForLookupModal().size(); i++) {
+            if (getCompleteContentForLookupModal().get(i).getText().contains(status))
+                flag = true;
+        }
         return flag;
     }
 }

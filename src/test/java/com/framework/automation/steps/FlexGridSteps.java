@@ -119,4 +119,14 @@ public class FlexGridSteps {
     public void assertModeOfDateTimeField() {
         flexGridPage.assertDateTimeFieldMode();
     }
+
+    @Then("^I see \"([^\"]*)\" currency unit is present in \"([^\"]*)\" Amount at \"([^\"]*)\" Flex Grid$")
+    public void assertCurrencyUnitInMEGridTotalAmount(String currencyUnit, String rowLabel, String tableID ) {
+        flexGridPage.assertMEGridCurrencyUnitInTotalAmount(currencyUnit, rowLabel, tableID);
+    }
+
+    @Then("^I see \"([^\"]*)\" inside rows of child grid id \"([^\"]*)\"$")
+    public void assertNewRowsWithTextAtChildFlexTable(String text, String tableId) {
+        flexGridPage.assertTextContainingRowAtChildFlexTabel(text, tableId);
+    }
 }
