@@ -17,7 +17,7 @@ Feature: New API related scenarios temporary
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I click "close" icon for lightning lookup
     When I click "search" icon for lightning lookup
-    Then I see "# Grants" in table header on lookup Modal
+    Then I see "#Grants" in table header on lookup Modal
 
   @54769    @lookUpHeaderTextFieldWithGrantingAgencyAtPageBlockDetail-gPlanning @check
   Scenario: Adding column header with granting agency Api name to lookup modal from config and validating it on program detail page

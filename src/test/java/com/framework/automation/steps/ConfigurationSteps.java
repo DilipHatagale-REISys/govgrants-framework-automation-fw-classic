@@ -30,4 +30,14 @@ public class ConfigurationSteps {
                     parameters.get("coreCOmponentSubFieldName"), parameters.get("coreComponentSubFieldValue"));
         }
     }
+
+    @And("I update the locale \"([^\"]*)\" and timezone \"([^\"]*)\"$")
+    public void iUpdateTheLocaleAndTimezone(String locale, String timezone) {
+        projectAPI.updateLocalAndTimeZone(locale,timezone);
+    }
+
+    @And("I update enable Lightning Lookup Field to \"([^\"]*)\"$")
+    public void iUpdateEnableLightningLookupFieldTo(String booleanValue) {
+        projectAPI.updateEnableLightningLookup(Boolean.parseBoolean(booleanValue));
+    }
 }
