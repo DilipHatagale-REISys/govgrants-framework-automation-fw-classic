@@ -1,11 +1,13 @@
 package com.framework.automation.steps;
 
-import com.framework.automation.projectmanager.ConfigurationParameters;
-import com.framework.automation.projectmanager.ProjectWebServices;
-import io.cucumber.java.en.*;
-import java.io.IOException;
-import java.util.List;
-import java.util.Map;
+        import com.framework.automation.projectmanager.ConfigurationParameters;
+        import com.framework.automation.projectmanager.ProjectWebServices;
+        import eyethink.automation.bots.Register.EyeThink;
+        import io.cucumber.java.en.*;
+
+        import java.io.IOException;
+        import java.util.List;
+        import java.util.Map;
 
 public class ConfigurationSteps {
     ProjectWebServices projectAPI;
@@ -33,11 +35,22 @@ public class ConfigurationSteps {
 
     @And("I update the locale \"([^\"]*)\" and timezone \"([^\"]*)\"$")
     public void iUpdateTheLocaleAndTimezone(String locale, String timezone) {
-        projectAPI.updateLocalAndTimeZone(locale,timezone);
+        projectAPI.updateLocalAndTimeZone(locale, timezone);
     }
 
     @And("I update enable Lightning Lookup Field to \"([^\"]*)\"$")
     public void iUpdateEnableLightningLookupFieldTo(String booleanValue) {
         projectAPI.updateEnableLightningLookup(Boolean.parseBoolean(booleanValue));
+    }
+
+    @And("I Reset the value to default of locale {string} and timexone {string}")
+    public void iResetTheValueToDefaultOfLocaleAndTimexone(String locale, String timezone) {
+        EyeThink.core().Properties().saveValue("locale", locale);
+        EyeThink.core().Properties().saveValue("timezone", timezone);
+    }
+
+    @And("I Reset enable Lightning Lookup Field to {string}")
+    public void iResetEnableLightningLookupFieldTo(String boolValue) {
+        EyeThink.core().Properties().saveValue("boolValue", boolValue);
     }
 }
