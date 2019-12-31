@@ -44,15 +44,19 @@ public class setup {
         try {
             ProjectWebServices.thisValue.postDefaultConfigCall();
             ProjectWebServices.thisValue = null;
-            if(ProjectWebServices.dynamicApi.equalsIgnoreCase("lightningLookUp")){
-            ProjectWebServices.thisValue.updateEnableLightningLookup(false);
-            }
-            if (ProjectWebServices.dynamicApi.equalsIgnoreCase("localeOrTimeZone")) {
-                ProjectWebServices.thisValue.updateLocalAndTimeZone("en_IN", "America/New_York");
+            if (!ProjectWebServices.dynamicApi.equalsIgnoreCase("None")) {
+                if (ProjectWebServices.dynamicApi.equalsIgnoreCase("lightningLookUp")) {
+                    ProjectWebServices.thisValue.updateEnableLightningLookup(false);
+                }
+                if (ProjectWebServices.dynamicApi.equalsIgnoreCase("localeOrTimeZone")) {
+                    ProjectWebServices.thisValue.updateLocalAndTimeZone("en_IN",
+                            "America/New_York");
+                }
                 ProjectWebServices.dynamicApi = "None";
             }
         } catch (Exception e) {
             ProjectWebServices.thisValue = null;
+            ProjectWebServices.dynamicApi = "None";
             System.out.println("Exception is " + e.getStackTrace());
         }
     }
