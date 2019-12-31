@@ -9,10 +9,7 @@ Feature: New API related scenarios temporary
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName                  | fieldNewValue          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name,NumberofAwards__c | Grantee State Program | Name                      | PBD-3178                   |
-    And I Reset the value to default of locale "en_IN" and timexone "America/New_York"
-    And I Reset enable Lightning Lookup Field to "false"
     When I login as "Automation" user
-    And I update the locale "en_PG" and timezone "Asia/Bangkok"
     And I update enable Lightning Lookup Field to "true"
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -22,6 +19,7 @@ Feature: New API related scenarios temporary
     When I click "close" icon for lightning lookup
     When I click "search" icon for lightning lookup
     Then I see "#Grants" in table header on lookup Modal
+    And I update enable Lightning Lookup Field to "false"
 
   @54769    @lookUpHeaderTextFieldWithGrantingAgencyAtPageBlockDetail-gPlanning @check
   Scenario: Adding column header with granting agency Api name to lookup modal from config and validating it on program detail page

@@ -25,6 +25,7 @@ public class ProjectWebServices {
     public static String tokenString;
     public static ArrayList<IdBucket> storeAllIds;
     public static ProjectWebServices thisValue = null;
+    public static String dynamicApi = "None";
 
     public ProjectWebServices() {
         setUpApiUtilAndSetupConfig();
@@ -240,7 +241,6 @@ public class ProjectWebServices {
         jsonContainer.add("fieldvalues", jsonObject);
         jsonContainer.addProperty("customsettingapiname", "GNT__KeyValueStore__c");
         jArray.add(jsonContainer);
-        EyeThink.core().apiCall().gsonToJson(jsonObject);
         EyeThink.core().apiCall().putCall(null, jArray.toString(), finalEndPoint, null, null, tokenString);
     }
 }

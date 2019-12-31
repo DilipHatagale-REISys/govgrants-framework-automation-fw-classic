@@ -2,7 +2,6 @@ package com.framework.automation.steps;
 
 import com.framework.automation.projectmanager.ProjectWebServices;
 import com.framework.automation.projectmanager.UsersAndURL;
-import cucumber.api.TestCase;
 import eyethink.automation.bots.Register.AuthorizedProject;
 import eyethink.automation.bots.Register.EyeThink;
 import eyethink.automation.bots.Report.CSS;
@@ -10,7 +9,6 @@ import eyethink.automation.bots.controller.TestSetupController;
 import io.cucumber.core.api.Scenario;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
-import io.cucumber.java.an.E;
 
 import java.awt.*;
 import java.io.IOException;
@@ -45,40 +43,17 @@ public class setup {
     public void wrapUp(Scenario scenario) throws IOException {
         try {
             ProjectWebServices.thisValue.postDefaultConfigCall();
-            if (scenario.getSourceTagNames().contains("@NewAPIRelatedScenarios")) {
-                String flag = EyeThink.core().Properties().getValue("locale");
-                if (flag != null) {
-                    ProjectWebServices.thisValue.updateLocalAndTimeZone(
-                            EyeThink.core().Properties().getValue("locale"),
-                            EyeThink.core().Properties().getValue("timezone")
-                    );
-                }
-                String flag1 = EyeThink.core().Properties().getValue("boolValue");
-                if (flag1 != null) {
-                    ProjectWebServices.thisValue.updateEnableLightningLookup(
-                            Boolean.parseBoolean(EyeThink.core().Properties().getValue("boolValue"))
-                    );
-                }
-            }
             ProjectWebServices.thisValue = null;
+            if(ProjectWebServices.dynamicApi.equalsIgnoreCase("lightningLookUp")){
+            ProjectWebServices.thisValue.updateEnableLightningLookup(false);
+            }
+            if (ProjectWebServices.dynamicApi.equalsIgnoreCase("localeOrTimeZone")) {
+                ProjectWebServices.thisValue.updateLocalAndTimeZone("en_IN", "America/New_York");
+                ProjectWebServices.dynamicApi = "None";
+            }
         } catch (Exception e) {
             ProjectWebServices.thisValue = null;
             System.out.println("Exception is " + e.getStackTrace());
-            if (scenario.getSourceTagNames().contains("@NewAPIRelatedScenarios")) {
-                String flag = EyeThink.core().Properties().getValue("locale");
-                if (flag != null) {
-                    ProjectWebServices.thisValue.updateLocalAndTimeZone(
-                            EyeThink.core().Properties().getValue("locale"),
-                            EyeThink.core().Properties().getValue("timezone")
-                    );
-                }
-                String flag1 = EyeThink.core().Properties().getValue("boolValue");
-                if (flag1 != null) {
-                    ProjectWebServices.thisValue.updateEnableLightningLookup(
-                            Boolean.parseBoolean(EyeThink.core().Properties().getValue("boolValue"))
-                    );
-                }
-            }
         }
     }
 }
