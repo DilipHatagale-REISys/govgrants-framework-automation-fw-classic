@@ -471,6 +471,15 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * click on session time out dialog box button
+     *
+     * @param buttonName
+     */
+    public void clickButtonInSessionTimeoutDialogbox(String buttonName) {
+        EyeThink.core().elementReference().of(By.xpath("//button[text()='" + buttonName + "']")).click();
+    }
+
+    /**
      * return true if expected field on page getting focused
      */
     public void assertExpectedFieldGettingFocusedOnClick() {
@@ -519,6 +528,34 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public WebElement getEditButtonOptionVerification() {
         return EyeThink.core().elementReference().of(By.cssSelector(".dropdown.open>.dropdown-menu-right>li:nth-child(2)"));
+    }
+
+    /**
+     * return true if modal containing top level action
+     */
+    public void assertModalContaingTopLevelActionInViewMode(String topActionName) {
+        Assert.assertTrue(isModalContainingTopLevelAction(topActionName));
+    }
+
+    /**
+     * return true if dialog box body contains text as Test Automation Body Text
+     */
+    public void assertSessionTimeoutDialogboxText(String bodyContent) {
+        Assert.assertTrue(isSessionTimeoutDialogboxTextDisplayed(bodyContent));
+    }
+
+    /**
+     * return true if session timeout remainder dialog box appears in browser tab
+     */
+    public void assertSessionTimeoutRemainderCountdownIsDisplayed(String countDownTimer) {
+        Assert.assertTrue(IsSessionTimeoutRemainderCountdownDisplayed(countDownTimer));
+    }
+
+    /**
+     * return true if Logout Page is Displayed after session expiry
+     */
+    public void assertLogoutPageIsDisplayed(String logoutURL) {
+        Assert.assertTrue(IsLogoutPageDisplayed(logoutURL));
     }
 
     /**
@@ -1445,6 +1482,63 @@ public class PageLayoutPage extends GovGrantsManager {
         for (int i = 0; i < getCompleteContentForLookupModal().size(); i++) {
             if (getCompleteContentForLookupModal().get(i).getText().contains(status))
                 flag = true;
+        }
+        return flag;
+    }
+
+    /**
+     * return true if  modal containing top level action
+     *
+     * @return
+     */
+    private boolean isModalContainingTopLevelAction(String topActionName) {
+        boolean flag = false;
+        if (EyeThink.core().is().isDisplayed(By.xpath("//button[text()='" + topActionName + "']"))) {
+            flag = true;
+        }
+        return flag;
+    }
+
+    /**
+     * return true if session timeout remainder dialog box appears in browser tab
+     *
+     * @return
+     */
+    private boolean IsSessionTimeoutRemainderCountdownDisplayed(String countDownTimer) {
+        String ele = EyeThink.core().get().pageTitle();
+        boolean flag = false;
+        if (ele.contains(countDownTimer)) {
+            flag = true;
+        }
+        return flag;
+    }
+
+    /**
+     * return true if Logout Page is Displayed after session expiry
+     *
+     * @return
+     */
+    private boolean IsLogoutPageDisplayed(String logoutURL) {
+        boolean flag = false;
+        String ele = EyeThink.core().get().currentURL();
+        String[] d = ele.split("/", 4);
+        String d1 = d[0] + "/" + d[1] + "/" + d[2];
+        if (d1.equalsIgnoreCase(logoutURL)) {
+            flag = true;
+        }
+        return flag;
+    }
+
+    /**
+     * return true if dialog box body contains text as Test Automation Body Text
+     *
+     * @return
+     */
+    private boolean isSessionTimeoutDialogboxTextDisplayed(String bodyContent) {
+        WebElement ele = EyeThink.core().elementReference().of(By.xpath("//div[contains(@class,'ui-dialog-content')]//p"));
+        boolean flag = false;
+        if (ele.getText().equalsIgnoreCase(bodyContent)) {
+            flag = true;
         }
         return flag;
     }
