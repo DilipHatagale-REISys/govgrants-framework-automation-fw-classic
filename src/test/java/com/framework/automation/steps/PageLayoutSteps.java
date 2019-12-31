@@ -1,12 +1,12 @@
 package com.framework.automation.steps;
 
-import com.framework.automation.pageobject.PageLayoutPage;
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+        import com.framework.automation.pageobject.PageLayoutPage;
+        import io.cucumber.java.en.And;
+        import io.cucumber.java.en.Then;
+        import io.cucumber.java.en.When;
 
-import java.io.IOException;
-import java.util.List;
+        import java.io.IOException;
+        import java.util.List;
 
 public class PageLayoutSteps {
     PageLayoutPage pageLayoutPage;
@@ -113,6 +113,11 @@ public class PageLayoutSteps {
     @When("^I hovering mouse on page block detail of label \"([^\"]*)\" lookup field \"([^\"]*)\"$")
     public void hoverAtPageBlockDetailLookupElement(String label, String lookupField) {
         pageLayoutPage.hoverMouseOnExpectedLookupField(label, lookupField);
+    }
+
+    @When("I click on \"([^\"]*)\" Button in Session Timeout dialogbox$")
+    public void clickOnButtonInSessionTimeoutDialogbox(String buttonName) {
+        pageLayoutPage.clickButtonInSessionTimeoutDialogbox(buttonName);
     }
 
     @And("^I click on expand collapse icon for panel heading \"([^\"]*)\"$")
@@ -385,5 +390,25 @@ public class PageLayoutSteps {
     @Then("^I see \"([^\"]*)\" status in Lookup window$")
     public void assertEnhancedLookupFilterCriteria(String status) {
         pageLayoutPage.assertEnhancedLookupRecordsGettingFilterOut(status);
+    }
+
+    @Then("^I see \"([^\"]*)\" button is present on Modal$")
+    public void assertNewRowsWithTextAtParentFlexTable(String topActionName) {
+        pageLayoutPage.assertModalContaingTopLevelActionInViewMode(topActionName);
+    }
+
+    @Then("^I see session timeout remainder as \"([^\"]*)\" countdown is shown in browser tab$")
+    public void assertSessionTimeoutRemainderCountdown(String countDownTimer) {
+        pageLayoutPage.assertSessionTimeoutRemainderCountdownIsDisplayed(countDownTimer);
+    }
+
+    @Then("^I see \"([^\"]*)\" page is displayed$")
+    public void assertLogoutPageDisplayed(String logoutURL) {
+        pageLayoutPage.assertLogoutPageIsDisplayed(logoutURL);
+    }
+
+    @Then("^I see Session Timeout dialogbox with text \"([^\"]*)\"$")
+    public void assertSessionTimeoutDialogboxWithText(String bodyContent) {
+        pageLayoutPage.assertSessionTimeoutDialogboxText(bodyContent);
     }
 }

@@ -19,7 +19,6 @@ Feature: New API related scenarios temporary
     When I click "close" icon for lightning lookup
     When I click "search" icon for lightning lookup
     Then I see "#Grants" in table header on lookup Modal
-    And I update enable Lightning Lookup Field to "false"
 
   @54769    @lookUpHeaderTextFieldWithGrantingAgencyAtPageBlockDetail-gPlanning @check
   Scenario: Adding column header with granting agency Api name to lookup modal from config and validating it on program detail page
@@ -30,6 +29,7 @@ Feature: New API related scenarios temporary
       | configurationCategory                    | fieldName                  | fieldNewValue            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name,IsGrantingAgency__c | Grantee State Program | Name                      | PBD-3178                   |
     When I login as "Automation" user
+    And I update enable Lightning Lookup Field to "true"
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -48,6 +48,7 @@ Feature: New API related scenarios temporary
       | configurationCategory                    | fieldName                  | fieldNewValue    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name,Division__c | Grantee State Program | Name                      | PBD-3178                   |
     When I login as "Automation" user
+    And I update enable Lightning Lookup Field to "true"
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -66,6 +67,7 @@ Feature: New API related scenarios temporary
       | configurationCategory                    | fieldName                  | fieldNewValue   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name,Contact__c | Grantee State Program | Name                      | PBD-3178                   |
     When I login as "Automation" user
+    And I update enable Lightning Lookup Field to "true"
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -84,6 +86,7 @@ Feature: New API related scenarios temporary
       | configurationCategory                    | fieldName                  | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name,BillingState__c | Grantee State Program | Name                      | PBD-3178                   |
     When I login as "Automation" user
+    And I update enable Lightning Lookup Field to "true"
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -102,6 +105,7 @@ Feature: New API related scenarios temporary
       | configurationCategory                    | fieldName                  | fieldNewValue    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name,DateTime__c | Grantee State Program | Name                      | PBD-3178                   |
     When I login as "Automation" user
+    And I update enable Lightning Lookup Field to "true"
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -120,6 +124,7 @@ Feature: New API related scenarios temporary
       | configurationCategory                    | fieldName                  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name,Date__c  | Grantee State Program | Name                      | PBD-3178                   |
     When I login as "Automation" user
+    And I update enable Lightning Lookup Field to "true"
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -138,6 +143,7 @@ Feature: New API related scenarios temporary
       | configurationCategory                    | fieldName                  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | <newFieldApi> | Grantee State Program | Name                      | PBD-3178                   |
     When I login as "Automation" user
+    And I update enable Lightning Lookup Field to "true"
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -160,6 +166,7 @@ Feature: New API related scenarios temporary
   @54901    @validatelookupSearchModalItemSortedInAscendingOrderAtPageBlockDetail-gPlanning @check
   Scenario: Changing column header and its data of lookup modal from config and valiodating it on program detail page
     When I login as "Automation" user
+    And I update enable Lightning Lookup Field to "true"
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -179,6 +186,7 @@ Feature: New API related scenarios temporary
       | configurationCategory                    | fieldName                  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | EINText__c    | Grantee State Program | Name                      | PBD-3178                   |
     When I login as "Automation" user
+    And I update enable Lightning Lookup Field to "true"
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -197,6 +205,7 @@ Feature: New API related scenarios temporary
       | configurationCategory                    | fieldName                  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | <newFieldApi> | Grantee State Program | Name                      | PBD-3178                   |
     When I login as "Automation" user
+    And I update enable Lightning Lookup Field to "true"
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -214,6 +223,7 @@ Feature: New API related scenarios temporary
   @54749    @itemGettingSavedAfterSelectingFromlookUpModal-gPlanning @check
   Scenario: Validate user is able to select particular organization and it should get saved properly.
     When I login as "Automation" user
+    And I update enable Lightning Lookup Field to "true"
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -236,6 +246,7 @@ Feature: New API related scenarios temporary
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | <newLookupDisplayName> | Grantee State Program | Name                      | PBD-3178                   |
       | Page Block Config:Page Block Rule Detail | Lookup Filter Criteria     | <newLookupFilter>      | Grantee State Program | Name                      | PBD-3178                   |
     When I login as "Automation" user
+    And I update enable Lightning Lookup Field to "true"
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -258,6 +269,7 @@ Feature: New API related scenarios temporary
       | configurationCategory                    | fieldName                  | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | OrganizationName__c | Grantee State Program | Name                      | PBD-3178                   |
     When I login as "Automation" user
+    And I update enable Lightning Lookup Field to "true"
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -282,6 +294,7 @@ Feature: New API related scenarios temporary
       | Page Block Config:Page Block Rule Detail | Lookup Sort Direction      | ASC               | Grantee State Program | Name                      | PBD-3178                   |
       | Page Block Config:Page Block Rule Detail | Lookup Sort By             | EINText__c        | Grantee State Program | Name                      | PBD-3178                   |
     When I login as "Automation" user
+    And I update enable Lightning Lookup Field to "true"
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -298,6 +311,7 @@ Feature: New API related scenarios temporary
   @60540    @errorMessageForInvalidInputAtLookupSearch
   Scenario: Validate lookup search throwing error message for invalid input
     When I login as "Automation" user
+    And I update enable Lightning Lookup Field to "true"
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -316,6 +330,7 @@ Feature: New API related scenarios temporary
       | configurationCategory                    | fieldName                  | fieldNewValue           | coreComponentField    | coreComponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | govgrants_config:Lookup | Grantee State Program | Name                      | PBD-3178                   |
     When I login as "Automation" user
+    And I update enable Lightning Lookup Field to "true"
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -336,6 +351,7 @@ Feature: New API related scenarios temporary
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | <newLookupDisplayName> | Grantee State Program | Name                      | PBD-3178                   |
       | Page Block Config:Page Block Rule Detail | Lookup Filter Criteria     | <newLookupFilter>      | Grantee State Program | Name                      | PBD-3178                   |
     When I login as "Automation" user
+    And I update enable Lightning Lookup Field to "true"
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -360,6 +376,7 @@ Feature: New API related scenarios temporary
       | Page Block Config:Page Block Rule Detail | Lookup Sort Direction | ASC           | Grantee State Program | Name                      | PBD-3178                   |
       | Page Block Config:Page Block Rule Detail | Lookup Sort By        | Name          | Grantee State Program | Name                      | PBD-3178                   |
     When I login as "Automation" user
+    And I update enable Lightning Lookup Field to "true"
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -380,6 +397,7 @@ Feature: New API related scenarios temporary
       | Page Block Config:Page Block Rule Detail | Lookup Sort Direction | DESC          | Grantee State Program | Name                      | PBD-3178                   |
       | Page Block Config:Page Block Rule Detail | Lookup Sort By        | Name          | Grantee State Program | Name                      | PBD-3178                   |
     When I login as "Automation" user
+    And I update enable Lightning Lookup Field to "true"
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -398,6 +416,7 @@ Feature: New API related scenarios temporary
       | configurationCategory                    | fieldName        | fieldNewValue                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:Lookup_Hide_Decision_Field | Grantee State Program | Name                      | PBD-3178                   |
     When I login as "Automation" user
+    And I update enable Lightning Lookup Field to "true"
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -436,7 +455,7 @@ Feature: New API related scenarios temporary
     And I click toggle button to select "Draft Programs"
     Then I see "IDR" is displayed under total amount in flex table
 
-  @59979    @verifyDollarSymbolIsNotPresentInTotalLabelAtMEGrid @NeedToCheckAfterBugFix
+  @59979    @verifyDollarSymbolIsNotPresentInTotalLabelAtMEGrid @NeedToCheck  @AfterBugFix @wip
   Scenario: Verify that double dollar symbol($$) is not shown inside Total Label in MEGrid
     Given I have default configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -523,3 +542,45 @@ Feature: New API related scenarios temporary
     Examples:
       | olddisplayfields                                                                                     | newdisplayfields                                          |
       | Id,ServiceAreaTitle__c,BudgetCategory__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c | Id,ServiceAreaTitle__c,BudgetCategory__c,GrantorAmount__c |
+
+  @67157   @VerifyDownloadAsPDFButtonOnModal @wip
+  Scenario: Validate download as PDF button on modal window in view mode
+    Given I have default configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Pdf Download | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide Pdf Download | false         | Roles and Responsibilities 2 |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I perform quick search for "Test Announcement For Automation"
+    When I click on "View" icon for "Test Announcement For Automation" inside table
+    When I navigate to "Roles" sub tab
+    When I click on "View" icon for "Owner" to save inside subtab
+    Then I see "Download As PDF" button is present on Modal
+
+  @61467   @VerifySessionTimeoutRemainderDialogBoxShownInBrowserTab @checkCountDownTimeLogic @wip
+  Scenario: Verify session Timeout reminder dialog box shown in browser tab title after 1 min of session login
+    When I login as "Automation" user
+    When I navigate to "Planning" tab
+    When I pause execution for "60" seconds
+    Then I see session timeout remainder as "01" countdown is shown in browser tab
+
+  @61468   @VerifyLogoutPageDisplayedAfterTimeGivenInSessionTimeoutValue @wip
+  Scenario Outline: Verify that session will get expired after given SessionTimeoutValue and Logout Page gets Displayed
+    When I login as "Automation" user
+    When I navigate to "Planning" tab
+    When I pause execution for "180" seconds
+    Then I see "<Logout_URL>" page is displayed
+    Examples:
+      | Logout_URL                                |
+      | https://ggptest5-dev-ed.my.salesforce.com |
+
+  @61635   @VerifySessionTimeoutDialogBoxText @checkCustomLabel @wip
+  Scenario: Verify session timeout Dialog Box text
+    When I login as "Automation" user
+    When I navigate to "Planning" tab
+    When I pause execution for "120" seconds
+    Then I see Session Timeout dialogbox with text "Test Automation Body Text"
