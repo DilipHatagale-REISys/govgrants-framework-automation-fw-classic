@@ -1,11 +1,13 @@
 package com.framework.automation.steps;
 
-import com.framework.automation.projectmanager.ConfigurationParameters;
-import com.framework.automation.projectmanager.ProjectWebServices;
-import io.cucumber.java.en.*;
-import java.io.IOException;
-import java.util.List;
-import java.util.Map;
+        import com.framework.automation.projectmanager.ConfigurationParameters;
+        import com.framework.automation.projectmanager.ProjectWebServices;
+        import eyethink.automation.bots.Register.EyeThink;
+        import io.cucumber.java.en.*;
+
+        import java.io.IOException;
+        import java.util.List;
+        import java.util.Map;
 
 public class ConfigurationSteps {
     ProjectWebServices projectAPI;
@@ -29,5 +31,17 @@ public class ConfigurationSteps {
                     parameters.get("fieldNewValue"), parameters.get("coreComponentField"),
                     parameters.get("coreCOmponentSubFieldName"), parameters.get("coreComponentSubFieldValue"));
         }
+    }
+
+    @And("I update the locale \"([^\"]*)\" and timezone \"([^\"]*)\"$")
+    public void iUpdateTheLocaleAndTimezone(String locale, String timezone) {
+        projectAPI.updateLocalAndTimeZone(locale, timezone);
+        ProjectWebServices.dynamicApi = "localeOrTimeZone";
+    }
+
+    @And("I update enable Lightning Lookup Field to \"([^\"]*)\"$")
+    public void iUpdateEnableLightningLookupFieldTo(String booleanValue) {
+        projectAPI.updateEnableLightningLookup(Boolean.parseBoolean(booleanValue));
+        ProjectWebServices.dynamicApi = "lightningLookUp";
     }
 }

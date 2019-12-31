@@ -744,6 +744,7 @@ public class PageLayoutPage extends GovGrantsManager {
         } catch (Exception e) {
         }
         WebElement iconAtLightningLookUp1 = EyeThink.core().elementReference().of(By.xpath("//lightning-primitive-icon/*[name()='svg' and @data-key='" + iconName + "']"));
+        EyeThink.core().scroll().moveToElement(By.xpath("//div[@id='custom_lookupAccount__c']"));
         EyeThink.core().click().on(iconAtLightningLookUp1);
     }
 

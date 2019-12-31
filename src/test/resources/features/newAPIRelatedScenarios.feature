@@ -10,6 +10,7 @@ Feature: New API related scenarios temporary
       | configurationCategory                    | fieldName                  | fieldNewValue          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name,NumberofAwards__c | Grantee State Program | Name                      | PBD-3178                   |
     When I login as "Automation" user
+    And I update enable Lightning Lookup Field to "true"
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -17,7 +18,8 @@ Feature: New API related scenarios temporary
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I click "close" icon for lightning lookup
     When I click "search" icon for lightning lookup
-    Then I see "# Grants" in table header on lookup Modal
+    Then I see "#Grants" in table header on lookup Modal
+    And I update enable Lightning Lookup Field to "false"
 
   @54769    @lookUpHeaderTextFieldWithGrantingAgencyAtPageBlockDetail-gPlanning @check
   Scenario: Adding column header with granting agency Api name to lookup modal from config and validating it on program detail page

@@ -28,9 +28,9 @@ public class setup {
     public setup(TestSetupController userController) {
         this.userController = userController;
         EyeThink.setRegister(AuthorizedProject.SAAS_GOVGRANTS_GGF);
-        if(report == null) {
+        if (report == null) {
             this.report = new CSS();
-            report.reportConfigWriteUp(System.getProperty("user.dir"),"GovGrants Framework Test Automation");
+            report.reportConfigWriteUp(System.getProperty("user.dir"), "GovGrants Framework Test Automation");
         }
     }
 
@@ -44,8 +44,19 @@ public class setup {
         try {
             ProjectWebServices.thisValue.postDefaultConfigCall();
             ProjectWebServices.thisValue = null;
+            if (!ProjectWebServices.dynamicApi.equalsIgnoreCase("None")) {
+                if (ProjectWebServices.dynamicApi.equalsIgnoreCase("lightningLookUp")) {
+                    ProjectWebServices.thisValue.updateEnableLightningLookup(false);
+                }
+                if (ProjectWebServices.dynamicApi.equalsIgnoreCase("localeOrTimeZone")) {
+                    ProjectWebServices.thisValue.updateLocalAndTimeZone("en_IN",
+                            "America/New_York");
+                }
+                ProjectWebServices.dynamicApi = "None";
+            }
         } catch (Exception e) {
             ProjectWebServices.thisValue = null;
+            ProjectWebServices.dynamicApi = "None";
             System.out.println("Exception is " + e.getStackTrace());
         }
     }

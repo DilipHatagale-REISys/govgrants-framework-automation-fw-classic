@@ -2,6 +2,8 @@ package com.framework.automation.projectmanager;
 
 import com.framework.automation.objects.IdBucket;
 import com.framework.automation.payloads.ApiUtilities;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import eyethink.automation.bots.Register.EnvironmentFetcher;
 import eyethink.automation.bots.Register.EyeThink;
 import eyethink.automation.bots.corelib.Properties_Logs;
@@ -10,6 +12,8 @@ import io.restassured.response.Response;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Map;
+
+import static io.restassured.RestAssured.given;
 
 public class ProjectWebServices {
     SetUpConfiguration configPostCall;
@@ -21,6 +25,7 @@ public class ProjectWebServices {
     public static String tokenString;
     public static ArrayList<IdBucket> storeAllIds;
     public static ProjectWebServices thisValue = null;
+    public static String dynamicApi = "None";
 
     public ProjectWebServices() {
         setUpApiUtilAndSetupConfig();
@@ -205,7 +210,7 @@ public class ProjectWebServices {
         }
         return configurationCategory;
     }
-    
+
     private void setUpApiUtilAndSetupConfig() {
         if (apiUtil == null) {
             apiUtil = new ApiUtilities();
@@ -213,5 +218,29 @@ public class ProjectWebServices {
         if (configPostCall == null) {
             configPostCall = new SetUpConfiguration();
         }
+    }
+
+    public void updateLocalAndTimeZone(String locale, String timeZone) {
+        String finalEndPoint = endPoint + "/services/apexrest/frameworkCustomsettingAPI?isLocale=true";
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("locale", locale);
+        jsonObject.addProperty("timezone", timeZone);
+        EyeThink.core().apiCall().gsonToJson(jsonObject);
+        EyeThink.core().apiCall().putCall(jsonObject, null, finalEndPoint, null, null, tokenString);
+    }
+
+    public void updateEnableLightningLookup(boolean booleanValue) {
+        String finalEndPoint = endPoint + "/services/apexrest/frameworkCustomsettingAPI";
+        JsonArray jArray = new JsonArray();
+        JsonObject jsonObject = new JsonObject();
+        JsonObject jsonContainer = new JsonObject();
+        jsonObject.addProperty("GNT__BooleanValue__c", booleanValue);
+        jsonObject.addProperty("Id", "a0b1C00000OGDD0QAP");
+        jsonObject.addProperty("GNT__Description__c", "Lightning lookup updated");
+        jsonObject.addProperty("Name", "enableLightningLookup");
+        jsonContainer.add("fieldvalues", jsonObject);
+        jsonContainer.addProperty("customsettingapiname", "GNT__KeyValueStore__c");
+        jArray.add(jsonContainer);
+        EyeThink.core().apiCall().putCall(null, jArray.toString(), finalEndPoint, null, null, tokenString);
     }
 }
