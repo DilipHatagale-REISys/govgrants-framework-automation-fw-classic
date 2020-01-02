@@ -43,10 +43,9 @@ public class setup {
     public void wrapUp(Scenario scenario) throws IOException {
         try {
             ProjectWebServices.thisValue.postDefaultConfigCall();
-            ProjectWebServices.thisValue = null;
             if (!ProjectWebServices.dynamicApi.equalsIgnoreCase("None")) {
                 if (ProjectWebServices.dynamicApi.equalsIgnoreCase("lightningLookUp")) {
-                    ProjectWebServices.thisValue.updateEnableLightningLookup(false);
+                    ProjectWebServices.thisValue.updateEnableLightningLookup(false, null, "a0b1C00000M9lj4QAB", "SessionEnableManagement", "SessionEnableManagement");
                 }
                 if (ProjectWebServices.dynamicApi.equalsIgnoreCase("localeOrTimeZone")) {
                     ProjectWebServices.thisValue.updateLocalAndTimeZone("en_IN",
@@ -54,6 +53,7 @@ public class setup {
                 }
                 ProjectWebServices.dynamicApi = "None";
             }
+            ProjectWebServices.thisValue = null;
         } catch (Exception e) {
             ProjectWebServices.thisValue = null;
             ProjectWebServices.dynamicApi = "None";

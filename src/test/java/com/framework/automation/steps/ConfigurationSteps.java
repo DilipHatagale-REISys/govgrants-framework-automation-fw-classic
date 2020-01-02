@@ -1,13 +1,13 @@
 package com.framework.automation.steps;
 
-        import com.framework.automation.projectmanager.ConfigurationParameters;
-        import com.framework.automation.projectmanager.ProjectWebServices;
-        import eyethink.automation.bots.Register.EyeThink;
-        import io.cucumber.java.en.*;
+import com.framework.automation.projectmanager.ConfigurationParameters;
+import com.framework.automation.projectmanager.ProjectWebServices;
+import eyethink.automation.bots.Register.EyeThink;
+import io.cucumber.java.en.*;
 
-        import java.io.IOException;
-        import java.util.List;
-        import java.util.Map;
+import java.io.IOException;
+import java.util.List;
+import java.util.Map;
 
 public class ConfigurationSteps {
     ProjectWebServices projectAPI;
@@ -33,15 +33,18 @@ public class ConfigurationSteps {
         }
     }
 
-    @And("I update the locale \"([^\"]*)\" and timezone \"([^\"]*)\"$")
-    public void iUpdateTheLocaleAndTimezone(String locale, String timezone) {
-        projectAPI.updateLocalAndTimeZone(locale, timezone);
+    @And("I update the locale and timezone related changes:$")
+    public void iUpdateTheLocaleAndTimezone(List<Map<String, String>> configParameters) {
+        for (Map<String, String> parameters : configParameters)
+            projectAPI.updateLocalAndTimeZone(parameters.get("locale"), parameters.get("timezone"));
         ProjectWebServices.dynamicApi = "localeOrTimeZone";
     }
 
-    @And("I update enable Lightning Lookup Field to \"([^\"]*)\"$")
-    public void iUpdateEnableLightningLookupFieldTo(String booleanValue) {
-        projectAPI.updateEnableLightningLookup(Boolean.parseBoolean(booleanValue));
-        ProjectWebServices.dynamicApi = "lightningLookUp";
+    @And("^I update custom setting changes:$")
+    public void iUpdateEnableLightningLookupFieldTo(List<Map<String, String>> configParameters) {
+        for (Map<String, String> parameters : configParameters) {
+            projectAPI.updateEnableLightningLookup(Boolean.parseBoolean(parameters.get("booleanValue")), Integer.parseInt(parameters.get("integerValue")), parameters.get("id"), parameters.get("description"), parameters.get("name"));
+            ProjectWebServices.dynamicApi = "lightningLookUp";
+        }
     }
 }
