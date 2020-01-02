@@ -10,7 +10,9 @@ Feature: New API related scenarios temporary
       | configurationCategory                    | fieldName                  | fieldNewValue          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name,NumberofAwards__c | Grantee State Program | Name                      | PBD-3178                   |
     When I login as "Automation" user
-    And I update enable Lightning Lookup Field to "true"
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description             | name                    |
+      | true         | 3            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"

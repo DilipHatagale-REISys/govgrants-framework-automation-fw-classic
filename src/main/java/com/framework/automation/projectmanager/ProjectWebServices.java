@@ -229,15 +229,16 @@ public class ProjectWebServices {
         EyeThink.core().apiCall().putCall(jsonObject, null, finalEndPoint, null, null, tokenString);
     }
 
-    public void updateEnableLightningLookup(boolean booleanValue) {
+    public void updateEnableLightningLookup(boolean booleanValue, Integer integerValue, String id, String description, String name) {
         String finalEndPoint = endPoint + "/services/apexrest/frameworkCustomsettingAPI";
         JsonArray jArray = new JsonArray();
         JsonObject jsonObject = new JsonObject();
         JsonObject jsonContainer = new JsonObject();
         jsonObject.addProperty("GNT__BooleanValue__c", booleanValue);
-        jsonObject.addProperty("Id", "a0b1C00000OGDD0QAP");
-        jsonObject.addProperty("GNT__Description__c", "Lightning lookup updated");
-        jsonObject.addProperty("Name", "enableLightningLookup");
+        jsonObject.addProperty("GNT__IntegerValue__c", integerValue);
+        jsonObject.addProperty("Id", id);
+        jsonObject.addProperty("GNT__Description__c", description);
+        jsonObject.addProperty("Name", name);
         jsonContainer.add("fieldvalues", jsonObject);
         jsonContainer.addProperty("customsettingapiname", "GNT__KeyValueStore__c");
         jArray.add(jsonContainer);
