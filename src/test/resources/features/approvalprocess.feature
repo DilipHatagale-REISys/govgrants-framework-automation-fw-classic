@@ -29,7 +29,7 @@ Feature: Approval Process Component Scenarios
 
   @34307    @changeApproveOptionSequence-Programs @smoke
   Scenario: Changing sequence of Approve option from configuration and validating its sequence in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory    | fieldName | fieldOrignalValue | filterId         |
       | Approval Decision Action | Sequence  | 1                 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -53,7 +53,7 @@ Feature: Approval Process Component Scenarios
 
   @34308    @mandatoryCommentsReqForApproveAction-Programs
   Scenario: Setup comments requried as mandatory for approval from configuration and in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory    | fieldName         | fieldOrignalValue | filterId         |
       | Approval Decision Action | Comments Required | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
@@ -79,7 +79,7 @@ Feature: Approval Process Component Scenarios
 
   @34306    @labelChangeOfApprovalDecision-Programs
   Scenario: Changing label of approve radio button text from configuration and validating its changed label in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory    | fieldName             | fieldOrignalValue | filterId         |
       | Approval Decision Action | Action Label Override | Approve           | ApiGeneratedId:1 |
     Given I setup test configuration as below:
@@ -103,7 +103,7 @@ Feature: Approval Process Component Scenarios
 
   @34309    @confirmationMessageBoxPopupForApproveApprovalDecisionAction-Programs
   Scenario: Setup confirmation message inside confirmation message box from configuration and validating it in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory    | fieldName          | fieldOrignalValue | filterId         |
       | Approval Decision Action | Confirmation Title |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
@@ -131,7 +131,7 @@ Feature: Approval Process Component Scenarios
 
   @34310    @filterCriteriaForUserReassignForApprovalDecisionAction-Programs
   Scenario Outline: Entering filter criteria for user reassign using forward action from configuration and validating it in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory    | fieldName                         | fieldOrignalValue | filterId         |
       | Approval Decision Action | Filter Criteria for User Reassign |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
@@ -160,7 +160,7 @@ Feature: Approval Process Component Scenarios
 
   @34311 @wip @automationNotRequired @approverTaskNotCreatedPrograms-Programs @smoke
   Scenario: Change approver setting for not receiveing approve task in configuration and validate that pending approver task is not displayed
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory        | fieldName      | fieldOrignalValue  | filterId         |
       | Approval Process Steps Cache | Field API Name | ProgramApprover__c | ApiGeneratedId:1 |
     Given I setup test configuration as below:
@@ -183,7 +183,7 @@ Feature: Approval Process Component Scenarios
 
   @34313    @successEmailSentToProgramOwner-Programs
   Scenario: Setup email setting in configuration and validate that program owner receiving email for program approval
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory        | fieldName            | fieldOrignalValue | filterId         |
       | Approval Process Steps Cache | Email Field API Name | CreatedById       | ApiGeneratedId:1 |
     Given I setup test configuration as below:
@@ -212,7 +212,7 @@ Feature: Approval Process Component Scenarios
 
   @34314    @confirmationMessageBoxPopupForApprovalDecisionUsingApprovalCache-Programs @smoke
   Scenario: Setup confirmation message inside confirmation message box from approval process step cache configuration and validating it in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory        | fieldName                    | fieldOrignalValue | filterId         |
       | Approval Process Steps Cache | Approve Confirmation Title   |                   | ApiGeneratedId:1 |
       | Approval Process Steps Cache | Approve Confirmation Message |                   | ApiGeneratedId:2 |
@@ -241,7 +241,7 @@ Feature: Approval Process Component Scenarios
 
   @34317    @taskAssignmentNotificationForProgramSubmissionThroughMail-Programs
   Scenario: Setup email setting in configuration and validate that program owner receiving email for program submitted for approval
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName                          | fieldOrignalValue | filterId         |
       | Task Config           | Send Task Assignment Notification? | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
@@ -264,7 +264,7 @@ Feature: Approval Process Component Scenarios
 
   @34316    @completeOnViewForSendToOwnerTaskConfig-Programs
   Scenario: Setup complete on view checkbox to true from send to owner task configuration and validating it by owner user
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Task Config           | Complete On View? | false             | ApiGeneratedId:1 |
       | Page Tabs Config      | Is Active         | true              | ApiGeneratedId:2 |
@@ -296,7 +296,7 @@ Feature: Approval Process Component Scenarios
 
   @37348    @rejectConfirmationMessageFieldAtApprovalProcess-Programs @smoke
   Scenario: Setup confirmation message inside confirmation message box for reject from configuration and validating it in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory        | fieldName                   | fieldOrignalValue | filterId         |
       | Approval Process Steps Cache | Reject Confirmation Title   |                   | ApiGeneratedId:1 |
       | Approval Process Steps Cache | Reject Confirmation Message |                   | ApiGeneratedId:2 |
@@ -325,7 +325,7 @@ Feature: Approval Process Component Scenarios
 
   @37431    @reassignConfirmationMessageFieldAtApprovalProcess-Programs
   Scenario: Setup confirmation message inside confirmation message box for reassign from configuration and validating it in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory        | fieldName                     | fieldOrignalValue | filterId         |
       | Approval Process Steps Cache | Reassign Confirmation Title   |                   | ApiGeneratedId:2 |
       | Approval Process Steps Cache | Reassign Confirmation Message |                   | ApiGeneratedId:3 |
@@ -356,7 +356,7 @@ Feature: Approval Process Component Scenarios
 
   @37433    @sendToOwnerConfirmationMessageFieldAtApprovalProcess-Programs
   Scenario: Setup confirmation message inside confirmation message box for reassign from configuration and validating it in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory        | fieldName                          | fieldOrignalValue | filterId         |
       | Approval Process Steps Cache | Send To Owner Confirmation Title   |                   | ApiGeneratedId:1 |
       | Approval Process Steps Cache | Send To Owner Confirmation Message |                   | ApiGeneratedId:2 |
@@ -385,7 +385,7 @@ Feature: Approval Process Component Scenarios
 
   @37506    @confirmationMessageBoxPopupForRejectApprovalDecisionAction-Programs
   Scenario: Setup confirmation message inside confirmation message box for reject approval decision action using Approval Decision Action from configuration and validating it in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Confirmation Title   |                   | ApiGeneratedId:1 |
       | Approval Decision Action | Confirmation Message |                   | ApiGeneratedId:2 |
@@ -414,7 +414,7 @@ Feature: Approval Process Component Scenarios
 
   @37523    @confirmationMessageBoxPopupForReassignApprovalDecisionAction-Programs
   Scenario: Setup confirmation message inside confirmation message box for reassign approval decision action using Approval Decision Action from configuration and validating it in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Confirmation Title   |                   | ApiGeneratedId:2 |
       | Approval Decision Action | Confirmation Message |                   | ApiGeneratedId:3 |
@@ -445,7 +445,7 @@ Feature: Approval Process Component Scenarios
 
   @37539    @commentsFieldAPINameFieldForApproveAction-Programs
   Scenario: Setup comments as FederalProgramCFDA__c inside comments field API field using Approval decision action config from config and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory    | fieldName               | fieldOrignalValue | filterId         |
       | Approval Decision Action | Comments Field API Name |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
@@ -475,7 +475,7 @@ Feature: Approval Process Component Scenarios
 
   @38847    @confirmationMessageBoxPopupForSendToOwnerApprovalDecisionAction-Programs @smoke
   Scenario: Setup confirmation message inside confirmation message box for send back approval decision action using Approval Decision Action from configuration and validating it in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Confirmation Title   |                   | ApiGeneratedId:1 |
       | Approval Decision Action | Confirmation Message |                   | ApiGeneratedId:2 |
@@ -504,7 +504,7 @@ Feature: Approval Process Component Scenarios
 
   @37540    @viewPageProfileFieldForApprovalProcess-Programs @AutomationNotRequired @wip
   Scenario Outline: Changing user inside profile field inside task config from config validating it at program approval page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
       | Task Config           | View Page Profiles | <oldProfiles>     | ApiGeneratedId:1 |
     Given I setup test configuration as below:
@@ -531,7 +531,7 @@ Feature: Approval Process Component Scenarios
 
   @37645    @successEmailSentWithRejectTemplateToProgramOwner-Programs @smoke
   Scenario: Setup email setting in configuration and validate that program owner receiving email with reject email template for program approval
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory        | fieldName              | fieldOrignalValue | filterId         |
       | Approval Process Steps Cache | Approve Email Template | ApiGeneratedId:1  | ApiGeneratedId:3 |
     Given I setup test configuration as below:
@@ -562,7 +562,7 @@ Feature: Approval Process Component Scenarios
 
   @37646    @rejectEmailSentWithApproveTemplateToProgramOwner-Programs
   Scenario: Setup email setting in configuration and validate that program owner receiving email for rejection with approve email template for program approval
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory        | fieldName             | fieldOrignalValue | filterId         |
       | Approval Process Steps Cache | Reject Email Template | ApiGeneratedId:1  | ApiGeneratedId:3 |
       | Page Tabs Config             | Is Active             | true              | ApiGeneratedId:4 |
@@ -595,7 +595,7 @@ Feature: Approval Process Component Scenarios
 
   @37656    @reassignedEmailSentWithApproveTemplateToProgramOwner-Programs
   Scenario: Setup email setting in configuration and validate that program owner receiving email for reassign with approve email template for program approval
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory        | fieldName                 | fieldOrignalValue | filterId         |
       | Approval Process Steps Cache | Reassigned Email Template |                   | ApiGeneratedId:2 |
       | Page Tabs Config             | Is Active                 | true              | ApiGeneratedId:3 |
@@ -630,7 +630,7 @@ Feature: Approval Process Component Scenarios
 
   @37666    @sendToOwnerEmailSentWithApproveTemplateToProgramOwner-Programs
   Scenario: Setup email setting in configuration and validate that program owner receiving email for reassign with approve email template for program approval
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory        | fieldName                    | fieldOrignalValue | filterId         |
       | Approval Process Steps Cache | Send To Owner Email Template |                   | ApiGeneratedId:2 |
       | Page Tabs Config             | Is Active                    | true              | ApiGeneratedId:3 |
@@ -662,7 +662,7 @@ Feature: Approval Process Component Scenarios
 
   @37667    @notifyAdditionalPeopleThroughEmailWithApproveTemplateToProgramOwner-Programs
   Scenario: Setup email setting in configuration and validate that program owner receiving email for program approval
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory        | fieldName                | fieldOrignalValue | filterId         |
       | Approval Process Steps Cache | Notify Additional People | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
@@ -691,7 +691,7 @@ Feature: Approval Process Component Scenarios
 
   @41058    @mandatoryCommentsReqForReassignAction-Programs
   Scenario: Setup comments requried as mandatory for reassign from configuration and in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory    | fieldName         | fieldOrignalValue | filterId         |
       | Approval Decision Action | Comments Required | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
@@ -717,7 +717,7 @@ Feature: Approval Process Component Scenarios
 
   @41059    @commentsFieldAPINameFieldForReassignAction-Programs
   Scenario: Setup comments as FederalProgramCFDA__c inside comments field API field using Approval decision action config from config and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory    | fieldName               | fieldOrignalValue | filterId         |
       | Approval Decision Action | Comments Field API Name |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
@@ -747,7 +747,7 @@ Feature: Approval Process Component Scenarios
 
   @41063    @hideApproveOptionFromHideExpressionJSONField-Programs @smoke
   Scenario: Hiding approve option from configuration and validating its content in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
@@ -771,7 +771,7 @@ Feature: Approval Process Component Scenarios
 
   @41064    @hideDisapproveOptionFromHideExpressionJSONField-Programs
   Scenario: Hiding reject option from configuration and validating its content in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
@@ -795,7 +795,7 @@ Feature: Approval Process Component Scenarios
 
   @41065    @hideReassignOptionFromHideExpressionJSONField-Programs
   Scenario: Hiding forward option from configuration and validating its content in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
@@ -819,7 +819,7 @@ Feature: Approval Process Component Scenarios
 
   @41067    @hideSendToOwnerOptionFromHideExpressionJSONField-Programs
   Scenario: Hiding send back option from configuration and validating its content in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:

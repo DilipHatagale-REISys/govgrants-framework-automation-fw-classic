@@ -94,32 +94,50 @@ public class ProjectWebServices {
     public Response postDefaultConfigCall() throws IOException {
         System.out.println("Default executed");
         Response response = null;
-        String filterClause;
-        String filterIdValue;
+
         for (var configurationKeys : ConfigurationParameters.getDefaultConfigurationParameters().keySet()) {
             for (Map<String, String> defaultParameters : ConfigurationParameters.getDefaultConfigurationParameters().get(configurationKeys)) {
-                if (defaultParameters.get("filterId") != null) {
-                    String[] getValueAt = defaultParameters.get("filterId").split(":");
-                    filterIdValue = storeAllIds.get(Integer.parseInt(getValueAt[1])).getId();
-                    response = handleDefaultConfigWithFilterId(
-                            handleConfigCategory(defaultParameters.get("configurationCategory")),
-                            defaultParameters.get("fieldName"), defaultParameters.get("fieldOrignalValue"), filterIdValue);
-                } else {
-                    filterClause = initilizeSalesForceIdFilter(defaultParameters.get("configurationCategory"),
-                            defaultParameters.get("coreComponentField"), defaultParameters.get("coreCOmponentSubFieldName"),
-                            defaultParameters.get("coreComponentSubFieldValue"));
-                    response = handleDefaultConfigWithoutFileterId(
-                            handleConfigCategory(defaultParameters.get("configurationCategory")),
-                            defaultParameters.get("fieldName"), defaultParameters.get("fieldOrignalValue"), filterClause);
+                if (configurationKeys.equalsIgnoreCase("default"))
+                    executeDefaultConfigurations(defaultParameters);
+                else if (configurationKeys.equalsIgnoreCase("lightening")) {
+                    // your method
                 }
-
             }
         }
 
         return response;
     }
 
+
+
     ////////////// Private methods ///////////////////
+
+    /**
+     * Connecting method for postDefaultConfigCall()
+     * @param defaultParameters
+     * @return
+     * @throws IOException
+     */
+    private Response executeDefaultConfigurations(Map<String, String> defaultParameters) throws IOException {
+        Response response = null;
+        String filterClause;
+        String filterIdValue;
+        if (defaultParameters.get("filterId") != null) {
+            String[] getValueAt = defaultParameters.get("filterId").split(":");
+            filterIdValue = storeAllIds.get(Integer.parseInt(getValueAt[1])).getId();
+            response = handleDefaultConfigWithFilterId(
+                    handleConfigCategory(defaultParameters.get("configurationCategory")),
+                    defaultParameters.get("fieldName"), defaultParameters.get("fieldOrignalValue"), filterIdValue);
+        } else {
+            filterClause = initilizeSalesForceIdFilter(defaultParameters.get("configurationCategory"),
+                    defaultParameters.get("coreComponentField"), defaultParameters.get("coreCOmponentSubFieldName"),
+                    defaultParameters.get("coreComponentSubFieldValue"));
+            response = handleDefaultConfigWithoutFileterId(
+                    handleConfigCategory(defaultParameters.get("configurationCategory")),
+                    defaultParameters.get("fieldName"), defaultParameters.get("fieldOrignalValue"), filterClause);
+        }
+        return response;
+    }
 
     /**
      * Start to setup filter for main api call
@@ -159,6 +177,15 @@ public class ProjectWebServices {
         response.then().statusCode(200);
     }
 
+    /**
+     * connecting method for executeDefaultConfigurations
+     * @param configurationCategory
+     * @param fieldName
+     * @param fieldOrignalValue
+     * @param filterId
+     * @return
+     * @throws IOException
+     */
     private Response handleDefaultConfigWithFilterId(String configurationCategory, String fieldName,
                                                      String fieldOrignalValue, String filterId) throws IOException {
         Response response = null;
