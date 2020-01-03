@@ -13,8 +13,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Map;
 
-import static io.restassured.RestAssured.given;
-
 public class ProjectWebServices {
     SetUpConfiguration configPostCall;
     Properties_Logs readProp = new Properties_Logs();
@@ -98,22 +96,26 @@ public class ProjectWebServices {
         Response response = null;
         String filterClause;
         String filterIdValue;
-        for (Map<String, String> defaultParameters : ConfigurationParameters.getDefaultConfigurationParameters()) {
-            if (defaultParameters.get("filterId") != null) {
-                String[] getValueAt = defaultParameters.get("filterId").split(":");
-                filterIdValue = storeAllIds.get(Integer.parseInt(getValueAt[1])).getId();
-                response = handleDefaultConfigWithFilterId(
-                        handleConfigCategory(defaultParameters.get("configurationCategory")),
-                        defaultParameters.get("fieldName"), defaultParameters.get("fieldOrignalValue"), filterIdValue);
-            } else {
-                filterClause = initilizeSalesForceIdFilter(defaultParameters.get("configurationCategory"),
-                        defaultParameters.get("coreComponentField"), defaultParameters.get("coreCOmponentSubFieldName"),
-                        defaultParameters.get("coreComponentSubFieldValue"));
-                response = handleDefaultConfigWithoutFileterId(
-                        handleConfigCategory(defaultParameters.get("configurationCategory")),
-                        defaultParameters.get("fieldName"), defaultParameters.get("fieldOrignalValue"), filterClause);
+        for (var configurationKeys : ConfigurationParameters.getDefaultConfigurationParameters().keySet()) {
+            for (Map<String, String> defaultParameters : ConfigurationParameters.getDefaultConfigurationParameters().get(configurationKeys)) {
+                if (defaultParameters.get("filterId") != null) {
+                    String[] getValueAt = defaultParameters.get("filterId").split(":");
+                    filterIdValue = storeAllIds.get(Integer.parseInt(getValueAt[1])).getId();
+                    response = handleDefaultConfigWithFilterId(
+                            handleConfigCategory(defaultParameters.get("configurationCategory")),
+                            defaultParameters.get("fieldName"), defaultParameters.get("fieldOrignalValue"), filterIdValue);
+                } else {
+                    filterClause = initilizeSalesForceIdFilter(defaultParameters.get("configurationCategory"),
+                            defaultParameters.get("coreComponentField"), defaultParameters.get("coreCOmponentSubFieldName"),
+                            defaultParameters.get("coreComponentSubFieldValue"));
+                    response = handleDefaultConfigWithoutFileterId(
+                            handleConfigCategory(defaultParameters.get("configurationCategory")),
+                            defaultParameters.get("fieldName"), defaultParameters.get("fieldOrignalValue"), filterClause);
+                }
+
             }
         }
+
         return response;
     }
 
@@ -138,14 +140,14 @@ public class ProjectWebServices {
      */
     private void getAuthToken() {
         Response response = EyeThink.core().apiCall().postCall(null, null, endPoint + defaultEndPointGetToken, null, null, null);
-        this.tokenString = response.body().jsonPath().getString("access_token");
+        tokenString = response.body().jsonPath().getString("access_token");
     }
 
     /**
      * create end point based on different urls
      */
     public void createEndPoint() {
-        this.endPoint = EnvironmentFetcher.getEnvironmentUrl();
+        endPoint = EnvironmentFetcher.getEnvironmentUrl();
     }
 
     /**

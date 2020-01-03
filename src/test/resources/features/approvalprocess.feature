@@ -5,7 +5,7 @@ Feature: Approval Process Component Scenarios
 
   @34305    @hideApproveOption-Programs @smoke
   Scenario: Hiding approve option from configuration and validating its content in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory    | fieldName   | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Action | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
