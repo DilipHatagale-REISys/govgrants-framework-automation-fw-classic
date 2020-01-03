@@ -230,6 +230,8 @@ public class ProjectWebServices {
     }
 
     public void updateEnableLightningLookup(boolean booleanValue, Integer integerValue, String id, String description, String name) {
+        createEndPoint();
+        getAuthToken();
         String finalEndPoint = endPoint + "/services/apexrest/frameworkCustomsettingAPI";
         JsonArray jArray = new JsonArray();
         JsonObject jsonObject = new JsonObject();

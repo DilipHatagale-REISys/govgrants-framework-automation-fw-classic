@@ -559,6 +559,34 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * return true if given buttonName is displayed under session timeout dialog box
+     */
+    public void assertSessionTimeoutDialogboxButtons(String buttonName) {
+        Assert.assertTrue(IsButtonDisplayedUnderDialogBox(buttonName));
+    }
+
+    /**
+     * return true if Warning dialog box appears/not appears
+     */
+    public void assertSessionTimeoutDialogboxDisplayed(String usage) {
+        By sessionTimeoutDialogboxField = By.xpath("//div[contains(@class,'ui-dialog-titlebar')]");
+        if (usage.contains("softly")) {
+            if (usage.contains("cannot see")) {
+                EyeThink.core().assertion().assertThat(EyeThink.core().is().isDisplayed(sessionTimeoutDialogboxField)).isFalse();
+            } else {
+                EyeThink.core().assertion().assertThat(EyeThink.core().is().isDisplayed(sessionTimeoutDialogboxField)).isTrue();
+            }
+        } else {
+            if (usage.contains("cannot see")) {
+                Assert.assertFalse(EyeThink.core().is().isDisplayed(sessionTimeoutDialogboxField));
+            } else {
+                Assert.assertTrue(EyeThink.core().is().isDisplayed(sessionTimeoutDialogboxField));
+            }
+        }
+
+    }
+
+    /**
      * return true if picklist dropDownValue is displayed
      *
      * @param dropDownValue
@@ -1535,9 +1563,22 @@ public class PageLayoutPage extends GovGrantsManager {
      * @return
      */
     private boolean isSessionTimeoutDialogboxTextDisplayed(String bodyContent) {
-        WebElement ele = EyeThink.core().elementReference().of(By.xpath("//div[contains(@class,'ui-dialog-content')]//p"));
+        WebElement ele = EyeThink.core().elementReference().of(By.xpath("//div[contains(@class,'ui-dialog-content')]"));
         boolean flag = false;
-        if (ele.getText().equalsIgnoreCase(bodyContent)) {
+        if (ele.getText().contains(bodyContent)) {
+            flag = true;
+        }
+        return flag;
+    }
+
+    /**
+     * return true if given buttonName is displayed under session timeout dialog box
+     *
+     * @return
+     */
+    private boolean IsButtonDisplayedUnderDialogBox(String buttonName) {
+        boolean flag = false;
+        if (EyeThink.core().is().isDisplayed(By.xpath("//button[text()='" + buttonName + "']"))) {
             flag = true;
         }
         return flag;

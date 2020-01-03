@@ -46,6 +46,12 @@ public class setup {
             if (!ProjectWebServices.dynamicApi.equalsIgnoreCase("None")) {
                 if (ProjectWebServices.dynamicApi.equalsIgnoreCase("lightningLookUp")) {
                     ProjectWebServices.thisValue.updateEnableLightningLookup(false, null, "a0b1C00000M9lj4QAB", "SessionEnableManagement", "SessionEnableManagement");
+                    ProjectWebServices.thisValue.updateEnableLightningLookup(false, null, "a0b1C00000OGDD0QAP", "Lightning lookup updated", "enableLightningLookup");
+                    ProjectWebServices.thisValue.updateEnableLightningLookup(false, 3, "a0b1C00000M9ljEQAR", "Value for session timeout in a minute", "SessionTimeoutValue");
+                    ProjectWebServices.thisValue.updateEnableLightningLookup(true, null, "a0b1C00000M9ljOQAR", "Session Enable Reminder", "SessionEnableReminder");
+                    ProjectWebServices.thisValue.updateEnableLightningLookup(false, 2, "a0b1C00000M9lj9QAB", "SessionTimeoutReminderValue", "SessionTimeoutReminderValue");
+                    ProjectWebServices.thisValue.updateEnableLightningLookup(true, null, "a0b1C00000M9ljTQAR", "Session Enable DialogBox", "SessionEnableDialogBox");
+                    ProjectWebServices.thisValue.updateEnableLightningLookup(false, 1, "a0b1C00000LaBhVQAV", "SessionDialogTimeoutLimit", "SessionDialogTimeoutLimit");
                 }
                 if (ProjectWebServices.dynamicApi.equalsIgnoreCase("localeOrTimeZone")) {
                     ProjectWebServices.thisValue.updateLocalAndTimeZone("en_IN",

@@ -411,4 +411,14 @@ public class PageLayoutSteps {
     public void assertSessionTimeoutDialogboxWithText(String bodyContent) {
         pageLayoutPage.assertSessionTimeoutDialogboxText(bodyContent);
     }
+
+    @Then("^I (softly see|softly cannot see|cannot see|see) Session Timeout dialogue box with title is displayed$")
+    public void assertSessionTimeoutDialogboxIsDisplayed(String usage) {
+        pageLayoutPage.assertSessionTimeoutDialogboxDisplayed(usage);
+    }
+
+    @Then("^I see Session Timeout dialogbox with button \"([^\"]*)\"$")
+    public void assertSessionTimeoutDialogboxWithButtons(String buttonName) {
+        pageLayoutPage.assertSessionTimeoutDialogboxButtons(buttonName);
+    }
 }
