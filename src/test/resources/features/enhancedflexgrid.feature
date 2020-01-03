@@ -5,7 +5,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @35432    @disablingAdvanceFilterForEnhancedGrid-gPlanning @smoke
   Scenario: validate disabling of advance filter from planning-Program enhance flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Flex Grid             | Enable Filter | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -22,7 +22,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @35433    @disablingMenuIconForEnhancedGrid-gPlanning @smoke
   Scenario: validate disabling of menu icon from Planning- Program enhanced flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
       | Flex Grid             | Disable Menu | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -39,7 +39,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @45281    @hideCellJsonfieldForChildFlexTableAtEnhancedGrid-gPlanning @smoke
   Scenario: Hiding specific cell value of child flex table at enhanced grid from config and validating it inside enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -58,7 +58,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @45284    @readOnlyCellJSONFieldForChildFlexTableAtEnhancedGrid-gPlanning @smoke
   Scenario: Changing specific cell value to read only for child flex table of enhanced grid from config and validating it inside enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Table List       | Read Only Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -78,7 +78,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @45285    @hideColumnJSONfieldForChildFlexTableAtEnhancedGrid-gPlanning @smoke
   Scenario: Hiding specific column value for child flex table of enhanced grid from config and validating it inside enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table List       | Hide Column JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -97,7 +97,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @45287    @readOnlyColumnJSONFieldForChildFlexTableAtEnhancedGrid-gPlanning @smoke
   Scenario: Changing specific cell value to read only for child flex table of enhanced grid from config and validating it inside enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
       | Flex Table List       | Read Only Column JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -117,7 +117,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @45290    @iconCssFieldForChildFlexTableAtEnhancedGridActionItem-gPlanning
   Scenario: Setup icon css of child flex table for enhanced grid table edit action from config and validating it inside enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue                                  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableEditActionDefaultIconCss | TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
     Given I setup test configuration as below:
@@ -136,7 +136,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @35436    @changeOfParentFlexTableTitleForEnhancedGrid-gPlanning
   Scenario: validate after changing name of enhanced flex grid title inside planning-program enhanced flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName | fieldOrignalValue                         | filterId         |
       | Flex Grid:Flex Table List | Label     | Monitoring Schedule For All Active Grants | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -153,7 +153,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @35438    @disablingPDFExportFileForEnhancedGrid-gPlanning @smoke
   Scenario: validate disabling of PDF download from menu option in enhanced flex grid planning- Program enhanced flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Grid             | Enable Export (PDF) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -171,7 +171,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @62810    @disablingXLSExportFileForEnhancedGrid-gPlanning @smoke
   Scenario: validate disabling of Excel download from menu option in enhanced flex grid planning- Program enhanced flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
       | Flex Grid             | Enable Export (XLS / CSV) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -189,7 +189,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @35439    @disblingQuickSearchForEnhancedGrid-gPlanning @smoke
   Scenario: validate disabling of quick search in enhanced flex grid planning-Program enhanced flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Grid             | Enable Quick Search | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -206,7 +206,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @35437    @disablingEnableTotalRecordCountFieldForParentFlexTableAtEnhancedGrid-gPlanning @smoke
   Scenario: validate disbaling of total row count in enhanced flex grid planning-Program enhanced flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
       | Flex Grid             | Enable Total Records Count | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -223,7 +223,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @35434    @enableAutoIndexForEnhancedGrid-gPlanning
   Scenario: validate enable auto index for details inside enhanced flex grid planning-Program enhanced flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Flex Grid             | Enable Auto Index | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -240,7 +240,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @35442    @enableRecordSelectionForFlexForEnhancedGrid-gPlanning
   Scenario: validate enabling of record selection check boxes in enhanced flex grid planning-Program enhanced flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
       | Flex Grid             | Enable Record Selection | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -257,7 +257,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @35441    @editActionOpensInSameWindowForEnhancedGrid-gPlanning @smoke
   Scenario Outline: validate enhanced flex grid action field Edit opens in same window planning-Program enhanced flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName                | fieldOrignalValue    | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Single Row Edit Behavior | Inline               | TmpActiveGrantsGrid | Name                      | Edit                       |
       | Flex Table Action     | Editable Rows            | SingleRow            | TmpActiveGrantsGrid | Name                      | Edit                       |
@@ -286,7 +286,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @35440    @editActionOpensInOverLayWindowForEnhancedGrid-gPlanning
   Scenario Outline: validate flex table action field- Edit opens in overlay window
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName                | fieldOrignalValue    | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Single Row Edit Behavior | Inline               | TmpActiveGrantsGrid | Name                      | Edit                       |
       | Flex Table Action     | Editable Rows            | SingleRow            | TmpActiveGrantsGrid | Name                      | Edit                       |
@@ -315,7 +315,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @35435    @addingfieldNamesOfDifferentDataTypesForEnhancedGrid-gPlanning @smoke
   Scenario Outline: validate adding field names for different data types in enhanced flex grid planning-Program enhanced flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -346,7 +346,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @41297    @headerHelpTextFieldForParentFlexTableAtEnhancedGrid-gPlanning
   Scenario Outline: Changing content of help text field at parent flex table of enhanced grid from config and validating it at enhanced grid planning-Program enhanced flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Grid             | Header Help Text | <old_helpText>    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -367,7 +367,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @41299    @enablePageSizeFieldAtParentFlexTableForEnhancedGrid-gPlanning
   Scenario: validate enabling of page size dropdown at bottom inside enhanced flex grid planning-Program enhanced flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Grid             | Enable Page Size | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -384,7 +384,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @41304    @defaultPageSizeFieldAtParentFlexTableForEnhancedGrid-gPlanning
   Scenario: validate change of default page size inside dropdown at bottom enhanced flex grid planning-Program enhanced flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Flex Grid:General     | Default Page Size | 5                 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -401,7 +401,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @41308    @enableHelpFieldAtParentFlexTableForEnhancedGrid-gPlanning
   Scenario: validate enabling of help inside menu option in enhanced flex grid planning-Program enhanced flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
       | Flex Grid             | Enable Help | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -419,7 +419,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @41311    @helpTextFieldAtEnhancedGridColumnHeader-gPlanning
   Scenario Outline: Changing content of help text field at enhanced grid column header from config and validating it inside enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Flex Table List       | Help Text |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -440,7 +440,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @41316    @fieldLabelOverrideFieldAtEnhancedGridColumnHeader-gPlanning
   Scenario: Changing specific column name of enhanced grid column header from config and validating it inside enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table List       | Field Label Override |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -457,7 +457,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @41319    @hideCellJsonfieldAtEnhancedGrid-gPlanning @smoke
   Scenario: Hiding specific cell value of enhanced grid from config and validating it inside enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -475,7 +475,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @41370    @readOnlyCellJSONFieldAtEnhancedGrid-gPlanning @smoke
   Scenario: Changing specific cell value to read only of enhanced grid from config and validating it inside enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Table List       | Read Only Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -494,7 +494,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @41375    @hideColumnJSONfieldAtEnhancedGrid-gPlanning @smoke
   Scenario: Hiding specific column value of enhanced grid from config and validating it inside enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table List       | Hide Column JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -511,7 +511,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @41376    @readOnlyColumnJSONFieldAtEnhancedGrid-gPlanning @smoke
   Scenario: Changing specific cell value to read only of enhanced grid from config and validating it inside enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
       | Flex Table List       | Read Only Column JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -530,7 +530,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @41465    @iconCssFieldAtEnhancedGridActionItem-gPlanning
   Scenario: Setup icon for enhanced grid table edit action from config and validating it inside enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue                                  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableEditActionDefaultIconCss | TmpActiveGrantsGrid | Name                      | Edit                       |
     Given I setup test configuration as below:
@@ -548,7 +548,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @41466    @ConfirmationMessageFieldAtEnhancedGridActionItem-gPlanning
   Scenario: Setup confirmation message for enhanced grid table edit action from configuration and validating it inside enhanced grid of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Show Confirmation Box | false             | TmpActiveGrantsGrid | Name                      | Edit                       |
       | Flex Table Action     | Confirmation Message  |                   | TmpActiveGrantsGrid | Name                      | Edit                       |
@@ -569,7 +569,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @41468    @locationFieldAtEnhancedGridActionItemFromRowToTop-gPlanning
   Scenario: Changing location of Monitoring Schedule For All Active Grants enhanced grid table view action from row to top from config anf validating it inside enhanced of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Location                   | Row               | TmpActiveGrantsGrid | Name                      | View                       |
       | Flex Table Action     | Header Action Display Type |                   | TmpActiveGrantsGrid | Name                      | View                       |
@@ -588,7 +588,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @41385    @formulaFieldAtEnhancedGrid-gPlanning
   Scenario: Validating subtotal of cell value of total obligated amount by entering formula at config validating it inside enhanced of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Flex Table List       | Formula   |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -605,7 +605,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @42027    @headerHelpTextFieldForChildFlexTableAtEnhancedGrid-gPlanning
   Scenario Outline: Changing content of help text field at child flex table of enhanced grid from config and validating it at enhanced grid planning-Program enhanced flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Grid             | Header Help Text | <old_helpText>    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -628,7 +628,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @42030    @enableHelpFieldAtChildFlexTableForEnhancedGrid-gPlanning
   Scenario: validate enabling of help inside menu option inside child table of enhanced flex grid planning-Program enhanced flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
       | Flex Grid             | Enable Help | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -648,7 +648,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @42024    @helpTextFieldAtChildTableEnhancedGridColumnHeader-gPlanning
   Scenario Outline: Changing content of help text field at enhanced grid column header from config and validating it inside enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Flex Table List       | Help Text |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -671,7 +671,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @42021    @fieldLabelOverrideFieldAtEnhancedGridChildColumnHeader-gPlanning
   Scenario: Changing specific column name of enhanced grid child column header from config and validating it inside enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table List       | Field Label Override |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -690,7 +690,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @44533    @orderBySortByFieldAtParentDataTableEnhancedGridForAscendingOrder-gPlanning @smoke
   Scenario: Changing specific column value in ascending order with order by and sort by field from config and validating it inside enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Order By       |                   | TmpActiveGrantsGrid |                           |                            |
       | Flex Grid:General     | Sort Direction |                   | TmpActiveGrantsGrid |                           |                            |
@@ -709,7 +709,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @44534    @orderBySortByFieldAtParentDataTableEnhancedGridForDescendingOrder-gPlanning
   Scenario: Changing specific column value in descending order with order by and sort by field from config and validating it inside enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Order By       |                   | TmpActiveGrantsGrid |                           |                            |
       | Flex Grid:General     | Sort Direction |                   | TmpActiveGrantsGrid |                           |                            |
@@ -728,7 +728,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @44535    @orderBySortByFieldAtChildDataTableEnhancedGridForAscendingOrder-gPlanning @smoke
   Scenario: Changing specific column value in ascending order with order by and sort by field from config at child table and validating it inside enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Order By       |                   | TmpGrantorActiveAwardsGrid |                           |                            |
       | Flex Grid:General     | Sort Direction |                   | TmpGrantorActiveAwardsGrid |                           |                            |
@@ -749,7 +749,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @44536    @orderBySortByFieldAtChildDataTableEnhancedGridForDescendingOrder-gPlanning
   Scenario: Changing specific column value in Descending order with order by and sort by field from config at child table and validating it inside enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Order By       |                   | TmpGrantorActiveAwardsGrid |                           |                            |
       | Flex Grid:General     | Sort Direction |                   | TmpGrantorActiveAwardsGrid |                           |                            |
@@ -770,7 +770,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @44628    @filterClauseFieldOfParentFlexTableAtEnhancedGrid-gPlanning @smoke
   Scenario Outline: validate removing draft status category from flex table of planning-program enhanced flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Flex Table List       | Filter Clause | <oldSoqlFilter>   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -791,7 +791,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @44728    @sequenceFieldAtParentflexTableActionForEnhancedGrid-gPlanning @smoke
   Scenario: Changing sequence of edit row level action item at enhanced grid parent table from config and validating it inside enhanced grid table of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Flex Table Action     | Sequence  | 1                 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -808,7 +808,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @44731    @buttonHelpTextFieldAtParentFlexTableActionForEnhancedGrid-gPlanning
   Scenario: Changing content of button help text field at enhanced grid parent table action from config and validating it inside enhanced grid table of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table Action     | Button Help Text |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -826,7 +826,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @44993    @disableFilterForChildFlexTableAtEnhancedGrid-gPlanning
   Scenario: Disabling the Advance Filter at child flex table of enhanced grid from config and validating it at enhanced grid planning-Program enhanced flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Flex Grid             | Enable Filter | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -845,7 +845,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @44994    @disableMenuFieldForChildFlexTableAtEnhancedGrid-gPlanning @smoke
   Scenario: Disabling the Menu Field at child flex table of enhanced grid from config and validating it at enhanced grid planning-Program enhanced flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
       | Flex Grid             | Disable Menu | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -864,7 +864,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @44995    @disablingPDFExportFileForChildFlextTableEnhancedGrid-gPlanning @smoke
   Scenario: validate disabling of PDF download from menu option in enhanced flex grid planning- Program enhanced flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Grid             | Enable Export (PDF) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -884,7 +884,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @62814    @disablingXLSExportFileForChildFlextTableEnhancedGrid-gPlanning @smoke
   Scenario: validate disabling of XLS download from menu option in enhanced flex grid planning- Program enhanced flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
       | Flex Grid             | Enable Export (XLS / CSV) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -904,7 +904,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @44996    @disablingQuickSearchForChildFlextTableEnhancedGrid-gPlanning
   Scenario: validate disabling of Quick Search field at Child Flex Table for Enhanced Grid - Planning phase
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Grid             | Enable Quick Search | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -949,7 +949,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @45001    @enableRecordSelectionForChildFlexForEnhancedGrid-gPlanning
   Scenario: validate enabling of record selection check boxes in enhanced flex grid planning-Program enhanced flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
       | Flex Grid             | Enable Record Selection | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -968,7 +968,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @45096    @OpenNewTabAtParentFlexTableForViewAction-gPlanning
   Scenario: validate open new tab for view at parent flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Where To Open ? | SameWindow        | TmpActiveGrantsGrid | Name                      | View                       |
     Given I setup test configuration as below:
@@ -987,7 +987,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @45097    @viewActionOpenInNewWindowAtParentFlexTableForEnhancedGrid-gPlanning
   Scenario: validate enhanced grid view action open in new window for parent flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Where To Open ? | SameWindow        | TmpActiveGrantsGrid | Name                      | View                       |
     Given I setup test configuration as below:
@@ -1006,7 +1006,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @45098    @viewActionOpenInNewTabAtChildFlexTableForEnhancedGrid-gPlanning
   Scenario: validate enhanced grid view action open in new tab for child flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Where To Open ? | SameWindow        | TmpGrantorActiveAwardsGrid | Name                      | View                       |
     Given I setup test configuration as below:
@@ -1026,7 +1026,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @45099    @viewActionOpenInNewWindowAtChildFlexTableForEnhancedGrid-gPlanning
   Scenario: validate enhanced grid view action open in new window for child flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Where To Open ? | SameWindow        | TmpGrantorActiveAwardsGrid | Name                      | View                       |
     Given I setup test configuration as below:
@@ -1046,7 +1046,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @45275    @viewActionOpenInSameWindowAtChildFlexTableForEnhancedGrid-gPlanning @smoke
   Scenario: validate enhanced grid view action open in same window for child flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Where To Open ? | SameWindow        | TmpGrantorActiveAwardsGrid | Name                      | View                       |
     Given I setup test configuration as below:
@@ -1066,7 +1066,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @45276    @addingfieldNamesOfDifferentDataTypesForChildFlexTableOfEnhancedGrid-gPlanning @smoke
   Scenario Outline: validate adding field names for different data types for child flex table of enhanced flex grid planning-Program enhanced flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1094,7 +1094,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @45293    @ConfirmationMessageFieldForChildFlexTableAtEnhancedGridActionItem-gPlanning
   Scenario: Setup confirmation message for child flex table action item at enhanced grid table view action from configuration and validating it inside enhanced grid of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Show Confirmation Box | false             | TmpGrantorActiveAwardsGrid | Name                      | View                       |
       | Flex Table Action     | Confirmation Message  |                   | TmpGrantorActiveAwardsGrid | Name                      | View                       |
@@ -1116,7 +1116,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @45297    @locationFieldForChildFlexTableAtEnhancedGridActionItem-gPlanning
   Scenario: Changing location of Active awards child flex table view action from row to top from config anf validating it inside enhanced of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Location                   | Row               | TmpGrantorActiveAwardsGrid | Name                      | View                       |
       | Flex Table Action     | Header Action Display Type |                   | TmpGrantorActiveAwardsGrid | Name                      | View                       |
@@ -1137,7 +1137,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @45300    @locationFieldAtEnhancedGridActionItemFromTopToRow-gPlanning @smoke
   Scenario: Changing location of enhanced grid flex table Test action button from top to row from config anf validating it inside enhanced grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Location                   | Top               | TmpActiveGrantsGrid | Name                      | Test                       |
       | Flex Table Action     | Header Action Display Type | Button            | TmpActiveGrantsGrid | Name                      | Test                       |
@@ -1156,7 +1156,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @45304    @locationFieldForChildFlexTableAtEnhancedGridActionItemFromTopToRow-gPlanning @smoke
   Scenario: Changing location of child flex table of enhanced grid test action button from top to row from config and validating it inside enhanced grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Location                   | Top               | TmpGrantorActiveAwardsGrid | Name                      | test                       |
       | Flex Table Action     | Header Action Display Type | Button            | TmpGrantorActiveAwardsGrid | Name                      | test                       |
@@ -1176,7 +1176,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @45308    @sequenceFieldAtChildflexTableActionForEnhancedGrid-gPlanning @smoke
   Scenario: Changing sequence of edit row level action item of child flex table at enhanced grid from config and validating it inside enhanced grid table of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Flex Table Action     | Sequence  | 1                 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1195,7 +1195,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @45309    @buttonHelpTextFieldAtChildFlexTableActionForEnhancedGrid-gPlanning
   Scenario: Changing content of button help text field at enhanced grid child flex table action from config and validating it inside enhanced grid table of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table Action     | Button Help Text |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1214,7 +1214,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @45310    @changeOfChildFlexTableTitleForEnhancedGrid-gPlanning
   Scenario: validate after changing name of child flex table title at enhanced grid inside planning-program enhanced flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName | fieldOrignalValue | filterId         |
       | Flex Grid:Flex Table List | Label     | Active Awards     | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1233,7 +1233,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @49243    @enableGroupingFieldAtParentFlexTableForEnhancedGrid-gPlanning @smoke
   Scenario: validate same value rows getting grouped and shown in sequence after checking checkbox true of Enable Row Grouping from config and validating it inside enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1250,7 +1250,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @49244    @hideGroupingColumnFieldAtParentFlexTableForEnhancedGrid-gPlanning
   Scenario: validate hide of particular column after checking checkbox true of Hide Grouping Column from config and validating it inside enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table List       | Hide Grouping Column | false             | ApiGeneratedId:0 |
       | Flex Table List       | Enable Row Grouping  | false             | ApiGeneratedId:1 |
@@ -1269,7 +1269,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @49250    @enableSubTotalFieldAtParentFlexTableForEnhancedGrid-gPlanning @smoke
   Scenario: validate total of number of awards after checking checkbox true of Enable Sub Total field from config and validating it inside enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:0 |
       | Flex Table List       | Enable Sub Total    | false             | ApiGeneratedId:1 |
@@ -1288,7 +1288,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @49251    @isMasterViewFieldUncheckedForAllFlexListViewAtParentFlexTable-gPlanning
   Scenario: validate error message at enhanced grid after Unchecking check box of Is Master View Field for both list view at config and validating it inside enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
       | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1306,7 +1306,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @49264    @isMasterViewFieldcheckedForAtleastOneFlexListViewAtParentFlexTable-gPlanning
   Scenario: validate error message at enhanced grid after Unchecking check box of Is Master View Field for both list view at config and validating it inside enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
       | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1324,7 +1324,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @49270    @styleAttributeFieldAtParentFlexTableForEnhancedGrid-gPlanning @wip
   Scenario Outline: validate color change of total adjusted amount cloumn content after making changes at style attribute from config and validating it inside enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Table List       | Style Attribute     |                    | ApiGeneratedId:0 |
       | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
@@ -1348,7 +1348,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @49271    @styleClassFieldAtParentFlexTableForEnhancedGrid-gPlanning
   Scenario Outline: validate color change of number of awards cells content after making changes at style class from config and validating it inside enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName  | fieldOrignalValue | filterId         |
       | Flex Table List       | StyleClass |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1369,7 +1369,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @49352    @enableGroupingFieldAtChildFlexTableForEnhancedGrid-gPlanning @smoke
   Scenario: validate same value rows getting grouped and shown in sequence after checking checkbox true of Enable Row Grouping from config and validating it inside enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1388,7 +1388,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @49353    @hideGroupingColumnFieldAtChildFlexTableForEnhancedGrid-gPlanning
   Scenario: validate hide of particular column after checking checkbox true of Hide Grouping Column from config and validating it inside enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table List       | Hide Grouping Column | false             | ApiGeneratedId:0 |
       | Flex Table List       | Enable Row Grouping  | false             | ApiGeneratedId:1 |
@@ -1409,7 +1409,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @49355    @enableSubTotalFieldAtChildFlexTableForEnhancedGrid-gPlanning
   Scenario: validate total of number of awards after checking checkbox true of Enable Sub Total field at child flex table from config and validating it inside enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:0 |
       | Flex Table List       | Enable Sub Total    | false             | ApiGeneratedId:1 |
@@ -1430,7 +1430,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @49358    @styleClassFieldAtChildFlexTableForEnhancedGrid-gPlanning
   Scenario Outline: validate color change of number of awards cells content after making changes at style class at chile flex table from config and validating it inside enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName  | fieldOrignalValue | filterId         |
       | Flex Table List       | StyleClass |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1453,7 +1453,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @49359    @styleAttributeFieldAtChildFlexTableForEnhancedGrid-gPlanning
   Scenario Outline: validate color change of total adjusted amount cloumn content after making changes at style attribute from config and validating it inside enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
       | Flex Table List       | Style Attribute |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1476,7 +1476,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @49240    @isMasterViewFieldUncheckedForAllFlexListViewAtChildFlexTable-gPlanning
   Scenario: validate error message at enhanced grid after Unchecking check box of Is Master View Field for both list view for child flex table at config and validating it inside enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
       | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1496,7 +1496,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @49241    @isMasterViewFieldcheckedForAtleastOneFlexListViewAtChildFlexTable-gPlanning
   Scenario: validate error message at enhanced grid after Unchecking check box of Is Master View Field for both list view at config and validating it inside enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
       | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:0 |
       | Flex Grid:Flex Table List | Show in PDF    | false             | ApiGeneratedId:2 |
@@ -1518,7 +1518,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @49249    @enableOverallTotalFieldAtParentFlexTableForEnhancedGrid-gPlanning
   Scenario Outline: validate enabling of overall total field after checking checkbox true of Enable Over All Total from config and validating it inside enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName             | fieldOrignalValue               | filterId         |
       | Flex Table List           | Enable Over All Total | false                           | ApiGeneratedId:0 |
       | Flex Grid:Flex Table List | Is Master View        | true                            | ApiGeneratedId:1 |
@@ -1542,7 +1542,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @49354     @enableOverallTotalFieldAtChildFlexTableForEnhancedGrid-gPlanning
   Scenario: validate enabling of overall total field after checking checkbox true of Enable Over All Total for child flex tablefrom config and validating it inside enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
       | Flex Table List       | Enable Row Grouping   | false             | ApiGeneratedId:0 |
       | Flex Table List       | Enable Over All Total | false             | ApiGeneratedId:1 |
@@ -1563,7 +1563,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @49361      @verifyEditSelectedAtParentFlexTableForEnhancedGrid-gPlanning
   Scenario Outline: validate Edit selected functionality for parent flex table at enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName               | fieldOrignalValue               | filterId         |
       | Flex Grid:Flex Table List | Is Master View          | true                            | ApiGeneratedId:0 |
       | Flex Grid:Flex Table List | Filter Clause           | <defaultFilterClauseForFLV2539> | ApiGeneratedId:1 |
@@ -1591,7 +1591,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @49364      @verifyEditSelectedAtChildFlexTableForEnhancedGrid-gPlanning
   Scenario: validate Edit selected functionality for child flex table at enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
       | Flex Table:General    | Enable Record Selection | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1614,7 +1614,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @49360      @verifyEditAllAtParentFlexTableForEnhancedGrid-gPlanning
   Scenario Outline: validate Edit selected functionality for parent flex table at enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName      | fieldOrignalValue               | filterId         |
       | Flex Grid:Flex Table List | Is Master View | true                            | ApiGeneratedId:0 |
       | Flex Grid:Flex Table List | Filter Clause  | <defaultFilterClauseForFLV2539> | ApiGeneratedId:1 |
@@ -1639,7 +1639,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @49362      @verifyEditAllAtChildFlexTableForEnhancedGrid-gPlanning
   Scenario Outline: validate Edit selected functionality for parent flex table at enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1665,7 +1665,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @48901    @orderByFieldAtParentDataTableEnhancedGridForAscendingOrderForMultipleField-gPlanning
   Scenario Outline: Changing specific columns values in ascending order with order by field from config and validating it inside enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Order By  |                   | TmpActiveGrantsGrid |                           |                            |
     Given I setup test configuration as below:
@@ -1686,7 +1686,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @48902    @orderByFieldAtParentDataTableEnhancedGridForDescendingOrderForMultipleField-gPlanning
   Scenario Outline: Changing specific columns values in descending order with order by field from config and validating it inside enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Order By  |                   | TmpActiveGrantsGrid |                           |                            |
     Given I setup test configuration as below:
@@ -1707,7 +1707,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @48903    @orderByFieldAtChildDataTableEnhancedGridForAscendingOrderForMultipleField-gPlanning @Smoke
   Scenario Outline: Changing specific column value in ascending order with order by and sort by field from config and validating it inside enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | TmpGrantorActiveAwardsGrid |                           |                            |
       | Flex Grid:General     | Order By            |                    | TmpGrantorActiveAwardsGrid |                           |                            |
@@ -1732,7 +1732,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @48905    @orderByFieldAtChildDataTableEnhancedGridDescendingOrderForMultipleField-gPlanning @Smoke
   Scenario Outline: Changing specific column value in ascending order with order by and sort by field from config and validating it inside enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | TmpGrantorActiveAwardsGrid |                           |                            |
       | Flex Grid:General     | Order By            |                    | TmpGrantorActiveAwardsGrid |                           |                            |
@@ -1757,7 +1757,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @45312    @filterClauseFieldOfChildFlexTableAtEnhancedGrid-gPlanning @smoke
   Scenario Outline: validate created status category from flex table of planning-program enhanced flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Flex Table List       | Filter Clause | <oldSoqlFilter>   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1780,7 +1780,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
   @66954 @verifyRequiredFieldsAtParentFlexTableForEnhancedGrid-gPlanning
   Scenario Outline: validate Required Fields functionality for parent flex table at enhanced grid of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName       | fieldOrignalValue               | filterId         |
       | Flex Grid:Flex Table List | Is Master View  | true                            | ApiGeneratedId:0 |
       | Flex Grid:Flex Table List | Filter Clause   | <defaultFilterClauseForFLV2539> | ApiGeneratedId:1 |

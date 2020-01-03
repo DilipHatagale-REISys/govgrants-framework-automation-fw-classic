@@ -5,7 +5,7 @@ Feature: Phase Config Component Scenarios
 
   @34419    @validatePlanningPhaseAllowedProfile-gplanning @smoke
   Scenario Outline: Remove admin profile from config. and validate that Plannign phase doesn't show up in admin user
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
       | Phase Config          | Available for Profiles | <Old-Profile>     | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -20,7 +20,7 @@ Feature: Phase Config Component Scenarios
 
   @34420    @validateTabDisplayName-gplanning @smoke
   Scenario: Setup tab name as Automation from config. and validate that tab name for planning is changed to Automation
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Phase Config          | Tab Display Label | Planning          | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -32,7 +32,7 @@ Feature: Phase Config Component Scenarios
 
   @34484    @validatePhaseSequence-gplanning @smoke
   Scenario: Setup tab sequence as "0" from config. and validate that tab name for planning is changed to first position
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Phase Config          | Sequence  | 2                 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -44,7 +44,7 @@ Feature: Phase Config Component Scenarios
 
   @34485    @validateNumberOfCharts-gplanning @smoke
   Scenario: Setup number of charts as "2" from config. and validate only two charts are displayed inside planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Phase Config          | Total Charts Allowed | 3                 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -57,7 +57,7 @@ Feature: Phase Config Component Scenarios
 
   @34487    @validateChartsDisplayedAtBottom-gplanning @smoke
   Scenario: Setup body bottom page url for charts in config. and validate charts are displayed at bottom are displayed inside planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Phase Config          | Body Bottom Page URL |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -70,7 +70,7 @@ Feature: Phase Config Component Scenarios
 
   @34587    @validateIsPlanningDisplayedInTaskSummary-gplanning
   Scenario: Uncheck is Phase for planning in config. and validate Planning is not displayed in Task Summary on home page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Phase Config          | Is Phase  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -83,7 +83,7 @@ Feature: Phase Config Component Scenarios
 
   @34589    @validateSettingAsDefaultLandingTab-gplanning @smoke
   Scenario: Select planning as "Default landing tab" in config. and validate Planning is default landing page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Phase Config          | Default Landing Tab? | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -96,7 +96,7 @@ Feature: Phase Config Component Scenarios
 
   @34590    @validateIconForTab-gplanning
   Scenario: Set up tab icon css for planning tab in config. and validate book is displayed instead of planning tab
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
       | Phase Config          | Tab Icon Css |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -108,7 +108,7 @@ Feature: Phase Config Component Scenarios
 
   @34599    @validateTotalChartsInRow-gplanning
   Scenario: Setup number of charts as "1" from config. and validate only two charts are displayed inside planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Phase Config          | Total Charts Allowed | 3                 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -121,7 +121,7 @@ Feature: Phase Config Component Scenarios
 
   @44735    @highlightPhaseFieldInSobjectPhaseConfig-gplanning @smoke
   Scenario: validate highlighting of planning tab by making changes at sobject phase config and validate inside planning-gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Phase Config Sobject  | Highlight Phase? | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -137,7 +137,7 @@ Feature: Phase Config Component Scenarios
 
   @44736    @globalsearchlabelfieldAtphaseConfigSobject-gplanning @smoke
   Scenario: Setup label change of program at sobject phase config and validating changed label for program inside global search at planning phase
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Phase Config Sobject  | Global Search Label | Program           | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -151,7 +151,7 @@ Feature: Phase Config Component Scenarios
 
   @44737    @addToGlobalSearchfieldAtphaseConfigSobject-gplanning @smoke
   Scenario: Disabling program inside global search and validating it inside global search of planning tab-gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
       | Phase Config Sobject  | Add to Global Search? | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -165,7 +165,7 @@ Feature: Phase Config Component Scenarios
 
   @44738    @disableProgramInRecentViewedLinkInSideBar-gplanning @smoke
   Scenario: Disabling the programs in Recent Viewed Link in Sidebar inside planning-gplanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
       | Phase Config Sobject  | Add to Recently Viewed? | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -178,7 +178,7 @@ Feature: Phase Config Component Scenarios
 
   @56846    @enablingProgramInRecentViewedLinkInSideBar-gplanning @smoke
   Scenario: Enabling the programs in Recent Viewed Link in Sidebar inside planning-gplanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
       | Phase Config Sobject  | Add to Recently Viewed? | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
