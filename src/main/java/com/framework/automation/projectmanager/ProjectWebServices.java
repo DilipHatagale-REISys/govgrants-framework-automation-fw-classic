@@ -91,52 +91,43 @@ public class ProjectWebServices {
 
     ////////////// Setup Default Config//////////////
 
-    public Response postDefaultConfigCall() throws IOException {
-        System.out.println("Default executed");
-        Response response = null;
-
+    public void postDefaultConfigCall() throws IOException {
         for (var configurationKeys : ConfigurationParameters.getDefaultConfigurationParameters().keySet()) {
-            for (Map<String, String> defaultParameters : ConfigurationParameters.getDefaultConfigurationParameters().get(configurationKeys)) {
-                if (configurationKeys.equalsIgnoreCase("default"))
-                    executeDefaultConfigurations(defaultParameters);
-                else if (configurationKeys.equalsIgnoreCase("lightening")) {
-                    // your method
-                }
+            if (configurationKeys.equalsIgnoreCase("default"))
+                executeDefaultConfigurations(configurationKeys);
+            else if (configurationKeys.equalsIgnoreCase("lightening")) {
+                // your method
             }
         }
-
-        return response;
     }
-
 
 
     ////////////// Private methods ///////////////////
 
     /**
      * Connecting method for postDefaultConfigCall()
-     * @param defaultParameters
+     *
      * @return
      * @throws IOException
      */
-    private Response executeDefaultConfigurations(Map<String, String> defaultParameters) throws IOException {
-        Response response = null;
+    private void executeDefaultConfigurations(String configurationKey) throws IOException {
         String filterClause;
         String filterIdValue;
-        if (defaultParameters.get("filterId") != null) {
-            String[] getValueAt = defaultParameters.get("filterId").split(":");
-            filterIdValue = storeAllIds.get(Integer.parseInt(getValueAt[1])).getId();
-            response = handleDefaultConfigWithFilterId(
-                    handleConfigCategory(defaultParameters.get("configurationCategory")),
-                    defaultParameters.get("fieldName"), defaultParameters.get("fieldOrignalValue"), filterIdValue);
-        } else {
-            filterClause = initilizeSalesForceIdFilter(defaultParameters.get("configurationCategory"),
-                    defaultParameters.get("coreComponentField"), defaultParameters.get("coreCOmponentSubFieldName"),
-                    defaultParameters.get("coreComponentSubFieldValue"));
-            response = handleDefaultConfigWithoutFileterId(
-                    handleConfigCategory(defaultParameters.get("configurationCategory")),
-                    defaultParameters.get("fieldName"), defaultParameters.get("fieldOrignalValue"), filterClause);
-        }
-        return response;
+        for (Map<String, String> defaultParameters : ConfigurationParameters.getDefaultConfigurationParameters().get(configurationKey))
+            if (defaultParameters.get("filterId") != null) {
+                String[] getValueAt = defaultParameters.get("filterId").split(":");
+                filterIdValue = storeAllIds.get(Integer.parseInt(getValueAt[1])).getId();
+                handleDefaultConfigWithFilterId(
+                        handleConfigCategory(defaultParameters.get("configurationCategory")),
+                        defaultParameters.get("fieldName"), defaultParameters.get("fieldOrignalValue"), filterIdValue);
+            } else {
+                filterClause = initilizeSalesForceIdFilter(defaultParameters.get("configurationCategory"),
+                        defaultParameters.get("coreComponentField"), defaultParameters.get("coreCOmponentSubFieldName"),
+                        defaultParameters.get("coreComponentSubFieldValue"));
+                handleDefaultConfigWithoutFileterId(
+                        handleConfigCategory(defaultParameters.get("configurationCategory")),
+                        defaultParameters.get("fieldName"), defaultParameters.get("fieldOrignalValue"), filterClause);
+            }
     }
 
     /**
@@ -179,6 +170,7 @@ public class ProjectWebServices {
 
     /**
      * connecting method for executeDefaultConfigurations
+     *
      * @param configurationCategory
      * @param fieldName
      * @param fieldOrignalValue
