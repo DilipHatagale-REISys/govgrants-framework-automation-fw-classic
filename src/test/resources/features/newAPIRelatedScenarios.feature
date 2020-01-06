@@ -6,13 +6,16 @@ Feature: New API related scenarios temporary
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
+    And I have "lightening" configuration for custom setting as below:
+      | booleanValue | integerValue | id                 | description              | name                  |
+      | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName                  | fieldNewValue          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name,NumberofAwards__c | Grantee State Program | Name                      | PBD-3178                   |
     When I login as "Automation" user
     And I update custom setting changes:
-      | booleanValue | integerValue | id                 | description             | name                    |
-      | true         | 3            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
+      | booleanValue | integerValue | id                 | description              | name                  |
+      | true         | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -563,16 +566,37 @@ Feature: New API related scenarios temporary
     When I click on "View" icon for "Owner" to save inside subtab
     Then I see "Download As PDF" button is present on Modal
 
-  @61467   @VerifySessionTimeoutRemainderDialogBoxShownInBrowserTab @checkCountDownTimeLogic @wip
+  @61467   @VerifySessionTimeoutRemainderDialogBoxShownInBrowserTab @checkCountDownTimeLogic
   Scenario: Verify session Timeout reminder dialog box shown in browser tab title after 1 min of session login
     When I login as "Automation" user
+    And I have "lightening" configuration for custom setting as below:
+      | booleanValue | integerValue | id                 | description             | name                    |
+      | false        | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description             | name                    |
+      | true         | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description                 | name                        |
+      | false        | 2            | a0b1C00000M9lj9QAB | SessionTimeoutReminderValue | SessionTimeoutReminderValue |
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description             | name                  |
+      | true         | 0            | a0b1C00000M9ljOQAR | Session Enable Reminder | SessionEnableReminder |
     When I navigate to "Planning" tab
     When I pause execution for "60" seconds
     Then I see session timeout remainder as "01" countdown is shown in browser tab
 
-  @61468   @VerifyLogoutPageDisplayedAfterTimeGivenInSessionTimeoutValue @wip
+  @61468   @VerifyLogoutPageDisplayedAfterTimeGivenInSessionTimeoutValue
   Scenario Outline: Verify that session will get expired after given SessionTimeoutValue and Logout Page gets Displayed
     When I login as "Automation" user
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description             | name                    |
+      | true         | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description                           | name                |
+      | false        | 3            | a0b1C00000M9ljEQAR | Value for session timeout in a minute | SessionTimeoutValue |
+    And I have "lightening" configuration for custom setting as below:
+      | booleanValue | integerValue | id                 | description             | name                    |
+      | false        | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
     When I navigate to "Planning" tab
     When I pause execution for "180" seconds
     Then I see "<Logout_URL>" page is displayed

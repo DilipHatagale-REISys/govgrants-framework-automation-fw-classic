@@ -12,18 +12,19 @@ import java.util.Map;
 
 public class ConfigurationSteps {
     ProjectWebServices projectAPI;
+    Map<String, List<Map<String, String>>> createConfigurationMap = new HashMap<>();
 
     public ConfigurationSteps(ProjectWebServices projectAPI) {
         this.projectAPI = projectAPI;
         this.projectAPI = projectAPI;
         this.projectAPI.setupIdBucket();
         this.projectAPI.thisValue = this.projectAPI;
+
     }
 
     @Given("I have {string} configuration as below:")
-    public void defaultConfigurationSetUp(String configType,List<Map<String, String>> defaultParameters) {
-        Map<String,List<Map<String, String>>> createConfigurationMap = new HashMap<>();
-        createConfigurationMap.put(configType,defaultParameters);
+    public void defaultConfigurationSetUp(String configType, List<Map<String, String>> defaultParameters) {
+        createConfigurationMap.put(configType, defaultParameters);
         ConfigurationParameters.setDefaultConfigurationParameters(createConfigurationMap);
     }
 
@@ -49,5 +50,11 @@ public class ConfigurationSteps {
             projectAPI.updateEnableLightningLookup(Boolean.parseBoolean(parameters.get("booleanValue")), Integer.parseInt(parameters.get("integerValue")), parameters.get("id"), parameters.get("description"), parameters.get("name"));
             ProjectWebServices.dynamicApi = "lightningLookUp";
         }
+    }
+
+    @Given("I have {string} configuration for custom setting as below:")
+    public void iUpdateEnableLightningLookupFieldToDefault(String configType, List<Map<String, String>> defaultParameters) {
+        createConfigurationMap.put(configType, defaultParameters);
+        ConfigurationParameters.setDefaultConfigurationParameters(createConfigurationMap);
     }
 }

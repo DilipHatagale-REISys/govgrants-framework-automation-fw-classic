@@ -95,12 +95,19 @@ public class ProjectWebServices {
         for (var configurationKeys : ConfigurationParameters.getDefaultConfigurationParameters().keySet()) {
             if (configurationKeys.equalsIgnoreCase("default"))
                 executeDefaultConfigurations(configurationKeys);
-            else if (configurationKeys.equalsIgnoreCase("lightening")) {
-                // your method
+            if (configurationKeys.equalsIgnoreCase("lightening")) {
+                setDefaultSettingForLightningLookup(configurationKeys);
             }
         }
     }
 
+    public void setDefaultSettingForLightningLookup(String key) {
+        for (Map<String, String> customMap : ConfigurationParameters.getDefaultConfigurationParameters().get(key)) {
+            updateEnableLightningLookup(Boolean.parseBoolean(customMap.get("booleanValue")), null, customMap.get("id"),
+                    customMap.get("description"), customMap.get("name"));
+        }
+
+    }
 
     ////////////// Private methods ///////////////////
 
@@ -251,6 +258,8 @@ public class ProjectWebServices {
     }
 
     public void updateEnableLightningLookup(boolean booleanValue, Integer integerValue, String id, String description, String name) {
+        createEndPoint();
+        getAuthToken();
         String finalEndPoint = endPoint + "/services/apexrest/frameworkCustomsettingAPI";
         JsonArray jArray = new JsonArray();
         JsonObject jsonObject = new JsonObject();
