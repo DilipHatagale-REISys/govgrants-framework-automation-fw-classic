@@ -5,7 +5,7 @@ Feature: Flex Table Component Scenarios
 
   @34022    @changeOfFlexTableTitle-gPlanning
   Scenario: validate after changing name of flex table title inside planning-programs
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Flex Table List       | Label     | Draft Programs    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -18,7 +18,7 @@ Feature: Flex Table Component Scenarios
 
   @34024    @disablingPDFExportFile-gPlanning
   Scenario: validate disabling of PDF download from menu option in flex table of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -33,7 +33,7 @@ Feature: Flex Table Component Scenarios
 
   @62703    @disablingCSVExportFile-gPlanning
   Scenario: validate disabling of Excel download from menu option in flex table of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId          |
       | Flex Table            | Enable Export (XLS / CSV) | true              |  ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -49,7 +49,7 @@ Feature: Flex Table Component Scenarios
 
   @34026    @disblingQuickSearch-gPlanning
   Scenario: validate disabling of quick search in flex table of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -63,7 +63,7 @@ Feature: Flex Table Component Scenarios
 
   @34027    @disablingAdvanceFilter-gPlanning
   Scenario: validate disabling of advance filter from planning-Program flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -77,7 +77,7 @@ Feature: Flex Table Component Scenarios
 
   @34028    @disablingMenuIcon-gPlanning
   Scenario: validate disabling of menu icon from Program flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
       | Flex Table            | Disable Menu | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -91,7 +91,7 @@ Feature: Flex Table Component Scenarios
 
   @34029    @enableRecordSelectionForFlex-gPlanning
   Scenario: validate enabling of record selection check boxes in flex table of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Record Selection | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -105,7 +105,7 @@ Feature: Flex Table Component Scenarios
 
   @34030    @disablingAmountTotalForFlex-gPlanning
   Scenario: validate disbaling of total amount in flex table of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Total Row | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -119,7 +119,7 @@ Feature: Flex Table Component Scenarios
 
   @34031    @disablingEnableTotalRecordsCountFieldAtProgramFlexTable-gPlanning
   Scenario: validate disbaling of total row count in flex table of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -133,7 +133,7 @@ Feature: Flex Table Component Scenarios
 
   @34032    @additionOfLabelForRowNamedTotal-gPlanning
   Scenario: validate addition of label for row named as total of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField | filterId         |
       | Flex Table            | Total Row Label | Total             | Programs           | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -147,7 +147,7 @@ Feature: Flex Table Component Scenarios
 
   @34033    @enableAutoIndex-gPlanning
   Scenario: validate enable auto index for details inside flex table of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -161,7 +161,7 @@ Feature: Flex Table Component Scenarios
 
   @34034    @addingfieldNamesOfDifferentDataTypes-gPlanning @smoke
   Scenario Outline: validate adding field names for different data types in flex table of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -187,7 +187,7 @@ Feature: Flex Table Component Scenarios
 
   @34035    @disableSpecificStatusCategory-gPlanning @smoke
   Scenario Outline: validate removing Created status category from flex table of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Flex Table List       | Filter Clause | <oldSoqlFilter>   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -205,7 +205,7 @@ Feature: Flex Table Component Scenarios
 
   @34037    @editActionOpensInNewWindow-gPlanning
   Scenario: validate flex table action field- Edit opens in new window
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue   | filterId         |
       | Flex Table Action     | Action Behavior | Open in same window | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -221,7 +221,7 @@ Feature: Flex Table Component Scenarios
 
   @34038    @editActionOpensInSameWindow-gPlanning @smoke
   Scenario: validate flex table action field- Edit opens in same window
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue   | filterId         |
       | Flex Table Action     | Action Behavior | Open in same window | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -237,7 +237,7 @@ Feature: Flex Table Component Scenarios
 
   @34039    @editActionOpensInOverLayWindow-gPlanning
   Scenario: validate flex table action field- Edit opens in overlay window
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue   | filterId         |
       | Flex Table Action     | Action Behavior | Open in same window | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -253,7 +253,7 @@ Feature: Flex Table Component Scenarios
 
   @34292    @refreshBehaviourFieldAtRolesAndResponsilitiesFlexTableAsRefreshEntirePage-gPlanning
   Scenario: validate flex table action field- refresh entire page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table Action     | Refresh Behavior |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -272,7 +272,7 @@ Feature: Flex Table Component Scenarios
 
   @34297    @hideForProfileFieldAtRolesAndResponsibilitiesFlexTableAction-gPlanning @smoke
   Scenario: Hide edit row level action for specific profile from configuration and validating it at under roles and responibilities flex table- gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName        | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide For Profile |                   | ProgramRolesAndResponsibilities | Name                      | Edit                       |
     Given I setup test configuration as below:
@@ -289,7 +289,7 @@ Feature: Flex Table Component Scenarios
 
   @34298    @hideForUserFieldAtRolesAndResponsibilitiesFlexTableAction-gPlanning @smoke
   Scenario: Hide edit row level action for specific profile from configuration and validating it at under roles and responibilities flex table- gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName     | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide For User |                   | ProgramRolesAndResponsibilities | Name                      | Edit                       |
     Given I setup test configuration as below:
@@ -306,7 +306,7 @@ Feature: Flex Table Component Scenarios
 
   @34299    @hideForContextFieldAtRolesAndResponsibilitiesFlexTableAction-gPlanning @smoke
   Scenario: Hide edit row level action for edit layout from configuration and validating it at under roles and responibilities flex table- gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName        | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide For Context |                   | ProgramRolesAndResponsibilities | Name                      | Edit                       |
     Given I setup test configuration as below:
@@ -323,7 +323,7 @@ Feature: Flex Table Component Scenarios
 
   @34300    @hideOperatorFieldUsingANDOperatorAtRolesAndResponsibilitiesFlexTAbleAction-gPlanning
   Scenario: Hide edit row level action using AND operator from configuration and validating it at under roles and responibilities flex table- gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName        | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide For Profile |                   | ProgramRolesAndResponsibilities | Name                      | Edit                       |
       | Flex Table Action Sobject | Hide For Context |                   | ProgramRolesAndResponsibilities | Name                      | Edit                       |
@@ -344,7 +344,7 @@ Feature: Flex Table Component Scenarios
 
   @34302    @hideOperatorFieldUsingOROperatorAtRolesAndResponsibilitiesFlexTAbleAction-gPlanning
   Scenario: Hide edit row level action using OR operator from configuration and validating it at under roles and responibilities flex table- gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName        | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide For Profile |                   | ProgramRolesAndResponsibilities | Name                      | Edit                       |
       | Flex Table Action Sobject | Hide For Context |                   | ProgramRolesAndResponsibilities | Name                      | Edit                       |
@@ -365,7 +365,7 @@ Feature: Flex Table Component Scenarios
 
   @39287    @headerHelpTextFieldAtFlexTable-gPlanning
   Scenario Outline: Changing content of header help text field at flex table and validating it at draft program flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table            | Header Help Text | <old_helpText>    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -383,7 +383,7 @@ Feature: Flex Table Component Scenarios
 
   @39296    @enableHelpFieldAtFlexTable-gPlanning
   Scenario: validate enabling of help inside menu option in flex table of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Help | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -398,7 +398,7 @@ Feature: Flex Table Component Scenarios
 
   @39298    @enablePageSizeFieldAtFlexTable-gPlanning
   Scenario: validate enabling of page size dropdown at bottom in flex table of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Page Size | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -412,7 +412,7 @@ Feature: Flex Table Component Scenarios
 
   @39299    @enablePaginationFieldAtFlexTable-gPlanning
   Scenario: validate enabling of page size dropdown at bottom in flex table of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Pagination | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -426,7 +426,7 @@ Feature: Flex Table Component Scenarios
 
   @39302    @defaultPageSizeFieldAtFlexTable-gPlanning
   Scenario: validate change of default page size inside dropdown at bottom in flex table of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Flex Table            | Default Page Size | 10                | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -440,7 +440,7 @@ Feature: Flex Table Component Scenarios
 
   @40002    @helpTextFieldAtFlexTableColumnHeader-gPlanning
   Scenario Outline: Changing content of help text field at flex table column header from config and validating it inside flex table of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Flex Table List       | Help Text |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -459,7 +459,7 @@ Feature: Flex Table Component Scenarios
 
   @40004    @fieldLabelOverrideFieldAtFlexTableColumnHeader-gPlanning
   Scenario: Changing specific column name of program flex table from config and validating it inside flex table of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table List       | Field Label Override | ID                | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -473,7 +473,7 @@ Feature: Flex Table Component Scenarios
 
   @40005    @enableTotalFieldAtFlexTable-gPlanning
   Scenario: Enabling total amount inside funded amount columb for all records config and validating it inside flex table of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
       | Flex Table List       | Enable Total | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -488,7 +488,7 @@ Feature: Flex Table Component Scenarios
 
   @40012    @sequenceFieldAtFlexTableAction-gPlanning
   Scenario: Changing sequence of edit row level action item at flex table from config and validating it inside flex table of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Flex Table Action     | Sequence  | 1                 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -503,7 +503,7 @@ Feature: Flex Table Component Scenarios
 
   @40014    @buttonHelpTextFieldAtFlexTableAction-gPlanning
   Scenario: Changing content of button help text field at flex table action from config and validating it inside flex table of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table Action     | Button Help Text |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -518,7 +518,7 @@ Feature: Flex Table Component Scenarios
 
   @40015    @actionURLFieldAtFlexTableAction-gPlanning
   Scenario Outline: Changing action url of action url field for edit action from config and validating it at flex table of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName  | fieldOrignalValue | filterId         |
       | Flex Table Action     | Action URL | <oldActionUrl>    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -538,7 +538,7 @@ Feature: Flex Table Component Scenarios
 
   @40020    @iconCSSFieldAtFlexTableAction-gPlanning
   Scenario: Setup icon for flex table edit action from config and validating it at flex table of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue                                  | filterId         |
       | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableEditActionDefaultIconCss | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -553,7 +553,7 @@ Feature: Flex Table Component Scenarios
 
   @40079    @locationFieldAtFlexTableRowLevelEditAction-gPlanning @smoke
   Scenario: Changing location of roles and responsibilities flex table edit action from row to top from config anf validating it inside Roles and Responsibilities flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Location                   | Row               | ProgramRolesAndResponsibilities | Name                      | Edit                       |
       | Flex Table Action     | Header Action Display Type |                   | ProgramRolesAndResponsibilities | Name                      | Edit                       |
@@ -572,7 +572,7 @@ Feature: Flex Table Component Scenarios
 
   @40080    @locationFieldAtFlexTableTopLevelNewAction-gPlanning
   Scenario: Changing location of roles and responsibilities flex table new action button from top to row from config anf validating it inside Roles and Responsibilities flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Location                   | Top               | ProgramRolesAndResponsibilities | Name                      | New                        |
       | Flex Table Action     | Header Action Display Type | Button            | ProgramRolesAndResponsibilities | Name                      | New                        |
@@ -590,7 +590,7 @@ Feature: Flex Table Component Scenarios
 
   @40087    @headerActionDisplayTypeFieldAtFlexTableTopLevelNewActionAsMenu-gPlanning
   Scenario: Changing display type of roles and responsibilities flex table new action button from button to menu from config anf validating it inside Roles and Responsibilities flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Header Action Display Type | Button            | ProgramRolesAndResponsibilities | Name                      | New                        |
     Given I setup test configuration as below:
@@ -608,7 +608,7 @@ Feature: Flex Table Component Scenarios
 
   @40088    @headerActionDisplayTypeFieldAtFlexTableTopLevelNewActionAsLink-gPlanning
   Scenario: Changing display type of roles and responsibilities flex table new action button from button to menu from config anf validating it inside Roles and Responsibilities flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Header Action Display Type | Button            | ProgramRolesAndResponsibilities | Name                      | New                        |
     Given I setup test configuration as below:
@@ -625,7 +625,7 @@ Feature: Flex Table Component Scenarios
 
   @40096    @headerActionDisplayTypeFieldAtFlexTableTopLevelViewSubmittedApplicationsAsLink-gPlanning @smoke
   Scenario: Changing display type of roles and responsibilities flex table new action button from button to menu from config anf validating it at flex table of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue  |
       | Flex Table Action     | Header Action Display Type | Menu              | Programs           | Name                      | View Submitted Applications |
     Given I setup test configuration as below:
@@ -639,7 +639,7 @@ Feature: Flex Table Component Scenarios
 
   @40100    @showConfirmationBoxFieldForProgramFlexTAbleViewAction-gPlanning
   Scenario: Setup confirmation box for program flex table view action configuration and validating it at flex table of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Show Confirmation Box | false             | Programs           | Name                      | View                       |
     Given I setup test configuration as below:
@@ -655,7 +655,7 @@ Feature: Flex Table Component Scenarios
 
   @40102    @ConfirmationMessageFieldForProgramFlexTAbleViewAction-gPlanning
   Scenario: Setup confirmation message for program flex table view action from configuration and validating it at flex table of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Show Confirmation Box | false             | Programs           | Name                      | View                       |
       | Flex Table Action     | Confirmation Message  |                   | Programs           | Name                      | View                       |
@@ -673,7 +673,7 @@ Feature: Flex Table Component Scenarios
 
   @40103    @modalTitleFieldForProgramFlexTAbleViewAction-gPlanning
   Scenario: Setup modal title for program flex table view action from configuration and validating it at flex table of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action Behavior |                   | Programs           | Name                      | View                       |
       | Flex Table Action     | Modal Title     |                   | Programs           | Name                      | View                       |
@@ -691,7 +691,7 @@ Feature: Flex Table Component Scenarios
 
   @40106    @hideForProfileFieldAtProgramFlexTableEditAction-gPlanning @smoke
   Scenario Outline: Hide edit row level action for specific profile from configuration and validating it at under program flex table- gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName                | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide For Profile         |                            | Programs           | Name                      | Edit                       |
       | Flex Table Action Sobject | Hide Decision Expression | <defaultExpression>        | Programs           | Name                      | Edit                       |
@@ -714,7 +714,7 @@ Feature: Flex Table Component Scenarios
 
   @40109    @hideForUserFieldAtProgramFlexTableEditAction-gPlanning @smoke
   Scenario Outline: Hide edit row level action for specific user from configuration and validating it at under program flex table- gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName                | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide For User            |                            | Programs           | Name                      | Edit                       |
       | Flex Table Action Sobject | Hide Decision Expression | <defaultExpression>        | Programs           | Name                      | Edit                       |
@@ -737,7 +737,7 @@ Feature: Flex Table Component Scenarios
 
   @40112    @hideForContextFieldAtProgramFlexTableEditAction-gPlanning @smoke
   Scenario Outline: Hide edit row level action for view layout from configuration and validating it at under program flex table- gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName                | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide For Context         |                            | Programs           | Name                      | Edit                       |
       | Flex Table Action Sobject | Hide Decision Expression | <defaultExpression>        | Programs           | Name                      | Edit                       |
@@ -760,7 +760,7 @@ Feature: Flex Table Component Scenarios
 
   @40115    @hideDecisionFieldAtProgramFlexTableEditAction-gPlanning @smoke
   Scenario Outline: Hide edit row level action for view layout from configuration and validating it at under program flex table- gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName                | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Decision Expression | <defaultExpression>        | Programs           | Name                      | Edit                       |
       | Flex Table Action Sobject | Hide Decision Field      | <defaultHideDecisionField> | Programs           | Name                      | Edit                       |
@@ -795,7 +795,7 @@ Feature: Flex Table Component Scenarios
 
   @40119    @hideOperatorFieldUsingANDOperatorAtProgramFlexTAbleAction-gPlanning
   Scenario Outline: Hide edit row level action using AND operator for program flex table from configuration and validating it at under programs flex table- gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName                | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide For Profile         |                            | Programs           | Name                      | Edit                       |
       | Flex Table Action Sobject | Hide For User            |                            | Programs           | Name                      | Edit                       |
@@ -821,7 +821,7 @@ Feature: Flex Table Component Scenarios
 
   @40121    @hideOperatorFieldUsingOROperatorAtProgramFlexTAbleAction-gPlanning
   Scenario Outline: Hide edit row level action using AND operator for program flex table from configuration and validating it at under programs flex table- gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName                | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide For Profile         |                            | Programs           | Name                      | Edit                       |
       | Flex Table Action Sobject | Hide For User            |                            | Programs           | Name                      | Edit                       |
@@ -848,7 +848,7 @@ Feature: Flex Table Component Scenarios
 
   @40124    @hideExpressionJSONFieldAtProgramFlexTable-gPlanning @smoke
   Scenario: Hide edit row level action for program flex table from json configuration and validating it under program flex table-gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | Edit                       |
     Given I setup test configuration as below:
@@ -863,7 +863,7 @@ Feature: Flex Table Component Scenarios
 
   @40128    @hideForProfileFieldAtActiveFundingOpprtunityFlexTableCreateAction-gAnnouncement @smoke
   Scenario: Hide create top level action for specific profile from configuration and validating it at under active funding opprtunities flex table- gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide For Profile |                   | ActiveFundingOpportunities | Name                      | Create                     |
     Given I setup test configuration as below:
@@ -877,7 +877,7 @@ Feature: Flex Table Component Scenarios
 
   @40129    @hideForUserFieldAtActiveFundingOpprtunityFlexTableCreateAction-gAnnouncement @smoke
   Scenario: Hide create top level action for specific profile from configuration and validating it at under active funding opprtunities flex table- gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide For User |                   | ActiveFundingOpportunities | Name                      | Create                     |
     Given I setup test configuration as below:
@@ -891,7 +891,7 @@ Feature: Flex Table Component Scenarios
 
   @40217    @hideOperatorFieldUsingANDOperatorAtActiveFundingOpprtunityFlexTableCreateAction-gAnnouncement
   Scenario: Hide create top level action for specific profile from configuration and validating it at under active funding opprtunities flex table- gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide For User    |                   | ActiveFundingOpportunities | Name                      | Create                     |
       | Flex Table Action     | Hide For Profile |                   | ActiveFundingOpportunities | Name                      | Create                     |
@@ -908,7 +908,7 @@ Feature: Flex Table Component Scenarios
 
   @40219    @hideOperatorFieldUsingOROperatorAtActiveFundingOpprtunityFlexTableCreateAction-gAnnouncement
   Scenario: Hide create top level action for specific profile from configuration and validating it at under active funding opprtunities flex table- gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide For User    |                   | ActiveFundingOpportunities | Name                      | Create                     |
       | Flex Table Action     | Hide For Profile |                   | ActiveFundingOpportunities | Name                      | Create                     |
@@ -926,7 +926,7 @@ Feature: Flex Table Component Scenarios
 
   @40220    @hideExpressionJSONFieldAtActiveFundingOpprtunityFlexTableCreateAction-gAnnouncement @smoke
   Scenario: Hide create top level action for specific profile from configuration and validating it at under active funding opprtunities flex table- gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ActiveFundingOpportunities | Name                      | Create                     |
     Given I setup test configuration as below:
@@ -940,7 +940,7 @@ Feature: Flex Table Component Scenarios
 
   @40225    @activeFieldAtFlexTable-gPlanning @smoke
   Scenario: Disabling active programs from list view of program flex table from config and validating it at program flex table-programs
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -955,7 +955,7 @@ Feature: Flex Table Component Scenarios
 
   @34295    @refreshBehaviourFieldAtRolesAndResponsilitiesFlexTableAsRefreshtheGrid-gPlanning
   Scenario: validate flex table action field- refresh the grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table Action     | Refresh Behavior |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -976,7 +976,7 @@ Feature: Flex Table Component Scenarios
 
   @34294    @refreshBehaviourFieldAtRolesAndResponsilitiesFlexTableAsRefreshParentPage-gPlanning
   Scenario: validate flex table action field- refresh parent Page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table Action     | Refresh Behavior |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -996,7 +996,7 @@ Feature: Flex Table Component Scenarios
 
   @34293    @refreshBehaviourFieldAtRolesAndResponsilitiesFlexTableAsCloseModalandRefreshGrid-gPlanning
   Scenario: validate flex table action field- close modal and refresh the grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table Action     | Refresh Behavior |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:

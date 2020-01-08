@@ -5,7 +5,7 @@ Feature: Step Progress Bar Component Scenarios
 
   @34347    @disablingRenderingOfProgressBarForCustomApp-gPlanning @smoke
   Scenario Outline: validate after disabling of progress bar for grantor planning and validating it on program detail page-programs
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                  | fieldName              | fieldOrignalValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Header Config:General | Render for Application | <defaultcustomApp> | PB-0016            |                           |                            |
     Given I setup test configuration as below:
@@ -25,7 +25,7 @@ Feature: Step Progress Bar Component Scenarios
 
   @34348    @disablingRenderingOfProgressBarForUser-gPlanning
   Scenario Outline: validate after disabling of progress bar for internal user and validating it on program detail page-programs
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                  | fieldName       | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Header Config:General | Render for User | <defaultuser>     | PB-0016            |                           |                            |
     Given I setup test configuration as below:
@@ -45,7 +45,7 @@ Feature: Step Progress Bar Component Scenarios
 
   @34349    @disablingRenderingOfParticularStatusProgressBarForUser-gPlanning @smoke
   Scenario Outline: validate after disabling of submit for approval status from progress bar for internal user and validating it on program detail page-programs
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory   | fieldName      | fieldOrignalValue | filterId         |
       | Step Progressbar Detail | Hide For Users |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -65,7 +65,7 @@ Feature: Step Progress Bar Component Scenarios
 
   @34350    @sequenceChangeOfStatusStepInsideStepProgressBar-gPlanning @smoke
   Scenario: validate after changin sequence of submit for approval status to zero and validating it on program detail page-programs
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory   | fieldName | fieldOrignalValue | filterId         |
       | Step Progressbar Detail | Sequence  | 2                 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -81,7 +81,7 @@ Feature: Step Progress Bar Component Scenarios
 
   @34351    @colorFieldOfStepProgressBar-gPlanning @smoke
   Scenario: validate after changing color of created status to different and validating it on program detail page-programs
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                  | fieldName      | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Header Config:General | Complete Color | #3ba10b           | PB-0016            |                           |                            |
     Given I setup test configuration as below:
@@ -97,7 +97,7 @@ Feature: Step Progress Bar Component Scenarios
 
   @34593    @negativeFieldOfStepProgressBar-gPlanning @smoke
   Scenario: validate after enabling negative field for submit for approval step progress bar and validating its appearence on program detail page-programs
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory   | fieldName     | fieldOrignalValue | filterId         |
       | Step Progressbar Detail | Negative Path | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
@@ -116,7 +116,7 @@ Feature: Step Progress Bar Component Scenarios
 
   @37316    @rejectColorFieldAtStepProgressBar-gPlanning
   Scenario: validate after changing color of rejected status to different color and validating it on program detail page-programs
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                  | fieldName    | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Header Config:General | Reject Color | #E60000           | PB-0016            |                           |                            |
     Given I setup test configuration as below:
@@ -132,7 +132,7 @@ Feature: Step Progress Bar Component Scenarios
 
   @37318    @incompleteColorFieldAtStepProgressBar-gPlanning
   Scenario: validate after changing color of rejected status to different color and validating it on program detail page-programs
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                  | fieldName        | fieldOrignalValue | coreComponentField |
       | Step Progressbar Header Config:General | Incomplete Color | #a0a0a0           | PB-0016            |
     Given I setup test configuration as below:
@@ -148,7 +148,7 @@ Feature: Step Progress Bar Component Scenarios
 
   @37324    @displayValueFieldAtStepProgressBAr-gPlanning
   Scenario: validate after changing display value of created disabling of submit for approval status from progress bar for internal user and validating it on program detail page-programs
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory   | fieldName     | fieldOrignalValue | filterId         |
       | Step Progressbar Detail | Display Value | Created           | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -164,7 +164,7 @@ Feature: Step Progress Bar Component Scenarios
 
   @37328    @isCreatedFieldAtStepProgressBar-gPlanning
   Scenario Outline: validate hover text of submit for approval status from progress bar for internal user and validating it on program detail page-programs
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory   | fieldName | fieldOrignalValue | filterId         |
       | Step Progressbar Detail | IsCreated | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:

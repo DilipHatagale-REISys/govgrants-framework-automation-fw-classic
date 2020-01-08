@@ -5,7 +5,7 @@ Feature: Expression Builder Component Scenarios
 
   @42233    @hideExpressioJsonForRightOperandForPMUser-gAnnouncement @smoke
   Scenario: validate disabling of create button for PM user from Announcement-Program
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ActiveFundingOpportunities | Name                      | Create                     |
     Given I setup test configuration as below:
@@ -19,7 +19,7 @@ Feature: Expression Builder Component Scenarios
 
   @42369    @hideExpressioJsonForRightOperandForAdminUser-gAnnouncement
   Scenario: validate disabling of create button for Admin user from Announcement-Program
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ActiveFundingOpportunities | Name                      | Create                     |
     Given I setup test configuration as below:
@@ -33,7 +33,7 @@ Feature: Expression Builder Component Scenarios
 
   @42475    @hideExpressioJsonForRightOperandForProfilePM-gAnnouncement
   Scenario: validate disabling of create button for profile PM from Announcement-Program
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ActiveFundingOpportunities | Name                      | Create                     |
     Given I setup test configuration as below:
@@ -47,7 +47,7 @@ Feature: Expression Builder Component Scenarios
 
   @42370    @hideExpressioJsonForRightOperandForProfileSystemAdministrator-gAnnouncement
   Scenario: validate disabling of create button for profile system administrator from Announcement-Program
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ActiveFundingOpportunities | Name                      | Create                     |
     Given I setup test configuration as below:
@@ -65,7 +65,7 @@ Feature: Expression Builder Component Scenarios
 
   @42476    @hideExpressioJsonForRightOperandForProfilePMWithOperatorNotIn-gAnnouncement
   Scenario: validate disabling of create button for profile PM With Operator Not In from Announcement-Program
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ActiveFundingOpportunities | Name                      | Create                     |
     Given I setup test configuration as below:
@@ -79,7 +79,7 @@ Feature: Expression Builder Component Scenarios
 
   @42371    @hideExpressioJsonForRightOperandForProfileAdministratorWithOperatorNotIn-gAnnouncement
   Scenario: validate create button is present for profile Administrator with Operator Not In from Announcement-Program
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ActiveFundingOpportunities | Name                      | Create                     |
     Given I setup test configuration as below:
@@ -93,7 +93,7 @@ Feature: Expression Builder Component Scenarios
 
   @42479    @hideExpressioJsonForRightOperandForUserTypeInternalWithOperatorIn-gAnnouncement @smoke
   Scenario: validate disabling of create button for user type Internal with Operator In from Announcement-Program
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ActiveFundingOpportunities | Name                      | Create                     |
     Given I setup test configuration as below:
@@ -107,7 +107,7 @@ Feature: Expression Builder Component Scenarios
 
   @42480    @hideExpressioJsonForRightOperandForUserTypeInternalWithOperatorNotIn-gAnnouncement
   Scenario: validate disabling of create button for user type Internal with Operator Not In from Announcement-Program
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ActiveFundingOpportunities | Name                      | Create                     |
     Given I setup test configuration as below:
@@ -121,7 +121,7 @@ Feature: Expression Builder Component Scenarios
 
   @42483    @hideExpressioJsonForRightOperandForUserTypeInternalWithOperatorNotIn-Reviewer-gAnnouncement
   Scenario: validate disabling of create button for user type Internal with Operator Not In from Announcement-Program
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ActiveFundingOpportunities | Name                      | Create                     |
     Given I setup test configuration as below:
@@ -135,7 +135,7 @@ Feature: Expression Builder Component Scenarios
 
   @42490    @hideExpressioJsonForRightOperandForUserType-Internal-gAnnouncement
   Scenario: validate disabling of create button for user type Internal from Announcement-Program
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ActiveFundingOpportunities | Name                      | Create                     |
     Given I setup test configuration as below:
@@ -149,7 +149,7 @@ Feature: Expression Builder Component Scenarios
 
   @42491    @hideExpressioJsonForRightOperandForUserType-Applicant-gAnnouncement
   Scenario: validate disabling of create button for user type Appplicant from Announcement-Program
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ActiveFundingOpportunities | Name                      | Create                     |
     Given I setup test configuration as below:
@@ -163,7 +163,7 @@ Feature: Expression Builder Component Scenarios
 
   @42492    @hideExpressioJsonForRightOperandForUserType-Reviewer-gAnnouncement
   Scenario: validate disabling of create button for user type Reviewer from Announcement-Program
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ActiveFundingOpportunities | Name                      | Create                     |
     Given I setup test configuration as below:
@@ -177,7 +177,7 @@ Feature: Expression Builder Component Scenarios
 
   @42499    @hideExpressioJsonForRightOperandForContextViewWithOperatorIn-gPlanning @smoke
   Scenario: validate disabling of create button for context view with operator IN -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ProgramFundingAccount | Name                      | Associate                  |
     Given I setup test configuration as below:
@@ -194,7 +194,7 @@ Feature: Expression Builder Component Scenarios
 
   @42612    @hideExpressioJsonForRightOperandForContextEditWithOperatorIn-gPlanning
   Scenario: validate disabling of create button for context edit with operator IN -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ProgramFundingAccount | Name                      | Associate                  |
     Given I setup test configuration as below:
@@ -211,7 +211,7 @@ Feature: Expression Builder Component Scenarios
 
   @42684    @hideExpressioJsonForRightOperandForContextViewWithOperatorNotIn-gPlanning
   Scenario: validate disabling of create button for context view with operator Not IN -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ProgramFundingAccount | Name                      | Associate                  |
     Given I setup test configuration as below:
@@ -228,7 +228,7 @@ Feature: Expression Builder Component Scenarios
 
   @42685    @hideExpressioJsonForRightOperandForContextEditWithOperatorNotIn-gPlanning
   Scenario: validate disabling of create button for context edit with operator Not IN -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ProgramFundingAccount | Name                      | Associate                  |
     Given I setup test configuration as below:
@@ -245,7 +245,7 @@ Feature: Expression Builder Component Scenarios
 
   @42690    @hideExpressioJsonForRightOperandForUserAppStateAsGrantorWithOperatorIn-gPlanning
   Scenario: validate disabling of create button for user app state as grantor with operator IN -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ProgramFundingAccount | Name                      | Associate                  |
     Given I setup test configuration as below:
@@ -262,7 +262,7 @@ Feature: Expression Builder Component Scenarios
 
   @42691    @hideExpressioJsonForRightOperandForUserAppStateAsGranteeWithOperatorInAtFlexTableAction-gOpportunities
   Scenario: validate disabling of Associate button for user app state as grantee with operator IN-gOpportuities
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | OpporunityGranteeServiceArea | Name                      | Associate                  |
     Given I setup test configuration as below:
@@ -278,7 +278,7 @@ Feature: Expression Builder Component Scenarios
 
   @42694    @hideExpressioJsonForRightOperandForUserAppStateAsAdministratorWithOperatorIn-gSetup
   Scenario: validate disabling of New button for User app State as Administrator with operator IN-gSetup
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | CreatedandInactiveOrganizations | Name                      | New                        |
     Given I setup test configuration as below:
@@ -291,7 +291,7 @@ Feature: Expression Builder Component Scenarios
 
   @42701    @hideExpressioJsonForRightOperandForFieldWithOperatorEquals-gPlanning
   Scenario: validate disabling of Associate button for field with operator Equals-gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ProgramFundingAccount | Name                      | Associate                  |
     Given I setup test configuration as below:
@@ -308,7 +308,7 @@ Feature: Expression Builder Component Scenarios
 
   @42704    @hideExpressioJsonForRightOperandForUserAppRecipientWithOperatorIn-gPlanning
   Scenario: validate disabling of Associate button for user app Recipient with operator In -gOpportunities
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | GrantProjectAreas  | Name                      | View                       |
     Given I setup test configuration as below:
@@ -324,7 +324,7 @@ Feature: Expression Builder Component Scenarios
 
   @44283    @hideExpressioJsonForRightOperandForUserAppRecipientandOperatorInAtPageLayoutAction-gPlanning
   Scenario: validate disabling of Create button for user app Recipient with operator In -gOpportunities
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField                     | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Qualified Annoucement External Grantor | Name                      | Create Application         |
     Given I setup test configuration as below:
@@ -340,7 +340,7 @@ Feature: Expression Builder Component Scenarios
 
   @42708    @hideExpressioJsonForRightOperandForProfileSystemAdministratorWithOperatorAND-gPlanning @smoke
   Scenario: validate disabling of Associate button for profile system adminitrator with operator AND -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ProgramFundingAccount | Name                      | Associate                  |
     Given I setup test configuration as below:
@@ -357,7 +357,7 @@ Feature: Expression Builder Component Scenarios
 
   @42710    @hideExpressioJsonForRightOperandForProfileSystemAdministratorWithOperatorOR-gPlanning
   Scenario: validate disabling of Associate button for profile system adminitrator with operator OR -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ProgramFundingAccount | Name                      | Associate                  |
     Given I setup test configuration as below:
@@ -374,7 +374,7 @@ Feature: Expression Builder Component Scenarios
 
   @42711    @hideExpressioJsonForRightOperandForUserTypeInternalAndContextViewWithOperatorAND-gPlanning
   Scenario: validate disabling of Associate button for user type Internal and context view with operator AND -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ProgramFundingAccount | Name                      | Associate                  |
     Given I setup test configuration as below:
@@ -391,7 +391,7 @@ Feature: Expression Builder Component Scenarios
 
   @42712    @hideExpressioJsonForRightOperandForUserTypeInternalAndContextViewWithOperatorOR-gPlanning
   Scenario: validate disabling of Associate button for user type Internal and context view with operator OR -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ProgramFundingAccount | Name                      | Associate                  |
     Given I setup test configuration as below:
@@ -408,7 +408,7 @@ Feature: Expression Builder Component Scenarios
 
   @42714    @hideExpressioJsonForRightOperandForUserTypeInternalAndUserAppSAGrantorWithOperatorAND-gPlanning
   Scenario: validate disabling of Associate button for user type Internal and user app state as grantor with operator AND -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ProgramFundingAccount | Name                      | Associate                  |
     Given I setup test configuration as below:
@@ -425,7 +425,7 @@ Feature: Expression Builder Component Scenarios
 
   @42716    @hideExpressioJsonForRightOperandForUserTypeInternalAndUserAppSAGrantorWithOperatorOR-gPlanning
   Scenario: validate disabling of Associate button for user type Internal and user app state as grantor with operator OR -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ProgramFundingAccount | Name                      | Associate                  |
     Given I setup test configuration as below:
@@ -442,7 +442,7 @@ Feature: Expression Builder Component Scenarios
 
   @42717    @hideExpressioJsonForRightOperandForProfileSystemAdministratorAndUserAppSAGrantorWithOperatorOR-gPlanning
   Scenario: validate disabling of Associate button for profile sys Administrator and user app state as grantor with operator OR -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ProgramFundingAccount | Name                      | Associate                  |
     Given I setup test configuration as below:
@@ -459,7 +459,7 @@ Feature: Expression Builder Component Scenarios
 
   @42719    @hideExpressioJsonForRightOperandForProfileSystemAdministratorAndUserAppSAGrantorWithOperatorAND-gPlanning
   Scenario: validate disabling of Associate button for profile sys Administrator and user app state as grantor with operator AND -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ProgramFundingAccount | Name                      | Associate                  |
     Given I setup test configuration as below:
@@ -476,7 +476,7 @@ Feature: Expression Builder Component Scenarios
 
   @42720    @hideExpressioJsonForRightOperandForProfileSystemAdministratorAndContextViewWithOperatorAND-gPlanning
   Scenario: validate disabling of Associate button for profile Sys Administrator and Context View with operator AND -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ProgramFundingAccount | Name                      | Associate                  |
     Given I setup test configuration as below:
@@ -493,7 +493,7 @@ Feature: Expression Builder Component Scenarios
 
   @42722    @hideExpressioJsonForRightOperandForProfileSystemAdministratorAndContextViewWithOperatorOR-gPlanning
   Scenario: validate disabling of Associate button for profile Sys Administrator and Context View with operator OR -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ProgramFundingAccount | Name                      | Associate                  |
     Given I setup test configuration as below:
@@ -510,7 +510,7 @@ Feature: Expression Builder Component Scenarios
 
   @42806    @hideExpressioJsonForRightOperandForContextViewAndUserAppSAGrantorWithOperatorAND-gPlanning
   Scenario: validate disabling of Associate button for context view and user app state as grantor with operator AND -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ProgramFundingAccount | Name                      | Associate                  |
     Given I setup test configuration as below:
@@ -527,7 +527,7 @@ Feature: Expression Builder Component Scenarios
 
   @42807    @hideExpressioJsonForRightOperandForContextViewAndUserAppSAGrantorWithOperatorOR-gPlanning
   Scenario: validate disabling of Associate button for context view and user app state as grantor with operator OR -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ProgramFundingAccount | Name                      | Associate                  |
     Given I setup test configuration as below:
@@ -544,7 +544,7 @@ Feature: Expression Builder Component Scenarios
 
   @42808    @hideExpressioJsonForRightOperandForFieldAndUserTypeInternalWithOperatorAND-gPlanning
   Scenario: validate disabling of Associate button for Field and user type internal with operator AND -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ProgramFundingAccount | Name                      | Associate                  |
     Given I setup test configuration as below:
@@ -561,7 +561,7 @@ Feature: Expression Builder Component Scenarios
 
   @42833    @hideExpressioJsonForRightOperandForFieldAndProfileSystemAdministratorWithOperatorAND-gPlanning
   Scenario: validate disabling of Associate button for Field and profile system administrator with operator AND -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ProgramFundingAccount | Name                      | Associate                  |
     Given I setup test configuration as below:
@@ -578,7 +578,7 @@ Feature: Expression Builder Component Scenarios
 
   @42835    @hideExpressioJsonForRightOperandForFieldAndProfileSystemAdministratorWithOperatorOR-gPlanning
   Scenario: validate disabling of Associate button for Field and profile system administrator with operator OR -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ProgramFundingAccount | Name                      | Associate                  |
     Given I setup test configuration as below:
@@ -595,7 +595,7 @@ Feature: Expression Builder Component Scenarios
 
   @42836    @hideExpressioJsonForRightOperandForFieldAndContextEditWithOperatorAND-gPlanning
   Scenario: validate disabling of Associate button for Field and context edit with operator AND -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ProgramFundingAccount | Name                      | Associate                  |
     Given I setup test configuration as below:
@@ -612,7 +612,7 @@ Feature: Expression Builder Component Scenarios
 
   @42837    @hideExpressioJsonForRightOperandForFieldAndContextEditWithOperatorOR-gPlanning
   Scenario: validate disabling of Associate button for Field and context edit with operator OR -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ProgramFundingAccount | Name                      | Associate                  |
     Given I setup test configuration as below:
@@ -629,7 +629,7 @@ Feature: Expression Builder Component Scenarios
 
   @42838    @hideExpressioJsonForRightOperandForFieldAndUserAppSAGrantorWithOperatorAND-gPlanning
   Scenario: validate disabling of Associate button for Field and user app state as grantor with operator AND -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ProgramFundingAccount | Name                      | Associate                  |
     Given I setup test configuration as below:
@@ -646,7 +646,7 @@ Feature: Expression Builder Component Scenarios
 
   @42839    @hideExpressioJsonForRightOperandForFieldAndUserAppSAGrantorWithOperatorOR-gPlanning
   Scenario: validate disabling of Associate button for Field and user app state as grantor with operator OR -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ProgramFundingAccount | Name                      | Associate                  |
     Given I setup test configuration as below:
@@ -663,7 +663,7 @@ Feature: Expression Builder Component Scenarios
 
   @43226    @hideExpressioJsonForLeftOperandForFieldWithOperatorNotEquals-gPlanning @smoke
   Scenario: validate Associate button is present for Field with operator NotEquals -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ProgramFundingAccount | Name                      | Associate                  |
     Given I setup test configuration as below:
@@ -680,7 +680,7 @@ Feature: Expression Builder Component Scenarios
 
   @43229    @hideExpressioJsonForLeftOperandForFieldWithOperatorNotEqualsAtDifferentPrograms-gPlanning
   Scenario: validate Associate button is not present for other programs which is not defined in Json  with operator NotEquals -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ProgramFundingAccount | Name                      | Associate                  |
     Given I setup test configuration as below:
@@ -697,7 +697,7 @@ Feature: Expression Builder Component Scenarios
 
   @43720    @hideExpressioJsonForLeftOperandForFieldUsingPicklistWithOperatorEqualsTo-gPlanning @smoke
   Scenario: validate disabling of Associate button for field using picklist value grant with operator Equals To -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ProgramFundingAccount | Name                      | Associate                  |
     Given I setup test configuration as below:
@@ -714,7 +714,7 @@ Feature: Expression Builder Component Scenarios
 
   @43721    @hideExpressioJsonForLeftOperandForFieldUsingLookupWithOperatorEqualsTo-gPlanning
   Scenario: validate disabling of Associate button for field using lookup relationship with operator Equals To -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ProgramFundingAccount | Name                      | Associate                  |
     Given I setup test configuration as below:
@@ -731,7 +731,7 @@ Feature: Expression Builder Component Scenarios
 
   @43722    @hideExpressioJsonForLeftOperandForFieldUsingPicklistWithOperatorNotEqualsTo-gPlanning
   Scenario: validate Associate button is present for Field using picklist with operator Not Equals To -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ProgramFundingAccount | Name                      | Associate                  |
     Given I setup test configuration as below:
@@ -748,7 +748,7 @@ Feature: Expression Builder Component Scenarios
 
   @43723    @hideExpressioJsonForLeftOperandForFieldUsingLookupWithOperatorNotEqualsTo-gPlanning @smoke
   Scenario: validate Associate button is present for Field using lookup with operator Not Equals To -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ProgramFundingAccount | Name                      | Associate                  |
     Given I setup test configuration as below:
@@ -765,7 +765,7 @@ Feature: Expression Builder Component Scenarios
 
   @43881    @hideExpressioJsonForLeftOperandForFieldUsingOperatorContains-gPlanning
   Scenario: validate disabling of Associate button for field with operator Contains -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ProgramFundingAccount | Name                      | Associate                  |
     Given I setup test configuration as below:
@@ -782,7 +782,7 @@ Feature: Expression Builder Component Scenarios
 
   @43883    @hideExpressioJsonForLeftOperandForFieldUsingOperatorLessThanEquals-gAnnouncement @smoke
   Scenario: validate disabling of Associate button for field with operator Less than equals -gAnnouncement
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | AnnouncementFundingAccount | Name                      | Associate                  |
     Given I setup test configuration as below:
@@ -799,7 +799,7 @@ Feature: Expression Builder Component Scenarios
 
   @43884    @hideExpressioJsonForLeftOperandForFieldUsingOperatorLessThanEqualsWithDiffAnnouncement-gAnnouncement
   Scenario: validate disabling of Associate button for field with operator equals(less than equals) -gAnnouncement
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | AnnouncementFundingAccount | Name                      | Associate                  |
     Given I setup test configuration as below:
@@ -816,7 +816,7 @@ Feature: Expression Builder Component Scenarios
 
   @43885    @hideExpressioJsonForLeftOperandForFieldUsingOperatorGreaterThanEquals-gAnnouncement
   Scenario: validate disabling of Associate button for field with operator greater than equals -gAnnouncement
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | AnnouncementFundingAccount | Name                      | Associate                  |
     Given I setup test configuration as below:
@@ -833,7 +833,7 @@ Feature: Expression Builder Component Scenarios
 
   @43886    @hideExpressioJsonForLeftOperandForFieldUsingOperatorGreaterThanEqualsWithDifferentAnnouncement-gAnnouncement
   Scenario: validate disabling of Associate button for field with operator euuals(greater than equals) -gAnnouncement
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | AnnouncementFundingAccount | Name                      | Associate                  |
     Given I setup test configuration as below:
@@ -850,7 +850,7 @@ Feature: Expression Builder Component Scenarios
 
   @43887    @hideExpressioJsonForLeftOperandForFieldUsingOperatorLessThan-gAnnouncement
   Scenario: validate disabling of Associate button for field with operator less than -gAnnouncement
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | AnnouncementFundingAccount | Name                      | Associate                  |
     Given I setup test configuration as below:
@@ -867,7 +867,7 @@ Feature: Expression Builder Component Scenarios
 
   @43888    @hideExpressioJsonForLeftOperandForFieldUsingOperatorGreaterThan-gAnnouncement
   Scenario: validate disabling of Associate button for field with operator greater than -gAnnouncement
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | AnnouncementFundingAccount | Name                      | Associate                  |
     Given I setup test configuration as below:
@@ -884,7 +884,7 @@ Feature: Expression Builder Component Scenarios
 
   @43889    @hideExpressioJsonForLeftOperandForFieldUsingOperatorNotIn-gPlanning
   Scenario: validate Associate button is present for Field using lookup with operator Not In -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ProgramFundingAccount | Name                      | Associate                  |
     Given I setup test configuration as below:
@@ -901,7 +901,7 @@ Feature: Expression Builder Component Scenarios
 
   @43890    @hideExpressioJsonForLeftOperandForProfilePMAtPageLayout-gPlanning
   Scenario: Hide Submit for approval button for Profile PM using hide expression Json -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantee State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
@@ -917,7 +917,7 @@ Feature: Expression Builder Component Scenarios
 
   @43891    @hideExpressioJsonForLeftOperandForProfilePMAndSystemAdminAtPageLayout-gPlanning @smoke
   Scenario: Hide Submit for approval button for Profile PM (PM and System Admin)using hide expression Json -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantee State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
@@ -933,7 +933,7 @@ Feature: Expression Builder Component Scenarios
 
   @43892    @hideExpressioJsonForLeftOperandForProfileSystemAdminAndPMAtPageLayout-gPlanning
   Scenario: Hide Submit for approval button for Profile PM (System Admin and PM)using hide expression Json -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantee State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
@@ -949,7 +949,7 @@ Feature: Expression Builder Component Scenarios
 
   @43893    @hideExpressioJsonForLeftOperandForProfilePMWithOperatorNotInAtPageLayout-gPlanning
   Scenario: Validate submit for approval button is present for Profile PM with operator Not In using hide expression Json -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantee State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
@@ -965,7 +965,7 @@ Feature: Expression Builder Component Scenarios
 
   @44158    @hideExpressioJsonForLeftOperandForProfilePMWithOperatorNotInLoggingAsAdmminAtPageLayout-gPlanning @smoke
   Scenario: Hide Submit for approval button for system admin using Profile PM with operator Not In -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantee State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
@@ -981,7 +981,7 @@ Feature: Expression Builder Component Scenarios
 
   @44160    @hideExpressioJsonForLeftOperandForUserTypeInternalWithOperatorInAtPageLayout-gPlanning
   Scenario: Hide Submit for approval button for internal user using user type internal and operator In -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantee State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
@@ -997,7 +997,7 @@ Feature: Expression Builder Component Scenarios
 
   @44210    @hideExpressioJsonForLeftOperandForUserTypeInternalWithOperatorNotInAtPageLayout-gPlanning
   Scenario: Validate submit for approval button is present for internal user using user type internal and operator NotIn -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantee State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
@@ -1013,7 +1013,7 @@ Feature: Expression Builder Component Scenarios
 
   @44211    @hideExpressioJsonForLeftOperandForUserTypeInternalWithOperatorNotInAtPageLayout-Reviewer-gPlanning
   Scenario: Hide submit for approval button for different user like reviewer except internal user using user type internal and operator NotIn -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantee State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
@@ -1029,7 +1029,7 @@ Feature: Expression Builder Component Scenarios
 
   @44212    @hideExpressioJsonForLeftOperandForUserTypeInternalAndReviewerAndApplicantWithOPeratorInAtPageLayout-Internal-gPlanning
   Scenario: Hide submit for approval button for user like intenal and applicant and reviewer using user type internal Applicant and reviewer and operator In -Internal-gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantee State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
@@ -1045,7 +1045,7 @@ Feature: Expression Builder Component Scenarios
 
   @44213    @hideExpressioJsonForLeftOperandForUserTypeInternalAndReviewerAndApplicantWithOPeratorInAtPageLayout-Reviewer-gPlanning
   Scenario: Hide submit for approval button for user like intenal and applicant and reviewer using user type internal Applicant and reviewer and operator In -Reviewer-gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantee State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
@@ -1061,7 +1061,7 @@ Feature: Expression Builder Component Scenarios
 
   @44214    @hideExpressioJsonForLeftOperandForUserTypeInternalAndReviewerAndApplicantWithOPeratorInAtPageLayout-Applicant-gPlanning
   Scenario: Hide submit for approval button for user like intenal and applicant and reviewer using user type internal Applicant and reviewer and operator In -Applicant-gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantee State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
@@ -1077,7 +1077,7 @@ Feature: Expression Builder Component Scenarios
 
   @44215    @hideExpressioJsonForLeftOperandForContextViewWithOperatorInAtPageLayout-gPlanning
   Scenario: Hide submit for approval button for context view with operator IN-gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantee State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
@@ -1093,7 +1093,7 @@ Feature: Expression Builder Component Scenarios
 
   @44216    @hideExpressioJsonForLeftOperandForContextViewWithOperatorNotInAtPageLayout-gPlanning
   Scenario: Validate submit for approval button is present for context view with operator Not IN-gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantee State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
@@ -1109,7 +1109,7 @@ Feature: Expression Builder Component Scenarios
 
   @44222    @hideExpressioJsonForLeftOperandForUserTypeStateAsGrantorWithOperatorInAtPageLayout-gPlanning
   Scenario: Hide submit for approval button for user type state as grantor with operator IN-gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantee State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
@@ -1125,7 +1125,7 @@ Feature: Expression Builder Component Scenarios
 
   @44223    @hideExpressioJsonForLeftOperandForUserTypeStateAsGranteeWithOperatorInAtPageLayout-gAnnouncement
   Scenario: Hide submit for approval button for user type state as grantee with operator IN-gOpportunities
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | AnnouncementGrantee | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
@@ -1141,7 +1141,7 @@ Feature: Expression Builder Component Scenarios
 
   @44282    @hideExpressioJsonForLeftOperandForUserAppStateAsAdministratorWithOperatorInAtPageLayout-gPlanning @smoke
   Scenario: Hide Activate button for user type state as Administrator with operator IN-gSetup
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField          | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | GranteeOrganizationInternal | Name                      | Activate                   |
     Given I setup test configuration as below:
@@ -1157,7 +1157,7 @@ Feature: Expression Builder Component Scenarios
 
   @44284    @hideExpressioJsonForLeftOperandForFieldWithOperatorEqualsAtPageLayout-gPlanning
   Scenario: Hide submit for approval button for field with operator Equals-gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantee State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
@@ -1173,7 +1173,7 @@ Feature: Expression Builder Component Scenarios
 
   @44285    @hideExpressioJsonForLeftOperandForProfileSystemAdministratorAndUserTypeInternalInternalWithOperatorANDAtPageLayout-gPlanning @smoke
   Scenario: Hide Submit for approval button for profile system administrator and user type internal with operator AND-gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantee State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
@@ -1189,7 +1189,7 @@ Feature: Expression Builder Component Scenarios
 
   @44286    @hideExpressioJsonForLeftOperandForProfileSystemAdministratorAndUserTypeInternalInternalWithOperatorORAtPageLayout-gPlanning
   Scenario: Hide Submit for approval button for profile system administrator and user type internal with operator OR-gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantee State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
@@ -1205,7 +1205,7 @@ Feature: Expression Builder Component Scenarios
 
   @44316    @hideExpressioJsonForLeftOperandForUserTypeInternalContextViewWithOperatorANDAtPageLayout-gPlanning
   Scenario: Hide Submit for approval button for user type internal and context view with operator AND-gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantee State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
@@ -1221,7 +1221,7 @@ Feature: Expression Builder Component Scenarios
 
   @44317    @hideExpressioJsonForLeftOperandForUserTypeInternalContextViewWithOperatorORAtPageLayout-gPlanning
   Scenario: Hide Submit for approval button for user type internal and context view with operator OR-gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantee State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
@@ -1237,7 +1237,7 @@ Feature: Expression Builder Component Scenarios
 
   @44318    @hideExpressioJsonForLeftOperandForUserTypeInternalUserAppSAGrantorWithOperatorANDAtPageLayout-gPlanning @smoke
   Scenario: Hide Submit for approval button for user type internal and user app state as grantor with operator AND-gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantee State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
@@ -1253,7 +1253,7 @@ Feature: Expression Builder Component Scenarios
 
   @45289    @HideExpressionLeftOperandUseOROperatorWithWHEREClauseAsADMINandAppAsStateGrantorPageLayout-gPlanning
   Scenario: Hide Submit for approval button for user type internal and user app state as grantor with operator OR -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantee State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
@@ -1269,7 +1269,7 @@ Feature: Expression Builder Component Scenarios
 
   @45291    @HideExpressionLeftOperandUseANDOperatorWithWHEREClauseAsADMINandAppAsStateGrantorPageLayout-gPlanning
   Scenario: Hide Submit for approval button for user type internal and user app state as grantor with operator AND -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantee State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
@@ -1285,7 +1285,7 @@ Feature: Expression Builder Component Scenarios
 
   @45294    @HideExpressionLeftOperandUseAllDataTypesOfFieldUsingANDOperatorWithWHEREClauseAsADMINandAppAsStateGrantorPageLayout-gPlanning @smoke
   Scenario: Hide Submit for approval button for user type internal and user app state as grantor with Use All Data Types Of Field Using AND operator -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantee State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
@@ -1301,7 +1301,7 @@ Feature: Expression Builder Component Scenarios
 
   @45295    @hide_expression_using_OR_operator_for_fields_text,picklist,date,lookup,longtextarea @smoke
   Scenario: Hide SUBMIT FOR APPROVAL button for user type internal and user app state as grantor with Use All Data Types Of Field Using OR operator for fields text,picklist,date,lookup,longtextarea -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantee State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
@@ -1317,7 +1317,7 @@ Feature: Expression Builder Component Scenarios
 
   @45296    @hide_expression_using_AND_operator_for_all_fields_using_group_expression
   Scenario: Hide SUBMIT FOR APPROVAL button for user type internal and user app state as grantor with Use All Data Types Of Field Using AND operator for all fields using group expression -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantee State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
@@ -1333,7 +1333,7 @@ Feature: Expression Builder Component Scenarios
 
   @45306    @hide_expression_using_OR_operator_using_group_expression
   Scenario: Hide SUBMIT FOR APPROVAL button for user type internal and user app state as grantor with group expression using OR Operator -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantee State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
@@ -1349,7 +1349,7 @@ Feature: Expression Builder Component Scenarios
 
   @45311    @hide_expression_using_IN_operator_for_left_operand_profile_as_Admin
   Scenario: Hide SUBMIT FOR APPROVAL button for user type internal and user app state as grantor with left operand profile as Admin using IN Operator -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantee State Program | Name                      | TAB-029                    |
     Given I setup test configuration as below:
@@ -1366,7 +1366,7 @@ Feature: Expression Builder Component Scenarios
 
   @45313    @hide_expression_Overview_Tab_using_IN_operator_and_Left_Operand=Profile_As_PM @smoke
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with IN operand and Left operator as Profile PM -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantee State Program | Name                      | TAB-029                    |
     Given I setup test configuration as below:
@@ -1382,7 +1382,7 @@ Feature: Expression Builder Component Scenarios
 
   @45316    @hide_expression_Overview_Tab_using_OR_operator_and_Left_Operand=Profile_As_Admin_PM
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with OR operand and Left operator as Profile Admin PM -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantee State Program | Name                      | TAB-029                    |
     Given I setup test configuration as below:
@@ -1398,7 +1398,7 @@ Feature: Expression Builder Component Scenarios
 
   @45317    @hide_expression_Overview_Tab_using_IN_operator_and_Left_Operand_USERTYPE=Internal
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with IN operator and Left Operand USERTYPE
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantee State Program | Name                      | TAB-029                    |
     Given I setup test configuration as below:
@@ -1414,7 +1414,7 @@ Feature: Expression Builder Component Scenarios
 
   @45319    @hide_expression_Overview_Tab_using_AND_operator_and_Left_Operand_USERTYPE=Internal @smoke
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with AND operator and Left Operand USERTYPE
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantee State Program | Name                      | TAB-029                    |
     Given I setup test configuration as below:
@@ -1430,7 +1430,7 @@ Feature: Expression Builder Component Scenarios
 
   @45320    @hide_expression_Overview_Tab_using_IN_operator_and_Left_Operand_AS_Context_View
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with IN operator and Left Operand AS Context View
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantee State Program | Name                      | TAB-029                    |
     Given I setup test configuration as below:
@@ -1446,7 +1446,7 @@ Feature: Expression Builder Component Scenarios
 
   @45322    @hide_expression_Overview_Tab_using_NOTIN_operator_and_Left_Operand_AS_Context
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with NOTIN operator and Left Operand AS Context
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantee State Program | Name                      | TAB-029                    |
     Given I setup test configuration as below:
@@ -1462,7 +1462,7 @@ Feature: Expression Builder Component Scenarios
 
   @45323    @hide_expression_Overview_Tab_using_AND_operator_and_Left_Operand_AS_Context_View_And_Admin_Profile @smoke
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with AND operator and Left Operand AS Context View and Admin Profile
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantee State Program | Name                      | TAB-029                    |
     Given I setup test configuration as below:
@@ -1478,7 +1478,7 @@ Feature: Expression Builder Component Scenarios
 
   @45324    @hide_expression_Overview_Tab_using_OR_operator_and_Left_Operand_AS_Context_And_Profile
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with OR operator and Left Operand AS Context And Profile
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantee State Program | Name                      | TAB-029                    |
     Given I setup test configuration as below:
@@ -1494,7 +1494,7 @@ Feature: Expression Builder Component Scenarios
 
   @45325    @hide_expression_Overview_Tab_using_OR_operator_and_Left_Operand_AS_Context_View_And_Admin_Profile @smoke
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with OR operator and Left Operand AS Context View and Admin Profile
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantee State Program | Name                      | TAB-029                    |
     Given I setup test configuration as below:
@@ -1510,7 +1510,7 @@ Feature: Expression Builder Component Scenarios
 
   @45327    @hide_expression_Overview_Tab_using_AND_operator_and_Left_Operand_AS_Context_And_UserType
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with AND operator and Left Operand AS Context and UserType
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantee State Program | Name                      | TAB-029                    |
     Given I setup test configuration as below:
@@ -1526,7 +1526,7 @@ Feature: Expression Builder Component Scenarios
 
   @45329    @hide_expression_Overview_Tab_using_OR_operator_and_Left_Operand_AS_Context_And_UserType
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with OR operator and Left Operand AS Context and UserType
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantee State Program | Name                      | TAB-029                    |
     Given I setup test configuration as below:
@@ -1542,7 +1542,7 @@ Feature: Expression Builder Component Scenarios
 
   @45702    @hide_expression_Program_Information_Page_Block_IN_Operator_SysAdmin_Profile
   Scenario: Hide Program Information from Overview Tab for user type internal using IN operator System Admin
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1558,7 +1558,7 @@ Feature: Expression Builder Component Scenarios
 
   @45704    @hide_expression_Program_Information_Page_Block_IN_Operator_PM_User_Profile
   Scenario: Hide Program Information from Overview Tab for PM User type internal using IN operator
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1574,7 +1574,7 @@ Feature: Expression Builder Component Scenarios
 
   @45705    @hide_expression_Program_Information_Page_Block_IN_Operator_PM_ADMIN_User_Profile @smoke
   Scenario: Hide Program Information from Overview Tab for PM-ADMIN User type internal using IN operator
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1590,7 +1590,7 @@ Feature: Expression Builder Component Scenarios
 
   @45709    @hide_expression_Program_Information_Page_Block_UserTypeIN_Internal_AND_ProfileIN_SystemAdministrator
   Scenario: Hide Program Information from Overview Tab for ADMIN User type internal using (UserTypeIN(Internal)ANDProfileIN(SystemAdministrator))
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1606,7 +1606,7 @@ Feature: Expression Builder Component Scenarios
 
   @45707    @hide_expression_Program_Information_Page_Block_LeftOperandsprofileNOTINoperator_ADMIN_PM @smoke
   Scenario: Hide Program Information from Overview Tab for ADMIN PM User type internal using LeftOperandsprofileNOTINoperator(ADMIN,PM)
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1622,7 +1622,7 @@ Feature: Expression Builder Component Scenarios
 
   @45708    @hide_expression_Program_Information_Page_Block_LeftOperands_UserTypeIN_Internal
   Scenario: Hide Program Information from Overview Tab for ADMIN User type internal using LeftOperands(UserTypeIN(Internal))
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1638,7 +1638,7 @@ Feature: Expression Builder Component Scenarios
 
   @45711    @hide_expression_Program_Information_Page_Block_Title_Context_InEdit
   Scenario: Hide Program Information from Overview Tab for ADMIN User type internal using Context IN at program edit page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1654,7 +1654,7 @@ Feature: Expression Builder Component Scenarios
 
   @45712    @hide_expression_Program_Information_Page_Block_Title_Context_InView
   Scenario: Hide Program Information from Overview Tab for ADMIN User type internal using context IN at program view page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1670,7 +1670,7 @@ Feature: Expression Builder Component Scenarios
 
   @45713    @hide_expression_Program_Information_Page_Block_Title_Context_NotIn_With_Create_Edit
   Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User type internal using context NOT IN (create,Edit)at program Edit page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1686,7 +1686,7 @@ Feature: Expression Builder Component Scenarios
 
   @45719    @hide_expression_Program_Information_Page_Block_Title_Context_NOT_IN_Edit_Create_OR_UserType_IN_Internal
   Scenario: Hide Program Information from Overview Tab for ADMIN User type internal using (Context NOT IN ( Edit, Create ) OR UserType IN ( Internal ))
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1702,7 +1702,7 @@ Feature: Expression Builder Component Scenarios
 
   @45717    @hide_expression_Program_Information_Page_Block_Title_Context_Context_NOT_IN_Edit_Create_AND_UserType_IN_Internal
   Scenario: Hide Program Information from Overview Tab for ADMIN User type internal using (Context NOT IN ( Edit, Create ) OR UserType IN ( Internal ))
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1718,7 +1718,7 @@ Feature: Expression Builder Component Scenarios
 
   @45716    @hide_expression_Program_Information_Page_Block_Title_Context_Context_IN_View_OR_Profile_IN_System_Administrator
   Scenario: Hide Program Information from Overview Tab for ADMIN User type internal using (Context IN ( View ) OR Profile IN ( System Administrator ))
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1734,7 +1734,7 @@ Feature: Expression Builder Component Scenarios
 
   @45714    @hide_expression_Program_Information_Page_Block_Title_Context_IN_View_AND_Profile_IN_System_Administrator
   Scenario: Hide Program Information from Overview Tab for ADMIN User type internal using (Context IN (View) AND Profile IN (System Administrator))
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1750,7 +1750,7 @@ Feature: Expression Builder Component Scenarios
 
   @45715    @hide_expression_Program_Information_Page_Block_Title_Context_NOT_IN_Edit_Create_OR_Profile_IN_System_Administrator_Validate_using_PM_profile @smoke
   Scenario: Hide Program Information from Overview Tab for ADMIN User type internal using (Context NOT IN( Edit,Create) OR Profile IN (System Administrator ))-Validate using PM profile
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1766,7 +1766,7 @@ Feature: Expression Builder Component Scenarios
 
   @45868    @hide_expression_Program_Information_Page_Block_Title_For_Field_FundedAmount__c_EqualTo_400000
   Scenario: Hide Program Information from Overview Tab for ADMIN User using field (FundedAmount_c=400000) at program view page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1782,7 +1782,7 @@ Feature: Expression Builder Component Scenarios
 
   @45872    @hide_expression_Program_Information_Page_Block_Title_For_Field_FundedAmount__c_NotEqualTo_400000
   Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User using field (FundedAmount_c!=400000) at program view page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1798,7 +1798,7 @@ Feature: Expression Builder Component Scenarios
 
   @45875    @hide_expression_Program_Information_Page_Block_Title_For_Field_Number__c_greaterThan_5678
   Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User using field (Number__c > 5678) at program view page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1814,7 +1814,7 @@ Feature: Expression Builder Component Scenarios
 
   @45876    @hide_expression_Program_Information_Page_Block_Title_For_Field_Number__c_lessThan_5678
   Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User using field (Number__c < 5678) at program view page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1830,7 +1830,7 @@ Feature: Expression Builder Component Scenarios
 
   @45877    @hide_expression_Program_Information_Page_Block_Title_For_Field_CFDA_Data__c_equalto_true
   Scenario: Hide Program Information from Overview Tab for ADMIN User using field (CFDA_Data__c=true) at program view page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1846,7 +1846,7 @@ Feature: Expression Builder Component Scenarios
 
   @45878    @hide_expression_Program_Information_Page_Block_Title_For_Field_CFDA_Data__c_notequalto_true
   Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User using field (CFDA_Data__c != true) at program view page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1862,7 +1862,7 @@ Feature: Expression Builder Component Scenarios
 
   @45748    @hide_expression_Program_Information_Page_Block_Title_Context_NOT_IN_Edit_Create_OR_Profile_IN_System_Administrator_PMUser
   Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User using field (Context NOT IN( Edit,Create) OR Profile IN (System Administrator ))-Validate using PM profile
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1878,7 +1878,7 @@ Feature: Expression Builder Component Scenarios
 
   @45821    @hide_expression_Program_Information_Page_Block_Title_Context_UserApp_IN_StateasGrantor
   Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User using field ( UserApp IN ( StateasGrantor ))
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1894,7 +1894,7 @@ Feature: Expression Builder Component Scenarios
 
   @45822    @hide_expression_Program_Information_Page_Block_Title_Context_UserApp_NOT_IN_StateasGrantor
   Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User using field ( UserApp NOTIN ( StateasGrantor ))
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1910,7 +1910,7 @@ Feature: Expression Builder Component Scenarios
 
   @45843    @hide_expression_Program_Information_Page_Block_Title_LeftOperand_Equals_ProgramType__c_Grant @smoke
   Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User using Field(Equals) ProgramType__c = Grant)
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1926,7 +1926,7 @@ Feature: Expression Builder Component Scenarios
 
   @45844    @hide_expression_Program_Information_Page_Block_Title_LeftOperand_Not_Equals_ProgramType_c_Grant
   Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User using Field(Not Equals)(ProgramType__c != Grant)
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1942,7 +1942,7 @@ Feature: Expression Builder Component Scenarios
 
   @45845    @hide_expression_Program_Information_Page_Block_Title_LeftOperand_Not_Equals_Account_r_Name_Department_of_Community_Health
   Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User using Field Equals( Account__r.Name = Department of Community Health )
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1958,7 +1958,7 @@ Feature: Expression Builder Component Scenarios
 
   @45850    @hide_expression_Program_Information_Page_Block_Title_LeftOperand_less_than_equals_StartDate__c_11_30_2020
   Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User using Field less than equals ( StartDate__c <= 11/30/2020 )
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1974,7 +1974,7 @@ Feature: Expression Builder Component Scenarios
 
   @45849    @hide_expression_Program_Information_Page_Block_Title_LeftOperand_Greater_than_equals_StartDate__c_11_30_2020 @smoke
   Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User using Field Greater than equals( StartDate__c >= 11/30/2020 )
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1990,7 +1990,7 @@ Feature: Expression Builder Component Scenarios
 
   @45848    @hide_expression_Program_Information_Page_Block_Title_LeftOperand_NOT_Equals_FunderType__c_Federal
   Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User using Field NOT Equals( FunderType__c != Federal )
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2006,7 +2006,7 @@ Feature: Expression Builder Component Scenarios
 
   @45846    @hide_expression_Program_Information_Page_Block_Title_LeftOperand_Not_Equals_Account__r_Name_Department_of_Community_Health @smoke
   Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User using Field Not Equals( Account__r.Name != Department of Community Health )
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2022,7 +2022,7 @@ Feature: Expression Builder Component Scenarios
 
   @45847    @hide_expression_Program_Information_Page_Block_Title_LeftOperand_FederalProgramCFDA__c_CONTAINS_TPA01
   Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User using Field (FederalProgramCFDA__c CONTAINS TPA01)
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2038,7 +2038,7 @@ Feature: Expression Builder Component Scenarios
 
   @45854    @hide_expression_Program_Information_Page_Block_Title_LeftOperandField_Account__r.Name_IN_DepartmentofCommunityHealth_OR_StartDate__c_greaterthan_11/30/2020
   Scenario: Hide Program Information from Overview Tab using field Account__r.Name IN Department of Community Health OR StartDate__c > 11/30/2020 ) at program view page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2054,7 +2054,7 @@ Feature: Expression Builder Component Scenarios
 
   @45855    @hide_expression_Program_Information_Page_Block_Title_LeftOperandField_UserApp_IN_StateasGrantor_for_AND
   Scenario: Hide Program Information from Overview Tab using field (UserApp IN (StateasGrantor)) for AND at program view page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2070,7 +2070,7 @@ Feature: Expression Builder Component Scenarios
 
   @45859    @hide_expression_Program_Information_Page_Block_Title_LeftOperandField_FunderType__c_CONTAINS_Federal
   Scenario: Set up configuration for Hide Program Information from Overview Tab using Field (FunderType__c CONTAINS Federal) program view page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2086,7 +2086,7 @@ Feature: Expression Builder Component Scenarios
 
   @45879    @hide_expression_Program_Information_Page_Block_Title_LeftOperandField_CFDA_Data__c_equalto_true_for_OR
   Scenario: Set up configuration for Hide Program Information from Overview Tab using Field Field ( CFDA_Data__c = true ) for OR program view page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2102,7 +2102,7 @@ Feature: Expression Builder Component Scenarios
 
   @45917    @hide_expression_ProgramCode_With_UserType_Internal @smoke
   Scenario: Set up configuration for Hide Program code from Overview page block using user type internal at program view page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2118,7 +2118,7 @@ Feature: Expression Builder Component Scenarios
 
   @45918    @hide_expression_ProgramCode_With_UserType_NotIn_Internal
   Scenario: Set up configuration for Hide Program code from Overview page block using user type Not In Internal at program view page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2134,7 +2134,7 @@ Feature: Expression Builder Component Scenarios
 
   @45919    @hide_expression_ProgramCode_With_Profile_In_SystemAdministrator
   Scenario: Set up configuration for Hide Program code from Overview page block using profile In system administrator at program view page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2150,7 +2150,7 @@ Feature: Expression Builder Component Scenarios
 
   @45920    @hide_expression_ProgramCode_With_Context_In_View @smoke
   Scenario: Set up configuration for Hide Program code from Overview page block using context In view at program view page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2166,7 +2166,7 @@ Feature: Expression Builder Component Scenarios
 
   @45921    @hide_expression_ProgramCode_With_Context_In_Edit
   Scenario: Set up configuration for Hide Program code from Overview page block using context In edit at program view page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2182,7 +2182,7 @@ Feature: Expression Builder Component Scenarios
 
   @45923    @hide_expression_ProgramCode_With_Context_NotIn_View
   Scenario: Set up configuration for Hide Program code from Overview page block using context Not In View at program view page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2198,7 +2198,7 @@ Feature: Expression Builder Component Scenarios
 
   @45924    @hide_expression_ProgramCode_With_Context_NotIn_Edit
   Scenario: Set up configuration for Hide Program code from Overview page block using context Not In Edit at program view page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2214,7 +2214,7 @@ Feature: Expression Builder Component Scenarios
 
   @45925    @hide_expression_ProgramCode_With_UserApp_In_StateAsGrantor @smoke
   Scenario: Set up configuration for Hide Program code from Overview page block using UserApp In State As Grantor at program edit page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2230,7 +2230,7 @@ Feature: Expression Builder Component Scenarios
 
   @45926    @hide_expression_ProgramCode_With_UserApp_NotIn_StateAsGrantor
   Scenario: Set up configuration for Hide Program code from Overview page block using UserApp NotIn State As Grantor at program view page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2246,7 +2246,7 @@ Feature: Expression Builder Component Scenarios
 
   @45930    @hide_expression_ProgramCode_With_UserType_Internal_Profile_Admin_Operator_AND
   Scenario: Set up configuration for Hide Program code from Overview page block using UserType Internal and profile Admin with operator AND at program edit page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2262,7 +2262,7 @@ Feature: Expression Builder Component Scenarios
 
   @45932    @hide_expression_ProgramCode_With_UserType_Internal_Profile_Admin_Operator_OR
   Scenario: Set up configuration for Hide Program code from Overview page block using UserType Internal and profile Admin with operator OR at program edit page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2278,7 +2278,7 @@ Feature: Expression Builder Component Scenarios
 
   @45933    @hide_expression_ProgramCode_With_Context_AND_UserApp_StateAsGrantor
   Scenario: Set up configuration for Hide Program code from Overview page block using Context AND and UserApp State As Grantor at program view page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2294,7 +2294,7 @@ Feature: Expression Builder Component Scenarios
 
   @45934    @hide_expression_ProgramCode_With_Context_OR_UserApp_StateAsGrantor
   Scenario: Set up configuration for Hide Program code from Overview page block using Context OR and UserApp State As Grantor at program view page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2310,7 +2310,7 @@ Feature: Expression Builder Component Scenarios
 
   @45823    @hide_expression_Program_Information_Page_Block_Title_Context_UserApp_IN_StateasGrantor_PM
   Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User using field ( UserApp IN ( StateasGrantor )) for PM user
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2326,7 +2326,7 @@ Feature: Expression Builder Component Scenarios
 
   @45853    @hide_expression_Program_Information_Page_Block_Title_LeftOperand_FunderType__c_Federal_OR_ProgramType__c_Grant
   Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User using Field (FunderType__c = Federal OR ProgramType__c = Grant )
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2342,7 +2342,7 @@ Feature: Expression Builder Component Scenarios
 
   @45852    @hide_expression_Program_Information_Page_Block_Title_LeftOperand_Not_Equals_StartDate__c_11_30_2020
   Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User using Field Not Equals ( StartDate__c != 11/30/2020 )
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2358,7 +2358,7 @@ Feature: Expression Builder Component Scenarios
 
   @45851    @hide_expression_Program_Information_Page_Block_Title_LeftOperand_Equals_StartDate__c_11_30_2020
   Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User using Field Equals( StartDate__c = 11/30/2020 )
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2374,7 +2374,7 @@ Feature: Expression Builder Component Scenarios
 
   @46314    @hide_expression_Program_Information_Page_Block_LeftOperand_Profile_In_Operator
   Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User using Profile IN operator
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2390,7 +2390,7 @@ Feature: Expression Builder Component Scenarios
 
   @45962    @hide_expression_Budget_Period_Details_Page_Block_LeftOperand_Profile_NotIN_SystemAdmin_PM_SPI
   Scenario: Set up configuration to display Budget Period Details from Overview Tab for ADMIN SPI PM User using Profile NotIn
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2406,7 +2406,7 @@ Feature: Expression Builder Component Scenarios
 
   @45959    @hide_expression_Budget_Period_Details_Page_Block_LeftOperand_UserType_IN_Internal
   Scenario: Set up configuration to hide Budget Period Details from Overview Tab using user type IN Internal
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2422,7 +2422,7 @@ Feature: Expression Builder Component Scenarios
 
   @45960    @hide_expression_Budget_Period_Details_Page_Block_LeftOperand_UserType_NotIN_Internal
   Scenario: Set up configuration to display Budget Period Details inside Overview Tab using user type NOTIN for Internal
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2438,7 +2438,7 @@ Feature: Expression Builder Component Scenarios
 
   @45963    @hide_expression_Budget_Period_Details_Page_Block_LeftOperand_UserType_NotIN_Internal_Applicant_Reviewer
   Scenario: Set up configuration to display Budget Period Details inside Overview Tab using user type NOTIN for Internal and Applicant and Reviewer
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2454,7 +2454,7 @@ Feature: Expression Builder Component Scenarios
 
   @45964    @hide_expression_Budget_Period_Details_Page_Block_LeftOperand_Profile_IN_or_UserType_IN
   Scenario: Set up configuration to hide Budget Period Details inside Overview Tab using profile IN or user type IN
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2470,7 +2470,7 @@ Feature: Expression Builder Component Scenarios
 
   @45965    @hide_expression_Program_Contacts_Page_Block_LeftOperand_Profile_IN_PM_SystemAdmin_SPI
   Scenario: Set up configuration to hide Program contacts inside Overview Tab using profile IN for PM System Admin and Spi user
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2486,7 +2486,7 @@ Feature: Expression Builder Component Scenarios
 
   @45966    @hide_expression_Program_Contacts_Page_Block_LeftOperand_Context_NotIN__Create_Edit @smoke
   Scenario: Set up configuration to display Program contacts inside Overview Tab using context NOTIN (Create,Edit)
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2502,7 +2502,7 @@ Feature: Expression Builder Component Scenarios
 
   @45967    @hide_expression_Program_Contacts_Page_Block_LeftOperand_UserApp_NotIN_StateAsGrantor
   Scenario: Set up configuration to display Program contacts inside Overview Tab using UserApp NOTIN (StateAsGrantor)
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2518,7 +2518,7 @@ Feature: Expression Builder Component Scenarios
 
   @45969    @hide_expression_Program_Contacts_Page_Block_LeftOperand_UserApp_IN
   Scenario: Set up configuration to hide Program contacts inside Overview Tab using UserApp IN
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2534,7 +2534,7 @@ Feature: Expression Builder Component Scenarios
 
   @45984    @hide_expression_Program_Information_Page_Block_LeftOperand_Profile_NOTIN_SPI_PM
   Scenario: Set up configuration to hide Program Information inside Overview Tab using Profile NOTIN for PM, SPI
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2550,7 +2550,7 @@ Feature: Expression Builder Component Scenarios
 
   @45985    @hide_expression_Program_Information_Page_Block_LeftOperand_Account_r_Name_CONTAINS_DepartmentOfCommunityHealth
   Scenario: Set up configuration to hide Program Information inside Overview Tab using (Account__r.Name CONTAINS Department of Community Health)
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2566,7 +2566,7 @@ Feature: Expression Builder Component Scenarios
 
   @45986    @hide_expression_Program_Information_Page_Block_LeftOperand_Profile_IN_SystemAdministrator_AND_Profile_IN_PM @smoke
   Scenario: Set up configuration to hide Program Information inside Overview Tab using Profile IN System Administrator AND Profile IN PM
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2582,7 +2582,7 @@ Feature: Expression Builder Component Scenarios
 
   @45988    @hide_expression_Program_Information_Page_Block_LeftOperand_Profile_IN_SystemAdministrator_OR_PM
   Scenario: Set up configuration to hide Program Information inside Overview Tab using Profile IN System Administrator OR PM
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2598,7 +2598,7 @@ Feature: Expression Builder Component Scenarios
 
   @45989    @hide_expression_Program_Information_Page_Block_LeftOperand_UserType_NOTIN__Internal_Applicant
   Scenario: Set up configuration to display Program Information inside Overview Tab using (UserType NOT IN( Internal,Applicant ))
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2614,7 +2614,7 @@ Feature: Expression Builder Component Scenarios
 
   @45991    @hide_expression_Program_Information_Page_Block_LeftOperand_UserType_IN_Internal_Applicant_Reviewer @smoke
   Scenario: Set up configuration to hide Program Information inside Overview Tab using (UserType IN(Internal,Applicant,Reviewer ))
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2630,7 +2630,7 @@ Feature: Expression Builder Component Scenarios
 
   @45993    @hide_expression_Program_Information_Page_Block_LeftOperand_Federal_OR_StartDate
   Scenario: Set up configuration to hide Program Information inside Overview Tab using Field Federal OR StartDate
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2646,7 +2646,7 @@ Feature: Expression Builder Component Scenarios
 
   @46051    @hide_expression_Program_Information_Page_Block_LeftOperand_Funder_OR_UserApp
   Scenario: Set up configuration to hide Program Information inside Overview Tab using Field Funder OR UserApp
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2662,7 +2662,7 @@ Feature: Expression Builder Component Scenarios
 
   @46064    @hide_expression_Program_Information_Page_Block_LeftOperand_ExpectedFunding_OR_UserApp
   Scenario: Set up configuration to hide Program Information inside Overview Tab using Field ExpectedFunding OR UserApp
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2678,7 +2678,7 @@ Feature: Expression Builder Component Scenarios
 
   @46065    @hide_expression_Program_Information_Page_Block_LeftOperand_UserApp_IN
   Scenario: Set up configuration to hide Program Information inside Overview Tab using UserApp In
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2694,7 +2694,7 @@ Feature: Expression Builder Component Scenarios
 
   @46370    @hide_expression_Website_Address_Page_Block_Details_With_FunderType_c_Contains_Federal @smoke
   Scenario: Set up configuration for Hide Website address from Overview page block details using Field (FunderType__c CONTAINS Federal) at program view page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2710,7 +2710,7 @@ Feature: Expression Builder Component Scenarios
 
   @46371    @hide_expression_Website_Address_Page_Block_Details_With_FunderAccount_c_equalto_40000
   Scenario: Set up configuration for Hide Website address from Overview page block details using Field (FundedAmount__c = 400000) at program view page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2726,7 +2726,7 @@ Feature: Expression Builder Component Scenarios
 
   @46372    @hide_expression_Website_Address_Page_Block_Details_With_FunderAccount_c_notequalto_40000
   Scenario: Set up configuration for display Website address from Overview page block details using Field (FundedAmount__c != 400000) at program view page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2742,7 +2742,7 @@ Feature: Expression Builder Component Scenarios
 
   @46373    @hide_expression_Website_Address_Page_Block_Details_With_StartDate_c_greaterequalto_11_30_2020 @smoke
   Scenario: Set up configuration for hide Website address from Overview page block details using Field (StartDate__c >= 11/30/2020) at program view page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2758,7 +2758,7 @@ Feature: Expression Builder Component Scenarios
 
   @46375    @hide_expression_Website_Address_Page_Block_Details_With_StartDate_c_lessequalto_11_30_2020
   Scenario: Set up configuration for hide Website address from Overview page block details using Field (StartDate__c <= 11/30/2020) at program view page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2774,7 +2774,7 @@ Feature: Expression Builder Component Scenarios
 
   @46376    @hide_expression_Website_Address_Page_Block_Details_With_Number_c_greaterthan_5678 @smoke
   Scenario: Set up configuration for display Website address from Overview page block details using Field (Number__c > 5678) at program view page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2790,7 +2790,7 @@ Feature: Expression Builder Component Scenarios
 
   @46377    @hide_expression_Website_Address_Page_Block_Details_With_Number_c_lessthan_5678
   Scenario: Set up configuration for display Website address from Overview page block details using Field (Number__c < 5678) at program view page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2806,7 +2806,7 @@ Feature: Expression Builder Component Scenarios
 
   @46378    @hide_expression_Website_Address_Page_Block_Details_With_CFDA_Data_c_equalto_true
   Scenario: Set up configuration for hide Website address from Overview page block details using Field (CFDA_Data__c = true) at program view page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2822,7 +2822,7 @@ Feature: Expression Builder Component Scenarios
 
   @46379    @hide_expression_Website_Address_Page_Block_Details_With_CFDA_Data_c_notequalto_true
   Scenario: Set up configuration for display Website address from Overview page block details using Field (CFDA_Data__c != true) at program view page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2838,7 +2838,7 @@ Feature: Expression Builder Component Scenarios
 
   @46380    @hide_expression_Website_Address_Page_Block_Details_With_Number_c_greaterequalto_5678
   Scenario: Set up configuration for hide Website address from Overview page block details using Field (Number__c >= 5678) at program view page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2854,7 +2854,7 @@ Feature: Expression Builder Component Scenarios
 
   @46386    @hide_expression_Website_Address_Page_Block_Details_With_CONTAINS_OR_Number @smoke
   Scenario: Set up configuration for hide Website address from Overview page block details using Field CONTAINS OR Number at program view page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2870,7 +2870,7 @@ Feature: Expression Builder Component Scenarios
 
   @45302    @hide_expression_SubmitForApproval_Page_Layout_Using_GROUP_EXPRESSION_With_AND_Operator
   Scenario: Set up configuration for hide Submit For Approval action from page layout GROUP EXPRESSION with AND operator at program view page -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantee State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
@@ -2886,7 +2886,7 @@ Feature: Expression Builder Component Scenarios
 
   @46381    @hide_expression_Website_Address_Page_Block_Details_With_Number_c_lessequalto_5678
   Scenario: Set up configuration for hide Website address from Overview page block details using Field (Number__c <= 5678) at program view page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2902,7 +2902,7 @@ Feature: Expression Builder Component Scenarios
 
   @46383    @hide_expression_Website_Address_Page_Block_Details_With_Account_r_Name_equalto_DepartmentOfCommunityHealth
   Scenario: Set up configuration for hide Website address from Overview page block details using Field (Account__r.Name = Department of Community Health) at program view page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2918,7 +2918,7 @@ Feature: Expression Builder Component Scenarios
 
   @46384    @hide_expression_Website_Address_Page_Block_Details_With_Account_r_Name_notequalto_DepartmentOfCommunityHealth
   Scenario: Set up configuration for display Website address from Overview page block details using Field (Account__r.Name != Department of Community Health) at program view page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2934,7 +2934,7 @@ Feature: Expression Builder Component Scenarios
 
   @46388    @hide_expression_Website_Address_Page_Block_Details_With_ExpectedFunding_AND_FunderType_CONTAINS
   Scenario: Set up configuration for hide Website address from Overview page block details using Field ExpectedFunding AND FunderType CONTAINS at program view page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2950,7 +2950,7 @@ Feature: Expression Builder Component Scenarios
 
   @46389    @hide_expression_Website_Address_Page_Block_Details_With_ExpectedFunding_OR_FunderType_CONTAINS
   Scenario: Set up configuration for hide Website address from Overview page block details using Field ExpectedFunding OR FunderType CONTAINS at program view page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2966,7 +2966,7 @@ Feature: Expression Builder Component Scenarios
 
   @46392    @render_expression_SideBar_ManageFundingSource_With_UserType_IN_Internal @smoke
   Scenario: Set up configuration for display Manage funding source from side bar using (UserType IN(Internal) -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | coreComponentField | filterId         |
       | Accordian Header      | Render Expression JSON |                   | GrantorPlanning    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2980,7 +2980,7 @@ Feature: Expression Builder Component Scenarios
 
   @46393    @render_expression_SideBar_ManageFundingSource_With_UserType_NOTIN_Internal
   Scenario: Set up configuration for hide Manage funding source from side bar using (UserType NOTIN(Internal) -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | coreComponentField | filterId         |
       | Accordian Header      | Render Expression JSON |                   | GrantorPlanning    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -2994,7 +2994,7 @@ Feature: Expression Builder Component Scenarios
 
   @46395    @render_expression_SideBar_ManageFundingSource_With_Profile_IN_SystemAdministrator @smoke
   Scenario: Set up configuration for display Manage funding source from side bar using Profile IN (System Administrator) -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | coreComponentField | filterId         |
       | Accordian Header      | Render Expression JSON |                   | GrantorPlanning    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3008,7 +3008,7 @@ Feature: Expression Builder Component Scenarios
 
   @46396    @render_expression_SideBar_ManageFundingSource_With_Profile_NOTIN_SystemAdministrator
   Scenario: Set up configuration for Hide Manage funding source from side bar using Profile NOTIN (System Administrator) -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | coreComponentField | filterId         |
       | Accordian Header      | Render Expression JSON |                   | GrantorPlanning    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3022,7 +3022,7 @@ Feature: Expression Builder Component Scenarios
 
   @46397    @render_expression_SideBar_ManageFundingSource_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal
   Scenario: Set up configuration for display Manage funding source from side bar using Profile IN (System Administrator ) AND UserType IN (Internal) -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | coreComponentField | filterId         |
       | Accordian Header      | Render Expression JSON |                   | GrantorPlanning    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3036,7 +3036,7 @@ Feature: Expression Builder Component Scenarios
 
   @46398    @render_expression_SideBar_ManageFundingSource_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal
   Scenario: Set up configuration for display Manage funding source from side bar using (Profile IN (System Administrator) OR UserType IN (Internal) -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | coreComponentField | filterId         |
       | Accordian Header      | Render Expression JSON |                   | GrantorPlanning    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3050,7 +3050,7 @@ Feature: Expression Builder Component Scenarios
 
   @46415    @render_expression_SideBar_ManageFundingSource_With_Profile_IN_SystemAdministrator_AND_Profile_IN_PM
   Scenario: Set up configuration for hide Manage funding source from side bar using (Profile IN (System Administrator) AND Profile IN PM) -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | coreComponentField | filterId         |
       | Accordian Header      | Render Expression JSON |                   | GrantorPlanning    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3064,7 +3064,7 @@ Feature: Expression Builder Component Scenarios
 
   @46416    @render_expression_SideBar_ManageFundingSource_With_Profile_IN_SystemAdministrator_OR_Profile_IN_PM
   Scenario: Set up configuration for display Manage funding source from side bar using (Profile IN (System Administrator) OR Profile IN PM) -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | coreComponentField | filterId         |
       | Accordian Header      | Render Expression JSON |                   | GrantorPlanning    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3078,7 +3078,7 @@ Feature: Expression Builder Component Scenarios
 
   @46399    @render_expression_SideBar_ManageFundingSource_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator @smoke
   Scenario: Set up configuration for hide Manage funding source from side bar using (UserType NOT IN (Internal) AND Profile NOT IN (System Administrator) -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | coreComponentField | filterId         |
       | Accordian Header      | Render Expression JSON |                   | GrantorPlanning    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3092,7 +3092,7 @@ Feature: Expression Builder Component Scenarios
 
   @46400    @render_expression_SideBar_ManageFundingSource_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator
   Scenario: Set up configuration for hide Manage funding source from side bar using (UserType NOT IN (Internal) OR Profile NOT IN (System Administrator) -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | coreComponentField | filterId         |
       | Accordian Header      | Render Expression JSON |                   | GrantorPlanning    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3106,7 +3106,7 @@ Feature: Expression Builder Component Scenarios
 
   @46417    @render_expression_SideBar_ManageFundingSource_With_UserType_IN_Applicant_Reviewer
   Scenario: Set up configuration for hide Manage funding source from side bar using UserType IN Applicant, Reviewer -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | coreComponentField | filterId         |
       | Accordian Header      | Render Expression JSON |                   | GrantorPlanning    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3120,7 +3120,7 @@ Feature: Expression Builder Component Scenarios
 
   @46418    @render_expression_SideBar_ManageFundingSource_With_UserType_NOTIN_Applicant_Reviewer
   Scenario: Set up configuration for display Manage funding source from side bar using UserType NOTIN Applicant, Reviewer -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | coreComponentField | filterId         |
       | Accordian Header      | Render Expression JSON |                   | GrantorPlanning    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3134,7 +3134,7 @@ Feature: Expression Builder Component Scenarios
 
   @46401    @render_expression_SideBar_ManageFundingSource_With_UserType_IN_Applicant_Internal_Reviewer
   Scenario: Set up configuration for display Manage funding source from side bar using (UserType IN (Applicant, Internal, Reviewer) -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | coreComponentField | filterId         |
       | Accordian Header      | Render Expression JSON |                   | GrantorPlanning    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3148,7 +3148,7 @@ Feature: Expression Builder Component Scenarios
 
   @46402    @render_expression_SideBar_ManageFundingSource_With_UserType_NOTIN_Applicant_Internal_Reviewer
   Scenario: Set up configuration for hide Manage funding source from side bar using (UserType NOT IN (Applicant, Internal, Reviewer) -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | coreComponentField | filterId         |
       | Accordian Header      | Render Expression JSON |                   | GrantorPlanning    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3162,7 +3162,7 @@ Feature: Expression Builder Component Scenarios
 
   @46403    @render_expression_CustomApp_With_UserType_IN_Internal @smoke
   Scenario: Set up configuration for display state as grantor custom app using User Type IN Internal -gHome
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
       | Custom App Config     | Render Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3174,7 +3174,7 @@ Feature: Expression Builder Component Scenarios
 
   @46404    @render_expression_CustomApp_With_UserType_NOTIN_Internal
   Scenario: Set up configuration for hide state as grantor custom app using User Type NOTIN Internal -gHome
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
       | Custom App Config     | Render Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3186,7 +3186,7 @@ Feature: Expression Builder Component Scenarios
 
   @46405    @render_expression_CustomApp_With_Profile_IN_SystemAdministrator
   Scenario: Set up configuration for display state as grantor custom app using profile IN system administrator -gHome
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
       | Custom App Config     | Render Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3198,7 +3198,7 @@ Feature: Expression Builder Component Scenarios
 
   @46406    @render_expression_CustomApp_With_Profile_NOTIN_SystemAdministrator
   Scenario: Set up configuration for hide state as grantor custom app using profile NOTIN system administrator -gHome
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
       | Custom App Config     | Render Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3210,7 +3210,7 @@ Feature: Expression Builder Component Scenarios
 
   @46407    @render_expression_CustomApp_With_Profile_IN_SystemAdministrator_AND_UserType_In_Internal
   Scenario: Set up configuration for display state as grantor custom app using(Profile IN (System Administrator) AND UserType IN (Internal) -gHome
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
       | Custom App Config     | Render Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3222,7 +3222,7 @@ Feature: Expression Builder Component Scenarios
 
   @46408    @render_expression_CustomApp_With_Profile_IN_SystemAdministrator_OR_UserType_In_Internal
   Scenario: Set up configuration for display state as grantor custom app using(Profile IN (System Administrator) OR UserType IN (Internal) -gHome
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
       | Custom App Config     | Render Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3234,7 +3234,7 @@ Feature: Expression Builder Component Scenarios
 
   @46410    @render_expression_CustomApp_With_Profile_IN_SystemAdministrator_AND_Profile_IN_PM
   Scenario: Set up configuration for hide state as grantor custom app using Profile IN System Administrator AND Profile IN PM -gHome
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
       | Custom App Config     | Render Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3246,7 +3246,7 @@ Feature: Expression Builder Component Scenarios
 
   @46413    @render_expression_CustomApp_With_Profile_IN_SystemAdministrator_OR_Profile_IN_PM @smoke
   Scenario: Set up configuration for display state as grantor custom app using Profile IN System Administrator OR Profile IN PM -gHome
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
       | Custom App Config     | Render Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3258,7 +3258,7 @@ Feature: Expression Builder Component Scenarios
 
   @47284    @render_expression_CustomApp_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator
   Scenario: Set up configuration for hide state as grantor custom app using (UserType NOT IN (Internal) OR Profile NOT IN (System Administrator) -gHome
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
       | Custom App Config     | Render Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3270,7 +3270,7 @@ Feature: Expression Builder Component Scenarios
 
   @46414    @render_expression_CustomApp_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator @smoke
   Scenario: Set up configuration for hide state as grantor custom app using (UserType NOT IN (Internal) AND Profile NOT IN (System Administrator) -gHome
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
       | Custom App Config     | Render Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3282,7 +3282,7 @@ Feature: Expression Builder Component Scenarios
 
   @46420    @render_expression_SideBar_ManageFundingSource_With_Profile_NOTIN_PM
   Scenario: Set up configuration for display Manage funding source from side bar using Profile NOTIN PM -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | coreComponentField | filterId         |
       | Accordian Header      | Render Expression JSON |                   | GrantorPlanning    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3296,7 +3296,7 @@ Feature: Expression Builder Component Scenarios
 
   @47285    @render_expression_CustomApp_With_UserType_IN_Applicant_Reviewer
   Scenario: Set up configuration for hide state as grantor custom app using UserType IN Applicant, Reviewer -gHome
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
       | Custom App Config     | Render Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3308,7 +3308,7 @@ Feature: Expression Builder Component Scenarios
 
   @47286    @render_expression_CustomApp_With_UserType_NOTIN_Applicant_Reviewer
   Scenario: Set up configuration for hide state as grantor custom app using UserType NOTIN Applicant, Reviewer -gHome
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
       | Custom App Config     | Render Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3320,7 +3320,7 @@ Feature: Expression Builder Component Scenarios
 
   @47287    @render_expression_CustomApp_With_UserType_IN_Applicant_Internal_Reviewer
   Scenario: Set up configuration for display state as grantor custom app using UserType IN Applicant,Internal,Reviewer -gHome
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
       | Custom App Config     | Render Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3332,7 +3332,7 @@ Feature: Expression Builder Component Scenarios
 
   @47291    @render_expression_CustomApp_With_UserType_NOTIN_Applicant_Internal_Reviewer
   Scenario: Set up configuration for hide state as grantor custom app using UserType NOTIN Applicant,Internal,Reviewer -gHome
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
       | Custom App Config     | Render Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3344,7 +3344,7 @@ Feature: Expression Builder Component Scenarios
 
   @47292    @render_expression_CustomApp_With_Profile_NOTIN_PM
   Scenario: Set up configuration for display state as grantor custom app using Profile NOT IN PM -gHome
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
       | Custom App Config     | Render Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3356,7 +3356,7 @@ Feature: Expression Builder Component Scenarios
 
   @47293    @render_expression_CustomApp_With_UserType_IN_Applicant
   Scenario: Set up configuration for hide state as grantor custom app using UserType IN Applicant -gHome
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
       | Custom App Config     | Render Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3368,7 +3368,7 @@ Feature: Expression Builder Component Scenarios
 
   @47294    @render_expression_CustomApp_With_Profile_IN_PM
   Scenario: Set up configuration for hide state as grantor custom app using Profile IN PM -gHome
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
       | Custom App Config     | Render Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3380,7 +3380,7 @@ Feature: Expression Builder Component Scenarios
 
   @47296    @render_expression_CustomApp_With_Profile_IN_PM_OR_UserType_IN_Internal @smoke
   Scenario: Set up configuration for display state as grantor custom app using Profile IN PM OR UserType IN Internal -gHome
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
       | Custom App Config     | Render Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3392,7 +3392,7 @@ Feature: Expression Builder Component Scenarios
 
   @47297    @render_expression_CustomApp_With_UserType_IN_Internal_AND_Profile_IN_PM
   Scenario: Set up configuration for hide state as grantor custom app using UserType IN Internal AND Profile IN PM -gHome
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
       | Custom App Config     | Render Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3404,7 +3404,7 @@ Feature: Expression Builder Component Scenarios
 
   @47302    @hide_Expression_Enhancedgrid_ViewAction_With_UserType_IN_Internal @smoke
   Scenario: Set up configuration to hide view action of parent enhanced grid using UserType IN Internal and validating it inside enhanced of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3422,7 +3422,7 @@ Feature: Expression Builder Component Scenarios
 
   @47304    @hide_Expression_Enhancedgrid_ViewAction_With_UserType_NOTIN_Internal
   Scenario: Set up configuration to display view action of parent enhanced grid using UserType NOTIN Internal and validating it inside enhanced of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3440,7 +3440,7 @@ Feature: Expression Builder Component Scenarios
 
   @47305    @hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator @smoke
   Scenario: Set up configuration to hide view action of parent enhanced grid using Profile IN System Administrator and validating it inside enhanced of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3458,7 +3458,7 @@ Feature: Expression Builder Component Scenarios
 
   @47306    @hide_Expression_Enhancedgrid_ViewAction_With_Profile_NOTIN_SystemAdministrator
   Scenario: Set up configuration to hide view action of parent enhanced grid using Profile NOTIN System Administrator and validating it inside enhanced of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3476,7 +3476,7 @@ Feature: Expression Builder Component Scenarios
 
   @47307    @hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal
   Scenario: Set up configuration to hide view action of parent enhanced grid using Profile IN System Administrator AND UserType IN Internal and validating it inside enhanced of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3494,7 +3494,7 @@ Feature: Expression Builder Component Scenarios
 
   @47308    @hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal
   Scenario: Set up configuration to hide view action of parent enhanced grid using Profile IN System Administrator OR UserType IN Internal and validating it inside enhanced of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3512,7 +3512,7 @@ Feature: Expression Builder Component Scenarios
 
   @47309    @hide_Expression_Enhancedgrid_ViewAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator @smoke
   Scenario: Set up configuration to display view action of parent enhanced grid using UserType NOT IN Internal AND Profile NOT IN System Administrator and validating it inside enhanced of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3530,7 +3530,7 @@ Feature: Expression Builder Component Scenarios
 
   @47310    @hide_Expression_Enhancedgrid_ViewAction_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator
   Scenario: Set up configuration to display view action of parent enhanced grid using UserType NOT IN Internal OR Profile NOT IN System Administrator and validating it inside enhanced of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3548,7 +3548,7 @@ Feature: Expression Builder Component Scenarios
 
   @47312    @hide_Expression_Enhancedgrid_ViewAction_With_UserType_IN_Internal_OR_Profile_IN_PM
   Scenario: Set up configuration to hide view action of parent enhanced grid using UserType IN Internal OR Profile IN PM and validating it inside enhanced of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3566,7 +3566,7 @@ Feature: Expression Builder Component Scenarios
 
   @47313    @hide_Expression_Enhancedgrid_ViewAction_With_UserType_IN_Internal_AND_Profile_IN_PM
   Scenario: Set up configuration to display view action of parent enhanced grid using UserType IN Internal AND Profile IN PM and validating it inside enhanced of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3584,7 +3584,7 @@ Feature: Expression Builder Component Scenarios
 
   @47315    @hide_Expression_Enhancedgrid_EditAction_With_UserApp_IN_StateAsGrantor @smoke
   Scenario: Set up configuration to hide edit action of parent enhanced grid using UserApp IN State As grantor and validating it inside enhanced of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3602,7 +3602,7 @@ Feature: Expression Builder Component Scenarios
 
   @47316    @hide_Expression_Enhancedgrid_EditAction_With_UserApp_NOTIN_StateAsGrantor
   Scenario: Set up configuration to display edit action of parent enhanced grid using UserApp NOTIN State As grantor and validating it inside enhanced of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3620,7 +3620,7 @@ Feature: Expression Builder Component Scenarios
 
   @47318    @hide_Expression_Enhancedgrid_EditAction_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor @smoke
   Scenario: Set up configuration to hide edit action of parent enhanced grid using UserType IN Internal AND UserApp IN StateasGrantor and validating it inside enhanced of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3638,7 +3638,7 @@ Feature: Expression Builder Component Scenarios
 
   @47319    @hide_Expression_Enhancedgrid_EditAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor
   Scenario: Set up configuration to hide edit action of parent enhanced grid using UserType IN Internal OR UserApp IN StateasGrantor and validating it inside enhanced of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3656,7 +3656,7 @@ Feature: Expression Builder Component Scenarios
 
   @47320    @hide_Expression_Enhancedgrid_EditAction_With_UserType_IN_Applicant_Internal_Reviewer
   Scenario: Set up configuration to hide edit action of parent enhanced grid using UserType IN Applicant Internal Reviewer and validating it inside enhanced of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3674,7 +3674,7 @@ Feature: Expression Builder Component Scenarios
 
   @47322    @hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_IN_Internal @smoke
   Scenario: Set up configuration to hide view action of child enhanced grid using UserType IN Internal and validating it inside enhanced of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3693,7 +3693,7 @@ Feature: Expression Builder Component Scenarios
 
   @47323    @hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_NOTIN_Internal
   Scenario: Set up configuration to display view action of child enhanced grid using UserType NOTIN Internal and validating it inside enhanced of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3712,7 +3712,7 @@ Feature: Expression Builder Component Scenarios
 
   @47324    @hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator @smoke
   Scenario: Set up configuration to hide view action of child enhanced grid using profile IN system Administrator and validating it inside enhanced of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3731,7 +3731,7 @@ Feature: Expression Builder Component Scenarios
 
   @47326    @hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_NOTIN_SystemAdministrator
   Scenario: Set up configuration to display view action of child enhanced grid using profile NOTIN system Administrator and validating it inside enhanced of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3750,7 +3750,7 @@ Feature: Expression Builder Component Scenarios
 
   @47329    @hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal
   Scenario: Set up configuration to hide view action of child enhanced grid using profile IN system Administrator AND User type IN Internal and validating it inside enhanced of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3769,7 +3769,7 @@ Feature: Expression Builder Component Scenarios
 
   @47330    @hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal
   Scenario: Set up configuration to hide view action of child enhanced grid using profile IN system Administrator OR User type IN Internal and validating it inside enhanced of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3788,7 +3788,7 @@ Feature: Expression Builder Component Scenarios
 
   @47331    @hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator @smoke
   Scenario: Set up configuration to display view action of child enhanced grid using UserType NOT IN Internal AND Profile NOT IN System Administrator and validating it inside enhanced of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3807,7 +3807,7 @@ Feature: Expression Builder Component Scenarios
 
   @47332    @hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator
   Scenario: Set up configuration to display view action of child enhanced grid using UserType NOT IN Internal OR Profile NOT IN System Administrator and validating it inside enhanced of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3826,7 +3826,7 @@ Feature: Expression Builder Component Scenarios
 
   @47333    @hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_IN_Internal_OR_Profile_IN_PM
   Scenario: Set up configuration to hide view action of child enhanced grid using user type IN internal OR profile IN PM and validating it inside enhanced of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3845,7 +3845,7 @@ Feature: Expression Builder Component Scenarios
 
   @47334    @hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_IN_Internal_AND_Profile_IN_PM
   Scenario: Set up configuration to display view action of child enhanced grid using user type IN internal AND profile IN PM and validating it inside enhanced of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3864,7 +3864,7 @@ Feature: Expression Builder Component Scenarios
 
   @47335    @hide_Expression_ChildEnhancedgrid_EditAction_With_UserApp_IN_StateAsGrantor @smoke
   Scenario: Set up configuration to hide Edit action of child enhanced grid using userApp IN State As Grantor and validating it inside enhanced of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3883,7 +3883,7 @@ Feature: Expression Builder Component Scenarios
 
   @47336    @hide_Expression_ChildEnhancedgrid_EditAction_With_UserApp_NOTIN_StateAsGrantor
   Scenario: Set up configuration to display Edit action of child enhanced grid using userApp NOTIN State As Grantor and validating it inside enhanced of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3902,7 +3902,7 @@ Feature: Expression Builder Component Scenarios
 
   @47337    @hide_Expression_ChildEnhancedgrid_EditAction_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor
   Scenario: Set up configuration to hide Edit action of child enhanced grid using  UserType IN Internal AND UserApp IN StateasGrantor and validating it inside enhanced of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3921,7 +3921,7 @@ Feature: Expression Builder Component Scenarios
 
   @47338    @hide_Expression_ChildEnhancedgrid_EditAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor
   Scenario: Set up configuration to hide Edit action of child enhanced grid using UserType IN Internal OR UserApp IN StateasGrantor and validating it inside enhanced of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3940,7 +3940,7 @@ Feature: Expression Builder Component Scenarios
 
   @47339    @hide_Expression_ChildEnhancedgrid_EditAction_With_UserType_IN_Applicant_Internal_Reviewer
   Scenario: Set up configuration to hide Edit action of child enhanced grid using UserType IN Applicant, Internal, Reviewer and validating it inside enhanced of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -3959,7 +3959,7 @@ Feature: Expression Builder Component Scenarios
 
   @48480    @hide_Expression_ProgramFlexTable_ViewAction_With_UserType_IN_Internal
   Scenario: Set up configuration to hide view action of program flex table using UserType IN Internal and validating it inside flex table of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | View                       |
     Given I setup test configuration as below:
@@ -3974,7 +3974,7 @@ Feature: Expression Builder Component Scenarios
 
   @48481    @hide_Expression_ProgramFlexTable_ViewAction_With_UserType_NOTIN_Internal @smoke
   Scenario: Set up configuration to display view action of program flex table using UserType NOTIN Internal and validating it inside flex table of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | View                       |
     Given I setup test configuration as below:
@@ -3989,7 +3989,7 @@ Feature: Expression Builder Component Scenarios
 
   @48482    @hide_Expression_ProgramFlexTable_ViewAction_With_Profile_IN_SystemAdministrator
   Scenario: Set up configuration to hide view action of program flex table using profile IN system administrator and validating it inside flex table of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | View                       |
     Given I setup test configuration as below:
@@ -4004,7 +4004,7 @@ Feature: Expression Builder Component Scenarios
 
   @48483    @hide_Expression_ProgramFlexTable_ViewAction_With_Profile_NOTIN_SystemAdministrator
   Scenario: Set up configuration to display view action of program flex table using profile NOTIN system administrator and validating it inside flex table of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | View                       |
     Given I setup test configuration as below:
@@ -4019,7 +4019,7 @@ Feature: Expression Builder Component Scenarios
 
   @48484    @hide_Expression_ProgramFlexTable_ViewAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal
   Scenario: Set up configuration to hide view action of program flex table using profile IN system administrator AND UserType IN Internal and validating it inside flex table of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | View                       |
     Given I setup test configuration as below:
@@ -4034,7 +4034,7 @@ Feature: Expression Builder Component Scenarios
 
   @48485    @hide_Expression_ProgramFlexTable_ViewAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal
   Scenario: Set up configuration to hide view action of program flex table using profile IN system administrator OR UserType IN Internal and validating it inside flex table of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | View                       |
     Given I setup test configuration as below:
@@ -4049,7 +4049,7 @@ Feature: Expression Builder Component Scenarios
 
   @48486    @hide_Expression_ProgramFlexTable_ViewAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator
   Scenario: Set up configuration to display view action of program flex table using user type NOTIN Internal AND profile NOTIN system administrator and validating it inside flex table of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | View                       |
     Given I setup test configuration as below:
@@ -4064,7 +4064,7 @@ Feature: Expression Builder Component Scenarios
 
   @48597    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Internal @smoke
   Scenario: Set up configuration to hide submit for approval status of program from step progress bar using user type IN Internal and validating it inside program detail page-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
       | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -4080,7 +4080,7 @@ Feature: Expression Builder Component Scenarios
 
   @48598    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_NOTIN_Internal
   Scenario: Set up configuration to display submit for approval status of program from step progress bar using user type IN Internal and validating it inside program detail page-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
       | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -4096,7 +4096,7 @@ Feature: Expression Builder Component Scenarios
 
   @48601    @hide_Expression_ProgramFlexTable_EditAction_With_UserApp_IN_StateAsGrantor @smoke
   Scenario: Set up configuration to hide Edit action of program flex table using User App IN State As grantor and validating it inside flex table of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | Edit                       |
     Given I setup test configuration as below:
@@ -4111,7 +4111,7 @@ Feature: Expression Builder Component Scenarios
 
   @48602    @hide_Expression_ProgramFlexTable_EditAction_With_UserApp_NOTIN_StateAsGrantor
   Scenario: Set up configuration to display Edit action of program flex table using User App NOTIN State As grantor and validating it inside flex table of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | Edit                       |
     Given I setup test configuration as below:
@@ -4126,7 +4126,7 @@ Feature: Expression Builder Component Scenarios
 
   @48600    @hide_Expression_ProgramFlexTable_ViewAction_With_UserType_IN_Internal_AND_Profile_IN_PM
   Scenario: Set up configuration to display view action of program flex table using UserType IN Internal AND Profile IN PM and validating it inside flex table of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | View                       |
     Given I setup test configuration as below:
@@ -4141,7 +4141,7 @@ Feature: Expression Builder Component Scenarios
 
   @48603    @hide_Expression_ProgramFlexTable_EditAction_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor
   Scenario: Set up configuration to hide Edit action of program flex table using UserType IN Internal AND UserApp IN StateAsGrantor and validating it inside flex table of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | Edit                       |
     Given I setup test configuration as below:
@@ -4156,7 +4156,7 @@ Feature: Expression Builder Component Scenarios
 
   @48604    @hide_Expression_ProgramFlexTable_EditAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor
   Scenario: Set up configuration to hide Edit action of program flex table using UserType IN Internal OR UserApp IN StateAsGrantor and validating it inside flex table of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | Edit                       |
     Given I setup test configuration as below:
@@ -4171,7 +4171,7 @@ Feature: Expression Builder Component Scenarios
 
   @48605    @hide_Expression_ProgramFlexTable_EditAction_With_UserType_IN_Applicant_Internal_Reviewer
   Scenario: Set up configuration to hide Edit action of program flex table using UserType IN Applicant Internal Reviewer and validating it inside flex table of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | Edit                       |
     Given I setup test configuration as below:
@@ -4186,7 +4186,7 @@ Feature: Expression Builder Component Scenarios
 
   @48606    @hide_Expression_ProgramFlexTable_EditAction_With_UserApp_IN_StateAsGrantor_Admin_Recipient
   Scenario: Set up configuration to hide Edit action of program flex table using UserApp IN StateasGrantor, Admin, Recipient and validating it inside flex table of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | Edit                       |
     Given I setup test configuration as below:
@@ -4201,7 +4201,7 @@ Feature: Expression Builder Component Scenarios
 
   @48607    @hide_Expression_ProgramFlexTable_EditAction_With_UserApp_NOTIN_Admin
   Scenario: Set up configuration to hide Edit action of program flex table using UserApp NOTIN Admin and validating it inside flex table of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | Edit                       |
     Given I setup test configuration as below:
@@ -4216,7 +4216,7 @@ Feature: Expression Builder Component Scenarios
 
   @48608    @hide_Expression_ProgramFlexTable_EditAction_With_UserApp_NOTIN_Recipient
   Scenario: Set up configuration to hide Edit action of program flex table using UserApp NOTIN Recipient and validating it inside flex table of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | Edit                       |
     Given I setup test configuration as below:
@@ -4231,7 +4231,7 @@ Feature: Expression Builder Component Scenarios
 
   @48609    @hide_Expression_ProgramFlexTable_EditAction_With_Profile_IN_SystemAdministrator_OR_UserApp_IN_StateAsGrantor
   Scenario: Set up configuration to hide Edit action of program flex table using Profile IN System Administrator OR UserApp IN StateasGrantor and validating it inside flex table of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | Edit                       |
     Given I setup test configuration as below:
@@ -4246,7 +4246,7 @@ Feature: Expression Builder Component Scenarios
 
   @48610    @hide_Expression_ProgramFlexTable_EditAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator
   Scenario: Set up configuration to hide Edit action of program flex table using UserType NOT IN Internal AND Profile NOT IN System Administrator and validating it inside flex table of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | Edit                       |
     Given I setup test configuration as below:
@@ -4261,7 +4261,7 @@ Feature: Expression Builder Component Scenarios
 
   @48611    @hide_Expression_ProgramFlexTable_ViewAction_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator @smoke
   Scenario: Set up configuration to display view action of program flex table using user type NOTIN Internal OR profile NOTIN system administrator and validating it inside flex table of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | View                       |
     Given I setup test configuration as below:
@@ -4276,7 +4276,7 @@ Feature: Expression Builder Component Scenarios
 
   @48612    @hide_Expression_ProgramFlexTable_ViewAction_With_UserType_IN_Internal_OR_Profile_IN_PM
   Scenario: Set up configuration to hide view action of program flex table using User type IN Internal OR Profile IN PM and validating it inside flex table of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | View                       |
     Given I setup test configuration as below:
@@ -4291,7 +4291,7 @@ Feature: Expression Builder Component Scenarios
 
   @48613    @hide_Expression_StepProgressBar_SubmitForApproval_With_Profile_IN_SystemAdministrator @smoke
   Scenario: Set up configuration to hide submit for approval status of program from step progress bar using Profile IN System Administrator and validating it inside program detail page-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
       | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -4307,7 +4307,7 @@ Feature: Expression Builder Component Scenarios
 
   @48614    @hide_Expression_StepProgressBar_SubmitForApproval_With_Profile_NOTIN_SystemAdministrator
   Scenario: Set up configuration to display submit for approval status of program from step progress bar using Profile NOTIN System Administrator and validating it inside program detail page-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
       | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -4323,7 +4323,7 @@ Feature: Expression Builder Component Scenarios
 
   @48615    @hide_Expression_StepProgressBar_SubmitForApproval_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal
   Scenario: Set up configuration to hide submit for approval status of program from step progress bar using Profile IN System Administrator AND User Type IN Internal and validating it inside program detail page-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
       | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -4339,7 +4339,7 @@ Feature: Expression Builder Component Scenarios
 
   @48616    @hide_Expression_StepProgressBar_SubmitForApproval_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal
   Scenario: Set up configuration to hide submit for approval status of program from step progress bar using Profile IN System Administrator OR User Type IN Internal and validating it inside program detail page-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
       | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -4355,7 +4355,7 @@ Feature: Expression Builder Component Scenarios
 
   @48617    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator @smoke
   Scenario: Set up configuration to display submit for approval status of program from step progress bar using User Type NOTIN Internal AND Profile NOTIN System Administrator and validating it inside program detail page-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
       | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -4371,7 +4371,7 @@ Feature: Expression Builder Component Scenarios
 
   @48618    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator
   Scenario: Set up configuration to display submit for approval status of program from step progress bar using User Type NOTIN Internal OR Profile NOTIN System Administrator and validating it inside program detail page-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
       | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -4387,7 +4387,7 @@ Feature: Expression Builder Component Scenarios
 
   @48619    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Internal_OR_Profile_IN_PM
   Scenario: Set up configuration to hide submit for approval status of program from step progress bar using User Type IN Internal OR Profile IN PM and validating it inside program detail page-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
       | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -4403,7 +4403,7 @@ Feature: Expression Builder Component Scenarios
 
   @48620    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Internal_AND_Profile_IN_PM
   Scenario: Set up configuration to display submit for approval status of program from step progress bar using User Type IN Internal AND Profile IN PM and validating it inside program detail page-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
       | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -4419,7 +4419,7 @@ Feature: Expression Builder Component Scenarios
 
   @48621    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserApp_IN_StateAsGrantor @smoke
   Scenario: Set up configuration to hide submit for approval status of program from step progress bar using User App IN State AS Grantor and validating it inside program detail page-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
       | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -4435,7 +4435,7 @@ Feature: Expression Builder Component Scenarios
 
   @48622    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserApp_NOTIN_StateAsGrantor
   Scenario: Set up configuration to display submit for approval status of program from step progress bar using User App NOTIN State AS Grantor and validating it inside program detail page-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
       | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -4451,7 +4451,7 @@ Feature: Expression Builder Component Scenarios
 
   @48623    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor
   Scenario: Set up configuration to hide submit for approval status of program from step progress bar using User Type IN Internal AND UserApp IN StateAsGrantor and validating it inside program detail page-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
       | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -4467,7 +4467,7 @@ Feature: Expression Builder Component Scenarios
 
   @48624    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor
   Scenario: Set up configuration to hide submit for approval status of program from step progress bar using User Type IN Internal OR UserApp IN StateAsGrantor and validating it inside program detail page-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
       | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -4483,7 +4483,7 @@ Feature: Expression Builder Component Scenarios
 
   @48625    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Applicant_Internal_Reviewer
   Scenario: Set up configuration to hide submit for approval status of program from step progress bar using User Type IN Applicant Internal Reviewer and validating it inside program detail page-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
       | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -4499,7 +4499,7 @@ Feature: Expression Builder Component Scenarios
 
   @48626    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserApp_IN_StateAsGrantor_Admin_Recipient @smoke
   Scenario: Set up configuration to hide submit for approval status of program from step progress bar using UserApp IN State As grantor, Admin, Recipient and validating it inside program detail page-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
       | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -4515,7 +4515,7 @@ Feature: Expression Builder Component Scenarios
 
   @48627    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserApp_NOTIN_Admin
   Scenario: Set up configuration to hide submit for approval status of program from step progress bar using UserApp NOTIN Admin and validating it inside program detail page-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
       | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -4531,7 +4531,7 @@ Feature: Expression Builder Component Scenarios
 
   @48628    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserApp_NOTIN_Recipient
   Scenario: Set up configuration to hide submit for approval status of program from step progress bar using UserApp NOTIN Recipient and validating it inside program detail page-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
       | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -4547,7 +4547,7 @@ Feature: Expression Builder Component Scenarios
 
   @48629    @hide_Expression_StepProgressBar_SubmitForApproval_With_Profile_IN_SystemAdministrator_OR_UserApp_IN_StateAsGrantor
   Scenario: Set up configuration to hide submit for approval status of program from step progress bar using Profile IN System Administrator OR UserApp IN StateasGrantor and validating it inside program detail page-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
       | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -4563,7 +4563,7 @@ Feature: Expression Builder Component Scenarios
 
   @48630    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_NOTIN_Internal_OR_Profile_IN_SystemAdministratror_EXE
   Scenario: Set up configuration to display submit for approval status of program from step progress bar using UserType NOT IN Internal OR Profile IN System Administrator, EXE and validating it inside program detail page-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
       | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -4579,7 +4579,7 @@ Feature: Expression Builder Component Scenarios
 
   @48634    @hide_Expression_ApprovalDecisionAction_Forward_With_UserType_IN_Internal @smoke
   Scenario: Setup configuration to hide forward option from configuration for approval decision using User Type IN Internal and validating its content in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
@@ -4605,7 +4605,7 @@ Feature: Expression Builder Component Scenarios
 
   @48637    @hide_Expression_ApprovalDecisionAction_Forward_With_UserType_NOTIN_Internal
   Scenario: Setup configuration to display forward option from configuration for approval decision using User Type NotIN Internal and validating its content in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
@@ -4631,7 +4631,7 @@ Feature: Expression Builder Component Scenarios
 
   @48638    @hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator @smoke
   Scenario: Setup configuration to display forward option from configuration for approval decision using Profile IN System Administrator and validating its content in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
@@ -4657,7 +4657,7 @@ Feature: Expression Builder Component Scenarios
 
   @48639    @hide_Expression_ApprovalDecisionAction_Forward_With_Profile_NOTIN_SystemAdministrator
   Scenario: Setup configuration to hide forward option from configuration for approval decision using Profile NOTIN System Administrator and validating its content in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
@@ -4683,7 +4683,7 @@ Feature: Expression Builder Component Scenarios
 
   @48640    @hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal
   Scenario: Setup configuration to display forward option from configuration for approval decision using  Profile IN System Administrator AND UserType IN Internal and validating its content in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
@@ -4709,7 +4709,7 @@ Feature: Expression Builder Component Scenarios
 
   @48641    @hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal
   Scenario: Setup configuration to hide forward option from configuration for approval decision using  Profile IN System Administrator OR UserType IN Internal and validating its content in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
@@ -4735,7 +4735,7 @@ Feature: Expression Builder Component Scenarios
 
   @48646    @hide_Expression_ApprovalDecisionAction_Reject_With_UserType_NotIN_Internal_AND_Profile_NOTIN_SystemAdministrator @smoke
   Scenario: Setup configuration to display Reject option from configuration for approval decision using User Type NOTIN Internal AND Profile NOTIN System Administrator and validating its content in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
@@ -4761,7 +4761,7 @@ Feature: Expression Builder Component Scenarios
 
   @48647    @hide_Expression_ApprovalDecisionAction_Reject_With_UserType_NotIN_Internal_OR_Profile_NOTIN_SystemAdministrator
   Scenario: Setup configuration to hide Reject option from configuration for approval decision using UserType NOT IN Internal OR Profile NOT IN System Administrator and validating its content in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
@@ -4787,7 +4787,7 @@ Feature: Expression Builder Component Scenarios
 
   @48648    @hide_Expression_ApprovalDecisionAction_Reject_With_UserType_IN_Internal_OR_Profile_IN_PM
   Scenario: Setup configuration to hide Reject option from configuration for approval decision using UserType IN Internal OR Profile IN PM and validating its content in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
@@ -4813,7 +4813,7 @@ Feature: Expression Builder Component Scenarios
 
   @48649    @hide_Expression_ApprovalDecisionAction_Reject_With_UserType_IN_Internal_AND_Profile_IN_PM
   Scenario: Setup configuration to hide Reject option from configuration for approval decision using UserType IN Internal AND Profile IN PM and validating its content in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
@@ -4839,7 +4839,7 @@ Feature: Expression Builder Component Scenarios
 
   @48650    @hide_Expression_ApprovalDecisionAction_Reject_With_UserApp_IN_StateAsGrantor
   Scenario: Setup configuration to hide Reject option from configuration for approval decision using userApp IN StateAs Grantor and validating its content in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
@@ -4865,7 +4865,7 @@ Feature: Expression Builder Component Scenarios
 
   @48651    @hide_Expression_ApprovalDecisionAction_Reject_With_UserApp_NOTIN_StateAsGrantor
   Scenario: Setup configuration to display Reject option from configuration for approval decision using userApp NOTIN State As Grantor and validating its content in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
@@ -4891,7 +4891,7 @@ Feature: Expression Builder Component Scenarios
 
   @48652    @hide_Expression_ApprovalDecisionAction_SendBack_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor
   Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserType IN Internal AND UserApp IN StateasGrantor and validating its content in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
@@ -4917,7 +4917,7 @@ Feature: Expression Builder Component Scenarios
 
   @48654    @hide_Expression_ApprovalDecisionAction_SendBack_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor
   Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserType IN Internal OR UserApp IN StateasGrantor and validating its content in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
@@ -4943,7 +4943,7 @@ Feature: Expression Builder Component Scenarios
 
   @48655    @hide_Expression_ApprovalDecisionAction_SendBack_With_UserType_IN_Applicant_Internal_Reviewer
   Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserType IN Applicant Internal Reviewer and validating its content in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
@@ -4969,7 +4969,7 @@ Feature: Expression Builder Component Scenarios
 
   @48656    @hide_Expression_ApprovalDecisionAction_SendBack_With_UserApp_IN_StateAsGrantee
   Scenario: Setup configuration to display Send back option from configuration for approval decision using UserApp IN State As Grantee and validating its content in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
@@ -4995,7 +4995,7 @@ Feature: Expression Builder Component Scenarios
 
   @48657    @hide_Expression_ApprovalDecisionAction_SendBack_With_UserApp_NOTIN_Admin @smoke
   Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserApp NOTIN Admin and validating its content in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
@@ -5021,7 +5021,7 @@ Feature: Expression Builder Component Scenarios
 
   @48658    @hide_Expression_ApprovalDecisionAction_SendBack_With_UserApp_NOTIN_Recipient
   Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserApp NOTIN Recipient and validating its content in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
@@ -5047,7 +5047,7 @@ Feature: Expression Builder Component Scenarios
 
   @48659    @hide_Expression_ApprovalDecisionAction_SendBack_With_UserApp_IN_StateAsGrantor_StateAsGrantee_Recipient_Admin
   Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserApp IN StateasGrantor, StateasGrantee, Recipient, Admin and validating its content in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
@@ -5073,7 +5073,7 @@ Feature: Expression Builder Component Scenarios
 
   @48662    @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_SystemAdministrator_OR_UserApp_IN_StateAsGrantor
   Scenario: Setup configuration to hide Approve option from configuration for approval decision using Profile IN System Administrator OR UserApp IN StateasGrantor and validating its content in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
@@ -5099,7 +5099,7 @@ Feature: Expression Builder Component Scenarios
 
   @48663    @hide_Expression_ApprovalDecisionAction_Approve_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_Admin
   Scenario: Setup configuration to display Approve option from configuration for approval decision using UserType NOT IN Internal AND Profile NOT IN  Admin and validating its content in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
@@ -5125,7 +5125,7 @@ Feature: Expression Builder Component Scenarios
 
   @48666    @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_PM_OR_UserApp_NOTIN_Admin
   Scenario: Setup configuration to hide Approve option from configuration for approval decision using Profile IN PM OR UserApp NOT IN Admin and validating its content in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
@@ -5151,7 +5151,7 @@ Feature: Expression Builder Component Scenarios
 
   @48667    @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_PM_AND_UserApp_NOTIN_Admin
   Scenario: Setup configuration to hide Approve option from configuration for approval decision using Profile IN PM AND UserApp NOT IN Admin and validating its content in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
@@ -5177,7 +5177,7 @@ Feature: Expression Builder Component Scenarios
 
   @48668    @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_NOTIN_SystemAdministrator_OR_UserType_IN_Internal
   Scenario: Setup configuration to hide Approve option from configuration for approval decision using Profile NOT IN System Administrator OR UserType IN Internal and validating its content in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
@@ -5203,7 +5203,7 @@ Feature: Expression Builder Component Scenarios
 
   @48670    @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_NOTIN_SystemAdministrator_AND_UserType_IN_Internal
   Scenario: Setup configuration to hide Approve option from configuration for approval decision using Profile NOT IN System Administrator AND UserType IN Internal and validating its content in pending tasks approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
@@ -5229,7 +5229,7 @@ Feature: Expression Builder Component Scenarios
 
   @51604    @hide_expression_Page_Block_Profile_IN_PM_For_Notes_And_Attachment
   Scenario: Set up configuration to display Notes and Attachment page block using expression json field
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -5246,7 +5246,7 @@ Feature: Expression Builder Component Scenarios
 
   @51605    @hide_expression_Page_Block_Profile_IN_System_Administrator_For_Notes_And_Attachment
   Scenario: Set up configuration to hide Notes and Attachment page block using expression json field for Admin
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -5263,7 +5263,7 @@ Feature: Expression Builder Component Scenarios
 
   @51606    @hide_expression_Page_Block_Profile_IN_PM_and_System_Administrator_For_Notes_And_Attachment
   Scenario: Set up configuration to hide Notes and Attachment page block using expression json field for Admin and PM
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -5280,7 +5280,7 @@ Feature: Expression Builder Component Scenarios
 
   @51607    @hide_expression_Page_Block_Profile_NOTIN_PM_For_Notes_And_Attachment
   Scenario: Set up configuration to hide Notes and Attachment page block using expression json field for NOTIN PM
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -5297,7 +5297,7 @@ Feature: Expression Builder Component Scenarios
 
   @51608    @hide_expression_Page_Block_UserType_IN_Internal__For_Notes_And_Attachment
   Scenario: Set up configuration to hide Notes and Attachment page block using expression json field as UserType IN Internal
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -5314,7 +5314,7 @@ Feature: Expression Builder Component Scenarios
 
   @51609    @hide_expression_Page_Block_UserType_NOTIN_Internal__For_Notes_And_Attachment
   Scenario: Set up configuration to display Notes and Attachment page block using expression json field as UserType NOTIN Internal
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -5331,7 +5331,7 @@ Feature: Expression Builder Component Scenarios
 
   @51610    @hide_expression_Page_Block_UserType_IN_Applicant_Internal_Reviewer__For_Notes_And_Attachment
   Scenario: Set up configuration to hide Notes and Attachment page block using expression json field as UserType IN Applicant Internal and Reviewer
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -5348,7 +5348,7 @@ Feature: Expression Builder Component Scenarios
 
   @52909    @Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Internal
   Scenario: validate disabling of top level action button from planning-Program enhance flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -5365,7 +5365,7 @@ Feature: Expression Builder Component Scenarios
 
   @52911    @Hide_Expression_EnhancedGrid_TopAction_With_UserType_NOTIN_Internal
   Scenario: validate enabling of top level action button from planning-Program enhance flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -5382,7 +5382,7 @@ Feature: Expression Builder Component Scenarios
 
   @52914    @Hide_Expression_EnhancedGrid_TopAction_With_Profile_IN_SystemAdministrator
   Scenario: validate disabling of top level action button from planning-Program enhance flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -5399,7 +5399,7 @@ Feature: Expression Builder Component Scenarios
 
   @52915    @Hide_Expression_EnhancedGrid_TopAction_With_Profile_NOTIN_SystemAdministrator
   Scenario: validate enabling of top level action button from planning-Program enhance flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -5416,7 +5416,7 @@ Feature: Expression Builder Component Scenarios
 
   @52917    @Hide_Expression_EnhancedGrid_TopAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal
   Scenario: validate disabling of top level action button from planning-Program enhance flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -5433,7 +5433,7 @@ Feature: Expression Builder Component Scenarios
 
   @52916    @Hide_Expression_EnhancedGrid_TopAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal
   Scenario: validate disabling of top level action button from planning-Program enhance flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -5450,7 +5450,7 @@ Feature: Expression Builder Component Scenarios
 
   @52918    @Hide_Expression_EnhancedGrid_TopAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator
   Scenario: validate enabling of top level action button from planning-Program enhance flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -5467,7 +5467,7 @@ Feature: Expression Builder Component Scenarios
 
   @52919    @Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Internal_OR_Profile_IN_PM
   Scenario: validate disabling of top level action button from planning-Program enhance flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -5484,7 +5484,7 @@ Feature: Expression Builder Component Scenarios
 
   @52927    @Hide_Expression_EnhancedGrid_TopAction_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator
   Scenario: validate enabling of top level action button from planning-Program enhance flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -5501,7 +5501,7 @@ Feature: Expression Builder Component Scenarios
 
   @52928    @Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Internal_AND_Profile_IN_PM
   Scenario: validate enabling of top level action button from planning-Program enhance flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -5518,7 +5518,7 @@ Feature: Expression Builder Component Scenarios
 
   @52929    @Hide_Expression_EnhancedGrid_TopAction_With_UserApp_IN_StateAsGrantor
   Scenario: validate disabling of top level action button from planning-Program enhance flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -5535,7 +5535,7 @@ Feature: Expression Builder Component Scenarios
 
   @52930    @Hide_Expression_EnhancedGrid_TopAction_With_UserApp_NOTIN_StateAsGrantor
   Scenario: validate enabling of top level action button from planning-Program enhance flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -5552,7 +5552,7 @@ Feature: Expression Builder Component Scenarios
 
   @52931    @Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor
   Scenario: validate disabling of top level action button from planning-Program enhance flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -5569,7 +5569,7 @@ Feature: Expression Builder Component Scenarios
 
   @52932    @Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor
   Scenario: validate disabling of top level action button from planning-Program enhance flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -5586,7 +5586,7 @@ Feature: Expression Builder Component Scenarios
 
   @52933    @Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Applicant_Internal_Reviewer
   Scenario: validate disabling of top level action button from planning-Program enhance flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -5603,7 +5603,7 @@ Feature: Expression Builder Component Scenarios
 
   @53008    @Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserType_IN_Internal
   Scenario: validate disabling of top level action button from planning-Program child enhance flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -5622,7 +5622,7 @@ Feature: Expression Builder Component Scenarios
 
   @53009    @Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserType_NOTIN_Internal
   Scenario: validate enabling of top level action button from planning-Program child enhance flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -5641,7 +5641,7 @@ Feature: Expression Builder Component Scenarios
 
   @53010    @Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_Profile_IN_SystemAdministrator
   Scenario: validate disabling of top level action button from planning-Program child enhance flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -5660,7 +5660,7 @@ Feature: Expression Builder Component Scenarios
 
   @53011    @Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_Profile_NOTIN_SystemAdministrator
   Scenario: validate disabling of top level action button from planning-Program child enhance flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -5679,7 +5679,7 @@ Feature: Expression Builder Component Scenarios
 
   @53012    @Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal
   Scenario: validate disabling of top level action button from planning-Program child enhance flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -5698,7 +5698,7 @@ Feature: Expression Builder Component Scenarios
 
   @53013    @Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal
   Scenario: validate disabling of top level action button from planning-Program child enhance flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -5717,7 +5717,7 @@ Feature: Expression Builder Component Scenarios
 
   @53014    @Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserApp_IN_StateAsGrantor
   Scenario: validate disabling of top level action button from planning-Program enhance flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -5736,7 +5736,7 @@ Feature: Expression Builder Component Scenarios
 
   @53015    @Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserApp_NOTIN_StateAsGrantor
   Scenario: validate enabling of top level action button from planning-Program enhance flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -5755,7 +5755,7 @@ Feature: Expression Builder Component Scenarios
 
   @53017    @Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor
   Scenario: validate disabling of top level action button from planning-Program enhance flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -5774,7 +5774,7 @@ Feature: Expression Builder Component Scenarios
 
   @53020    @Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserType_IN_Applicant_Internal_Reviewer
   Scenario: validate disabling of top level action button from planning-Program enhance flex grid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -5793,7 +5793,7 @@ Feature: Expression Builder Component Scenarios
 
   @45305    @hideExpressioJsonForGroupExpressionWithANDOperatorAtPageLayout-gPlanning
   Scenario: Hide Program contacts from Overview Tab using User App Not IN operator
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -5809,7 +5809,7 @@ Feature: Expression Builder Component Scenarios
 
   @45314    @hide_expression_using_left_operand_profile_NOTIN
   Scenario: Hide Overview sub tab with left operand profile NOTIN -gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantee State Program | Name                      | TAB-029                    |
     Given I setup test configuration as below:

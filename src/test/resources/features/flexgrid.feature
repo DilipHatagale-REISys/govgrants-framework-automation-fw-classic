@@ -6,7 +6,7 @@ Feature: Flex Grid Component Scenarios
 
   @34320    @changeOfN2GgridHeaderGoalOjective-ProgramStrategicGoals @smoke
   Scenario: changing information section header name of flex grid in configuratin and validating inside planning-programs view icon - plan subtab
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Flex Grid             | Header    | Goals Objectives  | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -23,7 +23,7 @@ Feature: Flex Grid Component Scenarios
 
   @34321    @disableMenuOptionGoalObjective-ProgramStrategicGoals
   Scenario: Disable menu bars for Goal Objective flex grid in configuratin and validating inside planning-programs view icon - plan subtab
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
       | Flex Grid             | Disable Menu | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -40,7 +40,7 @@ Feature: Flex Grid Component Scenarios
 
   @34323    @disableQuicksearchfromN2GFlexGrid-ProgramStrategicGoals @smoke
   Scenario: Disable quick search bar for Goal Objective flex grid in configuratin and validating inside planning-programs view icon - plan subtab
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Grid             | Enable Quick Search | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -57,7 +57,7 @@ Feature: Flex Grid Component Scenarios
 
   @34325    @disablePDFExport-ProgramStrategicGoals
   Scenario: Disable download PDF from for Goal Objective menu flex grid in configuratin and validating inside planning-programs view icon - plan subtab
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Grid             | Enable Export (PDF) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -75,7 +75,7 @@ Feature: Flex Grid Component Scenarios
 
   @62818    @disableXLSExport-ProgramStrategicGoals
   Scenario: Disable download XLS from for Goal Objective menu flex grid in configuratin and validating inside planning-programs view icon - plan subtab
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
       | Flex Grid             | Enable Export (XLS / CSV) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -93,7 +93,7 @@ Feature: Flex Grid Component Scenarios
 
   @34327    @disableFlexTableFieldName-ProgramStrategicGoals
   Scenario: Remove flex table header date column inside Goal Objective configuratin and validating inside planning-programs view icon - plan subtab
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue                                    | filterId         |
       | Flex Grid             | Display Field Names | Type__c,Title__c,Description__c,Status__c,DueDate__c | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -110,7 +110,7 @@ Feature: Flex Grid Component Scenarios
 
   @34332    @hideViewIconForPPMGVflexTable-Programs @smoke
   Scenario: Hide view context from PPMGV view cofniguration and validate inside planning-programs view icon - plan subtab - Goal Objectives flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory              | fieldName        | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid Action:Flex Table Action | Hide for context |                   | ProgramStrategicGoals | Name                      | View                       |
     Given I setup test configuration as below:
@@ -127,7 +127,7 @@ Feature: Flex Grid Component Scenarios
 
   @49449    @sequenceFieldAtProgramOutcomesFlexTable-Programs
   Scenario: Changing sequence of view row level action item at program outcomes flex table from config and validating it inside flex table of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Flex Table Action     | Sequence  | 2                 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -145,7 +145,7 @@ Feature: Flex Grid Component Scenarios
 
   @49450    @buttonHelpTextFieldAtProgramOutcomesFlexTableAction-gPlanning
   Scenario: Changing content of button help text field at program outcome flex table action from config and validating it inside flex table of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table Action     | Button Help Text |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -163,7 +163,7 @@ Feature: Flex Grid Component Scenarios
 
   @49451    @viewActionOpensInNewWindowAtProgramOutcomesFlexTable-gPlanning
   Scenario: validate program outcomes flex table action field- view opens in new window
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue   | filterId         |
       | Flex Table Action     | Action Behavior | Open in same window | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -182,7 +182,7 @@ Feature: Flex Grid Component Scenarios
 
   @49452    @locationFieldAtProgramOutcomesFlexTableActionItemFromRowToTop-gPlanning
   Scenario: Changing location of key outcomes flex table view action from row to top from config anf validating it inside program outcomes flex table of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Location                   | Row               | ProgramOutcomes    | Name                      | View                       |
       | Flex Table Action     | Header Action Display Type |                   | ProgramOutcomes    | Name                      | View                       |
@@ -201,7 +201,7 @@ Feature: Flex Grid Component Scenarios
 
   @49453    @ConfirmationMessageFieldForProgramOutcomesFlexTAbleViewAction-gPlanning
   Scenario: Setup confirmation message for program outcomes flex table view action from configuration and validating it at Program outcomes flex table of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Show Confirmation Box | false             | ProgramOutcomes    | Name                      | View                       |
       | Flex Table Action     | Confirmation Message  |                   | ProgramOutcomes    | Name                      | View                       |
@@ -221,7 +221,7 @@ Feature: Flex Grid Component Scenarios
 
   @49454    @hideForProfileFieldAtProgramOutcomesFlexTableViewAction-gPlanning
   Scenario: Hide view row level action for specific profile from configuration and validating it at under program outcomes flex table- gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName        | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide For Profile |                   | ProgramOutcomes    | Name                      | View                       |
     Given I setup test configuration as below:
@@ -239,7 +239,7 @@ Feature: Flex Grid Component Scenarios
 
   @49455    @hideForUserFieldAtProgramOutcomesFlexTableViewAction-gPlanning
   Scenario: Hide view row level action for specific user from configuration and validating it at under program outcomes flex table- gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName     | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide For User |                   | ProgramOutcomes    | Name                      | View                       |
     Given I setup test configuration as below:
@@ -257,7 +257,7 @@ Feature: Flex Grid Component Scenarios
 
   @49456    @hideForContextFieldAtProgramOutcomesFlexTableViewAction-gPlanning
   Scenario: Hide edit row level action for view layout from configuration and validating it at under program flex table- gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName        | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide For Context |                   | ProgramOutcomes    | Name                      | View                       |
     Given I setup test configuration as below:
@@ -275,7 +275,7 @@ Feature: Flex Grid Component Scenarios
 
   @49457    @viewActionOpensInSameWindowAtProgramOutcomesFlexTable-gPlanning
   Scenario: validate program outcomes flex table action field- view opens in same window
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue   | filterId         |
       | Flex Table Action     | Action Behavior | Open in same window | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -294,7 +294,7 @@ Feature: Flex Grid Component Scenarios
 
   @49458    @ViewActionOpensInOverLayWindowAtProgramOutcomesFlexTable-gPlanning
   Scenario: validate program outcomes flex table action field- view opens in overlay window
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue   | filterId         |
       | Flex Table Action     | Action Behavior | Open in same window | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -313,7 +313,7 @@ Feature: Flex Grid Component Scenarios
 
   @49459    @editActionOpensInInlineModeAtProgramOutcomesFlexTable-gPlanning
   Scenario: validate program outcomes flex table action field- edit opens in inline window
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue   | filterId         |
       | Flex Table Action     | Action Behavior | Open in Inline mode | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -332,7 +332,7 @@ Feature: Flex Grid Component Scenarios
 
   @49460    @actionURLLongFieldAtProgramOutcomesFlexTableViewAction-gPlanning
   Scenario Outline: Changing action url of action url field for view action from config and validating it at program outcomes flex table of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
       | Flex Table Action     | Action URL      | <oldActionUrl>    | ApiGeneratedId:0 |
       | Flex Table Action     | Action URL Long |                   | ApiGeneratedId:1 |
@@ -357,7 +357,7 @@ Feature: Flex Grid Component Scenarios
 
   @49462    @helpTextFieldAtProgramOutcomesFlexTableColumnHeader-gPlanning
   Scenario Outline: Changing content of help text field at program outcomes flex table column header from config and validating it inside program outcomes flex table of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Flex Table List       | Help Text |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -379,7 +379,7 @@ Feature: Flex Grid Component Scenarios
 
   @49539    @hideForProfileFieldAtProgramOutcomesParentFlexTableEditAction-gPlanning
   Scenario: Hide edit row level action for specific profile from configuration and validating it at under program outcomes parent flex table- gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide For Profile |                   | ProgramOutcomes    | Name                      | Edit                       |
     Given I setup test configuration as below:
@@ -397,7 +397,7 @@ Feature: Flex Grid Component Scenarios
 
   @49546    @hideForUserFieldAtProgramOutcomesParentFlexTableEditAction-gPlanning
   Scenario: Hide edit row level action for specific user from configuration and validating it at under program outcomes parent flex table- gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide For User |                   | ProgramOutcomes    | Name                      | Edit                       |
     Given I setup test configuration as below:
@@ -415,7 +415,7 @@ Feature: Flex Grid Component Scenarios
 
   @50210    @headerFieldAtProgramOutcomesParentFlexTable-gPlanning
   Scenario: validate after changing name of program Outcomes flex table title inside plan sub tab-programs
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Flex Table            | Header    | Key Outcomes      | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -432,7 +432,7 @@ Feature: Flex Grid Component Scenarios
 
   @50211    @disablingPDFExportFileAtProgramOutcomesParentFlexTable-gPlanning
   Scenario: validate disabling of PDF/Excel download from menu option in program outcomes flex table of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -450,7 +450,7 @@ Feature: Flex Grid Component Scenarios
 
   @62728    @disablingPDFExportFileAtProgramOutcomesParentFlexTable-gPlanning
   Scenario: validate disabling of Excel download from menu option in program outcomes flex table of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -468,7 +468,7 @@ Feature: Flex Grid Component Scenarios
 
   @49461    @enableTotalFieldAtProgramOutcomesFlexTable-gPlanning
   Scenario: Validating total sum for Target column after making changes for Enable total and Enable Total Row from config and validating it inside program outcomes flex table of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table List       | Enable Total     | false             | ApiGeneratedId:0 |
       | Flex Table:General    | Enable Total Row | false             | ApiGeneratedId:1 |
@@ -487,7 +487,7 @@ Feature: Flex Grid Component Scenarios
 
   @50212    @disblingQuickSearchFieldAtProgramOutcomesFlexTable-gPlanning
   Scenario: validate disabling of quick search in flex table of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -504,7 +504,7 @@ Feature: Flex Grid Component Scenarios
 
   @50213    @disablingMenuIconForProgramOutcomesFlexTable-gPlanning @smoke
   Scenario: validate disabling of menu icon from program outcomes flex table-gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
       | Flex Grid             | Disable Menu | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -521,7 +521,7 @@ Feature: Flex Grid Component Scenarios
 
   @50216    @enableTotalRowFieldAtProgramOutcomesFlexTable-gPlanning @smoke
   Scenario: validate enabling of total enable row in program outcomes flex table of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Total Row | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -538,7 +538,7 @@ Feature: Flex Grid Component Scenarios
 
   @50217    @enableTotalRecordsCountFieldAtProgramOutcomesFlexTable-gPlanning @smoke
   Scenario: validate disbaling of total row count in flex table of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -555,7 +555,7 @@ Feature: Flex Grid Component Scenarios
 
   @50219    @enablingEnableAutoIndexFieldAtProgramOutcomesFlexTable-gPlanning
   Scenario: validate after enabling enable auto index field for program outcomes flex table of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -572,7 +572,7 @@ Feature: Flex Grid Component Scenarios
 
   @50226    @headerHelpTextFieldAtProgramOutcomesFlexTable-gPlanning
   Scenario Outline: Changing content of help text field at program outcomes flex table from config and validating it at program outcomes flex table planning-Program
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Grid             | Header Help Text | <old_helpText>    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -593,7 +593,7 @@ Feature: Flex Grid Component Scenarios
 
   @50228    @enableHelpFieldAtProgramOutcomesFlexTable-gPlanning
   Scenario: validate enabling of help inside menu option in program outcomes flex table of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Help | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -611,7 +611,7 @@ Feature: Flex Grid Component Scenarios
 
   @50230   @orderBySortByFieldAtProgramOutcomesFlexTableForAscendingOrder-gPlanning
   Scenario: Changing specific column value in ascending order with order by and sort by field from config and validating it inside program outcomes flex table of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Order By       |                   | ProgramOutcomes    |                           |                            |
       | Flex Grid:General     | Sort Direction |                   | ProgramOutcomes    |                           |                            |
@@ -630,7 +630,7 @@ Feature: Flex Grid Component Scenarios
 
   @50231   @orderBySortByFieldAtProgramOutcomesFlexTableForDescendingOrder-gPlanning
   Scenario: Changing specific column value in Descending order with order by and sort by field from config and validating it inside program outcomes flex table of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Order By       |                   | ProgramOutcomes    |                           |                            |
       | Flex Grid:General     | Sort Direction |                   | ProgramOutcomes    |                           |                            |
@@ -649,7 +649,7 @@ Feature: Flex Grid Component Scenarios
 
   @50232    @fieldLabelOverrideFieldAtProgramOutcomesFlexTableColumnHeader-gPlanning
   Scenario: Changing specific column name of program outcomes flex table from config and validating it inside program outcomes flex table of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table List       | Field Label Override | ID                | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -666,7 +666,7 @@ Feature: Flex Grid Component Scenarios
 
   @50229    @displayFieldNameFieldWithAddingfieldNamesOfDifferentDataTypes-gPlanning @smoke
   Scenario Outline: validate adding field names for different data types in program outcomes flex table of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -692,7 +692,7 @@ Feature: Flex Grid Component Scenarios
 
   @50233    @widthPercentageFieldAtParentProgramOutcomesFlexTable-gPlanning
   Scenario: validate width size of particular column at program outcomes flex table programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
       | Flex Table List       | Field width(%) | 20                | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -709,7 +709,7 @@ Feature: Flex Grid Component Scenarios
 
   @50239    @refreshBehaviourFieldAtApplicationBudgetPeriodsFlexTableAsRefreshEntirePageForEditAction-gPlanning
   Scenario: validate flex table action field- refresh entire page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue   | filterId         |
       | Flex Table Action     | Refresh Behavior |                     | ApiGeneratedId:0 |
       | Flex Table Action     | Action Behavior  | Open in inline mode | ApiGeneratedId:1 |
@@ -730,7 +730,7 @@ Feature: Flex Grid Component Scenarios
 
   @50337    @buttonHelpTextFieldAtActiveGrantsGridParentFlexTableAction-gMonitoring
   Scenario: Changing content of button help text field at Monitoring Schedule For All Active Grant flex table action from config and validating it inside Monitoring Schedule For All Active Grant flex table of programs-Monitoring
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table Action     | Button Help Text |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -743,7 +743,7 @@ Feature: Flex Grid Component Scenarios
 
   @50338    @viewActionOpensInNewWindowForActiveGrantsGridParentFlexTableAction-gMonitoring
   Scenario: validate Monitoring Schedule For All Active Grant flex table action field- View opens in new window
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue   | filterId         |
       | Flex Table Action     | Action Behavior | Open in same window | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -758,7 +758,7 @@ Feature: Flex Grid Component Scenarios
 
   @50339    @viewActionOpensInSameWindowForActiveGrantsGridParentFlexTableAction-gMonitoring
   Scenario: validate Monitoring Schedule For All Active Grant flex table action field- View opens in same window
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue   | filterId         |
       | Flex Table Action     | Action Behavior | Open in same window | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -772,7 +772,7 @@ Feature: Flex Grid Component Scenarios
 
   @50340    @viewActionOpensInOverlayForActiveGrantsGridParentFlexTableAction-gMonitoring
   Scenario: validate Monitoring Schedule For All Active Grant flex table action field- View opens in overlay
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue   | filterId         |
       | Flex Table Action     | Action Behavior | Open in same window | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -786,7 +786,7 @@ Feature: Flex Grid Component Scenarios
 
   @50342    @actionURLLongFieldAtActiveGrantsGridParentFlexTableFlexTableViewAction-gPlanning @smoke
   Scenario Outline: Changing action url of action url long field for view action from config and validating it at Monitoring Schedule For All Active Grant flex table of program-gMonitoring
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
       | Flex Table Action     | Action URL      | <oldActionUrl>    | ApiGeneratedId:0 |
       | Flex Table Action     | Action URL Long |                   | ApiGeneratedId:1 |
@@ -806,7 +806,7 @@ Feature: Flex Grid Component Scenarios
 
   @50343    @locationFieldAtActiveGrantsGridParentFlexTableActionItemFromRowToTop-gMonitoring @smoke
   Scenario: Changing location of Monitoring Schedule For All Active Grant flex table view action from row to top from config anf validating it inside Monitoring Schedule For All Active Grant flex table of program-gMonitoring
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Location                   | Row               | ActiveGrantsGrid   | Name                      | View                       |
       | Flex Table Action     | Header Action Display Type |                   | ActiveGrantsGrid   | Name                      | View                       |
@@ -821,7 +821,7 @@ Feature: Flex Grid Component Scenarios
 
   @50344    @locationFieldAtActiveGrantsGridParentFlexTableActionItemFromTopToRow-gMonitoring @smoke
   Scenario: Changing location of Monitoring Schedule For All Active Grant flex table view action from top to row from config anf validating it inside Monitoring Schedule For All Active Grant flex table of program-gMonitoring
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Location  | Row               | ActiveGrantsGrid   | Name                      | View                       |
     Given I setup test configuration as below:
@@ -834,7 +834,7 @@ Feature: Flex Grid Component Scenarios
 
   @50345    @showConfirmationBoxFieldForActiveGrantsGridFlexTAbleViewAction-gMonitoring @smoke
   Scenario: Setup confirmation box for Monitoring Schedule For All Active Grant flex table view action configuration and validating it at Monitoring Schedule For All Active Grant flex table of program-gMonitoring
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Show Confirmation Box | false             | ActiveGrantsGrid   | Name                      | View                       |
     Given I setup test configuration as below:
@@ -848,7 +848,7 @@ Feature: Flex Grid Component Scenarios
 
   @50346    @ConfirmationMessageFieldForActiveGrantsGridFlexTAbleViewAction-gMonitoring
   Scenario: Setup confirmation message for Monitoring Schedule For All Active Grant flex table view action from configuration and validating it at Monitoring Schedule For All Active Grant flex table of program-gMonitoring
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Show Confirmation Box | false             | ActiveGrantsGrid   | Name                      | View                       |
       | Flex Table Action     | Confirmation Message  |                   | ActiveGrantsGrid   | Name                      | View                       |
@@ -864,7 +864,7 @@ Feature: Flex Grid Component Scenarios
 
   @50347    @refreshBehaviourFieldAtGrantorBudgetPeriodFlexTableAsRefreshEntirePageForEditAction-gGrants @smoke
   Scenario: validate budget period details flex table action field- refresh entire page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table Action     | Refresh Behavior |                   | ApiGeneratedId:0 |
       | Flex Table Action     | Action Behavior  | Open in overlay   | ApiGeneratedId:1 |
@@ -884,7 +884,7 @@ Feature: Flex Grid Component Scenarios
 
   @50351    @sequenceFieldAtGrantorBudgetPeriodFlexTableAction-gGrants
   Scenario: Changing sequence of edit row level action item at budget period details flex table from config and validating it inside budget period details flex table of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Flex Table Action     | Sequence  | 2                 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -900,7 +900,7 @@ Feature: Flex Grid Component Scenarios
 
   @50352    @hideForProfileFieldAtGrantorBudgetPeriodFlexTableViewAction-gGrants @smoke
   Scenario: Hide view row level action for specific profile from configuration and validating it at under Grantor Budget Period flex table- gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName        | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide For Profile |                   | GrantorBudgetPeriod | Name                      | View                       |
     Given I setup test configuration as below:
@@ -916,7 +916,7 @@ Feature: Flex Grid Component Scenarios
 
   @50353    @hideForUserFieldAtGrantorBudgetPeriodFlexTableViewAction-gGrants @smoke
   Scenario: Hide view row level action for specific User from configuration and validating it at under Grantor Budget Period flex table- gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName     | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide For User |                   | GrantorBudgetPeriod | Name                      | View                       |
     Given I setup test configuration as below:
@@ -932,7 +932,7 @@ Feature: Flex Grid Component Scenarios
 
   @50355    @iconCSSFieldAtActiveGrantsGridParentFlexTableEditActionItem-gMonitoring
   Scenario: Setup icon for ActiveGrantsGridParent flex table edit action from config and validating it at ActiveGrantsGridParentflex table of program-gMonitoring
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue                                  | filterId         |
       | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableEditActionDefaultIconCss | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -945,7 +945,7 @@ Feature: Flex Grid Component Scenarios
 
   @50359    @actionNameFieldAtActiveGrantsGridParentFlexTableViewAction-gMonitoeing
   Scenario: Changing action name field for view action at ActiveGrantsGridParent flex table from config and validating it inside ActiveGrantsGridParent flex table of programs-gMonitoring
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
       | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -958,7 +958,7 @@ Feature: Flex Grid Component Scenarios
 
   @50362    @headerFieldAtActiveGrantsGridParentFlexTable-gMonitoring
   Scenario: Changing content of header field at ActiveGrantsGridParent flex table and validating it at Monitoring schedule for all active grants flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue                        | filterId         |
       | Flex Table            | Header    | Monitoring Schedule For All Active Grant | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -971,7 +971,7 @@ Feature: Flex Grid Component Scenarios
 
   @50365    @headerHelpTextFieldAtActiveGrantsGridParentFlexTable-gMonitoring
   Scenario Outline: Changing content of help text field at parent flex table of ActiveGrantsGrid from config and validating it at Monitoring schedule for all active grant flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Grid             | Header Help Text | <old_helpText>    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -988,7 +988,7 @@ Feature: Flex Grid Component Scenarios
 
   @50367    @disblingQuickSearchFieldAtActiveGrantsGridParentFlexTable-gMonitoring @smoke
   Scenario: validate disabling of quick search in ActiveGrantsGrid flex table at program-gMonitoring
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1001,7 +1001,7 @@ Feature: Flex Grid Component Scenarios
 
   @50370    @enableHelpFieldAtActiveGrantsGridParentFlexTable-gMonitoring @smoke
   Scenario: validate enabling of help inside menu option in Monitoring schedule for all active grant flex table at Monitoring phase
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Help | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1015,7 +1015,7 @@ Feature: Flex Grid Component Scenarios
 
   @50371    @enablePaginationFieldAtActiveGrantsGridParentFlexTable-gMonitoring
   Scenario: validate enabling of page size dropdown at bottom in Monitoring schedule for all active grant flex table at Monitoring phase
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Pagination | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1028,7 +1028,7 @@ Feature: Flex Grid Component Scenarios
 
   @50377    @disablingMenuFieldAtActiveGrantsGridParentFlexTable-gMonitoring @smoke
   Scenario: validate disabling of menu icon from Monitoring schedule for all active grant flex table at Monitoring phase
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
       | Flex Table            | Disable Menu | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1041,7 +1041,7 @@ Feature: Flex Grid Component Scenarios
 
   @50379    @enableAutoIndexFieldAtActiveGrantsGridParentFlexTable-gMonitoring
   Scenario: validate enable auto index for Monitoring schedule for all active grant flex table at Monitoring phase
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1054,7 +1054,7 @@ Feature: Flex Grid Component Scenarios
 
   @50380    @disablingEnableTotalRecordsCountFieldAtActiveGrantsGridParentFlexTable-gMonitoring @smoke
   Scenario: validate disbaling of total row count for Monitoring schedule for all active grant flex table at Monitoring phase
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1067,7 +1067,7 @@ Feature: Flex Grid Component Scenarios
 
   @50383    @orderBySortByFieldAtActiveGrantsGridParentFlexTableForAscendingOrder-gMonitoring
   Scenario: Changing specific column value in ascending order with order by and sort by field At ActiveGrantsGrid Parent FlexTable from config and validating it inside Monitoring schedule for all active grant
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Order By       |                   | ActiveGrantsGrid   |                           |                            |
       | Flex Grid:General     | Sort Direction |                   | ActiveGrantsGrid   |                           |                            |
@@ -1082,7 +1082,7 @@ Feature: Flex Grid Component Scenarios
 
   @50386    @orderBySortByFieldAtActiveGrantsGridParentFlexTableForDescendingOrder-gMonitoring
   Scenario: Changing specific column value in descending order with order by and sort by field At ActiveGrantsGrid Parent FlexTable from config and validating it inside Monitoring schedule for all active grant flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Order By       |                   | ActiveGrantsGrid   |                           |                            |
       | Flex Grid:General     | Sort Direction |                   | ActiveGrantsGrid   |                           |                            |
@@ -1097,7 +1097,7 @@ Feature: Flex Grid Component Scenarios
 
   @50391    @disablingEnableExportFieldAtActiveGrantsGridParentFlexTable-gMonitoring
   Scenario: validate disabling of PDF download from menu option at inside Monitoring schedule for all active grant flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1111,7 +1111,7 @@ Feature: Flex Grid Component Scenarios
 
   @62730    @disablingEnableExportFieldAtActiveGrantsGridParentFlexTable-gMonitoring
   Scenario: validate disabling of Excel download from menu option at inside Monitoring schedule for all active grant flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1125,7 +1125,7 @@ Feature: Flex Grid Component Scenarios
 
   @50393    @helpTextFieldAtActiveGrantsGridParentFlexTable-gMonitoring
   Scenario Outline: Changing content of help text field at ActiveGrantsGridParent flex table column header from config and validating it inside Monitoring schedule for all active grant flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Flex Table List       | Help Text |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1143,7 +1143,7 @@ Feature: Flex Grid Component Scenarios
 
   @50394    @widthPercentageFieldAtActiveGrantsGridFlexTable-gMonitoring
   Scenario: validate width size of particular column at ActiveGrantsGrid flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
       | Flex Table List       | Field width(%) | 10                | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1156,7 +1156,7 @@ Feature: Flex Grid Component Scenarios
 
   @50397    @fieldLabelOverrideFieldAtActiveGrantsGridFlexTable-gMonitoring
   Scenario: Changing specific column name of ActiveGrantsGrid flex table from config and validating it inside Monitoring schedule for all active grant flex table at Monitoring phase
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table List       | Field Label Override | # Awards          | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1169,7 +1169,7 @@ Feature: Flex Grid Component Scenarios
 
   @50395    @labelFieldAtActiveGrantsGridFlexTable-gMonitoring
   Scenario: validate after changing name of ActiveGrantsGrid flex table title inside Monitoring phase
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue                        | filterId         |
       | Flex Table List       | Label     | Monitoring Schedule For All Active Grant | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1182,7 +1182,7 @@ Feature: Flex Grid Component Scenarios
 
   @50399    @filterClauseFieldAtActiveGrantsGridFlexTable-gMonitoring @smoke
   Scenario Outline: validate removing draft status category from ActiveGrantsGrid flex table of Monitoring Phase
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Flex Table List       | Filter Clause |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1199,7 +1199,7 @@ Feature: Flex Grid Component Scenarios
 
   @50275    @refreshBehaviourFieldAtApplicationBudgetPeriodsFlexTableAsRefreshParentPageForEditAction-gGrants
   Scenario: validate budget period details flex table action field- refresh parent page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue   | filterId         |
       | Flex Table Action     | Refresh Behavior |                     | ApiGeneratedId:0 |
       | Flex Table Action     | Action Behavior  | Open in inline mode | ApiGeneratedId:1 |
@@ -1220,7 +1220,7 @@ Feature: Flex Grid Component Scenarios
 
   @50244    @refreshBehaviourFieldAtApplicationBudgetPeriodsFlexTableAsRefreshTheGridForEditAction-gPlanning
   Scenario: validate flex table action field- refresh entire page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue   | filterId         |
       | Flex Table Action     | Refresh Behavior |                     | ApiGeneratedId:0 |
       | Flex Table Action     | Action Behavior  | Open in inline mode | ApiGeneratedId:1 |
@@ -1242,7 +1242,7 @@ Feature: Flex Grid Component Scenarios
 
   @50350    @refreshBehaviourFieldAtGrantorBudgetPeriodFlexTableAsRefreshParentPageForEditAction-gGrants
   Scenario: validate flex table action field- refresh entire page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table Action     | Refresh Behavior |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1260,7 +1260,7 @@ Feature: Flex Grid Component Scenarios
 
   @50348    @refreshBehaviourFieldAtGrantorBudgetPeriodFlexTableAsRefreshTheGridForEditAction-gPlanning
   Scenario: validate flex table action field- refresh entire page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table Action     | Refresh Behavior |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1280,7 +1280,7 @@ Feature: Flex Grid Component Scenarios
 
   @51323    @sequenceFieldAtApplicationBudgetCategoryFlexTableChild-gApplications
   Scenario: Changing sequence of view row level action item at Application Budget child flex table from config and validating it inside Application Budget child flex table of programs
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Flex Table Action     | Sequence  | 1                 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1299,7 +1299,7 @@ Feature: Flex Grid Component Scenarios
 
   @51328    @buttonHelpTextFieldAtApplicationBudgetCategoryFlexTableActionChild-gApplications
   Scenario: Changing content of button help text field Application Budget child flex table action from config and validating it inside Application Budget child flex table programs
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table Action     | Button Help Text |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1318,7 +1318,7 @@ Feature: Flex Grid Component Scenarios
 
   @51332    @viewActionOpensInNewWindowAtApplicationBudgetCategoryFlexTableActionChild-gApplications
   Scenario: validate Application Budget child flex table action field- view opens in new window
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue  | filterId         |
       | Flex Table Action     | Action Behavior | Open in new window | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1338,7 +1338,7 @@ Feature: Flex Grid Component Scenarios
 
   @51333    @viewActionOpensInSameWindowAtApplicationBudgetCategoryFlexTableActionChild-gApplications
   Scenario: validate Application Budget child flex table action field- view opens in same window
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue  | filterId         |
       | Flex Table Action     | Action Behavior | Open in new window | ApiGeneratedId:0 |
       | Flex Table Action     | Action Behavior | Open in new window | ApiGeneratedId:1 |
@@ -1360,7 +1360,7 @@ Feature: Flex Grid Component Scenarios
 
   @51334    @viewActionOpensInOverlayWindowAtApplicationBudgetCategoryFlexTableActionChild-gApplications
   Scenario: validate Application Budget child flex table action field- view opens in overlay
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue  | filterId         |
       | Flex Table Action     | Action Behavior | Open in new window | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1380,7 +1380,7 @@ Feature: Flex Grid Component Scenarios
 
   @51335    @showConfirmationBoxFieldAtApplicationBudgetCategoryFlexTableActionChild-gApplications
   Scenario: Setup confirmation box for Application Budget child flex table view action from configuration and validating it at Application Budget child flex table view action of program
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Show Confirmation Box | false             | ApplicationBudgetCategoryFlexTable | Name                      | View                       |
     Given I setup test configuration as below:
@@ -1400,7 +1400,7 @@ Feature: Flex Grid Component Scenarios
 
   @51343    @ConfirmationMessageFieldAtApplicationBudgetCategoryFlexTableActionChild-gApplications
   Scenario: Setup confirmation message for Application Budget child flex table view action from configuration and validating it at Application Budget child flex table view action of program
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Show Confirmation Box | false             | ApplicationBudgetCategoryFlexTable | Name                      | View                       |
       | Flex Table Action     | Confirmation Message  |                   | ApplicationBudgetCategoryFlexTable | Name                      | View                       |
@@ -1422,7 +1422,7 @@ Feature: Flex Grid Component Scenarios
 
   @51345    @hideForProfileFieldAtApplicationBudgetCategoryFlexTableViewActionChild-gApplications
   Scenario: Hide edit row level action for specific profile from configuration and validating it at under Application Budget child flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide For Profile |                   | ApplicationBudgetCategoryFlexTable | Name                      | View                       |
     Given I setup test configuration as below:
@@ -1441,7 +1441,7 @@ Feature: Flex Grid Component Scenarios
 
   @51358    @hideForUserFieldAtApplicationBudgetCategoryFlexTableViewActionChild-gApplications
   Scenario: Hide edit row level action for specific user from configuration and validating it at under Application Budget child flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide For User |                   | ApplicationBudgetCategoryFlexTable | Name                      | View                       |
     Given I setup test configuration as below:
@@ -1460,7 +1460,7 @@ Feature: Flex Grid Component Scenarios
 
   @51368    @actionURLLongFieldAtApplicationBudgetCategoryFlexTableViewActionChild-gApplications
   Scenario Outline: Changing action url long of action url long field for view action from config and validating it at under Application Budget child flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
       | Flex Table Action     | Action URL      | <oldActionUrl>    | ApiGeneratedId:0 |
       | Flex Table Action     | Action URL Long |                   | ApiGeneratedId:1 |
@@ -1486,7 +1486,7 @@ Feature: Flex Grid Component Scenarios
 
   @51375    @iconCSSFieldAtApplicationBudgetCategoryFlexTableViewActionChild-gApplications
   Scenario: Removing icon for ApplicationBudgetCategoryFlexTable view action from config and validating it at Application Budget child flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue                              | filterId         |
       | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableViewActionNewIconCss | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1505,7 +1505,7 @@ Feature: Flex Grid Component Scenarios
 
   @51384    @actionNameFieldAtApplicationBudgetCategoryFlexTableViewActionChild-gApplications
   Scenario: Changing action name field for view action at ApplicationBudgetCategoryFlexTable from config and validating it at Application Budget child flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
       | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1524,7 +1524,7 @@ Feature: Flex Grid Component Scenarios
 
   @51400    @headerFieldAtApplicationBudgetCategoryFlexTable-gApplications
   Scenario: Changing content of header field at ApplicationBudgetCategoryFlexTable and validating it at Application Budget child flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue            | filterId         |
       | Flex Table            | Header    | Proposed Uses Of Total Funds | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1543,7 +1543,7 @@ Feature: Flex Grid Component Scenarios
 
   @51499    @buttonHelpTextFieldAtBudgetPeriodFlexTableActionChild-gGrants
   Scenario: Changing content of button help text field for Budget period details child flex table action from config and validating it inside Budget period details child flex table programs
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table Action     | Button Help Text |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1560,7 +1560,7 @@ Feature: Flex Grid Component Scenarios
 
   @51500    @viewActionOpensInNewWindowAtBudgetPeriodFlexTableActionChild-gGrants
   Scenario: validate Budget period details child flex table action- view opens in new window
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue  | filterId         |
       | Flex Table Action     | Action Behavior | Open in new window | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1579,7 +1579,7 @@ Feature: Flex Grid Component Scenarios
 
   @51502    @viewActionOpensInSameWindowAtBudgetPeriodFlexTableActionChild-gGrants
   Scenario: validate Budget period details child flex table action- view opens in same window
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue  | filterId         |
       | Flex Table Action     | Action Behavior | Open in new window | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1597,7 +1597,7 @@ Feature: Flex Grid Component Scenarios
 
   @51503    @viewActionOpensInOverlayAtBudgetPeriodFlexTableActionChild-gGrants
   Scenario: validate Budget period details child flex table action- view opens in overlay
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue  | filterId         |
       | Flex Table Action     | Action Behavior | Open in new window | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1615,7 +1615,7 @@ Feature: Flex Grid Component Scenarios
 
   @51505    @actionURLLongFieldAtBudgetPeriodFlexTableActionChild-gGrants
   Scenario Outline: Changing action url long of action url long field for view action from config and validating it at Budget period details child flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
       | Flex Table Action     | Action URL      | <oldActionUrl>    | ApiGeneratedId:0 |
       | Flex Table Action     | Action URL Long |                   | ApiGeneratedId:1 |
@@ -1639,7 +1639,7 @@ Feature: Flex Grid Component Scenarios
 
   @51510    @hideForProfileFieldAtBudgetPeriodFlexTableActionChild-gGrants
   Scenario: Hide view row level action for specific profile from configuration and validating it at Budget period details child flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName        | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide For Profile |                   | BudgetPeriod       | Name                      | View                       |
     Given I setup test configuration as below:
@@ -1656,7 +1656,7 @@ Feature: Flex Grid Component Scenarios
 
   @51511    @hideForUserFieldAtBudgetPeriodFlexTableActionChild-gGrants
   Scenario: Hide view row level action for specific user from configuration and validating it at Budget period details child flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName     | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide For User |                   | BudgetPeriod       | Name                      | View                       |
     Given I setup test configuration as below:
@@ -1673,7 +1673,7 @@ Feature: Flex Grid Component Scenarios
 
   @51512    @iconCSSFieldAtBudgetPeriodFlexTableActionChild-gGrants
   Scenario: Removing icon for Budget period details child flex table view action from config and validating it at Budget period details child flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue                              | filterId         |
       | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableViewActionNewIconCss | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1690,7 +1690,7 @@ Feature: Flex Grid Component Scenarios
 
   @51513    @actionNameFieldAtBudgetPeriodFlexTableActionChild-gGrants
   Scenario: Changing action name field for view action at Budget period details child flex table from config and validating it inside Budget period details child flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
       | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1707,7 +1707,7 @@ Feature: Flex Grid Component Scenarios
 
   @51515    @enablingEnableAutoIndexFieldAtBudgetPeriodFlexTableActionChild-gGrants
   Scenario: validate after enabling enable auto index field for Budget period details child flex table of programs
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1724,7 +1724,7 @@ Feature: Flex Grid Component Scenarios
 
   @51516    @enableTotalRecordsCountFieldAtBudgetPeriodFlexTableActionChild-gGrants
   Scenario: validate disbaling of Enable Total Records Count in Budget period details child flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Total Records Count | false             | ApiGeneratedId:0 |
       | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:1 |
@@ -1743,7 +1743,7 @@ Feature: Flex Grid Component Scenarios
 
   @51558    @displayFieldNameFieldAtBudgetPeriodFlexTableActionChild-gGrants
   Scenario Outline: validate adding field names for different data types in Budget period details child flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1767,7 +1767,7 @@ Feature: Flex Grid Component Scenarios
 
   @51548    @fieldLabelOverrideFieldAtBudgetPeriodFlexTableActionChild-gGrants
   Scenario: Changing specific column name of Budget period details child flex table from config and validating it inside Budget period details child flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table List       | Field Label Override | Awarded Amount    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1784,7 +1784,7 @@ Feature: Flex Grid Component Scenarios
 
   @51550    @widthPercentageFieldAtBudgetPeriodFlexTableActionChild-gGrants
   Scenario: validate width size of particular column at budget period details child flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
       | Flex Table List       | Field width(%) | 10                | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1801,7 +1801,7 @@ Feature: Flex Grid Component Scenarios
 
   @51482    @labelFieldAtApplicationBudgetCategoryFlexTableChild-gApplications
   Scenario: validate after changing name of ApplicationBudgetCategoryFlexTable label inside Application budget flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue            | filterId         |
       | Flex Table List       | Label     | Proposed Uses Of Total Funds | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1819,7 +1819,7 @@ Feature: Flex Grid Component Scenarios
 
   @51450    @helpTextFieldAtApplicationBudgetCategoryFlexTableChild-gApplications
   Scenario Outline: Changing content of help text field at ApplicationBudgetCategoryFlexTable column header from config and validating it inside Application budget flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Flex Table List       | Help Text |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1843,7 +1843,7 @@ Feature: Flex Grid Component Scenarios
 
   @51449    @fieldLabelOverrideFieldAtApplicationBudgetCategoryFlexTableChild-gApplications
   Scenario: Changing specific column name of ApplicationBudgetCategoryFlexTable from config and validating it inside inside Application budget flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table List       | Field Label Override |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1862,7 +1862,7 @@ Feature: Flex Grid Component Scenarios
 
   @51556    @displayFieldNameFieldAtApplicationBudgetCategoryFlexTableChild-gApplications
   Scenario Outline: validate adding field names for different data types in Application budget flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1888,7 +1888,7 @@ Feature: Flex Grid Component Scenarios
 
   @51506    @showConfirmationBoxFieldAtBudgetPeriodFlexTableActionChild-gGrants
   Scenario: Setup confirmation box for Budget period details child flex table view action from configuration and validating it at Budget period details child flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Show Confirmation Box | false             | BudgetPeriod       | Name                      | View                       |
     Given I setup test configuration as below:
@@ -1907,7 +1907,7 @@ Feature: Flex Grid Component Scenarios
 
   @51509    @ConfirmationMessageFieldAtBudgetPeriodFlexTableActionChild-gGrants
   Scenario: Setup confirmation message for Budget period details child flex table view action from configuration and validating it at Budget period details child flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Show Confirmation Box | false             | BudgetPeriod       | Name                      | View                       |
       | Flex Table Action     | Confirmation Message  |                   | BudgetPeriod       | Name                      | View                       |
@@ -1928,7 +1928,7 @@ Feature: Flex Grid Component Scenarios
 
   @51547    @helpTextFieldAtBudgetPeriodFlexTableActionChild-gGrants
   Scenario Outline: Changing content of help text field at Budget period details child flex table column header from config and validating it inside Budget period details child flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Flex Table List       | Help Text |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1951,7 +1951,7 @@ Feature: Flex Grid Component Scenarios
 
   @51406    @enablingEnableAutoIndexFieldAtApplicationBudgetCategoryFlexTable-gApplications
   Scenario: validate after enabling enable auto index field for ApplicationBudgetCategoryFlexTable of program
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:0 |
       | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:1 |
@@ -1972,7 +1972,7 @@ Feature: Flex Grid Component Scenarios
 
   @51414    @enableTotalRecordsCountFieldAtApplicationBudgetCategoryFlexTable-gApplications
   Scenario: validate disbaling of enable otal records count in application budget category flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1991,7 +1991,7 @@ Feature: Flex Grid Component Scenarios
 
   @34335    @hideForProfileFieldForPPMGVflexTable-Programs
   Scenario: Hide view row level action for specific profile from configuration and validating it at under program strategic goals flex table- gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName        | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide For Profile |                   | ProgramStrategicGoals | Name                      | View                       |
     Given I setup test configuration as below:
@@ -2008,7 +2008,7 @@ Feature: Flex Grid Component Scenarios
 
   @34337    @hideOperatorFieldForPPMGVflexTable-Programs
   Scenario: Hide edit row level action using AND operator from configuration and validating it at under roles and responibilities flex table- gPlanning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory     | fieldName        | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide For Profile |                   | ProgramStrategicGoals | Name                      | View                       |
       | Flex Table Action Sobject | Hide For Context |                   | ProgramStrategicGoals | Name                      | View                       |
@@ -2029,7 +2029,7 @@ Feature: Flex Grid Component Scenarios
 
   @34338    @ConfirmationMessageFieldForPPMGVflexTable-Programs
   Scenario: Setup confirmation message for program strategic goals flex table delete action from configuration and validating it at program strtegic goals flex table of program-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Show Confirmation Box | false             | ProgramStrategicGoals | Name                      | Delete                     |
       | Flex Table Action     | Confirmation Message  |                   | ProgramStrategicGoals | Name                      | Delete                     |
@@ -2049,7 +2049,7 @@ Feature: Flex Grid Component Scenarios
 
   @51447   @orderBySortByFieldAtApplicationBudgetCategoryFlexTableChildForDescendingOrder-gApplications
   Scenario: Changing specific column value in ascending order with order by and sort by field from config and validating it inside Application budget flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue                     | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Order By       | ServiceAreaTitle__c,BudgetCategory__c | ApplicationBudgetCategoryFlexTable |                           |                            |
       | Flex Grid:General     | Sort Direction | ASC                                   | ApplicationBudgetCategoryFlexTable |                           |                            |
@@ -2070,7 +2070,7 @@ Feature: Flex Grid Component Scenarios
 
   @51446   @orderBySortByFieldAtApplicationBudgetCategoryFlexTableChildForAscendingOrder-gApplications
   Scenario: Changing specific column value in ascending order with order by and sort by field from config and validating it inside Application budget flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue                     | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Order By       | ServiceAreaTitle__c,BudgetCategory__c | ApplicationBudgetCategoryFlexTable |                           |                            |
       | Flex Grid:General     | Sort Direction | ASC                                   | ApplicationBudgetCategoryFlexTable |                           |                            |

@@ -3,16 +3,19 @@ Feature: New API related scenarios temporary
 
   @54772    @lookUpHeaderTextFieldWithNumberOfAwardsAtPageBlockDetail-gPlanning @check
   Scenario: Adding column header with number of award Api name to lookup modal from config and validating it on program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
+    And I have "lightening" configuration for custom setting as below:
+      | booleanValue | integerValue | id                 | description              | name                  |
+      | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName                  | fieldNewValue          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name,NumberofAwards__c | Grantee State Program | Name                      | PBD-3178                   |
     When I login as "Automation" user
     And I update custom setting changes:
-      | booleanValue | integerValue | id                 | description             | name                    |
-      | true         | 3            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
+      | booleanValue | integerValue | id                 | description              | name                  |
+      | true         | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -24,7 +27,7 @@ Feature: New API related scenarios temporary
 
   @54769    @lookUpHeaderTextFieldWithGrantingAgencyAtPageBlockDetail-gPlanning @check
   Scenario: Adding column header with granting agency Api name to lookup modal from config and validating it on program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -43,7 +46,7 @@ Feature: New API related scenarios temporary
 
   @54767    @lookUpHeaderTextFieldWithDivisionAtPageBlockDetail-gPlanning @check
   Scenario: Adding column header with Division Api name to lookup modal from config and validating it on program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -62,7 +65,7 @@ Feature: New API related scenarios temporary
 
   @54766    @lookUpHeaderTextFieldWithContactAtPageBlockDetail-gPlanning @check
   Scenario: Adding column header with Contact Api name to lookup modal from config and validating it on program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -81,7 +84,7 @@ Feature: New API related scenarios temporary
 
   @54765    @lookUpHeaderTextFieldWithBillingStateAtPageBlockDetail-gPlanning @check
   Scenario: Adding column header with Billing State Api name to lookup modal from config and validating it on program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -100,7 +103,7 @@ Feature: New API related scenarios temporary
 
   @54764    @lookUpHeaderTextFieldWithDateTimeAtPageBlockDetail-gPlanning @check
   Scenario: Adding column header with Date Time Api name to lookup modal from config and validating it on program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -119,7 +122,7 @@ Feature: New API related scenarios temporary
 
   @54763    @lookUpHeaderTextFieldWithDateAtPageBlockDetail-gPlanning @check
   Scenario: Adding column header with Date Api name to lookup modal from config and validating it on program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -138,7 +141,7 @@ Feature: New API related scenarios temporary
 
   @54758    @lookUpHeaderTextFieldWithMultipleFieldAPIAtPageBlockDetail-gPlanning  @check
   Scenario Outline: Adding column header with multiple Field API to lookup modal from config and validating it on program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | <defaultApi>      | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -181,7 +184,7 @@ Feature: New API related scenarios temporary
 
   @59142    @lookUpHeaderTextFieldWithoutNameAtPageBlockDetail-gPlanning @check
   Scenario: Adding column header with Api name EIN text without Name in the look up modal displaye name from config and validating it on program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -200,7 +203,7 @@ Feature: New API related scenarios temporary
 
   @59043    @lookUpHeaderTextFieldWithExpirationDateAndDateTimeAtPageBlockDetail-gPlanning  @check
   Scenario Outline: Adding column header with DUNS SAMS Expiration date and DateTime Field API to lookup modal from config and validating it on program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | <defaultApi>      | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -239,7 +242,7 @@ Feature: New API related scenarios temporary
 
   @54748    @isLookupSearchIsWorkingWihDateOrDateTimeField @smoke
   Scenario Outline: Validate lookup search is working fine with data and date time field
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
       | Page Block Config:Page Block Rule Detail | Lookup Filter Criteria     | <oldLookupFilter> | Grantee State Program | ApiGeneratedId:0 |
@@ -264,7 +267,7 @@ Feature: New API related scenarios temporary
 
   @59038    @dataTableShouldRenderedProperlyWithOrganizationNameAtLightningLookup-gPlanning @check
   Scenario: Validate after entering text inside lightning lookup search table should rendered properly with organization name while passing formula fiels at lookup dispaly field
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -283,7 +286,7 @@ Feature: New API related scenarios temporary
 
   @59060    @lookUpHeaderTextFieldWithoutNameAtPageBlockDetail-gPlanning @check
   Scenario Outline: Adding column header with Api name EIN text without Name in the look up modal displaye name from config and validating it on program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
       | Page Block Config:Page Block Rule Detail | Lookup Filter Criteria     | <oldLookupFilter> | Grantee State Program | ApiGeneratedId:1 |
@@ -325,7 +328,7 @@ Feature: New API related scenarios temporary
 
   @64956    @VerifylookUpDisplayFieldNameToOverrideLabelOfFieldsAtPageBlockDetail-gPlanning
   Scenario: Adding display field Names as Name to override the labels at lookup modal from PB config and validating it on program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -344,7 +347,7 @@ Feature: New API related scenarios temporary
 
   @65023    @VerifylookUpFilterCriteriaToFilterOutRecordsInLookupWindowAtPageBlockDetail-gPlanning
   Scenario Outline: Validate lookup filter criteria is working fine by displaying all Active records in lookup window
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
       | Page Block Config:Page Block Rule Detail | Lookup Filter Criteria     | <oldLookupFilter> | Grantee State Program | ApiGeneratedId:1 |
@@ -369,7 +372,7 @@ Feature: New API related scenarios temporary
 
   @65027    @VerifylookupSortByToSortRecordsUnderNameColumnInAscOrderInLookupWindowAtPageBlockDetail-gPlanning
   Scenario: Validate lookup sort by is working fine by sorting all records in ascending order under lookup window
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName             | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Lookup Sort Direction | ASC               | Grantee State Program | ApiGeneratedId:0 |
       | Page Block Config:Page Block Rule Detail | Lookup Sort By        | Name              | Grantee State Program | ApiGeneratedId:1 |
@@ -390,7 +393,7 @@ Feature: New API related scenarios temporary
 
   @65040    @VerifylookupSortByToSortRecordsUnderNameColumnInDescOrderInLookupWindowAtPageBlockDetail-gPlanning
   Scenario: Validate lookup sort by is working fine by sorting all records in descending order under lookup window
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName             | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Lookup Sort Direction | ASC               | Grantee State Program | ApiGeneratedId:0 |
       | Page Block Config:Page Block Rule Detail | Lookup Sort By        | Name              | Grantee State Program | ApiGeneratedId:1 |
@@ -411,7 +414,7 @@ Feature: New API related scenarios temporary
 
   @65042    @VerifyHideFieldJSONToHideFieldAccordingToSelectedLookupFieldValueAtPageBlockDetail-gPlanning @check
   Scenario: Validate Hide Fields JSON is working fine by Hiding Program SubType Field if owner organization is Department of Community Health
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -444,7 +447,7 @@ Feature: New API related scenarios temporary
 
   @59984    @verifyThatIDRCurrencyUnitIsDisplayedInsideTotalAmountAtFlexTable-gPlanning
   Scenario: verify that IDR is displayed under Total Amount displayed inside flex table of programs-planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
       | Flex Table List       | Enable Total | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -459,7 +462,7 @@ Feature: New API related scenarios temporary
 
   @59979    @verifyDollarSymbolIsNotPresentInTotalLabelAtMEGrid @NeedToCheck  @AfterBugFix @wip
   Scenario: Verify that double dollar symbol($$) is not shown inside Total Label in MEGrid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table List       | Enable Total Row | true              | ApiGeneratedId:0 |
       | Flex Table List       | Enable Total Row | true              | ApiGeneratedId:1 |
@@ -480,7 +483,7 @@ Feature: New API related scenarios temporary
 
   @59979    @verifyDollarSymbolIsNotPresentInSubTotalLabelAtMEGrid
   Scenario: Verify that dollar symbol($) is not shown inside SubTotal Label in MEGrid
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Total Row    | true              | ApiGeneratedId:0 |
       | Flex Table List       | Enable Row Grouping | true              | ApiGeneratedId:1 |
@@ -501,7 +504,7 @@ Feature: New API related scenarios temporary
 
   @59978   @CheckCurrencySymbolInTotalAmountAtApplicationBudgetCategoryFlexTableChild-gApplications
   Scenario Outline: Validate Currency Unit (IDR) is present under Grantor Share column Total Amount at Application budget flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Grid:General     | Display Field Names | <olddisplayfields> | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -524,7 +527,7 @@ Feature: New API related scenarios temporary
 
   @59978   @CheckCurrencySymbolInSubTotalAmountAtApplicationBudgetCategoryFlexTableChild-gApplications
   Scenario Outline: Validate Currency Unit (IDR) is present under Grantor Share column SubTotal Amount at Application budget flex table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Grid:General     | Display Field Names | <olddisplayfields> | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -547,7 +550,7 @@ Feature: New API related scenarios temporary
 
   @67157   @VerifyDownloadAsPDFButtonOnModal @wip
   Scenario: Validate download as PDF button on modal window in view mode
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Page Layout           | Hide Pdf Download | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -563,16 +566,37 @@ Feature: New API related scenarios temporary
     When I click on "View" icon for "Owner" to save inside subtab
     Then I see "Download As PDF" button is present on Modal
 
-  @61467   @VerifySessionTimeoutRemainderDialogBoxShownInBrowserTab @checkCountDownTimeLogic @wip
+  @61467   @VerifySessionTimeoutRemainderDialogBoxShownInBrowserTab @checkCountDownTimeLogic
   Scenario: Verify session Timeout reminder dialog box shown in browser tab title after 1 min of session login
     When I login as "Automation" user
+    And I have "lightening" configuration for custom setting as below:
+      | booleanValue | integerValue | id                 | description             | name                    |
+      | false        | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description             | name                    |
+      | true         | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description                 | name                        |
+      | false        | 2            | a0b1C00000M9lj9QAB | SessionTimeoutReminderValue | SessionTimeoutReminderValue |
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description             | name                  |
+      | true         | 0            | a0b1C00000M9ljOQAR | Session Enable Reminder | SessionEnableReminder |
     When I navigate to "Planning" tab
     When I pause execution for "60" seconds
     Then I see session timeout remainder as "01" countdown is shown in browser tab
 
-  @61468   @VerifyLogoutPageDisplayedAfterTimeGivenInSessionTimeoutValue @wip
+  @61468   @VerifyLogoutPageDisplayedAfterTimeGivenInSessionTimeoutValue
   Scenario Outline: Verify that session will get expired after given SessionTimeoutValue and Logout Page gets Displayed
     When I login as "Automation" user
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description             | name                    |
+      | true         | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description                           | name                |
+      | false        | 3            | a0b1C00000M9ljEQAR | Value for session timeout in a minute | SessionTimeoutValue |
+    And I have "lightening" configuration for custom setting as below:
+      | booleanValue | integerValue | id                 | description             | name                    |
+      | false        | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
     When I navigate to "Planning" tab
     When I pause execution for "180" seconds
     Then I see "<Logout_URL>" page is displayed

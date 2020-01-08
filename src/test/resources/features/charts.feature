@@ -5,7 +5,7 @@ Feature: Charts Component Scenarios
 
   @34666    @validateTitleField-gplanning
   Scenario: Changing chart title for 'AnnouncementByAdminBureauUnit' chart in configuration and validating inside planning-programs
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue             | filterId         |
       | Charts Config         | Title     | AnnouncementByAdminBureauUnit | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -18,7 +18,7 @@ Feature: Charts Component Scenarios
 
   @34667    @validateChartDisplayedInCorrectPhase-gAnnouncement
   Scenario: Changing chart phase config to Annoucnement for 'AnnouncementByAdminBureauUnit' chart in configuratin and validating inside annoucenment
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
       | Charts Config         | Phase Config | ApiGeneratedId:1  | ApiGeneratedId:2 |
     Given I setup test configuration as below:
@@ -33,7 +33,7 @@ Feature: Charts Component Scenarios
 
   @34668    @validateAllDataHeaders-gPlannging
   Scenario: Changing chart menu button config to "Funding Opportunity Automation" for 'AnnouncementByAdminBureauUnit' chart  in configuratin and validating inside planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue    | filterId         |
       | Charts Details Config | All data table header | Funding Opportunity1 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -48,7 +48,7 @@ Feature: Charts Component Scenarios
 
   @34977    @validateDisablingChartLegends-gPlannging @smoke
   Scenario: Disable chart legends for 'AnnouncementByAdminBureauUnit' chart in configuratin and validating inside planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
       | Charts Details Config | Disable Legend | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -61,7 +61,7 @@ Feature: Charts Component Scenarios
 
   @34981    @validateX-axisLabel-gPlannging @smoke
   Scenario: Change chart x-axis label for 'Funding Sources by Total Amount' chart in configuratin and validating inside planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName    | fieldOrignalValue      | filterId         |
       | Charts Details Config | X-Axis Label | Total Allocated Amount | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -74,7 +74,7 @@ Feature: Charts Component Scenarios
 
   @34985    @validateX-axisPrefix-gPlannging
   Scenario: Change chart x-axis prefix as $ for 'Funding Sources by Total Amount' chart in configuratin and validating inside planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Charts Details Config | X-Axis Prefix |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -87,7 +87,7 @@ Feature: Charts Component Scenarios
 
   @35086    @validateXFormattedNubers-gPlannging
   Scenario: Enable x-formatted numbers for 'Funding Sources by Total Amount' chart in configuratin and validating inside planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
       | Charts Details Config | X Formatted Number | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -100,7 +100,7 @@ Feature: Charts Component Scenarios
 
   @34984    @validateX-axisSuffix-gPlannging
   Scenario: Change chart x-axis suffix as $ for 'Funding Sources by Total Amount' chart in configuratin and validating inside planning
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Charts Details Config | X Axis Suffix |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:

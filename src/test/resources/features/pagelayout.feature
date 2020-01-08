@@ -5,7 +5,7 @@ Feature: Page Layout Component Scenarios
 
   @34042    @setUpHeaderWithContent-gPlanning
   Scenario: setting up header from configuration and validating its content in Edit view
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue           | filterId         |
       | Page Layout           | Header    | Program - {!ProgramName__c} | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -21,7 +21,7 @@ Feature: Page Layout Component Scenarios
 
   @34047    @setUpPageInstructionText-gPlanning
   Scenario: validate the page instructions text apears as configured in Edit view
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue                    | filterId         |
       | Page Layout           | Page Instruction Text | govgrants_config:PageInstructionText | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -37,7 +37,7 @@ Feature: Page Layout Component Scenarios
 
   @34049    @setUpHeaderOverRideField-gPlanning
   Scenario: setting up header over ride configuration and validating its content after clicking New button
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue    | filterId         |
       | Page Layout           | Create Header Override | Creating New Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -52,7 +52,7 @@ Feature: Page Layout Component Scenarios
 
   @34052    @hideDecisionExpression-gPlanning @smoke
   Scenario Outline: Hide Submit for approval for Created from configuration and validating it for Created status view icon
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName                | fieldOrignalValue | filterId         |
       | Page Layout Action    | Hide Decision Expression | <old_hide_config> | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -72,7 +72,7 @@ Feature: Page Layout Component Scenarios
 
   @34053    @hideExpressionJSON-gPlanning @smoke
   Scenario: Hide Submit for approval for Created from json configuration and validating it for Created status view icon
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Layout Action    | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -88,7 +88,7 @@ Feature: Page Layout Component Scenarios
 
   @34069    @hideForProfile-gPlanning @smoke
   Scenario: Hide Submit for approval for specific profile from configuration and validating it for Created status view icon
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Page Layout Action    | Hide for profile |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -104,7 +104,7 @@ Feature: Page Layout Component Scenarios
 
   @34043    @HidePdfDownloadFromMenuForMainPageLayout-gPlanning
   Scenario: Disabling of PDF download option from configuration and validating it from menu dropdown inside program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Page Layout           | Hide Pdf Download | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -121,7 +121,7 @@ Feature: Page Layout Component Scenarios
 
   @34046    @HideTakeSnapshotFromMenuForMainPageLayout-gPlanning
   Scenario: Disabling of Take snapshot option from configuration and validating it from menu dropdown inside program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
       | Page Layout           | Hide On Demand Snapshot | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -138,7 +138,7 @@ Feature: Page Layout Component Scenarios
 
   @34055    @enablePromptInputDialog-gPlanning
   Scenario: Enable prompt input box for Submit for approval button configuration and validating it for Created status view icon
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Enable Prompt Input Dialog | false             | Grantee State Program | Name                      | Submit For Approval        |
       | Page Layout Action    | Prompt Dailogue Header     |                   | Grantee State Program | Name                      | Submit For Approval        |
@@ -159,7 +159,7 @@ Feature: Page Layout Component Scenarios
 
   @34056    @hideForContextFieldForMainPageLayoutAction-gPlanning @smoke
   Scenario: Hide submit for approval button for program view page and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Page Layout Action    | Hide For Context |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -175,7 +175,7 @@ Feature: Page Layout Component Scenarios
 
   @35814    @labelChangeOfCancelButtonAtMainPageLayout-gPlanning
   Scenario: Setup cancel button label name as Automation cancel from config and it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Page Layout           | Cancel Button Label |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -192,7 +192,7 @@ Feature: Page Layout Component Scenarios
 
   @35813    @labelChangeOfSaveButtonAtMainPageLayout-gPlanning
   Scenario: Setup save button label name as Automation cancel from config and it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Page Layout           | Save Button Label |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -209,7 +209,7 @@ Feature: Page Layout Component Scenarios
 
   @35817    @hideForContextFieldAtPageLayout-gPlanning @smoke
   Scenario: Hide overview for program view page and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Hide For Context |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -225,7 +225,7 @@ Feature: Page Layout Component Scenarios
 
   @34354    @sortOrderForFieldAtPageTab-gPlanning
   Scenario: Changing sort order for overview page tab from config and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName  | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Sort Order | 0                 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -241,7 +241,7 @@ Feature: Page Layout Component Scenarios
 
   @34355    @headerInstructionTextFieldAtPageTab-gPlanning
   Scenario: Setup header instruction text for overview page tab from config and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Header Instruction Text |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -257,7 +257,7 @@ Feature: Page Layout Component Scenarios
 
   @34357    @tabTitleFieldAtPagePageTab-gPlanning
   Scenario: Changing sub tab title for overview page tab from config and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Tab Title | Overview          | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -273,7 +273,7 @@ Feature: Page Layout Component Scenarios
 
   @34359    @tabIconFieldAtPageTab-gPlanning
   Scenario: Setup tab icon for overview page tab from config and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue                  | filterId         |
       | Page Tabs Config      | Tab Icon  | govgrants_config:TabIconDefaultCss | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -289,7 +289,7 @@ Feature: Page Layout Component Scenarios
 
   @35949    @isActiveFieldAtPageTab-gPlanning @smoke
   Scenario: Disabling of Overview page tab from config and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -305,7 +305,7 @@ Feature: Page Layout Component Scenarios
 
   @35955    @hideForUserAtPageTab-gPlanning @smoke
   Scenario: Hiding of overview page tab for internal user from config and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Hide for User |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -321,7 +321,7 @@ Feature: Page Layout Component Scenarios
 
   @35956    @hideForProfileAtPageTab-gPlanning @smoke
   Scenario: Hiding of overview page tab for specific profile from config and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Hide for Profile |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -337,7 +337,7 @@ Feature: Page Layout Component Scenarios
 
   @35959    @hideDecisionFieldAtPageTab-gPlanning @smoke
   Scenario: Hiding of overview page tab for created state from config and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Hide Decision Field |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -353,7 +353,7 @@ Feature: Page Layout Component Scenarios
 
   @35962    @highlightsPanelFeildAtPageTab-gPlanning
   Scenario: Setup of header overview page tab from config and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -369,7 +369,7 @@ Feature: Page Layout Component Scenarios
 
   @35976    @hideExpressionJsonFieldAtPageTab-gPlanning @smoke
   Scenario: Hiding overview tab from json config and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -385,7 +385,7 @@ Feature: Page Layout Component Scenarios
 
   @35979    @pageBlockTitleFieldAtPageBlock-gPlanning
   Scenario: Changing page block title from config and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory        | fieldName        | fieldOrignalValue   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue     |
       | Page Block:Page Block Detail | Page Block Title | Program Information | Grantee State Program | GNT__PageBlockTitle__c    | Program Information Automation |
     Given I setup test configuration as below:
@@ -401,7 +401,7 @@ Feature: Page Layout Component Scenarios
 
   @35980    @isActiveFieldAtPageBlock-gPlanning @smoke
   Scenario: Disabling of program information page block from config and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Page Block            | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -417,7 +417,7 @@ Feature: Page Layout Component Scenarios
 
   @35981    @sortOrderFieldAtPageBlock-gPlanning
   Scenario: Changing sort order for Program information page block from config and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName  | fieldOrignalValue | filterId         |
       | Page Block            | Sort Order | 0                 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -433,7 +433,7 @@ Feature: Page Layout Component Scenarios
 
   @35984    @headerInstructionTextFieldAtPageBlock-gPlanning
   Scenario: Setup header instruction text for program information page block from config and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory        | fieldName               | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block:Page Block Detail | Header Instruction Text |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -449,7 +449,7 @@ Feature: Page Layout Component Scenarios
 
   @36037    @hideForContextFieldAtPageBlock-gPlanning @smoke
   Scenario: Hide program information page block from config and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory        | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block:Page Block Detail | Hide for Context |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -465,7 +465,7 @@ Feature: Page Layout Component Scenarios
 
   @36038    @hideForUserFieldAtPageBlock-gPlanning @smoke
   Scenario: Hiding of program information page block for internal user from config and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory        | fieldName     | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block:Page Block Detail | Hide for User |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -481,7 +481,7 @@ Feature: Page Layout Component Scenarios
 
   @35957    @hideOperatorFieldUsingANDOperatorAtPageTab-gPlanning
   Scenario: Hide overview for program view page from config using AND operator and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Operator         |                   | ApiGeneratedId:0 |
       | Page Tabs Config      | Hide for Profile |                   | ApiGeneratedId:0 |
@@ -501,7 +501,7 @@ Feature: Page Layout Component Scenarios
 
   @35958    @hideOperatorFieldUsingOROperatorAtPageTab-gPlanning
   Scenario: Hide overview for program view page from config using OR operator and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Operator         |                   | ApiGeneratedId:0 |
       | Page Tabs Config      | Hide for Profile |                   | ApiGeneratedId:0 |
@@ -521,7 +521,7 @@ Feature: Page Layout Component Scenarios
 
   @36039    @hideForProfileAtPageBlock-gPlanning @smoke
   Scenario: Hide program information page block for particular user from config and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory        | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block:Page Block Detail | Hide for Profile |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -537,7 +537,7 @@ Feature: Page Layout Component Scenarios
 
   @36040    @hideOperatorFieldUsingANDOperatorAtPageBlock-gPlanning
   Scenario: Hide program information for program view page from config using AND operator and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory        | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block:Page Block Detail | Operator         |                   | Grantee State Program | ApiGeneratedId:0 |
       | Page Block:Page Block Detail | Hide for Profile |                   | Grantee State Program | ApiGeneratedId:0 |
@@ -557,7 +557,7 @@ Feature: Page Layout Component Scenarios
 
   @36036    @totalFieldsPerRowFieldAtPageBlock-gPlanning
   Scenario: Setup value for total fields per row page block from config and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory        | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block:Page Block Detail | Total Fields per Row | 2                 | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -573,7 +573,7 @@ Feature: Page Layout Component Scenarios
 
   @36041    @hideOperatorFieldUsingOROperatorAtPageBlock-gPlanning
   Scenario: Hide program information for program view page from config using AND operator and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory        | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block:Page Block Detail | Operator         |                   | Grantee State Program | ApiGeneratedId:0 |
       | Page Block:Page Block Detail | Hide for Profile |                   | Grantee State Program | ApiGeneratedId:0 |
@@ -593,7 +593,7 @@ Feature: Page Layout Component Scenarios
 
   @36042    @hideDecisionFieldAtPageBlock-gPlanning @smoke
   Scenario: Hiding of program information page block from config and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory        | fieldName           | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block:Page Block Detail | Hide Decision Field |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -609,7 +609,7 @@ Feature: Page Layout Component Scenarios
 
   @36045    @flexTableNameFieldAtPageBlock-gPlanning @smoke
   Scenario: Changing flex table rendering by changing name inside flex table name field at page block from config and validating it on program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
       | Page Block            | Flex Table Name | ApiGeneratedId:0  | ApiGeneratedId:2 |
     Given I setup test configuration as below:
@@ -628,7 +628,7 @@ Feature: Page Layout Component Scenarios
 
   @36046    @flexGridNameFieldAtPageBlock-gPlanning @smoke
   Scenario: Changing flex grid rendering by changing name inside flex grid name field at page block from config and validating it on program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
       | Page Block            | Flex Grid Name | ApiGeneratedId:0  | ApiGeneratedId:2 |
     Given I setup test configuration as below:
@@ -647,7 +647,7 @@ Feature: Page Layout Component Scenarios
 
   @36051    @hideDisableAttachmentRowActionsFieldWithDisableOptionAtPageBlock-gPlanning @smoke
   Scenario: Hiding edit action item at row level inside attachments page block from config using disable option and validating it at program-submitted for approval detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                  | fieldName                           | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail           | Hide/Disable attachment Row actions |                   | Grantee State Program | GNT__PageBlockTitle__c    | Attachments                |
       | Page Block Rule:Page Block Rule Detail | Hide For Profile                    |                   | Grantee State Program | Name                      | Edit                       |
@@ -669,7 +669,7 @@ Feature: Page Layout Component Scenarios
 
   @36053    @hideDisableAttachmentRowActionsFieldWithHideOptionAtPageBlock-gPlanning
   Scenario: Hiding edit action item at row level inside attachments page block from config using hide option and validating it at program-submitted for approval detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                  | fieldName                           | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail           | Hide/Disable attachment Row actions | Disable           | Grantee State Program | GNT__PageBlockTitle__c    | Attachments                |
       | Page Block Rule:Page Block Rule Detail | Hide For Profile                    |                   | Grantee State Program | Name                      | Edit                       |
@@ -691,7 +691,7 @@ Feature: Page Layout Component Scenarios
 
   @36094    @feildAPINAmeFieldAtPageBlockDetail-gPlanning @smoke
   Scenario: Changing field api name for page block detail from config and validating it on program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName      | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Field API Name | ProgramName__c    | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -707,7 +707,7 @@ Feature: Page Layout Component Scenarios
 
   @36099    @isActiveFieldAtPageBlockDetail-gPlanning @smoke
   Scenario: Disabling of program name page block detail from config and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Is Active | true              | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -723,7 +723,7 @@ Feature: Page Layout Component Scenarios
 
   @36100    @sortOrderFieldAtPageBlockDetail-gPlanning
   Scenario: Changing sort order of program name page block detail from config and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName  | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Sort Order | 0                 | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -739,7 +739,7 @@ Feature: Page Layout Component Scenarios
 
   @36101    @fieldLabelOverrideFieldAtPageBlockDetail-gPlanning
   Scenario: Changing label of program name page block detail fom config and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Field Label Override | Title             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -755,7 +755,7 @@ Feature: Page Layout Component Scenarios
 
   @36106    @readOnlyFieldAtPageBlockDetail-gPlanning
   Scenario: changing rendering behaviour of program name read only from config and validaying it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Read Only | false             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -771,7 +771,7 @@ Feature: Page Layout Component Scenarios
 
   @36109    @hideForContextFieldAtPageBlockDetail-gPlanning @smoke
   Scenario: Hide program name field at page block detail from config validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide for Context |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -787,7 +787,7 @@ Feature: Page Layout Component Scenarios
 
   @36110    @hideForUserFieldAtPageBlockDetail-gPlanning @smoke
   Scenario: Hiding of program name page block detail for internal user from config and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName     | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide for User |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -803,7 +803,7 @@ Feature: Page Layout Component Scenarios
 
   @36111    @hideForProfileFieldAtPageBlockDetail-gPlanning @smoke
   Scenario: Hide program name page block detail for specific profile from configuration and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide For Profile |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -819,7 +819,7 @@ Feature: Page Layout Component Scenarios
 
   @36113    @hideOperatorFieldUsingANDOperatorAtPageBlockDetail-gPlanning
   Scenario: Hide program name page block detail from config using AND operator and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Operator         |                   | Grantee State Program | ApiGeneratedId:0 |
       | Page Block Config:Page Block Rule Detail | Hide For Profile |                   | Grantee State Program | ApiGeneratedId:0 |
@@ -839,7 +839,7 @@ Feature: Page Layout Component Scenarios
 
   @36114    @hideOperatorFieldUsingOROperatorAtPageBlockDetail-gPlanning
   Scenario: Hide program name page block detail from config using OR operator and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Operator         | AND               | Grantee State Program | ApiGeneratedId:0 |
       | Page Block Config:Page Block Rule Detail | Hide For Profile |                   | Grantee State Program | ApiGeneratedId:0 |
@@ -859,7 +859,7 @@ Feature: Page Layout Component Scenarios
 
   @36126    @readOnlyForContextFieldAtPageBlockDetail-gPlanning
   Scenario: changing rendering behaviour of program name read only for context from config and validaying it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName             | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Read Only For Context |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -875,7 +875,7 @@ Feature: Page Layout Component Scenarios
 
   @36127    @readOnlyForProfileFieldAtPageBlockDetail-gPlanning @smoke
   Scenario: changing rendering behaviour of program name to read only for specific profile from config and validaying it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName             | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Read Only For Profile |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -891,7 +891,7 @@ Feature: Page Layout Component Scenarios
 
   @36107    @requiredForSaveBehaviourAtPageBlockDetail-gPlanning @smoke
   Scenario: Changing value for required for save behaviour field from config and checking error message at program save
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -908,7 +908,7 @@ Feature: Page Layout Component Scenarios
 
   @36050    @attachementClassificationFieldAtPageBlock-gPlanning @smoke
   Scenario: Changing the values for Attachement classifications field from config and validating it at Program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory        | fieldName                  | fieldOrignalValue                                     | coreComponentField    | filterId         |
       | Page Block:Page Block Detail | Attachment Classifications | Program Artifacts;Financial Artifacts;Other Artifacts | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -927,7 +927,7 @@ Feature: Page Layout Component Scenarios
 
   @36104    @isHiddenFieldAtPageBlockDetail-gPlanning
   Scenario: Hiding program name while making is hidden field as false from config and validaying it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName       | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Is Hidden Field | false             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -943,7 +943,7 @@ Feature: Page Layout Component Scenarios
 
   @36115    @hideDecisionFieldAtPageBlockDetail-gPlanning @smoke
   Scenario: Hiding of program name at pege block detail by making change  inside hide decision field from config and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Decision Field |                   | Grantee State Program | ApiGeneratedId:0 |
       | Page Block Config:Page Block Rule Detail | Operator            | AND               | Grantee State Program | ApiGeneratedId:0 |
@@ -961,7 +961,7 @@ Feature: Page Layout Component Scenarios
 
   @36129    @readOnlyForUserFieldAtPageDetail-gPlanning @smoke
   Scenario: changing rendering behaviour of program name while making change for is hidden field as false from config and validaying it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName          | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Read Only For User |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -977,7 +977,7 @@ Feature: Page Layout Component Scenarios
 
   @36131    @readDecisionFieldAtPageBlockDetail-gPlanning @smoke
   Scenario: changing rendering behaviour of program name while making change for read decision field from config and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Read Decision Field |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -993,7 +993,7 @@ Feature: Page Layout Component Scenarios
 
   @36136    @hideLabelFieldAtPageBlockDetail-gPlanning
   Scenario: Hiding program name label at page block detail from config and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName  | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Label | false             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1009,7 +1009,7 @@ Feature: Page Layout Component Scenarios
 
   @36169    @lookUpHeaderTextFieldAtPageBlockDetail-gPlanning
   Scenario: Hiding program name label at page block detail from config and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName          | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Lookup Header Text | Organization      | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1026,7 +1026,7 @@ Feature: Page Layout Component Scenarios
 
   @36170    @lookupDisplayFieldNamesFieldAtPageBlockDetail-gPlanning @smoke
   Scenario: Changing column header and its data of lookup modal from config and valiodating it on program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1043,7 +1043,7 @@ Feature: Page Layout Component Scenarios
 
   @36172    @lookupFilterCriteriaFieldAtPAgeBlockDetail-gPlanning @smoke
   Scenario Outline: Validate removing Created status category from table on lookup modal from config and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
       | Page Block Config:Page Block Rule Detail | Lookup Filter Criteria     | <oldLookupFilter> | Grantee State Program | ApiGeneratedId:0 |
@@ -1066,7 +1066,7 @@ Feature: Page Layout Component Scenarios
 
   @36178    @attachmentClassificationFieldAtPageBlockDetail-gPlanning @smoke
   Scenario: Changing value of attachment classification field from config and validating it at announcement detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue   | coreComponentField      | filterId         |
       | Page Block Config:Page Block Rule Detail | Attachment Classifications | FOA;CFA;CFDA;Other; | Annoucement Profile-FOA | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1085,7 +1085,7 @@ Feature: Page Layout Component Scenarios
 
   @36196    @submitWarningMessageFieldAtPageLayoutAction-gPlanning
   Scenario: Setup submit warning message at program submit for approval from configuration and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue                                                                                   | filterId         |
       | Page Layout Action    | Submit Warning Message | You Will not be able to edit the Program once it is submitted , Are you sure you want to continue ? | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1101,7 +1101,7 @@ Feature: Page Layout Component Scenarios
 
   @36198    @isActiveFieldAtPageLayoutAction-gPlanning @smoke
   Scenario: Disabling of edit button action at page layout action from config and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Page Layout Action    | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1117,7 +1117,7 @@ Feature: Page Layout Component Scenarios
 
   @36200    @editButtonActionOpensInOverLayWindowAtPageLayoutAction-gPlanning
   Scenario: validate page layout action button field- Edit opens in overlay window
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
       | Page Layout Action    | Action Behavior |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1134,7 +1134,7 @@ Feature: Page Layout Component Scenarios
 
   @36202    @editButtonActionOpensInNewWindowAtPageLayoutAction-gPlanning @smoke
   Scenario: validate page layout action button field- Edit opens in New window
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
       | Page Layout Action    | Action Behavior |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1151,7 +1151,7 @@ Feature: Page Layout Component Scenarios
 
   @36204    @displayAreaFieldForCreateCampaignAtPageLayoutAction-gPlanning @smoke
   Scenario: Set up create campaign at page layout action from config and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
       | Page Layout Action    | Display Area | Menu              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1167,7 +1167,7 @@ Feature: Page Layout Component Scenarios
 
   @36205    @displayAreaFieldForEditAtPageLayoutAction-gPlanning
   Scenario: Set up create campaign at page layout action from config and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
       | Page Layout Action    | Display Area | Page Header       | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1184,7 +1184,7 @@ Feature: Page Layout Component Scenarios
 
   @36208    @headerSequenceFieldAtPageLayoutAction-gPlanning
   Scenario: Setup edit page layout action sequence as "1" from config. and validating it on program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
       | Page Layout Action    | Header Sequence | 2                 | ApiGeneratedId:0 |
       | Page Layout Action    | Header Sequence | 1                 | ApiGeneratedId:1 |
@@ -1202,7 +1202,7 @@ Feature: Page Layout Component Scenarios
 
   @35982    @helpTextFieldAtPageBlock-gPlanning
   Scenario Outline: Changing content of help text field at page block from config and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory        | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block:Page Block Detail | Help Text | <old_helpText>    | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1222,7 +1222,7 @@ Feature: Page Layout Component Scenarios
 
   @36102    @helpTextLongFieldAtPageBlockDetail-gPlanning
   Scenario Outline: Changing content of help text long field at page block detail from config and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName      | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Help Text Long | <old_helpText>    | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1242,7 +1242,7 @@ Feature: Page Layout Component Scenarios
 
   @35816    @hideApprovalDecisionFieldAtPageLayout-gPlanning
   Scenario: Hiding approval decision box at page layout from config and validating it inside pending task approval decision
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName                   | fieldOrignalValue | filterId         |
       | Page Layout           | Hide Approval Decision comp | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
@@ -1268,7 +1268,7 @@ Feature: Page Layout Component Scenarios
 
   @36043    @hideExpressionJsonFieldAtPageBlock-gPlanning @smoke
   Scenario: Hiding program information page block from json config and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1284,7 +1284,7 @@ Feature: Page Layout Component Scenarios
 
   @36116    @hideExpressionJsonFieldAtPageBlockDetail-gPlanning @smoke
   Scenario: Disabling of program name page block detail from json config and validating it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1300,7 +1300,7 @@ Feature: Page Layout Component Scenarios
 
   @36134    @readOnlyExpressionJSONFieldAtPageBlockDetail-gPlanning @smoke
   Scenario: changing rendering behaviour of program name read only with read only expression json field from config and validaying it at program detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                 | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Read Only Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1316,7 +1316,7 @@ Feature: Page Layout Component Scenarios
 
   @53094    @hideForContextFieldAtNotesAndAttachmentPageBlockForEditAction-gPlanning
   Scenario: Hide edit action from attachment page block from config validating it at attachments table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                  | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Rule:Page Block Rule Detail | Hide for Context |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1333,7 +1333,7 @@ Feature: Page Layout Component Scenarios
 
   @53095    @hideForProfileFieldAtNotesAndAttachmentPageBlockForEditAction-gPlanning
   Scenario: Hide edit action from attachment page block from config validating it at attachments table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                  | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Rule:Page Block Rule Detail | Hide for Profile |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1350,7 +1350,7 @@ Feature: Page Layout Component Scenarios
 
   @53096    @hideForUserFieldAtNotesAndAttachmentPageBlockForEditAction-gPlanning
   Scenario: Hide edit action from attachment page block from config validating it at attachments table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                  | fieldName     | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Rule:Page Block Rule Detail | Hide for User |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1368,7 +1368,7 @@ Feature: Page Layout Component Scenarios
 
   @53098    @hideOperatorFieldUsingOROperatorAtNotesAndAttachmentPageBlockForEditAction-gPlanning
   Scenario: Hide edit row level action using OR operator from configuration and validating it at attachments table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                  | fieldName        | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Rule:Page Block Rule Detail | Hide For Profile |                   | Grantee State Program | Name                      | Edit                       |
       | Page Block Rule:Page Block Rule Detail | Hide For User    |                   | Grantee State Program | Name                      | Edit                       |
@@ -1389,7 +1389,7 @@ Feature: Page Layout Component Scenarios
 
   @53097    @hideOperatorFieldUsingANDOperatorAtNotesAndAttachmentPageBlockForEditAction-gPlanning
   Scenario: Hide edit row level action using AND operator from configuration and validating it at attachments table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                  | fieldName        | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Rule:Page Block Rule Detail | Hide For Profile |                   | Grantee State Program | Name                      | Edit                       |
       | Page Block Rule:Page Block Rule Detail | Hide For User    |                   | Grantee State Program | Name                      | Edit                       |
@@ -1410,7 +1410,7 @@ Feature: Page Layout Component Scenarios
 
   @53099    @hideForContextFieldAtNotesAndAttachmentPageBlockForEditActionWithRecordTypeNotesConfig-gPlanning
   Scenario Outline: Hide edit row level action using AND operator from configuration and validating it at attachments table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Uid Config:Uid        | Hide For Context |                   |                    | Internal Unique Id        | <value>                    |
     Given I setup test configuration as below:
@@ -1431,7 +1431,7 @@ Feature: Page Layout Component Scenarios
 
   @53100    @hideForProfileFieldAtNotesAndAttachmentPageBlockForEditActionWithRecordTypeNotesConfig-gPlanning
   Scenario Outline: Hide edit action from attachment page block from config validating it at attachments table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Uid Config:Uid        | Hide for Profile |                   |                    | Internal Unique Id        | <value>                    |
     Given I setup test configuration as below:
@@ -1452,7 +1452,7 @@ Feature: Page Layout Component Scenarios
 
   @53101    @hideForUserFieldAtNotesAndAttachmentPageBlockForEditActionWithRecordTypeNotesConfig-gPlanning
   Scenario Outline: Hide edit action from attachment page block using Hide For User field from config validating it at attachments table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Uid Config:Uid        | Hide for User |                   |                    | Internal Unique Id        | <value>                    |
     Given I setup test configuration as below:
@@ -1473,7 +1473,7 @@ Feature: Page Layout Component Scenarios
 
   @53102    @hideOperatorFieldUsingANDOperatorAtNotesAndAttachmentPageBlockForEditActionWithRecordTypeNotesConfig-gPlanning
   Scenario Outline: Hide edit row level action using AND operator from configuration and validating it at attachments table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Uid Config:Uid        | Hide For Profile |                   |                    | Internal Unique Id        | <value>                    |
       | Uid Config:Uid        | Hide For User    |                   |                    | Internal Unique Id        | <value>                    |
@@ -1498,7 +1498,7 @@ Feature: Page Layout Component Scenarios
 
   @53103    @hideOperatorFieldUsingOROperatorAtNotesAndAttachmentPageBlockForEditActionWithRecordTypeNotesConfig-gPlanning
   Scenario Outline: Hide edit row level action using AND operator from configuration and validating it at attachments table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Uid Config:Uid        | Hide For Profile |                   |                    | Internal Unique Id        | <value>                    |
       | Uid Config:Uid        | Hide For User    |                   |                    | Internal Unique Id        | <value>                    |
@@ -1523,7 +1523,7 @@ Feature: Page Layout Component Scenarios
 
   @53260    @hideDecisionFieldAtNotesAndAttachmentPageBlockForEditAction-gPlanning
   Scenario: Hide edit action from attachment page block from config validating it at attachments table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                  | fieldName           | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Rule:Page Block Rule Detail | Hide Decision Field |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1540,7 +1540,7 @@ Feature: Page Layout Component Scenarios
 
   @53261    @hideDecisionFieldAtNotesAndAttachmentPageBlockForEditActionWithRecordTypeNotesConfig-gPlanning
   Scenario Outline: Hide edit action from attachment page block from config validating it at attachments table
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Uid Config:Uid        | Hide Decision Field |                   |                    | Internal Unique Id        | <value>                    |
     Given I setup test configuration as below:
@@ -1561,7 +1561,7 @@ Feature: Page Layout Component Scenarios
 
   @53092    @saveAttachementBehaviourFieldAtNotesAndAttachmentPageBlockAsSaveAndCloseModal-gPlanning
   Scenario: Changing save attachment behaviour at attachment modal from config and validating it at attachment modal
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory        | fieldName                 | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block:Page Block Detail | Save Attachment Behaviour | Save              | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1579,7 +1579,7 @@ Feature: Page Layout Component Scenarios
 
   @53093    @saveAttachementBehaviourFieldAtNotesAndAttachmentPageBlockAsSaveAndSaveAndCloseModal-gPlanning
   Scenario: Changing save attachment behaviour at attachment modal from config and validating it at attachment modal
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory        | fieldName                 | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block:Page Block Detail | Save Attachment Behaviour | Save              | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1598,7 +1598,7 @@ Feature: Page Layout Component Scenarios
 
   @53388    @requiredForSubmitBehaviourAtPageBlockDetailForTitleField-gPlanning
   Scenario: changing value of required behaviour and removing program title and validating error message while submitting program for approval
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1617,7 +1617,7 @@ Feature: Page Layout Component Scenarios
 
   @53389    @requiredForSubmitBehaviourAtPageBlockDetailForOwnerOrganizationField-gPlanning
   Scenario: changing value of required behaviour and removing owner organization value and validating error message while submitting program for approval
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1637,7 +1637,7 @@ Feature: Page Layout Component Scenarios
 
   @53390    @requiredForSubmitBehaviourAtPageBlockDetailForNumberField-gPlanning
   Scenario: changing value of required behaviour and removing Number Field and validating error message while submitting program for approval
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1656,7 +1656,7 @@ Feature: Page Layout Component Scenarios
 
   @53391    @requiredForSubmitBehaviourAtPageBlockDetailForKPIRequiredField-gPlanning
   Scenario: changing value of required behaviour and keeping none at kpi required Field and validating error message while submitting program for approval
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1675,7 +1675,7 @@ Feature: Page Layout Component Scenarios
 
   @53392    @requiredForSubmitBehaviourAtPageBlockDetailForProjectPeriodStartDateField-gPlanning
   Scenario: changing value of required behaviour and keeping none at project start period Field and validating error message while submitting program for approval
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1695,7 +1695,7 @@ Feature: Page Layout Component Scenarios
 
   @53393    @requiredForSubmitBehaviourAtPageBlockDetailForExpectedFutureFundingField-gPlanning
   Scenario: changing value of required behaviour and keeping none at expected future funding and validating error message while submitting program for approval
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1715,7 +1715,7 @@ Feature: Page Layout Component Scenarios
 
   @53394    @requiredForSubmitBehaviourAtPageBlockDetailForUrlField-gPlanning
   Scenario: changing value of required behaviour and keeping none at URL field and validating error message while submitting program for approval
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1735,7 +1735,7 @@ Feature: Page Layout Component Scenarios
 
   @53395    @requiredForSubmitBehaviourAtPageBlockDetailForProjectsGoalsField-gPlanning
   Scenario: changing value of required behaviour and keeping none at project goals field and validating error message while submitting program for approval
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1755,7 +1755,7 @@ Feature: Page Layout Component Scenarios
 
   @53396    @requiredForSubmitBehaviourAtPageBlockDetailForPercentageField-gPlanning
   Scenario: changing value of required behaviour and keeping none at percentage field and validating error message while submitting program for approval
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1774,7 +1774,7 @@ Feature: Page Layout Component Scenarios
 
   @53397   @requiredForSubmitBehaviourAtPageBlockDetailForDateAndTimeField-gPlanning
   Scenario: changing value of required behaviour and keeping none at date and time field and validating error message while submitting program for approval
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1793,7 +1793,7 @@ Feature: Page Layout Component Scenarios
 
   @53398   @requiredForSubmitBehaviourAtPageBlockDetailForTimeField-gPlanning
   Scenario: changing value of required behaviour and keeping none at time field and validating error message while submitting program for approval
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -1812,7 +1812,7 @@ Feature: Page Layout Component Scenarios
 
   @53399   @requiredForSubmitBehaviourAtPageBlockDetailForAuthorizationField-gPlanning
   Scenario: changing value of required behaviour and keeping none at authorization field and validating error message while submitting program for approval
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
