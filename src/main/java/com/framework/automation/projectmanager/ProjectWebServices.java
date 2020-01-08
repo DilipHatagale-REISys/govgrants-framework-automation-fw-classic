@@ -110,17 +110,18 @@ public class ProjectWebServices {
      *
      * @throws IOException
      */
-    public void postDefaultConfigCall() throws IOException {
-        for (var configurationKeys : ConfigurationParameters.getDefaultConfigurationParameters().keySet()) {
-            if (configurationKeys.equalsIgnoreCase("default"))
-                executeDefaultConfigurations(configurationKeys);
-            if (configurationKeys.equalsIgnoreCase("lightening")) {
-                setDefaultSettingForAllCustomSettings(configurationKeys);
-            }
-        }
+    public void postDefaultConfigCall() {
+        ConfigurationParameters.getDefaultConfigurationParameters().keySet().stream().forEach(keys -> callRelevantConfiguration(keys));
     }
 
     ////////////// Private methods ///////////////////
+
+    private void callRelevantConfiguration(String configurationType) {
+        if (configurationType.equalsIgnoreCase("default"))
+            executeDefaultConfigurations(configurationType);
+        if (configurationType.equalsIgnoreCase("lightening"))
+            setDefaultSettingForAllCustomSettings(configurationType);
+    }
 
     /**
      * Connecting method for postDefaultConfigCall()
@@ -128,23 +129,31 @@ public class ProjectWebServices {
      * @return
      * @throws IOException
      */
-    private void executeDefaultConfigurations(String configurationKey) throws IOException {
+    private void executeDefaultConfigurations(String configurationKey) {
         String filterClause;
         String filterIdValue;
         for (Map<String, String> defaultParameters : ConfigurationParameters.getDefaultConfigurationParameters().get(configurationKey))
             if (defaultParameters.get("filterId") != null) {
                 String[] getValueAt = defaultParameters.get("filterId").split(":");
                 filterIdValue = storeAllIds.get(Integer.parseInt(getValueAt[1])).getId();
-                handleDefaultConfigWithFilterId(
-                        handleConfigCategory(defaultParameters.get("configurationCategory")),
-                        defaultParameters.get("fieldName"), defaultParameters.get("fieldOrignalValue"), filterIdValue);
+                try {
+                    handleDefaultConfigWithFilterId(
+                            handleConfigCategory(defaultParameters.get("configurationCategory")),
+                            defaultParameters.get("fieldName"), defaultParameters.get("fieldOrignalValue"), filterIdValue);
+                } catch (IOException e) {
+                    // not required
+                }
             } else {
                 filterClause = initilizeSalesForceIdFilter(defaultParameters.get("configurationCategory"),
                         defaultParameters.get("coreComponentField"), defaultParameters.get("coreCOmponentSubFieldName"),
                         defaultParameters.get("coreComponentSubFieldValue"));
-                handleDefaultConfigWithoutFileterId(
-                        handleConfigCategory(defaultParameters.get("configurationCategory")),
-                        defaultParameters.get("fieldName"), defaultParameters.get("fieldOrignalValue"), filterClause);
+                try {
+                    handleDefaultConfigWithoutFileterId(
+                            handleConfigCategory(defaultParameters.get("configurationCategory")),
+                            defaultParameters.get("fieldName"), defaultParameters.get("fieldOrignalValue"), filterClause);
+                } catch (IOException e) {
+                    // not required
+                }
             }
     }
 

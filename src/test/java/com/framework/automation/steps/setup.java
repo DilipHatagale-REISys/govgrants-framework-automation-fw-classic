@@ -46,7 +46,7 @@ public class setup {
             ProjectWebServices.thisValue = null;
         } catch (Exception e) {
             ProjectWebServices.thisValue = null;
-            System.out.println("Exception is " + e.getStackTrace());
+            e.printStackTrace();
         }
     }
 }
