@@ -110,16 +110,8 @@ public class ProjectWebServices {
      *
      * @throws IOException
      */
-    public void postDefaultConfigCall() throws IOException {
+    public void postDefaultConfigCall() {
         ConfigurationParameters.getDefaultConfigurationParameters().keySet().stream().forEach(keys -> callRelevantConfiguration(keys));
-            /*
-        for (var configurationKeys : ConfigurationParameters.getDefaultConfigurationParameters().keySet()) {
-            if (configurationKeys.equalsIgnoreCase("default"))
-                executeDefaultConfigurations(configurationKeys);
-            if (configurationKeys.equalsIgnoreCase("lightening")) {
-                setDefaultSettingForAllCustomSettings(configurationKeys);
-            }
-        }*/
     }
 
     ////////////// Private methods ///////////////////
@@ -127,9 +119,8 @@ public class ProjectWebServices {
     private void callRelevantConfiguration(String configurationType) {
         if (configurationType.equalsIgnoreCase("default"))
             executeDefaultConfigurations(configurationType);
-        if (configurationType.equalsIgnoreCase("lightening")) {
+        if (configurationType.equalsIgnoreCase("lightening"))
             setDefaultSettingForAllCustomSettings(configurationType);
-        }
     }
 
     /**
