@@ -17,7 +17,7 @@ public class ProjectWebServices {
     SetUpConfiguration configPostCall;
     Properties_Logs readProp = new Properties_Logs();
     ApiUtilities apiUtil;
-    private static String endPoint;
+    private static String endPoint = EnvironmentFetcher.getEnvironmentUrl();
     private String defaultUpdateEndPoint = "/services/apexrest/frameworkAPIUpdate";
     private String defaultEndPointGetToken = "/services/oauth2/token?grant_type=password&client_secret=7608231485378593656&client_id=3MVG91ftikjGaMd8E01oyLzW0qhdCcSTnpVVwmMdo3H_C6vbhroOOpEF4C.54CXCiOi5SQFyN.a6Ze8NCAcSa&username=qa_automation@ggp.test5&password=Automation@12345";
     public static String tokenString;
@@ -51,7 +51,6 @@ public class ProjectWebServices {
     public void setupConfigurationForTest(String configurationCategory, String fieldName, String fieldValue,
                                           String coreComponentField, String coreCOmponentSubFieldName, String coreComponentSubFieldValue)
             throws IOException {
-        EnvironmentFetcher.getEnvironmentUrl();
         getAuthToken();
         String filterClause = initilizeSalesForceIdFilter(configurationCategory, coreComponentField,
                 coreCOmponentSubFieldName, coreComponentSubFieldValue);
@@ -87,7 +86,6 @@ public class ProjectWebServices {
      * @param name
      */
     public void updateEnableLightningLookup(boolean booleanValue, Integer integerValue, String id, String description, String name) {
-        EnvironmentFetcher.getEnvironmentUrl();
         getAuthToken();
         String finalEndPoint = endPoint + "/services/apexrest/frameworkCustomsettingAPI";
         JsonArray jArray = new JsonArray();
