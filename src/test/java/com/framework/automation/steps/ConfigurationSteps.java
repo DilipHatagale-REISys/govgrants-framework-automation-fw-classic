@@ -40,7 +40,7 @@ public class ConfigurationSteps {
     @And("I update the locale and timezone related changes:$")
     public void iUpdateTheLocaleAndTimezone(List<Map<String, String>> configParameters) {
         for (Map<String, String> parameters : configParameters)
-            projectAPI.updateLocalAndTimeZone(parameters.get("locale"), parameters.get("timezone"));
+            projectAPI.updateLocalAndTimeZone(parameters.get("locale"), parameters.get("timeZone"));
         ProjectWebServices.dynamicApi = "localeOrTimeZone";
     }
 

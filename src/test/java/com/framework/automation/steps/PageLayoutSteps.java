@@ -347,11 +347,6 @@ public class PageLayoutSteps {
         pageLayoutPage.assertHoldOnLogoDisappeared();
     }
 
-    @Then("^I see \"([^\"]*)\" shown inside mini page layout on hover$")
-    public void assertMiniPageLayoutTextOnHover(String text) {
-        pageLayoutPage.assertTextAtMiniPageLayoutAtPageBlockDetail(text);
-    }
-
     @Then("^I see content inside lookup modal in \"([^\"]*)\" order$")
     public void assertContentOfLookUpModalInExpectedOrder(String order) {
         pageLayoutPage.assertAscendingOrderOfLookupModalContent(order);
@@ -410,5 +405,15 @@ public class PageLayoutSteps {
     @Then("^I see Session Timeout dialogbox with text \"([^\"]*)\"$")
     public void assertSessionTimeoutDialogboxWithText(String bodyContent) {
         pageLayoutPage.assertSessionTimeoutDialogboxText(bodyContent);
+    }
+
+    @Then("^I (softly see|softly cannot see|cannot see|see) Session Timeout dialogue box with title \"([^\"]*)\" is displayed$")
+    public void assertSessionTimeoutDialogboxIsDisplayed(String usage , String headerText) {
+        pageLayoutPage.assertSessionTimeoutDialogboxDisplayed(usage , headerText);
+    }
+
+    @Then("^I see Session Timeout dialogbox with button \"([^\"]*)\"$")
+    public void assertSessionTimeoutDialogboxWithButtons(String buttonName) {
+        pageLayoutPage.assertSessionTimeoutDialogboxButtons(buttonName);
     }
 }

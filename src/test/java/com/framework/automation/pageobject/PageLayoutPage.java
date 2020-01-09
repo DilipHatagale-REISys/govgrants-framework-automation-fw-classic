@@ -400,13 +400,6 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
-     * assert true if mentioned text displayed on mini page layout while hover
-     */
-    public void assertTextAtMiniPageLayoutAtPageBlockDetail(String text) {
-        Assert.assertTrue(isTextDisplayedOnMiniPageLayout(text));
-    }
-
-    /**
      * assert if specified button is displayed on modal
      *
      * @param buttonName
@@ -556,6 +549,34 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public void assertLogoutPageIsDisplayed(String logoutURL) {
         Assert.assertTrue(IsLogoutPageDisplayed(logoutURL));
+    }
+
+    /**
+     * return true if given buttonName is displayed under session timeout dialog box
+     */
+    public void assertSessionTimeoutDialogboxButtons(String buttonName) {
+        Assert.assertTrue(IsButtonDisplayedUnderDialogBox(buttonName));
+    }
+
+    /**
+     * return true if Warning dialog box appears/not appears
+     */
+    public void assertSessionTimeoutDialogboxDisplayed(String usage,String headerText) {
+        By sessionTimeoutDialogboxField = By.xpath("//div[contains(@class,'ui-dialog-titlebar')]//span[contains(text(),'" + headerText + "')]");
+        if (usage.contains("softly")) {
+            if (usage.contains("cannot see")) {
+                EyeThink.core().assertion().assertThat(EyeThink.core().is().isDisplayed(sessionTimeoutDialogboxField)).isFalse();
+            } else {
+                EyeThink.core().assertion().assertThat(EyeThink.core().is().isDisplayed(sessionTimeoutDialogboxField)).isTrue();
+            }
+        } else {
+            if (usage.contains("cannot see")) {
+                Assert.assertFalse(EyeThink.core().is().isDisplayed(sessionTimeoutDialogboxField));
+            } else {
+                Assert.assertTrue(EyeThink.core().is().isDisplayed(sessionTimeoutDialogboxField));
+            }
+        }
+
     }
 
     /**
@@ -1384,23 +1405,6 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
-     * return true if help text is displayed
-     *
-     * @param text
-     * @return
-     */
-    private boolean isTextDisplayedOnMiniPageLayout(String text) {
-        boolean flag = false;
-        EyeThink.core().WaitFor().makeThreadSleep(2000);
-
-        if (EyeThink.core().get().text(textInsideMiniPageLayout).contains(text)
-                || EyeThink.core().get().text(textInsideMiniPageLayout).equalsIgnoreCase(text)) {
-            flag = true;
-        }
-        return flag;
-    }
-
-    /**
      * return true if content appears in Ascending/Descending order for look up modal
      *
      * @return
@@ -1535,9 +1539,22 @@ public class PageLayoutPage extends GovGrantsManager {
      * @return
      */
     private boolean isSessionTimeoutDialogboxTextDisplayed(String bodyContent) {
-        WebElement ele = EyeThink.core().elementReference().of(By.xpath("//div[contains(@class,'ui-dialog-content')]//p"));
+        WebElement ele = EyeThink.core().elementReference().of(By.xpath("//div[contains(@class,'ui-dialog-content')]"));
         boolean flag = false;
-        if (ele.getText().equalsIgnoreCase(bodyContent)) {
+        if (ele.getText().contains(bodyContent)) {
+            flag = true;
+        }
+        return flag;
+    }
+
+    /**
+     * return true if given buttonName is displayed under session timeout dialog box
+     *
+     * @return
+     */
+    private boolean IsButtonDisplayedUnderDialogBox(String buttonName) {
+        boolean flag = false;
+        if (EyeThink.core().is().isDisplayed(By.xpath("//button[text()='" + buttonName + "']"))) {
             flag = true;
         }
         return flag;
