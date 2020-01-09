@@ -5,7 +5,7 @@ Feature: Forms Component Scenarios
 
   @35185    @validateBusinessFormsRemoval-gApplication
   Scenario: Validate disabling of business form from config and validating inside Application view
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Page Block            | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -21,7 +21,7 @@ Feature: Forms Component Scenarios
 
   @35189    @hidingPreviewActionItemForUsersInsideBusinessForms-gApplication @smoke
   Scenario: Validate disabling preview of business form action item from config and validating inside Application view
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | coreComponentField | filterId         |
       | Page Block Rule       | Hide For User |                   | ApplicationView    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -37,7 +37,7 @@ Feature: Forms Component Scenarios
 
   @35193    @hidingViewActionItemForUsersInsideBusinessForms-gApplication
   Scenario: Validate disabling View of business form action item from config and validating inside Application view
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | coreComponentField | filterId         |
       | Page Block Rule       | Hide For User |                   | ApplicationView    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -53,7 +53,7 @@ Feature: Forms Component Scenarios
 
   @35271    @changeLabelOfEditFormPageLayoutActionItem-gApplication @smoke
   Scenario: Validate label change of edit action button at form page layout action from config and validating inside Application form view
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName   | fieldOrignalValue | coreComponentField     | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Action Name | Edit              | Application Cover Page | Name                      | Edit Automation            |
     Given I setup test configuration as below:
@@ -70,7 +70,7 @@ Feature: Forms Component Scenarios
 
   @35290    @hidingOfEditFormPageLayoutActionItemForUser-gApplication
   Scenario: Validate disabling of edit action button at form page layout action from config and validating inside Application form view
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | coreComponentField     | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide For User |                   | Application Cover Page | Name                      | Edit                       |
     Given I setup test configuration as below:
@@ -87,7 +87,7 @@ Feature: Forms Component Scenarios
 
   @37857    @versionFieldAtFormConfig-gApplication
   Scenario: Changing text for version field at form config for general application form from config and validating it at particular form detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Forms                 | Version   | 1.0               | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -104,7 +104,7 @@ Feature: Forms Component Scenarios
 
   @37856    @headerFieldAtFormLayout-gApplication @smoke
   Scenario: Changing header name for particular form inside application phase from config and validating it at application form detail page
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue  | filterId         |
       | Page Layout           | Header    | Application Simple | ApiGeneratedId:0 |
     Given I setup test configuration as below:

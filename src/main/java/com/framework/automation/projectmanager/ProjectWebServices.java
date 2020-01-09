@@ -13,13 +13,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Map;
 
-import static io.restassured.RestAssured.given;
-
 public class ProjectWebServices {
     SetUpConfiguration configPostCall;
     Properties_Logs readProp = new Properties_Logs();
     ApiUtilities apiUtil;
-    private static String endPoint;
+    private static String endPoint = EnvironmentFetcher.getEnvironmentUrl();
     private String defaultUpdateEndPoint = "/services/apexrest/frameworkAPIUpdate";
     private String defaultEndPointGetToken = "/services/oauth2/token?grant_type=password&client_secret=7608231485378593656&client_id=3MVG91ftikjGaMd8E01oyLzW0qhdCcSTnpVVwmMdo3H_C6vbhroOOpEF4C.54CXCiOi5SQFyN.a6Ze8NCAcSa&username=qa_automation@ggp.test5&password=Automation@12345";
     public static String tokenString;
@@ -53,7 +51,6 @@ public class ProjectWebServices {
     public void setupConfigurationForTest(String configurationCategory, String fieldName, String fieldValue,
                                           String coreComponentField, String coreCOmponentSubFieldName, String coreComponentSubFieldValue)
             throws IOException {
-        createEndPoint();
         getAuthToken();
         String filterClause = initilizeSalesForceIdFilter(configurationCategory, coreComponentField,
                 coreCOmponentSubFieldName, coreComponentSubFieldValue);
@@ -67,57 +64,98 @@ public class ProjectWebServices {
     }
 
     /**
-     * handle setting up new configurational setting
+     * It will accept and change locale and timezone value for internal/external user.
      *
-     * @param configCategory
-     * @param fieldName
-     * @param value
-     * @param filterClause
-     * @return
+     * @param locale
+     * @param timeZone
      */
-    private Response postConfigCall(String configCategory, String fieldName, String value, String filterClause) {
-        Response response = null;
-        if (value.contains("ApiGeneratedId")) {
-            String[] getValueAt = value.split(":");
-            response = EyeThink.core().apiCall().postCall(null,
-                    configPostCall.getConfigJson(handleConfigCategory(configCategory), fieldName,
-                            storeAllIds.get(Integer.parseInt(getValueAt[1])).getId(), filterClause),
-                    endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
-        } else {
-            response = EyeThink.core().apiCall().postCall(null,
-                    configPostCall.getConfigJson(handleConfigCategory(configCategory), fieldName, value, filterClause),
-                    endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
-        }
-        return response;
+    public void updateLocalAndTimeZone(String locale, String timeZone) {
+        String finalEndPoint = endPoint + "/services/apexrest/frameworkCustomsettingAPI?isLocale=true";
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("locale", locale);
+        jsonObject.addProperty("timezone", timeZone);
+        EyeThink.core().apiCall().gsonToJson(jsonObject);
+        EyeThink.core().apiCall().putCall(jsonObject, null, finalEndPoint, null, null, tokenString);
     }
+
+    /**
+     * @param booleanValue
+     * @param integerValue
+     * @param id
+     * @param description
+     * @param name
+     */
+    public void updateEnableLightningLookup(boolean booleanValue, Integer integerValue, String id, String description, String name) {
+        getAuthToken();
+        String finalEndPoint = endPoint + "/services/apexrest/frameworkCustomsettingAPI";
+        JsonArray jArray = new JsonArray();
+        JsonObject jsonObject = new JsonObject();
+        JsonObject jsonContainer = new JsonObject();
+        jsonObject.addProperty("GNT__BooleanValue__c", booleanValue);
+        jsonObject.addProperty("GNT__IntegerValue__c", integerValue);
+        jsonObject.addProperty("Id", id);
+        jsonObject.addProperty("GNT__Description__c", description);
+        jsonObject.addProperty("Name", name);
+        jsonContainer.add("fieldvalues", jsonObject);
+        jsonContainer.addProperty("customsettingapiname", "GNT__KeyValueStore__c");
+        jArray.add(jsonContainer);
+        EyeThink.core().apiCall().putCall(null, jArray.toString(), finalEndPoint, null, null, tokenString);
+    }
+
 
     ////////////// Setup Default Config//////////////
 
-    public Response postDefaultConfigCall() throws IOException {
-        System.out.println("Default executed");
-        Response response = null;
+    /**
+     * it will check parameter as default, lightning etc at steps level inside feature file and perform config changes accordingly.
+     *
+     * @throws IOException
+     */
+    public void postDefaultConfigCall() {
+        ConfigurationParameters.getDefaultConfigurationParameters().keySet().stream().forEach(keys -> callRelevantConfiguration(keys));
+    }
+
+    ////////////// Private methods ///////////////////
+
+    private void callRelevantConfiguration(String configurationType) {
+        if (configurationType.equalsIgnoreCase("default"))
+            executeDefaultConfigurations(configurationType);
+        if (configurationType.equalsIgnoreCase("lightening"))
+            setDefaultSettingForAllCustomSettings(configurationType);
+    }
+
+    /**
+     * Connecting method for postDefaultConfigCall()
+     *
+     * @return
+     * @throws IOException
+     */
+    private void executeDefaultConfigurations(String configurationKey) {
         String filterClause;
         String filterIdValue;
-        for (Map<String, String> defaultParameters : ConfigurationParameters.getDefaultConfigurationParameters()) {
+        for (Map<String, String> defaultParameters : ConfigurationParameters.getDefaultConfigurationParameters().get(configurationKey))
             if (defaultParameters.get("filterId") != null) {
                 String[] getValueAt = defaultParameters.get("filterId").split(":");
                 filterIdValue = storeAllIds.get(Integer.parseInt(getValueAt[1])).getId();
-                response = handleDefaultConfigWithFilterId(
-                        handleConfigCategory(defaultParameters.get("configurationCategory")),
-                        defaultParameters.get("fieldName"), defaultParameters.get("fieldOrignalValue"), filterIdValue);
+                try {
+                    handleDefaultConfigWithFilterId(
+                            handleConfigCategory(defaultParameters.get("configurationCategory")),
+                            defaultParameters.get("fieldName"), defaultParameters.get("fieldOrignalValue"), filterIdValue);
+                } catch (IOException e) {
+                    // not required
+                }
             } else {
                 filterClause = initilizeSalesForceIdFilter(defaultParameters.get("configurationCategory"),
                         defaultParameters.get("coreComponentField"), defaultParameters.get("coreCOmponentSubFieldName"),
                         defaultParameters.get("coreComponentSubFieldValue"));
-                response = handleDefaultConfigWithoutFileterId(
-                        handleConfigCategory(defaultParameters.get("configurationCategory")),
-                        defaultParameters.get("fieldName"), defaultParameters.get("fieldOrignalValue"), filterClause);
+                try {
+                    handleDefaultConfigWithoutFileterId(
+                            handleConfigCategory(defaultParameters.get("configurationCategory")),
+                            defaultParameters.get("fieldName"), defaultParameters.get("fieldOrignalValue"), filterClause);
+                } catch (IOException e) {
+                    // not required
+                }
             }
-        }
-        return response;
     }
-
-    ////////////// Private methods ///////////////////
 
     /**
      * Start to setup filter for main api call
@@ -138,14 +176,7 @@ public class ProjectWebServices {
      */
     private void getAuthToken() {
         Response response = EyeThink.core().apiCall().postCall(null, null, endPoint + defaultEndPointGetToken, null, null, null);
-        this.tokenString = response.body().jsonPath().getString("access_token");
-    }
-
-    /**
-     * create end point based on different urls
-     */
-    public void createEndPoint() {
-        this.endPoint = EnvironmentFetcher.getEnvironmentUrl();
+        tokenString = response.body().jsonPath().getString("access_token");
     }
 
     /**
@@ -157,6 +188,16 @@ public class ProjectWebServices {
         response.then().statusCode(200);
     }
 
+    /**
+     * connecting method for executeDefaultConfigurations
+     *
+     * @param configurationCategory
+     * @param fieldName
+     * @param fieldOrignalValue
+     * @param filterId
+     * @return
+     * @throws IOException
+     */
     private Response handleDefaultConfigWithFilterId(String configurationCategory, String fieldName,
                                                      String fieldOrignalValue, String filterId) throws IOException {
         Response response = null;
@@ -220,30 +261,44 @@ public class ProjectWebServices {
         }
     }
 
-    public void updateLocalAndTimeZone(String locale, String timeZone) {
-        String finalEndPoint = endPoint + "/services/apexrest/frameworkCustomsettingAPI?isLocale=true";
-        JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("locale", locale);
-        jsonObject.addProperty("timezone", timeZone);
-        EyeThink.core().apiCall().gsonToJson(jsonObject);
-        EyeThink.core().apiCall().putCall(jsonObject, null, finalEndPoint, null, null, tokenString);
+    /**
+     * It will take key and its value from feature file to make default config changes for custom setting
+     * <p>
+     * booleanValue - accept true/false for to enable disable custom settings
+     * integerValue - it will take integer value for session time out
+     * id           - it will take unique custom setting id where changes is supposed to made
+     * description  - it will take description of expected custom settings
+     * name         - it will take unique custom setting label
+     */
+    private void setDefaultSettingForAllCustomSettings(String key) {
+        for (Map<String, String> customMap : ConfigurationParameters.getDefaultConfigurationParameters().get(key)) {
+            updateEnableLightningLookup(Boolean.parseBoolean(customMap.get("booleanValue")), null, customMap.get("id"),
+                    customMap.get("description"), customMap.get("name"));
+        }
     }
 
-    public void updateEnableLightningLookup(boolean booleanValue, Integer integerValue, String id, String description, String name) {
-        createEndPoint();
-        getAuthToken();
-        String finalEndPoint = endPoint + "/services/apexrest/frameworkCustomsettingAPI";
-        JsonArray jArray = new JsonArray();
-        JsonObject jsonObject = new JsonObject();
-        JsonObject jsonContainer = new JsonObject();
-        jsonObject.addProperty("GNT__BooleanValue__c", booleanValue);
-        jsonObject.addProperty("GNT__IntegerValue__c", integerValue);
-        jsonObject.addProperty("Id", id);
-        jsonObject.addProperty("GNT__Description__c", description);
-        jsonObject.addProperty("Name", name);
-        jsonContainer.add("fieldvalues", jsonObject);
-        jsonContainer.addProperty("customsettingapiname", "GNT__KeyValueStore__c");
-        jArray.add(jsonContainer);
-        EyeThink.core().apiCall().putCall(null, jArray.toString(), finalEndPoint, null, null, tokenString);
+    /**
+     * handle setting up new configurational setting
+     *
+     * @param configCategory
+     * @param fieldName
+     * @param value
+     * @param filterClause
+     * @return
+     */
+    private Response postConfigCall(String configCategory, String fieldName, String value, String filterClause) {
+        Response response = null;
+        if (value.contains("ApiGeneratedId")) {
+            String[] getValueAt = value.split(":");
+            response = EyeThink.core().apiCall().postCall(null,
+                    configPostCall.getConfigJson(handleConfigCategory(configCategory), fieldName,
+                            storeAllIds.get(Integer.parseInt(getValueAt[1])).getId(), filterClause),
+                    endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
+        } else {
+            response = EyeThink.core().apiCall().postCall(null,
+                    configPostCall.getConfigJson(handleConfigCategory(configCategory), fieldName, value, filterClause),
+                    endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
+        }
+        return response;
     }
 }

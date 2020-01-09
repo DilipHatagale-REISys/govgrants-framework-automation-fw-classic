@@ -5,7 +5,7 @@ Feature: Side bar Component Scenarios
 
   @33877    @validateChangeinTaskMenuSequence-gHome
   Scenario: validate after changing sequence of task menu from second to third in side bar
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue                                                  | filterId         |
       | Side Bar Header       | Sidebar Component Sequence | Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -17,7 +17,7 @@ Feature: Side bar Component Scenarios
 
   @33876    @validateSidebarTaskMenuRemoval-gHome @smoke
   Scenario: validate disabling of task menu from side bar
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue                                                  | filterId         |
       | Side Bar Header       | Sidebar Component Sequence | Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -29,7 +29,7 @@ Feature: Side bar Component Scenarios
 
   @33879    @validateSidebarActivityMenuRemoval-gHome @smoke
   Scenario: validate disabling of activity menu from side bar
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue                                                  | filterId         |
       | Side Bar Header       | Sidebar Component Sequence | Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -41,7 +41,7 @@ Feature: Side bar Component Scenarios
 
   @33881    @validateLabelChangeOfAccordionContent-gHome @smoke
   Scenario: validate change of label in My tasks accordion content
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Accordian Content     | Name      | Completed         | GrantorHome        | Name                      | Automation                 |
     Given I setup test configuration as below:
@@ -53,7 +53,7 @@ Feature: Side bar Component Scenarios
 
   @33880    @validateChangeAccordianHeaderSeq-gHome @smoke
   Scenario: validate after changing accordian header sequence for activities
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Accordian Header      | Sequence  | 9                 | GrantorHome        | Name                      | Manage Forms               |
     Given I setup test configuration as below:
@@ -65,7 +65,7 @@ Feature: Side bar Component Scenarios
 
   @33883    @validateAccordionContentAllowedProfile-gHome @pankaj-blocked @wip
   Scenario Outline: validate accordion content Pending in My tasks is available for a specific added profile
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
       | Accordian Content     | Available for Profiles | <Old-Profile>     | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -80,7 +80,7 @@ Feature: Side bar Component Scenarios
 
   @33884    @validateLabelChangeOfAccordionHeader-gHome
   Scenario: Changing label of accordion Header
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Accordian Header      | Name      | My Tasks          | GrantorHome        | Name                      | Automation                 |
     Given I setup test configuration as below:
@@ -92,7 +92,7 @@ Feature: Side bar Component Scenarios
 
   @33885    @validateChangeAccordianContentSeq-gHome @smoke
   Scenario: validate after changing accordion content sequence for completed inside my tasks
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Accordian Content     | Sequence  | 1                 | GrantorHome        | Name                      | Completed                  |
     Given I setup test configuration as below:
@@ -104,7 +104,7 @@ Feature: Side bar Component Scenarios
 
   @33886    @validateAccordionContentOpensInNewWindow-gHome @smoke
   Scenario Outline: validate accordion content opens in new window
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Accordian Content     | Open in new window | false             | GrantorHome        | Name                      | Completed                  |
     Given I setup test configuration as below:
@@ -120,7 +120,7 @@ Feature: Side bar Component Scenarios
 
   @33887    @validateTargetUrlForAccordionContent-gHome
   Scenario Outline: validate accordion content opens with provided target url
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName  | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Accordian Content     | Target Url | <Old-TargetUrl>   | GrantorHome        | Name                      | Completed                  |
     Given I setup test configuration as below:

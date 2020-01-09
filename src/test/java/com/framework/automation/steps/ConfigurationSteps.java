@@ -6,22 +6,26 @@ import eyethink.automation.bots.Register.EyeThink;
 import io.cucumber.java.en.*;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class ConfigurationSteps {
     ProjectWebServices projectAPI;
+    Map<String, List<Map<String, String>>> createConfigurationMap = new HashMap<>();
 
     public ConfigurationSteps(ProjectWebServices projectAPI) {
         this.projectAPI = projectAPI;
         this.projectAPI = projectAPI;
         this.projectAPI.setupIdBucket();
         this.projectAPI.thisValue = this.projectAPI;
+
     }
 
-    @Given("^I have default configuration as below:$")
-    public void defaultConfigurationSetUp(List<Map<String, String>> defaultParameters) throws IOException {
-        ConfigurationParameters.setDefaultConfigurationParameters(defaultParameters);
+    @Given("I have {string} configuration as below:")
+    public void defaultConfigurationSetUp(String configType, List<Map<String, String>> defaultParameters) {
+        createConfigurationMap.put(configType, defaultParameters);
+        ConfigurationParameters.setDefaultConfigurationParameters(createConfigurationMap);
     }
 
     @Given("^I setup test configuration as below:$")
@@ -46,5 +50,11 @@ public class ConfigurationSteps {
             projectAPI.updateEnableLightningLookup(Boolean.parseBoolean(parameters.get("booleanValue")), Integer.parseInt(parameters.get("integerValue")), parameters.get("id"), parameters.get("description"), parameters.get("name"));
             ProjectWebServices.dynamicApi = "lightningLookUp";
         }
+    }
+
+    @Given("I have {string} configuration for custom setting as below:")
+    public void iUpdateEnableLightningLookupFieldToDefault(String configType, List<Map<String, String>> defaultParameters) {
+        createConfigurationMap.put(configType, defaultParameters);
+        ConfigurationParameters.setDefaultConfigurationParameters(createConfigurationMap);
     }
 }

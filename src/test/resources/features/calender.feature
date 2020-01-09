@@ -5,7 +5,7 @@ Feature: Calender Config Component Scenarios
 
   @35121    @colorCodeFieldAtCalenderConfig
   Scenario: Changing color code at calender confiuration and validating the changed color at calender grantor-Home
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory| fieldName  | fieldOrignalValue | filterId         |
       | Calender Config      | Color Code | #B0CEE1           | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -19,7 +19,7 @@ Feature: Calender Config Component Scenarios
 
   @35124    @activeFieldAtCalenderConfig
   Scenario: Disabling program from calender after changing confiuration and validating calender grantor-Home
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory| fieldName  | fieldOrignalValue | filterId         |
       | Calender Config      | Active     | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:

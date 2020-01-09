@@ -5,7 +5,7 @@ Feature: Custom App Config Component Scenarios
 
   @52893    @labelFieldAtCustomAppConfig
   Scenario: Changing name at label field from custom app confiuration and validating the changed label at custom app dropdown 
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory| fieldName  | fieldOrignalValue | filterId         |
       | Custom App Config    | Label      | As a Grantor      | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -17,7 +17,7 @@ Feature: Custom App Config Component Scenarios
     
   @52895    @defaultFieldNameFieldAtCustomAppConfig
   Scenario: Removing contrast content at default field name field from custom app confiuration and validating the changed label at custom app dropdown
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory| fieldName          | fieldOrignalValue     | filterId         |
       | Custom App Config    | Default Theme Name | ColorContrast_Grantor | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -29,7 +29,7 @@ Feature: Custom App Config Component Scenarios
     
   @52896    @availableForProfilesFieldAtCustomAppConfig
   Scenario Outline: Remove admin profile from config. and validate that As a Grantor custom App doesn't show up in custom App drop down for admin user
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory| fieldName             | fieldOrignalValue | filterId         |
       | Custom App Config    | Available For Profiles| <Old-Profile>     | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -45,7 +45,7 @@ Feature: Custom App Config Component Scenarios
 
   @52897    @activeFieldAtCustomAppConfig
   Scenario: Uncheck checkbox of Active Field from custom app confiuration and validate As a Grantor is not visible at custom app dropdown 
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory| fieldName  | fieldOrignalValue | filterId         |
       | Custom App Config    | Active     | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -57,7 +57,7 @@ Feature: Custom App Config Component Scenarios
 
   @52898    @urlFieldAtCustomAppConfig
   Scenario Outline: Removing the url from URL Field from custom app confiuration and validate that custom app is not displayed
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory| fieldName  | fieldOrignalValue | filterId         |
       | Custom App Config    | URL        | <defaultUrl>      | ApiGeneratedId:0 |
     Given I setup test configuration as below:
@@ -72,7 +72,7 @@ Feature: Custom App Config Component Scenarios
 
   @52894    @sequenceFieldAtCustomAppConfig
   Scenario: Changing sequence of custom app config values from confiuration and validating the changed sequenc at custom app dropdown
-    Given I have default configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory| fieldName  | fieldOrignalValue | filterId         |
       | Custom App Config    | Sequence   | 5                 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
