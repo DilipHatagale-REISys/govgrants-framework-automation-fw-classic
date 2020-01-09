@@ -400,13 +400,6 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
-     * assert true if mentioned text displayed on mini page layout while hover
-     */
-    public void assertTextAtMiniPageLayoutAtPageBlockDetail(String text) {
-        Assert.assertTrue(isTextDisplayedOnMiniPageLayout(text));
-    }
-
-    /**
      * assert if specified button is displayed on modal
      *
      * @param buttonName
@@ -568,8 +561,8 @@ public class PageLayoutPage extends GovGrantsManager {
     /**
      * return true if Warning dialog box appears/not appears
      */
-    public void assertSessionTimeoutDialogboxDisplayed(String usage) {
-        By sessionTimeoutDialogboxField = By.xpath("//div[contains(@class,'ui-dialog-titlebar')]");
+    public void assertSessionTimeoutDialogboxDisplayed(String usage,String headerText) {
+        By sessionTimeoutDialogboxField = By.xpath("//div[contains(@class,'ui-dialog-titlebar')]//span[contains(text(),'" + headerText + "')]");
         if (usage.contains("softly")) {
             if (usage.contains("cannot see")) {
                 EyeThink.core().assertion().assertThat(EyeThink.core().is().isDisplayed(sessionTimeoutDialogboxField)).isFalse();
@@ -1407,23 +1400,6 @@ public class PageLayoutPage extends GovGrantsManager {
             }
         } catch (Exception e) {
             e.printStackTrace();
-        }
-        return flag;
-    }
-
-    /**
-     * return true if help text is displayed
-     *
-     * @param text
-     * @return
-     */
-    private boolean isTextDisplayedOnMiniPageLayout(String text) {
-        boolean flag = false;
-        EyeThink.core().WaitFor().makeThreadSleep(2000);
-
-        if (EyeThink.core().get().text(textInsideMiniPageLayout).contains(text)
-                || EyeThink.core().get().text(textInsideMiniPageLayout).equalsIgnoreCase(text)) {
-            flag = true;
         }
         return flag;
     }

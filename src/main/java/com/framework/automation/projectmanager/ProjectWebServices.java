@@ -70,9 +70,10 @@ public class ProjectWebServices {
      */
     public void updateLocalAndTimeZone(String locale, String timeZone) {
         String finalEndPoint = endPoint + "/services/apexrest/frameworkCustomsettingAPI?isLocale=true";
+        getAuthToken();
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("locale", locale);
-        jsonObject.addProperty("timezone", timeZone);
+        jsonObject.addProperty("timeZone", timeZone);
         EyeThink.core().apiCall().gsonToJson(jsonObject);
         EyeThink.core().apiCall().putCall(jsonObject, null, finalEndPoint, null, null, tokenString);
     }
