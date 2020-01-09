@@ -12,7 +12,6 @@ import io.restassured.response.Response;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Map;
-
 public class ProjectWebServices {
     SetUpConfiguration configPostCall;
     Properties_Logs readProp = new Properties_Logs();
