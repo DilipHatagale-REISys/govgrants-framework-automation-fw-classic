@@ -12,6 +12,7 @@ import io.restassured.response.Response;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Map;
+
 public class ProjectWebServices {
     SetUpConfiguration configPostCall;
     Properties_Logs readProp = new Properties_Logs();
@@ -69,12 +70,11 @@ public class ProjectWebServices {
      * @param timeZone
      */
     public void updateLocalAndTimeZone(String locale, String timeZone) {
-        String finalEndPoint = endPoint + "/services/apexrest/frameworkCustomsettingAPI?isLocale=true";
         getAuthToken();
+        String finalEndPoint = endPoint + "/services/apexrest/frameworkCustomsettingAPI?isLocale=true";
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("locale", locale);
-        jsonObject.addProperty("timeZone", timeZone);
-        EyeThink.core().apiCall().gsonToJson(jsonObject);
+        jsonObject.addProperty("timezone", timeZone);
         EyeThink.core().apiCall().putCall(jsonObject, null, finalEndPoint, null, null, tokenString);
     }
 
@@ -121,6 +121,8 @@ public class ProjectWebServices {
             executeDefaultConfigurations(configurationType);
         if (configurationType.equalsIgnoreCase("lightening"))
             setDefaultSettingForAllCustomSettings(configurationType);
+        if (configurationType.equalsIgnoreCase("timeZoneLocale"))
+            setDefaultSettingForLocaleAndTimeZone("timeZoneLocale");
     }
 
     /**
@@ -274,6 +276,18 @@ public class ProjectWebServices {
         for (Map<String, String> customMap : ConfigurationParameters.getDefaultConfigurationParameters().get(key)) {
             updateEnableLightningLookup(Boolean.parseBoolean(customMap.get("booleanValue")), null, customMap.get("id"),
                     customMap.get("description"), customMap.get("name"));
+        }
+    }
+
+    /**
+     * It will take key and its value from feature file to make default config changes for Locale and TimeZone
+     * <p>
+     * locale - it will take country locale value from feature file
+     * timeZone - it will take country time zone from feature file
+     */
+    private void setDefaultSettingForLocaleAndTimeZone(String key) {
+        for (Map<String, String> customMap : ConfigurationParameters.getDefaultConfigurationParameters().get(key)) {
+            updateLocalAndTimeZone(customMap.get("locale"), customMap.get("timeZone"));
         }
     }
 

@@ -1191,6 +1191,9 @@ Feature: Logged Issues Scenarios
 
   @59586      @verifyBudgetPeriodEndDateFieldShouldSaveProperDateForMultipleRecord
   Scenario Outline: validate budget period end date field should save entered date correctly for multiple record at enhanced grid
+    Given I have "timeZoneLocale" configuration as below:
+      | locale | timeZone         |
+      | en_US  | America/New_York |
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName           | fieldOrignalValue               | filterId         |
       | Flex Grid:Flex Table List | Filter Clause       | <defaultFilterClauseForFLV2539> | ApiGeneratedId:0 |
@@ -1200,6 +1203,9 @@ Feature: Logged Issues Scenarios
       | Flex Grid:Flex Table List | Filter Clause       | <newFilterClauseForFLV2539> | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
       | Flex Grid:General         | Display Field Names | <newFieldsApi>              | TmpActiveGrantsGrid |                           |                            |
     When I login as "Automation" user
+    And I update the locale and timezone related changes:
+      | locale | timeZone         |
+      | en_US  | America/New_York |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"

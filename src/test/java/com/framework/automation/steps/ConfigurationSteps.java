@@ -51,10 +51,4 @@ public class ConfigurationSteps {
             ProjectWebServices.dynamicApi = "lightningLookUp";
         }
     }
-
-    @Given("I have {string} configuration for custom setting as below:")
-    public void iUpdateEnableLightningLookupFieldToDefault(String configType, List<Map<String, String>> defaultParameters) {
-        createConfigurationMap.put(configType, defaultParameters);
-        ConfigurationParameters.setDefaultConfigurationParameters(createConfigurationMap);
-    }
 }
