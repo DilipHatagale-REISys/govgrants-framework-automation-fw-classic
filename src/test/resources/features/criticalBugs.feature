@@ -1191,7 +1191,7 @@ Feature: Logged Issues Scenarios
 
   @59586      @verifyBudgetPeriodEndDateFieldShouldSaveProperDateForMultipleRecord
   Scenario Outline: validate budget period end date field should save entered date correctly for multiple record at enhanced grid
-    And I have "timeZoneLocale" configuration for locale and timezone as below:
+    Given I have "timeZoneLocale" configuration as below:
       | locale | timeZone         |
       | en_US  | America/New_York |
     Given I have "default" configuration as below:

@@ -6,7 +6,7 @@ Feature: New API related scenarios temporary
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
-    And I have "lightening" configuration for custom setting as below:
+    Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description              | name                  |
       | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
     Given I setup test configuration as below:
@@ -30,7 +30,7 @@ Feature: New API related scenarios temporary
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
-    And I have "lightening" configuration for custom setting as below:
+    Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description              | name                  |
       | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
     Given I setup test configuration as below:
@@ -54,7 +54,7 @@ Feature: New API related scenarios temporary
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
-    And I have "lightening" configuration for custom setting as below:
+    Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description              | name                  |
       | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
     Given I setup test configuration as below:
@@ -78,7 +78,7 @@ Feature: New API related scenarios temporary
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
-    And I have "lightening" configuration for custom setting as below:
+    Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description              | name                  |
       | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
     Given I setup test configuration as below:
@@ -102,7 +102,7 @@ Feature: New API related scenarios temporary
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
-    And I have "lightening" configuration for custom setting as below:
+    Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description              | name                  |
       | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
     Given I setup test configuration as below:
@@ -126,7 +126,7 @@ Feature: New API related scenarios temporary
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
-    And I have "lightening" configuration for custom setting as below:
+    Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description              | name                  |
       | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
     Given I setup test configuration as below:
@@ -150,7 +150,7 @@ Feature: New API related scenarios temporary
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
-    And I have "lightening" configuration for custom setting as below:
+    Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description              | name                  |
       | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
     Given I setup test configuration as below:
@@ -174,7 +174,7 @@ Feature: New API related scenarios temporary
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | <defaultApi>      | Grantee State Program | ApiGeneratedId:0 |
-    And I have "lightening" configuration for custom setting as below:
+    Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description              | name                  |
       | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
     Given I setup test configuration as below:
@@ -205,7 +205,7 @@ Feature: New API related scenarios temporary
 
   @54901    @validatelookupSearchModalItemSortedInAscendingOrderAtPageBlockDetail-gPlanning @check
   Scenario: Changing column header and its data of lookup modal from config and valiodating it on program detail page
-    And I have "lightening" configuration for custom setting as below:
+    Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description              | name                  |
       | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
     When I login as "Automation" user
@@ -227,7 +227,7 @@ Feature: New API related scenarios temporary
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
-    And I have "lightening" configuration for custom setting as below:
+    Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description              | name                  |
       | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
     Given I setup test configuration as below:
@@ -251,7 +251,7 @@ Feature: New API related scenarios temporary
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | <defaultApi>      | Grantee State Program | ApiGeneratedId:0 |
-    And I have "lightening" configuration for custom setting as below:
+    Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description              | name                  |
       | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
     Given I setup test configuration as below:
@@ -277,7 +277,7 @@ Feature: New API related scenarios temporary
 
   @54749    @itemGettingSavedAfterSelectingFromlookUpModal-gPlanning @check
   Scenario: Validate user is able to select particular organization and it should get saved properly.
-    And I have "lightening" configuration for custom setting as below:
+    Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description              | name                  |
       | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
     When I login as "Automation" user
@@ -301,7 +301,7 @@ Feature: New API related scenarios temporary
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
       | Page Block Config:Page Block Rule Detail | Lookup Filter Criteria     | <oldLookupFilter> | Grantee State Program | ApiGeneratedId:0 |
-    And I have "lightening" configuration for custom setting as below:
+    Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description              | name                  |
       | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
     Given I setup test configuration as below:
@@ -330,7 +330,7 @@ Feature: New API related scenarios temporary
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
-    And I have "lightening" configuration for custom setting as below:
+    Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description              | name                  |
       | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
     Given I setup test configuration as below:
@@ -357,7 +357,7 @@ Feature: New API related scenarios temporary
       | Page Block Config:Page Block Rule Detail | Lookup Filter Criteria     | <oldLookupFilter> | Grantee State Program | ApiGeneratedId:1 |
       | Page Block Config:Page Block Rule Detail | Lookup Sort Direction      | ASC               | Grantee State Program | ApiGeneratedId:2 |
       | Page Block Config:Page Block Rule Detail | Lookup Sort By             | Name              | Grantee State Program | ApiGeneratedId:3 |
-    And I have "lightening" configuration for custom setting as below:
+    Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description              | name                  |
       | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
     Given I setup test configuration as below:
@@ -385,7 +385,7 @@ Feature: New API related scenarios temporary
 
   @60540    @errorMessageForInvalidInputAtLookupSearch
   Scenario: Validate lookup search throwing error message for invalid input
-    And I have "lightening" configuration for custom setting as below:
+    Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description              | name                  |
       | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
     When I login as "Automation" user
@@ -406,7 +406,7 @@ Feature: New API related scenarios temporary
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
-    And I have "lightening" configuration for custom setting as below:
+    Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description              | name                  |
       | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
     Given I setup test configuration as below:
@@ -431,7 +431,7 @@ Feature: New API related scenarios temporary
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
       | Page Block Config:Page Block Rule Detail | Lookup Filter Criteria     | <oldLookupFilter> | Grantee State Program | ApiGeneratedId:1 |
-    And I have "lightening" configuration for custom setting as below:
+    Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description              | name                  |
       | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
     Given I setup test configuration as below:
@@ -461,7 +461,7 @@ Feature: New API related scenarios temporary
       | configurationCategory                    | fieldName             | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Lookup Sort Direction | ASC               | Grantee State Program | ApiGeneratedId:0 |
       | Page Block Config:Page Block Rule Detail | Lookup Sort By        | Name              | Grantee State Program | ApiGeneratedId:1 |
-    And I have "lightening" configuration for custom setting as below:
+    Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description              | name                  |
       | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
     Given I setup test configuration as below:
@@ -487,7 +487,7 @@ Feature: New API related scenarios temporary
       | configurationCategory                    | fieldName             | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Lookup Sort Direction | ASC               | Grantee State Program | ApiGeneratedId:0 |
       | Page Block Config:Page Block Rule Detail | Lookup Sort By        | Name              | Grantee State Program | ApiGeneratedId:1 |
-    And I have "lightening" configuration for custom setting as below:
+    Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description              | name                  |
       | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
     Given I setup test configuration as below:
@@ -512,7 +512,7 @@ Feature: New API related scenarios temporary
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
-    And I have "lightening" configuration for custom setting as below:
+    Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description              | name                  |
       | false        | 0            | a0b1C00000OGDD0QAP | Lightning lookup updated | enableLightningLookup |
     Given I setup test configuration as below:
@@ -668,7 +668,7 @@ Feature: New API related scenarios temporary
 
   @61467   @VerifySessionTimeoutRemainderDialogBoxShownInBrowserTab
   Scenario: Verify session Timeout reminder dialog box shown in browser tab title after 1 min of session login
-    And I have "lightening" configuration for custom setting as below:
+    Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description             | name                    |
       | false        | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
     When I login as "Automation" user
@@ -687,7 +687,7 @@ Feature: New API related scenarios temporary
 
   @61468   @VerifyLogoutPageDisplayedAfterTimeGivenInSessionTimeoutValue
   Scenario Outline: Verify that session will get expired after given SessionTimeoutValue and Logout Page gets Displayed
-    And I have "lightening" configuration for custom setting as below:
+    Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description             | name                    |
       | false        | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
     When I login as "Automation" user
@@ -706,7 +706,7 @@ Feature: New API related scenarios temporary
 
   @61434   @VerifySessionTimeoutPopUpAppears
   Scenario: Verify session timeout pop-up appears after 2 min of session login
-    And I have "lightening" configuration for custom setting as below:
+    Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description             | name                    |
       | false        | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
     When I login as "Automation" user
@@ -725,7 +725,7 @@ Feature: New API related scenarios temporary
 
   @61462 @VerifySessionGetsContinueByClickOnStayLoggedInButton @checkcannotSee @wip
   Scenario: Verify that session will get continue by click on Stay Logged In Button
-    And I have "lightening" configuration for custom setting as below:
+    Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description             | name                    |
       | false        | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
     When I login as "Automation" user
@@ -739,7 +739,7 @@ Feature: New API related scenarios temporary
 
   @61637   @VerifySessionTimeoutPopUpAppears
   Scenario: Verify session timeout pop-up appears after 1 min of session login
-    And I have "lightening" configuration for custom setting as below:
+    Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description             | name                    |
       | false        | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
     When I login as "Automation" user
@@ -763,7 +763,7 @@ Feature: New API related scenarios temporary
 
   @61635   @VerifySessionTimeoutDialogBoxText @checkCustomLabel @wip
   Scenario: Verify session timeout Dialog Box body text
-    And I have "lightening" configuration for custom setting as below:
+    Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description             | name                    |
       | false        | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
     When I login as "Automation" user
@@ -776,7 +776,7 @@ Feature: New API related scenarios temporary
 
   @68373   @VerifySessionTimeoutDialogBoxTimeRemainingText @checkCustomLabel @wip
   Scenario: Verify session timeout Dialog time remaining text
-    And I have "lightening" configuration for custom setting as below:
+    Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description             | name                    |
       | false        | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
     When I login as "Automation" user
@@ -789,7 +789,7 @@ Feature: New API related scenarios temporary
 
   @68376   @VerifySessionTimeoutDialogBoxWithTestLoggedInButton  @checkCustomLabel @wip
   Scenario: Verify session timeout Dialog Box text
-    And I have "lightening" configuration for custom setting as below:
+    Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description             | name                    |
       | false        | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
     When I login as "Automation" user
@@ -802,7 +802,7 @@ Feature: New API related scenarios temporary
 
   @68377   @VerifySessionTimeoutDialogBoxWithTestLoggedOutButton  @checkCustomLabel @wip
   Scenario: Verify session timeout Dialog Box text
-    And I have "lightening" configuration for custom setting as below:
+    Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description             | name                    |
       | false        | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
     When I login as "Automation" user
