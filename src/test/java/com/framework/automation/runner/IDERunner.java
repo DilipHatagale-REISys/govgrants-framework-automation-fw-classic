@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         glue = {"setup","com.framework.automation.steps","com.automation.rei.govgrantsSteps","eyethink.automation.bots.bdd","eyethink.automation.bots.Register"},
         features = {"src/test/resources/features"},
-        plugin = {"json:target/cucumber-report/cucumber.json","pretty","html:target/cucumber-html"},
+        plugin = {"json:target/cucumber-report/cucumber.json","eyethink.automation.bots.controller.ReportingLogsPlugin","html:target/cucumber-html"},
         tags = {"@59827"},
         monochrome = true
 )

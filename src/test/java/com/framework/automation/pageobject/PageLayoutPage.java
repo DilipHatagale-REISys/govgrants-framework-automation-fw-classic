@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 public class PageLayoutPage extends GovGrantsManager {
 
@@ -454,6 +455,13 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * return true if given internal & external user is displayed in suggestion box under send email modal
+     */
+    public void assertInternalExternalUsersDisplayedInSuggestionBox(List<Map<String, String>> status) {
+        Assert.assertTrue(isInternalExternalUsersDisplayedInSuggestionBox(status));
+    }
+
+    /**
      * hover mouse on lookup field inside page block details page
      *
      * @param label
@@ -559,9 +567,23 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * return true if attachment section is displayed under send email modal
+     */
+    public void assertAttachmentSectionDisplayedOnModal() {
+        Assert.assertTrue(EyeThink.core().is().isDisplayed(By.xpath("//label[contains(text(),'Attachments')]/following-sibling::div[@class='fileDragDropWrap']")));
+    }
+
+    /**
+     * return true if user searched in search-box is displayed in suggestion box under send email modal
+     */
+    public void assertSearchedUserNameDisplayedInSuggestion(String iconName, String userName) {
+        Assert.assertTrue(EyeThink.core().is().isDisplayed(By.xpath("//span[@class='" + iconName + "']/following-sibling::b[contains(text(),'" + userName + "')]")));
+    }
+
+    /**
      * return true if Warning dialog box appears/not appears
      */
-    public void assertSessionTimeoutDialogboxDisplayed(String usage,String headerText) {
+    public void assertSessionTimeoutDialogboxDisplayed(String usage, String headerText) {
         By sessionTimeoutDialogboxField = By.xpath("//div[contains(@class,'ui-dialog-titlebar')]//span[contains(text(),'" + headerText + "')]");
         if (usage.contains("softly")) {
             if (usage.contains("cannot see")) {
@@ -751,6 +773,19 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * click and enter value in fields on send email modal
+     */
+    public void enterValueInSendEmailModalFields(String value, String fieldLabel) {
+        if (fieldLabel.equalsIgnoreCase("Body Content")) {
+            WebElement fieldOnSendEmailModal = EyeThink.core().elementReference().of(By.xpath("//label[contains(text(),'" + fieldLabel + "')]/following-sibling::div//textarea"));
+            fieldOnSendEmailModal.sendKeys(value);
+        } else {
+            WebElement fieldOnSendEmailModal = EyeThink.core().elementReference().of(By.xpath("//label[contains(text(),'" + fieldLabel + "')]/following-sibling::div//input[@type='text']"));
+            fieldOnSendEmailModal.sendKeys(value);
+        }
+    }
+
+    /**
      * click and select package type and package for business form
      */
     public void selectPackageAndPackageType() {
@@ -807,6 +842,25 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * click on send button present on send email modal window
+     */
+    public void clickOnSendEmailModalButton(String buttonName) {
+        EyeThink.core().click().on(By.xpath("//button[text()='" + buttonName + "']"));
+    }
+
+    /**
+     * click on Search By field dropdown on send email modal window
+     * Also select value from dropdown
+     */
+    public void clickSearchByButton(String fieldLabel, String dropdownValue) {
+        By searchByField = By.xpath("//label[contains(text(),'" + fieldLabel + "')]/following-sibling::div//button[contains(text(),'Search By')]");
+        By DropDownItem = By.xpath("//label[contains(text(),'" + fieldLabel + "')]/following-sibling::div//input[@value='" + dropdownValue + "']");
+        EyeThink.core().click().on(searchByField);
+        EyeThink.core().click().on(DropDownItem);
+        EyeThink.core().click().on(searchByField);
+    }
+
+    /**
      * assert true/false for success messages on attachment modal
      */
     public void assertMessageOnAttachmentModalDisplayed(String pageblockName, boolean assertcan) {
@@ -850,6 +904,14 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public List<Elements> getCompleteContentForLookupModal() {
         return EyeThink.core().elementReference().listOfElements().of(By.xpath("//lightning-formatted-text[text()]"));
+    }
+
+    /**
+     * This function will return us list of users present in suggestion box under send email modal
+     */
+    public List<Elements> getCompleteContentForSendEmailSuggestionBox() {
+        List<Elements> element = EyeThink.core().elementReference().listOfElements().of(By.xpath("//div[@class='listDropdownToScroll']//ul//li//b"));
+        return element;
     }
 
     /*********
@@ -1556,6 +1618,32 @@ public class PageLayoutPage extends GovGrantsManager {
         boolean flag = false;
         if (EyeThink.core().is().isDisplayed(By.xpath("//button[text()='" + buttonName + "']"))) {
             flag = true;
+        }
+        return flag;
+    }
+
+    /**
+     * return true if internal & external both users are displayed in suggestion box under send email modal
+     *
+     * @return
+     */
+    private Boolean isInternalExternalUsersDisplayedInSuggestionBox(List<Map<String, String>> status) {
+        boolean flag = false;
+        Loop1:
+        for (Map<String, String> pStatus : status) {
+            List<Elements> elements = getCompleteContentForSendEmailSuggestionBox();
+            Loop2:
+            for (int i = 0; i < elements.size(); i++) {
+                if (elements.get(i).getText().equalsIgnoreCase(pStatus.get("userName"))) {
+                    flag = true;
+                    break Loop2;
+                } else {
+                    flag = false;
+                }
+            }
+            if (flag == false) {
+                break Loop1;
+            }
         }
         return flag;
     }

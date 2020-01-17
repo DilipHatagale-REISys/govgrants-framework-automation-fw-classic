@@ -544,7 +544,7 @@ Feature: Logged Issues Scenarios
     When I click dropdown field "fieldAnnouncementType__c"
     Then I see "Competitive:Sole Source/Directed" inside selectbox field "fieldAnnouncementType__c"
 
-  @56414    @globalSearchPopUpMessageShouldDisplayedProperly @check
+  @56414    @globalSearchPopUpMessageShouldDisplayedProperly @check @wip
   Scenario Outline: validate global search alert pop up box display message properly on UI
     When I login as "Automation" user
     When I setup my app as "As a Grantee"
@@ -1197,7 +1197,7 @@ Feature: Logged Issues Scenarios
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName           | fieldOrignalValue               | filterId         |
       | Flex Grid:Flex Table List | Filter Clause       | <defaultFilterClauseForFLV2539> | ApiGeneratedId:0 |
-      | Flex Grid                 | Display Field Names | <defaultFieldsApi>              | ApiGeneratedId:1 |
+      | Flex Grid:General         | Display Field Names | <defaultFieldsApi>              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName           | fieldNewValue               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:Flex Table List | Filter Clause       | <newFilterClauseForFLV2539> | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
@@ -1749,7 +1749,7 @@ Feature: Logged Issues Scenarios
   Scenario Outline: validate budget period end date field should save entered date correctly for at enhanced grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
@@ -1848,7 +1848,7 @@ Feature: Logged Issues Scenarios
     When I navigate to "Financials" sub tab
     Then I see value "$1,234.00" for title "Match/Secured Amount" inside table "inlineEditGridProjectCostForProgram"
 
-  @56756    @miniPageLayoutLinkShouldBeProperForProjectServiceAreaSideBarLink @check
+  @56756    @miniPageLayoutLinkShouldBeProperForProjectServiceAreaSideBarLink @check @wip
   Scenario: validate mini page layout displayed properly for lookup field at page block detail
     When I login as "Automation" user
     When I setup my app as "As a Grantee"
@@ -1876,18 +1876,18 @@ Feature: Logged Issues Scenarios
     When I navigate to "Financials" sub tab
     Then I see "Total Adjusted Amount : --" inside rows of enhanced grid id "Enhanced1grid"
 
-  @66939      @verifyEditAllAtParentFlexTableForEnhancedGridForRequiredFields-gPlanning @wip @checkAfterBugFixed
+  @66939      @verifyEditAllAtParentFlexTableForEnhancedGridForRequiredFields-gPlanning
   Scenario Outline: validate Edit All functionality for parent flex table for required fields at enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName       | fieldOrignalValue               | filterId         |
       | Flex Grid:Flex Table List | Is Master View  | true                            | ApiGeneratedId:0 |
       | Flex Grid:Flex Table List | Filter Clause   | <defaultFilterClauseForFLV2539> | ApiGeneratedId:1 |
-      | Flex Grid:Flex Table List | Required Fields |                                 | ApiGeneratedId:2 |
+      | Flex Grid:General         | Required Fields |                                 | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName       | fieldNewValue               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:Flex Table List | Is Master View  | true                        | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
       | Flex Grid:Flex Table List | Filter Clause   | <newFilterClauseForFLV2539> | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
-      | Flex Grid:Flex Table List | Required Fields | AddressProgramContact__c    | TmpActiveGrantsGrid |                           |                            |
+      | Flex Grid:General         | Required Fields | AddressProgramContact__c    | TmpActiveGrantsGrid |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1903,14 +1903,14 @@ Feature: Logged Issues Scenarios
       | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                         |
       | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c like 'Road%' |
 
-  @66949 @verifyEditSelectedAtParentFlexTableForEnhancedGridForRequiredFields-gPlanning @wip @checkAfterBugFixed
+  @66949 @verifyEditSelectedAtParentFlexTableForEnhancedGridForRequiredFields-gPlanning  @checkAfterBugFixed
   Scenario Outline: validate Edit Selected functionality for parent flex table for required fields at enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName               | fieldOrignalValue               | filterId         |
       | Flex Grid:Flex Table List | Is Master View          | true                            | ApiGeneratedId:0 |
       | Flex Grid:Flex Table List | Filter Clause           | <defaultFilterClauseForFLV2539> | ApiGeneratedId:1 |
       | Flex Table                | Enable Record Selection | false                           | ApiGeneratedId:2 |
-      | Flex Grid                 | Required Fields         |                                 | ApiGeneratedId:3 |
+      | Flex Grid:General         | Required Fields         |                                 | ApiGeneratedId:3 |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName               | fieldNewValue               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:Flex Table List | Is Master View          | true                        | TmpActiveGrantsGrid | Name                      | FLV-2539                   |

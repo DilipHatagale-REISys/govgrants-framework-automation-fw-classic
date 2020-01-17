@@ -1,7 +1,7 @@
 @NewAPIRelatedScenarios @regression
 Feature: New API related scenarios temporary
 
-  @54772    @lookUpHeaderTextFieldWithNumberOfAwardsAtPageBlockDetail-gPlanning @check
+  @54772    @lookUpHeaderTextFieldWithNumberOfAwardsAtPageBlockDetail-gPlanning @check @wip
   Scenario: Adding column header with number of award Api name to lookup modal from config and validating it on program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
@@ -25,7 +25,7 @@ Feature: New API related scenarios temporary
     When I click "search" icon for lightning lookup
     Then I see "#Grants" in table header on lookup Modal
 
-  @54769    @lookUpHeaderTextFieldWithGrantingAgencyAtPageBlockDetail-gPlanning @check
+  @54769    @lookUpHeaderTextFieldWithGrantingAgencyAtPageBlockDetail-gPlanning @check @wip
   Scenario: Adding column header with granting agency Api name to lookup modal from config and validating it on program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
@@ -49,7 +49,7 @@ Feature: New API related scenarios temporary
     When I click "search" icon for lightning lookup
     Then I see "Granting Agency" in table header on lookup Modal
 
-  @54767    @lookUpHeaderTextFieldWithDivisionAtPageBlockDetail-gPlanning @check
+  @54767    @lookUpHeaderTextFieldWithDivisionAtPageBlockDetail-gPlanning @check @wip
   Scenario: Adding column header with Division Api name to lookup modal from config and validating it on program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
@@ -73,7 +73,7 @@ Feature: New API related scenarios temporary
     When I click "search" icon for lightning lookup
     Then I see "Division" in table header on lookup Modal
 
-  @54766    @lookUpHeaderTextFieldWithContactAtPageBlockDetail-gPlanning @check
+  @54766    @lookUpHeaderTextFieldWithContactAtPageBlockDetail-gPlanning @check @wip
   Scenario: Adding column header with Contact Api name to lookup modal from config and validating it on program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
@@ -97,7 +97,7 @@ Feature: New API related scenarios temporary
     When I click "search" icon for lightning lookup
     Then I see "Contact" in table header on lookup Modal
 
-  @54765    @lookUpHeaderTextFieldWithBillingStateAtPageBlockDetail-gPlanning @check
+  @54765    @lookUpHeaderTextFieldWithBillingStateAtPageBlockDetail-gPlanning @check @wip
   Scenario: Adding column header with Billing State Api name to lookup modal from config and validating it on program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
@@ -121,7 +121,7 @@ Feature: New API related scenarios temporary
     When I click "search" icon for lightning lookup
     Then I see "Billing State" in table header on lookup Modal
 
-  @54764    @lookUpHeaderTextFieldWithDateTimeAtPageBlockDetail-gPlanning @check
+  @54764    @lookUpHeaderTextFieldWithDateTimeAtPageBlockDetail-gPlanning @check @wip
   Scenario: Adding column header with Date Time Api name to lookup modal from config and validating it on program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
@@ -145,7 +145,7 @@ Feature: New API related scenarios temporary
     When I click "search" icon for lightning lookup
     Then I see "DateTime" in table header on lookup Modal
 
-  @54763    @lookUpHeaderTextFieldWithDateAtPageBlockDetail-gPlanning @check
+  @54763    @lookUpHeaderTextFieldWithDateAtPageBlockDetail-gPlanning @check @wip
   Scenario: Adding column header with Date Api name to lookup modal from config and validating it on program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
@@ -169,7 +169,7 @@ Feature: New API related scenarios temporary
     When I click "search" icon for lightning lookup
     Then I see "Date" in table header on lookup Modal
 
-  @54758    @lookUpHeaderTextFieldWithMultipleFieldAPIAtPageBlockDetail-gPlanning  @check
+  @54758    @lookUpHeaderTextFieldWithMultipleFieldAPIAtPageBlockDetail-gPlanning  @check @wip
   Scenario Outline: Adding column header with multiple Field API to lookup modal from config and validating it on program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
@@ -203,7 +203,7 @@ Feature: New API related scenarios temporary
       | Division          | Division__c,Name,Date__c,DateTime__c,BillingState__c,Contact__c,IsGrantingAgency__c | Name       |
       | Granting Agency   | IsGrantingAgency__c,Name,Date__c,DateTime__c,BillingState__c,Contact__c,Division__c | Name       |
 
-  @54901    @validatelookupSearchModalItemSortedInAscendingOrderAtPageBlockDetail-gPlanning @check
+  @54901    @validatelookupSearchModalItemSortedInAscendingOrderAtPageBlockDetail-gPlanning @wip
   Scenario: Changing column header and its data of lookup modal from config and valiodating it on program detail page
     Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description              | name                  |
@@ -222,7 +222,7 @@ Feature: New API related scenarios temporary
     When I click on svg arrow inside lookup modal for "Ascending"
     Then I see content inside lookup modal in "Ascending" order
 
-  @59142    @lookUpHeaderTextFieldWithoutNameAtPageBlockDetail-gPlanning @check
+  @59142    @lookUpHeaderTextFieldWithoutNameAtPageBlockDetail-gPlanning @wip
   Scenario: Adding column header with Api name EIN text without Name in the look up modal displaye name from config and validating it on program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
@@ -246,7 +246,7 @@ Feature: New API related scenarios temporary
     When I click "search" icon for lightning lookup
     Then I see "EIN Text" in table header on lookup Modal
 
-  @59043    @lookUpHeaderTextFieldWithExpirationDateAndDateTimeAtPageBlockDetail-gPlanning  @check
+  @59043    @lookUpHeaderTextFieldWithExpirationDateAndDateTimeAtPageBlockDetail-gPlanning  @wip
   Scenario Outline: Adding column header with DUNS SAMS Expiration date and DateTime Field API to lookup modal from config and validating it on program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
@@ -275,7 +275,7 @@ Feature: New API related scenarios temporary
       | DUNS/SAMS Expiration Date | DUNSExpirationDate__c,Name,DateTime__c | Name       |
       | DateTime                  | DUNSExpirationDate__c,Name,DateTime__c | Name       |
 
-  @54749    @itemGettingSavedAfterSelectingFromlookUpModal-gPlanning @check
+  @54749    @itemGettingSavedAfterSelectingFromlookUpModal-gPlanning @wip
   Scenario: Validate user is able to select particular organization and it should get saved properly.
     Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description              | name                  |
@@ -295,7 +295,7 @@ Feature: New API related scenarios temporary
     When I click on "Save" in the page details
     Then I see field "Owner Organization" as "Department of Community Health"
 
-  @54748    @isLookupSearchIsWorkingWihDateOrDateTimeField @smoke
+  @54748    @isLookupSearchIsWorkingWihDateOrDateTimeField @smoke @wip
   Scenario Outline: Validate lookup search is working fine with data and date time field
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
@@ -325,7 +325,7 @@ Feature: New API related scenarios temporary
       | oldLookupFilter                                                                    | newLookupFilter | newLookupDisplayName |
       | RecordType.Name='Internal' AND GroupCode__c='{!GroupCode}' AND Status__c ='Active' | Date__c != null | Name,Date__c         |
 
-  @59038    @dataTableShouldRenderedProperlyWithOrganizationNameAtLightningLookup-gPlanning @check
+  @59038    @dataTableShouldRenderedProperlyWithOrganizationNameAtLightningLookup-gPlanning @wip
   Scenario: Validate after entering text inside lightning lookup search table should rendered properly with organization name while passing formula fiels at lookup dispaly field
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
@@ -349,7 +349,7 @@ Feature: New API related scenarios temporary
     When I enter value "Health" into field "custom_lookupAccount__c"
     Then I see data table box for lookup
 
-  @59060    @lookUpHeaderTextFieldWithoutNameAtPageBlockDetail-gPlanning @check
+  @59060    @lookUpHeaderTextFieldWithoutNameAtPageBlockDetail-gPlanning @wip
   Scenario Outline: Adding column header with Api name EIN text without Name in the look up modal displaye name from config and validating it on program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
@@ -383,7 +383,7 @@ Feature: New API related scenarios temporary
       | oldLookupFilter                                                                    | newLookupFilter                                                                    |
       | RecordType.Name='Internal' AND GroupCode__c='{!GroupCode}' AND Status__c ='Active' | RecordType.Name='Internal' AND GroupCode__c='{!GroupCode}' AND Status__c ='Active' |
 
-  @60540    @errorMessageForInvalidInputAtLookupSearch
+  @60540    @errorMessageForInvalidInputAtLookupSearch @wip
   Scenario: Validate lookup search throwing error message for invalid input
     Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description              | name                  |
@@ -401,7 +401,7 @@ Feature: New API related scenarios temporary
     When I enter value "'''" into field "custom_lookupAccount__c"
     Then I see error message "No Records Found" for invalid input at "custom_lookupAccount__c"
 
-  @64956    @VerifylookUpDisplayFieldNameToOverrideLabelOfFieldsAtPageBlockDetail-gPlanning
+  @64956    @VerifylookUpDisplayFieldNameToOverrideLabelOfFieldsAtPageBlockDetail-gPlanning @wip
   Scenario: Adding display field Names as Name to override the labels at lookup modal from PB config and validating it on program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
@@ -425,7 +425,7 @@ Feature: New API related scenarios temporary
     When I click "search" icon for lightning lookup
     Then I see "Test Automation" in table header on lookup Modal
 
-  @65023    @VerifylookUpFilterCriteriaToFilterOutRecordsInLookupWindowAtPageBlockDetail-gPlanning
+  @65023    @VerifylookUpFilterCriteriaToFilterOutRecordsInLookupWindowAtPageBlockDetail-gPlanning @wip
   Scenario Outline: Validate lookup filter criteria is working fine by displaying all Active records in lookup window
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
@@ -455,7 +455,7 @@ Feature: New API related scenarios temporary
       | oldLookupFilter                                                                    | newLookupFilter     | newLookupDisplayName |
       | RecordType.Name='Internal' AND GroupCode__c='{!GroupCode}' AND Status__c ='Active' | Status__c ='Active' | Name,Status__c       |
 
-  @65027    @VerifylookupSortByToSortRecordsUnderNameColumnInAscOrderInLookupWindowAtPageBlockDetail-gPlanning
+  @65027    @VerifylookupSortByToSortRecordsUnderNameColumnInAscOrderInLookupWindowAtPageBlockDetail-gPlanning @wip
   Scenario: Validate lookup sort by is working fine by sorting all records in ascending order under lookup window
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName             | fieldOrignalValue | coreComponentField    | filterId         |
@@ -481,7 +481,7 @@ Feature: New API related scenarios temporary
     When I click "search" icon for lightning lookup
     Then I see content inside lookup modal in "Ascending" order
 
-  @65040    @VerifylookupSortByToSortRecordsUnderNameColumnInDescOrderInLookupWindowAtPageBlockDetail-gPlanning
+  @65040    @VerifylookupSortByToSortRecordsUnderNameColumnInDescOrderInLookupWindowAtPageBlockDetail-gPlanning @wip
   Scenario: Validate lookup sort by is working fine by sorting all records in descending order under lookup window
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName             | fieldOrignalValue | coreComponentField    | filterId         |
@@ -507,7 +507,7 @@ Feature: New API related scenarios temporary
     When I click "search" icon for lightning lookup
     Then I see content inside lookup modal in "Descending" order
 
-  @65042    @VerifyHideFieldJSONToHideFieldAccordingToSelectedLookupFieldValueAtPageBlockDetail-gPlanning @check
+  @65042    @VerifyHideFieldJSONToHideFieldAccordingToSelectedLookupFieldValueAtPageBlockDetail-gPlanning @wip
   Scenario: Validate Hide Fields JSON is working fine by Hiding Program SubType Field if owner organization is Department of Community Health
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
@@ -560,7 +560,7 @@ Feature: New API related scenarios temporary
     And I click toggle button to select "Draft Programs"
     Then I see "IDR" is displayed under total amount in flex table
 
-  @59979    @verifyDollarSymbolIsNotPresentInTotalLabelAtMEGrid @NeedToCheck  @AfterBugFix
+  @59979    @verifyDollarSymbolIsNotPresentInTotalLabelAtMEGrid @NeedToCheck  @AfterBugFix @needCurrencyLocalAPIs @wip
   Scenario: Verify that double dollar symbol($$) is not shown inside Total Label in MEGrid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |

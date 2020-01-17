@@ -7,6 +7,7 @@ package com.framework.automation.steps;
 
         import java.io.IOException;
         import java.util.List;
+        import java.util.Map;
 
 public class PageLayoutSteps {
     PageLayoutPage pageLayoutPage;
@@ -118,6 +119,21 @@ public class PageLayoutSteps {
     @When("I click on \"([^\"]*)\" Button in Session Timeout dialogbox$")
     public void clickOnButtonInSessionTimeoutDialogbox(String buttonName) {
         pageLayoutPage.clickButtonInSessionTimeoutDialogbox(buttonName);
+    }
+
+    @When("^I enter value \"([^\"]*)\" into field \"([^\"]*)\" on send email modal$")
+    public void enterValueInSendEmailModal(String value, String fieldLabel) {
+        pageLayoutPage.enterValueInSendEmailModalFields(value, fieldLabel);
+    }
+
+    @When("^I click on \"([^\"]*)\" button in send email modal$")
+    public void clickOnSendEmailModalButton(String buttonName) {
+        pageLayoutPage.clickOnSendEmailModalButton(buttonName);
+    }
+
+    @When("^I click on \"([^\"]*)\" email Search By field and select dropdown value as \"([^\"]*)\"$")
+    public void clickSearchByButtonOnSendEmailModal(String fieldLabel , String dropdownValue) {
+        pageLayoutPage.clickSearchByButton(fieldLabel,dropdownValue);
     }
 
     @And("^I click on expand collapse icon for panel heading \"([^\"]*)\"$")
@@ -415,5 +431,20 @@ public class PageLayoutSteps {
     @Then("^I see Session Timeout dialogbox with button \"([^\"]*)\"$")
     public void assertSessionTimeoutDialogboxWithButtons(String buttonName) {
         pageLayoutPage.assertSessionTimeoutDialogboxButtons(buttonName);
+    }
+
+    @Then("^I see Attachment section is displayed under send email modal$")
+    public void assertAttachmentSectionIsDisplayedOnModal() {
+        pageLayoutPage.assertAttachmentSectionDisplayedOnModal();
+    }
+
+    @Then("^I see iconName \"([^\"]*)\" with user \"([^\"]*)\" is displayed on send email modal$")
+    public void assertUserNameDisplayedInSuggestionBox(String iconName, String userName) {
+        pageLayoutPage.assertSearchedUserNameDisplayedInSuggestion(iconName, userName);
+    }
+
+    @Then("^I see below users is displayed in suggestion box under send email modal:$")
+    public void assertInternalExternalUsersIsDisplayedInSuggestionBox(List<Map<String, String>> Parameters) throws IOException {
+        pageLayoutPage.assertInternalExternalUsersDisplayedInSuggestionBox(Parameters);
     }
 }
