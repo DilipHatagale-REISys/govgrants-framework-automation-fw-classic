@@ -3,6 +3,7 @@ package com.framework.automation.pageobject;
 import com.framework.automation.projectmanager.GovGrantsManager;
 import eyethink.automation.bots.Register.EyeThink;
 import eyethink.automation.bots.Report.LogLevel;
+import eyethink.automation.bots.controller.EyeThinkGlobal;
 import eyethink.automation.bots.objects.Elements;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -327,6 +328,7 @@ public class FlexGridPage extends GovGrantsManager {
      * @return true if expected width of specified column is displayed for flex grid
      */
     private Boolean isSpecificWidthOfColumnOfFlexGrid(String columnName, String tableId, String widthSize) {
+        EyeThinkGlobal.setVariable("highlightElements", "off");
         boolean flag = false;
         WebElement columnWidth = EyeThink.core().elementReference().of(By.xpath(
                 "//div[@id='" + tableId + "']//tr//th//span[contains(text(),'" + columnName + "')]/ancestor::th"));

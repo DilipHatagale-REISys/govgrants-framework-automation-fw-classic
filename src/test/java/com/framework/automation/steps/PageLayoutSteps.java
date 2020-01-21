@@ -1,13 +1,13 @@
 package com.framework.automation.steps;
 
-        import com.framework.automation.pageobject.PageLayoutPage;
-        import io.cucumber.java.en.And;
-        import io.cucumber.java.en.Then;
-        import io.cucumber.java.en.When;
+import com.framework.automation.pageobject.PageLayoutPage;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
-        import java.io.IOException;
-        import java.util.List;
-        import java.util.Map;
+import java.io.IOException;
+import java.util.List;
+import java.util.Map;
 
 public class PageLayoutSteps {
     PageLayoutPage pageLayoutPage;
@@ -132,8 +132,8 @@ public class PageLayoutSteps {
     }
 
     @When("^I click on \"([^\"]*)\" email Search By field and select dropdown value as \"([^\"]*)\"$")
-    public void clickSearchByButtonOnSendEmailModal(String fieldLabel , String dropdownValue) {
-        pageLayoutPage.clickSearchByButton(fieldLabel,dropdownValue);
+    public void clickSearchByButtonOnSendEmailModal(String fieldLabel, String dropdownValue) {
+        pageLayoutPage.clickSearchByButton(fieldLabel, dropdownValue);
     }
 
     @And("^I click on expand collapse icon for panel heading \"([^\"]*)\"$")
@@ -424,8 +424,8 @@ public class PageLayoutSteps {
     }
 
     @Then("^I (softly see|softly cannot see|cannot see|see) Session Timeout dialogue box with title \"([^\"]*)\" is displayed$")
-    public void assertSessionTimeoutDialogboxIsDisplayed(String usage , String headerText) {
-        pageLayoutPage.assertSessionTimeoutDialogboxDisplayed(usage , headerText);
+    public void assertSessionTimeoutDialogboxIsDisplayed(String usage, String headerText) {
+        pageLayoutPage.assertSessionTimeoutDialogboxDisplayed(usage, headerText);
     }
 
     @Then("^I see Session Timeout dialogbox with button \"([^\"]*)\"$")

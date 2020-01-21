@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -578,7 +579,7 @@ public class PhaseConfigPage extends GovGrantsManager {
                 flag = true;
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            flag = false;
         }
         return flag;
     }
@@ -589,7 +590,7 @@ public class PhaseConfigPage extends GovGrantsManager {
     private Boolean isCurrentDateDisplayedOnStickyNote() {
         WebElement stickyDate = EyeThink.core().elementReference().of(By.xpath("//div[contains(@class,'dateFieldNotes ng-binding')]"));
         String sDate = stickyDate.getText().split(" ")[0];
-        String currentDate = EyeThink.core().get().currentDate_MMDDYYYY();
+        String currentDate = EyeThink.core().get().currentDateInDesiredFormat(DateTimeFormatter.ofPattern("MM/dd/yyyy"));
         boolean flag = false;
         if (sDate.equals(currentDate)) {
             flag = true;

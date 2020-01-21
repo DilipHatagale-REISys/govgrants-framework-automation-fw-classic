@@ -60,6 +60,7 @@ Feature: Logged Issues Scenarios
     When I navigate to "Attachments" sub tab
     When I upload attachment "sbac-award-letter.pdf" of type "Program Artifacts"
     When I click on "Delete" icon for "Program Artifacts" inside table
+    When I pause execution for "3" seconds
     Then I see confirmation box with body "Record deleted successfully." is displayed
 
   @54860    @validateNotesDeleteActionWorkingOrNot
@@ -197,6 +198,7 @@ Feature: Logged Issues Scenarios
     And I navigate to "HOME" tab
     When I click on "My_Workspace_Notes"
     When I click on user notes content with icon name "fa fa-plus"
+    When I pause execution for "3" seconds
     When I enter details as "<titleValue>""<descriptionValue>" on Add New Notes Modal for "onlyDescription"
     When I click modal button "Save and Close"
     Then I see the following messages in the page details contains:
@@ -331,6 +333,7 @@ Feature: Logged Issues Scenarios
     When I navigate to "Roles" sub tab
     When I click on top right button "New" in flex table with id "flexTableDivId"
     When I click dropdown field "fieldBusinessRole__c"
+    When I pause execution for "3" seconds
     Then I see "Program Approver:Key POC:Owner" inside selectbox field "fieldBusinessRole__c"
 
   @56537    @submitForApprovalButtonInsideMenuOptionAtGrantDetailPage
@@ -421,6 +424,7 @@ Feature: Logged Issues Scenarios
     And I navigate to "HOME" tab
     When I click on "My_Workspace_Notes"
     When I delete specific Sticky Notes with title "Notes Title" on clicking "x"
+    When I pause execution for "3" seconds
     When I click on user notes content with icon name "fa fa-plus"
     When I enter details as "<titleValue>""<descriptionValue>" on Add New Notes Modal for ""
     When I click modal button "Save and Close"
@@ -527,6 +531,7 @@ Feature: Logged Issues Scenarios
     When I click on "View" icon for "FOA--114" inside table
     When I click on "Menu" in the page details
     And I select "Take Snapshot" from dropdown
+    And I pause execution for "5" seconds
     Then I see alert message "<message>"
 
     Examples:
@@ -622,8 +627,8 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I click on "My_Workspace_Notes"
-    When I delete stickey notes by clicking on "x"
-    When I click on user notes content with icon name "fa fa-plus"
+    When I delete specific Sticky Notes with title "Notes Title" on clicking "x"
+    When I click on user notes content with icon name "plus"
     When I enter details as "<titleValue>""<descriptionValue>" on Add New Notes Modal for ""
     When I click modal button "Save and Close"
     Then I see current date on sticky Notes
@@ -720,9 +725,11 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I click on "My_Workspace_Notes"
-    When I click on user notes content with icon name "fa fa-plus"
+    When I click on user notes content with icon name "plus"
     When I enter details as "<titleValue>""<descriptionValue>" on Add New Notes Modal for ""
     When I click modal button "Save and Close"
+    When I refresh the page
+    When I click on "My_Workspace_Notes"
     When I delete specific Sticky Notes with title "Sticky Notes Title" on clicking "x"
     Then I donot see sticky Notes "Sticky Notes Title" contains text as "<descriptionValue>"
 
@@ -1743,6 +1750,7 @@ Feature: Logged Issues Scenarios
     When I enter value "--None--" into field "fieldKPIsRequired__c"
     When I click on "Save" in the page details
     When I click on error message "KPI"
+    When I pause execution for "3" seconds
     Then I see expected field getting focused
 
   @59743      @verifyDateIsGettingSavedCorrectlyAsTodaysDate
