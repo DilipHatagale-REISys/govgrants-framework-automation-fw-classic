@@ -1255,6 +1255,7 @@ Feature: Flex Grid Component Scenarios
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Financials" sub tab
     When I click on "Edit" icon for "2019" to save inside subtab
+    When I pause execution for "2" seconds
     And I click modal button "Save"
     Then I see parent page is refreshing
 

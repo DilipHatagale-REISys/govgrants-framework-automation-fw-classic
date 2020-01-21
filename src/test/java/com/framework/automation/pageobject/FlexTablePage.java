@@ -8,6 +8,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
+
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
@@ -961,7 +962,7 @@ public class FlexTablePage extends GovGrantsManager {
             filename = text;
         try {
             EyeThink.core().elementReference().of(By.xpath("//tbody//tr//span[contains(text(),'" + filename + "')]"));
-                return true;
+            return true;
         } catch (Exception e) {
             return false;
         }
@@ -979,6 +980,7 @@ public class FlexTablePage extends GovGrantsManager {
                 flag = true;
             }
         } catch (Exception e) {
+            flag = false;
         }
         return flag;
     }
@@ -994,8 +996,7 @@ public class FlexTablePage extends GovGrantsManager {
             if (part[0].contains(currencyUnit)) {
                 flag = true;
             }
-        }
-        catch (org.openqa.selenium.NoSuchElementException e) {
+        } catch (org.openqa.selenium.NoSuchElementException e) {
         }
         return flag;
     }

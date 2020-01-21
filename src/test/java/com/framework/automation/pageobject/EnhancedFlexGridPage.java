@@ -625,7 +625,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     private boolean isNoOfRecordsInsideEnhancedGridPresent(int rowCount, String tableId) {
         boolean flag = false;
         try {
-            int listSize = EyeThink.saas().flexTable().getCompleteTableRow(tableId).size();
+            int listSize = EyeThink.saas().flexTable().getCompleteTableRow(tableId).size()-1;
             if (listSize == rowCount) {
                 flag = true;
             }
@@ -919,7 +919,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
                 obtainedList.add(we.getText());
             }
             for (int row = 0; row < obtainedList.size(); row++) {
-                if (obtainedList.get(row).equalsIgnoreCase(text)) {
+                if (obtainedList.get(row).contains(text)) {
                     flag = true;
                     break;
                 } else {

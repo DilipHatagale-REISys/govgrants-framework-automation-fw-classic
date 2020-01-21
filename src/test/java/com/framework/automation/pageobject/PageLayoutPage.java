@@ -2,6 +2,7 @@ package com.framework.automation.pageobject;
 
 import com.framework.automation.projectmanager.GovGrantsManager;
 import eyethink.automation.bots.Register.EyeThink;
+import eyethink.automation.bots.controller.EyeThinkGlobal;
 import eyethink.automation.bots.objects.Elements;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -986,6 +987,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * @return: true if it is not displayed
      */
     private boolean isOptionsDownloadPDFDisabled() {
+        EyeThinkGlobal.setVariable("highlightElements", "off");
         boolean flag = false;
         try {
             if (getPDFOptionForVerification().getAttribute("style").toLowerCase().contains("display: none")) {
@@ -1004,6 +1006,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * @return: true if it is not displayed
      */
     private boolean isTakeSnapshotDisabled(String option) {
+        EyeThinkGlobal.setVariable("highlightElements", "off");
         boolean flag = false;
         try {
             if (getTakeSnapshotOptionForVerification(option).getAttribute("style").toLowerCase()
@@ -1571,10 +1574,15 @@ public class PageLayoutPage extends GovGrantsManager {
      * @return
      */
     private boolean IsSessionTimeoutRemainderCountdownDisplayed(String countDownTimer) {
-        String ele = EyeThink.core().get().pageTitle();
         boolean flag = false;
-        if (ele.contains(countDownTimer)) {
-            flag = true;
+        EyeThink.core().WaitFor().makeThreadSleep(2000);
+        String ele = EyeThink.core().get().pageTitle();
+        try {
+            if (ele.contains(countDownTimer)) {
+                flag = true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return flag;
     }
