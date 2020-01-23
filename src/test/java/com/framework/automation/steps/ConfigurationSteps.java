@@ -51,4 +51,12 @@ public class ConfigurationSteps {
             ProjectWebServices.dynamicApi = "lightningLookUp";
         }
     }
+
+    @And("^I update custom global setting changes:$")
+    public void iUpdateGlobalEnableLightningLookupFieldTo(List<Map<String, String>> configParameters) {
+        for (Map<String, String> parameters : configParameters) {
+            projectAPI.updateGlobalConfig(parameters.get("booleanValue"), parameters.get("id"), parameters.get("ownerId"));
+            ProjectWebServices.dynamicApi = "global";
+        }
+    }
 }

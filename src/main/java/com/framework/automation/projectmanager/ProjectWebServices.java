@@ -102,6 +102,33 @@ public class ProjectWebServices {
         EyeThink.core().apiCall().putCall(null, jArray.toString(), finalEndPoint, null, null, tokenString);
     }
 
+    /**
+     * @param booleanValue
+     * @param ownerId
+     * @param id
+     */
+    public void updateGlobalConfig(String booleanValue, String id, String ownerId) {
+        getAuthToken();
+        String[] someApi = booleanValue.split(",");
+        String finalEndPoint = endPoint + "/services/apexrest/frameworkCustomsettingAPI";
+        JsonArray jArray = new JsonArray();
+        JsonObject jsonObject = new JsonObject();
+        JsonObject jsonContainer = new JsonObject();
+        jsonObject.addProperty("Id", id);
+        jsonObject.addProperty("SetupOwnerId", ownerId);
+        if (someApi.length != 1) {
+            for (String list : someApi) {
+                jsonObject.addProperty(list.split(":")[0].trim(), Boolean.parseBoolean(list.split(":")[1].trim()));
+            }
+        } else {
+            jsonObject.addProperty(booleanValue.split(":")[0].trim(), Boolean.parseBoolean(booleanValue.split(":")[1].trim()));
+        }
+        jsonContainer.add("fieldvalues", jsonObject);
+        jsonContainer.addProperty("customsettingapiname", "GNT__GlobalConfig__c");
+        jArray.add(jsonContainer);
+        EyeThink.core().apiCall().putCall(null, jArray.toString(), finalEndPoint, null, null, tokenString);
+    }
+
 
     ////////////// Setup Default Config//////////////
 
@@ -123,6 +150,9 @@ public class ProjectWebServices {
             setDefaultSettingForAllCustomSettings(configurationType);
         if (configurationType.equalsIgnoreCase("timeZoneLocale"))
             setDefaultSettingForLocaleAndTimeZone("timeZoneLocale");
+        if (configurationType.equalsIgnoreCase("global")) {
+            setDefaultGlobalSettingForAllCustomSettings("global");
+        }
     }
 
     /**
@@ -276,6 +306,19 @@ public class ProjectWebServices {
         for (Map<String, String> customMap : ConfigurationParameters.getDefaultConfigurationParameters().get(key)) {
             updateEnableLightningLookup(Boolean.parseBoolean(customMap.get("booleanValue")), null, customMap.get("id"),
                     customMap.get("description"), customMap.get("name"));
+        }
+    }
+
+    /**
+     * It will take key and its value from feature file to make default config changes for global custom setting
+     * <p>
+     * booleanValue - accept true/false for to enable disable custom settings
+     * id           - it will take unique custom setting id where changes is supposed to made
+     * ownerId      - it will unique owner id where all expected fields gets changed
+     */
+    private void setDefaultGlobalSettingForAllCustomSettings(String key) {
+        for (Map<String, String> customMap : ConfigurationParameters.getDefaultConfigurationParameters().get(key)) {
+            updateGlobalConfig(customMap.get("booleanValue"), customMap.get("id"), customMap.get("ownerId"));
         }
     }
 
