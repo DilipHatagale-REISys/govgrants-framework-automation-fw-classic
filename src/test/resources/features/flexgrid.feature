@@ -1191,7 +1191,7 @@ Feature: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
-    Then I see no "Draft" status in flex table id "toggleFGridMonitoringGridView"
+    Then I softly do not see "Draft" value in flex table id "toggleFGridMonitoringGridView"
 
     Examples:
       | newFilter                                        |

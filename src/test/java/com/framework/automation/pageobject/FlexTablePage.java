@@ -121,15 +121,6 @@ public class FlexTablePage extends GovGrantsManager {
     }
 
     /**
-     * return true if specific status category is not displayed
-     *
-     * @param statusName
-     */
-    public void assertFlexTableStatusDisabled(String statusName, String tableId) {
-        Assert.assertTrue(isStatusCategoryDisabled(statusName, tableId));
-    }
-
-    /**
      * assert if Edit icon open in new tab or not
      */
     public void assertEditWithNewTab() {
@@ -471,6 +462,24 @@ public class FlexTablePage extends GovGrantsManager {
         Assert.assertTrue(isExpectedRecordsDisplayedInsideTable(flexTableHeader, recordsName.split(",")));
     }
 
+    /**
+     * assert if fieldValue is displayed/not displayed inside flex table
+     *
+     * @param fieldValue
+     * @param tableId
+     */
+    public void assertFlexTableFieldValueDisplayed(String usuage, String fieldValue , String tableId) {
+        if (usuage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isSpecificfieldValueDisplayed(fieldValue , tableId));
+        } else if (usuage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isSpecificfieldValueDisplayed(fieldValue , tableId));
+        } else if (usuage.equalsIgnoreCase("softly see")) {
+            EyeThink.core().assertion().assertThat(isSpecificfieldValueDisplayed(fieldValue , tableId)).isTrue();
+        } else if (usuage.equalsIgnoreCase("softly do not see")) {
+            EyeThink.core().assertion().assertThat(isSpecificfieldValueDisplayed(fieldValue , tableId)).isFalse();
+        }
+    }
+
     /*********
      * "Local Methods with complete functionality - private"
      *****************/
@@ -647,15 +656,15 @@ public class FlexTablePage extends GovGrantsManager {
     }
 
     /**
-     * return true if statusName is not displayed
+     * return true if fieldValue is displayed
      *
-     * @param statusName
+     * @param fieldValue
      * @return
      */
-    private Boolean isStatusCategoryDisabled(String statusName, String tableId) {
+    private Boolean isSpecificfieldValueDisplayed(String fieldValue, String tableId) {
         List<Elements> elements = null;
         try {
-            elements = EyeThink.core().elementReference().listOfElements().of((By) EyeThink.saas().flexTable().getTableCellValue(tableId, statusName));
+            elements = EyeThink.core().elementReference().listOfElements().of((By) EyeThink.saas().flexTable().getTableCellValue(tableId, fieldValue));
         } catch (Exception e) {
         }
         try {

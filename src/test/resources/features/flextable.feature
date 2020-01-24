@@ -34,10 +34,10 @@ Feature: Flex Table Component Scenarios
   @62703    @disablingCSVExportFile-gPlanning
   Scenario: validate disabling of Excel download from menu option in flex table of programs-planning
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName                 | fieldOrignalValue | filterId          |
-      | Flex Table            | Enable Export (XLS / CSV) | true              |  ApiGeneratedId:0 |
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (XLS / CSV) | false         | Programs           |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -108,9 +108,11 @@ Feature: Flex Table Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Total Row | true              | ApiGeneratedId:0 |
+      | Flex Table            | Enable Total     | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Total Row | false         | Programs           |                           |                            |
+      | Flex Table List       | Enable Total     | false          | Programs           | Name                      | FTC-1018                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -197,7 +199,7 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    Then I see no "Created" status in flex table id "flexTableDivId"
+    Then I softly do not see "Created" value in flex table id "flexTableDivId"
 
     Examples:
       | newSoqlFilter                                                                                                   | oldSoqlFilter                                                                                                             |

@@ -94,9 +94,9 @@ public class FlexTableSteps {
         flexTablePage.assertFlexTableHeaderColumnName(headerColumnName);
     }
 
-    @Then("^I see no \"([^\"]*)\" status in flex table id \"([^\"]*)\"$")
-    public void assertSpecificStatusCategoryNotDisplayed(String statusCategory, String tableId) {
-        flexTablePage.assertFlexTableStatusDisabled(statusCategory, tableId);
+    @Then("^I (see|do not see|softly see|softly do not see) \"([^\"]*)\" value in flex table id \"([^\"]*)\"$")
+    public void assertSpecificFieldValueDisplayed(String usuage, String fieldValue, String tableId) {
+        flexTablePage.assertFlexTableFieldValueDisplayed(usuage, fieldValue , tableId);
     }
 
     @Then("^I see new tab is opened$")
