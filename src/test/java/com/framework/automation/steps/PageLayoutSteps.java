@@ -136,6 +136,22 @@ public class PageLayoutSteps {
         pageLayoutPage.clickSearchByButton(fieldLabel, dropdownValue);
     }
 
+    @When("^I select value \"([^\"]*)\" with iconName \"([^\"]*)\" into field on send email modal$")
+    public void selectValueInSendEmailModal(String userName, String iconName) {
+        pageLayoutPage.selectValueInSendEmailModalFields(userName, iconName);
+    }
+
+    @When("^I upload attachment \"([^\"]*)\" in send email modal$")
+    public void uploadAttachmentOnSendEmailModal(String attachmentName) {
+        pageLayoutPage.uploadAttachmentInSendEmailModal(attachmentName);
+    }
+
+    @When("^I select \"([^\"]*)\" from dropdown at History Table$")
+    public void selectValueFromDropdownInHistory(String objectName) {
+        pageLayoutPage.selectValueFromDropdownInHistory(objectName);
+    }
+
+
     @And("^I click on expand collapse icon for panel heading \"([^\"]*)\"$")
     public void clickOnExpandColapseIcon(String panelHeaderName) {
         pageLayoutPage.clickExpandCollapseIconAtTableHeader(panelHeaderName);
@@ -447,4 +463,15 @@ public class PageLayoutSteps {
     public void assertInternalExternalUsersIsDisplayedInSuggestionBox(List<Map<String, String>> Parameters) throws IOException {
         pageLayoutPage.assertInternalExternalUsersDisplayedInSuggestionBox(Parameters);
     }
+
+    @Then("^I see attachment \"([^\"]*)\" is present in send email modal$")
+    public void assertAttachmentIsPresentInSendEmailModal(String attachmentName) {
+        pageLayoutPage.assertAttachmentPresentInSendEmailModal(attachmentName);
+    }
+
+    @Then("^I see sticky bottom menu button is not present$")
+    public void assertStickyBottomMenuOptionIsNotDisplayed() {
+        pageLayoutPage.assertIsStickyBottomMenuOptionDisplayed();
+    }
+
 }
