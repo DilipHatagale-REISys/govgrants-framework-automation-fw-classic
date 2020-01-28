@@ -21,7 +21,6 @@ import java.io.IOException;
  */
 
 public class setup {
-    private ProjectWebServices api;
     private TestSetupController userController;
     private static CSS report;
 

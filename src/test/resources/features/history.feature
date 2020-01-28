@@ -12,3 +12,167 @@ Feature: history Component Scenarios
     When I navigate to "History" sub tab
     When I select "Program" from dropdown at History Table
     Then I softly see "PG-755-0205" value in flex table id "toggleFlexTableHistory"
+
+  @69577    @VerifyActualApproverNameIsDisplayedInApprovalHistoryAfterRecordSubmission
+  Scenario: Validate actual approver name inside Approval history table after submission of record to Submit for Approval
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField                                                               |
+      | Program               | Status    | Created       | Test program for automation - SA mode only - Not approved - History Tab Scenario |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForHistoryTabScenarios}"
+    When I click on "Edit" icon for "Test program for automation - SA mode only - Not approved - History Tab Scenario" inside table
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
+    And I refresh the page
+    When I navigate to "History" sub tab
+    Then I softly see column "Assigned To" inside row at position "1" and column at position "2" contains text "Automation PM"
+
+  @69578    @VerifyActualApproverAndAssignedToNameIsDisplayedInApprovalHistoryAfterRecordReassignToUser
+  Scenario: Validate Actual Approver name and Assigned To Name inside Approval history table after Reassigning of record to user
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField                                                               |
+      | Program               | Status    | Created       | Test program for automation - SA mode only - Not approved - History Tab Scenario |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForHistoryTabScenarios}"
+    When I click on "Edit" icon for "Test program for automation - SA mode only - Not approved - History Tab Scenario" inside table
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
+    And I navigate to "Planning" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{Framework_recordUsed:programForHistoryTabScenarios}"
+    When I click on "Start" icon for "{Framework_recordUsed:programForHistoryTabScenarios}" inside table
+    When I select "Reassign" from approval decision panel
+    When I click select dropdown
+    When I select specific user "Allen PM"
+    When I enter Approval comment
+    And I click submit
+    And I refresh the page
+    When I navigate to "History" sub tab
+    Then I softly see column "Assigned To" inside row at position "1" and column at position "2" contains text "Automation PM"
+    Then I softly see column "Actual Approver" inside row at position "1" and column at position "3" contains text "Allen PM"
+    Then I collect all the soft asserts
+
+  @69836    @VerifyExpectedStatusIsDisplayedInApprovalHistoryAfterRecordApproval
+  Scenario: Validating status as APPROVED inside Approval history table after approval of record
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField                                                               | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Program               | Status    | Created       | Test program for automation - SA mode only - Not approved - History Tab Scenario |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForHistoryTabScenarios}"
+    When I click on "Edit" icon for "Test program for automation - SA mode only - Not approved - History Tab Scenario" inside table
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
+    And I navigate to "Planning" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{Framework_recordUsed:programForHistoryTabScenarios}"
+    When I click on "Start" icon for "{Framework_recordUsed:programForHistoryTabScenarios}" inside table
+    When I select "Approve" from approval decision panel
+    When I enter Approval comment
+    And I click submit
+    When I navigate to "History" sub tab
+    Then I softly see column "Status" inside row at position "1" and column at position "5" contains text "Approved"
+    Then I collect all the soft asserts
+
+  @69943    @VerifyExpectedStatusIsDisplayedInApprovalHistoryAfterRecordRejection
+  Scenario: Validating status as REJECTED inside Approval history table after approval of record
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField                                                               | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Program               | Status    | Created       | Test program for automation - SA mode only - Not approved - History Tab Scenario |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForHistoryTabScenarios}"
+    When I click on "Edit" icon for "Test program for automation - SA mode only - Not approved - History Tab Scenario" inside table
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
+    And I navigate to "Planning" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{Framework_recordUsed:programForHistoryTabScenarios}"
+    When I click on "Start" icon for "{Framework_recordUsed:programForHistoryTabScenarios}" inside table
+    When I select "Disapprove" from approval decision panel
+    When I enter Approval comment
+    And I click submit
+    When I navigate to "History" sub tab
+    Then I softly see column "Status" inside row at position "1" and column at position "5" contains text "Rejected"
+    Then I collect all the soft asserts
+
+  @69944    @VerifyExpectedStatusIsDisplayedInApprovalHistoryAfterRecordReassign
+  Scenario: Validating status as REASSIGNED inside Approval history table after approval of record
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField                                                               | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Program               | Status    | Created       | Test program for automation - SA mode only - Not approved - History Tab Scenario |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForHistoryTabScenarios}"
+    When I click on "Edit" icon for "Test program for automation - SA mode only - Not approved - History Tab Scenario" inside table
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
+    And I navigate to "Planning" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{Framework_recordUsed:programForHistoryTabScenarios}"
+    When I click on "Start" icon for "{Framework_recordUsed:programForHistoryTabScenarios}" inside table
+    When I select "Reassign" from approval decision panel
+    When I click select dropdown
+    When I select specific user "Allen PM"
+    And I click submit
+    When I navigate to "History" sub tab
+    Then I softly see column "Status" inside row at position "1" and column at position "5" contains text "Reassigned"
+    Then I collect all the soft asserts
+
+  @69945    @VerifyExpectedStatusIsDisplayedInApprovalHistoryAfterRecordSentBack
+  Scenario: Validating status as SENT BACK inside Approval history table after approval of record
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField                                                               | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Program               | Status    | Created       | Test program for automation - SA mode only - Not approved - History Tab Scenario |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForHistoryTabScenarios}"
+    When I click on "Edit" icon for "Test program for automation - SA mode only - Not approved - History Tab Scenario" inside table
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
+    And I navigate to "Planning" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{Framework_recordUsed:programForHistoryTabScenarios}"
+    When I click on "Start" icon for "{Framework_recordUsed:programForHistoryTabScenarios}" inside table
+    When I select "Send to Owner" from approval decision panel
+    When I enter Approval comment
+    And I click submit
+    When I navigate to "History" sub tab
+    Then I softly see column "Status" inside row at position "1" and column at position "5" contains text "Sent Back"
+    Then I collect all the soft asserts
+
+  @69958   @VerifyExpectedOverAllStatusIsDisplayedInApprovalHistoryAfter @wip @check
+  Scenario: Validating Over all status as Pending inside Approval history table after record submission as submit for apprval
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField                                                               | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Program               | Status    | Created       | Test program for automation - SA mode only - Not approved - History Tab Scenario |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForHistoryTabScenarios}"
+    When I click on "Edit" icon for "Test program for automation - SA mode only - Not approved - History Tab Scenario" inside table
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
+    When I navigate to "History" sub tab
+    Then I softly see column "Overall Status" inside row at position "1" and column at position "6" contains text "Pending"
+    Then I collect all the soft asserts

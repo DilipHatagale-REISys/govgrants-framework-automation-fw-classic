@@ -58,8 +58,8 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    When I upload attachment "sbac-award-letter.pdf" of type "Program Artifacts"
-    When I click on "Delete" icon for "Program Artifacts" inside table
+    When I upload attachment "Automation-Letter.pdf" of type "Program Artifacts"
+    When I click on "Delete" icon for "Automation-Letter.pdf" inside table
     When I pause execution for "3" seconds
     Then I see confirmation box with body "Record deleted successfully." is displayed
 
@@ -197,7 +197,7 @@ Feature: Logged Issues Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I click on "My_Workspace_Notes"
-    When I click on user notes content with icon name "fa fa-plus"
+    When I click on user notes content with icon name "plus"
     When I pause execution for "3" seconds
     When I enter details as "<titleValue>""<descriptionValue>" on Add New Notes Modal for "onlyDescription"
     When I click modal button "Save and Close"
@@ -425,7 +425,7 @@ Feature: Logged Issues Scenarios
     When I click on "My_Workspace_Notes"
     When I delete specific Sticky Notes with title "Notes Title" on clicking "x"
     When I pause execution for "3" seconds
-    When I click on user notes content with icon name "fa fa-plus"
+    When I click on user notes content with icon name "plus"
     When I enter details as "<titleValue>""<descriptionValue>" on Add New Notes Modal for ""
     When I click modal button "Save and Close"
     Then I see sticky Notes "Notes Title" contains text as "<descriptionValue>"
@@ -530,8 +530,7 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "FOA--114"
     When I click on "View" icon for "FOA--114" inside table
     When I click on "Menu" in the page details
-    And I select "Take Snapshot" from dropdown
-    And I pause execution for "5" seconds
+    And I select without accepting alert "Take Snapshot" from dropdown
     Then I see alert message "<message>"
 
     Examples:
@@ -628,6 +627,7 @@ Feature: Logged Issues Scenarios
     And I navigate to "HOME" tab
     When I click on "My_Workspace_Notes"
     When I delete specific Sticky Notes with title "Notes Title" on clicking "x"
+    When I pause execution for "3" seconds
     When I click on user notes content with icon name "plus"
     When I enter details as "<titleValue>""<descriptionValue>" on Add New Notes Modal for ""
     When I click modal button "Save and Close"
@@ -799,6 +799,7 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "App2-FO for DCP" in "flexTableDivId" panel
     When I click on "View" icon for "App2-FO for DCP" inside table
     When I hover mouse on lookup link "AN-603-051"
+    When I pause execution for "2" seconds
     Then I see "<miniPageLayout_Text>" shown inside mini page layout on hover
 
     Examples:
@@ -1435,7 +1436,13 @@ Feature: Logged Issues Scenarios
     Then I see take snap shot getting saved with "Submit for approval snapshot.pdf"
 
   @60535    @afterEditValueShouldSaveCorrectlyInCurrencyFieldAtEnhancedGrid
-  Scenario: validate value is getting save for currency field correctly at enhanced grid
+  Scenario Outline: validate value is getting save for currency field correctly at enhanced grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue         | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi>        | TmpActiveGrantsGrid |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1444,12 +1451,18 @@ Feature: Logged Issues Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
+    When I pause execution for "2" seconds
     And I edit the following rows inline in flex table with id "flexGridEnhanced1" by clicking "Edit" :
       | Project Title | Total Adjusted Amount |
       | Demo_Title    | 20                    |
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
     Then I see value "$20.00" for title "Total Adjusted Amount" inside table "flexGridEnhanced1"
+
+    Examples:
+      | newFieldsApi                                                       | defaultFieldsApi                                                                                                                                                                                                                   |
+      | ProjectTitle__c,Name,BudgetPeriodEndDate__c,TotalAdjustedAmount__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
 
   @60541    @addLineItemTableShouldDisplayedAtChildTableApplicationBudgetGrid
   Scenario: validating add line item table is displayed or not at chile table of application budget grid

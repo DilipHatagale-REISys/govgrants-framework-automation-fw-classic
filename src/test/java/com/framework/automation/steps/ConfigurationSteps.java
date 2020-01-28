@@ -16,7 +16,6 @@ public class ConfigurationSteps {
 
     public ConfigurationSteps(ProjectWebServices projectAPI) {
         this.projectAPI = projectAPI;
-        this.projectAPI = projectAPI;
         this.projectAPI.setupIdBucket();
         this.projectAPI.thisValue = this.projectAPI;
 
