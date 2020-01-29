@@ -54,7 +54,7 @@ Feature: Sticky Bottom Component Scenarios
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableStickyBottomMenu__c:false | GNT__GlobalConfig__c |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
-    Then I see sticky bottom menu button is not present
+    Then I see sticky bottom menu button with id "sticky_bottom_Menu" is not present
 
   @69403 @validateOrgNameIsNotShownInStickyBottomForUser
   Scenario: Disabling Enable Org Name custom setting and validating display of org name Option in sticky bottom

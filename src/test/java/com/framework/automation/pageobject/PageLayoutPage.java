@@ -592,8 +592,8 @@ public class PageLayoutPage extends GovGrantsManager {
     /**
      * assert if sticky bottom menu option is not present at footer
      */
-    public void assertIsStickyBottomMenuOptionDisplayed() {
-        Assert.assertFalse(isStickyBottomMenuOptionDisplayed());
+    public void assertIsStickyBottomMenuOptionDisplayed(String id) {
+        Assert.assertFalse(isStickyBottomMenuOptionDisplayed(id));
     }
 
     /**
@@ -615,6 +615,25 @@ public class PageLayoutPage extends GovGrantsManager {
             }
         }
 
+    }
+
+    /**
+     * assert if text is present inside history table
+     */
+    public void assertTextInHistoryTable(String usage, String colName, String rowNo, String colNo, String text) {
+        if (usage.contains("softly")) {
+            if (usage.contains("cannot")) {
+                EyeThink.core().assertion().assertThat(isTextPresentInsideHistoryTable(colName, rowNo, colNo, text)).isFalse();
+            } else {
+                EyeThink.core().assertion().assertThat(isTextPresentInsideHistoryTable(colName, rowNo, colNo, text)).isTrue();
+            }
+        } else {
+            if (usage.contains("cannot")) {
+                Assert.assertFalse(isTextPresentInsideHistoryTable(colName, rowNo, colNo, text));
+            } else {
+                Assert.assertTrue(isTextPresentInsideHistoryTable(colName, rowNo, colNo, text));
+            }
+        }
     }
 
     /**
@@ -768,6 +787,7 @@ public class PageLayoutPage extends GovGrantsManager {
         EyeThink.core().enterText().in(attachmentDescriptionPath, "Success message on second tab");
         EyeThink.core().enterText().in(attachmentFilePath, defaultFilePath + fileName);
         EyeThink.core().click().on(By.xpath("//input[@value='Save']"));
+        EyeThink.core().WaitFor().makeThreadSleep(500);
         EyeThink.core().click().on(By.xpath("//div[@id='Attachmentadd']//span[text()='Upload file from Workspace']"));
     }
 
@@ -897,7 +917,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * click on user/group from suggestion box appears by entering text in To/CC fields on send email modal window
      */
     public void selectValueFromDropdownInHistory(String objectName) {
-        By selectValueFromDropdown = By.xpath("//div[@id='History']//option[contains(text(),'"+objectName+"')]");
+        By selectValueFromDropdown = By.xpath("//div[@id='History']//option[contains(text(),'" + objectName + "')]");
         EyeThink.core().click().on(selectValueFromDropdown);
     }
 
@@ -1702,25 +1722,39 @@ public class PageLayoutPage extends GovGrantsManager {
      * @return
      */
     private Boolean isAttachmentPresentInSendEmailModal(String attachmentName) {
-       boolean flag = false;
+        boolean flag = false;
 
-       if(EyeThink.core().elementReference().of(By.xpath("//tbody//tr//td[contains(text(),'" + attachmentName + "')]")).isDisplayed()){
-           flag = true;
-       }
-       return flag;
+        if (EyeThink.core().elementReference().of(By.xpath("//tbody//tr//td[contains(text(),'" + attachmentName + "')]")).isDisplayed()) {
+            flag = true;
+        }
+        return flag;
     }
 
     /**
      * @return true if sticky bottom menu is displayed at footer
      */
-    private boolean isStickyBottomMenuOptionDisplayed() {
+    private boolean isStickyBottomMenuOptionDisplayed(String id) {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().isDisplayed(By.xpath("//button[@id='sticky_bottom_Menu']"))) {
+            if (EyeThink.core().is().isDisplayed(EyeThink.saas().phasePanel().getStickyBottomMenu(id))) {
                 flag = true;
             }
         } catch (Exception e) {
         }
         return flag;
     }
+
+    /**
+     * @return true if expected text is displyed inside history table
+     */
+    private boolean isTextPresentInsideHistoryTable(String colName, String rowNo, String colNo, String text) {
+        boolean flag = false;
+        try {
+            if (EyeThink.core().is().isDisplayed(EyeThink.core().elementReference().of(By.xpath("//th[text()='" + colName + "']//ancestor::tbody/following-sibling::tbody[" + rowNo + "]/tr//td[" + colNo + "]//*[text()='" + text + "']")))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
     }
+}

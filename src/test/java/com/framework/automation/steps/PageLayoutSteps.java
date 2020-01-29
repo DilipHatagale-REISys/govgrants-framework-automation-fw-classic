@@ -469,9 +469,13 @@ public class PageLayoutSteps {
         pageLayoutPage.assertAttachmentPresentInSendEmailModal(attachmentName);
     }
 
-    @Then("^I see sticky bottom menu button is not present$")
-    public void assertStickyBottomMenuOptionIsNotDisplayed() {
-        pageLayoutPage.assertIsStickyBottomMenuOptionDisplayed();
+    @Then("^I see sticky bottom menu button with id \"([^\"]*)\" is not present$")
+    public void assertStickyBottomMenuOptionIsNotDisplayed(String id) {
+        pageLayoutPage.assertIsStickyBottomMenuOptionDisplayed(id);
     }
 
+    @Then("I (softly see|softly cannot see|cannot see|see) column \"([^\"]*)\" inside row at position \"([^\"]*)\" and column at position \"([^\"]*)\" contains text \"([^\"]*)\"$")
+    public void iSeeInsideRowOfIndexAndColumnIndex(String usage, String colName, String rowNo, String colNo, String text) {
+        pageLayoutPage.assertTextInHistoryTable(usage, colName, rowNo, colNo, text);
+    }
 }
