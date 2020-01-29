@@ -300,10 +300,3 @@ Feature: Send Email Component Scenarios
     When I upload attachment "SendEmailAttachment.pdf" in send email modal
     When I click on "Send" button in send email modal
     Then I see attachment "SendEmailAttachment.pdf" is present in send email modal
-
-
-
-
-
-
-

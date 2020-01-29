@@ -58,4 +58,12 @@ public class ConfigurationSteps {
             ProjectWebServices.dynamicApi = "global";
         }
     }
+
+    @And("^I update custom app footer setting changes:$")
+    public void iUpdateCustomAppFooterEnableLightningLookupFieldTo(List<Map<String, String>> configParameters) {
+        for (Map<String, String> parameters : configParameters) {
+            projectAPI.updateCustomAppFooterConfig(parameters.get("booleanValue"), parameters.get("id"), parameters.get("Name"), parameters.get("DisplayText"), parameters.get("TargetURL"), Integer.parseInt(parameters.get("Sequence")));
+            ProjectWebServices.dynamicApi = "customAppFooter";
+        }
+    }
 }

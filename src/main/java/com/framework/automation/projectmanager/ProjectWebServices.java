@@ -129,6 +129,39 @@ public class ProjectWebServices {
         EyeThink.core().apiCall().putCall(null, jArray.toString(), finalEndPoint, null, null, tokenString);
     }
 
+    /**
+     * @param booleanValue
+     * @param Name
+     * @param id
+     * @param DisplayText
+     * @param TargetURL
+     * @param Sequence
+     */
+    public void updateCustomAppFooterConfig(String booleanValue, String id, String Name, String DisplayText, String TargetURL, int Sequence) {
+        getAuthToken();
+        String[] someApi = booleanValue.split(",");
+        String finalEndPoint = endPoint + "/services/apexrest/frameworkCustomsettingAPI";
+        JsonArray jArray = new JsonArray();
+        JsonObject jsonObject = new JsonObject();
+        JsonObject jsonContainer = new JsonObject();
+        jsonObject.addProperty("Id", id);
+        jsonObject.addProperty("Name", Name);
+        jsonObject.addProperty("GNT__DisplayText__c", DisplayText);
+        jsonObject.addProperty("GNT__TargetURL__c", TargetURL);
+        jsonObject.addProperty("GNT__Sequence__c", Sequence);
+        if (someApi.length != 1) {
+            for (String list : someApi) {
+                jsonObject.addProperty(list.split(":")[0].trim(), Boolean.parseBoolean(list.split(":")[1].trim()));
+            }
+        } else {
+            jsonObject.addProperty(booleanValue.split(":")[0].trim(), Boolean.parseBoolean(booleanValue.split(":")[1].trim()));
+        }
+        jsonContainer.add("fieldvalues", jsonObject);
+        jsonContainer.addProperty("customsettingapiname", "GNT__CustomAppFooterConfig__c");
+        jArray.add(jsonContainer);
+        EyeThink.core().apiCall().putCall(null, jArray.toString(), finalEndPoint, null, null, tokenString);
+    }
+
 
     ////////////// Setup Default Config//////////////
 
@@ -143,6 +176,13 @@ public class ProjectWebServices {
 
     ////////////// Private methods ///////////////////
 
+    /**
+     * This function will help us to set configuration of all custom setting and all components(eg- Approval component, flex table etc..)
+     * <p>
+     * We just need to pass string parameter to make call on specific function to make default configuration change like:-
+     * -- "default" -- for all component configuration
+     * -- "global"  -- for all global custom setting changes
+     */
     private void callRelevantConfiguration(String configurationType) {
         if (configurationType.equalsIgnoreCase("default"))
             executeDefaultConfigurations(configurationType);
@@ -150,8 +190,10 @@ public class ProjectWebServices {
             setDefaultSettingForAllCustomSettings(configurationType);
         if (configurationType.equalsIgnoreCase("timeZoneLocale"))
             setDefaultSettingForLocaleAndTimeZone("timeZoneLocale");
-        if (configurationType.equalsIgnoreCase("global")) {
+        if (configurationType.equalsIgnoreCase("global"))
             setDefaultGlobalSettingForAllCustomSettings("global");
+        if (configurationType.equalsIgnoreCase("customAppFooter")) {
+            setDefaultCustomAppFooterSettingForAllCustomSettings("customAppFooter");
         }
     }
 
@@ -319,6 +361,22 @@ public class ProjectWebServices {
     private void setDefaultGlobalSettingForAllCustomSettings(String key) {
         for (Map<String, String> customMap : ConfigurationParameters.getDefaultConfigurationParameters().get(key)) {
             updateGlobalConfig(customMap.get("booleanValue"), customMap.get("id"), customMap.get("ownerId"));
+        }
+    }
+
+    /**
+     * It will take key and its value from feature file to make default config changes for custom app footer setting
+     * <p>
+     * booleanValue - accept true/false for to enable disable custom app footer details boolean fields
+     * id           - it will take unique custom setting id where changes is supposed to made
+     * Name         - it will
+     * DisplayText  - it will take string value for field Display Field from feature file
+     * TargetUrl    - it will take string url for field Target URL from feature file
+     * Sequence     - It will take Integer value for Sequence field from feature file
+     */
+    private void setDefaultCustomAppFooterSettingForAllCustomSettings(String key) {
+        for (Map<String, String> customMap : ConfigurationParameters.getDefaultConfigurationParameters().get(key)) {
+            updateCustomAppFooterConfig(customMap.get("booleanValue"), customMap.get("id"), customMap.get("Name"), customMap.get("DisplayText"), customMap.get("TargetURL"), Integer.parseInt(customMap.get("Sequence")));
         }
     }
 

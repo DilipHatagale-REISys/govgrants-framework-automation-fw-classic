@@ -597,6 +597,13 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * assert if Approver user is displyed for program approver manager inside chevron diagraom
+     */
+    public void assertIsApproverUserDisplayed(String approverTitle, String approverName) {
+        Assert.assertTrue(isUserDisplayedInsideChevron(approverTitle, approverName));
+    }
+
+    /**
      * return true if Warning dialog box appears/not appears
      */
     public void assertSessionTimeoutDialogboxDisplayed(String usage, String headerText) {
@@ -620,18 +627,18 @@ public class PageLayoutPage extends GovGrantsManager {
     /**
      * assert if text is present inside history table
      */
-    public void assertTextInHistoryTable(String usage, String colName, String rowNo, String colNo, String text) {
+    public void assertTextInHistoryTable(String usage, String colName, String rowNo, String tData, String colNo, String text) {
         if (usage.contains("softly")) {
             if (usage.contains("cannot")) {
-                EyeThink.core().assertion().assertThat(isTextPresentInsideHistoryTable(colName, rowNo, colNo, text)).isFalse();
+                EyeThink.core().assertion().assertThat(isTextPresentInsideHistoryTable(colName, rowNo, tData, colNo, text)).isFalse();
             } else {
-                EyeThink.core().assertion().assertThat(isTextPresentInsideHistoryTable(colName, rowNo, colNo, text)).isTrue();
+                EyeThink.core().assertion().assertThat(isTextPresentInsideHistoryTable(colName, rowNo, tData, colNo, text)).isTrue();
             }
         } else {
             if (usage.contains("cannot")) {
-                Assert.assertFalse(isTextPresentInsideHistoryTable(colName, rowNo, colNo, text));
+                Assert.assertFalse(isTextPresentInsideHistoryTable(colName, rowNo, tData, colNo, text));
             } else {
-                Assert.assertTrue(isTextPresentInsideHistoryTable(colName, rowNo, colNo, text));
+                Assert.assertTrue(isTextPresentInsideHistoryTable(colName, rowNo, tData, colNo, text));
             }
         }
     }
@@ -1747,13 +1754,39 @@ public class PageLayoutPage extends GovGrantsManager {
     /**
      * @return true if expected text is displyed inside history table
      */
-    private boolean isTextPresentInsideHistoryTable(String colName, String rowNo, String colNo, String text) {
+    private boolean isTextPresentInsideHistoryTable(String colName, String rowNo, String tData, String colNo, String text) {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().isDisplayed(EyeThink.core().elementReference().of(By.xpath("//th[text()='" + colName + "']//ancestor::tbody/following-sibling::tbody[" + rowNo + "]/tr//td[" + colNo + "]//*[text()='" + text + "']")))) {
+            if (EyeThink.core().is().isDisplayed(EyeThink.core().elementReference().of(By.xpath("//th[text()='" + colName + "']//ancestor::tbody/following-sibling::tbody[" + rowNo + "]/tr[" + tData + "]//td[" + colNo + "]//*[text()='" + text + "']")))) {
                 flag = true;
             }
         } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     *return true if specified Approver is displayed inside chevron
+     */
+    private boolean isUserDisplayedInsideChevron(String approverTitle, String approverName) {
+        boolean flag = false;
+        if (approverTitle.equalsIgnoreCase("Initial Submitter")) {
+            try {
+                if (EyeThink.core().is().isDisplayed(EyeThink.core().elementReference().of(By.xpath("//div[@id='chevronBarId']//a[contains(text(),'" + approverTitle + "')]//ancestor::ul/following-sibling::ul//li[1]//a/span[contains(text(),'" + approverName + "')]")))) {
+                    flag = true;
+                }
+            } catch (Exception e) {
+                flag = false;
+            }
+
+        } else if (approverTitle.equalsIgnoreCase("Program Manager Approver")) {
+            try {
+                if (EyeThink.core().is().isDisplayed(EyeThink.core().elementReference().of(By.xpath("//div[@id='chevronBarId']//a[contains(text(),'" + approverTitle + "')]//ancestor::ul/following-sibling::ul//li[2]//a/span[contains(text(),'" + approverName + "')]")))) {
+                    flag = true;
+                }
+            } catch (Exception e) {
+                flag = false;
+            }
         }
         return flag;
     }
