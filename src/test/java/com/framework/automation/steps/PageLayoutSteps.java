@@ -1,6 +1,6 @@
 package com.framework.automation.steps;
 
-import com.framework.automation.pageobject.*;
+import com.framework.automation.pageobject.PageLayoutPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

@@ -1749,9 +1749,8 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     private boolean isTextPresentInsideHistoryTable(String colName, String rowNo, String colNo, String text) {
         boolean flag = false;
-        WebElement element = EyeThink.core().elementReference().of(By.xpath("//th[text()='" + colName + "']//ancestor::tbody/following-sibling::tbody[" + rowNo + "]/tr//td[" + colNo + "]//*[text()='" + text + "']"));
         try {
-            if (EyeThink.core().is().isDisplayed(element)) {
+            if (EyeThink.core().is().isDisplayed(EyeThink.core().elementReference().of(By.xpath("//th[text()='" + colName + "']//ancestor::tbody/following-sibling::tbody[" + rowNo + "]/tr//td[" + colNo + "]//*[text()='" + text + "']")))) {
                 flag = true;
             }
         } catch (Exception e) {
