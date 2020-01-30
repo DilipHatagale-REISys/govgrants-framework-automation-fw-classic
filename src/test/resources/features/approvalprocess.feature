@@ -203,7 +203,7 @@ Feature: Approval Process Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
-    And I click on "Approve" on the approval decision box
+    And I "Approve" in the approval decision
     When I re-login to "As an Administrator" app as "Automation" user on "default" portal
     And I navigate to "Operate" tab
     When I navigate to "Email Logs" content inside "Logs" subheader on left panel
@@ -286,7 +286,7 @@ Feature: Approval Process Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    And I click on "Send to Owner" on the approval decision box
+    And I "Send to Owner" in the approval decision
     When I re-login to "As a Grantor" app as "Automation" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -465,7 +465,7 @@ Feature: Approval Process Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
-    And I click on "Approve" on the approval decision box
+    And I "Approve" in the approval decision
     When I re-login to "As a Grantor" app as "Automation" user on "default" portal
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -553,7 +553,7 @@ Feature: Approval Process Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
-    And I click on "Approve" on the approval decision box
+    And I "Approve" in the approval decision
     When I re-login to "As an Administrator" app as "Automation" user on "default" portal
     And I navigate to "Operate" tab
     When I navigate to "Email Logs" content inside "Logs" subheader on left panel
@@ -586,7 +586,7 @@ Feature: Approval Process Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    And I click on "Disapprove" on the approval decision box
+    And I "Disapprove" in the approval decision
     When I re-login to "As an Administrator" app as "Automation" user on "default" portal
     And I navigate to "Operate" tab
     When I navigate to "Email Logs" content inside "Logs" subheader on left panel
@@ -653,7 +653,7 @@ Feature: Approval Process Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    And I click on "Send to Owner" on the approval decision box
+    And I "Send to Owner" in the approval decision
     When I re-login to "As an Administrator" app as "Automation" user on "default" portal
     And I navigate to "Operate" tab
     When I navigate to "Email Logs" content inside "Logs" subheader on left panel
@@ -682,7 +682,7 @@ Feature: Approval Process Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
-    And I click on "Approve" on the approval decision box
+    And I "Approve" in the approval decision
     When I re-login to "As an Administrator" app as "Automation" user on "default" portal
     And I navigate to "Operate" tab
     When I navigate to "Email Logs" content inside "Logs" subheader on left panel
@@ -737,7 +737,7 @@ Feature: Approval Process Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
-    And I click on "Reassign,Allen PM" on the approval decision box
+    And I "Reassign" to user "Allen PM" in the approval decision
     When I re-login to "As a Grantor" app as "Automation" user on "default" portal
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"

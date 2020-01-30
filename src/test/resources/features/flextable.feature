@@ -785,7 +785,7 @@ Feature: Flex Table Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
-    And I click on "Approve" on the approval decision box
+    And I "Approve" in the approval decision
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
