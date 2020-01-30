@@ -429,9 +429,9 @@ public class PageLayoutSteps {
         pageLayoutPage.assertSessionTimeoutRemainderCountdownIsDisplayed(countDownTimer);
     }
 
-    @Then("^I see \"([^\"]*)\" page is displayed$")
-    public void assertLogoutPageDisplayed(String logoutURL) {
-        pageLayoutPage.assertLogoutPageIsDisplayed(logoutURL);
+    @Then("^I see \"([^\"]*)\" \"([^\"]*)\" page is displayed$")
+    public void assertLogoutPageDisplayed(String usage, String logoutURL) {
+        pageLayoutPage.assertLogoutPageIsDisplayed(usage, logoutURL);
     }
 
     @Then("^I see Session Timeout dialogbox with text \"([^\"]*)\"$")
@@ -478,4 +478,14 @@ public class PageLayoutSteps {
     public void iSeeInsideRowOfIndexAndColumnIndex(String usage, String colName, String rowNo, String colNo, String text) {
         pageLayoutPage.assertTextInHistoryTable(usage, colName, rowNo, colNo, text);
     }
+
+    @Then("I see \"([^\"]*)\" footer link is present")
+    public void assertFooterLinkIsPresent(String footerLinkName) {
+        pageLayoutPage.assertFooterLinkIsPresent(footerLinkName);
+    }
+
+  /*  @Then("^I see \"([^\"]*)\" footer link is displayed at position \"([^\"]*)\"$")
+    public void assertSequenceOfFooterLinksIsDisplayed(String linkName, String sequenceNumber) {
+        pageLayoutPage.assertSequenceOfFooterLinks(linkName, Integer.parseInt(sequenceNumber));
+    }*/
 }
