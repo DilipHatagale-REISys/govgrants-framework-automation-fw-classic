@@ -474,9 +474,14 @@ public class PageLayoutSteps {
         pageLayoutPage.assertIsStickyBottomMenuOptionDisplayed(id);
     }
 
-    @Then("I (softly see|softly cannot see|cannot see|see) column \"([^\"]*)\" inside row at position \"([^\"]*)\" and column at position \"([^\"]*)\" contains text \"([^\"]*)\"$")
-    public void iSeeInsideRowOfIndexAndColumnIndex(String usage, String colName, String rowNo, String colNo, String text) {
-        pageLayoutPage.assertTextInHistoryTable(usage, colName, rowNo, colNo, text);
+    @Then("I (softly see|softly cannot see|cannot see|see) column \"([^\"]*)\" inside row \"([^\"]*)\" at position \"([^\"]*)\" and column at position \"([^\"]*)\" contains text \"([^\"]*)\"$")
+    public void iSeeInsideRowOfIndexAndColumnIndex(String usage, String colName, String rowNo, String tData, String colNo, String text) {
+        pageLayoutPage.assertTextInHistoryTable(usage, colName, rowNo, tData, colNo, text);
+    }
+
+    @Then("I see for \"([^\"]*)\" value is \"([^\"]*)\" in chevron diagram")
+    public void iSeeForValueIsInChevronDiagram(String approverTitle, String approverName) {
+        pageLayoutPage.assertIsApproverUserDisplayed(approverTitle, approverName);
     }
 
     @Then("I see \"([^\"]*)\" footer link is present")
