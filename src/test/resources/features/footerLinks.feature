@@ -55,8 +55,3 @@ Feature: Footer Links Component Scenarios
       | a0E1500000VP7l4EAD | EL1  | Terms and Conditions | /apex/GNT__Help?uniqueName=Help-0094 | 1        | GNT__Active__c:true,GNT__TermsAndConditions__c:true | GNT__CustomAppFooterConfig__c |
     When I navigate to url "https://granteeportal-ggptest5-developer-edition.na69.force.com/ApplicantLogin4?username=null"
     Then I see "Terms and Conditions" footer link is present
-
-
-
-
-
