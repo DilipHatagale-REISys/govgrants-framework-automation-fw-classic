@@ -488,9 +488,4 @@ public class PageLayoutSteps {
     public void assertFooterLinkIsPresent(String footerLinkName) {
         pageLayoutPage.assertFooterLinkIsPresent(footerLinkName);
     }
-
-  /*  @Then("^I see \"([^\"]*)\" footer link is displayed at position \"([^\"]*)\"$")
-    public void assertSequenceOfFooterLinksIsDisplayed(String linkName, String sequenceNumber) {
-        pageLayoutPage.assertSequenceOfFooterLinks(linkName, Integer.parseInt(sequenceNumber));
-    }*/
 }

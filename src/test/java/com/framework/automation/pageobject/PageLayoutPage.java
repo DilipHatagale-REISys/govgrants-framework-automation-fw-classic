@@ -974,18 +974,12 @@ public class PageLayoutPage extends GovGrantsManager {
         Assert.assertTrue(isExpectedLinkIsDisplayedInPageFooter(footerLinkName));
     }
 
-  /*  *//**
-     * return true if footer link is displayed on expected position
-     *//*
-    public void assertSequenceOfFooterLinks(String linkName, int sequenceNumber) {
-        Assert.assertTrue(isFooterLinkSequenceAtFooterDisplayed(linkName, sequenceNumber));
-    }
-*/
     /**
      * get owner organisation lookup modal complete content
      *
      * @return
      */
+
     public List<Elements> getCompleteContentForLookupModal() {
         return EyeThink.core().elementReference().listOfElements().of(By.xpath("//lightning-formatted-text[text()]"));
     }
@@ -1796,24 +1790,13 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean isExpectedLinkIsDisplayedInPageFooter(String footerLinkName) {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().isDisplayed(By.xpath("//span[contains(@class,'footer-links')]//a[contains(text(),'" + footerLinkName + "')]"))) {
+            if (EyeThink.core().is().isDisplayed(By.xpath("//a[contains(text(),'" + footerLinkName + "')]"))) {
                 flag = true;
             }
         } catch (Exception e) {
         }
         return flag;
     }
-
-   /* *//**
-     * @return true if footer link is displayed on expected position
-     *//*
-    private boolean isFooterLinkSequenceAtFooterDisplayed(String linkName, int sequenceNumber) {
-        if (EyeThink.core().elementReference().listOfElements().of(allFooterLinksItems).get(sequenceNumber).getText().contains(linkName)) {
-            System.out.println("=========" +EyeThink.core().elementReference().listOfElements().of(allFooterLinksItems).get(sequenceNumber).getText());
-            return true;
-        } else
-            return false;
-    }*/
 
      /**
       *  return true if specified Approver is displayed inside chevron
