@@ -168,7 +168,7 @@ public class PhaseConfigPage extends GovGrantsManager {
      * @param acronym = program or announcement or related entity
      */
     public void assertThatObjectIsNotShowingInRecentlyViewedSideBarOption(String acronym) {
-        Assert.assertTrue(isObjectNotShowingInRecentlyViewedSideBar(acronym));
+        Assert.assertFalse(isObjectNotShowingInRecentlyViewedSideBar(acronym));
     }
 
     /**
@@ -178,7 +178,7 @@ public class PhaseConfigPage extends GovGrantsManager {
      * @param acronym = program related entity
      */
     public void assertThatObjectIsShowingInRecentlyViewedSideBarOption(String acronym) {
-        Assert.assertFalse(isObjectNotShowingInRecentlyViewedSideBar(acronym));
+        Assert.assertTrue(isObjectNotShowingInRecentlyViewedSideBar(acronym));
     }
 
     /**
@@ -439,12 +439,12 @@ public class PhaseConfigPage extends GovGrantsManager {
      * @return true or false
      */
     private boolean isObjectNotShowingInRecentlyViewedSideBar(String acronym) {
-        boolean flag = true;
+        boolean flag = false;
         try {
             if (EyeThink.core().is().isDisplayed(By.xpath(
                     ".//span[text()='Recently Viewed']/parent::a/following-sibling::ul//li//span[starts-with(text(),'"
                             + acronym + "')]"))) {
-                flag = false;
+                flag = true;
             }
         } catch (Exception e) {
         }

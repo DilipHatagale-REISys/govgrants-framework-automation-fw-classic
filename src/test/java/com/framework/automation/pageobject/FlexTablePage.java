@@ -164,6 +164,20 @@ public class FlexTablePage extends GovGrantsManager {
         }
     }
 
+
+    /**
+     * assert if specific action icon is not displayed for attachment flex table only
+     *
+     * @param iconName
+     * @param uniqueColumnValue
+     */
+    public void assertActionIconNotDisplayedInsideAttachmentflexTable(String iconName, String uniqueColumnValue) {
+        try {
+            Assert.assertFalse(EyeThink.core().is().isDisplayed(getTableActionIconForAttachmentOnly(iconName ,uniqueColumnValue )));
+        } catch (Exception e) {
+        }
+    }
+
     /**
      * access last row label name
      *
@@ -468,15 +482,15 @@ public class FlexTablePage extends GovGrantsManager {
      * @param fieldValue
      * @param tableId
      */
-    public void assertFlexTableFieldValueDisplayed(String usuage, String fieldValue , String tableId) {
+    public void assertFlexTableFieldValueDisplayed(String usuage, String fieldValue, String tableId) {
         if (usuage.equalsIgnoreCase("see")) {
-            Assert.assertTrue(isSpecificfieldValueDisplayed(fieldValue , tableId));
+            Assert.assertTrue(isSpecificfieldValueDisplayed(fieldValue, tableId));
         } else if (usuage.equalsIgnoreCase("do not see")) {
-            Assert.assertFalse(isSpecificfieldValueDisplayed(fieldValue , tableId));
+            Assert.assertFalse(isSpecificfieldValueDisplayed(fieldValue, tableId));
         } else if (usuage.equalsIgnoreCase("softly see")) {
-            EyeThink.core().assertion().assertThat(isSpecificfieldValueDisplayed(fieldValue , tableId)).isTrue();
+            EyeThink.core().assertion().assertThat(isSpecificfieldValueDisplayed(fieldValue, tableId)).isTrue();
         } else if (usuage.equalsIgnoreCase("softly do not see")) {
-            EyeThink.core().assertion().assertThat(isSpecificfieldValueDisplayed(fieldValue , tableId)).isFalse();
+            EyeThink.core().assertion().assertThat(isSpecificfieldValueDisplayed(fieldValue, tableId)).isFalse();
         }
     }
 
@@ -1003,6 +1017,21 @@ public class FlexTablePage extends GovGrantsManager {
         String[] part = str.split("(?<=\\D)(?=\\d)");
         try {
             if (part[0].contains(currencyUnit)) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    /**
+     * @return true if Attachment table actions are hidden
+     */
+    public Boolean getTableActionIconForAttachmentOnly(String iconName, String uniqueColumnValues) {
+        boolean flag = false;
+        WebElement desiredAction = EyeThink.core().elementReference().of(By.xpath("//span[text()='"+uniqueColumnValues+"']/../following-sibling::td/a[@title='"+iconName+"']"));
+        try {
+            if (desiredAction.getAttribute("Class").contains("ng-hide")) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {

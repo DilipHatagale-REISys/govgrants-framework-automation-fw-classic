@@ -1423,7 +1423,7 @@ Feature: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside flex table
+    Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside Attachment flex table
 
     Examples:
       | value                          |
@@ -1444,7 +1444,7 @@ Feature: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside flex table
+    Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside Attachment flex table
 
     Examples:
       | value                          |
@@ -1465,7 +1465,7 @@ Feature: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside flex table
+    Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside Attachment flex table
 
     Examples:
       | value                          |
@@ -1490,7 +1490,7 @@ Feature: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside flex table
+    Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside Attachment flex table
 
     Examples:
       | value                          |
@@ -1515,7 +1515,7 @@ Feature: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside flex table
+    Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside Attachment flex table
 
     Examples:
       | value                          |
@@ -1553,7 +1553,7 @@ Feature: Page Layout Component Scenarios
     When I perform quick search for "Test Demo"
     When I click on "View Program Details" icon for "Test Demo" inside table
     When I navigate to "Attachments" sub tab
-    Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside flex table
+    Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside Attachment flex table
 
     Examples:
       | value                          |

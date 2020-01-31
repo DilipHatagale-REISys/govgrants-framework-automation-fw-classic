@@ -563,8 +563,8 @@ public class PageLayoutPage extends GovGrantsManager {
     /**
      * return true if Logout Page is Displayed after session expiry
      */
-    public void assertLogoutPageIsDisplayed(String logoutURL) {
-        Assert.assertTrue(IsLogoutPageDisplayed(logoutURL));
+    public void assertLogoutPageIsDisplayed(String usage, String logoutURL) {
+        Assert.assertTrue(IsLogoutPageDisplayed(usage, logoutURL));
     }
 
     /**
@@ -621,7 +621,6 @@ public class PageLayoutPage extends GovGrantsManager {
                 Assert.assertTrue(EyeThink.core().is().isDisplayed(sessionTimeoutDialogboxField));
             }
         }
-
     }
 
     /**
@@ -966,10 +965,18 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * return true if expected link is present on page footer
+     */
+    public void assertFooterLinkIsPresent(String footerLinkName) {
+        Assert.assertTrue(isExpectedLinkIsDisplayedInPageFooter(footerLinkName));
+    }
+
+    /**
      * get owner organisation lookup modal complete content
      *
      * @return
      */
+
     public List<Elements> getCompleteContentForLookupModal() {
         return EyeThink.core().elementReference().listOfElements().of(By.xpath("//lightning-formatted-text[text()]"));
     }
@@ -1659,13 +1666,20 @@ public class PageLayoutPage extends GovGrantsManager {
      *
      * @return
      */
-    private boolean IsLogoutPageDisplayed(String logoutURL) {
+    private boolean IsLogoutPageDisplayed(String usage, String logoutURL) {
         boolean flag = false;
-        String ele = EyeThink.core().get().currentURL();
-        String[] d = ele.split("/", 4);
-        String d1 = d[0] + "/" + d[1] + "/" + d[2];
-        if (d1.equalsIgnoreCase(logoutURL)) {
-            flag = true;
+        if (!usage.equalsIgnoreCase("complete")) {
+            String ele = EyeThink.core().get().currentURL();
+            String[] d = ele.split("/", 4);
+            String d1 = d[0] + "/" + d[1] + "/" + d[2];
+            if (d1.equalsIgnoreCase(logoutURL)) {
+                flag = true;
+            }
+        } else {
+            String ele = EyeThink.core().get().currentURL();
+            if (ele.equalsIgnoreCase(logoutURL)) {
+                flag = true;
+            }
         }
         return flag;
     }
@@ -1766,7 +1780,21 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
-     *return true if specified Approver is displayed inside chevron
+     * @return true if expected footer link is displayed
+     */
+    private boolean isExpectedLinkIsDisplayedInPageFooter(String footerLinkName) {
+        boolean flag = false;
+        try {
+            if (EyeThink.core().is().isDisplayed(By.xpath("//a[contains(text(),'" + footerLinkName + "')]"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if specified Approver is displayed inside chevron
      */
     private boolean isUserDisplayedInsideChevron(String approverTitle, String approverName) {
         boolean flag = false;

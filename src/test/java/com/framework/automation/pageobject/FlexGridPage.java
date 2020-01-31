@@ -486,14 +486,13 @@ public class FlexGridPage extends GovGrantsManager {
      */
     private Boolean isCurrencyUnitDisplaysInTotalAmountAtMEGrid(String currencyUnit, String rowLabel, String tableID) {
         boolean flag = false;
-        String str = EyeThink.core().get().text(By.xpath("//div[@id='"+tableID+"']//table//tr//td//span[text()='"+rowLabel+"']/ancestor::td/following-sibling::td//b/span | //div[@id='"+ tableID +"']//table//td//span/b[text()='"+rowLabel+"']/ancestor::td/following-sibling::td//b/span"));
+        String str = EyeThink.core().get().text(By.xpath("//div[@id='" + tableID + "']//table//tr//td//span[text()='" + rowLabel + "']/ancestor::td/following-sibling::td//b/span | //div[@id='" + tableID + "']//table//td//span/b[text()='" + rowLabel + "']/ancestor::td/following-sibling::td//b/span"));
         String[] part = str.split("(?<=\\D)(?=\\d)");
         try {
             if (part[0].contains(currencyUnit)) {
                 flag = true;
             }
-        }
-        catch (org.openqa.selenium.NoSuchElementException e) {
+        } catch (org.openqa.selenium.NoSuchElementException e) {
         }
         return flag;
     }
