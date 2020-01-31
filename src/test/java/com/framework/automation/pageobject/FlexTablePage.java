@@ -159,7 +159,20 @@ public class FlexTablePage extends GovGrantsManager {
      */
     public void assertActionIconNotDisplayedInsideflexTable(String iconName, String uniqueColumnValue) {
         try {
-            //Assert.assertFalse(EyeThink.core().is().isDisplayed(EyeThink.saas().flexTable().getTableActionIconWithoutTableId(iconName, uniqueColumnValue)));
+            Assert.assertFalse(EyeThink.core().is().isDisplayed(EyeThink.saas().flexTable().getTableActionIconWithoutTableId(iconName, uniqueColumnValue)));
+        } catch (Exception e) {
+        }
+    }
+
+
+    /**
+     * assert if specific action icon is not displayed for attachment flex table only
+     *
+     * @param iconName
+     * @param uniqueColumnValue
+     */
+    public void assertActionIconNotDisplayedInsideAttachmentflexTable(String iconName, String uniqueColumnValue) {
+        try {
             Assert.assertFalse(EyeThink.core().is().isDisplayed(getTableActionIconForAttachmentOnly(iconName ,uniqueColumnValue )));
         } catch (Exception e) {
         }

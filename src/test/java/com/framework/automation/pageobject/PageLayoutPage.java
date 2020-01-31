@@ -20,7 +20,7 @@ public class PageLayoutPage extends GovGrantsManager {
             addButtonUnderAttachments, selectTypeDropdown, addAttachmentIframe, lookupSearchInputBox,
             lookupSearchButton, ownerOrganizationModalTitle, completeTableRowInsideLookupModal,
             manageAttachmentInsidePageBlockDetail, manageAttachmentIframe, editActionModalIframe, pageLayoutButton,
-            editAttachmentDescription, editAttachmentSaveButton, textInsideMiniPageLayout , allFooterLinksItems;
+            editAttachmentDescription, editAttachmentSaveButton, textInsideMiniPageLayout;
 
     /**
      * Constructor to handle dependency injection and framework library
@@ -52,7 +52,6 @@ public class PageLayoutPage extends GovGrantsManager {
         editAttachmentDescription = By.xpath("//div[@id='modaltemp']//textarea");
         editAttachmentSaveButton = By.xpath("//div[@id='modaltemp']//input[@type='submit' or @value='Save and Close Modal']");
         textInsideMiniPageLayout = By.xpath("//div[@class='tooltipster-base tooltipster-shadow tooltipster-fade tooltipster-fade-show']//div[@class='tooltipster-content']");
-        allFooterLinksItems = By.xpath("//span[@class='footer-links ']//a");
     }
 
     /******* "Key Methods with complete functionality - public" *****************/
@@ -622,7 +621,6 @@ public class PageLayoutPage extends GovGrantsManager {
                 Assert.assertTrue(EyeThink.core().is().isDisplayed(sessionTimeoutDialogboxField));
             }
         }
-
     }
 
     /**
@@ -945,7 +943,6 @@ public class PageLayoutPage extends GovGrantsManager {
     /**
      * click on footer links present at bottom of any page
      */
-    //public void clickOnAnyFooterLinks(String footerLinks) {
     public void clickOnAnyFooterLinks(String footerLinks) {
         EyeThink.core().click().on(By.xpath("//span[contains(@class,'footer-links')]//a[contains(text(),'" + footerLinks + "')]"));
     }
@@ -1669,20 +1666,18 @@ public class PageLayoutPage extends GovGrantsManager {
      *
      * @return
      */
-    private boolean IsLogoutPageDisplayed(String usage , String logoutURL) {
+    private boolean IsLogoutPageDisplayed(String usage, String logoutURL) {
         boolean flag = false;
-        if(!usage.equalsIgnoreCase("complete")) {
+        if (!usage.equalsIgnoreCase("complete")) {
             String ele = EyeThink.core().get().currentURL();
             String[] d = ele.split("/", 4);
             String d1 = d[0] + "/" + d[1] + "/" + d[2];
             if (d1.equalsIgnoreCase(logoutURL)) {
                 flag = true;
             }
-        }
-        else{
+        } else {
             String ele = EyeThink.core().get().currentURL();
             if (ele.equalsIgnoreCase(logoutURL)) {
-                System.out.println("=========" + ele);
                 flag = true;
             }
         }
@@ -1798,8 +1793,8 @@ public class PageLayoutPage extends GovGrantsManager {
         return flag;
     }
 
-     /**
-      *  return true if specified Approver is displayed inside chevron
+    /**
+     * return true if specified Approver is displayed inside chevron
      */
     private boolean isUserDisplayedInsideChevron(String approverTitle, String approverName) {
         boolean flag = false;

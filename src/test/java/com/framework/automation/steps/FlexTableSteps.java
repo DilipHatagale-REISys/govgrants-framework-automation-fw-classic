@@ -258,4 +258,9 @@ public class FlexTableSteps {
     public void assertCurrencyUnitInFlexTableTotalAmount(String currencyUnit) {
         flexTablePage.assertFlexTabelCurrencyUnitInTotalAmount(currencyUnit);
     }
+
+    @Then("^I see \"([^\"]*)\" icon for \"([^\"]*)\" is not displayed inside Attachment flex table$")
+    public void assertActionIconNotDisplayedInsideAttachmentTable(String iconName, String uniqueColumnValue) {
+        flexTablePage.assertActionIconNotDisplayedInsideAttachmentflexTable(iconName, uniqueColumnValue);
+    }
 }

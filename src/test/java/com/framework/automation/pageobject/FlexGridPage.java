@@ -412,16 +412,13 @@ public class FlexGridPage extends GovGrantsManager {
      * @return specific column values inside table while passing column name for MEGrid
      */
     private List<Elements> getTableSpecificColumnValuesForMEGrid(String text, String tableId) {
-       // WebElement row = EyeThink.core().elementReference().of(By.xpath("//div[@id='" + tableId + "']//table//tbody[contains(@class,'tbody-no-border-top')]//span[text()='BP-01']/ancestor::tr[@class='table-striped']/following-sibling::tr//tbody//tr"));
-        WebElement row = EyeThink.core().elementReference().of(By.xpath("//div[@id='" + tableId + "']//table//tbody[contains(@class,'tbody-no-border-top')]//span[text()='BP-01']/ancestor::tr/following-sibling::tr//tbody//tr"));
+        WebElement row = EyeThink.core().elementReference().of(By.xpath("//div[@id='" + tableId + "']//table//tbody[contains(@class,'tbody-no-border-top')]//span[text()='BP-01']/ancestor::tr[@class='table-striped']/following-sibling::tr//tbody//tr"));
         Set<String> headerTitles = new HashSet<String>();
         headerTitles.add(text);
         Map<String, Integer> columnMapping = EyeThink.saas().flexTable().constructColumnMapping(row, headerTitles);
         System.out.println("The column number was: " + columnMapping.get(text));
-       /* By columnSelector = By
-                .xpath("//div[@id='" + tableId + "']//table//tbody[contains(@class,'tbody-no-border-top')]//span[text()='BP-01']/ancestor::tr[@class='table-striped']/following-sibling::tr//tbody//tr[not(contains(@class,'flexTableHeader'))]//td[" + columnMapping.get(text) + "]//a");*/
         By columnSelector = By
-                .xpath("//div[@id='" + tableId + "']//table//tbody[contains(@class,'tbody-no-border-top')]//span[text()='BP-01']/ancestor::tr/following-sibling::tr//tbody//tr[not(contains(@class,'flexTableHeader'))]//td[" + columnMapping.get(text) + "]//a");
+                .xpath("//div[@id='" + tableId + "']//table//tbody[contains(@class,'tbody-no-border-top')]//span[text()='BP-01']/ancestor::tr[@class='table-striped']/following-sibling::tr//tbody//tr[not(contains(@class,'flexTableHeader'))]//td[" + columnMapping.get(text) + "]//a");
         return EyeThink.core().elementReference().listOfElements().of(columnSelector);
     }
 
@@ -489,14 +486,13 @@ public class FlexGridPage extends GovGrantsManager {
      */
     private Boolean isCurrencyUnitDisplaysInTotalAmountAtMEGrid(String currencyUnit, String rowLabel, String tableID) {
         boolean flag = false;
-        String str = EyeThink.core().get().text(By.xpath("//div[@id='"+tableID+"']//table//tr//td//span[text()='"+rowLabel+"']/ancestor::td/following-sibling::td//b/span | //div[@id='"+ tableID +"']//table//td//span/b[text()='"+rowLabel+"']/ancestor::td/following-sibling::td//b/span"));
+        String str = EyeThink.core().get().text(By.xpath("//div[@id='" + tableID + "']//table//tr//td//span[text()='" + rowLabel + "']/ancestor::td/following-sibling::td//b/span | //div[@id='" + tableID + "']//table//td//span/b[text()='" + rowLabel + "']/ancestor::td/following-sibling::td//b/span"));
         String[] part = str.split("(?<=\\D)(?=\\d)");
         try {
             if (part[0].contains(currencyUnit)) {
                 flag = true;
             }
-        }
-        catch (org.openqa.selenium.NoSuchElementException e) {
+        } catch (org.openqa.selenium.NoSuchElementException e) {
         }
         return flag;
     }

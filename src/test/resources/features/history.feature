@@ -190,7 +190,7 @@ Feature: history Component Scenarios
     And I download the file
     Then I see "Entity Name" on page "1" of "govgrants" pdf file
 
-  @69546   @snapshotLinkShouldBeShownUnderHistoryTableByClickOnTakeASnapshotOption @wip @checkAssertSnapshotStepWithMonu
+  @69546   @snapshotLinkShouldBeShownUnderHistoryTableByClickOnTakeASnapshotOption @checkwithDev
   Scenario: validate by click on Take a Snapshot option a snapshot PDF is getting downloaded
     Given I have "timeZoneLocale" configuration as below:
       | locale | timeZone         |
@@ -199,7 +199,6 @@ Feature: history Component Scenarios
     And I update the locale and timezone related changes:
       | locale | timeZone     |
       | en_US  | Asia/Kolkata |
-    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Test Program specific for History"
