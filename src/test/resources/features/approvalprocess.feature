@@ -25,7 +25,8 @@ Feature: Approval Process Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    Then I see "Approve" is disabled
+    Then I cannot see the radio button "Approve" in the approval decision
+    And I collect all the soft asserts
 
   @34307    @changeApproveOptionSequence-Programs @smoke
   Scenario: Changing sequence of Approve option from configuration and validating its sequence in pending tasks approval decision
@@ -49,7 +50,9 @@ Feature: Approval Process Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    Then i see "Approve" shown at number "3" in Approve Decision panel
+    Then I see only the following ordered radio buttons in the approval decision :
+      | Reject | Forward | Send Back | Approve |
+    And I collect all the soft asserts
 
   @34308    @mandatoryCommentsReqForApproveAction-Programs
   Scenario: Setup comments requried as mandatory for approval from configuration and in pending tasks approval decision
@@ -73,9 +76,10 @@ Feature: Approval Process Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I select "Approve" from approval decision panel
-    And I click submit
-    Then I see "Comments are Required." error is displayed
+    When I select radio button "Approve" in the approval decision
+    And I submit the approval in the approval decision
+    Then I can see the message "Comments are Required." in the approval decision
+    And I collect all the soft asserts
 
   @34306    @labelChangeOfApprovalDecision-Programs
   Scenario: Changing label of approve radio button text from configuration and validating its changed label in pending tasks approval decision
@@ -99,7 +103,8 @@ Feature: Approval Process Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    Then I see "Approved" inside approval decision box
+    Then I can see the radio button "Approved" in the approval decision
+    And I collect all the soft asserts
 
   @34309    @confirmationMessageBoxPopupForApproveApprovalDecisionAction-Programs
   Scenario: Setup confirmation message inside confirmation message box from configuration and validating it in pending tasks approval decision
@@ -124,9 +129,10 @@ Feature: Approval Process Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I select "Approve" from approval decision panel
-    When I enter Approval comment
-    And I click submit
+    And I pause execution
+    When I select radio button "Approve" in the approval decision
+    And I enter comment "Automation testing" in the approval decision
+    And I submit the approval in the approval decision without processing
     Then I see confirmation box with body "Confirmation box for automation" is displayed
 
   @34310    @filterCriteriaForUserReassignForApprovalDecisionAction-Programs
@@ -151,9 +157,9 @@ Feature: Approval Process Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I select "Reassign" from approval decision panel
-    When I click select dropdown
-    Then I see "Allen PM" inside selectbox
+    When I select radio button "Reassign" in the approval decision
+    Then I can see user "Allen PM" in the user lookup in the approval decision
+    And I collect all the soft asserts
     Examples:
       | newFilterCriteriaValue |
       | Name='Allen PM'        |
@@ -234,9 +240,9 @@ Feature: Approval Process Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I select "Approve" from approval decision panel
-    When I enter Approval comment
-    And I click submit
+    When I select radio button "Approve" in the approval decision
+    When I enter comment "Automation testing" in the approval decision
+    And I submit the approval in the approval decision without processing
     Then I see confirmation box with body "Confirmation box for automation" is displayed
 
   @34317    @taskAssignmentNotificationForProgramSubmissionThroughMail-Programs
@@ -318,9 +324,9 @@ Feature: Approval Process Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I select "Disapprove" from approval decision panel
-    When I enter Approval comment
-    And I click submit
+    When I select radio button "Disapprove" in the approval decision
+    And I enter comment "Automation testing" in the approval decision
+    And I submit the approval in the approval decision without processing
     Then I see confirmation box with body "Reject Confirmation box for automation" is displayed
 
   @37431    @reassignConfirmationMessageFieldAtApprovalProcess-Programs
@@ -348,10 +354,9 @@ Feature: Approval Process Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I select "Reassign" from approval decision panel
-    When I click select dropdown
-    When I select specific user "Allen PM"
-    And I click submit
+    When I select radio button "Reassign" in the approval decision
+    And I select user "Allen PM" in the approval decision
+    And I submit the approval in the approval decision without processing
     Then I see confirmation box with body "Reassign Confirmation box for automation" is displayed
 
   @37433    @sendToOwnerConfirmationMessageFieldAtApprovalProcess-Programs
@@ -378,9 +383,9 @@ Feature: Approval Process Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I select "Send to Owner" from approval decision panel
-    When I enter Approval comment
-    And I click submit
+    When I select radio button "Send to Owner" in the approval decision
+    When I enter comment "Automation testing" in the approval decision
+    And I submit the approval in the approval decision without processing
     Then I see confirmation box with body "Send to Owner Confirmation box for automation" is displayed
 
   @37506    @confirmationMessageBoxPopupForRejectApprovalDecisionAction-Programs
@@ -407,9 +412,9 @@ Feature: Approval Process Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I select "Disapprove" from approval decision panel
-    When I enter Approval comment
-    And I click submit
+    When I select radio button "Disapprove" in the approval decision
+    When I enter comment "Automation testing" in the approval decision
+    And I submit the approval in the approval decision without processing
     Then I see confirmation box with body "Test Automation for Rejection" is displayed
 
   @37523    @confirmationMessageBoxPopupForReassignApprovalDecisionAction-Programs
@@ -437,10 +442,10 @@ Feature: Approval Process Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I select "Reassign" from approval decision panel
-    When I click select dropdown
-    When I select specific user "Allen PM"
-    And I click submit
+    When I select radio button "Reassign" in the approval decision
+    And I select user "Allen PM" in the approval decision
+    And I submit the approval in the approval decision
+    And I submit the approval in the approval decision without processing
     Then I see confirmation box with body "Test Automation for Forward" is displayed
 
   @37539    @commentsFieldAPINameFieldForApproveAction-Programs
@@ -497,9 +502,9 @@ Feature: Approval Process Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I select "Send to Owner" from approval decision panel
-    When I enter Approval comment
-    And I click submit
+    When I select radio button "Send to Owner" in the approval decision
+    When I enter comment "Automation testing" in the approval decision
+    And I submit the approval in the approval decision without processing
     Then I see confirmation box with body "Test Automation for Sendback" is displayed
 
   @37540    @viewPageProfileFieldForApprovalProcess-Programs @AutomationNotRequired @wip
@@ -618,10 +623,7 @@ Feature: Approval Process Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I select "Reassign" from approval decision panel
-    When I click select dropdown
-    When I select specific user "Allen PM"
-    And I click submit
+    When I "Reassign" to user "Allen PM" in the approval decision
     When I re-login to "As an Administrator" app as "Automation" user on "default" portal
     And I navigate to "Operate" tab
     When I navigate to "Email Logs" content inside "Logs" subheader on left panel
@@ -711,9 +713,10 @@ Feature: Approval Process Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I select "Reassign" from approval decision panel
-    And I click submit
-    Then I see "Comments are Required." error is displayed
+    When I select radio button "Reassign" in the approval decision
+    And I submit the approval in the approval decision
+    Then I can see the message "Comments are Required." in the approval decision
+    And I collect all the soft asserts
 
   @41059    @commentsFieldAPINameFieldForReassignAction-Programs
   Scenario: Setup comments as FederalProgramCFDA__c inside comments field API field using Approval decision action config from config and validating it at program detail page
@@ -767,7 +770,8 @@ Feature: Approval Process Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    Then I see "Approve" is disabled
+    Then I cannot see the radio button "Approve" in the approval decision
+    And I collect all the soft asserts
 
   @41064    @hideDisapproveOptionFromHideExpressionJSONField-Programs
   Scenario: Hiding reject option from configuration and validating its content in pending tasks approval decision
@@ -791,7 +795,8 @@ Feature: Approval Process Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    Then I see "Disapprove" is disabled
+    Then I cannot see the radio button "Disapprove" in the approval decision
+    And I collect all the soft asserts
 
   @41065    @hideReassignOptionFromHideExpressionJSONField-Programs
   Scenario: Hiding forward option from configuration and validating its content in pending tasks approval decision
@@ -815,7 +820,8 @@ Feature: Approval Process Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    Then I see "Reassign" is disabled
+    Then I cannot see the radio button "Reassign" in the approval decision
+    And I collect all the soft asserts
 
   @41067    @hideSendToOwnerOptionFromHideExpressionJSONField-Programs
   Scenario: Hiding send back option from configuration and validating its content in pending tasks approval decision
@@ -839,7 +845,8 @@ Feature: Approval Process Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    Then I see "Send to Owner" is disabled
+    Then I cannot see the radio button "Send to Owner" in the approval decision
+    And I collect all the soft asserts
 
   @41060    @validateCommentedTextInsideHistoryTabForReassignAction-Programs @smoke
   Scenario: Validating commented text inside history tab for reassign approval action at program detail page
@@ -859,11 +866,7 @@ Feature: Approval Process Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programForHistoryTabScenarios}"
     When I click on "Start" icon for "{Framework_recordUsed:programForHistoryTabScenarios}" inside table
-    When I select "Reassign" from approval decision panel
-    When I click select dropdown
-    When I select specific user "Allen PM"
-    When I enter Approval comment
-    And I click submit
+    When I "Reassign" to user "Allen PM" in the approval decision
     When I re-login to "As a Grantor" app as "Automation" user on "default" portal
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
