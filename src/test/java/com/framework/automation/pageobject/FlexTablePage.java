@@ -967,8 +967,14 @@ public class FlexTablePage extends GovGrantsManager {
     private boolean isExpectedRecordsDisplayedInsideTable(String flexTableHeader, String... recordsName) {
         Boolean isRecordsDisplayed = false;
         for (String expectedRecords : recordsName) {
-            EyeThink.core().is().isDisplayed(By.xpath("//div[@id='myTabbedContent']//a[@title='" + flexTableHeader + "']/../../../following-sibling::div//tbody//td//span[text()='" + expectedRecords + "'] "));
-            isRecordsDisplayed = true;
+            if (expectedRecords.equalsIgnoreCase("currentdate")) {
+                expectedRecords = EyeThink.core().get().currentDateTimeInDesiredFormat(DateTimeFormatter.ofPattern("M/d/yyyy hh:mm a"));
+                EyeThink.core().is().isDisplayed(By.xpath("//div[@id='myTabbedContent']//a[@title='" + flexTableHeader + "']/../../../following-sibling::div//tbody//td//span[text()='" + expectedRecords + "'] "));
+                isRecordsDisplayed = true;
+            } else {
+                EyeThink.core().is().isDisplayed(By.xpath("//div[@id='myTabbedContent']//a[@title='" + flexTableHeader + "']/../../../following-sibling::div//tbody//td//span[text()='" + expectedRecords + "'] "));
+                isRecordsDisplayed = true;
+            }
         }
         return isRecordsDisplayed;
     }

@@ -183,6 +183,11 @@ public class ApiUtilities {
                         + String.valueOf(SObjectAPIs.GNT__PageLayoutConfig__r) + ".Name=" + "'" + ComponentCoreFieldName
                         + "' and" + " " + "Name=" + "'" + value + "'";
                 break;
+            case "SOBJECT AUTO SNAPSHOT":
+                filterClause = fieldName + "=" + "'" + value + "'" + " and" + " "
+                        + String.valueOf(SObjectAPIs.GNT__SObject__r) + ".Name=" + "'" + ComponentCoreFieldName
+                        + "'";
+                break;
         }
         return filterClause;
     }
