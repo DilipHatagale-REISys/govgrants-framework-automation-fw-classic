@@ -106,6 +106,12 @@ public class SetUpConfiguration {
             case "UID CONFIG":
                 stringPayload = new PageBlock().setUid(fieldLabel, value, filterClause);
                 break;
+            case "AUTO SNAPSHOT":
+                stringPayload = new SnapShot().setSobjectAutoSnapshotConfig(fieldLabel, value, filterClause);
+                break;
+            case "AUTO SNAPSHOT ON APPROVAL":
+                stringPayload = new SnapShot().setApprovalDecisionAutoSnapshotConfig(fieldLabel, value, filterClause);
+                break;
         }
         System.out.println("final payload is " + stringPayload);
         return stringPayload;
