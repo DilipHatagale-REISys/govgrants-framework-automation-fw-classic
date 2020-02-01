@@ -88,9 +88,7 @@ Feature: Snapshot Config Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programForHistoryTabScenarios}"
     When I click on "Start" icon for "{Framework_recordUsed:programForHistoryTabScenarios}" inside table
-    When I select "Approve" from approval decision panel
-    When I enter Approval comment
-    And I click submit
+    When I "Approve" in the approval decision
     When I navigate to "History" sub tab
     Then I see table with header "Snapshot History" contains records "currentdate"
 
@@ -120,9 +118,7 @@ Feature: Snapshot Config Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programForHistoryTabScenarios}"
     When I click on "Start" icon for "{Framework_recordUsed:programForHistoryTabScenarios}" inside table
-    When I select "Approve" from approval decision panel
-    When I enter Approval comment
-    And I click submit
+    When I "Approve" in the approval decision
     When I navigate to "History" sub tab
     Then I see table with header "Snapshot History" contains records "TestAutomationSnapshotOnApproval"
 
@@ -148,9 +144,7 @@ Feature: Snapshot Config Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programForHistoryTabScenarios}"
     When I click on "Start" icon for "{Framework_recordUsed:programForHistoryTabScenarios}" inside table
-    When I select "Disapprove" from approval decision panel
-    When I enter Approval comment
-    And I click submit
+    When I "Disapprove" in the approval decision
     When I navigate to "History" sub tab
     Then I see table with header "Snapshot History" contains records "currentdate"
 
@@ -176,10 +170,7 @@ Feature: Snapshot Config Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programForHistoryTabScenarios}"
     When I click on "Start" icon for "{Framework_recordUsed:programForHistoryTabScenarios}" inside table
-    When I select "Reassign" from approval decision panel
-    When I click select dropdown
-    When I select specific user "Allen PM"
-    And I click submit
+    When I "Reassign" to user "Allen PM" in the approval decision
     When I navigate to "History" sub tab
     Then I see table with header "Snapshot History" contains records "currentdate"
 
@@ -205,8 +196,6 @@ Feature: Snapshot Config Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programForHistoryTabScenarios}"
     When I click on "Start" icon for "{Framework_recordUsed:programForHistoryTabScenarios}" inside table
-    When I select "Send to Owner" from approval decision panel
-    When I enter Approval comment
-    And I click submit
+    When I "Send to Owner" in the approval decision
     When I navigate to "History" sub tab
     Then I see table with header "Snapshot History" contains records "currentdate"
