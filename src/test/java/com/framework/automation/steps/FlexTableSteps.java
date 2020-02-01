@@ -96,7 +96,7 @@ public class FlexTableSteps {
 
     @Then("^I (see|do not see|softly see|softly do not see) \"([^\"]*)\" value in flex table id \"([^\"]*)\"$")
     public void assertSpecificFieldValueDisplayed(String usuage, String fieldValue, String tableId) {
-        flexTablePage.assertFlexTableFieldValueDisplayed(usuage, fieldValue , tableId);
+        flexTablePage.assertFlexTableFieldValueDisplayed(usuage, fieldValue, tableId);
     }
 
     @Then("^I see new tab is opened$")
@@ -257,5 +257,10 @@ public class FlexTableSteps {
     @Then("^I see \"([^\"]*)\" is displayed under total amount in flex table$")
     public void assertCurrencyUnitInFlexTableTotalAmount(String currencyUnit) {
         flexTablePage.assertFlexTabelCurrencyUnitInTotalAmount(currencyUnit);
+    }
+
+    @Then("^I see \"([^\"]*)\" icon for \"([^\"]*)\" is not displayed inside Attachment flex table$")
+    public void assertActionIconNotDisplayedInsideAttachmentTable(String iconName, String uniqueColumnValue) {
+        flexTablePage.assertActionIconNotDisplayedInsideAttachmentflexTable(iconName, uniqueColumnValue);
     }
 }

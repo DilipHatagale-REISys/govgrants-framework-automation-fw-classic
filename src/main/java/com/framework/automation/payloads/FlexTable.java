@@ -323,6 +323,12 @@ public class FlexTable {
                                 .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
                         String.valueOf(SObjectAPIs.GNT__ShowHeaderPanel__c), value);
                 break;
+            case "ENABLE DATA IMPORT/EXPORT":
+                finalPayload = String.format(
+                        payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), apiUtilities
+                                .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__EnableDataImportExport__c), value);
+                break;
         }
         System.out.println(finalPayload);
         return finalPayload;

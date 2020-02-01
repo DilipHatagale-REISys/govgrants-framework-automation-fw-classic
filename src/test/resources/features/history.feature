@@ -165,6 +165,36 @@ Feature: history Component Scenarios
     Then I softly see column "Overall Status" inside row "1" at position "1" and column at position "2" contains text "Pending"
     Then I collect all the soft asserts
 
+  @69540   @VerifyDownloadAsPDFForFieldHistoryTable @wip
+  Scenario: Validate by click on Download As PDF option a PDF is getting downloaded in history table
+    When I login as "Automation" user
+    When I navigate to "Planning" tab
+    When I perform quick search for "Test Program specific for History"
+    When I click on "View Program Details" icon for "Test Program specific for History" inside table
+    When I navigate to "History" sub tab
+    When I select "Program" from dropdown at History Table
+    And I select "Download as PDF" from parallel lines dropdown of "Field History"
+    And I download the file
+    Then I see "Entity Name" on page "1" of "govgrants" pdf file
+
+  @69546   @snapshotLinkShouldBeShownUnderHistoryTableByClickOnTakeASnapshotOption @checkwithDev
+  Scenario: validate by click on Take a Snapshot option a snapshot PDF is getting downloaded
+    Given I have "timeZoneLocale" configuration as below:
+      | locale | timeZone         |
+      | en_US  | America/New_York |
+    When I login as "Automation" user
+    And I update the locale and timezone related changes:
+      | locale | timeZone     |
+      | en_US  | Asia/Kolkata |
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I perform quick search for "Test Program specific for History"
+    When I click on "View Program Details" icon for "Test Program specific for History" inside table
+    When I click on "Menu" in the page details
+    And I select "Take Snapshot" from dropdown
+    When I navigate to "History" sub tab
+    Then I see take snap shot getting saved with "Todays Date"
+
   @69959   @VerifyActualApproverIsDisplayedInApprovalHistoryAfterRecordReassignToUser
   Scenario: Validating Over all status as Pending inside Approval history table after record submission as submit for apprval
     Given I setup test configuration as below:

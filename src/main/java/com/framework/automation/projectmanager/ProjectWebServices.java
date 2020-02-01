@@ -162,7 +162,6 @@ public class ProjectWebServices {
         EyeThink.core().apiCall().putCall(null, jArray.toString(), finalEndPoint, null, null, tokenString);
     }
 
-
     ////////////// Setup Default Config//////////////
 
     /**
