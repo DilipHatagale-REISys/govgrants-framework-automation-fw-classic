@@ -1,4 +1,4 @@
-@history -component @regression
+@history-component @regression
 Feature: history Component Scenarios
   Test all history Component based scenarios
   As a configuration manager i make different changes related to flow and will validate them in history component.
@@ -49,12 +49,7 @@ Feature: history Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programForHistoryTabScenarios}"
     When I click on "Start" icon for "{Framework_recordUsed:programForHistoryTabScenarios}" inside table
-    When I select "Reassign" from approval decision panel
-    When I click select dropdown
-    When I select specific user "Allen PM"
-    When I enter Approval comment
-    And I click submit
-    And I refresh the page
+    When I "Reassign" to user "Allen PM" in the approval decision
     When I navigate to "History" sub tab
     Then I softly see column "Assigned To" inside row "1" at position "2" and column at position "2" contains text "Automation PM"
     Then I softly see column "Actual Approver" inside row "1" at position "2" and column at position "3" contains text "Allen PM"
@@ -78,9 +73,7 @@ Feature: history Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programForHistoryTabScenarios}"
     When I click on "Start" icon for "{Framework_recordUsed:programForHistoryTabScenarios}" inside table
-    When I select "Approve" from approval decision panel
-    When I enter Approval comment
-    And I click submit
+    When I "Approve" in the approval decision
     When I navigate to "History" sub tab
     Then I softly see column "Status" inside row "1" at position "2" and column at position "5" contains text "Approved"
     Then I collect all the soft asserts
@@ -103,9 +96,7 @@ Feature: history Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programForHistoryTabScenarios}"
     When I click on "Start" icon for "{Framework_recordUsed:programForHistoryTabScenarios}" inside table
-    When I select "Disapprove" from approval decision panel
-    When I enter Approval comment
-    And I click submit
+    When I "Disapprove" in the approval decision
     When I navigate to "History" sub tab
     Then I softly see column "Status" inside row "1" at position "2" and column at position "5" contains text "Rejected"
     Then I collect all the soft asserts
@@ -128,13 +119,11 @@ Feature: history Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programForHistoryTabScenarios}"
     When I click on "Start" icon for "{Framework_recordUsed:programForHistoryTabScenarios}" inside table
-    When I select "Reassign" from approval decision panel
-    When I click select dropdown
-    When I select specific user "Allen PM"
-    And I click submit
+    When I "Reassign" to user "Allen PM" in the approval decision
     When I navigate to "History" sub tab
-    Then I softly see column "Status" inside row "1" at position "2" and column at position "5" contains text "Reassigned"
-    Then I collect all the soft asserts
+    Then I softly see column "Status" inside row "1" at position "2" and column at position "5" contains text "Pending"
+    And I softly see column "Status" inside row "1" at position "3" and column at position "5" contains text "Reassigned"
+    And I collect all the soft asserts
 
   @69945    @VerifyExpectedStatusIsDisplayedInApprovalHistoryAfterRecordSentBack
   Scenario: Validating status as SENT BACK inside Approval history table after approval of record
@@ -154,9 +143,7 @@ Feature: history Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programForHistoryTabScenarios}"
     When I click on "Start" icon for "{Framework_recordUsed:programForHistoryTabScenarios}" inside table
-    When I select "Send to Owner" from approval decision panel
-    When I enter Approval comment
-    And I click submit
+    When I "Send to Owner" in the approval decision
     When I navigate to "History" sub tab
     Then I softly see column "Status" inside row "1" at position "2" and column at position "5" contains text "Sent Back"
     Then I collect all the soft asserts
@@ -226,12 +213,7 @@ Feature: history Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programForHistoryTabScenarios}"
     When I click on "Start" icon for "{Framework_recordUsed:programForHistoryTabScenarios}" inside table
-    When I select "Reassign" from approval decision panel
-    When I click select dropdown
-    When I select specific user "Allen PM"
-    When I enter Approval comment
-    And I click submit
-    And I refresh the page
+    When I "Reassign" to user "Allen PM" in the approval decision
     When I navigate to "History" sub tab
     Then I softly see column "Actual Approver" inside row "1" at position "2" and column at position "3" contains text "Allen PM"
     Then I collect all the soft asserts

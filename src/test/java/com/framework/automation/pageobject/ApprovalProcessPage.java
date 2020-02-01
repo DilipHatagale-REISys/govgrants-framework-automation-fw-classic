@@ -13,108 +13,10 @@ import java.util.List;
 public class ApprovalProcessPage extends GovGrantsManager {
     /******* "Variables and Locators" *****************/
 
-    private final By approvalDecisionPannel, approvalCommentTextBox, submitButton, saveButton;
-
     /**
      * Constructor to handle dependency injection and framework library
      */
-    public ApprovalProcessPage() {
-        approvalDecisionPannel = By.cssSelector("div>span>input[name='myRadio']");
-        approvalCommentTextBox = By.xpath("//div[@id='ApprovalDecisionComponent']//textarea");
-        submitButton = By.xpath("//input[@type='button' and @value='Submit']");
-        saveButton = By.xpath("//div/span//input[@type='submit' and @value ='Save']");
-    }
-
-    /**
-     * click Submit
-     */
-    public void clickSubmitButton() {
-        EyeThink.core().click().on(submitButton);
-        EyeThink.core().WaitFor().makeThreadSleep(9000);
-    }
-
-    /**
-     * click approval start play button
-     *
-     * @param programSubject
-     * @throws EyeThinkBotsCustomException
-     */
-    public void clickStartApprovalButton(String programSubject) throws EyeThinkBotsCustomException {
-        EyeThink.saas().flexTable().clickTableActionIcons("Start", programSubject);
-    }
-
-    /**
-     * selects radio option from approval decision panel
-     *
-     * @param radioName
-     */
-    public void selectApproveDecisionOption(String radioName) {
-        EyeThink.core().click().on(getApprovalDecisionPannel(radioName));
-    }
-
-    /**
-     * Assert specific approce radio button is not displayed
-     *
-     * @param radioButtonName
-     */
-    public void assertRadioButtonNotDisplayed(String radioButtonName) {
-        Assert.assertTrue(isApprovalDecisionRadioButtonDisplayed(radioButtonName));
-    }
-
-    /**
-     * Assert specific approce radio button is displayed
-     *
-     * @param radioButtonName
-     */
-    public void assertRadioButtonDisplayed(String radioButtonName) {
-        Assert.assertFalse(isApprovalDecisionRadioButtonDisplayed(radioButtonName));
-    }
-
-    /**
-     * assert true if sequence is correct as per provided name
-     *
-     * @param radioName
-     * @param sequenceNumber
-     */
-    public void assertApprovalDecisoinRadioSequence(String radioName, int sequenceNumber) {
-        Assert.assertTrue(isApprovalDecisionRadioSequence(radioName, sequenceNumber));
-    }
-
-    /**
-     * assert if error is displayed on not entering text in decision box
-     *
-     * @param error
-     */
-    public void assertDecisionCommentsMandatory(String error) {
-        Assert.assertTrue(EyeThink.core().get().text(dangerAlert).equalsIgnoreCase(error)
-                || EyeThink.core().get().text(dangerAlert).contains(error));
-    }
-
-    /**
-     * Assert specific approve radio button text
-     *
-     * @param radioButtonName
-     */
-    public void assertApproveRadioButtonText(String radioButtonName) {
-        Assert.assertTrue(isApprovalRadioButtonTextChanged(radioButtonName));
-    }
-
-    /**
-     * Enter input value to program approval comment box.
-     */
-    public void programApprovalTextBox() {
-        EyeThink.core().elementReference().of(approvalCommentTextBox);
-        EyeThink.core().enterText().in(approvalCommentTextBox, defaultComment);
-    }
-
-    /**
-     * assert if user is displayed inside select dropdown list
-     *
-     * @param dropDownValue
-     */
-    public void assertUserInsideDropdown(String dropDownValue) {
-        Assert.assertTrue(isSpecificUserDisplayed(dropDownValue));
-    }
+    public ApprovalProcessPage() { }
 
     /**
      * assert true if specific subject is not displayed for approval
@@ -141,107 +43,9 @@ public class ApprovalProcessPage extends GovGrantsManager {
         Assert.assertTrue(isCommentTextDisplayed(commentText, User));
     }
 
-    /**
-     * click on Select dropdown inside Approval decision box
-     */
-    public void clickOnSelectDropdown() {
-        EyeThink.core().click().on(selectDropdown);
-    }
-
-    /**
-     * click on specific user from approval decision action inside approval decision
-     * panel
-     *
-     * @param dropDownValue
-     */
-    public void selectUserFromApproveDecisionOptionDropdown(String dropDownValue) {
-        EyeThink.core().click().on(getuserFromApprovalDecisionAction(dropDownValue));
-    }
-
-    /**
-     * get item from Approval Decision action item
-     *
-     * @param dropDownValue
-     * @return
-     */
-    public WebElement getuserFromApprovalDecisionAction(String dropDownValue) {
-        return EyeThink.core().elementReference().of(By.xpath("//div[@id='select2-drop']//ul//li/div[contains(text(),'" + dropDownValue + "')]"));
-    }
-
     /*********
      * "Local Methods with complete functionality - private"
      *****************/
-
-    /**
-     * get radio button specific to Approval decision
-     *
-     * @param radioButtonName
-     * @return
-     */
-    private WebElement getApprovalDecisionPannel(String radioButtonName) {
-        return EyeThink.core().elementReference().of(By.xpath("//div/span/input[@name='myRadio' and @value='" + radioButtonName + "']"));
-    }
-
-    /**
-     * is specific radio button displayed in approval decision
-     *
-     * @param radioButtonName
-     * @return
-     */
-    private boolean isApprovalDecisionRadioButtonDisplayed(String radioButtonName) {
-        boolean flag = true;
-        try {
-            if (EyeThink.core().is().isDisplayed(getApprovalDecisionPannel(radioButtonName))) {
-                flag = false;
-            }
-        } catch (org.openqa.selenium.NoSuchElementException e) {
-
-        }
-        return flag;
-    }
-
-    /**
-     * return true if specific radio name appears at a specific sequence
-     *
-     * @param radioName
-     * @param sequenceNumber
-     * @return
-     */
-    private Boolean isApprovalDecisionRadioSequence(String radioName, int sequenceNumber) {
-        if (EyeThink.core().elementReference().listOfElements().of(approvalDecisionPannel).get(sequenceNumber).getAttributes("value")
-                .contains(radioName)) {
-            return true;
-        } else
-            return false;
-    }
-
-    /**
-     * validate if radio button text is changed
-     *
-     * @param radioButtonName
-     * @return
-     */
-    private boolean isApprovalRadioButtonTextChanged(String radioButtonName) {
-        boolean flag = false;
-        try {
-            if (getApprovedText(radioButtonName).getAttribute("innerText").equals(radioButtonName)) {
-                flag = true;
-            }
-        } catch (org.openqa.selenium.NoSuchElementException e) {
-        }
-        return flag;
-    }
-
-    /**
-     * get specific Approved text
-     *
-     * @param radioButtonName
-     * @return
-     */
-    private WebElement getApprovedText(String radioButtonName) {
-        return EyeThink.core().elementReference().of(By.xpath(
-                "//div/span/input[@name='myRadio' and @value='Approve']//ancestor::span[@class='approval-actions ng-scope ng-binding']"));
-    }
 
     /**
      * get exact start button for pending tasks assigned to me
@@ -327,25 +131,6 @@ public class ApprovalProcessPage extends GovGrantsManager {
     private WebElement getCommentTextInsideHistoryTab(String commentText, String User) {
         return EyeThink.core().elementReference().of(By.xpath("//td/span[contains(text(),'" + User
                 + "')]/../following-sibling::td/span[contains(text(),'" + commentText + "')]"));
-    }
-
-    /**
-     * return true if specific user displayed
-     *
-     * @param dropDownValue
-     * @return
-     */
-    private boolean isSpecificUserDisplayed(String dropDownValue) {
-        boolean flag = false;
-        try {
-            if (getuserFromApprovalDecisionAction(dropDownValue).getAttribute("innerText")
-                    .equalsIgnoreCase(dropDownValue)) {
-                flag = true;
-            }
-        } catch (org.openqa.selenium.NoSuchElementException e) {
-
-        }
-        return flag;
     }
 
     /**

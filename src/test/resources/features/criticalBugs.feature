@@ -667,9 +667,7 @@ Feature: Logged Issues Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programForHistoryTabScenarios}"
     When I click on "Start" icon for "{Framework_recordUsed:programForHistoryTabScenarios}" inside table
-    When I select "Disapprove" from approval decision panel
-    When I enter Approval comment
-    And I click submit
+    When I "Disapprove" in the approval decision
     When I navigate to "History" sub tab
     Then I see chevron bar is in "Red" color for "rejected" status
 
@@ -933,7 +931,9 @@ Feature: Logged Issues Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    Then I see "Disapprove" is disabled
+    Then I cannot see the radio button "Disapprove" in the approval decision
+    And I collect all the soft asserts
+
 
   @58840    @subRecipientPortalShouldRenderedWithColour
   Scenario: Validate page blocks of history sub tab should rendered properly on UI
