@@ -4601,7 +4601,8 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    Then I cannot see the radio button "Reassign" in the approval decision
+    Then I see only the following radio buttons in the approval decision :
+      | Approve | Reject | Send Back |
     And I collect all the soft asserts
 
   @48637    @hide_Expression_ApprovalDecisionAction_Forward_With_UserType_NOTIN_Internal
@@ -4628,7 +4629,7 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    Then I can see the radio button "Reassign" in the approval decision
+    Then I can see the radio button "Forward" in the approval decision
     And I collect all the soft asserts
 
   @48638    @hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator @smoke
@@ -4655,7 +4656,7 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    Then I can see the radio button "Reassign" in the approval decision
+    Then I can see the radio button "Forward" in the approval decision
     And I collect all the soft asserts
 
   @48639    @hide_Expression_ApprovalDecisionAction_Forward_With_Profile_NOTIN_SystemAdministrator
@@ -4682,7 +4683,8 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    Then I cannot see the radio button "Reassign" in the approval decision
+    And I see only the following radio buttons in the approval decision :
+      | Approve | Reject | Send Back |
     And I collect all the soft asserts
 
   @48640    @hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal
@@ -4709,7 +4711,7 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    Then I can see the radio button "Reassign" in the approval decision
+    Then I can see the radio button "Forward" in the approval decision
     And I collect all the soft asserts
 
   @48641    @hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal
@@ -4736,7 +4738,8 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    Then I cannot see the radio button "Reassign" in the approval decision
+    Then I see only the following radio buttons in the approval decision :
+      | Approve | Reject | Send Back |
     And I collect all the soft asserts
 
 
@@ -4764,7 +4767,7 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    Then I can see the radio button "Disapprove" in the approval decision
+    Then I can see the radio button "Reject" in the approval decision
     And I collect all the soft asserts
 
   @48647    @hide_Expression_ApprovalDecisionAction_Reject_With_UserType_NotIN_Internal_OR_Profile_NOTIN_SystemAdministrator
@@ -4791,7 +4794,8 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    Then I cannot see the radio button "Disapprove" in the approval decision
+    Then I see only the following radio buttons in the approval decision :
+      | Approve | Forward | Send Back |
     And I collect all the soft asserts
 
 
@@ -4819,7 +4823,8 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    Then I cannot see the radio button "Disapprove" in the approval decision
+    Then I see only the following radio buttons in the approval decision :
+      | Approve | Forward | Send Back |
     And I collect all the soft asserts
 
 
@@ -4847,7 +4852,8 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    Then I cannot see the radio button "Disapprove" in the approval decision
+    Then I see only the following radio buttons in the approval decision :
+      | Approve | Forward | Send Back |
     And I collect all the soft asserts
 
 
@@ -4875,7 +4881,8 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    Then I cannot see the radio button "Disapprove" in the approval decision
+    Then I see only the following radio buttons in the approval decision :
+      | Approve | Forward | Send Back |
     And I collect all the soft asserts
 
 
@@ -4903,7 +4910,7 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    Then I can see the radio button "Disapprove" in the approval decision
+    Then I can see the radio button "Reject" in the approval decision
     And I collect all the soft asserts
 
   @48652    @hide_Expression_ApprovalDecisionAction_SendBack_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor
@@ -4930,7 +4937,8 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    Then I cannot see the radio button "Send to Owner" in the approval decision
+    Then I see only the following radio buttons in the approval decision :
+      | Approve | Reject | Forward |
     And I collect all the soft asserts
 
 
@@ -4958,7 +4966,8 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    Then I cannot see the radio button "Send to Owner" in the approval decision
+    Then I see only the following radio buttons in the approval decision :
+      | Approve | Reject | Forward |
     And I collect all the soft asserts
 
 
@@ -4986,7 +4995,8 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    Then I cannot see the radio button "Send to Owner" in the approval decision
+    Then I see only the following radio buttons in the approval decision :
+      | Approve | Reject | Forward |
     And I collect all the soft asserts
 
 
@@ -5014,7 +5024,7 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    Then I can see the radio button "Send to Owner" in the approval decision
+    Then I can see the radio button "Send Back" in the approval decision
     And I collect all the soft asserts
 
   @48657    @hide_Expression_ApprovalDecisionAction_SendBack_With_UserApp_NOTIN_Admin @smoke
@@ -5041,7 +5051,8 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    Then I cannot see the radio button "Send to Owner" in the approval decision
+    Then I see only the following radio buttons in the approval decision :
+      | Approve | Reject | Forward |
     And I collect all the soft asserts
 
 
@@ -5069,7 +5080,8 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    Then I cannot see the radio button "Send to Owner" in the approval decision
+    Then I see only the following radio buttons in the approval decision :
+      | Approve | Reject | Forward |
     And I collect all the soft asserts
 
 
@@ -5097,7 +5109,8 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    Then I cannot see the radio button "Send to Owner" in the approval decision
+    Then I see only the following radio buttons in the approval decision :
+      | Approve | Reject | Forward |
     And I collect all the soft asserts
 
   @48662    @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_SystemAdministrator_OR_UserApp_IN_StateAsGrantor
@@ -5124,7 +5137,8 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    Then I cannot see the radio button "Approve" in the approval decision
+    Then I see only the following radio buttons in the approval decision :
+      | Reject | Forward | Send Back |
     And I collect all the soft asserts
 
   @48663    @hide_Expression_ApprovalDecisionAction_Approve_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_Admin
@@ -5178,7 +5192,8 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    Then I cannot see the radio button "Approve" in the approval decision
+    Then I see only the following radio buttons in the approval decision :
+      | Reject | Forward | Send Back |
     And I collect all the soft asserts
 
   @48667    @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_PM_AND_UserApp_NOTIN_Admin
@@ -5205,7 +5220,8 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    Then I cannot see the radio button "Approve" in the approval decision
+    Then I see only the following radio buttons in the approval decision :
+      | Reject | Forward | Send Back |
     And I collect all the soft asserts
 
   @48668    @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_NOTIN_SystemAdministrator_OR_UserType_IN_Internal
@@ -5232,7 +5248,8 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    Then I cannot see the radio button "Approve" in the approval decision
+    Then I see only the following radio buttons in the approval decision :
+      | Reject | Forward | Send Back |
     And I collect all the soft asserts
 
   @48670    @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_NOTIN_SystemAdministrator_AND_UserType_IN_Internal
@@ -5259,7 +5276,8 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    Then I cannot see the radio button "Approve" in the approval decision
+    Then I see only the following radio buttons in the approval decision :
+      | Reject | Forward | Send Back |
     And I collect all the soft asserts
 
   @51604    @hide_expression_Page_Block_Profile_IN_PM_For_Notes_And_Attachment

@@ -129,7 +129,6 @@ Feature: Approval Process Component Scenarios
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    And I pause execution
     When I select radio button "Approve" in the approval decision
     And I enter comment "Automation testing" in the approval decision
     And I submit the approval in the approval decision without processing
@@ -444,7 +443,6 @@ Feature: Approval Process Component Scenarios
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I select radio button "Reassign" in the approval decision
     And I select user "Allen PM" in the approval decision
-    And I submit the approval in the approval decision
     And I submit the approval in the approval decision without processing
     Then I see confirmation box with body "Test Automation for Forward" is displayed
 

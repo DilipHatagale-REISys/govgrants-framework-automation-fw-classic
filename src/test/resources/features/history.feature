@@ -1,4 +1,4 @@
-@history -component @regression
+@history-component @regression
 Feature: history Component Scenarios
   Test all history Component based scenarios
   As a configuration manager i make different changes related to flow and will validate them in history component.
@@ -121,8 +121,9 @@ Feature: history Component Scenarios
     When I click on "Start" icon for "{Framework_recordUsed:programForHistoryTabScenarios}" inside table
     When I "Reassign" to user "Allen PM" in the approval decision
     When I navigate to "History" sub tab
-    Then I softly see column "Status" inside row "1" at position "2" and column at position "5" contains text "Reassigned"
-    Then I collect all the soft asserts
+    Then I softly see column "Status" inside row "1" at position "2" and column at position "5" contains text "Pending"
+    And I softly see column "Status" inside row "1" at position "3" and column at position "5" contains text "Reassigned"
+    And I collect all the soft asserts
 
   @69945    @VerifyExpectedStatusIsDisplayedInApprovalHistoryAfterRecordSentBack
   Scenario: Validating status as SENT BACK inside Approval history table after approval of record
