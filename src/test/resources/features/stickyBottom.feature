@@ -1,4 +1,4 @@
-@stickyBottom -component @regression
+@stickyBottom-component @regression
 Feature: Sticky Bottom Component Scenarios
   Test all sticky Bottom component based scenarios
   As a configuration manager i make different configurations changes in sticky bottom component custom settings and will validate them.
