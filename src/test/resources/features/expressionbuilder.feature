@@ -5312,7 +5312,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    Then I see "Attachments" page block is not displayed
+    Then I do not see "Attachments" page block displayed
 
   @51606    @hide_expression_Page_Block_Profile_IN_PM_and_System_Administrator_For_Notes_And_Attachment
   Scenario: Set up configuration to hide Notes and Attachment page block using expression json field for Admin and PM
@@ -5397,7 +5397,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    Then I see "Attachments" page block is not displayed
+    Then I do not see "Attachments" page block displayed
 
   @52909    @Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Internal
   Scenario: validate disabling of top level action button from planning-Program enhance flex grid
