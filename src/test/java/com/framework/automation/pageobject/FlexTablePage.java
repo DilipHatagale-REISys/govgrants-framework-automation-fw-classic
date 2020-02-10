@@ -11,6 +11,7 @@ import org.openqa.selenium.WebElement;
 
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Locale;
 
 public class FlexTablePage extends GovGrantsManager {
     /******* "Variables and Locators" *****************/
@@ -173,7 +174,7 @@ public class FlexTablePage extends GovGrantsManager {
      */
     public void assertActionIconNotDisplayedInsideAttachmentflexTable(String iconName, String uniqueColumnValue) {
         try {
-            Assert.assertFalse(EyeThink.core().is().isDisplayed(getTableActionIconForAttachmentOnly(iconName ,uniqueColumnValue )));
+            Assert.assertFalse(EyeThink.core().is().isDisplayed(getTableActionIconForAttachmentOnly(iconName, uniqueColumnValue)));
         } catch (Exception e) {
         }
     }
@@ -968,7 +969,7 @@ public class FlexTablePage extends GovGrantsManager {
         Boolean isRecordsDisplayed = false;
         for (String expectedRecords : recordsName) {
             if (expectedRecords.equalsIgnoreCase("currentdate")) {
-                expectedRecords = EyeThink.core().get().currentDateTimeInDesiredFormat(DateTimeFormatter.ofPattern("M/d/yyyy hh:mm a"));
+                expectedRecords = EyeThink.core().get().currentDateTimeInDesiredFormat(DateTimeFormatter.ofPattern("M/d/yyyy hh:mm a").withLocale(Locale.US)).replaceAll("^0", "");
                 EyeThink.core().is().isDisplayed(By.xpath("//div[@id='myTabbedContent']//a[@title='" + flexTableHeader + "']/../../../following-sibling::div//tbody//td//span[text()='" + expectedRecords + "'] "));
                 isRecordsDisplayed = true;
             } else {
@@ -983,18 +984,35 @@ public class FlexTablePage extends GovGrantsManager {
      * Return true if snapshot saving content inside snapshot history page block
      */
     private boolean isContentGettingSavedBySanpShotOption(String text) {
-        String filename = "";
+        boolean result = true;
         if (text.equalsIgnoreCase("Todays Date")) {
-            String todaysDate = EyeThink.core().get().currentDateTimeInDesiredFormat(DateTimeFormatter.ofPattern("M/d/yyyy h:mm a")).replaceAll("^0", "");
-            filename = "SnapShot on " + todaysDate + ".pdf";
-        } else
-            filename = text;
-        try {
-            EyeThink.core().elementReference().of(By.xpath("//tbody//tr//span[contains(text(),'" + filename + "')]"));
-            return true;
-        } catch (Exception e) {
-            return false;
+            String cdate = EyeThink.core().get().currentDateTimeInDesiredFormat(DateTimeFormatter.ofPattern("M/d/yyyy h:mm a").withLocale(Locale.US)).replaceAll("^0", "");
+            System.out.println("The current date:-" + cdate);
+            String[] currentsplit = (cdate.split(":", 2));
+            String[] arrCSplit = currentsplit[1].split("\\s");
+            int date = Integer.parseInt(arrCSplit[0]);
+            date = date + 5;
+            String filename = "";
+            for (int i = 10; i > 0; i--) {
+                date = date - 1;
+                String ddate;
+                if (date <= 9) {
+                    String sdate = "0" + String.valueOf(date);
+                    ddate = currentsplit[0] + ":" + sdate + " " + arrCSplit[1];
+                } else {
+                    ddate = currentsplit[0] + ":" + date + " " + arrCSplit[1];
+                }
+
+                filename = "SnapShot on " + ddate + ".pdf";
+                if (EyeThink.core().elementReference().of(By.xpath("//html")).getText().contains(filename)) {
+                    result = true;
+                    break;
+                } else {
+                    result = false;
+                }
+            }
         }
+        return result;
     }
 
     /**
@@ -1035,7 +1053,7 @@ public class FlexTablePage extends GovGrantsManager {
      */
     public Boolean getTableActionIconForAttachmentOnly(String iconName, String uniqueColumnValues) {
         boolean flag = false;
-        WebElement desiredAction = EyeThink.core().elementReference().of(By.xpath("//span[text()='"+uniqueColumnValues+"']/../following-sibling::td/a[@title='"+iconName+"']"));
+        WebElement desiredAction = EyeThink.core().elementReference().of(By.xpath("//span[text()='" + uniqueColumnValues + "']/../following-sibling::td/a[@title='" + iconName + "']"));
         try {
             if (desiredAction.getAttribute("Class").contains("ng-hide")) {
                 flag = true;

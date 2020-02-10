@@ -211,24 +211,6 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
-     * assert if changed page block title is displayed
-     *
-     * @param titleName
-     */
-    public void assertChangedPageBlockTitleDisplayed(String titleName) {
-        Assert.assertTrue(isPageBlockTitleDisplayed(titleName));
-    }
-
-    /**
-     * assert if page block is not displayed
-     *
-     * @param titleName
-     */
-    public void assertPageBlockIsNotDisplayed(String titleName) {
-        Assert.assertFalse(isPageBlockTitleDisplayed(titleName));
-    }
-
-    /**
      * @param pageBlockName
      * @param number
      */
@@ -486,6 +468,16 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public void clickButtonInSessionTimeoutDialogbox(String buttonName) {
         EyeThink.core().elementReference().of(By.xpath("//button[text()='" + buttonName + "']")).click();
+    }
+
+    /**
+     * click on any button on Download & upload wizard modal content
+     *
+     * @param buttonName
+     */
+    public void clickModalContentSpecificButton(String buttonName) {
+        By modalButton = By.xpath("//button[contains(text(),'" + buttonName + "') and contains(@class,'customBtn')]");
+        EyeThink.core().click().on(modalButton);
     }
 
     /**
@@ -812,6 +804,18 @@ public class PageLayoutPage extends GovGrantsManager {
         }
         EyeThink.saas().modal().clickModalContentSpecificButton("Attach");
         EyeThink.saas().modal().closeModalByClickingTopRightCloseButton();
+    }
+
+    /**
+     * complete steps to upload sheet JS file inside download and upload wizard modal
+     */
+    public void uploadSheetJSFIle(String fileName, String buttonName) {
+        By attachmentFilePath = By.xpath("//input[@id='fileUpload' or @type='file']");
+        By modalButton = By.xpath("//button[contains(text(),'" + buttonName + "') and contains(@class,'customBtn')]");
+        String defaultFilePath = System.getProperty("user.dir") + "/src/main/resources/";
+        EyeThink.core().enterText().in(attachmentFilePath, defaultFilePath + fileName);
+        EyeThink.core().click().on(modalButton);
+       // EyeThink.core().click().on(By.xpath("//input[@value='Save']"));
     }
 
     /**
@@ -1210,22 +1214,6 @@ public class PageLayoutPage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (EyeThink.core().is().isDisplayed(headerOverviewTab)) {
-                flag = true;
-            }
-        } catch (Exception e) {
-        }
-        return flag;
-    }
-
-    /**
-     * @param titleName
-     * @return true if page block title is displayed
-     */
-    private boolean isPageBlockTitleDisplayed(String titleName) {
-        boolean flag = false;
-        try {
-            EyeThink.core().scroll().toElementCenter(By.xpath("//h3//a[contains(text(),'" + titleName + "')] | //a[@title='" + titleName + "']"));
-            if (EyeThink.core().is().isDisplayed(By.xpath("//h3//a[contains(text(),'" + titleName + "')] | //a[@title='" + titleName + "']"))) {
                 flag = true;
             }
         } catch (Exception e) {
