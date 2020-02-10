@@ -934,7 +934,6 @@ Feature: Logged Issues Scenarios
     Then I cannot see the radio button "Disapprove" in the approval decision
     And I collect all the soft asserts
 
-
   @58840    @subRecipientPortalShouldRenderedWithColour
   Scenario: Validate page blocks of history sub tab should rendered properly on UI
     When I login as "Automation" user
@@ -1412,6 +1411,7 @@ Feature: Logged Issues Scenarios
     When I click on "View" icon for "APP-HHS-082" inside table
     When I click on "Menu" in the page details
     And I select "Take Snapshot" from dropdown
+    And I refresh the page
     When I navigate to "History" sub tab
     Then I see take snap shot getting saved with "Todays Date"
 

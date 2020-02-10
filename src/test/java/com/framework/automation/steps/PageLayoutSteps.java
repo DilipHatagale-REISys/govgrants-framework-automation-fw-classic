@@ -76,6 +76,11 @@ public class PageLayoutSteps {
         pageLayoutPage.uploadAttachmentAndMoveOnSecondTab(fileName, fileType);
     }
 
+    @When("^I upload attachment \"([^\"]*)\" on button click \"([^\"]*)\" inside download & upload wizard$")
+    public void uploadAttachmentForSheetJS(String fileName, String fileType) {
+        pageLayoutPage.uploadSheetJSFIle(fileName, fileType);
+    }
+
     @When("^I upload attachment \"([^\"]*)\" from workspace$")
     public void iUploadAttachmentFromWorkspace(String fileNameToBeUpload) {
         pageLayoutPage.uploadAttachmentFromWorkspace(fileNameToBeUpload.split(","));
@@ -151,6 +156,10 @@ public class PageLayoutSteps {
         pageLayoutPage.selectValueFromDropdownInHistory(objectName);
     }
 
+    @When("I click on button {string} on download & upload wizard modal")
+    public void clickOnButtonOnDownloadUploadWizardModal(String buttonName) {
+        pageLayoutPage.clickModalContentSpecificButton(buttonName);
+    }
 
     @And("^I click on expand collapse icon for panel heading \"([^\"]*)\"$")
     public void clickOnExpandColapseIcon(String panelHeaderName) {
@@ -235,16 +244,6 @@ public class PageLayoutSteps {
     @Then("^I see complete header overview tab is displayed at view detail page$")
     public void assertHeaderOverviewTabInsideDetailsPage() {
         pageLayoutPage.assertHeaderOverviewTabDisplayed();
-    }
-
-    @Then("^I see \"([^\"]*)\" page block title$")
-    public void asserPageBlockTitleDisplayed(String titleName) {
-        pageLayoutPage.assertChangedPageBlockTitleDisplayed(titleName);
-    }
-
-    @Then("^I see \"([^\"]*)\" page block is not displayed$")
-    public void asserPageBlockIsNotDisplayed(String titleName) {
-        pageLayoutPage.assertPageBlockIsNotDisplayed(titleName);
     }
 
     @Then("^I see \"([^\"]*)\" shown at number \"([^\"]*)\" inside page block$")

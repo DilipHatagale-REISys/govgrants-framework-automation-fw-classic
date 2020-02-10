@@ -20,6 +20,7 @@ Feature: Snapshot Config Component Scenarios
     When I click on "Edit" icon for "Test program for automation - SA mode only - Not approved - History Tab Scenario" inside table
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
+    And I refresh the page
     When I navigate to "History" sub tab
     Then I see table with header "Snapshot History" contains records "currentdate"
 
@@ -120,7 +121,7 @@ Feature: Snapshot Config Component Scenarios
     When I click on "Start" icon for "{Framework_recordUsed:programForHistoryTabScenarios}" inside table
     When I "Approve" in the approval decision
     When I navigate to "History" sub tab
-    Then I see table with header "Snapshot History" contains records "TestAutomationSnapshotOnApproval"
+    Then I see table with header "Snapshot History" contains records "TestAutomationSnapshotOnApproval.pdf"
 
   @70028    @verifyAutoSnapShotIsGettingCapturedWithFieldCaptureSnapshotonApproval-Rejection
   Scenario: Validate Auto Snapshot is getting captured on record rejection after making change for field Capture Snapshot on Approval at config

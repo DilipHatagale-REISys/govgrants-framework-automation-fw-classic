@@ -46,7 +46,6 @@ Feature: Flex Table Component Scenarios
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
     Then I see "Download as CSV" options inside "Draft Programs" disabled
 
-
   @34026    @disblingQuickSearch-gPlanning
   Scenario: validate disabling of quick search in flex table of programs-planning
     Given I have "default" configuration as below:
