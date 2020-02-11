@@ -42,7 +42,13 @@ Feature: SheetJS Config Component Scenarios
       | configurationCategory | fieldName                 | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Data Import/Export | true           | Programs           |                           |                            |
       | Flex Table:General    | Display Field Names       | <newFieldsApi> | Programs           |                           |                            |
+    Given I have "lightening" configuration as below:
+      | booleanValue | integerValue | id                 | description                       | name                 |
+      | true         | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
     When I login as "Automation" user
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description                       | name                 |
+      | false        | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -64,7 +70,13 @@ Feature: SheetJS Config Component Scenarios
       | configurationCategory | fieldName                 | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Data Import/Export | true           | Programs           |                           |                            |
       | Flex Table:General    | Display Field Names       | <newFieldsApi> | Programs           |                           |                            |
+    Given I have "lightening" configuration as below:
+      | booleanValue | integerValue | id                 | description                       | name                 |
+      | true         | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
     When I login as "Automation" user
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description                       | name                 |
+      | false        | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -90,7 +102,13 @@ Feature: SheetJS Config Component Scenarios
       | configurationCategory | fieldName                 | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Data Import/Export | true           | Programs           |                           |                            |
       | Flex Table:General    | Display Field Names       | <newFieldsApi> | Programs           |                           |                            |
+    Given I have "lightening" configuration as below:
+      | booleanValue | integerValue | id                 | description                       | name                 |
+      | true         | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
     When I login as "Automation" user
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description                       | name                 |
+      | false        | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -116,7 +134,13 @@ Feature: SheetJS Config Component Scenarios
       | configurationCategory | fieldName                 | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Data Import/Export | true           | Programs           |                           |                            |
       | Flex Table:General    | Display Field Names       | <newFieldsApi> | Programs           |                           |                            |
+    Given I have "lightening" configuration as below:
+      | booleanValue | integerValue | id                 | description                       | name                 |
+      | true         | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
     When I login as "Automation" user
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description                       | name                 |
+      | false        | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -142,7 +166,13 @@ Feature: SheetJS Config Component Scenarios
       | configurationCategory | fieldName                 | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Data Import/Export | true           | Programs           |                           |                            |
       | Flex Table:General    | Display Field Names       | <newFieldsApi> | Programs           |                           |                            |
+    Given I have "lightening" configuration as below:
+      | booleanValue | integerValue | id                 | description                       | name                 |
+      | true         | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
     When I login as "Automation" user
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description                       | name                 |
+      | false        | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -170,7 +200,13 @@ Feature: SheetJS Config Component Scenarios
       | Flex Table:General                  | Enable Data Import/Export | true           | Programs              |                           |                            |
       | Flex Table:General                  | Display Field Names       | <newFieldsApi> | Programs              |                           |                            |
       | Page Tabs Config:Page Layout Action | Highlights Panel?         | true           | Grantee State Program | Name                      | TAB-409                    |
+    Given I have "lightening" configuration as below:
+      | booleanValue | integerValue | id                 | description                       | name                 |
+      | true         | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
     When I login as "Automation" user
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description                       | name                 |
+      | false        | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -201,7 +237,13 @@ Feature: SheetJS Config Component Scenarios
       | configurationCategory | fieldName                 | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Data Import/Export | true           | Programs           |                           |                            |
       | Flex Table:General    | Display Field Names       | <newFieldsApi> | Programs           |                           |                            |
+    Given I have "lightening" configuration as below:
+      | booleanValue | integerValue | id                 | description                       | name                 |
+      | true         | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
     When I login as "Automation" user
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description                       | name                 |
+      | false        | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -226,7 +268,13 @@ Feature: SheetJS Config Component Scenarios
       | configurationCategory | fieldName                 | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Data Import/Export | true           | Programs           |                           |                            |
       | Flex Table:General    | Display Field Names       | <newFieldsApi> | Programs           |                           |                            |
+    Given I have "lightening" configuration as below:
+      | booleanValue | integerValue | id                 | description                       | name                 |
+      | true         | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
     When I login as "Automation" user
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description                       | name                 |
+      | false        | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -251,7 +299,13 @@ Feature: SheetJS Config Component Scenarios
       | configurationCategory | fieldName                 | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Data Import/Export | true           | Programs           |                           |                            |
       | Flex Table:General    | Display Field Names       | <newFieldsApi> | Programs           |                           |                            |
+    Given I have "lightening" configuration as below:
+      | booleanValue | integerValue | id                 | description                       | name                 |
+      | true         | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
     When I login as "Automation" user
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description                       | name                 |
+      | false        | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -276,7 +330,13 @@ Feature: SheetJS Config Component Scenarios
       | configurationCategory | fieldName                 | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Data Import/Export | true           | Programs           |                           |                            |
       | Flex Table:General    | Display Field Names       | <newFieldsApi> | Programs           |                           |                            |
+    Given I have "lightening" configuration as below:
+      | booleanValue | integerValue | id                 | description                       | name                 |
+      | true         | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
     When I login as "Automation" user
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description                       | name                 |
+      | false        | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on top right button "Upload" in flex table with id "flexTableDivId"
@@ -304,7 +364,13 @@ Feature: SheetJS Config Component Scenarios
       | configurationCategory | fieldName                 | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Data Import/Export | true           | Programs           |                           |                            |
       | Flex Table:General    | Display Field Names       | <newFieldsApi> | Programs           |                           |                            |
+    Given I have "lightening" configuration as below:
+      | booleanValue | integerValue | id                 | description                       | name                 |
+      | true         | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
     When I login as "Automation" user
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description                       | name                 |
+      | false        | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on top right button "Upload" in flex table with id "flexTableDivId"
@@ -328,7 +394,13 @@ Feature: SheetJS Config Component Scenarios
       | configurationCategory | fieldName                 | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Data Import/Export | true           | Programs           |                           |                            |
       | Flex Table:General    | Display Field Names       | <newFieldsApi> | Programs           |                           |                            |
+    Given I have "lightening" configuration as below:
+      | booleanValue | integerValue | id                 | description                       | name                 |
+      | true         | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
     When I login as "Automation" user
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description                       | name                 |
+      | false        | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on top right button "Upload" in flex table with id "flexTableDivId"
