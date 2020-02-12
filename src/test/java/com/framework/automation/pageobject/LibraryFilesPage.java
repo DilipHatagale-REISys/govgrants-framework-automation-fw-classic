@@ -33,8 +33,16 @@ public class LibraryFilesPage extends GovGrantsManager {
      * @param dropDownOption
      * @param libraryFileFolderName
      */
-    public void asserDropdownOptionIsDisplayedAtLibraryFileFolder(String dropDownOption, String libraryFileFolderName) {
-        Assert.assertTrue(isDropdownOptionIsDisplayedAtLibraryFileFolder(dropDownOption, libraryFileFolderName));
+    public void asserDropdownOptionIsDisplayedAtLibraryFileFolder(String usuage, String dropDownOption, String libraryFileFolderName) {
+        if (usuage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isDropdownOptionIsDisplayedAtLibraryFileFolder(dropDownOption, libraryFileFolderName));
+        } else if (usuage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isDropdownOptionIsDisplayedAtLibraryFileFolder(dropDownOption, libraryFileFolderName));
+        } else if (usuage.equalsIgnoreCase("softly see")) {
+            EyeThink.core().assertion().assertThat(isDropdownOptionIsDisplayedAtLibraryFileFolder(dropDownOption, libraryFileFolderName)).isTrue();
+        } else if (usuage.equalsIgnoreCase("softly do not see")) {
+            EyeThink.core().assertion().assertThat(isDropdownOptionIsDisplayedAtLibraryFileFolder(dropDownOption, libraryFileFolderName)).isFalse();
+        }
     }
 
     /**
@@ -44,6 +52,15 @@ public class LibraryFilesPage extends GovGrantsManager {
      */
     public void asserModalWindowIsNotDisplayedAtLibraryFileFolder(String modalTitle) {
         Assert.assertTrue(isModalWindowNotDisplayedAtLibraryFileFolder(modalTitle));
+    }
+
+    /**
+     * assert true if upload button at modal window is disabled under library - Home phase
+     *
+     * @param buttonName
+     */
+    public void asserModalButtonIsDisabledAtLibrary(String buttonName) {
+        Assert.assertTrue(isModalButtonDisabledAtLibrary(buttonName));
     }
 
     /**
@@ -91,7 +108,7 @@ public class LibraryFilesPage extends GovGrantsManager {
      * @param fieldName
      */
     public void enterValueInFieldsAtModalWindow(String value, String fieldName) {
-        if (value.equalsIgnoreCase("Description")) {
+        if (fieldName.equalsIgnoreCase("Description")) {
             WebElement enterDescription = EyeThink.core().elementReference().of(By.xpath("//label[text()='" + fieldName + "']/following-sibling::div//textarea"));
             EyeThink.core().enterText().clear(enterDescription);
             EyeThink.core().enterText().in(enterDescription, value);
@@ -132,7 +149,7 @@ public class LibraryFilesPage extends GovGrantsManager {
     private boolean isDropdownOptionIsDisplayedAtLibraryFileFolder(String dropDownOption, String libraryFileFolderName) {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().isDisplayed(dropdownOptionAtLibraryFolderFile(libraryFileFolderName, dropDownOption))) {
+            if (EyeThink.core().is().isDisplayed(dropdownOptionAtLibraryFolderFile(dropDownOption, libraryFileFolderName))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -151,6 +168,23 @@ public class LibraryFilesPage extends GovGrantsManager {
         try {
             if (EyeThink.core().is().isDisplayed(By.xpath("//p[text()='" + modalTitle + "']"))) {
                 flag = false;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if upload button at modal window is disabled under library - Home phase
+     *
+     * @param buttonName
+     * @return
+     */
+    private boolean isModalButtonDisabledAtLibrary(String buttonName) {
+        boolean flag = false;
+        try {
+            if (EyeThink.core().is().isDisplayed(By.xpath("//button[text()='" + buttonName + "' and @disabled='true']"))) {
+                flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
         }

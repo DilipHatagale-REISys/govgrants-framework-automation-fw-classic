@@ -37,13 +37,18 @@ public class LibraryFilesSteps {
         libraryFilesPage.assertLibraryFileFolderIsDisplayed(usuage, libraryFileFolderName);
     }
 
-    @Then("^I see \"([^\"]*)\" option is present at library/folder/file \"([^\"]*)\"$")
-    public void asserDropdownOptionIsDisplayedOnUI(String dropDownOption, String libraryFileFolderName) {
-        libraryFilesPage.asserDropdownOptionIsDisplayedAtLibraryFileFolder(dropDownOption, libraryFileFolderName);
+    @Then("^I (see|do not see|softly see|softly do not see) \"([^\"]*)\" option is present at library/folder/file \"([^\"]*)\"$")
+    public void asserDropdownOptionIsDisplayedOnUI(String usuage ,String dropDownOption, String libraryFileFolderName) {
+        libraryFilesPage.asserDropdownOptionIsDisplayedAtLibraryFileFolder(usuage,dropDownOption, libraryFileFolderName);
     }
 
     @Then("^I see \"([^\"]*)\" modal window is not displayed$")
     public void asserModalWindowIsNotDisplayedOnUI(String modalTitle) {
         libraryFilesPage.asserModalWindowIsNotDisplayedAtLibraryFileFolder(modalTitle);
+    }
+
+    @Then("^I see \"([^\"]*)\" button is disabled at modal under library$")
+    public void asserModalButtonIsDisabledAtLibraryFileFolder(String buttonName) {
+        libraryFilesPage.asserModalButtonIsDisabledAtLibrary(buttonName);
     }
 }

@@ -163,3 +163,123 @@ Feature: Library Files Component Scenarios
     When I click on "Add New Folder" option at library/folder/file "Department of Community Health"
     When I click on "Cancel" button in send email modal
     Then I see "New Folder" modal window is not displayed
+
+  @70306 @validateThatAdminCanSeeAllActionsAtLibrary-HomePhase
+  Scenario: Verify that admin can see add new folder,upload file, download file actions- Home phase
+    When I login as "Automation" user
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on dropdown at library/folder/file "Department of Community Health"
+    Then I softly see "Add New Folder" option is present at library/folder/file "Department of Community Health"
+    Then I softly see "Upload File" option is present at library/folder/file "Department of Community Health"
+    Then I softly see "Download Files" option is present at library/folder/file "Department of Community Health"
+    Then I collect all the soft asserts
+
+  @70546 @validateThatAdminCanSeeAllActionsAtFolder-HomePhase
+  Scenario: Verify that admin can see add new folder,upload file, download file, Delete folder, Rename Folder actions at Folder- Home phase
+    When I login as "Automation" user
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "Department of Community Health"
+    When I click on dropdown at library/folder/file "testAutomationFolder1"
+    Then I softly see "Add New Folder" option is present at library/folder/file "testAutomationFolder1"
+    Then I softly see "Upload File" option is present at library/folder/file "testAutomationFolder1"
+    Then I softly see "Download Files" option is present at library/folder/file "testAutomationFolder1"
+    Then I softly see "Delete Folder" option is present at library/folder/file "testAutomationFolder1"
+    Then I softly see "Rename Folder" option is present at library/folder/file "testAutomationFolder1"
+    Then I collect all the soft asserts
+
+  @70547 @validateThatAdminCanSeeAllActionsAtFile-HomePhase
+  Scenario: Verify that admin can see download, Edit, Delete actions at File - Home phase
+    When I login as "Automation" user
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "Department of Community Health"
+    When I click on expand icon at library/folder "testAutomationFolder1"
+    When I click on dropdown at library/folder/file "SendEmailAttachment.png"
+    Then I softly see "Edit" option is present at library/folder/file "SendEmailAttachment.png"
+    Then I softly see "Delete" option is present at library/folder/file "SendEmailAttachment.png"
+    Then I softly see "Download" option is present at library/folder/file "SendEmailAttachment.png"
+    Then I collect all the soft asserts
+
+  @70284 @validateThatAuthorCanSeeAllActionsAtLibrary-HomePhase
+  Scenario: Verify that admin can see add new folder,upload file, download file actions- Home phase
+    When I login as "Automation-PM" user
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on dropdown at library/folder/file "Department of Community Health"
+    Then I softly see "Add New Folder" option is present at library/folder/file "Department of Community Health"
+    Then I softly see "Upload File" option is present at library/folder/file "Department of Community Health"
+    Then I softly see "Download Files" option is present at library/folder/file "Department of Community Health"
+    Then I collect all the soft asserts
+
+  @70354 @validateThatIfAttachmentNotUploadedThenUploadButtonIsDisabled-HomePhase
+  Scenario: Verify that Upload button is disabled when user click on upload button without uploading Attachment - home phase library
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on dropdown at library/folder/file "Department of Community Health"
+    When I click on "Upload File" option at library/folder/file "Department of Community Health"
+    Then I see "Upload" button is disabled at modal under library
+
+  @70358 @validateThatAddNewFolderOptionIsPresentAtExistingFolderDropDownMenuByAdmin-HomePhase
+  Scenario: Verify that Add New Folder option is present at existing folder drop-down menu under home phase library - by admin
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "Department of Community Health"
+    When I click on dropdown at library/folder/file "testAutomationFolder1"
+    Then I see "Add New Folder" option is present at library/folder/file "testAutomationFolder1"
+
+  @70359 @validateThatByClickOnAddNewFolderAFolderShouldGetAddedInExistingFolderByAdmin-HomePhase @reqChangeInMsg
+  Scenario: Verify that By click on Add New Folder, a folder should get added under home phase library - by admin
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "Department of Community Health"
+    When I click on dropdown at library/folder/file "testAutomationFolder1"
+    When I click on "Add New Folder" option at library/folder/file "testAutomationFolder1"
+    When I enter value as "testAutomationFolderInFolder" in field "Folder Name" at Library Files
+    When I click on "Save" button in send email modal
+    Then I softly see library/folder/file "testAutomationFolderInFolder" is displayed under files library
+    When I click on expand icon at library/folder "testAutomationFolder1"
+    When I click on dropdown at library/folder/file "testAutomationFolderInFolder"
+    When I click on "Delete Folder" option at library/folder/file "testAutomationFolderInFolder"
+    #Then I softly see the following messages in the page details :
+     # | Folder testAutomationFolder3 deleted successfully. |
+    When I pause execution for "5" seconds
+    Then I collect all the soft asserts
+
+  @70360 @validateThatDeleteFolderIsDisplayedInLibraryByAuthor-HomePhase
+  Scenario: Verify that the Delete folder option is available at library dropdown under home phase by author
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "Department of Community Health"
+    When I click on dropdown at library/folder/file "testAutomationFolder1"
+    Then I see "Delete Folder" option is present at library/folder/file "testAutomationFolder1"
+
+  @70361 @validateThatIfMultipleFoldersArePresentInFolderThenOnDeleteAnAlertMsgIsDisplayedInLibrary-HomePhase
+  Scenario: Verify that if multiple folders are present in folder then on delete operation an alert message is displayed - Home phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "Department of Community Health"
+    When I click on dropdown at library/folder/file "testAutomationFolder2"
+    When I click on "Delete Folder" option at library/folder/file "testAutomationFolder2"
+    Then I see the following messages in the page details contains:
+      | You can delete a Content Folder only if it's empty. |

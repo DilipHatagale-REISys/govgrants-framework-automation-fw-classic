@@ -815,7 +815,6 @@ public class PageLayoutPage extends GovGrantsManager {
         String defaultFilePath = System.getProperty("user.dir") + "/src/main/resources/";
         EyeThink.core().enterText().in(attachmentFilePath, defaultFilePath + fileName);
         EyeThink.core().click().on(modalButton);
-       // EyeThink.core().click().on(By.xpath("//input[@value='Save']"));
     }
 
     /**
