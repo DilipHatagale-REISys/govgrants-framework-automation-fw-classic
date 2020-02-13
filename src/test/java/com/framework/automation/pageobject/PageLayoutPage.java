@@ -302,17 +302,6 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
-     * assert if expected text is displayed on owner organization lookup field modal
-     * box
-     *
-     * @param headerText
-     */
-    public void assertOwnerOrganizationMOdalTitle(String headerText) {
-        Assert.assertTrue(EyeThink.core().elementReference().of(ownerOrganizationModalTitle)
-                .getAttribute("innerText").equalsIgnoreCase(headerText));
-    }
-
-    /**
      * assert true if header column name is present on lookup modal
      *
      * @param headerColumnName

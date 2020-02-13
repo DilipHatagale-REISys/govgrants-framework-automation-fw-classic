@@ -32,6 +32,11 @@ public class LibraryFilesSteps {
         libraryFilesPage.enterValueInFieldsAtModalWindow(value, fieldName);
     }
 
+    @When("^I click on \"([^\"]*)\" icon at \"([^\"]*)\" modal under Library$")
+    public void clickOnCloseIconAtLibraryModal(String icon, String modalTitle) {
+        libraryFilesPage.clickOnCloseIconAtLibraryFolderFileModal(icon, modalTitle);
+    }
+
     @Then("^I (see|do not see|softly see|softly do not see) library/folder/file \"([^\"]*)\" is displayed under files library$")
     public void asserLibraryFileFolderIsDisplayedOnUI(String usuage, String libraryFileFolderName) {
         libraryFilesPage.assertLibraryFileFolderIsDisplayed(usuage, libraryFileFolderName);

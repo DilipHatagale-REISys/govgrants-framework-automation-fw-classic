@@ -1039,7 +1039,7 @@ Feature: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click search icon for "Organization Lookup (New Window)" lookup modal and swithing to frame "iframeCustomLookupModalId"
+    When I click search icon for look up field "Organization Lookup (New Window)" without clearing
     Then I see "Code" in table header on lookup Modal
 
   @36172    @lookupFilterCriteriaFieldAtPAgeBlockDetail-gPlanning @smoke
@@ -1058,7 +1058,7 @@ Feature: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click search icon for "Organization Lookup (New Window)" lookup modal and swithing to frame "iframeCustomLookupModalId"
+    When I click search icon for look up field "Organization Lookup (New Window)" without clearing
     Then I see "Created" status in lookup modal table
 
     Examples:
