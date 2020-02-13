@@ -301,11 +301,6 @@ public class PageLayoutSteps {
         pageLayoutPage.assertSortingOfPageBlockDetailElementSubTab(changedFieldName, Integer.parseInt(number));
     }
 
-    @Then("^I see modal box with body \"([^\"]*)\" is displayed$")
-    public void assertOwnerOrganizationModalBoxWithMessage(String headerText) {
-        pageLayoutPage.assertOwnerOrganizationMOdalTitle(headerText);
-    }
-
     @Then("^I see \"([^\"]*)\" in table header on lookup Modal$")
     public void assertFlexTableHeaderName(String headerColumnName) {
         pageLayoutPage.assertTableHeaderColumnNameForLookupModal(headerColumnName);

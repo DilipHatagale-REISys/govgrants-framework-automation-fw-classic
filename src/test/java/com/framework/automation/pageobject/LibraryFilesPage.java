@@ -119,6 +119,16 @@ public class LibraryFilesPage extends GovGrantsManager {
         }
     }
 
+    /**
+     * perform click on close icon under add new folder/Edit Folder/upload File modal at library - home phase
+     *
+     * @param icon
+     * @param modalTitle
+     */
+    public void clickOnCloseIconAtLibraryFolderFileModal(String icon, String modalTitle) {
+        EyeThink.core().click().on(By.xpath("//p[text()='"+modalTitle+"']/..//*[contains(normalize-space(text()),'"+icon+"')]"));
+    }
+
     /*********
      * "Local Methods with complete functionality - private"
      *****************/
