@@ -26,6 +26,11 @@ public class ChartsSteps {
 		chartsPage.clickSpecificLinkOnTaskSummary(linkName, chartName);
 	}
 
+	@When("^I hovering mouse on enhanced charts id \"([^\"]*)\" and charts type \"([^\"]*)\"$")
+	public void getStepProgressStatusContent(String chartId, String chartsType) {
+		chartsPage.getHoveringOnEnhancedCharts(chartId, chartsType);
+	}
+
 	@Then("^I see \"([^\"]*)\" displayed in modal$")
 	public void assertModalTitle(String titleName) {
 		chartsPage.isTitleOfModal(titleName);
@@ -36,9 +41,9 @@ public class ChartsSteps {
 		chartsPage.assertChartTitleDisplayed(title);
 	}
 
-	@Then("^I see chart legends are not displayed for chart \"([^\"]*)\"$")
-	public void assertChartLegendsNotDisplayed(String chartName) {
-		chartsPage.assertChartLegendNotDisplayed(chartName);
+	@Then("^I (see|do not see) chart legends are not displayed for chart/enhanced Charts \"([^\"]*)\"$")
+	public void assertChartLegendsNotDisplayed(String usage,String chartName) {
+		chartsPage.assertChartLegendNotDisplayed(usage, chartName);
 	}
 
 	@Then("^I see \"([^\"]*)\" for chart \"([^\"]*)\"$")
@@ -54,5 +59,20 @@ public class ChartsSteps {
 	@Then("^I see \"([^\"]*)\" charts displayed$")
 	public void assertNoOfCharts(String number) {
 		chartsPage.assertExpectedNoOfChartsDisplayed(Integer.parseInt(number));
+	}
+
+	@Then("I (see|do not see|softly see|softly do not see) charts with id \"([^\"]*)\" displayed$")
+	public void assertChartDisplayed(String usage, String chartId) {
+		chartsPage.assertVisibilityOfAnyCharts(usage, chartId);
+	}
+
+	@Then("I see charts \"([^\"]*)\" with type as \"([^\"]*)\"$")
+	public void assertChartsType(String chartId, String chartType) {
+		chartsPage.assertExpectedChartsType(chartId, chartType);
+	}
+
+	@Then("^I (see|softly see) \"([^\"]*)\" shown inside enhanced charts on hover$")
+	public void assertMiniPageLayoutTextOnHover(String usage, String text) {
+		chartsPage.assertTextDisplayedOnEnhacedChartsHover(usage, text);
 	}
 }

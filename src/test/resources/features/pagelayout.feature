@@ -1268,7 +1268,6 @@ Feature: Page Layout Component Scenarios
     Then I cannot see the radio button "Approve" in the approval decision
     And I collect all the soft asserts
 
-
   @36043    @hideExpressionJsonFieldAtPageBlock-gPlanning @smoke
   Scenario: Hiding program information page block from json config and validating it at program detail page
     Given I have "default" configuration as below:
