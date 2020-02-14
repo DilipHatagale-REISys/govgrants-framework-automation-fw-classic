@@ -1,0 +1,320 @@
+@SanityRun-Allcomponent @sanityRun
+Feature: Sanity check for all Component Scenarios
+  Test all component scenarios for sanity
+
+  @34666    @validateTitleField-gplanning
+  Scenario: Changing chart title for 'AnnouncementByAdminBureauUnit' chart in configuration and validating inside planning-programs
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue             | filterId         |
+      | Charts Config         | Title     | AnnouncementByAdminBureauUnit | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue    |
+      | Charts Config         | Title     | Funding Opportunities for Automation | GrantorPlanning    | Name                      | AnnouncementByAdminBureauUnit |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "Funding Opportunities for Automation" displayed as chart title
+
+  @37667    @notifyAdditionalPeopleThroughEmailWithApproveTemplateToProgramOwner-Programs
+  Scenario: Setup email setting in configuration and validate that program owner receiving email for program approval
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName                | fieldOrignalValue | filterId         |
+      | Approval Process Steps Cache | Notify Additional People | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                | fieldName                | fieldNewValue | coreComponentField                                            |
+      | Program                              | Status                   | Created       | Test program for automation -  SA mode only - Can be Approved |
+      | Approval Process Steps Cache:General | Notify Additional People | true          | Program_Manager_Approver                                      |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
+    And I navigate to "Planning" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
+    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
+    And I "Approve" in the approval decision
+    When I re-login to "As an Administrator" app as "Automation" user on "default" portal
+    And I navigate to "Operate" tab
+    When I navigate to "Email Logs" content inside "Logs" subheader on left panel
+    And I click toggle button to select "Queued Emails"
+    Then I see email is generated with template "Program_Approved_Email_Template"
+
+  @35121    @colorCodeFieldAtCalenderConfig
+  Scenario: Changing color code at calender confiuration and validating the changed color at calender grantor-Home
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName  | fieldOrignalValue | filterId         |
+      | Calender Config       | Color Code | #B0CEE1           | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName  | fieldNewValue | coreComponentField   |
+      | Calender Config:General | Color Code | #FF0000       | Grantor_Home_Program |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_Calendar"
+    Then I see Program record in "Red" color inside my workspace
+
+  @54704      @verifyPicklistFieldShouldBeInViewModeAfterEditingMultipleRecords
+  Scenario Outline: validate picklist should visible in only view mode after Edit status field for multiple records
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName     | fieldOrignalValue               | filterId         |
+      | Flex Grid:Flex Table List | Filter Clause | <defaultFilterClauseForFLV2539> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName     | fieldNewValue               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Filter Clause | <newFilterClauseForFLV2539> | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    And I edit the following rows inline in flex table with id "flexGridEnhanced1" by clicking "Edit" :
+      | Project Title                 | Status |
+      | Road COnst. Ann.              | Active |
+      | Road Construction Annoumsment | Active |
+    Then I see select box for picklist is not displayed for status inside table
+    Examples:
+      | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                         |
+      | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c like 'Road%' |
+
+  @52895    @defaultFieldNameFieldAtCustomAppConfig
+  Scenario: Removing contrast content at default field name field from custom app confiuration and validating the changed label at custom app dropdown
+    Given I have "default" configuration as below:
+      | configurationCategory| fieldName          | fieldOrignalValue     | filterId         |
+      | Custom App Config    | Default Theme Name | ColorContrast_Grantor | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory    | fieldName          | fieldNewValue  | coreComponentField|
+      | Custom App Config:General| Default Theme Name |                | StateasGrantor    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    Then I see "ColorContrast_Grantor" on complete page for custom App as a Grantor
+
+  @49355    @enableSubTotalFieldAtChildFlexTableForEnhancedGrid-gPlanning
+  Scenario: validate total of number of awards after checking checkbox true of Enable Sub Total field at child flex table from config and validating it inside enhanced grid of programs-planning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Sub Total    | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Row Grouping | true          | TmpGrantorActiveAwardsGrid | Name                      | FTC-1498                   |
+      | Flex Table List       | Enable Sub Total    | true          | TmpGrantorActiveAwardsGrid | Name                      | FTC-1498                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "GT-VT-001" in "flexGridEnhanced1" panel
+    When I expand nested table containing column value "GT-VT-001"
+    Then I see cell subtotal for obligated amount at child table of enhanced grid
+
+  @48668    @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_NOTIN_SystemAdministrator_OR_UserType_IN_Internal
+  Scenario: Setup configuration to hide Approve option from configuration for approval decision using Profile NOT IN System Administrator OR UserType IN Internal and validating its content in pending tasks approval decision
+    Given I have "default" configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                                                  | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                                                        | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_Profile_NOTIN_SystemAdministrator_OR_UserType_IN_Internal | ADAC-0009                                                  |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
+    When I re-login as "Automation-PM" user on "default" portal
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    Then I see only the following radio buttons in the approval decision :
+      | Reject | Forward | Send Back |
+    And I collect all the soft asserts
+
+  @51323    @sequenceFieldAtApplicationBudgetCategoryFlexTableChild-gApplications
+  Scenario: Changing sequence of view row level action item at Application Budget child flex table from config and validating it inside Application Budget child flex table of programs
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Sequence  | 1                 | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Sequence  | 0             | ApplicationBudgetCategoryFlexTable | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
+    When I expand nested table containing column value "BP-01"
+    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    Then I see "View" icon for "toggleFGridApplicationBudgetCategoryFlexGrid" is at position "0" inside flex table
+
+  @34034    @addingfieldNamesOfDifferentDataTypes-gPlanning
+  Scenario Outline: validate adding field names for different data types in flex table of programs-planning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    Then I see "<fieldDisplayNames>" in flex table header
+
+    Examples:
+      | fieldDisplayNames      | newFieldsApi                                                                                                                           | defaultFieldsApi                                                                                                 |
+      | CFDA Number            | FederalProgramCFDA__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+      | Program Approver       | ProgramApprover__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+      | Expected Funding       | ExpectedFunding__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+      | End Date               | EndDate__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById            | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+      | Federal Program CFDA # | ProgramCFDA__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById        | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+      | Program Type           | ProgramType__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById        | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+      | Website Address        | WebsiteAddress__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById     | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+      | Is Federal Program     | IsFederalProgram__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById   | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+      | Number                 | Number__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById             | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+
+  @69951   @expectedTargetURLShouldGetsOpenByClickOnFooterLinks
+  Scenario Outline: validate given target URL opens by click on 508 Compliance link from footer
+    Given I have "customAppFooter" configuration as below:
+      | id                 | Name | DisplayText    | TargetURL                            | Sequence | booleanValue                                         | customSettingApiName          |
+      | a0E1500000VP7l5EAD | F3   | 508 Compliance | /apex/GNT__Help?uniqueName=Help-0113 | 3        | GNT__Active__c:true,GNT__TermsAndConditions__c:false | GNT__CustomAppFooterConfig__c |
+    And I update custom app footer setting changes:
+      | id                 | Name | DisplayText    | TargetURL                            | Sequence | booleanValue                                         | customSettingApiName          |
+      | a0E1500000VP7l5EAD | F3   | 508 Compliance | /apex/GNT__Help?uniqueName=Help-0094 | 3        | GNT__Active__c:true,GNT__TermsAndConditions__c:false | GNT__CustomAppFooterConfig__c |
+    When I login as "Automation" user
+    When I navigate to "Planning" tab
+    When I click on footer links "508 Compliance"
+    When I switch to tab number "1"
+    Then I see "Complete" "<Logout_URL>" page is displayed
+    Examples:
+      | Logout_URL                                                                             |
+      | https://ggptest5-dev-ed--gnt.na69.visual.force.com/apex/apex/Help?uniqueName=Help-0094 |
+
+  @37857    @versionFieldAtFormConfig-gApplication
+  Scenario: Changing text for version field at form config for general application form from config and validating it at particular form detail page
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Forms                 | Version   | 1.0               | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Forms:General         | Version   | 2.0           | General Application Form |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "AP-755-198"
+    When I click on "View" icon for "Test announcement for program 2" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon of form "General Application Form" program in flex table
+    Then I see "Form Version 2.0" inside Form Version
+
+  @69960   @VerifyAssignedApproverUserInsideChevron
+  Scenario: Validating chevron contain Approver user and Initial submitter after submission of record to submit for approval
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField                                                               | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Program               | Status    | Created       | Test program for automation - SA mode only - Not approved - History Tab Scenario |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForHistoryTabScenarios}"
+    When I click on "Edit" icon for "Test program for automation - SA mode only - Not approved - History Tab Scenario" inside table
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
+    And I refresh the page
+    When I navigate to "History" sub tab
+    Then I see for "Program Manager Approver" value is "Automation PM" in chevron diagram
+
+  @70432 @validateThatSpacesInFolderNameIsNotAcceptedWhileCreatingFolderUnderLibrary-AtHomePhase
+  Scenario: Verify that if user enter spaces in folder name then an alert message is displayed - home phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on dropdown at library/folder/file "Department of Community Health"
+    When I click on "Add New Folder" option at library/folder/file "Department of Community Health"
+    When I enter value as "  " in field "Folder Name" at Library Files
+    When I click on "Save" button in send email modal
+    Then I see the following messages in the page details contains:
+      | The Content Folder null isn't valid. Use a unique name that doesn't start or end with a space and doesn't contain the character /.: Name |
+
+  @35816    @hideApprovalDecisionFieldAtPageLayout-gPlanning
+  Scenario: Hiding approval decision box at page layout from config and validating it inside pending task approval decision
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                   | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Approval Decision comp | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                   | fieldNewValue | coreComponentField                                            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Program               | Status                      | Created       | Test program for automation -  SA mode only - Can be Approved |                           |                            |
+      | Page Layout:General   | Hide Approval Decision comp | true          | Grantee State Program                                         |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
+    When I re-login as "Automation-PM" user on "default" portal
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
+    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
+    Then I cannot see the radio button "Approve" in the approval decision
+    And I collect all the soft asserts
+
+  @34485    @validateNumberOfCharts-gplanning
+  Scenario: Setup number of charts as "2" from config. and validate only two charts are displayed inside planning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Phase Config          | Total Charts Allowed | 3                 | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue | coreComponentField |
+      | Phase Config:General  | Total Charts Allowed | 2             | GrantorPlanning    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "2" charts are displayed
+
+  @69217 @validateIfGroupCheckboxCheckedAtCCFieldThenOnlyUserGroupsIsShownInAutoSuggestionBox
+  Scenario: Validate If Group checkbox is checked At CC Field then only Group is shown in suggestion box at send email modal
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "CommunicationHistory"
+    When I click on "CC" email Search By field and select dropdown value as "Groups"
+    When I enter value "Automation Testing Group" into field "CC" on send email modal
+    Then I see iconName "fa fa-users" with user "Automation Testing Group" is displayed on send email modal
