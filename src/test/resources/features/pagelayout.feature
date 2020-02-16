@@ -413,7 +413,7 @@ Feature: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @35981    @sortOrderFieldAtPageBlock-gPlanning
   Scenario: Changing sort order for Program information page block from config and validating it at program detail page
@@ -461,7 +461,7 @@ Feature: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @36038    @hideForUserFieldAtPageBlock-gPlanning @smoke
   Scenario: Hiding of program information page block for internal user from config and validating it at program detail page
@@ -477,7 +477,7 @@ Feature: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @35957    @hideOperatorFieldUsingANDOperatorAtPageTab-gPlanning
   Scenario: Hide overview for program view page from config using AND operator and validating it at program detail page
@@ -533,7 +533,7 @@ Feature: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @36040    @hideOperatorFieldUsingANDOperatorAtPageBlock-gPlanning
   Scenario: Hide program information for program view page from config using AND operator and validating it at program detail page
@@ -553,7 +553,7 @@ Feature: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @36036    @totalFieldsPerRowFieldAtPageBlock-gPlanning
   Scenario: Setup value for total fields per row page block from config and validating it at program detail page
@@ -589,7 +589,7 @@ Feature: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @36042    @hideDecisionFieldAtPageBlock-gPlanning @smoke
   Scenario: Hiding of program information page block from config and validating it at program detail page
@@ -605,7 +605,7 @@ Feature: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @36045    @flexTableNameFieldAtPageBlock-gPlanning @smoke
   Scenario: Changing flex table rendering by changing name inside flex table name field at page block from config and validating it on program detail page
@@ -1282,7 +1282,7 @@ Feature: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @36116    @hideExpressionJsonFieldAtPageBlockDetail-gPlanning @smoke
   Scenario: Disabling of program name page block detail from json config and validating it at program detail page
