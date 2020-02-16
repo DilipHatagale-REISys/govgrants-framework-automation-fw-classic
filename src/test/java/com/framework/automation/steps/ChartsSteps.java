@@ -41,7 +41,7 @@ public class ChartsSteps {
 		chartsPage.assertChartTitleDisplayed(title);
 	}
 
-	@Then("^I (see|do not see) chart legends are not displayed for chart/enhanced Charts \"([^\"]*)\"$")
+	@Then("^I (see|do not see) chart legends are displayed for chart/enhanced Charts \"([^\"]*)\"$")
 	public void assertChartLegendsNotDisplayed(String usage,String chartName) {
 		chartsPage.assertChartLegendNotDisplayed(usage, chartName);
 	}

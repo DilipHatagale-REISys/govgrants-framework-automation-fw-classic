@@ -57,7 +57,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    Then I see chart legends are not displayed for chart/enhanced Charts "AnnouncementByAdminBureauUnit"
+    Then I see chart legends are displayed for chart/enhanced Charts "AnnouncementByAdminBureauUnit"
 
   @34981    @validateX-axisLabel-gPlannging @smoke
   Scenario: Change chart x-axis label for 'Funding Sources by Total Amount' chart in configuratin and validating inside planning
@@ -167,7 +167,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    Then I see chart legends are not displayed for chart/enhanced Charts "EnhancedPiechartId"
+    Then I see chart legends are displayed for chart/enhanced Charts "EnhancedPiechart"
 
   @70857    @validateDisableLegendsFieldsWithTrue-gAnnouncement-EnhancedCharts
   Scenario: validate disable legends fields is working or not by checking bottom element of charts is getting displayed on checking checkbox
@@ -182,7 +182,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    Then I do not see chart legends are not displayed for chart/enhanced Charts "EnhancedPiechartId"
+    Then I do not see chart legends are displayed for chart/enhanced Charts "EnhancedPiechartId"
 
   @70869    @validateY-axisLabel-gAnnouncement-EnhancedCharts
   Scenario Outline: Change chart y-axis label for 'EnhancedPiechartId' enhanced chart from configuration and validating inside Announcement
@@ -218,8 +218,8 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click on menu icon of chart "Enhanced Piee"
-    When I select "Show All Data" from chart menu of chart "Enhanced Piee"
+    And I click on menu icon of chart "Enhanced Pie"
+    When I select "Show All Data" from chart menu of chart "Enhanced Pie"
     Then I see the following rows under the following columns in table with id "EnhancedPiechartIdrecordsModal" :
       | Announcement Title | Status    |
       | Announcement171001 | Published |
@@ -228,5 +228,27 @@ Feature: Charts and Enhanced Charts Component Scenarios
       | default_Data_Table_Query                                                                                           | new_Data_Table_Query                                                                                                                         |
       | SELECT Name,AnnouncementName__c,AnnouncementType__c,Status__c FROM Announcement__c where RecordType.Name='Grantor' | SELECT Name,AnnouncementName__c,AnnouncementType__c,Status__c FROM Announcement__c where RecordType.Name='Grantor' AND Status__c='Published' |
 
+  @70877    @validateEditDataTableQueryforAllDataField-gAnnouncement-EnhancedCharts @wip
+  Scenario Outline: Validate all data from 'EnhancedPiechartId'
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                      | fieldOrignalValue          | filterId         |
+      | Charts Config         | Data Table Query(For All Data) | <default_Data_Table_Query> | ApiGeneratedId:0 |
+      | Charts Config         | Active                         | false                      | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                      | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Data Table Query(For All Data) | <new_Data_Table_Query> | FundingOpportunity | Name                      | Enhanced Pie chart         |
+      | Charts Config         | Active                         | true                   | FundingOpportunity | Name                      | Enhanced Pie chart         |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click on menu icon of chart "Enhanced Pie"
+    When I select "Show All Data" from chart menu of chart "Enhanced Pie"
+    Then I see the following rows under the following columns in table with id "EnhancedPiechartIdrecordsModal" :
+      | Announcement Title | Status    |
+      | Announcement171001 | Published |
+
+    Examples:
+      | default_Data_Table_Query                                                                                           | new_Data_Table_Query                                                                                                                                                 |
+      | SELECT Name,AnnouncementName__c,AnnouncementType__c,Status__c FROM Announcement__c where RecordType.Name='Grantor' | SELECT Name,AnnouncementName__c,AnnouncementType__c,TotalCommittedAmount__c,Status__c FROM Announcement__c where RecordType.Name='Grantor' AND Status__c='Published' |
 
 

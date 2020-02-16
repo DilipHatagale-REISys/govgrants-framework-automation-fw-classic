@@ -1554,7 +1554,7 @@ Feature: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @45704    @hide_expression_Program_Information_Page_Block_IN_Operator_PM_User_Profile
   Scenario: Hide Program Information from Overview Tab for PM User type internal using IN operator
@@ -1570,7 +1570,7 @@ Feature: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @45705    @hide_expression_Program_Information_Page_Block_IN_Operator_PM_ADMIN_User_Profile @smoke
   Scenario: Hide Program Information from Overview Tab for PM-ADMIN User type internal using IN operator
@@ -1586,7 +1586,7 @@ Feature: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @45709    @hide_expression_Program_Information_Page_Block_UserTypeIN_Internal_AND_ProfileIN_SystemAdministrator
   Scenario: Hide Program Information from Overview Tab for ADMIN User type internal using (UserTypeIN(Internal)ANDProfileIN(SystemAdministrator))
@@ -1602,7 +1602,7 @@ Feature: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @45707    @hide_expression_Program_Information_Page_Block_LeftOperandsprofileNOTINoperator_ADMIN_PM @smoke
   Scenario: Hide Program Information from Overview Tab for ADMIN PM User type internal using LeftOperandsprofileNOTINoperator(ADMIN,PM)
@@ -1634,7 +1634,7 @@ Feature: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @45711    @hide_expression_Program_Information_Page_Block_Title_Context_InEdit
   Scenario: Hide Program Information from Overview Tab for ADMIN User type internal using Context IN at program edit page
@@ -1650,7 +1650,7 @@ Feature: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @45712    @hide_expression_Program_Information_Page_Block_Title_Context_InView
   Scenario: Hide Program Information from Overview Tab for ADMIN User type internal using context IN at program view page
@@ -1666,7 +1666,7 @@ Feature: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @45713    @hide_expression_Program_Information_Page_Block_Title_Context_NotIn_With_Create_Edit
   Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User type internal using context NOT IN (create,Edit)at program Edit page
@@ -1698,7 +1698,7 @@ Feature: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @45717    @hide_expression_Program_Information_Page_Block_Title_Context_Context_NOT_IN_Edit_Create_AND_UserType_IN_Internal
   Scenario: Hide Program Information from Overview Tab for ADMIN User type internal using (Context NOT IN ( Edit, Create ) OR UserType IN ( Internal ))
@@ -1730,7 +1730,7 @@ Feature: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @45714    @hide_expression_Program_Information_Page_Block_Title_Context_IN_View_AND_Profile_IN_System_Administrator
   Scenario: Hide Program Information from Overview Tab for ADMIN User type internal using (Context IN (View) AND Profile IN (System Administrator))
@@ -1746,7 +1746,7 @@ Feature: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @45715    @hide_expression_Program_Information_Page_Block_Title_Context_NOT_IN_Edit_Create_OR_Profile_IN_System_Administrator_Validate_using_PM_profile @smoke
   Scenario: Hide Program Information from Overview Tab for ADMIN User type internal using (Context NOT IN( Edit,Create) OR Profile IN (System Administrator ))-Validate using PM profile
@@ -1778,7 +1778,7 @@ Feature: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @45872    @hide_expression_Program_Information_Page_Block_Title_For_Field_FundedAmount__c_NotEqualTo_400000
   Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User using field (FundedAmount_c!=400000) at program view page
@@ -1842,7 +1842,7 @@ Feature: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @45878    @hide_expression_Program_Information_Page_Block_Title_For_Field_CFDA_Data__c_notequalto_true
   Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User using field (CFDA_Data__c != true) at program view page
@@ -1890,7 +1890,7 @@ Feature: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @45822    @hide_expression_Program_Information_Page_Block_Title_Context_UserApp_NOT_IN_StateasGrantor
   Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User using field ( UserApp NOTIN ( StateasGrantor ))
@@ -1922,7 +1922,7 @@ Feature: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @45844    @hide_expression_Program_Information_Page_Block_Title_LeftOperand_Not_Equals_ProgramType_c_Grant
   Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User using Field(Not Equals)(ProgramType__c != Grant)
@@ -1954,7 +1954,7 @@ Feature: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @45850    @hide_expression_Program_Information_Page_Block_Title_LeftOperand_less_than_equals_StartDate__c_11_30_2020
   Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User using Field less than equals ( StartDate__c <= 11/30/2020 )
@@ -1970,7 +1970,7 @@ Feature: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @45849    @hide_expression_Program_Information_Page_Block_Title_LeftOperand_Greater_than_equals_StartDate__c_11_30_2020 @smoke
   Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User using Field Greater than equals( StartDate__c >= 11/30/2020 )
@@ -1986,7 +1986,7 @@ Feature: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @45848    @hide_expression_Program_Information_Page_Block_Title_LeftOperand_NOT_Equals_FunderType__c_Federal
   Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User using Field NOT Equals( FunderType__c != Federal )
@@ -2034,7 +2034,7 @@ Feature: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @45854    @hide_expression_Program_Information_Page_Block_Title_LeftOperandField_Account__r.Name_IN_DepartmentofCommunityHealth_OR_StartDate__c_greaterthan_11/30/2020
   Scenario: Hide Program Information from Overview Tab using field Account__r.Name IN Department of Community Health OR StartDate__c > 11/30/2020 ) at program view page
@@ -2050,7 +2050,7 @@ Feature: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @45855    @hide_expression_Program_Information_Page_Block_Title_LeftOperandField_UserApp_IN_StateasGrantor_for_AND
   Scenario: Hide Program Information from Overview Tab using field (UserApp IN (StateasGrantor)) for AND at program view page
@@ -2066,7 +2066,7 @@ Feature: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @45859    @hide_expression_Program_Information_Page_Block_Title_LeftOperandField_FunderType__c_CONTAINS_Federal
   Scenario: Set up configuration for Hide Program Information from Overview Tab using Field (FunderType__c CONTAINS Federal) program view page
@@ -2082,7 +2082,7 @@ Feature: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @45879    @hide_expression_Program_Information_Page_Block_Title_LeftOperandField_CFDA_Data__c_equalto_true_for_OR
   Scenario: Set up configuration for Hide Program Information from Overview Tab using Field Field ( CFDA_Data__c = true ) for OR program view page
@@ -2098,7 +2098,7 @@ Feature: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @45917    @hide_expression_ProgramCode_With_UserType_Internal @smoke
   Scenario: Set up configuration for Hide Program code from Overview page block using user type internal at program view page
@@ -2338,7 +2338,7 @@ Feature: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @45852    @hide_expression_Program_Information_Page_Block_Title_LeftOperand_Not_Equals_StartDate__c_11_30_2020
   Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User using Field Not Equals ( StartDate__c != 11/30/2020 )
@@ -2370,7 +2370,7 @@ Feature: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @46314    @hide_expression_Program_Information_Page_Block_LeftOperand_Profile_In_Operator
   Scenario: Set up configuration for Hide Program Information from Overview Tab for ADMIN User using Profile IN operator
@@ -2386,7 +2386,7 @@ Feature: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @45962    @hide_expression_Budget_Period_Details_Page_Block_LeftOperand_Profile_NotIN_SystemAdmin_PM_SPI
   Scenario: Set up configuration to display Budget Period Details from Overview Tab for ADMIN SPI PM User using Profile NotIn
@@ -2418,7 +2418,7 @@ Feature: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Budget Period Details" page block is not displayed
+    Then I do not see "Budget Period Details" page block displayed
 
   @45960    @hide_expression_Budget_Period_Details_Page_Block_LeftOperand_UserType_NotIN_Internal
   Scenario: Set up configuration to display Budget Period Details inside Overview Tab using user type NOTIN for Internal
@@ -2466,7 +2466,7 @@ Feature: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Budget Period Details" page block is not displayed
+    Then I do not see "Budget Period Details" page block displayed
 
   @45965    @hide_expression_Program_Contacts_Page_Block_LeftOperand_Profile_IN_PM_SystemAdmin_SPI
   Scenario: Set up configuration to hide Program contacts inside Overview Tab using profile IN for PM System Admin and Spi user
@@ -2482,7 +2482,7 @@ Feature: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Contacts" page block is not displayed
+    Then I do not see "Program Contacts" page block displayed
 
   @45966    @hide_expression_Program_Contacts_Page_Block_LeftOperand_Context_NotIN__Create_Edit @smoke
   Scenario: Set up configuration to display Program contacts inside Overview Tab using context NOTIN (Create,Edit)
@@ -2530,7 +2530,7 @@ Feature: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Contacts" page block is not displayed
+    Then I do not see "Program Contacts" page block displayed
 
   @45984    @hide_expression_Program_Information_Page_Block_LeftOperand_Profile_NOTIN_SPI_PM
   Scenario: Set up configuration to hide Program Information inside Overview Tab using Profile NOTIN for PM, SPI
@@ -2546,7 +2546,7 @@ Feature: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @45985    @hide_expression_Program_Information_Page_Block_LeftOperand_Account_r_Name_CONTAINS_DepartmentOfCommunityHealth
   Scenario: Set up configuration to hide Program Information inside Overview Tab using (Account__r.Name CONTAINS Department of Community Health)
@@ -2562,7 +2562,7 @@ Feature: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @45986    @hide_expression_Program_Information_Page_Block_LeftOperand_Profile_IN_SystemAdministrator_AND_Profile_IN_PM @smoke
   Scenario: Set up configuration to hide Program Information inside Overview Tab using Profile IN System Administrator AND Profile IN PM
@@ -2578,7 +2578,7 @@ Feature: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @45988    @hide_expression_Program_Information_Page_Block_LeftOperand_Profile_IN_SystemAdministrator_OR_PM
   Scenario: Set up configuration to hide Program Information inside Overview Tab using Profile IN System Administrator OR PM
@@ -2594,7 +2594,7 @@ Feature: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @45989    @hide_expression_Program_Information_Page_Block_LeftOperand_UserType_NOTIN__Internal_Applicant
   Scenario: Set up configuration to display Program Information inside Overview Tab using (UserType NOT IN( Internal,Applicant ))
@@ -2626,7 +2626,7 @@ Feature: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @45993    @hide_expression_Program_Information_Page_Block_LeftOperand_Federal_OR_StartDate
   Scenario: Set up configuration to hide Program Information inside Overview Tab using Field Federal OR StartDate
@@ -2642,7 +2642,7 @@ Feature: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @46051    @hide_expression_Program_Information_Page_Block_LeftOperand_Funder_OR_UserApp
   Scenario: Set up configuration to hide Program Information inside Overview Tab using Field Funder OR UserApp
@@ -2658,7 +2658,7 @@ Feature: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @46064    @hide_expression_Program_Information_Page_Block_LeftOperand_ExpectedFunding_OR_UserApp
   Scenario: Set up configuration to hide Program Information inside Overview Tab using Field ExpectedFunding OR UserApp
@@ -2674,7 +2674,7 @@ Feature: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @46065    @hide_expression_Program_Information_Page_Block_LeftOperand_UserApp_IN
   Scenario: Set up configuration to hide Program Information inside Overview Tab using UserApp In
@@ -2690,7 +2690,7 @@ Feature: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" page block displayed
+    Then I do not see "Program Information" page block displayed
 
   @46370    @hide_expression_Website_Address_Page_Block_Details_With_FunderType_c_Contains_Federal @smoke
   Scenario: Set up configuration for Hide Website address from Overview page block details using Field (FunderType__c CONTAINS Federal) at program view page
@@ -5329,7 +5329,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    Then I see "Attachments" page block is not displayed
+    Then I do not see "Attachments" page block displayed
 
   @51607    @hide_expression_Page_Block_Profile_NOTIN_PM_For_Notes_And_Attachment
   Scenario: Set up configuration to hide Notes and Attachment page block using expression json field for NOTIN PM
@@ -5346,7 +5346,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    Then I see "Attachments" page block is not displayed
+    Then I do not see "Attachments" page block displayed
 
   @51608    @hide_expression_Page_Block_UserType_IN_Internal__For_Notes_And_Attachment
   Scenario: Set up configuration to hide Notes and Attachment page block using expression json field as UserType IN Internal
@@ -5363,7 +5363,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    Then I see "Attachments" page block is not displayed
+    Then I do not see "Attachments" page block displayed
 
   @51609    @hide_expression_Page_Block_UserType_NOTIN_Internal__For_Notes_And_Attachment
   Scenario: Set up configuration to display Notes and Attachment page block using expression json field as UserType NOTIN Internal
