@@ -258,8 +258,8 @@ public class GovGrantsManager extends ProjectWebServices {
      *
      * @param chartName
      */
-    public void clickChartMenuIcon(String chartName) {
-        EyeThink.saas().charts().clickChartMenuIcon(chartName);
+    public void clickChartMenuIcon(String chartName, String iconTitle) {
+        EyeThink.saas().charts().clickChartMenuIcon(chartName, iconTitle);
     }
 
     /**

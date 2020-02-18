@@ -200,9 +200,9 @@ Feature: Library Files Component Scenarios
     When I click on expand icon at library/folder "Department of Community Health"
     When I click on expand icon at library/folder "testAutomationFolder1"
     When I click on dropdown at library/folder/file "SendEmailAttachment.png"
-    Then I softly see "Edit" option is present at library/folder/file "SendEmailAttachment.png"
-    Then I softly see "Delete" option is present at library/folder/file "SendEmailAttachment.png"
-    Then I softly see "Download" option is present at library/folder/file "SendEmailAttachment.png"
+    Then I softly see "Edit File" option is present at library/folder/file "SendEmailAttachment.png"
+    Then I softly see "Delete File" option is present at library/folder/file "SendEmailAttachment.png"
+    Then I softly see "Download File" option is present at library/folder/file "SendEmailAttachment.png"
     Then I collect all the soft asserts
 
   @70284 @validateThatAuthorCanSeeAllActionsAtLibrary-HomePhase
