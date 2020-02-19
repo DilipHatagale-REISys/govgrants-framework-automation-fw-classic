@@ -11,9 +11,9 @@ public class ChartsSteps {
 		chartsPage = new ChartsPage();
 	}
 
-	@When("^I click on menu icon of chart \"([^\"]*)\"$")
-	public void clickChartMenuIcon(String chartName) {
-		chartsPage.clickChartMenuIcon(chartName);
+	@When("^I click on menu icon of chart \"([^\"]*)\" with title \"([^\"]*)\"$")
+	public void clickChartMenuIcon(String chartName, String iconTitle) {
+		chartsPage.clickChartMenuIcon(chartName, iconTitle);
 	}
 
 	@When("^I select \"([^\"]*)\" from chart menu of chart \"([^\"]*)\"$")

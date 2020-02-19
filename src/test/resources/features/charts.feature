@@ -42,7 +42,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click on menu icon of chart "AnnouncementByAdminBureauUnit"
+    And I click on menu icon of chart "AnnouncementByAdminBureauUnit" with title "Menu"
     When I select "Show All Data" from chart menu of chart "AnnouncementByAdminBureauUnit"
     Then I see "Funding Opportunity Automation" displayed in modal
 
@@ -57,7 +57,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    Then I see chart legends are displayed for chart/enhanced Charts "AnnouncementByAdminBureauUnit"
+    Then I do not see chart legends are displayed for chart/enhanced Charts "AnnouncementByAdminBureauUnit"
 
   @34981    @validateX-axisLabel-gPlannging @smoke
   Scenario: Change chart x-axis label for 'Funding Sources by Total Amount' chart in configuratin and validating inside planning
@@ -155,7 +155,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     Then I see charts "EnhancedPiechartId" with type as "highcharts-point"
 
   @70856    @validateDisableLegendsFieldsWithFalse-gAnnouncement-EnhancedCharts
-  Scenario: validate disable legends fields is working or not by checking bottom element of charts is getting displayed on unchecking checkbox
+  Scenario: validate disable legends fields is working or not by viewing bottom element of charts is getting displayed on unchecking checkbox
     Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
       | Charts Config         | Disable Legend |                   | ApiGeneratedId:0 |
@@ -182,7 +182,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    Then I do not see chart legends are displayed for chart/enhanced Charts "EnhancedPiechartId"
+    Then I do not see chart legends are displayed for chart/enhanced Charts "EnhancedPiechart"
 
   @70869    @validateY-axisLabel-gAnnouncement-EnhancedCharts
   Scenario Outline: Change chart y-axis label for 'EnhancedPiechartId' enhanced chart from configuration and validating inside Announcement
@@ -205,7 +205,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
       | EchartY-Axix_Text             |
       | Automation Announcement count |
 
-  @70876    @validateEditDataTableQueryforAllDataField-gAnnouncement-EnhancedCharts @wip
+  @70876    @validateEditDataTableQueryforAllDataFieldFromBurgerIcon-gAnnouncement-EnhancedCharts
   Scenario Outline: Validate all data from 'EnhancedPiechartId'
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                      | fieldOrignalValue          | filterId         |
@@ -218,8 +218,32 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click on menu icon of chart "Enhanced Pie"
+    And I click on menu icon of chart "Enhanced Pie" with title "Menu"
     When I select "Show All Data" from chart menu of chart "Enhanced Pie"
+    Then I see the following rows under the following columns in table with id "EnhancedPiechartIdrecordsModal" :
+      | Announcement Title | Status    |
+      | Announcement171001 | Published |
+    Then I collect all the soft asserts
+
+    Examples:
+      | default_Data_Table_Query                                                                                           | new_Data_Table_Query                                                                                                                         |
+      | SELECT Name,AnnouncementName__c,AnnouncementType__c,Status__c FROM Announcement__c where RecordType.Name='Grantor' | SELECT Name,AnnouncementName__c,AnnouncementType__c,Status__c FROM Announcement__c where RecordType.Name='Grantor' AND Status__c='Published' |
+
+  @70877    @validateEditDataTableQueryforAllDataFieldFromEnhancedViewIcon-gAnnouncement-EnhancedCharts
+  Scenario Outline: Validate expected status from enhanced chart modal(show all data from enhanced view icon)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                      | fieldOrignalValue          | filterId         |
+      | Charts Config         | Data Table Query(For All Data) | <default_Data_Table_Query> | ApiGeneratedId:0 |
+      | Charts Config         | Active                         | false                      | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                      | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Data Table Query(For All Data) | <new_Data_Table_Query> | FundingOpportunity | Name                      | Enhanced Pie chart         |
+      | Charts Config         | Active                         | true                   | FundingOpportunity | Name                      | Enhanced Pie chart         |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click on menu icon of chart "Enhanced Pie" with title "Enhanced View"
+    When I click modal button "Show All Data"
     Then I see the following rows under the following columns in table with id "EnhancedPiechartIdrecordsModal" :
       | Announcement Title | Status    |
       | Announcement171001 | Published |
@@ -228,27 +252,140 @@ Feature: Charts and Enhanced Charts Component Scenarios
       | default_Data_Table_Query                                                                                           | new_Data_Table_Query                                                                                                                         |
       | SELECT Name,AnnouncementName__c,AnnouncementType__c,Status__c FROM Announcement__c where RecordType.Name='Grantor' | SELECT Name,AnnouncementName__c,AnnouncementType__c,Status__c FROM Announcement__c where RecordType.Name='Grantor' AND Status__c='Published' |
 
-  @70877    @validateEditDataTableQueryforAllDataField-gAnnouncement-EnhancedCharts @wip
-  Scenario Outline: Validate all data from 'EnhancedPiechartId'
+  @70880    @validateElementsOnModalComingOnEnhancedViewClick-EnhancedCharts
+  Scenario: Validate Enhanced chart modal details after closing show all data modal
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName                      | fieldOrignalValue          | filterId         |
-      | Charts Config         | Data Table Query(For All Data) | <default_Data_Table_Query> | ApiGeneratedId:0 |
-      | Charts Config         | Active                         | false                      | ApiGeneratedId:1 |
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Charts Config         | Active    | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                      | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Charts Config         | Data Table Query(For All Data) | <new_Data_Table_Query> | FundingOpportunity | Name                      | Enhanced Pie chart         |
-      | Charts Config         | Active                         | true                   | FundingOpportunity | Name                      | Enhanced Pie chart         |
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Active    | true          | FundingOpportunity | Name                      | Enhanced Pie chart         |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click on menu icon of chart "Enhanced Pie"
-    When I select "Show All Data" from chart menu of chart "Enhanced Pie"
-    Then I see the following rows under the following columns in table with id "EnhancedPiechartIdrecordsModal" :
-      | Announcement Title | Status    |
-      | Announcement171001 | Published |
+    And I click on menu icon of chart "Enhanced Pie" with title "Enhanced View"
+    When I click modal button "Show All Data"
+    When I click modal button "Close"
+    Then I see chart legends are displayed for chart/enhanced Charts "EnhancedPiechart"
+
+  @70891    @validateY-axisPrefix-gAnnouncement-EnhancedCharts
+  Scenario Outline: Change chart y-axis prefix for 'EnhancedPiechartId' enhanced chart from configuration and validating inside Announcement
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Charts Config         | Y Axis Prefix |                   | ApiGeneratedId:0 |
+      | Charts Config         | Active        | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Y Axis Prefix | <EchartY-Axix_Text> | FundingOpportunity | Name                      | Enhanced Pie chart         |
+      | Charts Config         | Active        | true                | FundingOpportunity | Name                      | Enhanced Pie chart         |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    When I hovering mouse on enhanced charts id "EnhancedPiechartId" and charts type "highcharts-point"
+    And I pause execution for "2" seconds
+    Then I see "<EchartY-Axix_Text>" shown inside enhanced charts on hover
 
     Examples:
-      | default_Data_Table_Query                                                                                           | new_Data_Table_Query                                                                                                                                                 |
-      | SELECT Name,AnnouncementName__c,AnnouncementType__c,Status__c FROM Announcement__c where RecordType.Name='Grantor' | SELECT Name,AnnouncementName__c,AnnouncementType__c,TotalCommittedAmount__c,Status__c FROM Announcement__c where RecordType.Name='Grantor' AND Status__c='Published' |
+      | EchartY-Axix_Text        |
+      | Automation Y Axis Prefix |
 
+  @70892    @validateY-axisSuffix-gAnnouncement-EnhancedCharts
+  Scenario Outline: Change chart y-axis suffix for 'EnhancedPiechartId' enhanced chart from configuration and validating inside Announcement
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Charts Config         | Y Axis Suffix |                   | ApiGeneratedId:0 |
+      | Charts Config         | Active        | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Y Axis Suffix | <EchartY-Axix_Text> | FundingOpportunity | Name                      | Enhanced Pie chart         |
+      | Charts Config         | Active        | true                | FundingOpportunity | Name                      | Enhanced Pie chart         |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    When I hovering mouse on enhanced charts id "EnhancedPiechartId" and charts type "highcharts-point"
+    And I pause execution for "2" seconds
+    Then I see "<EchartY-Axix_Text>" shown inside enhanced charts on hover
 
+    Examples:
+      | EchartY-Axix_Text          |
+      | Automation Y Axis Suffix $ |
+
+  @70896    @validateActiveField-gHOME-EnhancedDualAxesCharts
+  Scenario: Validating dual axes chart is getting displayed on UI while making changes of boolean field Active for dual axes chart at configuration page -gHOME
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Charts Config         | Active    | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Active    | true          | GrantorHome        | Name                      | Enhanced Dual Axes         |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see charts with id "EnhancedDualAxesId" displayed
+
+  @70897    @validateTitleFieldAtCharts-gHOME-EnhancedDualAxesCharts
+  Scenario: Changing chart title for 'EnhancedDualAxesId' enhanced dual axes chart in configuration and validating inside home-programs
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue  | filterId         |
+      | Charts Config         | Title     | Enhanced Dual Axes | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Title     | Automation Enhanced Dual Axes Chart | GrantorHome        | Name                      | Enhanced Dual Axes         |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see "Automation Enhanced Dual Axes Chart" displayed as chart title
+
+  @70899    @validateChartTypeFieldAtCharts-gHOME-EnhancedDualAxesCharts
+  Scenario: Changing value of chart type to dual axes for 'EnhancedDualAxesId' enhanced dual axes chart in configuration and validating inside planning-programs
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName  | fieldOrignalValue | filterId         |
+      | Charts Config         | Chart Type | Dual axes         | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Chart Type | Dual axes     | GrantorHome        | Name                      | Enhanced Dual Axes         |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see charts "EnhancedDualAxesId" with type as "highcharts-tracker-line"
+
+  @70981    @validateDisableLegendsFieldsWithFalse-gHOME-EnhancedDualAxesCharts
+  Scenario: validate disable legends fields of 'EnhancedDualAxesId' is working or not while unchecking checkbox of Disable Legend Field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Charts Config         | Disable Legend |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Disable Legend | false         | GrantorHome        | Name                      | Enhanced Dual Axes         |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see chart legends are displayed for chart/enhanced Charts "EnhancedDualAxes"
+
+  @70982    @validateDisableLegendsFieldsWithTrue-gHOME-EnhancedDualAxesCharts
+  Scenario: validate disable legends fields of 'EnhancedDualAxesId' is working or not while checking checkbox of Disable Legend Field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Charts Config         | Disable Legend | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Disable Legend | true          | GrantorHome        | Name                      | Enhanced Dual Axes         |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I do not see chart legends are displayed for chart/enhanced Charts "EnhancedDualAxes"
+
+  @70996    @validateX-axisLabelField-gHOME-EnhancedDualAxesCharts @wip
+  Scenario: Change chart x-axis label for 'EnhancedDualAxesId' chart in configuratin and validating inside HOME
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName    | fieldOrignalValue      | filterId         |
+      | Charts Config         | X-Axis Label | Internal Organizations | ApiGeneratedId:0 |
+      | Charts Config         | Chart Type   | Dual axes              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName    | fieldNewValue                     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | X-Axis Label | Automation Internal Organizations | GrantorHome        | Name                      | Enhanced Dual Axes         |
+      | Charts Config         | Chart Type   | Dual axes                         | GrantorHome        | Name                      | Enhanced Dual Axes         |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see "Automation Internal Organizations" for chart "EnhancedDualAxes"
