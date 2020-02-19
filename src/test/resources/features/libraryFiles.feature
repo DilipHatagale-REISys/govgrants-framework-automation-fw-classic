@@ -409,3 +409,216 @@ Feature: Library Files Component Scenarios
     When I click on "Delete Folder" option at library/folder/file "testAutomationFolder1"
     Then I see the following messages in the page details contains:
       | You can delete a Content Folder only if it's empty. |
+
+  @70286 @validateThatAuthorCanUploadFileUnderFolder-HomePhase
+  Scenario: Verify that an author can upload file in folder under home phase library
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "Department of Community Health"
+    When I click on dropdown at library/folder/file "testAutomationFolder1"
+    When I click on "Upload File" option at library/folder/file "testAutomationFolder1"
+    When I upload file "SendEmailAttachment.pdf" into library
+    When I enter value as "test Automation Description" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    And I pause execution for "5" seconds
+    And I refresh the page
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "Department of Community Health"
+    When I click on expand icon at library/folder "testAutomationFolder1"
+    Then I softly see library/folder/file "SendEmailAttachment.pdf" is displayed under files library
+    When I click on dropdown at library/folder/file "SendEmailAttachment.pdf"
+    When I click on "Delete File" option at library/folder/file "SendEmailAttachment.pdf"
+    Then I collect all the soft asserts
+
+  @70338 @validateThatAlertMessageIsDisplayedByClickOnSaveButtonIfFolderNameIsEmptyAtAddNewFolderOperation-HomePhase
+  Scenario: Verify that required fields validation msg appears below folder name field under Add New folder modal - home phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on dropdown at library/folder/file "Department of Community Health"
+    When I click on "Add New Folder" option at library/folder/file "Department of Community Health"
+    When I enter value as "" in field "Folder Name" at Library Files
+    Then I see the text containing :
+      | Folder name is required |
+
+  @70355 @validateThatLibraryNameIsDisplayedByDefaultInUploadFilePDFModalWindow-HomePhase
+  Scenario: Verify that Library name is displayed by default in upload file PDF modal window - Home phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on dropdown at library/folder/file "Department of Community Health"
+    When I click on "Upload File" option at library/folder/file "Department of Community Health"
+    Then I see default library/folder as "Department of Community Health" is displayed
+
+  @71055 @validateThatFolderNameIsDisplayedByDefaultInUploadFilePDFModalWindow-HomePhase
+  Scenario: Verify that folder name is displayed by default in upload file PDF modal window - Home phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "Department of Community Health"
+    When I click on dropdown at library/folder/file "testAutomationFolder1"
+    When I click on "Upload File" option at library/folder/file "testAutomationFolder1"
+    Then I see default library/folder as "testAutomationFolder1" is displayed
+
+  @70407 @validateThatFileFromLibraryFolderShouldBeEditableByAuthor-HomePhase
+  Scenario: Verify that By click on edit file, a file name should get updated and shown under library - by author
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "Department of Community Health"
+    When I click on dropdown at library/folder/file "SheetJSFileUpload (8).xlsx"
+    When I click on "Edit File" option at library/folder/file "SheetJSFileUpload (8).xlsx"
+    When I enter value as "TestAutomationSheetJSFileUpload (8).xlsx" in field "Title" at Library Files
+    When I click on "Save" button in send email modal
+    When I pause execution for "6" seconds
+    Then I softly see library/folder/file "TestAutomationSheetJSFileUpload (8).xlsx" is displayed under files library
+    When I click on dropdown at library/folder/file "TestAutomationSheetJSFileUpload (8).xlsx"
+    When I click on "Edit File" option at library/folder/file "TestAutomationSheetJSFileUpload (8).xlsx"
+    When I enter value as "SheetJSFileUpload (8).xlsx" in field "Title" at Library Files
+    When I click on "Save" button in send email modal
+    Then I softly see library/folder/file "SheetJSFileUpload (8).xlsx" is displayed under files library
+    Then I collect all the soft asserts
+
+  @70410 @validateThatUserCanUploadFileFromFileList-HomePhase-FileList
+  Scenario: Verify that user can upload file from HomePhase - FileList table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
+    When I upload file "SendEmailAttachment.pdf" into library
+    When I click on SelectChange Folder in add file modal
+    When I Select/Change Folder as "Department of Community Health" in add file modal
+    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+    When I perform quick search for "SendEmailAttachment.pdf" in "WorkSpaceFilesFlexToggle" panel
+    Then I softly see value "SendEmailAttachment.pdf" for title "Title" inside table "WorkSpaceFilesFlexToggle"
+    When I click on "Delete" icon for "SendEmailAttachment.pdf" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "3" seconds
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I perform quick search for "SendEmailAttachment.pdf" in "WorkSpaceFilesFlexToggle" panel
+    Then I softly see "No Records Found" inside flex table with id "WorkSpaceFilesFlexToggle"
+    Then I collect all the soft asserts
+
+  @70411 @validateThatFileUploadedFromFileListIsDisplayedUnderRespectiveLibraryAtFilesLibraryTab-HomePhase-FileList
+  Scenario: Verify thatfile uploaded from FileList tab is displayed under selected folder/library at library files tab - Home phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
+    When I upload file "SendEmailAttachment.pdf" into library
+    When I click on SelectChange Folder in add file modal
+    When I Select/Change Folder as "Department of Community Health" in add file modal
+    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+    And I refresh the page
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "Department of Community Health"
+    Then I softly see library/folder/file "SendEmailAttachment.pdf" is displayed under files library
+    When I click on dropdown at library/folder/file "SendEmailAttachment.pdf"
+    When I click on "Delete File" option at library/folder/file "SendEmailAttachment.pdf"
+    When I pause execution for "7" seconds
+    Then I softly do not see library/folder/file "SendEmailAttachment.pdf" is displayed under files library
+    Then I collect all the soft asserts
+
+  @70435 @validateThatByClickOnRenameFolderAnUpdatedFolderShouldGetShownInLibraryByAdmin-HomePhase
+  Scenario: Verify that By click on Rename, an updated folder name should get displayed under home phase library by admin
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "Department of Community Health"
+    When I click on dropdown at library/folder/file "Department of Community Health"
+    When I click on "Add New Folder" option at library/folder/file "Department of Community Health"
+    When I enter value as "testAutomationFolder4" in field "Folder Name" at Library Files
+    When I click on "Save" button in send email modal
+    When I pause execution for "10" seconds
+    When I click on dropdown at library/folder/file "testAutomationFolder4"
+    When I click on "Rename Folder" option at library/folder/file "testAutomationFolder4"
+    When I enter value as "testAutomationFolder4-Renamed" in field "Folder Name" at Library Files
+    When I click on "Save" button in send email modal
+    When I pause execution for "5" seconds
+    Then I softly see library/folder/file "testAutomationFolder4-Renamed" is displayed under files library
+    When I click on dropdown at library/folder/file "testAutomationFolder4-Renamed"
+    When I click on "Delete Folder" option at library/folder/file "testAutomationFolder4-Renamed"
+    When I pause execution for "7" seconds
+    Then I softly do not see library/folder/file "testAutomationFolder4-Renamed" is displayed under files library
+    Then I collect all the soft asserts
+
+  @70436 @validateThatFolderCanBeDeletedFromLibraryByAdminIfItIsEmpty-HomePhase
+  Scenario: Verify that folder present under library can be deleted by admin if it is empty - Home phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on dropdown at library/folder/file "Department of Community Health"
+    When I click on "Add New Folder" option at library/folder/file "Department of Community Health"
+    When I enter value as "testAutomationFolderByAdmin" in field "Folder Name" at Library Files
+    When I click on "Save" button in send email modal
+    And I pause execution for "2" seconds
+    When I click on expand icon at library/folder "Department of Community Health"
+    When I click on dropdown at library/folder/file "testAutomationFolderByAdmin"
+    When I click on "Delete Folder" option at library/folder/file "testAutomationFolderByAdmin"
+    And I pause execution for "3" seconds
+    Then I do not see library/folder/file "testAutomationFolderByAdmin" is displayed under files library
+
+  @70491 @validateThatIfFileIsAssociatedWithAnyRecordThenShouldNotBeDeleted-HomePhase
+  Scenario: Verify that if file is associate with any record then user can't delete that file - Home phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "Department of Community Health"
+    When I click on dropdown at library/folder/file "SheetJSFileUpload (8).xlsx"
+    When I click on "Delete File" option at library/folder/file "SheetJSFileUpload (8).xlsx"
+    Then I see the following messages in the page details contains:
+      | You can not delete File SheetJSFileUpload (8).xlsx, as it is associated with business records. |
+
+  @70495 @validateThatFileUploadedFromLibraryFilesIsDisplayedUnderFilesListTab-HomePhase-FileList
+  Scenario: Verify that file uploaded from LibraryFiles tab is displayed under files list tab - Home phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_Library"
+    When I click on dropdown at library/folder/file "Department of Community Health"
+    When I click on "Upload File" option at library/folder/file "Department of Community Health"
+    When I upload file "SendEmailAttachment.pdf" into library
+    When I enter value as "test Automation Description" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+    And I refresh the page
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I perform quick search for "SendEmailAttachment.pdf" in "WorkSpaceFilesFlexToggle" panel
+    Then I softly see value "SendEmailAttachment.pdf" for title "Title" inside table "WorkSpaceFilesFlexToggle"
+    When I click on "Delete" icon for "SendEmailAttachment.pdf" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "5" seconds
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I perform quick search for "SendEmailAttachment.pdf" in "WorkSpaceFilesFlexToggle" panel
+    Then I softly see "No Records Found" inside flex table with id "WorkSpaceFilesFlexToggle"
+    Then I collect all the soft asserts

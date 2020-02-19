@@ -1001,6 +1001,7 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "AP-755-214"
     When I click on "View" icon for "AP-755-214" inside table
     When I navigate to "Budget" sub tab
+    And I pause execution for "2" seconds
     And I click on page navigation arrow "inlineEditGridApplicationBudgetCategoryFlexGrid" for table id "Next"
     Then I see that "BP-05" has been added in flextable with Id "inlineEditGridApplicationBudgetCategoryFlexGrid"
 
