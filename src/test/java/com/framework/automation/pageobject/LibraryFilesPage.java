@@ -64,6 +64,14 @@ public class LibraryFilesPage extends GovGrantsManager {
     }
 
     /**
+     * assert true if default file/folder is displayed under upload file modal - Home Phase
+     *
+     * @param defaultFolder
+     */
+    public void asserDefaultLibraryFolderIsDisabledAtUploadModal(String defaultFolder) {
+        Assert.assertTrue(isDefaultLibraryFolderIsDisabledAtUploadModal(defaultFolder));
+    }
+    /**
      * perform click on expand icon at Library / folder - Home phase
      *
      * @param libraryFileFolderName
@@ -127,6 +135,33 @@ public class LibraryFilesPage extends GovGrantsManager {
      */
     public void clickOnCloseIconAtLibraryFolderFileModal(String icon, String modalTitle) {
         EyeThink.core().click().on(By.xpath("//p[text()='"+modalTitle+"']/..//*[contains(normalize-space(text()),'"+icon+"')]"));
+    }
+    /**
+     * Complete steps to upload file in Library files - Home phase
+     *
+     * @param attachmentName
+     */
+    public void uploadFileInLibraryAtHomePhase(String attachmentName) {
+        By attachmentChooseFilePath = By.xpath("//input[@type='file']");
+        String defaultFilePath = System.getProperty("user.dir") + "/src/main/resources/";
+        EyeThink.core().enterText().in(attachmentChooseFilePath, defaultFilePath + attachmentName);
+    }
+
+    /**
+     * perform click on select/change folder at add file modal - Library Files Home phase
+     *
+     */
+    public void clickOnSelectChangeFolderInAddFileModalUnderLibrary() {
+        EyeThink.core().click().on(By.xpath("//*[contains(normalize-space(text()),'Select/Change Folder')]"));
+    }
+
+    /**
+     * steps to select/change folder at add file modal - Library Files Home phase
+     *
+     * @param folderName
+     */
+    public void selectOrChangeFolderInAddFileModalUnderLibrary(String folderName) {
+        EyeThink.core().click().on(By.xpath("//div[@id='modaltemp']//span[text()='"+folderName+"']"));
     }
 
     /*********
@@ -194,6 +229,23 @@ public class LibraryFilesPage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (EyeThink.core().is().isDisplayed(By.xpath("//button[text()='" + buttonName + "' and @disabled='true']"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if default file/folder is displayed under upload file modal - Home phase
+     *
+     * @param defaultFolder
+     * @return
+     */
+    private boolean isDefaultLibraryFolderIsDisabledAtUploadModal(String defaultFolder) {
+        boolean flag = false;
+        try {
+            if (EyeThink.core().is().isDisplayed(By.xpath("//div[@data-folder-name='"+defaultFolder+"']"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
