@@ -142,7 +142,7 @@ public class LibraryFilesPage extends GovGrantsManager {
      * @param attachmentName
      */
     public void uploadFileInLibraryAtHomePhase(String attachmentName) {
-        By attachmentChooseFilePath = By.xpath("//input[@type='file' and @id='file-upload-input-01']");
+        By attachmentChooseFilePath = By.xpath("//input[@type='file']");
         String defaultFilePath = System.getProperty("user.dir") + "/src/main/resources/";
         EyeThink.core().enterText().in(attachmentChooseFilePath, defaultFilePath + attachmentName);
     }
