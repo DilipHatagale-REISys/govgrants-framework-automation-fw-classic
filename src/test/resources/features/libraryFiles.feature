@@ -622,3 +622,240 @@ Feature: Library Files Component Scenarios
     When I perform quick search for "SendEmailAttachment.pdf" in "WorkSpaceFilesFlexToggle" panel
     Then I softly see "No Records Found" inside flex table with id "WorkSpaceFilesFlexToggle"
     Then I collect all the soft asserts
+
+  @70490 @validateThatUserCanUploadFileOfWithoutEnteringDescriptionInLibrarAndFolder-HomePhase
+  Scenario: Verify that user can upload file without entering description under upload file modal - Home Phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on dropdown at library/folder/file "Department of Community Health"
+    When I click on "Upload File" option at library/folder/file "Department of Community Health"
+    When I upload file "SendEmailAttachment.pdf" into library
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+    And I refresh the page
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "Department of Community Health"
+    Then I softly see library/folder/file "SendEmailAttachment.pdf" is displayed under files library
+    When I click on dropdown at library/folder/file "SendEmailAttachment.pdf"
+    When I click on "Delete File" option at library/folder/file "SendEmailAttachment.pdf"
+    When I pause execution for "7" seconds
+    Then I softly do not see library/folder/file "SendEmailAttachment.pdf" is displayed under files library
+    Then I collect all the soft asserts
+
+  @70493 @validateThatUserCanUploadFileOfTypeDocxInLibrarAndFolder-HomePhase
+  Scenario: Verify that user can upload file of type Doc.x under library and folder - Home Phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on dropdown at library/folder/file "Department of Community Health"
+    When I click on "Upload File" option at library/folder/file "Department of Community Health"
+    When I upload file "TestAutomationFile.docx" into library
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+    And I refresh the page
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "Department of Community Health"
+    Then I softly see library/folder/file "TestAutomationFile.docx" is displayed under files library
+    When I click on dropdown at library/folder/file "TestAutomationFile.docx"
+    When I click on "Delete File" option at library/folder/file "TestAutomationFile.docx"
+    When I pause execution for "7" seconds
+    Then I softly do not see library/folder/file "TestAutomationFile.docx" is displayed under files library
+    Then I collect all the soft asserts
+
+  @70496 @validateThatUserCanDownloadFileFromFileListTab-HomePhase-FileList
+  Scenario: Verify that user can download file from FileList tab - Home phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I perform quick search for "automationTestingOfFiles.xls" in "WorkSpaceFilesFlexToggle" panel
+    When I click on "Download" icon for "automationTestingOfFiles.xls" inside table
+    Then I see "First Name" in downloaded xls or csv file "govgrants"
+
+  @70499 @validateThatFileUploadedFromRecordDetailIsDisplayedUnderHomePhaseFilesListTab-RecordLevel
+  Scenario: Verify that file added from record level is displayed under home phase files list tab - record level
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
+    When I upload file "SendEmailAttachment.pdf" into library
+    When I click on SelectChange Folder in add file modal
+    When I Select/Change Folder as "Department of Community Health" in add file modal
+    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+    When I perform quick search for "SendEmailAttachment.pdf" in "PlanningFilesgrid" panel
+    Then I softly see value "SendEmailAttachment.pdf" for title "Title" inside table "PlanningFilesgrid"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I perform quick search for "SendEmailAttachment.pdf" in "WorkSpaceFilesFlexToggle" panel
+    Then I softly see value "SendEmailAttachment.pdf" for title "Title" inside table "WorkSpaceFilesFlexToggle"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "SendEmailAttachment.pdf" in "PlanningFilesgrid" panel
+    When I click on "Delete" icon for "SendEmailAttachment.pdf" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "3" seconds
+    When I perform quick search for "SendEmailAttachment.pdf" in "PlanningFilesgrid" panel
+    Then I softly see "No Records Found" inside flex table with id "PlanningFilesgrid"
+    Then I collect all the soft asserts
+
+  @70534 @validateThatUserCanUploadFileOfTypeXlsxInLibrarAndFolder-HomePhase
+  Scenario: Verify that user can upload file of type Xlsx under library and folder - Home Phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on dropdown at library/folder/file "Department of Community Health"
+    When I click on "Upload File" option at library/folder/file "Department of Community Health"
+    When I upload file "SheetJSFileUploadDateTime.xlsx" into library
+    When I enter value as "test Automation Description xlsx upload" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+    And I refresh the page
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "Department of Community Health"
+    Then I softly see library/folder/file "SheetJSFileUploadDateTime.xlsx" is displayed under files library
+    When I click on dropdown at library/folder/file "SheetJSFileUploadDateTime.xlsx"
+    When I click on "Delete File" option at library/folder/file "SheetJSFileUploadDateTime.xlsx"
+    When I pause execution for "7" seconds
+    Then I softly do not see library/folder/file "SheetJSFileUploadDateTime.xlsx" is displayed under files library
+    Then I collect all the soft asserts
+
+  @70535 @validateThatUserCanUploadFileOfTypeZipInLibrarAndFolder-HomePhase
+  Scenario: Verify that user can upload file of type Zip under library and folder - Home Phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on dropdown at library/folder/file "Department of Community Health"
+    When I click on "Upload File" option at library/folder/file "Department of Community Health"
+    When I upload file "TestAutomationFile.zip" into library
+    When I enter value as "test Automation Description zip file upload" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+    And I refresh the page
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "Department of Community Health"
+    Then I softly see library/folder/file "TestAutomationFile.zip" is displayed under files library
+    When I click on dropdown at library/folder/file "TestAutomationFile.zip"
+    When I click on "Delete File" option at library/folder/file "TestAutomationFile.zip"
+    When I pause execution for "7" seconds
+    Then I softly do not see library/folder/file "TestAutomationFile.zip" is displayed under files library
+    Then I collect all the soft asserts
+
+  @70536 @validateThatUserCanUploadFileOfTypeTxtInLibrarAndFolder-HomePhase
+  Scenario: Verify that user can upload file of type .txt under library and folder - Home Phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on dropdown at library/folder/file "Department of Community Health"
+    When I click on "Upload File" option at library/folder/file "Department of Community Health"
+    When I upload file "TestAutomation.txt" into library
+    When I enter value as "test Automation Description text file upload" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+    And I refresh the page
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "Department of Community Health"
+    Then I softly see library/folder/file "TestAutomation.txt" is displayed under files library
+    When I click on dropdown at library/folder/file "TestAutomation.txt"
+    When I click on "Delete File" option at library/folder/file "TestAutomation.txt"
+    When I pause execution for "7" seconds
+    Then I softly do not see library/folder/file "TestAutomation.txt" is displayed under files library
+    Then I collect all the soft asserts
+
+  @70537 @validateThatUserCanUploadFileOfTypePDFInLibrarAndFolder-HomePhase
+  Scenario: Verify that user can upload file of type pdf under library and folder - Home Phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on dropdown at library/folder/file "Department of Community Health"
+    When I click on "Upload File" option at library/folder/file "Department of Community Health"
+    When I upload file "SendEmailAttachment.pdf" into library
+    When I enter value as "test Automation Description PDF upload" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+    And I refresh the page
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "Department of Community Health"
+    Then I softly see library/folder/file "SendEmailAttachment.pdf" is displayed under files library
+    When I click on dropdown at library/folder/file "SendEmailAttachment.pdf"
+    When I click on "Delete File" option at library/folder/file "SendEmailAttachment.pdf"
+    When I pause execution for "7" seconds
+    Then I softly do not see library/folder/file "SendEmailAttachment.pdf" is displayed under files library
+    Then I collect all the soft asserts
+
+  @70538 @validateThatUserCanUploadFileOfTypePptxInLibrarAndFolder-HomePhase
+  Scenario: Verify that user can upload file of type pptx under library and folder - Home Phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on dropdown at library/folder/file "Department of Community Health"
+    When I click on "Upload File" option at library/folder/file "Department of Community Health"
+    When I upload file "TestAutomationFile.pptx" into library
+    When I enter value as "test Automation Description Pptx upload" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+    And I refresh the page
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "Department of Community Health"
+    Then I softly see library/folder/file "TestAutomationFile.pptx" is displayed under files library
+    When I click on dropdown at library/folder/file "TestAutomationFile.pptx"
+    When I click on "Delete File" option at library/folder/file "TestAutomationFile.pptx"
+    When I pause execution for "7" seconds
+    Then I softly do not see library/folder/file "TestAutomationFile.pptx" is displayed under files library
+    Then I collect all the soft asserts
+
+  @70539 @validateThatUserCanUploadFileOfTypeJPGInLibrarAndFolder-HomePhase
+  Scenario: Verify that user can upload file of type jpg under library and folder - Home Phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on dropdown at library/folder/file "Department of Community Health"
+    When I click on "Upload File" option at library/folder/file "Department of Community Health"
+    When I upload file "TestAutomationFile.jpg" into library
+    When I enter value as "test Automation Description jpg upload" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+    And I refresh the page
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "Department of Community Health"
+    Then I softly see library/folder/file "TestAutomationFile.jpg" is displayed under files library
+    When I click on dropdown at library/folder/file "TestAutomationFile.jpg"
+    When I click on "Delete File" option at library/folder/file "TestAutomationFile.jpg"
+    When I pause execution for "7" seconds
+    Then I softly do not see library/folder/file "TestAutomationFile.jpg" is displayed under files library
+    Then I collect all the soft asserts
