@@ -1266,7 +1266,7 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     Then I see "Edit" icon for "Demo_Title" is not displayed inside flex table
 
-  @59822    @hideExpressioJsonForRightOperandForContextViewAtParentLevelEnhancedGrid
+  @59822  @hideExpressioJsonForRightOperandForContextViewAtParentLevelEnhancedGrid
   Scenario: validate disabling of view action for context edit at enhanced grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -1442,8 +1442,8 @@ Feature: Logged Issues Scenarios
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue         | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Display Field Names | <newFieldsApi>        | TmpActiveGrantsGrid |                           |                            |
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab

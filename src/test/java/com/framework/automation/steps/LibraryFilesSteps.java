@@ -76,4 +76,9 @@ public class LibraryFilesSteps {
     public void asserDefaultLibraryFolderIsDisabledAtUploadModal(String defaultFolder) {
         libraryFilesPage.asserDefaultLibraryFolderIsDisabledAtUploadModal(defaultFolder);
     }
+
+    @Then("^I see \"([^\"]*)\" modal window with id \"([^\"]*)\" is not displayed$")
+    public void assertModalWindowIsNotDisplayedAtFilesList(String modalTitle,String tableId) {
+        libraryFilesPage.assertModalWindowIsNotDisplayedAtFilesList(modalTitle,tableId);
+    }
 }

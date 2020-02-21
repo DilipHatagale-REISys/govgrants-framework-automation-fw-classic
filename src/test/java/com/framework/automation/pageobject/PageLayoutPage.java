@@ -879,7 +879,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * click on send button present on send email modal window
      */
     public void clickOnSendEmailModalButton(String buttonName) {
-        EyeThink.core().click().withJavaScript(By.xpath("//button[text()='" + buttonName + "']"));
+        EyeThink.core().click().withJavaScript(By.xpath("//button[text()='" + buttonName + "'][not(contains(@class,'btn btn-default'))]"));
     }
 
     /**

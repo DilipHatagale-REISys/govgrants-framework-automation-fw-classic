@@ -71,6 +71,17 @@ public class LibraryFilesPage extends GovGrantsManager {
     public void asserDefaultLibraryFolderIsDisabledAtUploadModal(String defaultFolder) {
         Assert.assertTrue(isDefaultLibraryFolderIsDisabledAtUploadModal(defaultFolder));
     }
+
+    /**
+     * assert true if modal window is not Displayed by click on action close/cancel - Files List - Home Phase
+     *
+     * @param modalTitle
+     * @param tableId
+     */
+    public void assertModalWindowIsNotDisplayedAtFilesList(String modalTitle , String tableId) {
+        Assert.assertTrue(isModalWindowIsNotDisabledAtFilesList(modalTitle,tableId));
+    }
+
     /**
      * perform click on expand icon at Library / folder - Home phase
      *
@@ -246,6 +257,25 @@ public class LibraryFilesPage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (EyeThink.core().is().isDisplayed(By.xpath("//div[@data-folder-name='"+defaultFolder+"']"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+
+    /**
+     * return true if modal window is not Displayed by click on action close/cancel - Files List - Home Phase
+     *
+     * @param modalTitle
+     * @param tableId
+     * @return
+     */
+    private boolean isModalWindowIsNotDisabledAtFilesList(String modalTitle , String tableId) {
+        boolean flag = false;
+        try {
+            if (EyeThink.core().is().isEnabled(By.xpath("//p[text()='"+ modalTitle +"']/ancestor::div[@id='"+ tableId +"' and @aria-hidden='true']"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
