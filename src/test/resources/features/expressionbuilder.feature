@@ -5224,34 +5224,6 @@ Feature: Expression Builder Component Scenarios
       | Reject | Forward | Send Back |
     And I collect all the soft asserts
 
-  @48668    @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_NOTIN_SystemAdministrator_OR_UserType_IN_Internal
-  Scenario: Setup configuration to hide Approve option from configuration for approval decision using Profile NOT IN System Administrator OR UserType IN Internal and validating its content in pending tasks approval decision
-    Given I have "default" configuration as below:
-      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                                                  | coreComponentField                                         |
-      | Program                          | Status               | Created                                                                                                                        | Test program for automation -  SA mode only - Not approved |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_Profile_NOTIN_SystemAdministrator_OR_UserType_IN_Internal | ADAC-0009                                                  |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    When I click on "Save" in the page details
-    When I click on "Submit For Approval" in the page details
-    When I re-login as "Automation-PM" user on "default" portal
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
-    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
-    Then I see only the following radio buttons in the approval decision :
-      | Reject | Forward | Send Back |
-    And I collect all the soft asserts
-
   @48670    @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_NOTIN_SystemAdministrator_AND_UserType_IN_Internal
   Scenario: Setup configuration to hide Approve option from configuration for approval decision using Profile NOT IN System Administrator AND UserType IN Internal and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:

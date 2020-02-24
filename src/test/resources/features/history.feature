@@ -217,20 +217,3 @@ Feature: history Component Scenarios
     When I navigate to "History" sub tab
     Then I softly see column "Actual Approver" inside row "1" at position "2" and column at position "3" contains text "Allen PM"
     Then I collect all the soft asserts
-
-  @69960   @VerifyAssignedApproverUserInsideChevron
-  Scenario: Validating chevron contain Approver user and Initial submitter after submission of record to submit for approval
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue | coreComponentField                                                               | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Program               | Status    | Created       | Test program for automation - SA mode only - Not approved - History Tab Scenario |                           |                            |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForHistoryTabScenarios}"
-    When I click on "Edit" icon for "Test program for automation - SA mode only - Not approved - History Tab Scenario" inside table
-    When I click on "Save" in the page details
-    When I click on "Submit For Approval" in the page details
-    And I refresh the page
-    When I navigate to "History" sub tab
-    Then I see for "Program Manager Approver" value is "Automation PM" in chevron diagram

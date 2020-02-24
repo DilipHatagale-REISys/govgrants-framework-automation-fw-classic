@@ -844,30 +844,6 @@ Feature: Logged Issues Scenarios
       | Service Area Title |
       | Budget Category    |
 
-  @54704      @verifyPicklistFieldShouldBeInViewModeAfterEditingMultipleRecords
-  Scenario Outline: validate picklist should visible in only view mode after Edit status field for multiple records
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName     | fieldOrignalValue               | filterId         |
-      | Flex Grid:Flex Table List | Filter Clause | <defaultFilterClauseForFLV2539> | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName     | fieldNewValue               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Filter Clause | <newFilterClauseForFLV2539> | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I navigate to "Financials" sub tab
-    And I edit the following rows inline in flex table with id "flexGridEnhanced1" by clicking "Edit" :
-      | Project Title                 | Status |
-      | Road COnst. Ann.              | Active |
-      | Road Construction Annoumsment | Active |
-    Then I see select box for picklist is not displayed for status inside table
-    Examples:
-      | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                         |
-      | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c like 'Road%' |
-
   @54705      @verifyCurrencyFieldGetEditedProperlyForMultipleRecord
   Scenario Outline: validate currency field showing Edited value properly for multiple records
     Given I have "default" configuration as below:

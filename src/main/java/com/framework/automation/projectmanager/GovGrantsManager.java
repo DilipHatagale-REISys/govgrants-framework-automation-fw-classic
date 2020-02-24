@@ -150,16 +150,6 @@ public class GovGrantsManager extends ProjectWebServices {
     }
 
     /**
-     * get any element from title table bar except Action
-     *
-     * @param titleName
-     * @return
-     */
-    public WebElement getSpecificElementFromTableHeader(String titleName) {
-        return EyeThink.saas().flexTable().getSpecificElementFromTableHeader(titleName);
-    }
-
-    /**
      * get complete rows
      *
      * @return

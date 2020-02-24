@@ -383,20 +383,6 @@ Feature: Library Files Component Scenarios
     Then I see the following messages in the page details contains:
       | A Content Folder with the name testAutomationFolder1 already exists in the Content Folder 07H1C000000kCx2. |
 
-  @70432 @validateThatSpacesInFolderNameIsNotAcceptedWhileCreatingFolderUnderLibrary-AtHomePhase
-  Scenario: Verify that if user enter spaces in folder name then an alert message is displayed - home phase
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
-    When I click on "My_Workspace_File"
-    When I click on "My_Workspace_Library"
-    When I click on dropdown at library/folder/file "Department of Community Health"
-    When I click on "Add New Folder" option at library/folder/file "Department of Community Health"
-    When I enter value as "  " in field "Folder Name" at Library Files
-    When I click on "Save" button in send email modal
-    Then I see the following messages in the page details contains:
-      | The Content Folder null isn't valid. Use a unique name that doesn't start or end with a space and doesn't contain the character /.: Name |
-
   @70434 @validateDeletionOfFolderHavingFilesInItWithAdminUser-HomePhase
   Scenario: Verify that if folder is having files then user can't delete the folder - Home phase
     When I login as "Automation" user

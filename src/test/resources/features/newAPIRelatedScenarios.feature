@@ -23,7 +23,7 @@ Feature: New API related scenarios temporary
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I click "close" icon for lightning lookup
     When I click "search" icon for lightning lookup
-    Then I see "#Grants" in table header on lookup Modal
+    Then I see "#Grants" in flex table header "custom_lookupAccount__c"
 
   @54769    @lookUpHeaderTextFieldWithGrantingAgencyAtPageBlockDetail-gPlanning @check @wip
   Scenario: Adding column header with granting agency Api name to lookup modal from config and validating it on program detail page
@@ -47,7 +47,7 @@ Feature: New API related scenarios temporary
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I click "close" icon for lightning lookup
     When I click "search" icon for lightning lookup
-    Then I see "Granting Agency" in table header on lookup Modal
+    Then I see "Granting Agency" in flex table header "custom_lookupAccount__c"
 
   @54767    @lookUpHeaderTextFieldWithDivisionAtPageBlockDetail-gPlanning @check @wip
   Scenario: Adding column header with Division Api name to lookup modal from config and validating it on program detail page
@@ -71,7 +71,7 @@ Feature: New API related scenarios temporary
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I click "close" icon for lightning lookup
     When I click "search" icon for lightning lookup
-    Then I see "Division" in table header on lookup Modal
+    Then I see "Division" in flex table header "custom_lookupAccount__c"
 
   @54766    @lookUpHeaderTextFieldWithContactAtPageBlockDetail-gPlanning @check @wip
   Scenario: Adding column header with Contact Api name to lookup modal from config and validating it on program detail page
@@ -95,7 +95,7 @@ Feature: New API related scenarios temporary
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I click "close" icon for lightning lookup
     When I click "search" icon for lightning lookup
-    Then I see "Contact" in table header on lookup Modal
+    Then I see "Contact" in flex table header "custom_lookupAccount__c"
 
   @54765    @lookUpHeaderTextFieldWithBillingStateAtPageBlockDetail-gPlanning @check @wip
   Scenario: Adding column header with Billing State Api name to lookup modal from config and validating it on program detail page
@@ -119,7 +119,7 @@ Feature: New API related scenarios temporary
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I click "close" icon for lightning lookup
     When I click "search" icon for lightning lookup
-    Then I see "Billing State" in table header on lookup Modal
+    Then I see "Billing State" in flex table header "custom_lookupAccount__c"
 
   @54764    @lookUpHeaderTextFieldWithDateTimeAtPageBlockDetail-gPlanning @check @wip
   Scenario: Adding column header with Date Time Api name to lookup modal from config and validating it on program detail page
@@ -143,7 +143,7 @@ Feature: New API related scenarios temporary
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I click "close" icon for lightning lookup
     When I click "search" icon for lightning lookup
-    Then I see "DateTime" in table header on lookup Modal
+    Then I see "DateTime" in flex table header "custom_lookupAccount__c"
 
   @54763    @lookUpHeaderTextFieldWithDateAtPageBlockDetail-gPlanning @check @wip
   Scenario: Adding column header with Date Api name to lookup modal from config and validating it on program detail page
@@ -167,7 +167,7 @@ Feature: New API related scenarios temporary
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I click "close" icon for lightning lookup
     When I click "search" icon for lightning lookup
-    Then I see "Date" in table header on lookup Modal
+    Then I see "Date" in flex table header "custom_lookupAccount__c"
 
   @54758    @lookUpHeaderTextFieldWithMultipleFieldAPIAtPageBlockDetail-gPlanning  @check @wip
   Scenario Outline: Adding column header with multiple Field API to lookup modal from config and validating it on program detail page
@@ -191,7 +191,7 @@ Feature: New API related scenarios temporary
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I click "close" icon for lightning lookup
     When I click "search" icon for lightning lookup
-    Then I see "<fieldDisplayNames>" in flex table header
+    Then I see "<fieldDisplayNames>" in flex table header "custom_lookupAccount__c"
 
     Examples:
       | fieldDisplayNames | newFieldApi                                                                         | defaultApi |
@@ -244,7 +244,7 @@ Feature: New API related scenarios temporary
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I click "close" icon for lightning lookup
     When I click "search" icon for lightning lookup
-    Then I see "EIN Text" in table header on lookup Modal
+    Then I see "EIN Text" in flex table header "custom_lookupAccount__c"
 
   @59043    @lookUpHeaderTextFieldWithExpirationDateAndDateTimeAtPageBlockDetail-gPlanning  @wip
   Scenario Outline: Adding column header with DUNS SAMS Expiration date and DateTime Field API to lookup modal from config and validating it on program detail page
@@ -268,7 +268,7 @@ Feature: New API related scenarios temporary
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I click "close" icon for lightning lookup
     When I click "search" icon for lightning lookup
-    Then I see "<fieldDisplayNames>" in flex table header
+    Then I see "<fieldDisplayNames>" in flex table header "custom_lookupAccount__c"
 
     Examples:
       | fieldDisplayNames         | newFieldApi                            | defaultApi |
@@ -423,7 +423,7 @@ Feature: New API related scenarios temporary
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I click "close" icon for lightning lookup
     When I click "search" icon for lightning lookup
-    Then I see "Test Automation" in table header on lookup Modal
+    Then I see "Test Automation" in flex table header "custom_lookupAccount__c"
 
   @65023    @VerifylookUpFilterCriteriaToFilterOutRecordsInLookupWindowAtPageBlockDetail-gPlanning @wip
   Scenario Outline: Validate lookup filter criteria is working fine by displaying all Active records in lookup window

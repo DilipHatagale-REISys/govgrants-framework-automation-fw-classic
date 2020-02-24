@@ -3,19 +3,6 @@ Feature: Charts and Enhanced Charts Component Scenarios
   Test all charts/enhanced charts component based scenarios
   As a configuration manager i make different configurational changes in charts/enhanced charts component and will validate them.
 
-  @34666    @validateTitleField-gplanning
-  Scenario: Changing chart title for 'AnnouncementByAdminBureauUnit' chart in configuration and validating inside planning-programs
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue             | filterId         |
-      | Charts Config         | Title     | AnnouncementByAdminBureauUnit | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue                        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue    |
-      | Charts Config         | Title     | Funding Opportunities for Automation | GrantorPlanning    | Name                      | AnnouncementByAdminBureauUnit |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    Then I see "Funding Opportunities for Automation" displayed as chart title
-
   @34667    @validateChartDisplayedInCorrectPhase-gAnnouncement
   Scenario: Changing chart phase config to Annoucnement for 'AnnouncementByAdminBureauUnit' chart in configuratin and validating inside annoucenment
     Given I have "default" configuration as below:
@@ -252,6 +239,30 @@ Feature: Charts and Enhanced Charts Component Scenarios
       | default_Data_Table_Query                                                                                           | new_Data_Table_Query                                                                                                                         |
       | SELECT Name,AnnouncementName__c,AnnouncementType__c,Status__c FROM Announcement__c where RecordType.Name='Grantor' | SELECT Name,AnnouncementName__c,AnnouncementType__c,Status__c FROM Announcement__c where RecordType.Name='Grantor' AND Status__c='Published' |
 
+  @71020    @validateDataTableQueryForSelectedDataField-gAnnouncement-EnhancedCharts @wip
+  Scenario Outline: Validate expected values as per query provided inside fields 'Data Table Query for selected data'
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                           | fieldOrignalValue          | filterId         |
+      | Charts Config         | Data Table Query(For Selected Data) | <default_Data_Table_Query> | ApiGeneratedId:0 |
+      | Charts Config         | Active                              | false                      | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                           | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Data Table Query(For Selected Data) | <new_Data_Table_Query> | FundingOpportunity | Name                      | Enhanced Pie chart         |
+      | Charts Config         | Active                              | true                   | FundingOpportunity | Name                      | Enhanced Pie chart         |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I pause execution for "5" seconds
+    And I click on enhanced charts id "EnhancedPiechartId" with color "LightBlue"
+    Then I see the following rows under the following columns in table with id "EnhancedPiechartIdrecordsModal" :
+      | Announcement Title     | Announcement Type |
+      | Test application..1234 | Competitive       |
+    Then I collect all the soft asserts
+
+    Examples:
+      | default_Data_Table_Query                                                                                                                                     | new_Data_Table_Query                                                                                                                                         |
+      | SELECT Name,AnnouncementName__c,AnnouncementType__c,Status__c FROM Announcement__c Where AnnouncementType__c = '{!XAxisValue}' And RecordType.Name='Grantor' | SELECT Name,AnnouncementName__c,AnnouncementType__c,Status__c FROM Announcement__c Where AnnouncementType__c = '{!XAxisValue}' And RecordType.Name='Grantor' |
+
   @70880    @validateElementsOnModalComingOnEnhancedViewClick-EnhancedCharts
   Scenario: Validate Enhanced chart modal details after closing show all data modal
     Given I have "default" configuration as below:
@@ -375,17 +386,137 @@ Feature: Charts and Enhanced Charts Component Scenarios
     And I navigate to "HOME" tab
     Then I do not see chart legends are displayed for chart/enhanced Charts "EnhancedDualAxes"
 
-  @70996    @validateX-axisLabelField-gHOME-EnhancedDualAxesCharts @wip
-  Scenario: Change chart x-axis label for 'EnhancedDualAxesId' chart in configuratin and validating inside HOME
+  @70996    @validateX-axisLabelField-gHOME-EnhancedDualAxesCharts
+  Scenario: Change chart x-axis label for 'EnhancedDualAxesId' chart in configuration and validating inside HOME
     Given I have "default" configuration as below:
       | configurationCategory | fieldName    | fieldOrignalValue      | filterId         |
       | Charts Config         | X-Axis Label | Internal Organizations | ApiGeneratedId:0 |
       | Charts Config         | Chart Type   | Dual axes              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName    | fieldNewValue                     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Charts Config         | X-Axis Label | Automation Internal Organizations | GrantorHome        | Name                      | Enhanced Dual Axes         |
-      | Charts Config         | Chart Type   | Dual axes                         | GrantorHome        | Name                      | Enhanced Dual Axes         |
+      | configurationCategory | fieldName    | fieldNewValue                   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | X-Axis Label | AutomationInternalOrganizations | GrantorHome        | Name                      | Enhanced Dual Axes         |
+      | Charts Config         | Chart Type   | Dual axes                       | GrantorHome        | Name                      | Enhanced Dual Axes         |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
-    Then I see "Automation Internal Organizations" for chart "EnhancedDualAxes"
+    Then I see "AutomationInternalOrganizations" for chart "EnhancedDualAxes"
+
+  @71000    @validateY-axisLabelField-gHOME-EnhancedDualAxesCharts
+  Scenario: Change chart y-axis label for 'EnhancedDualAxesId' chart in configuration and validating inside HOME
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
+      | Charts Config         | Y-Axis Label | Count             | ApiGeneratedId:0 |
+      | Charts Config         | Chart Type   | Dual axes         | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName    | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Y-Axis Label | Automation-Y-Axes-Label | GrantorHome        | Name                      | Enhanced Dual Axes         |
+      | Charts Config         | Chart Type   | Dual axes               | GrantorHome        | Name                      | Enhanced Dual Axes         |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see "Automation-Y-Axes-Label" for chart "EnhancedDualAxes"
+
+  @71006    @validateZ-axisLabelField-gHOME-EnhancedDualAxesCharts
+  Scenario: Change chart z-axis label for 'EnhancedDualAxesId' chart in configuration and validating inside HOME
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName    | fieldOrignalValue        | filterId         |
+      | Charts Config         | Z-Axis Label | Total Grant Award Amount | ApiGeneratedId:0 |
+      | Charts Config         | Chart Type   | Dual axes                | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName    | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Z-Axis Label | Automation-Z-Axes-Label | GrantorHome        | Name                      | Enhanced Dual Axes         |
+      | Charts Config         | Chart Type   | Dual axes               | GrantorHome        | Name                      | Enhanced Dual Axes         |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see "Automation-Z-Axes-Label" for chart "EnhancedDualAxes"
+
+  @71009    @validateElementsOnModalComingOnEnhancedViewClick-gHOME-EnhancedDualAxesCharts
+  Scenario: Validate Enhanced Dual Axes chart modal details after closing show all data modal
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
+      | Charts Config         | Y-Axis Label | Count             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName    | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Y-Axis Label | Automation-Y-Axes-Label | GrantorHome        | Name                      | Enhanced Dual Axes         |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I click on menu icon of chart "Enhanced Dual Axes" with title "Enhanced View"
+    When I click modal button "Show All Data"
+    When I click modal button "Close"
+    Then I see chart legends are displayed for chart/enhanced Charts "EnhancedDualAxes"
+
+  @71025    @validateDataTableQueryforAllDataFieldFromBurgerIcon-gHOME-EnhancedDualAxesCharts
+  Scenario Outline: Validate expected result as no of record rendered as per query provided inside 'Data Table Query(for all data)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                      | fieldOrignalValue          | filterId         |
+      | Charts Config         | Data Table Query(For All Data) | <default_Data_Table_Query> | ApiGeneratedId:0 |
+      | Charts Config         | Active                         | false                      | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                      | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Data Table Query(For All Data) | <new_Data_Table_Query> | GrantorHome        | Name                      | Enhanced Dual Axes         |
+      | Charts Config         | Active                         | true                   | GrantorHome        | Name                      | Enhanced Dual Axes         |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I click on menu icon of chart "Enhanced Dual Axes" with title "Menu"
+    When I select "Show All Data" from chart menu of chart "Enhanced Dual Axes"
+    Then I see on modal total records count is same as total row of table id "EnhancedDualAxesIdrecordsModal" and table name "flextable"
+
+    Examples:
+      | default_Data_Table_Query                                                                                                                                | new_Data_Table_Query                                                                                                                                             |
+      | SELECT TotalGrantAwardAmount__c ,Grant__r.InternalOrganization__r.Name FROM Award__c where Grant__r.InternalOrganization__r.recordtype.name='recipient' | SELECT TotalGrantAwardAmount__c ,Grant__r.InternalOrganization__r.Name  FROM Award__c where Grant__r.InternalOrganization__r.recordtype.name='recipient' limit 5 |
+
+  @71032    @validateDataTableQueryforAllDataFieldFromEnhancedViewIcon-gHOME-EnhancedDualAxesCharts
+  Scenario Outline: Validate expected result as no of record rendered as per query provided inside 'Data Table Query(for all data from enhanced view icon)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                      | fieldOrignalValue          | filterId         |
+      | Charts Config         | Data Table Query(For All Data) | <default_Data_Table_Query> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                      | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Data Table Query(For All Data) | <new_Data_Table_Query> | GrantorHome        | Name                      | Enhanced Dual Axes         |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I click on menu icon of chart "Enhanced Dual Axes" with title "Enhanced View"
+    When I click modal button "Show All Data"
+    Then I see on modal total records count is same as total row of table id "EnhancedDualAxesIdrecordsModal" and table name "flextable"
+
+    Examples:
+      | default_Data_Table_Query                                                                                                                                 | new_Data_Table_Query                                                                                                                                             |
+      | SELECT TotalGrantAwardAmount__c ,Grant__r.InternalOrganization__r.Name  FROM Award__c where Grant__r.InternalOrganization__r.recordtype.name='recipient' | SELECT TotalGrantAwardAmount__c ,Grant__r.InternalOrganization__r.Name  FROM Award__c where Grant__r.InternalOrganization__r.recordtype.name='recipient' limit 5 |
+
+  @71038    @validateElementsOnModalComingOnEnhancedViewClick-EnhancedDualAxesCharts
+  Scenario: Validate Enhanced Dual Axes chart modal details after closing show all data modal
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I click on menu icon of chart "Enhanced Dual Axes" with title "Enhanced View"
+    When I click modal button "Show All Data"
+    When I click modal button "Close"
+    Then I see chart legends are displayed for chart/enhanced Charts "EnhancedDualAxes"
+
+  @71041    @validateDataTableQueryForSelectedDataField-gHOME-EnhancedDualAxesCharts @wip
+  Scenario Outline: Validate expected values as per query provided inside fields 'Data Table Query for selected data'
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                           | fieldOrignalValue          | filterId         |
+      | Charts Config         | Data Table Query(For Selected Data) | <default_Data_Table_Query> | ApiGeneratedId:0 |
+      | Charts Config         | Active                              | false                      | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                           | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Data Table Query(For Selected Data) | <new_Data_Table_Query> | FundingOpportunity | Name                      | Enhanced Pie chart         |
+      | Charts Config         | Active                              | true                   | FundingOpportunity | Name                      | Enhanced Pie chart         |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I pause execution for "5" seconds
+    And I click on enhanced charts id "EnhancedPiechartId" with color "LightBlue"
+    Then I see the following rows under the following columns in table with id "EnhancedPiechartIdrecordsModal" :
+      | Announcement Title     | Announcement Type |
+      | Test application..1234 | Competitive       |
+    Then I collect all the soft asserts
+
+    Examples:
+      | default_Data_Table_Query                                                                                                                                     | new_Data_Table_Query                                                                                                                                         |
+      | SELECT Name,AnnouncementName__c,AnnouncementType__c,Status__c FROM Announcement__c Where AnnouncementType__c = '{!XAxisValue}' And RecordType.Name='Grantor' | SELECT Name,AnnouncementName__c,AnnouncementType__c,Status__c FROM Announcement__c Where AnnouncementType__c = '{!XAxisValue}' And RecordType.Name='Grantor' |

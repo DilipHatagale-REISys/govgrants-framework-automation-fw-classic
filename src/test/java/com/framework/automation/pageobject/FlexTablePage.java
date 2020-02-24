@@ -113,15 +113,8 @@ public class FlexTablePage extends GovGrantsManager {
     }
 
     /**
-     * assert true if header column name is present
-     *
-     * @param headerColumnName
-     */
-    public void assertFlexTableHeaderColumnName(String headerColumnName) {
-        Assert.assertTrue(isFlexTableColumnHeaderName(headerColumnName));
-    }
+hi
 
-    /**
      * assert if Edit icon open in new tab or not
      */
     public void assertEditWithNewTab() {
@@ -650,22 +643,6 @@ public class FlexTablePage extends GovGrantsManager {
                 flag = true;
             }
         } catch (Exception e) {
-        }
-        return flag;
-    }
-
-    /**
-     * @return false if element is not displayed
-     */
-    private Boolean isFlexTableColumnHeaderName(String titleName) {
-        boolean flag = false;
-        try {
-            if (EyeThink.core().is().isDisplayed(getSpecificElementFromTableHeader(titleName))
-                    || EyeThink.core().is().isEnabled(getSpecificElementFromTableHeader(titleName))) {
-                flag = true;
-            }
-        } catch (org.openqa.selenium.NoSuchElementException e) {
-            flag = false;
         }
         return flag;
     }
