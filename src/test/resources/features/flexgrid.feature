@@ -1050,7 +1050,7 @@ Feature: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
-    Then I see "#" in flex table header
+    Then I see "#" in flex table header "inlineEditGridMonitoringGridView"
 
   @50380    @disablingEnableTotalRecordsCountFieldAtActiveGrantsGridParentFlexTable-gMonitoring @smoke
   Scenario: validate disbaling of total row count for Monitoring schedule for all active grant flex table at Monitoring phase
@@ -1278,25 +1278,6 @@ Feature: Flex Grid Component Scenarios
     When I enter value "test" into field "fieldNotes__c"
     And I click modal button "Save"
     Then I see "test" inside Application Budget flex table for specified record "2019"
-
-  @51323    @sequenceFieldAtApplicationBudgetCategoryFlexTableChild-gApplications
-  Scenario: Changing sequence of view row level action item at Application Budget child flex table from config and validating it inside Application Budget child flex table of programs
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Flex Table Action     | Sequence  | 1                 | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Sequence  | 0             | ApplicationBudgetCategoryFlexTable | Name                      | View                       |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
-    When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
-    When I expand nested table containing column value "BP-01"
-    When I expand nested table containing column value "Proposed Uses Of Total Funds"
-    Then I see "View" icon for "toggleFGridApplicationBudgetCategoryFlexGrid" is at position "0" inside flex table
 
   @51328    @buttonHelpTextFieldAtApplicationBudgetCategoryFlexTableActionChild-gApplications
   Scenario: Changing content of button help text field Application Budget child flex table action from config and validating it inside Application Budget child flex table programs

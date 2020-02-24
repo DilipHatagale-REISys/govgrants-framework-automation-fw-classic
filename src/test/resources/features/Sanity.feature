@@ -162,7 +162,7 @@ Feature: Sanity check for all Component Scenarios
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     Then I see "View" icon for "toggleFGridApplicationBudgetCategoryFlexGrid" is at position "0" inside flex table
 
-  @34034    @addingfieldNamesOfDifferentDataTypes-gPlanning
+  @34034    @addingfieldNamesOfDifferentDataTypes-gPlanning @smoke
   Scenario Outline: validate adding field names for different data types in flex table of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -174,7 +174,7 @@ Feature: Sanity check for all Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    Then I see "<fieldDisplayNames>" in flex table header
+    Then I see "<fieldDisplayNames>" in flex table header "toggleFlexTablePrograms"
 
     Examples:
       | fieldDisplayNames      | newFieldsApi                                                                                                                           | defaultFieldsApi                                                                                                 |

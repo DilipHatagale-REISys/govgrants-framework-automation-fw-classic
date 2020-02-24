@@ -660,35 +660,6 @@ Feature: Approval Process Component Scenarios
     And I click toggle button to select "Queued Emails"
     Then I see email is generated with template "Program_Approved_Email_Template"
 
-  @37667    @notifyAdditionalPeopleThroughEmailWithApproveTemplateToProgramOwner-Programs
-  Scenario: Setup email setting in configuration and validate that program owner receiving email for program approval
-    Given I have "default" configuration as below:
-      | configurationCategory        | fieldName                | fieldOrignalValue | filterId         |
-      | Approval Process Steps Cache | Notify Additional People | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory                | fieldName                | fieldNewValue | coreComponentField                                            |
-      | Program                              | Status                   | Created       | Test program for automation -  SA mode only - Can be Approved |
-      | Approval Process Steps Cache:General | Notify Additional People | true          | Program_Manager_Approver                                      |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
-    When I click on "Save" in the page details
-    When I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
-    And I navigate to "Planning" tab
-    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
-    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
-    And I "Approve" in the approval decision
-    When I re-login to "As an Administrator" app as "Automation" user on "default" portal
-    And I navigate to "Operate" tab
-    When I navigate to "Email Logs" content inside "Logs" subheader on left panel
-    And I click toggle button to select "Queued Emails"
-    Then I see email is generated with template "Program_Approved_Email_Template"
-
   @41058    @mandatoryCommentsReqForReassignAction-Programs
   Scenario: Setup comments requried as mandatory for reassign from configuration and in pending tasks approval decision
     Given I have "default" configuration as below:

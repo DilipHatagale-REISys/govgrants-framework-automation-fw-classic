@@ -89,11 +89,6 @@ public class FlexTableSteps {
         flexTablePage.assertnewAddedLastRowLabelName(flexTablelastRowName);
     }
 
-    @Then("^I see \"([^\"]*)\" in flex table header$")
-    public void assertFlexTableHeaderName(String headerColumnName) {
-        flexTablePage.assertFlexTableHeaderColumnName(headerColumnName);
-    }
-
     @Then("^I (see|do not see|softly see|softly do not see) \"([^\"]*)\" value in flex table id \"([^\"]*)\"$")
     public void assertSpecificFieldValueDisplayed(String usuage, String fieldValue, String tableId) {
         flexTablePage.assertFlexTableFieldValueDisplayed(usuage, fieldValue, tableId);

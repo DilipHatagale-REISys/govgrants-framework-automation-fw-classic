@@ -14,19 +14,7 @@ Feature: Custom App Config Component Scenarios
     When I login as "Automation" user
     When I click CustomApp select dropdown
     Then I see "Test Automation" inside CustomApp dropDown
-    
-  @52895    @defaultFieldNameFieldAtCustomAppConfig
-  Scenario: Removing contrast content at default field name field from custom app confiuration and validating the changed label at custom app dropdown
-    Given I have "default" configuration as below:
-      | configurationCategory| fieldName          | fieldOrignalValue     | filterId         |
-      | Custom App Config    | Default Theme Name | ColorContrast_Grantor | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory    | fieldName          | fieldNewValue  | coreComponentField| 
-      | Custom App Config:General| Default Theme Name |                | StateasGrantor    |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    Then I see "ColorContrast_Grantor" on complete page for custom App as a Grantor
-    
+
   @52896    @availableForProfilesFieldAtCustomAppConfig
   Scenario Outline: Remove admin profile from config. and validate that As a Grantor custom App doesn't show up in custom App drop down for admin user
     Given I have "default" configuration as below:

@@ -85,23 +85,6 @@ Feature: Forms Component Scenarios
     When I click on "View" icon of form "General Application Cover Page" program in flex table
     Then I see "Edit" of action item inside form page layout is not displayed
 
-  @37857    @versionFieldAtFormConfig-gApplication
-  Scenario: Changing text for version field at form config for general application form from config and validating it at particular form detail page
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Forms                 | Version   | 1.0               | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Forms:General         | Version   | 2.0           | General Application Form |                           |                            |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    When I perform quick search for "AP-755-198"
-    When I click on "View" icon for "Test announcement for program 2" inside table
-    When I navigate to "Attachments" sub tab
-    When I click on "View" icon of form "General Application Form" program in flex table
-    Then I see "Form Version 2.0" inside Form Version
-
   @37856    @headerFieldAtFormLayout-gApplication @smoke
   Scenario: Changing header name for particular form inside application phase from config and validating it at application form detail page
     Given I have "default" configuration as below:

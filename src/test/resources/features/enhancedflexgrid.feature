@@ -1407,27 +1407,6 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I expand nested table containing column value "Demo_Title"
     Then I see "Total Obligated Amount" not displayed in enhanced grid table column title
 
-  @49355    @enableSubTotalFieldAtChildFlexTableForEnhancedGrid-gPlanning
-  Scenario: validate total of number of awards after checking checkbox true of Enable Sub Total field at child flex table from config and validating it inside enhanced grid of programs-planning
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:0 |
-      | Flex Table List       | Enable Sub Total    | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Row Grouping | true          | TmpGrantorActiveAwardsGrid | Name                      | FTC-1498                   |
-      | Flex Table List       | Enable Sub Total    | true          | TmpGrantorActiveAwardsGrid | Name                      | FTC-1498                   |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I navigate to "Financials" sub tab
-    When I perform quick search for "GT-VT-001" in "flexGridEnhanced1" panel
-    When I expand nested table containing column value "GT-VT-001"
-    Then I see cell subtotal for obligated amount at child table of enhanced grid
-
   @49358    @styleClassFieldAtChildFlexTableForEnhancedGrid-gPlanning
   Scenario Outline: validate color change of number of awards cells content after making changes at style class at chile flex table from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:

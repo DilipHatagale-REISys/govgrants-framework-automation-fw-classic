@@ -60,6 +60,13 @@ public class Charts {
                                         String.valueOf(SObjectAPIs.GNT__ChartConfig__c), filterClause),
                                 String.valueOf(SObjectAPIs.GNT__DataTableQueryForAllData__c), value);
                 break;
+            case "DATA TABLE QUERY(FOR SELECTED DATA)":
+                finalPayload = String
+                        .format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__ChartConfig__c),
+                                apiUtilities.getComponentCoreFieldId(
+                                        String.valueOf(SObjectAPIs.GNT__ChartConfig__c), filterClause),
+                                String.valueOf(SObjectAPIs.GNT__DataTableQueryForSelectedData__c), value);
+                break;
             case "Y AXIS PREFIX":
                 finalPayload = String
                         .format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__ChartConfig__c),
@@ -78,6 +85,11 @@ public class Charts {
                 finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__ChartConfig__c),
                         apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__ChartConfig__c), filterClause),
                         String.valueOf(SObjectAPIs.GNT__XAxisLabel__c), value);
+                break;
+            case "Z-AXIS LABEL":
+                finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__ChartConfig__c),
+                        apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__ChartConfig__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__ZAxisLabel__c), value);
                 break;
         }
         System.out.println("method for finalpayload " + finalPayload);

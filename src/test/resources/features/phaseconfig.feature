@@ -42,19 +42,6 @@ Feature: Phase Config Component Scenarios
     When I setup my app as "As a Grantor"
     Then I see "Planning" phase at position "0"
 
-  @34485    @validateNumberOfCharts-gplanning @smoke
-  Scenario: Setup number of charts as "2" from config. and validate only two charts are displayed inside planning
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Phase Config          | Total Charts Allowed | 3                 | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue | coreComponentField |
-      | Phase Config:General  | Total Charts Allowed | 2             | GrantorPlanning    |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    Then I see "2" charts are displayed
-
   @34487    @validateChartsDisplayedAtBottom-gplanning @smoke
   Scenario: Setup body bottom page url for charts in config. and validate charts are displayed at bottom are displayed inside planning
     Given I have "default" configuration as below:

@@ -1241,33 +1241,6 @@ Feature: Page Layout Component Scenarios
       | new_helpText             | old_helpText                                       |
       | Help Text for Automation | Name represents for what the program is meant for. |
 
-  @35816    @hideApprovalDecisionFieldAtPageLayout-gPlanning
-  Scenario: Hiding approval decision box at page layout from config and validating it inside pending task approval decision
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName                   | fieldOrignalValue | filterId         |
-      | Page Layout           | Hide Approval Decision comp | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName                   | fieldNewValue | coreComponentField                                            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Program               | Status                      | Created       | Test program for automation -  SA mode only - Can be Approved |                           |                            |
-      | Page Layout:General   | Hide Approval Decision comp | true          | Grantee State Program                                         |                           |                            |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
-    When I click on "Save" in the page details
-    When I click on "Submit For Approval" in the page details
-    When I re-login as "Automation-PM" user on "default" portal
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
-    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
-    Then I cannot see the radio button "Approve" in the approval decision
-    And I collect all the soft asserts
-
   @36043    @hideExpressionJsonFieldAtPageBlock-gPlanning @smoke
   Scenario: Hiding program information page block from json config and validating it at program detail page
     Given I have "default" configuration as below:
