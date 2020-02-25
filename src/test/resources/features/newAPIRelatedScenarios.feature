@@ -543,7 +543,6 @@ Feature: New API related scenarios temporary
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I softly see field "Expected Future Funding" as "IDR500,000"
-    Then I collect all the soft asserts
 
   @59984    @verifyThatIDRCurrencyUnitIsDisplayedInsideTotalAmountAtFlexTable-gPlanning @needCurrencyLocalAPIs @wip
   Scenario: verify that IDR is displayed under Total Amount displayed inside flex table of programs-planning

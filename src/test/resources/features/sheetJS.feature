@@ -86,7 +86,6 @@ Feature: SheetJS Config Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "AutomationSheetJSUpload"
     Then I softly see value "GovGrant" for title "Organization" inside table "flexTableDivId"
-    Then I collect all the soft asserts
 
     Examples:
       | newFieldsApi                                                                                                        | defaultFieldsApi                                                                                                 |
@@ -150,7 +149,6 @@ Feature: SheetJS Config Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "AutomationSheetJSUploadForStatusAsBlank"
     Then I softly see value "Created" for title "Status" inside table "flexTableDivId"
-    Then I collect all the soft asserts
 
     Examples:
       | newFieldsApi                                                                                                        | defaultFieldsApi                                                                                                 |
@@ -221,7 +219,6 @@ Feature: SheetJS Config Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "AutomationSheetJSUploadForStatusAsBlank"
     Then I softly see value "{SavedValue:EGMSID}" for title "ID" inside table "flexTableDivId"
-    Then I collect all the soft asserts
 
     Examples:
       | newFieldsApi                                                                                                        | defaultFieldsApi                                                                                                 |

@@ -52,6 +52,16 @@ public class LibraryFilesSteps {
         libraryFilesPage.selectOrChangeFolderInAddFileModalUnderLibrary(folderName);
     }
 
+    @When("^I perform quick search for \"([^\"]*)\" under files library$")
+    public void performQuickSearchUnderFilesLibrary(String searchValue) {
+        libraryFilesPage.performQuickSearchUnderFilesLibrary(searchValue);
+    }
+
+    @When("^I select Classification as \"([^\"]*)\" at upload file modal$")
+    public void selectClassificationAtUploadFileModal(String classification) {
+        libraryFilesPage.selectClassificationAtUploadFileModalUnderLibrary (classification);
+    }
+
     @Then("^I (see|do not see|softly see|softly do not see) library/folder/file \"([^\"]*)\" is displayed under files library$")
     public void asserLibraryFileFolderIsDisplayedOnUI(String usuage, String libraryFileFolderName) {
         libraryFilesPage.assertLibraryFileFolderIsDisplayed(usuage, libraryFileFolderName);
@@ -80,5 +90,15 @@ public class LibraryFilesSteps {
     @Then("^I see \"([^\"]*)\" modal window with id \"([^\"]*)\" is not displayed$")
     public void assertModalWindowIsNotDisplayedAtFilesList(String modalTitle,String tableId) {
         libraryFilesPage.assertModalWindowIsNotDisplayedAtFilesList(modalTitle,tableId);
+    }
+
+    @Then("^I (see|do not see|softly see|softly do not see) library/folder/file as \"([^\"]*)\" highlighted with color$")
+    public void seeLibraryFolderFileAsHighlightedInYellow(String usuage,String libraryFileFolderName) {
+        libraryFilesPage.libraryFolderFileAsHighlightedInYellow(usuage,libraryFileFolderName);
+    }
+
+    @Then("^I (see|do not see|softly see|softly do not see) Label/Count as \"([^\"]*)\" is displayed$")
+    public void libraryFolderFileCountDisplayedatLibraryFiles(String usuage, String labelAndCount) {
+        libraryFilesPage.libraryFolderFileCountDisplayedAtLibraryFiles(usuage,labelAndCount);
     }
 }

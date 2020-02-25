@@ -2,9 +2,14 @@ package com.framework.automation.pageobject;
 
 import com.framework.automation.projectmanager.GovGrantsManager;
 import eyethink.automation.bots.Register.EyeThink;
+import eyethink.automation.bots.objects.Elements;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.w3c.dom.Element;
+import org.w3c.dom.stylesheets.LinkStyle;
+
+import java.util.List;
 
 public class LibraryFilesPage extends GovGrantsManager {
 
@@ -78,8 +83,42 @@ public class LibraryFilesPage extends GovGrantsManager {
      * @param modalTitle
      * @param tableId
      */
-    public void assertModalWindowIsNotDisplayedAtFilesList(String modalTitle , String tableId) {
-        Assert.assertTrue(isModalWindowIsNotDisabledAtFilesList(modalTitle,tableId));
+    public void assertModalWindowIsNotDisplayedAtFilesList(String modalTitle, String tableId) {
+        Assert.assertTrue(isModalWindowIsNotDisabledAtFilesList(modalTitle, tableId));
+    }
+
+    /**
+     * assert true if Library/ Folder/ File name is Highlighted In Yellow color after quick search- Home Phase
+     *
+     * @param libraryFileFolderName
+     */
+    public void libraryFolderFileAsHighlightedInYellow(String usuage, String libraryFileFolderName) {
+        if (usuage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isLibraryFolderFileHighlightedInYellow(libraryFileFolderName));
+        } else if (usuage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isLibraryFolderFileHighlightedInYellow(libraryFileFolderName));
+        } else if (usuage.equalsIgnoreCase("softly see")) {
+            EyeThink.core().assertion().assertThat(isLibraryFolderFileHighlightedInYellow(libraryFileFolderName)).isTrue();
+        } else if (usuage.equalsIgnoreCase("softly do not see")) {
+            EyeThink.core().assertion().assertThat(isLibraryFolderFileHighlightedInYellow(libraryFileFolderName)).isFalse();
+        }
+    }
+
+    /**
+     * assert true if Library/ Folder/ File count is displayed after quick search- Home Phase
+     *
+     * @param labelAndCount
+     */
+    public void libraryFolderFileCountDisplayedAtLibraryFiles(String usuage, String labelAndCount) {
+        if (usuage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isLibraryFolderFileCountDisplayed(labelAndCount));
+        } else if (usuage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isLibraryFolderFileCountDisplayed(labelAndCount));
+        } else if (usuage.equalsIgnoreCase("softly see")) {
+            EyeThink.core().assertion().assertThat(isLibraryFolderFileCountDisplayed(labelAndCount)).isTrue();
+        } else if (usuage.equalsIgnoreCase("softly do not see")) {
+            EyeThink.core().assertion().assertThat(isLibraryFolderFileCountDisplayed(labelAndCount)).isFalse();
+        }
     }
 
     /**
@@ -145,8 +184,9 @@ public class LibraryFilesPage extends GovGrantsManager {
      * @param modalTitle
      */
     public void clickOnCloseIconAtLibraryFolderFileModal(String icon, String modalTitle) {
-        EyeThink.core().click().on(By.xpath("//p[text()='"+modalTitle+"']/..//*[contains(normalize-space(text()),'"+icon+"')]"));
+        EyeThink.core().click().on(By.xpath("//p[text()='" + modalTitle + "']/..//*[contains(normalize-space(text()),'" + icon + "')]"));
     }
+
     /**
      * Complete steps to upload file in Library files - Home phase
      *
@@ -160,7 +200,6 @@ public class LibraryFilesPage extends GovGrantsManager {
 
     /**
      * perform click on select/change folder at add file modal - Library Files Home phase
-     *
      */
     public void clickOnSelectChangeFolderInAddFileModalUnderLibrary() {
         EyeThink.core().click().on(By.xpath("//*[contains(normalize-space(text()),'Select/Change Folder')]"));
@@ -172,7 +211,30 @@ public class LibraryFilesPage extends GovGrantsManager {
      * @param folderName
      */
     public void selectOrChangeFolderInAddFileModalUnderLibrary(String folderName) {
-        EyeThink.core().click().on(By.xpath("//div[@id='modaltemp']//span[text()='"+folderName+"']"));
+        EyeThink.core().click().on(By.xpath("//div[@id='modaltemp']//span[text()='" + folderName + "']"));
+    }
+
+    /**
+     * steps to perform quick search under Library Files tab- Home phase
+     *
+     * @param searchValue
+     */
+    public void performQuickSearchUnderFilesLibrary(String searchValue) {
+        By enterText = By.xpath("//input[@type='search']");
+        EyeThink.core().enterText().clear(enterText);
+        EyeThink.core().enterText().in(enterText, searchValue);
+    }
+
+    /**
+     * select classification at upload file modal window - Library files Home phase/record level
+     *
+     * @param classification
+     */
+    public void selectClassificationAtUploadFileModalUnderLibrary(String classification) {
+        By clickOnDropdown = By.xpath("//select[@name='Classification']");
+        By selectValueFromDropdown = By.xpath("//select[@name='Classification']//option[@value='" + classification + "']");
+        EyeThink.core().click().on(clickOnDropdown);
+        EyeThink.core().click().on(selectValueFromDropdown);
     }
 
     /*********
@@ -202,7 +264,8 @@ public class LibraryFilesPage extends GovGrantsManager {
      * @param libraryFileFolderName
      * @return
      */
-    private boolean isDropdownOptionIsDisplayedAtLibraryFileFolder(String dropDownOption, String libraryFileFolderName) {
+    private boolean isDropdownOptionIsDisplayedAtLibraryFileFolder(String dropDownOption, String
+            libraryFileFolderName) {
         boolean flag = false;
         try {
             if (EyeThink.core().is().isDisplayed(dropdownOptionAtLibraryFolderFile(dropDownOption, libraryFileFolderName))) {
@@ -256,14 +319,13 @@ public class LibraryFilesPage extends GovGrantsManager {
     private boolean isDefaultLibraryFolderIsDisabledAtUploadModal(String defaultFolder) {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().isDisplayed(By.xpath("//div[@data-folder-name='"+defaultFolder+"']"))) {
+            if (EyeThink.core().is().isDisplayed(By.xpath("//div[@data-folder-name='" + defaultFolder + "']"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
         }
         return flag;
     }
-
 
     /**
      * return true if modal window is not Displayed by click on action close/cancel - Files List - Home Phase
@@ -272,11 +334,50 @@ public class LibraryFilesPage extends GovGrantsManager {
      * @param tableId
      * @return
      */
-    private boolean isModalWindowIsNotDisabledAtFilesList(String modalTitle , String tableId) {
+    private boolean isModalWindowIsNotDisabledAtFilesList(String modalTitle, String tableId) {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().isEnabled(By.xpath("//p[text()='"+ modalTitle +"']/ancestor::div[@id='"+ tableId +"' and @aria-hidden='true']"))) {
+            if (EyeThink.core().is().isEnabled(By.xpath("//p[text()='" + modalTitle + "']/ancestor::div[@id='" + tableId + "' and @aria-hidden='true']"))) {
                 flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if Library/ Folder/ File name is Highlighted In Yellow color after quick search- Home Phase
+     *
+     * @param libraryFileFolderName
+     * @return
+     */
+    private boolean isLibraryFolderFileHighlightedInYellow(String libraryFileFolderName) {
+        boolean flag = false;
+        WebElement fileFolderName = EyeThink.core().elementReference().of(By.xpath("//div[@id='WorkspaceFilesHierarchy']//*[text()='" + libraryFileFolderName + "']"));
+        try {
+            if (fileFolderName.getCssValue("background-color").contains("rgb(255, 235, 59, 1")) ;
+            {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if Library/ Folder/ File count is displayed after quick search- Home Phase
+     *
+     * @param labelAndCount
+     * @return
+     */
+    private boolean isLibraryFolderFileCountDisplayed(String labelAndCount) {
+        boolean flag = false;
+        List<Elements> searchResultLabelAndCountList = EyeThink.core().elementReference().listOfElements().of(By.xpath("//div[@class='slds-form-element__row search-result']//label"));
+        try {
+            for (int row = 0; row < searchResultLabelAndCountList.size(); row++) {
+                if (searchResultLabelAndCountList.get(row).getText().equalsIgnoreCase(labelAndCount)) {
+                    flag = true;
+                }
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
         }
