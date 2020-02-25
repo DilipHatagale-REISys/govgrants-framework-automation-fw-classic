@@ -16,7 +16,6 @@ Feature: Sticky Bottom Component Scenarios
     And I click on botton menu "sticky_bottom_Menu"
     Then I softly do not see "Enable GovGrants Setup" inside bottom menu
     Then I softly do not see "Enable Platform Setup" inside bottom menu
-    Then I collect all the soft asserts
 
   @69400 @validateSystemAlertsOptionsAreNotShownInStickyBottomForUser
   Scenario: Disabling Enable Alert custom setting and validating display of System Alerts Option in sticky bottom

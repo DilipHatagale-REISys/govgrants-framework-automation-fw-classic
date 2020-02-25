@@ -210,7 +210,6 @@ Feature: Charts and Enhanced Charts Component Scenarios
     Then I see the following rows under the following columns in table with id "EnhancedPiechartIdrecordsModal" :
       | Announcement Title | Status    |
       | Announcement171001 | Published |
-    Then I collect all the soft asserts
 
     Examples:
       | default_Data_Table_Query                                                                                           | new_Data_Table_Query                                                                                                                         |
@@ -515,7 +514,6 @@ Feature: Charts and Enhanced Charts Component Scenarios
     Then I see the following rows under the following columns in table with id "EnhancedPiechartIdrecordsModal" :
       | Announcement Title     | Announcement Type |
       | Test application..1234 | Competitive       |
-    Then I collect all the soft asserts
 
     Examples:
       | default_Data_Table_Query                                                                                                                                     | new_Data_Table_Query                                                                                                                                         |
