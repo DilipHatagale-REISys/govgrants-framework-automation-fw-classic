@@ -4603,7 +4603,6 @@ Feature: Expression Builder Component Scenarios
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see only the following radio buttons in the approval decision :
       | Approve | Reject | Send Back |
-    And I collect all the soft asserts
 
   @48637    @hide_Expression_ApprovalDecisionAction_Forward_With_UserType_NOTIN_Internal
   Scenario: Setup configuration to display forward option from configuration for approval decision using User Type NotIN Internal and validating its content in pending tasks approval decision
@@ -4630,7 +4629,6 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I can see the radio button "Forward" in the approval decision
-    And I collect all the soft asserts
 
   @48638    @hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator @smoke
   Scenario: Setup configuration to display forward option from configuration for approval decision using Profile IN System Administrator and validating its content in pending tasks approval decision
@@ -4657,7 +4655,6 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I can see the radio button "Forward" in the approval decision
-    And I collect all the soft asserts
 
   @48639    @hide_Expression_ApprovalDecisionAction_Forward_With_Profile_NOTIN_SystemAdministrator
   Scenario: Setup configuration to hide forward option from configuration for approval decision using Profile NOTIN System Administrator and validating its content in pending tasks approval decision
@@ -4685,7 +4682,6 @@ Feature: Expression Builder Component Scenarios
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     And I see only the following radio buttons in the approval decision :
       | Approve | Reject | Send Back |
-    And I collect all the soft asserts
 
   @48640    @hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal
   Scenario: Setup configuration to display forward option from configuration for approval decision using  Profile IN System Administrator AND UserType IN Internal and validating its content in pending tasks approval decision
@@ -4712,7 +4708,6 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I can see the radio button "Forward" in the approval decision
-    And I collect all the soft asserts
 
   @48641    @hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal
   Scenario: Setup configuration to hide forward option from configuration for approval decision using  Profile IN System Administrator OR UserType IN Internal and validating its content in pending tasks approval decision
@@ -4740,7 +4735,6 @@ Feature: Expression Builder Component Scenarios
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see only the following radio buttons in the approval decision :
       | Approve | Reject | Send Back |
-    And I collect all the soft asserts
 
 
   @48646    @hide_Expression_ApprovalDecisionAction_Reject_With_UserType_NotIN_Internal_AND_Profile_NOTIN_SystemAdministrator @smoke
@@ -4768,7 +4762,6 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I can see the radio button "Reject" in the approval decision
-    And I collect all the soft asserts
 
   @48647    @hide_Expression_ApprovalDecisionAction_Reject_With_UserType_NotIN_Internal_OR_Profile_NOTIN_SystemAdministrator
   Scenario: Setup configuration to hide Reject option from configuration for approval decision using UserType NOT IN Internal OR Profile NOT IN System Administrator and validating its content in pending tasks approval decision
@@ -4796,7 +4789,6 @@ Feature: Expression Builder Component Scenarios
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see only the following radio buttons in the approval decision :
       | Approve | Forward | Send Back |
-    And I collect all the soft asserts
 
 
   @48648    @hide_Expression_ApprovalDecisionAction_Reject_With_UserType_IN_Internal_OR_Profile_IN_PM
@@ -4825,7 +4817,6 @@ Feature: Expression Builder Component Scenarios
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see only the following radio buttons in the approval decision :
       | Approve | Forward | Send Back |
-    And I collect all the soft asserts
 
 
   @48649    @hide_Expression_ApprovalDecisionAction_Reject_With_UserType_IN_Internal_AND_Profile_IN_PM
@@ -4854,7 +4845,6 @@ Feature: Expression Builder Component Scenarios
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see only the following radio buttons in the approval decision :
       | Approve | Forward | Send Back |
-    And I collect all the soft asserts
 
 
   @48650    @hide_Expression_ApprovalDecisionAction_Reject_With_UserApp_IN_StateAsGrantor
@@ -4883,7 +4873,6 @@ Feature: Expression Builder Component Scenarios
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see only the following radio buttons in the approval decision :
       | Approve | Forward | Send Back |
-    And I collect all the soft asserts
 
 
   @48651    @hide_Expression_ApprovalDecisionAction_Reject_With_UserApp_NOTIN_StateAsGrantor
@@ -4911,7 +4900,6 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I can see the radio button "Reject" in the approval decision
-    And I collect all the soft asserts
 
   @48652    @hide_Expression_ApprovalDecisionAction_SendBack_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor
   Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserType IN Internal AND UserApp IN StateasGrantor and validating its content in pending tasks approval decision
@@ -4939,7 +4927,6 @@ Feature: Expression Builder Component Scenarios
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see only the following radio buttons in the approval decision :
       | Approve | Reject | Forward |
-    And I collect all the soft asserts
 
 
   @48654    @hide_Expression_ApprovalDecisionAction_SendBack_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor
@@ -4968,7 +4955,6 @@ Feature: Expression Builder Component Scenarios
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see only the following radio buttons in the approval decision :
       | Approve | Reject | Forward |
-    And I collect all the soft asserts
 
 
   @48655    @hide_Expression_ApprovalDecisionAction_SendBack_With_UserType_IN_Applicant_Internal_Reviewer
@@ -4997,7 +4983,6 @@ Feature: Expression Builder Component Scenarios
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see only the following radio buttons in the approval decision :
       | Approve | Reject | Forward |
-    And I collect all the soft asserts
 
 
   @48656    @hide_Expression_ApprovalDecisionAction_SendBack_With_UserApp_IN_StateAsGrantee
@@ -5025,7 +5010,6 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I can see the radio button "Send Back" in the approval decision
-    And I collect all the soft asserts
 
   @48657    @hide_Expression_ApprovalDecisionAction_SendBack_With_UserApp_NOTIN_Admin @smoke
   Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserApp NOTIN Admin and validating its content in pending tasks approval decision
@@ -5053,7 +5037,6 @@ Feature: Expression Builder Component Scenarios
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see only the following radio buttons in the approval decision :
       | Approve | Reject | Forward |
-    And I collect all the soft asserts
 
 
   @48658    @hide_Expression_ApprovalDecisionAction_SendBack_With_UserApp_NOTIN_Recipient
@@ -5082,7 +5065,6 @@ Feature: Expression Builder Component Scenarios
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see only the following radio buttons in the approval decision :
       | Approve | Reject | Forward |
-    And I collect all the soft asserts
 
 
   @48659    @hide_Expression_ApprovalDecisionAction_SendBack_With_UserApp_IN_StateAsGrantor_StateAsGrantee_Recipient_Admin
@@ -5111,7 +5093,6 @@ Feature: Expression Builder Component Scenarios
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see only the following radio buttons in the approval decision :
       | Approve | Reject | Forward |
-    And I collect all the soft asserts
 
   @48662    @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_SystemAdministrator_OR_UserApp_IN_StateAsGrantor
   Scenario: Setup configuration to hide Approve option from configuration for approval decision using Profile IN System Administrator OR UserApp IN StateasGrantor and validating its content in pending tasks approval decision
@@ -5139,7 +5120,6 @@ Feature: Expression Builder Component Scenarios
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see only the following radio buttons in the approval decision :
       | Reject | Forward | Send Back |
-    And I collect all the soft asserts
 
   @48663    @hide_Expression_ApprovalDecisionAction_Approve_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_Admin
   Scenario: Setup configuration to display Approve option from configuration for approval decision using UserType NOT IN Internal AND Profile NOT IN  Admin and validating its content in pending tasks approval decision
@@ -5166,7 +5146,6 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I can see the radio button "Approve" in the approval decision
-    And I collect all the soft asserts
 
   @48666    @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_PM_OR_UserApp_NOTIN_Admin
   Scenario: Setup configuration to hide Approve option from configuration for approval decision using Profile IN PM OR UserApp NOT IN Admin and validating its content in pending tasks approval decision
@@ -5194,7 +5173,6 @@ Feature: Expression Builder Component Scenarios
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see only the following radio buttons in the approval decision :
       | Reject | Forward | Send Back |
-    And I collect all the soft asserts
 
   @48667    @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_PM_AND_UserApp_NOTIN_Admin
   Scenario: Setup configuration to hide Approve option from configuration for approval decision using Profile IN PM AND UserApp NOT IN Admin and validating its content in pending tasks approval decision
@@ -5222,7 +5200,6 @@ Feature: Expression Builder Component Scenarios
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see only the following radio buttons in the approval decision :
       | Reject | Forward | Send Back |
-    And I collect all the soft asserts
 
   @48670    @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_NOTIN_SystemAdministrator_AND_UserType_IN_Internal
   Scenario: Setup configuration to hide Approve option from configuration for approval decision using Profile NOT IN System Administrator AND UserType IN Internal and validating its content in pending tasks approval decision
@@ -5250,7 +5227,6 @@ Feature: Expression Builder Component Scenarios
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see only the following radio buttons in the approval decision :
       | Reject | Forward | Send Back |
-    And I collect all the soft asserts
 
   @51604    @hide_expression_Page_Block_Profile_IN_PM_For_Notes_And_Attachment
   Scenario: Set up configuration to display Notes and Attachment page block using expression json field

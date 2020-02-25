@@ -52,7 +52,6 @@ Feature: history Component Scenarios
     When I navigate to "History" sub tab
     Then I softly see column "Assigned To" inside row "1" at position "2" and column at position "2" contains text "Automation PM"
     Then I softly see column "Actual Approver" inside row "1" at position "2" and column at position "3" contains text "Allen PM"
-    Then I collect all the soft asserts
 
   @69836    @VerifyExpectedStatusIsDisplayedInApprovalHistoryAfterRecordApproval
   Scenario: Validating status as APPROVED inside Approval history table after approval of record
@@ -97,7 +96,6 @@ Feature: history Component Scenarios
     When I "Disapprove" in the approval decision
     When I navigate to "History" sub tab
     Then I softly see column "Status" inside row "1" at position "2" and column at position "5" contains text "Rejected"
-    Then I collect all the soft asserts
 
   @69944    @VerifyExpectedStatusIsDisplayedInApprovalHistoryAfterRecordReassign
   Scenario: Validating status as REASSIGNED inside Approval history table after approval of record
@@ -121,7 +119,6 @@ Feature: history Component Scenarios
     When I navigate to "History" sub tab
     Then I softly see column "Status" inside row "1" at position "2" and column at position "5" contains text "Pending"
     And I softly see column "Status" inside row "1" at position "3" and column at position "5" contains text "Reassigned"
-    And I collect all the soft asserts
 
   @69945    @VerifyExpectedStatusIsDisplayedInApprovalHistoryAfterRecordSentBack
   Scenario: Validating status as SENT BACK inside Approval history table after approval of record
@@ -160,7 +157,6 @@ Feature: history Component Scenarios
     When I click on "Submit For Approval" in the page details
     When I navigate to "History" sub tab
     Then I softly see column "Overall Status" inside row "1" at position "1" and column at position "2" contains text "Pending"
-    Then I collect all the soft asserts
 
   @69540   @VerifyDownloadAsPDFForFieldHistoryTable @wip
   Scenario: Validate by click on Download As PDF option a PDF is getting downloaded in history table

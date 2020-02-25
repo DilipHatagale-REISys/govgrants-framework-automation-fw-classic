@@ -908,7 +908,6 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I cannot see the radio button "Disapprove" in the approval decision
-    And I collect all the soft asserts
 
   @58840    @subRecipientPortalShouldRenderedWithColour
   Scenario: Validate page blocks of history sub tab should rendered properly on UI
