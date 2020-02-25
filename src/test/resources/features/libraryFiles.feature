@@ -77,7 +77,6 @@ Feature: Library Files Component Scenarios
     When I click on expand icon at library/folder "Department of Community Health"
     Then I softly see library/folder/file "testAutomationFolder1" is displayed under files library
     Then I softly see library/folder/file "testAutomationFolder2" is displayed under files library
-    Then I collect all the soft asserts
 
   @70285 @validateThatByClickOnAddNewFolderAFolderShouldGetAddedInLibraryByAuthor-HomePhase @reqChangeInMsg
   Scenario: Verify that By click on Add New Folder, a folder should get added under home phase library by author
@@ -97,7 +96,6 @@ Feature: Library Files Component Scenarios
     #Then I softly see the following messages in the page details :
      # | Folder testAutomationFolder3 deleted successfully. |
     When I pause execution for "5" seconds
-    Then I collect all the soft asserts
 
   @70289 @validateThatByClickOnRenameFolderAnUpdatedFolderShouldGetShownInLibraryByAuthor-HomePhase @reqChangeInMsg
   Scenario: Verify that By click on Rename, an updated folder name should get displayed under home phase library by author
@@ -122,7 +120,6 @@ Feature: Library Files Component Scenarios
     When I click on "Delete Folder" option at library/folder/file "testAutomationFolder4-Renamed"
     #Then I softly see the following messages in the page details :
      # | Folder testAutomationFolder3 deleted successfully. |
-    Then I collect all the soft asserts
 
   @70305 @validateThatAccessGivenLibraryShouldDisplayOnUIForAdminProfileHomePhase
   Scenario: Verify that govgrant Viewer access given library is displayed under home phase library for Admin profile
@@ -150,7 +147,6 @@ Feature: Library Files Component Scenarios
     #Then I softly see the following messages in the page details :
      # | Folder testAutomationFolder3 deleted successfully. |
     When I pause execution for "5" seconds
-    Then I collect all the soft asserts
 
   @70337 @validateThatByClickOnCancelButtonAModalWindowGetsClosed-HomePhase
   Scenario: Verify that Add new Folder Modal should get Closed when click on cancel button - Home phase
@@ -174,7 +170,6 @@ Feature: Library Files Component Scenarios
     Then I softly see "Add New Folder" option is present at library/folder/file "Department of Community Health"
     Then I softly see "Upload File" option is present at library/folder/file "Department of Community Health"
     Then I softly see "Download Files" option is present at library/folder/file "Department of Community Health"
-    Then I collect all the soft asserts
 
   @70546 @validateThatAdminCanSeeAllActionsAtFolder-HomePhase
   Scenario: Verify that admin can see add new folder,upload file, download file, Delete folder, Rename Folder actions at Folder- Home phase
@@ -189,7 +184,6 @@ Feature: Library Files Component Scenarios
     Then I softly see "Download Files" option is present at library/folder/file "testAutomationFolder1"
     Then I softly see "Delete Folder" option is present at library/folder/file "testAutomationFolder1"
     Then I softly see "Rename Folder" option is present at library/folder/file "testAutomationFolder1"
-    Then I collect all the soft asserts
 
   @70547 @validateThatAdminCanSeeAllActionsAtFile-HomePhase
   Scenario: Verify that admin can see download, Edit, Delete actions at File - Home phase
@@ -203,7 +197,6 @@ Feature: Library Files Component Scenarios
     Then I softly see "Edit File" option is present at library/folder/file "SendEmailAttachment.png"
     Then I softly see "Delete File" option is present at library/folder/file "SendEmailAttachment.png"
     Then I softly see "Download File" option is present at library/folder/file "SendEmailAttachment.png"
-    Then I collect all the soft asserts
 
   @70284 @validateThatAuthorCanSeeAllActionsAtLibrary-HomePhase
   Scenario: Verify that admin can see add new folder,upload file, download file actions- Home phase
@@ -215,7 +208,6 @@ Feature: Library Files Component Scenarios
     Then I softly see "Add New Folder" option is present at library/folder/file "Department of Community Health"
     Then I softly see "Upload File" option is present at library/folder/file "Department of Community Health"
     Then I softly see "Download Files" option is present at library/folder/file "Department of Community Health"
-    Then I collect all the soft asserts
 
   @70354 @validateThatIfAttachmentNotUploadedThenUploadButtonIsDisabled-HomePhase
   Scenario: Verify that Upload button is disabled when user click on upload button without uploading Attachment - home phase library
@@ -258,7 +250,6 @@ Feature: Library Files Component Scenarios
     #Then I softly see the following messages in the page details :
      # | Folder testAutomationFolder3 deleted successfully. |
     When I pause execution for "5" seconds
-    Then I collect all the soft asserts
 
   @70360 @validateThatDeleteFolderIsDisplayedInLibraryByAuthor-HomePhase
   Scenario: Verify that the Delete folder option is available at library dropdown under home phase by author
@@ -367,7 +358,6 @@ Feature: Library Files Component Scenarios
     When I click on "Download Files" option at library/folder/file "Department of Community Health"
     Then I softly see "Program Name" in downloaded xls or csv file "govgrants"
     Then I softly cannot see "First Name" in downloaded xls or csv file "govgrants"
-    Then I collect all the soft asserts
 
   @70433 @validateThatFolderWithSameNameIsNotGettingCreatedUnderSameLibrary-AtHomePhase
   Scenario: Verify that if user create folder with name same as existing then an alert message is displayed - home phase
@@ -418,7 +408,6 @@ Feature: Library Files Component Scenarios
     Then I softly see library/folder/file "SendEmailAttachment.pdf" is displayed under files library
     When I click on dropdown at library/folder/file "SendEmailAttachment.pdf"
     When I click on "Delete File" option at library/folder/file "SendEmailAttachment.pdf"
-    Then I collect all the soft asserts
 
   @70338 @validateThatAlertMessageIsDisplayedByClickOnSaveButtonIfFolderNameIsEmptyAtAddNewFolderOperation-HomePhase
   Scenario: Verify that required fields validation msg appears below folder name field under Add New folder modal - home phase
@@ -475,7 +464,6 @@ Feature: Library Files Component Scenarios
     When I enter value as "SheetJSFileUpload (8).xlsx" in field "Title" at Library Files
     When I click on "Save" button in send email modal
     Then I softly see library/folder/file "SheetJSFileUpload (8).xlsx" is displayed under files library
-    Then I collect all the soft asserts
 
   @70410 @validateThatUserCanUploadFileFromFileList-HomePhase-FileList
   Scenario: Verify that user can upload file from HomePhase - FileList table
@@ -500,7 +488,6 @@ Feature: Library Files Component Scenarios
     When I click on "My_Workspace_FileList"
     When I perform quick search for "SendEmailAttachment.pdf" in "WorkSpaceFilesFlexToggle" panel
     Then I softly see "No Records Found" inside flex table with id "WorkSpaceFilesFlexToggle"
-    Then I collect all the soft asserts
 
   @70411 @validateThatFileUploadedFromFileListIsDisplayedUnderRespectiveLibraryAtFilesLibraryTab-HomePhase-FileList
   Scenario: Verify thatfile uploaded from FileList tab is displayed under selected folder/library at library files tab - Home phase
@@ -525,7 +512,6 @@ Feature: Library Files Component Scenarios
     When I click on "Delete File" option at library/folder/file "SendEmailAttachment.pdf"
     When I pause execution for "7" seconds
     Then I softly do not see library/folder/file "SendEmailAttachment.pdf" is displayed under files library
-    Then I collect all the soft asserts
 
   @70435 @validateThatByClickOnRenameFolderAnUpdatedFolderShouldGetShownInLibraryByAdmin-HomePhase
   Scenario: Verify that By click on Rename, an updated folder name should get displayed under home phase library by admin
@@ -550,7 +536,6 @@ Feature: Library Files Component Scenarios
     When I click on "Delete Folder" option at library/folder/file "testAutomationFolder4-Renamed"
     When I pause execution for "7" seconds
     Then I softly do not see library/folder/file "testAutomationFolder4-Renamed" is displayed under files library
-    Then I collect all the soft asserts
 
   @70436 @validateThatFolderCanBeDeletedFromLibraryByAdminIfItIsEmpty-HomePhase
   Scenario: Verify that folder present under library can be deleted by admin if it is empty - Home phase
@@ -607,7 +592,6 @@ Feature: Library Files Component Scenarios
     When I click on "My_Workspace_FileList"
     When I perform quick search for "SendEmailAttachment.pdf" in "WorkSpaceFilesFlexToggle" panel
     Then I softly see "No Records Found" inside flex table with id "WorkSpaceFilesFlexToggle"
-    Then I collect all the soft asserts
 
   @70490 @validateThatUserCanUploadFileOfWithoutEnteringDescriptionInLibrarAndFolder-HomePhase
   Scenario: Verify that user can upload file without entering description under upload file modal - Home Phase
@@ -630,7 +614,6 @@ Feature: Library Files Component Scenarios
     When I click on "Delete File" option at library/folder/file "SendEmailAttachment.pdf"
     When I pause execution for "7" seconds
     Then I softly do not see library/folder/file "SendEmailAttachment.pdf" is displayed under files library
-    Then I collect all the soft asserts
 
   @70493 @validateThatUserCanUploadFileOfTypeDocxInLibrarAndFolder-HomePhase
   Scenario: Verify that user can upload file of type Doc.x under library and folder - Home Phase
@@ -653,7 +636,6 @@ Feature: Library Files Component Scenarios
     When I click on "Delete File" option at library/folder/file "TestAutomationFile.docx"
     When I pause execution for "7" seconds
     Then I softly do not see library/folder/file "TestAutomationFile.docx" is displayed under files library
-    Then I collect all the soft asserts
 
   @70496 @validateThatUserCanDownloadFileFromFileListTab-HomePhase-FileList
   Scenario: Verify that user can download file from FileList tab - Home phase
@@ -700,7 +682,6 @@ Feature: Library Files Component Scenarios
     When I pause execution for "3" seconds
     When I perform quick search for "SendEmailAttachment.pdf" in "PlanningFilesgrid" panel
     Then I softly see "No Records Found" inside flex table with id "PlanningFilesgrid"
-    Then I collect all the soft asserts
 
   @70534 @validateThatUserCanUploadFileOfTypeXlsxInLibrarAndFolder-HomePhase
   Scenario: Verify that user can upload file of type Xlsx under library and folder - Home Phase
@@ -724,7 +705,6 @@ Feature: Library Files Component Scenarios
     When I click on "Delete File" option at library/folder/file "SheetJSFileUploadDateTime.xlsx"
     When I pause execution for "7" seconds
     Then I softly do not see library/folder/file "SheetJSFileUploadDateTime.xlsx" is displayed under files library
-    Then I collect all the soft asserts
 
   @70535 @validateThatUserCanUploadFileOfTypeZipInLibrarAndFolder-HomePhase
   Scenario: Verify that user can upload file of type Zip under library and folder - Home Phase
@@ -748,7 +728,6 @@ Feature: Library Files Component Scenarios
     When I click on "Delete File" option at library/folder/file "TestAutomationFile.zip"
     When I pause execution for "7" seconds
     Then I softly do not see library/folder/file "TestAutomationFile.zip" is displayed under files library
-    Then I collect all the soft asserts
 
   @70536 @validateThatUserCanUploadFileOfTypeTxtInLibrarAndFolder-HomePhase
   Scenario: Verify that user can upload file of type .txt under library and folder - Home Phase
@@ -772,7 +751,6 @@ Feature: Library Files Component Scenarios
     When I click on "Delete File" option at library/folder/file "TestAutomation.txt"
     When I pause execution for "7" seconds
     Then I softly do not see library/folder/file "TestAutomation.txt" is displayed under files library
-    Then I collect all the soft asserts
 
   @70537 @validateThatUserCanUploadFileOfTypePDFInLibrarAndFolder-HomePhase
   Scenario: Verify that user can upload file of type pdf under library and folder - Home Phase
@@ -796,7 +774,6 @@ Feature: Library Files Component Scenarios
     When I click on "Delete File" option at library/folder/file "SendEmailAttachment.pdf"
     When I pause execution for "7" seconds
     Then I softly do not see library/folder/file "SendEmailAttachment.pdf" is displayed under files library
-    Then I collect all the soft asserts
 
   @70538 @validateThatUserCanUploadFileOfTypePptxInLibrarAndFolder-HomePhase
   Scenario: Verify that user can upload file of type pptx under library and folder - Home Phase
@@ -820,7 +797,6 @@ Feature: Library Files Component Scenarios
     When I click on "Delete File" option at library/folder/file "TestAutomationFile.pptx"
     When I pause execution for "7" seconds
     Then I softly do not see library/folder/file "TestAutomationFile.pptx" is displayed under files library
-    Then I collect all the soft asserts
 
   @70539 @validateThatUserCanUploadFileOfTypeJPGInLibrarAndFolder-HomePhase
   Scenario: Verify that user can upload file of type jpg under library and folder - Home Phase
@@ -844,7 +820,6 @@ Feature: Library Files Component Scenarios
     When I click on "Delete File" option at library/folder/file "TestAutomationFile.jpg"
     When I pause execution for "7" seconds
     Then I softly do not see library/folder/file "TestAutomationFile.jpg" is displayed under files library
-    Then I collect all the soft asserts
 
   @70497 @validateByClickOnCloseIconAtEditFileModalOperationAModalIsGettingClosed-HomePhase
   Scenario: Verify that a modal is getting closed by lick on cross button under edit file modal - home phase
@@ -936,4 +911,3 @@ Feature: Library Files Component Scenarios
         When I pause execution for "3" seconds
         When I perform quick search for "TestAutomationFile.csv" in "PlanningFilesgrid" panel
         Then I softly see "No Records Found" inside flex table with id "PlanningFilesgrid"
-        Then I collect all the soft asserts

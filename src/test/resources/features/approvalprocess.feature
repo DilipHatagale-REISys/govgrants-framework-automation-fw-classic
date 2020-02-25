@@ -26,7 +26,6 @@ Feature: Approval Process Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I cannot see the radio button "Approve" in the approval decision
-    And I collect all the soft asserts
 
   @34307    @changeApproveOptionSequence-Programs @smoke
   Scenario: Changing sequence of Approve option from configuration and validating its sequence in pending tasks approval decision
@@ -52,7 +51,6 @@ Feature: Approval Process Component Scenarios
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see only the following ordered radio buttons in the approval decision :
       | Reject | Forward | Send Back | Approve |
-    And I collect all the soft asserts
 
   @34308    @mandatoryCommentsReqForApproveAction-Programs
   Scenario: Setup comments requried as mandatory for approval from configuration and in pending tasks approval decision
@@ -79,7 +77,6 @@ Feature: Approval Process Component Scenarios
     When I select radio button "Approve" in the approval decision
     And I submit the approval in the approval decision
     Then I can see the message "Comments are Required." in the approval decision
-    And I collect all the soft asserts
 
   @34306    @labelChangeOfApprovalDecision-Programs
   Scenario: Changing label of approve radio button text from configuration and validating its changed label in pending tasks approval decision
@@ -104,7 +101,6 @@ Feature: Approval Process Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I can see the radio button "Approved" in the approval decision
-    And I collect all the soft asserts
 
   @34309    @confirmationMessageBoxPopupForApproveApprovalDecisionAction-Programs
   Scenario: Setup confirmation message inside confirmation message box from configuration and validating it in pending tasks approval decision
@@ -158,7 +154,6 @@ Feature: Approval Process Component Scenarios
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I select radio button "Reassign" in the approval decision
     Then I can see user "Allen PM" in the user lookup in the approval decision
-    And I collect all the soft asserts
     Examples:
       | newFilterCriteriaValue |
       | Name='Allen PM'        |
@@ -685,7 +680,6 @@ Feature: Approval Process Component Scenarios
     When I select radio button "Reassign" in the approval decision
     And I submit the approval in the approval decision
     Then I can see the message "Comments are Required." in the approval decision
-    And I collect all the soft asserts
 
   @41059    @commentsFieldAPINameFieldForReassignAction-Programs
   Scenario: Setup comments as FederalProgramCFDA__c inside comments field API field using Approval decision action config from config and validating it at program detail page
@@ -740,7 +734,6 @@ Feature: Approval Process Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I cannot see the radio button "Approve" in the approval decision
-    And I collect all the soft asserts
 
   @41064    @hideDisapproveOptionFromHideExpressionJSONField-Programs
   Scenario: Hiding reject option from configuration and validating its content in pending tasks approval decision
@@ -765,7 +758,6 @@ Feature: Approval Process Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I cannot see the radio button "Disapprove" in the approval decision
-    And I collect all the soft asserts
 
   @41065    @hideReassignOptionFromHideExpressionJSONField-Programs
   Scenario: Hiding forward option from configuration and validating its content in pending tasks approval decision
@@ -790,7 +782,6 @@ Feature: Approval Process Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I cannot see the radio button "Reassign" in the approval decision
-    And I collect all the soft asserts
 
   @41067    @hideSendToOwnerOptionFromHideExpressionJSONField-Programs
   Scenario: Hiding send back option from configuration and validating its content in pending tasks approval decision
@@ -815,7 +806,6 @@ Feature: Approval Process Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I cannot see the radio button "Send to Owner" in the approval decision
-    And I collect all the soft asserts
 
   @41060    @validateCommentedTextInsideHistoryTabForReassignAction-Programs @smoke
   Scenario: Validating commented text inside history tab for reassign approval action at program detail page

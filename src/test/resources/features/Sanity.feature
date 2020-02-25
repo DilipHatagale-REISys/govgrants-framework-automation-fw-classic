@@ -141,7 +141,6 @@ Feature: Sanity check for all Component Scenarios
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I see only the following radio buttons in the approval decision :
       | Reject | Forward | Send Back |
-    And I collect all the soft asserts
 
   @51323    @sequenceFieldAtApplicationBudgetCategoryFlexTableChild-gApplications
   Scenario: Changing sequence of view row level action item at Application Budget child flex table from config and validating it inside Application Budget child flex table of programs
@@ -278,7 +277,6 @@ Feature: Sanity check for all Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
     Then I cannot see the radio button "Approve" in the approval decision
-    And I collect all the soft asserts
 
   @34485    @validateNumberOfCharts-gplanning
   Scenario: Setup number of charts as "2" from config. and validate only two charts are displayed inside planning

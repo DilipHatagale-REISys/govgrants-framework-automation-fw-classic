@@ -29,7 +29,6 @@ Feature: history Component Scenarios
     And I refresh the page
     When I navigate to "History" sub tab
     Then I softly see column "Assigned To" inside row "1" at position "2" and column at position "2" contains text "Automation PM"
-    Then I collect all the soft asserts
 
   @69578    @VerifyActualApproverAndAssignedToNameIsDisplayedInApprovalHistoryAfterRecordReassignToUser
   Scenario: Validate Actual Approver name and Assigned To Name inside Approval history table after Reassigning of record to user
@@ -53,7 +52,6 @@ Feature: history Component Scenarios
     When I navigate to "History" sub tab
     Then I softly see column "Assigned To" inside row "1" at position "2" and column at position "2" contains text "Automation PM"
     Then I softly see column "Actual Approver" inside row "1" at position "2" and column at position "3" contains text "Allen PM"
-    Then I collect all the soft asserts
 
   @69836    @VerifyExpectedStatusIsDisplayedInApprovalHistoryAfterRecordApproval
   Scenario: Validating status as APPROVED inside Approval history table after approval of record
@@ -76,7 +74,6 @@ Feature: history Component Scenarios
     When I "Approve" in the approval decision
     When I navigate to "History" sub tab
     Then I softly see column "Status" inside row "1" at position "2" and column at position "5" contains text "Approved"
-    Then I collect all the soft asserts
 
   @69943    @VerifyExpectedStatusIsDisplayedInApprovalHistoryAfterRecordRejection
   Scenario: Validating status as REJECTED inside Approval history table after approval of record
@@ -99,7 +96,6 @@ Feature: history Component Scenarios
     When I "Disapprove" in the approval decision
     When I navigate to "History" sub tab
     Then I softly see column "Status" inside row "1" at position "2" and column at position "5" contains text "Rejected"
-    Then I collect all the soft asserts
 
   @69944    @VerifyExpectedStatusIsDisplayedInApprovalHistoryAfterRecordReassign
   Scenario: Validating status as REASSIGNED inside Approval history table after approval of record
@@ -123,7 +119,6 @@ Feature: history Component Scenarios
     When I navigate to "History" sub tab
     Then I softly see column "Status" inside row "1" at position "2" and column at position "5" contains text "Pending"
     And I softly see column "Status" inside row "1" at position "3" and column at position "5" contains text "Reassigned"
-    And I collect all the soft asserts
 
   @69945    @VerifyExpectedStatusIsDisplayedInApprovalHistoryAfterRecordSentBack
   Scenario: Validating status as SENT BACK inside Approval history table after approval of record
@@ -146,7 +141,6 @@ Feature: history Component Scenarios
     When I "Send to Owner" in the approval decision
     When I navigate to "History" sub tab
     Then I softly see column "Status" inside row "1" at position "2" and column at position "5" contains text "Sent Back"
-    Then I collect all the soft asserts
 
   @69958   @VerifyExpectedOverAllStatusIsDisplayedInApprovalHistoryAfterRecordSubmission
   Scenario: Validating Over all status as Pending inside Approval history table after record submission as submit for apprval
@@ -163,7 +157,6 @@ Feature: history Component Scenarios
     When I click on "Submit For Approval" in the page details
     When I navigate to "History" sub tab
     Then I softly see column "Overall Status" inside row "1" at position "1" and column at position "2" contains text "Pending"
-    Then I collect all the soft asserts
 
   @69540   @VerifyDownloadAsPDFForFieldHistoryTable @wip
   Scenario: Validate by click on Download As PDF option a PDF is getting downloaded in history table
@@ -216,4 +209,3 @@ Feature: history Component Scenarios
     When I "Reassign" to user "Allen PM" in the approval decision
     When I navigate to "History" sub tab
     Then I softly see column "Actual Approver" inside row "1" at position "2" and column at position "3" contains text "Allen PM"
-    Then I collect all the soft asserts
