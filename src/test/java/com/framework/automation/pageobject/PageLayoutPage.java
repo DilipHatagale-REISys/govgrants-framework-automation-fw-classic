@@ -9,6 +9,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -17,7 +19,7 @@ public class PageLayoutPage extends GovGrantsManager {
     /******* "Variables and Locators" *****************/
     private final By overViewHeader, overViewTitle, pageInstructionText, headerInstructionText, headerOverviewTab,
             headerInstructionTextForPageBlock, rolesAndResponsibilitiesFlexTableTitle, monitoringFlexGridTitle,
-            addButtonUnderAttachments, selectTypeDropdown, addAttachmentIframe, lookupSearchInputBox,
+            addButtonUnderAttachments, addAttachmentIframe, lookupSearchInputBox,
             lookupSearchButton, ownerOrganizationModalTitle, completeTableRowInsideLookupModal,
             manageAttachmentInsidePageBlockDetail, manageAttachmentIframe, editActionModalIframe, pageLayoutButton,
             editAttachmentDescription, editAttachmentSaveButton, textInsideMiniPageLayout;
@@ -37,7 +39,6 @@ public class PageLayoutPage extends GovGrantsManager {
         monitoringFlexGridTitle = By.xpath(
                 "//div[@class='panel-heading']//div[contains(@class,'panel-title')]//a[@title='Monitoring Schedule For All Active Grant']");
         addButtonUnderAttachments = By.xpath("//button[@title='AddAttachments']");
-        selectTypeDropdown = By.xpath("//select[@title='Classification']");
         addAttachmentIframe = By.cssSelector("#addmodaldialog iframe");
         lookupSearchInputBox = By.xpath("//img[@title='Organization Lookup (New Window)']/../../input[@type='text']");
         lookupSearchButton = By.xpath("//img[@title='Organization Lookup (New Window)']");
@@ -630,21 +631,24 @@ public class PageLayoutPage extends GovGrantsManager {
      * @return
      */
     public boolean isValuePresentInsidePickList(String dropDownValue) {
-        String[] exp = dropDownValue.split(" ");
-        int count = 0;
-        for (WebElement we : EyeThink.core().select().from(selectTypeDropdown).getOptions()) {
-            for (int i = 0; i < exp.length; i++) {
-                if (we.getText().equals(exp[i])) {
-                    count++;
-                }
-            }
+        String[] exp = null;
+        if (dropDownValue.contains(":")) {
+            exp = dropDownValue.split(":");
         }
-        if (count == exp.length) {
+        List<String> opt01 = Arrays.asList(exp);
+        By selectD = By.xpath("//select[@title='Classification']");
+        List<WebElement> wee = EyeThink.core().select().from(selectD).getOptions();
+        List<String> opt = new ArrayList<>();
+        for (int i = 0; i < wee.size(); i++) {
+            opt.add(wee.get(i).getText());
+        }
+        if (opt01.containsAll(opt)) {
             return true;
         } else {
             return false;
         }
     }
+
 
     /**
      * get complete rows of table inside lookup modal
@@ -1380,13 +1384,6 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public void clickAddUnderAttachmentsPageBlock() {
         EyeThink.core().click().on(addButtonUnderAttachments);
-    }
-
-    /**
-     * click on Select dropdown inside add attachment iframe
-     */
-    public void clickOnTypeDropdown() {
-        EyeThink.core().click().on(selectTypeDropdown);
     }
 
     /**
