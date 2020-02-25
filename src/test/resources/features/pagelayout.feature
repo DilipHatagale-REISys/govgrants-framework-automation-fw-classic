@@ -923,8 +923,7 @@ Feature: Page Layout Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     When I click Add button inside attachments page block
-    When I click select dropdown inside add attachment iframe
-    Then I see "AnnouncementArtifacts1 AnnouncementArtifacts2" inside Type selectbox
+    Then I see "AnnouncementArtifacts1:AnnouncementArtifacts2" inside Type selectbox
 
   @36104    @isHiddenFieldAtPageBlockDetail-gPlanning
   Scenario: Hiding program name while making is hidden field as false from config and validaying it at program detail page
@@ -1081,8 +1080,7 @@ Feature: Page Layout Component Scenarios
     When I click on "View" icon for "Test Announcement For Automation" inside table
     When I navigate to "Overview" sub tab
     When I click on Manage Attachments inside page block details
-    When I click select dropdown inside add attachment iframe
-    Then I see "Test1 Test2" inside Type selectbox
+    Then I see "Test1:Test2" inside Type selectbox
 
   @36196    @submitWarningMessageFieldAtPageLayoutAction-gPlanning
   Scenario: Setup submit warning message at program submit for approval from configuration and validating it at program detail page

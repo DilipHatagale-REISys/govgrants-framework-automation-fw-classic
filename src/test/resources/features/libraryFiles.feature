@@ -386,7 +386,7 @@ Feature: Library Files Component Scenarios
     Then I see the following messages in the page details contains:
       | You can delete a Content Folder only if it's empty. |
 
-  @70286 @validateThatAuthorCanUploadFileUnderFolder-HomePhase
+  @70286 @validateThatAuthorCanUploadFileUnderFolder-HomePhase @NeedDeleteAPI
   Scenario: Verify that an author can upload file in folder under home phase library
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
@@ -465,7 +465,7 @@ Feature: Library Files Component Scenarios
     When I click on "Save" button in send email modal
     Then I softly see library/folder/file "SheetJSFileUpload (8).xlsx" is displayed under files library
 
-  @70410 @validateThatUserCanUploadFileFromFileList-HomePhase-FileList
+  @70410 @validateThatUserCanUploadFileFromFileList-HomePhase-FileList @NeedDeleteAPI
   Scenario: Verify that user can upload file from HomePhase - FileList table
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -568,7 +568,7 @@ Feature: Library Files Component Scenarios
     Then I see the following messages in the page details contains:
       | You can not delete File SheetJSFileUpload (8).xlsx, as it is associated with business records. |
 
-  @70495 @validateThatFileUploadedFromLibraryFilesIsDisplayedUnderFilesListTab-HomePhase-FileList
+  @70495 @validateThatFileUploadedFromLibraryFilesIsDisplayedUnderFilesListTab-HomePhase-FileList @NeedDeleteAPI
   Scenario: Verify that file uploaded from LibraryFiles tab is displayed under files list tab - Home phase
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -648,7 +648,7 @@ Feature: Library Files Component Scenarios
     When I click on "Download" icon for "automationTestingOfFiles.xls" inside table
     Then I see "First Name" in downloaded xls or csv file "govgrants"
 
-  @70499 @validateThatFileUploadedFromRecordDetailIsDisplayedUnderHomePhaseFilesListTab-RecordLevel
+  @70499 @validateThatFileUploadedFromRecordDetailIsDisplayedUnderHomePhaseFilesListTab-RecordLevel @NeedDeleteAPI
   Scenario: Verify that file added from record level is displayed under home phase files list tab - record level
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -865,49 +865,292 @@ Feature: Library Files Component Scenarios
     When I click on "Download" icon for "SheetJSFileUpload.xlsx" inside table
     Then I softly see "Organization" in downloaded xls or csv file "govgrants"
 
-    @70730 @validateThatUserCanDeleteFileFromPlanningFilesTableAtAttachmentTab-RecordLevel
-    Scenario: Verify that user can delete file from planning Files table at attachment tab - Record level
-      When I login as "Automation" user
-      When I setup my app as "As a Grantor"
-      And I navigate to "Planning" tab
-      And I click toggle button to select "Draft Programs"
-      When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-      When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-      When I navigate to "Attachments" sub tab
-      When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
-      When I upload file "SheetJSFileUpload.xlsx" into library
-      When I click on SelectChange Folder in add file modal
-      When I Select/Change Folder as "Department of Community Health" in add file modal
-      When I enter value as "test Automation upload from files list" in field "Description" at Library Files
-      When I click on "Upload" button in send email modal
-      When I pause execution for "7" seconds
-      When I perform quick search for "SheetJSFileUpload.xlsx" in "PlanningFilesgrid" panel
-      When I click on "Delete" icon for "SheetJSFileUpload.xlsx" inside table
-      When I click "Yes" on modal confirmation box
-      When I pause execution for "3" seconds
-      When I perform quick search for "SheetJSFileUpload.xlsx" in "PlanningFilesgrid" panel
-      Then I see "No Records Found" inside flex table with id "SheetJSFileUpload.xlsx"
+  @70730 @validateThatUserCanDeleteFileFromPlanningFilesTableAtAttachmentTab-RecordLevel
+  Scenario: Verify that user can delete file from planning Files table at attachment tab - Record level
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
+    When I upload file "SheetJSFileUpload.xlsx" into library
+    When I click on SelectChange Folder in add file modal
+    When I Select/Change Folder as "Department of Community Health" in add file modal
+    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I pause execution for "7" seconds
+    When I perform quick search for "SheetJSFileUpload.xlsx" in "PlanningFilesgrid" panel
+    When I click on "Delete" icon for "SheetJSFileUpload.xlsx" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "3" seconds
+    When I perform quick search for "SheetJSFileUpload.xlsx" in "PlanningFilesgrid" panel
+    Then I see "No Records Found" inside flex table with id "SheetJSFileUpload.xlsx"
 
-      @70731 @validateThatDescriptionAddedAtFileUploadModalIsDisplayedUnderPlanningFilesTableAtAttachmentTab-RecordLevel
-      Scenario: Verify that description added at upload file modal is shown under planning files table - Record level
-        When I login as "Automation" user
-        When I setup my app as "As a Grantor"
-        And I navigate to "Planning" tab
-        And I click toggle button to select "Draft Programs"
-        When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-        When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-        When I navigate to "Attachments" sub tab
-        When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
-        When I upload file "TestAutomationFile.csv" into library
-        When I click on SelectChange Folder in add file modal
-        When I Select/Change Folder as "Department of Community Health" in add file modal
-        When I enter value as "test Automation upload from record level" in field "Description" at Library Files
-        When I click on "Upload" button in send email modal
-        When I pause execution for "7" seconds
-        When I perform quick search for "TestAutomationFile.csv" in "PlanningFilesgrid" panel
-        Then I softly see value "test Automation upload from record level" for title "Description" inside table "PlanningFilesgrid"
-        When I click on "Delete" icon for "TestAutomationFile.csv" inside table
-        When I click "Yes" on modal confirmation box
-        When I pause execution for "3" seconds
-        When I perform quick search for "TestAutomationFile.csv" in "PlanningFilesgrid" panel
-        Then I softly see "No Records Found" inside flex table with id "PlanningFilesgrid"
+  @70731 @validateThatDescriptionAddedAtFileUploadModalIsDisplayedUnderPlanningFilesTableAtAttachmentTab-RecordLevel @NeedDeleteAPI
+  Scenario: Verify that description added at upload file modal is shown under planning files table - Record level
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
+    When I upload file "TestAutomationFile.csv" into library
+    When I click on SelectChange Folder in add file modal
+    When I Select/Change Folder as "Department of Community Health" in add file modal
+    When I enter value as "test Automation upload from record level" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I pause execution for "7" seconds
+    When I perform quick search for "TestAutomationFile.csv" in "PlanningFilesgrid" panel
+    Then I softly see value "test Automation upload from record level" for title "Description" inside table "PlanningFilesgrid"
+    When I click on "Delete" icon for "TestAutomationFile.csv" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "3" seconds
+    When I perform quick search for "TestAutomationFile.csv" in "PlanningFilesgrid" panel
+    Then I softly see "No Records Found" inside flex table with id "PlanningFilesgrid"
+
+  @70356 @validateThatDescriptionFieldShouldAcceptMax255CharactersAtUploadFileModal-HomePhase @NeedDeleteAPI
+  Scenario Outline: Verify that description field should accept 255 characters at upload file modal - Home Phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on dropdown at library/folder/file "Department of Community Health"
+    When I click on "Upload File" option at library/folder/file "Department of Community Health"
+    When I upload file "TestAutomationFile.csv" into library
+    When I enter value as "<enterValue>" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+    And I refresh the page
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I perform quick search for "TestAutomationFile.csv" in "WorkSpaceFilesFlexToggle" panel
+    Then I softly see value "<requiredValue>" for title "Description" inside table "WorkSpaceFilesFlexToggle"
+    When I click on "Delete" icon for "TestAutomationFile.csv" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "5" seconds
+    When I perform quick search for "TestAutomationFile.csv" in "WorkSpaceFilesFlexToggle" panel
+    Then I softly see "No Records Found" inside flex table with id "WorkSpaceFilesFlexToggle"
+    Examples:
+      | enterValue                                                                                                                                                                                                                                                           | requiredValue                                                                                                                                                                                                                                                   |
+      | titletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitleti255title | titletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitleti255 |
+
+  @70488 @validateThatQuickSearchResultIsDisplayedAndHighlightedInYellowColor-HomePhase
+  Scenario: Verify that quick search result is displayed and highlighted in yellow color under library files - Home Phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I perform quick search for "Test" under files library
+    Then I softly see library/folder/file as "testAutomationFolder1" highlighted with color
+    Then I softly see library/folder/file as "testAutomationFolder2" highlighted with color
+    Then I softly see library/folder/file as "TestSubFolder1-DND" highlighted with color
+    Then I softly see library/folder/file as "automationTestingOfFiles.xls" highlighted with color
+
+  @71528 @validateThatQuickSearchResultCountIsDisplayed-HomePhase
+  Scenario: Verify that quick search result count is displayed under library files - Home Phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I perform quick search for "Test" under files library
+    Then I softly see Label/Count as "Folders - 3" is displayed
+    Then I softly see Label/Count as "Files - 1" is displayed
+
+  @70732 @validateThatSelectedClassificationAtUploadModalIsDisplayedUnderPlanningFilesTable-RecordLevel @NeedDeleteAPI
+  Scenario: Verify that selected classification at upload modal is displayed under planning files table - Home Phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
+    When I upload file "TestAutomationFile.csv" into library
+    When I select Classification as "Medical Reports" at upload file modal
+    When I click on SelectChange Folder in add file modal
+    When I Select/Change Folder as "Department of Community Health" in add file modal
+    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I pause execution for "7" seconds
+    When I perform quick search for "TestAutomationFile.csv" in "PlanningFilesgrid" panel
+    Then I softly see value "Medical Reports" for title "Classification" inside table "PlanningFilesgrid"
+    When I click on "Delete" icon for "TestAutomationFile.csv" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "5" seconds
+    When I perform quick search for "TestAutomationFile.csv" in "PlanningFilesgrid" panel
+    Then I softly see "No Records Found" inside flex table with id "PlanningFilesgrid"
+
+  @70733 @validateThatFileExtensionOfUploadedFileIsDisplayedUnderPlanningFilesTable-HomePhase @NeedDeleteAPI
+  Scenario: Verify that file extension of uploaded is displayed under planning files table - Home Phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
+    When I upload file "TestAutomationFile.csv" into library
+    When I click on SelectChange Folder in add file modal
+    When I Select/Change Folder as "Department of Community Health" in add file modal
+    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I pause execution for "7" seconds
+    When I perform quick search for "TestAutomationFile.csv" in "PlanningFilesgrid" panel
+    Then I softly see value "csv" for title "File Extension" inside table "PlanningFilesgrid"
+    When I click on "Delete" icon for "TestAutomationFile.csv" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "5" seconds
+    When I perform quick search for "TestAutomationFile.csv" in "PlanningFilesgrid" panel
+    Then I softly see "No Records Found" inside flex table with id "PlanningFilesgrid"
+
+  @70734 @validateThatFileNameOfUploadedFileIsDisplayedUnderPlanningFilesTable-HomePhase @NeedDeleteAPI
+  Scenario: Verify that file name of uploaded is displayed under planning files table as it is - Home Phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
+    When I upload file "TestAutomationFile.csv" into library
+    When I click on SelectChange Folder in add file modal
+    When I Select/Change Folder as "Department of Community Health" in add file modal
+    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I pause execution for "7" seconds
+    When I perform quick search for "TestAutomationFile.csv" in "PlanningFilesgrid" panel
+    Then I softly see value "TestAutomationFile.csv" for title "Title" inside table "PlanningFilesgrid"
+    When I click on "Delete" icon for "TestAutomationFile.csv" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "5" seconds
+    When I perform quick search for "TestAutomationFile.csv" in "PlanningFilesgrid" panel
+    Then I softly see "No Records Found" inside flex table with id "PlanningFilesgrid"
+
+  @70735 @validateThatFileUploadedAtAnyRecordIsVisibleOnlyAtThatRecordAndNotAtOtherRecords-RecordLevel @NeedDeleteAPI
+  Scenario: Verify that file name of uploaded is displayed under planning files table as it is - Home Phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
+    When I upload file "TestAutomationFile.csv" into library
+    When I click on SelectChange Folder in add file modal
+    When I Select/Change Folder as "Department of Community Health" in add file modal
+    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I pause execution for "7" seconds
+    When I perform quick search for "TestAutomationFile.csv" in "PlanningFilesgrid" panel
+    Then I softly see value "TestAutomationFile.csv" for title "Title" inside table "PlanningFilesgrid"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "TestAutomationFile.csv" in "PlanningFilesgrid" panel
+    Then I softly see "No Records Found" inside flex table with id "PlanningFilesgrid"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "TestAutomationFile.csv" in "PlanningFilesgrid" panel
+    When I click on "Delete" icon for "TestAutomationFile.csv" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "5" seconds
+    When I perform quick search for "TestAutomationFile.csv" in "PlanningFilesgrid" panel
+    Then I softly see "No Records Found" inside flex table with id "PlanningFilesgrid"
+
+  @71583 @validateThatSelectedClassificationAtUploadModalIsDisplayedUnderFilesListTable-RecordLevel @NeedDeleteAPI
+  Scenario: Verify that selected classification at upload modal is displayed under files list table at Home Phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
+    When I upload file "TestAutomationFile.csv" into library
+    When I select Classification as "Medical Reports" at upload file modal
+    When I click on SelectChange Folder in add file modal
+    When I Select/Change Folder as "Department of Community Health" in add file modal
+    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I perform quick search for "TestAutomationFile.csv" in "WorkSpaceFilesFlexToggle" panel
+    Then I softly see value "Medical Reports" for title "Classification" inside table "WorkSpaceFilesFlexToggle"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "TestAutomationFile.csv" in "PlanningFilesgrid" panel
+    When I click on "Delete" icon for "TestAutomationFile.csv" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "3" seconds
+    When I perform quick search for "TestAutomationFile.csv" in "PlanningFilesgrid" panel
+    Then I softly see "No Records Found" inside flex table with id "PlanningFilesgrid"
+
+  @70737 @validateThatUserCanUploadDocxTypeFileUnderPlanningFilesTable-HomePhase @NeedDeleteAPI
+  Scenario: Verify that user can upload .docx type of file under planning files table as it is - Home Phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
+    When I upload file "TestAutomationFile.docx" into library
+    When I click on SelectChange Folder in add file modal
+    When I Select/Change Folder as "Department of Community Health" in add file modal
+    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I pause execution for "7" seconds
+    When I perform quick search for "TestAutomationFile.docx" in "PlanningFilesgrid" panel
+    Then I softly see value "TestAutomationFile.docx" for title "Title" inside table "PlanningFilesgrid"
+    When I click on "Delete" icon for "TestAutomationFile.docx" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "5" seconds
+    When I perform quick search for "TestAutomationFile.docx" in "PlanningFilesgrid" panel
+    Then I softly see "No Records Found" inside flex table with id "PlanningFilesgrid"
+
+  @70738 @validateThatUserCanUploadPDFTypeFileUnderPlanningFilesTable-HomePhase @NeedDeleteAPI
+  Scenario: Verify that user can upload .Pdf type of file under planning files table as it is - Home Phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
+    When I upload file "SendEmailAttachment.pdf" into library
+    When I click on SelectChange Folder in add file modal
+    When I Select/Change Folder as "Department of Community Health" in add file modal
+    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I pause execution for "7" seconds
+    When I perform quick search for "SendEmailAttachment.pdf" in "PlanningFilesgrid" panel
+    Then I softly see value "SendEmailAttachment.pdf" for title "Title" inside table "PlanningFilesgrid"
+    When I click on "Delete" icon for "SendEmailAttachment.pdf" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "5" seconds
+    When I perform quick search for "SendEmailAttachment.pdf" in "PlanningFilesgrid" panel
+    Then I softly see "No Records Found" inside flex table with id "PlanningFilesgrid"

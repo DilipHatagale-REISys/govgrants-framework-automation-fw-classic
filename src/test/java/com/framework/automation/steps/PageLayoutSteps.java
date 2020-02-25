@@ -26,11 +26,6 @@ public class PageLayoutSteps {
         pageLayoutPage.clickAddUnderAttachmentsPageBlock();
     }
 
-    @When("^I click select dropdown inside add attachment iframe$")
-    public void clickSelectDropdown() {
-        pageLayoutPage.clickOnTypeDropdown();
-    }
-
     @When("^I click search icon for \"([^\"]*)\" lookup modal and swithing to frame \"([^\"]*)\"$")
     public void searchLookUpModal(String lookupText, String frameId) {
         pageLayoutPage.handleLookUpSearchWithFrame(frameId, lookupText.split(","));
