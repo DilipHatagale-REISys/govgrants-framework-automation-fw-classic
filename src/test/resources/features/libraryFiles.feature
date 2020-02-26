@@ -1154,3 +1154,90 @@ Feature: Library Files Component Scenarios
     When I pause execution for "5" seconds
     When I perform quick search for "SendEmailAttachment.pdf" in "PlanningFilesgrid" panel
     Then I softly see "No Records Found" inside flex table with id "PlanningFilesgrid"
+
+  @70437 @validateThatSetAsDefaultFolderDropdownOptionIsNotDisplayedAtLibraryForViewerProfileHomePhase
+  Scenario: Verify that Dropdown Option as Set As Default Folder is not Displayed at File under home phase library for Viewer profile
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on dropdown at library/folder/file "Department of Community Health"
+    Then I softly do not see "Set As Default Folder" option is present at library/folder/file "Department of Community Health"
+    When I click on expand icon at library/folder "Department of Community Health"
+    When I click on dropdown at library/folder/file "testAutomationFolder1"
+    Then I softly do not see "Set As Default Folder" option is present at library/folder/file "testAutomationFolder1"
+
+  @70484 @validateThatSetAsDefaultFolderDropdownOptionIsNotDisplayedAtLibraryForAuthorProfileHomePhase
+  Scenario: Verify that Dropdown Option as Set As Default Folder is not Displayed at File under home phase library for Author profile
+    When I login as "Automation-PM" user
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on dropdown at library/folder/file "Department of Community Health"
+    Then I softly do not see "Set As Default Folder" option is present at library/folder/file "Department of Community Health"
+    When I click on expand icon at library/folder "Department of Community Health"
+    When I click on dropdown at library/folder/file "testAutomationFolder1"
+    Then I softly do not see "Set As Default Folder" option is present at library/folder/file "testAutomationFolder1"
+
+  @70486 @validateThatByClickOnRefreshButtonQuickSearchResultIsGettingRefreshed-HomePhase
+  Scenario: Verify that by click on Refresh button quick search result disappears - Home Phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I perform quick search for "Test" under files library
+    When I click on "Refresh" button in send email modal
+    Then I softly do not see Label/Count as "Folders - 3" is displayed
+    Then I softly do not see Label/Count as "Files - 1" is displayed
+
+  @70736 @validateThatUserCanUploadXLSTypeFileUnderPlanningFilesTable-HomePhase @NeedDeleteAPI
+  Scenario: Verify that user can upload .xls type of file under planning files table as it is - Home Phase
+    Given I "Delete" the record for below criteria:
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
+    When I upload file "TestAutomation.txt" into library
+    When I click on SelectChange Folder in add file modal
+    When I Select/Change Folder as "Department of Community Health" in add file modal
+    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I pause execution for "7" seconds
+    When I perform quick search for "TestAutomation.txt" in "PlanningFilesgrid" panel
+    Then I softly see value "TestAutomation.txt" for title "Title" inside table "PlanningFilesgrid"
+    When I click on "Delete" icon for "TestAutomation.txt" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "5" seconds
+    When I perform quick search for "TestAutomation.txt" in "PlanningFilesgrid" panel
+    Then I softly see "No Records Found" inside flex table with id "PlanningFilesgrid"
+
+  @70739 @validateThatUserCanUploadPngTypeFileUnderPlanningFilesTable-HomePhase @NeedDeleteAPI
+  Scenario: Verify that user can upload .png type of file under planning files table as it is - Home Phase
+    Given I "Delete" the record for below criteria:
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
+    When I upload file "SendEmailAttachment.png" into library
+    When I click on SelectChange Folder in add file modal
+    When I Select/Change Folder as "Department of Community Health" in add file modal
+    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I pause execution for "7" seconds
+    When I perform quick search for "SendEmailAttachment.png" in "PlanningFilesgrid" panel
+    Then I softly see value "SendEmailAttachment.png" for title "Title" inside table "PlanningFilesgrid"
+    When I click on "Delete" icon for "SendEmailAttachment.png" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "5" seconds
+    When I perform quick search for "SendEmailAttachment.png" in "PlanningFilesgrid" panel
+    Then I softly see "No Records Found" inside flex table with id "PlanningFilesgrid"
