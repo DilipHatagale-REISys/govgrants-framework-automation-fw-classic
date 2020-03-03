@@ -181,7 +181,7 @@ public class LibraryFilesPage extends GovGrantsManager {
      * @param modalTitle
      */
     public void clickOnCloseIconAtLibraryFolderFileModal(String icon, String modalTitle) {
-        EyeThink.core().click().on(By.xpath("//p[text()='" + modalTitle + "']/..//*[contains(normalize-space(text()),'" + icon + "')]"));
+        EyeThink.core().click().on(By.xpath("//p[text()='" + modalTitle + "']/ancestor::div[(@aria-hidden)]//*[contains(normalize-space(text()),'" + icon + "')]"));
     }
 
     /**

@@ -2,8 +2,12 @@ package com.framework.automation.pageobject;
 
 import com.framework.automation.projectmanager.GovGrantsManager;
 import eyethink.automation.bots.Register.EyeThink;
+import eyethink.automation.bots.objects.Elements;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 public class ChartsPage extends GovGrantsManager {
     /******* "Variables and Locators" *****************/
@@ -31,8 +35,72 @@ public class ChartsPage extends GovGrantsManager {
         EyeThink.core().scroll().moveToElement(enhancedCharts(chartId, chartsType), false);
     }
 
-    public void assertChartTitleDisplayed(String title) {
-        Assert.assertTrue(isChartTitleDisplayed(title));
+    /**
+     * perform click on bars of enhanced dual axes charts coming on modal
+     *
+     * @param chartId
+     * @param chartsLabelName
+     * @return
+     */
+    public void clickOnEnhancedDualAxesChartsOnModal(String chartId, String chartsLabelName) {
+        String parentLocator = "//div[@id='" + chartId + "' and @data-highcharts-chart='1']//*[local-name()='tspan' and contains(text(),'" + chartsLabelName + "')]//ancestor::*[local-name()='g']//preceding-sibling::*[local-name()='g' and @class='highcharts-series-group']//*[local-name()='rect']";
+        switch (chartsLabelName.toLowerCase()) {
+            case "unitedhealth group":
+                parentLocator = parentLocator + "[1]";
+                break;
+            case "sportDev":
+                parentLocator = parentLocator + "[2]";
+                break;
+            case "who":
+                parentLocator = parentLocator + "[3]";
+                break;
+            case "child development":
+                parentLocator = parentLocator + "[4]";
+                break;
+            case "Va Transport Services":
+                parentLocator = parentLocator + "[5]";
+                break;
+        }
+        EyeThink.core().scroll().moveToElement(By.xpath(parentLocator));
+        EyeThink.core().click().on(By.xpath(parentLocator));
+    }
+
+    /**
+     * perform click on bars of enhanced dual axes charts coming on main page
+     *
+     * @param chartId
+     * @param chartsLabelName
+     * @return
+     */
+    public void clickOnEnhancedDualAxesChartsOnMainPage(String chartId, String chartsLabelName) {
+        String parentLocator = "//div[@id='" + chartId + "' and @data-highcharts-chart='0']//*[local-name()='tspan' and contains(text(),'" + chartsLabelName + "')]//ancestor::*[local-name()='g']//preceding-sibling::*[local-name()='g' and @class='highcharts-series-group']//*[local-name()='rect']";
+        switch (chartsLabelName.toLowerCase()) {
+            case "unitedheal":
+                parentLocator = parentLocator + "[1]";
+                break;
+            case "sportDev":
+                parentLocator = parentLocator + "[2]";
+                break;
+            case "who":
+                parentLocator = parentLocator + "[3]";
+                break;
+            case "child development":
+                parentLocator = parentLocator + "[4]";
+                break;
+            case "Va Transport Services":
+                parentLocator = parentLocator + "[5]";
+                break;
+        }
+        EyeThink.core().scroll().moveToElement(By.xpath(parentLocator));
+        EyeThink.core().click().on(By.xpath(parentLocator));
+    }
+
+    public void assertChartTitleDisplayed(String usage, String title) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isChartTitleDisplayed(title));
+        } else if(usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isChartTitleDisplayed(title));
+        }
     }
 
     /**
@@ -71,9 +139,17 @@ public class ChartsPage extends GovGrantsManager {
      * @param title
      * @param chartName
      */
-    public void assertCorrectTextDisplayed(String title, String chartName) {
-        Assert.assertTrue(EyeThink.core().get().text(By.xpath("//div[@id='" + chartName
-                + "Id']//*[contains(@class,'highcharts-container')]//*[contains(text(),'" + title + "')]")).contains(title));
+    public void assertCorrectTextDisplayed(String usage, String title, String chartName) {
+        WebElement prefixSuffixElement = EyeThink.core().elementReference().of(By.xpath("//div[@id='" + chartName + "Id']//*[contains(@class,'highcharts-container')]//*[contains(text(),'" + title + "')]"));
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(EyeThink.core().get().text(prefixSuffixElement).contains(title));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(EyeThink.core().get().text(prefixSuffixElement).contains(title));
+        } else if (usage.equalsIgnoreCase("Softly see")) {
+            EyeThink.core().assertion().assertThat(EyeThink.core().get().text(prefixSuffixElement).contains(title)).isTrue();
+        } else if (usage.equalsIgnoreCase("Softly do not see")) {
+            EyeThink.core().assertion().assertThat(EyeThink.core().get().text(prefixSuffixElement).contains(title)).isFalse();
+        }
     }
 
     /**

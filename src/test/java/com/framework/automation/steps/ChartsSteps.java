@@ -26,6 +26,16 @@ public class ChartsSteps {
 		chartsPage.clickSpecificLinkOnTaskSummary(linkName, chartName);
 	}
 
+	@When("I click on barCharts \"([^\"]*)\" with charts label name \"([^\"]*)\" on modal$")
+	public void clickOnBarChartsWithChartsLabelNameOnModal(String chartsId, String chartsLabelName) {
+		chartsPage.clickOnEnhancedDualAxesChartsOnModal(chartsId, chartsLabelName);
+	}
+
+	@When("I click on barCharts \"([^\"]*)\" with charts label name \"([^\"]*)\" on main Page$")
+	public void clickOnBarChartsWithChartsLabelNameOnMainPage(String chartsId, String chartsLabelName) {
+		chartsPage.clickOnEnhancedDualAxesChartsOnMainPage(chartsId, chartsLabelName);
+	}
+
 	@When("^I hovering mouse on enhanced charts id \"([^\"]*)\" and charts type \"([^\"]*)\"$")
 	public void getStepProgressStatusContent(String chartId, String chartsType) {
 		chartsPage.getHoveringOnEnhancedCharts(chartId, chartsType);
@@ -36,9 +46,9 @@ public class ChartsSteps {
 		chartsPage.isTitleOfModal(titleName);
 	}
 
-	@Then("^I see \"([^\"]*)\" displayed as chart title$")
-	public void assertDisplayedChartTitle(String title) {
-		chartsPage.assertChartTitleDisplayed(title);
+	@Then("^I (see|do not see) \"([^\"]*)\" displayed as chart title$")
+	public void assertDisplayedChartTitle(String usage, String title) {
+		chartsPage.assertChartTitleDisplayed(usage, title);
 	}
 
 	@Then("^I (see|do not see) chart legends are displayed for chart/enhanced Charts \"([^\"]*)\"$")
@@ -46,9 +56,9 @@ public class ChartsSteps {
 		chartsPage.assertChartLegendNotDisplayed(usage, chartName);
 	}
 
-	@Then("^I see \"([^\"]*)\" for chart \"([^\"]*)\"$")
-	public void assertSpecificTextForChart(String label, String chartName) {
-		chartsPage.assertCorrectTextDisplayed(label, chartName);
+	@Then("^I (see|Softly see| do not see|Softly do not see) \"([^\"]*)\" for chart \"([^\"]*)\"$")
+	public void assertSpecificTextForChart(String usage, String label, String chartName) {
+		chartsPage.assertCorrectTextDisplayed(usage, label, chartName);
 	}
 
 	@Then("^I see \"([^\"]*)\" for chart \"([^\"]*)\" comes only once$")
