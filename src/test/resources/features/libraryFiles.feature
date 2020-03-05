@@ -1194,7 +1194,6 @@ Feature: Library Files Component Scenarios
 
   @70736 @validateThatUserCanUploadXLSTypeFileUnderPlanningFilesTable-HomePhase @NeedDeleteAPI
   Scenario: Verify that user can upload .xls type of file under planning files table as it is - Home Phase
-    Given I "Delete" the record for below criteria:
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1217,9 +1216,8 @@ Feature: Library Files Component Scenarios
     When I perform quick search for "TestAutomation.txt" in "PlanningFilesgrid" panel
     Then I softly see "No Records Found" inside flex table with id "PlanningFilesgrid"
 
-  @70739 @validateThatUserCanUploadPngTypeFileUnderPlanningFilesTable-HomePhase @NeedDeleteAPI
-  Scenario: Verify that user can upload .png type of file under planning files table as it is - Home Phase
-    Given I "Delete" the record for below criteria:
+  @70739 @validateThatUserCanUploadjpgTypeFileUnderPlanningFilesTable-HomePhase @NeedDeleteAPI
+  Scenario: Verify that user can upload .jpg type of file under planning files table as it is - Home Phase
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1240,4 +1238,144 @@ Feature: Library Files Component Scenarios
     When I click "Yes" on modal confirmation box
     When I pause execution for "5" seconds
     When I perform quick search for "SendEmailAttachment.png" in "PlanningFilesgrid" panel
+    Then I softly see "No Records Found" inside flex table with id "PlanningFilesgrid"
+
+  @70740 @validateThatUserCanUploadPngTypeFileUnderPlanningFilesTable-HomePhase @NeedDeleteAPI
+  Scenario: Verify that user can upload .png type of file under planning files table as it is - Home Phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
+    When I upload file "TestAutomationFile.jpg" into library
+    When I click on SelectChange Folder in add file modal
+    When I Select/Change Folder as "Department of Community Health" in add file modal
+    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I pause execution for "7" seconds
+    When I perform quick search for "TestAutomationFile.jpg" in "PlanningFilesgrid" panel
+    Then I softly see value "TestAutomationFile.jpg" for title "Title" inside table "PlanningFilesgrid"
+    When I click on "Delete" icon for "TestAutomationFile.jpg" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "5" seconds
+    When I perform quick search for "TestAutomationFile.jpg" in "PlanningFilesgrid" panel
+    Then I softly see "No Records Found" inside flex table with id "PlanningFilesgrid"
+
+  @70742 @validateThatFileUploadedFromRecordDetailIsDisplayedUnderHomePhaseLibraryFilesTabUnderRespectiveFolder-RecordLevel @NeedDeleteAPI
+  Scenario: Verify that file added from record level is displayed under respective folder under home phase library files tab - record level
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
+    When I upload file "SendEmailAttachment.pdf" into library
+    When I click on SelectChange Folder in add file modal
+    When I Select/Change Folder as "Department of Community Health" in add file modal
+    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+    When I perform quick search for "SendEmailAttachment.pdf" in "PlanningFilesgrid" panel
+    Then I softly see value "SendEmailAttachment.pdf" for title "Title" inside table "PlanningFilesgrid"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "Department of Community Health"
+    Then I softly see library/folder/file "SendEmailAttachment.pdf" is displayed under files library
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "SendEmailAttachment.pdf" in "PlanningFilesgrid" panel
+    When I click on "Delete" icon for "SendEmailAttachment.pdf" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "3" seconds
+    When I perform quick search for "SendEmailAttachment.pdf" in "PlanningFilesgrid" panel
+    Then I softly see "No Records Found" inside flex table with id "PlanningFilesgrid"
+  
+  @70743 @validateThatRecordNameSearchedUsingQuickSearchShouldGetDisplayedUnderUploadFileModal-RecordLevel
+  Scenario: Verify that by entering text in quick search box, respective record is displayed under upload file modal - record level
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
+    And I click on "Upload file from Library" tab at files library upload modal
+    When I perform quick search for "DummyFile2_DND.jpg" under files library
+    Then I see "DummyFile2_DND.jpg" shown in search table with id "WorkspaceFilesUpload" at file upload modal
+  
+  @70744 @validateThatByClickOnLastArrowALastPageIsDisplayedUnderUploadFileModal-RecordLevel
+  Scenario: Verify that by click on Last navigation arrow , last page is displayed under upload file modal - record level
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
+    And I click on "Upload file from Library" tab at files library upload modal
+    When I click on page navigation arrow "Last" at table with id "WorkspaceFilesUpload" under upload file modal
+    Then I see "DummyFile2_DND.jpg" shown in search table with id "WorkspaceFilesUpload" at file upload modal
+
+  @70745 @validateThatByClickOnFirstArrowAFirstPageIsDisplayedUnderUploadFileModal-RecordLevel
+  Scenario: Verify that by click on first navigation arrow , a first page is displayed under upload file modal - record level
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
+    And I click on "Upload file from Library" tab at files library upload modal
+    When I click on page navigation arrow "Last" at table with id "WorkspaceFilesUpload" under upload file modal
+    When I click on page navigation arrow "First" at table with id "WorkspaceFilesUpload" under upload file modal
+    Then I see "SendEmailAttachment.png" shown in search table with id "WorkspaceFilesUpload" at file upload modal
+
+  @70746 @validateThatByClickOnPagesDropdownAndBySelecting2ndPageThenRecordsFrom2ndPageAreDisplayed-RecordLevel
+  Scenario: Verify that by click on pages dropdown and selecting 2nd page then 2nd page record is displayed under upload file modal - record level
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
+    And I click on "Upload file from Library" tab at files library upload modal
+    When I select "2" page from dropdown at search table with id "WorkspaceFilesUpload" at file upload modal
+    Then I see "DummyFile2_DND.jpg" shown in search table with id "WorkspaceFilesUpload" at file upload modal
+
+  @70741 @validateThatUserCanUploadXlsxTypeFileUnderPlanningFilesTable-HomePhase @NeedDeleteAPI
+  Scenario: Verify that user can upload .xlsx type of file under planning files table as it is - Home Phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
+    When I upload file "SheetJSFileUploadDateTime.xlsx" into library
+    When I click on SelectChange Folder in add file modal
+    When I Select/Change Folder as "Department of Community Health" in add file modal
+    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I pause execution for "7" seconds
+    When I perform quick search for "SheetJSFileUploadDateTime.xlsx" in "PlanningFilesgrid" panel
+    Then I softly see value "SheetJSFileUploadDateTime.xlsx" for title "Title" inside table "PlanningFilesgrid"
+    When I click on "Delete" icon for "SheetJSFileUploadDateTime.xlsx" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "5" seconds
+    When I perform quick search for "SheetJSFileUploadDateTime.xlsx" in "PlanningFilesgrid" panel
     Then I softly see "No Records Found" inside flex table with id "PlanningFilesgrid"

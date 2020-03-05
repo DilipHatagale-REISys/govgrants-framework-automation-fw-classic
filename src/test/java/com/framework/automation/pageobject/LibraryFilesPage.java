@@ -6,11 +6,44 @@ import eyethink.automation.bots.objects.Elements;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+
 import java.util.List;
 
 public class LibraryFilesPage extends GovGrantsManager {
 
     /******* "Key Methods with complete functionality - public" *****************/
+
+    /**
+     * click on page navigation arrow at Files table - Library files record level
+     *
+     * @param NextPrevious
+     * @param tableId
+     */
+    public void filesTablePagination(String NextPrevious, String tableId) {
+        By paginationChoice = By.xpath("//*[@id='"+tableId+"']//button[@data-value='"+NextPrevious+"']");
+        EyeThink.core().click().on(paginationChoice);
+    }
+
+    /**
+     * click on pages dropdown to select page under upload file modal - Library files record level
+     *
+     * @param numberOfEntries
+     * @param tableId
+     */
+    public void filesTablePagesDropdown(String numberOfEntries, String tableId) {
+        By entriesDropDown = By.xpath("//*[@id='"+tableId+"']//div[@id='Footer']//div[contains(@class,'slds-select_container')]//select");
+        WebElement entriesDD = EyeThink.core().elementReference().of(entriesDropDown);
+
+        try {
+            entriesDD.click();
+            (new Select(entriesDD)).selectByVisibleText(numberOfEntries);
+        } catch (Exception var6) {
+            entriesDD.click();
+            (new Select(entriesDD)).selectByVisibleText(numberOfEntries);
+        }
+
+    }
 
     /**
      * assert true if Library/File/Folder is Displayed under files library - Home phase
@@ -116,6 +149,15 @@ public class LibraryFilesPage extends GovGrantsManager {
         } else if (usuage.equalsIgnoreCase("softly do not see")) {
             EyeThink.core().assertion().assertThat(isLibraryFolderFileCountDisplayed(labelAndCount)).isFalse();
         }
+    }
+
+    /**
+     * assert true if searched record/value is displayed under table at upload file modal - Record level
+     *
+     * @param tableValue
+     */
+    public void assertValueShownInSearchTableAtFileUploadModal(String tableValue, String tableId) {
+        Assert.assertTrue(isSearchedValueDisplayedInTableAtFileUploadModal(tableValue,tableId));
     }
 
     /**
@@ -232,6 +274,35 @@ public class LibraryFilesPage extends GovGrantsManager {
         By selectValueFromDropdown = By.xpath("//select[@name='Classification']//option[@value='" + classification + "']");
         EyeThink.core().click().on(clickOnDropdown);
         EyeThink.core().click().on(selectValueFromDropdown);
+    }
+
+    /**
+     * click on tab to select 'upload file from computer'/'upload file from library workspace' upload file modal window - Library files record level
+     *
+     * @param tabName
+     */
+    public void clickOnTabAtFilesLibraryUploadModal(String tabName) {
+        EyeThink.core().click().on(By.xpath("//li[@title='" + tabName + "']"));
+    }
+
+    /**
+     * click on page navigation arrow at search table under upload file modal - Library files record level
+     *
+     * @param NextPrevious
+     * @param tableId
+     */
+    public void clickOnPageNavigationArrowAtUploadFileModal(String NextPrevious, String tableId) {
+        filesTablePagination(NextPrevious,tableId);
+    }
+
+    /**
+     * click on pages dropdown to select page at search table under upload file modal - Library files record level
+     *
+     * @param numberOfEntries
+     * @param tableId
+     */
+    public void selectPagesFromDropdownAtFileUploadModal(String numberOfEntries, String tableId) {
+        filesTablePagesDropdown(numberOfEntries,tableId);
     }
 
     /*********
@@ -375,6 +446,24 @@ public class LibraryFilesPage extends GovGrantsManager {
                 if (searchResultLabelAndCountList.get(row).getText().equalsIgnoreCase(labelAndCount)) {
                     flag = true;
                 }
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if searched record/value is displayed under table at upload file modal - Record level
+     *
+     * @param tableValue
+     * @param tableId
+     * @return
+     */
+    private boolean isSearchedValueDisplayedInTableAtFileUploadModal(String tableValue,String tableId) {
+        boolean flag = false;
+        try {
+            if (EyeThink.core().is().isDisplayed(By.xpath("//*[@id='"+tableId+"']//tr//lightning-formatted-text[text()='"+tableValue+"']"))) {
+                flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
         }
