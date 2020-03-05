@@ -507,7 +507,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
       | Charts Config         | Active                              | true                   | FundingOpportunity | Name                      | Enhanced Pie chart         |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Announcements" tab
+    And I navigate to "HOME" tab
     And I pause execution for "5" seconds
     And I click on enhanced charts id "EnhancedPiechartId" with color "LightBlue"
     Then I see the following rows under the following columns in table with id "EnhancedPiechartIdrecordsModal" :
@@ -517,3 +517,264 @@ Feature: Charts and Enhanced Charts Component Scenarios
     Examples:
       | default_Data_Table_Query                                                                                                                                     | new_Data_Table_Query                                                                                                                                         |
       | SELECT Name,AnnouncementName__c,AnnouncementType__c,Status__c FROM Announcement__c Where AnnouncementType__c = '{!XAxisValue}' And RecordType.Name='Grantor' | SELECT Name,AnnouncementName__c,AnnouncementType__c,Status__c FROM Announcement__c Where AnnouncementType__c = '{!XAxisValue}' And RecordType.Name='Grantor' |
+
+  @71127    @validateAllDataTableHeaderFieldOnEnhancedViewClick-gHOME-EnhancedDualAxesCharts
+  Scenario: Validate All Data table header text on UI after making changes from config
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue          | filterId         |
+      | Charts Config         | All data table header | Total Grant Awarded Amount | ApiGeneratedId:0 |
+      | Charts Config         | Active                | true                       | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | All data table header | Test Automation Header | GrantorHome        | Name                      | Enhanced Dual Axes         |
+      | Charts Config         | Active                | true                   | GrantorHome        | Name                      | Enhanced Dual Axes         |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I click on menu icon of chart "Enhanced Dual Axes" with title "Enhanced View"
+    When I click modal button "Show All Data"
+    Then I see "Test Automation Header" displayed in modal
+
+  @71128    @validateAllDataTableHeaderFieldFromBurgerIcon-gHOME-EnhancedDualAxesCharts
+  Scenario: Validate All Data table header text on UI after making changes from config
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue          | filterId         |
+      | Charts Config         | All data table header | Total Grant Awarded Amount | ApiGeneratedId:0 |
+      | Charts Config         | Active                | true                       | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | All data table header | Test Automation Header | GrantorHome        | Name                      | Enhanced Dual Axes         |
+      | Charts Config         | Active                | true                   | GrantorHome        | Name                      | Enhanced Dual Axes         |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I click on menu icon of chart "Enhanced Dual Axes" with title "Menu"
+    When I select "Show All Data" from chart menu of chart "Enhanced Dual Axes"
+    Then I see "Test Automation Header" displayed in modal
+
+  @71133    @validateDataTableHeaderFieldFromBurgerIcon-gHOME-EnhancedDualAxesCharts
+  Scenario: Validate Data table header text on UI after making changes from config
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Charts Config         | Data table header | Awarded Amount    | ApiGeneratedId:0 |
+      | Charts Config         | Active            | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Data table header | Test Automation Header | GrantorHome        | Name                      | Enhanced Dual Axes         |
+      | Charts Config         | Active            | true                   | GrantorHome        | Name                      | Enhanced Dual Axes         |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I click on menu icon of chart "Enhanced Dual Axes" with title "Enhanced View"
+    When I click on barCharts "chartEnhancedDualAxesId" with charts label name "UnitedHealth Group" on modal
+    Then I see "Test Automation Header" displayed in modal
+
+  @71136    @validateElementsOnModalComingOnBarChartsClick-gHOME-EnhancedDualAxesCharts
+  Scenario: Validate Enhanced Dual Axes chart modal details after closing modal
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I click on menu icon of chart "Enhanced Dual Axes" with title "Enhanced View"
+    When I click on barCharts "chartEnhancedDualAxesId" with charts label name "UnitedHealth Group" on modal
+    When I click modal button "Close"
+    Then I see chart legends are displayed for chart/enhanced Charts "EnhancedDualAxes"
+
+  @71140    @validateAll-axisPrefix-gHOME-EnhancedDualAxesCharts
+  Scenario: Change chart x-axis/Y-Axis/Z-Axis prefix from config and validate inside HOME phase for Enhanced Dual Axes Charts
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Charts Config         | X Axis Prefix |                   | ApiGeneratedId:0 |
+      | Charts Config         | Y Axis Prefix |                   | ApiGeneratedId:1 |
+      | Charts Config         | Z-Axis Prefix |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | X Axis Prefix | @              | GrantorHome        | Name                      | Enhanced Dual Axes         |
+      | Charts Config         | Y Axis Prefix | TestAutomation | GrantorHome        | Name                      | Enhanced Dual Axes         |
+      | Charts Config         | Z-Axis Prefix | 01             | GrantorHome        | Name                      | Enhanced Dual Axes         |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see "(01)" for chart "EnhancedDualAxes"
+    Then I see "(@)" for chart "EnhancedDualAxes"
+    Then I see "(TestAutomation)" for chart "EnhancedDualAxes"
+
+  @71142    @validateAll-axisSuffix-gHOME-EnhancedDualAxesCharts
+  Scenario: Change chart x-axis/Y-Axis/Z-Axis suffix from config and validate inside HOME phase for Enhanced Dual Axes Charts
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Charts Config         | X Axis Suffix |                   | ApiGeneratedId:0 |
+      | Charts Config         | Y Axis Suffix |                   | ApiGeneratedId:1 |
+      | Charts Config         | Z-Axis Suffix |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | X Axis Suffix | @              | GrantorHome        | Name                      | Enhanced Dual Axes         |
+      | Charts Config         | Y Axis Suffix | TestAutomation | GrantorHome        | Name                      | Enhanced Dual Axes         |
+      | Charts Config         | Z-Axis Suffix | 01             | GrantorHome        | Name                      | Enhanced Dual Axes         |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see "(01)" for chart "EnhancedDualAxes"
+    Then I see "(@)" for chart "EnhancedDualAxes"
+    Then I see "(TestAutomation)" for chart "EnhancedDualAxes"
+
+  @71174    @validateElementsOnModalComingOnBarChartsClickOnMainPage-gHOME-EnhancedDualAxesCharts
+  Scenario: Validate Enhanced Dual Axes chart on home page details while clicking on charts bars on the basis of record name
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I pause execution for "5" seconds
+    When I click on barCharts "chartEnhancedDualAxesId" with charts label name "UnitedHeal" on main Page
+    Then I see the following rows under the following columns in table with id "EnhancedDualAxesIdrecordsModal" :
+      | Total Awarded Amount | Account Name       |
+      | $350000.00           | UnitedHealth Group |
+
+  @71024    @validateActiveFieldAtCharts-gAnnouncement-Announcementtest-1
+  Scenario: Validating Announcementtest_1 is getting displayed on UI while making changes of boolean field Active at configuration page -gAnnouncement
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Charts Config         | Active    | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Active    | true          | FundingOpportunity | Name                      | Announcemnenttest_1        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    Then I see charts with id "Announcemnenttest_1Id" displayed
+
+  @71026    @validateTitleFieldAtCharts-gAnnouncement-Announcementtest-1
+  Scenario: Changing chart title for 'Announcementtest-1' enhanced chart in configuration and validating inside- gAnnouncement
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Charts Config         | Title     | Test              | ApiGeneratedId:0 |
+      | Charts Config         | Active    | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Title     | Announcementtest-1 | FundingOpportunity | Name                      | Announcemnenttest_1        |
+      | Charts Config         | Active    | true               | FundingOpportunity | Name                      | Announcemnenttest_1        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    Then I see "Announcementtest-1" displayed as chart title
+
+  @71028    @validateChartTypeFieldAtCharts-gAnnouncement-Announcementtest-1
+  Scenario: Changing value of chart type to Bar for 'Announcementtest-1' enhanced chart in configuration and validating inside planning-programs
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName  | fieldOrignalValue | filterId         |
+      | Charts Config         | Chart Type | Bar               | ApiGeneratedId:0 |
+      | Charts Config         | Active     | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Chart Type | Bar           | FundingOpportunity | Name                      | Announcemnenttest_1        |
+      | Charts Config         | Active     | true          | FundingOpportunity | Name                      | Announcemnenttest_1        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click on menu icon of chart "Test" with title "Enhanced View"
+    When I click modal button "Close"
+    Then I see chart legends are displayed for chart/enhanced Charts "Test"
+
+  @71029    @validateTitleFieldAtCharts-gAnnouncement-Testing_column
+  Scenario: Changing chart title for 'Testing_column' enhanced chart in configuration and validating inside- gAnnouncement
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Charts Config         | Title     | Testing column    | ApiGeneratedId:0 |
+      | Charts Config         | Active    | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Title     | Testing column1 | FundingOpportunity | Name                      | Testing_Column             |
+      | Charts Config         | Active    | true            | FundingOpportunity | Name                      | Testing_Column             |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    Then I see "Testing_column1" displayed as chart title
+
+  @71030    @validateActiveFieldAtCharts-gAnnouncement-Testing_column
+  Scenario: Validating Testing_column is getting displayed/NotDisplayed on UI while making changes of boolean field Active at configuration page -gAnnouncement
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Charts Config         | Active    | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Active    | false         | FundingOpportunity | Name                      | Testing_Column             |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    Then I do not see "Testing_column1" displayed as chart title
+
+  @71031    @validateAll-axisPrefix-gHOME-Testing_columnCharts
+  Scenario: Change chart x-axis/Y-Axis prefix from config and validate inside Announcements phase for Testing_Column Charts-gAnnouncement
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Charts Config         | Active        | false             | ApiGeneratedId:0 |
+      | Charts Config         | X Axis Prefix |                   | ApiGeneratedId:1 |
+      | Charts Config         | Y Axis Prefix |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Active        | true          | FundingOpportunity | Name                      | Testing_Column             |
+      | Charts Config         | X Axis Prefix | @             | FundingOpportunity | Name                      | Testing_Column             |
+      | Charts Config         | Y Axis Prefix | $             | FundingOpportunity | Name                      | Testing_Column             |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    Then I see "($)" for chart "Testing_Column"
+    Then I see "(@)" for chart "Testing_Column"
+
+  @71033    @validateAll-axisSuffix-gHOME-Testing_columnCharts
+  Scenario: Change chart x-axis/Y-Axis suffix from config and validate inside Announcements phase for Testing_Column Charts-gAnnouncement
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Charts Config         | Active        | false             | ApiGeneratedId:0 |
+      | Charts Config         | X Axis Suffix |                   | ApiGeneratedId:1 |
+      | Charts Config         | Y Axis Suffix |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Active        | true          | FundingOpportunity | Name                      | Testing_Column             |
+      | Charts Config         | X Axis Suffix | @             | FundingOpportunity | Name                      | Testing_Column             |
+      | Charts Config         | Y Axis Suffix | $             | FundingOpportunity | Name                      | Testing_Column             |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    Then I see "($)" for chart "Testing_Column"
+    Then I see "(@)" for chart "Testing_Column"
+
+  @71036    @validateEditDataTableQueryforAllDataFieldFromEnhancedViewIcon-gAnnouncement-Testing_columnCharts @wip
+  Scenario Outline: Validate expected column from Testing_Column chart modal(show all data from enhanced view icon) displayed/Not displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                      | fieldOrignalValue          | filterId         |
+      | Charts Config         | Data Table Query(For All Data) | <default_Data_Table_Query> | ApiGeneratedId:0 |
+      | Charts Config         | Active                         | false                      | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                      | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Data Table Query(For All Data) | <new_Data_Table_Query> | FundingOpportunity | Name                      | Testing_Column             |
+      | Charts Config         | Active                         | true                   | FundingOpportunity | Name                      | Testing_Column             |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click on menu icon of chart "Testing column" with title "Enhanced View"
+    When I click modal button "Show All Data"
+    Then I softly do not see "Change Request #" in flex table header "Testing_ColumnIdrecordsModal"
+
+    Examples:
+      | default_Data_Table_Query                                                                                                                          | new_Data_Table_Query                                                                                                                         |
+      | SELECT Name,RecordType__c,Award__r.Status__c ,Status__c FROM AmendmentRequest__c Where Award__r.Status__c = 'Activated' AND Status__c!='Approved' | SELECT RecordType__c,Award__r.Status__c ,Status__c FROM AmendmentRequest__c Where Award__r.Status__c = 'Activated' AND Status__c!='Approved' |
+
+  @71034    @validateEditDataTableQueryforAllDataFieldFromEnhancedViewIcon-gAnnouncement-Testing_columnCharts @wip
+  Scenario Outline: Validate expected column from Testing_Column chart modal(show all data from enhanced view icon) displayed/Not displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                      | fieldOrignalValue          | filterId         |
+      | Charts Config         | Data Table Query(For All Data) | <default_Data_Table_Query> | ApiGeneratedId:0 |
+      | Charts Config         | Active                         | false                      | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                      | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Data Table Query(For All Data) | <new_Data_Table_Query> | FundingOpportunity | Name                      | Testing_Column             |
+      | Charts Config         | Active                         | true                   | FundingOpportunity | Name                      | Testing_Column             |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click on menu icon of chart "Testing column" with title "Enhanced View"
+    When I click modal button "Show All Data"
+    Then I softly do not see "Change Request #" in flex table header "Testing_ColumnIdrecordsModal"
+
+    Examples:
+      | default_Data_Table_Query                                                                                                                          | new_Data_Table_Query                                                                                                                         |
+      | SELECT Name,RecordType__c,Award__r.Status__c ,Status__c FROM AmendmentRequest__c Where Award__r.Status__c = 'Activated' AND Status__c!='Approved' | SELECT RecordType__c,Award__r.Status__c ,Status__c FROM AmendmentRequest__c Where Award__r.Status__c = 'Activated' AND Status__c!='Approved' |
