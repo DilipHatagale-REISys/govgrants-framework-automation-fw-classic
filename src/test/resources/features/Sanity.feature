@@ -1,4 +1,4 @@
-@SanityRun-Allcomponent @sanityRun
+@SanityRun-Allcomponent @GGFSanityBusinessFlow
 Feature: Sanity check for all Component Scenarios
   Test all component scenarios for sanity
 
