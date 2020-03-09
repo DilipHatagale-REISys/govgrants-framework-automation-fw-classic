@@ -21,7 +21,7 @@ public class LibraryFilesPage extends GovGrantsManager {
      * @param tableId
      */
     public void filesTablePagination(String NextPrevious, String tableId) {
-        By paginationChoice = By.xpath("//*[@id='"+tableId+"']//button[@data-value='"+NextPrevious+"']");
+        By paginationChoice = By.xpath("//*[@id='" + tableId + "']//button[@data-value='" + NextPrevious + "']");
         EyeThink.core().click().on(paginationChoice);
     }
 
@@ -32,14 +32,14 @@ public class LibraryFilesPage extends GovGrantsManager {
      * @param tableId
      */
     public void filesTablePagesDropdown(String numberOfEntries, String tableId) {
-        By entriesDropDown = By.xpath("//*[@id='"+tableId+"']//div[@id='Footer']//div[contains(@class,'slds-select_container')]//select");
+        By entriesDropDown = By.xpath("//*[@id='" + tableId + "']//div[@id='Footer']//div[contains(@class,'slds-select_container')]//select");
         WebElement entriesDD = EyeThink.core().elementReference().of(entriesDropDown);
 
         try {
-            entriesDD.click();
+            EyeThink.core().click().on(entriesDD);
             (new Select(entriesDD)).selectByVisibleText(numberOfEntries);
         } catch (Exception var6) {
-            entriesDD.click();
+            EyeThink.core().click().on(entriesDD);
             (new Select(entriesDD)).selectByVisibleText(numberOfEntries);
         }
 
@@ -157,7 +157,7 @@ public class LibraryFilesPage extends GovGrantsManager {
      * @param tableValue
      */
     public void assertValueShownInSearchTableAtFileUploadModal(String tableValue, String tableId) {
-        Assert.assertTrue(isSearchedValueDisplayedInTableAtFileUploadModal(tableValue,tableId));
+        Assert.assertTrue(isSearchedValueDisplayedInTableAtFileUploadModal(tableValue, tableId));
     }
 
     /**
@@ -292,7 +292,7 @@ public class LibraryFilesPage extends GovGrantsManager {
      * @param tableId
      */
     public void clickOnPageNavigationArrowAtUploadFileModal(String NextPrevious, String tableId) {
-        filesTablePagination(NextPrevious,tableId);
+        filesTablePagination(NextPrevious, tableId);
     }
 
     /**
@@ -302,7 +302,7 @@ public class LibraryFilesPage extends GovGrantsManager {
      * @param tableId
      */
     public void selectPagesFromDropdownAtFileUploadModal(String numberOfEntries, String tableId) {
-        filesTablePagesDropdown(numberOfEntries,tableId);
+        filesTablePagesDropdown(numberOfEntries, tableId);
     }
 
     /*********
@@ -459,10 +459,10 @@ public class LibraryFilesPage extends GovGrantsManager {
      * @param tableId
      * @return
      */
-    private boolean isSearchedValueDisplayedInTableAtFileUploadModal(String tableValue,String tableId) {
+    private boolean isSearchedValueDisplayedInTableAtFileUploadModal(String tableValue, String tableId) {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().isDisplayed(By.xpath("//*[@id='"+tableId+"']//tr//lightning-formatted-text[text()='"+tableValue+"']"))) {
+            if (EyeThink.core().is().isDisplayed(By.xpath("//*[@id='" + tableId + "']//tr//lightning-formatted-text[text()='" + tableValue + "']"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {

@@ -10,9 +10,9 @@ public class PhaseConfigSteps {
         phaseConfigPage = new PhaseConfigPage();
     }
 
-    @When("^I click on global search All$")
-    public void iClickOnGlobalSearchAll() {
-        phaseConfigPage.clickOnGlobalSearchAll();
+    @When("^I click on global search and select \"([^\"]*)\"$")
+    public void iClickOnGlobalSearchAll(String dropDownValue) {
+        phaseConfigPage.clickOnGlobalSearchAll(dropDownValue);
     }
 
     @When("^I click CustomApp select dropdown$")

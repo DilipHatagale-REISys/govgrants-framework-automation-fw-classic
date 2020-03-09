@@ -133,7 +133,7 @@ Feature: Phase Config Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on global search All
+    When I click on global search and select "All"
     Then I see "Program Automation" in search dropdown
 
   @44737    @addToGlobalSearchfieldAtphaseConfigSobject-gplanning @smoke
@@ -147,7 +147,7 @@ Feature: Phase Config Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on global search All
+    When I click on global search and select "All"
     Then I see "Program" is not displayed in global search All dropdown
 
   @44738    @disableProgramInRecentViewedLinkInSideBar-gplanning @smoke

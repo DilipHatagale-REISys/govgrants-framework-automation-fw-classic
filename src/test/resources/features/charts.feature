@@ -778,3 +778,103 @@ Feature: Charts and Enhanced Charts Component Scenarios
     Examples:
       | default_Data_Table_Query                                                                                                                          | new_Data_Table_Query                                                                                                                         |
       | SELECT Name,RecordType__c,Award__r.Status__c ,Status__c FROM AmendmentRequest__c Where Award__r.Status__c = 'Activated' AND Status__c!='Approved' | SELECT RecordType__c,Award__r.Status__c ,Status__c FROM AmendmentRequest__c Where Award__r.Status__c = 'Activated' AND Status__c!='Approved' |
+
+  @70859 @validateActiveFieldAtSemiCircleDonutCharts-gAnnouncement-EnhancedCharts
+  Scenario: Validating enhanced charts is getting displayed on UI while making changes of boolean field Active at semi circle donut chart configuration page -gAnnouncement
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Charts Config         | Active    | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Active    | false         | FundingOpportunity | Name                      | AnnouncementStatusFunding  |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    Then I do not see charts with id "AnnouncementStatusFundingId" displayed
+
+  @70860 @validateTitleFieldAtSemiCircleDonutCharts-gAnnouncement-EnhancedCharts
+  Scenario: Changing chart title for 'AnnouncementStatusFundingId' enhanced chart in configuration and validating inside planning-programs
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue           | filterId         |
+      | Charts Config         | Title     | Announcement status funding | ApiGeneratedId:0 |
+      | Charts Config         | Active    | true                        | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Title     | Automation Announcement status funding | FundingOpportunity | Name                      | AnnouncementStatusFunding  |
+      | Charts Config         | Active    | true                                   | FundingOpportunity | Name                      | AnnouncementStatusFunding  |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    Then I see "Automation Announcement status funding" displayed as chart title
+
+  @70862    @validateChartTypeFieldAtSemiCircleDonutCharts-gAnnouncement-EnhancedCharts
+  Scenario: Changing value of chart type to pie for 'AnnouncementStatusFundingId' enhanced chart in configuration and validating inside planning-programs
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName  | fieldOrignalValue | filterId         |
+      | Charts Config         | Chart Type | Semi circle donut | ApiGeneratedId:0 |
+      | Charts Config         | Active     | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName  | fieldNewValue     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Chart Type | Semi circle donut | FundingOpportunity | Name                      | AnnouncementStatusFunding  |
+      | Charts Config         | Active     | true              | FundingOpportunity | Name                      | AnnouncementStatusFunding  |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    Then I see charts "AnnouncementStatusFundingId" with type as "highcharts-point"
+
+  @70863    @validateDisableLegendsFieldsWithFalseAtSemiCircleDonutChart-gAnnouncement-EnhancedCharts
+  Scenario: validate disable legends fields is working or not by viewing bottom element of Semi Circle Donut charts is getting displayed on unchecking checkbox
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Charts Config         | Disable Legend | false             | ApiGeneratedId:0 |
+      | Charts Config         | Active         | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Disable Legend | false         | FundingOpportunity | Name                      | AnnouncementStatusFunding  |
+      | Charts Config         | Active         | true          | FundingOpportunity | Name                      | AnnouncementStatusFunding  |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    Then I see chart legends are displayed for chart/enhanced Charts "AnnouncementStatusFunding"
+
+  @70864    @validateY-axisPrefixAtSemiCircleDonutChart-gAnnouncement-EnhancedCharts
+  Scenario Outline: Change chart y-axis prefix for 'AnnouncementStatusFundingId' enhanced chart from configuration and validating inside Announcement
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Charts Config         | Y Axis Prefix |                   | ApiGeneratedId:0 |
+      | Charts Config         | Active        | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Y Axis Prefix | <EchartY-Axix_Text> | FundingOpportunity | Name                      | AnnouncementStatusFunding  |
+      | Charts Config         | Active        | true                | FundingOpportunity | Name                      | AnnouncementStatusFunding  |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    When I hovering mouse on enhanced charts id "AnnouncementStatusFundingId" and charts type "highcharts-point"
+    And I pause execution for "2" seconds
+    Then I see "<EchartY-Axix_Text>" shown inside enhanced charts on hover
+
+    Examples:
+      | EchartY-Axix_Text |
+      | $                 |
+
+  @70866    @validateY-axisSuffixAtSemiCircleDonutChart-gAnnouncement-EnhancedCharts
+  Scenario Outline: Change chart y-axis Suffix for 'AnnouncementStatusFundingId' enhanced chart from configuration and validating inside Announcement
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Charts Config         | Y Axis Suffix |                   | ApiGeneratedId:0 |
+      | Charts Config         | Active        | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Y Axis Suffix | <EchartY-Axix_Text> | FundingOpportunity | Name                      | AnnouncementStatusFunding  |
+      | Charts Config         | Active        | true                | FundingOpportunity | Name                      | AnnouncementStatusFunding  |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    When I hovering mouse on enhanced charts id "AnnouncementStatusFundingId" and charts type "highcharts-point"
+    And I pause execution for "2" seconds
+    Then I see "<EchartY-Axix_Text>" shown inside enhanced charts on hover
+
+    Examples:
+      | EchartY-Axix_Text |
+      | test1             |
