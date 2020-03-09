@@ -1298,7 +1298,7 @@ Feature: Library Files Component Scenarios
     When I pause execution for "3" seconds
     When I perform quick search for "SendEmailAttachment.pdf" in "PlanningFilesgrid" panel
     Then I softly see "No Records Found" inside flex table with id "PlanningFilesgrid"
-  
+
   @70743 @validateThatRecordNameSearchedUsingQuickSearchShouldGetDisplayedUnderUploadFileModal-RecordLevel
   Scenario: Verify that by entering text in quick search box, respective record is displayed under upload file modal - record level
     When I login as "Automation" user
@@ -1312,7 +1312,7 @@ Feature: Library Files Component Scenarios
     And I click on "Upload file from Library" tab at files library upload modal
     When I perform quick search for "DummyFile2_DND.jpg" under files library
     Then I see "DummyFile2_DND.jpg" shown in search table with id "WorkspaceFilesUpload" at file upload modal
-  
+
   @70744 @validateThatByClickOnLastArrowALastPageIsDisplayedUnderUploadFileModal-RecordLevel
   Scenario: Verify that by click on Last navigation arrow , last page is displayed under upload file modal - record level
     When I login as "Automation" user
@@ -1379,3 +1379,21 @@ Feature: Library Files Component Scenarios
     When I pause execution for "5" seconds
     When I perform quick search for "SheetJSFileUploadDateTime.xlsx" in "PlanningFilesgrid" panel
     Then I softly see "No Records Found" inside flex table with id "PlanningFilesgrid"
+
+  @70629 @validateThatUserCanSearchFilesInGlobalSearchUnderAllTable-HomePhase
+  Scenario: Verify that if file name is searched in global search-All tables then, it is displayed in files table - Home Phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on global search and select "All"
+    When I perform quick search inside global search "SendEmailAttachment.png"
+    Then I see value "SendEmailAttachment.png" for title "Title" inside table "PlanningFilesgrid"
+
+  @70630 @validateThatUserCanSearchFilesInGlobalSearchUnderFilesTable-HomePhase
+  Scenario: Verify that if file name is searched in global search-Files table then, it is displayed in files table - Home Phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on global search and select "Files"
+    When I perform quick search inside global search "SendEmailAttachment.pdf"
+    Then I see value "SendEmailAttachment.pdf" for title "Title" inside table "PlanningFilesgrid"

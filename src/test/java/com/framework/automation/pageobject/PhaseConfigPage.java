@@ -30,8 +30,8 @@ public class PhaseConfigPage extends GovGrantsManager {
     /**
      * click on global search all
      */
-    public void clickOnGlobalSearchAll() {
-        EyeThink.core().click().on(By.xpath("//select[@id='selectSearchId']"));
+    public void clickOnGlobalSearchAll(String dropDownValue) {
+        EyeThink.core().click().on(By.xpath("//select[@id='selectSearchId']/option[text()='" + dropDownValue + "']"));
     }
 
     /**
