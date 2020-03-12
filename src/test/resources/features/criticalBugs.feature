@@ -365,11 +365,11 @@ Feature: Logged Issues Scenarios
       | Appendix                    |
 
   @56618    @granteeRequestedAmountShouldDisplayInsteadOfAPINAmeOnApplicationByRequestedAmountChart
-  Scenario: Change chart x-axis suffix as $ for 'Funding Sources by Total Amount' chart in configuratin and validating inside planning
+  Scenario: Change chart x-axis suffix as $ for 'Funding Sources by Total Amount' chart in configuratin and validating inside Application
     When I login as "Automation" user
     When I setup my app as "As a Grantee"
     And I navigate to "Applications" tab
-    Then I see "Grantee Requested Amount" for chart "Applicationsbyrequestedamount1"
+    Then I see "Grantee Requested Amount" at axis "highcharts-xaxis" for chart "Applicationsbyrequestedamount1"
 
   @56623    @hideForContextFieldAtRolesAndResponsibilitiesFlexTableTopLevelAction-gPlanning
   Scenario: Hide New top level action for from configuration and validating it at under roles and responibilities flex table- gPlanning
