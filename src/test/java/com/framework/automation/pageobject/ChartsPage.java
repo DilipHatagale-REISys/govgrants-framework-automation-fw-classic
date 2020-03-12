@@ -98,7 +98,7 @@ public class ChartsPage extends GovGrantsManager {
     public void assertChartTitleDisplayed(String usage, String title) {
         if (usage.equalsIgnoreCase("see")) {
             Assert.assertTrue(isChartTitleDisplayed(title));
-        } else if(usage.equalsIgnoreCase("do not see")) {
+        } else if (usage.equalsIgnoreCase("do not see")) {
             Assert.assertFalse(isChartTitleDisplayed(title));
         }
     }
@@ -138,8 +138,28 @@ public class ChartsPage extends GovGrantsManager {
      *
      * @param title
      * @param chartName
+     * @param axisName
      */
-    public void assertCorrectTextDisplayed(String usage, String title, String chartName) {
+    public void assertCorrectTextDisplayed(String usage, String title, String axisName, String chartName) {
+        WebElement prefixSuffixElement = EyeThink.core().elementReference().of(By.xpath("//div[@id='" + chartName + "Id']//*[contains(@class,'highcharts-container')]//*[local-name()='g'][contains(@class,'" + axisName + "')]//*[contains(text(),'" + title + "')]"));
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(EyeThink.core().get().text(prefixSuffixElement).contains(title));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(EyeThink.core().get().text(prefixSuffixElement).contains(title));
+        } else if (usage.equalsIgnoreCase("Softly see")) {
+            EyeThink.core().assertion().assertThat(EyeThink.core().get().text(prefixSuffixElement).contains(title)).isTrue();
+        } else if (usage.equalsIgnoreCase("Softly do not see")) {
+            EyeThink.core().assertion().assertThat(EyeThink.core().get().text(prefixSuffixElement).contains(title)).isFalse();
+        }
+    }
+
+    /**
+     * If formatting at x/y axis is displayed in xhart.
+     *
+     * @param title
+     * @param chartName
+     */
+    public void assertFormattingAtAxisIsDisplayed(String usage, String title, String chartName) {
         WebElement prefixSuffixElement = EyeThink.core().elementReference().of(By.xpath("//div[@id='" + chartName + "Id']//*[contains(@class,'highcharts-container')]//*[contains(text(),'" + title + "')]"));
         if (usage.equalsIgnoreCase("see")) {
             Assert.assertTrue(EyeThink.core().get().text(prefixSuffixElement).contains(title));

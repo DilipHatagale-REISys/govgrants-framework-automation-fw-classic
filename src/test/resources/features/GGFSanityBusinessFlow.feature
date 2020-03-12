@@ -202,7 +202,7 @@ Feature: Sanity check for all Component Scenarios
     Then I see "Complete" "<Logout_URL>" page is displayed
     Examples:
       | Logout_URL                                                                             |
-      | https://ggptest5-dev-ed--gnt.na69.visual.force.com/apex/apex/Help?uniqueName=Help-0094 |
+      | https://ggptest5-dev-ed--gnt.na69.visual.force.com/apex/Help?uniqueName=Help-0094 |
 
   @37857    @versionFieldAtFormConfig-gApplication
   Scenario: Changing text for version field at form config for general application form from config and validating it at particular form detail page
