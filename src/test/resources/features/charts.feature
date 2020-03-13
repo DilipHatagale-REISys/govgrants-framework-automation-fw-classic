@@ -737,8 +737,8 @@ Feature: Charts and Enhanced Charts Component Scenarios
     Then I see "($)" at axis "highcharts-yaxis" for chart "Testing_Column"
     Then I see "(@)" at axis "highcharts-xaxis" for chart "Testing_Column"
 
-  @71036    @validateEditDataTableQueryforAllDataFieldFromEnhancedViewIcon-gAnnouncement-Testing_columnCharts @wip
-  Scenario Outline: Validate expected column from Testing_Column chart modal(show all data from enhanced view icon) displayed/Not displayed
+  @71036    @validateEditDataTableQueryforAllDataFieldFromBurgerMenuIcon-gAnnouncement-Testing_columnCharts
+  Scenario Outline: Validate expected column from Testing_Column chart modal(show all data from enhanced view icon) displayed/Not displayed - from burger menu icon
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                      | fieldOrignalValue          | filterId         |
       | Charts Config         | Data Table Query(For All Data) | <default_Data_Table_Query> | ApiGeneratedId:0 |
@@ -750,16 +750,16 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click on menu icon of chart "Testing column" with title "Enhanced View"
-    When I click modal button "Show All Data"
+    And I click on menu icon of chart "Testing column" with title "Menu"
+    When I select "Show All Data" from chart menu of chart "Testing column"
     Then I softly do not see "Change Request #" in flex table header "Testing_ColumnIdrecordsModal"
 
     Examples:
       | default_Data_Table_Query                                                                                                                          | new_Data_Table_Query                                                                                                                         |
       | SELECT Name,RecordType__c,Award__r.Status__c ,Status__c FROM AmendmentRequest__c Where Award__r.Status__c = 'Activated' AND Status__c!='Approved' | SELECT RecordType__c,Award__r.Status__c ,Status__c FROM AmendmentRequest__c Where Award__r.Status__c = 'Activated' AND Status__c!='Approved' |
 
-  @71034    @validateEditDataTableQueryforAllDataFieldFromEnhancedViewIcon-gAnnouncement-Testing_columnCharts @wip
-  Scenario Outline: Validate expected column from Testing_Column chart modal(show all data from enhanced view icon) displayed/Not displayed
+  @71034    @validateEditDataTableQueryforAllDataFieldFromEnhancedViewIcon-gAnnouncement-Testing_columnCharts
+  Scenario Outline: Validate expected column from Testing_Column chart modal(show all data from enhanced view icon) displayed/Not displayed - enhanced View
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                      | fieldOrignalValue          | filterId         |
       | Charts Config         | Data Table Query(For All Data) | <default_Data_Table_Query> | ApiGeneratedId:0 |
@@ -1051,3 +1051,186 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     Then I do not see charts with id "Enhanced_FunnelId" displayed
+
+  @71192   @validateEditDataTableQueryforAllDataFieldFromEnhancedViewIcon-gApplication-Enhanced_Funnel
+  Scenario Outline: Validate expected column from Enhanced_Funnel chart modal(show all data from enhanced view icon) displayed/Not displayed - enhanced View
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                      | fieldOrignalValue          | filterId         |
+      | Charts Config         | Data Table Query(For All Data) | <default_Data_Table_Query> | ApiGeneratedId:0 |
+      | Charts Config         | Active                         | true                       | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                      | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Data Table Query(For All Data) | <new_Data_Table_Query> | Application        | Name                      | Enhanced_Funnel            |
+      | Charts Config         | Active                         | true                   | Application        | Name                      | Enhanced_Funnel            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click on menu icon of chart "Enhanced Funnel" with title "Enhanced View"
+    When I click modal button "Show All Data"
+    Then I do not see "Change Request #" in flex table header "Enhanced_FunnelIdrecordsModal"
+
+    Examples:
+      | default_Data_Table_Query                                                                                                            | new_Data_Table_Query                                                                                                           |
+      | SELECT Name,Award__r.Status__c ,Status__c FROM AmendmentRequest__c Where Award__r.Status__c = 'Activated' AND Status__c!='Approved' | SELECT Award__r.Status__c ,Status__c FROM AmendmentRequest__c Where Award__r.Status__c = 'Activated' AND Status__c!='Approved' |
+
+  @71194   @validateEditDataTableQueryforAllDataFieldFromBurgerMenuIcon-gApplication-Enhanced_Funnel
+  Scenario Outline: Validate expected column from Enhanced_Funnel chart modal(show all data from enhanced view icon) displayed/Not displayed - burger menu icon
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                      | fieldOrignalValue          | filterId         |
+      | Charts Config         | Data Table Query(For All Data) | <default_Data_Table_Query> | ApiGeneratedId:0 |
+      | Charts Config         | Active                         | true                       | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                      | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Data Table Query(For All Data) | <new_Data_Table_Query> | Application        | Name                      | Enhanced_Funnel            |
+      | Charts Config         | Active                         | true                   | Application        | Name                      | Enhanced_Funnel            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click on menu icon of chart "Enhanced Funnel" with title "Menu"
+    When I select "Show All Data" from chart menu of chart "Enhanced Funnel"
+    Then I do not see "Change Request #" in flex table header "Enhanced_FunnelIdrecordsModal"
+
+    Examples:
+      | default_Data_Table_Query                                                                                                            | new_Data_Table_Query                                                                                                           |
+      | SELECT Name,Award__r.Status__c ,Status__c FROM AmendmentRequest__c Where Award__r.Status__c = 'Activated' AND Status__c!='Approved' | SELECT Award__r.Status__c ,Status__c FROM AmendmentRequest__c Where Award__r.Status__c = 'Activated' AND Status__c!='Approved' |
+
+  @71190    @validateY-axisPrefix-gApplication-Enhanced_FunnelCharts
+  Scenario Outline: Change chart y-axis prefix for 'Enhanced_FunnelId' enhanced chart from configuration and validating inside Application
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Charts Config         | Y Axis Prefix |                   | ApiGeneratedId:0 |
+      | Charts Config         | Active        | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Y Axis Prefix | <EchartY-Axix_Text> | Application        | Name                      | Enhanced_Funnel            |
+      | Charts Config         | Active        | true                | Application        | Name                      | Enhanced_Funnel            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I hovering mouse on enhanced charts id "Enhanced_FunnelId" and charts type "highcharts-point"
+    And I pause execution for "2" seconds
+    Then I see "<EchartY-Axix_Text>" shown inside enhanced charts on hover
+
+    Examples:
+      | EchartY-Axix_Text |
+      | $                 |
+
+  @71191    @validateY-axisSuffix-gApplication-Enhanced_FunnelCharts
+  Scenario Outline: Change chart y-axis Suffix for 'Enhanced_FunnelId' enhanced chart from configuration and validating inside Application
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Charts Config         | Y Axis Suffix |                   | ApiGeneratedId:0 |
+      | Charts Config         | Active        | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Y Axis Suffix | <EchartY-Axix_Text> | Application        | Name                      | Enhanced_Funnel            |
+      | Charts Config         | Active        | true                | Application        | Name                      | Enhanced_Funnel            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I hovering mouse on enhanced charts id "Enhanced_FunnelId" and charts type "highcharts-point"
+    And I pause execution for "2" seconds
+    Then I see "<EchartY-Axix_Text>" shown inside enhanced charts on hover
+
+    Examples:
+      | EchartY-Axix_Text |
+      | $                 |
+
+  @71418    @validateActiveFieldAtCharts-gHome-EnhancedLineCharts
+  Scenario: Validating enhanced charts is getting displayed on UI while making changes of boolean field Active at configuration page -gHome
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Charts Config         | Active    | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Active    | true          | GrantorHome        | Name                      | Enhanced Line              |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see charts with id "EnhancedLineId" displayed
+
+  @71419    @validateTitleFieldAtCharts-gHome-EnhancedLineCharts
+  Scenario: Changing chart title for 'EnhancedLineId' enhanced chart in configuration and validating inside home phase
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Charts Config         | Title     | Enhanced Line     | ApiGeneratedId:0 |
+      | Charts Config         | Active    | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Title     | Automation Enhanced Line | GrantorHome        | Name                      | Enhanced Line              |
+      | Charts Config         | Active    | true                     | GrantorHome        | Name                      | Enhanced Line              |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see "Automation Enhanced Line" displayed as chart title
+
+  @71421    @validateChartTypeFieldAtCharts-gHome-EnhancedLineCharts
+  Scenario: Changing value of chart type to pie for 'EnhancedLineId' enhanced chart in configuration and validating inside home
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName  | fieldOrignalValue | filterId         |
+      | Charts Config         | Chart Type | Line              | ApiGeneratedId:0 |
+      | Charts Config         | Active     | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Chart Type | Line          | GrantorHome        | Name                      | Enhanced Line              |
+      | Charts Config         | Active     | true          | GrantorHome        | Name                      | Enhanced Line              |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see charts "EnhancedLineId" with type as "highcharts-point"
+
+  @71426    @validateDisableLegendsFieldsWithFalse-gAnnouncement-EnhancedLineCharts
+  Scenario: validate disable legends fields is working or not by viewing bottom element of charts is getting displayed on unchecking checkbox at Line chart
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Charts Config         | Disable Legend |                   | ApiGeneratedId:0 |
+      | Charts Config         | Active         | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Disable Legend | false         | GrantorHome        | Name                      | Enhanced Line              |
+      | Charts Config         | Active         | true          | GrantorHome        | Name                      | Enhanced Line              |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see chart legends are displayed for chart/enhanced Charts "EnhancedLine"
+
+  @71427    @validateDisableLegendsFieldsWithTrue-gAnnouncement-EnhancedLineCharts
+  Scenario: validate disable legends fields is working or not by viewing bottom element of charts is getting displayed on checking checkbox at Line chart
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Charts Config         | Disable Legend | false             | ApiGeneratedId:0 |
+      | Charts Config         | Active         | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Disable Legend | true          | GrantorHome        | Name                      | Enhanced Line              |
+      | Charts Config         | Active         | true          | GrantorHome        | Name                      | Enhanced Line              |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I do not see chart legends are displayed for chart/enhanced Charts "EnhancedLine"
+
+  @71442    @validateX-axisAndY-axisLabelField-gHOME-EnhancedLineCharts
+  Scenario: Change chart x-axis and y-axis label for 'EnhancedLineId' chart in configuration and validating inside HOME
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
+      | Charts Config         | X-Axis Label | Announcement Name | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName    | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | X-Axis Label | AutomationAnnouncement | GrantorHome        | Name                      | Enhanced Line              |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see "AutomationAnnouncement" at axis "highcharts-xaxis" for chart "EnhancedLine"
+
+  @71444    @validateY-axisLabelField-gHOME-EnhancedLineCharts
+  Scenario: Change chart y-axis label for 'EnhancedLineId' chart in configuration and validating inside HOME
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
+      | Charts Config         | Y-Axis Label | Award ceiling     | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName    | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Y-Axis Label | AutomationAward        | GrantorHome        | Name                      | Enhanced Line              |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see "AutomationAward" at axis "highcharts-yaxis" for chart "EnhancedLine"
