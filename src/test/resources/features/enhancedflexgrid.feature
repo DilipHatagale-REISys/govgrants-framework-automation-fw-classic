@@ -783,7 +783,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    Then I softly do not see "Active" value in flex table id "Enhanced1grid"
+    Then I see "Draft" value in flex table id "Enhanced1grid"
 
     Examples:
       | newSoqlFilter                                   | oldSoqlFilter                                    |
@@ -1751,7 +1751,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
     When I expand nested table containing column value "Demo_Title"
-    Then I softly do not see "Created" value in flex table id "TmpGrantorActiveAwardsGridFlexToggle"
+    Then I see "Created" value in flex table id "TmpGrantorActiveAwardsGridFlexToggle"
 
     Examples:
       | newSoqlFilter                                       | oldSoqlFilter                                                                                       |
