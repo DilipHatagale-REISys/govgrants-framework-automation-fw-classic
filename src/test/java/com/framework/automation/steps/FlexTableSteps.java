@@ -104,9 +104,9 @@ public class FlexTableSteps {
         flexTablePage.assertEditOpenInSameTab();
     }
 
-    @Then("^I see \"([^\"]*)\" opens in overLay window$")
-    public void assertEditOpensInOverLayWindow(String titleName) {
-        flexTablePage.asserTextInOverLayIframe(titleName);
+    @Then("^I (see|softly see) \"([^\"]*)\" opens in overLay window$")
+    public void assertEditOpensInOverLayWindow(String usage, String titleName) {
+        flexTablePage.asserTextInOverLayIframe(usage, titleName);
     }
 
     @Then("^I see entire page is refreshing$")
@@ -184,11 +184,6 @@ public class FlexTableSteps {
         flexTablePage.getHelpTextAtEditActionOfFlexTable(iconName, columnName);
     }
 
-    @Then("^I see \"([^\"]*)\" displayed in flex table Action modal$")
-    public void assertModalTitleForFlexTableAction(String titleName) {
-        flexTablePage.asserTextInOverLayIframe(titleName);
-    }
-
     @Then("^I see \"([^\"]*)\" button inside \"([^\"]*)\" flex table not displayed$")
     public void assertCreateButtonInsideActiveFundingOpprtunitiesFlexTable(String buttonName, String headerName) {
         flexTablePage.assertActionButtonInsideFlexTableIsNotDisplayed(buttonName, headerName);
@@ -252,10 +247,5 @@ public class FlexTableSteps {
     @Then("^I see \"([^\"]*)\" is displayed under total amount in flex table$")
     public void assertCurrencyUnitInFlexTableTotalAmount(String currencyUnit) {
         flexTablePage.assertFlexTabelCurrencyUnitInTotalAmount(currencyUnit);
-    }
-
-    @Then("^I see \"([^\"]*)\" icon for \"([^\"]*)\" is not displayed inside Attachment flex table$")
-    public void assertActionIconNotDisplayedInsideAttachmentTable(String iconName, String uniqueColumnValue) {
-        flexTablePage.assertActionIconNotDisplayedInsideAttachmentflexTable(iconName, uniqueColumnValue);
     }
 }

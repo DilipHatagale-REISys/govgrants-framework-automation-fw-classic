@@ -1397,3 +1397,57 @@ Feature: Library Files Component Scenarios
     When I click on global search and select "Files"
     When I perform quick search inside global search "SendEmailAttachment.pdf"
     Then I see value "SendEmailAttachment.pdf" for title "Title" inside table "PlanningFilesgrid"
+
+  @70748 @validateThatUserCanViewFileUnderPlanningFilesTable-HomePhase @NeedDeleteAPI
+  Scenario: Verify that by click on View action at file under planning files table , a view file modal is displayed- Home Phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
+    When I upload file "SendEmailAttachment.pdf" into library
+    When I click on SelectChange Folder in add file modal
+    When I Select/Change Folder as "Department of Community Health" in add file modal
+    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I pause execution for "7" seconds
+    When I perform quick search for "SendEmailAttachment.pdf" in "PlanningFilesgrid" panel
+    When I click on "View" icon for "SendEmailAttachment.pdf" inside table
+    Then I softly see "File View" opens in overLay window
+    When I click on "×" icon at "File View" modal under Library
+    When I perform quick search for "SendEmailAttachment.pdf" in "PlanningFilesgrid" panel
+    When I click on "Delete" icon for "SendEmailAttachment.pdf" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "3" seconds
+    When I perform quick search for "SendEmailAttachment.pdf" in "PlanningFilesgrid" panel
+    Then I softly see "No Records Found" inside flex table with id "PlanningFilesgrid"
+
+  @70749 @validateThatUserCanEditFileUnderPlanningFilesTable-HomePhase @NeedDeleteAPI
+  Scenario: Verify that by click on Edit action at file under planning files table , a view file modal is displayed- Home Phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
+    When I upload file "SendEmailAttachment.pdf" into library
+    When I click on SelectChange Folder in add file modal
+    When I Select/Change Folder as "Department of Community Health" in add file modal
+    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I pause execution for "7" seconds
+    When I perform quick search for "SendEmailAttachment.pdf" in "PlanningFilesgrid" panel
+    When I click on "Edit" icon for "SendEmailAttachment.pdf" inside table
+    Then I softly see "File Edit" opens in overLay window
+    When I click on "×" icon at "File Edit" modal under Library
+    When I perform quick search for "SendEmailAttachment.pdf" in "PlanningFilesgrid" panel
+    When I click on "Delete" icon for "SendEmailAttachment.pdf" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "3" seconds
+    When I perform quick search for "SendEmailAttachment.pdf" in "PlanningFilesgrid" panel
+    Then I softly see "No Records Found" inside flex table with id "PlanningFilesgrid"

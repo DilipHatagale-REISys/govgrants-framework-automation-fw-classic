@@ -1228,9 +1228,108 @@ Feature: Charts and Enhanced Charts Component Scenarios
       | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
       | Charts Config         | Y-Axis Label | Award ceiling     | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName    | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Charts Config         | Y-Axis Label | AutomationAward        | GrantorHome        | Name                      | Enhanced Line              |
+      | configurationCategory | fieldName    | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Y-Axis Label | AutomationAward | GrantorHome        | Name                      | Enhanced Line              |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     Then I see "AutomationAward" at axis "highcharts-yaxis" for chart "EnhancedLine"
+
+  @71493    @validateAll-axisPrefix-gHOME-EnhancedLineCharts
+  Scenario: Change chart x-axis/Y-Axis prefix from config and validate inside HOME phase for Enhanced Line Charts
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Charts Config         | X Axis Prefix |                   | ApiGeneratedId:0 |
+      | Charts Config         | Y Axis Prefix |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | X Axis Prefix | #             | GrantorHome        | Name                      | Enhanced Line              |
+      | Charts Config         | Y Axis Prefix | $             | GrantorHome        | Name                      | Enhanced Line              |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see "($)" at axis "highcharts-yaxis" for chart "EnhancedLine"
+    Then I see "(#)" at axis "highcharts-xaxis" for chart "EnhancedLine"
+
+  @71494    @validateAll-axisSuffix-gHOME-EnhancedLineCharts
+  Scenario: Change chart x-axis/Y-Axis suffix from config and validate inside HOME phase for Enhanced Line Charts
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Charts Config         | X Axis Suffix |                   | ApiGeneratedId:0 |
+      | Charts Config         | Y Axis Suffix |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | X Axis Suffix | =             | GrantorHome        | Name                      | Enhanced Line              |
+      | Charts Config         | Y Axis Suffix | Count         | GrantorHome        | Name                      | Enhanced Line              |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see "(Count)" at axis "highcharts-yaxis" for chart "EnhancedLine"
+    Then I see "(=)" at axis "highcharts-xaxis" for chart "EnhancedLine"
+
+  @71496    @validateAllDataHeaders-gHome-EnhancedLineChart
+  Scenario:  Change chart show all data table header for 'EnhancedLine' chart in config and validating inside home - enhanced view
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Charts Config         | All data table header | Awarded Amount    | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue               | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | All data table header | Test Automation Application | GrantorHome        | Name                      | Enhanced Line              |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I click on menu icon of chart "Enhanced Line" with title "Enhanced View"
+    When I click modal button "Show All Data"
+    Then I see "Test Automation Application" displayed in modal
+
+  @71498    @validateAllDataHeadersFromBurgerMenu-gHome-EnhancedLineChart
+  Scenario:  Change chart show all data table header for 'EnhancedLine' chart in config and validating inside home - burger menu
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Charts Config         | All data table header | Awarded Amount    | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue               | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | All data table header | Test Automation Application | GrantorHome        | Name                      | Enhanced Line              |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I click on menu icon of chart "Enhanced Line" with title "Menu"
+    When I select "Show All Data" from chart menu of chart "Enhanced Line"
+    Then I see "Test Automation Application" displayed in modal
+
+  @71505    @validateElementsOnModalComingOnEnhancedViewClick-EnhancedLineCharts
+  Scenario: Validate Enhanced chart modal details after closing show all data modal - Enhanced Line chart
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Charts Config         | Active    | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Active    | true          | GrantorHome        | Name                      | Enhanced Line              |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I click on menu icon of chart "Enhanced Line" with title "Enhanced View"
+    When I click modal button "Show All Data"
+    When I click modal button "Close"
+    Then I see chart legends are displayed for chart/enhanced Charts "EnhancedLine"
+
+  @71563    @validateDataTableQueryforAllDataFieldFromBurgerIcon-gHOME-EnhancedLineCharts
+  Scenario Outline: Validate no of record rendered as per query provided inside 'Data Table Query(for all data), burger icon - Enhanced Line chart
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                      | fieldOrignalValue          | filterId         |
+      | Charts Config         | Data Table Query(For All Data) | <default_Data_Table_Query> | ApiGeneratedId:0 |
+      | Charts Config         | Active                         | false                      | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                      | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Data Table Query(For All Data) | <new_Data_Table_Query> | GrantorHome        | Name                      | Enhanced Line              |
+      | Charts Config         | Active                         | true                   | GrantorHome        | Name                      | Enhanced Line              |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I click on menu icon of chart "Enhanced Line" with title "Menu"
+    When I select "Show All Data" from chart menu of chart "Enhanced Line"
+    Then I see on modal total records count is same as total row of table id "EnhancedLineIdrecordsModal" and table name "flextable"
+
+    Examples:
+      | default_Data_Table_Query                                                                                                                                                                                            | new_Data_Table_Query                                                                                                                                                                                                        |
+      | SELECT Name,Announcement__r.Name,Announcement__r.AwardCeiling__c,ProjectPeriodStartDate__c,Announcement__r.Program__r.ProgramName__c FROM Application__c where RecordType.Name='Grantor' And Status__c != 'Created' | SELECT Name,Announcement__r.Name,Announcement__r.AwardCeiling__c,ProjectPeriodStartDate__c,Announcement__r.Program__r.ProgramName__c FROM Application__c where RecordType.Name='Grantor' And Status__c != 'Created' Limit 5 |
