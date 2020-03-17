@@ -111,11 +111,12 @@ Feature: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Total Row | false         | Programs           |                           |                            |
-      | Flex Table List       | Enable Total     | false          | Programs           | Name                      | FTC-1018                   |
+      | Flex Table List       | Enable Total     | false         | Programs           | Name                      | FTC-1018                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
+    And I pause execution for "2" seconds
     Then I see total amount row in flex table is not displayed
 
   @34031    @disablingEnableTotalRecordsCountFieldAtProgramFlexTable-gPlanning
@@ -662,7 +663,7 @@ Feature: Flex Table Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Automation Title" displayed in flex table Action modal
+    Then I see "Automation Title" opens in overLay window
 
   @40106    @hideForProfileFieldAtProgramFlexTableEditAction-gPlanning @smoke
   Scenario Outline: Hide edit row level action for specific profile from configuration and validating it at under program flex table- gPlanning

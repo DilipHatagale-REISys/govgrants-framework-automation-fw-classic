@@ -625,7 +625,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     private boolean isNoOfRecordsInsideEnhancedGridPresent(int rowCount, String tableId) {
         boolean flag = false;
         try {
-            int listSize = EyeThink.saas().flexTable().getCompleteTableRow(tableId).size()-1;
+            int listSize = EyeThink.saas().flexTable().getCompleteTableRow(tableId).size();
             if (listSize == rowCount) {
                 flag = true;
             }

@@ -113,8 +113,6 @@ public class FlexTablePage extends GovGrantsManager {
     }
 
     /**
-hi
-
      * assert if Edit icon open in new tab or not
      */
     public void assertEditWithNewTab() {
@@ -133,8 +131,12 @@ hi
      *
      * @param titleName
      */
-    public void asserTextInOverLayIframe(String titleName) {
-        Assert.assertTrue(isSpecificOverlayDisplayed(titleName));
+    public void asserTextInOverLayIframe(String usage, String titleName) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isSpecificOverlayDisplayed(titleName));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            EyeThink.core().assertion().assertThat(isSpecificOverlayDisplayed(titleName)).isTrue();
+        }
     }
 
     /**
@@ -154,20 +156,6 @@ hi
     public void assertActionIconNotDisplayedInsideflexTable(String iconName, String uniqueColumnValue) {
         try {
             Assert.assertFalse(EyeThink.core().is().isDisplayed(EyeThink.saas().flexTable().getTableActionIconWithoutTableId(iconName, uniqueColumnValue)));
-        } catch (Exception e) {
-        }
-    }
-
-
-    /**
-     * assert if specific action icon is not displayed for attachment flex table only
-     *
-     * @param iconName
-     * @param uniqueColumnValue
-     */
-    public void assertActionIconNotDisplayedInsideAttachmentflexTable(String iconName, String uniqueColumnValue) {
-        try {
-            Assert.assertFalse(EyeThink.core().is().isDisplayed(getTableActionIconForAttachmentOnly(iconName, uniqueColumnValue)));
         } catch (Exception e) {
         }
     }
@@ -654,20 +642,19 @@ hi
      * @return
      */
     private Boolean isSpecificfieldValueDisplayed(String fieldValue, String tableId) {
-        List<Elements> elements = null;
-        try {
-            elements = EyeThink.core().elementReference().listOfElements().of((By) EyeThink.saas().flexTable().getTableCellValue(tableId, fieldValue));
-        } catch (Exception e) {
-        }
+        boolean flag = false;
+        List<Elements> elements;
+        By tableCellValue = By.xpath("//div[@id='" + tableId + "']//td//span[" + EyeThink.core().xpath().equals("@title", fieldValue) + "or " + EyeThink.core().xpath().equals("text()", fieldValue) + "]");
+        elements = EyeThink.core().elementReference().listOfElements().of(tableCellValue, false);
         try {
             for (Elements element : elements) {
                 if (element.isDisplayed()) {
-                    return false;
+                    flag = true;
                 }
             }
         } catch (Exception e) {
         }
-        return true;
+        return flag;
     }
 
     /**
@@ -776,7 +763,7 @@ hi
         EyeThink.core().scroll().pageDocument("PageDown", 0, 0);
         boolean flag = false;
         try {
-            int listSize = EyeThink.saas().flexTable().getCompleteTableRow(tableId).size() - 1;
+            int listSize = EyeThink.saas().flexTable().getCompleteTableRow(tableId).size();
             if (listSize == rowCount) {
                 flag = true;
             }
@@ -1018,21 +1005,6 @@ hi
         String[] part = str.split("(?<=\\D)(?=\\d)");
         try {
             if (part[0].contains(currencyUnit)) {
-                flag = true;
-            }
-        } catch (org.openqa.selenium.NoSuchElementException e) {
-        }
-        return flag;
-    }
-
-    /**
-     * @return true if Attachment table actions are hidden
-     */
-    public Boolean getTableActionIconForAttachmentOnly(String iconName, String uniqueColumnValues) {
-        boolean flag = false;
-        WebElement desiredAction = EyeThink.core().elementReference().of(By.xpath("//span[text()='" + uniqueColumnValues + "']/../following-sibling::td/a[@title='" + iconName + "']"));
-        try {
-            if (desiredAction.getAttribute("Class").contains("ng-hide")) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
