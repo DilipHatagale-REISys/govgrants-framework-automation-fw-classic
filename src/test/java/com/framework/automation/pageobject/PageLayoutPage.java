@@ -19,8 +19,8 @@ public class PageLayoutPage extends GovGrantsManager {
     /******* "Variables and Locators" *****************/
     private final By overViewHeader, overViewTitle, pageInstructionText, headerInstructionText, headerOverviewTab,
             headerInstructionTextForPageBlock, rolesAndResponsibilitiesFlexTableTitle, monitoringFlexGridTitle,
-            addButtonUnderAttachments, addAttachmentIframe, lookupSearchInputBox,
-            lookupSearchButton, ownerOrganizationModalTitle, completeTableRowInsideLookupModal,
+            addAttachmentIframe,
+            ownerOrganizationModalTitle, completeTableRowInsideLookupModal,
             manageAttachmentInsidePageBlockDetail, manageAttachmentIframe, editActionModalIframe, pageLayoutButton,
             editAttachmentDescription, editAttachmentSaveButton, textInsideMiniPageLayout;
 
@@ -38,10 +38,7 @@ public class PageLayoutPage extends GovGrantsManager {
                 "//div[@class='panel-heading']//div[contains(@class,'panel-title')]//a//span[contains(text(),'Roles And Responsibilities')]");
         monitoringFlexGridTitle = By.xpath(
                 "//div[@class='panel-heading']//div[contains(@class,'panel-title')]//a[@title='Monitoring Schedule For All Active Grant']");
-        addButtonUnderAttachments = By.xpath("//button[@title='AddAttachments']");
         addAttachmentIframe = By.cssSelector("#addmodaldialog iframe");
-        lookupSearchInputBox = By.xpath("//img[@title='Organization Lookup (New Window)']/../../input[@type='text']");
-        lookupSearchButton = By.xpath("//img[@title='Organization Lookup (New Window)']");
         ownerOrganizationModalTitle = By.xpath("//p[@id='customLookupModalTitle']");
         completeTableRowInsideLookupModal = By
                 .xpath("//div[@id='lookuploading']//div[contains(@class,'panel-body')]//div/table/tbody/tr");
@@ -670,16 +667,6 @@ public class PageLayoutPage extends GovGrantsManager {
 
     /**
      * click search icon of owner organization at page block detail edit page
-     */
-
-    public void clickLookupModalQuickSearch() {
-        EyeThink.core().elementReference().of(lookupSearchButton);
-        EyeThink.core().enterText().clear(EyeThink.core().elementReference().of(lookupSearchInputBox));
-        EyeThink.core().click().withJavaScript(lookupSearchButton);
-    }
-
-    /**
-     * click search icon of owner organization at page block detail edit page
      *
      * @param frameId
      */
@@ -848,7 +835,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * click on send button present on send email modal window
      */
     public void clickOnSendEmailModalButton(String buttonName) {
-        EyeThink.core().click().withJavaScript(By.xpath("//button[text()='" + buttonName + "' or @title='"+buttonName+"'][not(contains(@class,'btn btn-default'))]"));
+        EyeThink.core().click().withJavaScript(By.xpath("//button[text()='" + buttonName + "' or @title='" + buttonName + "'][not(contains(@class,'btn btn-default'))]"));
     }
 
     /**
@@ -1341,14 +1328,6 @@ public class PageLayoutPage extends GovGrantsManager {
             return true;
         } else
             return false;
-    }
-
-    /**
-     * click add button inside attachments page block and switching to repective
-     * frame.
-     */
-    public void clickAddUnderAttachmentsPageBlock() {
-        EyeThink.core().click().on(addButtonUnderAttachments);
     }
 
     /**

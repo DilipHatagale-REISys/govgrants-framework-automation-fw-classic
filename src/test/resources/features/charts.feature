@@ -1318,7 +1318,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                      | fieldOrignalValue          | filterId         |
       | Charts Config         | Data Table Query(For All Data) | <default_Data_Table_Query> | ApiGeneratedId:0 |
-      | Charts Config         | Active                         | false                      | ApiGeneratedId:1 |
+      | Charts Config         | Active                         | true                       | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                      | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Charts Config         | Data Table Query(For All Data) | <new_Data_Table_Query> | GrantorHome        | Name                      | Enhanced Line              |
@@ -1333,3 +1333,97 @@ Feature: Charts and Enhanced Charts Component Scenarios
     Examples:
       | default_Data_Table_Query                                                                                                                                                                                            | new_Data_Table_Query                                                                                                                                                                                                        |
       | SELECT Name,Announcement__r.Name,Announcement__r.AwardCeiling__c,ProjectPeriodStartDate__c,Announcement__r.Program__r.ProgramName__c FROM Application__c where RecordType.Name='Grantor' And Status__c != 'Created' | SELECT Name,Announcement__r.Name,Announcement__r.AwardCeiling__c,ProjectPeriodStartDate__c,Announcement__r.Program__r.ProgramName__c FROM Application__c where RecordType.Name='Grantor' And Status__c != 'Created' Limit 5 |
+
+  @71564    @validateDataTableQueryforAllDataFieldFromEnhancedView-gHOME-EnhancedLineCharts
+  Scenario Outline: Validate no of record rendered as per query provided inside 'Data Table Query(for all data)- Enhanced view- Enhanced Line chart
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                      | fieldOrignalValue          | filterId         |
+      | Charts Config         | Data Table Query(For All Data) | <default_Data_Table_Query> | ApiGeneratedId:0 |
+      | Charts Config         | Active                         | true                       | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                      | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Data Table Query(For All Data) | <new_Data_Table_Query> | GrantorHome        | Name                      | Enhanced Line              |
+      | Charts Config         | Active                         | true                   | GrantorHome        | Name                      | Enhanced Line              |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I click on menu icon of chart "Enhanced Line" with title "Enhanced View"
+    When I click modal button "Show All Data"
+    Then I see on modal total records count is same as total row of table id "EnhancedLineIdrecordsModal" and table name "flextable"
+
+    Examples:
+      | default_Data_Table_Query                                                                                                                                                                                            | new_Data_Table_Query                                                                                                                                                                                                        |
+      | SELECT Name,Announcement__r.Name,Announcement__r.AwardCeiling__c,ProjectPeriodStartDate__c,Announcement__r.Program__r.ProgramName__c FROM Application__c where RecordType.Name='Grantor' And Status__c != 'Created' | SELECT Name,Announcement__r.Name,Announcement__r.AwardCeiling__c,ProjectPeriodStartDate__c,Announcement__r.Program__r.ProgramName__c FROM Application__c where RecordType.Name='Grantor' And Status__c != 'Created' Limit 5 |
+
+  @71586    @validateActiveFieldAtCharts-gAnnouncement-EnhancedSplineCharts
+  Scenario: Validating enhanced charts is getting displayed on UI while making changes of boolean field Active at configuration page -gGrants
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Charts Config         | Active    | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Active    | true          | Grants             | Name                      | Enhanced Spline            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    Then I see charts with id "EnhancedSplineId" displayed
+
+  @71587    @validateTitleFieldAtCharts-gGrants-EnhancedSplineCharts
+  Scenario: Validating enhanced spline charts title is getting displayed on UI while making changes at configuration page -gGrants
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Charts Config         | Active    | true              | ApiGeneratedId:0 |
+      | Charts Config         | Title     | Enhanced Spline   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue              | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Active    | true                       | Grants             | Name                      | Enhanced Spline            |
+      | Charts Config         | Title     | Enhanced Spline Automation | Grants             | Name                      | Enhanced Spline            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    Then I see "Enhanced Spline Automation" displayed as chart title
+
+  @71589  @validateChartTypeFieldAtCharts-gGrants-EnhancedSplineCharts
+  Scenario: Changing value of chart type to spline for 'EnhancedSplineId' enhanced chart in configuration and validating inside planning-programs
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName  | fieldOrignalValue | filterId         |
+      | Charts Config         | Chart Type | Spline            | ApiGeneratedId:0 |
+      | Charts Config         | Active     | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Chart Type | Spline        | Grants             | Name                      | Enhanced Spline            |
+      | Charts Config         | Active     | true          | Grants             | Name                      | Enhanced Spline            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    Then I see charts "EnhancedSplineId" with type as "highcharts-tracker-line"
+
+  @71590    @validateDisableLegendsFieldsWithFalse-gGrants-EnhancedSplineCharts
+  Scenario: validate disable legends fields is working or not by viewing bottom element of charts is getting displayed on unchecking checkbox
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Charts Config         | Disable Legend | false             | ApiGeneratedId:0 |
+      | Charts Config         | Active         | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Disable Legend | false         | Grants             | Name                      | Enhanced Spline            |
+      | Charts Config         | Active         | true          | Grants             | Name                      | Enhanced Spline            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    Then I see chart legends are displayed for chart/enhanced Charts "EnhancedSpline"
+
+  @71725    @validateTitleFieldAtCharts-gGrants-EnhancedAreaCharts
+  Scenario: Validating enhanced area charts title is getting displayed on UI while making changes at configuration page -gGrants
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Charts Config         | Active    | true              | ApiGeneratedId:0 |
+      | Charts Config         | Title     | Enhanced Area     | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Active    | true                     | Grants             | Name                      | Enhanced Area              |
+      | Charts Config         | Title     | Enhanced Area Automation | Grants             | Name                      | Enhanced Area              |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    Then I see "Enhanced Area Automation" displayed as chart title

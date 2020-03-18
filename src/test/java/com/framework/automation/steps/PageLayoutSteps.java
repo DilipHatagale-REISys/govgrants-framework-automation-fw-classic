@@ -21,19 +21,9 @@ public class PageLayoutSteps {
         pageLayoutPage.getRightHeaderButton(buttonName);
     }
 
-    @When("^I click Add button inside attachments page block$")
-    public void clickAddButton() {
-        pageLayoutPage.clickAddUnderAttachmentsPageBlock();
-    }
-
     @When("^I click search icon for \"([^\"]*)\" lookup modal and swithing to frame \"([^\"]*)\"$")
     public void searchLookUpModal(String lookupText, String frameId) {
         pageLayoutPage.handleLookUpSearchWithFrame(frameId, lookupText.split(","));
-    }
-
-    @When("^I click search icon for owner organization$")
-    public void clickLookUpSearchOwnerOrganization() {
-        pageLayoutPage.clickLookupModalQuickSearch();
     }
 
     @When("^I click on Manage Attachments inside page block details$")
