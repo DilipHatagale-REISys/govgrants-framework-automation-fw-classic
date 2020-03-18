@@ -923,6 +923,7 @@ Feature: Page Layout Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     When I click Add button inside attachments page block
+    When I click on "Add" button inside attachments page block
     Then I see "AnnouncementArtifacts1:AnnouncementArtifacts2" inside Type selectbox
 
   @36104    @isHiddenFieldAtPageBlockDetail-gPlanning
@@ -1021,7 +1022,7 @@ Feature: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click search icon for owner organization
+    When I click search icon for lookup "Organization Lookup (New Window)"
     Then I see modal box with body "Organization Automation" is displayed
 
   @36170    @lookupDisplayFieldNamesFieldAtPageBlockDetail-gPlanning @smoke
