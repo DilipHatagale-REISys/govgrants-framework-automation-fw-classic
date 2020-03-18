@@ -267,15 +267,6 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
-     * assert if specific value is displayed inside Type dropdown list
-     *
-     * @param dropDownValue
-     */
-    public void assertValueInsideDropdown(String dropDownValue) {
-        Assert.assertTrue(isValuePresentInsidePickList(dropDownValue));
-    }
-
-    /**
      * assert if changed field inside page block detail is displayed
      *
      * @param changedFieldName
@@ -623,32 +614,6 @@ public class PageLayoutPage extends GovGrantsManager {
             }
         }
     }
-
-    /**
-     * return true if picklist dropDownValue is displayed
-     *
-     * @param dropDownValue
-     * @return
-     */
-    public boolean isValuePresentInsidePickList(String dropDownValue) {
-        String[] exp = null;
-        if (dropDownValue.contains(":")) {
-            exp = dropDownValue.split(":");
-        }
-        List<String> opt01 = Arrays.asList(exp);
-        By selectD = By.xpath("//select[@title='Classification']");
-        List<WebElement> wee = EyeThink.core().select().from(selectD).getOptions();
-        List<String> opt = new ArrayList<>();
-        for (int i = 0; i < wee.size(); i++) {
-            opt.add(wee.get(i).getText());
-        }
-        if (opt01.containsAll(opt)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
 
     /**
      * get complete rows of table inside lookup modal

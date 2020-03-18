@@ -276,11 +276,6 @@ public class PageLayoutSteps {
         pageLayoutPage.assertEditActionItemNotVisibleForAttachment(pageBlockName);
     }
 
-    @Then("^I see \"([^\"]*)\" inside Type selectbox$")
-    public void assertValueInsideTypeDropdown(String dropDownValue) {
-        pageLayoutPage.assertValueInsideDropdown(dropDownValue);
-    }
-
     @Then("^I see \"([^\"]*)\" inside page block details$")
     public void assertChangedFieldInsidePageBlockDetail(String changedFieldName) {
         pageLayoutPage.assertChangedFieldInsidePageBlockDetailDisplayed(changedFieldName);
