@@ -197,7 +197,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                      | fieldOrignalValue          | filterId         |
       | Charts Config         | Data Table Query(For All Data) | <default_Data_Table_Query> | ApiGeneratedId:0 |
-      | Charts Config         | Active                         | false                      | ApiGeneratedId:1 |
+      | Charts Config         | Active                         | true                       | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                      | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Charts Config         | Data Table Query(For All Data) | <new_Data_Table_Query> | FundingOpportunity | Name                      | Enhanced Pie chart         |
@@ -220,7 +220,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                      | fieldOrignalValue          | filterId         |
       | Charts Config         | Data Table Query(For All Data) | <default_Data_Table_Query> | ApiGeneratedId:0 |
-      | Charts Config         | Active                         | false                      | ApiGeneratedId:1 |
+      | Charts Config         | Active                         | true                       | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                      | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Charts Config         | Data Table Query(For All Data) | <new_Data_Table_Query> | FundingOpportunity | Name                      | Enhanced Pie chart         |
@@ -450,7 +450,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                      | fieldOrignalValue          | filterId         |
       | Charts Config         | Data Table Query(For All Data) | <default_Data_Table_Query> | ApiGeneratedId:0 |
-      | Charts Config         | Active                         | false                      | ApiGeneratedId:1 |
+      | Charts Config         | Active                         | true                       | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                      | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Charts Config         | Data Table Query(For All Data) | <new_Data_Table_Query> | GrantorHome        | Name                      | Enhanced Dual Axes         |
@@ -742,7 +742,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                      | fieldOrignalValue          | filterId         |
       | Charts Config         | Data Table Query(For All Data) | <default_Data_Table_Query> | ApiGeneratedId:0 |
-      | Charts Config         | Active                         | false                      | ApiGeneratedId:1 |
+      | Charts Config         | Active                         | true                       | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                      | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Charts Config         | Data Table Query(For All Data) | <new_Data_Table_Query> | FundingOpportunity | Name                      | Testing_Column             |
@@ -763,7 +763,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                      | fieldOrignalValue          | filterId         |
       | Charts Config         | Data Table Query(For All Data) | <default_Data_Table_Query> | ApiGeneratedId:0 |
-      | Charts Config         | Active                         | false                      | ApiGeneratedId:1 |
+      | Charts Config         | Active                         | true                       | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                      | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Charts Config         | Data Table Query(For All Data) | <new_Data_Table_Query> | FundingOpportunity | Name                      | Testing_Column             |
@@ -1427,3 +1427,158 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     Then I see "Enhanced Area Automation" displayed as chart title
+
+  @71726    @validateActiveFieldAtCharts-gGrant-EnhancedAreaCharts
+  Scenario: Validating enhanced area charts is getting displayed on UI while making changes of boolean field Active at configuration page -gGrants
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Charts Config         | Active    | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Active    | false         | Grants             | Name                      | Enhanced Area              |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    Then I do not see charts with id "EnhancedAreaId" displayed
+
+  @71727    @validateAll-axisPrefix-gGrants-EnhancedAreaCharts
+  Scenario: Change chart x-axis/Y-Axis prefix from config and validate inside grants phase for Enhanced Area Charts-gGrants
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Charts Config         | Active        | true              | ApiGeneratedId:0 |
+      | Charts Config         | X Axis Prefix |                   | ApiGeneratedId:1 |
+      | Charts Config         | Y Axis Prefix |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Active        | true          | Grants             | Name                      | Enhanced Area              |
+      | Charts Config         | X Axis Prefix | @             | Grants             | Name                      | Enhanced Area              |
+      | Charts Config         | Y Axis Prefix | $             | Grants             | Name                      | Enhanced Area              |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    Then I see "($)" at axis "highcharts-yaxis" for chart "EnhancedArea"
+    Then I see "(@)" at axis "highcharts-xaxis" for chart "EnhancedArea"
+
+  @71728    @validateAll-axisSuffix-gGrants-EnhancedAreaCharts
+  Scenario: Change chart x-axis/Y-Axis Suffix from config and validate inside grants phase for Enhanced Area Charts-gGrants
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Charts Config         | Active        | true              | ApiGeneratedId:0 |
+      | Charts Config         | X Axis Suffix |                   | ApiGeneratedId:1 |
+      | Charts Config         | Y Axis Suffix |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Active        | true          | Grants             | Name                      | Enhanced Area              |
+      | Charts Config         | X Axis Prefix | @             | Grants             | Name                      | Enhanced Area              |
+      | Charts Config         | Y Axis Prefix | $             | Grants             | Name                      | Enhanced Area              |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    Then I see "($)" at axis "highcharts-yaxis" for chart "EnhancedArea"
+    Then I see "(@)" at axis "highcharts-xaxis" for chart "EnhancedArea"
+
+  @71730    @validateEditDataTableQueryforAllDataFieldFromEnhancedViewIcon-gGrants-EnhancedAreaCharts
+  Scenario Outline: Validate expected column from Enhanced Area chart modal(show all data from enhanced view icon) displayed/Not displayed - enhanced View
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                      | fieldOrignalValue          | filterId         |
+      | Charts Config         | Data Table Query(For All Data) | <default_Data_Table_Query> | ApiGeneratedId:0 |
+      | Charts Config         | Active                         | true                       | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                      | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Data Table Query(For All Data) | <new_Data_Table_Query> | Grants             | Name                      | Enhanced Area              |
+      | Charts Config         | Active                         | true                   | Grants             | Name                      | Enhanced Area              |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I click on menu icon of chart "Enhanced Area" with title "Enhanced View"
+    When I click modal button "Show All Data"
+    Then I softly do not see "Change Request #" in flex table header "EnhancedAreaIdrecordsModal"
+
+    Examples:
+      | default_Data_Table_Query                                                                                                            | new_Data_Table_Query                                                                                                           |
+      | SELECT Name,Award__r.Status__c ,Status__c FROM AmendmentRequest__c Where Award__r.Status__c = 'Activated' AND Status__c!='Approved' | SELECT Award__r.Status__c ,Status__c FROM AmendmentRequest__c Where Award__r.Status__c = 'Activated' AND Status__c!='Approved' |
+
+  @71731    @validateEditDataTableQueryforAllDataFieldFromBurgerMenu-gGrants-EnhancedAreaCharts
+  Scenario Outline: Validate expected column from Enhanced Area chart modal(show all data from enhanced view icon) displayed/Not displayed - Burger menu icon
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                      | fieldOrignalValue          | filterId         |
+      | Charts Config         | Data Table Query(For All Data) | <default_Data_Table_Query> | ApiGeneratedId:0 |
+      | Charts Config         | Active                         | true                       | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                      | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Data Table Query(For All Data) | <new_Data_Table_Query> | Grants             | Name                      | Enhanced Area              |
+      | Charts Config         | Active                         | true                   | Grants             | Name                      | Enhanced Area              |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I click on menu icon of chart "Enhanced Area" with title "Menu"
+    When I select "Show All Data" from chart menu of chart "Enhanced Area"
+    Then I softly do not see "Change Request #" in flex table header "EnhancedAreaIdrecordsModal"
+
+    Examples:
+      | default_Data_Table_Query                                                                                                            | new_Data_Table_Query                                                                                                           |
+      | SELECT Name,Award__r.Status__c ,Status__c FROM AmendmentRequest__c Where Award__r.Status__c = 'Activated' AND Status__c!='Approved' | SELECT Award__r.Status__c ,Status__c FROM AmendmentRequest__c Where Award__r.Status__c = 'Activated' AND Status__c!='Approved' |
+
+  @71733    @validateTitleFieldAtCharts-gAnnouncements-EnhancedAreaSplineCharts
+  Scenario: Validating enhanced area spline charts title is getting displayed on UI while making changes at configuration page -gAnnouncements
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue    | filterId         |
+      | Charts Config         | Active    | true                 | ApiGeneratedId:0 |
+      | Charts Config         | Title     | Enhanced Area Spline | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Active    | true                            | FundingOpportunity | Name                      | Enhanced Area Spline       |
+      | Charts Config         | Title     | Enhanced Area Spline Automation | FundingOpportunity | Name                      | Enhanced Area Spline       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    Then I see "Enhanced Area Spline Automation" displayed as chart title
+
+  @71734    @validateActiveFieldAtCharts-gAnnouncements-EnhancedAreaSplineCharts
+  Scenario: Validating enhanced area spline charts is getting displayed on UI while making changes of boolean field Active at configuration page -gGrants
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Charts Config         | Active    | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Active    | false         | FundingOpportunity | Name                      | Enhanced Area Spline       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    Then I do not see charts with id "EnhancedAreaSplineId" displayed
+
+  @71511    @validateViewActionOnShowAllDataModalComingOnBurgerIconClick-EnhancedLineCharts
+  Scenario: Validate Enhanced chart view record action on show all data modal - Enhanced Line chart - burger icon
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Charts Config         | Active    | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Active    | true          | GrantorHome        | Name                      | Enhanced Line              |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I click on menu icon of chart "Enhanced Line" with title "Menu"
+    When I select "Show All Data" from chart menu of chart "Enhanced Line"
+    When I perform quick search for "AP-755-179" inside charts modal with id "EnhancedLineIdmyTableSearch"
+    When I click on "View" icon for "AP-755-179" inside flex table with id "EnhancedLineIdrecordsModal"
+    When I switch to tab number "1"
+    Then I see "APP1- FOA for DHP" shown as over view title in header "Application"
+
+  @71513    @validateViewActionOnShowAllDataModalComingOnEnhancedViewClick-EnhancedLineCharts
+  Scenario: Validate Enhanced chart view record action on show all data modal - Enhanced Line chart - enhanced view
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Charts Config         | Active    | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Active    | true          | GrantorHome        | Name                      | Enhanced Line              |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I click on menu icon of chart "Enhanced Line" with title "Enhanced View"
+    When I click modal button "Show All Data"
+    When I perform quick search for "AP-755-179" inside charts modal with id "EnhancedLineIdmyTableSearch"
+    When I click on "View" icon for "AP-755-179" inside flex table with id "EnhancedLineIdrecordsModal"
+    When I switch to tab number "1"
+    Then I see "APP1- FOA for DHP" shown as over view title in header "Application"

@@ -41,6 +41,11 @@ public class ChartsSteps {
         chartsPage.getHoveringOnEnhancedCharts(chartId, chartsType);
     }
 
+    @When("^I perform quick search for \"([^\"]*)\" inside charts modal with id \"([^\"]*)\"$")
+    public void performSearchInsideChartsModal(String searchInput, String chartTableId) {
+        chartsPage.performQuickSearchInsideChartsModal(searchInput, chartTableId);
+    }
+
     @Then("^I see \"([^\"]*)\" displayed in modal$")
     public void assertModalTitle(String titleName) {
         chartsPage.isTitleOfModal(titleName);

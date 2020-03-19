@@ -95,6 +95,18 @@ public class ChartsPage extends GovGrantsManager {
         EyeThink.core().click().on(By.xpath(parentLocator));
     }
 
+    /**
+     * perform quick search without click on search icon inside enhanced charts (show all data) modal
+     *
+     * @param searchInput
+     * @param chartTableId
+     */
+    public void performQuickSearchInsideChartsModal(String searchInput, String chartTableId) {
+        By searchInputBox = By.xpath("//input[@id='" + chartTableId + "']");
+        EyeThink.core().enterText().clear(searchInputBox);
+        EyeThink.core().enterText().in(searchInputBox, searchInput);
+    }
+
     public void assertChartTitleDisplayed(String usage, String title) {
         if (usage.equalsIgnoreCase("see")) {
             Assert.assertTrue(isChartTitleDisplayed(title));
@@ -110,7 +122,7 @@ public class ChartsPage extends GovGrantsManager {
      * @param text
      */
     public void assertTextDisplayedOnEnhacedChartsHover(String usage, String text) {
-        By textInsideEnhancedChartHover = By.xpath("//div[contains(@class,'highcharts-label highcharts-tooltip')]//td[contains(text(),'" + text + "')]|//div[contains(@class,'highcharts-label highcharts-tooltip')]//td/b[contains(text(),'" + text + "')] | //div[contains(@class,'highcharts-label highcharts-tooltip')]//span[contains(text(),'"+ text +"')]");
+        By textInsideEnhancedChartHover = By.xpath("//div[contains(@class,'highcharts-label highcharts-tooltip')]//td[contains(text(),'" + text + "')]|//div[contains(@class,'highcharts-label highcharts-tooltip')]//td/b[contains(text(),'" + text + "')] | //div[contains(@class,'highcharts-label highcharts-tooltip')]//span[contains(text(),'" + text + "')]");
         EyeThink.core().WaitFor().makeThreadSleep(2000);
         if (usage.contains("softly")) {
             EyeThink.core().assertion()
