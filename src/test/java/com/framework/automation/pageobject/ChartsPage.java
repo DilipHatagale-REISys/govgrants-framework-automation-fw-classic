@@ -110,7 +110,7 @@ public class ChartsPage extends GovGrantsManager {
      * @param text
      */
     public void assertTextDisplayedOnEnhacedChartsHover(String usage, String text) {
-        By textInsideEnhancedChartHover = By.xpath("//div[contains(@class,'highcharts-label highcharts-tooltip')]//td[contains(text(),'" + text + "')]|//div[contains(@class,'highcharts-label highcharts-tooltip')]//td/b[contains(text(),'" + text + "')] | //div[contains(@class,'highcharts-label highcharts-tooltip')]//span[contains(text(),'"+ text +"')]");
+        By textInsideEnhancedChartHover = By.xpath("//div[contains(@class,'highcharts-label highcharts-tooltip')]//td[contains(text(),'" + text + "')]|//div[contains(@class,'highcharts-label highcharts-tooltip')]//td/b[contains(text(),'" + text + "')] | //div[contains(@class,'highcharts-label highcharts-tooltip')]//span[contains(text(),'" + text + "')]");
         EyeThink.core().WaitFor().makeThreadSleep(2000);
         if (usage.contains("softly")) {
             EyeThink.core().assertion()
