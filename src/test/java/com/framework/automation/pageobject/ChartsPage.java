@@ -95,18 +95,6 @@ public class ChartsPage extends GovGrantsManager {
         EyeThink.core().click().on(By.xpath(parentLocator));
     }
 
-    /**
-     * perform quick search without click on search icon inside enhanced charts (show all data) modal
-     *
-     * @param searchInput
-     * @param chartTableId
-     */
-    public void performQuickSearchInsideChartsModal(String searchInput, String chartTableId) {
-        By searchInputBox = By.xpath("//input[@id='" + chartTableId + "']");
-        EyeThink.core().enterText().clear(searchInputBox);
-        EyeThink.core().enterText().in(searchInputBox, searchInput);
-    }
-
     public void assertChartTitleDisplayed(String usage, String title) {
         if (usage.equalsIgnoreCase("see")) {
             Assert.assertTrue(isChartTitleDisplayed(title));
