@@ -1582,3 +1582,167 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I click on "View" icon for "AP-755-179" inside flex table with id "EnhancedLineIdrecordsModal"
     When I switch to tab number "1"
     Then I see "APP1- FOA for DHP" shown as over view title in header "Application"
+
+
+  @71735    @validateAll-axisPrefix-gGrants-EnhancedAreaSplineCharts
+  Scenario: Change chart x-axis/Y-Axis prefix from config and validate inside grants phase for Enhanced Area splineCharts-gGrants
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Charts Config         | Active        | true              | ApiGeneratedId:0 |
+      | Charts Config         | X Axis Prefix |                   | ApiGeneratedId:1 |
+      | Charts Config         | Y Axis Prefix |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Active        | true          | FundingOpportunity | Name                      | Enhanced Area Spline       |
+      | Charts Config         | X Axis Prefix | @             | FundingOpportunity | Name                      | Enhanced Area Spline       |
+      | Charts Config         | Y Axis Prefix | $             | FundingOpportunity | Name                      | Enhanced Area Spline       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    Then I see "($)" at axis "highcharts-yaxis" for chart "EnhancedAreaSpline"
+    Then I see "(@)" at axis "highcharts-xaxis" for chart "EnhancedAreaSpline"
+
+  @71736    @validateAll-axisSuffix-gGrants-EnhancedAreaSplineCharts
+  Scenario: Change chart x-axis/Y-Axis suffix from config and validate inside grants phase for Enhanced Area splineCharts-gGrants
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Charts Config         | Active        | true              | ApiGeneratedId:0 |
+      | Charts Config         | X Axis Suffix |                   | ApiGeneratedId:1 |
+      | Charts Config         | Y Axis Suffix |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Active        | true          | FundingOpportunity | Name                      | Enhanced Area Spline       |
+      | Charts Config         | X Axis Suffix | @             | FundingOpportunity | Name                      | Enhanced Area Spline       |
+      | Charts Config         | Y Axis Suffix | $             | FundingOpportunity | Name                      | Enhanced Area Spline       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    Then I see "($)" at axis "highcharts-yaxis" for chart "EnhancedAreaSpline"
+    Then I see "(@)" at axis "highcharts-xaxis" for chart "EnhancedAreaSpline"
+
+  @71737    @validateEditDataTableQueryforAllDataFieldFromEnhancedView-gAnnouncement-EnhancedAreaSplineCharts
+  Scenario Outline: Validate expected column from Enhanced Area Spline chart modal(show all data from enhanced view icon) displayed/Not displayed - from enhanced view
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                      | fieldOrignalValue          | filterId         |
+      | Charts Config         | Data Table Query(For All Data) | <default_Data_Table_Query> | ApiGeneratedId:0 |
+      | Charts Config         | Active                         | true                       | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                      | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Data Table Query(For All Data) | <new_Data_Table_Query> | FundingOpportunity | Name                      | Enhanced Area Spline       |
+      | Charts Config         | Active                         | true                   | FundingOpportunity | Name                      | Enhanced Area Spline       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click on menu icon of chart "Enhanced Area Spline" with title "Enhanced View"
+    When I click modal button "Show All Data"
+    Then I softly do not see "Change Request #" in flex table header "EnhancedAreaSplineIdrecordsModal"
+
+    Examples:
+      | default_Data_Table_Query                                                                                                            | new_Data_Table_Query                                                                                                           |
+      | SELECT Name,Award__r.Status__c ,Status__c FROM AmendmentRequest__c Where Award__r.Status__c = 'Activated' AND Status__c!='Approved' | SELECT Award__r.Status__c ,Status__c FROM AmendmentRequest__c Where Award__r.Status__c = 'Activated' AND Status__c!='Approved' |
+
+  @71738    @validateEditDataTableQueryforAllDataFieldFromBurgerMenuIcon-gAnnouncement-EnhancedAreaSplineCharts
+  Scenario Outline: Validate expected column from Enhanced Area Spline chart modal(show all data from enhanced view icon) displayed/Not displayed - from burger menu icon
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                      | fieldOrignalValue          | filterId         |
+      | Charts Config         | Data Table Query(For All Data) | <default_Data_Table_Query> | ApiGeneratedId:0 |
+      | Charts Config         | Active                         | true                       | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                      | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Data Table Query(For All Data) | <new_Data_Table_Query> | FundingOpportunity | Name                      | Enhanced Area Spline       |
+      | Charts Config         | Active                         | true                   | FundingOpportunity | Name                      | Enhanced Area Spline       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click on menu icon of chart "Enhanced Area Spline" with title "Menu"
+    When I select "Show All Data" from chart menu of chart "Enhanced Area Spline"
+    Then I softly do not see "Change Request #" in flex table header "EnhancedAreaSplineIdrecordsModal"
+
+    Examples:
+      | default_Data_Table_Query                                                                                                            | new_Data_Table_Query                                                                                                           |
+      | SELECT Name,Award__r.Status__c ,Status__c FROM AmendmentRequest__c Where Award__r.Status__c = 'Activated' AND Status__c!='Approved' | SELECT Award__r.Status__c ,Status__c FROM AmendmentRequest__c Where Award__r.Status__c = 'Activated' AND Status__c!='Approved' |
+
+  @71740    @validateTitleFieldAtCharts-gAnnouncement-EnhancedScatterCharts
+  Scenario: Changing chart title for 'EnhancedScatterId' enhanced chart in configuration and validating inside gannouncement
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Charts Config         | Title     | Enhanced Scatter  | ApiGeneratedId:0 |
+      | Charts Config         | Active    | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue               | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Title     | Automation Enhanced Scatter | FundingOpportunity | Name                      | Enhanced Scatter           |
+      | Charts Config         | Active    | true                        | FundingOpportunity | Name                      | Enhanced Scatter           |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    Then I see "Automation Enhanced Scatter" displayed as chart title
+
+  @71741    @validateActiveFieldAtCharts-gAnnouncements-EnhancedScatterCharts
+  Scenario: Validating Enhanced Scatter Charts is getting displayed on UI while making changes of boolean field Active at configuration page -gGrants
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Charts Config         | Active    | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Active    | false         | FundingOpportunity | Name                      | Enhanced Scatter           |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    Then I do not see charts with id "EnhancedScatterId" displayed
+
+  @71744    @validateEditDataTableQueryforAllDataFieldFromEnhancedView-gAnnouncement-EnhancedScatterCharts
+  Scenario Outline: Validate expected column from Enhanced Scatter chart modal(show all data from enhanced view icon) displayed/Not displayed - from enhanced view
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                      | fieldOrignalValue          | filterId         |
+      | Charts Config         | Data Table Query(For All Data) | <default_Data_Table_Query> | ApiGeneratedId:0 |
+      | Charts Config         | Active                         | true                       | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                      | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Data Table Query(For All Data) | <new_Data_Table_Query> | FundingOpportunity | Name                      | Enhanced Scatter           |
+      | Charts Config         | Active                         | true                   | FundingOpportunity | Name                      | Enhanced Scatter           |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click on menu icon of chart "Enhanced Scatter" with title "Enhanced View"
+    When I click modal button "Show All Data"
+    Then I softly do not see "Announcement Title" in flex table header "EnhancedScatterIdrecordsModal"
+
+    Examples:
+      | default_Data_Table_Query                                                                                           | new_Data_Table_Query                                                                           |
+      | SELECT Name,AnnouncementName__c,AnnouncementType__c,Status__c FROM Announcement__c where RecordType.Name='Grantor' | SELECT Name,AnnouncementType__c,Status__c FROM Announcement__c where RecordType.Name='Grantor' |
+
+  @71745    @validateEditDataTableQueryforAllDataFieldFromBurgerMenu-gAnnouncement-EnhancedScatterCharts
+  Scenario Outline: Validate expected column from Enhanced Scatter chart modal(show all data from enhanced view icon) displayed/Not displayed - from burger menu
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                      | fieldOrignalValue          | filterId         |
+      | Charts Config         | Data Table Query(For All Data) | <default_Data_Table_Query> | ApiGeneratedId:0 |
+      | Charts Config         | Active                         | true                       | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                      | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Data Table Query(For All Data) | <new_Data_Table_Query> | FundingOpportunity | Name                      | Enhanced Scatter           |
+      | Charts Config         | Active                         | true                   | FundingOpportunity | Name                      | Enhanced Scatter           |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click on menu icon of chart "Enhanced Scatter" with title "Menu"
+    When I select "Show All Data" from chart menu of chart "Enhanced Scatter"
+    Then I softly do not see "Announcement Title" in flex table header "EnhancedScatterIdrecordsModal"
+
+    Examples:
+      | default_Data_Table_Query                                                                                           | new_Data_Table_Query                                                                           |
+      | SELECT Name,AnnouncementName__c,AnnouncementType__c,Status__c FROM Announcement__c where RecordType.Name='Grantor' | SELECT Name,AnnouncementType__c,Status__c FROM Announcement__c where RecordType.Name='Grantor' |
+
+  @71917    @validateDisableLegendsFieldsWithFalse-gAnnouncement-EnhancedScatterCharts
+  Scenario: validate disable legends fields is working or not by viewing bottom element of charts is getting displayed on unchecking checkbox - enhanced scatter
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Charts Config         | Disable Legend | true              | ApiGeneratedId:0 |
+      | Charts Config         | Active         | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Disable Legend | true          | FundingOpportunity | Name                      | Enhanced Scatter           |
+      | Charts Config         | Active         | true          | FundingOpportunity | Name                      | Enhanced Scatter           |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    Then I do not see chart legends are displayed for chart/enhanced Charts "EnhancedScatterchart"
