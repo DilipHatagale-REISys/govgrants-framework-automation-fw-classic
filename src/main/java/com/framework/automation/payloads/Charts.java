@@ -129,6 +129,11 @@ public class Charts {
                         apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__ChartConfig__c), filterClause),
                         String.valueOf(SObjectAPIs.GNT__DataTableHeader__c), value);
                 break;
+            case "Y FORMATTED NUMBER":
+                finalPayload = String.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__ChartConfig__c),
+                        apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__ChartConfig__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__YFormattedNumber__c), value);
+                break;
         }
         System.out.println("method for finalpayload " + finalPayload);
         return finalPayload;

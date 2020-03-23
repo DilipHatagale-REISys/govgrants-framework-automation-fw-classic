@@ -36,6 +36,11 @@ public class ConfigurationSteps {
         }
     }
 
+    @Given("^I delete the record \"([^\"]*)\" from the object \"([^\"]*)\"$")
+    public void deleteTestData(String recordName, String objectType) {
+        projectAPI.deletionApiProgramRecord(recordName, objectType);
+    }
+
     @And("I update the locale and timezone related changes:$")
     public void iUpdateTheLocaleAndTimezone(List<Map<String, String>> configParameters) {
         for (Map<String, String> parameters : configParameters)

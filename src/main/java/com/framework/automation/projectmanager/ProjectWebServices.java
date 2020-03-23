@@ -162,6 +162,29 @@ public class ProjectWebServices {
         EyeThink.core().apiCall().putCall(null, jArray.toString(), finalEndPoint, null, null, tokenString);
     }
 
+    /**
+     * calls the api to delete test program data
+     *
+     * @param objectName - the object for which test data should be deleted
+     * @param recordName - the name or title of the record
+     */
+    public void deletionApiProgramRecord(String recordName, String objectName) {
+        System.out.print("Making API call... ");
+        getAuthToken();
+        String finalEndPoint = endPoint + "/services/apexrest/AutomationAPI/delete";
+
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("objectName", objectName);
+        jsonObject.addProperty("criteria", "ProgramName__c='" + recordName + "'");
+
+        Response response = EyeThink.core().apiCall().DeleteCall(jsonObject, null, finalEndPoint, "Authorization", "Bearer " + tokenString,
+                null);
+        System.out.println(finalEndPoint);
+        response.prettyPrint();
+        System.out.println("Completed.");
+        assertStatusCode(response);
+    }
+
     ////////////// Setup Default Config//////////////
 
     /**
