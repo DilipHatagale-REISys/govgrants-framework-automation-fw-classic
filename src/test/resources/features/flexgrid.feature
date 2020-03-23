@@ -140,8 +140,8 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
-    When I perform quick search for "Environment" in "toggleFGridProgramOutcomes" panel
-    Then I see "View" icon for "toggleFGridProgramOutcomes" is at position "0" inside flex table
+    When I perform quick search for "Environment" in "---program:-:programOutComesTableId---" panel
+    Then I see "View" icon for "---program:-:programOutComesTableId---" is at position "0" inside flex table
 
   @49450    @buttonHelpTextFieldAtProgramOutcomesFlexTableAction-gPlanning
   Scenario: Changing content of button help text field at program outcome flex table action from config and validating it inside flex table of programs-planning
@@ -158,7 +158,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
-    When I perform quick search for "Environment" in "toggleFGridProgramOutcomes" panel
+    When I perform quick search for "Environment" in "---program:-:programOutComesTableId---" panel
     Then I see "Test Automation" as title for "Environment" inside flex table action
 
   @49451    @viewActionOpensInNewWindowAtProgramOutcomesFlexTable-gPlanning
@@ -176,7 +176,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
-    When I perform quick search for "Environment" in "toggleFGridProgramOutcomes" panel
+    When I perform quick search for "Environment" in "---program:-:programOutComesTableId---" panel
     When I click on "View" icon for "Environment" inside table
     Then I see new tab is opened
 
@@ -216,7 +216,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
-    When I click on "View" icon for "Environment" inside table with table id "toggleFGridProgramOutcomes" without processing
+    When I click on "View" icon for "Environment" inside table with table id "---program:-:programOutComesTableId---" without processing
     Then I see confirmation box with body "Automation" is displayed
 
   @49454    @hideForProfileFieldAtProgramOutcomesFlexTableViewAction-gPlanning
@@ -234,7 +234,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
-    When I perform quick search for "Environment" in "toggleFGridProgramOutcomes" panel
+    When I perform quick search for "Environment" in "---program:-:programOutComesTableId---" panel
     Then I see "View" icon for "Environment" is not displayed inside flex table
 
   @49455    @hideForUserFieldAtProgramOutcomesFlexTableViewAction-gPlanning
@@ -252,7 +252,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
-    When I perform quick search for "Environment" in "toggleFGridProgramOutcomes" panel
+    When I perform quick search for "Environment" in "---program:-:programOutComesTableId---" panel
     Then I see "View" icon for "Environment" is not displayed inside flex table
 
   @49456    @hideForContextFieldAtProgramOutcomesFlexTableViewAction-gPlanning
@@ -270,7 +270,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
-    When I perform quick search for "Environment" in "toggleFGridProgramOutcomes" panel
+    When I perform quick search for "Environment" in "---program:-:programOutComesTableId---" panel
     Then I see "View" icon for "Environment" is not displayed inside flex table
 
   @49457    @viewActionOpensInSameWindowAtProgramOutcomesFlexTable-gPlanning
@@ -288,7 +288,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
-    When I perform quick search for "Environment" in "toggleFGridProgramOutcomes" panel
+    When I perform quick search for "Environment" in "---program:-:programOutComesTableId---" panel
     When I click on "View" icon for "Environment" inside table
     Then I see no new tab is opened
 
@@ -307,7 +307,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
-    When I perform quick search for "Environment" in "toggleFGridProgramOutcomes" panel
+    When I perform quick search for "Environment" in "---program:-:programOutComesTableId---" panel
     When I click on "View" icon for "Environment" inside table
     Then I see "View" opens in overLay window
 
@@ -326,7 +326,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
-    When I perform quick search for "Environment" in "toggleFGridProgramOutcomes" panel
+    When I perform quick search for "Environment" in "---program:-:programOutComesTableId---" panel
     When I click on "Edit" icon for "Environment" inside table
     Then I see inline edit options is displayed for flex grid
 
@@ -347,7 +347,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
-    When I perform quick search for "Environment" in "toggleFGridProgramOutcomes" panel
+    When I perform quick search for "Environment" in "---program:-:programOutComesTableId---" panel
     When I click on "View" icon for "Environment" inside table
     Then I see edit opens with "<newActionUrl>"
 
@@ -392,7 +392,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
-    When I perform quick search for "Environment" in "toggleFGridProgramOutcomes" panel
+    When I perform quick search for "Environment" in "---program:-:programOutComesTableId---" panel
     Then I see "Edit" icon for "Environment" is not displayed inside flex table
 
   @49546    @hideForUserFieldAtProgramOutcomesParentFlexTableEditAction-gPlanning
@@ -410,7 +410,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
-    When I perform quick search for "Environment" in "toggleFGridProgramOutcomes" panel
+    When I perform quick search for "Environment" in "---program:-:programOutComesTableId---" panel
     Then I see "Edit" icon for "Environment" is not displayed inside flex table
 
   @50210    @headerFieldAtProgramOutcomesParentFlexTable-gPlanning
@@ -428,7 +428,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
-    Then I see "Test Automation" shown as inside "toggleFGridProgramOutcomes"
+    Then I see "Test Automation" shown as inside "---program:-:programOutComesTableId---"
 
   @50211    @disablingPDFExportFileAtProgramOutcomesParentFlexTable-gPlanning
   Scenario: validate disabling of PDF/Excel download from menu option in program outcomes flex table of programs-planning
@@ -445,7 +445,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
-    When I click on parallel lines menu bar with data target value "#toggleFGridProgramOutcomes"
+    When I click on parallel lines menu bar with data target value "#---program:-:programOutComesTableId---"
     Then I see "Download as PDF" options inside "Key Outcomes" disabled
 
   @62728    @disablingPDFExportFileAtProgramOutcomesParentFlexTable-gPlanning
@@ -463,7 +463,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
-    When I click on parallel lines menu bar with data target value "#toggleFGridProgramOutcomes"
+    When I click on parallel lines menu bar with data target value "#---program:-:programOutComesTableId---"
     Then I see "Download as CSV" options inside "Key Outcomes" disabled
 
   @49461    @enableTotalFieldAtProgramOutcomesFlexTable-gPlanning
@@ -500,7 +500,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
-    Then I see quick search option disabled for table "toggleFGridProgramOutcomes "
+    Then I see quick search option disabled for table "---program:-:programOutComesTableId--- "
 
   @50213    @disablingMenuIconForProgramOutcomesFlexTable-gPlanning @smoke
   Scenario: validate disabling of menu icon from program outcomes flex table-gPlanning
@@ -534,7 +534,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
-    Then I see "Total" inside rows of enhanced grid id "toggleFGridProgramOutcomes"
+    Then I see "Total" inside rows of enhanced grid id "---program:-:programOutComesTableId---"
 
   @50217    @enableTotalRecordsCountFieldAtProgramOutcomesFlexTable-gPlanning @smoke
   Scenario: validate disbaling of total row count in flex table of programs-planning
@@ -568,7 +568,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
-    Then I see "#" shown inside flex table with id "toggleFGridProgramOutcomes"
+    Then I see "#" shown inside flex table with id "---program:-:programOutComesTableId---"
 
   @50226    @headerHelpTextFieldAtProgramOutcomesFlexTable-gPlanning
   Scenario Outline: Changing content of help text field at program outcomes flex table from config and validating it at program outcomes flex table planning-Program
@@ -606,7 +606,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
-    When I click on parallel lines menu bar with data target value "#toggleFGridProgramOutcomes"
+    When I click on parallel lines menu bar with data target value "#---program:-:programOutComesTableId---"
     Then I see "Help" options inside "Key Outcomes" enabled
 
   @50230   @orderBySortByFieldAtProgramOutcomesFlexTableForAscendingOrder-gPlanning
@@ -626,7 +626,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
-    Then I see column "Target" value is in "Ascending" order for table id "toggleFGridProgramOutcomes"
+    Then I see column "Target" value is in "Ascending" order for table id "---program:-:programOutComesTableId---"
 
   @50231   @orderBySortByFieldAtProgramOutcomesFlexTableForDescendingOrder-gPlanning
   Scenario: Changing specific column value in Descending order with order by and sort by field from config and validating it inside program outcomes flex table of programs-planning
@@ -645,7 +645,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
-    Then I see column "Target" value is in "Descending" order for table id "toggleFGridProgramOutcomes"
+    Then I see column "Target" value is in "Descending" order for table id "---program:-:programOutComesTableId---"
 
   @50232    @fieldLabelOverrideFieldAtProgramOutcomesFlexTableColumnHeader-gPlanning
   Scenario: Changing specific column name of program outcomes flex table from config and validating it inside program outcomes flex table of programs-planning
@@ -662,7 +662,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
-    Then I see "Test Automation" shown inside flex table with id "toggleFGridProgramOutcomes"
+    Then I see "Test Automation" shown inside flex table with id "---program:-:programOutComesTableId---"
 
   @50229    @displayFieldNameFieldWithAddingfieldNamesOfDifferentDataTypes-gPlanning @smoke
   Scenario Outline: validate adding field names for different data types in program outcomes flex table of programs-planning
@@ -679,7 +679,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
-    Then I see "<fieldDisplayNames>" in program Outcomes flex table header with id "toggleFGridProgramOutcomes"
+    Then I see "<fieldDisplayNames>" in program Outcomes flex table header with id "---program:-:programOutComesTableId---"
 
     Examples:
       | fieldDisplayNames   | newFieldsApi                                                                                                                                                                          | defaultFieldsApi                                                                                                                                                        |
@@ -705,7 +705,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
-    Then I see "ID" column inside Flex grid table id "toggleFGridProgramOutcomes" of width "width: 50%;"
+    Then I see "ID" column inside Flex grid table id "---program:-:programOutComesTableId---" of width "width: 50%;"
 
   @50239    @refreshBehaviourFieldAtApplicationBudgetPeriodsFlexTableAsRefreshEntirePageForEditAction-gPlanning
   Scenario: validate flex table action field- refresh entire page
