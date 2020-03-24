@@ -1746,3 +1746,164 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     Then I do not see chart legends are displayed for chart/enhanced Charts "EnhancedScatterchart"
+
+  @71918    @validateX-axisAndY-axisLabelField-gHOME-EnhancedSplineCharts
+  Scenario: Change chart x-axis and y-axis label for 'EnhancedSplineId' chart in configuration and validating inside HOME
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
+      | Charts Config         | Active       | true              | ApiGeneratedId:0 |
+      | Charts Config         | X-Axis Label | Status            | ApiGeneratedId:1 |
+      | Charts Config         | Y-Axis Label | Total Amendments  | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName    | fieldNewValue        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Active       | true                 | Grants             | Name                      | Enhanced Spline            |
+      | Charts Config         | X-Axis Label | AutomationStatus     | Grants             | Name                      | Enhanced Spline            |
+      | Charts Config         | Y-Axis Label | AutomationAmendments | Grants             | Name                      | Enhanced Spline            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    Then I Softly see "AutomationStatus" at axis "highcharts-xaxis" for chart "EnhancedSpline"
+    Then I Softly see "AutomationAmendments" at axis "highcharts-yaxis" for chart "EnhancedSpline"
+
+  @71920    @validateAll-axisPrefix-gGrants-EnhancedSplineCharts
+  Scenario: Change chart x-axis/Y-Axis prefix from config and validate inside grants phase for Enhanced spline Charts-gGrants
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Charts Config         | Active        | true              | ApiGeneratedId:0 |
+      | Charts Config         | X Axis Prefix |                   | ApiGeneratedId:1 |
+      | Charts Config         | Y Axis Prefix |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Active        | true          | Grants             | Name                      | Enhanced Spline            |
+      | Charts Config         | X Axis Prefix | @             | Grants             | Name                      | Enhanced Spline            |
+      | Charts Config         | Y Axis Prefix | $             | Grants             | Name                      | Enhanced Spline            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    Then I see "($)" at axis "highcharts-yaxis" for chart "EnhancedSpline"
+    Then I see "(@)" at axis "highcharts-xaxis" for chart "EnhancedSpline"
+
+  @71922    @validateAll-axisSuffix-gGrants-EnhancedSplineCharts
+  Scenario: Change chart x-axis/Y-Axis suffix from config and validate inside grants phase for Enhanced spline Charts-gGrants
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Charts Config         | Active        | true              | ApiGeneratedId:0 |
+      | Charts Config         | X Axis Suffix |                   | ApiGeneratedId:1 |
+      | Charts Config         | Y Axis Suffix |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Active        | true          | Grants             | Name                      | Enhanced Spline            |
+      | Charts Config         | X Axis Suffix | @             | Grants             | Name                      | Enhanced Spline            |
+      | Charts Config         | Y Axis Suffix | $             | Grants             | Name                      | Enhanced Spline            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    Then I see "($)" at axis "highcharts-yaxis" for chart "EnhancedSpline"
+    Then I see "(@)" at axis "highcharts-xaxis" for chart "EnhancedSpline"
+
+  @71923    @validateAllDataTableHeaderFieldFromEnhancedView-gGrants-EnhancedSplineCharts
+  Scenario: Validate All Data table header text on UI after making changes from config - EnhancedSplineCharts - enhanced view
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue               | filterId         |
+      | Charts Config         | All data table header | List of Announcements by Status | ApiGeneratedId:0 |
+      | Charts Config         | Active                | true                            | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | All data table header | Test Automation Header | Grants             | Name                      | Enhanced Spline            |
+      | Charts Config         | Active                | true                   | Grants             | Name                      | Enhanced Spline            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I click on menu icon of chart "Enhanced Spline" with title "Enhanced View"
+    When I click modal button "Show All Data"
+    Then I see "Test Automation Header" displayed in modal
+
+  @71924    @validateAllDataTableHeaderFieldFromBurgerIcon-gGrants-EnhancedSplineCharts
+  Scenario: Validate All Data table header text on UI after making changes from config - EnhancedSplineCharts - burger icon
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue               | filterId         |
+      | Charts Config         | All data table header | List of Announcements by Status | ApiGeneratedId:0 |
+      | Charts Config         | Active                | true                            | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | All data table header | Test Automation Header | Grants             | Name                      | Enhanced Spline            |
+      | Charts Config         | Active                | true                   | Grants             | Name                      | Enhanced Spline            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I click on menu icon of chart "Enhanced Spline" with title "Menu"
+    When I select "Show All Data" from chart menu of chart "Enhanced Spline"
+    Then I see "Test Automation Header" displayed in modal
+
+  @71927    @validateViewActionOnShowAllDataModalComingOnBurgerIconClick-EnhancedSplineCharts
+  Scenario: Validate Enhanced chart view record action on show all data modal - Enhanced spline chart - burger icon
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Charts Config         | Active    | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Active    | true          | Grants             | Name                      | Enhanced Spline            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I click on menu icon of chart "Enhanced Spline" with title "Menu"
+    When I select "Show All Data" from chart menu of chart "Enhanced Spline"
+    When I perform quick search for "AR-0142" inside charts modal with id "EnhancedSplineIdmyTableSearch"
+    When I click on "View" icon for "AR-0142" inside flex table with id "EnhancedSplineIdrecordsModal"
+    When I switch to tab number "1"
+    Then I see "This is the test application for IE 11" shown as over view title in header "Amendment Request"
+
+  @71928    @validateViewActionOnShowAllDataModalComingOnEnhancedViewClick-EnhancedSplineCharts
+  Scenario: Validate Enhanced chart view record action on show all data modal - Enhanced spline chart - enhanced view
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Charts Config         | Active    | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Active    | true          | Grants             | Name                      | Enhanced Spline            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I click on menu icon of chart "Enhanced Spline" with title "Enhanced View"
+    When I click modal button "Show All Data"
+    When I perform quick search for "AR-0142" inside charts modal with id "EnhancedSplineIdmyTableSearch"
+    When I click on "View" icon for "AR-0142" inside flex table with id "EnhancedSplineIdrecordsModal"
+    When I switch to tab number "1"
+    Then I see "This is the test application for IE 11" shown as over view title in header "Amendment Request"
+
+  @71930    @validateEditDataTableQueryforAllDataFieldFromBurgerMenuIcon-gGrants-EnhancedSplineCharts
+  Scenario Outline: Validate expected column from Enhanced spline chart modal(show all data from enhanced view icon) displayed/Not displayed - burger menu
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                      | fieldOrignalValue          | filterId         |
+      | Charts Config         | Data Table Query(For All Data) | <default_Data_Table_Query> | ApiGeneratedId:0 |
+      | Charts Config         | Active                         | true                       | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                      | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Data Table Query(For All Data) | <new_Data_Table_Query> | Grants             | Name                      | Enhanced Spline            |
+      | Charts Config         | Active                         | true                   | Grants             | Name                      | Enhanced Spline            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I click on menu icon of chart "Enhanced Spline" with title "Menu"
+    When I select "Show All Data" from chart menu of chart "Enhanced Spline"
+    Then I see on modal total records count is same as total row of table id "EnhancedSplineIdrecordsModal" and table name "flextable"
+
+    Examples:
+      | default_Data_Table_Query                                                                                                            | new_Data_Table_Query                                                                                                                        |
+      | SELECT Name,Award__r.Status__c ,Status__c FROM AmendmentRequest__c Where Award__r.Status__c = 'Activated' AND Status__c!='Approved' | SELECT Name,Award__r.Status__c ,Status__c FROM AmendmentRequest__c Where Award__r.Status__c = 'Activated' AND Status__c!='Approved' limit 5 |
+
+  @71949    @validateViewActionOnShowAllDataModalComingOnEnhancedViewClick-EnhancedSplineCharts @wip
+  Scenario: Validate Enhanced chart view record action on show all data modal - Enhanced spline chart - enhanced view
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Charts Config         | Active    | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Active    | true          | Grants             | Name                      | Enhanced Spline            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I click on menu icon of chart "Enhanced Spline" with title "Enhanced View"
+    When I click modal button "Show All Data"
+    When I perform quick search for "AR-0142" inside charts modal with id "EnhancedSplineIdmyTableSearch"
+    Then I see value "AR-0142" for title "Change Request #" inside table "myEnhancedTable"

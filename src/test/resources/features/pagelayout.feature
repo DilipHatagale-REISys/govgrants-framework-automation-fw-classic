@@ -922,7 +922,6 @@ Feature: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    When I click Add button inside attachments page block
     When I click on "Add" button inside attachments page block
     Then I see "AnnouncementArtifacts1:AnnouncementArtifacts2" inside Type selectbox
 
