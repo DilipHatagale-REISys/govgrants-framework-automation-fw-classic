@@ -1907,3 +1907,68 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I click modal button "Show All Data"
     When I perform quick search for "AR-0142" inside charts modal with id "EnhancedSplineIdmyTableSearch"
     Then I see value "AR-0142" for title "Change Request #" inside table "myEnhancedTable"
+
+  @74085    @validateActiveFieldAtCharts-gHome-EnhancedBubbleCharts
+  Scenario: Validating enhanced bubble charts is getting displayed on UI while making changes of boolean field Active at configuration page -gHome
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Charts Config         | Active    | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Active    | true          | GrantorHome        | Name                      | Enhanced Bubble            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see charts with id "EnhancedBubbleId" displayed
+
+  @74087    @validateTitleFieldAtCharts-gHOME-EnhancedBubbleCharts
+  Scenario: Changing chart title for 'EnhancedBubbleId' enhanced dual axes chart in configuration and validating inside home-programs
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Charts Config         | Title     | Enhanced Bubble   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Title     | Automation Enhanced Bubble Chart | GrantorHome        | Name                      | Enhanced Bubble            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see "Automation Enhanced Bubble Chart" displayed as chart title
+
+  @74088    @validateChartTypeFieldAtCharts-gHOME-EnhancedBubbleCharts
+  Scenario: Changing value of chart type to bubble for 'EnhancedBubbleId' in configuration and validating inside home
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName  | fieldOrignalValue | filterId         |
+      | Charts Config         | Chart Type | Dual axes         | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Chart Type | Dual axes     | GrantorHome        | Name                      | Enhanced Dual Axes         |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see charts "EnhancedBubbleId" with type as "highcharts-grid-line"
+
+  @74092    @validateDisableLegendsFieldsWithFalse-gHOME-EnhancedBubbleCharts
+  Scenario: validate disable legends fields of 'EnhancedBubbleId' is working or not while not checking checkbox of Disable Legend Field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Charts Config         | Disable Legend | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Disable Legend | false         | GrantorHome        | Name                      | Enhanced Bubble            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see chart legends are displayed for chart/enhanced Charts "EnhancedBubble"
+
+  @74090    @validateDisableLegendsFieldsWithTrue-gHOME-EnhancedBubbleCharts
+  Scenario: validate disable legends fields of 'EnhancedBubbleId' is working or not while checking checkbox of Disable Legend Field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Charts Config         | Disable Legend | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Disable Legend | true          | GrantorHome        | Name                      | Enhanced Bubble            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I do not see chart legends are displayed for chart/enhanced Charts "EnhancedBubble"
