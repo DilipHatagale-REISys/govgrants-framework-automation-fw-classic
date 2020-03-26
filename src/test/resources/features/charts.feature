@@ -686,7 +686,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    Then I see "Testing_column1" displayed as chart title
+    Then I see "Testing column1" displayed as chart title
 
   @71030    @validateActiveFieldAtCharts-gAnnouncement-Testing_column
   Scenario: Validating Testing_column is getting displayed/NotDisplayed on UI while making changes of boolean field Active at configuration page -gAnnouncement
