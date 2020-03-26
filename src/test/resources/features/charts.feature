@@ -1972,3 +1972,112 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     Then I do not see chart legends are displayed for chart/enhanced Charts "EnhancedBubble"
+
+  @74093    @validateX-axisAndY-axisLabelField-gHOME-EnhancedBubbleCharts
+  Scenario: Change chart x-axis and y-axis label for 'EnhancedBubbleId' chart in configuration and validating inside HOME
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName    | fieldOrignalValue   | filterId         |
+      | Charts Config         | Active       | true                | ApiGeneratedId:0 |
+      | Charts Config         | X-Axis Label | Application awarded | ApiGeneratedId:1 |
+      | Charts Config         | Y-Axis Label | No of Application   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName    | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Active       | true                   | GrantorHome        | Name                      | Enhanced Bubble            |
+      | Charts Config         | X-Axis Label | TestApplicationAwarded | GrantorHome        | Name                      | Enhanced Bubble            |
+      | Charts Config         | Y-Axis Label | TestAutomationYAxis    | GrantorHome        | Name                      | Enhanced Bubble            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I Softly see "TestApplicationAwarded" at axis "highcharts-xaxis" for chart "EnhancedBubble"
+    Then I Softly see "TestAutomationYAxis" at axis "highcharts-yaxis" for chart "EnhancedBubble"
+
+  @74094    @validateAll-axisPrefix-gHOME-EnhancedBubbleCharts
+  Scenario: Change chart x-axis/Y-Axis prefix from config and validate inside HOME phase for Enhanced Bubble Charts
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Charts Config         | X Axis Prefix |                   | ApiGeneratedId:0 |
+      | Charts Config         | Y Axis Prefix |                   | ApiGeneratedId:1 |
+      | Charts Config         | Active        | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | X Axis Prefix | @              | GrantorHome        | Name                      | Enhanced Bubble            |
+      | Charts Config         | Y Axis Prefix | TestAutomation | GrantorHome        | Name                      | Enhanced Bubble            |
+      | Charts Config         | Active        | true           | GrantorHome        | Name                      | Enhanced Bubble            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see "(@)" at axis "highcharts-xaxis" for chart "EnhancedBubble"
+    Then I see "(TestAutomation)" at axis "highcharts-yaxis" for chart "EnhancedBubble"
+
+  @74095    @validateAll-axisSuffix-gHOME-EnhancedBubbleCharts
+  Scenario: Change chart x-axis/Y-Axis Suffix from config and validate inside HOME phase for Enhanced Bubble Charts
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Charts Config         | X Axis Suffix |                   | ApiGeneratedId:0 |
+      | Charts Config         | Y Axis Suffix |                   | ApiGeneratedId:1 |
+      | Charts Config         | Active        | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | X Axis Suffix | @              | GrantorHome        | Name                      | Enhanced Bubble            |
+      | Charts Config         | Y Axis Suffix | TestAutomation | GrantorHome        | Name                      | Enhanced Bubble            |
+      | Charts Config         | Active        | true           | GrantorHome        | Name                      | Enhanced Bubble            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see "(@)" at axis "highcharts-xaxis" for chart "EnhancedBubble"
+    Then I see "(TestAutomation)" at axis "highcharts-yaxis" for chart "EnhancedBubble"
+
+  @74099    @validateAllDataTableHeaderFieldOnEnhancedViewClick-gHOME-EnhancedBubbleCharts
+  Scenario: Validate All Data table header text on UI after making changes from config - EnhancedBubbleCharts
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue          | filterId         |
+      | Charts Config         | All data table header | Total Grant Awarded Amount | ApiGeneratedId:0 |
+      | Charts Config         | Active                | true                       | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | All data table header | Test Automation Header | GrantorHome        | Name                      | Enhanced Bubble            |
+      | Charts Config         | Active                | true                   | GrantorHome        | Name                      | Enhanced Bubble            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I click on menu icon of chart "Enhanced Bubble" with title "Enhanced View"
+    When I click modal button "Show All Data"
+    Then I see "Test Automation Header" displayed in modal
+
+  @74100    @validateAllDataTableHeaderFieldOnEnhancedViewClick-gHOME-EnhancedBubbleCharts
+  Scenario: Validate All Data table header text on UI after making changes from config - EnhancedBubbleCharts
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue          | filterId         |
+      | Charts Config         | All data table header | Total Grant Awarded Amount | ApiGeneratedId:0 |
+      | Charts Config         | Active                | true                       | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | All data table header | Test Automation Header | GrantorHome        | Name                      | Enhanced Bubble            |
+      | Charts Config         | Active                | true                   | GrantorHome        | Name                      | Enhanced Bubble            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I click on menu icon of chart "Enhanced Bubble" with title "Menu"
+    When I select "Show All Data" from chart menu of chart "Enhanced Bubble"
+    Then I see "Test Automation Header" displayed in modal
+
+  @74101    @validateDataTableQueryforAllDataFieldFromBurgerIcon-gHOME-EnhancedBubbleCharts
+  Scenario Outline: Validate expected result as no of record rendered as per query provided inside 'Data Table Query(for all data) - EnhancedBubbleCharts
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                      | fieldOrignalValue          | filterId         |
+      | Charts Config         | Data Table Query(For All Data) | <default_Data_Table_Query> | ApiGeneratedId:0 |
+      | Charts Config         | Active                         | true                       | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                      | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Data Table Query(For All Data) | <new_Data_Table_Query> | GrantorHome        | Name                      | Enhanced Bubble            |
+      | Charts Config         | Active                         | true                   | GrantorHome        | Name                      | Enhanced Bubble            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I click on menu icon of chart "Enhanced Bubble" with title "Menu"
+    When I select "Show All Data" from chart menu of chart "Enhanced Bubble"
+    Then I see on modal total records count is same as total row of table id "EnhancedBubbleIdrecordsModal" and table name "flextable"
+
+    Examples:
+      | default_Data_Table_Query                                                                                                                                                                                                          | new_Data_Table_Query                                                                                                                                                                                                                      |
+      | SELECT ApplicationsAwarded__c,NumberOfApplications__c,MaxApplicationsAllowed__c,PreApplicationRequired__c FROM Announcement__c WHERE ApplicationsAwarded__c > 0 AND MaxApplicationsAllowed__c > 0 AND NumberOfApplications__c > 0 | SELECT ApplicationsAwarded__c,NumberOfApplications__c,MaxApplicationsAllowed__c,PreApplicationRequired__c FROM Announcement__c WHERE ApplicationsAwarded__c > 0 AND MaxApplicationsAllowed__c > 0 AND NumberOfApplications__c > 0 LIMIT 5 |
