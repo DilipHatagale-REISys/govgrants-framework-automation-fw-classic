@@ -1892,7 +1892,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
       | default_Data_Table_Query                                                                                                            | new_Data_Table_Query                                                                                                                        |
       | SELECT Name,Award__r.Status__c ,Status__c FROM AmendmentRequest__c Where Award__r.Status__c = 'Activated' AND Status__c!='Approved' | SELECT Name,Award__r.Status__c ,Status__c FROM AmendmentRequest__c Where Award__r.Status__c = 'Activated' AND Status__c!='Approved' limit 5 |
 
-  @71949    @validateViewActionOnShowAllDataModalComingOnEnhancedViewClick-EnhancedSplineCharts @wip
+  @71949    @validateViewActionOnShowAllDataModalComingOnEnhancedViewClick-EnhancedSplineCharts
   Scenario: Validate Enhanced chart view record action on show all data modal - Enhanced spline chart - enhanced view
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -1906,7 +1906,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     And I click on menu icon of chart "Enhanced Spline" with title "Enhanced View"
     When I click modal button "Show All Data"
     When I perform quick search for "AR-0142" inside charts modal with id "EnhancedSplineIdmyTableSearch"
-    Then I see value "AR-0142" for title "Change Request #" inside table "myEnhancedTable"
+    Then I see value "AR-0142" for title "Change Request #" inside table "EnhancedSplineIdrecordsModal"
 
   @74085    @validateActiveFieldAtCharts-gHome-EnhancedBubbleCharts
   Scenario: Validating enhanced bubble charts is getting displayed on UI while making changes of boolean field Active at configuration page -gHome
@@ -2081,3 +2081,121 @@ Feature: Charts and Enhanced Charts Component Scenarios
     Examples:
       | default_Data_Table_Query                                                                                                                                                                                                          | new_Data_Table_Query                                                                                                                                                                                                                      |
       | SELECT ApplicationsAwarded__c,NumberOfApplications__c,MaxApplicationsAllowed__c,PreApplicationRequired__c FROM Announcement__c WHERE ApplicationsAwarded__c > 0 AND MaxApplicationsAllowed__c > 0 AND NumberOfApplications__c > 0 | SELECT ApplicationsAwarded__c,NumberOfApplications__c,MaxApplicationsAllowed__c,PreApplicationRequired__c FROM Announcement__c WHERE ApplicationsAwarded__c > 0 AND MaxApplicationsAllowed__c > 0 AND NumberOfApplications__c > 0 LIMIT 5 |
+
+  @71950    @validateViewActionOnShowAllDataModalComingOnBurgerIconClick-EnhancedSplineCharts
+  Scenario: Validate Enhanced chart view record action on show all data modal - Enhanced spline chart - Burger Icon
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Charts Config         | Active    | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Active    | true          | Grants             | Name                      | Enhanced Spline            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I click on menu icon of chart "Enhanced Spline" with title "Enhanced View"
+    When I click modal button "Show All Data"
+    When I pause execution for "2" seconds
+    When I perform quick search for "AR-0142" inside charts modal with id "EnhancedSplineIdmyTableSearch"
+    Then I see value "AR-0142" for title "Change Request #" inside table "EnhancedSplineIdrecordsModal"
+
+  @71289    @validateDualChartType1AndDualChartType2FieldAtCharts-gHOME-EnhancedDualAxes1Charts
+  Scenario: Changing value of Dual Chart Type1 And Dual Chart Type2 for 'EnhancedDualAxes1Id' enhanced dual axes1 chart in configuration and validating inside planning-programs
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Charts Config         | Chart Type       | Dual axes         | ApiGeneratedId:0 |
+      | Charts Config         | Dual Chart Type1 | Spline            | ApiGeneratedId:1 |
+      | Charts Config         | Dual Chart Type2 | Area              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Chart Type       | Dual axes     | GrantorHome        | Name                      | Enhanced Dual Axes 1       |
+      | Charts Config         | Dual Chart Type1 | Spline        | GrantorHome        | Name                      | Enhanced Dual Axes 1       |
+      | Charts Config         | Dual Chart Type2 | Area          | GrantorHome        | Name                      | Enhanced Dual Axes 1       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see charts "EnhancedDualAxes1Id" with type as "highcharts-tracker-line"
+    Then I see charts "EnhancedDualAxes1Id" with type as "highcharts-area"
+
+  @71171    @validateEnhancedChartIsDisplayedOnlyToAutomationUser-gHOME-EnhancedDualAxesCharts
+  Scenario: Validating dual axes chart is displayed to Automation user only if the chart unique id is given under custom settings config
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Charts Config         | Active    | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Active    | true          | GrantorHome        | Name                      | Enhanced Dual Axes         |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see charts with id "EnhancedDualAxesId" displayed
+    When I re-login as "AUTOMATION-REVIEWER" user on "default" portal
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I do not see charts with id "EnhancedDualAxesId" displayed
+
+  @71172    @validateEnhancedChartIsDisplayedOnlyToAdminrUser-gHOME-EnhancedDualAxesCharts
+  Scenario: Validating dual axes chart is displayed to Admin user only if the chart unique id is given under custom settings config
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Charts Config         | Active    | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Active    | true          | GrantorHome        | Name                      | Enhanced Dual Axes         |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see charts with id "EnhancedDualAxesId" displayed
+    When I re-login as "Automation-PM" user on "default" portal
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I do not see charts with id "EnhancedDualAxesId" displayed
+
+  @75225    @validateActiveFieldAtCharts-gHome-EnhancedClassBasedConfigCharts
+  Scenario: Validating enhanced class based config charts is getting displayed on UI while making changes of boolean field Active at configuration page -gHome
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Charts Config         | Active    | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue      |
+      | Charts Config         | Active    | true          | GrantorHome        | Name                      | GrantPerformanceScatterClsBased |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see charts with id "GrantPerformanceScatterClsBasedId" displayed
+
+  @75226    @validateApexClassNameFieldAtCharts-gHome-EnhancedClassBasedConfigCharts
+  Scenario: Validating enhanced class based config charts is not displayed on UI if Apex class Name is not given at configuration page -gHome
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue               | filterId         |
+      | Charts Config         | Active          | true                            | ApiGeneratedId:0 |
+      | Charts Config         | Apex Class Name | GrantPerformanceScatterClsBased | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue      |
+      | Charts Config         | Active          | true          | GrantorHome        | Name                      | GrantPerformanceScatterClsBased |
+      | Charts Config         | Apex Class Name |               | GrantorHome        | Name                      | GrantPerformanceScatterClsBased |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I do not see "Performance Tracking" displayed as chart title
+
+  @75440    @validateDataTableQueryforAllDataFieldFromBurgerIcon-gHOME-EnhancedClassBasedConfigCharts
+  Scenario Outline: Validate expected result as no of record rendered as per query provided inside 'Data Table Query(for all data) -EnhancedClassBasedConfigCharts
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                      | fieldOrignalValue          | filterId         |
+      | Charts Config         | Data Table Query(For All Data) | <default_Data_Table_Query> | ApiGeneratedId:0 |
+      | Charts Config         | Active                         | true                       | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                      | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Data Table Query(For All Data) | <new_Data_Table_Query> | GrantorHome        | Name                      | GrantPerformanceScatterClsBased         |
+      | Charts Config         | Active                         | true                   | GrantorHome        | Name                      | GrantPerformanceScatterClsBased         |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I click on menu icon of chart "Performance Tracking" with title "Menu"
+    When I select "Show All Data" from chart menu of chart "Performance Tracking"
+    Then I see on modal total records count is same as total row of table id "GrantPerformanceScatterClsBasedIdrecordsModal" and table name "flextable"
+
+    Examples:
+      | default_Data_Table_Query                                                                                                            | new_Data_Table_Query                                                                                                                        |
+      | SELECT Name,Award__r.Status__c ,Status__c FROM AmendmentRequest__c Where Award__r.Status__c = 'Activated' AND Status__c!='Approved' | SELECT Name,Award__r.Status__c ,Status__c FROM AmendmentRequest__c Where Award__r.Status__c = 'Activated' AND Status__c!='Approved' limit 5 |

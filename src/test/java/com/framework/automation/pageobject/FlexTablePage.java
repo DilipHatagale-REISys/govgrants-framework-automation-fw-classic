@@ -458,24 +458,6 @@ public class FlexTablePage extends GovGrantsManager {
         Assert.assertTrue(isExpectedRecordsDisplayedInsideTable(flexTableHeader, recordsName.split(",")));
     }
 
-    /**
-     * assert if fieldValue is displayed/not displayed inside flex table
-     *
-     * @param fieldValue
-     * @param tableId
-     */
-    public void assertFlexTableFieldValueDisplayed(String usuage, String fieldValue, String tableId) {
-        if (usuage.equalsIgnoreCase("see")) {
-            Assert.assertTrue(isSpecificfieldValueDisplayed(fieldValue, tableId));
-        } else if (usuage.equalsIgnoreCase("do not see")) {
-            Assert.assertFalse(isSpecificfieldValueDisplayed(fieldValue, tableId));
-        } else if (usuage.equalsIgnoreCase("softly see")) {
-            EyeThink.core().assertion().assertThat(isSpecificfieldValueDisplayed(fieldValue, tableId)).isTrue();
-        } else if (usuage.equalsIgnoreCase("softly do not see")) {
-            EyeThink.core().assertion().assertThat(isSpecificfieldValueDisplayed(fieldValue, tableId)).isFalse();
-        }
-    }
-
     /*********
      * "Local Methods with complete functionality - private"
      *****************/
@@ -629,28 +611,6 @@ public class FlexTablePage extends GovGrantsManager {
         try {
             if (EyeThink.core().is().isDisplayed(EyeThink.saas().flexTable().getFooterElementsFromTable(text, tableId))) {
                 flag = true;
-            }
-        } catch (Exception e) {
-        }
-        return flag;
-    }
-
-    /**
-     * return true if fieldValue is displayed
-     *
-     * @param fieldValue
-     * @return
-     */
-    private Boolean isSpecificfieldValueDisplayed(String fieldValue, String tableId) {
-        boolean flag = false;
-        List<Elements> elements;
-        By tableCellValue = By.xpath("//div[@id='" + tableId + "']//td//span[" + EyeThink.core().xpath().equals("@title", fieldValue) + "or " + EyeThink.core().xpath().equals("text()", fieldValue) + "]");
-        elements = EyeThink.core().elementReference().listOfElements().of(tableCellValue, false);
-        try {
-            for (Elements element : elements) {
-                if (element.isDisplayed()) {
-                    flag = true;
-                }
             }
         } catch (Exception e) {
         }
