@@ -2186,9 +2186,9 @@ Feature: Charts and Enhanced Charts Component Scenarios
       | Charts Config         | Data Table Query(For All Data) | <default_Data_Table_Query> | ApiGeneratedId:0 |
       | Charts Config         | Active                         | true                       | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                      | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Charts Config         | Data Table Query(For All Data) | <new_Data_Table_Query> | GrantorHome        | Name                      | GrantPerformanceScatterClsBased         |
-      | Charts Config         | Active                         | true                   | GrantorHome        | Name                      | GrantPerformanceScatterClsBased         |
+      | configurationCategory | fieldName                      | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue      |
+      | Charts Config         | Data Table Query(For All Data) | <new_Data_Table_Query> | GrantorHome        | Name                      | GrantPerformanceScatterClsBased |
+      | Charts Config         | Active                         | true                   | GrantorHome        | Name                      | GrantPerformanceScatterClsBased |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
@@ -2199,3 +2199,193 @@ Feature: Charts and Enhanced Charts Component Scenarios
     Examples:
       | default_Data_Table_Query                                                                                                            | new_Data_Table_Query                                                                                                                        |
       | SELECT Name,Award__r.Status__c ,Status__c FROM AmendmentRequest__c Where Award__r.Status__c = 'Activated' AND Status__c!='Approved' | SELECT Name,Award__r.Status__c ,Status__c FROM AmendmentRequest__c Where Award__r.Status__c = 'Activated' AND Status__c!='Approved' limit 5 |
+
+  @75536    @validateActiveField-gHOME-EnhancedScatterwithmultiplepointsChart
+  Scenario: Validating scatter chart is getting displayed on UI while making changes of boolean field Active for dual axes chart at configuration page -gHOME
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Charts Config         | Active    | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue            |
+      | Charts Config         | Active    | true          | GrantorHome        | Name                      | Enhanced Scatter with multiple points |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see charts with id "EnhancedScatterwithmultiplepointsId" displayed
+
+  @75537    @validateTitleFieldAtCharts-gHOME-EnhancedScatterwithmultiplepointsChart
+  Scenario: Changing chart title for 'EnhancedScatterwithmultiplepointsChartId' enhanced dual axes chart in configuration and validating inside home-programs
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue                     | filterId         |
+      | Charts Config         | Active    | true                                  | ApiGeneratedId:0 |
+      | Charts Config         | Title     | Enhanced Scatter with multiple points | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                                    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue            |
+      | Charts Config         | Active    | true                                             | GrantorHome        | Name                      | Enhanced Scatter with multiple points |
+      | Charts Config         | Title     | Automation Enhanced Scatter with multiple points | GrantorHome        | Name                      | Enhanced Scatter with multiple points |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see "Automation Enhanced Scatter with multiple points" displayed as chart title
+
+  @75538    @validateChartTypeFieldAtCharts-gHOME-EnhancedScatterwithmultiplepointsChart
+  Scenario: Changing value of chart type for 'EnhancedScatterwithmultiplepointsChartId' chart in configuration and validating inside planning-programs
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName  | fieldOrignalValue            | filterId         |
+      | Charts Config         | Chart Type | Scatter with multiple points | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName  | fieldNewValue                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue            |
+      | Charts Config         | Chart Type | Scatter with multiple points | GrantorHome        | Name                      | Enhanced Scatter with multiple points |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see charts "EnhancedScatterwithmultiplepointsId" with type as "highcharts-grid-line"
+
+  @75539    @validateDisableLegendsFieldsWithFalse-gHOME-EnhancedScatterwithmultiplepointsChart
+  Scenario: validate disable legends fields of 'EnhancedScatterwithmultiplepointsChartId' is working or not while unchecking checkbox of Disable Legend Field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Charts Config         | Disable Legend | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue            |
+      | Charts Config         | Disable Legend | false         | GrantorHome        | Name                      | Enhanced Scatter with multiple points |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see chart legends are displayed for chart/enhanced Charts "EnhancedScatterwithmultiplepoints"
+
+  @75540    @validateDisableLegendsFieldsWithFalse-gHOME-EnhancedScatterwithmultiplepointsChart
+  Scenario: validate disable legends fields of 'EnhancedScatterwithmultiplepointsChartId' is working or not while unchecking checkbox of Disable Legend Field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Charts Config         | Disable Legend | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue            |
+      | Charts Config         | Disable Legend | true          | GrantorHome        | Name                      | Enhanced Scatter with multiple points |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I do not see chart legends are displayed for chart/enhanced Charts "EnhancedScatterwithmultiplepoints"
+
+  @75548    @validateX-axisLabelField-gHOME-EnhancedScatterwithmultiplepointsChart
+  Scenario: Change chart x-axis label for 'EnhancedScatterwithmultiplepointsChartId' chart in configuration and validating inside HOME
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName    | fieldOrignalValue            | filterId         |
+      | Charts Config         | X-Axis Label | Award Ceiling                | ApiGeneratedId:0 |
+      | Charts Config         | Chart Type   | Scatter with multiple points | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName    | fieldNewValue                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue            |
+      | Charts Config         | X-Axis Label | AutomationAwardCeiling       | GrantorHome        | Name                      | Enhanced Scatter with multiple points |
+      | Charts Config         | Chart Type   | Scatter with multiple points | GrantorHome        | Name                      | Enhanced Scatter with multiple points |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see "AutomationAwardCeiling" at axis "highcharts-xaxis" for chart "EnhancedScatterwithmultiplepoints"
+
+  @75549    @validateY-axisLabelField-gHOME-EnhancedScatterwithmultiplepointsChart
+  Scenario: Change chart y-axis label for 'EnhancedScatterwithmultiplepointsChartId' chart in configuration and validating inside HOME
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName    | fieldOrignalValue            | filterId         |
+      | Charts Config         | Y-Axis Label | Award Floor                  | ApiGeneratedId:0 |
+      | Charts Config         | Chart Type   | Scatter with multiple points | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName    | fieldNewValue                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue            |
+      | Charts Config         | Y-Axis Label | AutomationAwardFloor         | GrantorHome        | Name                      | Enhanced Scatter with multiple points |
+      | Charts Config         | Chart Type   | Scatter with multiple points | GrantorHome        | Name                      | Enhanced Scatter with multiple points |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see "AutomationAwardFloor" at axis "highcharts-yaxis" for chart "EnhancedScatterwithmultiplepoints"
+
+  @75555    @validateDataTableQueryforAllDataFieldFromBurgerIcon-gHOME-EnhancedScatterwithmultiplepointsChart
+  Scenario Outline: Validate expected result as no of record rendered as per query provided inside 'Data Table Query(for all data) -EnhancedScatterwithmultiplepointsChart
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                      | fieldOrignalValue          | filterId         |
+      | Charts Config         | Data Table Query(For All Data) | <default_Data_Table_Query> | ApiGeneratedId:0 |
+      | Charts Config         | Active                         | true                       | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                      | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue            |
+      | Charts Config         | Data Table Query(For All Data) | <new_Data_Table_Query> | GrantorHome        | Name                      | Enhanced Scatter with multiple points |
+      | Charts Config         | Active                         | true                   | GrantorHome        | Name                      | Enhanced Scatter with multiple points |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I click on menu icon of chart "Enhanced Scatter with multiple points" with title "Menu"
+    When I select "Show All Data" from chart menu of chart "Enhanced Scatter with multiple points"
+    Then I see on modal total records count is same as total row of table id "EnhancedScatterwithmultiplepointsIdrecordsModal" and table name "flextable"
+
+    Examples:
+      | default_Data_Table_Query                                                                                                  | new_Data_Table_Query                                                                                                              |
+      | SELECT Name,LevelofEffort__c,AwardCeiling__c,AwardFloor__c,Status__c FROM Announcement__c WHERE RecordType.Name='Grantor' | SELECT Name,LevelofEffort__c,AwardCeiling__c,AwardFloor__c,Status__c FROM Announcement__c WHERE RecordType.Name='Grantor' limit 5 |
+
+  @75556    @validateDataTableQueryforAllDataFieldFromEnhancedViewIcon-gHOME-EnhancedScatterwithmultiplepointsChart
+  Scenario Outline: Validate expected result as no of record rendered as per query provided inside 'Data Table Query(for all data) -EnhancedScatterwithmultiplepointsChart - enhanced view
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                      | fieldOrignalValue          | filterId         |
+      | Charts Config         | Data Table Query(For All Data) | <default_Data_Table_Query> | ApiGeneratedId:0 |
+      | Charts Config         | Active                         | true                       | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                      | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue            |
+      | Charts Config         | Data Table Query(For All Data) | <new_Data_Table_Query> | GrantorHome        | Name                      | Enhanced Scatter with multiple points |
+      | Charts Config         | Active                         | true                   | GrantorHome        | Name                      | Enhanced Scatter with multiple points |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I click on menu icon of chart "Enhanced Scatter with multiple points" with title "Enhanced View"
+    When I click modal button "Show All Data"
+    Then I see on modal total records count is same as total row of table id "EnhancedScatterwithmultiplepointsIdrecordsModal" and table name "flextable"
+
+    Examples:
+      | default_Data_Table_Query                                                                                                  | new_Data_Table_Query                                                                                                              |
+      | SELECT Name,LevelofEffort__c,AwardCeiling__c,AwardFloor__c,Status__c FROM Announcement__c WHERE RecordType.Name='Grantor' | SELECT Name,LevelofEffort__c,AwardCeiling__c,AwardFloor__c,Status__c FROM Announcement__c WHERE RecordType.Name='Grantor' limit 5 |
+
+  @75557    @validateAllDataHeadersFromBurgerMenu-gHome-EnhancedScatterwithmultiplepointsChart
+  Scenario:  Change chart show all data table header for 'EnhancedScatterwithmultiplepointsChartId' chart in config and validating inside home - burger menu
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Charts Config         | All data table header | Awarded Amount    | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue               | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue            |
+      | Charts Config         | All data table header | Test Automation Application | GrantorHome        | Name                      | Enhanced Scatter with multiple points |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I click on menu icon of chart "Enhanced Scatter with multiple points" with title "Menu"
+    When I select "Show All Data" from chart menu of chart "Enhanced Scatter with multiple points"
+    Then I see "Test Automation Application" displayed in modal
+
+  @75558    @validateAll-axisPrefix-gHOME-EnhancedScatterwithmultiplepointsChart
+  Scenario: Change chart x-axis/Y-Axis prefix from config and validate inside HOME phase for Enhanced Scatter with multiple points Charts
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Charts Config         | X Axis Prefix |                   | ApiGeneratedId:0 |
+      | Charts Config         | Y Axis Prefix |                   | ApiGeneratedId:1 |
+      | Charts Config         | Active        | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue            |
+      | Charts Config         | X Axis Prefix | @              | GrantorHome        | Name                      | Enhanced Scatter with multiple points |
+      | Charts Config         | Y Axis Prefix | TestAutomation | GrantorHome        | Name                      | Enhanced Scatter with multiple points |
+      | Charts Config         | Active        | true           | GrantorHome        | Name                      | Enhanced Scatter with multiple points |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see "(@)" at axis "highcharts-xaxis" for chart "EnhancedScatterwithmultiplepoints"
+    Then I see "TestAutomation" at axis "highcharts-yaxis" for chart "EnhancedScatterwithmultiplepoints"
+
+  @75559    @validateAll-axisSuffix-gHOME-EnhancedScatterwithmultiplepointsChart
+  Scenario: Change chart x-axis/Y-Axis suffix from config and validate inside HOME phase for Enhanced Scatter with multiple points Charts
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Charts Config         | X Axis Suffix |                   | ApiGeneratedId:0 |
+      | Charts Config         | Y Axis Suffix |                   | ApiGeneratedId:1 |
+      | Charts Config         | Active        | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue            |
+      | Charts Config         | X Axis Suffix | @              | GrantorHome        | Name                      | Enhanced Scatter with multiple points |
+      | Charts Config         | Y Axis Suffix | TestAutomation | GrantorHome        | Name                      | Enhanced Scatter with multiple points |
+      | Charts Config         | Active        | true           | GrantorHome        | Name                      | Enhanced Scatter with multiple points |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see "(@)" at axis "highcharts-xaxis" for chart "EnhancedScatterwithmultiplepoints"
+    Then I see "TestAutomation" at axis "highcharts-yaxis" for chart "EnhancedScatterwithmultiplepoints"
