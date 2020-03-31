@@ -41,6 +41,11 @@ public class ChartsSteps {
         chartsPage.getHoveringOnEnhancedCharts(chartId, chartsType);
     }
 
+    @When("^I hovering mouse on specific enhanced charts id \"([^\"]*)\" and charts type \"([^\"]*)\"$")
+    public void performHoverOnSpecificEnhancedCharts(String chartId, String chartsType) {
+        chartsPage.getHoveringOnSpecificEnhancedCharts(chartId, chartsType);
+    }
+
     @Then("^I see \"([^\"]*)\" displayed in modal$")
     public void assertModalTitle(String titleName) {
         chartsPage.isTitleOfModal(titleName);

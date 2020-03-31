@@ -2389,3 +2389,162 @@ Feature: Charts and Enhanced Charts Component Scenarios
     And I navigate to "HOME" tab
     Then I see "(@)" at axis "highcharts-xaxis" for chart "EnhancedScatterwithmultiplepoints"
     Then I see "TestAutomation" at axis "highcharts-yaxis" for chart "EnhancedScatterwithmultiplepoints"
+
+  @71566    @validateYFormattedNumbers-ghOME-EnhancedLineCharts
+  Scenario: Enable y-formatted numbers for 'Enhanced Line' chart in configuratin and validating inside home
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Charts Config         | Y Formatted Number | true              | ApiGeneratedId:0 |
+      | Charts Config         | Active             | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Y Formatted Number | true          | GrantorHome        | Name                      | Enhanced Line              |
+      | Charts Config         | Active             | true          | GrantorHome        | Name                      | Enhanced Line              |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I hovering mouse on specific enhanced charts id "EnhancedLineId" and charts type "highcharts-point"
+    And I pause execution for "2" seconds
+    Then I see ",000" shown inside enhanced charts on hover
+
+  @71446    @validateY-AxisLabel-ghOME-EnhancedLineCharts
+  Scenario: Enable y-formatted numbers for 'Enhanced Line' chart in configuratin and validating inside home
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
+      | Charts Config         | Y-Axis Label | Award ceiling     | ApiGeneratedId:0 |
+      | Charts Config         | Active       | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName    | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Y-Axis Label | AutomationAwardCeiling | GrantorHome        | Name                      | Enhanced Line              |
+      | Charts Config         | Active       | true                   | GrantorHome        | Name                      | Enhanced Line              |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I hovering mouse on specific enhanced charts id "EnhancedLineId" and charts type "highcharts-point"
+    And I pause execution for "2" seconds
+    Then I see "AutomationAwardCeiling" shown inside enhanced charts on hover
+
+  @71567    @validateDecimalNumberFormatting-ghOME-EnhancedLineCharts
+  Scenario: Enable 'Allow Decimal Number Y axis' field for 'Enhanced Line' chart in configuration and validating inside home
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                   | fieldOrignalValue | filterId         |
+      | Charts Config         | Allow Decimal Number Y axis | false             | ApiGeneratedId:0 |
+      | Charts Config         | Active                      | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                   | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Allow Decimal Number Y axis | true          | GrantorHome        | Name                      | Enhanced Line              |
+      | Charts Config         | Active                      | true          | GrantorHome        | Name                      | Enhanced Line              |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I hovering mouse on specific enhanced charts id "EnhancedLineId" and charts type "highcharts-point"
+    And I pause execution for "2" seconds
+    Then I see ".00" shown inside enhanced charts on hover
+
+  @71568    @validateDecimalNumberFormatting-ghOME-EnhancedLineCharts
+  Scenario: Enable 'Allow Decimal Number Y axis' field for 'Enhanced Line' chart in configuration and validating inside home
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                   | fieldOrignalValue | filterId         |
+      | Charts Config         | Allow Decimal Number Y axis | false             | ApiGeneratedId:0 |
+      | Charts Config         | Y Formatted Number          | false             | ApiGeneratedId:1 |
+      | Charts Config         | Active                      | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                   | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Allow Decimal Number Y axis | true          | GrantorHome        | Name                      | Enhanced Line              |
+      | Charts Config         | Y Formatted Number          | true          | GrantorHome        | Name                      | Enhanced Line              |
+      | Charts Config         | Active                      | true          | GrantorHome        | Name                      | Enhanced Line              |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I hovering mouse on specific enhanced charts id "EnhancedLineId" and charts type "highcharts-point"
+    And I pause execution for "2" seconds
+    Then I see ",000.00" shown inside enhanced charts on hover
+
+  @71742    @validateY-AxisPrefixFieldAtCharts-gAnnouncement-EnhancedScatterCharts
+  Scenario: Changing Y-Axis Prefix for 'EnhancedScatterId' enhanced chart in configuration and validating inside gannouncement
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Charts Config         | Y Axis Prefix |                   | ApiGeneratedId:0 |
+      | Charts Config         | Active        | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Y Axis Prefix | $             | FundingOpportunity | Name                      | Enhanced Scatter           |
+      | Charts Config         | Active        | true          | FundingOpportunity | Name                      | Enhanced Scatter           |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    When I hovering mouse on specific enhanced charts id "EnhancedScatterId" and charts type "highcharts-point"
+    And I pause execution for "2" seconds
+    Then I see "$" shown inside enhanced charts on hover
+
+  @71743    @validateY-AxisSuffixFieldAtCharts-gAnnouncement-EnhancedScatterCharts
+  Scenario: Changing Y-Axis suffix for 'EnhancedScatterId' enhanced chart in configuration and validating inside gannouncement
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Charts Config         | Y Axis Suffix |                   | ApiGeneratedId:0 |
+      | Charts Config         | Active        | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Y Axis Suffix | $             | FundingOpportunity | Name                      | Enhanced Scatter           |
+      | Charts Config         | Active        | true          | FundingOpportunity | Name                      | Enhanced Scatter           |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    When I hovering mouse on specific enhanced charts id "EnhancedScatterId" and charts type "highcharts-point"
+    And I pause execution for "2" seconds
+    Then I see "$" shown inside enhanced charts on hover
+
+  @74098    @validateX-AxisY-AxisZ-AxisLabel-ghOME-EnhancedBubbleCharts @wip
+  Scenario: Enable X-Axis Y-Axis Z-Axis Label for 'EnhancedBubbleId' chart in configuratin and validating inside planning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName    | fieldOrignalValue        | filterId         |
+      | Charts Config         | X-Axis Label | Application awarded      | ApiGeneratedId:0 |
+      | Charts Config         | Y-Axis Label | No of Application        | ApiGeneratedId:1 |
+      | Charts Config         | Z-Axis Label | Total grant Award Amount | ApiGeneratedId:2 |
+      | Charts Config         | Active       | true                     | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName    | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | X-Axis Label | TestAutomationXAxis | GrantorHome        | Name                      | Enhanced Bubble            |
+      | Charts Config         | Y-Axis Label | TestAutomationYAxis | GrantorHome        | Name                      | Enhanced Bubble            |
+      | Charts Config         | Z-Axis Label | TestAutomationZAxis | GrantorHome        | Name                      | Enhanced Bubble            |
+      | Charts Config         | Active       | true                | GrantorHome        | Name                      | Enhanced Bubble            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I hovering mouse on specific enhanced charts id "EnhancedBubbleId" and charts type "highcharts-grid-line"
+    And I pause execution for "2" seconds
+    Then I see "TestAutomationXAxis" shown inside enhanced charts on hover
+    Then I see "TestAutomationYAxis" shown inside enhanced charts on hover
+    Then I see "TestAutomationZAxis" shown inside enhanced charts on hover
+
+  @74802    @validateNameFieldAPIName-ghOME-EnhancedBubbleCharts
+  Scenario: validate Name Field API Name for 'EnhancedBubbleId' chart in configuratin and validating inside planning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue         | filterId         |
+      | Charts Config         | Name Field API Name | PreApplicationRequired__c | ApiGeneratedId:0 |
+      | Charts Config         | Active              | true                      | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue             | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Name Field API Name | PreApplicationRequired__c | GrantorHome        | Name                      | Enhanced Bubble            |
+      | Charts Config         | Active              | true                      | GrantorHome        | Name                      | Enhanced Bubble            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see "false" at axis "highcharts-bubble-series" for chart "EnhancedBubble"
+
+  @75016    @validateHeaderFieldAPIName-ghOME-EnhancedBubbleCharts @wip
+  Scenario: validate Header Field API Name for 'EnhancedBubbleId' chart in configuratin and validating inside planning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue         | filterId         |
+      | Charts Config         | Header Field API Name | PreApplicationRequired__c | ApiGeneratedId:0 |
+      | Charts Config         | Active                | true                      | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue             | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Header Field API Name | PreApplicationRequired__c | GrantorHome        | Name                      | Enhanced Bubble            |
+      | Charts Config         | Active                | true                      | GrantorHome        | Name                      | Enhanced Bubble            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I hovering mouse on specific enhanced charts id "EnhancedBubbleId" and charts type "highcharts-grid-line"
+    And I pause execution for "2" seconds
+    Then I see "false" shown inside enhanced charts on hover

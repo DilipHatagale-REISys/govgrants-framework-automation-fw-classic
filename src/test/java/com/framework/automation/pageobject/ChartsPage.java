@@ -33,6 +33,19 @@ public class ChartsPage extends GovGrantsManager {
     }
 
     /**
+     * perform mouse hover on specific enhanced charts (need to modify this function in future)
+     *
+     * @param chartId
+     * @param chartsType
+     */
+    public void getHoveringOnSpecificEnhancedCharts(String chartId, String chartsType) {
+        EyeThink.core().elementReference().of(By.xpath("//div[@id='" + chartId + "']"));
+        EyeThink.core().WaitFor().makeThreadSleep(5000);
+        EyeThink.core().scroll().withMouseToElement(enhancedCharts(chartId, chartsType));
+        EyeThink.core().scroll().withMouseToElement(enhancedCharts(chartId, chartsType));
+    }
+
+    /**
      * perform click on bars of enhanced dual axes charts coming on modal
      *
      * @param chartId
