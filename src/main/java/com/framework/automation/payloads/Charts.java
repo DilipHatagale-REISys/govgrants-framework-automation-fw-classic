@@ -149,6 +149,21 @@ public class Charts {
                         apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__ChartConfig__c), filterClause),
                         String.valueOf(SObjectAPIs.GNT__ApexClassName__c), value);
                 break;
+            case "ALLOW DECIMAL NUMBER Y AXIS":
+                finalPayload = String.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__ChartConfig__c),
+                        apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__ChartConfig__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__AllowDecimalNumberYaxis__c), value);
+                break;
+            case "NAME FIELD API NAME":
+                finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__ChartConfig__c),
+                        apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__ChartConfig__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__NameFieldAPIName__c), value);
+                break;
+            case "HEADER FIELD API NAME":
+                finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__ChartConfig__c),
+                        apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__ChartConfig__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__HeaderFieldAPIName__c), value);
+                break;
         }
         System.out.println("method for finalpayload " + finalPayload);
         return finalPayload;
