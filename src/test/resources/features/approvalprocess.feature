@@ -527,7 +527,7 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Log" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:programServiceAreaTableId---"
     When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
-    And I refresh the pages
+    And I refresh the page
     When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
@@ -587,7 +587,7 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Log" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:programServiceAreaTableId---"
     When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
-    And I refresh the pages
+    And I refresh the page
     When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
@@ -647,7 +647,7 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Log" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:programServiceAreaTableId---"
     When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
-    And I refresh the pages
+    And I refresh the page
     When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
@@ -708,7 +708,7 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Log" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:programServiceAreaTableId---"
     When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
-    And I refresh the pages
+    And I refresh the page
     When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
@@ -766,7 +766,7 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Log" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:programServiceAreaTableId---"
     When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
-    And I refresh the pages
+    And I refresh the page
     When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
@@ -829,7 +829,7 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Log" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:programServiceAreaTableId---"
     When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
-    And I refresh the pages
+    And I refresh the page
     When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
@@ -887,7 +887,7 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Log" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:programServiceAreaTableId---"
     When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
-    And I refresh the pages
+    And I refresh the page
     When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
@@ -947,7 +947,7 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Log" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:programServiceAreaTableId---"
     When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
-    And I refresh the pages
+    And I refresh the page
     When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
@@ -1011,7 +1011,7 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Log" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:programServiceAreaTableId---"
     When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
-    And I refresh the pages
+    And I refresh the page
     When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
@@ -1074,7 +1074,7 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Log" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:programServiceAreaTableId---"
     When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
-    And I refresh the pages
+    And I refresh the page
     When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
@@ -1137,7 +1137,7 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Log" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:programServiceAreaTableId---"
     When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
-    And I refresh the pages
+    And I refresh the page
     When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
@@ -1197,7 +1197,7 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Log" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:programServiceAreaTableId---"
     When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
-    And I refresh the pages
+    And I refresh the page
     When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
@@ -1254,7 +1254,7 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Log" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:programServiceAreaTableId---"
     When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
-    And I refresh the pages
+    And I refresh the page
     When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
@@ -1315,7 +1315,7 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Log" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:programServiceAreaTableId---"
     When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
-    And I refresh the pages
+    And I refresh the page
     When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
@@ -1370,7 +1370,7 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Log" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:programServiceAreaTableId---"
     When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
-    And I refresh the pages
+    And I refresh the page
     When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
@@ -1425,7 +1425,7 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Log" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:programServiceAreaTableId---"
     When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
-    And I refresh the pages
+    And I refresh the page
     When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
@@ -1480,7 +1480,7 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Log" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:programServiceAreaTableId---"
     When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
-    And I refresh the pages
+    And I refresh the page
     When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
@@ -1529,7 +1529,7 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Log" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:programServiceAreaTableId---"
     When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
-    And I refresh the pages
+    And I refresh the page
     When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
