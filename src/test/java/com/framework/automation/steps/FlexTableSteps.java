@@ -1,7 +1,7 @@
 package com.framework.automation.steps;
 
 import com.framework.automation.pageobject.FlexTablePage;
-import eyethink.automation.bots.exception.EyeThinkBotsCustomException;
+import com.testingblaze.exception.TestingBlazeCustomException;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.springframework.context.annotation.Description;
@@ -35,7 +35,7 @@ public class FlexTableSteps {
 
     @Description("Step to validate a bug which results in error if a certain sequnce is followed for a certain period of time continuosly")
     @When("^I perform sequence of actions on flex table for \"([^\"]*)\" minute$")
-    public void performSequenceOfActionsOnFlexTable(String durationOfRun) throws EyeThinkBotsCustomException {
+    public void performSequenceOfActionsOnFlexTable(String durationOfRun) throws TestingBlazeCustomException {
         flexTablePage.performSequenceOfActionsOnFlexTable(durationOfRun);
     }
 

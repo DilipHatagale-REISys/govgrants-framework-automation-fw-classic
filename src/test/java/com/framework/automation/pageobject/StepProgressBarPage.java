@@ -1,8 +1,9 @@
 package com.framework.automation.pageobject;
 
+import com.automation.rei.handlers.govgrants;
 import com.framework.automation.projectmanager.GovGrantsManager;
-import eyethink.automation.bots.Register.EyeThink;
-import eyethink.automation.bots.objects.Elements;
+import com.testingblaze.objects.Elements;
+import com.testingblaze.register.I;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -74,7 +75,7 @@ public class StepProgressBarPage extends GovGrantsManager {
      * @param statusName
      */
     public void getHoveringContentOfStepProgressBar(String statusName) {
-        EyeThink.core().scroll().moveToElement(EyeThink.core().elementReference().of(By.xpath("//div[@class='container-fluid']//*[@id='progressBarId']//li//span[contains(text(),'" + statusName + "')]"), false));
+        I.amPerforming().scroll().toMoveToElement(I.amPerforming().getElementReference().of(By.xpath("//div[@class='container-fluid']//*[@id='progressBarId']//li//span[contains(text(),'" + statusName + "')]"), false));
     }
 
     /*********
@@ -89,7 +90,7 @@ public class StepProgressBarPage extends GovGrantsManager {
     private boolean isStepProgressBarIsNotDisplayed() {
         boolean flag = true;
         try {
-            if (EyeThink.core().is().isDisplayed(stepProgressBar)) {
+            if (I.amPerforming().checkToSee().isDisplayed(stepProgressBar)) {
                 flag = false;
             }
         } catch (Exception e) {
@@ -113,7 +114,7 @@ public class StepProgressBarPage extends GovGrantsManager {
      * @return: List of all status item of step progress bar.
      */
     private List<Elements> getallStatusItemList() {
-        return EyeThink.core().elementReference().listOfElements().of(stepProgressBar);
+        return I.amPerforming().getElementReference().forListOfElements().of(stepProgressBar);
     }
 
     /**
@@ -125,7 +126,7 @@ public class StepProgressBarPage extends GovGrantsManager {
     private boolean isStatusStepInsideProgressBarIsNotDisplayed(String statusName) {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().isDisplayed(EyeThink.saas().pageDetails().getSpecificStatusFromProgressBar(statusName))) {
+            if (I.amPerforming().checkToSee().isDisplayed(govgrants.perform().pageDetails().getSpecificStatusFromProgressBar(statusName))) {
                 flag = false;
             }
         } catch (Exception e) {
@@ -139,7 +140,7 @@ public class StepProgressBarPage extends GovGrantsManager {
      */
     private Boolean isExpectedColorDisplayedAtChevronBarForStaus(String colorName, String status) {
         boolean flag = false;
-        WebElement chevronBar = EyeThink.core().elementReference().of(By.xpath("//div[@id='chevronBarId']/ul/li/a[contains(@class,'" + status + "')]"));
+        WebElement chevronBar = I.amPerforming().getElementReference().of(By.xpath("//div[@id='chevronBarId']/ul/li/a[contains(@class,'" + status + "')]"));
         switch (colorName.toUpperCase()) {
             case "Red":
                 if (chevronBar.getCssValue("color").contains("255, 255, 255, 1")

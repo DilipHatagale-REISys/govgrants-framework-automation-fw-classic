@@ -1,8 +1,8 @@
 package com.framework.automation.pageobject;
 
 import com.framework.automation.projectmanager.GovGrantsManager;
-import eyethink.automation.bots.Register.EyeThink;
-import eyethink.automation.bots.objects.Elements;
+import com.testingblaze.objects.Elements;
+import com.testingblaze.register.I;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -22,7 +22,7 @@ public class LibraryFilesPage extends GovGrantsManager {
      */
     public void filesTablePagination(String NextPrevious, String tableId) {
         By paginationChoice = By.xpath("//*[@id='" + tableId + "']//button[@data-value='" + NextPrevious + "']");
-        EyeThink.core().click().on(paginationChoice);
+        I.amPerforming().click().on(paginationChoice);
     }
 
     /**
@@ -33,13 +33,13 @@ public class LibraryFilesPage extends GovGrantsManager {
      */
     public void filesTablePagesDropdown(String numberOfEntries, String tableId) {
         By entriesDropDown = By.xpath("//*[@id='" + tableId + "']//div[@id='Footer']//div[contains(@class,'slds-select_container')]//select");
-        WebElement entriesDD = EyeThink.core().elementReference().of(entriesDropDown);
+        WebElement entriesDD = I.amPerforming().getElementReference().of(entriesDropDown);
 
         try {
-            EyeThink.core().click().on(entriesDD);
+            I.amPerforming().click().on(entriesDD);
             (new Select(entriesDD)).selectByVisibleText(numberOfEntries);
         } catch (Exception var6) {
-            EyeThink.core().click().on(entriesDD);
+            I.amPerforming().click().on(entriesDD);
             (new Select(entriesDD)).selectByVisibleText(numberOfEntries);
         }
 
@@ -56,9 +56,9 @@ public class LibraryFilesPage extends GovGrantsManager {
         } else if (usuage.equalsIgnoreCase("do not see")) {
             Assert.assertFalse(isLibraryFileFolderIsDisplayed(libraryFileFolderName));
         } else if (usuage.equalsIgnoreCase("softly see")) {
-            EyeThink.core().assertion().assertThat(isLibraryFileFolderIsDisplayed(libraryFileFolderName)).isTrue();
+            I.amPerforming().assertionsTo().assertThat(isLibraryFileFolderIsDisplayed(libraryFileFolderName)).isTrue();
         } else if (usuage.equalsIgnoreCase("softly do not see")) {
-            EyeThink.core().assertion().assertThat(isLibraryFileFolderIsDisplayed(libraryFileFolderName)).isFalse();
+            I.amPerforming().assertionsTo().assertThat(isLibraryFileFolderIsDisplayed(libraryFileFolderName)).isFalse();
         }
     }
 
@@ -74,9 +74,9 @@ public class LibraryFilesPage extends GovGrantsManager {
         } else if (usuage.equalsIgnoreCase("do not see")) {
             Assert.assertFalse(isDropdownOptionIsDisplayedAtLibraryFileFolder(dropDownOption, libraryFileFolderName));
         } else if (usuage.equalsIgnoreCase("softly see")) {
-            EyeThink.core().assertion().assertThat(isDropdownOptionIsDisplayedAtLibraryFileFolder(dropDownOption, libraryFileFolderName)).isTrue();
+            I.amPerforming().assertionsTo().assertThat(isDropdownOptionIsDisplayedAtLibraryFileFolder(dropDownOption, libraryFileFolderName)).isTrue();
         } else if (usuage.equalsIgnoreCase("softly do not see")) {
-            EyeThink.core().assertion().assertThat(isDropdownOptionIsDisplayedAtLibraryFileFolder(dropDownOption, libraryFileFolderName)).isFalse();
+            I.amPerforming().assertionsTo().assertThat(isDropdownOptionIsDisplayedAtLibraryFileFolder(dropDownOption, libraryFileFolderName)).isFalse();
         }
     }
 
@@ -128,9 +128,9 @@ public class LibraryFilesPage extends GovGrantsManager {
         } else if (usuage.equalsIgnoreCase("do not see")) {
             Assert.assertFalse(isLibraryFolderFileHighlightedInYellow(libraryFileFolderName));
         } else if (usuage.equalsIgnoreCase("softly see")) {
-            EyeThink.core().assertion().assertThat(isLibraryFolderFileHighlightedInYellow(libraryFileFolderName)).isTrue();
+            I.amPerforming().assertionsTo().assertThat(isLibraryFolderFileHighlightedInYellow(libraryFileFolderName)).isTrue();
         } else if (usuage.equalsIgnoreCase("softly do not see")) {
-            EyeThink.core().assertion().assertThat(isLibraryFolderFileHighlightedInYellow(libraryFileFolderName)).isFalse();
+            I.amPerforming().assertionsTo().assertThat(isLibraryFolderFileHighlightedInYellow(libraryFileFolderName)).isFalse();
         }
     }
 
@@ -145,9 +145,9 @@ public class LibraryFilesPage extends GovGrantsManager {
         } else if (usuage.equalsIgnoreCase("do not see")) {
             Assert.assertFalse(isLibraryFolderFileCountDisplayed(labelAndCount));
         } else if (usuage.equalsIgnoreCase("softly see")) {
-            EyeThink.core().assertion().assertThat(isLibraryFolderFileCountDisplayed(labelAndCount)).isTrue();
+            I.amPerforming().assertionsTo().assertThat(isLibraryFolderFileCountDisplayed(labelAndCount)).isTrue();
         } else if (usuage.equalsIgnoreCase("softly do not see")) {
-            EyeThink.core().assertion().assertThat(isLibraryFolderFileCountDisplayed(labelAndCount)).isFalse();
+            I.amPerforming().assertionsTo().assertThat(isLibraryFolderFileCountDisplayed(labelAndCount)).isFalse();
         }
     }
 
@@ -166,7 +166,7 @@ public class LibraryFilesPage extends GovGrantsManager {
      * @param libraryFileFolderName
      */
     public void clickOnExpandIconAtLibraryFolder(String libraryFileFolderName) {
-        EyeThink.core().click().on(By.xpath("//*[text() ='" + libraryFileFolderName + "']//parent::div//button[@title='Expand Folder']"));
+        I.amPerforming().click().on(By.xpath("//*[text() ='" + libraryFileFolderName + "']//parent::div//button[@title='Expand Folder']"));
     }
 
     /**
@@ -175,7 +175,7 @@ public class LibraryFilesPage extends GovGrantsManager {
      * @param libraryFileFolderName
      */
     public void clickOnDropdownIconAtLibraryFolderFile(String libraryFileFolderName) {
-        EyeThink.core().click().on(By.xpath("//*[text() ='" + libraryFileFolderName + "']//parent::div//button[@aria-expanded='false']"));
+        I.amPerforming().click().on(By.xpath("//*[text() ='" + libraryFileFolderName + "']//parent::div//button[@aria-expanded='false']"));
     }
 
     /**
@@ -185,7 +185,7 @@ public class LibraryFilesPage extends GovGrantsManager {
      * @param libraryFileFolderName
      */
     public void clickOnDropdownOptionsAtLibraryFolderFile(String dropDownOption, String libraryFileFolderName) {
-        EyeThink.core().click().on(dropdownOptionAtLibraryFolderFile(dropDownOption, libraryFileFolderName));
+        I.amPerforming().click().on(dropdownOptionAtLibraryFolderFile(dropDownOption, libraryFileFolderName));
     }
 
     /**
@@ -206,13 +206,13 @@ public class LibraryFilesPage extends GovGrantsManager {
      */
     public void enterValueInFieldsAtModalWindow(String value, String fieldName) {
         if (fieldName.equalsIgnoreCase("Description")) {
-            WebElement enterDescription = EyeThink.core().elementReference().of(By.xpath("//label[text()='" + fieldName + "']/following-sibling::div//textarea"));
-            EyeThink.core().enterText().clear(enterDescription);
-            EyeThink.core().enterText().in(enterDescription, value);
+            WebElement enterDescription = I.amPerforming().getElementReference().of(By.xpath("//label[text()='" + fieldName + "']/following-sibling::div//textarea"));
+            I.amPerforming().textInput().toClear(enterDescription);
+            I.amPerforming().textInput().in(enterDescription, value);
         } else {
-            WebElement enterFieldValue = EyeThink.core().elementReference().of(By.xpath("//label[text()='" + fieldName + "']/following-sibling::div//input"));
-            EyeThink.core().enterText().clear(enterFieldValue);
-            EyeThink.core().enterText().in(enterFieldValue, value);
+            WebElement enterFieldValue = I.amPerforming().getElementReference().of(By.xpath("//label[text()='" + fieldName + "']/following-sibling::div//input"));
+            I.amPerforming().textInput().toClear(enterFieldValue);
+            I.amPerforming().textInput().in(enterFieldValue, value);
         }
     }
 
@@ -223,7 +223,7 @@ public class LibraryFilesPage extends GovGrantsManager {
      * @param modalTitle
      */
     public void clickOnCloseIconAtLibraryFolderFileModal(String icon, String modalTitle) {
-        EyeThink.core().click().on(By.xpath("//p[text()='" + modalTitle + "']/ancestor::div[(@aria-hidden)]//*[contains(normalize-space(text()),'" + icon + "')]"));
+        I.amPerforming().click().on(By.xpath("//p[text()='" + modalTitle + "']/ancestor::div[(@aria-hidden)]//*[contains(normalize-space(text()),'" + icon + "')]"));
     }
 
     /**
@@ -234,14 +234,14 @@ public class LibraryFilesPage extends GovGrantsManager {
     public void uploadFileInLibraryAtHomePhase(String attachmentName) {
         By attachmentChooseFilePath = By.xpath("//input[@type='file']");
         String defaultFilePath = System.getProperty("user.dir") + "/src/main/resources/";
-        EyeThink.core().enterText().in(attachmentChooseFilePath, defaultFilePath + attachmentName);
+        I.amPerforming().textInput().in(attachmentChooseFilePath, defaultFilePath + attachmentName);
     }
 
     /**
      * perform click on select/change folder at add file modal - Library Files Home phase
      */
     public void clickOnSelectChangeFolderInAddFileModalUnderLibrary() {
-        EyeThink.core().click().on(By.xpath("//*[contains(normalize-space(text()),'Select/Change Folder')]"));
+        I.amPerforming().click().on(By.xpath("//*[contains(normalize-space(text()),'Select/Change Folder')]"));
     }
 
     /**
@@ -250,7 +250,7 @@ public class LibraryFilesPage extends GovGrantsManager {
      * @param folderName
      */
     public void selectOrChangeFolderInAddFileModalUnderLibrary(String folderName) {
-        EyeThink.core().click().on(By.xpath("//div[@id='modaltemp']//span[text()='" + folderName + "']"));
+        I.amPerforming().click().on(By.xpath("//div[@id='modaltemp']//span[text()='" + folderName + "']"));
     }
 
     /**
@@ -260,8 +260,8 @@ public class LibraryFilesPage extends GovGrantsManager {
      */
     public void performQuickSearchUnderFilesLibrary(String searchValue) {
         By enterText = By.xpath("//input[@type='search']");
-        EyeThink.core().enterText().clear(enterText);
-        EyeThink.core().enterText().in(enterText, searchValue);
+        I.amPerforming().textInput().toClear(enterText);
+        I.amPerforming().textInput().in(enterText, searchValue);
     }
 
     /**
@@ -272,8 +272,8 @@ public class LibraryFilesPage extends GovGrantsManager {
     public void selectClassificationAtUploadFileModalUnderLibrary(String classification) {
         By clickOnDropdown = By.xpath("//select[@name='Classification']");
         By selectValueFromDropdown = By.xpath("//select[@name='Classification']//option[@value='" + classification + "']");
-        EyeThink.core().click().on(clickOnDropdown);
-        EyeThink.core().click().on(selectValueFromDropdown);
+        I.amPerforming().click().on(clickOnDropdown);
+        I.amPerforming().click().on(selectValueFromDropdown);
     }
 
     /**
@@ -282,7 +282,7 @@ public class LibraryFilesPage extends GovGrantsManager {
      * @param tabName
      */
     public void clickOnTabAtFilesLibraryUploadModal(String tabName) {
-        EyeThink.core().click().on(By.xpath("//li[@title='" + tabName + "']"));
+        I.amPerforming().click().on(By.xpath("//li[@title='" + tabName + "']"));
     }
 
     /**
@@ -318,7 +318,7 @@ public class LibraryFilesPage extends GovGrantsManager {
     private boolean isLibraryFileFolderIsDisplayed(String libraryFileFolderName) {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().isDisplayed(By.xpath("//div[@id='WorkspaceFilesHierarchy']//*[text()='" + libraryFileFolderName + "']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='WorkspaceFilesHierarchy']//*[text()='" + libraryFileFolderName + "']"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -336,7 +336,7 @@ public class LibraryFilesPage extends GovGrantsManager {
             libraryFileFolderName) {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().isDisplayed(dropdownOptionAtLibraryFolderFile(dropDownOption, libraryFileFolderName))) {
+            if (I.amPerforming().checkToSee().isDisplayed(dropdownOptionAtLibraryFolderFile(dropDownOption, libraryFileFolderName))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -353,7 +353,7 @@ public class LibraryFilesPage extends GovGrantsManager {
     private boolean isModalWindowNotDisplayedAtLibraryFileFolder(String modalTitle) {
         boolean flag = true;
         try {
-            if (EyeThink.core().is().isDisplayed(By.xpath("//p[text()='" + modalTitle + "']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//p[text()='" + modalTitle + "']"))) {
                 flag = false;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -370,7 +370,7 @@ public class LibraryFilesPage extends GovGrantsManager {
     private boolean isModalButtonDisabledAtLibrary(String buttonName) {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().isDisplayed(By.xpath("//button[text()='" + buttonName + "' and @disabled='true']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//button[text()='" + buttonName + "' and @disabled='true']"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -387,7 +387,7 @@ public class LibraryFilesPage extends GovGrantsManager {
     private boolean isDefaultLibraryFolderIsDisabledAtUploadModal(String defaultFolder) {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().isDisplayed(By.xpath("//div[@data-folder-name='" + defaultFolder + "']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@data-folder-name='" + defaultFolder + "']"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -405,7 +405,7 @@ public class LibraryFilesPage extends GovGrantsManager {
     private boolean isModalWindowIsNotDisabledAtFilesList(String modalTitle, String tableId) {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().isEnabled(By.xpath("//p[text()='" + modalTitle + "']/ancestor::div[@id='" + tableId + "' and @aria-hidden='true']"))) {
+            if (I.amPerforming().checkToSee().isEnabled(By.xpath("//p[text()='" + modalTitle + "']/ancestor::div[@id='" + tableId + "' and @aria-hidden='true']"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -421,7 +421,7 @@ public class LibraryFilesPage extends GovGrantsManager {
      */
     private boolean isLibraryFolderFileHighlightedInYellow(String libraryFileFolderName) {
         boolean flag = false;
-        WebElement fileFolderName = EyeThink.core().elementReference().of(By.xpath("//div[@id='WorkspaceFilesHierarchy']//*[text()='" + libraryFileFolderName + "']"));
+        WebElement fileFolderName = I.amPerforming().getElementReference().of(By.xpath("//div[@id='WorkspaceFilesHierarchy']//*[text()='" + libraryFileFolderName + "']"));
         try {
             if (fileFolderName.getCssValue("background-color").contains("rgb(255, 235, 59, 1")) ;
             {
@@ -440,7 +440,7 @@ public class LibraryFilesPage extends GovGrantsManager {
      */
     private boolean isLibraryFolderFileCountDisplayed(String labelAndCount) {
         boolean flag = false;
-        List<Elements> searchResultLabelAndCountList = EyeThink.core().elementReference().listOfElements().of(By.xpath("//div[@class='slds-form-element__row search-result']//label"));
+        List<Elements> searchResultLabelAndCountList = I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//div[@class='slds-form-element__row search-result']//label"));
         try {
             for (int row = 0; row < searchResultLabelAndCountList.size(); row++) {
                 if (searchResultLabelAndCountList.get(row).getText().equalsIgnoreCase(labelAndCount)) {
@@ -462,7 +462,7 @@ public class LibraryFilesPage extends GovGrantsManager {
     private boolean isSearchedValueDisplayedInTableAtFileUploadModal(String tableValue, String tableId) {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().isDisplayed(By.xpath("//*[@id='" + tableId + "']//tr//lightning-formatted-text[text()='" + tableValue + "']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//*[@id='" + tableId + "']//tr//lightning-formatted-text[text()='" + tableValue + "']"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {

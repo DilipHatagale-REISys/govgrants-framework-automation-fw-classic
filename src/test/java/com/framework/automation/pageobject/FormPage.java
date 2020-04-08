@@ -1,7 +1,7 @@
 package com.framework.automation.pageobject;
 
 import com.framework.automation.projectmanager.GovGrantsManager;
-import eyethink.automation.bots.Register.EyeThink;
+import com.testingblaze.register.I;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -44,10 +44,10 @@ public class FormPage extends GovGrantsManager {
      */
     public void clickFormActionIconsForSpecificSubject(String programSubject, String iconName) {
         try {
-            EyeThink.core().click().on(By.xpath("//td//span[@title='" + programSubject + "']/../../../td//a[@title='" + iconName + "']//i"));
+            I.amPerforming().click().on(By.xpath("//td//span[@title='" + programSubject + "']/../../../td//a[@title='" + iconName + "']//i"));
         } catch (Exception e) {
-            EyeThink.core().WaitFor().makeThreadSleep(1000);
-            EyeThink.core().click().withJavaScript(By
+            I.amPerforming().waitFor().makeThreadSleep(1000);
+            I.amPerforming().click().withJavaScript(By
                     .xpath("//td//span[@title='" + programSubject + "']/../../../td//a[@title='" + iconName + "']//i"));
         }
     }
@@ -75,7 +75,7 @@ public class FormPage extends GovGrantsManager {
      * @param versionNo
      */
     public void assertVersionNoInsideForm(String versionNo) {
-        Assert.assertTrue(EyeThink.core().get().attribute(versionNumber, "innerText").trim()
+        Assert.assertTrue(I.amPerforming().actionToGet().attribute(versionNumber, "innerText").trim()
                 .equalsIgnoreCase(versionNo));
     }
 
@@ -91,7 +91,7 @@ public class FormPage extends GovGrantsManager {
     private boolean isBusinessFormSectionNotDisplayed() {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().isDisplayed(businessFormSection)) {
+            if (I.amPerforming().checkToSee().isDisplayed(businessFormSection)) {
                 flag = false;
             }
         } catch (Exception e) {
@@ -107,7 +107,7 @@ public class FormPage extends GovGrantsManager {
     private boolean isChangedButtonNameDisplayed(String actionButtonName) {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().isDisplayed(getAllActionItemInsideFormDetalPage(actionButtonName))) {
+            if (I.amPerforming().checkToSee().isDisplayed(getAllActionItemInsideFormDetalPage(actionButtonName))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -123,7 +123,7 @@ public class FormPage extends GovGrantsManager {
     private boolean isEditButtonDisplayed(String actionButtonName) {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().isDisplayed(getAllActionItemInsideFormDetalPage(actionButtonName))) {
+            if (I.amPerforming().checkToSee().isDisplayed(getAllActionItemInsideFormDetalPage(actionButtonName))) {
                 flag = false;
             }
         } catch (Exception e) {
@@ -140,7 +140,7 @@ public class FormPage extends GovGrantsManager {
     private boolean isPreviewActionItemNotDisplayForInternalUser(String Item) {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().isDisplayed(getAllActionItemInsideBusinessForm(Item))) {
+            if (I.amPerforming().checkToSee().isDisplayed(getAllActionItemInsideBusinessForm(Item))) {
                 flag = false;
             }
         } catch (Exception e) {
@@ -156,7 +156,7 @@ public class FormPage extends GovGrantsManager {
      * @return
      */
     private WebElement getAllActionItemInsideBusinessForm(String Item) {
-        return EyeThink.core().elementReference().of(By.xpath(("//div[@id='FormComponent']//div/table/tbody/tr//td//a[@title='" + Item + "']")));
+        return I.amPerforming().getElementReference().of(By.xpath(("//div[@id='FormComponent']//div/table/tbody/tr//td//a[@title='" + Item + "']")));
     }
 
     /**
@@ -166,6 +166,6 @@ public class FormPage extends GovGrantsManager {
      * @return
      */
     private WebElement getAllActionItemInsideFormDetalPage(String actionButtonName) {
-        return EyeThink.core().elementReference().of(By.xpath(("//div[@id='headerButtonsPanel']//*[@title='" + actionButtonName + "']")));
+        return I.amPerforming().getElementReference().of(By.xpath(("//div[@id='headerButtonsPanel']//*[@title='" + actionButtonName + "']")));
     }
 }

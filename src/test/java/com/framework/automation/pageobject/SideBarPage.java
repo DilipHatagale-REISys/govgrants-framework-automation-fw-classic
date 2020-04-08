@@ -1,8 +1,9 @@
 package com.framework.automation.pageobject;
 
+import com.automation.rei.handlers.govgrants;
 import com.framework.automation.projectmanager.GovGrantsManager;
-import eyethink.automation.bots.Register.EyeThink;
-import eyethink.automation.bots.objects.Elements;
+import com.testingblaze.objects.Elements;
+import com.testingblaze.register.I;
 import org.junit.Assert;
 
 import java.util.ArrayList;
@@ -146,7 +147,7 @@ public class SideBarPage extends GovGrantsManager {
      * @param headerName
      */
     private Boolean isAccordianContentSequence(String accordianHeaderName, int number, String headerName) {
-        if (EyeThink.saas().sideBar().getSideBarContents(headerName).get(number).getText().contains(accordianHeaderName)) {
+        if (govgrants.perform().sideBar().getSideBarContents(headerName).get(number).getText().contains(accordianHeaderName)) {
             return true;
         } else
             return false;
@@ -159,12 +160,12 @@ public class SideBarPage extends GovGrantsManager {
      * @return
      */
     private Boolean isNewTabOpens(String pageTitle) {
-        ArrayList<String> tabHandles = new ArrayList<String>(EyeThink.core().switchTo().getWindowsHandlers());
+        ArrayList<String> tabHandles = new ArrayList<String>(I.amPerforming().switchTo().getWindowsHandlers());
         boolean myNewTabFound = false;
         for (int index = 0; index < tabHandles.size(); index++) {
-            EyeThink.core().switchTo().switchToWindowHandler(index);
-            EyeThink.core().WaitFor().makeThreadSleep(2000);
-            if (EyeThink.core().get().pageTitle().equalsIgnoreCase(pageTitle)) {
+            I.amPerforming().switchTo().windowHandler(index);
+            I.amPerforming().waitFor().makeThreadSleep(2000);
+            if (I.amPerforming().actionToGet().pageTitle().equalsIgnoreCase(pageTitle)) {
                 myNewTabFound = true;
                 break;
             }
@@ -180,7 +181,7 @@ public class SideBarPage extends GovGrantsManager {
     private boolean isSideBarAccordionSubHeaderDisplayed(String sideBarCategory, String accordianSubHeaderDetail) {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().isDisplayed(getSideBarAccordianSubHeaderContent(sideBarCategory, accordianSubHeaderDetail))) {
+            if (I.amPerforming().checkToSee().isDisplayed(getSideBarAccordianSubHeaderContent(sideBarCategory, accordianSubHeaderDetail))) {
                 flag = true;
             }
         } catch (Exception e) {
