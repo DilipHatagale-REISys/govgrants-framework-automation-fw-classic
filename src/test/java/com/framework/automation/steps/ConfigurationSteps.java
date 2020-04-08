@@ -2,7 +2,6 @@ package com.framework.automation.steps;
 
 import com.framework.automation.projectmanager.ConfigurationParameters;
 import com.framework.automation.projectmanager.ProjectWebServices;
-import eyethink.automation.bots.Register.EyeThink;
 import io.cucumber.java.en.*;
 
 import java.io.IOException;

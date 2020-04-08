@@ -1,9 +1,8 @@
 package com.framework.automation.pageobject;
 
 import com.framework.automation.projectmanager.GovGrantsManager;
-import eyethink.automation.bots.Register.EyeThink;
-import eyethink.automation.bots.exception.EyeThinkBotsCustomException;
-import eyethink.automation.bots.objects.Elements;
+import com.testingblaze.objects.Elements;
+import com.testingblaze.register.I;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -54,16 +53,16 @@ public class ApprovalProcessPage extends GovGrantsManager {
         int whileHandler = 0;
         By startButton = By.xpath("//div/table/tbody/tr/td/span/span/span[text()='" + programSubject
                 + "']//following::td/div/span/span/span/span/a[@title='" + titleInLocator + "']");
-        List<Elements> approvalStartButtonTable = EyeThink.core().elementReference().listOfElements().of(startButton);
+        List<Elements> approvalStartButtonTable = I.amPerforming().getElementReference().forListOfElements().of(startButton);
         int approvalStartButtonTableSize = approvalStartButtonTable.size();
         while (approvalStartButtonTableSize == 0) {
             whileHandler++;
             if (whileHandler == 2) {
                 break;
             }
-            EyeThink.core().get().pageRefresh();
-            EyeThink.core().elementReference().of(pendingTasksTableRef);
-            approvalStartButtonTable = EyeThink.core().elementReference().listOfElements().of(startButton);
+            I.amPerforming().actionToGet().pageRefresh();
+            I.amPerforming().getElementReference().of(pendingTasksTableRef);
+            approvalStartButtonTable = I.amPerforming().getElementReference().forListOfElements().of(startButton);
             approvalStartButtonTableSize = approvalStartButtonTable.size();
         }
         System.out.println("size of pending task " + approvalStartButtonTable.size());
@@ -78,7 +77,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
      */
     private boolean isSuccessForEmailToProgramOwner(String templateName) {
         boolean flag = false;
-        EyeThink.core().WaitFor().makeThreadSleep(3000);
+        I.amPerforming().waitFor().makeThreadSleep(3000);
         try {
             if (validateQueueEmail().getAttribute("title").equalsIgnoreCase("Queued")) {
                 flag = true;
@@ -88,7 +87,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
         if (flag == false) {
             try {
                 clickAndSelectOptionFromLeftDoubleArrowDropDown("Success Emails");
-                EyeThink.core().WaitFor().makeThreadSleep(2500);
+                I.amPerforming().waitFor().makeThreadSleep(2500);
                 if (validateSuccessEmail(templateName).get(0).isDisplayed()) {
                     flag = true;
                 }
@@ -105,8 +104,8 @@ public class ApprovalProcessPage extends GovGrantsManager {
      * @return
      */
     private WebElement validateQueueEmail() {
-        EyeThink.core().WaitFor().makeThreadSleep(200);
-        return EyeThink.core().elementReference().of(By.xpath("//td//span[@title='Queued']"));
+        I.amPerforming().waitFor().makeThreadSleep(200);
+        return I.amPerforming().getElementReference().of(By.xpath("//td//span[@title='Queued']"));
     }
 
     /**
@@ -116,7 +115,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
      * @return
      */
     private List<Elements> validateSuccessEmail(String templateName) {
-        return EyeThink.core().elementReference().listOfElements().of(By.xpath(
+        return I.amPerforming().getElementReference().forListOfElements().of(By.xpath(
                 "//td//span[text()='nauman.shahid@reisystems.com']/../../../../following-sibling::td//span[text()='"
                         + templateName + "']/../../../following-sibling::td//span[text()='Success']"));
     }
@@ -129,7 +128,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
      * @return
      */
     private WebElement getCommentTextInsideHistoryTab(String commentText, String User) {
-        return EyeThink.core().elementReference().of(By.xpath("//td/span[contains(text(),'" + User
+        return I.amPerforming().getElementReference().of(By.xpath("//td/span[contains(text(),'" + User
                 + "')]/../following-sibling::td/span[contains(text(),'" + commentText + "')]"));
     }
 
@@ -141,10 +140,10 @@ public class ApprovalProcessPage extends GovGrantsManager {
      * @return
      */
     private boolean isCommentTextDisplayed(String commentText, String User) {
-        EyeThink.core().scroll().pageDocument("PageDown", 0, 0);
+        I.amPerforming().scroll().onPageDocument("PageDown", 0, 0);
         boolean flag = false;
         try {
-            if (EyeThink.core().get().text(getCommentTextInsideHistoryTab(commentText, User)).contains(commentText)) {
+            if (I.amPerforming().actionToGet().text(getCommentTextInsideHistoryTab(commentText, User)).contains(commentText)) {
                 flag = true;
             }
         } catch (Exception e) {

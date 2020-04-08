@@ -4,9 +4,9 @@ import com.framework.automation.objects.IdBucket;
 import com.framework.automation.payloads.ApiUtilities;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import eyethink.automation.bots.Register.EnvironmentFetcher;
-import eyethink.automation.bots.Register.EyeThink;
-import eyethink.automation.bots.corelib.Properties_Logs;
+import com.testingblaze.misclib.Properties_Logs;
+import com.testingblaze.register.EnvironmentFactory;
+import com.testingblaze.register.I;
 import io.restassured.response.Response;
 
 import java.io.IOException;
@@ -17,7 +17,7 @@ public class ProjectWebServices {
     SetUpConfiguration configPostCall;
     Properties_Logs readProp = new Properties_Logs();
     ApiUtilities apiUtil;
-    private static String endPoint = EnvironmentFetcher.getEnvironmentUrl();
+    private static String endPoint = EnvironmentFactory.getEnvironmentUrl();
     private String defaultUpdateEndPoint = "/services/apexrest/frameworkAPIUpdate";
     private String defaultEndPointGetToken = "/services/oauth2/token?grant_type=password&client_secret=7608231485378593656&client_id=3MVG91ftikjGaMd8E01oyLzW0qhdCcSTnpVVwmMdo3H_C6vbhroOOpEF4C.54CXCiOi5SQFyN.a6Ze8NCAcSa&username=qa_automation@ggp.test5&password=Automation@12345";
     public static String tokenString;
@@ -75,7 +75,7 @@ public class ProjectWebServices {
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("locale", locale);
         jsonObject.addProperty("timezone", timeZone);
-        EyeThink.core().apiCall().putCall(jsonObject, null, finalEndPoint, null, null, tokenString);
+        I.amPerforming().restHttp().putCall(jsonObject, null, finalEndPoint, null, null, tokenString);
     }
 
     /**
@@ -99,7 +99,7 @@ public class ProjectWebServices {
         jsonContainer.add("fieldvalues", jsonObject);
         jsonContainer.addProperty("customsettingapiname", "GNT__KeyValueStore__c");
         jArray.add(jsonContainer);
-        EyeThink.core().apiCall().putCall(null, jArray.toString(), finalEndPoint, null, null, tokenString);
+        I.amPerforming().restHttp().putCall(null, jArray.toString(), finalEndPoint, null, null, tokenString);
     }
 
     /**
@@ -126,7 +126,7 @@ public class ProjectWebServices {
         jsonContainer.add("fieldvalues", jsonObject);
         jsonContainer.addProperty("customsettingapiname", "GNT__GlobalConfig__c");
         jArray.add(jsonContainer);
-        EyeThink.core().apiCall().putCall(null, jArray.toString(), finalEndPoint, null, null, tokenString);
+        I.amPerforming().restHttp().putCall(null, jArray.toString(), finalEndPoint, null, null, tokenString);
     }
 
     /**
@@ -159,7 +159,7 @@ public class ProjectWebServices {
         jsonContainer.add("fieldvalues", jsonObject);
         jsonContainer.addProperty("customsettingapiname", "GNT__CustomAppFooterConfig__c");
         jArray.add(jsonContainer);
-        EyeThink.core().apiCall().putCall(null, jArray.toString(), finalEndPoint, null, null, tokenString);
+        I.amPerforming().restHttp().putCall(null, jArray.toString(), finalEndPoint, null, null, tokenString);
     }
 
     /**
@@ -177,7 +177,7 @@ public class ProjectWebServices {
         jsonObject.addProperty("objectName", objectName);
         jsonObject.addProperty("criteria", "ProgramName__c='" + recordName + "'");
 
-        Response response = EyeThink.core().apiCall().DeleteCall(jsonObject, null, finalEndPoint, "Authorization", "Bearer " + tokenString,
+        Response response = I.amPerforming().restHttp().DeleteCall(jsonObject, null, finalEndPoint, "Authorization", "Bearer " + tokenString,
                 null);
         System.out.println(finalEndPoint);
         response.prettyPrint();
@@ -271,7 +271,7 @@ public class ProjectWebServices {
      * get token for authentication of Delete request
      */
     private void getAuthToken() {
-        Response response = EyeThink.core().apiCall().postCall(null, null, endPoint + defaultEndPointGetToken, null, null, null);
+        Response response = I.amPerforming().restHttp().postCall(null, null, endPoint + defaultEndPointGetToken, null, null, null);
         tokenString = response.body().jsonPath().getString("access_token");
     }
 
@@ -303,11 +303,11 @@ public class ProjectWebServices {
                     readProp.ReadPropertyFile("govgrants_Config.properties", splittedValue[1]), filterId + ":idValue");
         } else if (fieldOrignalValue.contains("ApiGeneratedId")) {
             String[] getValueAt = fieldOrignalValue.split(":");
-            response = EyeThink.core().apiCall().postCall(null, new SetUpConfiguration().getConfigJson(configurationCategory, fieldName,
+            response = I.amPerforming().restHttp().postCall(null, new SetUpConfiguration().getConfigJson(configurationCategory, fieldName,
                     storeAllIds.get(Integer.parseInt(getValueAt[1])).getId(), filterId + ":idValue"),
                     endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
         } else {
-            response = EyeThink.core().apiCall().postCall(null,
+            response = I.amPerforming().restHttp().postCall(null,
                     new SetUpConfiguration().getConfigJson(configurationCategory, fieldName, fieldOrignalValue,
                             filterId + ":idValue"),
                     endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
@@ -324,12 +324,12 @@ public class ProjectWebServices {
                     readProp.ReadPropertyFile("govgrants_Config.properties", splittedValue[1]), filterClause);
         } else if (fieldOrignalValue.contains("ApiGeneratedId")) {
             String[] getValueAt = fieldOrignalValue.split(":");
-            response = EyeThink.core().apiCall().postCall(null,
+            response = I.amPerforming().restHttp().postCall(null,
                     new SetUpConfiguration().getConfigJson(configurationCategory, fieldName,
                             storeAllIds.get(Integer.parseInt(getValueAt[1])).getId(), filterClause),
                     endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
         } else {
-            response = EyeThink.core().apiCall().postCall(null,
+            response = I.amPerforming().restHttp().postCall(null,
                     new SetUpConfiguration().getConfigJson(configurationCategory, fieldName, fieldOrignalValue,
                             filterClause),
                     endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
@@ -427,12 +427,12 @@ public class ProjectWebServices {
         Response response = null;
         if (value.contains("ApiGeneratedId")) {
             String[] getValueAt = value.split(":");
-            response = EyeThink.core().apiCall().postCall(null,
+            response = I.amPerforming().restHttp().postCall(null,
                     configPostCall.getConfigJson(handleConfigCategory(configCategory), fieldName,
                             storeAllIds.get(Integer.parseInt(getValueAt[1])).getId(), filterClause),
                     endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
         } else {
-            response = EyeThink.core().apiCall().postCall(null,
+            response = I.amPerforming().restHttp().postCall(null,
                     configPostCall.getConfigJson(handleConfigCategory(configCategory), fieldName, value, filterClause),
                     endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
         }

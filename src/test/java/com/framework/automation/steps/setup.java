@@ -2,10 +2,9 @@ package com.framework.automation.steps;
 
 import com.framework.automation.projectmanager.ProjectWebServices;
 import com.framework.automation.projectmanager.UsersAndURL;
-import eyethink.automation.bots.Register.AuthorizedProject;
-import eyethink.automation.bots.Register.EyeThink;
-import eyethink.automation.bots.Report.CSS;
-import eyethink.automation.bots.controller.TestSetupController;
+import com.testingblaze.controller.TestSetupController;
+import com.testingblaze.register.EnvironmentFactory;
+import com.testingblaze.report.CSS;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -26,10 +25,12 @@ public class setup {
 
     public setup(TestSetupController userController) {
         this.userController = userController;
-        EyeThink.setRegister(AuthorizedProject.SAAS_GOVGRANTS_GGF);
-        if (report == null) {
+        if(report == null) {
             this.report = new CSS();
-            report.reportConfigWriteUp(System.getProperty("user.dir"), "GovGrants Framework Test Automation");
+            EnvironmentFactory.setProjectName("GovGrants TVC Test Automation");
+            EnvironmentFactory.setOrgName("REI Systems [Saas Business Unit]");
+            EnvironmentFactory.setProjectPath(System.getProperty("user.dir"));
+            report.reportConfigWriteUp();
         }
     }
 

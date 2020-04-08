@@ -1516,7 +1516,7 @@ Feature: Logged Issues Scenarios
     Then I see "Draft Programs" is selected at program flex table
 
   @60559    @numericFieldvalueShouldBeBlankAtEnhancedGrid
-  Scenario Outline: validate Number field is displaying blank after clearing the existing value at enhanced grid
+  Scenario Outline: validate Number field is displaying blank after toClearing the existing value at enhanced grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |

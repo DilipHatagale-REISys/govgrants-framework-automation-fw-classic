@@ -1,9 +1,10 @@
 package com.framework.automation.pageobject;
 
+import com.automation.rei.handlers.govgrants;
 import com.framework.automation.projectmanager.GovGrantsManager;
-import eyethink.automation.bots.Register.EyeThink;
-import eyethink.automation.bots.exception.EyeThinkBotsCustomException;
-import eyethink.automation.bots.objects.Elements;
+import com.testingblaze.exception.TestingBlazeCustomException;
+import com.testingblaze.objects.Elements;
+import com.testingblaze.register.I;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -73,7 +74,7 @@ public class FlexTablePage extends GovGrantsManager {
      */
     public void assertFlexTabelTotalCalulationRowDisabled() {
         try {
-            EyeThink.core().scroll().pageDocument("PageDown", 0, 0);
+            I.amPerforming().scroll().onPageDocument("PageDown", 0, 0);
         } catch (Exception e) {
         }
         Assert.assertTrue(isFlexTableRowsTotalDisabled());
@@ -84,7 +85,7 @@ public class FlexTablePage extends GovGrantsManager {
      */
     public void assertFlexTabelRowCountDisabled(String text, String tableId) {
         try {
-            EyeThink.core().scroll().pageDocument("PageDown", 0, 0);
+            I.amPerforming().scroll().onPageDocument("PageDown", 0, 0);
         } catch (Exception e) {
 
         }
@@ -96,7 +97,7 @@ public class FlexTablePage extends GovGrantsManager {
      */
     public void assertFlexTabelRowCountEnabled(String text, String tableId) {
         try {
-            EyeThink.core().scroll().pageDocument("PageDown", 0, 0);
+            I.amPerforming().scroll().onPageDocument("PageDown", 0, 0);
         } catch (Exception e) {
 
         }
@@ -107,9 +108,9 @@ public class FlexTablePage extends GovGrantsManager {
      * @param flexTablelastRowName
      */
     public void assertnewAddedLastRowLabelName(String flexTablelastRowName) {
-        EyeThink.core().elementReference().of(flexTablelastRowNameAsTotal);
-        EyeThink.core().scroll().pageToSpecificElement(flexTablelastRowNameAsTotal);
-        Assert.assertEquals(EyeThink.core().get().text(getLastRowLabelContent()), flexTablelastRowName);
+        I.amPerforming().getElementReference().of(flexTablelastRowNameAsTotal);
+        I.amPerforming().scroll().onPageToSpecificElement(flexTablelastRowNameAsTotal);
+        Assert.assertEquals(I.amPerforming().actionToGet().text(getLastRowLabelContent()), flexTablelastRowName);
     }
 
     /**
@@ -135,7 +136,7 @@ public class FlexTablePage extends GovGrantsManager {
         if (usage.equalsIgnoreCase("see")) {
             Assert.assertTrue(isSpecificOverlayDisplayed(titleName));
         } else if (usage.equalsIgnoreCase("softly see")) {
-            EyeThink.core().assertion().assertThat(isSpecificOverlayDisplayed(titleName)).isTrue();
+            I.amPerforming().assertionsTo().assertThat(isSpecificOverlayDisplayed(titleName)).isTrue();
         }
     }
 
@@ -155,7 +156,7 @@ public class FlexTablePage extends GovGrantsManager {
      */
     public void assertActionIconNotDisplayedInsideflexTable(String iconName, String uniqueColumnValue) {
         try {
-            Assert.assertFalse(EyeThink.core().is().isDisplayed(EyeThink.saas().flexTable().getTableActionIconWithoutTableId(iconName, uniqueColumnValue)));
+            Assert.assertFalse(I.amPerforming().checkToSee().isDisplayed(govgrants.perform().flexTable().getTableActionIconWithoutTableId(iconName, uniqueColumnValue)));
         } catch (Exception e) {
         }
     }
@@ -166,7 +167,7 @@ public class FlexTablePage extends GovGrantsManager {
      * @return
      */
     public WebElement getLastRowLabelContent() {
-        return EyeThink.core().elementReference().of(flexTablelastRowNameAsTotal);
+        return I.amPerforming().getElementReference().of(flexTablelastRowNameAsTotal);
     }
 
     /**
@@ -175,7 +176,7 @@ public class FlexTablePage extends GovGrantsManager {
      * @param blockTitle
      */
     public void getHelpTextAtDraftProgramFlexTable(String blockTitle) {
-        EyeThink.core().scroll().moveToElement(By.xpath("//div[contains(@class,'panel-title')]//div[text()='" + blockTitle
+        I.amPerforming().scroll().toMoveToElement(By.xpath("//div[contains(@class,'panel-title')]//div[text()='" + blockTitle
                 + "']/../..//a[@id='Programstooltip']/span[contains(@class,'fa-info')]|//div/a[@title='"
                 + blockTitle + "']/..//span[contains(@class,'fa-info')]"));
     }
@@ -217,7 +218,7 @@ public class FlexTablePage extends GovGrantsManager {
      * @param columnTitle
      */
     public void getHelpTextAtFlexTableSpecificColumn(String columnTitle) {
-        EyeThink.core().scroll().moveToElement(By.xpath("//th//span[@title='" + columnTitle + "' or text()='" + columnTitle
+        I.amPerforming().scroll().toMoveToElement(By.xpath("//th//span[@title='" + columnTitle + "' or text()='" + columnTitle
                 + "']/../../following-sibling::span//span[contains(@class,'fa-info')]|//th//span[@title='"
                 + columnTitle + "' or text()='" + columnTitle + "']/..//span[contains(@class,'fa-info')]"));
     }
@@ -236,7 +237,7 @@ public class FlexTablePage extends GovGrantsManager {
      */
     public void assertFlexTabelTotalCalulationAmountDiplayed() {
         try {
-            EyeThink.core().scroll().pageDocument("PageDown", 0, 0);
+            I.amPerforming().scroll().onPageDocument("PageDown", 0, 0);
         } catch (Exception e) {
         }
         Assert.assertTrue(isTotalAmountFieldAtFlexTableDisplayed());
@@ -259,7 +260,7 @@ public class FlexTablePage extends GovGrantsManager {
      * @param columnName
      */
     public void getHelpTextAtEditActionOfFlexTable(String iconName, String columnName) {
-        EyeThink.core().elementReference().of(EyeThink.saas().flexTable().getTableActionIconWithoutTableId(iconName, columnName))
+        I.amPerforming().getElementReference().of(govgrants.perform().flexTable().getTableActionIconWithoutTableId(iconName, columnName))
                 .getAttribute("title").equalsIgnoreCase(iconName);
     }
 
@@ -293,7 +294,7 @@ public class FlexTablePage extends GovGrantsManager {
      * @param iconTitle
      */
     public void assertFlexTableEditActionIconDisplayed(String columnTitle, String iconTitle) {
-        Assert.assertTrue(EyeThink.core().is().isDisplayed(By.xpath("//td//*[@title = '" + columnTitle + "' or text() = '" + columnTitle
+        Assert.assertTrue(I.amPerforming().checkToSee().isDisplayed(By.xpath("//td//*[@title = '" + columnTitle + "' or text() = '" + columnTitle
                 + "']/ancestor::tr[1]//td//a[@title = '" + iconTitle
                 + "']//i[contains(@class,'fa fa-external-link')]")));
     }
@@ -313,7 +314,7 @@ public class FlexTablePage extends GovGrantsManager {
      */
     public boolean isValuePresentInsideDropDown(String dropDownValue) {
         boolean flag = false;
-        for (Elements we : EyeThink.core().elementReference().listOfElements().of(programFlexTableDropdown)) {
+        for (Elements we : I.amPerforming().getElementReference().forListOfElements().of(programFlexTableDropdown)) {
             if (we.getAttributes("title").equalsIgnoreCase(dropDownValue)) {
                 flag = true;
             }
@@ -338,7 +339,7 @@ public class FlexTablePage extends GovGrantsManager {
      * @param uniqueColumnValue
      */
     public void assertActionIconDisplayedInsideflexTable(String iconName, String uniqueColumnValue) {
-        Assert.assertTrue(EyeThink.core().is().isDisplayed(EyeThink.saas().flexTable().getTableActionIconWithoutTableId(iconName, uniqueColumnValue)));
+        Assert.assertTrue(I.amPerforming().checkToSee().isDisplayed(govgrants.perform().flexTable().getTableActionIconWithoutTableId(iconName, uniqueColumnValue)));
     }
 
     /**
@@ -365,10 +366,10 @@ public class FlexTablePage extends GovGrantsManager {
      * Click on toggle button inside program flex table
      */
     public void clickToggleButtonAndSelect(String menuItemName) {
-        EyeThink.saas().phasePanel().clickDoubleArrowtoggle(menuItemName);
+        govgrants.perform().phasePanel().clickDoubleArrowtoggle(menuItemName);
     }
 
-    public void performSequenceOfActionsOnFlexTable(String durationOfRun) throws EyeThinkBotsCustomException {
+    public void performSequenceOfActionsOnFlexTable(String durationOfRun) throws TestingBlazeCustomException {
         long executionTime = (System.currentTimeMillis() / 1000) + (Integer.parseInt(durationOfRun) * 60);
         do {
             try {
@@ -384,7 +385,7 @@ public class FlexTablePage extends GovGrantsManager {
      * click on select dropdown At page detail
      */
     public void clickSelectDropdownAtPageDetail(String fieldApiName) {
-        EyeThink.core().click().on(By.xpath("//div[@id='" + fieldApiName + "']//select"));
+        I.amPerforming().click().on(By.xpath("//div[@id='" + fieldApiName + "']//select"));
     }
 
     /**
@@ -426,7 +427,7 @@ public class FlexTablePage extends GovGrantsManager {
      * assert true if flex table toggle button is displayed
      */
     public void assertToogleButtonIsDisplayed(String anyItemContainedInDropDown) {
-        Assert.assertTrue(EyeThink.core().is().isDisplayed(EyeThink.saas().phasePanel().getDoubleArrowtoggle(anyItemContainedInDropDown)));
+        Assert.assertTrue(I.amPerforming().checkToSee().isDisplayed(govgrants.perform().phasePanel().getDoubleArrowtoggle(anyItemContainedInDropDown)));
     }
 
     /**
@@ -444,9 +445,9 @@ public class FlexTablePage extends GovGrantsManager {
      * @param message
      */
     public void assertTextMessageOnConfirmationAlert(String message) {
-        String popupMessage = EyeThink.core().switchTo().getAlertText();
+        String popupMessage = I.amPerforming().switchTo().getAlertText();
         Assert.assertTrue(popupMessage.equalsIgnoreCase(message));
-        EyeThink.core().switchTo().acceptAlert();
+        I.amPerforming().switchTo().acceptAlert();
     }
 
     /**
@@ -462,40 +463,40 @@ public class FlexTablePage extends GovGrantsManager {
      * "Local Methods with complete functionality - private"
      *****************/
 
-    private void handleSequenceOfActionsOnFlexTable() throws EyeThinkBotsCustomException {
-        EyeThink.saas().phasePanel().clickTopRightButton("Draft Programs", "New");
-        EyeThink.saas().pageDetails().clickAnyTopRightButton("Cancel");
-        EyeThink.saas().quickSearch().performTableSpecificQuickSearch("toggleFlexTablePrograms", "Program for Health");
-        EyeThink.saas().mainPage().waitForNavigationLogoToDisappear();
-        EyeThink.saas().flexTable().clickTableActionIcons("Edit", "Program for Health");
-        EyeThink.saas().pageDetails().clickAnyTopRightButton("Cancel");
-        EyeThink.saas().mainPage().clickMainMenuBar("Planning");
-        EyeThink.saas().flexTable().flexTableShowEntriesDropDown("toggleFlexTablePrograms", "20");
-        EyeThink.saas().mainPage().waitForNavigationLogoToDisappear();
-        EyeThink.saas().flexTable().flexTableShowEntriesDropDown("toggleFlexTablePrograms", "10");
-        EyeThink.saas().mainPage().waitForNavigationLogoToDisappear();
-        EyeThink.core().get().pageRefresh();
-        EyeThink.core().WaitFor().makeThreadSleep(1000);
-        EyeThink.saas().flexTable().flexTablePagination("toggleFlexTablePrograms", "Next");
-        EyeThink.saas().mainPage().waitForNavigationLogoToDisappear();
-        EyeThink.core().WaitFor().makeThreadSleep(500);
-        EyeThink.saas().flexTable().flexTablePagination("toggleFlexTablePrograms", "Previous");
-        EyeThink.core().get().pageRefresh();
-        EyeThink.core().WaitFor().makeThreadSleep(1000);
-        EyeThink.saas().mainPage().waitForNavigationLogoToDisappear();
-        EyeThink.core().click().on(EyeThink.saas().flexTable().getSpecificElementFromTableHeader("ID"));
-        EyeThink.saas().mainPage().waitForNavigationLogoToDisappear();
-        EyeThink.core().click().on(EyeThink.saas().flexTable().getSpecificElementFromTableHeader("Program Name"));
-        EyeThink.saas().mainPage().waitForNavigationLogoToDisappear();
-        EyeThink.core().get().pageRefresh();
-        EyeThink.core().WaitFor().makeThreadSleep(1000);
-        EyeThink.saas().phasePanel().clickParallelMenuBars("Draft Programs");
-        EyeThink.saas().phasePanel().selectItemFromParallelMenuBars("Draft Programs", "Refresh");
+    private void handleSequenceOfActionsOnFlexTable() throws TestingBlazeCustomException {
+        govgrants.perform().phasePanel().clickTopRightButton("Draft Programs", "New");
+        govgrants.perform().pageDetails().clickAnyTopRightButton("Cancel");
+        govgrants.perform().quickSearch().performTableSpecificQuickSearch("toggleFlexTablePrograms", "Program for Health");
+        govgrants.perform().mainPage().waitForNavigationLogoToDisappear();
+        govgrants.perform().flexTable().clickTableActionIcons("Edit", "Program for Health");
+        govgrants.perform().pageDetails().clickAnyTopRightButton("Cancel");
+        govgrants.perform().mainPage().clickMainMenuBar("Planning");
+        govgrants.perform().flexTable().flexTableShowEntriesDropDown("toggleFlexTablePrograms", "20");
+        govgrants.perform().mainPage().waitForNavigationLogoToDisappear();
+        govgrants.perform().flexTable().flexTableShowEntriesDropDown("toggleFlexTablePrograms", "10");
+        govgrants.perform().mainPage().waitForNavigationLogoToDisappear();
+        I.amPerforming().actionToGet().pageRefresh();
+        I.amPerforming().waitFor().makeThreadSleep(1000);
+        govgrants.perform().flexTable().flexTablePagination("toggleFlexTablePrograms", "Next");
+        govgrants.perform().mainPage().waitForNavigationLogoToDisappear();
+        I.amPerforming().waitFor().makeThreadSleep(500);
+        govgrants.perform().flexTable().flexTablePagination("toggleFlexTablePrograms", "Previous");
+        I.amPerforming().actionToGet().pageRefresh();
+        I.amPerforming().waitFor().makeThreadSleep(1000);
+        govgrants.perform().mainPage().waitForNavigationLogoToDisappear();
+        I.amPerforming().click().on(govgrants.perform().flexTable().getSpecificElementFromTableHeader("ID"));
+        govgrants.perform().mainPage().waitForNavigationLogoToDisappear();
+        I.amPerforming().click().on(govgrants.perform().flexTable().getSpecificElementFromTableHeader("Program Name"));
+        govgrants.perform().mainPage().waitForNavigationLogoToDisappear();
+        I.amPerforming().actionToGet().pageRefresh();
+        I.amPerforming().waitFor().makeThreadSleep(1000);
+        govgrants.perform().phasePanel().clickParallelMenuBars("Draft Programs");
+        govgrants.perform().phasePanel().selectItemFromParallelMenuBars("Draft Programs", "Refresh");
     }
 
     private boolean isErrorMessageNotDisplayed(String errorMessage) {
         boolean flag = false;
-        if (EyeThink.core().get().pageSource().contains(errorMessage)) {
+        if (I.amPerforming().actionToGet().pageSource().contains(errorMessage)) {
             flag = true;
         }
         return flag;
@@ -508,9 +509,9 @@ public class FlexTablePage extends GovGrantsManager {
      * @return
      */
     private boolean isTitleDisplayed(String titleName) {
-        EyeThink.saas().phasePanel().clickDoubleArrowtoggle(titleName);
+        govgrants.perform().phasePanel().clickDoubleArrowtoggle(titleName);
         try {
-            if (EyeThink.core().is().isDisplayed(EyeThink.saas().phasePanel().getDoubleArrowtoggle(titleName))) {
+            if (I.amPerforming().checkToSee().isDisplayed(govgrants.perform().phasePanel().getDoubleArrowtoggle(titleName))) {
                 return true;
             } else {
                 return false;
@@ -529,7 +530,7 @@ public class FlexTablePage extends GovGrantsManager {
     private boolean isTopRightParallelLinesBarSpecificOptionsDisabled(String option1, String pannelTitleName) {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().isDisplayed(EyeThink.saas().phasePanel().getItemFromParallelMenuBars(pannelTitleName, option1))) {
+            if (I.amPerforming().checkToSee().isDisplayed(govgrants.perform().phasePanel().getItemFromParallelMenuBars(pannelTitleName, option1))) {
                 flag = false;
             }
         } catch (Exception e) {
@@ -546,7 +547,7 @@ public class FlexTablePage extends GovGrantsManager {
     private boolean isQuickSearchDisabled() {
         boolean flag = true;
         try {
-            if (EyeThink.core().is().isDisplayed(searchInput)) {
+            if (I.amPerforming().checkToSee().isDisplayed(searchInput)) {
                 flag = false;
             }
         } catch (Exception e) {
@@ -562,7 +563,7 @@ public class FlexTablePage extends GovGrantsManager {
     private Boolean isMenuIconDisabled(String panelTitleName) {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().isDisplayed(EyeThink.saas().phasePanel().getParallelBarsLocator(panelTitleName))) {
+            if (I.amPerforming().checkToSee().isDisplayed(govgrants.perform().phasePanel().getParallelBarsLocator(panelTitleName))) {
                 flag = false;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -578,7 +579,7 @@ public class FlexTablePage extends GovGrantsManager {
         boolean flag = false;
         try {
             for (Elements element : getCompleteTableRow()) {
-                if (EyeThink.core().is().isDisplayed(element.nestedElement(selectRecordCheckBox))) {
+                if (I.amPerforming().checkToSee().isDisplayed(element.nestedElement(selectRecordCheckBox))) {
                     flag = true;
                     break;
                 }
@@ -595,7 +596,7 @@ public class FlexTablePage extends GovGrantsManager {
     private Boolean isFlexTableRowsTotalDisabled() {
         boolean flag = true;
         try {
-            if (getCompleteTableRow().stream().anyMatch(item -> EyeThink.core().is().isDisplayed(item.nestedElement(totalRowsCalc)))) {
+            if (getCompleteTableRow().stream().anyMatch(item -> I.amPerforming().checkToSee().isDisplayed(item.nestedElement(totalRowsCalc)))) {
                 flag = false;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -609,7 +610,7 @@ public class FlexTablePage extends GovGrantsManager {
     private Boolean isFlexTableRowsCountDisabled(String text, String tableId) {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().isDisplayed(EyeThink.saas().flexTable().getFooterElementsFromTable(text, tableId))) {
+            if (I.amPerforming().checkToSee().isDisplayed(govgrants.perform().flexTable().getFooterElementsFromTable(text, tableId))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -624,7 +625,7 @@ public class FlexTablePage extends GovGrantsManager {
      */
     private Boolean isNewTabOpensForEdit() {
         boolean myNewTabFound = false;
-        if (EyeThink.core().switchTo().getWindowsHandlers().size() > 1)
+        if (I.amPerforming().switchTo().getWindowsHandlers().size() > 1)
             myNewTabFound = true;
         return myNewTabFound;
     }
@@ -636,7 +637,7 @@ public class FlexTablePage extends GovGrantsManager {
      */
     private Boolean isSameTabStaysForEdit() {
         boolean sameTabFound = false;
-        if (EyeThink.core().switchTo().getWindowsHandlers().size() == 1) {
+        if (I.amPerforming().switchTo().getWindowsHandlers().size() == 1) {
             sameTabFound = true;
         }
         return sameTabFound;
@@ -649,7 +650,7 @@ public class FlexTablePage extends GovGrantsManager {
      * @return
      */
     private WebElement getOverLayTitle(String titleName) {
-        return EyeThink.core().elementReference().of(By.xpath(
+        return I.amPerforming().getElementReference().of(By.xpath(
                 "//iframe[contains(@ng-src,'apex') or contains(@src,'apex')]//ancestor::div[contains(@class,'modal-content')][1]//p[text()='"
                         + titleName
                         + "']|//iframe[contains(@ng-src,'apex') or contains(@src,'apex')]//ancestor::div[contains(@class,'modal-content')][1]//p[text()='"
@@ -665,10 +666,10 @@ public class FlexTablePage extends GovGrantsManager {
      * @return
      */
     private boolean isSpecificOverlayDisplayed(String titleName) {
-        EyeThink.core().switchTo().switchToParentFrame();
-        EyeThink.saas().mainPage().waitForNavigationLogoToDisappear();
+        I.amPerforming().switchTo().parentFrame();
+        govgrants.perform().mainPage().waitForNavigationLogoToDisappear();
         boolean flag = false;
-        if (EyeThink.core().is().isDisplayed(getOverLayTitle(titleName))) {
+        if (I.amPerforming().checkToSee().isDisplayed(getOverLayTitle(titleName))) {
             flag = true;
         }
         return flag;
@@ -678,7 +679,7 @@ public class FlexTablePage extends GovGrantsManager {
      * return true if entire page refreshed on button click
      */
     private String isPageRefreshOnButtonClick() {
-        return EyeThink.core().get().pageLoadStatus();
+        return I.amPerforming().actionToGet().pageLoadStatus();
     }
 
     /**
@@ -691,7 +692,7 @@ public class FlexTablePage extends GovGrantsManager {
     private boolean isTopRightParallelLinesBarSpecificOptionsEnabled(String menuOption, String pannelTitleName) {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().isDisplayed(EyeThink.saas().phasePanel().getItemFromParallelMenuBars(pannelTitleName, menuOption))) {
+            if (I.amPerforming().checkToSee().isDisplayed(govgrants.perform().phasePanel().getItemFromParallelMenuBars(pannelTitleName, menuOption))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -704,11 +705,11 @@ public class FlexTablePage extends GovGrantsManager {
      * @return true if bottom element is displayed at flex table
      */
     private boolean isFlexTableBottomElementEnabled(String text, String tableId) {
-        EyeThink.core().scroll().pageDocument("PageDown", 0, 0);
+        I.amPerforming().scroll().onPageDocument("PageDown", 0, 0);
         boolean flag = false;
         try {
-            if (EyeThink.core().is().isDisplayed(EyeThink.saas().flexTable().getFooterElementsFromTable(text, tableId))
-                    || EyeThink.core().is().isEnabled(EyeThink.saas().flexTable().getFooterElementsFromTable(text, tableId))) {
+            if (I.amPerforming().checkToSee().isDisplayed(govgrants.perform().flexTable().getFooterElementsFromTable(text, tableId))
+                    || I.amPerforming().checkToSee().isEnabled(govgrants.perform().flexTable().getFooterElementsFromTable(text, tableId))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -720,10 +721,10 @@ public class FlexTablePage extends GovGrantsManager {
      * @return true if expected count of records is present inside flex table
      */
     private boolean isNoOfRecordsInsideFlexTablePresent(int rowCount, String tableId) {
-        EyeThink.core().scroll().pageDocument("PageDown", 0, 0);
+        I.amPerforming().scroll().onPageDocument("PageDown", 0, 0);
         boolean flag = false;
         try {
-            int listSize = EyeThink.saas().flexTable().getCompleteTableRow(tableId).size();
+            int listSize = govgrants.perform().flexTable().getCompleteTableRow(tableId).size();
             if (listSize == rowCount) {
                 flag = true;
             }
@@ -740,7 +741,7 @@ public class FlexTablePage extends GovGrantsManager {
      */
     private boolean isFlexTableColumnTitleDisplayed(String columnValueName) {
         try {
-            if (EyeThink.core().is().isDisplayed(EyeThink.saas().flexTable().getSpecificElementFromTableHeader(columnValueName))) {
+            if (I.amPerforming().checkToSee().isDisplayed(govgrants.perform().flexTable().getSpecificElementFromTableHeader(columnValueName))) {
                 return true;
             } else {
                 return false;
@@ -756,7 +757,7 @@ public class FlexTablePage extends GovGrantsManager {
     private Boolean isTotalAmountFieldAtFlexTableDisplayed() {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().isDisplayed(totalRowsCalc)) {
+            if (I.amPerforming().checkToSee().isDisplayed(totalRowsCalc)) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -772,7 +773,7 @@ public class FlexTablePage extends GovGrantsManager {
      * @return true/false
      */
     private boolean isEditActionIconSequenceAtProgramFlexTable(String buttonName, int sequenceNumber) {
-        if (EyeThink.core().elementReference().listOfElements().of(programFlexTableActionItems).get(sequenceNumber).getAttributes("title")
+        if (I.amPerforming().getElementReference().forListOfElements().of(programFlexTableActionItems).get(sequenceNumber).getAttributes("title")
                 .contains(buttonName)) {
             return true;
         } else
@@ -786,7 +787,7 @@ public class FlexTablePage extends GovGrantsManager {
      * @return true/false
      */
     private boolean isEditActionOpenedWithSpecifiedUrl(String newActionUrl) {
-        String currentUrl = EyeThink.core().get().currentURL();
+        String currentUrl = I.amPerforming().actionToGet().currentURL();
         if (currentUrl.contains(newActionUrl)) {
             return true;
         } else
@@ -803,7 +804,7 @@ public class FlexTablePage extends GovGrantsManager {
     private boolean isActionButtonInsideTopOfFlexTableDisplayed(String buttonName, String headerName) {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().isDisplayed(EyeThink.saas().phasePanel().getTopRightButton(headerName, buttonName))) {
+            if (I.amPerforming().checkToSee().isDisplayed(govgrants.perform().phasePanel().getTopRightButton(headerName, buttonName))) {
                 flag = true;
             }
         } catch (NoSuchElementException e) {
@@ -818,8 +819,8 @@ public class FlexTablePage extends GovGrantsManager {
     private Boolean isSpecificCellValueOfApplicationBudgetFlexTable(String cellValue, String colName) {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().isStale(recordElement)
-                    || EyeThink.core().get().text(EyeThink.saas().flexTable().getFlexTableColumn(cellValue)).equalsIgnoreCase(cellValue)) {
+            if (I.amPerforming().checkToSee().isStale(recordElement)
+                    || I.amPerforming().actionToGet().text(govgrants.perform().flexTable().getFlexTableColumn(cellValue)).equalsIgnoreCase(cellValue)) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -834,7 +835,7 @@ public class FlexTablePage extends GovGrantsManager {
     private Boolean isCSSIconForSpecificActionOfFlexTable(String columnTitle, String iconTitle, String cssValue) {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().isDisplayed(By.xpath("//td//*[@title = '" + columnTitle + "' or text() = '" + columnTitle
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//td//*[@title = '" + columnTitle + "' or text() = '" + columnTitle
                     + "']/ancestor::tr[1]//td//a[@title = '" + iconTitle + "']//i[contains(@class,'" + cssValue
                     + "')]"))) ;
             {
@@ -851,7 +852,7 @@ public class FlexTablePage extends GovGrantsManager {
     private Boolean isFlexTableRecordsContainsTextAsExpected(String text, String tableId) {
         boolean flag = false;
         try {
-            for (Elements ele : EyeThink.saas().flexTable().getCompleteTableRow()) {
+            for (Elements ele : govgrants.perform().flexTable().getCompleteTableRow()) {
                 ele.getText().contains(text);
                 flag = true;
             }
@@ -873,7 +874,7 @@ public class FlexTablePage extends GovGrantsManager {
             exp = dropDownValue.split(":");
         }
         Boolean isValuePresent = false;
-        for (WebElement we : EyeThink.core().select().from(By.xpath("//div[@id='" + fieldApiName + "']//select")).getOptions()) {
+        for (WebElement we : I.amPerforming().dropDownSelection().from(By.xpath("//div[@id='" + fieldApiName + "']//select")).getOptions()) {
             for (int i = 0; i < exp.length; i++) {
                 if ((we.getAttribute("value") != "") && we.getText().trim().equals(exp[i])) {
                     isValuePresent = true;
@@ -893,11 +894,11 @@ public class FlexTablePage extends GovGrantsManager {
         Boolean isRecordsDisplayed = false;
         for (String expectedRecords : recordsName) {
             if (expectedRecords.equalsIgnoreCase("currentdate")) {
-                expectedRecords = EyeThink.core().get().currentDateTimeInDesiredFormat(DateTimeFormatter.ofPattern("M/d/yyyy hh:mm a").withLocale(Locale.US)).replaceAll("^0", "");
-                EyeThink.core().is().isDisplayed(By.xpath("//div[@id='myTabbedContent']//a[@title='" + flexTableHeader + "']/../../../following-sibling::div//tbody//td//span[text()='" + expectedRecords + "'] "));
+                expectedRecords = I.amPerforming().actionToGet().currentDateTimeInDesiredFormat(DateTimeFormatter.ofPattern("M/d/yyyy hh:mm a").withLocale(Locale.US)).replaceAll("^0", "");
+                I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='myTabbedContent']//a[@title='" + flexTableHeader + "']/../../../following-sibling::div//tbody//td//span[text()='" + expectedRecords + "'] "));
                 isRecordsDisplayed = true;
             } else {
-                EyeThink.core().is().isDisplayed(By.xpath("//div[@id='myTabbedContent']//a[@title='" + flexTableHeader + "']/../../../following-sibling::div//tbody//td//span[text()='" + expectedRecords + "'] "));
+                I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='myTabbedContent']//a[@title='" + flexTableHeader + "']/../../../following-sibling::div//tbody//td//span[text()='" + expectedRecords + "'] "));
                 isRecordsDisplayed = true;
             }
         }
@@ -910,7 +911,7 @@ public class FlexTablePage extends GovGrantsManager {
     private boolean isContentGettingSavedBySanpShotOption(String text) {
         boolean result = true;
         if (text.equalsIgnoreCase("Todays Date")) {
-            String cdate = EyeThink.core().get().currentDateTimeInDesiredFormat(DateTimeFormatter.ofPattern("M/d/yyyy h:mm a").withLocale(Locale.US)).replaceAll("^0", "");
+            String cdate = I.amPerforming().actionToGet().currentDateTimeInDesiredFormat(DateTimeFormatter.ofPattern("M/d/yyyy h:mm a").withLocale(Locale.US)).replaceAll("^0", "");
             System.out.println("The current date:-" + cdate);
             String[] currentsplit = (cdate.split(":", 2));
             String[] arrCSplit = currentsplit[1].split("\\s");
@@ -928,7 +929,7 @@ public class FlexTablePage extends GovGrantsManager {
                 }
 
                 filename = "SnapShot on " + ddate + ".pdf";
-                if (EyeThink.core().elementReference().of(By.xpath("//html")).getText().contains(filename)) {
+                if (I.amPerforming().getElementReference().of(By.xpath("//html")).getText().contains(filename)) {
                     result = true;
                     break;
                 } else {
@@ -945,7 +946,7 @@ public class FlexTablePage extends GovGrantsManager {
     private boolean isExpectedFLexTableWithTitleIsDisplayed(String tableTitle) {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().isDisplayed(By.xpath("//div[contains(@class,'panel-title')][text()='" + tableTitle + "']")))
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[contains(@class,'panel-title')][text()='" + tableTitle + "']")))
                 ;
             {
                 flag = true;
@@ -961,7 +962,7 @@ public class FlexTablePage extends GovGrantsManager {
      */
     private Boolean isCurrencyUnitDisplaysInTotalAmount(String currencyUnit) {
         boolean flag = false;
-        String str = EyeThink.core().get().text(EyeThink.core().elementReference().of(totalRowsCalc));
+        String str = I.amPerforming().actionToGet().text(I.amPerforming().getElementReference().of(totalRowsCalc));
         String[] part = str.split("(?<=\\D)(?=\\d)");
         try {
             if (part[0].contains(currencyUnit)) {

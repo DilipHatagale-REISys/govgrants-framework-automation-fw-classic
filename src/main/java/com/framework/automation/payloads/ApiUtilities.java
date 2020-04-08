@@ -4,7 +4,7 @@ import com.framework.automation.objects.IdBucket;
 import com.framework.automation.projectmanager.ProjectWebServices;
 import com.framework.automation.projectmanager.SetUpConfiguration;
 import com.google.gson.JsonObject;
-import eyethink.automation.bots.Register.EyeThink;
+import com.testingblaze.register.I;
 import io.restassured.response.Response;
 
 public class ApiUtilities {
@@ -25,7 +25,7 @@ public class ApiUtilities {
             String[] getFilterId = filterClause.split(":");
             iD = getFilterId[0];
         } else {
-            Response response = EyeThink.core().apiCall().postCall(getPayLaodForIdRetrieval(ComponentAPI, filterClause), null,
+            Response response = I.amPerforming().restHttp().postCall(getPayLaodForIdRetrieval(ComponentAPI, filterClause), null,
                     SetUpConfiguration.defaultRetrieveEndPoint, "Authorization",
                     "Bearer " + ProjectWebServices.tokenString, null);
             String[] splittedStringForId = response.body().asString().split(":");
@@ -45,7 +45,7 @@ public class ApiUtilities {
      */
     public String getComponentCoreFieldIdForContextObjects(String ComponentAPI, String contextSobject,
                                                            String filterClause) {
-        Response response = EyeThink.core().apiCall().postCall(
+        Response response = I.amPerforming().restHttp().postCall(
                 getPayLaodForIdRetrievalForContextObjects(ComponentAPI, contextSobject, filterClause), null,
                 SetUpConfiguration.defaultRetrieveEndPoint, "Authorization", "Bearer " + ProjectWebServices.tokenString,
                 null);

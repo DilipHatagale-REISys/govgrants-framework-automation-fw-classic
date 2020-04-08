@@ -1,7 +1,8 @@
 package com.framework.automation.projectmanager;
 
-import eyethink.automation.bots.Register.EnvironmentFetcher;
-import eyethink.automation.bots.controller.UsersController;
+
+import com.testingblaze.controller.UsersController;
+import com.testingblaze.register.EnvironmentFactory;
 
 public class UsersAndURL implements UsersController {
 
@@ -13,9 +14,9 @@ public class UsersAndURL implements UsersController {
     @Override
     public String getUserName(String userLevel) {
         String userName = null;
-        if ((EnvironmentFetcher.getEnvironmentName() != null) && (EnvironmentFetcher.getEnvironmentName().contains("QA"))) {
+        if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("QA"))) {
             userName = getQAEnvironmentUser(userLevel);
-        } else if ((EnvironmentFetcher.getEnvironmentName() != null) && (EnvironmentFetcher.getEnvironmentName().contains("UAT"))) {
+        } else if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("UAT"))) {
             /* TO DO */
         } else {
             userName = getQAEnvironmentUser(userLevel);

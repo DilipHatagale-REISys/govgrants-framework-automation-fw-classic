@@ -1,7 +1,7 @@
 package com.framework.automation.pageobject;
 
 import com.framework.automation.projectmanager.GovGrantsManager;
-import eyethink.automation.bots.Register.EyeThink;
+import com.testingblaze.register.I;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -29,7 +29,7 @@ public class ChartsPage extends GovGrantsManager {
      * @param chartsType
      */
     public void getHoveringOnEnhancedCharts(String chartId, String chartsType) {
-        EyeThink.core().scroll().moveToElement(enhancedCharts(chartId, chartsType), false);
+        I.amPerforming().scroll().toMoveToElement(enhancedCharts(chartId, chartsType), false);
     }
 
     /**
@@ -39,10 +39,10 @@ public class ChartsPage extends GovGrantsManager {
      * @param chartsType
      */
     public void getHoveringOnSpecificEnhancedCharts(String chartId, String chartsType) {
-        EyeThink.core().elementReference().of(By.xpath("//div[@id='" + chartId + "']"));
-        EyeThink.core().WaitFor().makeThreadSleep(5000);
-        EyeThink.core().scroll().withMouseToElement(enhancedCharts(chartId, chartsType));
-        EyeThink.core().scroll().withMouseToElement(enhancedCharts(chartId, chartsType));
+        I.amPerforming().getElementReference().of(By.xpath("//div[@id='" + chartId + "']"));
+        I.amPerforming().waitFor().makeThreadSleep(5000);
+        I.amPerforming().scroll().withMouseToElement(enhancedCharts(chartId, chartsType));
+        I.amPerforming().scroll().withMouseToElement(enhancedCharts(chartId, chartsType));
     }
 
     /**
@@ -71,8 +71,8 @@ public class ChartsPage extends GovGrantsManager {
                 parentLocator = parentLocator + "[5]";
                 break;
         }
-        EyeThink.core().scroll().moveToElement(By.xpath(parentLocator));
-        EyeThink.core().click().on(By.xpath(parentLocator));
+        I.amPerforming().scroll().toMoveToElement(By.xpath(parentLocator));
+        I.amPerforming().click().on(By.xpath(parentLocator));
     }
 
     /**
@@ -101,8 +101,8 @@ public class ChartsPage extends GovGrantsManager {
                 parentLocator = parentLocator + "[5]";
                 break;
         }
-        EyeThink.core().scroll().moveToElement(By.xpath(parentLocator));
-        EyeThink.core().click().on(By.xpath(parentLocator));
+        I.amPerforming().scroll().toMoveToElement(By.xpath(parentLocator));
+        I.amPerforming().click().on(By.xpath(parentLocator));
     }
 
     public void assertChartTitleDisplayed(String usage, String title) {
@@ -121,14 +121,14 @@ public class ChartsPage extends GovGrantsManager {
      */
     public void assertTextDisplayedOnEnhacedChartsHover(String usage, String text) {
         By textInsideEnhancedChartHover = By.xpath("//div[contains(@class,'highcharts-label highcharts-tooltip')]//td[contains(text(),'" + text + "')]|//div[contains(@class,'highcharts-label highcharts-tooltip')]//td/b[contains(text(),'" + text + "')] | //div[contains(@class,'highcharts-label highcharts-tooltip')]//span[contains(text(),'" + text + "')]");
-        EyeThink.core().WaitFor().makeThreadSleep(2000);
+        I.amPerforming().waitFor().makeThreadSleep(2000);
         if (usage.contains("softly")) {
-            EyeThink.core().assertion()
+            I.amPerforming().assertionsTo()
                     .assertThat(
-                            EyeThink.core().is().isDisplayed(textInsideEnhancedChartHover)).isTrue();
+                            I.amPerforming().checkToSee().isDisplayed(textInsideEnhancedChartHover)).isTrue();
         } else {
             Assert.assertTrue(
-                    EyeThink.core().is().isDisplayed(textInsideEnhancedChartHover));
+                    I.amPerforming().checkToSee().isDisplayed(textInsideEnhancedChartHover));
         }
     }
 
@@ -151,15 +151,15 @@ public class ChartsPage extends GovGrantsManager {
      * @param axisName
      */
     public void assertCorrectTextDisplayed(String usage, String title, String axisName, String chartName) {
-        WebElement prefixSuffixElement = EyeThink.core().elementReference().of(By.xpath("//div[@id='" + chartName + "Id']//*[contains(@class,'highcharts-container')]//*[local-name()='g'][contains(@class,'" + axisName + "')]//*[contains(text(),'" + title + "')]"));
+        WebElement prefixSuffixElement = I.amPerforming().getElementReference().of(By.xpath("//div[@id='" + chartName + "Id']//*[contains(@class,'highcharts-container')]//*[local-name()='g'][contains(@class,'" + axisName + "')]//*[contains(text(),'" + title + "')]"));
         if (usage.equalsIgnoreCase("see")) {
-            Assert.assertTrue(EyeThink.core().get().text(prefixSuffixElement).contains(title));
+            Assert.assertTrue(I.amPerforming().actionToGet().text(prefixSuffixElement).contains(title));
         } else if (usage.equalsIgnoreCase("do not see")) {
-            Assert.assertFalse(EyeThink.core().get().text(prefixSuffixElement).contains(title));
+            Assert.assertFalse(I.amPerforming().actionToGet().text(prefixSuffixElement).contains(title));
         } else if (usage.equalsIgnoreCase("Softly see")) {
-            EyeThink.core().assertion().assertThat(EyeThink.core().get().text(prefixSuffixElement).contains(title)).isTrue();
+            I.amPerforming().assertionsTo().assertThat(I.amPerforming().actionToGet().text(prefixSuffixElement).contains(title)).isTrue();
         } else if (usage.equalsIgnoreCase("Softly do not see")) {
-            EyeThink.core().assertion().assertThat(EyeThink.core().get().text(prefixSuffixElement).contains(title)).isFalse();
+            I.amPerforming().assertionsTo().assertThat(I.amPerforming().actionToGet().text(prefixSuffixElement).contains(title)).isFalse();
         }
     }
 
@@ -170,15 +170,15 @@ public class ChartsPage extends GovGrantsManager {
      * @param chartName
      */
     public void assertFormattingAtAxisIsDisplayed(String usage, String title, String chartName) {
-        WebElement prefixSuffixElement = EyeThink.core().elementReference().of(By.xpath("//div[@id='" + chartName + "Id']//*[contains(@class,'highcharts-container')]//*[contains(text(),'" + title + "')]"));
+        WebElement prefixSuffixElement = I.amPerforming().getElementReference().of(By.xpath("//div[@id='" + chartName + "Id']//*[contains(@class,'highcharts-container')]//*[contains(text(),'" + title + "')]"));
         if (usage.equalsIgnoreCase("see")) {
-            Assert.assertTrue(EyeThink.core().get().text(prefixSuffixElement).contains(title));
+            Assert.assertTrue(I.amPerforming().actionToGet().text(prefixSuffixElement).contains(title));
         } else if (usage.equalsIgnoreCase("do not see")) {
-            Assert.assertFalse(EyeThink.core().get().text(prefixSuffixElement).contains(title));
+            Assert.assertFalse(I.amPerforming().actionToGet().text(prefixSuffixElement).contains(title));
         } else if (usage.equalsIgnoreCase("Softly see")) {
-            EyeThink.core().assertion().assertThat(EyeThink.core().get().text(prefixSuffixElement).contains(title)).isTrue();
+            I.amPerforming().assertionsTo().assertThat(I.amPerforming().actionToGet().text(prefixSuffixElement).contains(title)).isTrue();
         } else if (usage.equalsIgnoreCase("Softly do not see")) {
-            EyeThink.core().assertion().assertThat(EyeThink.core().get().text(prefixSuffixElement).contains(title)).isFalse();
+            I.amPerforming().assertionsTo().assertThat(I.amPerforming().actionToGet().text(prefixSuffixElement).contains(title)).isFalse();
         }
     }
 
@@ -210,9 +210,9 @@ public class ChartsPage extends GovGrantsManager {
         } else if (usage.equalsIgnoreCase("do not see")) {
             Assert.assertFalse(isExpectedChartsDisplayed(chartId));
         } else if (usage.equalsIgnoreCase("softly see")) {
-            EyeThink.core().assertion().assertThat(isExpectedChartsDisplayed(chartId)).isTrue();
+            I.amPerforming().assertionsTo().assertThat(isExpectedChartsDisplayed(chartId)).isTrue();
         } else if (usage.equalsIgnoreCase("softly do not see")) {
-            EyeThink.core().assertion().assertThat(isExpectedChartsDisplayed(chartId)).isFalse();
+            I.amPerforming().assertionsTo().assertThat(isExpectedChartsDisplayed(chartId)).isFalse();
         }
     }
 
@@ -234,7 +234,7 @@ public class ChartsPage extends GovGrantsManager {
     private boolean isChartTitleDisplayed(String title) {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().isDisplayed(By.cssSelector("div#charts [title='" + title + "']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.cssSelector("div#charts [title='" + title + "']"))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -251,7 +251,7 @@ public class ChartsPage extends GovGrantsManager {
     private boolean isChartLegendNotDisplayed(String title) {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().isDisplayed(By.cssSelector("div#" + title + "Id .highcharts-legend"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.cssSelector("div#" + title + "Id .highcharts-legend"))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -268,7 +268,7 @@ public class ChartsPage extends GovGrantsManager {
     private boolean isExpectedTextComesOnlyOnceInChart(String title, String chartName) {
         boolean flag = false;
         int textCount = 0;
-        textCount = EyeThink.core().elementReference().listOfElements().of(By.xpath("//div[@id='" + chartName + "Id']//*[contains(@class,'highcharts-container')]//*[contains(text(),'" + title + "')]")).size();
+        textCount = I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//div[@id='" + chartName + "Id']//*[contains(@class,'highcharts-container')]//*[contains(text(),'" + title + "')]")).size();
         try {
             if (textCount == 1) {
                 flag = true;
@@ -287,7 +287,7 @@ public class ChartsPage extends GovGrantsManager {
     private boolean isExpectedNoOfChartsDisplayed(int number) {
         boolean flag = false;
         int chartCount = 0;
-        chartCount = EyeThink.core().elementReference().listOfElements().of(By.xpath("//div[@id='charts']//div[@class='ng-scope' and not(@ng-controller) and not(@ng-if)]")).size();
+        chartCount = I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//div[@id='charts']//div[@class='ng-scope' and not(@ng-controller) and not(@ng-if)]")).size();
         try {
             if (chartCount == number) {
                 flag = true;
@@ -305,7 +305,7 @@ public class ChartsPage extends GovGrantsManager {
     private boolean isExpectedChartsDisplayed(String chartsId) {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().isDisplayed(By.xpath("//div[@id='" + chartsId + "']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='" + chartsId + "']"))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -322,7 +322,7 @@ public class ChartsPage extends GovGrantsManager {
     private boolean isExpectedChartsTypeDisplayed(String chartId, String chartsType) {
         boolean flag = false;
         try {
-            if (EyeThink.core().is().isDisplayed(enhancedCharts(chartId, chartsType))) {
+            if (I.amPerforming().checkToSee().isDisplayed(enhancedCharts(chartId, chartsType))) {
                 flag = true;
             }
         } catch (Exception e) {
