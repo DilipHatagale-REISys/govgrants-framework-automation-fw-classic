@@ -48,10 +48,12 @@ Feature: Snapshot Config Component Scenarios
   Scenario: Validate Auto Snapshot is not getting captured after record submission as submit for approval
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Auto Snapshot         | Is Active | false             | ApiGeneratedId:1 |
+      | Auto Snapshot         | Is Active | false             | ApiGeneratedId:0 |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Auto Snapshot:Sobject Auto Snapshot | Is Active | true          | Program__c         | Name                      | SAS-0000                   |
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Auto Snapshot:Sobject Auto Snapshot | Is Active | true          | Program__c            | Name                      | SAS-0000                   |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-027                    |
     And I refresh the page
     When I navigate to "History" sub tab
     Then I see table with header "Snapshot History" contains records "currentdate"
@@ -60,11 +62,13 @@ Feature: Snapshot Config Component Scenarios
   Scenario: Validate Auto Snapshot is getting captured after record submission as submit for approval
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Auto Snapshot         | Is Active | false             | ApiGeneratedId:1 |
+      | Auto Snapshot         | Is Active | false             | ApiGeneratedId:0 |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName       | fieldNewValue                           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Auto Snapshot:Sobject Auto Snapshot | Is Active       | false                                   | Program__c         | Name                      | SAS-0000                   |
-      | Auto Snapshot:Sobject Auto Snapshot | Expression JSON | govgrants_config:SnapShotExpressionJSON | Program__c         | Name                      | SAS-0000                   |
+      | configurationCategory               | fieldName       | fieldNewValue                           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Auto Snapshot:Sobject Auto Snapshot | Is Active       | false                                   | Program__c            | Name                      | SAS-0000                   |
+      | Auto Snapshot:Sobject Auto Snapshot | Expression JSON | govgrants_config:SnapShotExpressionJSON | Program__c            | Name                      | SAS-0000                   |
+      | Page Tabs Config:Page Layout Action | Is Active       | true                                    | Grantee State Program | Name                      | TAB-027                    |
     And I click on "Submit For Approval" in the page details
     And I refresh the page
     When I navigate to "History" sub tab
@@ -74,10 +78,12 @@ Feature: Snapshot Config Component Scenarios
   Scenario: Validate Auto Snapshot record name is getting chages after making changes inside field SnapShot File Name at config page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
-      | Auto Snapshot         | Snapshot File Name |                   | ApiGeneratedId:1 |
+      | Auto Snapshot         | Snapshot File Name |                   | ApiGeneratedId:0 |
+      | Page Tabs Config      | Is Active          | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName          | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Auto Snapshot:Sobject Auto Snapshot | Snapshot File Name | testAutomationSnapshot | Program__c         | Name                      | SAS-0000                   |
+      | configurationCategory               | fieldName          | fieldNewValue          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Auto Snapshot:Sobject Auto Snapshot | Snapshot File Name | testAutomationSnapshot | Program__c            | Name                      | SAS-0000                   |
+      | Page Tabs Config:Page Layout Action | Is Active          | true                   | Grantee State Program | Name                      | TAB-027                    |
     And I click on "Submit For Approval" in the page details
     And I refresh the page
     When I navigate to "History" sub tab

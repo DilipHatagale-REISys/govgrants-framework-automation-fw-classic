@@ -14,7 +14,7 @@ Feature: SheetJS Config Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    Then I can see top right button "Upload" in flex table with id "flexTableDivId"
+    Then I can see top right button "Upload" in flex table with id "---program:-:programTableDivId---"
 
   @70096    @verifyDownloadingOfTemplateFile
   Scenario: Validate Template file is getting downloaded or not on download button click inside download and upload wizard modal.
@@ -28,7 +28,7 @@ Feature: SheetJS Config Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    And I click on top right button "Upload" in flex table with id "flexTableDivId"
+    And I click on top right button "Upload" in flex table with id "---program:-:programTableDivId---"
     When I click on button "Download File" on download & upload wizard modal
     Then I see "Program Name" in downloaded xls or csv file "govgrants"
 
@@ -52,7 +52,7 @@ Feature: SheetJS Config Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    And I click on top right button "Upload" in flex table with id "flexTableDivId"
+    And I click on top right button "Upload" in flex table with id "---program:-:programTableDivId---"
     When I upload attachment "SheetJSFileUpload.xlsx" on button click "Upload" inside download & upload wizard
     Then I see confirmation box with body "Data Uploaded Successfully!" is displayed
 
@@ -80,12 +80,12 @@ Feature: SheetJS Config Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    And I click on top right button "Upload" in flex table with id "flexTableDivId"
+    And I click on top right button "Upload" in flex table with id "---program:-:programTableDivId---"
     When I upload attachment "SheetJSFileUpload.xlsx" on button click "Upload" inside download & upload wizard
     And I refresh the page
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "AutomationSheetJSUpload"
-    Then I softly see value "GovGrant" for title "Organization" inside table "flexTableDivId"
+    Then I softly see value "GovGrant" for title "Organization" inside table "---program:-:programTableDivId---"
 
     Examples:
       | newFieldsApi                                                                                                        | defaultFieldsApi                                                                                                 |
@@ -111,12 +111,12 @@ Feature: SheetJS Config Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    And I click on top right button "Upload" in flex table with id "flexTableDivId"
+    And I click on top right button "Upload" in flex table with id "---program:-:programTableDivId---"
     When I upload attachment "SheetJSFileUpload.xlsx" on button click "Upload" inside download & upload wizard
     And I refresh the page
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "AutomationSheetJSUpload"
-    Then I softly see value "Created" for title "Status" inside table "flexTableDivId"
+    Then I softly see value "Created" for title "Status" inside table "---program:-:programTableDivId---"
 
     Examples:
       | newFieldsApi                                                                                                        | defaultFieldsApi                                                                                                 |
@@ -142,12 +142,12 @@ Feature: SheetJS Config Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    And I click on top right button "Upload" in flex table with id "flexTableDivId"
+    And I click on top right button "Upload" in flex table with id "---program:-:programTableDivId---"
     When I upload attachment "SheetJSFileUpload.xlsx" on button click "Upload" inside download & upload wizard
     And I refresh the page
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "AutomationSheetJSUploadForStatusAsBlank"
-    Then I softly see value "Created" for title "Status" inside table "flexTableDivId"
+    Then I softly see value "Created" for title "Status" inside table "---program:-:programTableDivId---"
 
     Examples:
       | newFieldsApi                                                                                                        | defaultFieldsApi                                                                                                 |
@@ -173,12 +173,12 @@ Feature: SheetJS Config Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    And I click on top right button "Upload" in flex table with id "flexTableDivId"
+    And I click on top right button "Upload" in flex table with id "---program:-:programTableDivId---"
     When I upload attachment "SheetJSFileUpload.xlsx" on button click "Upload" inside download & upload wizard
     And I refresh the page
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "AutomationSheetJSUploadForStatusAsBlank"
-    Then I softly see value "$5,000" for title "Funded Amount" inside table "flexTableDivId"
+    Then I softly see value "$5,000" for title "Funded Amount" inside table "---program:-:programTableDivId---"
 
     Examples:
       | newFieldsApi                                                                                                        | defaultFieldsApi                                                                                                 |
@@ -206,7 +206,7 @@ Feature: SheetJS Config Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    And I click on top right button "Upload" in flex table with id "flexTableDivId"
+    And I click on top right button "Upload" in flex table with id "---program:-:programTableDivId---"
     When I upload attachment "SheetJSFileUpload.xlsx" on button click "Upload" inside download & upload wizard
     And I refresh the page
     And I click toggle button to select "Draft Programs"
@@ -216,7 +216,7 @@ Feature: SheetJS Config Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "AutomationSheetJSUploadForStatusAsBlank"
-    Then I softly see value "{SavedValue:EGMSID}" for title "ID" inside table "flexTableDivId"
+    Then I softly see value "{SavedValue:EGMSID}" for title "ID" inside table "---program:-:programTableDivId---"
 
     Examples:
       | newFieldsApi                                                                                                        | defaultFieldsApi                                                                                                 |
@@ -304,12 +304,12 @@ Feature: SheetJS Config Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    And I click on top right button "Upload" in flex table with id "flexTableDivId"
+    And I click on top right button "Upload" in flex table with id "---program:-:programTableDivId---"
     When I upload attachment "SheetJSFileUpload.xlsx" on button click "Upload" inside download & upload wizard
     And I refresh the page
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "AutomationSheetJSUploadForStatusAsBlank"
-    Then I see value "02/10/2020" for title "Funded Amount" inside table "flexTableDivId"
+    Then I see value "02/10/2020" for title "Funded Amount" inside table "---program:-:programTableDivId---"
 
     Examples:
       | newFieldsApi                                                                                                                       | defaultFieldsApi                                                                                                 |
@@ -334,12 +334,12 @@ Feature: SheetJS Config Component Scenarios
       | false        | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click on top right button "Upload" in flex table with id "flexTableDivId"
+    And I click on top right button "Upload" in flex table with id "---program:-:programTableDivId---"
     When I upload attachment "SheetJSFileUploadForFundedAmount.xlsx" on button click "Upload" inside download & upload wizard
     And I refresh the page
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test Automation Record For Funded Amount- SheetJS"
-    Then I softly see value "$10,000" for title "Funded Amount" inside table "flexTableDivId"
+    Then I softly see value "$10,000" for title "Funded Amount" inside table "---program:-:programTableDivId---"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "Test Automation Record For Funded Amount- SheetJS"
@@ -368,12 +368,12 @@ Feature: SheetJS Config Component Scenarios
       | false        | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click on top right button "Upload" in flex table with id "flexTableDivId"
+    And I click on top right button "Upload" in flex table with id "---program:-:programTableDivId---"
     When I upload attachment "SheetJSFileUploadDateTime.xlsx" on button click "Upload" inside download & upload wizard
     And I refresh the page
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "AutomationSheetJSUpload"
-    Then I see value "7/3/2021 7:37 AM" for title "DateandTime" inside table "flexTableDivId"
+    Then I see value "7/3/2021 7:37 AM" for title "DateandTime" inside table "---program:-:programTableDivId---"
 
     Examples:
       | newFieldsApi                                                                                                                       | defaultFieldsApi                                                                                                 |
@@ -398,12 +398,12 @@ Feature: SheetJS Config Component Scenarios
       | false        | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click on top right button "Upload" in flex table with id "flexTableDivId"
+    And I click on top right button "Upload" in flex table with id "---program:-:programTableDivId---"
     When I upload attachment "SheetJSFileUploadWithMultipleData.xlsx" on button click "Upload" inside download & upload wizard
     And I refresh the page
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "AutomationSheetJSUpload"
-    Then I see total records count is same as total row of table id "flexTableDivId" and table name "flextable"
+    Then I see total records count is same as total row of table id "---program:-:programTableDivId---" and table name "flextable"
 
     Examples:
       | newFieldsApi                                                                                                                       | defaultFieldsApi                                                                                                 |

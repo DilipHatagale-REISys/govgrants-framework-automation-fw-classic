@@ -24,7 +24,7 @@ Feature: Send Email Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
-    When I click on top right button "Send Email" in flex table with id "CommunicationHistory"
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     Then I see Attachment section is displayed under send email modal
 
   @69005 @validateDisplayOfToEmailvalidationMessageInSendEmailModal @needAPICustomMetaData
@@ -48,7 +48,7 @@ Feature: Send Email Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
-    When I click on top right button "Send Email" in flex table with id "CommunicationHistory"
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "testautomation@gmail.com" into field "To" on send email modal
     When I enter value "Test automation mail subject 1" into field "Subject" on send email modal
     When I click on "Send" button in send email modal
@@ -76,7 +76,7 @@ Feature: Send Email Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
-    When I click on top right button "Send Email" in flex table with id "CommunicationHistory"
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "To" email Search By field and select dropdown value as "Internal"
     When I enter value "Automation PM" into field "To" on send email modal
     Then I see iconName "fa fa-user" with user "Automation PM" is displayed on send email modal
@@ -102,7 +102,7 @@ Feature: Send Email Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
-    When I click on top right button "Send Email" in flex table with id "CommunicationHistory"
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "To" email Search By field and select dropdown value as "External"
     When I enter value "Automation spi" into field "To" on send email modal
     Then I see iconName "fa fa-user" with user "Automation spi" is displayed on send email modal
@@ -128,7 +128,7 @@ Feature: Send Email Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
-    When I click on top right button "Send Email" in flex table with id "CommunicationHistory"
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "To" email Search By field and select dropdown value as "Internal"
     When I click on "To" email Search By field and select dropdown value as "External"
     When I enter value "Automation" into field "To" on send email modal
@@ -158,7 +158,7 @@ Feature: Send Email Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
-    When I click on top right button "Send Email" in flex table with id "CommunicationHistory"
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "To" email Search By field and select dropdown value as "Groups"
     When I enter value "Automation Testing Group" into field "To" on send email modal
     Then I see iconName "fa fa-users" with user "Automation Testing Group" is displayed on send email modal
@@ -184,7 +184,7 @@ Feature: Send Email Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
-    When I click on top right button "Send Email" in flex table with id "CommunicationHistory"
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "CC" email Search By field and select dropdown value as "Internal"
     When I enter value "Automation PM" into field "CC" on send email modal
     Then I see iconName "fa fa-user" with user "Automation PM" is displayed on send email modal
@@ -210,7 +210,7 @@ Feature: Send Email Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
-    When I click on top right button "Send Email" in flex table with id "CommunicationHistory"
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "CC" email Search By field and select dropdown value as "External"
     When I enter value "Automation spi" into field "CC" on send email modal
     Then I see iconName "fa fa-user" with user "Automation spi" is displayed on send email modal
@@ -236,7 +236,7 @@ Feature: Send Email Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
-    When I click on top right button "Send Email" in flex table with id "CommunicationHistory"
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "CC" email Search By field and select dropdown value as "Internal"
     When I click on "CC" email Search By field and select dropdown value as "External"
     When I enter value "Automation" into field "CC" on send email modal
@@ -266,7 +266,7 @@ Feature: Send Email Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
-    When I click on top right button "Send Email" in flex table with id "CommunicationHistory"
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "To" email Search By field and select dropdown value as "Internal"
     When I enter value "Automation PM" into field "To" on send email modal
     When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal

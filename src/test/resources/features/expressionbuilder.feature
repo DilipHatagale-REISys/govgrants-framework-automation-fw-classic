@@ -3417,7 +3417,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     Then I see "View" icon for "Demo_Title" is not displayed inside flex table
 
   @47304    @hide_Expression_Enhancedgrid_ViewAction_With_UserType_NOTIN_Internal
@@ -3435,7 +3435,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     Then I see "View" icon for "Demo_Title" is displayed inside flex table
 
   @47305    @hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator @smoke
@@ -3453,7 +3453,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     Then I see "View" icon for "Demo_Title" is not displayed inside flex table
 
   @47306    @hide_Expression_Enhancedgrid_ViewAction_With_Profile_NOTIN_SystemAdministrator
@@ -3471,7 +3471,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     Then I see "View" icon for "Demo_Title" is displayed inside flex table
 
   @47307    @hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal
@@ -3489,7 +3489,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     Then I see "View" icon for "Demo_Title" is not displayed inside flex table
 
   @47308    @hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal
@@ -3507,7 +3507,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     Then I see "View" icon for "Demo_Title" is not displayed inside flex table
 
   @47309    @hide_Expression_Enhancedgrid_ViewAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator @smoke
@@ -3525,7 +3525,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     Then I see "View" icon for "Demo_Title" is displayed inside flex table
 
   @47310    @hide_Expression_Enhancedgrid_ViewAction_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator
@@ -3543,7 +3543,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     Then I see "View" icon for "Demo_Title" is displayed inside flex table
 
   @47312    @hide_Expression_Enhancedgrid_ViewAction_With_UserType_IN_Internal_OR_Profile_IN_PM
@@ -3561,7 +3561,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     Then I see "View" icon for "Demo_Title" is not displayed inside flex table
 
   @47313    @hide_Expression_Enhancedgrid_ViewAction_With_UserType_IN_Internal_AND_Profile_IN_PM
@@ -3579,7 +3579,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     Then I see "View" icon for "Demo_Title" is displayed inside flex table
 
   @47315    @hide_Expression_Enhancedgrid_EditAction_With_UserApp_IN_StateAsGrantor @smoke
@@ -3597,7 +3597,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     Then I see "Edit" icon for "Demo_Title" is not displayed inside flex table
 
   @47316    @hide_Expression_Enhancedgrid_EditAction_With_UserApp_NOTIN_StateAsGrantor
@@ -3615,7 +3615,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     Then I see "Edit" icon for "Demo_Title" is displayed inside flex table
 
   @47318    @hide_Expression_Enhancedgrid_EditAction_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor @smoke
@@ -3633,7 +3633,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     Then I see "Edit" icon for "Demo_Title" is not displayed inside flex table
 
   @47319    @hide_Expression_Enhancedgrid_EditAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor
@@ -3651,7 +3651,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     Then I see "Edit" icon for "Demo_Title" is not displayed inside flex table
 
   @47320    @hide_Expression_Enhancedgrid_EditAction_With_UserType_IN_Applicant_Internal_Reviewer
@@ -3669,7 +3669,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     Then I see "Edit" icon for "Demo_Title" is not displayed inside flex table
 
   @47322    @hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_IN_Internal @smoke
@@ -3687,7 +3687,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "View" icon for "AD-GG PJ--00" is not displayed inside flex table
 
@@ -3706,7 +3706,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "View" icon for "AD-GG PJ--00" is displayed inside flex table
 
@@ -3725,7 +3725,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "View" icon for "AD-GG PJ--00" is not displayed inside flex table
 
@@ -3744,7 +3744,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "View" icon for "AD-GG PJ--00" is displayed inside flex table
 
@@ -3763,7 +3763,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "View" icon for "AD-GG PJ--00" is not displayed inside flex table
 
@@ -3782,7 +3782,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "View" icon for "AD-GG PJ--00" is not displayed inside flex table
 
@@ -3801,7 +3801,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "View" icon for "AD-GG PJ--00" is displayed inside flex table
 
@@ -3820,7 +3820,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "View" icon for "AD-GG PJ--00" is displayed inside flex table
 
@@ -3839,7 +3839,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "View" icon for "AD-GG PJ--00" is not displayed inside flex table
 
@@ -3858,7 +3858,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "View" icon for "AD-GG PJ--00" is displayed inside flex table
 
@@ -3877,7 +3877,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "Edit" icon for "AD-GG PJ--00" is not displayed inside flex table
 
@@ -3896,7 +3896,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "Edit" icon for "AD-GG PJ--00" is displayed inside flex table
 
@@ -3915,7 +3915,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "Edit" icon for "AD-GG PJ--00" is not displayed inside flex table
 
@@ -3934,7 +3934,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "Edit" icon for "AD-GG PJ--00" is not displayed inside flex table
 
@@ -3953,7 +3953,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "Edit" icon for "AD-GG PJ--00" is not displayed inside flex table
 
@@ -5617,7 +5617,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see no "Edit All" button inside "Active Awards" enhanced grid
 
@@ -5636,7 +5636,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "Edit All" button inside "Active Awards" enhanced grid
 
@@ -5655,7 +5655,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see no "Edit All" button inside "Active Awards" enhanced grid
 
@@ -5674,7 +5674,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "Edit All" button inside "Active Awards" enhanced grid
 
@@ -5693,7 +5693,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see no "Edit All" button inside "Active Awards" enhanced grid
 
@@ -5712,7 +5712,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see no "Edit All" button inside "Active Awards" enhanced grid
 
@@ -5731,7 +5731,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see no "Edit All" button inside "Active Awards" enhanced grid
 
@@ -5750,7 +5750,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "Edit All" button inside "Active Awards" enhanced grid
 
@@ -5769,7 +5769,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see no "Edit All" button inside "Active Awards" enhanced grid
 
@@ -5788,7 +5788,7 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see no "Edit All" button inside "Active Awards" enhanced grid
 

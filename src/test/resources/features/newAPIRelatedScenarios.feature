@@ -575,10 +575,10 @@ Feature: New API related scenarios temporary
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
-    Then I see "Total" inside rows of child grid id "toggleFGridApplicationBudgetCategoryFlexGrid"
+    Then I see "Total" inside rows of child grid id "---program:-:applicationBudgetCategoryFlexGridTableId---"
 
   @59979    @verifyDollarSymbolIsNotPresentInSubTotalLabelAtMEGrid @needCurrencyLocalAPIs @wip
   Scenario: Verify that dollar symbol($) is not shown inside SubTotal Label in MEGrid
@@ -596,10 +596,10 @@ Feature: New API related scenarios temporary
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
-    Then I see "SubTotal" inside rows of enhanced grid id "toggleFGridApplicationBudgetCategoryFlexGrid"
+    Then I see "SubTotal" inside rows of enhanced grid id "---program:-:applicationBudgetCategoryFlexGridTableId---"
 
   @59978   @CheckCurrencySymbolInTotalAmountAtApplicationBudgetCategoryFlexTableChild-gApplications @needCurrencyLocalAPIs @wip
   Scenario Outline: Validate Currency Unit (IDR) is present under Grantor Share column Total Amount at Application budget flex table
@@ -615,10 +615,10 @@ Feature: New API related scenarios temporary
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    And I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
+    And I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
-    Then I see "IDR" currency unit is present in "Total" Amount at "toggleFGridApplicationBudgetCategoryFlexGrid" Flex Grid
+    Then I see "IDR" currency unit is present in "Total" Amount at "---program:-:applicationBudgetCategoryFlexGridTableId---" Flex Grid
 
     Examples:
       | olddisplayfields                                                                                     | newdisplayfields                                          |
@@ -638,10 +638,10 @@ Feature: New API related scenarios temporary
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    And I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
+    And I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
-    Then I see "IDR" currency unit is present in "SubTotal" Amount at "toggleFGridApplicationBudgetCategoryFlexGrid" Flex Grid
+    Then I see "IDR" currency unit is present in "SubTotal" Amount at "---program:-:applicationBudgetCategoryFlexGridTableId---" Flex Grid
 
     Examples:
       | olddisplayfields                                                                                     | newdisplayfields                                          |
@@ -749,7 +749,7 @@ Feature: New API related scenarios temporary
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
-    When I click on top right button "Associate" in flex table with id "ProgramContacts"
+    When I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     When I pause execution for "120" seconds
     Then I softly see Session Timeout dialogue box with title "Session Expiration Warning" is displayed
 
