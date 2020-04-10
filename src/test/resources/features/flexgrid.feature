@@ -752,7 +752,7 @@ Feature: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
-    When I perform quick search for "App 786" in "inlineEditGridMonitoringGridView" panel
+    When I perform quick search for "App 786" in "---program:-:monitoringGridTableId---" panel
     When I click on "View" icon for "App 786" inside table
     Then I see new tab is opened
 
@@ -843,7 +843,7 @@ Feature: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
-    When I click on "View" icon for "App 786" inside table with table id "toggleFGridMonitoringGridView" without processing
+    When I click on "View" icon for "App 786" inside table with table id "---program:-:toggleFlexGridMonitoringTableId---" without processing
     Then I see confirmation box with body "null" is displayed
 
   @50346    @ConfirmationMessageFieldForActiveGrantsGridFlexTAbleViewAction-gMonitoring
@@ -859,7 +859,7 @@ Feature: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
-    When I click on "View" icon for "App 786" inside table with table id "toggleFGridMonitoringGridView" without processing
+    When I click on "View" icon for "App 786" inside table with table id "---program:-:toggleFlexGridMonitoringTableId---" without processing
     Then I see confirmation box with body "Test Automation" is displayed
 
   @50347    @refreshBehaviourFieldAtGrantorBudgetPeriodFlexTableAsRefreshEntirePageForEditAction-gGrants @smoke
@@ -896,7 +896,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title" in "toggleFlexTableActiveGrants" panel
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Financials" sub tab
-    Then I see "Edit" icon for "toggleFGridGrantFinancials" is at position "0" inside flex table
+    Then I see "Edit" icon for "---program:-:grantFinancialsTableId---" is at position "0" inside flex table
 
   @50352    @hideForProfileFieldAtGrantorBudgetPeriodFlexTableViewAction-gGrants @smoke
   Scenario: Hide view row level action for specific profile from configuration and validating it at under Grantor Budget Period flex table- gPlanning
@@ -912,7 +912,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title" in "toggleFlexTableActiveGrants" panel
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Financials" sub tab
-    Then I see "View" icon for column value "Active" is not displayed at table "toggleFGridGrantFinancials"
+    Then I see "View" icon for column value "Active" is not displayed at table "---program:-:grantFinancialsTableId---"
 
   @50353    @hideForUserFieldAtGrantorBudgetPeriodFlexTableViewAction-gGrants @smoke
   Scenario: Hide view row level action for specific User from configuration and validating it at under Grantor Budget Period flex table- gPlanning
@@ -928,7 +928,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title" in "toggleFlexTableActiveGrants" panel
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Financials" sub tab
-    Then I see "View" icon for column value "Active" is not displayed at table "toggleFGridGrantFinancials"
+    Then I see "View" icon for column value "Active" is not displayed at table "---program:-:grantFinancialsTableId---"
 
   @50355    @iconCSSFieldAtActiveGrantsGridParentFlexTableEditActionItem-gMonitoring
   Scenario: Setup icon for ActiveGrantsGridParent flex table edit action from config and validating it at ActiveGrantsGridParentflex table of program-gMonitoring
@@ -967,7 +967,7 @@ Feature: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
-    Then I see "Test Automation" shown as inside "toggleFGridMonitoringGridView"
+    Then I see "Test Automation" shown as inside "---program:-:toggleFlexGridMonitoringTableId---"
 
   @50365    @headerHelpTextFieldAtActiveGrantsGridParentFlexTable-gMonitoring
   Scenario Outline: Changing content of help text field at parent flex table of ActiveGrantsGrid from config and validating it at Monitoring schedule for all active grant flex table
@@ -997,7 +997,7 @@ Feature: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
-    Then I see quick search option disabled for table "toggleFGridMonitoringGridView"
+    Then I see quick search option disabled for table "---program:-:toggleFlexGridMonitoringTableId---"
 
   @50370    @enableHelpFieldAtActiveGrantsGridParentFlexTable-gMonitoring @smoke
   Scenario: validate enabling of help inside menu option in Monitoring schedule for all active grant flex table at Monitoring phase
@@ -1024,7 +1024,7 @@ Feature: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
-    Then I see "Page" with pagination arrow at "toggleFGridMonitoringGridView"
+    Then I see "Page" with pagination arrow at "---program:-:toggleFlexGridMonitoringTableId---"
 
   @50377    @disablingMenuFieldAtActiveGrantsGridParentFlexTable-gMonitoring @smoke
   Scenario: validate disabling of menu icon from Monitoring schedule for all active grant flex table at Monitoring phase
@@ -1050,7 +1050,7 @@ Feature: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
-    Then I see "#" in flex table header "inlineEditGridMonitoringGridView"
+    Then I see "#" in flex table header "---program:-:monitoringGridTableId---"
 
   @50380    @disablingEnableTotalRecordsCountFieldAtActiveGrantsGridParentFlexTable-gMonitoring @smoke
   Scenario: validate disbaling of total row count for Monitoring schedule for all active grant flex table at Monitoring phase
@@ -1063,7 +1063,7 @@ Feature: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
-    Then I see no "Total Records" count in "toggleFGridMonitoringGridView"
+    Then I see no "Total Records" count in "---program:-:toggleFlexGridMonitoringTableId---"
 
   @50383    @orderBySortByFieldAtActiveGrantsGridParentFlexTableForAscendingOrder-gMonitoring
   Scenario: Changing specific column value in ascending order with order by and sort by field At ActiveGrantsGrid Parent FlexTable from config and validating it inside Monitoring schedule for all active grant
@@ -1078,7 +1078,7 @@ Feature: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
-    Then I see column "# Awards" value is in "Ascending" order for table id "toggleFGridMonitoringGridView"
+    Then I see column "# Awards" value is in "Ascending" order for table id "---program:-:toggleFlexGridMonitoringTableId---"
 
   @50386    @orderBySortByFieldAtActiveGrantsGridParentFlexTableForDescendingOrder-gMonitoring
   Scenario: Changing specific column value in descending order with order by and sort by field At ActiveGrantsGrid Parent FlexTable from config and validating it inside Monitoring schedule for all active grant flex table
@@ -1093,7 +1093,7 @@ Feature: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
-    Then I see column "# Awards" value is in "Descending" order for table id "toggleFGridMonitoringGridView"
+    Then I see column "# Awards" value is in "Descending" order for table id "---program:-:toggleFlexGridMonitoringTableId---"
 
   @50391    @disablingEnableExportFieldAtActiveGrantsGridParentFlexTable-gMonitoring
   Scenario: validate disabling of PDF download from menu option at inside Monitoring schedule for all active grant flex table
@@ -1152,7 +1152,7 @@ Feature: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
-    Then I see "# Awards" column inside Flex grid table id "toggleFGridMonitoringGridView" contains width "50%"
+    Then I see "# Awards" column inside Flex grid table id "---program:-:toggleFlexGridMonitoringTableId---" contains width "50%"
 
   @50397    @fieldLabelOverrideFieldAtActiveGrantsGridFlexTable-gMonitoring
   Scenario: Changing specific column name of ActiveGrantsGrid flex table from config and validating it inside Monitoring schedule for all active grant flex table at Monitoring phase
@@ -1178,7 +1178,7 @@ Feature: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
-    Then I see "Automation N2G Grid" shown as inside "toggleFGridMonitoringGridView"
+    Then I see "Automation N2G Grid" shown as inside "---program:-:toggleFlexGridMonitoringTableId---"
 
   @50399    @filterClauseFieldAtActiveGrantsGridFlexTable-gMonitoring @smoke
   Scenario Outline: validate removing draft status category from ActiveGrantsGrid flex table of Monitoring Phase
@@ -1191,7 +1191,7 @@ Feature: Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
-    Then I softly do not see "Draft" value in flex table id "toggleFGridMonitoringGridView"
+    Then I softly do not see "Draft" value in flex table id "---program:-:toggleFlexGridMonitoringTableId---"
 
     Examples:
       | newFilter                                        |
@@ -1234,8 +1234,8 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "AP-755-198"
     When I click on "View" icon for "Test announcement for program 2" inside table
     When I navigate to "Budget" sub tab
-    When I record webelement at table "toggleFGridApplicationBudgetCategoryFlexGrid" for column "BP-01"
-    And I click on "Edit" icon for "BP-01" inside flex table with id "toggleFGridApplicationBudgetCategoryFlexGrid" with wait for record
+    When I record webelement at table "---program:-:applicationBudgetCategoryFlexGridTableId---" for column "BP-01"
+    And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:applicationBudgetCategoryFlexGridTableId---" with wait for record
     When I enter value "test" into field "fieldNotes__c"
     And I click modal button "Save"
     Then I see "test" inside Application Budget flex table for specified record "BP-01"
@@ -1273,8 +1273,8 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Financials" sub tab
-    When I record webelement at table "toggleFGridGrantFinancials" for column "2019"
-    And I click on "Edit" icon for "2019" inside flex table with id "toggleFGridGrantFinancials" with wait for record
+    When I record webelement at table "---program:-:grantFinancialsTableId---" for column "2019"
+    And I click on "Edit" icon for "2019" inside flex table with id "---program:-:grantFinancialsTableId---" with wait for record
     When I enter value "test" into field "fieldNotes__c"
     And I click modal button "Save"
     Then I see "test" inside Application Budget flex table for specified record "2019"
@@ -1293,7 +1293,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     Then I see "Test Automation" as title for "Indirect Cost Rate" inside flex table action
@@ -1312,7 +1312,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     When I click on "View" icon for "Proposed Uses Of Total Funds" inside table
@@ -1334,7 +1334,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     When I click on "View" icon for "Proposed Uses Of Total Funds" inside table
@@ -1354,7 +1354,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     When I click on "View" icon for "Proposed Uses Of Total Funds" inside table
@@ -1374,10 +1374,10 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
-    When I click on "View" icon for "Proposed Uses Of Total Funds" inside table with table id "toggleFGridApplicationBudgetCategoryFlexGrid" without processing
+    When I click on "View" icon for "Proposed Uses Of Total Funds" inside table with table id "---program:-:applicationBudgetCategoryFlexGridTableId---" without processing
     Then I see confirmation box with body "null" is displayed
 
   @51343    @ConfirmationMessageFieldAtApplicationBudgetCategoryFlexTableActionChild-gApplications
@@ -1396,10 +1396,10 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
-    When I click on "View" icon for "Proposed Uses Of Total Funds" inside table with table id "toggleFGridApplicationBudgetCategoryFlexGrid" without processing
+    When I click on "View" icon for "Proposed Uses Of Total Funds" inside table with table id "---program:-:applicationBudgetCategoryFlexGridTableId---" without processing
     Then I see confirmation box with body "Automation" is displayed
 
   @51345    @hideForProfileFieldAtApplicationBudgetCategoryFlexTableViewActionChild-gApplications
@@ -1416,7 +1416,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     Then I see "View" icon for "Proposed Uses Of Total Funds" is not displayed inside flex table
@@ -1435,7 +1435,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     Then I see "View" icon for "Proposed Uses Of Total Funds" is not displayed inside flex table
@@ -1456,7 +1456,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     When I click on "View" icon for "Proposed Uses Of Total Funds" inside table
@@ -1480,7 +1480,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     Then I see record "Indirect Cost Rate" having action "View" donot contain icon css "fa fa-eye"
@@ -1499,7 +1499,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     Then I see "Test Automation" as title for "Indirect Cost Rate" inside flex table action
@@ -1518,10 +1518,10 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Test Automation"
-    Then I see Nested Table "toggleFGridApplicationBudgetCategoryFlexGrid" with changed header name as "Test Automation"
+    Then I see Nested Table "---program:-:applicationBudgetCategoryFlexGridTableId---" with changed header name as "Test Automation"
 
   @51499    @buttonHelpTextFieldAtBudgetPeriodFlexTableActionChild-gGrants
   Scenario: Changing content of button help text field for Budget period details child flex table action from config and validating it inside Budget period details child flex table programs
@@ -1702,7 +1702,7 @@ Feature: Flex Grid Component Scenarios
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Financials" sub tab
     When I expand nested table containing column value "2019"
-    Then I see "#" shown inside flex table with id "toggleFGridGrantFinancials"
+    Then I see "#" shown inside flex table with id "---program:-:grantFinancialsTableId---"
 
   @51516    @enableTotalRecordsCountFieldAtBudgetPeriodFlexTableActionChild-gGrants
   Scenario: validate disbaling of Enable Total Records Count in Budget period details child flex table
@@ -1721,7 +1721,7 @@ Feature: Flex Grid Component Scenarios
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Financials" sub tab
     When I expand nested table containing column value "2019"
-    Then I see "Total Records" count in "toggleFGridGrantFinancials"
+    Then I see "Total Records" count in "---program:-:grantFinancialsTableId---"
 
   @51558    @displayFieldNameFieldAtBudgetPeriodFlexTableActionChild-gGrants
   Scenario Outline: validate adding field names for different data types in Budget period details child flex table
@@ -1738,7 +1738,7 @@ Feature: Flex Grid Component Scenarios
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Financials" sub tab
     When I expand nested table containing column value "2019"
-    Then I see "<fieldDisplayNames>" in program Outcomes flex table header with id "toggleFGridGrantFinancials"
+    Then I see "<fieldDisplayNames>" in program Outcomes flex table header with id "---program:-:grantFinancialsTableId---"
 
     Examples:
       | fieldDisplayNames | newFieldsApi                                                                                   | defaultFieldsApi                                                                               |
@@ -1762,7 +1762,7 @@ Feature: Flex Grid Component Scenarios
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Financials" sub tab
     When I expand nested table containing column value "2019"
-    Then I see "Test Automation" shown inside flex table with id "toggleFGridGrantFinancials"
+    Then I see "Test Automation" shown inside flex table with id "---program:-:grantFinancialsTableId---"
 
   @51550    @widthPercentageFieldAtBudgetPeriodFlexTableActionChild-gGrants
   Scenario: validate width size of particular column at budget period details child flex table
@@ -1779,7 +1779,7 @@ Feature: Flex Grid Component Scenarios
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Financials" sub tab
     When I expand nested table containing column value "2019"
-    Then I see "Awarded Amount" column inside Flex grid table id "toggleFGridGrantFinancials" contains width "50%"
+    Then I see "Awarded Amount" column inside Flex grid table id "---program:-:grantFinancialsTableId---" contains width "50%"
 
   @51482    @labelFieldAtApplicationBudgetCategoryFlexTableChild-gApplications
   Scenario: validate after changing name of ApplicationBudgetCategoryFlexTable label inside Application budget flex table
@@ -1795,9 +1795,9 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-01"
-    Then I see Nested Table "toggleFGridApplicationBudgetCategoryFlexGrid" with changed header name as "Test Automation"
+    Then I see Nested Table "---program:-:applicationBudgetCategoryFlexGridTableId---" with changed header name as "Test Automation"
 
   @51450    @helpTextFieldAtApplicationBudgetCategoryFlexTableChild-gApplications
   Scenario Outline: Changing content of help text field at ApplicationBudgetCategoryFlexTable column header from config and validating it inside Application budget flex table
@@ -1813,7 +1813,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     When I hovering mouse on help text icon inside "Grantee Share %" for flex table column
@@ -1837,10 +1837,10 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
-    Then I see "Test Automation" shown inside flex table with id "toggleFGridApplicationBudgetCategoryFlexGrid"
+    Then I see "Test Automation" shown inside flex table with id "---program:-:applicationBudgetCategoryFlexGridTableId---"
 
   @51556    @displayFieldNameFieldAtApplicationBudgetCategoryFlexTableChild-gApplications
   Scenario Outline: validate adding field names for different data types in Application budget flex table
@@ -1856,10 +1856,10 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
-    Then I see "<fieldDisplayNames>" in program Outcomes flex table header with id "toggleFGridApplicationBudgetCategoryFlexGrid"
+    Then I see "<fieldDisplayNames>" in program Outcomes flex table header with id "---program:-:applicationBudgetCategoryFlexGridTableId---"
 
     Examples:
       | fieldDisplayNames          | newFieldsApi                                                                                                   | defaultFieldsApi                                                                                     |
@@ -1884,7 +1884,7 @@ Feature: Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I expand nested table containing column value "2019"
     When I expand nested table containing column value "AD-GG PJ--00"
-    When I click on "View" icon for "AD-GG PJ--00" inside table with table id "toggleFGridGrantFinancials" without processing
+    When I click on "View" icon for "AD-GG PJ--00" inside table with table id "---program:-:grantFinancialsTableId---" without processing
     Then I see confirmation box with body "null" is displayed
 
   @51509    @ConfirmationMessageFieldAtBudgetPeriodFlexTableActionChild-gGrants
@@ -1905,7 +1905,7 @@ Feature: Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I expand nested table containing column value "2019"
     When I expand nested table containing column value "AD-GG PJ--00"
-    When I click on "View" icon for "AD-GG PJ--00" inside table with table id "toggleFGridGrantFinancials" without processing
+    When I click on "View" icon for "AD-GG PJ--00" inside table with table id "---program:-:grantFinancialsTableId---" without processing
     Then I see confirmation box with body "Automation" is displayed
 
   @51547    @helpTextFieldAtBudgetPeriodFlexTableActionChild-gGrants
@@ -1947,10 +1947,10 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
-    Then I see "#" shown inside flex table with id "toggleFGridApplicationBudgetCategoryFlexGrid"
+    Then I see "#" shown inside flex table with id "---program:-:applicationBudgetCategoryFlexGridTableId---"
 
   @51414    @enableTotalRecordsCountFieldAtApplicationBudgetCategoryFlexTable-gApplications
   Scenario: validate disbaling of enable otal records count in application budget category flex table
@@ -1966,10 +1966,10 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
-    Then I see no "Total Records" count in "toggleFGridApplicationBudgetCategoryFlexGrid"
+    Then I see no "Total Records" count in "---program:-:applicationBudgetCategoryFlexGridTableId---"
 
   @34335    @hideForProfileFieldForPPMGVflexTable-Programs
   Scenario: Hide view row level action for specific profile from configuration and validating it at under program strategic goals flex table- gPlanning
@@ -2045,10 +2045,10 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    And I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
+    And I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
-    Then I see column "Budget Category" value is in "Descending" order for table id "toggleFGridApplicationBudgetCategoryFlexGrid" for MEGrid
+    Then I see column "Budget Category" value is in "Descending" order for table id "---program:-:applicationBudgetCategoryFlexGridTableId---" for MEGrid
 
   @51446   @orderBySortByFieldAtApplicationBudgetCategoryFlexTableChildForAscendingOrder-gApplications
   Scenario: Changing specific column value in ascending order with order by and sort by field from config and validating it inside Application budget flex table
@@ -2066,7 +2066,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    And I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
+    And I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
-    Then I see column "Budget Category" value is in "Ascending" order for table id "toggleFGridApplicationBudgetCategoryFlexGrid" for MEGrid
+    Then I see column "Budget Category" value is in "Ascending" order for table id "---program:-:applicationBudgetCategoryFlexGridTableId---" for MEGrid

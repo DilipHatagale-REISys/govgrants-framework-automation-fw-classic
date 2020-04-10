@@ -43,7 +43,7 @@ Feature: Library Files Component Scenarios
     When I click on expand icon at library/folder "Department of Community Health"
     When I click on expand icon at library/folder "testAutomationFolder1"
     When I click on dropdown at library/folder/file "SendEmailAttachment.png"
-    Then I see "Download" option is present at library/folder/file "SendEmailAttachment.png"
+    Then I see "Download File" option is present at library/folder/file "SendEmailAttachment.png"
 
   @70264 @validateThatFileShouldGetDownloadFromFolderForViewerProfileHomePhase
   Scenario: Verify that file is getting download from folder under home phase library for Viewer profile
@@ -55,7 +55,7 @@ Feature: Library Files Component Scenarios
     When I click on expand icon at library/folder "Department of Community Health"
     When I click on expand icon at library/folder "testAutomationFolder2"
     When I click on dropdown at library/folder/file "automationTestingOfFiles.xls"
-    When I click on "Download" option at library/folder/file "automationTestingOfFiles.xls"
+    When I click on "Download File" option at library/folder/file "automationTestingOfFiles.xls"
     Then I see "First Name" in downloaded xls or csv file "govgrants"
 
   @70282 @validateThatAccessGivenLibraryShouldDisplayOnUIForAuthorProfileHomePhase
@@ -109,7 +109,7 @@ Feature: Library Files Component Scenarios
     When I click on "Add New Folder" option at library/folder/file "Department of Community Health"
     When I enter value as "testAutomationFolder4" in field "Folder Name" at Library Files
     When I click on "Save" button in send email modal
-    When I pause execution for "10" seconds
+    When I pause execution for "4" seconds
     When I click on dropdown at library/folder/file "testAutomationFolder4"
     When I click on "Rename Folder" option at library/folder/file "testAutomationFolder4"
     When I enter value as "testAutomationFolder4-Renamed" in field "Folder Name" at Library Files
@@ -419,6 +419,7 @@ Feature: Library Files Component Scenarios
     When I click on dropdown at library/folder/file "Department of Community Health"
     When I click on "Add New Folder" option at library/folder/file "Department of Community Health"
     When I enter value as "" in field "Folder Name" at Library Files
+    When I click on "Save" button in send email modal
     Then I see the text containing :
       | Folder name is required |
 
@@ -479,15 +480,15 @@ Feature: Library Files Component Scenarios
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
     When I pause execution for "5" seconds
-    When I perform quick search for "SendEmailAttachment.pdf" in "WorkSpaceFilesFlexToggle" panel
-    Then I softly see value "SendEmailAttachment.pdf" for title "Title" inside table "WorkSpaceFilesFlexToggle"
+    When I perform quick search for "SendEmailAttachment.pdf" in "---program:-:workSpaceFilesFlexTableId---" panel
+    Then I softly see value "SendEmailAttachment.pdf" for title "Title" inside table "---program:-:workSpaceFilesFlexTableId---"
     When I click on "Delete" icon for "SendEmailAttachment.pdf" inside table
     When I click "Yes" on modal confirmation box
     When I pause execution for "3" seconds
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
-    When I perform quick search for "SendEmailAttachment.pdf" in "WorkSpaceFilesFlexToggle" panel
-    Then I softly see "No Records Found" inside flex table with id "WorkSpaceFilesFlexToggle"
+    When I perform quick search for "SendEmailAttachment.pdf" in "---program:-:workSpaceFilesFlexTableId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:workSpaceFilesFlexTableId---"
 
   @70411 @validateThatFileUploadedFromFileListIsDisplayedUnderRespectiveLibraryAtFilesLibraryTab-HomePhase-FileList
   Scenario: Verify thatfile uploaded from FileList tab is displayed under selected folder/library at library files tab - Home phase
@@ -583,15 +584,15 @@ Feature: Library Files Component Scenarios
     And I refresh the page
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
-    When I perform quick search for "SendEmailAttachment.pdf" in "WorkSpaceFilesFlexToggle" panel
-    Then I softly see value "SendEmailAttachment.pdf" for title "Title" inside table "WorkSpaceFilesFlexToggle"
+    When I perform quick search for "SendEmailAttachment.pdf" in "---program:-:workSpaceFilesFlexTableId---" panel
+    Then I softly see value "SendEmailAttachment.pdf" for title "Title" inside table "---program:-:workSpaceFilesFlexTableId---"
     When I click on "Delete" icon for "SendEmailAttachment.pdf" inside table
     When I click "Yes" on modal confirmation box
     When I pause execution for "5" seconds
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
-    When I perform quick search for "SendEmailAttachment.pdf" in "WorkSpaceFilesFlexToggle" panel
-    Then I softly see "No Records Found" inside flex table with id "WorkSpaceFilesFlexToggle"
+    When I perform quick search for "SendEmailAttachment.pdf" in "---program:-:workSpaceFilesFlexTableId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:workSpaceFilesFlexTableId---"
 
   @70490 @validateThatUserCanUploadFileOfWithoutEnteringDescriptionInLibrarAndFolder-HomePhase
   Scenario: Verify that user can upload file without entering description under upload file modal - Home Phase
@@ -644,7 +645,7 @@ Feature: Library Files Component Scenarios
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
-    When I perform quick search for "automationTestingOfFiles.xls" in "WorkSpaceFilesFlexToggle" panel
+    When I perform quick search for "automationTestingOfFiles.xls" in "---program:-:workSpaceFilesFlexTableId---" panel
     When I click on "Download" icon for "automationTestingOfFiles.xls" inside table
     Then I see "First Name" in downloaded xls or csv file "govgrants"
 
@@ -657,31 +658,31 @@ Feature: Library Files Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "SendEmailAttachment.pdf" into library
     When I click on SelectChange Folder in add file modal
     When I Select/Change Folder as "Department of Community Health" in add file modal
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
     When I pause execution for "5" seconds
-    When I perform quick search for "SendEmailAttachment.pdf" in "PlanningFilesgrid" panel
-    Then I softly see value "SendEmailAttachment.pdf" for title "Title" inside table "PlanningFilesgrid"
+    When I perform quick search for "SendEmailAttachment.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see value "SendEmailAttachment.pdf" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
-    When I perform quick search for "SendEmailAttachment.pdf" in "WorkSpaceFilesFlexToggle" panel
-    Then I softly see value "SendEmailAttachment.pdf" for title "Title" inside table "WorkSpaceFilesFlexToggle"
+    When I perform quick search for "SendEmailAttachment.pdf" in "---program:-:workSpaceFilesFlexTableId---" panel
+    Then I softly see value "SendEmailAttachment.pdf" for title "Title" inside table "---program:-:workSpaceFilesFlexTableId---"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    When I perform quick search for "SendEmailAttachment.pdf" in "PlanningFilesgrid" panel
+    When I perform quick search for "SendEmailAttachment.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
     When I click on "Delete" icon for "SendEmailAttachment.pdf" inside table
     When I click "Yes" on modal confirmation box
     When I pause execution for "3" seconds
-    When I perform quick search for "SendEmailAttachment.pdf" in "PlanningFilesgrid" panel
-    Then I softly see "No Records Found" inside flex table with id "PlanningFilesgrid"
+    When I perform quick search for "SendEmailAttachment.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:PlanningFilesFlexGridId---"
 
   @70534 @validateThatUserCanUploadFileOfTypeXlsxInLibrarAndFolder-HomePhase
   Scenario: Verify that user can upload file of type Xlsx under library and folder - Home Phase
@@ -828,10 +829,10 @@ Feature: Library Files Component Scenarios
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
-    When I perform quick search for "automationTestingOfFiles.xls" in "WorkSpaceFilesFlexToggle" panel
+    When I perform quick search for "automationTestingOfFiles.xls" in "---program:-:workSpaceFilesFlexTableId---" panel
     When I click on "Edit" icon for "automationTestingOfFiles.xls" inside table
     When I click on "×" icon at "File Edit" modal under Library
-    Then I see "File Edit" modal window with id "WorkSpaceFilesmodalDiv" is not displayed
+    Then I see "File Edit" modal window with id "---program:-:workSpaceFilesModalId---" is not displayed
 
   @70498 @validateByClickOnCloseIconAtEditFileModalOperationAModalIsGettingClosed-HomePhase
   Scenario: Verify that a modal is getting closed by lick on cross button under edit file modal - home phase
@@ -840,10 +841,10 @@ Feature: Library Files Component Scenarios
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
-    When I perform quick search for "automationTestingOfFiles.xls" in "WorkSpaceFilesFlexToggle" panel
+    When I perform quick search for "automationTestingOfFiles.xls" in "---program:-:workSpaceFilesFlexTableId---" panel
     When I click on "Edit" icon for "automationTestingOfFiles.xls" inside table
     When I click on "Cancel" button in send email modal
-    Then I see "File Edit" modal window with id "WorkSpaceFilesmodalDiv" is not displayed
+    Then I see "File Edit" modal window with id "---program:-:workSpaceFilesModalId---" is not displayed
 
   @70729 @validateThatUserCanDownloadFileFromPlanningFilesTableAtAttachmentTab-RecordLevel @wip @NeedDeleteAPI
   Scenario: Verify that user can download file from planning Files table at attachment tab - Record level
@@ -854,14 +855,14 @@ Feature: Library Files Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "SheetJSFileUpload.xlsx" into library
     When I click on SelectChange Folder in add file modal
     When I Select/Change Folder as "Department of Community Health" in add file modal
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
-    When I perform quick search for "SheetJSFileUpload.xlsx" in "PlanningFilesgrid" panel
+    When I perform quick search for "SheetJSFileUpload.xlsx" in "---program:-:PlanningFilesFlexGridId---" panel
     When I click on "Download" icon for "SheetJSFileUpload.xlsx" inside table
     Then I softly see "Organization" in downloaded xls or csv file "govgrants"
 
@@ -874,19 +875,19 @@ Feature: Library Files Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "SheetJSFileUpload.xlsx" into library
     When I click on SelectChange Folder in add file modal
     When I Select/Change Folder as "Department of Community Health" in add file modal
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
-    When I perform quick search for "SheetJSFileUpload.xlsx" in "PlanningFilesgrid" panel
+    When I perform quick search for "SheetJSFileUpload.xlsx" in "---program:-:PlanningFilesFlexGridId---" panel
     When I click on "Delete" icon for "SheetJSFileUpload.xlsx" inside table
     When I click "Yes" on modal confirmation box
     When I pause execution for "3" seconds
-    When I perform quick search for "SheetJSFileUpload.xlsx" in "PlanningFilesgrid" panel
-    Then I see "No Records Found" inside flex table with id "SheetJSFileUpload.xlsx"
+    When I perform quick search for "SheetJSFileUpload.xlsx" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I see "No Records Found" inside flex table with id "---program:-:PlanningFilesFlexGridId---"
 
   @70731 @validateThatDescriptionAddedAtFileUploadModalIsDisplayedUnderPlanningFilesTableAtAttachmentTab-RecordLevel @NeedDeleteAPI
   Scenario: Verify that description added at upload file modal is shown under planning files table - Record level
@@ -897,20 +898,20 @@ Feature: Library Files Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library
     When I click on SelectChange Folder in add file modal
     When I Select/Change Folder as "Department of Community Health" in add file modal
     When I enter value as "test Automation upload from record level" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
-    When I perform quick search for "TestAutomationFile.csv" in "PlanningFilesgrid" panel
-    Then I softly see value "test Automation upload from record level" for title "Description" inside table "PlanningFilesgrid"
+    When I perform quick search for "TestAutomationFile.csv" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see value "test Automation upload from record level" for title "Description" inside table "---program:-:PlanningFilesFlexGridId---"
     When I click on "Delete" icon for "TestAutomationFile.csv" inside table
     When I click "Yes" on modal confirmation box
     When I pause execution for "3" seconds
-    When I perform quick search for "TestAutomationFile.csv" in "PlanningFilesgrid" panel
-    Then I softly see "No Records Found" inside flex table with id "PlanningFilesgrid"
+    When I perform quick search for "TestAutomationFile.csv" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:PlanningFilesFlexGridId---"
 
   @70356 @validateThatDescriptionFieldShouldAcceptMax255CharactersAtUploadFileModal-HomePhase @NeedDeleteAPI
   Scenario Outline: Verify that description field should accept 255 characters at upload file modal - Home Phase
@@ -928,13 +929,13 @@ Feature: Library Files Component Scenarios
     And I refresh the page
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
-    When I perform quick search for "TestAutomationFile.csv" in "WorkSpaceFilesFlexToggle" panel
-    Then I softly see value "<requiredValue>" for title "Description" inside table "WorkSpaceFilesFlexToggle"
+    When I perform quick search for "TestAutomationFile.csv" in "---program:-:workSpaceFilesFlexTableId---" panel
+    Then I softly see value "<requiredValue>" for title "Description" inside table "---program:-:workSpaceFilesFlexTableId---"
     When I click on "Delete" icon for "TestAutomationFile.csv" inside table
     When I click "Yes" on modal confirmation box
     When I pause execution for "5" seconds
-    When I perform quick search for "TestAutomationFile.csv" in "WorkSpaceFilesFlexToggle" panel
-    Then I softly see "No Records Found" inside flex table with id "WorkSpaceFilesFlexToggle"
+    When I perform quick search for "TestAutomationFile.csv" in "---program:-:workSpaceFilesFlexTableId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:workSpaceFilesFlexTableId---"
     Examples:
       | enterValue                                                                                                                                                                                                                                                           | requiredValue                                                                                                                                                                                                                                                   |
       | titletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitleti255title | titletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitleti255 |
@@ -972,7 +973,7 @@ Feature: Library Files Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library
     When I select Classification as "Medical Reports" at upload file modal
     When I click on SelectChange Folder in add file modal
@@ -980,13 +981,13 @@ Feature: Library Files Component Scenarios
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
-    When I perform quick search for "TestAutomationFile.csv" in "PlanningFilesgrid" panel
-    Then I softly see value "Medical Reports" for title "Classification" inside table "PlanningFilesgrid"
+    When I perform quick search for "TestAutomationFile.csv" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see value "Medical Reports" for title "Classification" inside table "---program:-:PlanningFilesFlexGridId---"
     When I click on "Delete" icon for "TestAutomationFile.csv" inside table
     When I click "Yes" on modal confirmation box
     When I pause execution for "5" seconds
-    When I perform quick search for "TestAutomationFile.csv" in "PlanningFilesgrid" panel
-    Then I softly see "No Records Found" inside flex table with id "PlanningFilesgrid"
+    When I perform quick search for "TestAutomationFile.csv" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:PlanningFilesFlexGridId---"
 
   @70733 @validateThatFileExtensionOfUploadedFileIsDisplayedUnderPlanningFilesTable-HomePhase @NeedDeleteAPI
   Scenario: Verify that file extension of uploaded is displayed under planning files table - Home Phase
@@ -997,20 +998,20 @@ Feature: Library Files Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library
     When I click on SelectChange Folder in add file modal
     When I Select/Change Folder as "Department of Community Health" in add file modal
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
-    When I perform quick search for "TestAutomationFile.csv" in "PlanningFilesgrid" panel
-    Then I softly see value "csv" for title "File Extension" inside table "PlanningFilesgrid"
+    When I perform quick search for "TestAutomationFile.csv" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see value "csv" for title "File Extension" inside table "---program:-:PlanningFilesFlexGridId---"
     When I click on "Delete" icon for "TestAutomationFile.csv" inside table
     When I click "Yes" on modal confirmation box
     When I pause execution for "5" seconds
-    When I perform quick search for "TestAutomationFile.csv" in "PlanningFilesgrid" panel
-    Then I softly see "No Records Found" inside flex table with id "PlanningFilesgrid"
+    When I perform quick search for "TestAutomationFile.csv" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:PlanningFilesFlexGridId---"
 
   @70734 @validateThatFileNameOfUploadedFileIsDisplayedUnderPlanningFilesTable-HomePhase @NeedDeleteAPI
   Scenario: Verify that file name of uploaded is displayed under planning files table as it is - Home Phase
@@ -1021,20 +1022,20 @@ Feature: Library Files Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library
     When I click on SelectChange Folder in add file modal
     When I Select/Change Folder as "Department of Community Health" in add file modal
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
-    When I perform quick search for "TestAutomationFile.csv" in "PlanningFilesgrid" panel
-    Then I softly see value "TestAutomationFile.csv" for title "Title" inside table "PlanningFilesgrid"
+    When I perform quick search for "TestAutomationFile.csv" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see value "TestAutomationFile.csv" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
     When I click on "Delete" icon for "TestAutomationFile.csv" inside table
     When I click "Yes" on modal confirmation box
     When I pause execution for "5" seconds
-    When I perform quick search for "TestAutomationFile.csv" in "PlanningFilesgrid" panel
-    Then I softly see "No Records Found" inside flex table with id "PlanningFilesgrid"
+    When I perform quick search for "TestAutomationFile.csv" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:PlanningFilesFlexGridId---"
 
   @70735 @validateThatFileUploadedAtAnyRecordIsVisibleOnlyAtThatRecordAndNotAtOtherRecords-RecordLevel @NeedDeleteAPI
   Scenario: Verify that file name of uploaded is displayed under planning files table as it is - Home Phase
@@ -1045,33 +1046,33 @@ Feature: Library Files Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library
     When I click on SelectChange Folder in add file modal
     When I Select/Change Folder as "Department of Community Health" in add file modal
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
-    When I perform quick search for "TestAutomationFile.csv" in "PlanningFilesgrid" panel
-    Then I softly see value "TestAutomationFile.csv" for title "Title" inside table "PlanningFilesgrid"
+    When I perform quick search for "TestAutomationFile.csv" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see value "TestAutomationFile.csv" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I navigate to "Attachments" sub tab
-    When I perform quick search for "TestAutomationFile.csv" in "PlanningFilesgrid" panel
-    Then I softly see "No Records Found" inside flex table with id "PlanningFilesgrid"
+    When I perform quick search for "TestAutomationFile.csv" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:PlanningFilesFlexGridId---"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    When I perform quick search for "TestAutomationFile.csv" in "PlanningFilesgrid" panel
+    When I perform quick search for "TestAutomationFile.csv" in "---program:-:PlanningFilesFlexGridId---" panel
     When I click on "Delete" icon for "TestAutomationFile.csv" inside table
     When I click "Yes" on modal confirmation box
     When I pause execution for "5" seconds
-    When I perform quick search for "TestAutomationFile.csv" in "PlanningFilesgrid" panel
-    Then I softly see "No Records Found" inside flex table with id "PlanningFilesgrid"
+    When I perform quick search for "TestAutomationFile.csv" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:PlanningFilesFlexGridId---"
 
   @71583 @validateThatSelectedClassificationAtUploadModalIsDisplayedUnderFilesListTable-RecordLevel @NeedDeleteAPI
   Scenario: Verify that selected classification at upload modal is displayed under files list table at Home Phase
@@ -1082,7 +1083,7 @@ Feature: Library Files Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library
     When I select Classification as "Medical Reports" at upload file modal
     When I click on SelectChange Folder in add file modal
@@ -1093,19 +1094,19 @@ Feature: Library Files Component Scenarios
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
-    When I perform quick search for "TestAutomationFile.csv" in "WorkSpaceFilesFlexToggle" panel
-    Then I softly see value "Medical Reports" for title "Classification" inside table "WorkSpaceFilesFlexToggle"
+    When I perform quick search for "TestAutomationFile.csv" in "---program:-:workSpaceFilesFlexTableId---" panel
+    Then I softly see value "Medical Reports" for title "Classification" inside table "---program:-:workSpaceFilesFlexTableId---"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    When I perform quick search for "TestAutomationFile.csv" in "PlanningFilesgrid" panel
+    When I perform quick search for "TestAutomationFile.csv" in "---program:-:PlanningFilesFlexGridId---" panel
     When I click on "Delete" icon for "TestAutomationFile.csv" inside table
     When I click "Yes" on modal confirmation box
     When I pause execution for "3" seconds
-    When I perform quick search for "TestAutomationFile.csv" in "PlanningFilesgrid" panel
-    Then I softly see "No Records Found" inside flex table with id "PlanningFilesgrid"
+    When I perform quick search for "TestAutomationFile.csv" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:PlanningFilesFlexGridId---"
 
   @70737 @validateThatUserCanUploadDocxTypeFileUnderPlanningFilesTable-HomePhase @NeedDeleteAPI
   Scenario: Verify that user can upload .docx type of file under planning files table as it is - Home Phase
@@ -1116,20 +1117,20 @@ Feature: Library Files Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.docx" into library
     When I click on SelectChange Folder in add file modal
     When I Select/Change Folder as "Department of Community Health" in add file modal
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
-    When I perform quick search for "TestAutomationFile.docx" in "PlanningFilesgrid" panel
-    Then I softly see value "TestAutomationFile.docx" for title "Title" inside table "PlanningFilesgrid"
+    When I perform quick search for "TestAutomationFile.docx" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see value "TestAutomationFile.docx" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
     When I click on "Delete" icon for "TestAutomationFile.docx" inside table
     When I click "Yes" on modal confirmation box
     When I pause execution for "5" seconds
-    When I perform quick search for "TestAutomationFile.docx" in "PlanningFilesgrid" panel
-    Then I softly see "No Records Found" inside flex table with id "PlanningFilesgrid"
+    When I perform quick search for "TestAutomationFile.docx" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:PlanningFilesFlexGridId---"
 
   @70738 @validateThatUserCanUploadPDFTypeFileUnderPlanningFilesTable-HomePhase @NeedDeleteAPI
   Scenario: Verify that user can upload .Pdf type of file under planning files table as it is - Home Phase
@@ -1140,20 +1141,20 @@ Feature: Library Files Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "SendEmailAttachment.pdf" into library
     When I click on SelectChange Folder in add file modal
     When I Select/Change Folder as "Department of Community Health" in add file modal
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
-    When I perform quick search for "SendEmailAttachment.pdf" in "PlanningFilesgrid" panel
-    Then I softly see value "SendEmailAttachment.pdf" for title "Title" inside table "PlanningFilesgrid"
+    When I perform quick search for "SendEmailAttachment.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see value "SendEmailAttachment.pdf" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
     When I click on "Delete" icon for "SendEmailAttachment.pdf" inside table
     When I click "Yes" on modal confirmation box
     When I pause execution for "5" seconds
-    When I perform quick search for "SendEmailAttachment.pdf" in "PlanningFilesgrid" panel
-    Then I softly see "No Records Found" inside flex table with id "PlanningFilesgrid"
+    When I perform quick search for "SendEmailAttachment.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:PlanningFilesFlexGridId---"
 
   @70437 @validateThatSetAsDefaultFolderDropdownOptionIsNotDisplayedAtLibraryForViewerProfileHomePhase
   Scenario: Verify that Dropdown Option as Set As Default Folder is not Displayed at File under home phase library for Viewer profile
@@ -1201,20 +1202,20 @@ Feature: Library Files Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomation.txt" into library
     When I click on SelectChange Folder in add file modal
     When I Select/Change Folder as "Department of Community Health" in add file modal
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
-    When I perform quick search for "TestAutomation.txt" in "PlanningFilesgrid" panel
-    Then I softly see value "TestAutomation.txt" for title "Title" inside table "PlanningFilesgrid"
+    When I perform quick search for "TestAutomation.txt" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see value "TestAutomation.txt" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
     When I click on "Delete" icon for "TestAutomation.txt" inside table
     When I click "Yes" on modal confirmation box
     When I pause execution for "5" seconds
-    When I perform quick search for "TestAutomation.txt" in "PlanningFilesgrid" panel
-    Then I softly see "No Records Found" inside flex table with id "PlanningFilesgrid"
+    When I perform quick search for "TestAutomation.txt" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:PlanningFilesFlexGridId---"
 
   @70739 @validateThatUserCanUploadjpgTypeFileUnderPlanningFilesTable-HomePhase @NeedDeleteAPI
   Scenario: Verify that user can upload .jpg type of file under planning files table as it is - Home Phase
@@ -1225,20 +1226,20 @@ Feature: Library Files Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
-    When I upload file "SendEmailAttachment.png" into library
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    When I upload file "TestAutomationFile.jpg" into library
     When I click on SelectChange Folder in add file modal
     When I Select/Change Folder as "Department of Community Health" in add file modal
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
-    When I perform quick search for "SendEmailAttachment.png" in "PlanningFilesgrid" panel
-    Then I softly see value "SendEmailAttachment.png" for title "Title" inside table "PlanningFilesgrid"
-    When I click on "Delete" icon for "SendEmailAttachment.png" inside table
+    When I perform quick search for "TestAutomationFile.jpg" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see value "TestAutomationFile.jpg" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
+    When I click on "Delete" icon for "TestAutomationFile.jpg" inside table
     When I click "Yes" on modal confirmation box
     When I pause execution for "5" seconds
-    When I perform quick search for "SendEmailAttachment.png" in "PlanningFilesgrid" panel
-    Then I softly see "No Records Found" inside flex table with id "PlanningFilesgrid"
+    When I perform quick search for "TestAutomationFile.jpg" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:PlanningFilesFlexGridId---"
 
   @70740 @validateThatUserCanUploadPngTypeFileUnderPlanningFilesTable-HomePhase @NeedDeleteAPI
   Scenario: Verify that user can upload .png type of file under planning files table as it is - Home Phase
@@ -1249,20 +1250,20 @@ Feature: Library Files Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.jpg" into library
     When I click on SelectChange Folder in add file modal
     When I Select/Change Folder as "Department of Community Health" in add file modal
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
-    When I perform quick search for "TestAutomationFile.jpg" in "PlanningFilesgrid" panel
-    Then I softly see value "TestAutomationFile.jpg" for title "Title" inside table "PlanningFilesgrid"
+    When I perform quick search for "TestAutomationFile.jpg" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see value "TestAutomationFile.jpg" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
     When I click on "Delete" icon for "TestAutomationFile.jpg" inside table
     When I click "Yes" on modal confirmation box
     When I pause execution for "5" seconds
-    When I perform quick search for "TestAutomationFile.jpg" in "PlanningFilesgrid" panel
-    Then I softly see "No Records Found" inside flex table with id "PlanningFilesgrid"
+    When I perform quick search for "TestAutomationFile.jpg" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:PlanningFilesFlexGridId---"
 
   @70742 @validateThatFileUploadedFromRecordDetailIsDisplayedUnderHomePhaseLibraryFilesTabUnderRespectiveFolder-RecordLevel @NeedDeleteAPI
   Scenario: Verify that file added from record level is displayed under respective folder under home phase library files tab - record level
@@ -1273,15 +1274,15 @@ Feature: Library Files Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "SendEmailAttachment.pdf" into library
     When I click on SelectChange Folder in add file modal
     When I Select/Change Folder as "Department of Community Health" in add file modal
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
     When I pause execution for "5" seconds
-    When I perform quick search for "SendEmailAttachment.pdf" in "PlanningFilesgrid" panel
-    Then I softly see value "SendEmailAttachment.pdf" for title "Title" inside table "PlanningFilesgrid"
+    When I perform quick search for "SendEmailAttachment.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see value "SendEmailAttachment.pdf" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
@@ -1292,12 +1293,12 @@ Feature: Library Files Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    When I perform quick search for "SendEmailAttachment.pdf" in "PlanningFilesgrid" panel
+    When I perform quick search for "SendEmailAttachment.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
     When I click on "Delete" icon for "SendEmailAttachment.pdf" inside table
     When I click "Yes" on modal confirmation box
     When I pause execution for "3" seconds
-    When I perform quick search for "SendEmailAttachment.pdf" in "PlanningFilesgrid" panel
-    Then I softly see "No Records Found" inside flex table with id "PlanningFilesgrid"
+    When I perform quick search for "SendEmailAttachment.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:PlanningFilesFlexGridId---"
 
   @70743 @validateThatRecordNameSearchedUsingQuickSearchShouldGetDisplayedUnderUploadFileModal-RecordLevel
   Scenario: Verify that by entering text in quick search box, respective record is displayed under upload file modal - record level
@@ -1308,8 +1309,8 @@ Feature: Library Files Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
-    And I click on "Upload file from Library" tab at files library upload modal
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    And I click on "Upload File from Library" tab at files library upload modal
     When I perform quick search for "DummyFile2_DND.jpg" under files library
     Then I see "DummyFile2_DND.jpg" shown in search table with id "WorkspaceFilesUpload" at file upload modal
 
@@ -1322,8 +1323,8 @@ Feature: Library Files Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
-    And I click on "Upload file from Library" tab at files library upload modal
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    And I click on "Upload File from Library" tab at files library upload modal
     When I click on page navigation arrow "Last" at table with id "WorkspaceFilesUpload" under upload file modal
     Then I see "DummyFile2_DND.jpg" shown in search table with id "WorkspaceFilesUpload" at file upload modal
 
@@ -1336,8 +1337,8 @@ Feature: Library Files Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
-    And I click on "Upload file from Library" tab at files library upload modal
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    And I click on "Upload File from Library" tab at files library upload modal
     When I click on page navigation arrow "Last" at table with id "WorkspaceFilesUpload" under upload file modal
     When I click on page navigation arrow "First" at table with id "WorkspaceFilesUpload" under upload file modal
     Then I see "SendEmailAttachment.png" shown in search table with id "WorkspaceFilesUpload" at file upload modal
@@ -1351,8 +1352,8 @@ Feature: Library Files Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
-    And I click on "Upload file from Library" tab at files library upload modal
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    And I click on "Upload File from Library" tab at files library upload modal
     When I select "2" page from dropdown at search table with id "WorkspaceFilesUpload" at file upload modal
     Then I see "DummyFile2_DND.jpg" shown in search table with id "WorkspaceFilesUpload" at file upload modal
 
@@ -1365,20 +1366,20 @@ Feature: Library Files Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "SheetJSFileUploadDateTime.xlsx" into library
     When I click on SelectChange Folder in add file modal
     When I Select/Change Folder as "Department of Community Health" in add file modal
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
-    When I perform quick search for "SheetJSFileUploadDateTime.xlsx" in "PlanningFilesgrid" panel
-    Then I softly see value "SheetJSFileUploadDateTime.xlsx" for title "Title" inside table "PlanningFilesgrid"
+    When I perform quick search for "SheetJSFileUploadDateTime.xlsx" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see value "SheetJSFileUploadDateTime.xlsx" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
     When I click on "Delete" icon for "SheetJSFileUploadDateTime.xlsx" inside table
     When I click "Yes" on modal confirmation box
     When I pause execution for "5" seconds
-    When I perform quick search for "SheetJSFileUploadDateTime.xlsx" in "PlanningFilesgrid" panel
-    Then I softly see "No Records Found" inside flex table with id "PlanningFilesgrid"
+    When I perform quick search for "SheetJSFileUploadDateTime.xlsx" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:PlanningFilesFlexGridId---"
 
   @70629 @validateThatUserCanSearchFilesInGlobalSearchUnderAllTable-HomePhase
   Scenario: Verify that if file name is searched in global search-All tables then, it is displayed in files table - Home Phase
@@ -1387,7 +1388,7 @@ Feature: Library Files Component Scenarios
     And I navigate to "HOME" tab
     When I click on global search and select "All"
     When I perform quick search inside global search "SendEmailAttachment.png"
-    Then I see value "SendEmailAttachment.png" for title "Title" inside table "PlanningFilesgrid"
+    Then I see value "SendEmailAttachment.png" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
 
   @70630 @validateThatUserCanSearchFilesInGlobalSearchUnderFilesTable-HomePhase
   Scenario: Verify that if file name is searched in global search-Files table then, it is displayed in files table - Home Phase
@@ -1396,7 +1397,7 @@ Feature: Library Files Component Scenarios
     And I navigate to "HOME" tab
     When I click on global search and select "Files"
     When I perform quick search inside global search "SendEmailAttachment.pdf"
-    Then I see value "SendEmailAttachment.pdf" for title "Title" inside table "PlanningFilesgrid"
+    Then I see value "SendEmailAttachment.pdf" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
 
   @70748 @validateThatUserCanViewFileUnderPlanningFilesTable-HomePhase @NeedDeleteAPI
   Scenario: Verify that by click on View action at file under planning files table , a view file modal is displayed- Home Phase
@@ -1407,23 +1408,23 @@ Feature: Library Files Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "SendEmailAttachment.pdf" into library
     When I click on SelectChange Folder in add file modal
     When I Select/Change Folder as "Department of Community Health" in add file modal
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
-    When I perform quick search for "SendEmailAttachment.pdf" in "PlanningFilesgrid" panel
+    When I perform quick search for "SendEmailAttachment.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
     When I click on "View" icon for "SendEmailAttachment.pdf" inside table
     Then I softly see "File View" opens in overLay window
     When I click on "×" icon at "File View" modal under Library
-    When I perform quick search for "SendEmailAttachment.pdf" in "PlanningFilesgrid" panel
+    When I perform quick search for "SendEmailAttachment.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
     When I click on "Delete" icon for "SendEmailAttachment.pdf" inside table
     When I click "Yes" on modal confirmation box
     When I pause execution for "3" seconds
-    When I perform quick search for "SendEmailAttachment.pdf" in "PlanningFilesgrid" panel
-    Then I softly see "No Records Found" inside flex table with id "PlanningFilesgrid"
+    When I perform quick search for "SendEmailAttachment.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:PlanningFilesFlexGridId---"
 
   @70749 @validateThatUserCanEditFileUnderPlanningFilesTable-HomePhase @NeedDeleteAPI
   Scenario: Verify that by click on Edit action at file under planning files table , a view file modal is displayed- Home Phase
@@ -1434,20 +1435,50 @@ Feature: Library Files Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    When I click on top right button "Add Files" in flex table with id "PlanningFilesgrid"
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "SendEmailAttachment.pdf" into library
     When I click on SelectChange Folder in add file modal
     When I Select/Change Folder as "Department of Community Health" in add file modal
     When I enter value as "test Automation upload from files list" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
     When I pause execution for "7" seconds
-    When I perform quick search for "SendEmailAttachment.pdf" in "PlanningFilesgrid" panel
+    When I perform quick search for "SendEmailAttachment.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
     When I click on "Edit" icon for "SendEmailAttachment.pdf" inside table
     Then I softly see "File Edit" opens in overLay window
     When I click on "×" icon at "File Edit" modal under Library
-    When I perform quick search for "SendEmailAttachment.pdf" in "PlanningFilesgrid" panel
+    When I perform quick search for "SendEmailAttachment.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
     When I click on "Delete" icon for "SendEmailAttachment.pdf" inside table
     When I click "Yes" on modal confirmation box
     When I pause execution for "3" seconds
-    When I perform quick search for "SendEmailAttachment.pdf" in "PlanningFilesgrid" panel
-    Then I softly see "No Records Found" inside flex table with id "PlanningFilesgrid"
+    When I perform quick search for "SendEmailAttachment.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:PlanningFilesFlexGridId---"
+
+  @70631 @validateThatIfUserSearchedInvalidDataInFilesInGlobalSearchUnderFilesTableThen-HomePhase
+  Scenario: Verify that if file name is searched in global search-Files table then, it is displayed in files table - Home Phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on global search and select "Files"
+    When I perform quick search inside global search "SendEmailAttachment.pdf"
+    Then I see value "SendEmailAttachment.pdf" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
+
+  @70288 @validateThatFoldersPresentAtHomePhaseFilesLibraryArePresentAtRecordLevelUploadFileModal-RecordLevel @wip
+  Scenario: Verify that file added from record level is displayed under home phase files list tab - record level
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "Department of Community Health"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    When I upload file "SendEmailAttachment.pdf" into library
+    When I click on SelectChange Folder in add file modal
+    When I Select/Change Folder as "Department of Community Health" in add file modal
+    And I save the field containing "<string>" as "<string>"
+    And I save the field labeled "<string>" as "<string>"
+    Then I softly see field "Cash Match Required (%)" as "{SavedValue:MatchPercentage}"

@@ -33,7 +33,7 @@ Feature: Logged Issues Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "hild"
-    Then I see record with text "hild" in "flexTableDivId"
+    Then I see record with text "hild" in "---program:-:programTableDivId---"
 
   @54846    @validateAttachmentEditActionWorkingOrNot
   Scenario: validate Attachment edit action working correctly while entering text inside description field of programs-planning
@@ -160,8 +160,8 @@ Feature: Logged Issues Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-test-003" in "flexGridEnhancedDivId" panel
     When I click on "Edit" icon for "GT-test-003" inside table
-    When I enter values "Test Automation" into textarea for table id "flexGridEnhanced1"
-    When I click on top right button "Save" in flex table with id "flexGridEnhanced1"
+    When I enter values "Test Automation" into textarea for table id "---program:-:flexGridEnhancedID---"
+    When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
     When I perform quick search for "GT-test-003" in "flexGridEnhancedDivId" panel
     Then I see value "Test Automation" for multiple cells at column "AddressProgramContact__c"
 
@@ -180,11 +180,11 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "GT-FIN.2-001" in "flexGridEnhanced1" panel
+    When I perform quick search for "GT-FIN.2-001" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "GT-FIN.2-001"
     When I click on "Edit" icon for "AD-FIN.2--00" inside table
-    When I enter values "Test Automation" into textarea for table id "TmpGrantorActiveAwardsGridFlexToggle"
-    When I click on top right button "Save" in flex table with id "flexGridEnhanced1"
+    When I enter values "Test Automation" into textarea for table id "---program:-:tmpGrantorActiveAwardsGridTableId---"
+    When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
     Then I see value "Test Automation" for multiple cells at column "Agreement1__c"
 
     Examples:
@@ -331,7 +331,7 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Roles" sub tab
-    When I click on top right button "New" in flex table with id "flexTableDivId"
+    When I click on top right button "New" in flex table with id "---program:-:programTableDivId---"
     When I click dropdown field "fieldBusinessRole__c"
     When I pause execution for "3" seconds
     Then I see "Program Approver:Key POC:Owner" inside selectbox field "fieldBusinessRole__c"
@@ -463,7 +463,7 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Roles" sub tab
-    When I click on top right button "New" in flex table with id "flexTableDivId"
+    When I click on top right button "New" in flex table with id "---program:-:programTableDivId---"
     When I click modal button "Save"
     Then I see the text containing :
       | is Required to save. |
@@ -587,7 +587,7 @@ Feature: Logged Issues Scenarios
     When I login to "Grants Portal" app as "Automation-SPI" user
     And I navigate to "Opportunities" tab
     When I navigate to "Qualified Opportunities" content inside "Activities" subheader on left panel
-    When I perform quick search for "FOA-State-004" in "flexTableDivId" panel
+    When I perform quick search for "FOA-State-004" in "---program:-:programTableDivId---" panel
     When I click on "View" icon for "FOA-State-004" inside table
     Then I see the text :
       | General Information    |
@@ -616,7 +616,7 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "Silvio O. Conte Centers for Basic Neuroscience or Translational Mental Health Research (P50 Clinical Trial Optional)"
     When I click on "View" icon for "Silvio O. Conte Centers for Basic Neuroscience or Translational Mental Health Research (P50 Clinical Trial Optional)" inside table
     When I navigate to "Awards" sub tab
-    When I perform quick search for "FAD-GHHS-BP-01-00" in "flexTableDivId" panel
+    When I perform quick search for "FAD-GHHS-BP-01-00" in "---program:-:programTableDivId---" panel
     When I click on "View" icon for "FAD-GHHS-BP-01-00" inside table
     Then I see "Edit" button is not displayed
 
@@ -780,7 +780,7 @@ Feature: Logged Issues Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
     And I navigate to "Applications" tab
-    When I perform quick search for "App2-FO for DCP" in "flexTableDivId" panel
+    When I perform quick search for "App2-FO for DCP" in "---program:-:programTableDivId---" panel
     When I click on "View" icon for "App2-FO for DCP" inside table
     When I navigate to "Attachments" sub tab
     Then I see the text :
@@ -794,7 +794,7 @@ Feature: Logged Issues Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
     And I navigate to "Applications" tab
-    When I perform quick search for "App2-FO for DCP" in "flexTableDivId" panel
+    When I perform quick search for "App2-FO for DCP" in "---program:-:programTableDivId---" panel
     When I click on "View" icon for "App2-FO for DCP" inside table
     When I hover mouse on lookup link "AN-603-051"
     When I pause execution for "2" seconds
@@ -835,7 +835,7 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "Shambhavi Application"
     When I click on "View" icon for "Shambhavi Application" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "toggleFGridApplicationBudgetCategoryFlexGrid" panel
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryFlexGridTableId---" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     When I click on "View" icon for "Maintenance And Repair Costs" inside table
@@ -861,7 +861,7 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    And I edit the following rows inline in flex table with id "flexGridEnhanced1" by clicking "Edit" :
+    And I edit the following rows inline in flex table with id "---program:-:flexGridEnhancedID---" by clicking "Edit" :
       | Project Title                 | Cumulative Awarded Amount |
       | Road COnst. Ann.              | 1234                      |
       | Road Construction Annoumsment | 1234                      |
@@ -942,7 +942,7 @@ Feature: Logged Issues Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
-    When I perform quick search for "App 786" in "inlineEditGridMonitoringGridView" panel
+    When I perform quick search for "App 786" in "---program:-:monitoringGridTableId---" panel
     When I click on "View" icon for "App 786" inside table
     Then I see new tab is opened
 
@@ -955,10 +955,10 @@ Feature: Logged Issues Scenarios
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
     When I click on "Delete" icon for "BP-00" inside table
-    When I enter the following values into flex table with id "inlineEditGridApplicationBudgetCategoryFlexGrid" by clicking "New" :
+    When I enter the following values into flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" by clicking "New" :
       | Support Year |
       | BP-00        |
-    Then I see that "BP-00" has been added in flextable with Id "inlineEditGridApplicationBudgetCategoryFlexGrid"
+    Then I see that "BP-00" has been added in flextable with Id "---program:-:applicationBudgetCategoryInlineEditTableId---"
 
   @59287    @enablePaginationShouldWorkAtApplicationBudgetPeriods-gApplications
   Scenario: validate page navigation is working fine after enabling auto index and row grouping at ApplicationBudgetCategoryFlexTable
@@ -977,8 +977,8 @@ Feature: Logged Issues Scenarios
     When I click on "View" icon for "AP-755-214" inside table
     When I navigate to "Budget" sub tab
     And I pause execution for "2" seconds
-    And I click on page navigation arrow "inlineEditGridApplicationBudgetCategoryFlexGrid" for table id "Next"
-    Then I see that "BP-05" has been added in flextable with Id "inlineEditGridApplicationBudgetCategoryFlexGrid"
+    And I click on page navigation arrow "---program:-:applicationBudgetCategoryInlineEditTableId---" for table id "Next"
+    Then I see that "BP-05" has been added in flextable with Id "---program:-:applicationBudgetCategoryInlineEditTableId---"
 
   @59130    @parentLevelLookupfieldOfApplicationBudgetPeriodsShouldBeInViewMode-gApplications
   Scenario: validate page navigation is working fine after enabling auto index and row grouping at ApplicationBudgetCategoryFlexTable
@@ -1080,8 +1080,8 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "AP-755-214"
     When I click on "View" icon for "AP-755-214" inside table
     When I navigate to "Budget" sub tab
-    And I click on top right button "New" in flex table with id "inlineEditGridApplicationBudgetCategoryFlexGrid"
-    When I click on "Start Date" column header inside table with id "inlineEditGridApplicationBudgetCategoryFlexGrid"
+    And I click on top right button "New" in flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---"
+    When I click on "Start Date" column header inside table with id "---program:-:applicationBudgetCategoryInlineEditTableId---"
     Then I see confirmation box with body "Please save the record before sorting." is displayed
 
   @54719    @normalHideExpressionShouldNotWorkWithSobjectHideExpressionChanges
@@ -1166,9 +1166,9 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "GT-FIN.1-001" in "flexGridEnhanced1" panel
+    When I perform quick search for "GT-FIN.1-001" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "GT-FIN.1-001"
-    When I click on top right button "New" in flex table with id "flexGridEnhanced1"
+    When I click on top right button "New" in flex table with id "---program:-:flexGridEnhancedID---"
     And I click toggle button to select "Monitoring Schedule For All  Draft Grants"
     Then I see confirmation box with body "Please save record before performing any action" is displayed
 
@@ -1195,11 +1195,11 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    And I edit the following rows inline in flex table with id "flexGridEnhanced1" by clicking "Edit" :
+    And I edit the following rows inline in flex table with id "---program:-:flexGridEnhancedID---" by clicking "Edit" :
       | Project Title                 | Current Budget Period End Date |
       | Road COnst. Ann.              | 0                              |
       | Road Construction Annoumsment | 0                              |
-    And I save the value from row "1" for column name "Current Budget Period End Date" as "BPdate1" from flex table "flexGridEnhanced1"
+    And I save the value from row "1" for column name "Current Budget Period End Date" as "BPdate1" from flex table "---program:-:flexGridEnhancedID---"
     Then I see the Budget Period End Date field contains todays date
     Examples:
       | defaultFieldsApi                                                                                                                                                                                                                                          | newFieldsApi                                | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                         |
@@ -1238,7 +1238,7 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     Then I see "Edit" icon for "Demo_Title" is not displayed inside flex table
 
   @59822  @hideExpressioJsonForRightOperandForContextViewAtParentLevelEnhancedGrid
@@ -1256,7 +1256,7 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     Then I see "View" icon for "Demo_Title" is not displayed inside flex table
 
   @59825    @hideExpressioJsonForRightOperandForContextViewAtChildLevelEnhancedGrid
@@ -1274,7 +1274,7 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "View" icon for "AD-GG PJ--00" is not displayed inside flex table
 
@@ -1293,7 +1293,7 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "Edit" icon for "AD-GG PJ--00" is not displayed inside flex table
 
@@ -1324,7 +1324,7 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     Then I see "LastModifiedById" and "LastModifiedBy.Id" contains user names as "Nauman Shahid"
 
     Examples:
@@ -1346,10 +1346,10 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I click on advance filter "#advfTmpActiveGrantsGrid" of table id "flexGridEnhanced1"
+    When I click on advance filter "#advfTmpActiveGrantsGrid" of table id "---program:-:flexGridEnhancedID---"
     When I enter advance filter values inside id "advfTmpActiveGrantsGrid"
       | Total Adjusted Amount | equals to | -1 |
-    Then I see value "($1.00)" for title "Total Adjusted Amount" inside table "flexGridEnhanced1"
+    Then I see value "($1.00)" for title "Total Adjusted Amount" inside table "---program:-:flexGridEnhancedID---"
 
     Examples:
       | newFieldsApi                           | defaultFieldsApi                                                                                                                                                                                                                   |
@@ -1428,12 +1428,12 @@ Feature: Logged Issues Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
     When I pause execution for "2" seconds
-    And I edit the following rows inline in flex table with id "flexGridEnhanced1" by clicking "Edit" :
+    And I edit the following rows inline in flex table with id "---program:-:flexGridEnhancedID---" by clicking "Edit" :
       | Project Title | Total Adjusted Amount |
       | Demo_Title    | 20                    |
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
-    Then I see value "$20.00" for title "Total Adjusted Amount" inside table "flexGridEnhanced1"
+    Then I see value "$20.00" for title "Total Adjusted Amount" inside table "---program:-:flexGridEnhancedID---"
 
     Examples:
       | newFieldsApi                                                       | defaultFieldsApi                                                                                                                                                                                                                   |
@@ -1448,7 +1448,7 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "toggleFGridApplicationBudgetCategoryFlexGrid" panel
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryFlexGridTableId---" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     When I click on "Add Line Items" icon for "Indirect Cost Rate" inside table
@@ -1470,11 +1470,11 @@ Feature: Logged Issues Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
-    And I edit the following rows inline in flex table with id "flexGridEnhanced1" by clicking "Edit" :
+    And I edit the following rows inline in flex table with id "---program:-:flexGridEnhancedID---" by clicking "Edit" :
       | Total Adjusted Amount | NUMBER |
       | Demo_Title            | -1234  |
     When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
-    Then I see value "(1,234)" for title "NUMBER" inside table "flexGridEnhanced1"
+    Then I see value "(1,234)" for title "NUMBER" inside table "---program:-:flexGridEnhancedID---"
 
     Examples:
       | newFieldsApi                             | defaultFieldsApi                                                                                                                                                                                                                                          |
@@ -1531,13 +1531,13 @@ Feature: Logged Issues Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
-    And I edit the following rows inline in flex table with id "flexGridEnhanced1" by clicking "Edit" :
+    And I edit the following rows inline in flex table with id "---program:-:flexGridEnhancedID---" by clicking "Edit" :
       | Project Title | NUMBER |
       | Demo_Title    | 2      |
     And I refresh the page
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
-    And I edit the following rows inline in flex table with id "flexGridEnhanced1" by clicking "Edit" :
+    And I edit the following rows inline in flex table with id "---program:-:flexGridEnhancedID---" by clicking "Edit" :
       | Project Title | NUMBER |
       | Demo_Title    |        |
     And I refresh the page
@@ -1564,7 +1564,7 @@ Feature: Logged Issues Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
-    And I edit the following rows inline in flex table with id "flexGridEnhanced1" by clicking "Edit" :
+    And I edit the following rows inline in flex table with id "---program:-:flexGridEnhancedID---" by clicking "Edit" :
       | Project Title | Current Budget Period End Date |
       | Demo_Title    | 0                              |
     And I refresh the page
@@ -1612,10 +1612,10 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I click on advance filter "#advfTmpActiveGrantsGrid" of table id "flexGridEnhanced1"
+    When I click on advance filter "#advfTmpActiveGrantsGrid" of table id "---program:-:flexGridEnhancedID---"
     When I enter advance filter values inside id "advfTmpActiveGrantsGrid"
       | Project Period | contains | 10/1/2016 |
-    Then I see value "10/1/2016--12/31/2022" for title "Project Period" inside table "flexGridEnhanced1"
+    Then I see value "10/1/2016--12/31/2022" for title "Project Period" inside table "---program:-:flexGridEnhancedID---"
 
     Examples:
       | newFieldsApi                            | defaultFieldsApi                                                                                                                                                                                                                   |
@@ -1636,10 +1636,10 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I click on advance filter "#advfTmpActiveGrantsGrid" of table id "flexGridEnhanced1"
+    When I click on advance filter "#advfTmpActiveGrantsGrid" of table id "---program:-:flexGridEnhancedID---"
     When I enter advance filter values inside id "advfTmpActiveGrantsGrid"
       | Project Title | starts with | Health |
-    Then I see value "Health Program Announcement" for title "Project Title" inside table "flexGridEnhanced1"
+    Then I see value "Health Program Announcement" for title "Project Title" inside table "---program:-:flexGridEnhancedID---"
 
     Examples:
       | newFieldsApi                            | defaultFieldsApi                                                                                                                                                                                                                   |
@@ -1660,10 +1660,10 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I click on advance filter "#advfTmpActiveGrantsGrid" of table id "flexGridEnhanced1"
+    When I click on advance filter "#advfTmpActiveGrantsGrid" of table id "---program:-:flexGridEnhancedID---"
     When I enter advance filter values inside id "advfTmpActiveGrantsGrid"
       | Project Title | ends with | 11 |
-    Then I see value "Health Awaerness 11" for title "Project Title" inside table "flexGridEnhanced1"
+    Then I see value "Health Awaerness 11" for title "Project Title" inside table "---program:-:flexGridEnhancedID---"
 
     Examples:
       | newFieldsApi                            | defaultFieldsApi                                                                                                                                                                                                                   |
@@ -1677,8 +1677,8 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "toggleFGridApplicationBudgetCategoryFlexGrid" panel
-    Then I see value "BP-01" for title "Support Year" inside table "toggleFGridApplicationBudgetCategoryFlexGrid"
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryFlexGridTableId---" panel
+    Then I see value "BP-01" for title "Support Year" inside table "---program:-:applicationBudgetCategoryFlexGridTableId---"
 
   @61082    @formulaAndFormulaJsonFieldAtEnhancedGridQuickSearch
   Scenario: Validating subtotal of cell value of total obligated amount by entering formula and formula json field at config validating it inside enhanced grid with particular value of program-planning
@@ -1720,7 +1720,7 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    And I edit the following rows inline in flex table with id "flexGridEnhanced1" by clicking "Edit" :
+    And I edit the following rows inline in flex table with id "---program:-:flexGridEnhancedID---" by clicking "Edit" :
       | ID          | Total Adjusted Amount |
       | GT-bvaa-001 | 10                    |
     Then I see over all total for "TotalAdjustedAmount__c" at enhanced grid
@@ -1757,14 +1757,14 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "GT-final-001" in "flexGridEnhanced1" panel
-    And I edit the following rows inline in flex table with id "flexGridEnhanced1" by clicking "Edit" :
+    When I perform quick search for "GT-final-001" in "---program:-:flexGridEnhancedID---" panel
+    And I edit the following rows inline in flex table with id "---program:-:flexGridEnhancedID---" by clicking "Edit" :
       | Project Title | Current Budget Period End Date |
       | GT-final-001  | 0                              |
     And I refresh the page
     When I navigate to "Financials" sub tab
-    When I perform quick search for "GT-final-001" in "flexGridEnhanced1" panel
-    And I save the value from row "1" for column name "Current Budget Period End Date" as "BPdate1" from flex table "flexGridEnhanced1"
+    When I perform quick search for "GT-final-001" in "---program:-:flexGridEnhancedID---" panel
+    And I save the value from row "1" for column name "Current Budget Period End Date" as "BPdate1" from flex table "---program:-:flexGridEnhancedID---"
     Then I see the Budget Period End Date field contains todays date
     Examples:
       | defaultFieldsApi                                                                                                                                                                                                                                          | newFieldsApi                                |
@@ -1785,7 +1785,7 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see upArrow for multiple field at enhanced grid
 
@@ -1801,11 +1801,11 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "AP-755-214"
     When I click on "View" icon for "AP-755-214" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
-    And I edit the following rows inline in flex table with id "inlineEditGridApplicationBudgetCategoryFlexGrid" by clicking "Edit" :
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    And I edit the following rows inline in flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" by clicking "Edit" :
       | Support Year | DateTime |
       | BP-01        | 0        |
-    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     Then I see Date Time field is in view mode
 
   @61105    @enableGroupingFieldAndHideGroupingColumnFieldAtParentFlexTableOfEnhancedGrid
@@ -1871,7 +1871,7 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    Then I see "Total Adjusted Amount : --" inside rows of enhanced grid id "Enhanced1grid"
+    Then I see "Total Adjusted Amount : --" inside rows of enhanced grid id "---program:-:enhancedGridTableId---"
 
   @66939      @verifyEditAllAtParentFlexTableForEnhancedGridForRequiredFields-gPlanning
   Scenario Outline: validate Edit All functionality for parent flex table for required fields at enhanced grid of programs-planning
@@ -1892,9 +1892,9 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I click on top right button "Edit All" in flex table with id "flexGridEnhanced1"
-    When I enter values "Test Automation" into textarea for table id "flexGridEnhanced1"
-    When I click on top right button "Save" in flex table with id "flexGridEnhanced1"
+    When I click on top right button "Edit All" in flex table with id "---program:-:flexGridEnhancedID---"
+    When I enter values "Test Automation" into textarea for table id "---program:-:flexGridEnhancedID---"
+    When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
     Then I see value "Test Automation" for multiple cells at column "AddressProgramContact__c"
     Examples:
       | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                         |
@@ -1921,11 +1921,11 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I check "Road Construction Annoumsment" boxes in flex table with id "flexGridEnhanced1"
-    When I click on top right button "Edit Selected" in flex table with id "flexGridEnhanced1"
+    When I check "Road Construction Annoumsment" boxes in flex table with id "---program:-:flexGridEnhancedID---"
+    When I click on top right button "Edit Selected" in flex table with id "---program:-:flexGridEnhancedID---"
     When I enter value "Test Automation" into field "AddressProgramContact__c"
-    When I click on top right button "Save" in flex table with id "flexGridEnhanced1"
-    Then I see edited value inside textarea is "Test Automation" for column value "Road Construction Annoumsment" of table "flexGridEnhanced1"
+    When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
+    Then I see edited value inside textarea is "Test Automation" for column value "Road Construction Annoumsment" of table "---program:-:flexGridEnhancedID---"
     Examples:
       | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                         |
       | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c like 'Road%' |

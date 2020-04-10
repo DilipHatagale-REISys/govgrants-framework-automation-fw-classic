@@ -224,7 +224,7 @@ Feature: All pdf and xls related scenario including component and completed back
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "GT-12132-001" in "flexGridEnhanced1" panel
+    When I perform quick search for "GT-12132-001" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "GT-12132-001"
     When I click on parallel lines menu bar with data target value "#TmpGrantorActiveAwardsGridFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Active Awards"
@@ -257,7 +257,7 @@ Feature: All pdf and xls related scenario including component and completed back
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "GT-12132-001" in "flexGridEnhanced1" panel
+    When I perform quick search for "GT-12132-001" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "GT-12132-001"
     When I click on parallel lines menu bar with data target value "#TmpGrantorActiveAwardsGridFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Active Awards"
@@ -289,7 +289,7 @@ Feature: All pdf and xls related scenario including component and completed back
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "GT-12132-001" in "flexGridEnhanced1" panel
+    When I perform quick search for "GT-12132-001" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "GT-12132-001"
     When I click on parallel lines menu bar with data target value "#TmpGrantorActiveAwardsGridFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Active Awards"
@@ -363,7 +363,7 @@ Feature: All pdf and xls related scenario including component and completed back
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "GT-12132-001" in "flexGridEnhanced1" panel
+    When I perform quick search for "GT-12132-001" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "GT-12132-001"
     When I click on parallel lines menu bar with data target value "#TmpGrantorActiveAwardsGridFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Active Awards"
@@ -388,7 +388,7 @@ Feature: All pdf and xls related scenario including component and completed back
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "GT-12132-001" in "flexGridEnhanced1" panel
+    When I perform quick search for "GT-12132-001" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "GT-12132-001"
     When I click on parallel lines menu bar with data target value "#TmpGrantorActiveAwardsGridFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Active Awards"
@@ -415,7 +415,7 @@ Feature: All pdf and xls related scenario including component and completed back
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "GT-12132-001" in "flexGridEnhanced1" panel
+    When I perform quick search for "GT-12132-001" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "GT-12132-001"
     When I click on parallel lines menu bar with data target value "#TmpGrantorActiveAwardsGridFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Active Awards"
@@ -722,7 +722,7 @@ Feature: All pdf and xls related scenario including component and completed back
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
-    And I edit the following rows inline in flex table with id "flexGridEnhanced1" by clicking "Edit" :
+    And I edit the following rows inline in flex table with id "---program:-:flexGridEnhancedID---" by clicking "Edit" :
       | Project Title | DateTime |
       | Demo_Title    | 0        |
     And I refresh the page

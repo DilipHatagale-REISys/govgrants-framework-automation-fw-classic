@@ -18,7 +18,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    Then I see Advance Filter is disabled from table "flexGridEnhanced1" with data target value "#advfTmpActiveGrantsGrid"
+    Then I see Advance Filter is disabled from table "---program:-:flexGridEnhancedID---" with data target value "#advfTmpActiveGrantsGrid"
 
   @35433    @disablingMenuIconForEnhancedGrid-gPlanning @smoke
   Scenario: validate disabling of menu icon from Planning- Program enhanced flex grid
@@ -52,7 +52,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "*****" shown inside enhanced grid table for specified record "Demo_Title"
 
@@ -71,7 +71,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     When I click on "Edit" icon for "AD-GG PJ--00" inside table
     Then I see input box is not displayed for ID inside child Flex table
@@ -91,7 +91,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "Award Title" not displayed in enhanced grid table column title
 
@@ -110,7 +110,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     When I click on "Edit" icon for "AD-GG PJ--00" inside table
     Then I see input box is not displayed for ID inside child Flex table
@@ -130,7 +130,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see external link icon as "AD-GG PJ--00" for "Edit" inside enhanced grid table action
 
@@ -149,7 +149,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    Then I see "Automation Enhanced Grid" shown as inside "Enhanced1grid"
+    Then I see "Automation Enhanced Grid" shown as inside "---program:-:enhancedGridTableId---"
 
   @35438    @disablingPDFExportFileForEnhancedGrid-gPlanning @smoke
   Scenario: validate disabling of PDF download from menu option in enhanced flex grid planning- Program enhanced flex grid
@@ -219,7 +219,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    Then I see no "Total Records" count in enhanced grid "Enhanced1grid"
+    Then I see no "Total Records" count in enhanced grid "---program:-:enhancedGridTableId---"
 
   @35434    @enableAutoIndexForEnhancedGrid-gPlanning
   Scenario: validate enable auto index for details inside enhanced flex grid planning-Program enhanced flex grid
@@ -236,7 +236,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    Then I see "#" in enhanced flex grid header "Enhanced1grid"
+    Then I see "#" in enhanced flex grid header "---program:-:enhancedGridTableId---"
 
   @35442    @enableRecordSelectionForFlexForEnhancedGrid-gPlanning
   Scenario: validate enabling of record selection check boxes in enhanced flex grid planning-Program enhanced flex grid
@@ -276,7 +276,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I click on "Edit" icon for "Demo_Title" inside table
     Then I see no new tab is opened for action item in enhanced flex grid
 
@@ -305,7 +305,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I click on "Edit" icon for "Demo_Title" inside table
     Then I see "TmpActiveGrantsGrid" opens in overLay window
 
@@ -328,7 +328,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    Then I see "<fieldDisplayNames>" in enhanced flex grid header "Enhanced1grid"
+    Then I see "<fieldDisplayNames>" in enhanced flex grid header "---program:-:enhancedGridTableId---"
 
     Examples:
       | fieldDisplayNames              | newFieldsApi                                                                                                                                                                                                                       | defaultFieldsApi                                                                                                                                                                                                                   |
@@ -380,7 +380,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    Then I see "Entries" with page size dropdown in enhanced grid "Enhanced1grid"
+    Then I see "Entries" with page size dropdown in enhanced grid "---program:-:enhancedGridTableId---"
 
   @41304    @defaultPageSizeFieldAtParentFlexTableForEnhancedGrid-gPlanning
   Scenario: validate change of default page size inside dropdown at bottom enhanced flex grid planning-Program enhanced flex grid
@@ -397,7 +397,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    Then I see "10" records inside enhanced grid id "Enhanced1grid"
+    Then I see "10" records inside enhanced grid id "---program:-:enhancedGridTableId---"
 
   @41308    @enableHelpFieldAtParentFlexTableForEnhancedGrid-gPlanning
   Scenario: validate enabling of help inside menu option in enhanced flex grid planning-Program enhanced flex grid
@@ -453,7 +453,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    Then I see "Test Automation" shown inside flex table with id "TmpActiveGrantsGridFlexToggle"
+    Then I see "Test Automation" shown inside flex table with id "---program:-:tmpActiveGrantsGridTableId---"
 
   @41319    @hideCellJsonfieldAtEnhancedGrid-gPlanning @smoke
   Scenario: Hiding specific cell value of enhanced grid from config and validating it inside enhanced grid of programs-planning
@@ -470,7 +470,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     Then I see "*****" shown inside enhanced grid table for specified record "Demo_Title"
 
   @41370    @readOnlyCellJSONFieldAtEnhancedGrid-gPlanning @smoke
@@ -488,7 +488,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I click on "Edit" icon for "Demo_Title" inside table
     Then I see input box is not displayed for budget period end date
 
@@ -524,7 +524,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I click on "Edit" icon for "Demo_Title" inside table
     Then I see input box is not displayed for budget period end date
 
@@ -543,7 +543,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     Then I see external link icon as "Demo_Title" for "Edit" inside enhanced grid table action
 
   @41466    @ConfirmationMessageFieldAtEnhancedGridActionItem-gPlanning
@@ -563,8 +563,8 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
-    When I click on "Edit" icon for "Demo_Title" inside table with table id "TmpActiveGrantsGridFlexToggle" without processing
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
+    When I click on "Edit" icon for "Demo_Title" inside table with table id "---program:-:tmpActiveGrantsGridTableId---" without processing
     Then I see confirmation box with body "Automation" is displayed
 
   @41468    @locationFieldAtEnhancedGridActionItemFromRowToTop-gPlanning
@@ -618,7 +618,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I expand nested table containing column value "Demo_Title"
     When I hovering mouse on help text icon inside "Active Awards" for enhanced grid
     Then I see "<new_helpText>" shown as help text
@@ -641,7 +641,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I expand nested table containing column value "Demo_Title"
     When I click on parallel lines menu bar with data target value "#TmpGrantorActiveAwardsGridFlexToggle"
     Then I see "Help" options inside "Active Awards" enabled
@@ -661,7 +661,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I expand nested table containing column value "Demo_Title"
     When I hovering mouse on help text icon inside "ID" for enhanced grid table column
     Then I see "<new_helpText>" shown as help text
@@ -684,9 +684,9 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I expand nested table containing column value "Demo_Title"
-    Then I see "Test Automation" shown inside flex table with id "TmpGrantorActiveAwardsGridFlexToggle"
+    Then I see "Test Automation" shown inside flex table with id "---program:-:tmpGrantorActiveAwardsGridTableId---"
 
   @44533    @orderBySortByFieldAtParentDataTableEnhancedGridForAscendingOrder-gPlanning @smoke
   Scenario: Changing specific column value in ascending order with order by and sort by field from config and validating it inside enhanced grid of programs-planning
@@ -743,7 +743,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "GT-VT-001" in "flexGridEnhanced1" panel
+    When I perform quick search for "GT-VT-001" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "GT-VT-001"
     Then I see column "TotalGrantAwardAmount__c" value is in "Ascending" order
 
@@ -764,7 +764,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "GT-VT-001" in "flexGridEnhanced1" panel
+    When I perform quick search for "GT-VT-001" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "GT-VT-001"
     Then I see column "TotalGrantAwardAmount__c" value is in "Descending" order
 
@@ -783,7 +783,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    Then I see "Draft" value in flex table id "Enhanced1grid"
+    Then I see "Draft" value in flex table id "---program:-:enhancedGridTableId---"
 
     Examples:
       | newSoqlFilter                                   | oldSoqlFilter                                    |
@@ -804,7 +804,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    Then I see "Edit" icon for "TmpActiveGrantsGridFlexToggle" is at position "1" inside flex table
+    Then I see "Edit" icon for "---program:-:tmpActiveGrantsGridTableId---" is at position "1" inside flex table
 
   @44731    @buttonHelpTextFieldAtParentFlexTableActionForEnhancedGrid-gPlanning
   Scenario: Changing content of button help text field at enhanced grid parent table action from config and validating it inside enhanced grid table of programs-planning
@@ -821,7 +821,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     Then I see "Test Automation" as title for "Demo_Title" inside flex table action
 
   @44993    @disableFilterForChildFlexTableAtEnhancedGrid-gPlanning
@@ -839,9 +839,9 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I expand nested table containing column value "Demo_Title"
-    Then I see Advance Filter is disabled from table "TmpGrantorActiveAwardsGridFlexToggle" with data target value "#advfTmpGrantorActiveAwardsGrid"
+    Then I see Advance Filter is disabled from table "---program:-:tmpGrantorActiveAwardsGridTableId---" with data target value "#advfTmpGrantorActiveAwardsGrid"
 
   @44994    @disableMenuFieldForChildFlexTableAtEnhancedGrid-gPlanning @smoke
   Scenario: Disabling the Menu Field at child flex table of enhanced grid from config and validating it at enhanced grid planning-Program enhanced flex grid
@@ -858,7 +858,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I expand nested table containing column value "Demo_Title"
     Then Then I see Menu icon is disabled from planning child flex table "Active Awards" under Monitoring Schedule For All Active Grants table
 
@@ -877,7 +877,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I expand nested table containing column value "Demo_Title"
     When I click on parallel lines menu bar with data target value "#TmpGrantorActiveAwardsGridFlexToggle"
     Then I see "Download as PDF" options inside "Active Awards" disabled
@@ -897,7 +897,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I expand nested table containing column value "Demo_Title"
     When I click on parallel lines menu bar with data target value "#TmpGrantorActiveAwardsGridFlexToggle"
     Then I see "Download as XLS" options inside "Active Awards" disabled
@@ -917,9 +917,9 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I expand nested table containing column value "Demo_Title"
-    Then I see quick search option disabled from enhanced grid for child flex table "TmpGrantorActiveAwardsGridFlexToggle"
+    Then I see quick search option disabled from enhanced grid for child flex table "---program:-:tmpGrantorActiveAwardsGridTableId---"
 
   @44997    @enableTotalRecordCountForChildFlexTableForEnhancedGrid-gPlanning @smoke
   Scenario: validate total row count in child flex table for enhanced grid.
@@ -930,9 +930,9 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I expand nested table containing column value "Demo_Title"
-    Then I see "Total Records" for Child Flex table "TmpGrantorActiveAwardsGridFlexToggle" count in enhanced grid
+    Then I see "Total Records" for Child Flex table "---program:-:tmpGrantorActiveAwardsGridTableId---" count in enhanced grid
 
   @44998    @enableAutoIndexForChildFlexTableOnEnhancedGrid-gPlanning
   Scenario: validate auto index for details inside child flex table for enhanced grid.
@@ -943,9 +943,9 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I expand nested table containing column value "Demo_Title"
-    Then I see "#" in enhanced flex grid header "Enhanced1grid"
+    Then I see "#" in enhanced flex grid header "---program:-:enhancedGridTableId---"
 
   @45001    @enableRecordSelectionForChildFlexForEnhancedGrid-gPlanning
   Scenario: validate enabling of record selection check boxes in enhanced flex grid planning-Program enhanced flex grid
@@ -962,7 +962,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see select check box enabled for child flex table in enhanced flex grid
 
@@ -981,7 +981,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I click on "View" icon for "Demo_Title" inside table
     Then I see new tab is opened
 
@@ -1000,7 +1000,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I click on "View" icon for "Demo_Title" inside table
     Then I see new tab is opened
 
@@ -1019,7 +1019,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     When I click on "View" icon for "AD-GG PJ--00" inside table
     Then I see new tab is opened
@@ -1039,7 +1039,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     When I click on "View" icon for "AD-GG PJ--00" inside table
     Then I see new tab is opened
@@ -1059,7 +1059,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     When I click on "View" icon for "AD-GG PJ--00" inside table
     Then I see no new tab is opened
@@ -1079,9 +1079,9 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
-    Then I see "<fieldDisplayNames>" in enhanced flex grid header "TmpGrantorActiveAwardsGridFlexToggle"
+    Then I see "<fieldDisplayNames>" in enhanced flex grid header "---program:-:tmpGrantorActiveAwardsGridTableId---"
 
     Examples:
       | fieldDisplayNames      | newFieldsApi                                                                                                               | defaultFieldsApi                                                                                                                               |
@@ -1109,9 +1109,9 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
-    When I click on "View" icon for "AD-GG PJ--00" inside table with table id "TmpGrantorActiveAwardsGridFlexToggle" without processing
+    When I click on "View" icon for "AD-GG PJ--00" inside table with table id "---program:-:tmpGrantorActiveAwardsGridTableId---" without processing
     Then I see confirmation box with body "Test Automation" is displayed
 
   @45297    @locationFieldForChildFlexTableAtEnhancedGridActionItem-gPlanning
@@ -1131,7 +1131,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "View" button inside "Active Awards" enhanced grid
 
@@ -1151,7 +1151,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     Then I see "Test" icon for "Demo_Title" is displayed inside flex table
 
   @45304    @locationFieldForChildFlexTableAtEnhancedGridActionItemFromTopToRow-gPlanning @smoke
@@ -1170,7 +1170,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "test" icon for "AD-GG PJ--00" is displayed inside flex table
 
@@ -1189,9 +1189,9 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
-    Then I see "Edit" icon for "TmpGrantorActiveAwardsGridFlexToggle" is at position "1" inside flex table
+    Then I see "Edit" icon for "---program:-:tmpGrantorActiveAwardsGridTableId---" is at position "1" inside flex table
 
   @45309    @buttonHelpTextFieldAtChildFlexTableActionForEnhancedGrid-gPlanning
   Scenario: Changing content of button help text field at enhanced grid child flex table action from config and validating it inside enhanced grid table of programs-planning
@@ -1208,7 +1208,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "Test Automation" as title for "AD-GG PJ--00" inside flex table action
 
@@ -1227,9 +1227,9 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
-    Then I see "Automation Enhanced Grid" shown as inside "Enhanced1grid"
+    Then I see "Automation Enhanced Grid" shown as inside "---program:-:enhancedGridTableId---"
 
   @49243    @enableGroupingFieldAtParentFlexTableForEnhancedGrid-gPlanning @smoke
   Scenario: validate same value rows getting grouped and shown in sequence after checking checkbox true of Enable Row Grouping from config and validating it inside enhanced grid of programs-planning
@@ -1246,7 +1246,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    Then I see "Number of Awards : 1" inside rows of enhanced grid id "Enhanced1grid"
+    Then I see "Number of Awards : 1" inside rows of enhanced grid id "---program:-:enhancedGridTableId---"
 
   @49244    @hideGroupingColumnFieldAtParentFlexTableForEnhancedGrid-gPlanning
   Scenario: validate hide of particular column after checking checkbox true of Hide Grouping Column from config and validating it inside enhanced grid of programs-planning
@@ -1339,7 +1339,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    Then I see "($1.00)" inside enhanced grid table id "flexGridEnhanced1" in "Red" colour
+    Then I see "($1.00)" inside enhanced grid table id "---program:-:flexGridEnhancedID---" in "Red" colour
 
     Examples:
       | styleAttributeValue | newFieldsApi                                                       | defaultFieldsApi                                                                                                                                                                                                                   |
@@ -1361,7 +1361,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    Then I see "Road Construction Annoumsment" inside enhanced grid table id "flexGridEnhanced1" in "Red" colour
+    Then I see "Road Construction Annoumsment" inside enhanced grid table id "---program:-:flexGridEnhancedID---" in "Red" colour
 
     Examples:
       | styleClassValue                                             |
@@ -1382,9 +1382,9 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
-    Then I see "Total Obligated Amount : 72000" inside rows of enhanced grid id "Enhanced1grid"
+    Then I see "Total Obligated Amount : 72000" inside rows of enhanced grid id "---program:-:enhancedGridTableId---"
 
   @49353    @hideGroupingColumnFieldAtChildFlexTableForEnhancedGrid-gPlanning
   Scenario: validate hide of particular column after checking checkbox true of Hide Grouping Column from config and validating it inside enhanced grid of programs-planning
@@ -1403,7 +1403,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "Total Obligated Amount" not displayed in enhanced grid table column title
 
@@ -1422,9 +1422,9 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "GT-12132-001" in "flexGridEnhanced1" panel
+    When I perform quick search for "GT-12132-001" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "GT-12132-001"
-    Then I see "Activated" inside enhanced grid table id "TmpGrantorActiveAwardsGridFlexToggle" in "Red" colour
+    Then I see "Activated" inside enhanced grid table id "---program:-:tmpGrantorActiveAwardsGridTableId---" in "Red" colour
 
     Examples:
       | styleClassValue                         |
@@ -1445,9 +1445,9 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "GT-12132-001" in "flexGridEnhanced1" panel
+    When I perform quick search for "GT-12132-001" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "GT-12132-001"
-    Then I see "($1.00)" inside enhanced grid table id "TmpGrantorActiveAwardsGridFlexToggle" in "Red" colour
+    Then I see "($1.00)" inside enhanced grid table id "---program:-:tmpGrantorActiveAwardsGridTableId---" in "Red" colour
 
     Examples:
       | styleAttributeValue |
@@ -1469,7 +1469,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "GT-12132-001" in "flexGridEnhanced1" panel
+    When I perform quick search for "GT-12132-001" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "GT-12132-001"
     Then I see "Atleast one list view should be marked as a Master List View" error is displayed at enhanced grid
 
@@ -1491,7 +1491,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "GT-12132-001" in "flexGridEnhanced1" panel
+    When I perform quick search for "GT-12132-001" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "GT-12132-001"
     Then I see "Atleast one list view should be marked as a Master List View" error is displayed at enhanced grid
 
@@ -1536,7 +1536,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "GT-VT-001" in "flexGridEnhanced1" panel
+    When I perform quick search for "GT-VT-001" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "GT-VT-001"
     Then I see cell subtotal for obligated amount at child table of enhanced grid
 
@@ -1559,11 +1559,11 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I check "Road Construction Annoumsment" boxes in flex table with id "flexGridEnhanced1"
-    When I click on top right button "Edit Selected" in flex table with id "flexGridEnhanced1"
+    When I check "Road Construction Annoumsment" boxes in flex table with id "---program:-:flexGridEnhancedID---"
+    When I click on top right button "Edit Selected" in flex table with id "---program:-:flexGridEnhancedID---"
     When I enter value "Test Automation" into field "AddressProgramContact__c"
-    When I click on top right button "Save" in flex table with id "flexGridEnhanced1"
-    Then I see edited value inside textarea is "Test Automation" for column value "Road Construction Annoumsment" of table "flexGridEnhanced1"
+    When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
+    Then I see edited value inside textarea is "Test Automation" for column value "Road Construction Annoumsment" of table "---program:-:flexGridEnhancedID---"
     Examples:
       | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                         |
       | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c like 'Road%' |
@@ -1583,13 +1583,13 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "GT-FIN.1-001" in "flexGridEnhanced1" panel
+    When I perform quick search for "GT-FIN.1-001" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "GT-FIN.1-001"
-    When I check "AD-FIN.1-BP01-00" boxes in flex table with id "Enhanced1grid"
-    When I click on top right button "Edit Selected" in flex table with id "Enhanced1grid"
+    When I check "AD-FIN.1-BP01-00" boxes in flex table with id "---program:-:enhancedGridTableId---"
+    When I click on top right button "Edit Selected" in flex table with id "---program:-:enhancedGridTableId---"
     When I enter value "10" into field "AmountDirectAssistance__c"
-    When I click on top right button "Save" in flex table with id "Enhanced1grid"
-    Then I see edited value inside textarea is "$10" for column value "AD-FIN.1-BP01-00" of table "Enhanced1grid"
+    When I click on top right button "Save" in flex table with id "---program:-:enhancedGridTableId---"
+    Then I see edited value inside textarea is "$10" for column value "AD-FIN.1-BP01-00" of table "---program:-:enhancedGridTableId---"
 
   @49360      @verifyEditAllAtParentFlexTableForEnhancedGrid-gPlanning
   Scenario Outline: validate Edit selected functionality for parent flex table at enhanced grid of programs-planning
@@ -1608,9 +1608,9 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I click on top right button "Edit All" in flex table with id "flexGridEnhanced1"
-    When I enter values "Test Automation" into textarea for table id "flexGridEnhanced1"
-    When I click on top right button "Save" in flex table with id "flexGridEnhanced1"
+    When I click on top right button "Edit All" in flex table with id "---program:-:flexGridEnhancedID---"
+    When I enter values "Test Automation" into textarea for table id "---program:-:flexGridEnhancedID---"
+    When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
     Then I see value "Test Automation" for multiple cells at column "AddressProgramContact__c"
     Examples:
       | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                         |
@@ -1631,11 +1631,11 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "GT-FIN.1-001" in "flexGridEnhanced1" panel
+    When I perform quick search for "GT-FIN.1-001" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "GT-FIN.1-001"
-    When I click on top right button "Edit All" in flex table with id "TmpGrantorActiveAwardsGridFlexToggle"
-    When I enter values "Test Automation" into textarea for table id "TmpGrantorActiveAwardsGridFlexToggle"
-    When I click on top right button "Save" in flex table with id "flexGridEnhanced1"
+    When I click on top right button "Edit All" in flex table with id "---program:-:tmpGrantorActiveAwardsGridTableId---"
+    When I enter values "Test Automation" into textarea for table id "---program:-:tmpGrantorActiveAwardsGridTableId---"
+    When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
     Then I see value "Test Automation" for multiple cells at column "Agreement1__c"
 
     Examples:
@@ -1701,7 +1701,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Financials 1" in "flexGridEnhanced1" panel
+    When I perform quick search for "Financials 1" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Financials 1"
     Then I see "GrantAwardName__c" and "ActiveBudgetYear__c" in "Ascending" order
 
@@ -1726,7 +1726,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Financials 1" in "flexGridEnhanced1" panel
+    When I perform quick search for "Financials 1" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Financials 1"
     Then I see "GrantAwardName__c" and "ActiveBudgetYear__c" in "Descending" order
 
@@ -1749,9 +1749,9 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhanced1" panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
-    Then I see "Created" value in flex table id "TmpGrantorActiveAwardsGridFlexToggle"
+    Then I see "Created" value in flex table id "---program:-:tmpGrantorActiveAwardsGridTableId---"
 
     Examples:
       | newSoqlFilter                                       | oldSoqlFilter                                                                                       |
@@ -1777,9 +1777,9 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     When I click on "Edit" icon for "GT-GTRC-001" inside table
-    When I enter values "Test Automation" into textarea for table id "flexGridEnhanced1"
-    When I click on top right button "Save" in flex table with id "flexGridEnhanced1"
-    When I perform quick search for "GT-GTRC-001" in "flexGridEnhanced1" panel
+    When I enter values "Test Automation" into textarea for table id "---program:-:flexGridEnhancedID---"
+    When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
+    When I perform quick search for "GT-GTRC-001" in "---program:-:flexGridEnhancedID---" panel
     Then I see value "Test Automation" for multiple cells at column "AddressProgramContact__c"
     Examples:
       | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                         |

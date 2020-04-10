@@ -73,7 +73,7 @@ Feature: Sanity check for all Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    And I edit the following rows inline in flex table with id "flexGridEnhanced1" by clicking "Edit" :
+    And I edit the following rows inline in flex table with id "---program:-:flexGridEnhancedID---" by clicking "Edit" :
       | Project Title                 | Status |
       | Road COnst. Ann.              | Active |
       | Road Construction Annoumsment | Active |
@@ -85,11 +85,11 @@ Feature: Sanity check for all Component Scenarios
   @52895    @defaultFieldNameFieldAtCustomAppConfig
   Scenario: Removing contrast content at default field name field from custom app confiuration and validating the changed label at custom app dropdown
     Given I have "default" configuration as below:
-      | configurationCategory| fieldName          | fieldOrignalValue     | filterId         |
-      | Custom App Config    | Default Theme Name | ColorContrast_Grantor | ApiGeneratedId:0 |
+      | configurationCategory | fieldName          | fieldOrignalValue     | filterId         |
+      | Custom App Config     | Default Theme Name | ColorContrast_Grantor | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory    | fieldName          | fieldNewValue  | coreComponentField|
-      | Custom App Config:General| Default Theme Name |                | StateasGrantor    |
+      | configurationCategory     | fieldName          | fieldNewValue | coreComponentField |
+      | Custom App Config:General | Default Theme Name |               | StateasGrantor     |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     Then I see "ColorContrast_Grantor" on complete page for custom App as a Grantor
@@ -111,7 +111,7 @@ Feature: Sanity check for all Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I perform quick search for "GT-VT-001" in "flexGridEnhanced1" panel
+    When I perform quick search for "GT-VT-001" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "GT-VT-001"
     Then I see cell subtotal for obligated amount at child table of enhanced grid
 
@@ -156,10 +156,10 @@ Feature: Sanity check for all Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-01" in "inlineEditGridApplicationBudgetCategoryFlexGrid" panel
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
-    Then I see "View" icon for "toggleFGridApplicationBudgetCategoryFlexGrid" is at position "0" inside flex table
+    Then I see "View" icon for "---program:-:applicationBudgetCategoryFlexGridTableId---" is at position "0" inside flex table
 
   @34034    @addingfieldNamesOfDifferentDataTypes-gPlanning @smoke
   Scenario Outline: validate adding field names for different data types in flex table of programs-planning
@@ -201,7 +201,7 @@ Feature: Sanity check for all Component Scenarios
     When I switch to tab number "1"
     Then I see "Complete" "<Logout_URL>" page is displayed
     Examples:
-      | Logout_URL                                                                             |
+      | Logout_URL                                                                        |
       | https://ggptest5-dev-ed--gnt.na69.visual.force.com/apex/Help?uniqueName=Help-0094 |
 
   @37857    @versionFieldAtFormConfig-gApplication
@@ -312,7 +312,7 @@ Feature: Sanity check for all Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
-    When I click on top right button "Send Email" in flex table with id "CommunicationHistory"
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "CC" email Search By field and select dropdown value as "Groups"
     When I enter value "Automation Testing Group" into field "CC" on send email modal
     Then I see iconName "fa fa-users" with user "Automation Testing Group" is displayed on send email modal

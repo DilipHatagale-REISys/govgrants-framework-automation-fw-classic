@@ -5,16 +5,28 @@ Feature: history Component Scenarios
 
   @69537   @VerifyDisplayOfRecordsInHistoryTableAsPerSelectedObjectFromDropDown
   Scenario: Validate all program records are shown in Field History table if Program object is selected in dropdown
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-027                    |
     When I login as "Automation" user
     When I navigate to "Planning" tab
     When I perform quick search for "Test Program specific for History"
     When I click on "View Program Details" icon for "Test Program specific for History" inside table
     When I navigate to "History" sub tab
     When I select "Program" from dropdown at History Table
-    Then I softly see "PG-755-0205" value in flex table id "toggleFlexTableHistory"
+    Then I softly see "PG-755-0205" value in flex table id "---program:-:historyTableId---"
 
   @69577    @VerifyActualApproverNameIsDisplayedInApprovalHistoryAfterRecordSubmission
   Scenario: Validate actual approver name inside Approval history table after submission of record to Submit for Approval
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-027                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -61,6 +73,12 @@ Feature: history Component Scenarios
 
   @69578    @VerifyActualApproverAndAssignedToNameIsDisplayedInApprovalHistoryAfterRecordReassignToUser
   Scenario: Validate Actual Approver name and Assigned To Name inside Approval history table after Reassigning of record to user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-027                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -113,6 +131,12 @@ Feature: history Component Scenarios
 
   @69836    @VerifyExpectedStatusIsDisplayedInApprovalHistoryAfterRecordApproval
   Scenario: Validating status as APPROVED inside Approval history table after approval of record
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-027                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -164,6 +188,12 @@ Feature: history Component Scenarios
 
   @69943    @VerifyExpectedStatusIsDisplayedInApprovalHistoryAfterRecordRejection
   Scenario: Validating status as REJECTED inside Approval history table after approval of record
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-027                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -215,6 +245,12 @@ Feature: history Component Scenarios
 
   @69944    @VerifyExpectedStatusIsDisplayedInApprovalHistoryAfterRecordReassign
   Scenario: Validating status as REASSIGNED inside Approval history table after approval of record
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-027                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -267,6 +303,12 @@ Feature: history Component Scenarios
 
   @69945    @VerifyExpectedStatusIsDisplayedInApprovalHistoryAfterRecordSentBack
   Scenario: Validating status as SENT BACK inside Approval history table after approval of record
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-027                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -318,6 +360,12 @@ Feature: history Component Scenarios
 
   @69958   @VerifyExpectedOverAllStatusIsDisplayedInApprovalHistoryAfterRecordSubmission
   Scenario: Validating Over all status as Pending inside Approval history table after record submission as submit for apprval
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-027                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -363,6 +411,12 @@ Feature: history Component Scenarios
 
   @69540   @VerifyDownloadAsPDFForFieldHistoryTable @wip
   Scenario: Validate by click on Download As PDF option a PDF is getting downloaded in history table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-027                    |
     When I login as "Automation" user
     When I navigate to "Planning" tab
     When I perform quick search for "Test Program specific for History"
@@ -375,9 +429,15 @@ Feature: history Component Scenarios
 
   @69546   @snapshotLinkShouldBeShownUnderHistoryTableByClickOnTakeASnapshotOption @checkwithDev
   Scenario: validate by click on Take a Snapshot option a snapshot PDF is getting downloaded
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
     Given I have "timeZoneLocale" configuration as below:
       | locale | timeZone         |
       | en_US  | America/New_York |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-027                    |
     When I login as "Automation" user
     And I update the locale and timezone related changes:
       | locale | timeZone     |
@@ -393,6 +453,12 @@ Feature: history Component Scenarios
 
   @69959   @VerifyActualApproverIsDisplayedInApprovalHistoryAfterRecordReassignToUser
   Scenario: Validating Over all status as Pending inside Approval history table after record submission as submit for apprval
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-027                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"

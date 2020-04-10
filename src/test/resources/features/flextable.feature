@@ -131,16 +131,18 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    Then I see no "Total Records" count in "flexTableDivId"
+    Then I see no "Total Records" count in "---program:-:programsTableId---"
 
   @34032    @additionOfLabelForRowNamedTotal-gPlanning
   Scenario: validate addition of label for row named as total of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField | filterId         |
       | Flex Table            | Total Row Label | Total             | Programs           | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Total    | true              | Programs           | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName       | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Total Row Label | Automation Total | Programs           |                           | Total                      |
+      | Flex Table List       | Enable Total    | true             | Programs           | Name                      | FTC-1018                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -173,7 +175,7 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    Then I softly do not see "Created" value in flex table id "flexTableDivId"
+    Then I softly do not see "Created" value in flex table id "---program:-:programsTableId---"
 
     Examples:
       | newSoqlFilter                                                                                                   | oldSoqlFilter                                                                                                             |
@@ -384,7 +386,7 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    Then I see "Show" with page size dropdown at "flexTableDivId"
+    Then I see "Show" with page size dropdown at "---program:-:programsTableId---"
 
   @39299    @enablePaginationFieldAtFlexTable-gPlanning
   Scenario: validate enabling of page size dropdown at bottom in flex table of programs-planning
@@ -398,7 +400,7 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    Then I see "Page" with pagination arrow at "flexTableDivId"
+    Then I see "Page" with pagination arrow at "---program:-:programsTableId---"
 
   @39302    @defaultPageSizeFieldAtFlexTable-gPlanning
   Scenario: validate change of default page size inside dropdown at bottom in flex table of programs-planning
@@ -412,7 +414,7 @@ Feature: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    Then I see "20" records inside flex table id "flexTableDivId"
+    Then I see "20" records inside flex table id "---program:-:programsTableId---"
 
   @40002    @helpTextFieldAtFlexTableColumnHeader-gPlanning
   Scenario Outline: Changing content of help text field at flex table column header from config and validating it inside flex table of programs-planning

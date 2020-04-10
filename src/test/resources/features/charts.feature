@@ -57,7 +57,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    Then I see "Total Allocated Amount Automation" at axis "highcharts-xaxis" for chart "FundingSourcesbyTotalAmount"
+    Then I see "Total Allocated Amount Automation" at axis "highcharts-yaxis" for chart "FundingSourcesbyTotalAmount"
 
   @34985    @validateX-axisPrefix-gPlannging
   Scenario: Change chart x-axis prefix as $ for 'Funding Sources by Total Amount' chart in configuratin and validating inside planning
@@ -70,7 +70,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    Then I see "$" at axis "highcharts-xaxis" for chart "FundingSourcesbyTotalAmount"
+    Then I see "$" at axis "highcharts-yaxis" for chart "FundingSourcesbyTotalAmount"
 
   @35086    @validateXFormattedNubers-gPlannging
   Scenario: Enable x-formatted numbers for 'Funding Sources by Total Amount' chart in configuratin and validating inside planning
@@ -96,7 +96,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    Then I see "$" at axis "highcharts-xaxis" for chart "FundingSourcesbyTotalAmount"
+    Then I see "$" at axis "highcharts-yaxis" for chart "FundingSourcesbyTotalAmount"
 
   @70853    @validateActiveFieldAtCharts-gAnnouncement-EnhancedCharts
   Scenario: Validating enhanced charts is getting displayed on UI while making changes of boolean field Active at configuration page -gAnnouncement
@@ -109,7 +109,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    Then I see charts with id "EnhancedPiechartId" displayed
+    Then I see charts with id "---program:-:EnhancedPiechartID---" displayed
 
   @70854    @validateTitleFieldAtCharts-gAnnouncement-EnhancedCharts
   Scenario: Changing chart title for 'EnhancedPiechartId' enhanced chart in configuration and validating inside planning-programs
@@ -139,7 +139,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    Then I see charts "EnhancedPiechartId" with type as "highcharts-point"
+    Then I see charts "---program:-:EnhancedPiechartID---" with type as "highcharts-point"
 
   @70856    @validateDisableLegendsFieldsWithFalse-gAnnouncement-EnhancedCharts
   Scenario: validate disable legends fields is working or not by viewing bottom element of charts is getting displayed on unchecking checkbox
@@ -184,7 +184,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    When I hovering mouse on enhanced charts id "EnhancedPiechartId" and charts type "highcharts-point"
+    When I hovering mouse on enhanced charts id "---program:-:EnhancedPiechartID---" and charts type "highcharts-point"
     And I pause execution for "2" seconds
     Then I see "<EchartY-Axix_Text>" shown inside enhanced charts on hover
 
@@ -207,7 +207,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     And I navigate to "Announcements" tab
     And I click on menu icon of chart "Enhanced Pie" with title "Menu"
     When I select "Show All Data" from chart menu of chart "Enhanced Pie"
-    Then I see the following rows under the following columns in table with id "EnhancedPiechartIdrecordsModal" :
+    Then I see the following rows under the following columns in table with id "---program:-:EnhancedPiechartModalID---" :
       | Announcement Title | Status    |
       | Announcement171001 | Published |
 
@@ -230,7 +230,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     And I navigate to "Announcements" tab
     And I click on menu icon of chart "Enhanced Pie" with title "Enhanced View"
     When I click modal button "Show All Data"
-    Then I see the following rows under the following columns in table with id "EnhancedPiechartIdrecordsModal" :
+    Then I see the following rows under the following columns in table with id "---program:-:EnhancedPiechartModalID---" :
       | Announcement Title | Status    |
       | Announcement171001 | Published |
 
@@ -252,8 +252,8 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I pause execution for "5" seconds
-    And I click on enhanced charts id "EnhancedPiechartId" with color "LightBlue"
-    Then I see the following rows under the following columns in table with id "EnhancedPiechartIdrecordsModal" :
+    And I click on enhanced charts id "---program:-:EnhancedPiechartID---" with color "LightBlue"
+    Then I see the following rows under the following columns in table with id "---program:-:EnhancedPiechartModalID---" :
       | Announcement Title     | Announcement Type |
       | Test application..1234 | Competitive       |
 
@@ -290,7 +290,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    When I hovering mouse on enhanced charts id "EnhancedPiechartId" and charts type "highcharts-point"
+    When I hovering mouse on enhanced charts id "---program:-:EnhancedPiechartID---" and charts type "highcharts-point"
     And I pause execution for "2" seconds
     Then I see "<EchartY-Axix_Text>" shown inside enhanced charts on hover
 
@@ -311,7 +311,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    When I hovering mouse on enhanced charts id "EnhancedPiechartId" and charts type "highcharts-point"
+    When I hovering mouse on enhanced charts id "---program:-:EnhancedPiechartID---" and charts type "highcharts-point"
     And I pause execution for "2" seconds
     Then I see "<EchartY-Axix_Text>" shown inside enhanced charts on hover
 
@@ -330,7 +330,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
-    Then I see charts with id "EnhancedDualAxesId" displayed
+    Then I see charts with id "---program:-:EnhancedDualAxesID---" displayed
 
   @70897    @validateTitleFieldAtCharts-gHOME-EnhancedDualAxesCharts
   Scenario: Changing chart title for 'EnhancedDualAxesId' enhanced dual axes chart in configuration and validating inside home-programs
@@ -356,7 +356,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
-    Then I see charts "EnhancedDualAxesId" with type as "highcharts-tracker-line"
+    Then I see charts "---program:-:EnhancedDualAxesID---" with type as "highcharts-tracker-line"
 
   @70981    @validateDisableLegendsFieldsWithFalse-gHOME-EnhancedDualAxesCharts
   Scenario: validate disable legends fields of 'EnhancedDualAxesId' is working or not while unchecking checkbox of Disable Legend Field
@@ -460,7 +460,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     And I navigate to "HOME" tab
     And I click on menu icon of chart "Enhanced Dual Axes" with title "Menu"
     When I select "Show All Data" from chart menu of chart "Enhanced Dual Axes"
-    Then I see on modal total records count is same as total row of table id "EnhancedDualAxesIdrecordsModal" and table name "flextable"
+    Then I see on modal total records count is same as total row of table id "---program:-:EnhancedDualAxesModalID---" and table name "flextable"
 
     Examples:
       | default_Data_Table_Query                                                                                                                                | new_Data_Table_Query                                                                                                                                             |
@@ -479,7 +479,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     And I navigate to "HOME" tab
     And I click on menu icon of chart "Enhanced Dual Axes" with title "Enhanced View"
     When I click modal button "Show All Data"
-    Then I see on modal total records count is same as total row of table id "EnhancedDualAxesIdrecordsModal" and table name "flextable"
+    Then I see on modal total records count is same as total row of table id "---program:-:EnhancedDualAxesModalID---" and table name "flextable"
 
     Examples:
       | default_Data_Table_Query                                                                                                                                 | new_Data_Table_Query                                                                                                                                             |
@@ -509,8 +509,8 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     And I pause execution for "5" seconds
-    And I click on enhanced charts id "EnhancedPiechartId" with color "LightBlue"
-    Then I see the following rows under the following columns in table with id "EnhancedPiechartIdrecordsModal" :
+    And I click on enhanced charts id "---program:-:EnhancedPiechartID---" with color "LightBlue"
+    Then I see the following rows under the following columns in table with id "---program:-:EnhancedPiechartModalID---" :
       | Announcement Title     | Announcement Type |
       | Test application..1234 | Competitive       |
 
@@ -552,7 +552,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I select "Show All Data" from chart menu of chart "Enhanced Dual Axes"
     Then I see "Test Automation Header" displayed in modal
 
-  @71133    @validateDataTableHeaderFieldFromBurgerIcon-gHOME-EnhancedDualAxesCharts
+  @71133    @validateDataTableHeaderFieldFromBurgerIcon-gHOME-EnhancedDualAxesCharts @wip
   Scenario: Validate Data table header text on UI after making changes from config
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -566,7 +566,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     And I click on menu icon of chart "Enhanced Dual Axes" with title "Enhanced View"
-    When I click on barCharts "chartEnhancedDualAxesId" with charts label name "UnitedHealth Group" on modal
+    When I click on barCharts "---program:-:EnhancedDualAxesChartID---" with charts label name "UnitedHealth Group" on modal
     Then I see "Test Automation Header" displayed in modal
 
   @71136    @validateElementsOnModalComingOnBarChartsClick-gHOME-EnhancedDualAxesCharts
@@ -575,7 +575,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     And I click on menu icon of chart "Enhanced Dual Axes" with title "Enhanced View"
-    When I click on barCharts "chartEnhancedDualAxesId" with charts label name "UnitedHealth Group" on modal
+    When I click on barCharts "---program:-:EnhancedDualAxesChartID---" with charts label name "UnitedHealth Group" on modal
     When I click modal button "Close"
     Then I see chart legends are displayed for chart/enhanced Charts "EnhancedDualAxes"
 
@@ -623,8 +623,8 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     And I pause execution for "5" seconds
-    When I click on barCharts "chartEnhancedDualAxesId" with charts label name "UnitedHeal" on main Page
-    Then I see the following rows under the following columns in table with id "EnhancedDualAxesIdrecordsModal" :
+    When I click on barCharts "---program:-:EnhancedDualAxesChartID---" with charts label name "UnitedHeal" on main Page
+    Then I see the following rows under the following columns in table with id "---program:-:EnhancedDualAxesModalID---" :
       | Total Awarded Amount | Account Name       |
       | $350000.00           | UnitedHealth Group |
 
@@ -639,7 +639,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    Then I see charts with id "Announcemnenttest_1Id" displayed
+    Then I see charts with id "---program:-:AnnouncemnentTestChartID---" displayed
 
   @71026    @validateTitleFieldAtCharts-gAnnouncement-Announcementtest-1
   Scenario: Changing chart title for 'Announcementtest-1' enhanced chart in configuration and validating inside- gAnnouncement
@@ -790,7 +790,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    Then I do not see charts with id "AnnouncementStatusFundingId" displayed
+    Then I do not see charts with id "---program:-:AnnouncementStatusFundingID---" displayed
 
   @70860 @validateTitleFieldAtSemiCircleDonutCharts-gAnnouncement-EnhancedCharts
   Scenario: Changing chart title for 'AnnouncementStatusFundingId' enhanced chart in configuration and validating inside planning-programs
@@ -820,7 +820,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    Then I see charts "AnnouncementStatusFundingId" with type as "highcharts-point"
+    Then I see charts "---program:-:AnnouncementStatusFundingID---" with type as "highcharts-point"
 
   @70863    @validateDisableLegendsFieldsWithFalseAtSemiCircleDonutChart-gAnnouncement-EnhancedCharts
   Scenario: validate disable legends fields is working or not by viewing bottom element of Semi Circle Donut charts is getting displayed on unchecking checkbox
@@ -850,7 +850,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    When I hovering mouse on enhanced charts id "AnnouncementStatusFundingId" and charts type "highcharts-point"
+    When I hovering mouse on enhanced charts id "---program:-:AnnouncementStatusFundingID---" and charts type "highcharts-point"
     And I pause execution for "2" seconds
     Then I see "<EchartY-Axix_Text>" shown inside enhanced charts on hover
 
@@ -871,7 +871,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    When I hovering mouse on enhanced charts id "AnnouncementStatusFundingId" and charts type "highcharts-point"
+    When I hovering mouse on enhanced charts id "---program:-:AnnouncementStatusFundingID---" and charts type "highcharts-point"
     And I pause execution for "2" seconds
     Then I see "<EchartY-Axix_Text>" shown inside enhanced charts on hover
 
@@ -909,7 +909,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     And I navigate to "Announcements" tab
     And I click on menu icon of chart "Announcement status funding" with title "Enhanced View"
     When I click modal button "Show All Data"
-    Then I see only the following ordered headers in table with id "AnnouncementStatusFundingIdrecordsModal" :
+    Then I see only the following ordered headers in table with id "---program:-:AnnouncementStatusFundingModalID---" :
       | ID | Announcement Title | Status | Action |
 
     Examples:
@@ -931,7 +931,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     And I navigate to "Announcements" tab
     And I click on menu icon of chart "Announcement status funding" with title "Menu"
     When I select "Show All Data" from chart menu of chart "Announcement status funding"
-    Then I see only the following ordered headers in table with id "AnnouncementStatusFundingIdrecordsModal" :
+    Then I see only the following ordered headers in table with id "---program:-:AnnouncementStatusFundingModalID---" :
       | ID | Announcement Title | Status | Action |
 
     Examples:
@@ -997,7 +997,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     And I navigate to "Announcements" tab
     And I click on menu icon of chart "Test" with title "Menu"
     When I select "Show All Data" from chart menu of chart "Test"
-    Then I see only the following ordered headers in table with id "Announcemnenttest_1IdrecordsModal" :
+    Then I see only the following ordered headers in table with id "---program:-:AnnouncemnenttestModalID---" :
       | Type | Status | Status | Action |
 
     Examples:
@@ -1019,7 +1019,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     And I navigate to "Announcements" tab
     And I click on menu icon of chart "Test" with title "Enhanced View"
     When I click modal button "Show All Data"
-    Then I see only the following ordered headers in table with id "Announcemnenttest_1IdrecordsModal" :
+    Then I see only the following ordered headers in table with id "---program:-:AnnouncemnenttestModalID---" :
       | Type | Status | Status | Action |
 
     Examples:
@@ -1050,7 +1050,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    Then I do not see charts with id "Enhanced_FunnelId" displayed
+    Then I do not see charts with id "---program:-:Enhanced_FunnelID---" displayed
 
   @71192   @validateEditDataTableQueryforAllDataFieldFromEnhancedViewIcon-gApplication-Enhanced_Funnel
   Scenario Outline: Validate expected column from Enhanced_Funnel chart modal(show all data from enhanced view icon) displayed/Not displayed - enhanced View
@@ -1067,7 +1067,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     And I navigate to "Applications" tab
     And I click on menu icon of chart "Enhanced Funnel" with title "Enhanced View"
     When I click modal button "Show All Data"
-    Then I do not see "Change Request #" in flex table header "Enhanced_FunnelIdrecordsModal"
+    Then I do not see "Change Request #" in flex table header "---program:-:Enhanced_FunnelModalID---"
 
     Examples:
       | default_Data_Table_Query                                                                                                            | new_Data_Table_Query                                                                                                           |
@@ -1088,7 +1088,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     And I navigate to "Applications" tab
     And I click on menu icon of chart "Enhanced Funnel" with title "Menu"
     When I select "Show All Data" from chart menu of chart "Enhanced Funnel"
-    Then I do not see "Change Request #" in flex table header "Enhanced_FunnelIdrecordsModal"
+    Then I do not see "Change Request #" in flex table header "---program:-:Enhanced_FunnelModalID---"
 
     Examples:
       | default_Data_Table_Query                                                                                                            | new_Data_Table_Query                                                                                                           |
@@ -1107,7 +1107,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I hovering mouse on enhanced charts id "Enhanced_FunnelId" and charts type "highcharts-point"
+    When I hovering mouse on enhanced charts id "---program:-:Enhanced_FunnelID---" and charts type "highcharts-point"
     And I pause execution for "2" seconds
     Then I see "<EchartY-Axix_Text>" shown inside enhanced charts on hover
 
@@ -1128,7 +1128,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I hovering mouse on enhanced charts id "Enhanced_FunnelId" and charts type "highcharts-point"
+    When I hovering mouse on enhanced charts id "---program:-:Enhanced_FunnelID---" and charts type "highcharts-point"
     And I pause execution for "2" seconds
     Then I see "<EchartY-Axix_Text>" shown inside enhanced charts on hover
 
@@ -1147,7 +1147,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
-    Then I see charts with id "EnhancedLineId" displayed
+    Then I see charts with id "---program:-:EnhancedLineID---" displayed
 
   @71419    @validateTitleFieldAtCharts-gHome-EnhancedLineCharts
   Scenario: Changing chart title for 'EnhancedLineId' enhanced chart in configuration and validating inside home phase
@@ -1177,7 +1177,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
-    Then I see charts "EnhancedLineId" with type as "highcharts-point"
+    Then I see charts "---program:-:EnhancedLineID---" with type as "highcharts-point"
 
   @71426    @validateDisableLegendsFieldsWithFalse-gAnnouncement-EnhancedLineCharts
   Scenario: validate disable legends fields is working or not by viewing bottom element of charts is getting displayed on unchecking checkbox at Line chart
@@ -1328,7 +1328,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     And I navigate to "HOME" tab
     And I click on menu icon of chart "Enhanced Line" with title "Menu"
     When I select "Show All Data" from chart menu of chart "Enhanced Line"
-    Then I see on modal total records count is same as total row of table id "EnhancedLineIdrecordsModal" and table name "flextable"
+    Then I see on modal total records count is same as total row of table id "---program:-:EnhancedLineModalID---" and table name "flextable"
 
     Examples:
       | default_Data_Table_Query                                                                                                                                                                                            | new_Data_Table_Query                                                                                                                                                                                                        |
@@ -1349,7 +1349,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     And I navigate to "HOME" tab
     And I click on menu icon of chart "Enhanced Line" with title "Enhanced View"
     When I click modal button "Show All Data"
-    Then I see on modal total records count is same as total row of table id "EnhancedLineIdrecordsModal" and table name "flextable"
+    Then I see on modal total records count is same as total row of table id "---program:-:EnhancedLineModalID---" and table name "flextable"
 
     Examples:
       | default_Data_Table_Query                                                                                                                                                                                            | new_Data_Table_Query                                                                                                                                                                                                        |
@@ -1366,7 +1366,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
-    Then I see charts with id "EnhancedSplineId" displayed
+    Then I see charts with id "---program:-:EnhancedSplineID---" displayed
 
   @71587    @validateTitleFieldAtCharts-gGrants-EnhancedSplineCharts
   Scenario: Validating enhanced spline charts title is getting displayed on UI while making changes at configuration page -gGrants
@@ -1396,7 +1396,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
-    Then I see charts "EnhancedSplineId" with type as "highcharts-tracker-line"
+    Then I see charts "---program:-:EnhancedSplineID---" with type as "highcharts-tracker-line"
 
   @71590    @validateDisableLegendsFieldsWithFalse-gGrants-EnhancedSplineCharts
   Scenario: validate disable legends fields is working or not by viewing bottom element of charts is getting displayed on unchecking checkbox
@@ -1439,7 +1439,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
-    Then I do not see charts with id "EnhancedAreaId" displayed
+    Then I do not see charts with id "---program:-:EnhancedAreaID---" displayed
 
   @71727    @validateAll-axisPrefix-gGrants-EnhancedAreaCharts
   Scenario: Change chart x-axis/Y-Axis prefix from config and validate inside grants phase for Enhanced Area Charts-gGrants
@@ -1492,7 +1492,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     And I navigate to "Grants" tab
     And I click on menu icon of chart "Enhanced Area" with title "Enhanced View"
     When I click modal button "Show All Data"
-    Then I softly do not see "Change Request #" in flex table header "EnhancedAreaIdrecordsModal"
+    Then I softly do not see "Change Request #" in flex table header "---program:-:EnhancedAreaModalID---"
 
     Examples:
       | default_Data_Table_Query                                                                                                            | new_Data_Table_Query                                                                                                           |
@@ -1513,7 +1513,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     And I navigate to "Grants" tab
     And I click on menu icon of chart "Enhanced Area" with title "Menu"
     When I select "Show All Data" from chart menu of chart "Enhanced Area"
-    Then I softly do not see "Change Request #" in flex table header "EnhancedAreaIdrecordsModal"
+    Then I softly do not see "Change Request #" in flex table header "---program:-:EnhancedAreaModalID---"
 
     Examples:
       | default_Data_Table_Query                                                                                                            | new_Data_Table_Query                                                                                                           |
@@ -1545,7 +1545,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    Then I do not see charts with id "EnhancedAreaSplineId" displayed
+    Then I do not see charts with id "---program:-:EnhancedAreaSplineID---" displayed
 
   @71511    @validateViewActionOnShowAllDataModalComingOnBurgerIconClick-EnhancedLineCharts
   Scenario: Validate Enhanced chart view record action on show all data modal - Enhanced Line chart - burger icon
@@ -1560,8 +1560,8 @@ Feature: Charts and Enhanced Charts Component Scenarios
     And I navigate to "HOME" tab
     And I click on menu icon of chart "Enhanced Line" with title "Menu"
     When I select "Show All Data" from chart menu of chart "Enhanced Line"
-    When I perform quick search for "AP-755-179" inside charts modal with id "EnhancedLineIdmyTableSearch"
-    When I click on "View" icon for "AP-755-179" inside flex table with id "EnhancedLineIdrecordsModal"
+    When I perform quick search for "AP-755-179" inside charts modal with id "---program:-:EnhancedLineSearchTableID---"
+    When I click on "View" icon for "AP-755-179" inside flex table with id "---program:-:EnhancedLineModalID---"
     When I switch to tab number "1"
     Then I see "APP1- FOA for DHP" shown as over view title in header "Application"
 
@@ -1578,8 +1578,8 @@ Feature: Charts and Enhanced Charts Component Scenarios
     And I navigate to "HOME" tab
     And I click on menu icon of chart "Enhanced Line" with title "Enhanced View"
     When I click modal button "Show All Data"
-    When I perform quick search for "AP-755-179" inside charts modal with id "EnhancedLineIdmyTableSearch"
-    When I click on "View" icon for "AP-755-179" inside flex table with id "EnhancedLineIdrecordsModal"
+    When I perform quick search for "AP-755-179" inside charts modal with id "---program:-:EnhancedLineSearchTableID---"
+    When I click on "View" icon for "AP-755-179" inside flex table with id "---program:-:EnhancedLineModalID---"
     When I switch to tab number "1"
     Then I see "APP1- FOA for DHP" shown as over view title in header "Application"
 
@@ -1635,7 +1635,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     And I navigate to "Announcements" tab
     And I click on menu icon of chart "Enhanced Area Spline" with title "Enhanced View"
     When I click modal button "Show All Data"
-    Then I softly do not see "Change Request #" in flex table header "EnhancedAreaSplineIdrecordsModal"
+    Then I softly do not see "Change Request #" in flex table header "---program:-:EnhancedAreaSplineModalID---"
 
     Examples:
       | default_Data_Table_Query                                                                                                            | new_Data_Table_Query                                                                                                           |
@@ -1656,7 +1656,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     And I navigate to "Announcements" tab
     And I click on menu icon of chart "Enhanced Area Spline" with title "Menu"
     When I select "Show All Data" from chart menu of chart "Enhanced Area Spline"
-    Then I softly do not see "Change Request #" in flex table header "EnhancedAreaSplineIdrecordsModal"
+    Then I softly do not see "Change Request #" in flex table header "---program:-:EnhancedAreaSplineModalID---"
 
     Examples:
       | default_Data_Table_Query                                                                                                            | new_Data_Table_Query                                                                                                           |
@@ -1688,7 +1688,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    Then I do not see charts with id "EnhancedScatterId" displayed
+    Then I do not see charts with id "---program:-:EnhancedScatterID---" displayed
 
   @71744    @validateEditDataTableQueryforAllDataFieldFromEnhancedView-gAnnouncement-EnhancedScatterCharts
   Scenario Outline: Validate expected column from Enhanced Scatter chart modal(show all data from enhanced view icon) displayed/Not displayed - from enhanced view
@@ -1705,7 +1705,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     And I navigate to "Announcements" tab
     And I click on menu icon of chart "Enhanced Scatter" with title "Enhanced View"
     When I click modal button "Show All Data"
-    Then I softly do not see "Announcement Title" in flex table header "EnhancedScatterIdrecordsModal"
+    Then I softly do not see "Announcement Title" in flex table header "---program:-:EnhancedScatterModalID---"
 
     Examples:
       | default_Data_Table_Query                                                                                           | new_Data_Table_Query                                                                           |
@@ -1726,7 +1726,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     And I navigate to "Announcements" tab
     And I click on menu icon of chart "Enhanced Scatter" with title "Menu"
     When I select "Show All Data" from chart menu of chart "Enhanced Scatter"
-    Then I softly do not see "Announcement Title" in flex table header "EnhancedScatterIdrecordsModal"
+    Then I softly do not see "Announcement Title" in flex table header "---program:-:EnhancedScatterModalID---"
 
     Examples:
       | default_Data_Table_Query                                                                                           | new_Data_Table_Query                                                                           |
@@ -1848,8 +1848,8 @@ Feature: Charts and Enhanced Charts Component Scenarios
     And I navigate to "Grants" tab
     And I click on menu icon of chart "Enhanced Spline" with title "Menu"
     When I select "Show All Data" from chart menu of chart "Enhanced Spline"
-    When I perform quick search for "AR-0142" inside charts modal with id "EnhancedSplineIdmyTableSearch"
-    When I click on "View" icon for "AR-0142" inside flex table with id "EnhancedSplineIdrecordsModal"
+    When I perform quick search for "AR-0142" inside charts modal with id "---program:-:EnhancedSplineSearchTableID---"
+    When I click on "View" icon for "AR-0142" inside flex table with id "---program:-:EnhancedSplineModalID---"
     When I switch to tab number "1"
     Then I see "This is the test application for IE 11" shown as over view title in header "Amendment Request"
 
@@ -1866,8 +1866,8 @@ Feature: Charts and Enhanced Charts Component Scenarios
     And I navigate to "Grants" tab
     And I click on menu icon of chart "Enhanced Spline" with title "Enhanced View"
     When I click modal button "Show All Data"
-    When I perform quick search for "AR-0142" inside charts modal with id "EnhancedSplineIdmyTableSearch"
-    When I click on "View" icon for "AR-0142" inside flex table with id "EnhancedSplineIdrecordsModal"
+    When I perform quick search for "AR-0142" inside charts modal with id "---program:-:EnhancedSplineSearchTableID---"
+    When I click on "View" icon for "AR-0142" inside flex table with id "---program:-:EnhancedSplineModalID---"
     When I switch to tab number "1"
     Then I see "This is the test application for IE 11" shown as over view title in header "Amendment Request"
 
@@ -1886,7 +1886,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     And I navigate to "Grants" tab
     And I click on menu icon of chart "Enhanced Spline" with title "Menu"
     When I select "Show All Data" from chart menu of chart "Enhanced Spline"
-    Then I see on modal total records count is same as total row of table id "EnhancedSplineIdrecordsModal" and table name "flextable"
+    Then I see on modal total records count is same as total row of table id "---program:-:EnhancedSplineModalID---" and table name "flextable"
 
     Examples:
       | default_Data_Table_Query                                                                                                            | new_Data_Table_Query                                                                                                                        |
@@ -1905,8 +1905,8 @@ Feature: Charts and Enhanced Charts Component Scenarios
     And I navigate to "Grants" tab
     And I click on menu icon of chart "Enhanced Spline" with title "Enhanced View"
     When I click modal button "Show All Data"
-    When I perform quick search for "AR-0142" inside charts modal with id "EnhancedSplineIdmyTableSearch"
-    Then I see value "AR-0142" for title "Change Request #" inside table "EnhancedSplineIdrecordsModal"
+    When I perform quick search for "AR-0142" inside charts modal with id "---program:-:EnhancedSplineSearchTableID---"
+    Then I see value "AR-0142" for title "Change Request #" inside table "---program:-:EnhancedSplineModalID---"
 
   @74085    @validateActiveFieldAtCharts-gHome-EnhancedBubbleCharts
   Scenario: Validating enhanced bubble charts is getting displayed on UI while making changes of boolean field Active at configuration page -gHome
@@ -1919,7 +1919,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
-    Then I see charts with id "EnhancedBubbleId" displayed
+    Then I see charts with id "---program:-:EnhancedBubbleID---" displayed
 
   @74087    @validateTitleFieldAtCharts-gHOME-EnhancedBubbleCharts
   Scenario: Changing chart title for 'EnhancedBubbleId' enhanced dual axes chart in configuration and validating inside home-programs
@@ -1945,7 +1945,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
-    Then I see charts "EnhancedBubbleId" with type as "highcharts-grid-line"
+    Then I see charts "---program:-:EnhancedBubbleID---" with type as "highcharts-grid-line"
 
   @74092    @validateDisableLegendsFieldsWithFalse-gHOME-EnhancedBubbleCharts
   Scenario: validate disable legends fields of 'EnhancedBubbleId' is working or not while not checking checkbox of Disable Legend Field
@@ -2076,7 +2076,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     And I navigate to "HOME" tab
     And I click on menu icon of chart "Enhanced Bubble" with title "Menu"
     When I select "Show All Data" from chart menu of chart "Enhanced Bubble"
-    Then I see on modal total records count is same as total row of table id "EnhancedBubbleIdrecordsModal" and table name "flextable"
+    Then I see on modal total records count is same as total row of table id "---program:-:EnhancedBubbleModalID---" and table name "flextable"
 
     Examples:
       | default_Data_Table_Query                                                                                                                                                                                                          | new_Data_Table_Query                                                                                                                                                                                                                      |
@@ -2096,8 +2096,8 @@ Feature: Charts and Enhanced Charts Component Scenarios
     And I click on menu icon of chart "Enhanced Spline" with title "Enhanced View"
     When I click modal button "Show All Data"
     When I pause execution for "2" seconds
-    When I perform quick search for "AR-0142" inside charts modal with id "EnhancedSplineIdmyTableSearch"
-    Then I see value "AR-0142" for title "Change Request #" inside table "EnhancedSplineIdrecordsModal"
+    When I perform quick search for "AR-0142" inside charts modal with id "---program:-:EnhancedSplineSearchTableID---"
+    Then I see value "AR-0142" for title "Change Request #" inside table "---program:-:EnhancedSplineModalID---"
 
   @71289    @validateDualChartType1AndDualChartType2FieldAtCharts-gHOME-EnhancedDualAxes1Charts
   Scenario: Changing value of Dual Chart Type1 And Dual Chart Type2 for 'EnhancedDualAxes1Id' enhanced dual axes1 chart in configuration and validating inside planning-programs
@@ -2128,11 +2128,11 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
-    Then I see charts with id "EnhancedDualAxesId" displayed
+    Then I see charts with id "---program:-:EnhancedDualAxesID---" displayed
     When I re-login as "AUTOMATION-REVIEWER" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
-    Then I do not see charts with id "EnhancedDualAxesId" displayed
+    Then I do not see charts with id "---program:-:EnhancedDualAxesID---" displayed
 
   @71172    @validateEnhancedChartIsDisplayedOnlyToAdminrUser-gHOME-EnhancedDualAxesCharts
   Scenario: Validating dual axes chart is displayed to Admin user only if the chart unique id is given under custom settings config
@@ -2145,11 +2145,11 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
-    Then I see charts with id "EnhancedDualAxesId" displayed
+    Then I see charts with id "---program:-:EnhancedDualAxesID---" displayed
     When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
-    Then I do not see charts with id "EnhancedDualAxesId" displayed
+    Then I do not see charts with id "---program:-:EnhancedDualAxesID---" displayed
 
   @75225    @validateActiveFieldAtCharts-gHome-EnhancedClassBasedConfigCharts
   Scenario: Validating enhanced class based config charts is getting displayed on UI while making changes of boolean field Active at configuration page -gHome
@@ -2162,7 +2162,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
-    Then I see charts with id "GrantPerformanceScatterClsBasedId" displayed
+    Then I see charts with id "---program:-:GrantPerformanceScatterClsBasedID---" displayed
 
   @75226    @validateApexClassNameFieldAtCharts-gHome-EnhancedClassBasedConfigCharts
   Scenario: Validating enhanced class based config charts is not displayed on UI if Apex class Name is not given at configuration page -gHome
@@ -2194,7 +2194,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     And I navigate to "HOME" tab
     And I click on menu icon of chart "Performance Tracking" with title "Menu"
     When I select "Show All Data" from chart menu of chart "Performance Tracking"
-    Then I see on modal total records count is same as total row of table id "GrantPerformanceScatterClsBasedIdrecordsModal" and table name "flextable"
+    Then I see on modal total records count is same as total row of table id "---program:-:GrantPerformanceScatterClsBasedModalID---" and table name "flextable"
 
     Examples:
       | default_Data_Table_Query                                                                                                            | new_Data_Table_Query                                                                                                                        |
@@ -2211,7 +2211,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
-    Then I see charts with id "EnhancedScatterwithmultiplepointsId" displayed
+    Then I see charts with id "---program:-:EnhancedScatterwithmultiplepointsID---" displayed
 
   @75537    @validateTitleFieldAtCharts-gHOME-EnhancedScatterwithmultiplepointsChart
   Scenario: Changing chart title for 'EnhancedScatterwithmultiplepointsChartId' enhanced dual axes chart in configuration and validating inside home-programs
@@ -2239,7 +2239,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
-    Then I see charts "EnhancedScatterwithmultiplepointsId" with type as "highcharts-grid-line"
+    Then I see charts "---program:-:EnhancedScatterwithmultiplepointsID---" with type as "highcharts-grid-line"
 
   @75539    @validateDisableLegendsFieldsWithFalse-gHOME-EnhancedScatterwithmultiplepointsChart
   Scenario: validate disable legends fields of 'EnhancedScatterwithmultiplepointsChartId' is working or not while unchecking checkbox of Disable Legend Field
@@ -2312,7 +2312,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     And I navigate to "HOME" tab
     And I click on menu icon of chart "Enhanced Scatter with multiple points" with title "Menu"
     When I select "Show All Data" from chart menu of chart "Enhanced Scatter with multiple points"
-    Then I see on modal total records count is same as total row of table id "EnhancedScatterwithmultiplepointsIdrecordsModal" and table name "flextable"
+    Then I see on modal total records count is same as total row of table id "---program:-:EnhancedScatterwithmultiplepointsModalID---" and table name "flextable"
 
     Examples:
       | default_Data_Table_Query                                                                                                  | new_Data_Table_Query                                                                                                              |
@@ -2333,7 +2333,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     And I navigate to "HOME" tab
     And I click on menu icon of chart "Enhanced Scatter with multiple points" with title "Enhanced View"
     When I click modal button "Show All Data"
-    Then I see on modal total records count is same as total row of table id "EnhancedScatterwithmultiplepointsIdrecordsModal" and table name "flextable"
+    Then I see on modal total records count is same as total row of table id "---program:-:EnhancedScatterwithmultiplepointsModalID---" and table name "flextable"
 
     Examples:
       | default_Data_Table_Query                                                                                                  | new_Data_Table_Query                                                                                                              |
@@ -2403,7 +2403,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
-    When I hovering mouse on specific enhanced charts id "EnhancedLineId" and charts type "highcharts-point"
+    When I hovering mouse on specific enhanced charts id "---program:-:EnhancedLineID---" and charts type "highcharts-point"
     And I pause execution for "2" seconds
     Then I see ",000" shown inside enhanced charts on hover
 
@@ -2420,7 +2420,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
-    When I hovering mouse on specific enhanced charts id "EnhancedLineId" and charts type "highcharts-point"
+    When I hovering mouse on specific enhanced charts id "---program:-:EnhancedLineID---" and charts type "highcharts-point"
     And I pause execution for "2" seconds
     Then I see "AutomationAwardCeiling" shown inside enhanced charts on hover
 
@@ -2437,7 +2437,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
-    When I hovering mouse on specific enhanced charts id "EnhancedLineId" and charts type "highcharts-point"
+    When I hovering mouse on specific enhanced charts id "---program:-:EnhancedLineID---" and charts type "highcharts-point"
     And I pause execution for "2" seconds
     Then I see ".00" shown inside enhanced charts on hover
 
@@ -2456,7 +2456,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
-    When I hovering mouse on specific enhanced charts id "EnhancedLineId" and charts type "highcharts-point"
+    When I hovering mouse on specific enhanced charts id "---program:-:EnhancedLineID---" and charts type "highcharts-point"
     And I pause execution for "2" seconds
     Then I see ",000.00" shown inside enhanced charts on hover
 
@@ -2473,7 +2473,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    When I hovering mouse on specific enhanced charts id "EnhancedScatterId" and charts type "highcharts-point"
+    When I hovering mouse on specific enhanced charts id "---program:-:EnhancedScatterID---" and charts type "highcharts-point"
     And I pause execution for "2" seconds
     Then I see "$" shown inside enhanced charts on hover
 
@@ -2490,7 +2490,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    When I hovering mouse on specific enhanced charts id "EnhancedScatterId" and charts type "highcharts-point"
+    When I hovering mouse on specific enhanced charts id "---program:-:EnhancedScatterID---" and charts type "highcharts-point"
     And I pause execution for "2" seconds
     Then I see "$" shown inside enhanced charts on hover
 
@@ -2511,7 +2511,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
-    When I hovering mouse on specific enhanced charts id "EnhancedBubbleId" and charts type "highcharts-grid-line"
+    When I hovering mouse on specific enhanced charts id "---program:-:EnhancedBubbleID---" and charts type "highcharts-grid-line"
     And I pause execution for "2" seconds
     Then I see "TestAutomationXAxis" shown inside enhanced charts on hover
     Then I see "TestAutomationYAxis" shown inside enhanced charts on hover
@@ -2545,6 +2545,6 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
-    When I hovering mouse on specific enhanced charts id "EnhancedBubbleId" and charts type "highcharts-grid-line"
+    When I hovering mouse on specific enhanced charts id "---program:-:EnhancedBubbleID---" and charts type "highcharts-grid-line"
     And I pause execution for "2" seconds
     Then I see "false" shown inside enhanced charts on hover
