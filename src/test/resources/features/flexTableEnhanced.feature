@@ -122,7 +122,7 @@ Feature: Flex Table enhanced Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    Then I see "6" records inside enhanced grid id "---program:-:EnhancedDataTableId---"
+    Then I see "5" records inside enhanced grid id "---program:-:EnhancedDataTableId---"
 
   @77113    @disablingEnableTotalRecordCountFieldForAtEnhancedDataTable-gPlanning
   Scenario: validate disabling of total row count in enhanced flex table planning

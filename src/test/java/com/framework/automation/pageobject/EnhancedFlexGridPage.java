@@ -16,7 +16,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     /******* "Variables and Locators" *****************/
     private final By reachOutToEnhancedGridCollapse, searchInputEnhancedGrid, completeTableRowOfEnhancedGrid,
             selectRecordCheckBoxForEnhancedGrid, currentBudgetPeriodEndDate, scrollToActionColumn,
-            awardObligatedAmountSpecificCells, idColumnForChildFlexTable, numberOfAwardscells,
+            idColumnForChildFlexTable, numberOfAwardscells,
             obligatedAmountSpecificCellsAtChildTable, selectBoxOfStatusColumnInEditMode;
 
     /**
@@ -31,8 +31,6 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
                 .xpath("//div[@id='Enhanced1grid']//input[@aria-label='Select Record']");
         currentBudgetPeriodEndDate = By.xpath("//field[@field-name='BudgetPeriodEndDate__c']//input[@type='text']");
         scrollToActionColumn = By.xpath("//div[@id='Enhanced1grid']//th[contains(text(),'Actions')]");
-        awardObligatedAmountSpecificCells = By
-                .xpath("//table/tbody[contains(@ng-repeat,'row')]/tr/td//*[@field-name='TotalAwardObligatedAmount__c']/span");
         idColumnForChildFlexTable = By.xpath("//field[@field-name='Name']//input[@type='text']");
         numberOfAwardscells = By.xpath("//table/tbody//*[@field-name='NumberofAwards__c']//span");
         obligatedAmountSpecificCellsAtChildTable = By
