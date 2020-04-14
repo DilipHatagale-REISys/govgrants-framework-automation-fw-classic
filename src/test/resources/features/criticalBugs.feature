@@ -1697,7 +1697,7 @@ Feature: Logged Issues Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "test" in "flexGridEnhancedDivId" panel
-    Then I see cell subtotal as expected as given formula
+    Then I see cell subtotal as expected as given formula at "TotalAwardObligatedAmount__c" field
 
   @61083    @onEditOfRecordEnableOverallTotalFieldAtParentFlexTableForEnhancedGridShouldWork-gPlanning
   Scenario Outline: validate enabling of overall total field after checking checkbox true of Enable Over All Total from config and validating it inside enhanced grid of programs with editing record value-planning

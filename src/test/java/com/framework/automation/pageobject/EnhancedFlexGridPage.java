@@ -16,7 +16,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     /******* "Variables and Locators" *****************/
     private final By reachOutToEnhancedGridCollapse, searchInputEnhancedGrid, completeTableRowOfEnhancedGrid,
             selectRecordCheckBoxForEnhancedGrid, currentBudgetPeriodEndDate, scrollToActionColumn,
-            awardObligatedAmountSpecificCells, idColumnForChildFlexTable, numberOfAwardscells,
+            idColumnForChildFlexTable, numberOfAwardscells,
             obligatedAmountSpecificCellsAtChildTable, selectBoxOfStatusColumnInEditMode;
 
     /**
@@ -31,8 +31,6 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
                 .xpath("//div[@id='Enhanced1grid']//input[@aria-label='Select Record']");
         currentBudgetPeriodEndDate = By.xpath("//field[@field-name='BudgetPeriodEndDate__c']//input[@type='text']");
         scrollToActionColumn = By.xpath("//div[@id='Enhanced1grid']//th[contains(text(),'Actions')]");
-        awardObligatedAmountSpecificCells = By
-                .xpath("//table/tbody[contains(@ng-repeat,'row')]/tr/td//*[@field-name='TotalAwardObligatedAmount__c']/span");
         idColumnForChildFlexTable = By.xpath("//field[@field-name='Name']//input[@type='text']");
         numberOfAwardscells = By.xpath("//table/tbody//*[@field-name='NumberofAwards__c']//span");
         obligatedAmountSpecificCellsAtChildTable = By
@@ -242,8 +240,8 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     /**
      * return true if cell value is as expected
      */
-    public void assertCellValueAtEnhancedGridWithFormula() {
-        Assert.assertTrue(isExpectedSumValueAtEnhancedGridTableDisplayed());
+    public void assertCellValueAtEnhancedGridWithFormula(String fieldApiName) {
+        Assert.assertTrue(isExpectedSumValueAtEnhancedGridTableDisplayed(fieldApiName));
     }
 
     /**
@@ -389,8 +387,8 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      * return true if cell over all total sum value is as expected for number of
      * award column
      */
-    public void assertOverAllTotalCellValueForNumberOfAwardsAtEnhancedGrid() {
-        Assert.assertTrue(isExpectedOverAllTotalSumValueForNumberOfAwardsAtEnhancedGridTableDisplayed());
+    public void assertOverAllTotalCellValueForNumberOfAwardsAtEnhancedGrid(String fieldApiName) {
+        Assert.assertTrue(isExpectedOverAllTotalSumValueForNumberOfAwardsAtEnhancedGridTableDisplayed(fieldApiName));
     }
 
     /**
@@ -723,10 +721,10 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      *
      * @return
      */
-    private boolean isExpectedSumValueAtEnhancedGridTableDisplayed() {
+    private boolean isExpectedSumValueAtEnhancedGridTableDisplayed(String fieldApiName) {
         boolean flag = false;
         try {
-            List<Elements> rows_table = I.amPerforming().getElementReference().forListOfElements().of(awardObligatedAmountSpecificCells);
+            List<Elements> rows_table = I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//table/tbody[contains(@ng-repeat,'row')]/tr/td//*[@field-name='"+ fieldApiName +"']/span"));
             String str = "";
             String strNew = "";
             BigDecimal bd = new BigDecimal(0);
@@ -1048,11 +1046,12 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      *
      * @return
      */
-    private boolean isExpectedOverAllTotalSumValueForNumberOfAwardsAtEnhancedGridTableDisplayed() {
+    private boolean isExpectedOverAllTotalSumValueForNumberOfAwardsAtEnhancedGridTableDisplayed(String fieldApiName) {
         boolean flag = false;
+
         try {
-            I.amPerforming().scroll().onPageToSpecificElement(numberOfAwardscells);
-            List<Elements> rows_table = I.amPerforming().getElementReference().forListOfElements().of(numberOfAwardscells);
+            I.amPerforming().scroll().onPageToSpecificElement(By.xpath("//table/tbody//*[@field-name='"+ fieldApiName +"']//span"));
+            List<Elements> rows_table = I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//table/tbody//*[@field-name='"+ fieldApiName +"']//span"));
             String sumStr = rows_table.get(rows_table.size() - 1).getText();
             double sum = 0.00;
             for (int row = 0; row < rows_table.size() - 1; row++) {

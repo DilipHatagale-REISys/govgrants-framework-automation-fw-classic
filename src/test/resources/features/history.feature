@@ -294,8 +294,8 @@ Feature: history Component Scenarios
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programForHistoryTabScenarios}"
-    When I click on "Start" icon for "{Framework_recordUsed:programForHistoryTabScenarios}" inside table
+    When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
+    When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
     When I "Reassign" to user "Allen PM" in the approval decision
     When I navigate to "History" sub tab
     Then I softly see column "Status" inside row "1" at position "2" and column at position "5" contains text "Pending"
