@@ -111,9 +111,9 @@ public class EnhancedFlexGridSteps {
 		enhancedFlexGrid.assertActionButtonInsideEnhancedGridTableIsNotDisplayed(buttonName, headerName);
 	}
 
-	@Then("^I see cell subtotal as expected as given formula$")
-	public void assertCellValueWithFormula() {
-		enhancedFlexGrid.assertCellValueAtEnhancedGridWithFormula();
+	@Then("^I see cell subtotal as expected as given formula at \"([^\"]*)\" field$")
+	public void assertCellValueWithFormula(String fieldApiName) {
+		enhancedFlexGrid.assertCellValueAtEnhancedGridWithFormula(fieldApiName);
 	}
 
 	@Then("^I see column \"([^\"]*)\" value is in \"([^\"]*)\" order$")
@@ -192,9 +192,9 @@ public class EnhancedFlexGridSteps {
 		enhancedFlexGrid.assertCellValueForObligatedAmountAtChildFlexTableOfEnhancedGrid();
 	}
 
-	@Then("^I see over all total for number of awards at enhanced grid$")
-	public void assertOverAllTotalCellValueAtNumberOfAwardsColumn() {
-		enhancedFlexGrid.assertOverAllTotalCellValueForNumberOfAwardsAtEnhancedGrid();
+	@Then("^I see over all total for \"([^\"]*)\" field at enhanced grid$")
+	public void assertOverAllTotalCellValueAtNumberOfAwardsColumn(String fieldApiName) {
+		enhancedFlexGrid.assertOverAllTotalCellValueForNumberOfAwardsAtEnhancedGrid(fieldApiName);
 	}
 
 	@Then("^I see edited value inside textarea is \"([^\"]*)\" for column value \"([^\"]*)\" of table \"([^\"]*)\"$")

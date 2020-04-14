@@ -601,7 +601,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    Then I see cell subtotal as expected as given formula
+    Then I see cell subtotal as expected as given formula at "TotalAwardObligatedAmount__c" field
 
   @42027    @headerHelpTextFieldForChildFlexTableAtEnhancedGrid-gPlanning
   Scenario Outline: Changing content of help text field at child flex table of enhanced grid from config and validating it at enhanced grid planning-Program enhanced flex grid
@@ -1514,7 +1514,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    Then I see over all total for number of awards at enhanced grid
+    Then I see over all total for "NumberofAwards__c" field at enhanced grid
     Examples:
       | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                         |
       | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c like 'Road%' |
