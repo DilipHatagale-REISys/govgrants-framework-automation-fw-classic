@@ -1284,7 +1284,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    Then I see cell subtotal for number of awards at enhanced grid
+    Then I see cell subtotal for "NumberofAwards__c" at enhanced grid
 
   @49251    @isMasterViewFieldUncheckedForAllFlexListViewAtParentFlexTable-gPlanning
   Scenario: validate error message at enhanced grid after Unchecking check box of Is Master View Field for both list view at config and validating it inside enhanced grid of programs-planning
