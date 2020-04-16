@@ -16,8 +16,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     /******* "Variables and Locators" *****************/
     private final By reachOutToEnhancedGridCollapse, searchInputEnhancedGrid, completeTableRowOfEnhancedGrid,
             selectRecordCheckBoxForEnhancedGrid, currentBudgetPeriodEndDate, scrollToActionColumn,
-            idColumnForChildFlexTable, numberOfAwardscells,
-            obligatedAmountSpecificCellsAtChildTable, selectBoxOfStatusColumnInEditMode;
+            idColumnForChildFlexTable, obligatedAmountSpecificCellsAtChildTable, selectBoxOfStatusColumnInEditMode;
 
     /**
      * Constructor to handle dependency injection and framework library
@@ -32,7 +31,6 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         currentBudgetPeriodEndDate = By.xpath("//field[@field-name='BudgetPeriodEndDate__c']//input[@type='text']");
         scrollToActionColumn = By.xpath("//div[@id='Enhanced1grid']//th[contains(text(),'Actions')]");
         idColumnForChildFlexTable = By.xpath("//field[@field-name='Name']//input[@type='text']");
-        numberOfAwardscells = By.xpath("//table/tbody//*[@field-name='NumberofAwards__c']//span");
         obligatedAmountSpecificCellsAtChildTable = By
                 .xpath("//table/tbody/tr/td//*[@field-name='TotalObligateAmount__c']");
         selectBoxOfStatusColumnInEditMode = By.xpath("//select[@ng-model='pickListValue']");
@@ -341,8 +339,8 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     /**
      * return true if cell sum value is as expected for number of award column
      */
-    public void assertCellValueForNumberOfAwardsAtEnhancedGrid() {
-        Assert.assertTrue(isExpectedSumValueForNumberOfAwardsAtEnhancedGridTableDisplayed());
+    public void assertCellValueForNumberOfAwardsAtEnhancedGrid(String fieldApiName) {
+        Assert.assertTrue(isExpectedSumValueForNumberOfAwardsAtEnhancedGridTableDisplayed(fieldApiName));
     }
 
     /**
@@ -724,7 +722,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     private boolean isExpectedSumValueAtEnhancedGridTableDisplayed(String fieldApiName) {
         boolean flag = false;
         try {
-            List<Elements> rows_table = I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//table/tbody[contains(@ng-repeat,'row')]/tr/td//*[@field-name='"+ fieldApiName +"']/span"));
+            List<Elements> rows_table = I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//table/tbody[contains(@ng-repeat,'row')]/tr/td//*[@field-name='" + fieldApiName + "']/span"));
             String str = "";
             String strNew = "";
             BigDecimal bd = new BigDecimal(0);
@@ -936,11 +934,11 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      *
      * @return
      */
-    private boolean isExpectedSumValueForNumberOfAwardsAtEnhancedGridTableDisplayed() {
+    private boolean isExpectedSumValueForNumberOfAwardsAtEnhancedGridTableDisplayed(String fieldApiName) {
         boolean flag = false;
         try {
-            I.amPerforming().scroll().onPageToSpecificElement(numberOfAwardscells);
-            List<Elements> rows_table = I.amPerforming().getElementReference().forListOfElements().of(numberOfAwardscells);
+            I.amPerforming().scroll().onPageToSpecificElement(By.xpath("//table/tbody//*[@field-name='" + fieldApiName + "']//span"));
+            List<Elements> rows_table = I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//table/tbody//*[@field-name='" + fieldApiName + "']//span"));
             double rowTotal = 0.00;
             double sum = 0.00;
             for (int row = 0; row < rows_table.size(); row++) {
@@ -1050,8 +1048,8 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         boolean flag = false;
 
         try {
-            I.amPerforming().scroll().onPageToSpecificElement(By.xpath("//table/tbody//*[@field-name='"+ fieldApiName +"']//span"));
-            List<Elements> rows_table = I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//table/tbody//*[@field-name='"+ fieldApiName +"']//span"));
+            I.amPerforming().scroll().onPageToSpecificElement(By.xpath("//table/tbody//*[@field-name='" + fieldApiName + "']//span"));
+            List<Elements> rows_table = I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//table/tbody//*[@field-name='" + fieldApiName + "']//span"));
             String sumStr = rows_table.get(rows_table.size() - 1).getText();
             double sum = 0.00;
             for (int row = 0; row < rows_table.size() - 1; row++) {
@@ -1334,8 +1332,8 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     }
 
     /**
-     * @return true Over All Total is not displayed for expected column
      * @param fieldApiName
+     * @return true Over All Total is not displayed for expected column
      */
     private Boolean isOverAllTotalIsDisplayed(String fieldApiName) {
         boolean flag = true;
