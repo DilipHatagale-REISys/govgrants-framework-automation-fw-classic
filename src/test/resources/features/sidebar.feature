@@ -133,3 +133,65 @@ Feature: Side bar Component Scenarios
     Examples:
       | New-TargetUrl              | Old-TargetUrl                                                  |
       | /apex/PendingRegistrations | /apex/FlexTableNewView?ft1=CompletedTasks&ft2=CompletedTasksBy |
+
+  @77432    @enablePageSizeFieldAndValidateInsideEnhancedDataTableAtAtSidebar-gHome
+  Scenario: enabling of page size dropdown at bottom inside enhanced flex table at sidebar - Home phase
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Grid             | Enable Page Size  | false             | ApiGeneratedId:0 |
+      | Flex Grid             | Default Page Size | 10                | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Page Size  | true          | EnhancedDataTable  |                           |                            |
+      | Flex Grid:General     | Default Page Size | 5             | EnhancedDataTable  |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Data table enhanced record" content inside "Manage Organizations" subheader on left panel
+    Then I see "Entries" with page size dropdown in enhanced grid "---program:-:EnhancedDataTableId---"
+
+  @77433    @defaultPageSizeFieldAndValidateInsideEnhancedDataTableAtSidebar-gHome
+  Scenario: validate change of default page size inside dropdown at bottom of enhanced flex table at sidebar - Home phase
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Grid             | Default Page Size | 10                | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Default Page Size | 5             | EnhancedDataTable  |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Data table enhanced record" content inside "Manage Organizations" subheader on left panel
+    Then I see "5" records inside enhanced grid id "---program:-:EnhancedDataTableId---"
+
+  @77462    @orderBySortByFieldAtEnhancedDataTableAtSidebar-gHome
+  Scenario: Changing specific column value in ascending order with order by and sort by field from config and validating it inside enhanced flex table at sidebar - Home phase
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Flex Grid             | Order By       |                   | ApiGeneratedId:0 |
+      | Flex Grid             | Sort Direction |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Order By       | GrantAbbreviation__c | EnhancedDataTable  |                           |                            |
+      | Flex Grid:General     | Sort Direction | ASC                  | EnhancedDataTable  |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Data table enhanced record" content inside "Manage Organizations" subheader on left panel
+    Then I see column "GrantAbbreviation__c" value is in "Ascending" order
+
+  @77463    @orderBySortByFieldDescendingAtEnhancedDataTableAtSidebar-gHome
+  Scenario: Changing specific column value in descending order with order by and sort by field from config and validating it inside enhanced flex table at sidebar - Home phase
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Flex Grid             | Order By       |                   | ApiGeneratedId:0 |
+      | Flex Grid             | Sort Direction |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Order By       | GrantAbbreviation__c | EnhancedDataTable  |                           |                            |
+      | Flex Grid:General     | Sort Direction | DESC                 | EnhancedDataTable  |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Data table enhanced record" content inside "Manage Organizations" subheader on left panel
+    Then I see column "GrantAbbreviation__c" value is in "Descending" order

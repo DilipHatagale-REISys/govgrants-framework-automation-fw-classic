@@ -93,11 +93,13 @@ Feature: Flex Table enhanced Component Scenarios
   @77110    @enablePageSizeFieldAtEnhancedDataTable-gPlanning
   Scenario: enabling of page size dropdown at bottom inside enhanced enhanced flex table planning
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
-      | Flex Grid             | Enable Page Size | false             | ApiGeneratedId:0 |
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Grid             | Enable Page Size  | false             | ApiGeneratedId:0 |
+      | Flex Grid             | Default Page Size | 10                | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Page Size | true          | EnhancedDataTable  |                           |                            |
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Page Size  | true          | EnhancedDataTable  |                           |                            |
+      | Flex Grid:General     | Default Page Size | 5             | EnhancedDataTable  |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -395,3 +397,23 @@ Feature: Flex Table enhanced Component Scenarios
     And I select "Download as PDF" from parallel lines dropdown of "Grants Enhanced Table"
     And I download the file
     Then I see "Active" on page "1" of "govgrants" pdf file
+
+  @77472    @validateDownloadedXLSContentIfShowInPDFCheckboxIsCheckedAtFlexTableEnhanced-gPlanning
+  Scenario: validate Activated status in downloaded xls file for enhanced data table -planning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Grid             | Enable Export (xls / csv) | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Show in PDF               | true          | EnhancedDataTable  | Name                      | FLV-2548                   |
+      | Flex Grid:General     | Enable Export (xls / csv) | true          | EnhancedDataTable  |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I click on parallel lines menu bar with data target value "#EnhancedDataTableFlexToggle"
+    And I select "Download as XLS" from parallel lines dropdown of "Grants Enhanced Table"
+    Then I see "Active" in downloaded xls or csv file "govgrants"
