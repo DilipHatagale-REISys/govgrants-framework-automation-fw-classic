@@ -27,7 +27,7 @@ public class setup {
         this.userController = userController;
         if(report == null) {
             this.report = new CSS();
-            EnvironmentFactory.setProjectName("GovGrants TVC Test Automation");
+            EnvironmentFactory.setProjectName("GovGrants Framework Test Automation");
             EnvironmentFactory.setOrgName("REI Systems [Saas Business Unit]");
             EnvironmentFactory.setProjectPath(System.getProperty("user.dir"));
             report.reportConfigWriteUp();
