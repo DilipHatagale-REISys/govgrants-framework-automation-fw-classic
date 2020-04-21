@@ -307,8 +307,8 @@ Feature: Approval Process Component Scenarios
       | configurationCategory | fieldName                          | fieldOrignalValue | filterId         |
       | Task Config           | Send Task Assignment Notification? | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory   | fieldName                          | fieldNewValue | coreComponentField                                         |
-      | Task Config:Task Action | Send Task Assignment Notification? | true          | Approve Program                                            |
+      | configurationCategory   | fieldName                          | fieldNewValue | coreComponentField |
+      | Task Config:Task Action | Send Task Assignment Notification? | true          | Approve Program    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -905,10 +905,10 @@ Feature: Approval Process Component Scenarios
       | configurationCategory        | fieldName              | fieldOrignalValue | filterId         |
       | Approval Process Steps Cache | Approve Email Template | ApiGeneratedId:1  | ApiGeneratedId:3 |
     Given I setup test configuration as below:
-      | configurationCategory                | fieldName              | fieldNewValue                   | coreComponentField                                            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Approval Process Steps Cache:General | Email Template Name    | Program Approved Email Template | Program Approved Email Template                               |                           |                            |
-      | Approval Process Steps Cache:General | Email Template Name    | Program Rejected Email Template | Program Rejected Email Template                               |                           |                            |
-      | Approval Process Steps Cache:General | Approve Email Template | ApiGeneratedId:2                | Program_Manager_Approver                                      |                           |                            |
+      | configurationCategory                | fieldName              | fieldNewValue                   | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Approval Process Steps Cache:General | Email Template Name    | Program Approved Email Template | Program Approved Email Template |                           |                            |
+      | Approval Process Steps Cache:General | Email Template Name    | Program Rejected Email Template | Program Rejected Email Template |                           |                            |
+      | Approval Process Steps Cache:General | Approve Email Template | ApiGeneratedId:2                | Program_Manager_Approver        |                           |                            |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -968,11 +968,11 @@ Feature: Approval Process Component Scenarios
       | Approval Process Steps Cache | Reject Email Template | ApiGeneratedId:1  | ApiGeneratedId:3 |
       | Page Tabs Config             | Is Active             | true              | ApiGeneratedId:4 |
     Given I setup test configuration as below:
-      | configurationCategory                | fieldName             | fieldNewValue                   | coreComponentField                                         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Approval Process Steps Cache:General | Email Template Name   | Program Rejected Email Template | Program Rejected Email Template                            |                           |                            |
-      | Approval Process Steps Cache:General | Email Template Name   | Program Approved Email Template | Program Approved Email Template                            |                           |                            |
-      | Approval Process Steps Cache:General | Reject Email Template | ApiGeneratedId:2                | Program_Manager_Approver                                   |                           |                            |
-      | Page Tabs Config:Page Layout Action  | Is Active             | false                           | Grantee State Program                                      | Name                      | TAB-027                    |
+      | configurationCategory                | fieldName             | fieldNewValue                   | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Approval Process Steps Cache:General | Email Template Name   | Program Rejected Email Template | Program Rejected Email Template |                           |                            |
+      | Approval Process Steps Cache:General | Email Template Name   | Program Approved Email Template | Program Approved Email Template |                           |                            |
+      | Approval Process Steps Cache:General | Reject Email Template | ApiGeneratedId:2                | Program_Manager_Approver        |                           |                            |
+      | Page Tabs Config:Page Layout Action  | Is Active             | false                           | Grantee State Program           | Name                      | TAB-027                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -1032,10 +1032,10 @@ Feature: Approval Process Component Scenarios
       | Approval Process Steps Cache | Reassigned Email Template |                   | ApiGeneratedId:2 |
       | Page Tabs Config             | Is Active                 | true              | ApiGeneratedId:3 |
     Given I setup test configuration as below:
-      | configurationCategory                | fieldName                 | fieldNewValue                   | coreComponentField                                         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Approval Process Steps Cache:General | Email Template Name       | Program Approved Email Template | Program Approved Email Template                            |                           |                            |
-      | Approval Process Steps Cache:General | Reassigned Email Template | ApiGeneratedId:1                | Program_Manager_Approver                                   |                           |                            |
-      | Page Tabs Config:Page Layout Action  | Is Active                 | false                           | Grantee State Program                                      | Name                      | TAB-027                    |
+      | configurationCategory                | fieldName                 | fieldNewValue                   | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Approval Process Steps Cache:General | Email Template Name       | Program Approved Email Template | Program Approved Email Template |                           |                            |
+      | Approval Process Steps Cache:General | Reassigned Email Template | ApiGeneratedId:1                | Program_Manager_Approver        |                           |                            |
+      | Page Tabs Config:Page Layout Action  | Is Active                 | false                           | Grantee State Program           | Name                      | TAB-027                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -1095,10 +1095,10 @@ Feature: Approval Process Component Scenarios
       | Approval Process Steps Cache | Send To Owner Email Template |                   | ApiGeneratedId:2 |
       | Page Tabs Config             | Is Active                    | true              | ApiGeneratedId:3 |
     Given I setup test configuration as below:
-      | configurationCategory                | fieldName                    | fieldNewValue                   | coreComponentField                                         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Approval Process Steps Cache:General | Email Template Name          | Program Approved Email Template | Program Approved Email Template                            |                           |                            |
-      | Approval Process Steps Cache:General | Send To Owner Email Template | ApiGeneratedId:1                | Program_Manager_Approver                                   |                           |                            |
-      | Page Tabs Config:Page Layout Action  | Is Active                    | false                           | Grantee State Program                                      | Name                      | TAB-027                    |
+      | configurationCategory                | fieldName                    | fieldNewValue                   | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Approval Process Steps Cache:General | Email Template Name          | Program Approved Email Template | Program Approved Email Template |                           |                            |
+      | Approval Process Steps Cache:General | Send To Owner Email Template | ApiGeneratedId:1                | Program_Manager_Approver        |                           |                            |
+      | Page Tabs Config:Page Layout Action  | Is Active                    | false                           | Grantee State Program           | Name                      | TAB-027                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -1157,8 +1157,8 @@ Feature: Approval Process Component Scenarios
       | configurationCategory    | fieldName         | fieldOrignalValue | filterId         |
       | Approval Decision Action | Comments Required | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory            | fieldName         | fieldNewValue | coreComponentField                                         |
-      | Approval Decision Action:General | Comments Required | true          | ADAC-0011                                                  |
+      | configurationCategory            | fieldName         | fieldNewValue | coreComponentField |
+      | Approval Decision Action:General | Comments Required | true          | ADAC-0011          |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -1214,8 +1214,8 @@ Feature: Approval Process Component Scenarios
       | configurationCategory    | fieldName               | fieldOrignalValue | filterId         |
       | Approval Decision Action | Comments Field API Name |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory            | fieldName               | fieldNewValue         | coreComponentField                                            |
-      | Approval Decision Action:General | Comments Field API Name | FederalProgramCFDA__c | ADAC-0011                                                     |
+      | configurationCategory            | fieldName               | fieldNewValue         | coreComponentField |
+      | Approval Decision Action:General | Comments Field API Name | FederalProgramCFDA__c | ADAC-0011          |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -1275,8 +1275,8 @@ Feature: Approval Process Component Scenarios
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                       | coreComponentField                                         |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:HideExpressonJsonForApprovalAction | ADAC-0009                                                  |
+      | configurationCategory            | fieldName            | fieldNewValue                                       | coreComponentField |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:HideExpressonJsonForApprovalAction | ADAC-0009          |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -1330,8 +1330,8 @@ Feature: Approval Process Component Scenarios
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                       | coreComponentField                                         |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:HideExpressonJsonForApprovalAction | ADAC-0010                                                  |
+      | configurationCategory            | fieldName            | fieldNewValue                                       | coreComponentField |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:HideExpressonJsonForApprovalAction | ADAC-0010          |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -1385,8 +1385,8 @@ Feature: Approval Process Component Scenarios
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                       | coreComponentField                                         |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:HideExpressonJsonForApprovalAction | ADAC-0011                                                  |
+      | configurationCategory            | fieldName            | fieldNewValue                                       | coreComponentField |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:HideExpressonJsonForApprovalAction | ADAC-0011          |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -1440,8 +1440,8 @@ Feature: Approval Process Component Scenarios
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                       | coreComponentField                                         |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:HideExpressonJsonForApprovalAction | ADAC-0012                                                  |
+      | configurationCategory            | fieldName            | fieldNewValue                                       | coreComponentField |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:HideExpressonJsonForApprovalAction | ADAC-0012          |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
