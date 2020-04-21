@@ -358,3 +358,100 @@ Feature: Side bar Component Scenarios
     When I navigate to "Flex Grid Enhanced" content inside "Manage Organizations" subheader on left panel
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     Then I see "View" icon for "Demo_Title" is not displayed inside flex table
+
+  @77470     @hideColumnJsonFieldAtEnhancedDataTableAtSideBar-gHome
+  Scenario: Hiding specific column value from config and validating it inside enhanced data table at sidebar
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Column JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                                                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Column JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator | EnhancedDataTable  | Name                      | FTC-1511                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Data table enhanced record" content inside "Manage Organizations" subheader on left panel
+    Then I see "Number of Project Areas" not displayed in enhanced grid table column title
+
+  @77800    @validateDownloadedPDFContentAsStatusIsActiveAtFlexTableEnhancedUnderSidebar-gHome
+  Scenario: validate Activated status in downloaded pdf file for enhanced data table at sidebar
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:Flex Table List | Show in PDF         | true               | ApiGeneratedId:0 |
+      | Flex Grid                 | Enable Export (PDF) | true               | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Show in PDF         | true           | EnhancedDataTable  | Name                      | FLV-2548                   |
+      | Flex Grid:General     | Enable Export (PDF) | true           | EnhancedDataTable  |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Data table enhanced record" content inside "Manage Organizations" subheader on left panel
+    When I click on parallel lines menu bar with data target value "#EnhancedDataTableFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Grants Enhanced Table"
+    And I download the file
+    Then I see "Active" on page "1" of "govgrants" pdf file
+
+  @77819    @validateDownloadedXLSContentAsStatusIsActiveAtFlexTableEnhancedUnderSidebar-gHome
+  Scenario: validate Activated status in downloaded xls file for enhanced data table at sidebar
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Grid             | Enable Export (xls / csv) | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Export (xls / csv) | true          | EnhancedDataTable  |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Data table enhanced record" content inside "Manage Organizations" subheader on left panel
+    When I click on parallel lines menu bar with data target value "#EnhancedDataTableFlexToggle"
+    And I select "Download as XLS" from parallel lines dropdown of "Grants Enhanced Table"
+    Then I see "Active" in downloaded xls or csv file "govgrants"
+
+  @77822    @validateViewActionAtParentFlexTableForEnhancedGridAtSideBar-gHOME
+  Scenario: validate view action at enhanced grid at sidebar - home phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Flex Grid Enhanced" content inside "Manage Organizations" subheader on left panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
+    When I click on "View" icon for "Demo_Title" inside table
+    Then I see "Grant View" shown as over view header
+
+  @77823    @validateEditActionAtParentFlexTableForEnhancedGridAtSideBar-gHOME
+  Scenario: validate edit action at enhanced grid at sidebar - home phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Flex Grid Enhanced" content inside "Manage Organizations" subheader on left panel
+    When I perform quick search for "QA Team Automation Record" in "---program:-:flexGridEnhancedTableId---" panel
+    When I click on "Edit" icon for "QA Team Automation Record" inside table
+    When I enter values "Test Automation sidebar" into textarea for table id "---program:-:flexGridEnhancedID---"
+    When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
+    When I perform quick search for "QA Team Automation Record" in "---program:-:flexGridEnhancedID---" panel
+    Then I see value "Test Automation sidebar" for multiple cells at column "AddressProgramContact__c"
+
+  @77820    @validateDownloadedPDFContentAsStatusIsActiveUnderParentFlexTableForEnhancedGridAtSideBar-gHOME
+  Scenario Outline: validate Activated status in downloaded pdf file for enhanced grid at sidebar - home phase
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:Flex Table List | Show in PDF         | false              | ApiGeneratedId:0 |
+      | Flex Table                | Enable Export (PDF) | true               | ApiGeneratedId:1 |
+      | Flex Grid                 | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Show in PDF         | true           | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Table:General        | Enable Export (PDF) | true           | TmpActiveGrantsGrid |                           |                            |
+      | Flex Grid:General         | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Flex Grid Enhanced" content inside "Manage Organizations" subheader on left panel
+    When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
+    And I download the file
+    Then I see "Active" on page "1" of "govgrants" pdf file
+
+    Examples:
+      | newFieldsApi                                                                                                                                                                                                                       | defaultFieldsApi                                                                                                                                                                                                                   |
+      | ProjectTitle__c,Status__c,Name,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
