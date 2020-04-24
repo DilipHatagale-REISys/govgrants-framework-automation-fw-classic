@@ -1784,3 +1784,65 @@ Feature: Enhanced Flex Grid Component Scenarios
     Examples:
       | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                         |
       | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c like 'Road%' |
+
+  @78091    @verifyByClickOnLookupValueItShouldRedirectedToRespectiveRecordPageAtEnhancedGrid-gPlanning
+  Scenario: validate by click on lookup value in table , respective page should get opens at EnhancedGrid - gPlanning
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    When I click on "Department of Higher Education" icon for "Demo_Title" inside table
+    Then I see "Organization" shown as over view header
+
+  @78095    @verifyPicklistFieldValueIsShownInDownloadedPDFAtEnhancedGrid-gPlanning
+  Scenario Outline: validate a picklist field value is shown in downloaded pdf instead of picklist value API name at EnhancedGrid - gPlanning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
+    And I download the file
+    Then I see "Project Grants" on page "1" of "govgrants" pdf file
+
+    Examples:
+      | newFieldsApi                      | defaultFieldsApi                                                                                                                                                                                                                   |
+      | ProjectTitle__c,Name,GrantType__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @78097    @verifyPicklistFieldValueIsShownInDownloadedXLSAtEnhancedGrid-gPlanning
+  Scenario Outline: validate a picklist field value is shown in downloaded xls instead of picklist value API name at EnhancedGrid - gPlanning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names       | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Grid             | Enable Export (XLS / CSV) | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names       | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
+      | Flex Grid:General     | Enable Export (XLS / CSV) | true           | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
+    And I select "Download as XLS" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
+    Then I see "Project Grants" in downloaded xls or csv file "govgrants"
+
+    Examples:
+      | newFieldsApi                      | defaultFieldsApi                                                                                                                                                                                                                   |
+      | ProjectTitle__c,Name,GrantType__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
