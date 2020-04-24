@@ -376,13 +376,13 @@ Feature: Side bar Component Scenarios
   @77800    @validateDownloadedPDFContentAsStatusIsActiveAtFlexTableEnhancedUnderSidebar-gHome
   Scenario: validate Activated status in downloaded pdf file for enhanced data table at sidebar
     Given I have "default" configuration as below:
-      | configurationCategory     | fieldName           | fieldOrignalValue  | filterId         |
-      | Flex Grid:Flex Table List | Show in PDF         | true               | ApiGeneratedId:0 |
-      | Flex Grid                 | Enable Export (PDF) | true               | ApiGeneratedId:1 |
+      | configurationCategory     | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Grid:Flex Table List | Show in PDF         | true              | ApiGeneratedId:0 |
+      | Flex Grid                 | Enable Export (PDF) | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Show in PDF         | true           | EnhancedDataTable  | Name                      | FLV-2548                   |
-      | Flex Grid:General     | Enable Export (PDF) | true           | EnhancedDataTable  |                           |                            |
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Show in PDF         | true          | EnhancedDataTable  | Name                      | FLV-2548                   |
+      | Flex Grid:General     | Enable Export (PDF) | true          | EnhancedDataTable  |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
@@ -455,3 +455,54 @@ Feature: Side bar Component Scenarios
     Examples:
       | newFieldsApi                                                                                                                                                                                                                       | defaultFieldsApi                                                                                                                                                                                                                   |
       | ProjectTitle__c,Status__c,Name,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @77821    @validateDownloadedXLSContentAsStatusIsActiveUnderParentFlexTableForEnhancedGridAtSideBar-gHOME
+  Scenario: validate Activated status in downloaded xls file for enhanced grid at sidebar - home phase
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Grid:Flex Table List | Show in PDF               | false             | ApiGeneratedId:0 |
+      | Flex Grid                 | Enable Export (xls / csv) | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName                 | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Show in PDF               | true          | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Grid:General         | Enable Export (xls / csv) | true          | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Flex Grid Enhanced" content inside "Manage Organizations" subheader on left panel
+    When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
+    And I select "Download as XLS" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
+    Then I see "Active" in downloaded xls or csv file "govgrants"
+
+  @78043    @validateViewActionAtFlexTableEnhancedAtSideBar-gHOME
+  Scenario: validate view action at flex table enhanced at sidebar - home phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Data table enhanced record" content inside "Manage Organizations" subheader on left panel
+    When I perform quick search for "Applicationg test88888" in "---program:-:flexGridEnhancedDataTableId---" panel
+    When I click on "View" icon for "Applicationg test88888" inside table
+    Then I see "Grant View" shown as over view header
+
+  @78068    @validateEditActionAtEnhancedDataTableAtSideBar-gHOME
+  Scenario Outline: validate edit action at enhanced table at sidebar - home phase
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhancedDataTable  |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Data table enhanced record" content inside "Manage Organizations" subheader on left panel
+    When I perform quick search for "Applicationg test88888" in "---program:-:flexGridEnhancedDataTableId---" panel
+    When I click on "Edit" icon for "Applicationg test88888" inside table
+    When I enter values "Test Automation sidebar 1" into textarea for table id "---program:-:flexGridEnhancedDataTableId---"
+    When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedDataTableId---"
+    When I perform quick search for "Applicationg test88888" in "---program:-:flexGridEnhancedDataTableId---" panel
+    Then I see value "Test Automation sidebar 1" for multiple cells at column "AddressProgramContact__c"
+
+    Examples:
+      | newFieldsApi                                                                                                                                                                     | defaultFieldsApi                                                                                                                                        |
+      | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,NumberofProjectAreas__c,Status__c,GrantAbbreviation__c,TotalAwardObligatedAmount__c,AddressProgramContact__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,NumberofProjectAreas__c,Status__c,GrantAbbreviation__c,TotalAwardObligatedAmount__c |
