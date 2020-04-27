@@ -864,3 +864,259 @@ Feature: All pdf and xls related scenario including component and completed back
     Examples:
       | newFieldsApi                                                                                                           | defaultFieldsApi                                                                                          |
       | id,Name,IssueDate__c,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,TotalObligatedAmount__c,Status__c | id,Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,TotalObligatedAmount__c,Status__c |
+
+  @78095    @verifyPicklistFieldValueIsShownInDownloadedPDFAtEnhancedGrid-gPlanning
+  Scenario Outline: validate a picklist field value is shown in downloaded pdf instead of picklist value API name at EnhancedGrid - gPlanning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
+    And I download the file
+    Then I see "Project Grants" on page "1" of "govgrants" pdf file
+
+    Examples:
+      | newFieldsApi                      | defaultFieldsApi                                                                                                                                                                                                                   |
+      | ProjectTitle__c,Name,GrantType__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @78097    @verifyPicklistFieldValueIsShownInDownloadedXLSAtEnhancedGrid-gPlanning
+  Scenario Outline: validate a picklist field value is shown in downloaded xls instead of picklist value API name at EnhancedGrid - gPlanning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names       | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Grid             | Enable Export (XLS / CSV) | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names       | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
+      | Flex Grid:General     | Enable Export (XLS / CSV) | true           | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
+    And I select "Download as XLS" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
+    Then I see "Project Grants" in downloaded xls or csv file "govgrants"
+
+    Examples:
+      | newFieldsApi                      | defaultFieldsApi                                                                                                                                                                                                                   |
+      | ProjectTitle__c,Name,GrantType__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @78304    @verifyPicklistFieldValueIsShownInDownloadedPDFAtMEGrid-gApplication
+  Scenario Outline: validate a picklist field value is shown in downloaded pdf instead of picklist value API name at ME Grid - gApplication
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetPeriods |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
+    And I select "Download as PDF" from parallel lines dropdown of "Application Budget"
+    And I download the file
+    Then I see "Yes/No" on page "1" of "govgrants" pdf file
+
+    Examples:
+      | defaultFieldsApi                                                         | newFieldsApi                                                                           |
+      | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c,BudgetType__c |
+
+  @78305    @verifyPicklistFieldValueIsShownInDownloadedXLSAtMEGrid-gApplication
+  Scenario Outline: validate a picklist field value is shown in downloaded xls instead of picklist value API name at ME Grid - gApplication
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetPeriods |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
+    And I select "Download as XLS" from parallel lines dropdown of "Application Budget"
+    Then I see "Yes/No" in downloaded xls or csv file "govgrants"
+
+    Examples:
+      | defaultFieldsApi                                                         | newFieldsApi                                                                           |
+      | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c,BudgetType__c |
+
+  @79167    @verifyPicklistFieldValueIsShownInDownloadedPDFAtN2GGrid-gGrant @wip
+  Scenario Outline:  validate a picklist field value is shown in downloaded pdf instead of picklist value API name at N2G Grid - gGrant
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | GrantorBudgetPeriod |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Financials" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFGridGrantFinancials"
+    And I select "Download as PDF" from parallel lines dropdown of "Budget Period Details"
+    And I download the file
+    Then I see "Yes/No" on page "1" of "govgrants" pdf file
+
+    Examples:
+      | defaultFieldsApi                                               | newFieldsApi                                                                 |
+      | Year__c,BudgetStartDate__c,BudgetEndDate__c,Status__c,Notes__c | Year__c,BudgetStartDate__c,BudgetEndDate__c,Status__c,Notes__c,BudgetType__c |
+
+  @79169    @verifyPicklistFieldValueIsShownInDownloadedPDFAtProgramFlexTable
+  Scenario Outline: validate a picklist field value is shown in downloaded pdf instead of picklist value API name at flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Export (PDF) | true               | ApiGeneratedId:1 |
+      | Flex Table List       | Filter Clause       | <oldSoqlFilter>    | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi>  | Programs           |                           |                            |
+      | Flex Table:General    | Enable Export (PDF) | true            | Programs           |                           |                            |
+      | Flex Table List       | Filter Clause       | <newSoqlFilter> | Programs           | Name                      | FLV-1837                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
+    And I select "Download as PDF" from parallel lines dropdown of "Draft Programs"
+    And I download the file
+    Then I see "Grant" on page "1" of "govgrants" pdf file
+
+    Examples:
+      | newFieldsApi                                                                                                                    | defaultFieldsApi                                                                                                 | newSoqlFilter                                                                                                                                                                                    | oldSoqlFilter                                                                                                             |
+      | Name,ProgramName__c,ProgramType__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | RecordType.Name = 'Internal Program' and Status__c IN ( 'Created','Change Requested','Submitted for Approval','Approved') and ProgramName__c = 'Test program for automation - Created mode only' | RecordType.Name = 'Internal Program' and Status__c IN ( 'Created','Change Requested','Submitted for Approval','Approved') |
+
+  @79171    @verifyPicklistFieldValueIsShownInDownloadedXLSAtProgramFlexTable
+  Scenario Outline: validate a picklist field value is shown in downloaded xls instead of picklist value API name at flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names       | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Export (XLS / CSV) | true               | ApiGeneratedId:1 |
+      | Flex Table List       | Filter Clause             | <oldSoqlFilter>    | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names       | <newFieldsApi>  | Programs           |                           |                            |
+      | Flex Table:General    | Enable Export (XLS / CSV) | true            | Programs           |                           |                            |
+      | Flex Table List       | Filter Clause             | <newSoqlFilter> | Programs           | Name                      | FLV-1837                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
+    And I select "Download as XLS" from parallel lines dropdown of "Draft Programs"
+    Then I see "Grant" in downloaded xls or csv file "govgrants"
+
+    Examples:
+      | newFieldsApi                                                                                                                    | defaultFieldsApi                                                                                                 | newSoqlFilter                                                                                                                                                                                    | oldSoqlFilter                                                                                                             |
+      | Name,ProgramName__c,ProgramType__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | RecordType.Name = 'Internal Program' and Status__c IN ( 'Created','Change Requested','Submitted for Approval','Approved') and ProgramName__c = 'Test program for automation - Created mode only' | RecordType.Name = 'Internal Program' and Status__c IN ( 'Created','Change Requested','Submitted for Approval','Approved') |
+
+  @79176    @verifyPicklistFieldValueIsShownInDownloadedPDFAtHistoryTable-gPlanning @history-component
+  Scenario: validate a picklist field value is shown in downloaded pdf instead of picklist value API name at history table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-027                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I click on "Edit" in the page details
+    When I navigate to "Overview" sub tab
+    And I enter value "Loan" into field "ProgramType__c"
+    And I click on "Save" in the page details
+    When I navigate to "History" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFlexTableHistory"
+    And I select "Download as PDF" from parallel lines dropdown of "Field History"
+    And I download the file
+    Then I see "Loan" on page "1" of "govgrants" pdf file
+
+  @79178    @verifyPicklistFieldValueIsShownInDownloadedXLSAtHistoryTable-gPlanning @history-component
+  Scenario: validate a picklist field value is shown in downloaded xls instead of picklist value API name at history table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active                 | true              | ApiGeneratedId:0 |
+      | Flex Table            | Enable Export (XLS / CSV) | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName                 | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active                 | true          | Grantee State Program | Name                      | TAB-027                    |
+      | Flex Table:General                  | Enable Export (XLS / CSV) | true          | History               |                           |                            |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I click on "Edit" in the page details
+    When I navigate to "Overview" sub tab
+    And I enter value "Loan" into field "ProgramType__c"
+    And I click on "Save" in the page details
+    When I navigate to "History" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFlexTableHistory"
+    And I select "Download as CSV" from parallel lines dropdown of "Field History"
+    Then I see "Loan" in downloaded xls or csv file "govgrants"
+
+  @79173    @verifyPicklistFieldValueIsShownInDownloadedPDFAtPageLayout-gPlanning @pagelayout-component @wip
+  Scenario: validate a picklist field value is shown in downloaded pdf instead of picklist value API name at page detail
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see "Grant" on page "1" of "govgrants" pdf file
+
+  @79168    @verifyPicklistFieldValueIsShownInDownloadedXLSAtN2GGrid-gGrant
+  Scenario Outline:  validate a picklist field value is shown in downloaded xls instead of picklist value API name at N2G Grid - gGrant
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names       | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Grid             | Enable Export (XLS / CSV) | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names       | <newFieldsApi> | GrantorBudgetPeriod |                           |                            |
+      | Flex Grid:General     | Enable Export (XLS / CSV) | true           | GrantorBudgetPeriod |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Financials" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFGridGrantFinancials"
+    And I select "Download as XLS" from parallel lines dropdown of "Budget Period Details"
+    Then I see "Yes/No" in downloaded xls or csv file "govgrants"
+
+    Examples:
+      | defaultFieldsApi                                               | newFieldsApi                                                                 |
+      | Year__c,BudgetStartDate__c,BudgetEndDate__c,Status__c,Notes__c | Year__c,BudgetStartDate__c,BudgetEndDate__c,Status__c,Notes__c,BudgetType__c |

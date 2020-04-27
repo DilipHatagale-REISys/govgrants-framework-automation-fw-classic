@@ -407,9 +407,13 @@ Feature: Flex Table Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Flex Table            | Default Page Size | 10                | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Total      | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Row  | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Default Page Size | 20            | Programs           |                           |                            |
+      | Flex Table List       | Enable Total      | false         | Programs           | Name                      | FTC-1018                   |
+      | Flex Table:General    | Enable Total Row  | false         | Programs           |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
