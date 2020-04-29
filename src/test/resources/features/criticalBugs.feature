@@ -160,7 +160,7 @@ Feature: Logged Issues Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-test-003" in "flexGridEnhancedDivId" panel
     When I click on "Edit" icon for "GT-test-003" inside table
-    When I enter values "Test Automation" into textarea for table id "---program:-:flexGridEnhancedID---"
+    When I enter value "Test Automation" into field "AddressProgramContact__c"
     When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
     When I perform quick search for "GT-test-003" in "flexGridEnhancedDivId" panel
     Then I see value "Test Automation" for multiple cells at column "AddressProgramContact__c"
@@ -183,7 +183,7 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "GT-FIN.2-001" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "GT-FIN.2-001"
     When I click on "Edit" icon for "AD-FIN.2--00" inside table
-    When I enter values "Test Automation" into textarea for table id "---program:-:tmpGrantorActiveAwardsGridTableId---"
+    When I enter value "Test Automation" into field "Agreement1__c"
     When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
     Then I see value "Test Automation" for multiple cells at column "Agreement1__c"
 
@@ -334,7 +334,8 @@ Feature: Logged Issues Scenarios
     When I click on top right button "New" in flex table with id "---program:-:programTableDivId---"
     When I click dropdown field "fieldBusinessRole__c"
     When I pause execution for "3" seconds
-    Then I see "Program Approver:Key POC:Owner" inside selectbox field "fieldBusinessRole__c"
+    Then I see only the following ordered options in dropdown field "BusinessRole__c" :
+      | --None-- | Program Approver | Key POC | Owner |
 
   @56537    @submitForApprovalButtonInsideMenuOptionAtGrantDetailPage
   Scenario: validate submit for approval button is not displayed inside menu option
@@ -546,7 +547,8 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "FOA--114"
     When I click on "Edit" icon for "FOA--114" inside table
     When I click dropdown field "fieldAnnouncementType__c"
-    Then I see "Competitive:Sole Source/Directed" inside selectbox field "fieldAnnouncementType__c"
+    Then I see only the following ordered options in dropdown field "AnnouncementType__c" :
+      | --None-- | Competitive | Sole Source/Directed |
 
   @56414    @globalSearchPopUpMessageShouldDisplayedProperly @check @wip
   Scenario Outline: validate global search alert pop up box display message properly on UI
@@ -605,7 +607,8 @@ Feature: Logged Issues Scenarios
     When I click on "Edit" icon for "Test Announcement For Automation" inside table
     When I navigate to "Financials" sub tab
     When I click dropdown field "fieldDetailedBudgetingRequired__c"
-    Then I see "Yes:No" inside selectbox field "fieldDetailedBudgetingRequired__c"
+    Then I see only the following ordered options in dropdown field "DetailedBudgetingRequired__c" :
+      | --None-- | Yes | No |
 
   @56581    @editButtonShouldNotDisplayedForAwardInSubmitForApprovalStatus
   Scenario: validate edit button should not displayed on Page detail for award which is in submit for approval state

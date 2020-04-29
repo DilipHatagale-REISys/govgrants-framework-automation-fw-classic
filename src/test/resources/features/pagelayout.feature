@@ -1,4 +1,4 @@
-@pagelayout-component @regression
+@pagelayout-component @regression @pageLayout
 Feature: Page Layout Component Scenarios
   Test all page layout component based scenarios
   As a configuration manager i make different configurational changes in page layout component and will validate them.
@@ -1813,3 +1813,15 @@ Feature: Page Layout Component Scenarios
     When I click on "Submit For Approval" in the page details
     Then I see the following message in the page details :
       | Authorization is Required to submit under Overview. |
+
+  @79735    @verifyByClickOnUserValueItShouldRedirectedToRespectiveUserPageAtPageLayout-gPlanning
+  Scenario: validate by click on user value in table , respective user page should get opens at page layout - gPlanning
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    When I click "Nauman Shahid" lookup link
+    Then I see "User" shown as over view header

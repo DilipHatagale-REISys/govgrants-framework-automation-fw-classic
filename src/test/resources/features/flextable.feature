@@ -1,4 +1,4 @@
-@flextable-component @regression
+@flextable-component @regression @flexTable
 Feature: Flex Table Component Scenarios
   Test all flex table component based scenarios
   As a configuration manager i make different configurational changes in flex table component and will validate them.
@@ -996,6 +996,16 @@ Feature: Flex Table Component Scenarios
     When I enter value "Owner Of The Record" into field "fieldResponsibility__c"
     And I click modal button "Save"
     Then I see "Owner Of The Record" inside Application Budget flex table for specified record "Owner"
+
+  @79734    @verifyByClickOnUserValueItShouldRedirectedToRespectiveUserPageAtFlexTable-gPlanning
+  Scenario: validate by click on user value in table , respective user page should gets opened at FlexTable - gPlanning
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Nauman Shahid" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    Then I see "User" shown as over view header
 
 #  @flextablebug-test
 #  Scenario: Run flex table specific steps for specific time continuosly to ensure no error is displayed
