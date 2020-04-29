@@ -214,11 +214,6 @@ public class FlexTableSteps {
         flexTablePage.assertToogleButtonIsDisplayed(anyItemContainedInDropDown);
     }
 
-    @Then("^I see \"([^\"]*)\" inside selectbox field \"([^\"]*)\"$")
-    public void assertValueInsideSelectDropdownValues(String dropDownValue, String fieldApiName) {
-        flexTablePage.assertValueInsideSelectDropdownAtPageDetail(dropDownValue, fieldApiName);
-    }
-
     @Then("^I see alert message \"([^\"]*)\"$")
     public void assertConfirmationAlertMessage(String message) {
         flexTablePage.assertTextMessageOnConfirmationAlert(message);

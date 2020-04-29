@@ -1,4 +1,4 @@
-@flexgrid-component @regression
+@flexgrid-component @regression @flexGrid
 Feature: Flex Grid Component Scenarios
   Abbreviations: ProgramPerformanceMgmtGridView (PPMGV)
   Test all flex grid component based scenarios
@@ -2113,3 +2113,46 @@ Feature: Flex Grid Component Scenarios
     Examples:
       | defaultFieldsApi                                               | newFieldsApi                                                                                               |
       | Year__c,BudgetStartDate__c,BudgetEndDate__c,Status__c,Notes__c | Year__c,BudgetStartDate__c,BudgetEndDate__c,Status__c,Notes__c,Application__r.ExternalOrganization__r.Name |
+
+  @79730    @verifyByClickOnUserValueItShouldRedirectedToRespectiveUserPageAtMEGrid-gApplication
+  Scenario Outline: validate by click on user value in table , respective user page should get opens at ME Grid - gApplication
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetPeriods |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    And I perform quick search for "BP-02" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I click on "David PM" icon for "BP-02" inside table
+    Then I see "User" shown as over view header
+
+    Examples:
+      | defaultFieldsApi                                                         | newFieldsApi                                                                         |
+      | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c,CreatedById |
+
+  @79731    @verifyByClickOnUserValueItShouldRedirectedToRespectiveUserPageAtN2GGrid-gGrant
+  Scenario Outline: validate by click on user value in table , respective user page should get opens at N2G Grid - gGrant
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | GrantorBudgetPeriod |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Financials" sub tab
+    When I click on "David PM" icon for "2021" inside table
+    Then I see "User" shown as over view header
+
+    Examples:
+      | defaultFieldsApi                                               | newFieldsApi                                                               |
+      | Year__c,BudgetStartDate__c,BudgetEndDate__c,Status__c,Notes__c | Year__c,BudgetStartDate__c,BudgetEndDate__c,Status__c,Notes__c,CreatedById |

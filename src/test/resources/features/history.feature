@@ -1,4 +1,4 @@
-@history-component @regression
+@history-component @regression @history
 Feature: history Component Scenarios
   Test all history Component based scenarios
   As a configuration manager i make different changes related to flow and will validate them in history component.

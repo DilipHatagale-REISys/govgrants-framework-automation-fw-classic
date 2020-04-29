@@ -1,4 +1,4 @@
-@enhancedflexgrid-component @regression
+@enhancedflexgrid-component @regression @enhancedGrid
 Feature: Enhanced Flex Grid Component Scenarios
   Test all enhanced flex grid component based scenarios
   As a configuration manager i make different configurational changes in enhanced flex grid component and will validate them.
@@ -1777,7 +1777,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     When I click on "Edit" icon for "GT-GTRC-001" inside table
-    When I enter values "Test Automation" into textarea for table id "---program:-:flexGridEnhancedID---"
+    When I enter value "Test Automation" into field "AddressProgramContact__c"
     When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
     When I perform quick search for "GT-GTRC-001" in "---program:-:flexGridEnhancedID---" panel
     Then I see value "Test Automation" for multiple cells at column "AddressProgramContact__c"
@@ -1797,3 +1797,52 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I click on "Department of Higher Education" icon for "Demo_Title" inside table
     Then I see "Organization" shown as over view header
+
+  @79675    @verifyByClickOnUserValueItShouldRedirectedToRespectiveUserPageAtEnhancedGrid-gPlanning
+  Scenario Outline: validate by click on user value in table , respective user page should get opens at EnhancedGrid - gPlanning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    When I click on "David PM" icon for "Demo_Title" inside table
+    Then I see "User" shown as over view header
+
+    Examples:
+      | newFieldsApi                     | defaultFieldsApi                                                                                                                                                                                                                   |
+      | ProjectTitle__c,Name,CreatedById | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @79737  @verifyIfNoneIsSelectedInPicklistFieldThenAfterSaveABlankValueIsShownAtUIAtEnhancedGrid-gPlanning
+  Scenario Outline: validate if none is selected and saved in picklist from dropdown then blank value is shown at UI at EnhancedGrid - gPlanning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "test Program for automation DND" in "---program:-:flexGridEnhancedID---" panel
+    When I click on "Edit" icon for "test Program for automation DND" inside table
+    When I enter value "--None--" into field "GrantType__c"
+    When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
+    When I perform quick search for "test Program for automation DND" in "flexGridEnhancedDivId" panel
+    Then I see value "" for multiple cells at column "GrantType__c"
+
+    Examples:
+      | newFieldsApi                      | defaultFieldsApi                                                                                                                                                                                                                   |
+      | ProjectTitle__c,Name,GrantType__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |

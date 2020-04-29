@@ -431,15 +431,6 @@ public class FlexTablePage extends GovGrantsManager {
     }
 
     /**
-     * assert if specific value is displayed inside select dropdown list
-     *
-     * @param dropDownValue
-     */
-    public void assertValueInsideSelectDropdownAtPageDetail(String dropDownValue, String fieldApiName) {
-        Assert.assertTrue(isValuePresentInsideSelectDropdownPickList(dropDownValue, fieldApiName));
-    }
-
-    /**
      * assert if specified message is displayed inside confirmation alert box
      *
      * @param message
@@ -859,29 +850,6 @@ public class FlexTablePage extends GovGrantsManager {
         } catch (Exception e) {
         }
         return flag;
-    }
-
-    /**
-     * return true if picklist dropDownValue is displayed
-     *
-     * @param dropDownValue
-     * @param fieldApiName
-     * @return
-     */
-    private boolean isValuePresentInsideSelectDropdownPickList(String dropDownValue, String fieldApiName) {
-        String[] exp = null;
-        if (dropDownValue.contains(":")) {
-            exp = dropDownValue.split(":");
-        }
-        Boolean isValuePresent = false;
-        for (WebElement we : I.amPerforming().dropDownSelection().from(By.xpath("//div[@id='" + fieldApiName + "']//select")).getOptions()) {
-            for (int i = 0; i < exp.length; i++) {
-                if ((we.getAttribute("value") != "") && we.getText().trim().equals(exp[i])) {
-                    isValuePresent = true;
-                }
-            }
-        }
-        return isValuePresent;
     }
 
     /**
