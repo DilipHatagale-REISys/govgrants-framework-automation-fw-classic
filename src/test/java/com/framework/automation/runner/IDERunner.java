@@ -7,10 +7,10 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        glue = {"setup","com.framework.automation.steps","com.automation.rei.govgrantsSteps","com.TestingBlazeGlobal.actionsfactory.gherkin","com.TestingBlazeGlobal.register"},
+        glue = {"setup","com.framework.automation.steps","com.automation.rei.govgrantsSteps","com.testingblaze.actionsfactory.gherkin","com.testingblaze.register"},
         features = {"src/test/resources/features"},
-        plugin = {"json:target/cucumber-report/cucumber.json","eyethink.automation.bots.controller.ReportingLogsPlugin","html:target/cucumber-html"},
-        tags = {"@59827"},
+        plugin = {"json:target/cucumber-report/cucumber.json","com.testingblaze.controller.ReportingLogsPlugin","html:target/cucumber-html"},
+        tags = {"@successEmailSentToProgramOwner-Programs"},
         monochrome = true
 )
 public class IDERunner {
