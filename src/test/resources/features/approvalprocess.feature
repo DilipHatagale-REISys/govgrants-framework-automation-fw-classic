@@ -201,7 +201,7 @@ Feature: Approval Process Component Scenarios
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "3" seconds
     When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
-    And I pause execution for "3" seconds
+    When I pause execution for "3" seconds
     And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
     And I enter value "Active" into field "fieldStatus__c"
     And I click modal button "Save"
@@ -218,6 +218,7 @@ Feature: Approval Process Component Scenarios
     And I navigate to "Financials" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:fundingAccountInformationTableId---"
     When I click "Add" after selection of "FA-17-03" in the table "---program:-:fundingAccountSelectionTableId---"
+    When I pause execution for "3" seconds
     And I navigate to "Financials" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:budgetCategoryTableId---"
     When I click "Add" after selection of "SBC-A-209" in the table "---program:-:budgetCategorySelectionTableId---"
