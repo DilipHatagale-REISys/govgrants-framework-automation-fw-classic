@@ -26,7 +26,7 @@ public class FlexGridPage extends GovGrantsManager {
     public FlexGridPage() {
         programOutcomesRowsInlineMode = By
                 .xpath("//div[@id='toggleFGridProgramOutcomes']//table/tbody/tr//*[@mode='edit']");
-        enableTotalSumValueForTargetColumn = By.xpath("//b[@class='totalFullDisplayFlex']//span");
+        enableTotalSumValueForTargetColumn = By.xpath("//div[@id='toggleFGridProgramOutcomes']//b[@class='totalFullDisplayFlex']//span");
     }
 
     /******* "Key Methods with complete functionality - public" *****************/
@@ -230,6 +230,20 @@ public class FlexGridPage extends GovGrantsManager {
      */
     public void assertTextContainingRowAtChildFlexTabel(String text, String tableId) {
         Assert.assertTrue(isExpectedTextIsDisplayedAtChildFlexTabledRow(text, tableId));
+    }
+
+    /**
+     * assert if default total is not displayed for currency field at Program Outcomes Flex Grid(ME Grid)
+     */
+    public void assertDefaultTotalAtProgramOutcomesFlexGrid() {
+        Assert.assertFalse(isDefaultTotalDisplayedAtProgramOutcomesFlexGrid());
+    }
+
+    /**
+     * assert if default total is not displayed for currency field at active grants Flex Grid(N2G Grid)
+     */
+    public void assertDefaultTotalAtActiveGrantsFlexGrid() {
+        Assert.assertFalse(isDefaultTotalDisplayedAtActiveGrantsFlexGrid());
     }
 
     /*********
@@ -506,6 +520,34 @@ public class FlexGridPage extends GovGrantsManager {
         String str = I.amPerforming().actionToGet().text(By.xpath("//div[@id='" + tableId + "']//div/table/tfoot"));
         try {
             if (str.equalsIgnoreCase(text)) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * @return false if default total is not displayed inside for currency field at ME Grid
+     */
+    private Boolean isDefaultTotalDisplayedAtProgramOutcomesFlexGrid() {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(enableTotalSumValueForTargetColumn)) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * @return false if default total is not displayed inside for currency field at N2G Grid
+     */
+    private Boolean isDefaultTotalDisplayedAtActiveGrantsFlexGrid() {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//td[contains(@class,'headerCell')]//span"))) {
                 flag = true;
             }
         } catch (Exception e) {

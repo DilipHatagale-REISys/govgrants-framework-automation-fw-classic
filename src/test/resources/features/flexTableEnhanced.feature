@@ -1,4 +1,4 @@
-@flextableEnhanced-component @regression
+@flextableEnhanced-component @regression @flexTableEnhanced
 Feature: Flex Table enhanced Component Scenarios
   Test all flex table enhanced component based scenarios
   As a configuration manager i make different configurational changes in flex table enhanced component and will validate them.
@@ -375,45 +375,3 @@ Feature: Flex Table enhanced Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     Then I see "Number of Project Areas" not displayed in enhanced grid table column title
-
-  @77434    @validateDownloadedPDFContentIfShowInPDFCheckboxIsCheckedAtFlexTableEnhanced-gPlanning
-  Scenario: validate Activated status in downloaded pdf file for enhanced data table -planning
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Grid:Flex Table List | Show in PDF         | true              | ApiGeneratedId:0 |
-      | Flex Grid                 | Enable Export (PDF) | true              | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Show in PDF         | true          | EnhancedDataTable  | Name                      | FLV-2548                   |
-      | Flex Grid:General     | Enable Export (PDF) | true          | EnhancedDataTable  |                           |                            |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I navigate to "Financials" sub tab
-    When I click on parallel lines menu bar with data target value "#EnhancedDataTableFlexToggle"
-    And I select "Download as PDF" from parallel lines dropdown of "Grants Enhanced Table"
-    And I download the file
-    Then I see "Active" on page "1" of "govgrants" pdf file
-
-  @77472    @validateDownloadedXLSContentIfShowInPDFCheckboxIsCheckedAtFlexTableEnhanced-gPlanning
-  Scenario: validate Activated status in downloaded xls file for enhanced data table -planning
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
-      | Flex Grid             | Enable Export (xls / csv) | true              | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Show in PDF               | true          | EnhancedDataTable  | Name                      | FLV-2548                   |
-      | Flex Grid:General     | Enable Export (xls / csv) | true          | EnhancedDataTable  |                           |                            |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I navigate to "Financials" sub tab
-    When I click on parallel lines menu bar with data target value "#EnhancedDataTableFlexToggle"
-    And I select "Download as XLS" from parallel lines dropdown of "Grants Enhanced Table"
-    Then I see "Active" in downloaded xls or csv file "govgrants"

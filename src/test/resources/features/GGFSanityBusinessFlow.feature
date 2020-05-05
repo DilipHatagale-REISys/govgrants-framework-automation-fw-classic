@@ -199,6 +199,7 @@ Feature: Sanity check for all Component Scenarios
     When I navigate to "Planning" tab
     When I click on footer links "508 Compliance"
     When I switch to tab number "1"
+    When I pause execution for "3" seconds
     Then I see "Complete" "<Logout_URL>" page is displayed
     Examples:
       | Logout_URL                                                                        |

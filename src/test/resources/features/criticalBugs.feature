@@ -1828,7 +1828,7 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    Then I see over all total sum is not displayed for "TotalAwardObligatedAmount__c"
+    Then I see over all total sum is not displayed for "TotalAwardObligatedAmount__c" inside "---program:-:flexGridEnhancedID---" table
 
   @56392    @amountShouldGetEnterAtMatchSecuredFieldOnIEBrowser
   Scenario: validate amount should get enter at match secured field of Program budget table

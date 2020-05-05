@@ -1846,3 +1846,98 @@ Feature: Enhanced Flex Grid Component Scenarios
     Examples:
       | newFieldsApi                      | defaultFieldsApi                                                                                                                                                                                                                   |
       | ProjectTitle__c,Name,GrantType__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @80046    @verifyModalTitleFieldForEnhancedGridRowLevelPreviewAction-gPlanning
+  Scenario: Setup modal title for enhanced grid preview action from configuration and validating it at e-grid-planning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Modal Title |                   | TmpActiveGrantsGrid | Name                      | Preview                    |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName   | fieldNewValue    | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Modal Title | Automation Title | TmpActiveGrantsGrid | Name                      | Preview                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
+    When I click on "Preview" icon for "Demo_Title" inside table
+    Then I see "Automation Title" opens in overLay window
+
+  @80047    @verifyModalTitleFieldForEnhancedGridTopLevelPreviewAction-gPlanning
+  Scenario: Setup modal title for enhanced grid preview action from configuration and validating it at e-grid-planning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Modal Title |                   | TmpActiveGrantsGrid | Name                      | Create                     |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName   | fieldNewValue    | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Modal Title | Automation Title | TmpActiveGrantsGrid | Name                      | Create                     |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I click on top right button "Create" in flex table with id "---program:-:flexGridEnhancedID---"
+    Then I see "Automation Title" opens in overLay window
+
+  @80071    @verifyDisplayFieldValueAtInternalOrganizationAtEnhancedGrid-gPlanning
+  Scenario: verify display Field value at internal organization column at enhanced grid-gPlanning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table List       | Display Field |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Display Field | County__c     | TmpActiveGrantsGrid | Name                      | FTC-1486                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    Then I see value "USA" for multiple cells at column "InternalOrganization__c"
+
+  @80183    @defaultOverallTotalForCurrencyFieldIsNotDisplayedAtParentFlexTableForEnhancedGrid-gPlanning
+  Scenario: validate enabling of overall total field after checking checkbox true of Enable Over All Total from config and validating it inside enhanced grid of programs-planning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Flex Table List       | Enable Over All Total | false             | ApiGeneratedId:0 |
+      | Flex Table            | Enable Total Row      | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Over All Total | false         | TmpActiveGrantsGrid | Name                      | FTC-1491                   |
+      | Flex Table:General    | Enable Total Row      | false         | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    Then I see over all total sum is not displayed for "TotalAwardObligatedAmount__c" inside "---program:-:flexGridEnhancedID---" table
+
+  @80067   @verifyLookupFieldShouldBeInViewModeIfEnableEditDisplayFieldCheckboxIsUnchecked-gPlanning
+  Scenario: validate lookup field is in view mode after unchecking the Enable Edit Display Field from config at e-grid - gplanning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table List       | Display Field             |                   | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Edit Display Field | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Display Field             | County__c     | TmpActiveGrantsGrid | Name                      | FTC-1486                   |
+      | Flex Table List       | Enable Edit Display Field | false         | TmpActiveGrantsGrid | Name                      | FTC-1486                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab54
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    When I click on "Edit" icon for "Demo_Title" inside table
+    Then I do not see "InternalOrganization__c" field is editable inside enhanced grid

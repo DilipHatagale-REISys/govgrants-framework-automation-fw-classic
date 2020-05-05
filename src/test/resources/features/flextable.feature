@@ -1007,6 +1007,22 @@ Feature: Flex Table Component Scenarios
     When I click on "Nauman Shahid" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "User" shown as over view header
 
+  @80156    @validateDefaultTotalAtCurrencyFieldIsNotDisplayedAtFlexTable-gPlanning
+  Scenario: validate default total amount inside funded amount column is not displayed inside flex table of programs-planning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table List       | Enable Total     | true              | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Total Row | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Total     | false         | Programs           | Name                      | FTC-1018                   |
+      | Flex Table:General    | Enable Total Row | false         | Programs           |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    Then I do not see total amount in flex table
+
 #  @flextablebug-test
 #  Scenario: Run flex table specific steps for specific time continuosly to ensure no error is displayed
 #    When I login as "Automation" user

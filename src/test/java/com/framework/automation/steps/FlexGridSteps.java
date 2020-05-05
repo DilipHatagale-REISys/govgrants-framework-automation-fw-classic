@@ -121,12 +121,22 @@ public class FlexGridSteps {
     }
 
     @Then("^I see \"([^\"]*)\" currency unit is present in \"([^\"]*)\" Amount at \"([^\"]*)\" Flex Grid$")
-    public void assertCurrencyUnitInMEGridTotalAmount(String currencyUnit, String rowLabel, String tableID ) {
+    public void assertCurrencyUnitInMEGridTotalAmount(String currencyUnit, String rowLabel, String tableID) {
         flexGridPage.assertMEGridCurrencyUnitInTotalAmount(currencyUnit, rowLabel, tableID);
     }
 
     @Then("^I see \"([^\"]*)\" inside rows of child grid id \"([^\"]*)\"$")
     public void assertNewRowsWithTextAtChildFlexTable(String text, String tableId) {
         flexGridPage.assertTextContainingRowAtChildFlexTabel(text, tableId);
+    }
+
+    @Then("I do not see default total at program outcomes flex grid")
+    public void assertDefaultTotalAtProgramOutcomesFlexGridIsNotDisplayed() {
+        flexGridPage.assertDefaultTotalAtProgramOutcomesFlexGrid();
+    }
+
+    @Then("I do not see default total at active grants flex grid")
+    public void assertDefaultTotalAtActiveGrantsFlexGridIsNotDisplayed() {
+        flexGridPage.assertDefaultTotalAtActiveGrantsFlexGrid();
     }
 }
