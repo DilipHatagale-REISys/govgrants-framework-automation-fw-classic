@@ -2156,3 +2156,39 @@ Feature: Flex Grid Component Scenarios
     Examples:
       | defaultFieldsApi                                               | newFieldsApi                                                               |
       | Year__c,BudgetStartDate__c,BudgetEndDate__c,Status__c,Notes__c | Year__c,BudgetStartDate__c,BudgetEndDate__c,Status__c,Notes__c,CreatedById |
+
+  @80174    @VerifyDefaultTotalIsNotDisplayedAtCurrencyFieldIfEnableTotalIsUncheckedAtProgramOutcomesFlexTable-gPlanning
+  Scenario: Validating default total for currency field after setting Enable total and Enable Total Row to false from config and validating it inside ME Grid-planning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table List       | Enable Total     | false             | ApiGeneratedId:0 |
+      | Flex Table:General    | Enable Total Row | false             | ApiGeneratedId:1 |
+      | Flex Table List       | Enable Total     | false             | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Total     | false         | ProgramOutcomes    | Name                      | FTC-1188                   |
+      | Flex Table:General    | Enable Total Row | false         | ProgramOutcomes    |                           |                            |
+      | Flex Table List       | Enable Total     | false         | ProgramOutcomes    | Name                      | FTC-1503                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Plan" sub tab
+    Then I do not see default total at program outcomes flex grid
+
+  @80182    @VerifyDefaultTotalIsNotDisplayedAtCurrencyFieldIfEnableTotalIsUncheckedAtN2GGrid-gGrant
+  Scenario: Validating default total for currency field after setting Enable total and Enable Total Row to false from config and validating it inside N2G Grid-GRANT
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table List       | Enable Total     | true              | ApiGeneratedId:0 |
+      | Flex Table:General    | Enable Total Row | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Total     | false         | ActiveGrants       | Name                      | FTC-870                    |
+      | Flex Table:General    | Enable Total Row | false         | ActiveGrants       |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    Then I do not see default total at active grants flex grid

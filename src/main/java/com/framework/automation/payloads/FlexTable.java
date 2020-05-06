@@ -175,6 +175,20 @@ public class FlexTable {
                                 String.valueOf(SObjectAPIs.GNT__FlexTableFilterListViewConfig__c), filterClause),
                         String.valueOf(SObjectAPIs.GNT__IsDefault__c), value);
                 break;
+            case "DISPLAY FIELD":
+                finalPayload = String
+                        .format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c),
+                                apiUtilities.getComponentCoreFieldId(
+                                        String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c), filterClause),
+                                String.valueOf(SObjectAPIs.GNT__DisplayFields__c), value);
+                break;
+            case "ENABLE EDIT DISPLAY FIELD":
+                finalPayload = String
+                        .format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c),
+                                apiUtilities.getComponentCoreFieldId(
+                                        String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c), filterClause),
+                                String.valueOf(SObjectAPIs.GNT__EnableEditDisplayField__c), value);
+                break;
         }
         System.out.println(finalPayload);
         return finalPayload;

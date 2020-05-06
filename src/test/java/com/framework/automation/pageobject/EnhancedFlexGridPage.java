@@ -477,8 +477,19 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     /**
      * return true if over all total sum is not displayed for expected column
      */
-    public void assertOverAllTotalNotDisplayed(String fieldApiNAme) {
-        Assert.assertTrue(isOverAllTotalIsDisplayed(fieldApiNAme));
+    public void assertOverAllTotalNotDisplayed(String fieldApiNAme, String tableId) {
+        Assert.assertTrue(isOverAllTotalIsDisplayed(fieldApiNAme, tableId));
+    }
+
+    /**
+     * return if lookup field is ediatble/not editable at enhanced grid
+     */
+    public void assertLookupFieldIsNotEditableAtEnhancedGrid(String usage, String fieldApiName) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isLookupFieldIsEditableAtEnhancedGrid(fieldApiName));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isLookupFieldIsEditableAtEnhancedGrid(fieldApiName));
+        }
     }
 
     /*********
@@ -1333,14 +1344,31 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 
     /**
      * @param fieldApiName
+     * @param tableId
      * @return true Over All Total is not displayed for expected column
      */
-    private Boolean isOverAllTotalIsDisplayed(String fieldApiName) {
+    private Boolean isOverAllTotalIsDisplayed(String fieldApiName, String tableId) {
         boolean flag = true;
         I.amPerforming().scroll().onPageToSpecificElement(completeTableRowOfEnhancedGrid);
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//field[@field-name='" + fieldApiName + "' and @record='tableCommunicator.overAllTotalValue']/span"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='" + tableId + "']//field[@field-name='" + fieldApiName + "' and @record='tableCommunicator.overAllTotalValue']/span"))) {
                 flag = false;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * @param fieldApiName
+     * @return true if lookup field is not editable for enhanced grid
+     */
+    private Boolean isLookupFieldIsEditableAtEnhancedGrid(String fieldApiName) {
+        boolean flag = false;
+        I.amPerforming().scroll().onPageToSpecificElement(completeTableRowOfEnhancedGrid);
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//field[@field-name='" + fieldApiName + "']//div[contains(@class,'select2-container')]"))) {
+                flag = true;
             }
         } catch (Exception e) {
         }

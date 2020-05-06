@@ -1155,3 +1155,79 @@ Feature: All pdf and xls related scenario including component and completed back
     Examples:
       | newFieldsApi                      | defaultFieldsApi                                                                                                                                                                                                                   | newSoqlFilter                                                                                          | oldSoqlFilter                                    |
       | ProjectTitle__c,Name,GrantType__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c='test Program for automation DND' | RecordType.Name='Grantor' and status__c='Active' |
+
+  @77434    @validateDownloadedPDFContentIfShowInPDFCheckboxIsCheckedAtFlexTableEnhanced-gPlanning @flexTableEnhanced
+  Scenario: validate Activated status in downloaded pdf file for enhanced data table -planning
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Grid:Flex Table List | Show in PDF         | true              | ApiGeneratedId:0 |
+      | Flex Grid                 | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Show in PDF         | true          | EnhancedDataTable  | Name                      | FLV-2548                   |
+      | Flex Grid:General     | Enable Export (PDF) | true          | EnhancedDataTable  |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I click on parallel lines menu bar with data target value "#EnhancedDataTableFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Grants Enhanced Table"
+    And I download the file
+    Then I see "Active" on page "1" of "govgrants" pdf file
+
+  @77472    @validateDownloadedXLSContentIfShowInPDFCheckboxIsCheckedAtFlexTableEnhanced-gPlanning @flexTableEnhanced
+  Scenario: validate Activated status in downloaded xls file for enhanced data table -planning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Grid             | Enable Export (xls / csv) | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Show in PDF               | true          | EnhancedDataTable  | Name                      | FLV-2548                   |
+      | Flex Grid:General     | Enable Export (xls / csv) | true          | EnhancedDataTable  |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I click on parallel lines menu bar with data target value "#EnhancedDataTableFlexToggle"
+    And I select "Download as XLS" from parallel lines dropdown of "Grants Enhanced Table"
+    Then I see "Active" in downloaded xls or csv file "govgrants"
+
+  @79744    @verifyIfNoneIsSelectedInPicklistFieldThenAfterSaveABlankValueIsShownInDownloadedXLSAtEnhancedGrid-gPlanning @enhancedGrid
+  Scenario Outline: validate if none is selected and saved in picklist from dropdown then blank value is shown in downloaded XLS - EnhancedGrid
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid                 | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Grid:Flex Table List | Show in PDF         | false              | ApiGeneratedId:1 |
+      | Flex Grid:Flex Table List | Is Master View      | true               | ApiGeneratedId:2 |
+      | Flex Table List           | Filter Clause       | <oldSoqlFilter>    | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName           | fieldNewValue   | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General         | Display Field Names | <newFieldsApi>  | TmpActiveGrantsGrid |                           |                            |
+      | Flex Grid:Flex Table List | Show in PDF         | true            | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Grid:Flex Table List | Is Master View      | true            | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Table List           | Filter Clause       | <newSoqlFilter> | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "test Program for automation DND" in "---program:-:flexGridEnhancedID---" panel
+    When I click on "Edit" icon for "test Program for automation DND" inside table
+    When I enter value "--None--" into field "GrantType__c"
+    When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
+    When I navigate to "Financials" sub tab
+    When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
+    And I select "Download as XLS" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
+    Then I see "" in downloaded xls or csv file "govgrants"
+
+    Examples:
+      | newFieldsApi                      | defaultFieldsApi                                                                                                                                                                                                                   | newSoqlFilter                                                                                          | oldSoqlFilter                                    |
+      | ProjectTitle__c,Name,GrantType__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c='test Program for automation DND' | RecordType.Name='Grantor' and status__c='Active' |

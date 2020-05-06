@@ -144,9 +144,9 @@ public class FlexTableSteps {
         flexTablePage.assertCorrectFlexTableColumnTitleDisplayed(columnTitleName);
     }
 
-    @Then("^I see total amount in flex table$")
-    public void assertTotalAmountInFlexTable() {
-        flexTablePage.assertFlexTabelTotalCalulationAmountDiplayed();
+    @Then("^I (see|do not see) total amount in flex table$")
+    public void assertTotalAmountInFlexTable(String usage) {
+        flexTablePage.assertFlexTabelTotalCalulationAmountDiplayed(usage);
     }
 
     @Then("^I see \"([^\"]*)\" row action Button at position \"([^\"]*)\"$")

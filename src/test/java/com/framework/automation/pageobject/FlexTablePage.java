@@ -235,12 +235,15 @@ public class FlexTablePage extends GovGrantsManager {
     /**
      * assert true if total calculation amount field is displayed
      */
-    public void assertFlexTabelTotalCalulationAmountDiplayed() {
+    public void assertFlexTabelTotalCalulationAmountDiplayed(String usage) {
         try {
-            I.amPerforming().scroll().onPageDocument("PageDown", 0, 0);
+            if (usage.equalsIgnoreCase("see")) {
+                Assert.assertTrue(isTotalAmountFieldAtFlexTableDisplayed());
+            } else if (usage.equalsIgnoreCase("do not see")) {
+                Assert.assertFalse(isTotalAmountFieldAtFlexTableDisplayed());
+            }
         } catch (Exception e) {
         }
-        Assert.assertTrue(isTotalAmountFieldAtFlexTableDisplayed());
     }
 
     /**

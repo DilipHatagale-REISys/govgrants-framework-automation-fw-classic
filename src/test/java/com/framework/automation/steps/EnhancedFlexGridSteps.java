@@ -252,8 +252,13 @@ public class EnhancedFlexGridSteps {
         enhancedFlexGrid.assertUpArrowWithSortingAtMultipleField();
     }
 
-    @Then("^I see over all total sum is not displayed for \"([^\"]*)\"$")
-    public void assertUpArrowForMultipleField(String fieldApiName) {
-        enhancedFlexGrid.assertOverAllTotalNotDisplayed(fieldApiName);
+    @Then("^I see over all total sum is not displayed for \"([^\"]*)\" inside \"([^\"]*)\" table$")
+    public void assertUpArrowForMultipleField(String fieldApiName , String tableId) {
+        enhancedFlexGrid.assertOverAllTotalNotDisplayed(fieldApiName , tableId);
+    }
+
+    @Then("I (see|do not see) \"([^\"]*)\" field is editable inside enhanced grid$")
+    public void assertFieldIsNotEditableInsideEnhancedGrid(String usage, String fieldApiName) {
+        enhancedFlexGrid.assertLookupFieldIsNotEditableAtEnhancedGrid(usage , fieldApiName);
     }
 }
