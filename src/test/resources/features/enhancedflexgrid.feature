@@ -1941,3 +1941,60 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I click on "Edit" icon for "Demo_Title" inside table
     Then I do not see "InternalOrganization__c" field is editable inside enhanced grid
+
+  @80068   @verifyLookupFieldShouldBeInViewModeIfEnableEditDisplayFieldCheckboxIsChecked-gPlanning
+  Scenario: validate lookup field is in view mode after checking the Enable Edit Display Field from config at e-grid - gplanning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table List       | Display Field             |                   | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Edit Display Field | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Display Field             | County__c     | TmpActiveGrantsGrid | Name                      | FTC-1486                   |
+      | Flex Table List       | Enable Edit Display Field | true          | TmpActiveGrantsGrid | Name                      | FTC-1486                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    When I click on "Edit" icon for "Demo_Title" inside table
+    Then I see "InternalOrganization__c" field is editable inside enhanced grid
+
+  @80502   @verifyHyperlinkShouldNotBePresentAtColumnValueIfEnableHyperlinkAsTextFieldCheckboxIsChecked-gPlanning
+  Scenario: validate hyperlink is not present at column value after checking the Enable Hyperlink As Text Field from config at e-grid - gplanning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                | fieldOrignalValue | filterId         |
+      | Flex Grid             | Enable Hyperlink As Text | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Hyperlink As Text | true          | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    Then I do not see hyperlink at column value "Department of Transportation" inside "---program:-:enhancedGridTableId---" table
+
+  @80506   @verifyHyperlinkShouldBePresentAtColumnValueIfEnableHyperlinkAsTextFieldCheckboxIsUnchecked-gPlanning
+  Scenario: validate hyperlink is present at column value after unchecking the Enable Hyperlink As Text Field from config at e-grid - gplanning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                | fieldOrignalValue | filterId         |
+      | Flex Grid             | Enable Hyperlink As Text | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Hyperlink As Text | false          | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    Then I see hyperlink at column value "Department of Transportation" inside "---program:-:enhancedGridTableId---" table

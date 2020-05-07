@@ -181,6 +181,12 @@ public class FlexGrid {
                                 .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
                         String.valueOf(SObjectAPIs.GNT__RequiredFields__c), value);
                 break;
+            case "ENABLE HYPERLINK AS TEXT":
+                finalPayload = String.format(
+                        payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), apiUtilities
+                                .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__EnableHyperLinkAsText__c), value);
+                break;
         }
         System.out.println(finalPayload);
         return finalPayload;
