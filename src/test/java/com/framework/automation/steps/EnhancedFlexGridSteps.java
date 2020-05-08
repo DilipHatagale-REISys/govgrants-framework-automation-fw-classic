@@ -261,4 +261,9 @@ public class EnhancedFlexGridSteps {
     public void assertFieldIsNotEditableInsideEnhancedGrid(String usage, String fieldApiName) {
         enhancedFlexGrid.assertLookupFieldIsNotEditableAtEnhancedGrid(usage , fieldApiName);
     }
+
+    @Then("I (see|do not see) hyperlink at column value \"([^\"]*)\" inside \"([^\"]*)\" table$")
+    public void assertHyperlinkAtColumnValueInsideEnhancedGrid(String usage, String columnValue, String tableId) {
+        enhancedFlexGrid.assertHyperlinkIsDisplayedAtColumnValueInsideEnhancedGrid(usage, columnValue, tableId);
+    }
 }
