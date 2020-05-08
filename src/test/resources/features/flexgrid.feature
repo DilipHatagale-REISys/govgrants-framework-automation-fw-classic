@@ -2192,22 +2192,3 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     Then I do not see default total at active grants flex grid
-
-  @80933    @verifyDoubleDollarSymbolInCurrencyFieldIsNotDisplayedForTotalAtMEGrid-gApplication
-  Scenario: validate double dollar symbol at currency field total is not displayed at ME Grid - gApplication
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
-      | Flex Table List       | Enable Total     | false             | ApiGeneratedId:0 |
-      | Flex Table:General    | Enable Total Row | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Total     | true          | ProgramOutcomes    | Name                      | FTC-1503                   |
-      | Flex Table:General    | Enable Total Row | true          | ProgramOutcomes    |                           |                            |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I navigate to "Plan" sub tab
-    Then I see enable total sum for target column at program outcomes flex grid

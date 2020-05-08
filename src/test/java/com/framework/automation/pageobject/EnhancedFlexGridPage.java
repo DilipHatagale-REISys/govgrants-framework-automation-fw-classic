@@ -1395,7 +1395,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         boolean flag = false;
         I.amPerforming().scroll().onPageToSpecificElement(completeTableRowOfEnhancedGrid);
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='" + tableId + "']//span[text()='" + columnValue + "' and contains(@ng-if,'EnableHyperLinkAsText == false')] | //div[@id='"+tableId+"']//span[contains(@ng-if,'EnableHyperLinkAsText == false')]//a[text()='"+columnValue+"']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='" + tableId + "']//span[text()='" + columnValue + "'] | //div[@id='" + tableId + "']//a[text()='" + columnValue + "']"))) {
                 flag = true;
             }
         } catch (Exception e) {

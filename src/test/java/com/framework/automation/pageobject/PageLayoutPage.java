@@ -767,9 +767,11 @@ public class PageLayoutPage extends GovGrantsManager {
     public void enterValueInSendEmailModalFields(String value, String fieldLabel) {
         if (fieldLabel.equalsIgnoreCase("Body Content")) {
             WebElement fieldOnSendEmailModal = I.amPerforming().getElementReference().of(By.xpath("//label[contains(text(),'" + fieldLabel + "')]/following-sibling::div//textarea"));
+            I.amPerforming().textInput().toClear(fieldOnSendEmailModal);
             fieldOnSendEmailModal.sendKeys(value);
         } else {
             WebElement fieldOnSendEmailModal = I.amPerforming().getElementReference().of(By.xpath("//label[contains(text(),'" + fieldLabel + "')]/following-sibling::div//input[@type='text']"));
+            I.amPerforming().textInput().toClear(fieldOnSendEmailModal);
             fieldOnSendEmailModal.sendKeys(value);
         }
     }
