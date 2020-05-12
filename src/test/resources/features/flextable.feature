@@ -1030,4 +1030,3 @@ Feature: Flex Table Component Scenarios
 #    And I navigate to "Planning" tab
 #    When I perform sequence of actions on flex table for "120" minute
 #    Then I do not see "Bad Message 431" error
-	

@@ -1,4 +1,4 @@
-@libraryFiles-component @regression
+@libraryFiles-component @regression @libraryFiles
 Feature: Library Files Component Scenarios
   Test all library files component based scenarios
   As a configuration manager i make different configurations changes in library files component and will validate them.
@@ -1482,3 +1482,142 @@ Feature: Library Files Component Scenarios
     And I save the field containing "<string>" as "<string>"
     And I save the field labeled "<string>" as "<string>"
     Then I softly see field "Cash Match Required (%)" as "{SavedValue:MatchPercentage}"
+
+  @81170 @validateLabelOfUploadFileFromComputerTabUnderPlanningFilesTable-RecordLevel
+  Scenario: Verify that by click on Add file action at planning files table, first tab label displayed correctly - Planing Phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    Then I see tab label as "Upload File from Computer" at files library upload modal
+
+  @81171 @validateLabelOfUploadFileFromLibraryTabUnderPlanningFilesTable-RecordLevel
+  Scenario: Verify that by click on Add file action at planning files table, second tab label displayed correctly - Planing Phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    Then I see tab label as "Upload File from Library" at files library upload modal
+
+  @81172 @validateClassificationNameUnderSelectDropDownAtPlanningFilesTable-HomePhase-RecordLevel
+  Scenario: Verify name of classification under select classification field dropdown at add file modal - Planing Phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    Then I see Classification as "Select File Classification" at upload file modal
+
+  @81173 @validateUploadFileButtonNameAtPlanningFilesTable-RecordLevel
+  Scenario: Verify upload file button name at add file modal - Planing Phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    Then I see label as "Choose a File OR Drag it here" is displayed at upload file button
+
+  @81208 @validateUploadFileButtonNameAtPlanningFilesTable-HomePhase
+  Scenario: Verify upload file button name at add file modal - Home Phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
+    Then I see label as "Choose a File OR Drag it here" is displayed at upload file button
+
+  @81243 @validateThatSetAsDefaultFolderDropdownOptionIsNotDisplayedAtLibraryForSPIProfile-HomePhase
+  Scenario: Verify that Dropdown Option as Set As Default Folder is not Displayed at library under home phase for SPI profile
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on dropdown at library/folder/file "UnitedHealth Group"
+    Then I do not see "Set As Default Folder" option is present at library/folder/file "UnitedHealth Group"
+
+  @81309 @validateThatSetAsDefaultFolderDropdownOptionIsNotDisplayedAtFolderForSPIProfile-HomePhase
+  Scenario: Verify that Dropdown Option as Set As Default Folder is not Displayed at folder under home phase library for SPI profile
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "UnitedHealth Group"
+    When I click on dropdown at library/folder/file "Library-Folder 1 DND"
+    Then I do not see "Set As Default Folder" option is present at library/folder/file "Library-Folder 1 DND"
+
+  @81236 @validateThatDefaultKeyWordIsNotDisplayedAtLibraryForSPIProfile-HomePhase
+  Scenario: Verify that default keyword is not Displayed at Library under home phase library for SPI profile
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    Then I do not see Default keyword at "UnitedHealth Group" at library/folder
+
+  @81302 @validateThatDefaultKeyWordIsNotDisplayedAtFolderForSPIProfile-HomePhase
+  Scenario: Verify that  default keyword is not Displayed at folder under home phase library for SPI profile
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "Department of Community Health"
+    Then I do not see Default keyword at "testAutomationFolder3" at library/folder
+
+  @81311 @validateThatUploadFileFromLibraryTabIsNotDisplayedAtAddFileModalForSPIProfile-RecordLevel
+  Scenario: Verify that upload file from library tab is not Displayed at add file modal for SPI profile
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
+    Then I softly do not see tab label as "Upload File from Library" at files library upload modal
+    Then I softly see tab label as "Upload File from Computer" at files library upload modal
+
+  @81333 @validateThatDefaultKeyWordIsDisplayedAtLibraryForGovGrantAdminProfile-HomePhase
+  Scenario: Verify that default keyword is Displayed at Library under home phase library for GovGrant Admin profile
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    Then I see Default keyword at "UnitedHealth Group" at library/folder
+
+  @81344 @validateThatDefaultKeyWordIsDisplayedAtFolderForGovGrantAdminProfile-HomePhase
+  Scenario: Verify that default keyword is Displayed at folder under home phase library for GovGrant Admin profile
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "Department of Community Health"
+    Then I see Default keyword at "testAutomationFolder3" at library/folder
+
+  @81359 @validateThatSetAsDefaultFolderDropdownOptionIsDisplayedAtLibraryGovGrantAdminProfile-HomePhase
+  Scenario: Verify that Dropdown Option as Set As Default Folder is Displayed at library under home phase for GovGrant Admin profile
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on dropdown at library/folder/file "Department of Community Health"
+    Then I see "Set As Default Folder" option is present at library/folder/file "Department of Community Health"

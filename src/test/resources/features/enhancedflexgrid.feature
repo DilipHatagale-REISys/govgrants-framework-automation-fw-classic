@@ -1933,7 +1933,7 @@ Feature: Enhanced Flex Grid Component Scenarios
       | Flex Table List       | Enable Edit Display Field | false         | TmpActiveGrantsGrid | Name                      | FTC-1486                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab54
+    And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table

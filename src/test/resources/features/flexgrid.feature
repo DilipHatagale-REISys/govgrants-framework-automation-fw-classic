@@ -2129,7 +2129,7 @@ Feature: Flex Grid Component Scenarios
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
     And I perform quick search for "BP-02" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    When I click on "David PM" icon for "BP-02" inside table
+    When I click on "Bob Samuela" icon for "BP-02" inside table
     Then I see "User" shown as over view header
 
     Examples:

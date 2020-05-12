@@ -122,4 +122,24 @@ public class LibraryFilesSteps {
     public void assertValueShownInSearchTableAtFileUploadModal(String tableValue, String tableId) {
         libraryFilesPage.assertValueShownInSearchTableAtFileUploadModal(tableValue, tableId);
     }
+
+    @Then("^I (softly see|see|softly do not see|do not see) tab label as \"([^\"]*)\" at files library upload modal$")
+    public void assertTabLabelInsideAddFileModal(String usage , String tabName) {
+        libraryFilesPage.assertTabNameInsideAddFileModal(usage, tabName);
+    }
+
+    @Then("^I see Classification as \"([^\"]*)\" at upload file modal$")
+    public void assertClassificationAtUploadFileModal(String classification) {
+        libraryFilesPage.assertClassificationNameAtAddFileModal(classification);
+    }
+
+    @Then("^I see label as \"([^\"]*)\" is displayed at upload file button$")
+    public void assertLabelIsDisplayedAtUploadFileButton(String buttonLabel) {
+        libraryFilesPage.assertLabelAtUploadFileButton(buttonLabel);
+    }
+
+    @Then("^I (see|do not see|softly see|softly do not see) Default keyword at \"([^\"]*)\" at library/folder$")
+    public void assertDefaultKeywordAtLibraryFolder(String usuage, String libraryOrFolderName) {
+        libraryFilesPage.assertDefaultKeywordAtLibraryFolder(usuage,libraryOrFolderName);
+    }
 }

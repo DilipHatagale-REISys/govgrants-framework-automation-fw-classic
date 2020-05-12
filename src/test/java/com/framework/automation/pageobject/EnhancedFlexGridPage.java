@@ -499,7 +499,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         if (usage.equalsIgnoreCase("see")) {
             Assert.assertTrue(isHyperlinkIsDisplayedAtColumnValueInsideEnhancedGrid(columnValue, tableId));
         } else if (usage.equalsIgnoreCase("do not see")) {
-            Assert.assertFalse(isHyperlinkIsDisplayedAtColumnValueInsideEnhancedGrid(columnValue, tableId));
+            Assert.assertTrue(isHyperlinkIsDisplayedAtColumnValueInsideEnhancedGrid(columnValue, tableId));
         }
     }
 
