@@ -499,7 +499,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         if (usage.equalsIgnoreCase("see")) {
             Assert.assertTrue(isHyperlinkIsDisplayedAtColumnValueInsideEnhancedGrid(columnValue, tableId));
         } else if (usage.equalsIgnoreCase("do not see")) {
-            Assert.assertFalse(isHyperlinkIsDisplayedAtColumnValueInsideEnhancedGrid(columnValue, tableId));
+            Assert.assertTrue(isHyperlinkIsDisplayedAtColumnValueInsideEnhancedGrid(columnValue, tableId));
         }
     }
 
@@ -1393,7 +1393,6 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      */
     private Boolean isHyperlinkIsDisplayedAtColumnValueInsideEnhancedGrid(String columnValue, String tableId) {
         boolean flag = false;
-        I.amPerforming().scroll().onPageToSpecificElement(completeTableRowOfEnhancedGrid);
         try {
             if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='" + tableId + "']//span[text()='" + columnValue + "'] | //div[@id='" + tableId + "']//a[text()='" + columnValue + "']"))) {
                 flag = true;

@@ -5,6 +5,7 @@ import com.testingblaze.objects.Elements;
 import com.testingblaze.register.I;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
@@ -161,6 +162,67 @@ public class LibraryFilesPage extends GovGrantsManager {
     }
 
     /**
+     * assert true if tab name is displayed under upload file modal - Record level
+     *
+     * @param tabName
+     */
+    public void assertTabNameInsideAddFileModal(String usage, String tabName) {
+        if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isTabNameDisplayedAtFileUploadModal(tabName)).isTrue();
+        } else if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isTabNameDisplayedAtFileUploadModal(tabName));
+        } else if (usage.equalsIgnoreCase("do no see")) {
+            Assert.assertFalse(isTabNameDisplayedAtFileUploadModal(tabName));
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isTabNameDisplayedAtFileUploadModal(tabName)).isFalse();
+        }
+    }
+
+    /**
+     * assert true if classification name is displayed under select classification field at upload file modal - Record level
+     *
+     * @param classification
+     */
+    public void assertClassificationNameAtAddFileModal(String classification) {
+        Assert.assertTrue(isClassificationNameDisplayedAtFileUploadModal(classification));
+    }
+
+    /**
+     * assert true if given label is displayed at upload file button under add file modal - Record level
+     *
+     * @param buttonName
+     */
+    public void assertLabelAtUploadFileButton(String buttonName) {
+        Assert.assertTrue(isLabelDisplayedAtUploadFileButton(buttonName));
+    }
+
+    /**
+     * assert true if default keyword is displayed at default library / folder
+     *
+     * @param libraryOrFolderName
+     */
+    public void assertDefaultKeywordAtLibraryFolder(String usuage, String libraryOrFolderName) {
+        if (usuage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isDefaultKeywordDisplayedAtLibraryFolder(libraryOrFolderName));
+        } else if (usuage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isDefaultKeywordDisplayedAtLibraryFolder(libraryOrFolderName));
+        } else if (usuage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isDefaultKeywordDisplayedAtLibraryFolder(libraryOrFolderName)).isTrue();
+        } else if (usuage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isDefaultKeywordDisplayedAtLibraryFolder(libraryOrFolderName)).isFalse();
+        }
+    }
+
+    /**
+     * assert true if pre-selected folder/library name is displayed at add file modal - Record level/phase level
+     *
+     * @param folderName
+     */
+    public void assertPreSelectedLibraryFolderAtAddFileModal(String folderName) {
+        Assert.assertTrue(isPreSelectedLibraryFolderDisplayedAtAddFileModal(folderName));
+    }
+
+    /**
      * perform click on expand icon at Library / folder - Home phase
      *
      * @param libraryFileFolderName
@@ -270,10 +332,17 @@ public class LibraryFilesPage extends GovGrantsManager {
      * @param classification
      */
     public void selectClassificationAtUploadFileModalUnderLibrary(String classification) {
-        By clickOnDropdown = By.xpath("//select[@name='Classification']");
-        By selectValueFromDropdown = By.xpath("//select[@name='Classification']//option[@value='" + classification + "']");
-        I.amPerforming().click().on(clickOnDropdown);
-        I.amPerforming().click().on(selectValueFromDropdown);
+        I.amPerforming().click().on(getClassificationAtUploadFileModalUnderLibrary(classification));
+    }
+
+    /**
+     * get classification at upload file modal window - Library files Home phase/record level
+     *
+     * @param classification
+     */
+    public WebElement getClassificationAtUploadFileModalUnderLibrary(String classification) {
+        By selectValueFromDropdown = By.xpath("//select[@name='Classification']//option[text()='" + classification + "']");
+        return I.amPerforming().getElementReference().of(selectValueFromDropdown);
     }
 
     /**
@@ -282,7 +351,16 @@ public class LibraryFilesPage extends GovGrantsManager {
      * @param tabName
      */
     public void clickOnTabAtFilesLibraryUploadModal(String tabName) {
-        I.amPerforming().click().on(By.xpath("//li[@title='" + tabName + "']"));
+        I.amPerforming().click().on(getTabInsideAddFileModal(tabName));
+    }
+
+    /**
+     * get label of tab under Add file modal window - Library files record level
+     *
+     * @param tabName
+     */
+    public WebElement getTabInsideAddFileModal(String tabName) {
+        return I.amPerforming().getElementReference().of(By.xpath("//li[@title='" + tabName + "']"));
     }
 
     /**
@@ -463,6 +541,93 @@ public class LibraryFilesPage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//*[@id='" + tableId + "']//tr//lightning-formatted-text[text()='" + tableValue + "']"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if given tab name is displayed under upload file modal - Record level
+     *
+     * @param tabName
+     * @return
+     */
+    private boolean isTabNameDisplayedAtFileUploadModal(String tabName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(getTabInsideAddFileModal(tabName))) {
+                flag = true;
+            }
+        } catch (NoSuchElementException var5) {
+            flag = false;
+        }
+        return flag;
+    }
+
+    /**
+     * return true if classification name is displayed under select classification field at upload file modal - Record level
+     *
+     * @param classification
+     * @return
+     */
+    private boolean isClassificationNameDisplayedAtFileUploadModal(String classification) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(getClassificationAtUploadFileModalUnderLibrary(classification))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if given label is displayed at upload file button under add file modal - Record level
+     *
+     * @param buttonName
+     * @return
+     */
+    private boolean isLabelDisplayedAtUploadFileButton(String buttonName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//span[normalize-space(text())='" + buttonName + "']"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if default keyword is displayed at default library / folder
+     *
+     * @param libraryOrFolderName
+     * @return
+     */
+    private boolean isDefaultKeywordDisplayedAtLibraryFolder(String libraryOrFolderName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//*[text()='" + libraryOrFolderName + "']//span"))) {
+                flag = true;
+            }
+        } catch (NoSuchElementException var5) {
+            flag = false;
+        }
+        return flag;
+    }
+
+    /**
+     * return true if if pre-selected folder/library name is displayed at add file modal - Record level/phase level
+     *
+     * @param folderName
+     * @return
+     */
+    private boolean isPreSelectedLibraryFolderDisplayedAtAddFileModal(String folderName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='modaltemp']//*[@data-folder-name='" + folderName + "']"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {

@@ -6,6 +6,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.springframework.context.annotation.Description;
 
+
 public class FlexTableSteps {
     FlexTablePage flexTablePage;
 
