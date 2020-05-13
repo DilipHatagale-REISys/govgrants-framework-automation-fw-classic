@@ -1621,3 +1621,57 @@ Feature: Library Files Component Scenarios
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "Department of Community Health"
     Then I see "Set As Default Folder" option is present at library/folder/file "Department of Community Health"
+
+  @81336 @validateIfFolderIsSetAsDefaultThenItsNameIsDisplayedAsPre-SelectedFolderAtAddFileModalUnderPlanningFilesTable-RecordLevel
+  Scenario: Verify if default folder is set then that folder name is displayed under select/change folder field at add file modal - Planing Phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    Then I see pre-selected library/folder as "testAutomationFolder3" is displayed at add file modal
+
+  @81337 @validateIfFolderIsSetAsDefaultThenItsNameIsDisplayedAsPre-SelectedFolderAtAddFileModalUnderPlanningFilesTable-PhaseLevel
+  Scenario: Verify if default folder is set then that folder name is displayed under select/change folder field at add file modal - Home Phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
+    Then I see pre-selected library/folder as "testAutomationFolder3" is displayed at add file modal
+
+  @81525 @validateIfLibraryIsSetAsDefaultThenItsNameIsDisplayedAsPre-SelectedFolderAtAddFileModalUnderPlanningFilesTable-RecordLevel @needMetaDataAPIs @wip
+  Scenario: Verify if default library is set then that folder name is displayed under select/change folder field at add file modal - Planing Phase
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
+    Then I see pre-selected library/folder as "UnitedHealth Group" is displayed at add file modal
+
+  @81534 @validateIfLibraryIsSetAsDefaultThenItsNameIsDisplayedAsPre-SelectedFolderAtAddFileModalUnderPlanningFilesTable-PhaseLevel @needMetaDataAPIs
+  Scenario: Verify if default library is set then that folder name is displayed under select/change folder field at add file modal - home Phase
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
+    Then I see pre-selected library/folder as "UnitedHealth Group" is displayed at add file modal
+
+  @81569 @validateThatSetAsDefaultFolderDropdownOptionIsDisplayedAtFoldersGovGrantAdminProfile-HomePhase
+  Scenario: Verify that Dropdown Option as Set As Default Folder is Displayed at folder under home phase for GovGrant Admin profile
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "Department of Community Health"
+    When I click on dropdown at library/folder/file "testAutomationFolder2"
+    Then I see "Set As Default Folder" option is present at library/folder/file "testAutomationFolder2"

@@ -214,6 +214,15 @@ public class LibraryFilesPage extends GovGrantsManager {
     }
 
     /**
+     * assert true if pre-selected folder/library name is displayed at add file modal - Record level/phase level
+     *
+     * @param folderName
+     */
+    public void assertPreSelectedLibraryFolderAtAddFileModal(String folderName) {
+        Assert.assertTrue(isPreSelectedLibraryFolderDisplayedAtAddFileModal(folderName));
+    }
+
+    /**
      * perform click on expand icon at Library / folder - Home phase
      *
      * @param libraryFileFolderName
@@ -605,6 +614,23 @@ public class LibraryFilesPage extends GovGrantsManager {
             }
         } catch (NoSuchElementException var5) {
             flag = false;
+        }
+        return flag;
+    }
+
+    /**
+     * return true if if pre-selected folder/library name is displayed at add file modal - Record level/phase level
+     *
+     * @param folderName
+     * @return
+     */
+    private boolean isPreSelectedLibraryFolderDisplayedAtAddFileModal(String folderName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='modaltemp']//*[@data-folder-name='" + folderName + "']"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
         }
         return flag;
     }

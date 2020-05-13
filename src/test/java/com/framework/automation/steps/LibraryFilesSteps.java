@@ -142,4 +142,9 @@ public class LibraryFilesSteps {
     public void assertDefaultKeywordAtLibraryFolder(String usuage, String libraryOrFolderName) {
         libraryFilesPage.assertDefaultKeywordAtLibraryFolder(usuage,libraryOrFolderName);
     }
+
+    @Then("^I see pre-selected library/folder as \"([^\"]*)\" is displayed at add file modal$")
+    public void assertPreSelectedLibraryOrFolderAtAddFileModal(String folderName) {
+        libraryFilesPage.assertPreSelectedLibraryFolderAtAddFileModal(folderName);
+    }
 }
