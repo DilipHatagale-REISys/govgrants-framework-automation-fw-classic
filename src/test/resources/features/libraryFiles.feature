@@ -1482,7 +1482,7 @@ Feature: Library Files Component Scenarios
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
-    Then I do not see Default keyword at "UnitedHealth Group" at library/folder
+    Then I do not see Default keyword "UnitedHealth Group" at library/folder inside "fileLibrary"
 
   @81302 @validateThatDefaultKeyWordIsNotDisplayedAtFolderForSPIProfile-HomePhase
   Scenario: Verify that  default keyword is not Displayed at folder under home phase library for SPI profile
@@ -1492,7 +1492,7 @@ Feature: Library Files Component Scenarios
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Department of Community Health"
-    Then I do not see Default keyword at "testAutomationDefaultFolder" at library/folder
+    Then I do not see Default keyword "testAutomationDefaultFolder" at library/folder inside "fileLibrary"
 
   @81311 @validateThatUploadFileFromLibraryTabIsNotDisplayedAtAddFileModalForSPIProfile-RecordLevel
   Scenario: Verify that upload file from library tab is not Displayed at add file modal for SPI profile
@@ -1513,7 +1513,7 @@ Feature: Library Files Component Scenarios
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
-    Then I see Default keyword at "UnitedHealth Group" at library/folder
+    Then I see Default keyword "UnitedHealth Group" at library/folder inside "fileLibrary"
 
   @81344 @validateThatDefaultKeyWordIsDisplayedAtFolderForGovGrantAdminProfile-HomePhase
   Scenario: Verify that default keyword is Displayed at folder under home phase library for GovGrant Admin profile
@@ -1523,7 +1523,7 @@ Feature: Library Files Component Scenarios
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Department of Community Health"
-    Then I see Default keyword at "testAutomationDefaultFolder" at library/folder
+    Then I see Default keyword "testAutomationDefaultFolder" at library/folder inside "fileLibrary"
 
   @81359 @validateThatSetAsDefaultFolderDropdownOptionIsDisplayedAtLibraryGovGrantAdminProfile-HomePhase
   Scenario: Verify that Dropdown Option as Set As Default Folder is Displayed at library under home phase for GovGrant Admin profile
@@ -1634,3 +1634,98 @@ Feature: Library Files Component Scenarios
     When I click on expand icon at library/folder "Department of Community Health"
     When I click on dropdown at library/folder/file "testAutomationFolder1"
     Then I do not see "Rename Folder" option is present at library/folder/file "testAutomationFolder1"
+
+  @81745 @validateThatDefaultKeyWordIsDisplayedAtLibraryUnderSelectChangeFolderModalWindowForGovGrantAdminProfile-HomePhase
+  Scenario: Verify that default keyword is Displayed at library at select or change folder modal for GovGrant Admin profile - -HomePhase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
+    When I click on SelectChange Folder in add file modal
+    Then I see Default keyword "UnitedHealth Group" at library/folder inside "modaltemp"
+
+  @81675 @validateThatDefaultKeyWordIsDisplayedAtLibraryUnderSelectChangeFolderModalWindowForGovGrantAdminProfile-RecordLevel
+  Scenario: Verify that default keyword is Displayed at library at select or change folder modal for GovGrant Admin profile -Record level
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    When I click on SelectChange Folder in add file modal
+    Then I see Default keyword "UnitedHealth Group" at library/folder inside "modaltemp"
+
+  @81674 @validateThatDefaultKeyWordIsDisplayedAtFolderUnderSelectChangeFolderModalWindowForGovGrantAdminProfile-RecordLevel
+  Scenario: Verify that default keyword is Displayed at folder at select or change folder modal for GovGrant Admin profile -Record level
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    When I click on SelectChange Folder in add file modal
+    When I click on expand icon at library/folder "Department of Community Health"
+    Then I see Default keyword "testAutomationDefaultFolder" at library/folder inside "modaltemp"
+
+  @81512 @validateThatIfBlankFileUploadedFromRecordThenAlertMessageIsGettingDisplayed-RecordLevel
+  Scenario: Verify that if blank doc file added from record level then alert message is displayed - record level
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    When I upload file "testAutomationBlankData.docx" into library
+    When I enter value as "test Automation blank file upload from files list" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    Then I see the following messages in the page details contains:
+      | Please verify that the file can be readable |
+
+  @81515 @validateThatUserCanEditFileAndChangeFolderOfExistingFile-RecordLevel
+  Scenario: Verify that user is able to edit existing file and change folder of that file - record level
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "testAutomationFileDND.png" in "---program:-:PlanningFilesFlexGridId---" panel
+    When I click on "Edit" icon for "testAutomationFileDND.png" inside table
+    When I click on SelectChange Folder in add file modal
+    When I click on expand icon at library/folder "UnitedHealth Group"
+    When I Select/Change Folder as "Library - Folder 2 DND" in add file modal
+    When I click on "Save" button in send email modal
+    When I pause execution for "3" seconds
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "UnitedHealth Group"
+    When I click on expand icon at library/folder "Library - Folder 2 DND"
+    Then I softly see library/folder/file "testAutomationFileDND.png" is displayed under files library
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "testAutomationFileDND.png" in "---program:-:PlanningFilesFlexGridId---" panel
+    When I click on "Edit" icon for "testAutomationFileDND.png" inside table
+    When I click on SelectChange Folder in add file modal
+    When I click on expand icon at library/folder "UnitedHealth Group"
+    When I Select/Change Folder as "Library-Folder 1 DND" in add file modal
+    When I click on "Save" button in send email modal
+    When I pause execution for "3" seconds
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "UnitedHealth Group"
+    When I click on expand icon at library/folder "Library-Folder 1 DND"
+    Then I softly see library/folder/file "testAutomationFileDND.png" is displayed under files library

@@ -201,15 +201,15 @@ public class LibraryFilesPage extends GovGrantsManager {
      *
      * @param libraryOrFolderName
      */
-    public void assertDefaultKeywordAtLibraryFolder(String usuage, String libraryOrFolderName) {
+    public void assertDefaultKeywordAtLibraryFolder(String usuage, String libraryOrFolderName, String pageID) {
         if (usuage.equalsIgnoreCase("see")) {
-            Assert.assertTrue(isDefaultKeywordDisplayedAtLibraryFolder(libraryOrFolderName));
+            Assert.assertTrue(isDefaultKeywordDisplayedAtLibraryFolder(libraryOrFolderName,pageID));
         } else if (usuage.equalsIgnoreCase("do not see")) {
-            Assert.assertFalse(isDefaultKeywordDisplayedAtLibraryFolder(libraryOrFolderName));
+            Assert.assertFalse(isDefaultKeywordDisplayedAtLibraryFolder(libraryOrFolderName,pageID));
         } else if (usuage.equalsIgnoreCase("softly see")) {
-            I.amPerforming().assertionsTo().assertThat(isDefaultKeywordDisplayedAtLibraryFolder(libraryOrFolderName)).isTrue();
+            I.amPerforming().assertionsTo().assertThat(isDefaultKeywordDisplayedAtLibraryFolder(libraryOrFolderName,pageID)).isTrue();
         } else if (usuage.equalsIgnoreCase("softly do not see")) {
-            I.amPerforming().assertionsTo().assertThat(isDefaultKeywordDisplayedAtLibraryFolder(libraryOrFolderName)).isFalse();
+            I.amPerforming().assertionsTo().assertThat(isDefaultKeywordDisplayedAtLibraryFolder(libraryOrFolderName,pageID)).isFalse();
         }
     }
 
@@ -606,10 +606,10 @@ public class LibraryFilesPage extends GovGrantsManager {
      * @param libraryOrFolderName
      * @return
      */
-    private boolean isDefaultKeywordDisplayedAtLibraryFolder(String libraryOrFolderName) {
+    private boolean isDefaultKeywordDisplayedAtLibraryFolder(String libraryOrFolderName, String pageID) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//*[text()='" + libraryOrFolderName + "']//span"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='" + pageID + "']//*[text()='" + libraryOrFolderName + "']//span"))) {
                 flag = true;
             }
         } catch (NoSuchElementException var5) {

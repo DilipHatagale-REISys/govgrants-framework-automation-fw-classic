@@ -138,9 +138,9 @@ public class LibraryFilesSteps {
         libraryFilesPage.assertLabelAtUploadFileButton(buttonLabel);
     }
 
-    @Then("^I (see|do not see|softly see|softly do not see) Default keyword at \"([^\"]*)\" at library/folder$")
-    public void assertDefaultKeywordAtLibraryFolder(String usuage, String libraryOrFolderName) {
-        libraryFilesPage.assertDefaultKeywordAtLibraryFolder(usuage,libraryOrFolderName);
+    @Then("^I (see|do not see|softly see|softly do not see) Default keyword \"([^\"]*)\" at library/folder inside \"([^\"]*)\"$")
+    public void assertDefaultKeywordAtLibraryFolder(String usuage, String libraryOrFolderName , String pageID) {
+        libraryFilesPage.assertDefaultKeywordAtLibraryFolder(usuage,libraryOrFolderName,pageID);
     }
 
     @Then("^I see pre-selected library/folder as \"([^\"]*)\" is displayed at add file modal$")
