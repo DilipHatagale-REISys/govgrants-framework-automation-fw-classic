@@ -1,4 +1,4 @@
-@sendEmail-component @regression
+@sendEmail-component @regression @sendEmail
 Feature: Send Email Component Scenarios
   Test all send email component based scenarios
   As a configuration manager i make different configurational changes in send email component custom metadata and will validate them.
@@ -106,36 +106,6 @@ Feature: Send Email Component Scenarios
     When I click on "To" email Search By field and select dropdown value as "External"
     When I enter value "Automation spi" into field "To" on send email modal
     Then I see iconName "fa fa-user" with user "Automation spi" is displayed on send email modal
-
-  @69095 @validateIfInternal+ExternalCheckboxCheckedAtToFieldThenBothUserIsShownInAutoSuggestionBox
-  Scenario: Validate If Internal+ External checkbox is checked At To Field then only Group is shown in suggestion box at send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I navigate to "Collab" sub tab
-    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "To" email Search By field and select dropdown value as "Internal"
-    When I click on "To" email Search By field and select dropdown value as "External"
-    When I enter value "Automation" into field "To" on send email modal
-    Then I see below users is displayed in suggestion box under send email modal:
-      | userName       |
-      | Automation PM  |
-      | Automation spi |
 
   @69096 @validateIfGroupCheckboxCheckedAtToFieldThenOnlyUserGroupsIsShownInAutoSuggestionBox
   Scenario: Validate If Group checkbox is checked At To Field then only Group is shown in suggestion box at send email modal

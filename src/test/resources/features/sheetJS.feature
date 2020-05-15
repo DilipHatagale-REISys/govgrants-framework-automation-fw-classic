@@ -1,4 +1,4 @@
-@SheetJS-component @regression @wip
+@SheetJS-component @regression @wip @SheetJS
 Feature: SheetJS Config Component Scenarios
   Test all Sheet JS config component based scenarios
   As a configuration manager i make different configurational changes in sheetJS component and will validate them.
@@ -184,45 +184,7 @@ Feature: SheetJS Config Component Scenarios
       | newFieldsApi                                                                                                        | defaultFieldsApi                                                                                                 |
       | Name,Id,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
-  @70104    @verifyUploadOfSheetJSFileWithFieldEGMSId
-  Scenario Outline: Validate sheet JS file is getting uploaded and content of sheet getting loaded inside flex table with EGMS ID.
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName                 | fieldOrignalValue  | filterId         |
-      | Flex Table            | Enable Data Import/Export | false              | ApiGeneratedId:0 |
-      | Flex Table            | Display Field Names       | <defaultFieldsApi> | ApiGeneratedId:1 |
-      | Page Tabs Config      | Highlights Panel?         | false              | ApiGeneratedId:2 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName                 | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General                  | Enable Data Import/Export | true           | Programs              |                           |                            |
-      | Flex Table:General                  | Display Field Names       | <newFieldsApi> | Programs              |                           |                            |
-      | Page Tabs Config:Page Layout Action | Highlights Panel?         | true           | Grantee State Program | Name                      | TAB-409                    |
-    Given I have "lightening" configuration as below:
-      | booleanValue | integerValue | id                 | description                       | name                 |
-      | true         | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
-    When I login as "Automation" user
-    And I update custom setting changes:
-      | booleanValue | integerValue | id                 | description                       | name                 |
-      | false        | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    And I click on top right button "Upload" in flex table with id "---program:-:programTableDivId---"
-    When I upload attachment "SheetJSFileUpload.xlsx" on button click "Upload" inside download & upload wizard
-    And I refresh the page
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "AutomationSheetJSUploadForStatusAsBlank"
-    When I click on "View Program Details" icon for "AutomationSheetJSUploadForStatusAsBlank" inside table
-    And I save the field labeled "ID" as "EGMSID"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "AutomationSheetJSUploadForStatusAsBlank"
-    Then I softly see value "{SavedValue:EGMSID}" for title "ID" inside table "---program:-:programTableDivId---"
-
-    Examples:
-      | newFieldsApi                                                                                                        | defaultFieldsApi                                                                                                 |
-      | Name,Id,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
-
-  @70107    @verifyUploadOfSheetJSFileWithFieldCFDANumberAsTrue
+ @70107    @verifyUploadOfSheetJSFileWithFieldCFDANumberAsTrue
   Scenario Outline: Validate sheet JS file is getting uploaded and content of sheet getting loaded inside flex table with CFDA DATA as true.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue  | filterId         |

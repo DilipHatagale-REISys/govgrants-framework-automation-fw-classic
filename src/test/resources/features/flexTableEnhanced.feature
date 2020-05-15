@@ -216,7 +216,7 @@ Feature: Flex Table enhanced Component Scenarios
     When I navigate to "Financials" sub tab
     Then I see column "GrantAbbreviation__c" value is in "Descending" order
 
-  @77284    @enableOverallTotalFieldAtFlexTableForEnhanced-gPlanning
+  @77284    @enableOverallTotalFieldAtFlexTableForEnhanced-gPlanning @smoke
   Scenario: validate enabling of overall total field after checking checkbox true of Enable Over All Total from config and validating it inside enhanced data table-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
@@ -234,24 +234,7 @@ Feature: Flex Table enhanced Component Scenarios
     When I navigate to "Financials" sub tab
     Then I see over all total for "NumberofProjectAreas__c" field at enhanced grid
 
-  @77285    @enableFormulaFieldAtFlexTableForEnhanced-gPlanning
-  Scenario: Validating subtotal of cell value of total obligated amount by entering formula at config validating it inside enhanced data table -planning
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Flex Table List       | Formula   |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue                               | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid | EnhancedDataTable  | Name                      | FTC-1511                   |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I navigate to "Financials" sub tab
-    Then I see cell subtotal as expected as given formula at "NumberofProjectAreas__c" field
-
-  @77288    @hideCellJsonFieldAtFlexTableForEnhanced-gPlanning
+  @77288    @hideCellJsonFieldAtFlexTableForEnhanced-gPlanning @smoke
   Scenario: Hiding specific cell value of enhanced data table from config and validating it inside enhanced data table -planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
@@ -269,7 +252,7 @@ Feature: Flex Table enhanced Component Scenarios
     When I perform quick search for "Applicationg test88888" in "---program:-:flexGridEnhancedDataTableId---" panel
     Then I see "*****" shown inside enhanced grid table for specified record "Applicationg test88888"
 
-  @77286    @hideColumnJsonFieldAtFlexTableForEnhanced-gPlanning
+  @77286    @hideColumnJsonFieldAtFlexTableForEnhanced-gPlanning @smoke
   Scenario: Hiding specific column value of enhanced data table from config and validating it inside enhanced data table -planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -286,7 +269,7 @@ Feature: Flex Table enhanced Component Scenarios
     When I navigate to "Financials" sub tab
     Then I see "Number of Project Areas" not displayed in enhanced grid table column title
 
-  @77315    @hideExpressionJsonFieldAtFlexTableForEnhanced-gPlanning
+  @77315    @hideExpressionJsonFieldAtFlexTableForEnhanced-gPlanning @smoke
   Scenario: Set up configuration to hide edit action of parent enhanced grid using UserType IN Internal and validating it inside enhanced data table -planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -304,7 +287,7 @@ Feature: Flex Table enhanced Component Scenarios
     When I perform quick search for "Applicationg test88888" in "---program:-:flexGridEnhancedDataTableId---" panel
     Then I see "Edit" icon for "Applicationg test88888" is not displayed inside flex table
 
-  @77353    @enableGroupingFieldAtFlexTableForEnhanced-gPlanning
+  @77353    @enableGroupingFieldAtFlexTableForEnhanced-gPlanning @smoke
   Scenario: validate same value rows getting grouped and shown in sequence after checking checkbox true of Enable Row Grouping from config and validating it inside  enhanced data table -planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |

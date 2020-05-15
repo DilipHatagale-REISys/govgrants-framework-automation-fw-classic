@@ -2,7 +2,7 @@
 Feature: Sanity check for all Component Scenarios
   Test all component scenarios for sanity
 
-  @34666    @validateTitleField-gplanning
+  @34666    @validateTitleField-gplanning @enhancedCharts
   Scenario: Changing chart title for 'AnnouncementByAdminBureauUnit' chart in configuration and validating inside planning-programs
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue             | filterId         |
@@ -15,7 +15,7 @@ Feature: Sanity check for all Component Scenarios
     And I navigate to "Planning" tab
     Then I see "Funding Opportunities for Automation" displayed as chart title
 
-  @37667    @notifyAdditionalPeopleThroughEmailWithApproveTemplateToProgramOwner-Programs
+  @37667    @notifyAdditionalPeopleThroughEmailWithApproveTemplateToProgramOwner-Programs @approvalProcess
   Scenario: Setup email setting in configuration and validate that program owner receiving email for program approval
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName                | fieldOrignalValue | filterId         |
@@ -44,7 +44,7 @@ Feature: Sanity check for all Component Scenarios
     And I click toggle button to select "Queued Emails"
     Then I see email is generated with template "Program_Approved_Email_Template"
 
-  @35121    @colorCodeFieldAtCalenderConfig
+  @35121    @colorCodeFieldAtCalenderConfig @calenderConfig
   Scenario: Changing color code at calender confiuration and validating the changed color at calender grantor-Home
     Given I have "default" configuration as below:
       | configurationCategory | fieldName  | fieldOrignalValue | filterId         |
@@ -58,7 +58,7 @@ Feature: Sanity check for all Component Scenarios
     When I click on "My_Workspace_Calendar"
     Then I see Program record in "Red" color inside my workspace
 
-  @54704      @verifyPicklistFieldShouldBeInViewModeAfterEditingMultipleRecords
+  @54704      @verifyPicklistFieldShouldBeInViewModeAfterEditingMultipleRecords @enhancedGrid
   Scenario Outline: validate picklist should visible in only view mode after Edit status field for multiple records
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName     | fieldOrignalValue               | filterId         |
@@ -82,7 +82,7 @@ Feature: Sanity check for all Component Scenarios
       | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                         |
       | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c like 'Road%' |
 
-  @52895    @defaultFieldNameFieldAtCustomAppConfig
+  @52895    @defaultFieldNameFieldAtCustomAppConfig @customAppConfig
   Scenario: Removing contrast content at default field name field from custom app confiuration and validating the changed label at custom app dropdown
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue     | filterId         |
@@ -94,7 +94,7 @@ Feature: Sanity check for all Component Scenarios
     When I setup my app as "As a Grantor"
     Then I see "ColorContrast_Grantor" on complete page for custom App as a Grantor
 
-  @49355    @enableSubTotalFieldAtChildFlexTableForEnhancedGrid-gPlanning
+  @49355    @enableSubTotalFieldAtChildFlexTableForEnhancedGrid-gPlanning @enhancedGrid
   Scenario: validate total of number of awards after checking checkbox true of Enable Sub Total field at child flex table from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -115,7 +115,7 @@ Feature: Sanity check for all Component Scenarios
     When I expand nested table containing column value "GT-VT-001"
     Then I see cell subtotal for obligated amount at child table of enhanced grid
 
-  @48668    @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_NOTIN_SystemAdministrator_OR_UserType_IN_Internal
+  @48668    @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_NOTIN_SystemAdministrator_OR_UserType_IN_Internal @expressionBuilder
   Scenario: Setup configuration to hide Approve option from configuration for approval decision using Profile NOT IN System Administrator OR UserType IN Internal and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -173,7 +173,7 @@ Feature: Sanity check for all Component Scenarios
     Then I see only the following radio buttons in the approval decision :
       | Reject | Forward | Send Back |
 
-  @51323    @sequenceFieldAtApplicationBudgetCategoryFlexTableChild-gApplications
+  @51323    @sequenceFieldAtApplicationBudgetCategoryFlexTableChild-gApplications @flexGrid
   Scenario: Changing sequence of view row level action item at Application Budget child flex table from config and validating it inside Application Budget child flex table of programs
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -192,7 +192,7 @@ Feature: Sanity check for all Component Scenarios
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     Then I see "View" icon for "---program:-:applicationBudgetCategoryFlexGridTableId---" is at position "0" inside flex table
 
-  @34034    @addingfieldNamesOfDifferentDataTypes-gPlanning @smoke
+  @34034    @addingfieldNamesOfDifferentDataTypes-gPlanning @flexTable
   Scenario Outline: validate adding field names for different data types in flex table of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -218,7 +218,7 @@ Feature: Sanity check for all Component Scenarios
       | Is Federal Program     | IsFederalProgram__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById   | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
       | Number                 | Number__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById             | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
-  @69951   @expectedTargetURLShouldGetsOpenByClickOnFooterLinks
+  @69951   @expectedTargetURLShouldGetsOpenByClickOnFooterLinks @footerLinks
   Scenario Outline: validate given target URL opens by click on 508 Compliance link from footer
     Given I have "customAppFooter" configuration as below:
       | id                 | Name | DisplayText    | TargetURL                            | Sequence | booleanValue                                         | customSettingApiName          |
@@ -253,7 +253,7 @@ Feature: Sanity check for all Component Scenarios
     When I click on "View" icon of form "General Application Form" program in flex table
     Then I see "Form Version 2.0" inside Form Version
 
-  @69960   @VerifyAssignedApproverUserInsideChevron
+  @69960   @VerifyAssignedApproverUserInsideChevron @approvalProcess
   Scenario: Validating chevron contain Approver user and Initial submitter after submission of record to submit for approval
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
     When I login as "Automation" user
@@ -299,7 +299,7 @@ Feature: Sanity check for all Component Scenarios
     When I navigate to "History" sub tab
     Then I see for "Program Manager Approver" value is "Automation PM" in chevron diagram
 
-  @70432 @validateThatSpacesInFolderNameIsNotAcceptedWhileCreatingFolderUnderLibrary-AtHomePhase
+  @70432 @validateThatSpacesInFolderNameIsNotAcceptedWhileCreatingFolderUnderLibrary-AtHomePhase @libraryFiles
   Scenario: Verify that if user enter spaces in folder name then an alert message is displayed - home phase
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -313,7 +313,7 @@ Feature: Sanity check for all Component Scenarios
     Then I see the following messages in the page details contains:
       | The Content Folder null isn't valid. Use a unique name that doesn't start or end with a space and doesn't contain the character /.: Name |
 
-  @35816    @hideApprovalDecisionFieldAtPageLayout-gPlanning
+  @35816    @hideApprovalDecisionFieldAtPageLayout-gPlanning @approvalProcess
   Scenario: Hiding approval decision box at page layout from config and validating it inside pending task approval decision
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                   | fieldOrignalValue | filterId         |
@@ -370,7 +370,7 @@ Feature: Sanity check for all Component Scenarios
     When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
     Then I cannot see the radio button "Approve" in the approval decision
 
-  @34485    @validateNumberOfCharts-gplanning
+  @34485    @validateNumberOfCharts-gplanning  @enhancedCharts
   Scenario: Setup number of charts as "2" from config. and validate only two charts are displayed inside planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -383,7 +383,7 @@ Feature: Sanity check for all Component Scenarios
     And I navigate to "Planning" tab
     Then I see "2" charts are displayed
 
-  @69217 @validateIfGroupCheckboxCheckedAtCCFieldThenOnlyUserGroupsIsShownInAutoSuggestionBox
+  @69217 @validateIfGroupCheckboxCheckedAtCCFieldThenOnlyUserGroupsIsShownInAutoSuggestionBox @sendEmail
   Scenario: Validate If Group checkbox is checked At CC Field then only Group is shown in suggestion box at send email modal
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -408,3 +408,284 @@ Feature: Sanity check for all Component Scenarios
     When I click on "CC" email Search By field and select dropdown value as "Groups"
     When I enter value "Automation Testing Group" into field "CC" on send email modal
     Then I see iconName "fa fa-users" with user "Automation Testing Group" is displayed on send email modal
+
+  @70869    @validateY-axisLabel-gAnnouncement-EnhancedCharts @enhancedCharts
+  Scenario Outline: Change chart y-axis label for 'EnhancedPiechartId' enhanced chart from configuration and validating inside Announcement
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
+      | Charts Config         | Y-Axis Label |                   | ApiGeneratedId:0 |
+      | Charts Config         | Active       | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName    | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Y-Axis Label | <EchartY-Axix_Text> | FundingOpportunity | Name                      | Enhanced Pie chart         |
+      | Charts Config         | Active       | true                | FundingOpportunity | Name                      | Enhanced Pie chart         |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    When I hovering mouse on enhanced charts id "---program:-:EnhancedPiechartID---" and charts type "highcharts-point"
+    And I pause execution for "2" seconds
+    Then I see "<EchartY-Axix_Text>" shown inside enhanced charts on hover
+
+    Examples:
+      | EchartY-Axix_Text             |
+      | Automation Announcement count |
+
+  @70876    @validateEditDataTableQueryforAllDataFieldFromBurgerIcon-gAnnouncement-EnhancedCharts @enhancedCharts
+  Scenario Outline: Validate all data from 'EnhancedPiechartId'
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                      | fieldOrignalValue          | filterId         |
+      | Charts Config         | Data Table Query(For All Data) | <default_Data_Table_Query> | ApiGeneratedId:0 |
+      | Charts Config         | Active                         | true                       | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                      | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Data Table Query(For All Data) | <new_Data_Table_Query> | FundingOpportunity | Name                      | Enhanced Pie chart         |
+      | Charts Config         | Active                         | true                   | FundingOpportunity | Name                      | Enhanced Pie chart         |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click on menu icon of chart "Enhanced Pie" with title "Menu"
+    When I select "Show All Data" from chart menu of chart "Enhanced Pie"
+    Then I see the following rows under the following columns in table with id "---program:-:EnhancedPiechartModalID---" :
+      | Announcement Title | Status    |
+      | Announcement171001 | Published |
+
+    Examples:
+      | default_Data_Table_Query                                                                                           | new_Data_Table_Query                                                                                                                         |
+      | SELECT Name,AnnouncementName__c,AnnouncementType__c,Status__c FROM Announcement__c where RecordType.Name='Grantor' | SELECT Name,AnnouncementName__c,AnnouncementType__c,Status__c FROM Announcement__c where RecordType.Name='Grantor' AND Status__c='Published' |
+
+  @70877    @validateEditDataTableQueryforAllDataFieldFromEnhancedViewIcon-gAnnouncement-EnhancedCharts @enhancedCharts
+  Scenario Outline: Validate expected status from enhanced chart modal(show all data from enhanced view icon)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                      | fieldOrignalValue          | filterId         |
+      | Charts Config         | Data Table Query(For All Data) | <default_Data_Table_Query> | ApiGeneratedId:0 |
+      | Charts Config         | Active                         | true                       | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                      | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Data Table Query(For All Data) | <new_Data_Table_Query> | FundingOpportunity | Name                      | Enhanced Pie chart         |
+      | Charts Config         | Active                         | true                   | FundingOpportunity | Name                      | Enhanced Pie chart         |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click on menu icon of chart "Enhanced Pie" with title "Enhanced View"
+    When I click modal button "Show All Data"
+    Then I see the following rows under the following columns in table with id "---program:-:EnhancedPiechartModalID---" :
+      | Announcement Title | Status    |
+      | Announcement171001 | Published |
+
+    Examples:
+      | default_Data_Table_Query                                                                                           | new_Data_Table_Query                                                                                                                         |
+      | SELECT Name,AnnouncementName__c,AnnouncementType__c,Status__c FROM Announcement__c where RecordType.Name='Grantor' | SELECT Name,AnnouncementName__c,AnnouncementType__c,Status__c FROM Announcement__c where RecordType.Name='Grantor' AND Status__c='Published' |
+
+  @70982    @validateDisableLegendsFieldsWithTrue-gHOME-EnhancedDualAxesCharts @enhancedCharts
+  Scenario: validate disable legends fields of 'EnhancedDualAxesId' is working or not while checking checkbox of Disable Legend Field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Charts Config         | Disable Legend | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Disable Legend | true          | GrantorHome        | Name                      | Enhanced Dual Axes         |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I do not see chart legends are displayed for chart/enhanced Charts "EnhancedDualAxes"
+
+
+  @69577    @VerifyActualApproverNameIsDisplayedInApprovalHistoryAfterRecordSubmission @history
+  Scenario: Validate actual approver name inside Approval history table after submission of record to Submit for Approval
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-027                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    And I pause execution for "3" seconds
+    When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
+    And I pause execution for "3" seconds
+    And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
+    And I enter value "Active" into field "fieldStatus__c"
+    And I click modal button "Save"
+    And I navigate to "Roles" sub tab
+    And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
+    And I enter value "Automation PM" into field "fieldName__c"
+    And I enter value "Program Approver" into field "fieldBusinessRole__c"
+    And I click modal button "Save"
+    And I navigate to "Roles" sub tab
+    And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
+    And I enter value "Allen PM" into field "fieldName__c"
+    And I enter value "Key POC" into field "fieldBusinessRole__c"
+    And I click modal button "Save"
+    And I navigate to "Financials" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:fundingAccountInformationTableId---"
+    When I click "Add" after selection of "FA-17-03" in the table "---program:-:fundingAccountSelectionTableId---"
+    And I navigate to "Financials" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:budgetCategoryTableId---"
+    When I click "Add" after selection of "SBC-A-209" in the table "---program:-:budgetCategorySelectionTableId---"
+    And I navigate to "Log" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:relatedFederalProgramTableId---"
+    When I click "Add" after selection of "90.404" in the table "---program:-:relatedFederalProgramSelectionTableId---"
+    And I navigate to "Log" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:programServiceAreaTableId---"
+    When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
+    And I refresh the page
+    When I click on "Submit For Approval" in the page details
+    And I refresh the page
+    When I navigate to "History" sub tab
+    Then I softly see column "Assigned To" inside row "1" at position "2" and column at position "2" contains text "Automation PM"
+
+  @69095 @validateIfInternal+ExternalCheckboxCheckedAtToFieldThenBothUserIsShownInAutoSuggestionBox @sendEmail
+  Scenario: Validate If Internal+ External checkbox is checked At To Field then only Group is shown in suggestion box at send email modal
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "To" email Search By field and select dropdown value as "Internal"
+    When I click on "To" email Search By field and select dropdown value as "External"
+    When I enter value "Automation" into field "To" on send email modal
+    Then I see below users is displayed in suggestion box under send email modal:
+      | userName       |
+      | Automation PM  |
+      | Automation spi |
+
+  @70742 @validateThatFileUploadedFromRecordDetailIsDisplayedUnderHomePhaseLibraryFilesTabUnderRespectiveFolder-RecordLevel @NeedDeleteAPI @libraryFiles
+  Scenario: Verify that file added from record level is displayed under respective folder under home phase library files tab - record level
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    When I upload file "SendEmailAttachment.pdf" into library
+    When I click on SelectChange Folder in add file modal
+    When I Select/Change Folder as "Department of Community Health" in add file modal
+    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I pause execution for "5" seconds
+    When I perform quick search for "SendEmailAttachment.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see value "SendEmailAttachment.pdf" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "Department of Community Health"
+    Then I softly see library/folder/file "SendEmailAttachment.pdf" is displayed under files library
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "SendEmailAttachment.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
+    When I click on "Delete" icon for "SendEmailAttachment.pdf" inside table
+    When I click "Yes" on modal confirmation box
+    When I pause execution for "3" seconds
+    When I perform quick search for "SendEmailAttachment.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see "No Records Found" inside flex table with id "---program:-:PlanningFilesFlexGridId---"
+
+  @77285    @enableFormulaFieldAtFlexTableForEnhanced-gPlanning
+  Scenario: Validating subtotal of cell value of total obligated amount by entering formula at config validating it inside enhanced data table -planning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Formula   |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                               | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid | EnhancedDataTable  | Name                      | FTC-1511                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    Then I see cell subtotal as expected as given formula at "NumberofProjectAreas__c" field
+
+  @70104    @verifyUploadOfSheetJSFileWithFieldEGMSId @SheetJS
+  Scenario Outline: Validate sheet JS file is getting uploaded and content of sheet getting loaded inside flex table with EGMS ID.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue  | filterId         |
+      | Flex Table            | Enable Data Import/Export | false              | ApiGeneratedId:0 |
+      | Flex Table            | Display Field Names       | <defaultFieldsApi> | ApiGeneratedId:1 |
+      | Page Tabs Config      | Highlights Panel?         | false              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName                 | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General                  | Enable Data Import/Export | true           | Programs              |                           |                            |
+      | Flex Table:General                  | Display Field Names       | <newFieldsApi> | Programs              |                           |                            |
+      | Page Tabs Config:Page Layout Action | Highlights Panel?         | true           | Grantee State Program | Name                      | TAB-409                    |
+    Given I have "lightening" configuration as below:
+      | booleanValue | integerValue | id                 | description                       | name                 |
+      | true         | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
+    When I login as "Automation" user
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description                       | name                 |
+      | false        | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "Upload" in flex table with id "---program:-:programTableDivId---"
+    When I upload attachment "SheetJSFileUpload.xlsx" on button click "Upload" inside download & upload wizard
+    And I refresh the page
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "AutomationSheetJSUploadForStatusAsBlank"
+    When I click on "View Program Details" icon for "AutomationSheetJSUploadForStatusAsBlank" inside table
+    And I save the field labeled "ID" as "EGMSID"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "AutomationSheetJSUploadForStatusAsBlank"
+    Then I softly see value "{SavedValue:EGMSID}" for title "ID" inside table "---program:-:programTableDivId---"
+
+    Examples:
+      | newFieldsApi                                                                                                        | defaultFieldsApi                                                                                                 |
+      | Name,Id,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+
+  @77698    @enableFormulaFieldAtParentFlexTableForEnhancedGridAtSideBar-gHOME @sidebar
+  Scenario: validate subtotal of cell value of total obligated amount by entering formula at config  and validating it inside enhanced grid at sidebar - home phase
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Formula   |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1491                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Flex Grid Enhanced" content inside "Manage Organizations" subheader on left panel
+    Then I see cell subtotal as expected as given formula at "TotalAwardObligatedAmount__c" field
+
+  @69445 @validateOrgNameIsNotShownInStickyBottomForPMProfileUsers @stickyBottom
+  Scenario: Disabling Enable Org Name custom setting and validating display of org name Option in sticky bottom
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1C00000KyBBdUAN | 0051C000007cehzQAA | GNT__EnableOrgName__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1C00000KyBBdUAN | 0051C000007cehzQAA | GNT__EnableOrgName__c:false | GNT__GlobalConfig__c |
+    When I re-login as "Automation-PM" user on "default" portal
+    When I setup my app as "As a Grantor"
+    And I click on botton menu "sticky_bottom_Menu"
+    Then I softly do not see "GGPTEST5" inside bottom menu

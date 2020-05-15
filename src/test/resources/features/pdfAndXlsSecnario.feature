@@ -1328,3 +1328,152 @@ Feature: All pdf and xls related scenario including component and completed back
     When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
     And I select "Download as XLS" from parallel lines dropdown of "Application Budget"
     Then I see "$29,700.00" in downloaded xls or csv file "govgrants"
+
+
+  @77820    @validateDownloadedPDFContentAsStatusIsActiveUnderParentFlexTableForEnhancedGridAtSideBar-gHOME @sidebar
+  Scenario Outline: validate Activated status in downloaded pdf file for enhanced grid at sidebar - home phase
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:Flex Table List | Show in PDF         | false              | ApiGeneratedId:0 |
+      | Flex Table                | Enable Export (PDF) | true               | ApiGeneratedId:1 |
+      | Flex Grid                 | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Show in PDF         | true           | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Table:General        | Enable Export (PDF) | true           | TmpActiveGrantsGrid |                           |                            |
+      | Flex Grid:General         | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Flex Grid Enhanced" content inside "Manage Organizations" subheader on left panel
+    When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
+    And I download the file
+    Then I see "Active" on page "1" of "govgrants" pdf file
+
+    Examples:
+      | newFieldsApi                                                                                                                                                                                                                       | defaultFieldsApi                                                                                                                                                                                                                   |
+      | ProjectTitle__c,Status__c,Name,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @77821    @validateDownloadedXLSContentAsStatusIsActiveUnderParentFlexTableForEnhancedGridAtSideBar-gHOME @sidebar
+  Scenario: validate Activated status in downloaded xls file for enhanced grid at sidebar - home phase
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Grid:Flex Table List | Show in PDF               | false             | ApiGeneratedId:0 |
+      | Flex Grid                 | Enable Export (xls / csv) | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName                 | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Show in PDF               | true          | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Grid:General         | Enable Export (xls / csv) | true          | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Flex Grid Enhanced" content inside "Manage Organizations" subheader on left panel
+    When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
+    And I select "Download as XLS" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
+    Then I see "Active" in downloaded xls or csv file "govgrants"
+
+  @77800    @validateDownloadedPDFContentAsStatusIsActiveAtFlexTableEnhancedUnderSidebar-gHome @sidebar
+  Scenario: validate Activated status in downloaded pdf file for enhanced data table at sidebar
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Grid:Flex Table List | Show in PDF         | true              | ApiGeneratedId:0 |
+      | Flex Grid                 | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Show in PDF         | true          | EnhancedDataTable  | Name                      | FLV-2548                   |
+      | Flex Grid:General     | Enable Export (PDF) | true          | EnhancedDataTable  |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Data table enhanced record" content inside "Manage Organizations" subheader on left panel
+    When I click on parallel lines menu bar with data target value "#EnhancedDataTableFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Grants Enhanced Table"
+    And I download the file
+    Then I see "Active" on page "1" of "govgrants" pdf file
+
+  @77819    @validateDownloadedXLSContentAsStatusIsActiveAtFlexTableEnhancedUnderSidebar-gHome @sidebar
+  Scenario: validate Activated status in downloaded xls file for enhanced data table at sidebar
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Grid             | Enable Export (xls / csv) | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Export (xls / csv) | true          | EnhancedDataTable  |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Data table enhanced record" content inside "Manage Organizations" subheader on left panel
+    When I click on parallel lines menu bar with data target value "#EnhancedDataTableFlexToggle"
+    And I select "Download as XLS" from parallel lines dropdown of "Grants Enhanced Table"
+    Then I see "Active" in downloaded xls or csv file "govgrants"
+
+  @70264 @validateThatFileShouldGetDownloadFromFolderForViewerProfileHomePhase @libraryFiles
+  Scenario: Verify that file is getting download from folder under home phase library for Viewer profile
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "Department of Community Health"
+    When I click on expand icon at library/folder "testAutomationFolder2"
+    When I click on dropdown at library/folder/file "automationTestingOfFiles.xls"
+    When I click on "Download File" option at library/folder/file "automationTestingOfFiles.xls"
+    Then I see "First Name" in downloaded xls or csv file "govgrants"
+
+  @70409 @validateThatFileShouldGetDownloadFromFolderForAuthorProfileHomePhase @libraryFiles
+  Scenario: Verify that file is getting download from folder under home phase library for Author profile
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "Department of Community Health"
+    When I click on expand icon at library/folder "testAutomationFolder2"
+    When I click on dropdown at library/folder/file "automationTestingOfFiles.xls"
+    When I click on "Download" option at library/folder/file "automationTestingOfFiles.xls"
+    Then I see "First Name" in downloaded xls or csv file "automationTestingOfFiles"
+
+  @70367 @validateThatWhenClickOnDownloadFileAtLibraryThenFilesFromThatLibraryGetsDownloadedAtHomePhase @libraryFiles
+  Scenario: Verify that if click on download at library then files only from that library is getting downloaded under home phase library
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on dropdown at library/folder/file "Department of Community Health"
+    When I click on "Download Files" option at library/folder/file "Department of Community Health"
+    Then I softly see "Program Name" in downloaded xls or csv file "govgrants"
+    Then I softly cannot see "First Name" in downloaded xls or csv file "govgrants"
+
+
+  @70496 @validateThatUserCanDownloadFileFromFileListTab-HomePhase-FileList @libraryFiles
+  Scenario: Verify that user can download file from FileList tab - Home phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I perform quick search for "automationTestingOfFiles.xls" in "---program:-:workSpaceFilesFlexTableId---" panel
+    When I click on "Download" icon for "automationTestingOfFiles.xls" inside table
+    Then I see "First Name" in downloaded xls or csv file "govgrants"
+
+  @70729 @validateThatUserCanDownloadFileFromPlanningFilesTableAtAttachmentTab-RecordLevel @wip @NeedDeleteAPI @libraryFiles
+  Scenario: Verify that user can download file from planning Files table at attachment tab - Record level
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    When I upload file "SheetJSFileUpload.xlsx" into library
+    When I click on SelectChange Folder in add file modal
+    When I Select/Change Folder as "Department of Community Health" in add file modal
+    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+    When I click on "Upload" button in send email modal
+    When I pause execution for "7" seconds
+    When I perform quick search for "SheetJSFileUpload.xlsx" in "---program:-:PlanningFilesFlexGridId---" panel
+    When I click on "Download" icon for "SheetJSFileUpload.xlsx" inside table
+    Then I softly see "Organization" in downloaded xls or csv file "govgrants"

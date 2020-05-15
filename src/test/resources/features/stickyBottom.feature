@@ -1,4 +1,4 @@
-@stickyBottom-component @regression
+@stickyBottom-component @regression @stickyBottom
 Feature: Sticky Bottom Component Scenarios
   Test all sticky Bottom component based scenarios
   As a configuration manager i make different configurations changes in sticky bottom component custom settings and will validate them.
@@ -79,19 +79,5 @@ Feature: Sticky Bottom Component Scenarios
       | a0W1C00000KyIeBUAV | 00515000005xr9aAAA | GNT__EnableOrgName__c:false | GNT__GlobalConfig__c |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
-    And I click on botton menu "sticky_bottom_Menu"
-    Then I softly do not see "GGPTEST5" inside bottom menu
-
-  @69445 @validateOrgNameIsNotShownInStickyBottomForPMProfileUsers
-  Scenario: Disabling Enable Org Name custom setting and validating display of org name Option in sticky bottom
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1C00000KyBBdUAN | 0051C000007cehzQAA | GNT__EnableOrgName__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1C00000KyBBdUAN | 0051C000007cehzQAA | GNT__EnableOrgName__c:false | GNT__GlobalConfig__c |
-    When I re-login as "Automation-PM" user on "default" portal
-    When I setup my app as "As a Grantor"
     And I click on botton menu "sticky_bottom_Menu"
     Then I softly do not see "GGPTEST5" inside bottom menu
