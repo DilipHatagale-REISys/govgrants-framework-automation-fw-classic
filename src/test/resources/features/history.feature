@@ -19,58 +19,6 @@ Feature: history Component Scenarios
     When I select "Program" from dropdown at History Table
     Then I softly see "PG-755-0205" value in flex table id "---program:-:historyTableId---"
 
-  @69577    @VerifyActualApproverNameIsDisplayedInApprovalHistoryAfterRecordSubmission
-  Scenario: Validate actual approver name inside Approval history table after submission of record to Submit for Approval
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-027                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
-    And I pause execution for "3" seconds
-    When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
-    And I pause execution for "3" seconds
-    And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
-    And I enter value "Active" into field "fieldStatus__c"
-    And I click modal button "Save"
-    And I navigate to "Roles" sub tab
-    And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
-    And I enter value "Automation PM" into field "fieldName__c"
-    And I enter value "Program Approver" into field "fieldBusinessRole__c"
-    And I click modal button "Save"
-    And I navigate to "Roles" sub tab
-    And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
-    And I enter value "Allen PM" into field "fieldName__c"
-    And I enter value "Key POC" into field "fieldBusinessRole__c"
-    And I click modal button "Save"
-    And I navigate to "Financials" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:fundingAccountInformationTableId---"
-    When I click "Add" after selection of "FA-17-03" in the table "---program:-:fundingAccountSelectionTableId---"
-    And I navigate to "Financials" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:budgetCategoryTableId---"
-    When I click "Add" after selection of "SBC-A-209" in the table "---program:-:budgetCategorySelectionTableId---"
-    And I navigate to "Log" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:relatedFederalProgramTableId---"
-    When I click "Add" after selection of "90.404" in the table "---program:-:relatedFederalProgramSelectionTableId---"
-    And I navigate to "Log" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:programServiceAreaTableId---"
-    When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
-    And I refresh the page
-    When I click on "Submit For Approval" in the page details
-    And I refresh the page
-    When I navigate to "History" sub tab
-    Then I softly see column "Assigned To" inside row "1" at position "2" and column at position "2" contains text "Automation PM"
-
   @69578    @VerifyActualApproverAndAssignedToNameIsDisplayedInApprovalHistoryAfterRecordReassignToUser
   Scenario: Validate Actual Approver name and Assigned To Name inside Approval history table after Reassigning of record to user
     Given I have "default" configuration as below:

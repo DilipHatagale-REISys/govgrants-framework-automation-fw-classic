@@ -1,4 +1,4 @@
-@sidebar-component @regression
+@sidebar-component @regression @sidebar
 Feature: Side bar Component Scenarios
   Test all sidebar component based scenarios
   As a configuration manager i make different configurational changes in side bar component and will validate them.
@@ -164,7 +164,7 @@ Feature: Side bar Component Scenarios
     When I navigate to "Data table enhanced record" content inside "Manage Organizations" subheader on left panel
     Then I see "5" records inside enhanced grid id "---program:-:EnhancedDataTableId---"
 
-  @77462    @orderBySortByFieldAtEnhancedDataTableAtSidebar-gHome
+  @77462    @orderBySortByFieldAtEnhancedDataTableAtSidebar-gHome @smoke
   Scenario: Changing specific column value in ascending order with order by and sort by field from config and validating it inside enhanced flex table at sidebar - Home phase
     Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
@@ -180,7 +180,7 @@ Feature: Side bar Component Scenarios
     When I navigate to "Data table enhanced record" content inside "Manage Organizations" subheader on left panel
     Then I see column "GrantAbbreviation__c" value is in "Ascending" order
 
-  @77463    @orderBySortByFieldDescendingAtEnhancedDataTableAtSidebar-gHome
+  @77463    @orderBySortByFieldDescendingAtEnhancedDataTableAtSidebar-gHome @smoke
   Scenario: Changing specific column value in descending order with order by and sort by field from config and validating it inside enhanced flex table at sidebar - Home phase
     Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
@@ -196,7 +196,7 @@ Feature: Side bar Component Scenarios
     When I navigate to "Data table enhanced record" content inside "Manage Organizations" subheader on left panel
     Then I see column "GrantAbbreviation__c" value is in "Descending" order
 
-  @77467    @enableFormulaFieldAtFlexTableAtEnhancedDataTableAtSidebar-gHome
+  @77467    @enableFormulaFieldAtFlexTableAtEnhancedDataTableAtSidebar-gHome @smoke
   Scenario: Validating subtotal of cell value of total obligated amount by entering formula at config and validating it inside enhanced flex table at sidebar - Home phase
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -210,7 +210,7 @@ Feature: Side bar Component Scenarios
     When I navigate to "Data table enhanced record" content inside "Manage Organizations" subheader on left panel
     Then I see cell subtotal as expected as given formula at "NumberofProjectAreas__c" field
 
-  @77468    @hideCellJsonFieldAtFlexTableForEnhancedDataTableAtSidebar-gHome
+  @77468    @hideCellJsonFieldAtFlexTableForEnhancedDataTableAtSidebar-gHome @smoke
   Scenario: Hiding specific cell value of enhanced data table from config and validating it inside enhanced data table at sidebar -Home
     Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
@@ -224,7 +224,7 @@ Feature: Side bar Component Scenarios
     When I navigate to "Data table enhanced record" content inside "Manage Organizations" subheader on left panel
     Then I see "*****" shown inside enhanced grid table for specified record "Applicationg test88888"
 
-  @77471    @hideExpressionJsonFieldAtFlexTableForEnhancedDataTableAtSidebar-gHome
+  @77471    @hideExpressionJsonFieldAtFlexTableForEnhancedDataTableAtSidebar-gHome @smoke
   Scenario: Set up configuration to hide edit action of parent enhanced grid using UserType IN Internal and validating it inside enhanced data table at sidebar -Home
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -239,7 +239,7 @@ Feature: Side bar Component Scenarios
     When I perform quick search for "Applicationg test88888" in "---program:-:flexGridEnhancedDataTableId---" panel
     Then I see "Edit" icon for "Applicationg test88888" is not displayed inside flex table
 
-  @77614    @enablePageSizeFieldAndValidateInsideEnhancedGridAtAtSidebar-gHome
+  @77614    @enablePageSizeFieldAndValidateInsideEnhancedGridAtAtSidebar-gHome @smoke
   Scenario: enabling of page size dropdown at bottom inside enhanced grid at sidebar - Home phase
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -285,7 +285,7 @@ Feature: Side bar Component Scenarios
     When I navigate to "Flex Grid Enhanced" content inside "Manage Organizations" subheader on left panel
     Then I see column "ProjectTitle__c" value is in "Ascending" order
 
-  @77623    @orderBySortByDescFieldAtParentDataTableEnhancedGridForDescendingOrderAtSidebar-gHome
+  @77623    @orderBySortByDescFieldAtParentDataTableEnhancedGridForDescendingOrderAtSidebar-gHome @smoke
   Scenario: Changing specific column value in descending order with order by and sort by field from config and validating it inside enhanced grid at sidebar-gHome
     Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -301,21 +301,7 @@ Feature: Side bar Component Scenarios
     When I navigate to "Flex Grid Enhanced" content inside "Manage Organizations" subheader on left panel
     Then I see column "ProjectTitle__c" value is in "Descending" order
 
-  @77698    @enableFormulaFieldAtParentFlexTableForEnhancedGridAtSideBar-gHOME
-  Scenario: validate subtotal of cell value of total obligated amount by entering formula at config  and validating it inside enhanced grid at sidebar - home phase
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Flex Table List       | Formula   |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue                               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1491                   |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
-    When I navigate to "Flex Grid Enhanced" content inside "Manage Organizations" subheader on left panel
-    Then I see cell subtotal as expected as given formula at "TotalAwardObligatedAmount__c" field
-
-  @77701     @hideCellJsonFieldAtEnhancedGridAtSideBar-gHome
+  @77701     @hideCellJsonFieldAtEnhancedGridAtSideBar-gHome @smoke
   Scenario: Hiding specific cell value of enhanced grid from config and validating it inside enhanced grid at sidebar
     Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
@@ -330,7 +316,7 @@ Feature: Side bar Component Scenarios
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     Then I see "*****" shown inside enhanced grid table for specified record "Demo_Title"
 
-  @77705     @hideColumnJsonFieldAtEnhancedGridAtSideBar-gHome
+  @77705     @hideColumnJsonFieldAtEnhancedGridAtSideBar-gHome @smoke
   Scenario: Hiding specific column value of enhanced grid from config and validating it inside enhanced grid at sidebar
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -344,7 +330,7 @@ Feature: Side bar Component Scenarios
     When I navigate to "Flex Grid Enhanced" content inside "Manage Organizations" subheader on left panel
     Then I see "Project Period" not displayed in enhanced grid table column title
 
-  @77721    @hideExpressionJSONAtEnhancedGridViewActionForInternalUserAtSideBar-gHome
+  @77721    @hideExpressionJSONAtEnhancedGridViewActionForInternalUserAtSideBar-gHome @smoke
   Scenario: Set up configuration to hide view action in config and validating it inside enhanced grid at sidebar
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -373,41 +359,6 @@ Feature: Side bar Component Scenarios
     When I navigate to "Data table enhanced record" content inside "Manage Organizations" subheader on left panel
     Then I see "Number of Project Areas" not displayed in enhanced grid table column title
 
-  @77800    @validateDownloadedPDFContentAsStatusIsActiveAtFlexTableEnhancedUnderSidebar-gHome
-  Scenario: validate Activated status in downloaded pdf file for enhanced data table at sidebar
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Grid:Flex Table List | Show in PDF         | true              | ApiGeneratedId:0 |
-      | Flex Grid                 | Enable Export (PDF) | true              | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Show in PDF         | true          | EnhancedDataTable  | Name                      | FLV-2548                   |
-      | Flex Grid:General     | Enable Export (PDF) | true          | EnhancedDataTable  |                           |                            |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
-    When I navigate to "Data table enhanced record" content inside "Manage Organizations" subheader on left panel
-    When I click on parallel lines menu bar with data target value "#EnhancedDataTableFlexToggle"
-    And I select "Download as PDF" from parallel lines dropdown of "Grants Enhanced Table"
-    And I download the file
-    Then I see "Active" on page "1" of "govgrants" pdf file
-
-  @77819    @validateDownloadedXLSContentAsStatusIsActiveAtFlexTableEnhancedUnderSidebar-gHome
-  Scenario: validate Activated status in downloaded xls file for enhanced data table at sidebar
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
-      | Flex Grid             | Enable Export (xls / csv) | true              | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Export (xls / csv) | true          | EnhancedDataTable  |                           |                            |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
-    When I navigate to "Data table enhanced record" content inside "Manage Organizations" subheader on left panel
-    When I click on parallel lines menu bar with data target value "#EnhancedDataTableFlexToggle"
-    And I select "Download as XLS" from parallel lines dropdown of "Grants Enhanced Table"
-    Then I see "Active" in downloaded xls or csv file "govgrants"
-
   @77822    @validateViewActionAtParentFlexTableForEnhancedGridAtSideBar-gHOME
   Scenario: validate view action at enhanced grid at sidebar - home phase
     When I login as "Automation" user
@@ -430,49 +381,6 @@ Feature: Side bar Component Scenarios
     When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
     When I perform quick search for "QA Team Automation Record" in "---program:-:flexGridEnhancedID---" panel
     Then I see value "Test Automation sidebar" for multiple cells at column "AddressProgramContact__c"
-
-  @77820    @validateDownloadedPDFContentAsStatusIsActiveUnderParentFlexTableForEnhancedGridAtSideBar-gHOME
-  Scenario Outline: validate Activated status in downloaded pdf file for enhanced grid at sidebar - home phase
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName           | fieldOrignalValue  | filterId         |
-      | Flex Grid:Flex Table List | Show in PDF         | false              | ApiGeneratedId:0 |
-      | Flex Table                | Enable Export (PDF) | true               | ApiGeneratedId:1 |
-      | Flex Grid                 | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:2 |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Show in PDF         | true           | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
-      | Flex Table:General        | Enable Export (PDF) | true           | TmpActiveGrantsGrid |                           |                            |
-      | Flex Grid:General         | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
-    When I navigate to "Flex Grid Enhanced" content inside "Manage Organizations" subheader on left panel
-    When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
-    And I select "Download as PDF" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
-    And I download the file
-    Then I see "Active" on page "1" of "govgrants" pdf file
-
-    Examples:
-      | newFieldsApi                                                                                                                                                                                                                       | defaultFieldsApi                                                                                                                                                                                                                   |
-      | ProjectTitle__c,Status__c,Name,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
-
-  @77821    @validateDownloadedXLSContentAsStatusIsActiveUnderParentFlexTableForEnhancedGridAtSideBar-gHOME
-  Scenario: validate Activated status in downloaded xls file for enhanced grid at sidebar - home phase
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName                 | fieldOrignalValue | filterId         |
-      | Flex Grid:Flex Table List | Show in PDF               | false             | ApiGeneratedId:0 |
-      | Flex Grid                 | Enable Export (xls / csv) | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName                 | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Show in PDF               | true          | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
-      | Flex Grid:General         | Enable Export (xls / csv) | true          | TmpActiveGrantsGrid |                           |                            |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
-    When I navigate to "Flex Grid Enhanced" content inside "Manage Organizations" subheader on left panel
-    When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
-    And I select "Download as XLS" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
-    Then I see "Active" in downloaded xls or csv file "govgrants"
 
   @78043    @validateViewActionAtFlexTableEnhancedAtSideBar-gHOME
   Scenario: validate view action at flex table enhanced at sidebar - home phase
