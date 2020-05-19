@@ -5823,3 +5823,74 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I cannot see "Overview" sub tab at view detail page
+
+  @82039    @verifyHideExpressionJSONAtEnhancedGridForMultipleGroupsByAndOperatorAtRowLevelActions-EGrid @enhancedGrid
+  Scenario: Verify Hide expression JSON for multiple AND groups at row level action - enhanced grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                        | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_Multiple_AND_group_at_row_level_action | TmpActiveGrantsGrid | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Test Program For Automation - Expression Builder"
+    When I click on "View Program Details" icon for "Test Program For Automation - Expression Builder" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    Then I see "Edit" icon for "Demo_Title" is not displayed inside flex table
+
+  @82057    @verifyHideExpressionJSONAtEnhancedGridForMultipleGroupsByUsingOrOperatorAtRowLevelActions-EGrid @enhancedGrid
+  Scenario: Verify Hide expression JSON for multiple OR groups at row level action - enhanced grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                       | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_Multiple_OR_group_at_row_level_action | TmpActiveGrantsGrid | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Test Program For Automation - Expression Builder"
+    When I click on "View Program Details" icon for "Test Program For Automation - Expression Builder" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    Then I see "Edit" icon for "Demo_Title" is not displayed inside flex table
+
+  @82059    @verifyHideExpressionJSONAtEnhancedGridForMultipleGroupsByUsingOrAndOperatorAtRowLevelActions-EGrid @enhancedGrid @smoke
+  Scenario: Verify Hide expression JSON by using OR and AND operator in multiple groups at row level action - enhanced grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                           | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_Multiple_AND_OR_group_at_row_level_action | TmpActiveGrantsGrid | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Test Program For Automation - Expression Builder"
+    When I click on "View Program Details" icon for "Test Program For Automation - Expression Builder" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    Then I see "Edit" icon for "Demo_Title" is not displayed inside flex table
+
+  @82065    @verifyHideExpressionJSONAtEnhancedGridForMultipleGroupsByAndOperatorAtTopLevelActions-EGrid @enhancedGrid
+  Scenario: Verify Hide expression JSON for multiple AND groups at top level action - enhanced grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                        | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_Multiple_AND_group_at_top_level_action | TmpActiveGrantsGrid | Name                      | New                        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    Then I see no "New" button inside "Monitoring Schedule For All Active Grants" enhanced grid

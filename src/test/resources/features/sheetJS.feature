@@ -1,4 +1,4 @@
-@SheetJS-component @regression @wip @SheetJS
+@SheetJS-component @regression @SheetJS
 Feature: SheetJS Config Component Scenarios
   Test all Sheet JS config component based scenarios
   As a configuration manager i make different configurational changes in sheetJS component and will validate them.

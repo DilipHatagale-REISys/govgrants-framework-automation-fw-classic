@@ -115,8 +115,8 @@ Feature: Side bar Component Scenarios
     When I navigate to "Completed" content inside "Tasks" subheader on left panel
     Then I see "<Page title>" in new tab
     Examples:
-      | Page title                     |
-      | HOME: Completed ~ As a Grantor |
+      | Page title      |
+      | HOME: Completed |
 
   @33887    @validateTargetUrlForAccordionContent-gHome
   Scenario Outline: validate accordion content opens with provided target url
