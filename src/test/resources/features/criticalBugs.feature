@@ -279,8 +279,8 @@ Feature: Logged Issues Scenarios
     When I click on "View" icon for "Energy Cluster Program" inside table
     Then I see "<Page title>" in new tab
     Examples:
-      | Page title                  |
-      | Account View ~ As a Grantee |
+      | Page title   |
+      | Account View |
 
   @56394     @verifyActionsButtonNotDisplayedUnderFormsAttachmentBlockAtPreviewPage
   Scenario: validate Add button should be displayed on at attachment page block at forms preview page

@@ -311,7 +311,7 @@ Feature: Sanity check for all Component Scenarios
     When I enter value as "  " in field "Folder Name" at Library Files
     When I click on "Save" button in send email modal
     Then I see the following messages in the page details contains:
-      | The Content Folder null isn't valid. Use a unique name that doesn't start or end with a space and doesn't contain the character /.: Name |
+      | The Content Folder null isn't valid. Use a unique name that doesn't start or end with a space and doesn't contain the character /. |
 
   @35816    @hideApprovalDecisionFieldAtPageLayout-gPlanning @approvalProcess
   Scenario: Hiding approval decision box at page layout from config and validating it inside pending task approval decision
