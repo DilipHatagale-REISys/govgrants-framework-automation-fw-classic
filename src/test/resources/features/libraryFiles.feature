@@ -909,8 +909,8 @@ Feature: Library Files Component Scenarios
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I perform quick search for "Test" under files library
-    Then I softly see Label/Count as "Folders - 3" is displayed
-    Then I softly see Label/Count as "Files - 1" is displayed
+    Then I softly see Label/Count as "Folders - 4" is displayed
+    Then I softly see Label/Count as "Files - 2" is displayed
 
   @70732 @validateThatSelectedClassificationAtUploadModalIsDisplayedUnderPlanningFilesTable-RecordLevel @NeedDeleteAPI
   Scenario: Verify that selected classification at upload modal is displayed under planning files table - Home Phase

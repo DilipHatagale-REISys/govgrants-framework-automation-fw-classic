@@ -7,9 +7,11 @@ Feature: Sanity check for all Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue             | filterId         |
       | Charts Config         | Title     | AnnouncementByAdminBureauUnit | ApiGeneratedId:0 |
+      | Charts Config         | Active    | false                         | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue                        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue    |
       | Charts Config         | Title     | Funding Opportunities for Automation | GrantorPlanning    | Name                      | AnnouncementByAdminBureauUnit |
+      | Charts Config         | Active    | true                                 | GrantorPlanning    | Name                      | AnnouncementByAdminBureauUnit |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab

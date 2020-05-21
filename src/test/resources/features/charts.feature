@@ -7,12 +7,14 @@ Feature: Charts and Enhanced Charts Component Scenarios
   Scenario: Changing chart phase config to Annoucnement for 'AnnouncementByAdminBureauUnit' chart in configuratin and validating inside annoucenment
     Given I have "default" configuration as below:
       | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
-      | Charts Config         | Phase Config | ApiGeneratedId:1  | ApiGeneratedId:2 |
+      | Charts Config         | Active       | false             | ApiGeneratedId:0 |
+      | Charts Config         | Phase Config | ApiGeneratedId:2  | ApiGeneratedId:3 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue    |
+      | Charts Config         | Active            | true             | GrantorPlanning    | Name                      | AnnouncementByAdminBureauUnit |
       | Phase Config:General  | Tab Display Label | Announcements    | FundingOpportunity |                           |                               |
       | Phase Config:General  | Tab Display Label | Planning         | GrantorPlanning    |                           |                               |
-      | Charts Config         | Phase Config      | ApiGeneratedId:0 | GrantorPlanning    | Name                      | AnnouncementByAdminBureauUnit |
+      | Charts Config         | Phase Config      | ApiGeneratedId:1 | GrantorPlanning    | Name                      | AnnouncementByAdminBureauUnit |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -23,9 +25,11 @@ Feature: Charts and Enhanced Charts Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue    | filterId         |
       | Charts Details Config | All data table header | Funding Opportunity1 | ApiGeneratedId:0 |
+      | Charts Config         | Active                | false                | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName             | fieldNewValue                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Charts Details Config | All data table header | Funding Opportunity Automation | GrantorPlanning    | Name                      | CD-0147                    |
+      | configurationCategory | fieldName             | fieldNewValue                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue    |
+      | Charts Details Config | All data table header | Funding Opportunity Automation | GrantorPlanning    | Name                      | CD-0147                       |
+      | Charts Config         | Active                | true                           | GrantorPlanning    | Name                      | AnnouncementByAdminBureauUnit |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -38,9 +42,11 @@ Feature: Charts and Enhanced Charts Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
       | Charts Details Config | Disable Legend | false             | ApiGeneratedId:0 |
+      | Charts Config         | Active         | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Charts Details Config | Disable Legend | true          | GrantorPlanning    | Name                      | CD-0147                    |
+      | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue    |
+      | Charts Details Config | Disable Legend | true          | GrantorPlanning    | Name                      | CD-0147                       |
+      | Charts Config         | Active         | true          | GrantorPlanning    | Name                      | AnnouncementByAdminBureauUnit |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
