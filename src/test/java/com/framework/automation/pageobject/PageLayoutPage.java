@@ -1762,7 +1762,7 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean IsExpectedOptionDisplayedInDropdownAtDashboard(String dropdownOptions) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//button[@id='menuPhase']/following-sibling::ul//a[" + I.amPerforming().sanityOfXpathTo().equals("text()", dropdownOptions) + "]"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//button[@id='menuPhase']/following-sibling::ul//input[" + I.amPerforming().sanityOfXpathTo().equals("@aria-label", dropdownOptions) + "]"))) {
                 flag = true;
             }
         } catch (Exception e) {
