@@ -1988,7 +1988,7 @@ Feature: Enhanced Flex Grid Component Scenarios
       | Flex Grid             | Enable Hyperlink As Text | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Hyperlink As Text | false          | TmpActiveGrantsGrid |                           |                            |
+      | Flex Grid:General     | Enable Hyperlink As Text | false         | TmpActiveGrantsGrid |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1998,3 +1998,16 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     Then I see hyperlink at column value "Department of Transportation" inside "---program:-:enhancedGridTableId---" table
+
+  @82800    @validateQuickSearchBoxIsDisabledIfAnyRecordIsInInlineModeUnderEnhancedGrid-gPlanning
+  Scenario: validate quick search box is disabled if any record is in inline mode under enhanced grid-gPlanning
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    When I click on "Edit" icon for "Demo_Title" inside table
+    Then I see quick search box is disabled in flex table with id "---program:-:flexGridEnhancedID---"

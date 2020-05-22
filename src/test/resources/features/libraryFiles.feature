@@ -1729,3 +1729,40 @@ Feature: Library Files Component Scenarios
     When I click on expand icon at library/folder "UnitedHealth Group"
     When I click on expand icon at library/folder "Library-Folder 1 DND"
     Then I softly see library/folder/file "testAutomationFileDND.png" is displayed under files library
+
+  @82664 @validateThatibraryViewIsAvailableAtRecordLevelForAdminUser-RecordLevel
+  Scenario: Verify that library view is available at record level for admin user - record level
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    Then I softly see library/folder/file "Department of Community Health" is displayed under files library
+    Then I softly do not see library/folder/file "UnitedHealth Group" is displayed under files library
+    Then I softly do not see library/folder/file "Asset Library" is displayed under files library
+
+  @82740 @validateThatSingleLibraryIsDisplayedAtAddFileModalAsPerGivenActionUrlAtRecordLevelFor-RecordLevel
+  Scenario Outline: Verify that single library is displayed at add file modal as per given action url in config - record level
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL Long | <actionUrlLongDefaultValue> | PlanningFiles      | Name                      | Add Files                  |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | PlanningFiles      | Name                      | Add Files                  |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    When I click on SelectChange Folder in add file modal
+    Then I softly see library/folder/file "Department of Community Health" is displayed under files library
+    Then I softly do not see library/folder/file "UnitedHealth Group" is displayed under files library
+
+    Examples:
+      | actionUrlLongNewValue                                                                                                          | actionUrlLongDefaultValue                                                                           |
+      | /apex/SalesforceFiles?pageName=GNT__FileUpload&parentId={!Program__c.Id}&pageBlockId={!pageBlockId}&workspaceId={!workspaceId} | /apex/SalesforceFiles?pageName=GNT__FileUpload&parentId={!Program__c.Id}&pageBlockId={!pageBlockId} |

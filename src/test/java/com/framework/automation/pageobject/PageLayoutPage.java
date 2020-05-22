@@ -458,6 +458,14 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * click on -By phase- drop-down at refine filter section in Dashboard
+     */
+    public void clickOnByPhaseDropdownAtDashboard() {
+        By ByPhaseButton = By.xpath("//button[contains(text(),'By Phase')]");
+        I.amPerforming().click().on(ByPhaseButton);
+    }
+
+    /**
      * return true if expected field on page getting focused
      */
     public void assertExpectedFieldGettingFocusedOnClick() {
@@ -918,6 +926,17 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public void assertFooterLinkIsPresent(String footerLinkName) {
         Assert.assertTrue(isExpectedLinkIsDisplayedInPageFooter(footerLinkName));
+    }
+
+    /**
+     * return true if expected option is present under dropdown at dashboard
+     */
+    public void assertOptionsInDropdownAtDashboard(String usage, String dropdownOptions) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(IsExpectedOptionDisplayedInDropdownAtDashboard(dropdownOptions));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(IsExpectedOptionDisplayedInDropdownAtDashboard(dropdownOptions)).isFalse();
+        }
     }
 
     /**
@@ -1733,6 +1752,20 @@ public class PageLayoutPage extends GovGrantsManager {
             } catch (Exception e) {
                 flag = false;
             }
+        }
+        return flag;
+    }
+
+    /**
+     * @return true if expected option is present under dropdown at dashboard
+     */
+    private boolean IsExpectedOptionDisplayedInDropdownAtDashboard(String dropdownOptions) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//button[@id='menuPhase']/following-sibling::ul//a[" + I.amPerforming().sanityOfXpathTo().equals("text()", dropdownOptions) + "]"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
         }
         return flag;
     }

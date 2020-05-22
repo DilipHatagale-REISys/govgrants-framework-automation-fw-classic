@@ -146,6 +146,11 @@ public class PageLayoutSteps {
         pageLayoutPage.clickModalContentSpecificButton(buttonName);
     }
 
+    @When("^I click on By phase dropdown at dashboard$")
+    public void clickOnByPhaseDropdownAtDashboard() {
+        pageLayoutPage.clickOnByPhaseDropdownAtDashboard();
+    }
+
     @And("^I click on expand collapse icon for panel heading \"([^\"]*)\"$")
     public void clickOnExpandColapseIcon(String panelHeaderName) {
         pageLayoutPage.clickExpandCollapseIconAtTableHeader(panelHeaderName);
@@ -461,5 +466,10 @@ public class PageLayoutSteps {
     @Then("^I see \"([^\"]*)\" footer link is present$")
     public void assertFooterLinkIsPresent(String footerLinkName) {
         pageLayoutPage.assertFooterLinkIsPresent(footerLinkName);
+    }
+
+    @Then("^I (see|do not see) \"([^\"]*)\" is displayed in dropdown at dashboard$")
+    public void assertOptionIsDisplayedInDropdownAtDashboard(String usage, String dropdownOptions) {
+        pageLayoutPage.assertOptionsInDropdownAtDashboard(usage, dropdownOptions);
     }
 }

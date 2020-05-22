@@ -6095,3 +6095,81 @@ Feature: Expression Builder Component Scenarios
     Examples:
       | newFieldsApi                                                                | defaultFieldsApi                                                                                                                               |
       | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,CurrentAmount__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
+
+  @82777    @verifyHideExpressionJSONAtEnhancedGridForInternalUserIfEnableParentHideLogicFieldIsCheckedAtRowLevelActions-EGrid @enhancedGrid
+  Scenario: Verify Hide expression JSON for internal user if enable parent hide logic field checkbox is checked at row level action - enhanced grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON     |                   | ApiGeneratedId:0 |
+      | Flex Table Action     | Enable Parent Hide Logic | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                | fieldNewValue                                                               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON     | govgrants_config:HideExpressionJsonIfParentHideLogicIsEnabledAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | Edit                       |
+      | Flex Table Action     | Enable Parent Hide Logic | true                                                                        | TmpActiveGrantsGrid | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Plan" sub tab
+    When I perform quick search for "Test Data DND" in "---program:-:flexGridEnhancedID---" panel
+    Then I see "Edit" icon for "Test Data DND" is not displayed inside flex table
+
+  @82801    @verifyHideExpressionJSONAtEnhancedGridForExternalUserIfEnableParentHideLogicFieldIsCheckedAtRowLevelActions-EGrid @enhancedGrid
+  Scenario: Verify Hide expression JSON for external user if enable parent hide logic field checkbox is checked at row level action - enhanced grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON     |                   | ApiGeneratedId:0 |
+      | Flex Table Action     | Enable Parent Hide Logic | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                | fieldNewValue                                                               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON     | govgrants_config:HideExpressionJsonIfParentHideLogicIsEnabledAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | Edit                       |
+      | Flex Table Action     | Enable Parent Hide Logic | true                                                                        | TmpActiveGrantsGrid | Name                      | Edit                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Plan" sub tab
+    When I perform quick search for "Test Data DND" in "---program:-:flexGridEnhancedID---" panel
+    Then I see "Edit" icon for "Test Data DND" is not displayed inside flex table
+
+  @82803    @verifyHideExpressionJSONAtEnhancedGridForInternalUserIfEnableParentHideLogicFieldIsCheckedAtRowLevelActions-EGridChildTable @enhancedGrid
+  Scenario: Verify Hide expression JSON for internal user if enable parent hide logic field checkbox is checked at row level action - enhanced grid child table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON     |                   | ApiGeneratedId:0 |
+      | Flex Table Action     | Enable Parent Hide Logic | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                | fieldNewValue                                                               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON     | govgrants_config:HideExpressionJsonIfParentHideLogicIsEnabledAtEnhancedGridChildTable | TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
+      | Flex Table Action     | Enable Parent Hide Logic | true                                                                        | TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Plan" sub tab
+    When I perform quick search for "Test Data DND" in "---program:-:flexGridEnhancedID---" panel
+    When I expand nested table containing column value "Test Data DND"
+    Then I see "Edit" icon for "AD-GT6OC--00" is not displayed inside flex table
+
+  @82804    @verifyHideExpressionJSONAtEnhancedGridForExternalUserIfEnableParentHideLogicFieldIsCheckedAtRowLevelActions-EGridChildTable @enhancedGrid
+  Scenario: Verify Hide expression JSON for external user if enable parent hide logic field checkbox is checked at row level action - enhanced grid child table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON     |                   | ApiGeneratedId:0 |
+      | Flex Table Action     | Enable Parent Hide Logic | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                | fieldNewValue                                                               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON     | govgrants_config:HideExpressionJsonIfParentHideLogicIsEnabledAtEnhancedGridChildTable | TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
+      | Flex Table Action     | Enable Parent Hide Logic | true                                                                        | TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Plan" sub tab
+    When I perform quick search for "Test Data DND" in "---program:-:flexGridEnhancedID---" panel
+    When I expand nested table containing column value "Test Data DND"
+    Then I see "Edit" icon for "AD-GT6OC--00" is not displayed inside flex table
