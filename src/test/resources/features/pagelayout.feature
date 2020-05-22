@@ -1825,3 +1825,19 @@ Feature: Page Layout Component Scenarios
     When I navigate to "Overview" sub tab
     When I click "Nauman Shahid" lookup link
     Then I see "User" shown as over view header
+
+  @82792   @verifyThatOptionAsALLIsPresentUnderRefineFilterByPhaseDropdown-gDashboard
+  Scenario: validate that by click on by phase dropdown at refine filter , an option as ALL is displayed - gDashboard
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Analytics" tab
+    When I click on By phase dropdown at dashboard
+    Then I see "All" is displayed in dropdown at dashboard
+
+  @82793   @verifyThatOptionAsCollabIsNotPresentUnderRefineFilterByPhaseDropdown-gDashboard
+  Scenario: validate that by click on by phase dropdown at refine filter , an option as Collab is not displayed - gDashboard
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Analytics" tab
+    When I click on By phase dropdown at dashboard
+    Then I do not see "Collab" is displayed in dropdown at dashboard

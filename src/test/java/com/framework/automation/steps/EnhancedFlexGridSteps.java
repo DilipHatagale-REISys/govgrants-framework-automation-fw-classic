@@ -266,4 +266,9 @@ public class EnhancedFlexGridSteps {
     public void assertHyperlinkAtColumnValueInsideEnhancedGrid(String usage, String columnValue, String tableId) {
         enhancedFlexGrid.assertHyperlinkIsDisplayedAtColumnValueInsideEnhancedGrid(usage, columnValue, tableId);
     }
+
+    @Then("^I see quick search box is disabled in flex table with id \"([^\"]*)\"$")
+    public void assertQuickSearchBoxIsDisabledInFlexTable(String tableId) {
+        enhancedFlexGrid.assertQuickSearchBoxIsDisabledAtFlexTable(tableId);
+    }
 }

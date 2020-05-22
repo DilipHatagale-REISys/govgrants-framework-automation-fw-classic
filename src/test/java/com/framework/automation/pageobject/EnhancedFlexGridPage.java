@@ -503,6 +503,13 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         }
     }
 
+    /**
+     * return true if quick search box is displayed as disabled at enhanced grid
+     */
+    public void assertQuickSearchBoxIsDisabledAtFlexTable(String tableId) {
+        Assert.assertTrue(isQuickSearchBoxIsDisabledAtFlexTable(tableId));
+    }
+
     /*********
      * "Local Methods with complete functionality - private"
      *****************/
@@ -1395,6 +1402,21 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='" + tableId + "']//span[text()='" + columnValue + "'] | //div[@id='" + tableId + "']//a[text()='" + columnValue + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * @param tableId
+     * @return true if quick search box is displayed as disabled at enhanced grid
+     */
+    private Boolean isQuickSearchBoxIsDisabledAtFlexTable(String tableId) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='" + tableId + "']//div[contains(@class,'disabledOpacity')]"))) {
                 flag = true;
             }
         } catch (Exception e) {
