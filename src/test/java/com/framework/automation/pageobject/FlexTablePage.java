@@ -310,6 +310,17 @@ public class FlexTablePage extends GovGrantsManager {
     }
 
     /**
+     * assert true if expected button is displayed at top/bottom of modal window
+     */
+    public void assertButtonsIsDisplayedAtModalWindow(String usage, String buttonName, String buttonPosition) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isButtonsDisplayedAtModalWindow(buttonName, buttonPosition));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isButtonsDisplayedAtModalWindow(buttonName, buttonPosition));
+        }
+    }
+
+    /**
      * return false if specified item is displayed
      *
      * @param dropDownValue
@@ -940,6 +951,27 @@ public class FlexTablePage extends GovGrantsManager {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    /**
+     * @return true if expected button is displayed at top/bottom of modal window
+     */
+    private Boolean isButtonsDisplayedAtModalWindow(String buttonName, String buttonPosition) {
+        boolean flag = false;
+        if (buttonPosition.equals("Top")) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[contains(@class,'panel-heading')]//input[@value='"+buttonName+"' or @type='"+buttonName+"' or text()='"+buttonName+"']"))) {
+                flag = true;
+            } else {
+                flag = false;
+            }
+        } else if (buttonPosition.equals("Bottom")) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[contains(@class,'panel-footer')]//input[@value='"+buttonName+"' or @type='"+buttonName+"' or text()='"+buttonName+"']"))) {
+                flag = true;
+            } else {
+                flag = false;
+            }
         }
         return flag;
     }

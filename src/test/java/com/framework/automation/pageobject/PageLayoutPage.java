@@ -466,6 +466,48 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * click on icon in rich text area description field at page layout
+     */
+    public void clickAtIconInRichTextAreaField(String iconName) {
+        I.amPerforming().click().withJavaScript(getIconInRichTextAreaField(iconName));
+    }
+
+    /**
+     * click on user dropdown and select menu from header
+     */
+    public void clickOnUserDropdownAndSelectMenu(String dropdownMenu) {
+        I.amPerforming().click().on(By.xpath("//div[contains(@class,'navTopHeader')]//li[@class='dropdown userDropdown']//a[@class='dropdown-toggle']"));
+        I.amPerforming().click().on(By.xpath("//div/ul/li[contains(@class,'dropdown userDropdown')]//li//span[text()='" + dropdownMenu + "']"));
+    }
+
+    /**
+     * get icon in rich text area description field at page layout
+     */
+    public WebElement getIconInRichTextAreaField(String iconName) {
+        By getIcon = By.xpath("//div[@id='fieldObjectives__c']//a[contains(@title,'" + iconName + "')]");
+        return I.amPerforming().getElementReference().of(getIcon);
+    }
+
+    /**
+     * @param displayTextOrURL
+     * @param value            create hyperlink to the given text/URL using CK Editor tool under description field
+     */
+    public void createHyperlinkUsingCKEditorAtDescriptionField(String displayTextOrURL, String value) {
+        By displayTextInputBox = By.xpath("//label[text()='Display Text']/..//input");
+        By URLInputBox = By.xpath("//label[text()='URL']/..//input");
+        By okButton = By.xpath("//a[@title='OK']");
+
+        if (displayTextOrURL.equalsIgnoreCase("text")) {
+            I.amPerforming().textInput().in(displayTextInputBox, value);
+            I.amPerforming().textInput().in(URLInputBox, "www.google.com");
+        } else if (displayTextOrURL.equalsIgnoreCase("URL")) {
+            I.amPerforming().textInput().in(URLInputBox, value);
+        }
+
+        I.amPerforming().click().on(okButton);
+    }
+
+    /**
      * return true if expected field on page getting focused
      */
     public void assertExpectedFieldGettingFocusedOnClick() {
@@ -936,6 +978,38 @@ public class PageLayoutPage extends GovGrantsManager {
             Assert.assertTrue(IsExpectedOptionDisplayedInDropdownAtDashboard(dropdownOptions));
         } else if (usage.equalsIgnoreCase("do not see")) {
             I.amPerforming().assertionsTo().assertThat(IsExpectedOptionDisplayedInDropdownAtDashboard(dropdownOptions)).isFalse();
+        }
+    }
+
+    /**
+     * return true if expected icon is present in CK Editor at page layout
+     */
+    public void assertIconIsPresentInCKEditorAtDescriptionField(String iconName) {
+        Assert.assertTrue(isExpectedIconIsDisplayedInCKEditor(iconName));
+    }
+
+    /**
+     * return true if hyperlink is present at text/URL in rich text area field at page layout
+     */
+    public void assertHyperlinkIsPresentAtRichTextArea(String textOrURLValue) {
+        Assert.assertTrue(isHyperlinkPresentAtRichTextArea(textOrURLValue));
+    }
+
+    /**
+     * return true if hyperlink is not present at user name at user profile page
+     */
+    public void assertHyperlinkIsNotPresentAtUserProfilePage(String userName) {
+        Assert.assertTrue(isHyperlinkPresentAtUserName(userName));
+    }
+
+    /**
+     * return true if likes count / label is displayed at user profile page
+     */
+    public void assertLikesCountOrLabelIsPresentAtUserDetailPage(String usage, String likesCountOrlabel) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isLikesCountOrLabelPresentAtUserDetailPage(likesCountOrlabel));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isLikesCountOrLabelPresentAtUserDetailPage(likesCountOrlabel)).isTrue();
         }
     }
 
@@ -1763,6 +1837,62 @@ public class PageLayoutPage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//button[@id='menuPhase']/following-sibling::ul//input[" + I.amPerforming().sanityOfXpathTo().equals("@aria-label", dropdownOptions) + "]"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * @return true if expected icon is present in CK Editor for rich text area at page layout
+     */
+    private boolean isExpectedIconIsDisplayedInCKEditor(String iconName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(getIconInRichTextAreaField(iconName))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * @return true if hyperlink is present at text/URL in rich text area field at page layout
+     */
+    private boolean isHyperlinkPresentAtRichTextArea(String textOrURLValue) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//body/a[text()='" + textOrURLValue + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * @return true if hyperlink is not present at user name at user profile page
+     */
+    private boolean isHyperlinkPresentAtUserName(String userName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[contains(@class,'profileSidebar')]//span[text()='" + userName + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * @return true  likes count / label is displayed at user profile page
+     */
+    private boolean isLikesCountOrLabelPresentAtUserDetailPage(String likesCountOrlabel) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@class='postInfo']//span[text()='" + likesCountOrlabel + "']"))) {
                 flag = true;
             }
         } catch (Exception e) {

@@ -151,6 +151,21 @@ public class PageLayoutSteps {
         pageLayoutPage.clickOnByPhaseDropdownAtDashboard();
     }
 
+    @When("^I create hyperlink for \"([^\"]*)\" as \"([^\"]*)\" at rich text area field$")
+    public void createHyperlinkInCKEditor(String displayTextOrURL, String value) {
+        pageLayoutPage.createHyperlinkUsingCKEditorAtDescriptionField(displayTextOrURL,value);
+    }
+
+    @When("^I click on \"([^\"]*)\" icon in rich text area description field$")
+    public void clickOnIconInRichTextAreaDescriptionField(String iconName) {
+        pageLayoutPage.clickAtIconInRichTextAreaField(iconName);
+    }
+
+    @When("^I select \"([^\"]*)\" from user dropdown$")
+    public void clickOnUserDropdownAndSelectMenu(String dropdownMenu) {
+        pageLayoutPage.clickOnUserDropdownAndSelectMenu(dropdownMenu);
+    }
+
     @And("^I click on expand collapse icon for panel heading \"([^\"]*)\"$")
     public void clickOnExpandColapseIcon(String panelHeaderName) {
         pageLayoutPage.clickExpandCollapseIconAtTableHeader(panelHeaderName);
@@ -471,5 +486,25 @@ public class PageLayoutSteps {
     @Then("^I (see|do not see) \"([^\"]*)\" is displayed in dropdown at dashboard$")
     public void assertOptionIsDisplayedInDropdownAtDashboard(String usage, String dropdownOptions) {
         pageLayoutPage.assertOptionsInDropdownAtDashboard(usage, dropdownOptions);
+    }
+
+    @Then("^I see icon for \"([^\"]*)\" is present in rich text area description field$")
+    public void assertIconIsPresentInCKEditorAtDescriptionField(String iconName) {
+        pageLayoutPage.assertIconIsPresentInCKEditorAtDescriptionField(iconName);
+    }
+
+    @Then("^I see hyperlink is present at \"([^\"]*)\" in rich text area field$")
+    public void assertHyperlinkIsPresentAtRichTextAreaField(String textOrURLValue) {
+        pageLayoutPage.assertHyperlinkIsPresentAtRichTextArea(textOrURLValue);
+    }
+
+    @Then("^I see hyperlink is not present at \"([^\"]*)\" user$")
+    public void hyperlinkIsNotPresentAtUserProfilePage(String userName) {
+        pageLayoutPage.assertHyperlinkIsNotPresentAtUserProfilePage(userName);
+    }
+
+    @Then("^I (softly see|see) likesCount / label as \"([^\"]*)\" is present at user detail page$")
+    public void likesCountOrLabelPresentAtUserDetailPage(String usage, String likesCountOrlabel) {
+        pageLayoutPage.assertLikesCountOrLabelIsPresentAtUserDetailPage(usage,likesCountOrlabel);
     }
 }

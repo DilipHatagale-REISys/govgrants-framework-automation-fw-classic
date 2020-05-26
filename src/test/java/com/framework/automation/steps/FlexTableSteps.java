@@ -239,4 +239,9 @@ public class FlexTableSteps {
     public void assertCurrencyUnitInFlexTableTotalAmount(String currencyUnit) {
         flexTablePage.assertFlexTabelCurrencyUnitInTotalAmount(currencyUnit);
     }
+
+    @Then("^I (see|softly see) \"([^\"]*)\" button at \"([^\"]*)\" of  Modal window$")
+    public void buttonsAtModalWindow(String usage, String buttonName, String buttonPosition) {
+        flexTablePage.assertButtonsIsDisplayedAtModalWindow(usage,buttonName,buttonPosition);
+    }
 }

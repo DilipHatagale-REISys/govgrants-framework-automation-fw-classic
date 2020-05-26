@@ -6141,9 +6141,9 @@ Feature: Expression Builder Component Scenarios
       | Flex Table Action     | Hide Expression JSON     |                   | ApiGeneratedId:0 |
       | Flex Table Action     | Enable Parent Hide Logic | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                | fieldNewValue                                                               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory | fieldName                | fieldNewValue                                                                         | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON     | govgrants_config:HideExpressionJsonIfParentHideLogicIsEnabledAtEnhancedGridChildTable | TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
-      | Flex Table Action     | Enable Parent Hide Logic | true                                                                        | TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
+      | Flex Table Action     | Enable Parent Hide Logic | true                                                                                  | TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -6161,9 +6161,9 @@ Feature: Expression Builder Component Scenarios
       | Flex Table Action     | Hide Expression JSON     |                   | ApiGeneratedId:0 |
       | Flex Table Action     | Enable Parent Hide Logic | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                | fieldNewValue                                                               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory | fieldName                | fieldNewValue                                                                         | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON     | govgrants_config:HideExpressionJsonIfParentHideLogicIsEnabledAtEnhancedGridChildTable | TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
-      | Flex Table Action     | Enable Parent Hide Logic | true                                                                        | TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
+      | Flex Table Action     | Enable Parent Hide Logic | true                                                                                  | TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
     And I navigate to "Applications" tab
@@ -6173,3 +6173,21 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "Test Data DND" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Test Data DND"
     Then I see "Edit" icon for "AD-GT6OC--00" is not displayed inside flex table
+
+  @83087    @VerifyHideExpressionJsonIfHideRowLevelActionOnTheBasisOfParentFormulaFieldWhichIsNotPresentInEnhancedGridParentTable
+  Scenario: validate row level action hide expression json on the basis of field which is not present in enhanced grid parent flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionJSONForRowLevelActionIfFieldIsNotPresentInTable | TmpActiveGrantsGrid | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "test Program for automation DND" in "---program:-:flexGridEnhancedID---" panel
+    Then I see "Edit" icon for "test Program for automation DND" is not displayed inside flex table

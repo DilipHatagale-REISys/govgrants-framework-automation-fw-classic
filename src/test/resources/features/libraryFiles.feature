@@ -1766,3 +1766,39 @@ Feature: Library Files Component Scenarios
     Examples:
       | actionUrlLongNewValue                                                                                                          | actionUrlLongDefaultValue                                                                           |
       | /apex/SalesforceFiles?pageName=GNT__FileUpload&parentId={!Program__c.Id}&pageBlockId={!pageBlockId}&workspaceId={!workspaceId} | /apex/SalesforceFiles?pageName=GNT__FileUpload&parentId={!Program__c.Id}&pageBlockId={!pageBlockId} |
+
+  @83048 @validateThatAssertLibraryIsDisplayedAtAdminUser-HomePhase
+  Scenario: Verify that assert library is displayed at home phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    Then I see library/folder/file "Asset Library" is displayed under files library
+
+  @83055 @validateThatAssertLibraryIsNotDisplayedAtAddFileModalUnderSelectChangeFolder-gPlanning
+  Scenario: Verify that assert library is not displayed at add file modal under select/Change folder - record level
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    When I click on SelectChange Folder in add file modal
+    Then I do not see library/folder/file "Asset Library" is displayed under files library
+
+  @83078 @validateThatAuthorCanSeeFilesPresentUnderAssetLibraryAtUploadFileModal-RecordLevel
+  Scenario: Verify that author can see files from asset library at upload file from library modal- record level
+    When I login as "AUTOMATION-APPLICANT" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    And I click on "Upload File from Library" tab at files library upload modal
+    When I perform quick search for "AssetLibraryTestData.docx" under files library
+    Then I see "AssetLibraryTestData.docx" shown in search table with id "WorkspaceFilesUpload" at file upload modal

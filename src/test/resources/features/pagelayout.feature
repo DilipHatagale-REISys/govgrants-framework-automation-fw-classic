@@ -1841,3 +1841,55 @@ Feature: Page Layout Component Scenarios
     And I navigate to "Analytics" tab
     When I click on By phase dropdown at dashboard
     Then I do not see "Collab" is displayed in dropdown at dashboard
+
+  @82770    @verifyALinkIconPresentAtRichTextAreaDescriptionFieldUnderPageLayout-gPlanning
+  Scenario: validate that link icon is present at rich text area description field under page layout - gPlanning
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    Then I see icon for "Link" is present in rich text area description field
+
+  @82786    @verifyHyperLinkIsPresentAtTextGivenInRichTextAreaDescriptionFieldUnderPageLayout-gPlanning
+  Scenario: validate that a hyperlink is present at display text in rich text area description field under page layout - gPlanning
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    When I click on "Link" icon in rich text area description field
+    When I create hyperlink for "text" as "TestAutomationDescription" at rich text area field
+    Then I see hyperlink is present at "TestAutomationDescription" in rich text area field
+
+  @82775    @verifyHyperLinkIsPresentAtURLGivenInRichTextAreaDescriptionFieldUnderPageLayout-gPlanning
+  Scenario: validate that a hyperlink is present at URL in rich text area description field under page layout - gPlanning
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    When I click on "Link" icon in rich text area description field
+    When I create hyperlink for "URL" as "www.testAutomation.com" at rich text area field
+    Then I see hyperlink is present at "www.testAutomation.com" in rich text area field
+
+  @83110    @verifyHyperLinkIsNotPresentAtUserNameUnderUserProfilePage
+  Scenario: validate that a hyperlink is not present at user name under user profile page
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    When I select "My Profile" from user dropdown
+    Then I see hyperlink is not present at "Nauman Shahid" user
+
+  @83111   @verifySpaceIsPresentBetweenLikesAndLabelUnderUserProfilePage
+  Scenario: validate that space is present between likes count and label under user profile page
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    When I select "My Profile" from user dropdown
+    Then I softly see likesCount / label as "0" is present at user detail page
+    Then I softly see likesCount / label as "Posts & Comments" is present at user detail page
