@@ -1477,3 +1477,27 @@ Feature: All pdf and xls related scenario including component and completed back
     When I perform quick search for "SheetJSFileUpload.xlsx" in "---program:-:PlanningFilesFlexGridId---" panel
     When I click on "Download" icon for "SheetJSFileUpload.xlsx" inside table
     Then I softly see "Organization" in downloaded xls or csv file "govgrants"
+
+
+  @83182 @validateThatAdminUserCanDownloadTheLibraryAndAllFilesInItAtAssetLibrary-HomePhase @libraryFiles
+  Scenario: Verify that admin user can download library and it's files at  asset library
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on dropdown at library/folder/file "Asset Library"
+    When I click on "Download Files" option at library/folder/file "Asset Library"
+    Then I softly see "Creating" on page "1" of "govgrants" pdf file
+
+  @83183 @validateThatAdminUserCanDownloadTheAttachedFilesFromAssetLibrary-HomePhase @libraryFiles
+  Scenario: Verify that admin user can download the attached files from  asset library
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "Asset Library"
+    When I click on dropdown at library/folder/file "AssetLibraryTestData.pdf"
+    When I click on "Download File" option at library/folder/file "AssetLibraryTestData.pdf"
+    Then I see "Creating" on page "1" of "govgrants" pdf file

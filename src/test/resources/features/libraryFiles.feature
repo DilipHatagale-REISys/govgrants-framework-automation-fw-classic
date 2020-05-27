@@ -1800,5 +1800,52 @@ Feature: Library Files Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     And I click on "Upload File from Library" tab at files library upload modal
-    When I perform quick search for "AssetLibraryTestData.docx" under files library
-    Then I see "AssetLibraryTestData.docx" shown in search table with id "WorkspaceFilesUpload" at file upload modal
+    When I perform quick search for "AssetLibraryTestData.pdf" under files library
+    Then I see "AssetLibraryTestData.pdf" shown in search table with id "WorkspaceFilesUpload" at file upload modal
+
+  @83085 @validateThatOnlyAssetLibraryIsDisplayedToUserWhoDon'tHaveAccessOfAnyOtherLibraryAtUploadFileModal-RecordLevel
+  Scenario: Verify that only asset library is displayed to the user who have access of only asset library at upload file from library modal window - record level
+    When I login as "AUTOMATION-APPLICANT" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    Then I see pre-selected library/folder as "Asset Library" is displayed at add file modal
+
+  @83164 @validateThatAddFolderOptionAtAssetLibraryIsNotDisplayedForAllUsers-HomePhase
+  Scenario: Verify that Add new folder option not available on asset library for all users
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on dropdown at library/folder/file "Asset Library"
+    Then I softly do not see "Add New Folder" option is present at library/folder/file "Asset Library"
+    Then I softly see "Upload File" option is present at library/folder/file "Asset Library"
+    Then I softly see "Download Files" option is present at library/folder/file "Asset Library"
+
+  @83180 @validateThatAdminUserCanDeleteTheFilesFromAssetLibrary-HomePhase
+  Scenario: Verify that admin user can delete the files from  asset library
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "Asset Library"
+    When I click on dropdown at library/folder/file "Asset Library"
+    When I click on "Upload File" option at library/folder/file "Asset Library"
+    When I upload file "TestAutomationFile.jpg" into library
+    When I click on "Upload" button in send email modal
+    And I pause execution for "5" seconds
+    And I refresh the page
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "Asset Library"
+    Then I softly see library/folder/file "TestAutomationFile.jpg" is displayed under files library
+    When I click on dropdown at library/folder/file "TestAutomationFile.jpg"
+    When I click on "Delete File" option at library/folder/file "TestAutomationFile.jpg"
+    And I pause execution for "5" seconds
+    Then I softly do not see library/folder/file "TestAutomationFile.jpg" is displayed under files library

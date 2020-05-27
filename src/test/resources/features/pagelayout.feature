@@ -1893,3 +1893,34 @@ Feature: Page Layout Component Scenarios
     When I select "My Profile" from user dropdown
     Then I softly see likesCount / label as "0" is present at user detail page
     Then I softly see likesCount / label as "Posts & Comments" is present at user detail page
+
+  @83330   @verifyRequiredForSaveBehaviourAtPageBlockDetailInModalWindowForURLField
+  Scenario: Changing value for required for save behaviour field for URL from config and checking error message at modal
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField            | filterId         |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Announcement Create - Grantor | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Announcement Create - Grantor | Name                      | PBD-9217                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I click on top right button "Create" in flex table with id "ActiveFundingOpportunities"
+    When I enter value "PG-343-0034" into field "Program__c"
+    And I click modal button "Continue"
+    Then I see the following message in the page details :
+      | Funding Opportunity Web Address is Required to save. |
+
+  @83324   @verifyAlertMessageForEnteringIncorrectDataAtURLFieldInModal-gAnnouncement
+  Scenario: validate alert message for enetering incorrect data at url field on modal
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I click on top right button "Create" in flex table with id "ActiveFundingOpportunities"
+    When I enter value "PG-343-0034" into field "Program__c"
+    When I enter value "abc" into field "FundingOpportunityURL__c"
+    And I click modal button "Continue"
+    Then I see the following message in the page details :
+      | Please enter valid URL value. |
