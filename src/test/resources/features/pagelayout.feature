@@ -1924,3 +1924,95 @@ Feature: Page Layout Component Scenarios
     And I click modal button "Continue"
     Then I see the following message in the page details :
       | Please enter valid URL value. |
+
+  @83323 @verifyURLFieldIsAcceptsCorrectURLEnteredOnModalWindow-gAnnouncement
+  Scenario:validate if correct URL value entered in URL field on modal and click on continue button then it redirects to next page
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I click on top right button "Create" in flex table with id "ActiveFundingOpportunities"
+    When I enter value "PG-343-0034" into field "Program__c"
+    When I enter value "www.google.com" into field "FundingOpportunityURL__c"
+    And I click modal button "Continue"
+    Then I see "Create Funding Opportunity" shown as over view header
+
+  @83351   @verifyDigitalSigniturePageBlockrendersUnderPageLayoutInEditMode-gAnnouncement
+  Scenario: validate digital signiture page block displayed under page layout in edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Block            | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName | fieldNewValue | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Is Active | true          | Annoucement Profile-FOA | GNT__PageBlockTitle__c    | Digital signature          |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I perform quick search for "Test Announcement For Automation"
+    When I click on "Edit" icon for "Test Announcement For Automation" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see "Digital signature" page block displayed
+
+  @83157   @verifyHeaderFieldAccepts255CharactersAtFlexTableOnModalWindow-gPlanning
+  Scenario Outline: validate digital signiture page block displayed xyz
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table            | Header    | Program Contacts  | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header    | <enteredValue> | SelectNGOContacts  |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    And I pause execution for "3" seconds
+    Then I see "<requiredValue>" shown as inside "SelectNGOContacts"
+
+    Examples:
+      | enteredValue                                                                                                                                                                                                                                                    | requiredValue                                                                                                                                                                                                                                                   |
+      | The total size of this sentence is 255 The total size of this sentence is 255 The total size of this sentence is 255 The total size of this sentence is 255 The total size of this sentence is 255 The total size of this sentence is 255 Checked size limit... | The total size of this sentence is 255 The total size of this sentence is 255 The total size of this sentence is 255 The total size of this sentence is 255 The total size of this sentence is 255 The total size of this sentence is 255 Checked size limit... |
+
+  @83173    @pageBlockTitleFieldAccepts255CharAtPageBlock-gPlanning
+  Scenario Outline: Changing page block title with the 255 character value from config and validating it at program detail page
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName        | fieldOrignalValue   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Page Block Title | Program Information | Grantee State Program | GNT__PageBlockTitle__c    | <enteredValue>             |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName        | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Page Block Title | <enteredValue> | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    Then I see "<requiredValue>" page block displayed
+
+    Examples:
+      | enteredValue                                                                                                                                                                                                                                                    | requiredValue                                                                                                                                                                                                                                                   |
+      | The total size of this sentence is 255 The total size of this sentence is 255 The total size of this sentence is 255 The total size of this sentence is 255 The total size of this sentence is 255 The total size of this sentence is 255 Checked size limit... | The total size of this sentence is 255 The total size of this sentence is 255 The total size of this sentence is 255 The total size of this sentence is 255 The total size of this sentence is 255 The total size of this sentence is 255 Checked size limit... |
+
+  @83206    @pageBlockTitleFieldAccepts255CharactersWithSpecialCharactersInItAtPageBlock-gPlanning
+  Scenario Outline: Changing page block title with the 255 character including special characters value from config and validating it at program detail page
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName        | fieldOrignalValue   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Page Block Title | Program Information | Grantee State Program | GNT__PageBlockTitle__c    | <enteredValue>             |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName        | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Page Block Title | <enteredValue> | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    Then I see "<requiredValue>" page block displayed
+
+    Examples:
+      | enteredValue                                                                                                                                                                                                                                                   | requiredValue                                                                                                                                                                                                                                                   |
+      | ~!@#$%^&*()_+=-`{} \][:"';<>?/.,The total size of this sentence is 255 The total size of this sentence is 255 The total size of this sentence is 255 The total size of this sentence is 255 The total size of this sentence is 255 The total size of this sent | ~!@#$%^&*()_+=-`{} \][:"';<>?/., The total size of this sentence is 255 The total size of this sentence is 255 The total size of this sentence is 255 The total size of this sentence is 255 The total size of this sentence is 255 The total size of this sent |

@@ -6191,3 +6191,21 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "test Program for automation DND" in "---program:-:flexGridEnhancedID---" panel
     Then I see "Edit" icon for "test Program for automation DND" is not displayed inside flex table
+
+  @83512    @verifyHideExpressionJSONAtEnhancedGridByHidingRowLevelActionsOnTheBasisOfParentObject-EGrid @enhancedGrid
+  Scenario: Verify Hide expression JSON By hiding row level action on the basis of parent object - enhanced grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_row_level_action_Hide_using_parent_Object_Fields | TmpActiveGrantsGrid | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    Then I see "Edit" icon for "Demo_Title" is not displayed inside flex table

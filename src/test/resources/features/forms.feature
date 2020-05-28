@@ -101,3 +101,26 @@ Feature: Forms Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on "View" icon of form "General Application Form" program in flex table
     Then I see "Test Automation" shown as over view header
+
+
+  @83501 @verifyEnhancedGridWithHeaderIsDisplayedOnFormPreviewPage-gAnnouncement
+  Scenario:validate that enhanced grid with header is displayed on forms preview layout
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon of form "General Application Form" program in flex table
+    Then I see "Monitoring Schedule For All Active Grants" shown as inside "---program:-:enhancedGridTableId---"
+
+  @83505 @verifyEnhancedDataTableWithHeaderIsDisplayedOnFormPreviewPage-gAnnouncement
+  Scenario:validate that enhanced data table with header is displayed on forms preview layout
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon of form "General Application Budget Form" program in flex table
+    Then I see "Monitoring Schedule For All Active Grants" shown as inside "---program:-:TmpActiveGrantsGridTableId---"
