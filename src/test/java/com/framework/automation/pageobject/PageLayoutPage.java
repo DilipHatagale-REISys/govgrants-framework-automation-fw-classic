@@ -466,6 +466,14 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * get icon in rich text area description field at page layout
+     */
+    public WebElement getIconInRichTextAreaField(String iconName) {
+        By getIcon = By.xpath("//div[@id='fieldObjectives__c']//a[contains(@title,'" + iconName + "')]");
+        return I.amPerforming().getElementReference().of(getIcon);
+    }
+
+    /**
      * return true if expected field on page getting focused
      */
     public void assertExpectedFieldGettingFocusedOnClick() {
@@ -936,6 +944,38 @@ public class PageLayoutPage extends GovGrantsManager {
             Assert.assertTrue(IsExpectedOptionDisplayedInDropdownAtDashboard(dropdownOptions));
         } else if (usage.equalsIgnoreCase("do not see")) {
             I.amPerforming().assertionsTo().assertThat(IsExpectedOptionDisplayedInDropdownAtDashboard(dropdownOptions)).isFalse();
+        }
+    }
+
+    /**
+     * return true if expected icon is present in CK Editor at page layout
+     */
+    public void assertIconIsPresentInCKEditorAtDescriptionField(String iconName) {
+        Assert.assertTrue(isExpectedIconIsDisplayedInCKEditor(iconName));
+    }
+
+    /**
+     * return true if hyperlink is present at text/URL in rich text area field at page layout
+     */
+    public void assertHyperlinkIsPresentAtRichTextArea(String textOrURLValue) {
+        Assert.assertTrue(isHyperlinkPresentAtRichTextArea(textOrURLValue));
+    }
+
+    /**
+     * return true if hyperlink is not present at user name at user profile page
+     */
+    public void assertHyperlinkIsNotPresentAtUserProfilePage(String userName) {
+        Assert.assertTrue(isHyperlinkPresentAtUserName(userName));
+    }
+
+    /**
+     * return true if likes count / label is displayed at user profile page
+     */
+    public void assertLikesCountOrLabelIsPresentAtUserDetailPage(String usage, String likesCountOrlabel) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isLikesCountOrLabelPresentAtUserDetailPage(likesCountOrlabel));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isLikesCountOrLabelPresentAtUserDetailPage(likesCountOrlabel)).isTrue();
         }
     }
 
@@ -1763,6 +1803,62 @@ public class PageLayoutPage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//button[@id='menuPhase']/following-sibling::ul//input[" + I.amPerforming().sanityOfXpathTo().equals("@aria-label", dropdownOptions) + "]"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * @return true if expected icon is present in CK Editor for rich text area at page layout
+     */
+    private boolean isExpectedIconIsDisplayedInCKEditor(String iconName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(getIconInRichTextAreaField(iconName))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * @return true if hyperlink is present at text/URL in rich text area field at page layout
+     */
+    private boolean isHyperlinkPresentAtRichTextArea(String textOrURLValue) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//body/a[text()='" + textOrURLValue + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * @return true if hyperlink is not present at user name at user profile page
+     */
+    private boolean isHyperlinkPresentAtUserName(String userName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[contains(@class,'profileSidebar')]//span[text()='" + userName + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * @return true  likes count / label is displayed at user profile page
+     */
+    private boolean isLikesCountOrLabelPresentAtUserDetailPage(String likesCountOrlabel) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@class='postInfo']//span[text()='" + likesCountOrlabel + "']"))) {
                 flag = true;
             }
         } catch (Exception e) {

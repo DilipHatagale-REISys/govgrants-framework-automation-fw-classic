@@ -472,4 +472,24 @@ public class PageLayoutSteps {
     public void assertOptionIsDisplayedInDropdownAtDashboard(String usage, String dropdownOptions) {
         pageLayoutPage.assertOptionsInDropdownAtDashboard(usage, dropdownOptions);
     }
+
+    @Then("^I see icon for \"([^\"]*)\" is present in rich text area description field$")
+    public void assertIconIsPresentInCKEditorAtDescriptionField(String iconName) {
+        pageLayoutPage.assertIconIsPresentInCKEditorAtDescriptionField(iconName);
+    }
+
+    @Then("^I see hyperlink is present at \"([^\"]*)\" in rich text area field$")
+    public void assertHyperlinkIsPresentAtRichTextAreaField(String textOrURLValue) {
+        pageLayoutPage.assertHyperlinkIsPresentAtRichTextArea(textOrURLValue);
+    }
+
+    @Then("^I see hyperlink is not present at \"([^\"]*)\" user$")
+    public void hyperlinkIsNotPresentAtUserProfilePage(String userName) {
+        pageLayoutPage.assertHyperlinkIsNotPresentAtUserProfilePage(userName);
+    }
+
+    @Then("^I (softly see|see) likesCount / label as \"([^\"]*)\" is present at user detail page$")
+    public void likesCountOrLabelPresentAtUserDetailPage(String usage, String likesCountOrlabel) {
+        pageLayoutPage.assertLikesCountOrLabelIsPresentAtUserDetailPage(usage, likesCountOrlabel);
+    }
 }

@@ -747,9 +747,9 @@ Feature: Flex Table Component Scenarios
       | Flex Table Action Sobject | Hide Decision Expression | <defaultExpression>        | Programs           | Name                      | Edit                       |
       | Flex Table Action Sobject | Hide Decision Field      | <defaultHideDecisionField> | Programs           | Name                      | Edit                       |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName                | fieldNewValue              | coreComponentField                                            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Decision Expression |                            | Programs                                                      | Name                      | Edit                       |
-      | Flex Table Action Sobject | Hide Decision Field      | <defaultHideDecisionField> | Programs                                                      | Name                      | Edit                       |
+      | configurationCategory     | fieldName                | fieldNewValue              | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Decision Expression |                            | Programs           | Name                      | Edit                       |
+      | Flex Table Action Sobject | Hide Decision Field      | <defaultHideDecisionField> | Programs           | Name                      | Edit                       |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -1054,6 +1054,45 @@ Feature: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     Then I do not see total amount in flex table
+
+  @83081    @validateIfCustomSettingIsEnabledThenSaveButtonIsDisplayedAtTopAndBottomOfModalOnly-gPlanning
+  Scenario: validate if custom setting is enabled then save button is displayed at top and bottom of modal - gPlanning
+    Given I have "lightening" configuration as below:
+      | booleanValue | integerValue | id                 | description                                                              | name                           |
+      | false        | 0            | a0b1C00000OGdbvQAD | This will Enable actions on the modal window at top and bottom of window | EnableModalHeaderActionButtons |
+    When I login as "Automation" user
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description                                                              | name                           |
+      | true         | 0            | a0b1C00000OGdbvQAD | This will Enable actions on the modal window at top and bottom of window | EnableModalHeaderActionButtons |
+    When I navigate to "Planning" tab
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Roles" sub tab
+    And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
+    Then I softly see "Save" button at "Bottom" of  Modal window
+    Then I softly see "Save" button at "Top" of  Modal window
+
+  @83082    @validateIfCustomSettingIsDisabledThenSaveButtonIsDisplayedAtBottomOfModalOnly-gPlanning
+  Scenario: validate if custom setting is disabled then save button is displayed at bottom of modal - gPlanning
+    Given I have "lightening" configuration as below:
+      | booleanValue | integerValue | id                 | description                                                              | name                           |
+      | false        | 0            | a0b1C00000OGdbvQAD | This will Enable actions on the modal window at top and bottom of window | EnableModalHeaderActionButtons |
+    When I login as "Automation" user
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description                                                              | name                           |
+      | false        | 0            | a0b1C00000OGdbvQAD | This will Enable actions on the modal window at top and bottom of window | EnableModalHeaderActionButtons |
+    When I navigate to "Planning" tab
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Roles" sub tab
+    And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
+    Then I see "Save" button at "Bottom" of  Modal window
 
 #  @flextablebug-test
 #  Scenario: Run flex table specific steps for specific time continuosly to ensure no error is displayed
