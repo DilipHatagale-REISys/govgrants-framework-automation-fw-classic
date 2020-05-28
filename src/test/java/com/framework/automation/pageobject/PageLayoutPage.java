@@ -466,45 +466,11 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
-     * click on icon in rich text area description field at page layout
-     */
-    public void clickAtIconInRichTextAreaField(String iconName) {
-        I.amPerforming().click().withJavaScript(getIconInRichTextAreaField(iconName));
-    }
-
-    /**
-     * click on user dropdown and select menu from header
-     */
-    public void clickOnUserDropdownAndSelectMenu(String dropdownMenu) {
-        I.amPerforming().click().on(By.xpath("//div[contains(@class,'navTopHeader')]//li[@class='dropdown userDropdown']//a[@class='dropdown-toggle']"));
-        I.amPerforming().click().on(By.xpath("//div/ul/li[contains(@class,'dropdown userDropdown')]//li//span[text()='" + dropdownMenu + "']"));
-    }
-
-    /**
      * get icon in rich text area description field at page layout
      */
     public WebElement getIconInRichTextAreaField(String iconName) {
         By getIcon = By.xpath("//div[@id='fieldObjectives__c']//a[contains(@title,'" + iconName + "')]");
         return I.amPerforming().getElementReference().of(getIcon);
-    }
-
-    /**
-     * @param displayTextOrURL
-     * @param value            create hyperlink to the given text/URL using CK Editor tool under description field
-     */
-    public void createHyperlinkUsingCKEditorAtDescriptionField(String displayTextOrURL, String value) {
-        By displayTextInputBox = By.xpath("//label[text()='Display Text']/..//input");
-        By URLInputBox = By.xpath("//label[text()='URL']/..//input");
-        By okButton = By.xpath("//a[@title='OK']");
-
-        if (displayTextOrURL.equalsIgnoreCase("text")) {
-            I.amPerforming().textInput().in(displayTextInputBox, value);
-            I.amPerforming().textInput().in(URLInputBox, "www.google.com");
-        } else if (displayTextOrURL.equalsIgnoreCase("URL")) {
-            I.amPerforming().textInput().in(URLInputBox, value);
-        }
-
-        I.amPerforming().click().on(okButton);
     }
 
     /**

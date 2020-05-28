@@ -1024,7 +1024,7 @@ Feature: Page Layout Component Scenarios
     When I click search icon for lookup "Organization Lookup (New Window)"
     Then I see modal box with body "Organization Automation" is displayed
 
-  @36170    @lookupDisplayFieldNamesFieldAtPageBlockDetail-gPlanning @smoke
+  @36170    @lookupDisplayFieldNamesFieldAtPageBlockDetail-gPlanning @smoke @wip
   Scenario: Changing column header and its data of lookup modal from config and valiodating it on program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
@@ -1862,7 +1862,8 @@ Feature: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
-    When I click on "Link" icon in rich text area description field
+    And I pause execution for "3" seconds
+    When I click on "Link" icon in rich text area editor menu options
     When I create hyperlink for "text" as "TestAutomationDescription" at rich text area field
     Then I see hyperlink is present at "TestAutomationDescription" in rich text area field
 
@@ -1875,8 +1876,10 @@ Feature: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
-    When I click on "Link" icon in rich text area description field
+    When I pause execution for "3" seconds
+    When I click on "Link" icon in rich text area editor menu options
     When I create hyperlink for "URL" as "www.testAutomation.com" at rich text area field
+    When I pause execution for "3" seconds
     Then I see hyperlink is present at "www.testAutomation.com" in rich text area field
 
   @83110    @verifyHyperLinkIsNotPresentAtUserNameUnderUserProfilePage

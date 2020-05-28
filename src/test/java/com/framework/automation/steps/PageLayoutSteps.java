@@ -151,21 +151,6 @@ public class PageLayoutSteps {
         pageLayoutPage.clickOnByPhaseDropdownAtDashboard();
     }
 
-    @When("^I create hyperlink for \"([^\"]*)\" as \"([^\"]*)\" at rich text area field$")
-    public void createHyperlinkInCKEditor(String displayTextOrURL, String value) {
-        pageLayoutPage.createHyperlinkUsingCKEditorAtDescriptionField(displayTextOrURL,value);
-    }
-
-    @When("^I click on \"([^\"]*)\" icon in rich text area description field$")
-    public void clickOnIconInRichTextAreaDescriptionField(String iconName) {
-        pageLayoutPage.clickAtIconInRichTextAreaField(iconName);
-    }
-
-    @When("^I select \"([^\"]*)\" from user dropdown$")
-    public void clickOnUserDropdownAndSelectMenu(String dropdownMenu) {
-        pageLayoutPage.clickOnUserDropdownAndSelectMenu(dropdownMenu);
-    }
-
     @And("^I click on expand collapse icon for panel heading \"([^\"]*)\"$")
     public void clickOnExpandColapseIcon(String panelHeaderName) {
         pageLayoutPage.clickExpandCollapseIconAtTableHeader(panelHeaderName);
@@ -505,6 +490,6 @@ public class PageLayoutSteps {
 
     @Then("^I (softly see|see) likesCount / label as \"([^\"]*)\" is present at user detail page$")
     public void likesCountOrLabelPresentAtUserDetailPage(String usage, String likesCountOrlabel) {
-        pageLayoutPage.assertLikesCountOrLabelIsPresentAtUserDetailPage(usage,likesCountOrlabel);
+        pageLayoutPage.assertLikesCountOrLabelIsPresentAtUserDetailPage(usage, likesCountOrlabel);
     }
 }
