@@ -353,9 +353,9 @@ public class PageLayoutSteps {
         pageLayoutPage.assertSubmitForApprovalOptionDisabled(option);
     }
 
-    @Then("^I donot see navigation logo on page$")
-    public void assertModalClosedProperly() {
-        pageLayoutPage.assertHoldOnLogoDisappeared();
+    @Then("^I (see|donot see) navigation logo on page$")
+    public void assertModalClosedProperly(String usage) {
+        pageLayoutPage.assertHoldOnLogoDisappeared(usage);
     }
 
     @Then("^I see content inside lookup modal in \"([^\"]*)\" order$")

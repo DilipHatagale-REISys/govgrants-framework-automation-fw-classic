@@ -192,9 +192,13 @@ public class PageLayoutPage extends GovGrantsManager {
     /**
      * assert navigation hold on logo disappeared and modal closes properly
      */
-    public void assertHoldOnLogoDisappeared() {
+    public void assertHoldOnLogoDisappeared(String usage) {
         try {
-            Assert.assertFalse(I.amPerforming().checkToSee().isDisplayed(I.amPerforming().getElementReference().of(navigationLogo)));
+            if (usage.equalsIgnoreCase("see")) {
+                Assert.assertTrue(I.amPerforming().checkToSee().isDisplayed(I.amPerforming().getElementReference().of(navigationLogo)));
+            } else if (usage.equalsIgnoreCase("donot see")) {
+                Assert.assertFalse(I.amPerforming().checkToSee().isDisplayed(I.amPerforming().getElementReference().of(navigationLogo)));
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

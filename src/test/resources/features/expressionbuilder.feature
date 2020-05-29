@@ -6209,3 +6209,94 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     Then I see "Edit" icon for "Demo_Title" is not displayed inside flex table
+
+  @83515    @verifyHideExpressionJSONAtEnhancedGridChildTableByHidingRowLevelActionsOnTheBasisOfParentObject-EGrid @enhancedGrid
+  Scenario: Verify Hide expression JSON By hiding row level action on the basis of parent object at child flex table - enhanced grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                             | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_childTable_row_level_action_Hide_using_parent_Object_Fields | TmpGrantorActiveAwardsGrid | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    When I expand nested table containing column value "Demo_Title"
+    Then I see "View" icon for "AD-GG PJ--00" is not displayed inside flex table
+
+  @83692    @verifyHideCellJSONAtEnhancedGridByHidingCellValueOnTheBasisOfSingleField-EGrid @enhancedGrid
+  Scenario: Verify Hide cell JSON By hiding cell on the basis of single field - enhanced grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue                                             | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForSingleFieldAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1497                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
+    Then I see "*****" shown inside enhanced grid table for specified record "Demo_Title"
+
+  @83693    @verifyHideCellJSONAtEnhancedGridByHidingCellValueOnTheBasisOfGroup-EGrid @enhancedGrid @sanity
+  Scenario: Verify Hide cell JSON By hiding cell on the basis of group - enhanced grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue                                               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForGroupCriteriaAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1497                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
+    Then I see "*****" shown inside enhanced grid table for specified record "Demo_Title"
+
+  @83694    @verifyHideColumnJSONAtEnhancedGridByHidingColumnValueOnTheBasisOfSingleField-EGrid @enhancedGrid
+  Scenario: Verify Hide column JSON By hiding column on the basis of single field - enhanced grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Column JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                                | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Column JSON | govgrants_config: HideColumnJsonForSingleFieldAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1497                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    Then I see "Number of Awards" not displayed in enhanced grid table column title
+
+  @83699    @verifyReadOnlyCellJSONFieldAtEnhancedGridOnTheBasisOfSingleField-gPlanning @enhancedGrid
+  Scenario:  Verify Read only cell JSON on the basis of single field - enhanced grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table List       | Read Only Cell JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                                 | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Read Only Cell JSON | govgrants_config:ReadOnlyCellJsonForSingleFieldAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1489                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
+    When I click on "Edit" icon for "Demo_Title" inside table
+    Then I see input box is not displayed for budget period end date
