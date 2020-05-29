@@ -2019,3 +2019,9 @@ Feature: Page Layout Component Scenarios
     Examples:
       | enteredValue                                                                                                                                                                                                                                                   | requiredValue                                                                                                                                                                                                                                                   |
       | ~!@#$%^&*()_+=-`{} \][:"';<>?/.,The total size of this sentence is 255 The total size of this sentence is 255 The total size of this sentence is 255 The total size of this sentence is 255 The total size of this sentence is 255 The total size of this sent | ~!@#$%^&*()_+=-`{} \][:"';<>?/., The total size of this sentence is 255 The total size of this sentence is 255 The total size of this sentence is 255 The total size of this sentence is 255 The total size of this sentence is 255 The total size of this sent |
+
+  @83730    @verifyNavigationLogoIsLoadingOnChangingTheCustomAppFromUI
+  Scenario: validate that navigation app is loading on changing the custom app on ui -gHOME
+    When I login as "Automation" user
+    When I setup my app as "As a Grantee"
+    Then I see navigation logo on page
