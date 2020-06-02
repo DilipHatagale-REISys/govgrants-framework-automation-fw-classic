@@ -85,14 +85,6 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     }
 
     /**
-     * Save the entered value of budget period date field
-     */
-    public void saveSpecificValueFromFlexTableInsideGivenKey(String columnValueFromRow, String columnName, String key, String flexTableId) {
-        I.amPerforming().propertiesFileOperationsTo().saveValue(key, getValueOfSpecifiedColFromTableHavingColumnNameAs(columnValueFromRow,
-                columnName, flexTableId));
-    }
-
-    /**
      * assert true if changed icon css of enhanced grid table edit action is
      * displayed
      *

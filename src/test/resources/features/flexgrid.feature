@@ -2192,3 +2192,61 @@ Feature: Flex Grid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     Then I do not see default total at active grants flex grid
+
+  @83657    @verifyByClickOnUserValueItShouldRedirectedToRespectiveRecordPageAtMEGridChildTable-gApplications @sanity
+  Scenario: validate by click on user lookup value in table , respective page should get opens at ME Grid child table - gApplications
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    And I perform quick search for "BP-02" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "BP-02"
+    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    When I click on "Bob Samuela" icon for "Equipment" inside table
+    Then I see "Community User" shown as over view header
+
+  @83658    @verifyByClickOnUserValueItShouldRedirectedToRespectiveUserPageAtN2GGridChildTable-gGrant
+  Scenario Outline: validate by click on user value in table , respective user page should get opens at N2G Grid child table- gGrant
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | BudgetPeriod       |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Financials" sub tab
+    When I expand nested table containing column value "2019"
+    When I click on "David PM" icon for "AD-GG PJ--00" inside table
+    Then I see "User" shown as over view header
+
+    Examples:
+      | defaultFieldsApi                                                                               | newFieldsApi                                                                                               |
+      | Id,Name,GrantAwardName__c,AwardedAmountthisAction__c,YTDAdvancePaid__c,YTDReimbursementPaid__c | Id,Name,GrantAwardName__c,AwardedAmountthisAction__c,YTDAdvancePaid__c,YTDReimbursementPaid__c,CreatedById |
+
+  @83659    @verifyByClickOnAccountValueItShouldRedirectedToRespectiveUserPageAtN2GGridChildTable-gGrant
+  Scenario Outline: validate by click on account value in table , respective user page should get opens at N2G Grid child table- gGrant
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | BudgetPeriod       |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Financials" sub tab
+    When I expand nested table containing column value "2019"
+    When I click on "Department of Community Health" icon for "AD-GG PJ--00" inside table
+    Then I see "Organization" shown as over view header
+
+    Examples:
+      | defaultFieldsApi                                                                               | newFieldsApi                                                                                              |
+      | Id,Name,GrantAwardName__c,AwardedAmountthisAction__c,YTDAdvancePaid__c,YTDReimbursementPaid__c | Id,Name,GrantAwardName__c,AwardedAmountthisAction__c,YTDAdvancePaid__c,YTDReimbursementPaid__c,Account__c |
