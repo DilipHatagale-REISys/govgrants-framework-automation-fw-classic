@@ -26,11 +26,6 @@ public class EnhancedFlexGridSteps {
         enhancedFlexGrid.enterValueForTextareaAtEnhancedGridColumn(enteredValue, tableId);
     }
 
-    @When("^I save the value from row \"([^\"]*)\" for column name \"([^\"]*)\" as \"([^\"]*)\" from flex table \"([^\"]*)\"$")
-    public void SaveTheValueFromRowForColumnNameAsFromFlexTable(String columnValueFromRow, String columnName, String key, String flexTableId) {
-        enhancedFlexGrid.saveSpecificValueFromFlexTableInsideGivenKey(columnValueFromRow, columnName, key, flexTableId);
-    }
-
     @Then("^I see Advance Filter is disabled from table \"([^\"]*)\" with data target value \"([^\"]*)\"$")
     public void assertAdvanceFilterOptionDisabled(String tableId, String dataTargetValue) {
         enhancedFlexGrid.assertDisableAdvanceFilterFromEnhancedGrid(tableId, dataTargetValue);
