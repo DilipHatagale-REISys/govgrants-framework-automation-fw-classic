@@ -2025,3 +2025,23 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantee"
     Then I see navigation logo on page
+
+    @83713 @verifyRecordIsGettingCreatedEvenIfSkipAutoNumberingCheckBoxIsCheckedAtCustomSetting @needNameTemplateAPI
+      Scenario: validate that if skip auto numbering check box is checked then a record is getting created
+      Given I delete the record "Test Automation Grants Record" from the object "Grant__c"
+      When I login as "Automation" user
+      When I setup my app as "As a Grantor"
+      And I navigate to "Grants" tab
+      And I click on top right button "New" in flex table with id "---program:-:ActiveGrantsTableId---"
+      And I enter value "Test Automation Grants Record" into field "fieldProjectTitle__c"
+      And I enter value "Test" into field "fieldGrantAbbreviation__c"
+      And I click modal button "Continue"
+      And I pause execution for "3" seconds
+      And I navigate to "Overview" sub tab
+      And I enter value "PG-755-0229" into field "fieldProgram__c"
+      And I enter value "Test" into field "fieldGrantDescription__c"
+      And I enter value "UnitedHealth Group" into field "fieldInternalOrganization__c"
+      And I enter value "0" into field "fieldProjectPeriodStartDate__c"
+      And I enter value "365" into field "fieldProjectPeriodEndDate__c"
+      And I click on "Save" in the page details
+      Then I see the sub-header is "Test Automation Grants Record" in the page details

@@ -6300,3 +6300,77 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I click on "Edit" icon for "Demo_Title" inside table
     Then I see input box is not displayed for budget period end date
+
+  @83695    @verifyHideColumnJSONAtEnhancedGridByHidingColumnValueOnTheBasisOfGroupCriteria-EGrid @enhancedGrid
+  Scenario: Verify Hide column JSON By hiding column on the basis of group criteria - enhanced grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Column JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                                 | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Column JSON | govgrants_config:HideColumnJsonForGroupCriteriaAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1497                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    Then I see "Number of Awards" not displayed in enhanced grid table column title
+
+  @83707    @verifyReadOnlyCellJSONFieldAtEnhancedGridOnTheBasisOfGroupCriteria-gPlanning @enhancedGrid
+  Scenario:  Verify Read only cell JSON on the basis of group criteria - enhanced grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table List       | Read Only Cell JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                                   | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Read Only Cell JSON | govgrants_config:ReadOnlyCellJsonForGroupCriteriaAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1489                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
+    When I click on "Edit" icon for "Demo_Title" inside table
+    Then I see input box is not displayed for budget period end date
+
+  @83916    @verifyReadOnlyColumnJSONFieldAtEnhancedGridOnTheBasisOfSingleField-gPlanning @enhancedGrid
+  Scenario:  Verify Read only column JSON on the basis of single field - enhanced grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Flex Table List       | Read Only Column JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue                                                   | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Read Only Column JSON | govgrants_config:ReadOnlyColumnJsonForSingleFieldAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1489                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
+    When I click on "Edit" icon for "Demo_Title" inside table
+    Then I see input box is not displayed for budget period end date
+
+  @83941    @verifyReadOnlyColumnJSONFieldAtEnhancedGridOnTheBasisOfGroupCriteria-gPlanning @enhancedGrid
+  Scenario:  Verify Read only column JSON on the basis of group criteria - enhanced grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Flex Table List       | Read Only Column JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue                                                     | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Read Only Column JSON | govgrants_config:ReadOnlyColumnJsonForGroupCriteriaAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1489                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
+    When I click on "Edit" icon for "Demo_Title" inside table
+    Then I see input box is not displayed for budget period end date

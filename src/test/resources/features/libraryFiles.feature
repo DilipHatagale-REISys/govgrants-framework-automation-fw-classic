@@ -1849,3 +1849,43 @@ Feature: Library Files Component Scenarios
     When I click on "Delete File" option at library/folder/file "TestAutomationFile.jpg"
     And I pause execution for "5" seconds
     Then I softly do not see library/folder/file "TestAutomationFile.jpg" is displayed under files library
+
+  @83944 @validateThatFilesLinkedAtProgramAreDisplayedInApplicationRecordByChangingFilterClauseFromConfig-gApplication
+  Scenario: Verify that files linked at program record are displayed at application record by changing filter criteria of files table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue   | filterId         |
+      | Flex Table            | Filter Criteria | {!ContentDocLinkId} | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Filter Criteria | parentId= '{!ProgramId}' | ApplicationFiles   |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "ProgramRecordDoNotDelete.png" in "---program:-:ApplicationFilesFlexGridId---" panel
+    Then I softly see "ProgramRecordDoNotDelete.png" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
+
+  @83982 @validateThatFileLinkedAtProgramIsNotEditableInApplicationRecord-gApplication
+  Scenario: Verify that file linked at program record and displayed in application record is not editable at application record
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue   | filterId         |
+      | Flex Table            | Filter Criteria | {!ContentDocLinkId} | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Filter Criteria | parentId= '{!ProgramId}' | ApplicationFiles   |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "ProgramRecordDoNotDelete.png" in "---program:-:ApplicationFilesFlexGridId---" panel
+    When I click on "Edit" icon for "ProgramRecordDoNotDelete.png" inside table
+    When I enter value as "test Automation" in field "Description" at Library Files
+    When I click on "Save" button in send email modal
+    Then I see the following messages in the page details contains:
+      | You do not have the level of access necessary to perform the operation you requested. Please contact the owner of the record or your administrator if access is necessary. |
