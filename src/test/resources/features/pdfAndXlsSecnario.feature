@@ -1502,7 +1502,6 @@ Feature: All pdf and xls related scenario including component and completed back
     When I click on "Download File" option at library/folder/file "AssetLibraryTestData.pdf"
     Then I see "Creating" on page "1" of "govgrants" pdf file
 
-
   @83781    @validatePicklistFieldLabelAtFlexTableInDownloadedPDF-gPlanning @flexTable
   Scenario: validate label of 'Status_c' field inside downloaded PDF at program flex table
     Given I have "default" configuration as below:
@@ -1580,3 +1579,36 @@ Feature: All pdf and xls related scenario including component and completed back
     Examples:
       | defaultFieldsApi                                                         | newFieldsApi                                                                           |
       | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c,BudgetType__c |
+
+  @83930    @verifyPicklistFieldLabelIsShownInDownloadedPDFAtPageLayout-gPlanning @pageLayout @smoke
+  Scenario: validate a picklist field label is shown in downloaded pdf instead of picklist field API name inside program detail page
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Closed/Reject Announcements"
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see "Announcement Type" on page "1" of "govgrants" pdf file
+
+  @83970 @validateThatFilesLinkedAtProgramAreShownInDownloadedPDFAtApplicationRecord-gApplication @libraryFiles
+  Scenario: Verify that files linked at program record are displayed in downloaded PDF at application record by changing filter criteria of files tabl
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue   | filterId         |
+      | Flex Table            | Filter Criteria | {!ContentDocLinkId} | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Filter Criteria | parentId= '{!ProgramId}' | ApplicationFiles   |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on parallel lines menu bar with data target value "#ApplicationFilesFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Application Files"
+    And I download the file
+    Then I see "ProgramRecordDoNotDelete.png" on page "1" of "govgrants" pdf file
