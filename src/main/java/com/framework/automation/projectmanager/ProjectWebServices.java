@@ -163,6 +163,38 @@ public class ProjectWebServices {
         I.amPerforming().restHttp().putCall(null, jArray.toString(), finalEndPoint, null, null, tokenString);
     }
 
+
+    /**
+     * @param booleanValue
+     * @param Name
+     * @param id
+     * @param AutoNumberFormat
+     * @param StartNumber
+     */
+    public void updateCustomNameTemplateConfig(String booleanValue, String id, String Name, String AutoNumberFormat, int StartNumber) {
+        getAuthToken();
+        String[] someApi = booleanValue.split(",");
+        String finalEndPoint = endPoint + "/services/apexrest/frameworkCustomsettingAPI";
+        JsonArray jArray = new JsonArray();
+        JsonObject jsonObject = new JsonObject();
+        JsonObject jsonContainer = new JsonObject();
+        jsonObject.addProperty("Id", id);
+        jsonObject.addProperty("Name", Name);
+        jsonObject.addProperty("GNT__AutoNumberFormat__c", AutoNumberFormat);
+        jsonObject.addProperty("GNT__StartNumber__c", StartNumber);
+        if (someApi.length != 1) {
+            for (String list : someApi) {
+                jsonObject.addProperty(list.split(":")[0].trim(), Boolean.parseBoolean(list.split(":")[1].trim()));
+            }
+        } else {
+            jsonObject.addProperty(booleanValue.split(":")[0].trim(), Boolean.parseBoolean(booleanValue.split(":")[1].trim()));
+        }
+        jsonContainer.add("fieldvalues", jsonObject);
+        jsonContainer.addProperty("customsettingapiname", "GNT__NameTemplateConfig__c");
+        jArray.add(jsonContainer);
+        I.amPerforming().restHttp().putCall(null, jArray.toString(), finalEndPoint, null, null, tokenString);
+    }
+
     /**
      * calls the api to delete test program data
      *
@@ -217,6 +249,9 @@ public class ProjectWebServices {
             setDefaultGlobalSettingForAllCustomSettings("global");
         if (configurationType.equalsIgnoreCase("customAppFooter")) {
             setDefaultCustomAppFooterSettingForAllCustomSettings("customAppFooter");
+        }
+        if (configurationType.equalsIgnoreCase("customNameTemplate")) {
+            setDefaultCustomNameTemplateSettingForAllCustomSettings("customNameTemplate");
         }
     }
 
@@ -412,6 +447,21 @@ public class ProjectWebServices {
     private void setDefaultSettingForLocaleAndTimeZone(String key) {
         for (Map<String, String> customMap : ConfigurationParameters.getDefaultConfigurationParameters().get(key)) {
             updateLocalAndTimeZone(customMap.get("locale"), customMap.get("timeZone"));
+        }
+    }
+
+    /**
+     * It will take key and its value from feature file to make default config changes for custom name template setting
+     * <p>
+     * booleanValue - accept true/false for to enable disable custom name template details boolean fields
+     * id           - it will take unique custom setting id where changes is supposed to made
+     * Name         - it will
+     * AutoNumberFormat  - it will take string value for formatting Id of new created record from feature file
+     * StartNumber     - It will take Integer value for starting number from feature file
+     */
+    private void setDefaultCustomNameTemplateSettingForAllCustomSettings(String key) {
+        for (Map<String, String> customMap : ConfigurationParameters.getDefaultConfigurationParameters().get(key)) {
+            updateCustomNameTemplateConfig(customMap.get("booleanValue"), customMap.get("id"), customMap.get("Name"), customMap.get("AutoNumberFormat"), Integer.parseInt(customMap.get("StartNumber")));
         }
     }
 

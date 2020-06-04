@@ -125,7 +125,7 @@ public class PhaseConfigPage extends GovGrantsManager {
      */
     public void assertPhaseNotDisplayedInTaskSummaryByPhase(String shouldBeDisplayed, String phaseName) {
         I.amPerforming().waitFor().makeThreadSleep(1000);
-        Assert.assertEquals("donot see".equalsIgnoreCase(shouldBeDisplayed),isPhaseNotDisplayedInTaskSummary(phaseName));
+        Assert.assertEquals("donot see".equalsIgnoreCase(shouldBeDisplayed), isPhaseNotDisplayedInTaskSummary(phaseName));
     }
 
     public void assertPhaseBookIconDisplayed(String phaseName) {
@@ -312,6 +312,33 @@ public class PhaseConfigPage extends GovGrantsManager {
      */
     public void assertPageColorForCustomApp(String colorName) {
         Assert.assertTrue(isCustomAppColorChanged(colorName));
+    }
+
+    /**
+     * assert header actions background color
+     *
+     * @param colorName
+     */
+    public void assertHeaderActionButtonBackgroundColor(String colorName) {
+        Assert.assertTrue(isHeaderActionButtonBackgroundColorChanged(colorName));
+    }
+
+    /**
+     * assert page layout footer color
+     *
+     * @param colorName
+     */
+    public void assertPageFooterColor(String colorName) {
+        Assert.assertTrue(isPageFooterColorChanged(colorName));
+    }
+
+    /**
+     * assert sidebar background color
+     *
+     * @param colorName
+     */
+    public void asserSidebarBackgroundColor(String colorName) {
+        Assert.assertTrue(isSidebarBackgroundColorChanged(colorName));
     }
 
 
@@ -680,8 +707,113 @@ public class PhaseConfigPage extends GovGrantsManager {
                 }
                 break;
             case "DARK BLUE":
-                if (pageColor.getCssValue("background-color").contains("rgba(75, 141, 177, 1)")
-                        || pageColor.getCssValue("color").contains("rgb(75, 141, 177)")) {
+                if (pageColor.getCssValue("background-color").contains("rgba(5, 89, 156, 1)")
+                        || pageColor.getCssValue("color").contains("rgb(5, 89, 156)")) {
+                    flag = true;
+                }
+                break;
+            case "VERY DARK BLUE":
+                if (pageColor.getCssValue("background-color").contains("rgba(13, 85, 117, 1)")
+                        || pageColor.getCssValue("color").contains("rgb(13, 85, 117)")) {
+                    flag = true;
+                }
+                break;
+            case "VERY DARK GRAY":
+                if (pageColor.getCssValue("background-color").contains("rgba(56, 56, 56, 1)")
+                        || pageColor.getCssValue("color").contains("rgb(56, 56, 56)")) {
+                    flag = true;
+                }
+                break;
+        }
+        return flag;
+    }
+
+    /**
+     * @return true if header actions background color is displayed as expected
+     */
+    private Boolean isHeaderActionButtonBackgroundColorChanged(String colorName) {
+        boolean flag = false;
+        WebElement actionButton = I.amPerforming().getElementReference().of(By.xpath("//div[contains(@class,'header-buttons')]"));
+        switch (colorName.toUpperCase()) {
+            case "DARK BLUE":
+                if (actionButton.getCssValue("background-color").contains("rgba(5, 89, 156, 1)")
+                        || actionButton.getCssValue("color").contains("rgb(5, 89, 156)")) {
+                    flag = true;
+                }
+                break;
+        }
+        return flag;
+    }
+
+    /**
+     * @return true if page layout footer color is displayed as expected
+     */
+    private Boolean isPageFooterColorChanged(String colorName) {
+        boolean flag = false;
+        WebElement pageFooterColor = I.amPerforming().getElementReference().of(By.xpath("//footer[@class='footer sidebarAvail']"));
+        switch (colorName.toUpperCase()) {
+            case "LIGHT BLUE":
+                if (pageFooterColor.getCssValue("background-color").contains("rgba(107, 172, 208, 1)")
+                        || pageFooterColor.getCssValue("color").contains("rgb(107, 172, 208)")) {
+                    flag = true;
+                }
+                break;
+            case "DARK BLUE":
+                if (pageFooterColor.getCssValue("background-color").contains("rgba(5, 89, 156, 1)")
+                        || pageFooterColor.getCssValue("color").contains("rgb(5, 89, 156)")) {
+                    flag = true;
+                }
+                break;
+            case "VERY DARK BLUE":
+                if (pageFooterColor.getCssValue("background-color").contains("rgba(13, 85, 117, 1)")
+                        || pageFooterColor.getCssValue("color").contains("rgb(13, 85, 117)")) {
+                    flag = true;
+                }
+                break;
+            case "VERY DARK GRAY":
+                if (pageFooterColor.getCssValue("background-color").contains("rgba(56, 56, 56, 1)")
+                        || pageFooterColor.getCssValue("color").contains("rgb(56, 56, 56)")) {
+                    flag = true;
+                }
+                break;
+            case "VERY DARK DESATURATED CYAN":
+                if (pageFooterColor.getCssValue("background-color").contains("rgba(34, 71, 76, 1)")
+                        || pageFooterColor.getCssValue("color").contains("rgb(34, 71, 76)")) {
+                    flag = true;
+                }
+                break;
+        }
+        return flag;
+    }
+
+    /**
+     * @return true if sidebar background color is displayed as expected
+     */
+    private Boolean isSidebarBackgroundColorChanged(String colorName) {
+        boolean flag = false;
+        WebElement getSidebar = I.amPerforming().getElementReference().of(By.xpath("//div[contains(@class,'customSidebar')]"));
+        switch (colorName.toUpperCase()) {
+            case "VERY DARK BLUE":
+                if (getSidebar.getCssValue("background-color").contains("rgba(0, 57, 107, 1)")
+                        || getSidebar.getCssValue("color").contains("rgb(0, 57, 107)")) {
+                    flag = true;
+                }
+                break;
+            case "VERY DARK BLUE 1":
+                if (getSidebar.getCssValue("background-color").contains("rgba(7, 53, 74, 1)")
+                        || getSidebar.getCssValue("color").contains("rgb(7, 53, 74)")) {
+                    flag = true;
+                }
+                break;
+            case "BLACK":
+                if (getSidebar.getCssValue("background-color").contains("rgba(17, 17, 17, 1)")
+                        || getSidebar.getCssValue("color").contains("rgb(17, 17, 17)")) {
+                    flag = true;
+                }
+                break;
+            case "VERY DARK CYAN":
+                if (getSidebar.getCssValue("background-color").contains("rgba(10, 49, 54, 1)")
+                        || getSidebar.getCssValue("color").contains("rgb(10, 49, 54)")) {
                     flag = true;
                 }
                 break;

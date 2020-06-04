@@ -70,4 +70,12 @@ public class ConfigurationSteps {
             ProjectWebServices.dynamicApi = "customAppFooter";
         }
     }
+
+    @And("^I update custom name template setting changes:$")
+    public void iUpdateCustomSettingsAsNameTemplate(List<Map<String, String>> configParameters) {
+        for (Map<String, String> parameters : configParameters) {
+            projectAPI.updateCustomNameTemplateConfig(parameters.get("booleanValue"), parameters.get("id"), parameters.get("Name"), parameters.get("AutoNumberFormat"), Integer.parseInt(parameters.get("StartNumber")));
+            ProjectWebServices.dynamicApi = "customNameTemplate";
+        }
+    }
 }

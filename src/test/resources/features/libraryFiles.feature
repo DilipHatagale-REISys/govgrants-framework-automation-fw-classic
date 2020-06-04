@@ -1889,3 +1889,16 @@ Feature: Library Files Component Scenarios
     When I click on "Save" button in send email modal
     Then I see the following messages in the page details contains:
       | You do not have the level of access necessary to perform the operation you requested. Please contact the owner of the record or your administrator if access is necessary. |
+
+  @83170 @validateThatFileCanBeDragAndDropFromOneFolderToOther-gApplication @issue
+  Scenario: Verify that file can be drag and droped from one folder to another folder
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "Department of Community Health"
+    When I drag the "asd.png" file from "Department of Community Health" folder and drop in "UnitedHealth Group" folder at library
+    When I pause execution for "3" seconds
+    When I click on expand icon at library/folder "UnitedHealth Group"
+    Then I see library/folder/file "asd.png" is displayed under files library

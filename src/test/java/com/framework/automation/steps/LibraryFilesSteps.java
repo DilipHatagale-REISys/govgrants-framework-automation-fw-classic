@@ -73,6 +73,11 @@ public class LibraryFilesSteps {
         libraryFilesPage.selectPagesFromDropdownAtFileUploadModal(numberOfEntries, tableId);
     }
 
+    @When("^I drag the \"([^\"]*)\" file from \"([^\"]*)\" folder and drop in \"([^\"]*)\" folder at library$")
+    public void dragTheFileFromFolderAndDropInAnotherFolderAtLibrary(String fileName, String sourceFolderName, String targetFolderName) {
+        libraryFilesPage.dragAndDropFileFromOneFolderToAnother(fileName,sourceFolderName,targetFolderName);
+    }
+
     @And("I click on {string} tab at files library upload modal")
     public void clickOnTabAtFilesLibraryUploadModal(String tabName) {
         libraryFilesPage.clickOnTabAtFilesLibraryUploadModal(tabName);

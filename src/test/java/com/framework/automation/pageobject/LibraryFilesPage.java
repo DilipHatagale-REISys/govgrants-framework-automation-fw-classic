@@ -383,6 +383,19 @@ public class LibraryFilesPage extends GovGrantsManager {
         filesTablePagesDropdown(numberOfEntries, tableId);
     }
 
+    /**
+     * drag files from one folder (source) and drop it in another folder (destination)- Library files home phase
+     *
+     * @param fileName
+     * @param sourceFolderName
+     * @param targetFolderName
+     */
+    public void dragAndDropFileFromOneFolderToAnother(String fileName, String sourceFolderName, String targetFolderName) {
+        By getSource = By.xpath("//span[text()='"+sourceFolderName+"']/ancestor::li//span[text()='"+fileName+"']");
+        By getTarget = By.xpath("//span[text()='"+targetFolderName+"']");
+        I.amPerforming().click().withMouse().dragAndDrop(getSource,getTarget);
+    }
+
     /*********
      * "Local Methods with complete functionality - private"
      *****************/
