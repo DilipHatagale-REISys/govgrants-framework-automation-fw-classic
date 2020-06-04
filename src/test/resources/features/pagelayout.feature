@@ -2026,22 +2026,118 @@ Feature: Page Layout Component Scenarios
     When I setup my app as "As a Grantee"
     Then I see navigation logo on page
 
-    @83713 @verifyRecordIsGettingCreatedEvenIfSkipAutoNumberingCheckBoxIsCheckedAtCustomSetting @needNameTemplateAPI
-      Scenario: validate that if skip auto numbering check box is checked then a record is getting created
-      Given I delete the record "Test Automation Grants Record" from the object "Grant__c"
-      When I login as "Automation" user
-      When I setup my app as "As a Grantor"
-      And I navigate to "Grants" tab
-      And I click on top right button "New" in flex table with id "---program:-:ActiveGrantsTableId---"
-      And I enter value "Test Automation Grants Record" into field "fieldProjectTitle__c"
-      And I enter value "Test" into field "fieldGrantAbbreviation__c"
-      And I click modal button "Continue"
-      And I pause execution for "3" seconds
-      And I navigate to "Overview" sub tab
-      And I enter value "PG-755-0229" into field "fieldProgram__c"
-      And I enter value "Test" into field "fieldGrantDescription__c"
-      And I enter value "UnitedHealth Group" into field "fieldInternalOrganization__c"
-      And I enter value "0" into field "fieldProjectPeriodStartDate__c"
-      And I enter value "365" into field "fieldProjectPeriodEndDate__c"
-      And I click on "Save" in the page details
-      Then I see the sub-header is "Test Automation Grants Record" in the page details
+  @83713 @verifyRecordIsGettingCreatedEvenIfSkipAutoNumberingCheckBoxIsCheckedAtCustomSetting
+  Scenario: validate that if skip auto numbering check box is checked then a record is getting created
+    Given I have "customNameTemplate" configuration as below:
+      | id                 | Name     | AutoNumberFormat | StartNumber | booleanValue                                          | customSettingApiName       |
+      | a0e15000008FjIqAAK | Grant__c | {000}            | 0           | GNT__Active__c:true,GNT__SkipAutoNumberReset__c:false | GNT__NameTemplateConfig__c |
+    And I update custom name template setting changes:
+      | id                 | Name     | AutoNumberFormat | StartNumber | booleanValue                                         | customSettingApiName       |
+      | a0e15000008FjIqAAK | Grant__c | {000}            | 0           | GNT__Active__c:true,GNT__SkipAutoNumberReset__c:true | GNT__NameTemplateConfig__c |
+    Given I delete the record "Test Automation Grants Record" from the object "Grant__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I click on top right button "New" in flex table with id "---program:-:ActiveGrantsTableId---"
+    And I enter value "Test Automation Grants Record" into field "fieldProjectTitle__c"
+    And I enter value "Test" into field "fieldGrantAbbreviation__c"
+    And I click modal button "Continue"
+    And I pause execution for "3" seconds
+    And I navigate to "Overview" sub tab
+    And I enter value "PG-755-0229" into field "fieldProgram__c"
+    And I enter value "Test" into field "fieldGrantDescription__c"
+    And I enter value "UnitedHealth Group" into field "fieldInternalOrganization__c"
+    And I enter value "0" into field "fieldProjectPeriodStartDate__c"
+    And I enter value "365" into field "fieldProjectPeriodEndDate__c"
+    And I click on "Save" in the page details
+    Then I see the sub-header is "Test Automation Grants Record" in the page details
+
+  @83352   @verifyDigitalSigniturePageBlockrendersUnderPageLayoutInViewMode-gAnnouncement
+  Scenario: validate digital signiture page block displayed under page layout in view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Block            | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName | fieldNewValue | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Is Active | true          | Annoucement Profile-FOA | GNT__PageBlockTitle__c    | Digital signature          |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I perform quick search for "Test Announcement For Automation"
+    When I click on "View" icon for "Test Announcement For Automation" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see "Digital signature" page block displayed
+
+  @84215 @verifyThatDarkBlueColorIsDisplayedForLoggedInUser-StateAsAGrantor
+  Scenario: verify that page header / page is displayed in dark blue color for logged in user-StateAsAGrantor
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    Then I see page is in "Dark Blue" color
+
+  @84216 @verifyThatVeryDarkBlueColorIsDisplayedForLoggedInUser-StateAsAGrantee
+  Scenario: verify that page header / page is displayed in very dark blue color for logged in user
+    When I login as "Automation" user
+    When I setup my app as "As a Grantee"
+    Then I see page is in "Very Dark Blue" color
+
+  @84224 @verifyThatVeryDarkGrayColorIsDisplayedForLoggedInUser-StateAsAdministrator
+  Scenario: verify that page header / page is displayed in Very dark gray color for logged in user
+    When I login as "Automation" user
+    When I setup my app as "As an Administrator"
+    Then I see page is in "Very Dark gray" color
+
+  @84572 @verifyThatDarkBlueColorIsDisplayedAtFooterForLoggedInUser-StateAsAGrantor
+  Scenario: verify that footer is displayed in dark blue color for logged in user-StateAsAGrantor
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    Then I see page footer is in "Dark Blue" color
+
+  @84575 @verifyThatVeryDarkBlueColorIsDisplayedAtFooterForLoggedInUser-StateAsAGrantee
+  Scenario: verify that page footer is displayed in very dark blue color for logged in user
+    When I login as "Automation" user
+    When I setup my app as "As a Grantee"
+    Then I see page footer is in "Very Dark Blue" color
+
+  @84577 @verifyThatVeryDarkGrayColorIsDisplayedAtFooterForLoggedInUser-StateAsAdministrator
+  Scenario: verify that page footer is displayed in Very dark gray color for logged in user
+    When I login as "Automation" user
+    When I setup my app as "As an Administrator"
+    Then I see page footer is in "Very Dark gray" color
+
+  @84227 @verifyThatDarkBlueColorIsDisplayedAtAllButtonsBackgroundForLoggedInUser-StateAsAGrantor
+  Scenario: verify that dark blue color is displayed at background for all buttons for logged in user-StateAsAGrantor
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see header action has "Dark Blue" background color
+
+  @84592 @verifyThatVeryDarkBlueColorIsDisplayedAtSidebarBackgroundForLoggedInUser-StateAsAGrantor
+  Scenario: verify that very dark blue color is displayed as background for sidebar for logged in user-StateAsAGrantor
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    Then I see sidebar has "Very Dark Blue" background color
+
+  @84593 @verifyThatVeryDarkBlue1ColorIsDisplayedAtSidebarBackgroundForLoggedInUser-StateAsAGrantee
+  Scenario: verify that Very Dark Blue 1 color is displayed as background for sidebar for logged in user-StateAsAGrantee
+    When I login as "Automation" user
+    When I setup my app as "As a Grantee"
+    Then I see sidebar has "Very Dark Blue 1" background color
+
+  @84595 @verifyThatBlackColorIsDisplayedAtSidebarBackgroundForLoggedInUser-AsAnAdministrator
+  Scenario: verify that black color is displayed as background for sidebar for logged in user-As an Administrator
+    When I login as "Automation" user
+    When I setup my app as "As an Administrator"
+    Then I see sidebar has "Black" background color
+
+  @84594 @verifyThatVeryDarkCyanColorIsDisplayedAtSidebarBackgroundForLoggedInUser-recipient
+  Scenario: verify that Very dark cyan color is displayed as background for sidebar for logged in user-recipient
+    When I login as "Automation" user
+    When I setup my app as "As a Sub-Recipient"
+    Then I see sidebar has "Very dark cyan" background color
+
+  @84218 @verifyThatVeryDarkBlueColorIsDisplayedForLoggedInUser-recipient
+  Scenario: verify that page header / page is displayed in Very dark desaturated cyan color for logged in user-recipient
+    When I login as "Automation" user
+    When I setup my app as "As a Sub-Recipient"
+    Then I see page footer is in "Very dark desaturated cyan" color

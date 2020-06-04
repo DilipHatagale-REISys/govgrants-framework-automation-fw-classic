@@ -169,4 +169,19 @@ public class PhaseConfigSteps {
     public void assertCustomAppColor(String colorName) {
         phaseConfigPage.assertPageColorForCustomApp(colorName);
     }
+
+    @Then("^I see header action has \"([^\"]*)\" background color$")
+    public void assertHeaderActionButtonBackgroundColor(String colorName) {
+        phaseConfigPage.assertHeaderActionButtonBackgroundColor(colorName);
+    }
+
+    @Then("^I see page footer is in \"([^\"]*)\" color$")
+    public void assertPageFooterColor(String colorName) {
+        phaseConfigPage.assertPageFooterColor(colorName);
+    }
+
+    @Then("^I see sidebar has \"([^\"]*)\" background color$")
+    public void assertSidebarButtonBackgroundColor(String colorName) {
+        phaseConfigPage.asserSidebarBackgroundColor(colorName);
+    }
 }

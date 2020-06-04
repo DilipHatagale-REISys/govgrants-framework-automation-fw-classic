@@ -961,13 +961,13 @@ public class FlexTablePage extends GovGrantsManager {
     private Boolean isButtonsDisplayedAtModalWindow(String buttonName, String buttonPosition) {
         boolean flag = false;
         if (buttonPosition.equals("Top")) {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[contains(@class,'panel-heading')]//input[@value='"+buttonName+"' or @type='"+buttonName+"' or text()='"+buttonName+"']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[contains(@class,'panel-heading')]//input[@value='" + buttonName + "' or @type='" + buttonName + "' or text()='" + buttonName + "']"))) {
                 flag = true;
             } else {
                 flag = false;
             }
         } else if (buttonPosition.equals("Bottom")) {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[contains(@class,'panel-footer')]//input[@value='"+buttonName+"' or @type='"+buttonName+"' or text()='"+buttonName+"']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[contains(@class,'panel-footer')]//input[@value='" + buttonName + "' or @type='" + buttonName + "' or text()='" + buttonName + "']"))) {
                 flag = true;
             } else {
                 flag = false;
