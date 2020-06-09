@@ -492,4 +492,9 @@ public class PageLayoutSteps {
     public void likesCountOrLabelPresentAtUserDetailPage(String usage, String likesCountOrlabel) {
         pageLayoutPage.assertLikesCountOrLabelIsPresentAtUserDetailPage(usage, likesCountOrlabel);
     }
+
+    @Then("I see arrow is displayed at user drop-down")
+    public void assertArrowIsDisplayedAtUserDropDown() {
+        pageLayoutPage.assertArrowIsDisplayedAtUserDropDown();
+    }
 }

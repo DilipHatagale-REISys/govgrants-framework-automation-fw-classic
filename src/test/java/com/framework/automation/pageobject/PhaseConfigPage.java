@@ -341,6 +341,22 @@ public class PhaseConfigPage extends GovGrantsManager {
         Assert.assertTrue(isSidebarBackgroundColorChanged(colorName));
     }
 
+    /**
+     * assert active tab has background color
+     */
+    public void assertActiveTabHasBackgroundColour() {
+        Assert.assertTrue(isActiveTabHasBackgroundColour());
+    }
+
+    /**
+     * assert phase tab background color
+     *
+     * @param colorName
+     */
+    public void asserPhaseTabBackgroundColor(String colorName) {
+        Assert.assertTrue(isPhaseTabBackgroundColorChanged(colorName));
+    }
+
 
     /********* "Local Methods with complete functionality - private" *********/
 
@@ -792,7 +808,7 @@ public class PhaseConfigPage extends GovGrantsManager {
     private Boolean isSidebarBackgroundColorChanged(String colorName) {
         boolean flag = false;
         WebElement getSidebar = I.amPerforming().getElementReference().of(By.xpath("//div[contains(@class,'customSidebar')]"));
-        switch (colorName.toUpperCase()) {
+       switch (colorName.toUpperCase()) {
             case "VERY DARK BLUE":
                 if (getSidebar.getCssValue("background-color").contains("rgba(0, 57, 107, 1)")
                         || getSidebar.getCssValue("color").contains("rgb(0, 57, 107)")) {
@@ -817,6 +833,55 @@ public class PhaseConfigPage extends GovGrantsManager {
                     flag = true;
                 }
                 break;
+        }
+        return flag;
+    }
+
+    /**
+     * @return true if phase tab background color is displayed as expected
+     */
+    private Boolean isPhaseTabBackgroundColorChanged(String colorName) {
+        boolean flag = false;
+        WebElement getPhaseTab = I.amPerforming().getElementReference().of(By.xpath("//div[contains(@class,'navMenuHeader')]"));
+        switch (colorName.toUpperCase()) {
+            case "VERY DARK BLUE":
+                if (getPhaseTab.getCssValue("background-color").contains("rgba(0, 57, 107, 1)")
+                        || getPhaseTab.getCssValue("color").contains("rgb(0, 57, 107)")) {
+                    flag = true;
+                }
+                break;
+            case "VERY DARK BLUE 1":
+                if (getPhaseTab.getCssValue("background-color").contains("rgba(7, 53, 74, 1)")
+                        || getPhaseTab.getCssValue("color").contains("rgb(7, 53, 74)")) {
+                    flag = true;
+                }
+                break;
+            case "BLACK":
+                if (getPhaseTab.getCssValue("background-color").contains("rgba(17, 17, 17, 1)")
+                        || getPhaseTab.getCssValue("color").contains("rgb(17, 17, 17)")) {
+                    flag = true;
+                }
+                break;
+            case "VERY DARK CYAN":
+                if (getPhaseTab.getCssValue("background-color").contains("rgba(10, 49, 54, 1)")
+                        || getPhaseTab.getCssValue("color").contains("rgb(10, 49, 54)")) {
+                    flag = true;
+                }
+                break;
+        }
+        return flag;
+    }
+
+
+    /**
+     * @return true if active tab background color is displayed as expected at header
+     */
+    private Boolean isActiveTabHasBackgroundColour() {
+        boolean flag = false;
+        WebElement getActiveTab = I.amPerforming().getElementReference().of(By.xpath("//ul[@id='myTabNew']"));
+        if (getActiveTab.getCssValue("background").contains("rgba(255, 255, 255, 1)")
+                || getActiveTab.getCssValue("background").contains("rgb(255, 255, 255)")) {
+            flag = true;
         }
         return flag;
     }

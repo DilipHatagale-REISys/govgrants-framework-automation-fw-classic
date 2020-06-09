@@ -984,6 +984,13 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * return true if expected arrow is displayed at user drop-down at header
+     */
+    public void assertArrowIsDisplayedAtUserDropDown() {
+        Assert.assertTrue(isExpectedArrowDisplayedAtUserDropDown());
+    }
+
+    /**
      * get owner organisation lookup modal complete content
      *
      * @return
@@ -1863,6 +1870,20 @@ public class PageLayoutPage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@class='postInfo']//span[text()='" + likesCountOrlabel + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * @return true if expected arrow is displayed at user drop-down at header
+     */
+    private boolean isExpectedArrowDisplayedAtUserDropDown() {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//li[contains(@class,'userDropdown')]//i[contains(@class,'fa-chevron-down')]"))) {
                 flag = true;
             }
         } catch (Exception e) {

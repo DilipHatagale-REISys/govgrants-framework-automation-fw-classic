@@ -2141,3 +2141,78 @@ Feature: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Sub-Recipient"
     Then I see page footer is in "Very dark desaturated cyan" color
+
+  @84755 @verifyThatVeryDarkBlueColorIsDisplayedAtPhasesTabForLoggedInUser-StateAsAGrantor
+  Scenario: verify that very dark blue color is displayed as background for phases tab for logged in user-StateAsAGrantor
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    Then I see phase tab has "Very Dark Blue" background color
+
+  @84756 @verifyThatVeryDarkBlue1ColorIsDisplayedAtPhasesTabForLoggedInUser-StateAsAGrantee
+  Scenario: verify that Very Dark Blue 1 color is displayed as background for phases tab for logged in user-StateAsAGrantee
+    When I login as "Automation" user
+    When I setup my app as "As a Grantee"
+    Then I see phase tab has "Very Dark Blue 1" background color
+
+  @84772 @verifyThatBlackColorIsDisplayedAtPhasesTabForLoggedInUser-AsAnAdministrator
+  Scenario: verify that black color is displayed as background for phases tab for logged in user-As an Administrator
+    When I login as "Automation" user
+    When I setup my app as "As an Administrator"
+    Then I see phase tab has "Black" background color
+
+  @84757 @verifyThatVeryDarkCyanColorIsDisplayedAtPhasesTabForLoggedInUser-recipient
+  Scenario: verify that Very dark cyan color is displayed as background for phases tab for logged in user-recipient
+    When I login as "Automation" user
+    When I setup my app as "As a Sub-Recipient"
+    Then I see phase tab has "Very dark cyan" background color
+
+  @84598 @verifyThatDropDownArrowIsUsedAtUserProfileSelectionDropdown
+  Scenario: verify that dropdown arrow is displayed at user drop-down at header
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    Then I see arrow is displayed at user drop-down
+
+  @84743 @verifyThatWhiteColorIsDisplayedForActiveTabAtHeader
+  Scenario: verify that white color is displayed for active tab at header
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see active tab has White background colour
+
+  @84617   @verifyAProgramRecordIsGettingCreatedEvenIfSkipAutoNumberingCheckBoxIsCheckedAtCustomSetting
+  Scenario: validate that if skip auto numbering check box is checked then a program record is getting created
+    Given I have "customNameTemplate" configuration as below:
+      | id                 | Name       | AutoNumberFormat | StartNumber | booleanValue                                          | customSettingApiName       |
+      | a0e15000008FjIyAAK | Program__c | {000}            | 1           | GNT__Active__c:true,GNT__SkipAutoNumberReset__c:false | GNT__NameTemplateConfig__c |
+    And I update custom name template setting changes:
+      | id                 | Name       | AutoNumberFormat | StartNumber | booleanValue                                         | customSettingApiName       |
+      | a0e15000008FjIyAAK | Program__c | {000}            | 1           | GNT__Active__c:true,GNT__SkipAutoNumberReset__c:true | GNT__NameTemplateConfig__c |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    Then I see the sub-header is "Test Automation Grants Record" in the page details
+
+  @84619   @verifyAProgramRecordIsGettingCreatedIfSkipAutoNumberingCheckBoxIsUncheckedAtCustomSetting
+  Scenario: validate that if skip auto numbering check box is unchecked then a program record is getting created
+    Given I have "customNameTemplate" configuration as below:
+      | id                 | Name       | AutoNumberFormat | StartNumber | booleanValue                                          | customSettingApiName       |
+      | a0e15000008FjIyAAK | Program__c | {000}            | 1           | GNT__Active__c:true,GNT__SkipAutoNumberReset__c:false | GNT__NameTemplateConfig__c |
+    And I update custom name template setting changes:
+      | id                 | Name       | AutoNumberFormat | StartNumber | booleanValue                                         | customSettingApiName       |
+      | a0e15000008FjIyAAK | Program__c | {000}            | 1           | GNT__Active__c:true,GNT__SkipAutoNumberReset__c:false | GNT__NameTemplateConfig__c |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    Then I see the sub-header is "Test Automation Grants Record" in the page details
