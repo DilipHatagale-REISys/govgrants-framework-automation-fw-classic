@@ -1612,3 +1612,85 @@ Feature: All pdf and xls related scenario including component and completed back
     And I select "Download as PDF" from parallel lines dropdown of "Application Files"
     And I download the file
     Then I see "ProgramRecordDoNotDelete.png" on page "1" of "govgrants" pdf file
+
+  @84591   @verifyDateTimeFieldFormatForLocalAsISTUnderFieldHistoryTableUnderDownloadedPDF @history
+  Scenario: validate the date and time format under field history table with respective to IST Local - under downloaded PDF
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I have "timeZoneLocale" configuration as below:
+      | locale | timeZone         |
+      | en_US  | America/New_York |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-027                    |
+    When I login as "Automation" user
+    And I update the locale and timezone related changes:
+      | locale | timeZone     |
+      | en_IN  | Asia/Kolkata |
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:ProgramForLocalTesting}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramForLocalTesting}" inside table
+    When I click on "Menu" in the page details
+    And I navigate to "History" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFlexTableHistory"
+    And I select "Download as PDF" from parallel lines dropdown of "Field History"
+    And I download the file
+    Then I softly see "12/6/2020 5:00 PM" on page "1" of "govgrants" pdf file
+    Then I softly see "11/6/2020 4:14 PM" on page "1" of "govgrants" pdf file
+
+  @84590   @verifyDateTimeFieldFormatForLocalAsEDTUnderFieldHistoryTableUnderDownloadedPDF @history
+  Scenario: validate the date and time format under field history table with respective to EDT Local - under downloaded PDF
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I have "timeZoneLocale" configuration as below:
+      | locale | timeZone         |
+      | en_US  | America/New_York |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-027                    |
+    When I login as "Automation" user
+    And I update the locale and timezone related changes:
+      | locale | timeZone         |
+      | en_CA  | America/New_York |
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:ProgramForLocalTesting}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramForLocalTesting}" inside table
+    And I navigate to "History" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFlexTableHistory"
+    And I select "Download as PDF" from parallel lines dropdown of "Field History"
+    And I download the file
+    Then I softly see "12/06/2020 5:00 PM" on page "1" of "govgrants" pdf file
+    Then I softly see "11/06/2020 4:14 PM" on page "1" of "govgrants" pdf file
+
+  @84584   @verifyDateTimeFieldFormatForLocalAsESTUnderFieldHistoryTableUnderDownloadedPDF @history
+  Scenario: validate the date and time format under field history table with respective to EST Local - under downloaded PDF
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I have "timeZoneLocale" configuration as below:
+      | locale | timeZone         |
+      | en_US  | America/New_York |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-027                    |
+    When I login as "Automation" user
+    And I update the locale and timezone related changes:
+      | locale | timeZone       |
+      | en_US  | America/Panama |
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:ProgramForLocalTesting}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramForLocalTesting}" inside table
+    And I navigate to "History" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFlexTableHistory"
+    And I select "Download as PDF" from parallel lines dropdown of "Field History"
+    And I download the file
+    Then I softly see "06/12/2020 5:00 PM" on page "1" of "govgrants" pdf file
+    Then I softly see "06/11/2020 4:14 PM" on page "1" of "govgrants" pdf file
