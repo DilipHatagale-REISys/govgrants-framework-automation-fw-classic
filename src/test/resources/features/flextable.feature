@@ -1094,8 +1094,8 @@ Feature: Flex Table Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
     Then I see "Save" button at "Bottom" of  Modal window
 
-  @84822    @verifyDateFieldFormatForLocalAsEDTUnderFlexTable-gPlanning
-  Scenario Outline: validate the date field format under flex table with respective to EDT Local
+  @84822    @verifyDateFieldFormatForLocalAsESTUnderFlexTable-gPlanning
+  Scenario Outline: validate the date field format under flex table with respective to EST Local
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
@@ -1119,6 +1119,80 @@ Feature: Flex Table Component Scenarios
       | newFieldsApi                               | defaultFieldsApi                                                                                                 |
       | Name,ProgramName__c,StartDate__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
+  @84828    @verifyDateFieldFormatForLocalAsEDTUnderFlexTable-gPlanning
+  Scenario Outline: validate the date field format under flex table with respective to EDT Local
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I have "timeZoneLocale" configuration as below:
+      | locale | timeZone         |
+      | en_US  | America/New_York |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
+    When I login as "Automation" user
+    And I update the locale and timezone related changes:
+      | locale | timeZone         |
+      | en_US  | America/New_York |
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    Then I see value "11/30/2020" for title "Start Date" inside table "toggleFlexTablePrograms"
+
+    Examples:
+      | newFieldsApi                               | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,StartDate__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+
+  @84830    @verifyDateFieldFormatForLocalAsISTUnderFlexTable-gPlanning
+  Scenario Outline: validate the date field format under flex table with respective to IST Local
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I have "timeZoneLocale" configuration as below:
+      | locale | timeZone         |
+      | en_US  | America/New_York |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
+    When I login as "Automation" user
+    And I update the locale and timezone related changes:
+      | locale | timeZone     |
+      | en_IN  | Asia/Kolkata |
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    Then I see value "30/11/2020" for title "Start Date" inside table "toggleFlexTablePrograms"
+
+    Examples:
+      | newFieldsApi                               | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,StartDate__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+
+  @84704    @verifyDateAndTimeFieldFormatForLocalAsESTUnderFlexTable-gPlanning
+  Scenario Outline: validate the date and time field format under flex table with respective to EST Local
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I have "timeZoneLocale" configuration as below:
+      | locale | timeZone         |
+      | en_US  | America/New_York |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
+    When I login as "Automation" user
+    And I update the locale and timezone related changes:
+      | locale | timeZone       |
+      | en_US  | America/Panama |
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    Then I see value "11/30/2020 5:00 PM" for title "DateandTime" inside table "toggleFlexTablePrograms"
+
+    Examples:
+      | newFieldsApi                                 | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,DateandTime__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
 #  @flextablebug-test
 #  Scenario: Run flex table specific steps for specific time continuosly to ensure no error is displayed
