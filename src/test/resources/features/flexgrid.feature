@@ -2250,3 +2250,105 @@ Feature: Flex Grid Component Scenarios
     Examples:
       | defaultFieldsApi                                                                               | newFieldsApi                                                                                              |
       | Id,Name,GrantAwardName__c,AwardedAmountthisAction__c,YTDAdvancePaid__c,YTDReimbursementPaid__c | Id,Name,GrantAwardName__c,AwardedAmountthisAction__c,YTDAdvancePaid__c,YTDReimbursementPaid__c,Account__c |
+
+  @84690    @verifyDateAndTimeFieldFormatForLocalAsESTUnderMEGridParentFlexTable
+  Scenario: validate the date and time field format under ME Grid parent flex table with respective to EST Local
+    Given I have "timeZoneLocale" configuration as below:
+      | locale | timeZone         |
+      | en_US  | America/New_York |
+    When I login as "Automation" user
+    And I update the locale and timezone related changes:
+      | locale | timeZone       |
+      | en_US  | America/Panama |
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-02" in "---program:-:applicationBudgetCategoryFlexGridTableId---" panel
+    Then I see value "06/01/2020 5:00 PM" for title "DateTime" inside table "---program:-:applicationBudgetCategoryFlexGridTableId---"
+
+  @84700    @verifyDateAndTimeFieldFormatForLocalAsEDTUnderMEGridParentFlexTable
+  Scenario: validate the date and time field format under ME Grid parent flex table with respective to EDT Local
+    Given I have "timeZoneLocale" configuration as below:
+      | locale | timeZone         |
+      | en_US  | America/New_York |
+    When I login as "Automation" user
+    And I update the locale and timezone related changes:
+      | locale | timeZone         |
+      | en_CA  | America/New_York |
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-02" in "---program:-:applicationBudgetCategoryFlexGridTableId---" panel
+    Then I see value "01/06/2020 5:00 PM" for title "DateTime" inside table "---program:-:applicationBudgetCategoryFlexGridTableId---"
+
+  @84703    @verifyDateAndTimeFieldFormatForLocalAsISTUnderMEGridParentFlexTable
+  Scenario: validate the date and time field format under ME Grid parent flex table with respective to IST Local
+    Given I have "timeZoneLocale" configuration as below:
+      | locale | timeZone         |
+      | en_US  | America/New_York |
+    When I login as "Automation" user
+    And I update the locale and timezone related changes:
+      | locale | timeZone         |
+      | en_IN  | Asia/Kolkata |
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-02" in "---program:-:applicationBudgetCategoryFlexGridTableId---" panel
+    Then I see value "1/6/2020 5:00 PM" for title "DateTime" inside table "---program:-:applicationBudgetCategoryFlexGridTableId---"
+
+  @84815    @verifyDateFieldFormatForLocalAsESTUnderMEGridParentFlexTable
+  Scenario: validate the date field format under ME Grid parent flex table with respective to EST Local
+    Given I have "timeZoneLocale" configuration as below:
+      | locale | timeZone         |
+      | en_US  | America/New_York |
+    When I login as "Automation" user
+    And I update the locale and timezone related changes:
+      | locale | timeZone       |
+      | en_US  | America/Panama |
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-02" in "---program:-:applicationBudgetCategoryFlexGridTableId---" panel
+    Then I see value "06/01/2020" for title "Start Date" inside table "---program:-:applicationBudgetCategoryFlexGridTableId---"
+
+  @84816    @verifyDateFieldFormatForLocalAsEDTUnderMEGridParentFlexTable
+  Scenario: validate the date field format under ME Grid parent flex table with respective to EDT Local
+    Given I have "timeZoneLocale" configuration as below:
+      | locale | timeZone         |
+      | en_US  | America/New_York |
+    When I login as "Automation" user
+    And I update the locale and timezone related changes:
+      | locale | timeZone         |
+      | en_CA  | America/New_York |
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-02" in "---program:-:applicationBudgetCategoryFlexGridTableId---" panel
+    Then I see value "01/06/2020" for title "Start Date" inside table "---program:-:applicationBudgetCategoryFlexGridTableId---"
+
+  @84817    @verifyDateFieldFormatForLocalAsISTUnderMEGridParentFlexTable
+  Scenario: validate the date field format under ME Grid parent flex table with respective to IST Local
+    Given I have "timeZoneLocale" configuration as below:
+      | locale | timeZone         |
+      | en_US  | America/New_York |
+    When I login as "Automation" user
+    And I update the locale and timezone related changes:
+      | locale | timeZone         |
+      | en_IN  | Asia/Kolkata |
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-02" in "---program:-:applicationBudgetCategoryFlexGridTableId---" panel
+    Then I see value "1/6/2020" for title "Start Date" inside table "---program:-:applicationBudgetCategoryFlexGridTableId---"
