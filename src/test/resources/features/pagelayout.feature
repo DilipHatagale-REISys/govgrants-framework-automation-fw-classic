@@ -2204,7 +2204,7 @@ Feature: Page Layout Component Scenarios
       | id                 | Name       | AutoNumberFormat | StartNumber | booleanValue                                          | customSettingApiName       |
       | a0e15000008FjIyAAK | Program__c | {000}            | 1           | GNT__Active__c:true,GNT__SkipAutoNumberReset__c:false | GNT__NameTemplateConfig__c |
     And I update custom name template setting changes:
-      | id                 | Name       | AutoNumberFormat | StartNumber | booleanValue                                         | customSettingApiName       |
+      | id                 | Name       | AutoNumberFormat | StartNumber | booleanValue                                          | customSettingApiName       |
       | a0e15000008FjIyAAK | Program__c | {000}            | 1           | GNT__Active__c:true,GNT__SkipAutoNumberReset__c:false | GNT__NameTemplateConfig__c |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
     When I login as "Automation" user
@@ -2216,3 +2216,105 @@ Feature: Page Layout Component Scenarios
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     Then I see the sub-header is "Test Automation Grants Record" in the page details
+
+  @84760   @verifyDateAndTimeFieldFormatForLocalAsESTUnderUnderPageLayoutInViewMode-gAnnouncement
+  Scenario: validate displayed of date and time field format under page layout in view mode with respective to EST Local
+    Given I have "timeZoneLocale" configuration as below:
+      | locale | timeZone         |
+      | en_US  | America/New_York |
+    When I login as "Automation" user
+    And I update the locale and timezone related changes:
+      | locale | timeZone       |
+      | en_US  | America/Panama |
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I perform quick search for "Test Announcement For Automation"
+    When I click on "View" icon for "Test Announcement For Automation" inside table
+    When I navigate to "Overview" sub tab
+    Then I softly see field "Application Deadline" as "11/05/2020 2:57 AM"
+
+  @84765   @verifyDateAndTimeFieldFormatForLocalAsEDTUnderUnderPageLayoutInViewMode-gAnnouncement
+  Scenario: validate displayed of date and time field format under page layout in view mode with respective to EDT Local
+    Given I have "timeZoneLocale" configuration as below:
+      | locale | timeZone         |
+      | en_US  | America/New_York |
+    When I login as "Automation" user
+    And I update the locale and timezone related changes:
+      | locale | timeZone         |
+      | en_CA  | America/New_York |
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I perform quick search for "Test Announcement For Automation"
+    When I click on "View" icon for "Test Announcement For Automation" inside table
+    When I navigate to "Overview" sub tab
+    Then I softly see field "Application Deadline" as "05/11/2020 2:57 AM"
+
+  @84766   @verifyDateAndTimeFieldFormatForLocalAsISTUnderUnderPageLayoutInViewMode-gAnnouncement
+  Scenario: validate displayed of date and time field format under page layout in view mode with respective to IST Local
+    Given I have "timeZoneLocale" configuration as below:
+      | locale | timeZone         |
+      | en_US  | America/New_York |
+    When I login as "Automation" user
+    And I update the locale and timezone related changes:
+      | locale | timeZone     |
+      | en_IN  | Asia/Kolkata |
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I perform quick search for "Test Announcement For Automation"
+    When I click on "View" icon for "Test Announcement For Automation" inside table
+    When I navigate to "Overview" sub tab
+    Then I softly see field "Application Deadline" as "5/11/2020 1:27 PM"
+
+  @86802   @verifyDateFieldFormatForLocalAsESTUnderUnderPageLayoutInViewMode-gAnnouncement
+  Scenario: validate displayed of date field format under page layout in view mode with respective to EST Local
+    Given I have "timeZoneLocale" configuration as below:
+      | locale | timeZone         |
+      | en_US  | America/New_York |
+    When I login as "Automation" user
+    And I update the locale and timezone related changes:
+      | locale | timeZone       |
+      | en_US  | America/Panama |
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I perform quick search for "Test Announcement For Automation"
+    When I click on "View" icon for "Test Announcement For Automation" inside table
+    When I navigate to "Overview" sub tab
+    Then I softly see field "FOA Release Date" as "11/04/2020"
+
+  @86808   @verifyDateFieldFormatForLocalAsEDTUnderUnderPageLayoutInViewMode-gAnnouncement
+  Scenario: validate displayed of date field format under page layout in view mode with respective to EDT Local
+    Given I have "timeZoneLocale" configuration as below:
+      | locale | timeZone         |
+      | en_US  | America/New_York |
+    When I login as "Automation" user
+    And I update the locale and timezone related changes:
+      | locale | timeZone         |
+      | en_CA  | America/New_York |
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I perform quick search for "Test Announcement For Automation"
+    When I click on "View" icon for "Test Announcement For Automation" inside table
+    When I navigate to "Overview" sub tab
+    Then I softly see field "FOA Release Date" as "04/11/2020"
+
+  @86809   @verifyDateFieldFormatForLocalAsISTUnderUnderPageLayoutInViewMode-gAnnouncement
+  Scenario: validate displayed of date field format under page layout in view mode with respective to IST Local
+    Given I have "timeZoneLocale" configuration as below:
+      | locale | timeZone         |
+      | en_US  | America/New_York |
+    When I login as "Automation" user
+    And I update the locale and timezone related changes:
+      | locale | timeZone     |
+      | en_IN  | Asia/Kolkata |
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I perform quick search for "Test Announcement For Automation"
+    When I click on "View" icon for "Test Announcement For Automation" inside table
+    When I navigate to "Overview" sub tab
+    Then I softly see field "FOA Release Date" as "4/11/2020"
