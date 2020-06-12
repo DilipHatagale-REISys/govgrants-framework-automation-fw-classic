@@ -6374,3 +6374,57 @@ Feature: Expression Builder Component Scenarios
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I click on "Edit" icon for "Demo_Title" inside table
     Then I see input box is not displayed for budget period end date
+
+  @86595    @verifyHideCellJSONAtEnhancedGridByHidingCellValueWithTheCombinationOfMultipleGroupsAndNotInOperators-EGrid @enhancedGrid
+  Scenario: Verify Hide cell JSON By hiding cell on the basis of multiple groups and NotIn operators - enhanced grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue                                                                | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForMultipleGroupsWithAndOperatordAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1497                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
+    Then I see "*****" shown inside enhanced grid table for specified record "Demo_Title"
+
+  @86633    @verifyHideCellJSONAtEnhancedGridByHidingCellValueWithTheCombinationOfDifferentLeftOperandsAsFieldsUserTypeProfileAndContext-EGrid @enhancedGrid
+  Scenario: Verify Hide cell JSON By hiding cell with the combination of diff left operands as Fields,UserType,Profile And Context - enhanced grid parent table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue                                                                                        | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForDifferentLeftOperandsAsFieldsUserTypeProfileAndContextAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1497                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Test Data DND" in "---program:-:flexGridEnhancedTableId---" panel
+    Then I see "*****" shown inside enhanced grid table for specified record "Test Data DND"
+
+  @86652    @verifyHideCellJSONAtEnhancedGridByHidingCellValueUsingOROperator-EGrid @enhancedGrid
+  Scenario: Verify Hide cell JSON By hiding cell value using OR operator - at enhanced grid parent table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue                                            | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForOROperatorAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1497                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Test Data DND" in "---program:-:flexGridEnhancedTableId---" panel
+    Then I see "*****" shown inside enhanced grid table for specified record "Test Data DND"
