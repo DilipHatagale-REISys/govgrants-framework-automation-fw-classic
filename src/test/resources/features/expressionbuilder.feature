@@ -808,7 +808,7 @@ Feature: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Draft Announcements"
+    And I click toggle button to select "Closed/Reject Announcements"
     When I perform quick search for "Test 11-Jul"
     When I click on "View" icon for "Test 11-Jul" inside table
     When I navigate to "Financials" sub tab
@@ -6428,3 +6428,134 @@ Feature: Expression Builder Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Test Data DND" in "---program:-:flexGridEnhancedTableId---" panel
     Then I see "*****" shown inside enhanced grid table for specified record "Test Data DND"
+
+  @86580  @verifyHideCellJSONAtEnhancedGridByHidingCellValueUsingAndOperatorAndINOperator-EGrid @enhancedGrid
+  Scenario: Verify Hide cell JSON By hiding cell value using AND operator and IN operator- at enhanced grid parent table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue                                                       | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForAndGroupAndINOperatorAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1497                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Test Data DND" in "---program:-:flexGridEnhancedTableId---" panel
+    Then I see "*****" shown inside enhanced grid table for specified record "Test Data DND"
+
+  @86657  @verifyHideCellJSONAtEnhancedGridByHidingCellValueUsingOROperatorWitMultipleGroups-EGrid @enhancedGrid
+  Scenario: Verify Hide cell JSON By hiding cell value using OR operator with multiple groups - at enhanced grid parent table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue                                                                 | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForOROperatorAndWithMultipleGroupsAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1497                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Test Data DND" in "---program:-:flexGridEnhancedTableId---" panel
+    Then I see "*****" shown inside enhanced grid table for specified record "Test Data DND"
+
+  @86811    @verifyReadOnlyCellJSONFieldAtEnhancedGridUsingAndOperatorOnTheBasisOfSingleField-gPlanning @enhancedGrid
+  Scenario:  Verify Read only cell JSON using AND operator on the basis of single field - enhanced grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table List       | Read Only Cell JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                                                 | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Read Only Cell JSON | govgrants_config:ReadOnlyCellJsonUsingANDOperatorForSingleFieldAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1489                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
+    When I click on "Edit" icon for "Demo_Title" inside table
+    Then I see input box is not displayed for budget period end date
+
+  @86812    @verifyReadOnlyCellJSONFieldAtEnhancedGridUsingAndOperatorOnTheBasisOfMultipleOperands-gPlanning @enhancedGrid
+  Scenario:  Verify Read only cell JSON using AND operator on the basis of multiple operands - enhanced grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table List       | Read Only Cell JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                                                    | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Read Only Cell JSON | govgrants_config:ReadOnlyCellJsonUsingANDOperatorForMultipleOperandsAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1489                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Test Data DND" in "---program:-:flexGridEnhancedTableId---" panel
+    When I click on "Edit" icon for "Test Data DND" inside table
+    Then I see input box is not displayed for budget period end date
+
+  @86835    @verifyReadOnlyCellJSONFieldAtEnhancedGridUsingOROperatorOnTheBasisOfSingleField-gPlanning @enhancedGrid
+  Scenario:  Verify Read only cell JSON using OR operator on the basis of singlefield  - enhanced grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table List       | Read Only Cell JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                                                    | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Read Only Cell JSON | govgrants_config:ReadOnlyCellJsonUsingOrOperatorForSingleFieldAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1489                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Test Data DND" in "---program:-:flexGridEnhancedTableId---" panel
+    When I click on "Edit" icon for "Test Data DND" inside table
+    Then I see input box is not displayed for budget period end date
+
+  @86837    @verifyReadOnlyCellJSONFieldAtEnhancedGridUsingOROperatorOnTheBasisOfMultipleOperandsndGroups-gPlanning @enhancedGrid
+  Scenario:  Verify Read only cell JSON using OR operator on the basis of multiple operands and groups  - enhanced grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table List       | Read Only Cell JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                                                    | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Read Only Cell JSON | govgrants_config:ReadOnlyCellJsonUsingOrOperatorForMultipleOperandsAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1489                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Test Data DND" in "---program:-:flexGridEnhancedTableId---" panel
+    When I click on "Edit" icon for "Test Data DND" inside table
+    Then I see input box is not displayed for budget period end date
+
+  @87007    @verifyReadOnlyCellJSONFieldAtEnhancedGridUsingROperandAsField-gPlanning @enhancedGrid
+  Scenario:  Verify Read only cell JSON using right operands as field  - enhanced grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table List       | Read Only Cell JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                                                    | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Read Only Cell JSON | govgrants_config:ReadOnlyCellJsonUsingROperandAsFieldAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1489                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
+    When I click on "Edit" icon for "Demo_Title" inside table
+    Then I see input box is not displayed for budget period end date
