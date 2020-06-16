@@ -910,13 +910,6 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
-     * click on footer links present at bottom of any page
-     */
-    public void clickOnAnyFooterLinks(String footerLinks) {
-        I.amPerforming().click().on(By.xpath("//span[contains(@class,'footer-links')]//a[contains(text(),'" + footerLinks + "')]"));
-    }
-
-    /**
      * return true if specific text is displayed inside Attachment flex table
      *
      * @param valueToBeSearch
@@ -931,13 +924,6 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public void assertExpectedFieldAtEditPageDetails(String fieldAPIName) {
         Assert.assertTrue(isExpectedFieldIsDisplayedOnEditPageDetails(fieldAPIName));
-    }
-
-    /**
-     * return true if expected link is present on page footer
-     */
-    public void assertFooterLinkIsPresent(String footerLinkName) {
-        Assert.assertTrue(isExpectedLinkIsDisplayedInPageFooter(footerLinkName));
     }
 
     /**
@@ -1760,20 +1746,6 @@ public class PageLayoutPage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(I.amPerforming().getElementReference().of(By.xpath("//th[text()='" + colName + "']//ancestor::tbody/following-sibling::tbody[" + rowNo + "]/tr[" + tData + "]//td[" + colNo + "]//*[text()='" + text + "']")))) {
-                flag = true;
-            }
-        } catch (Exception e) {
-        }
-        return flag;
-    }
-
-    /**
-     * @return true if expected footer link is displayed
-     */
-    private boolean isExpectedLinkIsDisplayedInPageFooter(String footerLinkName) {
-        boolean flag = false;
-        try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//a[contains(text(),'" + footerLinkName + "')]"))) {
                 flag = true;
             }
         } catch (Exception e) {

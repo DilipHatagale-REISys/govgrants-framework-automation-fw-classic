@@ -71,11 +71,6 @@ public class PageLayoutSteps {
         pageLayoutPage.uploadAttachmentFromWorkspace(fileNameToBeUpload.split(","));
     }
 
-    @When("^I click on footer links \"([^\"]*)\"$")
-    public void clickFooterLinks(String footerLinks) {
-        pageLayoutPage.clickOnAnyFooterLinks(footerLinks);
-    }
-
     @When("^I click \"([^\"]*)\" icon for lightning lookup$")
     public void clickOnLightningLookUpIcons(String iconName) {
         pageLayoutPage.clickOnIconsAtOwnerOrganisationLightningLookUpModal(iconName);
@@ -461,11 +456,6 @@ public class PageLayoutSteps {
     @Then("^I see for \"([^\"]*)\" value is \"([^\"]*)\" in chevron diagram$")
     public void iSeeForValueIsInChevronDiagram(String approverTitle, String approverName) {
         pageLayoutPage.assertIsApproverUserDisplayed(approverTitle, approverName);
-    }
-
-    @Then("^I see \"([^\"]*)\" footer link is present$")
-    public void assertFooterLinkIsPresent(String footerLinkName) {
-        pageLayoutPage.assertFooterLinkIsPresent(footerLinkName);
     }
 
     @Then("^I (see|do not see) \"([^\"]*)\" is displayed in dropdown at dashboard$")

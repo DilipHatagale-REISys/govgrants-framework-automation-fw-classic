@@ -691,13 +691,15 @@ Feature: Enhanced Flex Grid Component Scenarios
   @44533    @orderBySortByFieldAtParentDataTableEnhancedGridForAscendingOrder-gPlanning @smoke
   Scenario: Changing specific column value in ascending order with order by and sort by field from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName      | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Order By       |                   | TmpActiveGrantsGrid |                           |                            |
-      | Flex Grid:General     | Sort Direction |                   | TmpActiveGrantsGrid |                           |                            |
+      | configurationCategory        | fieldName      | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General            | Order By       |                   | TmpActiveGrantsGrid   |                           |                            |
+      | Flex Grid:General            | Sort Direction |                   | TmpActiveGrantsGrid   |                           |                            |
+      | Page Block:Page Block Detail | Is Active      | true              | Grantee State Program | GNT__PageBlockTitle__c    | Enhanced data table        |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName      | fieldNewValue   | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Order By       | ProjectTitle__c | TmpActiveGrantsGrid |                           |                            |
-      | Flex Grid:General     | Sort Direction | ASC             | TmpActiveGrantsGrid |                           |                            |
+      | configurationCategory        | fieldName      | fieldNewValue   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General            | Order By       | ProjectTitle__c | TmpActiveGrantsGrid   |                           |                            |
+      | Flex Grid:General            | Sort Direction | ASC             | TmpActiveGrantsGrid   |                           |                            |
+      | Page Block:Page Block Detail | Is Active      | false           | Grantee State Program | GNT__PageBlockTitle__c    | Enhanced data table        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -710,13 +712,15 @@ Feature: Enhanced Flex Grid Component Scenarios
   @44534    @orderBySortByFieldAtParentDataTableEnhancedGridForDescendingOrder-gPlanning
   Scenario: Changing specific column value in descending order with order by and sort by field from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName      | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Order By       |                   | TmpActiveGrantsGrid |                           |                            |
-      | Flex Grid:General     | Sort Direction |                   | TmpActiveGrantsGrid |                           |                            |
+      | configurationCategory        | fieldName      | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General            | Order By       |                   | TmpActiveGrantsGrid   |                           |                            |
+      | Flex Grid:General            | Sort Direction |                   | TmpActiveGrantsGrid   |                           |                            |
+      | Page Block:Page Block Detail | Is Active      | true              | Grantee State Program | GNT__PageBlockTitle__c    | Enhanced data table        |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName      | fieldNewValue   | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Order By       | ProjectTitle__c | TmpActiveGrantsGrid |                           |                            |
-      | Flex Grid:General     | Sort Direction | DESC            | TmpActiveGrantsGrid |                           |                            |
+      | configurationCategory        | fieldName      | fieldNewValue   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General            | Order By       | ProjectTitle__c | TmpActiveGrantsGrid   |                           |                            |
+      | Flex Grid:General            | Sort Direction | DESC            | TmpActiveGrantsGrid   |                           |                            |
+      | Page Block:Page Block Detail | Is Active      | false           | Grantee State Program | GNT__PageBlockTitle__c    | Enhanced data table        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1645,11 +1649,13 @@ Feature: Enhanced Flex Grid Component Scenarios
   @48901    @orderByFieldAtParentDataTableEnhancedGridForAscendingOrderForMultipleField-gPlanning
   Scenario Outline: Changing specific columns values in ascending order with order by field from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Order By  |                   | TmpActiveGrantsGrid |                           |                            |
+      | configurationCategory        | fieldName | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General            | Order By  |                   | TmpActiveGrantsGrid   |                           |                            |
+      | Page Block:Page Block Detail | Is Active | true              | Grantee State Program | GNT__PageBlockTitle__c    | Enhanced data table        |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue   | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Order By  | <fieldNewValue> | TmpActiveGrantsGrid |                           |                            |
+      | configurationCategory        | fieldName | fieldNewValue   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General            | Order By  | <fieldNewValue> | TmpActiveGrantsGrid   |                           |                            |
+      | Page Block:Page Block Detail | Is Active | false           | Grantee State Program | GNT__PageBlockTitle__c    | Enhanced data table        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1666,11 +1672,13 @@ Feature: Enhanced Flex Grid Component Scenarios
   @48902    @orderByFieldAtParentDataTableEnhancedGridForDescendingOrderForMultipleField-gPlanning
   Scenario Outline: Changing specific columns values in descending order with order by field from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Order By  |                   | TmpActiveGrantsGrid |                           |                            |
+      | configurationCategory        | fieldName | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General            | Order By  |                   | TmpActiveGrantsGrid   |                           |                            |
+      | Page Block:Page Block Detail | Is Active | true              | Grantee State Program | GNT__PageBlockTitle__c    | Enhanced data table        |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue   | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Order By  | <fieldNewValue> | TmpActiveGrantsGrid |                           |                            |
+      | configurationCategory        | fieldName | fieldNewValue   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General            | Order By  | <fieldNewValue> | TmpActiveGrantsGrid   |                           |                            |
+      | Page Block:Page Block Detail | Is Active | false           | Grantee State Program | GNT__PageBlockTitle__c    | Enhanced data table        |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2118,7 +2126,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
-    Then I see "06/05/2020 4:00 PM" shown inside enhanced grid table for specified record "Demo_Title"
+    Then I see "05/06/2020 4:00 PM" shown inside enhanced grid table for specified record "Demo_Title"
 
     Examples:
       | newFieldsApi                                         | defaultFieldsApi                                                                                                                                                                                                                   |
@@ -2146,7 +2154,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
-    Then I see "05/06/2020 5:00 PM" shown inside enhanced grid table for specified record "Demo_Title"
+    Then I see "06/05/2020 5:00 PM" shown inside enhanced grid table for specified record "Demo_Title"
 
     Examples:
       | newFieldsApi                                         | defaultFieldsApi                                                                                                                                                                                                                   |
