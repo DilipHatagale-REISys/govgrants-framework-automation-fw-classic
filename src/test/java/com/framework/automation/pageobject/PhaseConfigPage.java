@@ -872,13 +872,12 @@ public class PhaseConfigPage extends GovGrantsManager {
         return flag;
     }
 
-
     /**
      * @return true if active tab background color is displayed as expected at header
      */
     private Boolean isActiveTabHasBackgroundColour() {
         boolean flag = false;
-        WebElement getActiveTab = I.amPerforming().getElementReference().of(By.xpath("//ul[@id='myTabNew']"));
+        WebElement getActiveTab = I.amPerforming().getElementReference().of(By.xpath("//ul[@id='myTabNew']//a[@id='GrantorPlanning']"));
         if (getActiveTab.getCssValue("background").contains("rgba(255, 255, 255, 1)")
                 || getActiveTab.getCssValue("background").contains("rgb(255, 255, 255)")) {
             flag = true;
