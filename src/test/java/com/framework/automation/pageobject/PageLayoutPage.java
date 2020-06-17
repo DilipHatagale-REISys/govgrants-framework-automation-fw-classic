@@ -977,6 +977,20 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * return true if dateTime field value is displayed in an expected format as per selected LOCAL - in History table
+     *
+     * @param dateTimeFieldValue
+     * @param columnName
+     */
+    public void assertDateTimeDisplayedInExpectedFormatInHistoryTable(String usage, String dateTimeFieldValue, String columnName) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isDateTimeDisplayedInExpectedFormatInHistoryTable(dateTimeFieldValue, columnName));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isDateTimeDisplayedInExpectedFormatInHistoryTable(dateTimeFieldValue, columnName)).isTrue();
+        }
+    }
+
+    /**
      * get owner organisation lookup modal complete content
      *
      * @return
@@ -1859,6 +1873,39 @@ public class PageLayoutPage extends GovGrantsManager {
                 flag = true;
             }
         } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if dateTime field value is displayed in an expected format as per selected LOCAL - in History table
+     *
+     * @param dateTimeFieldValue
+     * @param columnName
+     * @return
+     */
+    private boolean isDateTimeDisplayedInExpectedFormatInHistoryTable(String dateTimeFieldValue, String columnName) {
+        boolean flag = false;
+        By getNewValue = By.xpath("//div[@id='History']//tr[1]//td[3]");
+        By getOldValue = By.xpath("//div[@id='History']//tr[1]//td[4]");
+
+        if (columnName.equalsIgnoreCase("New Value")) {
+            try {
+                if (I.amPerforming().getElementReference().of(getNewValue).getText().contains(dateTimeFieldValue)) {
+                    flag = true;
+                }
+            } catch (Exception e) {
+                flag = false;
+
+            }
+        } else if (columnName.equalsIgnoreCase("Old Value")) {
+            try {
+                if (I.amPerforming().getElementReference().of(getOldValue).getText().contains(dateTimeFieldValue)) {
+                    flag = true;
+                }
+            } catch (Exception e) {
+                flag = false;
+            }
         }
         return flag;
     }

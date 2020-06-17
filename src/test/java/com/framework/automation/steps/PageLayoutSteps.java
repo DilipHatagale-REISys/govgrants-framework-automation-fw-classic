@@ -487,4 +487,9 @@ public class PageLayoutSteps {
     public void assertArrowIsDisplayedAtUserDropDown() {
         pageLayoutPage.assertArrowIsDisplayedAtUserDropDown();
     }
+
+    @Then("^I (softly see|see) \"([^\"]*)\" shown inside \"([^\"]*)\" column in history table$")
+    public void dateTimeShownInsideNewOldValueColumnInHistoryTable(String usage, String dateTimeFieldValue, String columnName) {
+        pageLayoutPage.assertDateTimeDisplayedInExpectedFormatInHistoryTable(usage, dateTimeFieldValue, columnName);
+    }
 }
