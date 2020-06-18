@@ -499,8 +499,8 @@ Feature: history Component Scenarios
       | en_US  | America/New_York |
     When I login as "Automation" user
     And I update the locale and timezone related changes:
-      | locale | timeZone       |
-      | en_US  | America/Panama |
+      | locale | timeZone     |
+      | en_IN  | Asia/Kolkata |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
