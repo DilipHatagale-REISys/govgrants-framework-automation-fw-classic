@@ -2305,3 +2305,59 @@ Feature: Enhanced Flex Grid Component Scenarios
     Examples:
       | newFieldsApi                                           | defaultFieldsApi                                                                                                                                                                                                                   |
       | Name,ProjectTitle__c,Status__c,ExternalOrganization__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @87573   @verifyLookupFieldShouldBeInViewModeIfEnableEditDisplayFieldCheckboxIsUncheckedAtChildTable-gPlanning
+  Scenario Outline: validate lookup field is in view mode after unchecking the Enable Edit Display Field from config at e-grid child table - gplanning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Display Field             |                    | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Edit Display Field | false              | ApiGeneratedId:1 |
+      | Flex Table List       | Display Field Names       | <defaultFieldsApi> | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Display Field             | Code__c        | TmpGrantorActiveAwardsGrid | Name                      | FTC-1519                   |
+      | Flex Table List       | Enable Edit Display Field | false          | TmpGrantorActiveAwardsGrid | Name                      | FTC-1519                   |
+      | Flex Grid:General     | Display Field Names       | <newFieldsApi> | TmpGrantorActiveAwardsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    When I expand nested table containing column value "Demo_Title"
+    When I click on "Edit" icon for "AD-GG PJ--00" inside table
+    Then I do not see "Account__c" field is editable inside enhanced grid
+
+    Examples:
+      | newFieldsApi                                | defaultFieldsApi                                                                                                                               |
+      | Name,GrantAwardName__c,Status__c,Account__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
+
+  @87763   @verifyLookupFieldShouldBeInViewModeIfEnableEditDisplayFieldCheckboxIsCheckedAtChildTable-gPlanning
+  Scenario Outline: validate lookup field is in view mode after checking the Enable Edit Display Field from config at e-grid child table- gplanning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Display Field             |                    | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Edit Display Field | false              | ApiGeneratedId:1 |
+      | Flex Table List       | Display Field Names       | <defaultFieldsApi> | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Display Field             | Code__c        | TmpGrantorActiveAwardsGrid | Name                      | FTC-1519                   |
+      | Flex Table List       | Enable Edit Display Field | true           | TmpGrantorActiveAwardsGrid | Name                      | FTC-1519                   |
+      | Flex Grid:General     | Display Field Names       | <newFieldsApi> | TmpGrantorActiveAwardsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    When I expand nested table containing column value "Demo_Title"
+    When I click on "Edit" icon for "AD-GG PJ--00" inside table
+    Then I see "Account__c" field is editable inside enhanced grid
+
+    Examples:
+      | newFieldsApi                                | defaultFieldsApi                                                                                                                               |
+      | Name,GrantAwardName__c,Status__c,Account__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |

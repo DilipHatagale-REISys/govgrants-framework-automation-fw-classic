@@ -19,7 +19,6 @@ public class ProjectWebServices {
     ApiUtilities apiUtil;
     private static String endPoint = EnvironmentFactory.getEnvironmentUrl();
     private String defaultUpdateEndPoint = "/services/apexrest/frameworkAPIUpdate";
-    private String defaultEndPointGetToken = "/services/oauth2/token?grant_type=password&client_secret=7608231485378593656&client_id=3MVG91ftikjGaMd8E01oyLzW0qhdCcSTnpVVwmMdo3H_C6vbhroOOpEF4C.54CXCiOi5SQFyN.a6Ze8NCAcSa&username=qa_automation@ggp.test5&password=Automation@12345";
     public static String tokenString;
     public static ArrayList<IdBucket> storeAllIds;
     public static ProjectWebServices thisValue = null;
@@ -319,7 +318,7 @@ public class ProjectWebServices {
      * get token for authentication of Delete request
      */
     private void getAuthToken() {
-        Response response = I.amPerforming().restHttp().postCall(null, null, endPoint + defaultEndPointGetToken, null, null, null);
+        Response response = I.amPerforming().restHttp().postCall(null, null, endPoint + defaultEndPointGetToken(), null, null, null);
         tokenString = response.body().jsonPath().getString("access_token");
     }
 
