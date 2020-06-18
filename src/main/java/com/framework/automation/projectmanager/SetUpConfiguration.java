@@ -1,9 +1,10 @@
 package com.framework.automation.projectmanager;
 
 import com.framework.automation.payloads.*;
+import com.testingblaze.register.EnvironmentFactory;
 
 public class SetUpConfiguration {
-    public static String defaultRetrieveEndPoint = "https://ggptest5-dev-ed.my.salesforce.com/services/apexrest/frameworkAPIRetrieve";
+    public static String defaultRetrieveEndPoint = EnvironmentFactory.getEnvironmentUrl()+"/services/apexrest/frameworkAPIRetrieve";
 
 
     /**
