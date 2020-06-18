@@ -32,10 +32,8 @@ public class ProjectWebServices {
         String defaultEndPointGetToken = "";
         if (EnvironmentFactory.getEnvironmentName().contains("QA")) {
             defaultEndPointGetToken = "/services/oauth2/token?grant_type=password&client_secret=7608231485378593656&client_id=3MVG91ftikjGaMd8E01oyLzW0qhdCcSTnpVVwmMdo3H_C6vbhroOOpEF4C.54CXCiOi5SQFyN.a6Ze8NCAcSa&username=qa_automation@ggp.test5&password=Automation@12345";
-            return defaultEndPointGetToken;
         } else if (EnvironmentFactory.getEnvironmentName().contains("TEST8")) {
             defaultEndPointGetToken = "/services/oauth2/token?grant_type=password&client_secret=ED8AAA4C6E94B6CF90739C5FC2E705B7548BE195EF4364B99AC72B64F12AC9FE&client_id=3MVG9ahGHqp.k2_wmbjHwYMdmX6eG9Rs2V6RgQyCXgwKRQN5OzafHM.hCYLC2hRCOhvfzkBokman98o5xN6dK&username=nakul@admin.test8.ux&password=test@1234";
-            return defaultEndPointGetToken;
         }
         return defaultEndPointGetToken;
     }
@@ -487,16 +485,17 @@ public class ProjectWebServices {
      */
     private Response postConfigCall(String configCategory, String fieldName, String value, String filterClause) {
         Response response = null;
+        var callingEndPoint=endPoint + defaultUpdateEndPoint;
         if (value.contains("ApiGeneratedId")) {
             String[] getValueAt = value.split(":");
             response = I.amPerforming().restHttp().postCall(null,
                     configPostCall.getConfigJson(handleConfigCategory(configCategory), fieldName,
                             storeAllIds.get(Integer.parseInt(getValueAt[1])).getId(), filterClause),
-                    endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
+                    callingEndPoint, "Authorization", "Bearer " + tokenString, null);
         } else {
             response = I.amPerforming().restHttp().postCall(null,
                     configPostCall.getConfigJson(handleConfigCategory(configCategory), fieldName, value, filterClause),
-                    endPoint + defaultUpdateEndPoint, "Authorization", "Bearer " + tokenString, null);
+                    callingEndPoint, "Authorization", "Bearer " + tokenString, null);
         }
         return response;
     }

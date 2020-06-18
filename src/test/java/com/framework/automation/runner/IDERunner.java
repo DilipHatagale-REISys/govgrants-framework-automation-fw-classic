@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         glue = {"setup","com.framework.automation.steps","com.automation.rei.govgrantsSteps","com.testingblaze.actionsfactory.gherkin","com.testingblaze.register"},
         features = {"src/test/resources/features"},
         plugin = {"json:target/cucumber-report/cucumber.json","com.testingblaze.controller.ReportingLogsPlugin","html:target/cucumber-html"},
-        tags = {"@82792"},
+        tags = {"@activeFieldAtCalenderConfig"},
         monochrome = true
 )
 public class IDERunner {
