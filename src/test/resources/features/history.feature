@@ -455,3 +455,57 @@ Feature: history Component Scenarios
     When I "Reassign" to user "Allen PM" in the approval decision
     When I navigate to "History" sub tab
     Then I softly see column "Actual Approver" inside row "1" at position "2" and column at position "3" contains text "Allen PM"
+
+  @84566  @verifyDateAndTimeFieldFormatForLocalAsESTUnderHistoryTable
+  Scenario: validate the date and time field format under field history table with respective to EST Local
+    Given I have "timeZoneLocale" configuration as below:
+      | locale | timeZone         |
+      | en_US  | America/New_York |
+    When I login as "Automation" user
+    And I update the locale and timezone related changes:
+      | locale | timeZone       |
+      | en_US  | America/Panama |
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:ProgramForLocalTestingAtHistory}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramForLocalTestingAtHistory}" inside table
+    When I navigate to "History" sub tab
+    Then I softly see "06/04/2020 3:00 PM" shown inside "New Value" column in history table
+    Then I softly see "06/03/2020 1:00 PM" shown inside "Old Value" column in history table
+
+  @84568  @verifyDateAndTimeFieldFormatForLocalAsEDTUnderHistoryTable
+  Scenario: validate the date and time field format under field history table with respective to EDT Local
+    Given I have "timeZoneLocale" configuration as below:
+      | locale | timeZone         |
+      | en_US  | America/New_York |
+    When I login as "Automation" user
+    And I update the locale and timezone related changes:
+      | locale | timeZone         |
+      | en_CA  | America/New_York |
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:ProgramForLocalTestingAtHistory}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramForLocalTestingAtHistory}" inside table
+    When I navigate to "History" sub tab
+    Then I softly see "04/06/2020 3:00 PM" shown inside "New Value" column in history table
+    Then I softly see "03/06/2020 1:00 PM" shown inside "Old Value" column in history table
+
+  @84570  @verifyDateAndTimeFieldFormatForLocalAsISTUnderHistoryTable
+  Scenario: validate the date and time field format under field history table with respective to IST Local
+    Given I have "timeZoneLocale" configuration as below:
+      | locale | timeZone         |
+      | en_US  | America/New_York |
+    When I login as "Automation" user
+    And I update the locale and timezone related changes:
+      | locale | timeZone     |
+      | en_IN  | Asia/Kolkata |
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:ProgramForLocalTestingAtHistory}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramForLocalTestingAtHistory}" inside table
+    When I navigate to "History" sub tab
+    Then I softly see "4/6/2020 3:00 PM" shown inside "New Value" column in history table
+    Then I softly see "3/6/2020 1:00 PM" shown inside "Old Value" column in history table
