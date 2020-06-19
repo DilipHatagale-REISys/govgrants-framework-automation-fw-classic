@@ -194,4 +194,9 @@ public class PhaseConfigSteps {
     public void assertActiveTabHasBackgroundColour() {
         phaseConfigPage.assertActiveTabHasBackgroundColour();
     }
+
+    @Then("^I see active tab has Black background colour at my workspace section$")
+    public void activeTabHasBlackBackgroundColourAtMyWorkspaceSection() {
+        phaseConfigPage.assertActiveTabBackgroundColorAtMyWorkspaceSection();
+    }
 }

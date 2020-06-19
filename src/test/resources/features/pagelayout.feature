@@ -2318,3 +2318,44 @@ Feature: Page Layout Component Scenarios
     When I click on "View" icon for "Test Announcement For Automation" inside table
     When I navigate to "Overview" sub tab
     Then I softly see field "FOA Release Date" as "4/11/2020"
+
+  @84732 @verifyThatBlackColorIsDisplayedForActiveTabAtWorkspaceLibrary-gHome
+  Scenario: verify that black color is displayed at background for active tab at workspace library section
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see active tab has Black background colour at my workspace section
+
+  @86820 @verifyThatLookupModalWindowIsDisplayedProperly
+  Scenario: verify that lookup modal window is displayed properly
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I click search icon for lookup "Organization Lookup (New Window)"
+    Then I see a lookup modal window is displayed properly
+
+  @86968 @verifyThatLookupModalWindowIsDisplayedProperlyIfLookupContainsMoreThanTwoDisplayFields
+  Scenario Outline: verify that lookup modal window is displayed properly if lookup contains more that 2 display fields
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | <defaultValue>    | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName                  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | <newValue>    | Grantee State Program | Name                      | PBD-3178                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I click search icon for lookup "Organization Lookup (New Window)"
+    Then I see a lookup modal window is displayed properly
+
+    Examples:
+      | <defaultValue> | <newValue>                                                                                      |
+      | Name           | Name,Jigsaw,AnnualRevenue,NumberOfEmployees,ApplicantType__c,SupplySchedule__c,IsCustomerPortal |
