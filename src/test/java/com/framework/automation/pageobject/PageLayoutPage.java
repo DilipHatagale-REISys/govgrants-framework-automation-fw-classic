@@ -991,10 +991,10 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
-     * return true if lookup modal window is displayed properly
+     * return true if lookup modal window width is rendered as expected
      */
-    public void assertLookupModalWindowIsDisplayedProperly() {
-        Assert.assertTrue(isLookupModalWindowDisplayedProperly());
+    public void assertLookupModalWidthIsRenderedProperly(String width) {
+        Assert.assertTrue(isLookupModalWidthRenderedProperly(width));
     }
 
     /**
@@ -1918,13 +1918,13 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
-     * @return true if lookup modal window is displayed properly
+     * @return true if lookup modal window width is rendered as expected
      */
-    private boolean isLookupModalWindowDisplayedProperly() {
+    private boolean isLookupModalWidthRenderedProperly(String width) {
         boolean flag = false;
         WebElement getModalWidth = I.amPerforming().getElementReference().of(By.xpath("//div[@id='customLookupModalDialog']"));
         try {
-            if (getModalWidth.getCssValue("width").contains("800px")) {
+            if (getModalWidth.getCssValue("width").equalsIgnoreCase(width)) {
                 flag = true;
             }
         } catch (Exception e) {

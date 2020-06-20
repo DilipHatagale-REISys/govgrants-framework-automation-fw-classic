@@ -2336,7 +2336,7 @@ Feature: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I click search icon for lookup "Organization Lookup (New Window)"
-    Then I see a lookup modal window is displayed properly
+    Then I see a lookup modal with width as "800px" is rendered
 
   @86968 @verifyThatLookupModalWindowIsDisplayedProperlyIfLookupContainsMoreThanTwoDisplayFields
   Scenario Outline: verify that lookup modal window is displayed properly if lookup contains more that 2 display fields
@@ -2354,7 +2354,7 @@ Feature: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I click search icon for lookup "Organization Lookup (New Window)"
-    Then I see a lookup modal window is displayed properly
+    Then I see a lookup modal with width as "800px" is rendered
 
     Examples:
       | <defaultValue> | <newValue>                                                                                      |

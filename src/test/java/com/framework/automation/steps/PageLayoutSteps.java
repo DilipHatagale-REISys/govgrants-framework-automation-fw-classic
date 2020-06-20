@@ -493,8 +493,8 @@ public class PageLayoutSteps {
         pageLayoutPage.assertDateTimeDisplayedInExpectedFormatInHistoryTable(usage, dateTimeFieldValue, columnName);
     }
 
-    @Then("I see a lookup modal window is displayed properly")
-    public void lookupModalWindowIsDisplayedProperly() {
-        pageLayoutPage.assertLookupModalWindowIsDisplayedProperly();
+    @Then("^I see a lookup modal with width as \"([^\"]*)\" is rendered$")
+    public void lookupModalWidthIsRenderedProperly(String width) {
+        pageLayoutPage.assertLookupModalWidthIsRenderedProperly(width);
     }
 }
