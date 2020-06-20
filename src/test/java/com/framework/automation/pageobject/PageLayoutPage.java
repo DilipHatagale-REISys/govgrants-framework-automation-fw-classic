@@ -991,6 +991,13 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * return true if lookup modal window width is rendered as expected
+     */
+    public void assertLookupModalWidthIsRenderedProperly(String width) {
+        Assert.assertTrue(isLookupModalWidthRenderedProperly(width));
+    }
+
+    /**
      * get owner organisation lookup modal complete content
      *
      * @return
@@ -1906,6 +1913,21 @@ public class PageLayoutPage extends GovGrantsManager {
             } catch (Exception e) {
                 flag = false;
             }
+        }
+        return flag;
+    }
+
+    /**
+     * @return true if lookup modal window width is rendered as expected
+     */
+    private boolean isLookupModalWidthRenderedProperly(String width) {
+        boolean flag = false;
+        WebElement getModalWidth = I.amPerforming().getElementReference().of(By.xpath("//div[@id='customLookupModalDialog']"));
+        try {
+            if (getModalWidth.getCssValue("width").equalsIgnoreCase(width)) {
+                flag = true;
+            }
+        } catch (Exception e) {
         }
         return flag;
     }

@@ -492,4 +492,9 @@ public class PageLayoutSteps {
     public void dateTimeShownInsideNewOldValueColumnInHistoryTable(String usage, String dateTimeFieldValue, String columnName) {
         pageLayoutPage.assertDateTimeDisplayedInExpectedFormatInHistoryTable(usage, dateTimeFieldValue, columnName);
     }
+
+    @Then("^I see a lookup modal with width as \"([^\"]*)\" is rendered$")
+    public void lookupModalWidthIsRenderedProperly(String width) {
+        pageLayoutPage.assertLookupModalWidthIsRenderedProperly(width);
+    }
 }

@@ -349,6 +349,13 @@ public class PhaseConfigPage extends GovGrantsManager {
     }
 
     /**
+     * assert active tab has black background color at workspace library section - home phase
+     */
+    public void assertActiveTabBackgroundColorAtMyWorkspaceSection() {
+        Assert.assertTrue(isActiveTabHasBackgroundColourAtMyWorkspaceSection());
+    }
+
+    /**
      * assert phase tab background color
      *
      * @param colorName
@@ -880,6 +887,19 @@ public class PhaseConfigPage extends GovGrantsManager {
         WebElement getActiveTab = I.amPerforming().getElementReference().of(By.xpath("//ul[@id='myTabNew']//a[@id='GrantorPlanning']"));
         if (getActiveTab.getCssValue("background").contains("rgba(255, 255, 255, 1)")
                 || getActiveTab.getCssValue("background").contains("rgb(255, 255, 255)")) {
+            flag = true;
+        }
+        return flag;
+    }
+
+    /**
+     * @return true if active tab has black background color at workspace library section - home phase
+     */
+    private Boolean isActiveTabHasBackgroundColourAtMyWorkspaceSection() {
+        boolean flag = false;
+        WebElement getActiveTabAtWorkspace = I.amPerforming().getElementReference().of(By.xpath("//button[@id='My_Workspace_File']"));
+        if (getActiveTabAtWorkspace.getCssValue("background-color").contains("rgba(34, 34, 34, 1)")
+                || getActiveTabAtWorkspace.getCssValue("background").contains("rgb(34, 34, 34)")) {
             flag = true;
         }
         return flag;
