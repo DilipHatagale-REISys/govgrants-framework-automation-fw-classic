@@ -2045,7 +2045,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
     Examples:
       | newFieldsApi                                          | defaultFieldsApi                                                                                                                                                                                                                   |
-      | ProjectTitle__c,Status__c,Name,BudgetPeriodEndDate__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+      | ProjectTitle__c,Status__c,Name,BudgetPeriodStartDate__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
 
   @86427  @verifyDateFieldFormatForLocalAsEDTUnderEnhancedGridParentTable
   Scenario Outline: validate the date field format under enhanced grid flex table with respective to EDT Local
@@ -2073,7 +2073,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
     Examples:
       | newFieldsApi                                          | defaultFieldsApi                                                                                                                                                                                                                   |
-      | ProjectTitle__c,Status__c,Name,BudgetPeriodEndDate__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+      | ProjectTitle__c,Status__c,Name,BudgetPeriodStartDate__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
 
   @86430  @verifyDateFieldFormatForLocalAsISTUnderEnhancedGridParentTable
   Scenario Outline: validate the date field format under enhanced grid flex table with respective to IST Local
@@ -2101,7 +2101,7 @@ Feature: Enhanced Flex Grid Component Scenarios
 
     Examples:
       | newFieldsApi                                          | defaultFieldsApi                                                                                                                                                                                                                   |
-      | ProjectTitle__c,Status__c,Name,BudgetPeriodEndDate__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+      | ProjectTitle__c,Status__c,Name,BudgetPeriodStartDate__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
 
   @86302  @verifyDateAndTimeFieldFormatForLocalAsESTUnderEnhancedGridParentTable
   Scenario Outline: validate the date and time field format under enhanced grid flex table with respective to EST Local

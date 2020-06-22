@@ -1694,3 +1694,22 @@ Feature: All pdf and xls related scenario including component and completed back
     And I download the file
     Then I softly see "06/12/2020 5:00 PM" on page "1" of "govgrants" pdf file
     Then I softly see "06/11/2020 4:14 PM" on page "1" of "govgrants" pdf file
+
+  @88656   @VerifyChangedValueColumnInDownloadAsPDFForFieldHistoryTable @history
+  Scenario: Validate by click on Download As PDF option a PDF is getting downloaded and value is present in changed value column in history table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-027                    |
+    When I login as "Automation" user
+    When I navigate to "Planning" tab
+    When I perform quick search for "Test Program specific for History"
+    When I click on "View Program Details" icon for "Test Program specific for History" inside table
+    When I navigate to "History" sub tab
+    When I select "Program" from dropdown at History Table
+    When I click on parallel lines menu bar with data target value "#toggleFlexTableHistory"
+    And I select "Download as PDF" from parallel lines dropdown of "Field History"
+    And I download the file
+    Then I see "DateandTime" on page "1" of "govgrants" pdf file
