@@ -133,9 +133,9 @@ public class LibraryFilesSteps {
         libraryFilesPage.assertTabNameInsideAddFileModal(usage, tabName);
     }
 
-    @Then("^I see Classification as \"([^\"]*)\" at upload file modal$")
-    public void assertClassificationAtUploadFileModal(String classification) {
-        libraryFilesPage.assertClassificationNameAtAddFileModal(classification);
+    @Then("^I (see|softly see) Classification as \"([^\"]*)\" at upload file modal$")
+    public void assertClassificationAtUploadFileModal(String usage, String classification) {
+        libraryFilesPage.assertClassificationNameAtAddFileModal(usage, classification);
     }
 
     @Then("^I see label as \"([^\"]*)\" is displayed at upload file button$")

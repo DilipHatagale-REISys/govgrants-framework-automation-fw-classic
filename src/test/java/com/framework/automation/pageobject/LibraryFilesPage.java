@@ -183,8 +183,12 @@ public class LibraryFilesPage extends GovGrantsManager {
      *
      * @param classification
      */
-    public void assertClassificationNameAtAddFileModal(String classification) {
-        Assert.assertTrue(isClassificationNameDisplayedAtFileUploadModal(classification));
+    public void assertClassificationNameAtAddFileModal(String usuage, String classification) {
+        if (usuage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isClassificationNameDisplayedAtFileUploadModal(classification));
+        } else if (usuage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isClassificationNameDisplayedAtFileUploadModal(classification)).isTrue();
+        }
     }
 
     /**
@@ -203,13 +207,13 @@ public class LibraryFilesPage extends GovGrantsManager {
      */
     public void assertDefaultKeywordAtLibraryFolder(String usuage, String libraryOrFolderName, String pageID) {
         if (usuage.equalsIgnoreCase("see")) {
-            Assert.assertTrue(isDefaultKeywordDisplayedAtLibraryFolder(libraryOrFolderName,pageID));
+            Assert.assertTrue(isDefaultKeywordDisplayedAtLibraryFolder(libraryOrFolderName, pageID));
         } else if (usuage.equalsIgnoreCase("do not see")) {
-            Assert.assertFalse(isDefaultKeywordDisplayedAtLibraryFolder(libraryOrFolderName,pageID));
+            Assert.assertFalse(isDefaultKeywordDisplayedAtLibraryFolder(libraryOrFolderName, pageID));
         } else if (usuage.equalsIgnoreCase("softly see")) {
-            I.amPerforming().assertionsTo().assertThat(isDefaultKeywordDisplayedAtLibraryFolder(libraryOrFolderName,pageID)).isTrue();
+            I.amPerforming().assertionsTo().assertThat(isDefaultKeywordDisplayedAtLibraryFolder(libraryOrFolderName, pageID)).isTrue();
         } else if (usuage.equalsIgnoreCase("softly do not see")) {
-            I.amPerforming().assertionsTo().assertThat(isDefaultKeywordDisplayedAtLibraryFolder(libraryOrFolderName,pageID)).isFalse();
+            I.amPerforming().assertionsTo().assertThat(isDefaultKeywordDisplayedAtLibraryFolder(libraryOrFolderName, pageID)).isFalse();
         }
     }
 
@@ -391,9 +395,9 @@ public class LibraryFilesPage extends GovGrantsManager {
      * @param targetFolderName
      */
     public void dragAndDropFileFromOneFolderToAnother(String fileName, String sourceFolderName, String targetFolderName) {
-        By getSource = By.xpath("//span[text()='"+sourceFolderName+"']/ancestor::li//span[text()='"+fileName+"']");
-        By getTarget = By.xpath("//span[text()='"+targetFolderName+"']");
-        I.amPerforming().click().withMouse().dragAndDrop(getSource,getTarget);
+        By getSource = By.xpath("//span[text()='" + sourceFolderName + "']/ancestor::li//span[text()='" + fileName + "']");
+        By getTarget = By.xpath("//span[text()='" + targetFolderName + "']");
+        I.amPerforming().click().withMouse().dragAndDrop(getSource, getTarget);
     }
 
     /*********

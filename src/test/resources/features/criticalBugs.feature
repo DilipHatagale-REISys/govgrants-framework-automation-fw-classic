@@ -1932,3 +1932,17 @@ Feature: Logged Issues Scenarios
     Examples:
       | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                         |
       | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c like 'Road%' |
+
+  @88651 @validateAllClassificationsPresentUnderSelectDropDownAtPlanningFilesTable-HomePhase-RecordLevel
+  Scenario: Verify all classifications present under select classification field dropdown at add file modal - Planing Phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    Then I softly see Classification as "Select File Classification" at upload file modal
+    Then I softly see Classification as "Medical Reports" at upload file modal
+    Then I softly see Classification as "Clinical Budgets" at upload file modal
