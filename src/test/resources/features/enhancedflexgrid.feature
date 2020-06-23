@@ -2044,7 +2044,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     Then I see "06/05/2020" shown inside enhanced grid table for specified record "Demo_Title"
 
     Examples:
-      | newFieldsApi                                          | defaultFieldsApi                                                                                                                                                                                                                   |
+      | newFieldsApi                                            | defaultFieldsApi                                                                                                                                                                                                                   |
       | ProjectTitle__c,Status__c,Name,BudgetPeriodStartDate__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
 
   @86427  @verifyDateFieldFormatForLocalAsEDTUnderEnhancedGridParentTable
@@ -2072,7 +2072,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     Then I see "05/06/2020" shown inside enhanced grid table for specified record "Demo_Title"
 
     Examples:
-      | newFieldsApi                                          | defaultFieldsApi                                                                                                                                                                                                                   |
+      | newFieldsApi                                            | defaultFieldsApi                                                                                                                                                                                                                   |
       | ProjectTitle__c,Status__c,Name,BudgetPeriodStartDate__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
 
   @86430  @verifyDateFieldFormatForLocalAsISTUnderEnhancedGridParentTable
@@ -2100,7 +2100,7 @@ Feature: Enhanced Flex Grid Component Scenarios
     Then I see "5/6/2020" shown inside enhanced grid table for specified record "Demo_Title"
 
     Examples:
-      | newFieldsApi                                          | defaultFieldsApi                                                                                                                                                                                                                   |
+      | newFieldsApi                                            | defaultFieldsApi                                                                                                                                                                                                                   |
       | ProjectTitle__c,Status__c,Name,BudgetPeriodStartDate__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
 
   @86302  @verifyDateAndTimeFieldFormatForLocalAsESTUnderEnhancedGridParentTable

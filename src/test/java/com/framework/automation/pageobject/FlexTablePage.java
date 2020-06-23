@@ -10,6 +10,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 
+import java.io.IOException;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Locale;
@@ -462,6 +463,15 @@ public class FlexTablePage extends GovGrantsManager {
      */
     public void assertExpectedRecordsInsideTable(String flexTableHeader, String recordsName) {
         Assert.assertTrue(isExpectedRecordsDisplayedInsideTable(flexTableHeader, recordsName.split(",")));
+    }
+
+    /**
+     * return true if flex table actions are aligned
+     *
+     */
+    public void assertActionsAreAligned() throws IOException {
+        WebElement actionsAligned = I.amPerforming().getElementReference().of(By.xpath("//a[@title='Attachments']/../../../..//a[@class='actionIcons']/.."));
+        Assert.assertTrue(I.amPerforming().comparisonOf().image().isElementImage(actionsAligned, "tableActionsAlignmentView1"));
     }
 
     /*********

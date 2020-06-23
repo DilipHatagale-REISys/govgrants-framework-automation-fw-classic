@@ -470,6 +470,29 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * click on send email search by field dropdown
+     */
+    public void clickOnSendEmailSearchByField(String fieldLabel) {
+        I.amPerforming().click().on(getSendEmailSearchByField(fieldLabel));
+    }
+
+    /**
+     * get send email search by field at send email modal
+     */
+    public WebElement getSendEmailSearchByField(String fieldLabel) {
+        By searchByField = By.xpath("//label[contains(text(),'" + fieldLabel + "')]/following-sibling::div//button[contains(text(),'Search By')]");
+        return I.amPerforming().getElementReference().of(searchByField);
+    }
+
+    /**
+     * get drop down items from search by field at to/cc email field under send email modal
+     */
+    public WebElement getSearchByFieldDropDownItems(String fieldLabel, String dropdownValue) {
+        By DropDownItem = By.xpath("//label[contains(text(),'" + fieldLabel + "')]/following-sibling::div//input[@value='" + dropdownValue + "']");
+        return I.amPerforming().getElementReference().of(DropDownItem);
+    }
+
+    /**
      * get icon in rich text area description field at page layout
      */
     public WebElement getIconInRichTextAreaField(String iconName) {
@@ -864,11 +887,9 @@ public class PageLayoutPage extends GovGrantsManager {
      * Also select value from dropdown
      */
     public void clickSearchByButton(String fieldLabel, String dropdownValue) {
-        By searchByField = By.xpath("//label[contains(text(),'" + fieldLabel + "')]/following-sibling::div//button[contains(text(),'Search By')]");
-        By DropDownItem = By.xpath("//label[contains(text(),'" + fieldLabel + "')]/following-sibling::div//input[@value='" + dropdownValue + "']");
-        I.amPerforming().click().on(searchByField);
-        I.amPerforming().click().on(DropDownItem);
-        I.amPerforming().click().on(searchByField);
+        I.amPerforming().click().on(getSendEmailSearchByField(fieldLabel));
+        I.amPerforming().click().on(getSearchByFieldDropDownItems(fieldLabel, dropdownValue));
+        I.amPerforming().click().on(getSendEmailSearchByField(fieldLabel));
     }
 
     /**
@@ -995,6 +1016,20 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public void assertLookupModalWidthIsRenderedProperly(String width) {
         Assert.assertTrue(isLookupModalWidthRenderedProperly(width));
+    }
+
+    /**
+     * return true if search by field dropdown contains expected values at send email modal
+     *
+     * @param dropdownValue
+     * @param fieldLabel
+     */
+    public void assertSearchByFieldDropdownValues(String usage, String fieldLabel, String dropdownValue) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isExpectedDropDownValueDisplayedAtSendEmailModal(fieldLabel, dropdownValue));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isExpectedDropDownValueDisplayedAtSendEmailModal(fieldLabel, dropdownValue)).isTrue();
+        }
     }
 
     /**
@@ -1925,6 +1960,23 @@ public class PageLayoutPage extends GovGrantsManager {
         WebElement getModalWidth = I.amPerforming().getElementReference().of(By.xpath("//div[@id='customLookupModalDialog']"));
         try {
             if (getModalWidth.getCssValue("width").equalsIgnoreCase(width)) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+
+    /**
+     * @param dropdownValue
+     * @param fieldLabel
+     * @return true return true if search by field dropdown contains expected values at send email modal
+     */
+    private boolean isExpectedDropDownValueDisplayedAtSendEmailModal(String fieldLabel, String dropdownValue) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(getSearchByFieldDropDownItems(fieldLabel, dropdownValue))) {
                 flag = true;
             }
         } catch (Exception e) {
