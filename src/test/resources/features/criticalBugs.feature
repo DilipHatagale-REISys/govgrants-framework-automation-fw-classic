@@ -1933,7 +1933,7 @@ Feature: Logged Issues Scenarios
       | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                         |
       | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c like 'Road%' |
 
-  @88651 @validateAllClassificationsPresentUnderSelectDropDownAtPlanningFilesTable-HomePhase-RecordLevel
+  @88651 @validateAllClassificationsPresentUnderSelectDropDownAtPlanningFilesTable-HomePhase-RecordLevel @libraryFiles
   Scenario: Verify all classifications present under select classification field dropdown at add file modal - Planing Phase
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -1946,3 +1946,85 @@ Feature: Logged Issues Scenarios
     Then I softly see Classification as "Select File Classification" at upload file modal
     Then I softly see Classification as "Medical Reports" at upload file modal
     Then I softly see Classification as "Clinical Budgets" at upload file modal
+
+
+  @89268 @validateTheItemsPresentInSearByFieldDropDownAtTOEmailFieldAtSendEmailModal @sendEmail
+  Scenario: Validate the options present under search by field dropdown at TO email field at send email modal
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "To" email Search By field
+    Then I softly see "To" email search by field contains dropdown value as "Internal"
+    Then I softly see "To" email search by field contains dropdown value as "External"
+    Then I softly see "To" email search by field contains dropdown value as "Groups"
+
+  @89269 @validateTheItemsPresentInSearByFieldDropDownAtCCEmailFieldAtSendEmailModal @sendEmail
+  Scenario: Validate the options present under search by field dropdown at CC email field at send email modal
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "CC" email Search By field
+    Then I softly see "CC" email search by field contains dropdown value as "Internal"
+    Then I softly see "CC" email search by field contains dropdown value as "External"
+    Then I softly see "CC" email search by field contains dropdown value as "Groups"
+
+  @89365  @VerifyThatTheLookupFieldValueIsOverridedByCurrencyFieldAtEnhancedGridChildFlexTable
+  Scenario Outline: verify that the lookup field value is overrided by currency field at child flex table at enhanced grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Display Field             |                    | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Edit Display Field | false              | ApiGeneratedId:1 |
+      | Flex Table List       | Display Field Names       | <defaultFieldsApi> | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Display Field             | AnnualRevenue  | TmpGrantorActiveAwardsGrid | Name                      | FTC-1519                   |
+      | Flex Table List       | Enable Edit Display Field | true           | TmpGrantorActiveAwardsGrid | Name                      | FTC-1519                   |
+      | Flex Grid:General     | Display Field Names       | <newFieldsApi> | TmpGrantorActiveAwardsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    When I expand nested table containing column value "Demo_Title"
+    Then I see "$5,000" shown inside enhanced grid table for specified record "AD-GG PJ--00"
+
+    Examples:
+      | newFieldsApi                                | defaultFieldsApi                                                                                                                               |
+      | Name,GrantAwardName__c,Status__c,Account__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |

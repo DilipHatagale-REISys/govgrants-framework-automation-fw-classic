@@ -6,6 +6,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.springframework.context.annotation.Description;
 
+import java.io.IOException;
+
 
 public class FlexTableSteps {
     FlexTablePage flexTablePage;
@@ -243,5 +245,10 @@ public class FlexTableSteps {
     @Then("^I (see|softly see) \"([^\"]*)\" button at \"([^\"]*)\" of  Modal window$")
     public void buttonsAtModalWindow(String usage, String buttonName, String buttonPosition) {
         flexTablePage.assertButtonsIsDisplayedAtModalWindow(usage,buttonName,buttonPosition);
+    }
+
+    @Then("I see actions are aligned")
+    public void iSeeActionsAreAligned() throws IOException {
+        flexTablePage.assertActionsAreAligned();
     }
 }

@@ -6990,3 +6990,119 @@ Feature: Expression Builder Component Scenarios
     Examples:
       | newFieldsApi                                              | defaultFieldsApi                                                                                                                                                                                                                   |
       | Name,ProjectTitle__c,Status__c,CumulativeAwardedAmount__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @89295    @verifyCumulativeAwardedAmountColumnIsHiddenUsingHideColumnJsonUsingOROperatorWithNotInOperatorAndMultipleGroupsAtEnhancedGridParentTableDetails-gPlanning @enhancedGrid
+  Scenario Outline: Hiding specific column from config using OR and NOT-IN operator with multiple groups and validating it inside enhanced grid of programs-planning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Hide Column JSON    |                    | ApiGeneratedId:0 |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                                                          | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Column JSON    | govgrants_config:HideColumnJsonUsingORAndNOTINOperatorWithMultipleGroupsAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1518                   |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi>                                                                         | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    Then I see "Cumulative Awarded Amount" not displayed in enhanced grid table column title
+
+    Examples:
+      | newFieldsApi                                              | defaultFieldsApi                                                                                                                                                                                                                   |
+      | Name,ProjectTitle__c,Status__c,CumulativeAwardedAmount__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @89316    @verifyCumulativeAwardedAmountColumnIsHiddenUsingHideColumnJsonUsingANDOperatorWithNotInOperatorAtEnhancedGridParentTableDetails-gPlanning @enhancedGrid
+  Scenario Outline: Hiding specific column from config using AND and NOT-IN operator and validating it inside enhanced grid of programs-planning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Hide Column JSON    |                    | ApiGeneratedId:0 |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                                          | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Column JSON    | govgrants_config:HideColumnJsonUsingANDAndNOTINOperatorForEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1518                   |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi>                                                         | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    Then I see "Cumulative Awarded Amount" not displayed in enhanced grid table column title
+
+    Examples:
+      | newFieldsApi                                              | defaultFieldsApi                                                                                                                                                                                                                   |
+      | Name,ProjectTitle__c,Status__c,CumulativeAwardedAmount__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @89324    @verifyCumulativeAwardedAmountColumnIsHiddenUsingHideColumnJsonUsingParentObjectFieldsAndWithEqualsOperatorAtEnhancedGridParentTableDetails-gPlanning @enhancedGrid
+  Scenario Outline: Hiding specific column from config using parent object field and equal operator and validating it inside enhanced grid of programs-planning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Hide Column JSON    |                    | ApiGeneratedId:0 |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                                                         | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Column JSON    | govgrants_config:HideColumnJsonUsingParentObjectFieldAndEqualsOperatorForEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1518                   |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi>                                                                        | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    Then I see "Cumulative Awarded Amount" not displayed in enhanced grid table column title
+
+    Examples:
+      | newFieldsApi                                              | defaultFieldsApi                                                                                                                                                                                                                   |
+      | Name,ProjectTitle__c,Status__c,CumulativeAwardedAmount__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+
+  @89326    @verifyCumulativeAwardedAmountColumnIsHiddenUsingHideColumnJsonUsingParentObjectFieldsAndWithLessThanEqualsOperatorAtEnhancedGridParentTableDetails-gPlanning @enhancedGrid
+  Scenario Outline: Hiding specific column from config using parent object field and less than equals operator and validating it inside enhanced grid of programs-planning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Hide Column JSON    |                    | ApiGeneratedId:0 |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                                                                 | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Column JSON    | govgrants_config:HideColumnJsonUsingParentObjectFieldAndLessThanEqualsOperatorForEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1518                   |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi>                                                                                | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    Then I see "Cumulative Awarded Amount" not displayed in enhanced grid table column title
+
+    Examples:
+      | newFieldsApi                                              | defaultFieldsApi                                                                                                                                                                                                                   |
+      | Name,ProjectTitle__c,Status__c,CumulativeAwardedAmount__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @89329    @verifyCumulativeAwardedAmountColumnIsHiddenUsingHideColumnJsonUsingParentObjectFieldsAndWithGreaterThanEqualsOperatorAtEnhancedGridParentTableDetails-gPlanning @enhancedGrid
+  Scenario Outline: Hiding specific column from config using parent object field and greater than equals operator and validating it inside enhanced grid of programs-planning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Hide Column JSON    |                    | ApiGeneratedId:0 |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                                                                    | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Column JSON    | govgrants_config:HideColumnJsonUsingParentObjectFieldAndGreaterThanEqualsOperatorForEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1518                   |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi>                                                                                   | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    Then I see "Cumulative Awarded Amount" not displayed in enhanced grid table column title
+
+    Examples:
+      | newFieldsApi                                              | defaultFieldsApi                                                                                                                                                                                                                   |
+      | Name,ProjectTitle__c,Status__c,CumulativeAwardedAmount__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |

@@ -146,6 +146,11 @@ public class PageLayoutSteps {
         pageLayoutPage.clickOnByPhaseDropdownAtDashboard();
     }
 
+    @When("^I click on \"([^\"]*)\" email Search By field$")
+    public void clickOnSendEmailSearchByField(String fieldLabel) {
+        pageLayoutPage.clickOnSendEmailSearchByField(fieldLabel);
+    }
+
     @And("^I click on expand collapse icon for panel heading \"([^\"]*)\"$")
     public void clickOnExpandColapseIcon(String panelHeaderName) {
         pageLayoutPage.clickExpandCollapseIconAtTableHeader(panelHeaderName);
@@ -496,5 +501,10 @@ public class PageLayoutSteps {
     @Then("^I see a lookup modal with width as \"([^\"]*)\" is rendered$")
     public void lookupModalWidthIsRenderedProperly(String width) {
         pageLayoutPage.assertLookupModalWidthIsRenderedProperly(width);
+    }
+
+    @Then("^I (see|softly see) \"([^\"]*)\" email search by field contains dropdown value as \"([^\"]*)\"$")
+    public void searchByFieldDropdownValues(String usage, String fieldLabel, String dropdownValue) {
+        pageLayoutPage.assertSearchByFieldDropdownValues(usage,fieldLabel,dropdownValue);
     }
 }
