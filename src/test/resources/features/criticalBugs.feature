@@ -2002,7 +2002,7 @@ Feature: Logged Issues Scenarios
     Then I softly see "CC" email search by field contains dropdown value as "External"
     Then I softly see "CC" email search by field contains dropdown value as "Groups"
 
-  @89365  @VerifyThatTheLookupFieldValueIsOverridedByCurrencyFieldAtEnhancedGridChildFlexTable
+  @89365  @VerifyThatTheLookupFieldValueIsOverridedByCurrencyFieldAtEnhancedGridChildFlexTable @enhancedGrid
   Scenario Outline: verify that the lookup field value is overrided by currency field at child flex table at enhanced grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue  | filterId         |
@@ -2024,6 +2024,214 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     Then I see "$5,000" shown inside enhanced grid table for specified record "AD-GG PJ--00"
+
+    Examples:
+      | newFieldsApi                                | defaultFieldsApi                                                                                                                               |
+      | Name,GrantAwardName__c,Status__c,Account__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
+
+  @89615 @validateEmailSubjectWithSpecialCharacterIsShownProperlyInViewModal @sendEmail
+  Scenario: Validate special characters present under subject in sent email view modal are displayed properly
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Collab" sub tab
+    When I perform quick search for "1@&%#$*\|/test;:!<>?[]{}()" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "Delete" icon for "1@&%#$*\|/test;:!<>?[]{}()" inside table
+    When I pause execution for "2" seconds
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "To" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "To" on send email modal
+    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
+    When I enter value "1@&%#$*\|/test;:!<>?[]{}()" into field "Subject" on send email modal
+    When I enter value "1@&%#$*\|/test;:!<>?[]{}()" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    And I refresh the page
+    When I navigate to "Collab" sub tab
+    When I perform quick search for "1@&%#$*\|/test;:!<>?[]{}()" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "View" icon for "1@&%#$*\|/test;:!<>?[]{}()" inside table
+    Then I see "1@&%#$*\|/test;:!<>?[]{}()" as "Subject" on send email modal
+
+  @89619 @validateEmailBodyWithSpecialCharacterIsShownProperlyInViewModal @sendEmail
+  Scenario: Validate special characters present under body in sent email view modal are displayed properly
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Collab" sub tab
+    When I perform quick search for "1@&%#$*\|/test;:!<>?[]{}()" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "Delete" icon for "1@&%#$*\|/test;:!<>?[]{}()" inside table
+    When I pause execution for "2" seconds
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "To" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "To" on send email modal
+    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
+    When I enter value "1@&%#$*\|/test;:!<>?[]{}()" into field "Subject" on send email modal
+    When I enter value "1@&%#$*\|/test;:!<>?[]{}()" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    And I refresh the page
+    When I navigate to "Collab" sub tab
+    When I perform quick search for "1@&%#$*\|/test;:!<>?[]{}()" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "View" icon for "1@&%#$*\|/test;:!<>?[]{}()" inside table
+    Then I see "1@&%#$*\|/test;:!<>?[]{}()" as "Body Content" on send email modal
+
+  @89617 @validateReplyEmailSubjectAndBodyWithSpecialCharacterIsShownProperlyInReplyEmailViewModal @sendEmail
+  Scenario: Validate special characters present under body and subject in reply mail on send email modal
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Collab" sub tab
+    When I perform quick search for "Re: Reply1@&%#$*\|/test;:!<>?[]{}()" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "Delete" icon for "Re: Reply1@&%#$*\|/test;:!<>?[]{}()" inside table
+    When I pause execution for "2" seconds
+    When I perform quick search for "Reply1@&%#$*\|/test;:!<>?[]{}()" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "Delete" icon for "Reply1@&%#$*\|/test;:!<>?[]{}()" inside table
+    When I pause execution for "2" seconds
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "To" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "To" on send email modal
+    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
+    When I enter value "Reply1@&%#$*\|/test;:!<>?[]{}()" into field "Subject" on send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    And I refresh the page
+    When I navigate to "Collab" sub tab
+    When I perform quick search for "Reply1@&%#$*\|/test;:!<>?[]{}()" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "Reply" icon for "Reply1@&%#$*\|/test;:!<>?[]{}()" inside table
+    When I enter value "Reply1@&%#$*\|/test;:!<>?[]{}()" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    And I refresh the page
+    When I navigate to "Collab" sub tab
+    When I perform quick search for "Reply1@&%#$*\|/test;:!<>?[]{}()" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "View" icon for "Reply1@&%#$*\|/test;:!<>?[]{}()" inside table
+    Then I softly see "Re: Reply1@&%#$*\|/test;:!<>?[]{}()" as "Subject" on send email modal
+    Then I softly see "Re: Reply1@&%#$*\|/test;:!<>?[]{}()" as "Body Content" on send email modal
+
+  @89674  @verifyThatByClickOnPendingTaskCountInTaskSummaryByPhaseChartForProgramAPendingTasksTableIsDisplayed @phase
+  Scenario: validate by click on pending task count for planning inside Task Summary By Phase chart , pending tasks table gets displayed
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Planning" content inside "Task Summary By Phase" charts
+    Then I see "PG" records are present in pending task table
+    Then I see expected table with id "---program:-:PhasePendingTasksFlexTableId---"
+
+  @89299    @VerifyThatTheBooleanFieldValueIsOverridesAsPerGivenDisplayFieldAtEnhancedGridParentFlexTable @enhancedGrid
+  Scenario Outline: verify that the boolean field value is overrided as per given display field at parent flex table at enhanced grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Grid             | Display Field       |                    | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue       | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi>      | TmpActiveGrantsGrid |                           |                            |
+      | Flex Table List       | Display Field       | IsGrantingAgency__c | TmpActiveGrantsGrid | Name                      | FTC-1487                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    Then I softly see "check" symbol in flex table with id "---program:-:flexGridEnhancedID---"
+
+    Examples:
+      | newFieldsApi                                           | defaultFieldsApi                                                                                                                                                                                                                   |
+      | Name,ProjectTitle__c,Status__c,ExternalOrganization__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @89360    @VerifyThatTheCurrencyFieldValueIsOverridesAsPerGivenDisplayFieldAtEnhancedGridParentFlexTable @enhancedGrid
+  Scenario Outline: verify that the currency field value is overrided as per given display field at parent flex table at enhanced grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Grid             | Display Field       |                    | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
+      | Flex Table List       | Display Field       | AnnualRevenue  | TmpActiveGrantsGrid | Name                      | FTC-1487                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    Then I see "$5,000" shown inside enhanced grid table for specified record "Demo_Title"
+
+    Examples:
+      | newFieldsApi                                           | defaultFieldsApi                                                                                                                                                                                                                   |
+      | Name,ProjectTitle__c,Status__c,ExternalOrganization__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @89364  @VerifyThatTheBooleanFieldValueIsOverridesIfEnableEditDisplayFieldIsCheckedAtEnhancedGridChildFlexTable @enhancedGrid
+  Scenario Outline: verify that the boolean field value is override if enable edit display field checkbox is checked at child tabl- enhanced grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Display Field             |                    | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Edit Display Field | false              | ApiGeneratedId:1 |
+      | Flex Table List       | Display Field Names       | <defaultFieldsApi> | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue       | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Display Field             | IsGrantingAgency__c | TmpGrantorActiveAwardsGrid | Name                      | FTC-1519                   |
+      | Flex Table List       | Enable Edit Display Field | false               | TmpGrantorActiveAwardsGrid | Name                      | FTC-1519                   |
+      | Flex Grid:General     | Display Field Names       | <newFieldsApi>      | TmpGrantorActiveAwardsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    When I expand nested table containing column value "Demo_Title"
+    Then I softly see "check" symbol in flex table with id "---program:-:tmpGrantorActiveAwardsGridTableId---"
 
     Examples:
       | newFieldsApi                                | defaultFieldsApi                                                                                                                               |

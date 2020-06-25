@@ -2357,5 +2357,5 @@ Feature: Page Layout Component Scenarios
     Then I see a lookup modal with width as "800px" is rendered
 
     Examples:
-      | <defaultValue> | <newValue>                                                                                      |
-      | Name           | Name,Jigsaw,AnnualRevenue,NumberOfEmployees,ApplicantType__c,SupplySchedule__c,IsCustomerPortal |
+      | defaultValue | newValue                                                                                        |
+      | Name         | Name,Jigsaw,AnnualRevenue,NumberOfEmployees,ApplicantType__c,SupplySchedule__c,IsCustomerPortal |

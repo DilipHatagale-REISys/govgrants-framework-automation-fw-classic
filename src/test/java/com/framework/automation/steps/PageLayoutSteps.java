@@ -507,4 +507,10 @@ public class PageLayoutSteps {
     public void searchByFieldDropdownValues(String usage, String fieldLabel, String dropdownValue) {
         pageLayoutPage.assertSearchByFieldDropdownValues(usage,fieldLabel,dropdownValue);
     }
+
+    @Then("^I (softly see|see) \"([^\"]*)\" as \"([^\"]*)\" on send email modal$")
+    public void iSoftlySeeAsOnSendEmailModal(String usage, String value, String fieldLabel) {
+        pageLayoutPage.assertFieldValueAtSendEmailModal(usage, value, fieldLabel);
+
+    }
 }
