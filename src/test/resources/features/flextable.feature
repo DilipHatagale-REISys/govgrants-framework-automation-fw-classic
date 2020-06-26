@@ -1244,7 +1244,7 @@ Feature: Flex Table Component Scenarios
       | newFieldsApi                                 | defaultFieldsApi                                                                                                 |
       | Name,ProgramName__c,DateandTime__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
-  @80953     @VerifyFlexTableActionsAreAlignedProperly-gPlanning @81276 @wip
+  @80953     @VerifyFlexTableActionsAreAlignedProperly-gPlanning @81276
   Scenario: validate alignment of actions under flex table - Planning phase
     When I login as "Automation" user
     When I setup my app as "As a Grantor"

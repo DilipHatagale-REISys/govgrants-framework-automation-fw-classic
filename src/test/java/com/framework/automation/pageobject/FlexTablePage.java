@@ -2,6 +2,7 @@ package com.framework.automation.pageobject;
 
 import com.automation.rei.handlers.govgrants;
 import com.framework.automation.projectmanager.GovGrantsManager;
+import com.testingblaze.controller.TestingBlazeGlobal;
 import com.testingblaze.exception.TestingBlazeCustomException;
 import com.testingblaze.objects.Elements;
 import com.testingblaze.register.I;
@@ -470,8 +471,9 @@ public class FlexTablePage extends GovGrantsManager {
      *
      */
     public void assertActionsAreAligned() throws IOException {
+        TestingBlazeGlobal.setVariable("highlightElements", "off");
         WebElement actionsAligned = I.amPerforming().getElementReference().of(By.xpath("//a[@title='Attachments']/../../../..//a[@class='actionIcons']/.."));
-        Assert.assertTrue(I.amPerforming().comparisonOf().image().isElementImage(actionsAligned, "tableActionsAlignmentView1"));
+        Assert.assertTrue(I.amPerforming().comparisonOf().image().isElementImage(actionsAligned, "test.png"));
     }
 
     /*********
