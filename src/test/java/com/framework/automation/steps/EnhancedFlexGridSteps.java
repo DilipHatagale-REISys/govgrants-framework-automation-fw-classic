@@ -248,13 +248,13 @@ public class EnhancedFlexGridSteps {
     }
 
     @Then("^I see over all total sum is not displayed for \"([^\"]*)\" inside \"([^\"]*)\" table$")
-    public void assertUpArrowForMultipleField(String fieldApiName , String tableId) {
-        enhancedFlexGrid.assertOverAllTotalNotDisplayed(fieldApiName , tableId);
+    public void assertUpArrowForMultipleField(String fieldApiName, String tableId) {
+        enhancedFlexGrid.assertOverAllTotalNotDisplayed(fieldApiName, tableId);
     }
 
     @Then("I (see|do not see) \"([^\"]*)\" field is editable inside enhanced grid$")
     public void assertFieldIsNotEditableInsideEnhancedGrid(String usage, String fieldApiName) {
-        enhancedFlexGrid.assertLookupFieldIsNotEditableAtEnhancedGrid(usage , fieldApiName);
+        enhancedFlexGrid.assertLookupFieldIsNotEditableAtEnhancedGrid(usage, fieldApiName);
     }
 
     @Then("I (see|do not see) hyperlink at column value \"([^\"]*)\" inside \"([^\"]*)\" table$")
@@ -265,5 +265,10 @@ public class EnhancedFlexGridSteps {
     @Then("^I see quick search box is disabled in flex table with id \"([^\"]*)\"$")
     public void assertQuickSearchBoxIsDisabledInFlexTable(String tableId) {
         enhancedFlexGrid.assertQuickSearchBoxIsDisabledAtFlexTable(tableId);
+    }
+
+    @Then("^I softly see \"([^\"]*)\" symbol in flex table with id \"([^\"]*)\"$")
+    public void iSoftlySeeSymbolInFlexTableWithId(String symbol, String tableId) {
+        enhancedFlexGrid.assertSymbolIsDisplayed(symbol, tableId);
     }
 }

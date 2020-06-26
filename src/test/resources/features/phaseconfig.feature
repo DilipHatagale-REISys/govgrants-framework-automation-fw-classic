@@ -1,4 +1,4 @@
-@phaseconfig-component @regression
+@phaseconfig-component @regression @phase
 Feature: Phase Config Component Scenarios
   Test all phase config component based scenarios
   As a configuration manager i make different configurational changes in phase component and will validate them.
