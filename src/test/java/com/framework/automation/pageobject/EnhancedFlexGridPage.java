@@ -512,6 +512,15 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         Assert.assertTrue(assertSymbolIsDisplayedInsideTable(symbol, tableId));
     }
 
+    /**
+     * It will check advane filter section is displayed in table
+     *
+     * @param tableId
+     */
+    public void assertAdvanceFilterBoxIsDisplayed(String tableId) {
+        Assert.assertTrue(assertAdvanceFilterBoxIsDisplayedInsideTable(tableId));
+    }
+
     /*********
      * "Local Methods with complete functionality - private"
      *****************/
@@ -1437,6 +1446,22 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         try {
             if (("cross".equalsIgnoreCase(symbol) && I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='" + tableId + "']//*[contains(@class,'fa-close')]")))
                     || ("check".equalsIgnoreCase(symbol) && I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='" + tableId + "']//*[contains(@class,'fa-check')]")))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if advane filter section is displayed in table
+     *
+     * @param tableId
+     */
+    private boolean assertAdvanceFilterBoxIsDisplayedInsideTable(String tableId) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='advfEnhancedDataTable']"))) {
                 flag = true;
             }
         } catch (Exception e) {

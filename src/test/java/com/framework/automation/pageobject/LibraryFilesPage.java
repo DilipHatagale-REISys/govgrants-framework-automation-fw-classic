@@ -82,12 +82,16 @@ public class LibraryFilesPage extends GovGrantsManager {
     }
 
     /**
-     * assert true if add new folder modal window is not Displayed - Home phase
+     * assert true if modal window is Displayed - Home phase
      *
      * @param modalTitle
      */
-    public void asserModalWindowIsNotDisplayedAtLibraryFileFolder(String modalTitle) {
-        Assert.assertTrue(isModalWindowNotDisplayedAtLibraryFileFolder(modalTitle));
+    public void asserModalWindowIsNotDisplayedAtLibraryFileFolder(String usage, String modalTitle) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isModalWindowNotDisplayedAtLibraryFileFolder(modalTitle));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isModalWindowNotDisplayedAtLibraryFileFolder(modalTitle));
+        }
     }
 
     /**
@@ -440,16 +444,16 @@ public class LibraryFilesPage extends GovGrantsManager {
     }
 
     /**
-     * return true if add new folder modal window is not Displayed - Home phase
+     * return true if  modal window is Displayed - Home phase
      *
      * @param modalTitle
      * @return
      */
     private boolean isModalWindowNotDisplayedAtLibraryFileFolder(String modalTitle) {
-        boolean flag = true;
+        boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//p[text()='" + modalTitle + "']"))) {
-                flag = false;
+                flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
         }

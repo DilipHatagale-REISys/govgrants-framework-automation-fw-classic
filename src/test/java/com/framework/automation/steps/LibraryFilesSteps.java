@@ -93,9 +93,9 @@ public class LibraryFilesSteps {
         libraryFilesPage.asserDropdownOptionIsDisplayedAtLibraryFileFolder(usuage, dropDownOption, libraryFileFolderName);
     }
 
-    @Then("^I see \"([^\"]*)\" modal window is not displayed$")
-    public void asserModalWindowIsNotDisplayedOnUI(String modalTitle) {
-        libraryFilesPage.asserModalWindowIsNotDisplayedAtLibraryFileFolder(modalTitle);
+    @Then("^I (see|do not see) \"([^\"]*)\" modal window is displayed$")
+    public void asserModalWindowIsNotDisplayedOnUI(String usage, String modalTitle) {
+        libraryFilesPage.asserModalWindowIsNotDisplayedAtLibraryFileFolder(usage, modalTitle);
     }
 
     @Then("^I see \"([^\"]*)\" button is disabled at modal under library$")

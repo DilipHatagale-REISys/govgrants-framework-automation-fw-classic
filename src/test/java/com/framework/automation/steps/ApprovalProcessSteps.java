@@ -25,4 +25,14 @@ public class ApprovalProcessSteps {
     public void assertCommentedTextInsideHistoryTab(String commentText, String User) {
         approvalProcesPage.assertCommentTextInsideHistoryTab(commentText, User);
     }
+
+    @Then("I see comment box at approval decision section is aligned properly")
+    public void iSeeCommentBoxIsAlignedProperly() {
+        approvalProcesPage.assertAlignmentOfCommentBoxIsProper();
+    }
+
+    @Then("I see reassigned select box at approval decision section is aligned properly")
+    public void iSeeReassignedSelectBoxAIsAlignedProperly() {
+        approvalProcesPage.assertReassignedSelectBoxIsAlignedProperly();
+    }
 }

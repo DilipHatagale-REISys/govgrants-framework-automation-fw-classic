@@ -246,6 +246,15 @@ public class FlexGridPage extends GovGrantsManager {
         Assert.assertFalse(isDefaultTotalDisplayedAtActiveGrantsFlexGrid());
     }
 
+    /**
+     * assert true if undo action displayed by inline editing a record at Flex Grid(ME Grid)
+     *
+     * @param tableId
+     */
+    public void assertUndoActionInsideTable(String tableId) {
+        Assert.assertTrue(isUndoActionDisplayedInsideTable(tableId));
+    }
+
     /*********
      * "Local Methods with complete functionality - private"
      *****************/
@@ -548,6 +557,22 @@ public class FlexGridPage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//td[contains(@class,'headerCell')]//span"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * @return true if undo action displayed by inline editing a record at Flex Grid(ME Grid)
+     *
+     * @param tableId
+     */
+    private Boolean isUndoActionDisplayedInsideTable(String tableId) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='"+tableId+"']//a[@title='Undo']"))) {
                 flag = true;
             }
         } catch (Exception e) {

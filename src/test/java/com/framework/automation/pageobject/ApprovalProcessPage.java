@@ -15,7 +15,8 @@ public class ApprovalProcessPage extends GovGrantsManager {
     /**
      * Constructor to handle dependency injection and framework library
      */
-    public ApprovalProcessPage() { }
+    public ApprovalProcessPage() {
+    }
 
     /**
      * assert true if specific subject is not displayed for approval
@@ -40,6 +41,20 @@ public class ApprovalProcessPage extends GovGrantsManager {
      */
     public void assertCommentTextInsideHistoryTab(String commentText, String User) {
         Assert.assertTrue(isCommentTextDisplayed(commentText, User));
+    }
+
+    /**
+     * assert true if comment box displayed properly inside approval decision section
+     */
+    public void assertAlignmentOfCommentBoxIsProper() {
+        Assert.assertTrue(isCommentBoxDisplayedProperly());
+    }
+
+    /**
+     * assert true if reassiged select box displayed properly inside approval decision section
+     */
+    public void assertReassignedSelectBoxIsAlignedProperly() {
+        Assert.assertTrue(isReassignedSelectBoxDisplayedProperly());
     }
 
     /*********
@@ -147,6 +162,35 @@ public class ApprovalProcessPage extends GovGrantsManager {
                 flag = true;
             }
         } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if comment box displayed properly inside approval decision section
+     *
+     * @return
+     */
+    private boolean isCommentBoxDisplayedProperly() {
+        boolean flag = false;
+        WebElement commentBox = I.amPerforming().getElementReference().of(By.xpath("//div[contains(@class,'approvalDecisionBox') and @ng-if='isCommentsshown']"));
+
+        if (commentBox.getCssValue("display").equalsIgnoreCase("flex")) {
+            flag = true;
+        }
+        return flag;
+    }
+
+    /**
+     * return true if reassiged select box displayed properly inside approval decision section
+     *
+     * @return
+     */
+    private boolean isReassignedSelectBoxDisplayedProperly() {
+        boolean flag = false;
+        WebElement reassignedSelectionBox = I.amPerforming().getElementReference().of(By.xpath("//div[contains(@class,'approvalDecisionBox') and @ng-if='isReassignSelected']"));
+        if (reassignedSelectionBox.getCssValue("display").equalsIgnoreCase("flex")) {
+            flag = true;
         }
         return flag;
     }

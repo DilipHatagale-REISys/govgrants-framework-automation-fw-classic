@@ -271,4 +271,9 @@ public class EnhancedFlexGridSteps {
     public void iSoftlySeeSymbolInFlexTableWithId(String symbol, String tableId) {
         enhancedFlexGrid.assertSymbolIsDisplayed(symbol, tableId);
     }
+
+    @Then("^I see Advance Filter box is displayed with id \"([^\"]*)\"$")
+    public void iSeeAdvanceFilterBoxIsDisplayedWithId(String tableId) {
+        enhancedFlexGrid.assertAdvanceFilterBoxIsDisplayed(tableId);
+    }
 }
