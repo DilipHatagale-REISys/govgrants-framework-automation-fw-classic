@@ -1033,6 +1033,20 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * return true if subject/body displays expected values in it at send email modal
+     *
+     * @param value
+     * @param fieldLabel
+     */
+    public void assertFieldValueAtSendEmailModal(String usage, String value, String fieldLabel) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isExpectedFieldValueDisplayedAtSendEmailModal(value, fieldLabel));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isExpectedFieldValueDisplayedAtSendEmailModal(value, fieldLabel)).isTrue();
+        }
+    }
+
+    /**
      * get owner organisation lookup modal complete content
      *
      * @return
@@ -1971,12 +1985,28 @@ public class PageLayoutPage extends GovGrantsManager {
     /**
      * @param dropdownValue
      * @param fieldLabel
-     * @return true return true if search by field dropdown contains expected values at send email modal
+     * @return true if search by field dropdown contains expected values at send email modal
      */
     private boolean isExpectedDropDownValueDisplayedAtSendEmailModal(String fieldLabel, String dropdownValue) {
         boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(getSearchByFieldDropDownItems(fieldLabel, dropdownValue))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * @param value
+     * @param fieldLabel
+     * @return true if subject/body displays expected values in it at send email modal
+     */
+    private boolean isExpectedFieldValueDisplayedAtSendEmailModal(String value, String fieldLabel) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//label[contains(text(),'"+ fieldLabel +"')]/..//span[text()='"+ value +"']"))) {
                 flag = true;
             }
         } catch (Exception e) {

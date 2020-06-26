@@ -502,6 +502,16 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         Assert.assertTrue(isQuickSearchBoxIsDisabledAtFlexTable(tableId));
     }
 
+    /**
+     * It will check symbol is displayed
+     *
+     * @param symbol
+     * @param tableId
+     */
+    public void assertSymbolIsDisplayed(String symbol, String tableId) {
+        Assert.assertTrue(assertSymbolIsDisplayedInsideTable(symbol, tableId));
+    }
+
     /*********
      * "Local Methods with complete functionality - private"
      *****************/
@@ -1409,6 +1419,24 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='" + tableId + "']//div[contains(@class,'disabledOpacity')]"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true/false if symbol is displayed/ not displayed
+     *
+     * @param symbol
+     * @param tableId
+     */
+    private boolean assertSymbolIsDisplayedInsideTable(String symbol, String tableId) {
+        boolean flag = false;
+        try {
+            if (("cross".equalsIgnoreCase(symbol) && I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='" + tableId + "']//*[contains(@class,'fa-close')]")))
+                    || ("check".equalsIgnoreCase(symbol) && I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='" + tableId + "']//*[contains(@class,'fa-check')]")))) {
                 flag = true;
             }
         } catch (Exception e) {
