@@ -145,7 +145,7 @@ Feature: Library Files Component Scenarios
     When I click on dropdown at library/folder/file "Department of Community Health"
     When I click on "Add New Folder" option at library/folder/file "Department of Community Health"
     When I click on "Cancel" button in send email modal
-    Then I see "New Folder" modal window is not displayed
+    Then I do not see "New Folder" modal window is displayed
 
   @70306 @validateThatAdminCanSeeAllActionsAtLibrary-HomePhase
   Scenario: Verify that admin can see add new folder,upload file, download file actions- Home phase

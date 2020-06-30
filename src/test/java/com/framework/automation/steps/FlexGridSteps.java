@@ -139,4 +139,9 @@ public class FlexGridSteps {
     public void assertDefaultTotalAtActiveGrantsFlexGridIsNotDisplayed() {
         flexGridPage.assertDefaultTotalAtActiveGrantsFlexGrid();
     }
+
+    @Then("I see Undo action displayed by inline editing record under {string} table")
+    public void iSeeUndoActionByInlineEditingARecord(String tableId) {
+        flexGridPage.assertUndoActionInsideTable(tableId);
+    }
 }

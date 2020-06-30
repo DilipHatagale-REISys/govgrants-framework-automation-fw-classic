@@ -1,5 +1,6 @@
 package com.framework.automation.pageobject;
 
+import com.automation.rei.handlers.govgrants;
 import com.framework.automation.projectmanager.GovGrantsManager;
 import com.testingblaze.objects.Elements;
 import com.testingblaze.register.I;
@@ -82,12 +83,16 @@ public class LibraryFilesPage extends GovGrantsManager {
     }
 
     /**
-     * assert true if add new folder modal window is not Displayed - Home phase
+     * assert true if modal window is Displayed - Home phase
      *
      * @param modalTitle
      */
-    public void asserModalWindowIsNotDisplayedAtLibraryFileFolder(String modalTitle) {
-        Assert.assertTrue(isModalWindowNotDisplayedAtLibraryFileFolder(modalTitle));
+    public void asserModalWindowIsNotDisplayedAtLibraryFileFolder(String usage, String modalTitle) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isModalWindowNotDisplayedAtLibraryFileFolder(modalTitle));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isModalWindowNotDisplayedAtLibraryFileFolder(modalTitle));
+        }
     }
 
     /**
@@ -227,34 +232,6 @@ public class LibraryFilesPage extends GovGrantsManager {
     }
 
     /**
-     * perform click on expand icon at Library / folder - Home phase
-     *
-     * @param libraryFileFolderName
-     */
-    public void clickOnExpandIconAtLibraryFolder(String libraryFileFolderName) {
-        I.amPerforming().click().on(By.xpath("//*[text() ='" + libraryFileFolderName + "']//parent::div//button[@title='Expand Folder']"));
-    }
-
-    /**
-     * perform click on dropdown icon at Library / folder / file - Home phase
-     *
-     * @param libraryFileFolderName
-     */
-    public void clickOnDropdownIconAtLibraryFolderFile(String libraryFileFolderName) {
-        I.amPerforming().click().on(By.xpath("//*[text() ='" + libraryFileFolderName + "']//parent::div//button[@aria-expanded='false']"));
-    }
-
-    /**
-     * perform click on dropdown options at Library / folder / file - Home phase
-     *
-     * @param dropDownOption
-     * @param libraryFileFolderName
-     */
-    public void clickOnDropdownOptionsAtLibraryFolderFile(String dropDownOption, String libraryFileFolderName) {
-        I.amPerforming().click().on(dropdownOptionAtLibraryFolderFile(dropDownOption, libraryFileFolderName));
-    }
-
-    /**
      * get dropdown options under respective Library/File/Folder - Home phase
      *
      * @param libraryFileFolderName
@@ -262,24 +239,6 @@ public class LibraryFilesPage extends GovGrantsManager {
      */
     public By dropdownOptionAtLibraryFolderFile(String dropDownOption, String libraryFileFolderName) {
         return By.xpath("//*[text()='" + libraryFileFolderName + "']//parent::div//*[text()='" + dropDownOption + "']");
-    }
-
-    /**
-     * enter value in fields on modal while adding/editing folders/ files in library - home phase
-     *
-     * @param value
-     * @param fieldName
-     */
-    public void enterValueInFieldsAtModalWindow(String value, String fieldName) {
-        if (fieldName.equalsIgnoreCase("Description")) {
-            WebElement enterDescription = I.amPerforming().getElementReference().of(By.xpath("//label[text()='" + fieldName + "']/following-sibling::div//textarea"));
-            I.amPerforming().textInput().toClear(enterDescription);
-            I.amPerforming().textInput().in(enterDescription, value);
-        } else {
-            WebElement enterFieldValue = I.amPerforming().getElementReference().of(By.xpath("//label[text()='" + fieldName + "']/following-sibling::div//input"));
-            I.amPerforming().textInput().toClear(enterFieldValue);
-            I.amPerforming().textInput().in(enterFieldValue, value);
-        }
     }
 
     /**
@@ -293,53 +252,6 @@ public class LibraryFilesPage extends GovGrantsManager {
     }
 
     /**
-     * Complete steps to upload file in Library files - Home phase
-     *
-     * @param attachmentName
-     */
-    public void uploadFileInLibraryAtHomePhase(String attachmentName) {
-        By attachmentChooseFilePath = By.xpath("//input[@type='file']");
-        String defaultFilePath = System.getProperty("user.dir") + "/src/main/resources/";
-        I.amPerforming().textInput().in(attachmentChooseFilePath, defaultFilePath + attachmentName);
-    }
-
-    /**
-     * perform click on select/change folder at add file modal - Library Files Home phase
-     */
-    public void clickOnSelectChangeFolderInAddFileModalUnderLibrary() {
-        I.amPerforming().click().on(By.xpath("//*[contains(normalize-space(text()),'Select/Change Folder')]"));
-    }
-
-    /**
-     * steps to select/change folder at add file modal - Library Files Home phase
-     *
-     * @param folderName
-     */
-    public void selectOrChangeFolderInAddFileModalUnderLibrary(String folderName) {
-        I.amPerforming().click().on(By.xpath("//div[@id='modaltemp']//span[text()='" + folderName + "']"));
-    }
-
-    /**
-     * steps to perform quick search under Library Files tab- Home phase
-     *
-     * @param searchValue
-     */
-    public void performQuickSearchUnderFilesLibrary(String searchValue) {
-        By enterText = By.xpath("//input[@type='search']");
-        I.amPerforming().textInput().toClear(enterText);
-        I.amPerforming().textInput().in(enterText, searchValue);
-    }
-
-    /**
-     * select classification at upload file modal window - Library files Home phase/record level
-     *
-     * @param classification
-     */
-    public void selectClassificationAtUploadFileModalUnderLibrary(String classification) {
-        I.amPerforming().click().on(getClassificationAtUploadFileModalUnderLibrary(classification));
-    }
-
-    /**
      * get classification at upload file modal window - Library files Home phase/record level
      *
      * @param classification
@@ -347,24 +259,6 @@ public class LibraryFilesPage extends GovGrantsManager {
     public WebElement getClassificationAtUploadFileModalUnderLibrary(String classification) {
         By selectValueFromDropdown = By.xpath("//select[@name='Classification']//option[text()='" + classification + "']");
         return I.amPerforming().getElementReference().of(selectValueFromDropdown);
-    }
-
-    /**
-     * click on tab to select 'upload file from computer'/'upload file from library workspace' upload file modal window - Library files record level
-     *
-     * @param tabName
-     */
-    public void clickOnTabAtFilesLibraryUploadModal(String tabName) {
-        I.amPerforming().click().on(getTabInsideAddFileModal(tabName));
-    }
-
-    /**
-     * get label of tab under Add file modal window - Library files record level
-     *
-     * @param tabName
-     */
-    public WebElement getTabInsideAddFileModal(String tabName) {
-        return I.amPerforming().getElementReference().of(By.xpath("//li[@title='" + tabName + "']"));
     }
 
     /**
@@ -385,6 +279,16 @@ public class LibraryFilesPage extends GovGrantsManager {
      */
     public void selectPagesFromDropdownAtFileUploadModal(String numberOfEntries, String tableId) {
         filesTablePagesDropdown(numberOfEntries, tableId);
+    }
+
+    /**
+     * perform click on dropdown options at Library / folder / file - Home phase
+     *
+     * @param dropDownOption
+     * @param libraryFileFolderName
+     */
+    public void clickOnDropdownOptionsAtLibraryFolderFile(String dropDownOption, String libraryFileFolderName) {
+        I.amPerforming().click().on(dropdownOptionAtLibraryFolderFile(dropDownOption, libraryFileFolderName));
     }
 
     /**
@@ -440,16 +344,16 @@ public class LibraryFilesPage extends GovGrantsManager {
     }
 
     /**
-     * return true if add new folder modal window is not Displayed - Home phase
+     * return true if  modal window is Displayed - Home phase
      *
      * @param modalTitle
      * @return
      */
     private boolean isModalWindowNotDisplayedAtLibraryFileFolder(String modalTitle) {
-        boolean flag = true;
+        boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//p[text()='" + modalTitle + "']"))) {
-                flag = false;
+                flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
         }
@@ -574,7 +478,7 @@ public class LibraryFilesPage extends GovGrantsManager {
     private boolean isTabNameDisplayedAtFileUploadModal(String tabName) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(getTabInsideAddFileModal(tabName))) {
+            if (I.amPerforming().checkToSee().isDisplayed(govgrants.perform().libraryFiles().getTabInsideAddFileModal(tabName))) {
                 flag = true;
             }
         } catch (NoSuchElementException var5) {
@@ -592,7 +496,7 @@ public class LibraryFilesPage extends GovGrantsManager {
     private boolean isClassificationNameDisplayedAtFileUploadModal(String classification) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(getClassificationAtUploadFileModalUnderLibrary(classification))) {
+            if (I.amPerforming().checkToSee().isDisplayed(govgrants.perform().libraryFiles().getClassificationAtUploadFileModalUnderLibrary(classification))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {

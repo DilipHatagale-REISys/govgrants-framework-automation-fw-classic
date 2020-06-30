@@ -151,6 +151,11 @@ public class PageLayoutSteps {
         pageLayoutPage.clickOnSendEmailSearchByField(fieldLabel);
     }
 
+    @When("^I click on cross icon at \"([^\"]*)\" attachment inside send email modal$")
+    public void iClickOnCrossIconAtAttachmentSectionAtSendEmailModal(String attachmentName) {
+        pageLayoutPage.clickOnCrossIconAtAttachmentSectionAtSendEmailModal(attachmentName);
+    }
+
     @And("^I click on expand collapse icon for panel heading \"([^\"]*)\"$")
     public void clickOnExpandColapseIcon(String panelHeaderName) {
         pageLayoutPage.clickExpandCollapseIconAtTableHeader(panelHeaderName);
@@ -511,6 +516,15 @@ public class PageLayoutSteps {
     @Then("^I (softly see|see) \"([^\"]*)\" as \"([^\"]*)\" on send email modal$")
     public void iSoftlySeeAsOnSendEmailModal(String usage, String value, String fieldLabel) {
         pageLayoutPage.assertFieldValueAtSendEmailModal(usage, value, fieldLabel);
+    }
 
+    @Then("I see a boarder is displayed at page block section")
+    public void assertBoarderIsDisplayedAtPageBlockSection() {
+        pageLayoutPage.assertBoarderIsDisplayedAtPageBlockSection();
+    }
+
+    @Then("^I see attached file \"([^\"]*)\" is deleted successfully inside send email modal$")
+    public void assertAttachedFileIsDeletedSuccessfullyAtSendEmail(String attachmentName) {
+        pageLayoutPage.assertAttachedFileIsDeletedSuccessfullyAtSendEmail(attachmentName);
     }
 }
