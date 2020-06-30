@@ -477,6 +477,14 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * click on cross icon at uploaded file at attachment section in send email modal
+     */
+    public void clickOnCrossIconAtAttachmentSectionAtSendEmailModal(String attachmentName) {
+        I.amPerforming().click().on(By.xpath("//td[normalize-space(text())='"+attachmentName+"']/following-sibling::td//i[contains(@class,'fa-times')]"));
+        ;
+    }
+
+    /**
      * get send email search by field at send email modal
      */
     public WebElement getSendEmailSearchByField(String fieldLabel) {
@@ -1044,6 +1052,20 @@ public class PageLayoutPage extends GovGrantsManager {
         } else if (usage.equalsIgnoreCase("softly see")) {
             I.amPerforming().assertionsTo().assertThat(isExpectedFieldValueDisplayedAtSendEmailModal(value, fieldLabel)).isTrue();
         }
+    }
+
+    /**
+     * return true if boarder is displayed at page block detail section
+     */
+    public void assertBoarderIsDisplayedAtPageBlockSection() {
+        Assert.assertTrue(isBoarderDisplayedAtPageBlockSection());
+    }
+
+    /**
+     * return true if attached file is deleted successfully at send email modal
+     */
+    public void assertAttachedFileIsDeletedSuccessfullyAtSendEmail(String attachmentName) {
+        Assert.assertTrue(isAttachedFileIsDeletedSuccessfullyAtSendEmail(attachmentName));
     }
 
     /**
@@ -2006,10 +2028,44 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean isExpectedFieldValueDisplayedAtSendEmailModal(String value, String fieldLabel) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//label[contains(text(),'"+ fieldLabel +"')]/..//span[text()='"+ value +"']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//label[contains(text(),'" + fieldLabel + "')]/..//span[text()='" + value + "']"))) {
                 flag = true;
             }
         } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if boarder is displayed at page block detail section
+     *
+     * @return
+     */
+    private boolean isBoarderDisplayedAtPageBlockSection() {
+        boolean flag = false;
+        WebElement getPageBlockBoarder = I.amPerforming().getElementReference().of(By.xpath("//span[text()='Program Information']/ancestor::div[contains(@class,'panel-default')]"));
+        try {
+            if (getPageBlockBoarder.getCssValue("border-top-width").equalsIgnoreCase("3px") &&
+                    getPageBlockBoarder.getCssValue("border-top-color").contains("rgba(176, 196, 223, 1)")) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if if attached file is deleted successfully at send email modal
+     *
+     * @return
+     */
+    private boolean isAttachedFileIsDeletedSuccessfullyAtSendEmail(String attachmentName) {
+        boolean flag = true;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//table//td[normalize-space(text())='" + attachmentName + "']"))) {
+                flag = false;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
         }
         return flag;
     }

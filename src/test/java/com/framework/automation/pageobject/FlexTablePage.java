@@ -468,7 +468,6 @@ public class FlexTablePage extends GovGrantsManager {
 
     /**
      * return true if flex table actions are aligned
-     *
      */
     public void assertActionsAreAligned() throws IOException {
         TestingBlazeGlobal.setVariable("highlightElements", "off");

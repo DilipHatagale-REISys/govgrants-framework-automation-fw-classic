@@ -2274,7 +2274,7 @@ Feature: Logged Issues Scenarios
     When I click on "Reply" icon for "DND-Test Automation Record" inside table
     Then I see "Reply" opens in overLay window
 
-  @89789    @mandatoryCommentsBoxAlignmentAtApproveDecisionSectionForApproveAction-Programs
+  @89789    @mandatoryCommentsBoxAlignmentAtApproveDecisionSectionForApproveAction-Programs @approvalProcess
   Scenario: verify comments requried box alignment for approval action inside approval decision section
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName         | fieldOrignalValue | filterId         |
@@ -2330,7 +2330,7 @@ Feature: Logged Issues Scenarios
     When I select radio button "Approve" in the approval decision
     Then I see comment box at approval decision section is aligned properly
 
-  @89793    @mandatoryCommentsBoxAlignmentAtApproveDecisionSectionForRejectAction-Programs
+  @89793    @mandatoryCommentsBoxAlignmentAtApproveDecisionSectionForRejectAction-Programs @approvalProcess
   Scenario: verify comments requried box alignment for reject action inside approval decision section
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName         | fieldOrignalValue | filterId         |
@@ -2386,7 +2386,7 @@ Feature: Logged Issues Scenarios
     When I select radio button "Reject" in the approval decision
     Then I see comment box at approval decision section is aligned properly
 
-  @89790    @mandatoryCommentsBoxAlignmentAtApproveDecisionSectionForForwardAction-Programs
+  @89790    @mandatoryCommentsBoxAlignmentAtApproveDecisionSectionForForwardAction-Programs @approvalProcess
   Scenario: verify comments requried box alignment for forward action inside approval decision section
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName         | fieldOrignalValue | filterId         |
@@ -2442,7 +2442,7 @@ Feature: Logged Issues Scenarios
     When I select radio button "Reject" in the approval decision
     Then I see comment box at approval decision section is aligned properly
 
-  @89835    @mandatoryCommentsBoxAlignmentAtApproveDecisionSectionForForwardAction-Programs
+  @89835    @mandatoryCommentsBoxAlignmentAtApproveDecisionSectionForForwardAction-Programs @approvalProcess
   Scenario: verify comments requried box alignment for forward action inside approval decision section
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName         | fieldOrignalValue | filterId         |
@@ -2498,7 +2498,7 @@ Feature: Logged Issues Scenarios
     When I select radio button "Forward" in the approval decision
     Then I see reassigned select box at approval decision section is aligned properly
 
-  @88799 @validateTitleOfEditFileModalWindowAtFileEditModalUnderLibraryFile-HomePhase
+  @88799 @validateTitleOfEditFileModalWindowAtFileEditModalUnderLibraryFile-HomePhase @libraryFiles
   Scenario: Verify title of edit file modal at  home phase library
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -2511,14 +2511,14 @@ Feature: Logged Issues Scenarios
     When I click on "Edit File" option at library/folder/file "SendEmailAttachment.png"
     Then I see "Edit File" modal window is displayed
 
-  @89809    @verifyAdvanceFilterDisplayedAtEnhancedDataTable-gPlanning
+  @89809    @verifyAdvanceFilterDisplayedAtEnhancedDataTable-gPlanning @flexTableEnhanced
   Scenario: validate advance filter displayed at enhanced flex table planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Flex Grid             | Enable Filter | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Filter | true         | EnhancedDataTable  |                           |                            |
+      | Flex Grid:General     | Enable Filter | true          | EnhancedDataTable  |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2528,3 +2528,101 @@ Feature: Logged Issues Scenarios
     When I navigate to "Financials" sub tab
     When I click on advance filter "#advfEnhancedDataTable" of table id "---program:-:EnhancedDataTableId---"
     Then I see Advance Filter box is displayed with id "advfEnhancedDataTable"
+
+  @89811  @VerifyTheAdvanceFilterIsWorkingAtEnhancedGridFlexTable @enhancedGrid
+  Scenario: validate advance search filter at enhanced grid
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I click on advance filter "#advfTmpActiveGrantsGrid" of table id "---program:-:enhancedGridTableId---"
+    When I enter advance filter values inside id "advfTmpActiveGrantsGrid"
+      | Status | equals to | --None-- |
+    Then I see "No Records Found" inside flex table with id "---program:-:enhancedGridTableId---"
+
+  @84603    @verifyDisplayOfFooterActionsAtPageLayoutAction-gPlanning @pageLayout
+  Scenario: verify action buttons are diplayed at page layout footer
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    Then I softly see "Edit" button is displayed at bottom
+    Then I softly see "Submit For Approval" button is displayed at bottom
+
+  @84602    @verifyDisplayOfBlueBorderAtPageBlock-gPlanning @pageLayout
+  Scenario: verify page block border is displayed with blue color at page detail
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    Then I see a boarder is displayed at page block section
+
+  @89675 @validateThatFileIsDeletedSuccessfullyByclickOnCrossIconAtAttachedFileInSendEmailModal @sendEmail
+  Scenario: Validate that attached file is deleted successfully by click on cross icon at send email modal
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "To" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "To" on send email modal
+    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
+    When I enter value "Test automation mail subject 1" into field "Subject" on send email modal
+    When I upload attachment "SendEmailAttachment.pdf" in send email modal
+    When I click on cross icon at "SendEmailAttachment.pdf" attachment inside send email modal
+    Then I see attached file "SendEmailAttachment.pdf" is deleted successfully inside send email modal
+
+  @89677 @validateThatFileIsDeletedSuccessfullyFromMultipleFilesByclickOnCrossIconAtAttachedFileInSendEmailModal @sendEmail
+  Scenario: Validate that attached file is deleted successfully from multiple uploaded file by click on cross icon at send email modal
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "To" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "To" on send email modal
+    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
+    When I enter value "Test automation mail subject 1" into field "Subject" on send email modal
+    When I upload attachment "SendEmailAttachment.pdf" in send email modal
+    When I upload attachment "AttachmentTesting.pdf" in send email modal
+    When I upload attachment "test.png" in send email modal
+    When I click on cross icon at "SendEmailAttachment.pdf" attachment inside send email modal
+    Then I see attached file "SendEmailAttachment.pdf" is deleted successfully inside send email modal

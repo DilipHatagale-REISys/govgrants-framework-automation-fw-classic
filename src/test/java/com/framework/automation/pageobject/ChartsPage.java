@@ -22,89 +22,6 @@ public class ChartsPage extends GovGrantsManager {
         return By.xpath("//div[@id='" + chartId + "']//*[local-name()='path'][contains(@class,'" + chartsType + "')]");
     }
 
-    /**
-     * perform mouse hover on enhanced charts
-     *
-     * @param chartId
-     * @param chartsType
-     */
-    public void getHoveringOnEnhancedCharts(String chartId, String chartsType) {
-        I.amPerforming().scroll().toMoveToElement(enhancedCharts(chartId, chartsType), false);
-    }
-
-    /**
-     * perform mouse hover on specific enhanced charts (need to modify this function in future)
-     *
-     * @param chartId
-     * @param chartsType
-     */
-    public void getHoveringOnSpecificEnhancedCharts(String chartId, String chartsType) {
-        I.amPerforming().getElementReference().of(By.xpath("//div[@id='" + chartId + "']"));
-        I.amPerforming().waitFor().makeThreadSleep(5000);
-        I.amPerforming().scroll().withMouseToElement(enhancedCharts(chartId, chartsType));
-        I.amPerforming().scroll().withMouseToElement(enhancedCharts(chartId, chartsType));
-    }
-
-    /**
-     * perform click on bars of enhanced dual axes charts coming on modal
-     *
-     * @param chartId
-     * @param chartsLabelName
-     * @return
-     */
-    public void clickOnEnhancedDualAxesChartsOnModal(String chartId, String chartsLabelName) {
-        String parentLocator = "//div[@id='" + chartId + "' and @data-highcharts-chart='1']//*[local-name()='tspan' and contains(text(),'" + chartsLabelName + "')]//ancestor::*[local-name()='g']//preceding-sibling::*[local-name()='g' and @class='highcharts-series-group']//*[local-name()='rect']";
-        switch (chartsLabelName.toLowerCase()) {
-            case "unitedhealth group":
-                parentLocator = parentLocator + "[1]";
-                break;
-            case "sportDev":
-                parentLocator = parentLocator + "[2]";
-                break;
-            case "who":
-                parentLocator = parentLocator + "[3]";
-                break;
-            case "child development":
-                parentLocator = parentLocator + "[4]";
-                break;
-            case "Va Transport Services":
-                parentLocator = parentLocator + "[5]";
-                break;
-        }
-        I.amPerforming().scroll().toMoveToElement(By.xpath(parentLocator));
-        I.amPerforming().click().on(By.xpath(parentLocator));
-    }
-
-    /**
-     * perform click on bars of enhanced dual axes charts coming on main page
-     *
-     * @param chartId
-     * @param chartsLabelName
-     * @return
-     */
-    public void clickOnEnhancedDualAxesChartsOnMainPage(String chartId, String chartsLabelName) {
-        String parentLocator = "//div[@id='" + chartId + "' and @data-highcharts-chart='0']//*[local-name()='tspan' and contains(text(),'" + chartsLabelName + "')]//ancestor::*[local-name()='g']//preceding-sibling::*[local-name()='g' and @class='highcharts-series-group']//*[local-name()='rect']";
-        switch (chartsLabelName.toLowerCase()) {
-            case "unitedheal":
-                parentLocator = parentLocator + "[1]";
-                break;
-            case "sportDev":
-                parentLocator = parentLocator + "[2]";
-                break;
-            case "who":
-                parentLocator = parentLocator + "[3]";
-                break;
-            case "child development":
-                parentLocator = parentLocator + "[4]";
-                break;
-            case "Va Transport Services":
-                parentLocator = parentLocator + "[5]";
-                break;
-        }
-        I.amPerforming().scroll().toMoveToElement(By.xpath(parentLocator));
-        I.amPerforming().click().on(By.xpath(parentLocator));
-    }
-
     public void assertChartTitleDisplayed(String usage, String title) {
         if (usage.equalsIgnoreCase("see")) {
             Assert.assertTrue(isChartTitleDisplayed(title));
@@ -221,6 +138,66 @@ public class ChartsPage extends GovGrantsManager {
      */
     public void assertExpectedChartsType(String chartId, String chartType) {
         Assert.assertTrue(isExpectedChartsTypeDisplayed(chartId, chartType));
+    }
+
+    /**
+     * perform click on bars of enhanced dual axes charts coming on modal
+     *
+     * @param chartId
+     * @param chartsLabelName
+     * @return
+     */
+    public void clickOnEnhancedDualAxesChartsOnModal(String chartId, String chartsLabelName) {
+        String parentLocator = "//div[@id='" + chartId + "' and @data-highcharts-chart='1']//*[local-name()='tspan' and contains(text(),'" + chartsLabelName + "')]//ancestor::*[local-name()='g']//preceding-sibling::*[local-name()='g' and @class='highcharts-series-group']//*[local-name()='rect']";
+        switch (chartsLabelName.toLowerCase()) {
+            case "unitedhealth group":
+                parentLocator = parentLocator + "[1]";
+                break;
+            case "sportDev":
+                parentLocator = parentLocator + "[2]";
+                break;
+            case "who":
+                parentLocator = parentLocator + "[3]";
+                break;
+            case "child development":
+                parentLocator = parentLocator + "[4]";
+                break;
+            case "Va Transport Services":
+                parentLocator = parentLocator + "[5]";
+                break;
+        }
+        I.amPerforming().scroll().toMoveToElement(By.xpath(parentLocator));
+        I.amPerforming().click().on(By.xpath(parentLocator));
+    }
+
+    /**
+     * perform click on bars of enhanced dual axes charts coming on main page
+     *
+     * @param chartId
+     * @param chartsLabelName
+     * @return
+     */
+    public void clickOnEnhancedDualAxesChartsOnMainPage(String chartId, String chartsLabelName) {
+        String parentLocator = "//div[@id='" + chartId + "' and @data-highcharts-chart='0']//*[local-name()='tspan' and contains(text(),'" + chartsLabelName + "')]//ancestor::*[local-name()='g']//preceding-sibling::*[local-name()='g' and @class='highcharts-series-group']//*[local-name()='rect']";
+        switch (chartsLabelName.toLowerCase()) {
+            case "unitedheal":
+                parentLocator = parentLocator + "[1]";
+                break;
+            case "sportDev":
+                parentLocator = parentLocator + "[2]";
+                break;
+            case "who":
+                parentLocator = parentLocator + "[3]";
+                break;
+            case "child development":
+                parentLocator = parentLocator + "[4]";
+                break;
+            case "Va Transport Services":
+                parentLocator = parentLocator + "[5]";
+                break;
+        }
+        I.amPerforming().scroll().toMoveToElement(By.xpath(parentLocator));
+        I.amPerforming().click().on(By.xpath(parentLocator));
     }
 
     /********* "Local Methods with complete functionality - private" ******/
