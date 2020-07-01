@@ -33,6 +33,16 @@ public class DynamicFormPage extends GovGrantsManager {
         Assert.assertTrue(isFieldValueDisplayedInsideDynamicForm(fieldName, fieldValue));
     }
 
+    /**
+     * assert true if field is displayed in expected section at dynamic form layout
+     *
+     * @param fieldName
+     * @param sectionName
+     */
+    public void assertFieldsDisplayedInExpectedSectionAtDynamicForm(String fieldName, String sectionName) {
+        Assert.assertTrue(isFieldDisplayedInExpectedSectionAtDynamicForm(fieldName, sectionName));
+    }
+
     /*********
      * "Local Methods with complete functionality - private"
      *****************/
@@ -46,6 +56,21 @@ public class DynamicFormPage extends GovGrantsManager {
     private boolean isFieldValueDisplayedInsideDynamicForm(String fieldName, String fieldValue) {
         boolean flag = false;
         By getFieldValue = By.xpath("//span[text()='" + fieldName + "']/../following-sibling::dd//span[text()='" + fieldValue + "']");
+        if (I.amPerforming().checkToSee().isDisplayed(getFieldValue)) {
+            return true;
+        }
+        return flag;
+    }
+
+    /**
+     * assert true if field is displayed in expected section at dynamic form layout
+     *
+     * @param fieldName
+     * @param sectionName
+     */
+    private boolean isFieldDisplayedInExpectedSectionAtDynamicForm(String fieldName, String sectionName) {
+        boolean flag = false;
+        By getFieldValue = By.xpath("//a[@title='Section: "+sectionName+"']/../../../following-sibling::div//span[text()='"+fieldName+"']");
         if (I.amPerforming().checkToSee().isDisplayed(getFieldValue)) {
             return true;
         }

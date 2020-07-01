@@ -20,4 +20,9 @@ public class DynamicFormSteps {
     public void fieldValueInsideDynamicForm(String fieldName, String fieldValue) {
         dynamicFormPage.assertFieldValueInsideDynamicForm(fieldName, fieldValue);
     }
+
+    @Then("^I see \"([^\"]*)\" inside \"([^\"]*)\" at dynamic form$")
+    public void iSeeInsideAtDynamicForm(String fieldName, String sectionName) {
+        dynamicFormPage.assertFieldsDisplayedInExpectedSectionAtDynamicForm(fieldName, sectionName);
+    }
 }
