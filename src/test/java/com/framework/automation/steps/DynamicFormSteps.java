@@ -11,9 +11,9 @@ public class DynamicFormSteps {
         dynamicFormPage = new DynamicFormPage();
     }
 
-    @When("^I enter value as \"([^\"]*)\" into \"([^\"]*)\" field at dynamic forms layout$")
-    public void enterValueIntoFieldAtDynamicFormsLayout(String enterValue, String fieldName) {
-        dynamicFormPage.enterValueIntoFieldAtDynamicForms(enterValue, fieldName);
+    @When("^I enter value as \"([^\"]*)\" into field \"([^\"]*)\" of type \"([^\"]*)\" at dynamic forms layout$")
+    public void enterValueIntoFieldAtDynamicFormsLayout(String enterValue, String fieldName ,String fieldType) {
+        dynamicFormPage.enterValueIntoAllFieldTypeAtDynamicForms(enterValue, fieldName, fieldType);
     }
 
     @Then("^I see for \"([^\"]*)\" field value is \"([^\"]*)\" inside dynamic form$")

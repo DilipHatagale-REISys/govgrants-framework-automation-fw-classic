@@ -14,7 +14,7 @@ Feature: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I switch to tab number "1"
-    When I enter value as "Test Automation" into "Written" field at dynamic forms layout
+    When I enter value as "Test Automation" into field "Written" of type "Text" at dynamic forms layout
     When I click on "Save" in the page details
     Then I see for "Written" field value is "Test Automation" inside dynamic form
 
@@ -29,7 +29,7 @@ Feature: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I switch to tab number "1"
-    When I enter value as "12.00" into "Currency" field at dynamic forms layout
+    When I enter value as "12.00" into field "Currency" of type "Integer" at dynamic forms layout
     When I click on "Save" in the page details
     Then I see for "Currency" field value is "$12.00" inside dynamic form
 
@@ -44,7 +44,7 @@ Feature: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I switch to tab number "1"
-    When I enter value as "12.00" into "Number" field at dynamic forms layout
+    When I enter value as "12.00" into field "Number" of type "Integer" at dynamic forms layout
     When I click on "Save" in the page details
     Then I see for "Number" field value is "12.00" inside dynamic form
 
@@ -59,7 +59,7 @@ Feature: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I switch to tab number "1"
-    When I enter value as "12.00" into "Percent" field at dynamic forms layout
+    When I enter value as "12.00" into field "Percent" of type "Integer" at dynamic forms layout
     When I click on "Save" in the page details
     Then I see for "Percent" field value is "12.00%" inside dynamic form
 
@@ -160,3 +160,120 @@ Feature: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see "Percent" inside "Section 1" at dynamic form
+
+  @88282    @validateNumberFieldIsDisplayedInsideFormAtAtDynamicFormLayout
+  Scenario: validate that a number field is displayed inside dynamic form layout
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    Then I see "Number" inside "Section 1" at dynamic form
+
+  @88283    @validatePicklistFieldIsDisplayedInsideFormAtAtDynamicFormLayout
+  Scenario: validate that a picklist field is displayed inside dynamic form layout
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    Then I see "Picklist" inside "Section 1" at dynamic form
+
+  @88284    @validateRadioFieldIsDisplayedInsideFormAtAtDynamicFormLayout
+  Scenario: validate that a radio field is displayed inside dynamic form layout
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    Then I see "Radio" inside "Section 1" at dynamic form
+
+  @88285    @validateRadioFieldIsDisplayedInsideFormAtAtDynamicFormLayout
+  Scenario: validate that a radio field is displayed inside dynamic form layout
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    Then I see "Radio" inside "Section 1" at dynamic form
+
+  @88286    @validateRichTextAreaFieldIsDisplayedInsideFormAtDynamicFormLayout
+  Scenario: validate that a rich text area field is displayed inside dynamic form layout
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    Then I see "Rich Text Area" inside "Section 1" at dynamic form
+
+  @89702    @validateByEnteringValueInCheckboxFieldAResponseIsGettingSavedAndDisplayedAtDynamicFormLayout
+  Scenario: Entering value into checkbox field and click on save , a value is getting saved into checkbox field at dynamic form
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I switch to tab number "1"
+    When I enter value as "checked" into field "Checkbox" of type "Checkbox" at dynamic forms layout
+    When I click on "Save" in the page details
+    Then I see for "Checkbox" field value is "Checked" inside dynamic form
+
+  @89704    @validateByEnteringValueInRadioFieldAResponseIsGettingSavedAndDisplayedAtDynamicFormLayout
+  Scenario: Entering value into radio field and click on save , a value is getting saved into radio field at dynamic form
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I enter value as "Yes" into field "Radio" of type "Radio" at dynamic forms layout
+    When I click on "Save" in the page details
+    Then I see for "Radio" field value is "Yes" inside dynamic form
+
+  @89700    @validateByEnteringValueInPicklistFieldAResponseIsGettingSavedAndDisplayedAtDynamicFormLayout
+  Scenario: Entering value into picklist field and click on save , a value is getting saved into picklist field at dynamic form
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I enter value as "YES" into field "Picklist" of type "Picklist" at dynamic forms layout
+    When I click on "Save" in the page details
+    Then I see for "Picklist" field value is "YES" inside dynamic form
+
+  @89705    @validateByEnteringValueInRichTextAreaFieldAResponseIsGettingSavedAndDisplayedAtDynamicFormLayout
+  Scenario: Entering value into rich text area field and click on save , a value is getting saved into rich text area field at dynamic form
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I enter value as "Test Automation Rich Text" into field "Rich Text Area" of type "Rich Text Area" at dynamic forms layout
+    When I click on "Save" in the page details
+    Then I see for "Rich Text Area" field value is "Test Automation Rich Text" inside dynamic form
