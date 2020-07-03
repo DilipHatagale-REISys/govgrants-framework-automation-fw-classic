@@ -111,4 +111,9 @@ public class LibraryFilesSteps {
     public void assertPreSelectedLibraryOrFolderAtAddFileModal(String folderName) {
         libraryFilesPage.assertPreSelectedLibraryFolderAtAddFileModal(folderName);
     }
+
+    @Then("^I see \"([^\"]*)\" button inside select folder modal$")
+    public void iSeeButtonInsideSelectFolderModal(String buttonName) {
+        libraryFilesPage.assertButtonInsideSelectFolderModal(buttonName);
+    }
 }

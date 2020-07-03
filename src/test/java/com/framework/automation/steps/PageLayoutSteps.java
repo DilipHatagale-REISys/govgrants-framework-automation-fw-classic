@@ -527,4 +527,9 @@ public class PageLayoutSteps {
     public void assertAttachedFileIsDeletedSuccessfullyAtSendEmail(String attachmentName) {
         pageLayoutPage.assertAttachedFileIsDeletedSuccessfullyAtSendEmail(attachmentName);
     }
+
+    @Then("^I see search item display box size at \"([^\"]*)\" field is proper for \"([^\"]*)\" results$")
+    public void iSeeSearchItemDisplayBoxSizeIsProperForResults(String fieldName, String condition) {
+        pageLayoutPage.assertSearchItemDisplayBoxSizeIsProperAtSendEmailModal(fieldName, condition);
+    }
 }

@@ -277,3 +277,26 @@ Feature: dynamic forms Component Scenarios
     When I enter value as "Test Automation Rich Text" into field "Rich Text Area" of type "Rich Text Area" at dynamic forms layout
     When I click on "Save" in the page details
     Then I see for "Rich Text Area" field value is "Test Automation Rich Text" inside dynamic form
+
+  @88147    @validateThatASingleSectionIsDisplayedAtDynamicFormLayout
+  Scenario: validate that a single section is displayed inside dynamic form layout
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    Then I see section as "Section 1" inside dynamic form layout
+
+  @88104    @validateThatDynamicFormIsDisplayedInsideDynamicFormTableATAnnouncement
+  Scenario: validate that a linked dynamic form is displayed inside dynamic form enhanced table at announcement detail
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    Then I see "Dynamic Form" value in flex table id "---program:-:flexGridDynamicFormTableId---"

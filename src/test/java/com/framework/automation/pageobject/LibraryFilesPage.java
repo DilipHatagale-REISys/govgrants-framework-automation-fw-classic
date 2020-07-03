@@ -232,6 +232,15 @@ public class LibraryFilesPage extends GovGrantsManager {
     }
 
     /**
+     * assert true if back to previous button displayed at selectFolder modal under library files- Record level
+     *
+     * @param buttonName
+     */
+    public void assertButtonInsideSelectFolderModal(String buttonName) {
+        Assert.assertTrue(isButtonDisplayedInsideSelectFolderModal(buttonName));
+    }
+
+    /**
      * get dropdown options under respective Library/File/Folder - Home phase
      *
      * @param libraryFileFolderName
@@ -549,6 +558,23 @@ public class LibraryFilesPage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='modaltemp']//*[@data-folder-name='" + folderName + "']"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if back to previous button displayed at selectFolder modal under library files- Record level
+     *
+     * @param buttonName
+     * @return
+     */
+    private boolean isButtonDisplayedInsideSelectFolderModal(String buttonName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//a[text()='"+ buttonName +"']"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {

@@ -25,4 +25,9 @@ public class DynamicFormSteps {
     public void iSeeInsideAtDynamicForm(String fieldName, String sectionName) {
         dynamicFormPage.assertFieldsDisplayedInExpectedSectionAtDynamicForm(fieldName, sectionName);
     }
+
+    @Then("^I see section as \"([^\"]*)\" inside dynamic form layout$")
+    public void assertSectionDisplayedAInsideDynamicForm(String sectionName) {
+        dynamicFormPage.assertSectionDisplayedInsideDynamicFormLayout(sectionName);
+    }
 }

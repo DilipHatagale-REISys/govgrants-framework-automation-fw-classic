@@ -480,7 +480,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * click on cross icon at uploaded file at attachment section in send email modal
      */
     public void clickOnCrossIconAtAttachmentSectionAtSendEmailModal(String attachmentName) {
-        I.amPerforming().click().on(By.xpath("//td[normalize-space(text())='"+attachmentName+"']/following-sibling::td//i[contains(@class,'fa-times')]"));
+        I.amPerforming().click().on(By.xpath("//td[normalize-space(text())='" + attachmentName + "']/following-sibling::td//i[contains(@class,'fa-times')]"));
         ;
     }
 
@@ -1066,6 +1066,13 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public void assertAttachedFileIsDeletedSuccessfullyAtSendEmail(String attachmentName) {
         Assert.assertTrue(isAttachedFileIsDeletedSuccessfullyAtSendEmail(attachmentName));
+    }
+
+    /**
+     * return true if if at TO or CC field , a search item display box size is displayed properly at Send Email Modal
+     */
+    public void assertSearchItemDisplayBoxSizeIsProperAtSendEmailModal(String fieldName, String condition) {
+        Assert.assertTrue(isSearchItemDisplayBoxSizeIsDisplayedProperlyAtSendEmailModal(fieldName, condition));
     }
 
     /**
@@ -2066,6 +2073,25 @@ public class PageLayoutPage extends GovGrantsManager {
                 flag = false;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if at TO or CC field , a search item display box size is displayed properly at Send Email Modal
+     *
+     * @return
+     */
+    private boolean isSearchItemDisplayBoxSizeIsDisplayedProperlyAtSendEmailModal(String fieldName, String condition) {
+        boolean flag = true;
+        if (condition.equalsIgnoreCase("GREATER THAN 5")) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//label[normalize-space(text())='" + fieldName + "']/following-sibling::div//*[@class='listDropdownToScroll']"))) {
+                return true;
+            }
+        } else if (condition.equalsIgnoreCase("LESS THAN 5")) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//label[normalize-space(text())='" + fieldName + "']/following-sibling::div//*[@class='listDropdownTo']"))) {
+                return true;
+            }
         }
         return flag;
     }
