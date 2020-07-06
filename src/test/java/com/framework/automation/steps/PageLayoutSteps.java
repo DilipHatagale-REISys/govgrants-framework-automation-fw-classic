@@ -171,11 +171,6 @@ public class PageLayoutSteps {
         pageLayoutPage.assertOverViewTitleWithHeader(overViewTitle, overViewHeader);
     }
 
-    @Then("^I see \"([^\"]*)\" shown as page instruction text$")
-    public void assertPageInstructionText(String pageInstructionText) {
-        pageLayoutPage.assertPageInstructionText(pageInstructionText);
-    }
-
     @Then("^I see \"([^\"]*)\" shown as over view header$")
     public void assertOverViewHeaderDisplayed(String headerName) {
         pageLayoutPage.assertOverViewHeaderDisplayed(headerName);

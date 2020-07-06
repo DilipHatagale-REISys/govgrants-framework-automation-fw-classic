@@ -8,7 +8,11 @@ import org.openqa.selenium.WebElement;
 
 public class DynamicFormPage extends GovGrantsManager {
 
+private final By formInstructionText;
 
+    public DynamicFormPage() {
+        formInstructionText = By.cssSelector("div.article>div");
+    }
     /******* "Key Methods with complete functionality - public" *****************/
 
     /**
@@ -61,6 +65,16 @@ public class DynamicFormPage extends GovGrantsManager {
     }
 
     /**
+     * click on view more/view less button at page instruction section inside dynamic form layout
+     *
+     * @param buttonName
+     */
+    public void clickOnButtonAtPageInstruction(String buttonName) {
+        By getButton = By.xpath("//div[@class='panel-body']//*[text()='view more']");
+        I.amPerforming().click().on(getButton);
+    }
+
+    /**
      * assert true if expected value is displayed in respective field at dynamic form layout
      *
      * @param fieldName
@@ -87,6 +101,16 @@ public class DynamicFormPage extends GovGrantsManager {
      */
     public void assertSectionDisplayedInsideDynamicFormLayout(String sectionName) {
         Assert.assertTrue(isSectionDisplayedInsideDynamicFormLayout(sectionName));
+    }
+
+    /**
+     * assert true if expected instruction text is displayed
+     *
+     * @param expectedInstructionText
+     */
+    public void assertTextMatches(String expectedInstructionText) {
+        I.amPerforming().assertionsTo().assertThat(I.amPerforming().actionToGet().text(formInstructionText))
+                .isEqualToNormalizingWhitespace(expectedInstructionText);
     }
 
     /*********

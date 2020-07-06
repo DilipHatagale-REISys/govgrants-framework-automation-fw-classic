@@ -1,6 +1,7 @@
 package com.framework.automation.steps;
 
 import com.framework.automation.pageobject.DynamicFormPage;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -16,6 +17,11 @@ public class DynamicFormSteps {
         dynamicFormPage.enterValueIntoAllFieldTypeAtDynamicForms(enterValue, fieldName, fieldType);
     }
 
+    @And("^I click on \"([^\"]*)\" button at page instruction$")
+    public void clickOnButtonAtPageInstruction(String buttonName) {
+        dynamicFormPage.clickOnButtonAtPageInstruction(buttonName);
+    }
+
     @Then("^I see for \"([^\"]*)\" field value is \"([^\"]*)\" inside dynamic form$")
     public void fieldValueInsideDynamicForm(String fieldName, String fieldValue) {
         dynamicFormPage.assertFieldValueInsideDynamicForm(fieldName, fieldValue);
@@ -29,5 +35,10 @@ public class DynamicFormSteps {
     @Then("^I see section as \"([^\"]*)\" inside dynamic form layout$")
     public void assertSectionDisplayedAInsideDynamicForm(String sectionName) {
         dynamicFormPage.assertSectionDisplayedInsideDynamicFormLayout(sectionName);
+    }
+
+    @Then("I see the instruction text is as follows :")
+    public void verifyCompleteInstructionText(String expectedInstructionText) {
+        dynamicFormPage.assertTextMatches(expectedInstructionText);
     }
 }

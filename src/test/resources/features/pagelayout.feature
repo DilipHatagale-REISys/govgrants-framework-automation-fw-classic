@@ -33,7 +33,10 @@ Feature: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Automation Instruction Text" shown as page instruction text
+    Then I see the instruction text is as follows :
+  """
+   {LongText:PageInstruction-Text}
+  """
 
   @34049    @setUpHeaderOverRideField-gPlanning
   Scenario: setting up header over ride configuration and validating its content after clicking New button

@@ -300,3 +300,140 @@ Feature: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     Then I see "Dynamic Form" value in flex table id "---program:-:flexGridDynamicFormTableId---"
+
+  @89922    @ValidatePageInstructionTextAtDynamicFormInViewMode
+  Scenario: validate the page instructions text apears as configured in view mode on dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Capture Form          | Form Instruction |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                 | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Form Instruction | Demo Testing form Instruction | CF-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    Then I see "Demo Testing form Instruction" shown as page instruction text
+
+  @89923    @ValidatePageInstructionTextAtDynamicFormInEditMode
+  Scenario: validate the page instructions text apears as configured in edit mode on dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Capture Form          | Form Instruction |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                 | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Form Instruction | Demo Testing form Instruction | CF-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    Then I see the instruction text is as follows :
+  """
+   {LongText:FormInstructionSmall-Text}
+  """
+
+  @89932    @ValidateDisplayOfValidateButtonAtDynamicFormLayoutInViewMode
+  Scenario: validate the display of validate button in view mode if Validation Button Visibility is set as shown from config at dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                    | fieldOrignalValue | filterId         |
+      | Capture Form          | Validation Button Visibility | Show              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                    | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Validation Button Visibility | Show          | CF-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    Then I see "Validate" button is displayed
+
+  @89934    @ValidateThatValidateButtonIsHiddenAtDynamicFormLayoutInViewMode
+  Scenario: validate the validate button is hidden if Validation Button Visibility is set as Hide from config at dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                    | fieldOrignalValue | filterId         |
+      | Capture Form          | Validation Button Visibility | Show              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                    | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Validation Button Visibility | Hide          | CF-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    Then I see "Validate" button is not displayed
+
+  @89925    @ValidateByClickOnViewMoreOptionAllPageInstructionTextIsDisplayedAtDynamicFormInViewMode
+  Scenario Outline: validate that by click on view more button at page instructions text , all text is getting displayed on dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Capture Form          | Form Instruction |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue         | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Form Instruction | <enterNewInstruction> | CF-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    And I click on "view more" button at page instruction
+    Then I see the instruction text is as follows :
+  """
+   {LongText:FormInstruction-Text}
+  """
+
+    Examples:
+      | enterNewInstruction                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+      | Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.  |
+
+  @90786    @ValidateThatValidateButtonIsNotDisplayedAtDynamicFormLayoutInEditMode
+  Scenario: validate the validate button is not displayed in edit mode if Validation Button Visibility is set as Show from config at dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                    | fieldOrignalValue | filterId         |
+      | Capture Form          | Validation Button Visibility | Show              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                    | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Validation Button Visibility | Show          | CF-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    Then I see "Validate" button is not displayed
+
+  @90787    @ValidateThatValidateButtonIsNotDisplayedAtDynamicFormLayoutInEditMode
+  Scenario: validate the validate button is not displayed in edit mode if Validation Button Visibility is set as Hide from config at dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                    | fieldOrignalValue | filterId         |
+      | Capture Form          | Validation Button Visibility | Show              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                    | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Validation Button Visibility | Hide          | CF-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    Then I see "Validate" button is not displayed
