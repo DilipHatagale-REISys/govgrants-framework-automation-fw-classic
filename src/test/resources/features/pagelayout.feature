@@ -1880,7 +1880,7 @@ Feature: Page Layout Component Scenarios
     When I click on "Link" icon in rich text area editor menu options
     When I create hyperlink for "URL" as "www.testAutomation.com" at rich text area field
     When I pause execution for "3" seconds
-    Then I see hyperlink is present at "www.testAutomation.com" in rich text area field
+    Then I see hyperlink is present at "http://www.testAutomation.com" in rich text area field
 
   @83110    @verifyHyperLinkIsNotPresentAtUserNameUnderUserProfilePage
   Scenario: validate that a hyperlink is not present at user name under user profile page
