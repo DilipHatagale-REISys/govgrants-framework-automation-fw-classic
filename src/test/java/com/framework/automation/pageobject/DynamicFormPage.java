@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 
 public class DynamicFormPage extends GovGrantsManager {
 
-private final By formInstructionText;
+    private final By formInstructionText;
 
     public DynamicFormPage() {
         formInstructionText = By.cssSelector("div.article>div");
@@ -70,8 +70,17 @@ private final By formInstructionText;
      * @param buttonName
      */
     public void clickOnButtonAtPageInstruction(String buttonName) {
-        By getButton = By.xpath("//div[@class='panel-body']//*[text()='view more']");
+        By getButton = By.xpath("//div[@class='panel-body']//*[text()='" + buttonName + "']");
         I.amPerforming().click().on(getButton);
+    }
+
+    /**
+     * click on help text at section 1 inside dynamic form layout
+     *
+     * @param sectionName
+     */
+    public void getHelpTextAtSectionInsideDynamicForm(String sectionName) {
+        I.amPerforming().scroll().toMoveToElement(By.xpath("//h3//a[@title='Section: "+sectionName+"']/..//span[contains(@class,'fa-info')]"));
     }
 
     /**

@@ -17,6 +17,11 @@ public class DynamicFormSteps {
         dynamicFormPage.enterValueIntoAllFieldTypeAtDynamicForms(enterValue, fieldName, fieldType);
     }
 
+    @When("^I hovering mouse on help text icon at \"([^\"]*)\" inside dynamic form$")
+    public void hoveringMouseOnHelpTextIconInsideDynamicForm(String sectionName) {
+        dynamicFormPage.getHelpTextAtSectionInsideDynamicForm(sectionName);
+    }
+
     @And("^I click on \"([^\"]*)\" button at page instruction$")
     public void clickOnButtonAtPageInstruction(String buttonName) {
         dynamicFormPage.clickOnButtonAtPageInstruction(buttonName);

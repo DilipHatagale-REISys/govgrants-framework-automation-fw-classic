@@ -116,6 +116,9 @@ public class SetUpConfiguration {
             case "CAPTURE FORM":
                 stringPayload = new DynamicForm().setDynamicFormCaptureFormConfig(fieldLabel, value, filterClause);
                 break;
+            case "CAPTURE SECTION":
+                stringPayload = new DynamicForm().setDynamicFormCaptureSectionConfig(fieldLabel, value, filterClause);
+                break;
         }
         System.out.println("final payload is " + stringPayload);
         return stringPayload;

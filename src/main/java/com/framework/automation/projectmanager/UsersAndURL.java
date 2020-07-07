@@ -118,7 +118,7 @@ public class UsersAndURL implements UsersController {
         Map<String, String> username = new HashMap<>();
         username.put("ADMIN", "nakul@admin.test8.ux");
         username.put("EXE", "autoexe@yopmail.com.ux");
-        username.put("PM", "ddonaldpm@yopmail.com.ux");
+        username.put("PM", "donaldpm@yopmail.com.ux");
         username.put("FO", "autofm@yopmail.com.ux");
         if (userLevel.toUpperCase() != null) {
             return username.get(userLevel.toUpperCase());

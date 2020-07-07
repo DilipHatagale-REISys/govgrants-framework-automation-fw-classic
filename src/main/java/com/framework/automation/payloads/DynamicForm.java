@@ -39,4 +39,43 @@ public class DynamicForm {
         System.out.println(finalPayload);
         return finalPayload;
     }
+
+
+    /**
+     * Handles Dynamic Form capture section level configuration
+     *
+     * @param fieldLabel    : Name of the field. Name of the API.
+     *                      Main phase name: eg; GrantorHome
+     * @param value:        Parameter that we want to change
+     * @param filterClause: filter clause to get the specific id
+     * @return: payload
+     */
+    public String setDynamicFormCaptureSectionConfig(String fieldLabel, String value, String filterClause) {
+        String finalPayload = null;
+        switch (fieldLabel.toUpperCase()) {
+            case "SECTION HELP TEXT":
+                finalPayload = String.format(payloadForStringValue,
+                        String.valueOf(SObjectAPIs.GNT__CaptureSection__c),
+                        apiUtilities.getComponentCoreFieldId(
+                                String.valueOf(SObjectAPIs.GNT__CaptureSection__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__SectionHelpText__c), value);
+                break;
+            case "SECTION INSTRUCTION":
+                finalPayload = String.format(payloadForStringValue,
+                        String.valueOf(SObjectAPIs.GNT__CaptureSection__c),
+                        apiUtilities.getComponentCoreFieldId(
+                                String.valueOf(SObjectAPIs.GNT__CaptureSection__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__SectionInstruction__c), value);
+                break;
+            case "SECTION NAME":
+                finalPayload = String.format(payloadForStringValue,
+                        String.valueOf(SObjectAPIs.GNT__CaptureSection__c),
+                        apiUtilities.getComponentCoreFieldId(
+                                String.valueOf(SObjectAPIs.GNT__CaptureSection__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__Name__c	), value);
+                break;
+        }
+        System.out.println(finalPayload);
+        return finalPayload;
+    }
 }

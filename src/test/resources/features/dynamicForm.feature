@@ -317,7 +317,10 @@ Feature: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
-    Then I see "Demo Testing form Instruction" shown as page instruction text
+    Then I see the instruction text is as follows :
+  """
+   {LongText:FormInstructionSmall-Text}
+  """
 
   @89923    @ValidatePageInstructionTextAtDynamicFormInEditMode
   Scenario: validate the page instructions text apears as configured in edit mode on dynamic form layout
@@ -437,3 +440,172 @@ Feature: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     Then I see "Validate" button is not displayed
+
+  @89927    @ValidateByClickOnViewLessOptionPageInstructionTextShouldGetCollapsedAtDynamicFormInViewMode
+  Scenario Outline: validate that by click on view less button at page instructions text, it should get collapsed on dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Capture Form          | Form Instruction |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue         | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Form Instruction | <enterNewInstruction> | CF-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    And I click on "view more" button at page instruction
+    And I click on "view less" button at page instruction
+    Then I see the instruction text is as follows :
+  """
+   {LongText:FormInstructionCollapse-Text}
+  """
+
+    Examples:
+      | enterNewInstruction                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+      | Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum |
+
+  @90062    @ValidateSectionInstructionTextAtDynamicFormInViewMode
+  Scenario: validate the section instructions text apears as configured in view mode on dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue        | filterId         |
+      | Capture Section       | Section Instruction | Demo Section instruction | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName           | fieldNewValue                       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Section:General | Section Instruction | Demo Section instruction Automation | CS-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    Then I see the instruction text is as follows :
+  """
+   {LongText:SectionInstruction-Text}
+  """
+
+  @90978    @ValidateSectionInstructionTextAtDynamicFormInEditMode
+  Scenario: validate the section instructions text apears as configured in edit mode on dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue        | filterId         |
+      | Capture Section       | Section Instruction | Demo Section instruction | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName           | fieldNewValue                       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Section:General | Section Instruction | Demo Section instruction Automation | CS-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    Then I see the instruction text is as follows :
+  """
+   {LongText:SectionInstruction-Text}
+  """
+
+  @90060    @ValidateSectionHelpTextFieldAtDynamicFormInViewMode
+  Scenario: validate the section help text apears as configured in view mode on dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Capture Section       | Section Help Text | Demo Testing      | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName         | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Section:General | Section Help Text | Demo Section help text | CS-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I hovering mouse on help text icon at "Section 1" inside dynamic form
+    Then I see "Demo Section help text" shown as help text
+
+  @90984    @ValidateSectionHelpTextFieldAtDynamicFormInEditMode
+  Scenario: validate the section help text apears as configured in edit mode on dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Capture Section       | Section Help Text | Demo Testing      | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName         | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Section:General | Section Help Text | Demo Section help text | CS-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I hovering mouse on help text icon at "Section 1" inside dynamic form
+    Then I see "Demo Section help text" shown as help text
+
+  @89936   @ValidateValidationMessageAtDynamicFormInViewMode
+  Scenario: validate that validation message should display by click on validate button on dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                    | fieldOrignalValue | filterId         |
+      | Capture Form          | Validation Button Visibility | Show              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                    | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Validation Button Visibility | Show          | CF-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Validate" button in right header
+    Then I see the following message in the page details :
+      | What is Form? in Section Section 1 question not answered |
+
+  @90063    @ValidateSectionNameAtDynamicFormInViewMode
+  Scenario: validate the section name apears as configured in view mode on dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
+      | Capture Section       | Section Name | Section 1         | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName    | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Section:General | Section Name | Automation Title | CS-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    Then I see section as "Automation Title" inside dynamic form layout
+
+  @90997    @ValidateByClickOnViewMoreOptionAllSectionInstructionTextIsDisplayedAtDynamicFormInViewMode
+  Scenario Outline: validate that by click on view more button at section instructions text , all text is getting displayed on dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue        | filterId         |
+      | Capture Section       | Section Instruction | Demo Section instruction | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName           | fieldNewValue         | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Section:General | Section Instruction | <enterNewInstruction> | CS-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    Then I see the instruction text is as follows :
+  """
+   {LongText:SectionInstructionLong-Text}
+  """
+    Examples:
+      | enterNewInstruction                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+      | Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. |
