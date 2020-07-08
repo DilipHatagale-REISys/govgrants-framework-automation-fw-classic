@@ -113,6 +113,15 @@ public class SetUpConfiguration {
             case "AUTO SNAPSHOT ON APPROVAL":
                 stringPayload = new SnapShot().setApprovalDecisionAutoSnapshotConfig(fieldLabel, value, filterClause);
                 break;
+            case "CAPTURE FORM":
+                stringPayload = new DynamicForm().setDynamicFormCaptureFormConfig(fieldLabel, value, filterClause);
+                break;
+            case "CAPTURE SECTION":
+                stringPayload = new DynamicForm().setDynamicFormCaptureSectionConfig(fieldLabel, value, filterClause);
+                break;
+            case "CAPTURE ITEM":
+                stringPayload = new DynamicForm().setDynamicFormCaptureItemConfig(fieldLabel, value, filterClause);
+                break;
         }
         System.out.println("final payload is " + stringPayload);
         return stringPayload;

@@ -7,6 +7,7 @@ import com.testingblaze.register.I;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -815,7 +816,7 @@ public class PhaseConfigPage extends GovGrantsManager {
     private Boolean isSidebarBackgroundColorChanged(String colorName) {
         boolean flag = false;
         WebElement getSidebar = I.amPerforming().getElementReference().of(By.xpath("//div[contains(@class,'customSidebar')]"));
-       switch (colorName.toUpperCase()) {
+        switch (colorName.toUpperCase()) {
             case "VERY DARK BLUE":
                 if (getSidebar.getCssValue("background-color").contains("rgba(0, 57, 107, 1)")
                         || getSidebar.getCssValue("color").contains("rgb(0, 57, 107)")) {

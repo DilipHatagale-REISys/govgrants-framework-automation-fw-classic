@@ -16,7 +16,7 @@ import java.util.Map;
 public class PageLayoutPage extends GovGrantsManager {
 
     /******* "Variables and Locators" *****************/
-    private final By overViewHeader, overViewTitle, pageInstructionText, headerInstructionText, headerOverviewTab,
+    private final By overViewHeader, overViewTitle, headerInstructionText, headerOverviewTab,
             headerInstructionTextForPageBlock, rolesAndResponsibilitiesFlexTableTitle, monitoringFlexGridTitle,
             addAttachmentIframe,
             ownerOrganizationModalTitle, completeTableRowInsideLookupModal,
@@ -29,7 +29,6 @@ public class PageLayoutPage extends GovGrantsManager {
     public PageLayoutPage() {
         overViewHeader = By.cssSelector("h2.panel-title>div>span.customLabelstyle");
         overViewTitle = By.cssSelector("h2.panel-title>div>span.overview-title");
-        pageInstructionText = By.cssSelector("div.article>div");
         headerInstructionText = By.cssSelector("div.tabheaderinstruction");
         headerOverviewTab = By.xpath("//div[@class='panel-body']//span[contains(text(),'ID')]");
         headerInstructionTextForPageBlock = By.xpath("//div//span[contains(text(),'Header for Automation')]");
@@ -61,13 +60,6 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public void assertOverViewTitleWithHeader(String overViewTitle, String overViewHeader) {
         Assert.assertTrue(isOverViewTitleWithHeaderDisplayed(overViewHeader, overViewTitle));
-    }
-
-    /**
-     * assert true if correct page instruction text is displayed
-     */
-    public void assertPageInstructionText(String text) {
-        Assert.assertTrue(isPageInstructionTextDisplayed(text));
     }
 
     /**
@@ -480,7 +472,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * click on cross icon at uploaded file at attachment section in send email modal
      */
     public void clickOnCrossIconAtAttachmentSectionAtSendEmailModal(String attachmentName) {
-        I.amPerforming().click().on(By.xpath("//td[normalize-space(text())='"+attachmentName+"']/following-sibling::td//i[contains(@class,'fa-times')]"));
+        I.amPerforming().click().on(By.xpath("//td[normalize-space(text())='" + attachmentName + "']/following-sibling::td//i[contains(@class,'fa-times')]"));
         ;
     }
 
@@ -1069,6 +1061,13 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * return true if if at TO or CC field , a search item display box size is displayed properly at Send Email Modal
+     */
+    public void assertSearchItemDisplayBoxSizeIsProperAtSendEmailModal(String fieldName, String condition) {
+        Assert.assertTrue(isSearchItemDisplayBoxSizeIsDisplayedProperlyAtSendEmailModal(fieldName, condition));
+    }
+
+    /**
      * get owner organisation lookup modal complete content
      *
      * @return
@@ -1101,20 +1100,6 @@ public class PageLayoutPage extends GovGrantsManager {
         boolean flag = false;
         if ((I.amPerforming().actionToGet().text(overViewHeader).contains(overViewHeaderName))
                 && (I.amPerforming().actionToGet().text(overViewTitle).contains(overViewTitleName))) {
-            flag = true;
-        }
-        return flag;
-    }
-
-    /**
-     * return true if text is displayed
-     *
-     * @param text
-     * @return
-     */
-    private boolean isPageInstructionTextDisplayed(String text) {
-        boolean flag = false;
-        if (I.amPerforming().actionToGet().text(pageInstructionText).equalsIgnoreCase(text)) {
             flag = true;
         }
         return flag;
@@ -2066,6 +2051,25 @@ public class PageLayoutPage extends GovGrantsManager {
                 flag = false;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if at TO or CC field , a search item display box size is displayed properly at Send Email Modal
+     *
+     * @return
+     */
+    private boolean isSearchItemDisplayBoxSizeIsDisplayedProperlyAtSendEmailModal(String fieldName, String condition) {
+        boolean flag = true;
+        if (condition.equalsIgnoreCase("GREATER THAN 5")) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//label[normalize-space(text())='" + fieldName + "']/following-sibling::div//*[@class='listDropdownToScroll']"))) {
+                return true;
+            }
+        } else if (condition.equalsIgnoreCase("LESS THAN 5")) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//label[normalize-space(text())='" + fieldName + "']/following-sibling::div//*[@class='listDropdownTo']"))) {
+                return true;
+            }
         }
         return flag;
     }

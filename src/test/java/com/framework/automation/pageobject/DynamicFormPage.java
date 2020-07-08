@@ -4,23 +4,34 @@ import com.framework.automation.projectmanager.GovGrantsManager;
 import com.testingblaze.register.I;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 public class DynamicFormPage extends GovGrantsManager {
 
+    private final By formInstructionText;
 
+    public DynamicFormPage() {
+        formInstructionText = By.cssSelector("div.article>div");
+    }
     /******* "Key Methods with complete functionality - public" *****************/
 
     /**
-     * enter values in the fields at dynamic form layout
+     * click on view more/view less button at page instruction section inside dynamic form layout
      *
-     * @param enterValue
-     * @param fieldName
+     * @param buttonName
      */
-    public void enterValueIntoFieldAtDynamicForms(String enterValue, String fieldName) {
-        By getField = By.xpath("//div[@class='formUIWrap']//span[text()='" + fieldName + "']/../following-sibling::dd//textarea " +
-                "| //div[@class='formUIWrap']//span[text()='" + fieldName + "']/../following-sibling::dd//input");
-        I.amPerforming().textInput().toClear(getField);
-        I.amPerforming().textInput().in(getField, enterValue);
+    public void clickOnButtonAtPageInstruction(String buttonName) {
+        By getButton = By.xpath("//div[@class='panel-body']//*[text()='" + buttonName + "']");
+        I.amPerforming().click().on(getButton);
+    }
+
+    /**
+     * click on help text at section 1 inside dynamic form layout
+     *
+     * @param sectionName
+     */
+    public void getHelpTextAtSectionInsideDynamicForm(String sectionName) {
+        I.amPerforming().scroll().toMoveToElement(By.xpath("//h3//a[@title='Section: "+sectionName+"']/..//span[contains(@class,'fa-info')]"));
     }
 
     /**
@@ -43,6 +54,25 @@ public class DynamicFormPage extends GovGrantsManager {
         Assert.assertTrue(isFieldDisplayedInExpectedSectionAtDynamicForm(fieldName, sectionName));
     }
 
+    /**
+     * assert true if expected section displayed inside dynamic form layout
+     *
+     * @param sectionName
+     */
+    public void assertSectionDisplayedInsideDynamicFormLayout(String sectionName) {
+        Assert.assertTrue(isSectionDisplayedInsideDynamicFormLayout(sectionName));
+    }
+
+    /**
+     * assert true if expected instruction text is displayed
+     *
+     * @param expectedInstructionText
+     */
+    public void assertTextMatches(String expectedInstructionText) {
+        I.amPerforming().assertionsTo().assertThat(I.amPerforming().actionToGet().text(formInstructionText))
+                .isEqualToNormalizingWhitespace(expectedInstructionText);
+    }
+
     /*********
      * "Local Methods with complete functionality - private"
      *****************/
@@ -55,7 +85,8 @@ public class DynamicFormPage extends GovGrantsManager {
      */
     private boolean isFieldValueDisplayedInsideDynamicForm(String fieldName, String fieldValue) {
         boolean flag = false;
-        By getFieldValue = By.xpath("//span[text()='" + fieldName + "']/../following-sibling::dd//span[text()='" + fieldValue + "']");
+        By getFieldValue = By.xpath("//span[text()='" + fieldName + "']/../following-sibling::dd//span[text()='" + fieldValue + "']" +
+                " | //span[text()='" + fieldName + "']/../following-sibling::dd//span//img[@alt='" + fieldValue + "']");
         if (I.amPerforming().checkToSee().isDisplayed(getFieldValue)) {
             return true;
         }
@@ -70,8 +101,23 @@ public class DynamicFormPage extends GovGrantsManager {
      */
     private boolean isFieldDisplayedInExpectedSectionAtDynamicForm(String fieldName, String sectionName) {
         boolean flag = false;
-        By getFieldValue = By.xpath("//a[@title='Section: "+sectionName+"']/../../../following-sibling::div//span[text()='"+fieldName+"']");
+        By getFieldValue = By.xpath("//a[@title='Section: " + sectionName + "']/../../../following-sibling::div//span[text()='" + fieldName + "']");
         if (I.amPerforming().checkToSee().isDisplayed(getFieldValue)) {
+            return true;
+        }
+        return flag;
+    }
+
+
+    /**
+     * assert true if expected section is displayed at dynamic form layout
+     *
+     * @param sectionName
+     */
+    private boolean isSectionDisplayedInsideDynamicFormLayout(String sectionName) {
+        boolean flag = false;
+        By getSection = By.xpath("//a[@title='Section: " + sectionName + "']");
+        if (I.amPerforming().checkToSee().isDisplayed(getSection)) {
             return true;
         }
         return flag;
