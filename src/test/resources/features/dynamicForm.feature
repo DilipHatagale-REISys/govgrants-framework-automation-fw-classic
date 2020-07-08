@@ -14,7 +14,9 @@ Feature: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I switch to tab number "1"
-    When I enter value as "Test Automation" into field "Written" of type "Text" at dynamic forms layout
+    When I enter values into "Section 1" page block
+      | Field   | Value           |
+      | Written | Test Automation |
     When I click on "Save" in the page details
     Then I see for "Written" field value is "Test Automation" inside dynamic form
 
@@ -29,7 +31,9 @@ Feature: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I switch to tab number "1"
-    When I enter value as "12.00" into field "Currency" of type "Integer" at dynamic forms layout
+    When I enter values into "Section 1" page block
+      | Field    | Value |
+      | Currency | 12.00 |
     When I click on "Save" in the page details
     Then I see for "Currency" field value is "$12.00" inside dynamic form
 
@@ -44,7 +48,9 @@ Feature: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I switch to tab number "1"
-    When I enter value as "12.00" into field "Number" of type "Integer" at dynamic forms layout
+    When I enter values into "Section 1" page block
+      | Field  | Value |
+      | Number | 12.00 |
     When I click on "Save" in the page details
     Then I see for "Number" field value is "12.00" inside dynamic form
 
@@ -59,7 +65,9 @@ Feature: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I switch to tab number "1"
-    When I enter value as "12.00" into field "Percent" of type "Integer" at dynamic forms layout
+    When I enter values into "Section 1" page block
+      | Field   | Value |
+      | Percent | 12.00 |
     When I click on "Save" in the page details
     Then I see for "Percent" field value is "12.00%" inside dynamic form
 
@@ -232,7 +240,9 @@ Feature: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I switch to tab number "1"
-    When I enter value as "checked" into field "Checkbox" of type "Checkbox" at dynamic forms layout
+    When I enter values into "Section 1" page block
+      | Field    | Value   |
+      | Checkbox | checked |
     When I click on "Save" in the page details
     Then I see for "Checkbox" field value is "Checked" inside dynamic form
 
@@ -246,7 +256,9 @@ Feature: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
-    When I enter value as "Yes" into field "Radio" of type "Radio" at dynamic forms layout
+    When I enter values into "Section 1" page block
+      | Field | Value |
+      | Radio | Yes   |
     When I click on "Save" in the page details
     Then I see for "Radio" field value is "Yes" inside dynamic form
 
@@ -260,7 +272,9 @@ Feature: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
-    When I enter value as "YES" into field "Picklist" of type "Picklist" at dynamic forms layout
+    When I enter values into "Section 1" page block
+      | Field    | Value |
+      | Picklist | YES   |
     When I click on "Save" in the page details
     Then I see for "Picklist" field value is "YES" inside dynamic form
 
@@ -274,7 +288,9 @@ Feature: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
-    When I enter value as "Test Automation Rich Text" into field "Rich Text Area" of type "Rich Text Area" at dynamic forms layout
+    When I enter values into "Section 1" page block
+      | Field          | Value                     |
+      | Rich Text Area | Test Automation Rich Text |
     When I click on "Save" in the page details
     Then I see for "Rich Text Area" field value is "Test Automation Rich Text" inside dynamic form
 
@@ -553,9 +569,11 @@ Feature: dynamic forms Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                    | fieldOrignalValue | filterId         |
       | Capture Form          | Validation Button Visibility | Show              | ApiGeneratedId:0 |
+      | Capture Item          | Question Applicable ?        |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                    | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Form:General  | Validation Button Visibility | Show          | CF-0000            |                           |                            |
+      | Capture Item:General  | Question Applicable ?        |               | CI-0016            |                           |                            |
     When I login as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -563,10 +581,11 @@ Feature: dynamic forms Component Scenarios
     When I perform quick search for "AnnouncementTest"
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
-    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I click on "Save" button in right header
     When I click on "Validate" button in right header
     Then I see the following message in the page details :
-      | What is Form? in Section Section 1 question not answered |
+      | Radio New in Section Section 1 question not answered |
 
   @90063    @ValidateSectionNameAtDynamicFormInViewMode
   Scenario: validate the section name apears as configured in view mode on dynamic form layout
@@ -609,3 +628,181 @@ Feature: dynamic forms Component Scenarios
     Examples:
       | enterNewInstruction                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
       | Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. |
+
+  @89694    @validateByEnteringValueInDateFieldAResponseIsGettingSavedAndDisplayedAtDynamicFormLayout
+  Scenario: Entering value into date field and click on save , a value is getting saved into date field at dynamic form
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I switch to tab number "1"
+    When I enter values into "Section 1" page block
+      | Field | Value     |
+      | Date  | 6/30/2020 |
+    When I click on "Save" in the page details
+    Then I see for "Date" field value is "6/30/2020" inside dynamic form
+
+  @89823    @validateQuestionApplicableFieldAsRequiredForSaveAtTextFieldTypeAtDynamicFormLayout
+  Scenario: changing value of question applicable as required for save and checking error message for written field at dynamic form
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Applicable ? | Required to save  | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Applicable ? | Required to save | CI-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I enter values into "Section 1" page block
+      | Field   | Value |
+      | Written |       |
+    When I click on "Save" in the page details
+    Then I see the following message in the page details :
+      | Written is Required to save under Section 1. |
+
+  @89833    @validateQuestionApplicableFieldAsRequiredForSaveAtCurrencyFieldTypeAtDynamicFormLayout
+  Scenario: changing value of question applicable as required for save and checking error message for currency field at dynamic form
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Applicable ? | Required to save  | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Applicable ? | Required to save | CI-0004            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I enter values into "Section 1" page block
+      | Field    | Value |
+      | Currency |       |
+    When I click on "Save" in the page details
+    Then I see the following message in the page details :
+      | Currency is Required to save under Section 1. |
+
+  @89834    @validateQuestionApplicableFieldAsRequiredForSaveAtPercentFieldTypeAtDynamicFormLayout
+  Scenario: changing value of question applicable as required for save and checking error message for percent field at dynamic form
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Applicable ? | Required to save  | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Applicable ? | Required to save | CI-0005            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I enter values into "Section 1" page block
+      | Field   | Value |
+      | Percent |       |
+    When I click on "Save" in the page details
+    Then I see the following message in the page details :
+      | Percent is Required to save under Section 1. |
+
+  @89836    @validateQuestionApplicableFieldAsRequiredForSaveAtNumberFieldTypeAtDynamicFormLayout
+  Scenario: changing value of question applicable as required for save and checking error message for number field at dynamic form
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Applicable ? | Required to save  | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Applicable ? | Required to save | CI-0006            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I enter values into "Section 1" page block
+      | Field  | Value |
+      | Number |       |
+    When I click on "Save" in the page details
+    Then I see the following message in the page details :
+      | Number is Required to save under Section 1. |
+
+  @89843    @validateQuestionApplicableFieldAsRequiredForSaveAtCheckboxFieldTypeAtDynamicFormLayout
+  Scenario: changing value of question applicable as required for save and checking error message for checkbox field at dynamic form
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Applicable ? | Required to save  | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Applicable ? | Required to save | CI-0008            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I enter values into "Section 1" page block
+      | Field    | Value |
+      | Checkbox |       |
+    When I click on "Save" in the page details
+    Then I see the following message in the page details :
+      | Checkbox is Required to save under Section 1. |
+
+  @89859    @validateQuestionApplicableFieldAsRequiredForSaveAtRichTextAreaFieldTypeAtDynamicFormLayout
+  Scenario: changing value of question applicable as required for save and checking error message for rich text area field at dynamic form
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Applicable ? | Required to save  | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Applicable ? | Required to save | CI-0010            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I enter values into "Section 1" page block
+      | Field          | Value |
+      | Rich Text Area |       |
+    When I click on "Save" in the page details
+    Then I see the following message in the page details :
+      | Rich Text Area is Required to save under Section 1. |
+
+  @89855    @validateQuestionApplicableFieldAsRequiredForSaveAtRadioNewFieldTypeAtDynamicFormLayout
+  Scenario: changing value of question applicable as required for save and checking error message for radio new field at dynamic form
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Applicable ? | Required to save  | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Applicable ? | Required to save | CI-0016            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I enter values into "Section 1" page block
+      | Field     | Value |
+      | Radio New |       |
+    When I click on "Save" in the page details
+    Then I see the following message in the page details :
+      | Radio New is Required to save under Section 1. |

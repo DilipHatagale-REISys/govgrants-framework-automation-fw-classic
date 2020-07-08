@@ -78,4 +78,29 @@ public class DynamicForm {
         System.out.println(finalPayload);
         return finalPayload;
     }
+
+
+    /**
+     * Handles Dynamic Form capture item level configuration
+     *
+     * @param fieldLabel    : Name of the field. Name of the API.
+     *                      Main phase name: eg; GrantorHome
+     * @param value:        Parameter that we want to change
+     * @param filterClause: filter clause to get the specific id
+     * @return: payload
+     */
+    public String setDynamicFormCaptureItemConfig(String fieldLabel, String value, String filterClause) {
+        String finalPayload = null;
+        switch (fieldLabel.toUpperCase()) {
+            case "QUESTION APPLICABLE ?":
+                finalPayload = String.format(payloadForStringValue,
+                        String.valueOf(SObjectAPIs.GNT__CaptureItem__c	),
+                        apiUtilities.getComponentCoreFieldId(
+                                String.valueOf(SObjectAPIs.GNT__CaptureItem__c	), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__QuestionApplicable__c), value);
+                break;
+        }
+        System.out.println(finalPayload);
+        return finalPayload;
+    }
 }

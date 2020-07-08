@@ -12,11 +12,6 @@ public class DynamicFormSteps {
         dynamicFormPage = new DynamicFormPage();
     }
 
-    @When("^I enter value as \"([^\"]*)\" into field \"([^\"]*)\" of type \"([^\"]*)\" at dynamic forms layout$")
-    public void enterValueIntoFieldAtDynamicFormsLayout(String enterValue, String fieldName ,String fieldType) {
-        dynamicFormPage.enterValueIntoAllFieldTypeAtDynamicForms(enterValue, fieldName, fieldType);
-    }
-
     @When("^I hovering mouse on help text icon at \"([^\"]*)\" inside dynamic form$")
     public void hoveringMouseOnHelpTextIconInsideDynamicForm(String sectionName) {
         dynamicFormPage.getHelpTextAtSectionInsideDynamicForm(sectionName);
