@@ -145,7 +145,7 @@ public class LibraryFilesPage extends GovGrantsManager {
      *
      * @param labelAndCount
      */
-    public void libraryFolderFileCountDisplayedAtLibraryFiles(String usuage, String labelAndCount) {
+    public void isLibraryFolderFileCountDisplayedAtLibraryFiles(String usuage, String labelAndCount) {
         if (usuage.equalsIgnoreCase("see")) {
             Assert.assertTrue(isLibraryFolderFileCountDisplayed(labelAndCount));
         } else if (usuage.equalsIgnoreCase("do not see")) {

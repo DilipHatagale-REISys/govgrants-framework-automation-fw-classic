@@ -1067,6 +1067,18 @@ public class PageLayoutPage extends GovGrantsManager {
         Assert.assertTrue(isSearchItemDisplayBoxSizeIsDisplayedProperlyAtSendEmailModal(fieldName, condition));
     }
 
+
+    /**
+     * return true if asterisk mark at required field is displayed at Send Email Modal
+     */
+    public void assertAsteriskMarkAtSendEmailModal(String usage, String fieldName) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isAsteriskMarkDisplayAtSendEmailModal(fieldName));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isAsteriskMarkDisplayAtSendEmailModal(fieldName)).isFalse();
+        }
+    }
+
     /**
      * get owner organisation lookup modal complete content
      *
@@ -2070,6 +2082,21 @@ public class PageLayoutPage extends GovGrantsManager {
             if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//label[normalize-space(text())='" + fieldName + "']/following-sibling::div//*[@class='listDropdownTo']"))) {
                 return true;
             }
+        }
+        return flag;
+    }
+
+    /**
+     * @param fieldName return true if asterisk mark at required field is displayed at Send Email Modal
+     * @return
+     */
+    private boolean isAsteriskMarkDisplayAtSendEmailModal(String fieldName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//label[contains(@class,'control-label') and contains(text(),'" + fieldName + "')]"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
         }
         return flag;
     }

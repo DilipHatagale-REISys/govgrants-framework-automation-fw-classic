@@ -2741,3 +2741,88 @@ Feature: Logged Issues Scenarios
     When I click on "To" email Search By field and select dropdown value as "Internal"
     When I enter value "David PM" into field "To" on send email modal
     Then I see search item display box size at "To" field is proper for "Less than 5" results
+
+  @89234 @validateDisplayOfToEmailSentSUccessfullyMessageInSendEmailModal
+  Scenario: Validate if reply email is sent then alert message is displayed on send email modal
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Collab" sub tab
+    When I perform quick search for "Re: DND-Test Automation Record" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "Delete" icon for "Re: DND-Test Automation Record" inside table
+    When I pause execution for "2" seconds
+    When I navigate to "Collab" sub tab
+    When I perform quick search for "DND-Test Automation Record" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "Reply" icon for "DND-Test Automation Record" inside table
+    When I enter value "test body content" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    And I refresh the page
+    When I navigate to "Collab" sub tab
+    When I perform quick search for "Re: DND-Test Automation Record" in "---program:-:communicationHistoryTableId---" panel
+    Then I see table with header "Messages" contains records "Re: DND-Test Automation Record"
+
+  @89725 @validateAsteriskMarkAtRequiredFieldsInSendEmailModalAtViewSendEmailWindow
+  Scenario: Validate asterisk mark is displayed at required fields in send email modal at view mail window
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Collab" sub tab
+    When I perform quick search for "DND-Test Automation Record" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "view" icon for "DND-Test Automation Record" inside table
+    Then I do not see asterisk mark at "To" field is displayed at send email modal
+
+  @91328 @validateAsteriskMarkAtRequiredFieldsInSendEmailModalAtReplyMailWindow
+  Scenario: Validate asterisk mark is displayed at required fields in send email modal at reply mail window
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Collab" sub tab
+    When I perform quick search for "DND-Test Automation Record" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "Reply" icon for "DND-Test Automation Record" inside table
+    Then I see asterisk mark at "To" field is displayed at send email modal

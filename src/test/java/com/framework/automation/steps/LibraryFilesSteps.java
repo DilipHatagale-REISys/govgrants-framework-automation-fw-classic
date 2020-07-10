@@ -79,7 +79,7 @@ public class LibraryFilesSteps {
 
     @Then("^I (see|do not see|softly see|softly do not see) Label/Count as \"([^\"]*)\" is displayed$")
     public void libraryFolderFileCountDisplayedatLibraryFiles(String usuage, String labelAndCount) {
-        libraryFilesPage.libraryFolderFileCountDisplayedAtLibraryFiles(usuage, labelAndCount);
+        libraryFilesPage.isLibraryFolderFileCountDisplayedAtLibraryFiles(usuage, labelAndCount);
     }
 
     @Then("^I see \"([^\"]*)\" shown in search table with id \"([^\"]*)\" at file upload modal$")

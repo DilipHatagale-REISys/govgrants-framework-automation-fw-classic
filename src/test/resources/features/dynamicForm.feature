@@ -411,7 +411,7 @@ Feature: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
-    And I click on "view more" button at page instruction
+    And I click on "view more" hyperlink in page instruction block
     Then I see the instruction text is as follows :
   """
    {LongText:FormInstruction-Text}
@@ -473,8 +473,8 @@ Feature: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
-    And I click on "view more" button at page instruction
-    And I click on "view less" button at page instruction
+    And I click on "view more" hyperlink in page instruction block
+    And I click on "view less" hyperlink in page instruction block
     Then I see the instruction text is as follows :
   """
    {LongText:FormInstructionCollapse-Text}
@@ -621,6 +621,7 @@ Feature: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
+    And I click on "view more" hyperlink in page instruction block
     Then I see the instruction text is as follows :
   """
    {LongText:SectionInstructionLong-Text}
@@ -806,3 +807,65 @@ Feature: dynamic forms Component Scenarios
     When I click on "Save" in the page details
     Then I see the following message in the page details :
       | Radio New is Required to save under Section 1. |
+
+  @90043   @ValidateAlignmentOfSectionColumnIfSetAsVeticallyAtDynamicFormLayout
+  Scenario: validate alignment of section column if selected as vertically at dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Capture Section       | Section Column | Vertical          | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Section:General | Section Column | Vertical    | CS-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    Then I see section column is "vertically" aligned
+
+  @90042   @ValidateAlignmentOfSectionColumnIfSetAsHorizontallyAtDynamicFormLayout
+  Scenario: validate alignment of section column if selected as horizontally at dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Capture Section       | Section Column | Vertical          | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Section:General | Section Column | Horizontal    | CS-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    Then I see section column is "horizontally" aligned
+
+  @91526    @validateCancelButtonIsDisplayedAtTopRightCornerInEditModeAtDynamicForm
+  Scenario: validate that cancel button is displayed at top right corner at dynamic form layout
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Edit" button in right header
+    Then I see "Cancel" button is displayed
+
+  @91528    @validateSaveButtonIsDisplayedAtTopRightCornerInEditModeAtDynamicForm
+  Scenario: validate that save button is displayed at top right corner at dynamic form layout
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Edit" button in right header
+    Then I see "Save" button is displayed

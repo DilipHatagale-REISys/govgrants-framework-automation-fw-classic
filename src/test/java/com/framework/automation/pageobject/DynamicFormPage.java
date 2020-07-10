@@ -13,17 +13,8 @@ public class DynamicFormPage extends GovGrantsManager {
     public DynamicFormPage() {
         formInstructionText = By.cssSelector("div.article>div");
     }
-    /******* "Key Methods with complete functionality - public" *****************/
 
-    /**
-     * click on view more/view less button at page instruction section inside dynamic form layout
-     *
-     * @param buttonName
-     */
-    public void clickOnButtonAtPageInstruction(String buttonName) {
-        By getButton = By.xpath("//div[@class='panel-body']//*[text()='" + buttonName + "']");
-        I.amPerforming().click().on(getButton);
-    }
+    /******* "Key Methods with complete functionality - public" *****************/
 
     /**
      * click on help text at section 1 inside dynamic form layout
@@ -31,7 +22,7 @@ public class DynamicFormPage extends GovGrantsManager {
      * @param sectionName
      */
     public void getHelpTextAtSectionInsideDynamicForm(String sectionName) {
-        I.amPerforming().scroll().toMoveToElement(By.xpath("//h3//a[@title='Section: "+sectionName+"']/..//span[contains(@class,'fa-info')]"));
+        I.amPerforming().scroll().toMoveToElement(By.xpath("//h3//a[@title='Section: " + sectionName + "']/..//span[contains(@class,'fa-info')]"));
     }
 
     /**
@@ -73,6 +64,15 @@ public class DynamicFormPage extends GovGrantsManager {
                 .isEqualToNormalizingWhitespace(expectedInstructionText);
     }
 
+    /**
+     * assert true if alignment of section column displayed as expected
+     *
+     * @param columnAlignment
+     */
+    public void assertAlignmentOfSectionColumn(String columnAlignment) {
+        I.amPerforming().assertionsTo().assertThat(isAlignmentOfSectionColumnDisplayedAsExpected(columnAlignment));
+    }
+
     /*********
      * "Local Methods with complete functionality - private"
      *****************/
@@ -108,7 +108,6 @@ public class DynamicFormPage extends GovGrantsManager {
         return flag;
     }
 
-
     /**
      * assert true if expected section is displayed at dynamic form layout
      *
@@ -118,6 +117,23 @@ public class DynamicFormPage extends GovGrantsManager {
         boolean flag = false;
         By getSection = By.xpath("//a[@title='Section: " + sectionName + "']");
         if (I.amPerforming().checkToSee().isDisplayed(getSection)) {
+            return true;
+        }
+        return flag;
+    }
+
+    /**
+     * assert true if alignment of section column displayed as expected
+     *
+     * @param columnAlignment
+     */
+    private boolean isAlignmentOfSectionColumnDisplayedAsExpected(String columnAlignment) {
+        boolean flag = false;
+        if (columnAlignment.equalsIgnoreCase("vertically")
+                && I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@class='formUIWrap']//div[contains(@class,'col-md-12')]"))) {
+            return true;
+        } else if (columnAlignment.equalsIgnoreCase("horizontally")
+                && I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@class='formUIWrap']//div[contains(@class,'col-md-4')]"))) {
             return true;
         }
         return flag;

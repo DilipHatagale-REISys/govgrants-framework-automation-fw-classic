@@ -527,4 +527,9 @@ public class PageLayoutSteps {
     public void iSeeSearchItemDisplayBoxSizeIsProperForResults(String fieldName, String condition) {
         pageLayoutPage.assertSearchItemDisplayBoxSizeIsProperAtSendEmailModal(fieldName, condition);
     }
+
+    @Then("^I (see|do not see) asterisk mark at \"([^\"]*)\" field is displayed at send email modal$")
+    public void iSeeAsteriskMarkAtFieldIsDisplayedAtSendEmailModal(String usage, String fieldName) {
+        pageLayoutPage.assertAsteriskMarkAtSendEmailModal(usage, fieldName);
+    }
 }

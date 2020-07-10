@@ -2362,3 +2362,24 @@ Feature: Page Layout Component Scenarios
     Examples:
       | defaultValue | newValue                                                                                        |
       | Name         | Name,Jigsaw,AnnualRevenue,NumberOfEmployees,ApplicantType__c,SupplySchedule__c,IsCustomerPortal |
+
+  @87261   @verifyAProgramRecordIsGettingCreatedAndIdIsDisplayedAsPerGivenLastSequence
+  Scenario: validate that a program record is getting created with program id as per given last sequence in config
+    Given I have "default" configuration as below:
+      | configurationCategory  | fieldName     | fieldOrignalValue           | filterId         |
+      | Name Template Sequence | Last Sequence |                             | ApiGeneratedId:0 |
+      | Page Layout            | Header        | Program - {!ProgramName__c} | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory           | fieldName     | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Name Template Sequence :General | Last Sequence | 2                 | PG-343-               | Year                      | 2,020                      |
+      | Page Layout:General             | Header        | Program - {!Name} | Grantee State Program |                           |                            |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    Then I see the sub-header is "PG-343-003" in the page details

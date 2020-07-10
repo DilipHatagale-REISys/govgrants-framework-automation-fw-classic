@@ -17,11 +17,6 @@ public class DynamicFormSteps {
         dynamicFormPage.getHelpTextAtSectionInsideDynamicForm(sectionName);
     }
 
-    @And("^I click on \"([^\"]*)\" button at page instruction$")
-    public void clickOnButtonAtPageInstruction(String buttonName) {
-        dynamicFormPage.clickOnButtonAtPageInstruction(buttonName);
-    }
-
     @Then("^I see for \"([^\"]*)\" field value is \"([^\"]*)\" inside dynamic form$")
     public void fieldValueInsideDynamicForm(String fieldName, String fieldValue) {
         dynamicFormPage.assertFieldValueInsideDynamicForm(fieldName, fieldValue);
@@ -40,5 +35,10 @@ public class DynamicFormSteps {
     @Then("I see the instruction text is as follows :")
     public void verifyCompleteInstructionText(String expectedInstructionText) {
         dynamicFormPage.assertTextMatches(expectedInstructionText);
+    }
+
+    @Then("^I see section column is \"([^\"]*)\" aligned$")
+    public void iSeeSectionColumnIsAligned(String columnAlignment) {
+        dynamicFormPage.assertAlignmentOfSectionColumn(columnAlignment);
     }
 }
