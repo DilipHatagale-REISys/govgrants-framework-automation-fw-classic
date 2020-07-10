@@ -11,7 +11,7 @@ public enum SObjectAPIs {
     Program__c,GNT__ApprovalProcessStepCache__c,GNT__SobjectActionConfig__c,GNT__TaskAction__c,GNT__ProgressbarHeaderConfig__r,GNT__ChartConfig__c,GNT__ChartDetailConfig__c,
     GNT__ChartConfig__r,GNT__PageTemplate__c,GNT__PageBlockConfig__c,GNT__TabLayoutConfig__r,GNT__TabConfig__c,GNT__PageBlockDetailConfig__c,GNT__EmailTemplateConfig__c,
     GNT__DataTableDetailConfig__c, GNT__SObjectPhaseConfig__c,GNT__CustomApp__c,GNT__CalendarConfig__c,GNT__SobjectActionConfig__r,GNT__SObjectAutoSnapshot__c,GNT__CaptureForm__c,GNT__CaptureSection__c,
-    GNT__CaptureItem__c,
+    GNT__CaptureItem__c,GNT__NameTemplateSequence__c,
 
     //Fields
     GNT__Abbreviation__c, GNT__Active__c,GNT__AvailableForProfiles__c, GNT__DefaultThemeName__c, GNT__InternalUniqueID__c, 
@@ -38,5 +38,5 @@ public enum SObjectAPIs {
     GNT__ExpressionJSON__c,GNT__SnapShotFileName__c,GNT__SObject__c,GNT__SobjectConfig__c,GNT__SObject__r,GNT__CaptureSnapshotonApproval__c,GNT__ApprovalSnapshotFileName__c,GNT__EnableDataImportExport__c,GNT__ChartType__c,GNT__YAxisLabel__c,GNT__DataTableQueryForAllData__c,
     GNT__YAxisPrefix__c,GNT__YAxisSuffix__c,GNT__ZAxisLabel__c,GNT__DataTableQueryForSelectedData__c,GNT__DataTableHeader__c,GNT__ZAxisPrefix__c,GNT__ZAxisSuffix__c,GNT__YFormattedNumber__c,GNT__DualChartType1__c,GNT__DualChartType2__c,GNT__ApexClassName__c,GNT__AllowDecimalNumberYaxis__c,
     GNT__NameFieldAPIName__c,GNT__HeaderFieldAPIName__c,GNT__DisplayFields__c,GNT__EnableEditDisplayField__c,GNT__EnableHyperLinkAsText__c,GNT__EnableParentHideLogic__c,GNT__FormInstruction__c,GNT__ValidationButtonVisibility__c,GNT__SectionHelpText__c,GNT__SectionInstruction__c,GNT__Name__c,
-    GNT__QuestionApplicable__c
+    GNT__QuestionApplicable__c,GNT__LastSequence__c,GNT__Year__c,GNT__SectionColumn__c
 }

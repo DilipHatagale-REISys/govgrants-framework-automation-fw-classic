@@ -122,6 +122,9 @@ public class SetUpConfiguration {
             case "CAPTURE ITEM":
                 stringPayload = new DynamicForm().setDynamicFormCaptureItemConfig(fieldLabel, value, filterClause);
                 break;
+            case "NAME TEMPLATE SEQUENCE":
+                stringPayload = new NameTemplateSequence().setNameTemplateSequenceConfig(fieldLabel, value, filterClause);
+                break;
         }
         System.out.println("final payload is " + stringPayload);
         return stringPayload;

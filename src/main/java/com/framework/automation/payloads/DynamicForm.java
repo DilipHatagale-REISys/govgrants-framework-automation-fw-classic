@@ -74,6 +74,13 @@ public class DynamicForm {
                                 String.valueOf(SObjectAPIs.GNT__CaptureSection__c), filterClause),
                         String.valueOf(SObjectAPIs.GNT__Name__c	), value);
                 break;
+            case "SECTION COLUMN":
+                finalPayload = String.format(payloadForStringValue,
+                        String.valueOf(SObjectAPIs.GNT__CaptureSection__c),
+                        apiUtilities.getComponentCoreFieldId(
+                                String.valueOf(SObjectAPIs.GNT__CaptureSection__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__SectionColumn__c	), value);
+                break;
         }
         System.out.println(finalPayload);
         return finalPayload;
