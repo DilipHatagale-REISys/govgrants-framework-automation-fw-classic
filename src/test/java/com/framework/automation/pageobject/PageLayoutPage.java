@@ -1080,6 +1080,19 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * return true if bottom right header button as per name is displayed
+     *
+     * @param buttonName
+     */
+    public void assertBottomRightButtonDisplayed(String usage, String buttonName) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isBottomRightButtonDisplayed(buttonName));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isBottomRightButtonDisplayed(buttonName)).isTrue();
+        }
+    }
+
+    /**
      * get owner organisation lookup modal complete content
      *
      * @return
@@ -2094,6 +2107,23 @@ public class PageLayoutPage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//label[contains(@class,'control-label') and contains(text(),'" + fieldName + "')]"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if any specific bottom right hand button is displayed
+     *
+     * @param buttonName
+     * @return
+     */
+    public boolean isBottomRightButtonDisplayed(String buttonName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(govgrants.perform().pageDetails().getAnyBottomRightButton(buttonName))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {

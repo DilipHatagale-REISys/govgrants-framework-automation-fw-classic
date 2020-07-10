@@ -1713,3 +1713,26 @@ Feature: All pdf and xls related scenario including component and completed back
     And I select "Download as PDF" from parallel lines dropdown of "Field History"
     And I download the file
     Then I see "DateandTime" on page "1" of "govgrants" pdf file
+
+  @91565    @numberFieldWithNoDecimalShouldDisplayedInDownloadPDFFileAtProgramFlexTable  @flexTable
+  Scenario Outline: validate value of Number Field should displayed correctly in downloaded pdf file
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Export (PDF) | true               | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
+      | Flex Table:General    | Enable Export (PDF) | true           | Programs           |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
+    And I select "Download as PDF" from parallel lines dropdown of "Draft Programs"
+    And I download the file
+    Then I see "20" on page "25" of "govgrants" pdf file
+
+    Examples:
+      | newFieldsApi                                                                                                               | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Number_Test__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |

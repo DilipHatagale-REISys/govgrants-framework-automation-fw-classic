@@ -505,7 +505,7 @@ public class PageLayoutSteps {
 
     @Then("^I (see|softly see) \"([^\"]*)\" email search by field contains dropdown value as \"([^\"]*)\"$")
     public void searchByFieldDropdownValues(String usage, String fieldLabel, String dropdownValue) {
-        pageLayoutPage.assertSearchByFieldDropdownValues(usage,fieldLabel,dropdownValue);
+        pageLayoutPage.assertSearchByFieldDropdownValues(usage, fieldLabel, dropdownValue);
     }
 
     @Then("^I (softly see|see) \"([^\"]*)\" as \"([^\"]*)\" on send email modal$")
@@ -531,5 +531,10 @@ public class PageLayoutSteps {
     @Then("^I (see|do not see) asterisk mark at \"([^\"]*)\" field is displayed at send email modal$")
     public void iSeeAsteriskMarkAtFieldIsDisplayedAtSendEmailModal(String usage, String fieldName) {
         pageLayoutPage.assertAsteriskMarkAtSendEmailModal(usage, fieldName);
+    }
+
+    @Then("^I (see|softly see) \"([^\"]*)\" button is displayed at bottom$")
+    public void assertBottomRightHeaderButtonDisplayed(String usage, String buttonName) {
+        pageLayoutPage.assertBottomRightButtonDisplayed(usage, buttonName);
     }
 }
