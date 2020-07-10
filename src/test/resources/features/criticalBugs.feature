@@ -2742,7 +2742,7 @@ Feature: Logged Issues Scenarios
     When I enter value "David PM" into field "To" on send email modal
     Then I see search item display box size at "To" field is proper for "Less than 5" results
 
-  @89234 @validateDisplayOfToEmailSentSUccessfullyMessageInSendEmailModal
+  @89234 @validateDisplayOfToEmailSentSUccessfullyMessageInSendEmailModal @sendEmail
   Scenario: Validate if reply email is sent then alert message is displayed on send email modal
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -2775,9 +2775,9 @@ Feature: Logged Issues Scenarios
     And I refresh the page
     When I navigate to "Collab" sub tab
     When I perform quick search for "Re: DND-Test Automation Record" in "---program:-:communicationHistoryTableId---" panel
-    Then I see table with header "Messages" contains records "Re: DND-Test Automation Record"
+    Then I see "Re: DND-Test Automation Record" value in flex table id "---program:-:communicationHistoryTableId---"
 
-  @89725 @validateAsteriskMarkAtRequiredFieldsInSendEmailModalAtViewSendEmailWindow
+  @89725 @validateAsteriskMarkAtRequiredFieldsInSendEmailModalAtViewSendEmailWindow @sendEmail
   Scenario: Validate asterisk mark is displayed at required fields in send email modal at view mail window
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -2802,7 +2802,7 @@ Feature: Logged Issues Scenarios
     When I click on "view" icon for "DND-Test Automation Record" inside table
     Then I do not see asterisk mark at "To" field is displayed at send email modal
 
-  @91328 @validateAsteriskMarkAtRequiredFieldsInSendEmailModalAtReplyMailWindow
+  @91328 @validateAsteriskMarkAtRequiredFieldsInSendEmailModalAtReplyMailWindow @sendEmail
   Scenario: Validate asterisk mark is displayed at required fields in send email modal at reply mail window
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -2826,3 +2826,38 @@ Feature: Logged Issues Scenarios
     When I perform quick search for "DND-Test Automation Record" in "---program:-:communicationHistoryTableId---" panel
     When I click on "Reply" icon for "DND-Test Automation Record" inside table
     Then I see asterisk mark at "To" field is displayed at send email modal
+
+  @86985 @validateThatAlertMessageWillAppearAtModalIfUserDonnotHaveAccessToEditFileAtFileList @libraryFiles
+  Scenario: Verify that user can upload file from HomePhase - FileList table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I perform quick search for "F-product-banner" in "---program:-:workSpaceFilesFlexTableId---" panel
+    When I click on "Edit" icon for "F-product-banner" inside table
+    Then I see alert message inside "---program:-:workSpaceFileEditId---" modal as follows :
+    """
+   {LongText:FileEditModalAlertMessageLong-Text}
+  """
+
+  @91601    @numberFieldWithNoDecimalShouldDisplayedInDownloadPDFFileAtProgramFlexTable @flexTable
+  Scenario Outline: validate value of Number Field should displayed correctly in downloaded pdf file
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Export (PDF) | true               | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
+      | Flex Table:General    | Enable Export (PDF) | true           | Programs           |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:ProgramTestSendToOwnerForNumberFieldValue}"
+    Then I see "20" value in flex table id "---program:-:programsTableId---"
+
+    Examples:
+      | newFieldsApi                                 | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Number_Test__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |

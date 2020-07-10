@@ -241,6 +241,17 @@ public class LibraryFilesPage extends GovGrantsManager {
     }
 
     /**
+     * assert true if expected alert message displayed at selectFolder modal under library files- Record level
+     *
+     * @param modalId
+     * @param expectedAlertMessage
+     */
+    public void assertAlertMessageInsideLibraryFilesModal(String modalId, String expectedAlertMessage) {
+        I.amPerforming().assertionsTo().assertThat(I.amPerforming().actionToGet().text(By.xpath("//div[@id='"+modalId+"']//h3")))
+                .isEqualToNormalizingWhitespace(expectedAlertMessage);
+    }
+
+    /**
      * get dropdown options under respective Library/File/Folder - Home phase
      *
      * @param libraryFileFolderName

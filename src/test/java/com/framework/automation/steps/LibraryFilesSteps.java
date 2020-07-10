@@ -116,4 +116,9 @@ public class LibraryFilesSteps {
     public void iSeeButtonInsideSelectFolderModal(String buttonName) {
         libraryFilesPage.assertButtonInsideSelectFolderModal(buttonName);
     }
+
+    @Then("I see alert message inside {string} modal as follows :")
+    public void iSeeAlertMessageInsideModalAsFollows(String modalId, String expectedAlertMessage) {
+        libraryFilesPage.assertAlertMessageInsideLibraryFilesModal(modalId,expectedAlertMessage);
+    }
 }

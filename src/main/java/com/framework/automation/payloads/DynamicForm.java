@@ -106,6 +106,13 @@ public class DynamicForm {
                                 String.valueOf(SObjectAPIs.GNT__CaptureItem__c	), filterClause),
                         String.valueOf(SObjectAPIs.GNT__QuestionApplicable__c), value);
                 break;
+            case "MAX SCORE":
+                finalPayload = String.format(payloadForIntValue,
+                        String.valueOf(SObjectAPIs.GNT__CaptureItem__c	),
+                        apiUtilities.getComponentCoreFieldId(
+                                String.valueOf(SObjectAPIs.GNT__CaptureItem__c	), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__MaxScore__c), value);
+                break;
         }
         System.out.println(finalPayload);
         return finalPayload;

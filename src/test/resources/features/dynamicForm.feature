@@ -815,7 +815,7 @@ Feature: dynamic forms Component Scenarios
       | Capture Section       | Section Column | Vertical          | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory   | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Capture Section:General | Section Column | Vertical    | CS-0000            |                           |                            |
+      | Capture Section:General | Section Column | Vertical      | CS-0000            |                           |                            |
     When I login as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -869,3 +869,71 @@ Feature: dynamic forms Component Scenarios
     When I click on "View" icon for "Dynamic Form" inside table
     When I click on "Edit" button in right header
     Then I see "Save" button is displayed
+
+  @91527    @validateCancelButtonIsDisplayedAtBottomRightCornerInEditModeAtDynamicForm
+  Scenario: validate that cancel button is displayed at bottom right corner at dynamic form layout
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Edit" button in right header
+    Then I see "Cancel" button is displayed at bottom
+
+  @91529    @validateSaveButtonIsDisplayedAtBottomRightCornerInEditModeAtDynamicForm
+  Scenario: validate that save button is displayed at bottom right corner at dynamic form layout
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Edit" button in right header
+    Then I see "Save" button is displayed at bottom
+
+  @91364    @validateValidateButtonIsDisplayedAtBottomRightCornerInEditModeAtDynamicForm
+  Scenario: validate that validate button is displayed at bottom right corner at dynamic form layout
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    Then I see "Validate" button is displayed at bottom
+
+  @91360    @validateEditButtonIsDisplayedAtBottomRightCornerInEditModeAtDynamicForm
+  Scenario: validate that edit button is displayed at bottom right corner at dynamic form layout
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    Then I see "Edit" button is displayed at bottom
+
+  @91363    @validateMaxScoreFieldIsDisplayedInsideFormAtAtDynamicFormLayout
+  Scenario: validate that a max score field is displayed inside dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Capture Item          | Max Score | 50.00             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Max Score | 50.00         | CI-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    Then I see "Score (Max Score : 50.00)" inside "Section 1" at dynamic form
