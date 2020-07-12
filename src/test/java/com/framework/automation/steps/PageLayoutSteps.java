@@ -532,9 +532,4 @@ public class PageLayoutSteps {
     public void iSeeAsteriskMarkAtFieldIsDisplayedAtSendEmailModal(String usage, String fieldName) {
         pageLayoutPage.assertAsteriskMarkAtSendEmailModal(usage, fieldName);
     }
-
-    @Then("^I (see|softly see) \"([^\"]*)\" button is displayed at bottom$")
-    public void assertBottomRightHeaderButtonDisplayed(String usage, String buttonName) {
-        pageLayoutPage.assertBottomRightButtonDisplayed(usage, buttonName);
-    }
 }

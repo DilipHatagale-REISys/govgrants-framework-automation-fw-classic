@@ -918,7 +918,7 @@ Feature: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
-    Then I see "Edit" button is displayed at bottom
+    Then I can see bottom button "Edit" in page detail
 
   @91363    @validateMaxScoreFieldIsDisplayedInsideFormAtAtDynamicFormLayout
   Scenario: validate that a max score field is displayed inside dynamic form layout
