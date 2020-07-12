@@ -800,7 +800,7 @@ public class PageLayoutPage extends GovGrantsManager {
         By attachmentFilePath = By.xpath("//input[@id='fileUpload' or @type='file']");
         By modalButton = By.xpath("//button[contains(text(),'" + buttonName + "') and contains(@class,'customBtn')]");
         String defaultFilePath = System.getProperty("user.dir") + "/src/main/resources/";
-        I.amPerforming().textInput().in(attachmentFilePath, defaultFilePath + fileName);
+        I.amPerforming().textInput().withJavaScript(attachmentFilePath, defaultFilePath + fileName);
         I.amPerforming().click().on(modalButton);
     }
 
