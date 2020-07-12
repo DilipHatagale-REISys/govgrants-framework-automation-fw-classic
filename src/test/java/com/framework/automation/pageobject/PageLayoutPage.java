@@ -800,7 +800,7 @@ public class PageLayoutPage extends GovGrantsManager {
         By attachmentFilePath = By.xpath("//input[@id='fileUpload' or @type='file']");
         By modalButton = By.xpath("//button[contains(text(),'" + buttonName + "') and contains(@class,'customBtn')]");
         String defaultFilePath = System.getProperty("user.dir") + "/src/main/resources/";
-        I.amPerforming().textInput().in(attachmentFilePath, defaultFilePath + fileName);
+        I.amPerforming().textInput().withJavaScript(attachmentFilePath, defaultFilePath + fileName);
         I.amPerforming().click().on(modalButton);
     }
 
@@ -1076,19 +1076,6 @@ public class PageLayoutPage extends GovGrantsManager {
             Assert.assertTrue(isAsteriskMarkDisplayAtSendEmailModal(fieldName));
         } else if (usage.equalsIgnoreCase("do not see")) {
             I.amPerforming().assertionsTo().assertThat(isAsteriskMarkDisplayAtSendEmailModal(fieldName)).isFalse();
-        }
-    }
-
-    /**
-     * return true if bottom right header button as per name is displayed
-     *
-     * @param buttonName
-     */
-    public void assertBottomRightButtonDisplayed(String usage, String buttonName) {
-        if (usage.equalsIgnoreCase("see")) {
-            Assert.assertTrue(isBottomRightButtonDisplayed(buttonName));
-        } else if (usage.equalsIgnoreCase("softly see")) {
-            I.amPerforming().assertionsTo().assertThat(isBottomRightButtonDisplayed(buttonName)).isTrue();
         }
     }
 
@@ -2107,23 +2094,6 @@ public class PageLayoutPage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//label[contains(@class,'control-label') and contains(text(),'" + fieldName + "')]"))) {
-                flag = true;
-            }
-        } catch (org.openqa.selenium.NoSuchElementException e) {
-        }
-        return flag;
-    }
-
-    /**
-     * return true if any specific bottom right hand button is displayed
-     *
-     * @param buttonName
-     * @return
-     */
-    public boolean isBottomRightButtonDisplayed(String buttonName) {
-        boolean flag = false;
-        try {
-            if (I.amPerforming().checkToSee().isDisplayed(govgrants.perform().pageDetails().getAnyBottomRightButton(buttonName))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
