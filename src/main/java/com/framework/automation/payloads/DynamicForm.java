@@ -35,6 +35,13 @@ public class DynamicForm {
                                 String.valueOf(SObjectAPIs.GNT__CaptureForm__c), filterClause),
                         String.valueOf(SObjectAPIs.GNT__ValidationButtonVisibility__c), value);
                 break;
+            case "FORM NAME":
+                finalPayload = String.format(payloadForStringValue,
+                        String.valueOf(SObjectAPIs.GNT__CaptureForm__c),
+                        apiUtilities.getComponentCoreFieldId(
+                                String.valueOf(SObjectAPIs.GNT__CaptureForm__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__Name__c), value);
+                break;
         }
         System.out.println(finalPayload);
         return finalPayload;

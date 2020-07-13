@@ -2551,8 +2551,8 @@ Feature: Logged Issues Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I softly see "Edit" button is displayed at bottom
-    Then I softly see "Submit For Approval" button is displayed at bottom
+    Then I softly can see bottom button "Edit" in page detail
+    Then I softly can see bottom button "Submit For Approval" in page detail
 
   @84602    @verifyDisplayOfBlueBorderAtPageBlock-gPlanning @pageLayout
   Scenario: verify page block border is displayed with blue color at page detail
@@ -2861,3 +2861,43 @@ Feature: Logged Issues Scenarios
     Examples:
       | newFieldsApi                                 | defaultFieldsApi                                                                                                 |
       | Name,ProgramName__c,Number_Test__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+
+  @91560    @validateDisplayOfTotalRowAndTotalRowLabelIfEnableTotalFieldIsUnchedForFlexTable-gPlanning
+  Scenario: validate disbaling of total amount in flex table of programs-planning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Total Row | true              | ApiGeneratedId:0 |
+      | Flex Table            | Enable Total     | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Total Row | true          | Programs           |                           |                            |
+      | Flex Table List       | Enable Total     | false         | Programs           | Name                      | FTC-1018                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I pause execution for "2" seconds
+    Then I see total amount row in flex table is not displayed
+
+  @91781    @validateHideColumnsFieldAtGrantorBudgetPeriodFlexTableAsRefreshTheGridForEditAction-gPlanning
+  Scenario Outline: validate flex table action field- refresh entire page
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Hide Columns        |                    | ApiGeneratedId:0 |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                         | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Hide Columns        | govgrants_config:HideColumnsAtApplicationBudgetMEGrid | ApplicationBudgetPeriods |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi>                                        | ApplicationBudgetPeriods |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-02" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    Then I see that "*****" has been added in flextable with Id "---program:-:applicationBudgetCategoryInlineEditTableId---"
+
+    Examples:
+      | defaultFieldsApi                                                         | newFieldsApi                                                  |
+      | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,Application__r.AwardCeiling__c,TestField__c |

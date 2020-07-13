@@ -188,6 +188,9 @@ public class ApiUtilities {
                         + String.valueOf(SObjectAPIs.GNT__SObject__r) + ".Name=" + "'" + ComponentCoreFieldName
                         + "'";
                 break;
+            case "NAME TEMPLATE":
+                filterClause = "GNT__InternalUniqueID__c=" + "'" + value + "'";
+                break;
         }
         return filterClause;
     }
