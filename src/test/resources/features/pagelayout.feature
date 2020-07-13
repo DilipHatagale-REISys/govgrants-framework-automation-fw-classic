@@ -2199,7 +2199,7 @@ Feature: Page Layout Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
-    Then I see the sub-header is "Test Automation Grants Record" in the page details
+    Then I see the sub-header is "Automation Internal Program for Approval and Snapshot scenarios" in the page details
 
   @84619   @verifyAProgramRecordIsGettingCreatedIfSkipAutoNumberingCheckBoxIsUncheckedAtCustomSetting
   Scenario: validate that if skip auto numbering check box is unchecked then a program record is getting created
@@ -2218,7 +2218,7 @@ Feature: Page Layout Component Scenarios
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
-    Then I see the sub-header is "Test Automation Grants Record" in the page details
+    Then I see the sub-header is "Automation Internal Program for Approval and Snapshot scenarios" in the page details
 
   @84760   @verifyDateAndTimeFieldFormatForLocalAsESTUnderUnderPageLayoutInViewMode-gAnnouncement
   Scenario: validate displayed of date and time field format under page layout in view mode with respective to EST Local
@@ -2366,13 +2366,13 @@ Feature: Page Layout Component Scenarios
   @87261   @verifyAProgramRecordIsGettingCreatedAndIdIsDisplayedAsPerGivenLastSequence
   Scenario: validate that a program record is getting created with program id as per given last sequence in config
     Given I have "default" configuration as below:
-      | configurationCategory  | fieldName     | fieldOrignalValue           | filterId         |
-      | Name Template Sequence | Last Sequence |                             | ApiGeneratedId:0 |
-      | Page Layout            | Header        | Program - {!ProgramName__c} | ApiGeneratedId:1 |
+      | configurationCategory         | fieldName     | fieldOrignalValue           | filterId         |
+      | Name Template Sequence Config | Last Sequence |                             | ApiGeneratedId:0 |
+      | Page Layout                   | Header        | Program - {!ProgramName__c} | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory           | fieldName     | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Name Template Sequence :General | Last Sequence | 2                 | PG-343-               | Year                      | 2,020                      |
-      | Page Layout:General             | Header        | Program - {!Name} | Grantee State Program |                           |                            |
+      | configurationCategory                       | fieldName     | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue     |
+      | Name Template Sequence Config:Name Template | Last Sequence | 2                 |                       | Internal Unique Id        | p8BKf5E0q1cd1Re8ybgBWh1jQ0Ap3D |
+      | Page Layout:General                         | Header        | Program - {!Name} | Grantee State Program |                           |                                |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"

@@ -881,7 +881,7 @@ Feature: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I click on "Edit" button in right header
-    Then I see "Cancel" button is displayed at bottom
+    Then I can see bottom button "Cancel" in page detail
 
   @91529    @validateSaveButtonIsDisplayedAtBottomRightCornerInEditModeAtDynamicForm
   Scenario: validate that save button is displayed at bottom right corner at dynamic form layout
@@ -894,7 +894,7 @@ Feature: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I click on "Edit" button in right header
-    Then I see "Save" button is displayed at bottom
+    Then I can see bottom button "Save" in page detail
 
   @91364    @validateValidateButtonIsDisplayedAtBottomRightCornerInEditModeAtDynamicForm
   Scenario: validate that validate button is displayed at bottom right corner at dynamic form layout
@@ -906,7 +906,7 @@ Feature: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
-    Then I see "Validate" button is displayed at bottom
+    Then I can see bottom button "Validate" in page detail
 
   @91360    @validateEditButtonIsDisplayedAtBottomRightCornerInEditModeAtDynamicForm
   Scenario: validate that edit button is displayed at bottom right corner at dynamic form layout
@@ -937,3 +937,56 @@ Feature: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see "Score (Max Score : 50.00)" inside "Section 1" at dynamic form
+
+  @91757   @ValidateSpecialCharactersAtSectionNameAtDynamicFormInViewMode
+  Scenario: validate special characters are accepted at section name in view mode on dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
+      | Capture Section       | Section Name | Section 1         | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName    | fieldNewValue              | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Section:General | Section Name | test~!@#$%^&*()_+{}][?/><. | CS-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    Then I see section as "test~!@#$%^&*()_+{}][?/><." inside dynamic form layout
+
+  @91796    @validateFormNameFieldAcceptsSpecialCharactersAtDynamicFormLayout
+  Scenario: validate the form name with special characters is displayed at dynamic form view page
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Capture Form          | Form Name | Dynamic Form      | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue              | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Form Name | test~!@#$%^&*()_+{}][?/><. | CF-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "test~!@#$%^&*()_+{}][?/><." inside table
+    Then I see "test~!@#$%^&*()_+{}][?/><." shown as over view header
+
+  @91797    @validateIfDynamicFormNameIsChangedFromCaptureFormConfigThenItShouldDisplayedInsideDynamicFormTableATAnnouncement
+  Scenario: validate if dynamic form name is changed from config then that name should displayed inside dynamic form enhanced table at announcement detail
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Capture Form          | Form Name | Dynamic Form      | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Form Name | Test Automation Form | CF-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    Then I see "Test Automation Form" value in flex table id "---program:-:flexGridDynamicFormTableId---"

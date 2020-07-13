@@ -22,18 +22,11 @@ public class NameTemplateSequence {
         String finalPayload = null;
         switch (fieldLabel.toUpperCase()) {
             case "LAST SEQUENCE":
-                finalPayload = String.format(payloadForStringValue,
+                finalPayload = String.format(payloadForIntValue,
                         String.valueOf(SObjectAPIs.GNT__NameTemplateSequence__c),
                         apiUtilities.getComponentCoreFieldId(
                                 String.valueOf(SObjectAPIs.GNT__NameTemplateSequence__c), filterClause),
                         String.valueOf(SObjectAPIs.GNT__LastSequence__c), value);
-                break;
-            case "Year":
-                finalPayload = String.format(payloadForStringValue,
-                        String.valueOf(SObjectAPIs.GNT__NameTemplateSequence__c),
-                        apiUtilities.getComponentCoreFieldId(
-                                String.valueOf(SObjectAPIs.GNT__NameTemplateSequence__c), filterClause),
-                        String.valueOf(SObjectAPIs.GNT__Year__c	), value);
                 break;
         }
         System.out.println(finalPayload);
