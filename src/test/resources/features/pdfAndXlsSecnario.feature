@@ -1814,3 +1814,88 @@ Feature: All pdf and xls related scenario including component and completed back
     Examples:
       | newFieldsApi                                           | defaultFieldsApi                                                                                                 | newSoqlFilter                                                                                                                                                           | oldSoqlFilter                                                                                                             |
       | Name,ProgramName__c,Account__r.AnnualRevenue,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | RecordType.Name = 'Internal Program' and Status__c IN ( 'Created','Change Requested','Submitted for Approval','Approved') and ProgramName__c like '%Created mode only%' | RecordType.Name = 'Internal Program' and Status__c IN ( 'Created','Change Requested','Submitted for Approval','Approved') |
+
+  @91845    @validateHideColumnsFieldAtApplicationBudgetPeriodFlexTableInsideDownloadedPDF-MEGrid @flexGrid
+  Scenario Outline: validate hide columns field at application budget period flex table inside downloaded pdf - me grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Hide Columns        |                    | ApiGeneratedId:0 |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+      | Flex Table List       | Filter Clause       | <oldFilterClause>  | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                         | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Hide Columns        | govgrants_config:HideColumnsAtApplicationBudgetMEGrid | ApplicationBudgetPeriods |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi>                                        | ApplicationBudgetPeriods |                           |                            |
+      | Flex Table List       | Filter Clause       | <newFilterClause>                                     | ApplicationBudgetPeriods | Name                      | FLV-2100                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
+    And I select "Download as PDF" from parallel lines dropdown of "Application Budget"
+    And I download the file
+    Then I see "*****" on page "1" of "govgrants" pdf file
+
+    Examples:
+      | defaultFieldsApi                                                         | newFieldsApi                                                  | oldFilterClause                         | newFilterClause                                                    |
+      | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,Application__r.AwardCeiling__c,TestField__c | Application__c = '{!Application__c.Id}' | Application__c = '{!Application__c.Id}' and SupportYear__c='BP-02' |
+
+  @91846    @validateHideColumnsFieldAtApplicationBudgetPeriodFlexTableInsideDownloadedXLS-MEGrid @flexGrid
+  Scenario Outline: validate hide columns field at application budget period flex table inside downloaded xls - me grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Hide Columns        |                    | ApiGeneratedId:0 |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+      | Flex Table List       | Filter Clause       | <oldFilterClause>  | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                         | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Hide Columns        | govgrants_config:HideColumnsAtApplicationBudgetMEGrid | ApplicationBudgetPeriods |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi>                                        | ApplicationBudgetPeriods |                           |                            |
+      | Flex Table List       | Filter Clause       | <newFilterClause>                                     | ApplicationBudgetPeriods | Name                      | FLV-2100                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
+    And I select "Download as XLS" from parallel lines dropdown of "Application Budget"
+    Then I see "*****" in downloaded xls or csv file "govgrants"
+
+    Examples:
+      | defaultFieldsApi                                                         | newFieldsApi                                                  | oldFilterClause                         | newFilterClause                                                    |
+      | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,Application__r.AwardCeiling__c,TestField__c | Application__c = '{!Application__c.Id}' | Application__c = '{!Application__c.Id}' and SupportYear__c='BP-02' |
+
+  @92065    @validateCurrencyFieldWithNoDecimalValueAtProgramFlexTableUnderDownloadedPDF @flexTable @wip
+  Scenario Outline: validate if we enter decimal value in non-decimal currency field then non-decimal value should get saved and displayed correctly in flex table downloaded pdf
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Export (PDF) | true               | ApiGeneratedId:1 |
+      | Flex Table List       | Filter Clause       | <oldSoqlFilter>    | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi>  | Programs           |                           |                            |
+      | Flex Table:General    | Enable Export (PDF) | true            | Programs           |                           |                            |
+      | Flex Table List       | Filter Clause       | <newSoqlFilter> | Programs           | Name                      | FLV-1837                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    And I enter value "123.10" into field "fieldFundedAmount__c"
+    When I click on "Save" in the page details
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
+    And I select "Download as PDF" from parallel lines dropdown of "Draft Programs"
+    And I download the file
+    Then I see "123" on page "1" of "govgrants" pdf file
+
+    Examples:
+      | newFieldsApi                        | defaultFieldsApi                                                                                                 | newSoqlFilter                                                                                                                                                                                    | oldSoqlFilter                                                                                                             |
+      | Name,ProgramName__c,FundedAmount__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | RecordType.Name = 'Internal Program' and Status__c IN ( 'Created','Change Requested','Submitted for Approval','Approved') and ProgramName__c = 'Test program for automation - Created mode only' | RecordType.Name = 'Internal Program' and Status__c IN ( 'Created','Change Requested','Submitted for Approval','Approved') |

@@ -990,3 +990,100 @@ Feature: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     Then I see "Test Automation Form" value in flex table id "---program:-:flexGridDynamicFormTableId---"
+
+  @92154    @validateAlertMessageIfInvalidDataInsertedAtDynamicFormFields
+  Scenario: validate alert message if invalid data inserted in any field at dynamic form
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I enter values into "Section 1" page block
+      | Field    | Value |
+      | Currency | abc   |
+    When I click on "Save" in the page details
+    Then I see the following message in the page details :
+      | Please correct below errors. |
+
+  @91998    @validateAlertMessageAtCurrencyFieldTypeIfInvalidDataInsertedAtDynamicFormLayout
+  Scenario: validate alert message if invalid data inserted in currency field at dynamic form
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I enter values into "Section 1" page block
+      | Field    | Value |
+      | Currency | abc   |
+    When I click on "Save" in the page details
+    Then I see message "Please enter valid number" below "Currency" field in form detail
+
+  @92004    @validateAlertMessageAtNumberFieldTypeIfInvalidDataInsertedAtDynamicFormLayout
+  Scenario: validate alert message if invalid data inserted in number field at dynamic form
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I enter values into "Section 1" page block
+      | Field  | Value |
+      | Number | abc   |
+    When I click on "Save" in the page details
+    Then I see message "Please enter valid number" below "Number" field in form detail
+
+  @92003    @validateAlertMessageAtPercentFieldTypeIfInvalidDataInsertedAtDynamicFormLayout
+  Scenario: validate alert message if invalid data inserted in percent field at dynamic form
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I enter values into "Section 1" page block
+      | Field   | Value |
+      | Percent | abc   |
+    When I click on "Save" in the page details
+    Then I see message "Please enter valid number" below "Percent" field in form detail
+
+  @92055    @validateAlertMessageAtScoreFieldTypeIfMoreThanMaxScoreIsInsertedAtDynamicFormLayout
+  Scenario: validate alert message if more than max score is inserted in percent field at dynamic form
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I enter values into "Section 1" page block
+      | Field                     | Value |
+      | Score (Max Score : 50.00) | 60    |
+    When I click on "Save" in the page details
+    Then I see message "Score value should not be greater than max score" below "Score (Max Score : 50.00)" field in form detail
+
+  @92006    @validateAlertMessageAtMaxScoreFieldTypeIfInvalidDataInsertedAtDynamicFormLayout
+  Scenario: validate alert message if invalid data inserted in max score field at dynamic form
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I enter values into "Section 1" page block
+      | Field                     | Value |
+      | Score (Max Score : 50.00) | abc   |
+    When I click on "Save" in the page details
+    Then I see message "Please enter valid number" below "Score (Max Score : 50.00)" field in form detail

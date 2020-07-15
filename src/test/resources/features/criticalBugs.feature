@@ -2879,8 +2879,8 @@ Feature: Logged Issues Scenarios
     And I pause execution for "2" seconds
     Then I see total amount row in flex table is not displayed
 
-  @91781    @validateHideColumnsFieldAtGrantorBudgetPeriodFlexTableAsRefreshTheGridForEditAction-gPlanning
-  Scenario Outline: validate flex table action field- refresh entire page
+  @91781    @validateHideColumnsFieldAtApplicationBudgetPeriodFlexTable-MEGrid @flexGrid
+  Scenario Outline: validate hide columns field at application budget period flex table - me grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Table            | Hide Columns        |                    | ApiGeneratedId:0 |
@@ -2901,3 +2901,153 @@ Feature: Logged Issues Scenarios
     Examples:
       | defaultFieldsApi                                                         | newFieldsApi                                                  |
       | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,Application__r.AwardCeiling__c,TestField__c |
+
+  @81044    @VerifyDecimalPlacesInsideOverallTotalForCurrencyFieldAtMEGrid-gGrant @flexGrid
+  Scenario Outline: Validating decimal places inside overall total for currency field at ME Grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Enable Total        | false              | ApiGeneratedId:0 |
+      | Flex Table:General    | Enable Total Row    | true               | ApiGeneratedId:1 |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Total        | true           | ApplicationBudgetPeriods | Name                      | FTC-1520                   |
+      | Flex Table:General    | Enable Total Row    | true           | ApplicationBudgetPeriods |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetPeriods |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    Then I see format as ".00" in "TestField" field total inside "toggleFGridApplicationBudgetCategoryFlexGrid" me grid
+
+    Examples:
+      | defaultFieldsApi                                                         | newFieldsApi                   |
+      | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,TestField__c |
+
+  @81043    @VerifyDecimalPlacesAreNotPresentInsideOverallTotalForCurrencyFieldAtMEGrid-gGrant @flexGrid
+  Scenario Outline: Validating decimal places ar not present inside overall total for currency field at ME Grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Enable Total        | false              | ApiGeneratedId:0 |
+      | Flex Table:General    | Enable Total Row    | true               | ApiGeneratedId:1 |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Total        | true           | ApplicationBudgetPeriods | Name                      | FTC-1521                   |
+      | Flex Table:General    | Enable Total Row    | true           | ApplicationBudgetPeriods |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetPeriods |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    Then I do not see format as ".00" in "AwardCeiling" field total inside "toggleFGridApplicationBudgetCategoryFlexGrid" me grid
+
+    Examples:
+      | defaultFieldsApi                                                         | newFieldsApi                                     |
+      | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,Application__r.AwardCeiling__c |
+
+  @91572    @VerifyDollarSignIsPresentInsideOverallTotalForCurrencyFieldAtMEGrid-gGrant @flexGrid
+  Scenario Outline: Validating dollar sign is present inside overall total for currency field at ME Grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Enable Total        | false              | ApiGeneratedId:0 |
+      | Flex Table:General    | Enable Total Row    | true               | ApiGeneratedId:1 |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Total        | true           | ApplicationBudgetPeriods | Name                      | FTC-1521                   |
+      | Flex Table:General    | Enable Total Row    | true           | ApplicationBudgetPeriods |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetPeriods |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    Then I see format as "$" in "AwardCeiling" field total inside "toggleFGridApplicationBudgetCategoryFlexGrid" me grid
+
+    Examples:
+      | defaultFieldsApi                                                         | newFieldsApi                                     |
+      | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,Application__r.AwardCeiling__c |
+
+  @91800    @VerifyOverallTotalIsNotDisplayedAtChildFlexTableInsideMEGrid-gGrant @flexGrid
+  Scenario Outline: Validating overall total is not displayed at child flex table under ME Grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table:General    | Enable Total Row    | true               | ApiGeneratedId:1 |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Total Row    | false          | ApplicationBudgetCategoryFlexTable |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetCategoryFlexTable |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-02" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "BP-02"
+    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    Then I do not see overall total row inside child flex table with id "toggleFGridApplicationBudgetCategoryFlexGrid" at me grid
+
+    Examples:
+      | defaultFieldsApi                                                                                     | newFieldsApi                                              |
+      | Id,ServiceAreaTitle__c,BudgetCategory__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c | Id,ServiceAreaTitle__c,BudgetCategory__c,GrantorAmount__c |
+
+  @91799    @VerifyOverallTotalIsDisplayedAtChildFlexTableInsideMEGrid-gGrant @flexGrid
+  Scenario Outline: Validating overall total is displayed at child flex table under ME Grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table:General    | Enable Total Row    | true               | ApiGeneratedId:1 |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Total Row    | true           | ApplicationBudgetCategoryFlexTable |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetCategoryFlexTable |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-02" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "BP-02"
+    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    Then I see overall total row inside child flex table with id "toggleFGridApplicationBudgetCategoryFlexGrid" at me grid
+
+    Examples:
+      | defaultFieldsApi                                                                                     | newFieldsApi                                              |
+      | Id,ServiceAreaTitle__c,BudgetCategory__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c | Id,ServiceAreaTitle__c,BudgetCategory__c,GrantorAmount__c |
+
+  @92064    @validateCurrencyFieldWithNoDecimalValueSAtProgramFlexTable @flexTable
+  Scenario Outline: validate if we enter decimal value in non-decimal currency field then non-decimal value should get saved and displayed correctly in flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Export (PDF) | true               | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
+      | Flex Table:General    | Enable Export (PDF) | true           | Programs           |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    And I enter value "123.10" into field "fieldFundedAmount__c"
+    When I click on "Save" in the page details
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    Then I see value "$123" for title "Funded Amount" inside table "---program:-:programTableDivId---"
+
+    Examples:
+      | newFieldsApi                        | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,FundedAmount__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |

@@ -144,4 +144,14 @@ public class FlexGridSteps {
     public void iSeeUndoActionByInlineEditingARecord(String tableId) {
         flexGridPage.assertUndoActionInsideTable(tableId);
     }
+
+    @Then("^I (see|do not see) format as \"([^\"]*)\" in \"([^\"]*)\" field total inside \"([^\"]*)\" me grid$")
+    public void iSeeFormatAsInFieldTotalInsideMeGrid(String usage, String format, String fieldName, String tableId) {
+        flexGridPage.assertTotalFieldFormatInsideMeGrid(usage, format, fieldName, tableId);
+    }
+
+    @Then("^I see overall total row inside child flex table with id \"([^\"]*)\" at me grid$")
+    public void overallTotalInsideChildFlexTableWithIdAtMeGrid( String tablId) {
+        flexGridPage.assertOverallTotalRowInsideChildFlexTableAtMeGrid(tablId);
+    }
 }

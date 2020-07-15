@@ -255,6 +255,31 @@ public class FlexGridPage extends GovGrantsManager {
         Assert.assertTrue(isUndoActionDisplayedInsideTable(tableId));
     }
 
+    /**
+     * assert true if expected format is displayed at overall total row inside ME Grid
+     *
+     * @param format
+     * @param fieldName
+     * @param tableId
+     */
+    public void assertTotalFieldFormatInsideMeGrid(String usage, String format, String fieldName, String tableId) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isTotalFieldFormatDisplayedInsideMeGrid(format, fieldName, tableId));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isTotalFieldFormatDisplayedInsideMeGrid(format, fieldName, tableId));
+        }
+    }
+
+    /**
+     * assert true if overall total row is displayed inside ME Grid child flex table
+     *
+     * @param tableId
+     */
+    public void assertOverallTotalRowInsideChildFlexTableAtMeGrid(String tableId) {
+        Assert.assertTrue(isOverallTotalRowDisplayedInsideChildFlexTableAtMeGrid(tableId));
+    }
+
+
     /*********
      * "Local Methods with complete functionality - private"
      *****************/
@@ -565,17 +590,51 @@ public class FlexGridPage extends GovGrantsManager {
     }
 
     /**
-     * @return true if undo action displayed by inline editing a record at Flex Grid(ME Grid)
-     *
      * @param tableId
+     * @return true if undo action displayed by inline editing a record at Flex Grid(ME Grid)
      */
     private Boolean isUndoActionDisplayedInsideTable(String tableId) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='"+tableId+"']//a[@title='Undo']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='" + tableId + "']//a[@title='Undo']"))) {
                 flag = true;
             }
         } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * @param format
+     * @param fieldName
+     * @param tableId
+     * @return true if if expected format is displayed at overall total row inside ME Grid
+     */
+    private Boolean isTotalFieldFormatDisplayedInsideMeGrid(String format, String fieldName, String tableId) {
+        boolean flag = false;
+        WebElement getTotalValueFromLastRow = I.amPerforming().getElementReference().of(By.xpath("//div[@id='" + tableId + "']//span[text()='" + fieldName + "']/ancestor::tbody/following-sibling::tfoot//span[contains(@ng-bind,'isTotalRow')]"));
+        try {
+            if (getTotalValueFromLastRow.getText().contains(format)) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * @param tableId
+     * @return true if overall total row is displayed inside ME Grid child flex table
+     */
+    private Boolean isOverallTotalRowDisplayedInsideChildFlexTableAtMeGrid(String tableId) {
+        boolean flag = false;
+        By getTotalRowAtChildTable = By.xpath("//div[@id='" + tableId + "']//tbody//tfoot");
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(getTotalRowAtChildTable)) {
+                flag = true;
+            }
+        } catch (Exception e) {
+            flag = false;
         }
         return flag;
     }
