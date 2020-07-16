@@ -1087,3 +1087,96 @@ Feature: dynamic forms Component Scenarios
       | Score (Max Score : 50.00) | abc   |
     When I click on "Save" in the page details
     Then I see message "Please enter valid number" below "Score (Max Score : 50.00)" field in form detail
+
+  @92158    @ValidateHelpTextAtWrittenFieldInsideDynamicFormInViewMode
+  Scenario: validate the help text is displayed at written field as configured in Question Help Text field in view mode on dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Help Text |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Help Text | Test Automation Written Help | CI-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I hovering mouse on help text icon inside page block detail "Written"
+    Then I see "Test Automation Written Help" shown as help text
+
+  @92441    @validateAlertMessageAtTopOfFormIfMoreThanMaxScoreIsInsertedAtDynamicFormLayout
+  Scenario: validate alert message if more than max score is inserted in percent field at dynamic form
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I enter values into "Section 1" page block
+      | Field                     | Value |
+      | Score (Max Score : 50.00) | 60    |
+    When I click on "Save" in the page details
+    Then I see the following message in the page details :
+      | Score value should not be greater than max score |
+
+  @92165    @ValidateHelpTextAtDateFieldInsideDynamicFormInViewMode
+  Scenario: validate the help text is displayed at date field as configured in Question Help Text field in view mode on dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Help Text |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue             | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Help Text | Test Automation Date Help | CI-0001            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I hovering mouse on help text icon inside page block detail "Date"
+    Then I see "Test Automation Date Help" shown as help text
+
+  @92166    @ValidateHelpTextAtCurrencyFieldInsideDynamicFormInViewMode
+  Scenario: validate the help text is displayed at Currency field as configured in Question Help Text field in view mode on dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Help Text |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue                 | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Help Text | Test Automation Currency Help | CI-0004            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I hovering mouse on help text icon inside page block detail "Currency"
+    Then I see "Test Automation Currency Help" shown as help text
+
+  @92167    @ValidateHelpTextAtNumberFieldInsideDynamicFormInViewMode
+  Scenario: validate the help text is displayed at Number field as configured in Question Help Text field in view mode on dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Help Text |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue               | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Help Text | Test Automation Number Help | CI-0006            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I hovering mouse on help text icon inside page block detail "Number"
+    Then I see "Test Automation Number Help" shown as help text

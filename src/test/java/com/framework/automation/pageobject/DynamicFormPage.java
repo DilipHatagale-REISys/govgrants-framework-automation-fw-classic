@@ -79,8 +79,8 @@ public class DynamicFormPage extends GovGrantsManager {
      * @param message
      * @param fieldName
      */
-    public void assertAlertMessageInTheFormDetails(String message, String fieldName) {
-        I.amPerforming().assertionsTo().assertThat(isAlertMessageInsideFormDetailsDisplayedAsExpected(message, fieldName));
+    public void assertFieldErrorMessageInTheFormDetails(String message, String fieldName) {
+        I.amPerforming().assertionsTo().assertThat(isFieldErrorMessageDisplayedInsideFormDetails(message, fieldName));
     }
 
     /*********
@@ -155,9 +155,9 @@ public class DynamicFormPage extends GovGrantsManager {
      * @param message
      * @param fieldName
      */
-    private boolean isAlertMessageInsideFormDetailsDisplayedAsExpected(String message, String fieldName) {
+    private boolean isFieldErrorMessageDisplayedInsideFormDetails(String message, String fieldName) {
         boolean flag = false;
-        if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//span[text()='"+fieldName+"']/ancestor::dl//p[text()='"+message+"']"))) {
+        if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//span[contains(text(),'" + fieldName + "')]/ancestor::dl//p[contains(@class,'errorCheck') and text()='" + message + "']"))) {
             return true;
         }
         return flag;

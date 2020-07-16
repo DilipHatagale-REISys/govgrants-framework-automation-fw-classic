@@ -44,6 +44,6 @@ public class DynamicFormSteps {
 
     @Then("^I see message \"([^\"]*)\" below \"([^\"]*)\" field in form detail$")
     public void iSeeTheMessageInTheFormDetails(String message, String fieldName) {
-        dynamicFormPage.assertAlertMessageInTheFormDetails(message, fieldName);
+        dynamicFormPage.assertFieldErrorMessageInTheFormDetails(message, fieldName);
     }
 }

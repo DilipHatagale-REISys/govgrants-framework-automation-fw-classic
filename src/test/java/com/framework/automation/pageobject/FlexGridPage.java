@@ -233,10 +233,16 @@ public class FlexGridPage extends GovGrantsManager {
     }
 
     /**
-     * assert if default total is not displayed for currency field at Program Outcomes Flex Grid(ME Grid)
+     * assert if default total is displayed for currency field at  Flex Grid(ME Grid) - parent and child table
+     *
+     * @param tableId
      */
-    public void assertDefaultTotalAtProgramOutcomesFlexGrid() {
-        Assert.assertFalse(isDefaultTotalDisplayedAtProgramOutcomesFlexGrid());
+    public void assertDefaultTotalAtFlexGrid(String usage, String tableId) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isDefaultTotalDisplayedAtFlexGrid(tableId));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isDefaultTotalDisplayedAtFlexGrid(tableId));
+        }
     }
 
     /**
@@ -269,16 +275,6 @@ public class FlexGridPage extends GovGrantsManager {
             Assert.assertFalse(isTotalFieldFormatDisplayedInsideMeGrid(format, fieldName, tableId));
         }
     }
-
-    /**
-     * assert true if overall total row is displayed inside ME Grid child flex table
-     *
-     * @param tableId
-     */
-    public void assertOverallTotalRowInsideChildFlexTableAtMeGrid(String tableId) {
-        Assert.assertTrue(isOverallTotalRowDisplayedInsideChildFlexTableAtMeGrid(tableId));
-    }
-
 
     /*********
      * "Local Methods with complete functionality - private"
@@ -562,10 +558,12 @@ public class FlexGridPage extends GovGrantsManager {
     }
 
     /**
-     * @return false if default total is not displayed inside for currency field at ME Grid
+     * @return true if default total is displayed for currency field at  Flex Grid(ME Grid) - parent and child table
      */
-    private Boolean isDefaultTotalDisplayedAtProgramOutcomesFlexGrid() {
+    private Boolean isDefaultTotalDisplayedAtFlexGrid(String tableId) {
         boolean flag = false;
+        By enableTotalSumValueForTargetColumn = By.xpath("//div[@id='" + tableId + "']//b[@class='totalFullDisplayFlex']//span |" +
+                "//div[@id='" + tableId + "']//tbody//tfoot");
         try {
             if (I.amPerforming().checkToSee().isDisplayed(enableTotalSumValueForTargetColumn)) {
                 flag = true;
@@ -618,23 +616,6 @@ public class FlexGridPage extends GovGrantsManager {
                 flag = true;
             }
         } catch (Exception e) {
-        }
-        return flag;
-    }
-
-    /**
-     * @param tableId
-     * @return true if overall total row is displayed inside ME Grid child flex table
-     */
-    private Boolean isOverallTotalRowDisplayedInsideChildFlexTableAtMeGrid(String tableId) {
-        boolean flag = false;
-        By getTotalRowAtChildTable = By.xpath("//div[@id='" + tableId + "']//tbody//tfoot");
-        try {
-            if (I.amPerforming().checkToSee().isDisplayed(getTotalRowAtChildTable)) {
-                flag = true;
-            }
-        } catch (Exception e) {
-            flag = false;
         }
         return flag;
     }

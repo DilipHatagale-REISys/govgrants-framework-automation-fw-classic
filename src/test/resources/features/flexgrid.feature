@@ -2176,7 +2176,7 @@ Feature: Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
-    Then I do not see default total at program outcomes flex grid
+    Then I do not see default total at "---program:-:programOutComesTableId---" flex grid
 
   @80182    @VerifyDefaultTotalIsNotDisplayedAtCurrencyFieldIfEnableTotalIsUncheckedAtN2GGrid-gGrant
   Scenario: Validating default total for currency field after setting Enable total and Enable Total Row to false from config and validating it inside N2G Grid-GRANT
@@ -2292,7 +2292,7 @@ Feature: Flex Grid Component Scenarios
       | en_US  | America/New_York |
     When I login as "Automation" user
     And I update the locale and timezone related changes:
-      | locale | timeZone         |
+      | locale | timeZone     |
       | en_IN  | Asia/Kolkata |
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -2343,7 +2343,7 @@ Feature: Flex Grid Component Scenarios
       | en_US  | America/New_York |
     When I login as "Automation" user
     And I update the locale and timezone related changes:
-      | locale | timeZone         |
+      | locale | timeZone     |
       | en_IN  | Asia/Kolkata |
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab

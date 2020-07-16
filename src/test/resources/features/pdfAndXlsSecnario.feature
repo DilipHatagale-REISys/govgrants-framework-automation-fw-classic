@@ -1887,15 +1887,15 @@ Feature: All pdf and xls related scenario including component and completed back
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
-    And I enter value "123.10" into field "fieldFundedAmount__c"
+    And I enter value "40000.12" into field "fieldFundedAmount__c"
     When I click on "Save" in the page details
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
     And I select "Download as PDF" from parallel lines dropdown of "Draft Programs"
     And I download the file
-    Then I see "123" on page "1" of "govgrants" pdf file
+    Then I see "$40,000" on page "1" of "govgrants" pdf file
 
     Examples:
-      | newFieldsApi                        | defaultFieldsApi                                                                                                 | newSoqlFilter                                                                                                                                                                                    | oldSoqlFilter                                                                                                             |
-      | Name,ProgramName__c,FundedAmount__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | RecordType.Name = 'Internal Program' and Status__c IN ( 'Created','Change Requested','Submitted for Approval','Approved') and ProgramName__c = 'Test program for automation - Created mode only' | RecordType.Name = 'Internal Program' and Status__c IN ( 'Created','Change Requested','Submitted for Approval','Approved') |
+      | newFieldsApi                                  | defaultFieldsApi                                                                                                 | newSoqlFilter                                                                                                                                                                                    | oldSoqlFilter                                                                                                             |
+      | Name,ProgramName__c,FundedAmount__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | RecordType.Name = 'Internal Program' and Status__c IN ( 'Created','Change Requested','Submitted for Approval','Approved') and ProgramName__c = 'Test program for automation - Created mode only' | RecordType.Name = 'Internal Program' and Status__c IN ( 'Created','Change Requested','Submitted for Approval','Approved') |
