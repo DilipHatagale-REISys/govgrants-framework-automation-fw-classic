@@ -1,10 +1,13 @@
 package com.framework.automation.pageobject;
 
 import com.framework.automation.projectmanager.GovGrantsManager;
+import com.testingblaze.objects.Elements;
 import com.testingblaze.register.I;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 public class ChartsPage extends GovGrantsManager {
     /******* "Variables and Locators" *****************/
@@ -148,7 +151,7 @@ public class ChartsPage extends GovGrantsManager {
      * @return
      */
     public void clickOnEnhancedDualAxesChartsOnModal(String chartId, String chartsLabelName) {
-        String parentLocator = "//div[@id='" + chartId + "' and @data-highcharts-chart='1']//*[local-name()='tspan' and contains(text(),'" + chartsLabelName + "')]//ancestor::*[local-name()='g']//preceding-sibling::*[local-name()='g' and @class='highcharts-series-group']//*[local-name()='rect']";
+        String parentLocator = "//div[@id='" + chartId + "' and @data-highcharts-chart='0']//*[local-name()='tspan' and contains(text(),'" + chartsLabelName + "')]//ancestor::*[local-name()='g']//preceding-sibling::*[local-name()='g' and @class='highcharts-series-group']//*[local-name()='rect']";
         switch (chartsLabelName.toLowerCase()) {
             case "unitedhealth group":
                 parentLocator = parentLocator + "[1]";
@@ -199,6 +202,41 @@ public class ChartsPage extends GovGrantsManager {
         I.amPerforming().scroll().toMoveToElement(By.xpath(parentLocator));
         I.amPerforming().click().on(By.xpath(parentLocator));
     }
+
+    public void clickOnEnhancedCharts(String chartId, String colorName) {
+        List<Elements> chartsColor = I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//div[@id='" + chartId + "']//*[local-name()='g' and contains(@class,'highcharts-series-group')]//*[local-name()='path']"));
+
+        for (int i = 1; i < chartsColor.size(); i++) {
+            switch (colorName.toUpperCase()) {
+                case "LIGHTBLUE":
+                    if (chartsColor.get(i).getCssValue("color").contains("rgb(124, 181, 236)")
+                            || chartsColor.get(i).getAttributes("fill").contains("rgb(124,181,236)")) {
+                        I.amPerforming().scroll().toMoveToElement(chartsColor.get(i));
+                        chartsColor.get(i).click();
+                    }
+                    break;
+                case "GREY":
+                    if (chartsColor.get(i).getCssValue("color").contains("rgb(67,67,72)")
+                            || chartsColor.get(i).getAttributes("fill").contains("rgb(67,67,72)")) {
+                        chartsColor.get(i).click();
+                    }
+                    break;
+                case "GREEN":
+                    if (chartsColor.get(i).getCssValue("color").contains("rgb(144, 237, 125)")
+                            || chartsColor.get(i).getAttributes("fill").contains("rgb(144, 237, 125)")) {
+                        chartsColor.get(i).click();
+                    }
+                    break;
+                case "LIGHTORANGE":
+                    if (chartsColor.get(i).getCssValue("color").contains("rgb(247,163,92)")
+                            || chartsColor.get(i).getAttributes("fill").contains("rgb(247,163,92)")) {
+                        chartsColor.get(i).click();
+                    }
+                    break;
+            }
+        }
+    }
+
 
     /********* "Local Methods with complete functionality - private" ******/
 
