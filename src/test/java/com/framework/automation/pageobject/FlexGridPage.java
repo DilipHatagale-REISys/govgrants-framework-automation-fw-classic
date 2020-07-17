@@ -233,10 +233,16 @@ public class FlexGridPage extends GovGrantsManager {
     }
 
     /**
-     * assert if default total is not displayed for currency field at Program Outcomes Flex Grid(ME Grid)
+     * assert if default total is displayed for currency field at  Flex Grid(ME Grid) - parent and child table
+     *
+     * @param tableId
      */
-    public void assertDefaultTotalAtProgramOutcomesFlexGrid() {
-        Assert.assertFalse(isDefaultTotalDisplayedAtProgramOutcomesFlexGrid());
+    public void assertDefaultTotalAtFlexGrid(String usage, String tableId) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isDefaultTotalDisplayedAtFlexGrid(tableId));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isDefaultTotalDisplayedAtFlexGrid(tableId));
+        }
     }
 
     /**
@@ -253,6 +259,21 @@ public class FlexGridPage extends GovGrantsManager {
      */
     public void assertUndoActionInsideTable(String tableId) {
         Assert.assertTrue(isUndoActionDisplayedInsideTable(tableId));
+    }
+
+    /**
+     * assert true if expected format is displayed at overall total row inside ME Grid
+     *
+     * @param format
+     * @param fieldName
+     * @param tableId
+     */
+    public void assertTotalFieldFormatInsideMeGrid(String usage, String format, String fieldName, String tableId) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isTotalFieldFormatDisplayedInsideMeGrid(format, fieldName, tableId));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isTotalFieldFormatDisplayedInsideMeGrid(format, fieldName, tableId));
+        }
     }
 
     /*********
@@ -537,10 +558,12 @@ public class FlexGridPage extends GovGrantsManager {
     }
 
     /**
-     * @return false if default total is not displayed inside for currency field at ME Grid
+     * @return true if default total is displayed for currency field at  Flex Grid(ME Grid) - parent and child table
      */
-    private Boolean isDefaultTotalDisplayedAtProgramOutcomesFlexGrid() {
+    private Boolean isDefaultTotalDisplayedAtFlexGrid(String tableId) {
         boolean flag = false;
+        By enableTotalSumValueForTargetColumn = By.xpath("//div[@id='" + tableId + "']//b[@class='totalFullDisplayFlex']//span |" +
+                "//div[@id='" + tableId + "']//tbody//tfoot");
         try {
             if (I.amPerforming().checkToSee().isDisplayed(enableTotalSumValueForTargetColumn)) {
                 flag = true;
@@ -565,14 +588,31 @@ public class FlexGridPage extends GovGrantsManager {
     }
 
     /**
-     * @return true if undo action displayed by inline editing a record at Flex Grid(ME Grid)
-     *
      * @param tableId
+     * @return true if undo action displayed by inline editing a record at Flex Grid(ME Grid)
      */
     private Boolean isUndoActionDisplayedInsideTable(String tableId) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='"+tableId+"']//a[@title='Undo']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='" + tableId + "']//a[@title='Undo']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * @param format
+     * @param fieldName
+     * @param tableId
+     * @return true if if expected format is displayed at overall total row inside ME Grid
+     */
+    private Boolean isTotalFieldFormatDisplayedInsideMeGrid(String format, String fieldName, String tableId) {
+        boolean flag = false;
+        WebElement getTotalValueFromLastRow = I.amPerforming().getElementReference().of(By.xpath("//div[@id='" + tableId + "']//span[text()='" + fieldName + "']/ancestor::tbody/following-sibling::tfoot//span[contains(@ng-bind,'isTotalRow')]"));
+        try {
+            if (getTotalValueFromLastRow.getText().contains(format)) {
                 flag = true;
             }
         } catch (Exception e) {

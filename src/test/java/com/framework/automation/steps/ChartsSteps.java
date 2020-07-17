@@ -1,6 +1,7 @@
 package com.framework.automation.steps;
 
 import com.framework.automation.pageobject.ChartsPage;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -34,6 +35,11 @@ public class ChartsSteps {
     @When("I click on barCharts \"([^\"]*)\" with charts label name \"([^\"]*)\" on main Page$")
     public void clickOnBarChartsWithChartsLabelNameOnMainPage(String chartsId, String chartsLabelName) {
         chartsPage.clickOnEnhancedDualAxesChartsOnMainPage(chartsId, chartsLabelName);
+    }
+
+    @And("I click on enhanced charts id {string} with color {string}")
+    public void iClickOnEnhancedChartsIdWithColor(String chartId, String colorName) {
+        chartsPage.clickOnEnhancedCharts(chartId, colorName);
     }
 
     @Then("^I see \"([^\"]*)\" displayed in modal$")

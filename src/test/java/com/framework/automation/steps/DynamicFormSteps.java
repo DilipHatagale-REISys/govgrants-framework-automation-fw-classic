@@ -41,4 +41,9 @@ public class DynamicFormSteps {
     public void iSeeSectionColumnIsAligned(String columnAlignment) {
         dynamicFormPage.assertAlignmentOfSectionColumn(columnAlignment);
     }
+
+    @Then("^I see message \"([^\"]*)\" below \"([^\"]*)\" field in form detail$")
+    public void iSeeTheMessageInTheFormDetails(String message, String fieldName) {
+        dynamicFormPage.assertFieldErrorMessageInTheFormDetails(message, fieldName);
+    }
 }

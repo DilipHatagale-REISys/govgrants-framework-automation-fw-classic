@@ -130,9 +130,9 @@ public class FlexGridSteps {
         flexGridPage.assertTextContainingRowAtChildFlexTabel(text, tableId);
     }
 
-    @Then("I do not see default total at program outcomes flex grid")
-    public void assertDefaultTotalAtProgramOutcomesFlexGridIsNotDisplayed() {
-        flexGridPage.assertDefaultTotalAtProgramOutcomesFlexGrid();
+    @Then("^I (see|do not see) default total at \"([^\"]*)\" flex grid$")
+    public void assertDefaultTotalAtFlexGridIsDisplayed(String usage, String tableId) {
+        flexGridPage.assertDefaultTotalAtFlexGrid(usage, tableId);
     }
 
     @Then("I do not see default total at active grants flex grid")
@@ -143,5 +143,10 @@ public class FlexGridSteps {
     @Then("I see Undo action displayed by inline editing record under {string} table")
     public void iSeeUndoActionByInlineEditingARecord(String tableId) {
         flexGridPage.assertUndoActionInsideTable(tableId);
+    }
+
+    @Then("^I (see|do not see) format as \"([^\"]*)\" in \"([^\"]*)\" field total inside \"([^\"]*)\" me grid$")
+    public void iSeeFormatAsInFieldTotalInsideMeGrid(String usage, String format, String fieldName, String tableId) {
+        flexGridPage.assertTotalFieldFormatInsideMeGrid(usage, format, fieldName, tableId);
     }
 }

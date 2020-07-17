@@ -73,6 +73,16 @@ public class DynamicFormPage extends GovGrantsManager {
         I.amPerforming().assertionsTo().assertThat(isAlignmentOfSectionColumnDisplayedAsExpected(columnAlignment));
     }
 
+    /**
+     * assert true if alert message displayed below fields inside dynamic form layout by entering invalid data
+     *
+     * @param message
+     * @param fieldName
+     */
+    public void assertFieldErrorMessageInTheFormDetails(String message, String fieldName) {
+        I.amPerforming().assertionsTo().assertThat(isFieldErrorMessageDisplayedInsideFormDetails(message, fieldName));
+    }
+
     /*********
      * "Local Methods with complete functionality - private"
      *****************/
@@ -134,6 +144,20 @@ public class DynamicFormPage extends GovGrantsManager {
             return true;
         } else if (columnAlignment.equalsIgnoreCase("horizontally")
                 && I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@class='formUIWrap']//div[contains(@class,'col-md-4')]"))) {
+            return true;
+        }
+        return flag;
+    }
+
+    /**
+     * assert true if alert message displayed below fields inside dynamic form layout by entering invalid data
+     *
+     * @param message
+     * @param fieldName
+     */
+    private boolean isFieldErrorMessageDisplayedInsideFormDetails(String message, String fieldName) {
+        boolean flag = false;
+        if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//span[contains(text(),'" + fieldName + "')]/ancestor::dl//p[contains(@class,'errorCheck') and text()='" + message + "']"))) {
             return true;
         }
         return flag;

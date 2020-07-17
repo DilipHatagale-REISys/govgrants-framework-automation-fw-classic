@@ -421,7 +421,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I click modal button "Close"
     Then I see chart legends are displayed for chart/enhanced Charts "EnhancedDualAxes"
 
-  @71041    @validateDataTableQueryForSelectedDataField-gHOME-EnhancedDualAxesCharts @wip
+  @71041    @validateDataTableQueryForSelectedDataField-gHOME-EnhancedDualAxesCharts @wip @71934
   Scenario Outline: Validate expected values as per query provided inside fields 'Data Table Query for selected data'
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                           | fieldOrignalValue          | filterId         |
@@ -433,7 +433,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
       | Charts Config         | Active                              | true                   | FundingOpportunity | Name                      | Enhanced Pie chart         |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Announcements" tab
     And I pause execution for "5" seconds
     And I click on enhanced charts id "---program:-:EnhancedPiechartID---" with color "LightBlue"
     Then I see the following rows under the following columns in table with id "---program:-:EnhancedPiechartModalID---" :
@@ -478,7 +478,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I select "Show All Data" from chart menu of chart "Enhanced Dual Axes"
     Then I see "Test Automation Header" displayed in modal
 
-  @71133    @validateDataTableHeaderFieldFromBurgerIcon-gHOME-EnhancedDualAxesCharts @wip
+  @71133    @validateDataTableHeaderFieldFromBurgerIcon-gHOME-EnhancedDualAxesCharts
   Scenario: Validate Data table header text on UI after making changes from config
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
