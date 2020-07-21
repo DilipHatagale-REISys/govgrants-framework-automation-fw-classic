@@ -319,9 +319,9 @@ public class LibraryFilesPage extends GovGrantsManager {
      * @param targetFolderName
      */
     public void dragAndDropFileFromOneFolderToAnother(String fileName, String sourceFolderName, String targetFolderName) {
-        By getSource = By.xpath("//span[text()='" + sourceFolderName + "']/ancestor::li//span[text()='" + fileName + "']");
+        By getSource = By.xpath("//span[text()='" + sourceFolderName + "']/ancestor::li//div[@role='treeitem' and (.//span[text()='" + fileName + "'])]");
         By getTarget = By.xpath("//span[text()='" + targetFolderName + "']");
-        I.amPerforming().click().withMouse().dragAndDrop(getSource, getTarget);
+        I.amPerforming().click().withMouse().dragAndDropInHtml5(getSource, getTarget);
     }
 
     /*********
