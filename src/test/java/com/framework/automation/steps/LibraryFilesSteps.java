@@ -121,4 +121,9 @@ public class LibraryFilesSteps {
     public void iSeeAlertMessageInsideModalAsFollows(String modalId, String expectedAlertMessage) {
         libraryFilesPage.assertAlertMessageInsideLibraryFilesModal(modalId,expectedAlertMessage);
     }
+
+    @Then("I see file {string} is displayed under {string} library or folder")
+    public void iSeeFileIsDisplayedUnderFilesLibrary(String fileName, String libraryOrFolderName) {
+        libraryFilesPage.assertFileDisplayedUnderExpectedLibrary(fileName, libraryOrFolderName);
+    }
 }

@@ -910,7 +910,7 @@ Feature: Library Files Component Scenarios
     When I click on "My_Workspace_Library"
     When I perform quick search for "Test" under files library
     Then I softly see Label/Count as "Folders - 4" is displayed
-    Then I softly see Label/Count as "Files - 2" is displayed
+    Then I softly see Label/Count as "Files - 4" is displayed
 
   @70732 @validateThatSelectedClassificationAtUploadModalIsDisplayedUnderPlanningFilesTable-RecordLevel @NeedDeleteAPI
   Scenario: Verify that selected classification at upload modal is displayed under planning files table - Home Phase
@@ -1568,7 +1568,7 @@ Feature: Library Files Component Scenarios
     When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
     Then I see pre-selected library/folder as "UnitedHealth Group" is displayed at add file modal
 
-  @81534 @validateIfLibraryIsSetAsDefaultThenItsNameIsDisplayedAsPre-SelectedFolderAtAddFileModalUnderPlanningFilesTable-PhaseLevel @needMetaDataAPIs
+  @81534 @validateIfLibraryIsSetAsDefaultThenItsNameIsDisplayedAsPre-SelectedFolderAtAddFileModalUnderPlanningFilesTable-PhaseLevel @needMetaDataAPIs @wip
   Scenario: Verify if default library is set then that folder name is displayed under select/change folder field at add file modal - home Phase
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
@@ -1847,7 +1847,7 @@ Feature: Library Files Component Scenarios
     Then I softly see library/folder/file "TestAutomationFile.jpg" is displayed under files library
     When I click on dropdown at library/folder/file "TestAutomationFile.jpg"
     When I click on "Delete File" option at library/folder/file "TestAutomationFile.jpg"
-    And I pause execution for "5" seconds
+    And I pause execution for "7" seconds
     Then I softly do not see library/folder/file "TestAutomationFile.jpg" is displayed under files library
 
   @83944 @validateThatFilesLinkedAtProgramAreDisplayedInApplicationRecordByChangingFilterClauseFromConfig-gApplication
@@ -1890,15 +1890,48 @@ Feature: Library Files Component Scenarios
     Then I see the following messages in the page details contains:
       | You do not have the level of access necessary to perform the operation you requested. Please contact the owner of the record or your administrator if access is necessary. |
 
-  @83170 @validateThatFileCanBeDragAndDropFromOneFolderToOther-gApplication @issue
-  Scenario: Verify that file can be drag and droped from one folder to another folder
+  @83170 @validateThatFileCanBeDragAndDropFromOneLibraryToOtherLibrary-gHome
+  Scenario: Verify that file can be drag and droped from one library to another lbrary
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "UnitedHealth Group"
+    When I drag the "asd.png" file from "UnitedHealth Group" folder and drop in "Department of Community Health" folder at library
+    When I pause execution for "3" seconds
     When I click on expand icon at library/folder "Department of Community Health"
     When I drag the "asd.png" file from "Department of Community Health" folder and drop in "UnitedHealth Group" folder at library
     When I pause execution for "3" seconds
+    Then I see file "asd.png" is displayed under "UnitedHealth Group" library or folder
+
+  @83086 @validateThatFileCanBeDragAndDropFromAssertLibraryToOther-gHome
+  Scenario: Verify that file can be drag from assert library and droped into another library
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
-    Then I see library/folder/file "asd.png" is displayed under files library
+    When I drag the "DragAndDropFileDND.png" file from "UnitedHealth Group" folder and drop in "Asset Library" folder at library
+    When I pause execution for "3" seconds
+    When I click on expand icon at library/folder "Asset Library"
+    When I drag the "DragAndDropFileDND.png" file from "Asset Library" folder and drop in "UnitedHealth Group" folder at library
+    When I pause execution for "3" seconds
+    Then I see file "DragAndDropFileDND.png" is displayed under "UnitedHealth Group" library or folder
+
+  @70288 @validateThatFileCanBeDragAndDropFromoneFolderToOtherFolderAtSameLibrary-gHome
+  Scenario: Verify that file can be drag from one folder and droped into another folder in same library
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "UnitedHealth Group"
+    When I click on expand icon at library/folder "Library-Folder 1 DND"
+    When I drag the "DragAndDropFolderToFolderDND.png" file from "Library-Folder 1 DND" folder and drop in "Library - Folder 2 DND" folder at library
+    When I pause execution for "3" seconds
+    When I click on expand icon at library/folder "Library - Folder 2 DND"
+    When I drag the "DragAndDropFolderToFolderDND.png" file from "Library - Folder 2 DND" folder and drop in "Library-Folder 1 DND" folder at library
+    When I pause execution for "3" seconds
+    Then I see file "DragAndDropFolderToFolderDND.png" is displayed under "Library-Folder 1 DND" library or folder

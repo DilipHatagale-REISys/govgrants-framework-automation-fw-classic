@@ -16,22 +16,6 @@ Feature: SheetJS Config Component Scenarios
     And I navigate to "Planning" tab
     Then I can see top right button "Upload" in flex table with id "---program:-:programTableDivId---"
 
-  @70096    @verifyDownloadingOfTemplateFile
-  Scenario: Validate Template file is getting downloaded or not on download button click inside download and upload wizard modal.
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Data Import/Export | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Data Import/Export | true          | Programs           |                           |                            |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    And I click on top right button "Upload" in flex table with id "---program:-:programTableDivId---"
-    When I click on button "Download File" on download & upload wizard modal
-    Then I see "Program Name" in downloaded xls or csv file "govgrants"
-
   @70097    @verifyUploadOfSheetJSFile
   Scenario Outline: Validate sheet JS file is getting uploaded with success message or not on upload button click inside download and upload wizard modal.
     Given I have "default" configuration as below:

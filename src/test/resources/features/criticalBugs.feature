@@ -2978,8 +2978,8 @@ Feature: Logged Issues Scenarios
   Scenario Outline: Validating overall total is displayed at child flex table under ME Grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-      | Flex Table:General    | Enable Total Row    | true               | ApiGeneratedId:1 |
-      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:2 |
+      | Flex Table:General    | Enable Total Row    | true               | ApiGeneratedId:0 |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Total Row    | true           | ApplicationBudgetCategoryFlexTable |                           |                            |
