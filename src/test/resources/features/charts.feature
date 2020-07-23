@@ -177,7 +177,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     And I navigate to "Announcements" tab
     Then I do not see chart legends are displayed for chart/enhanced Charts "EnhancedPiechart"
 
-  @71020    @validateDataTableQueryForSelectedDataField-gAnnouncement-EnhancedCharts @wip
+  @71020    @validateDataTableQueryForSelectedDataField-gAnnouncement-EnhancedCharts
   Scenario Outline: Validate expected values as per query provided inside fields 'Data Table Query for selected data'
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                           | fieldOrignalValue          | filterId         |
@@ -421,7 +421,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I click modal button "Close"
     Then I see chart legends are displayed for chart/enhanced Charts "EnhancedDualAxes"
 
-  @71041    @validateDataTableQueryForSelectedDataField-gHOME-EnhancedDualAxesCharts @wip @71934
+  @71041    @validateDataTableQueryForSelectedDataField-gHOME-EnhancedDualAxesCharts  @71934
   Scenario Outline: Validate expected values as per query provided inside fields 'Data Table Query for selected data'
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                           | fieldOrignalValue          | filterId         |
@@ -991,7 +991,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    And I click on menu icon of chart "Enhanced Funnel" with title "Enhanced View"
+    And I click on menu icon of chart "Enhanced_Funnel" with title "Enhanced View"
     When I click modal button "Show All Data"
     Then I do not see "Change Request #" in flex table header "---program:-:Enhanced_FunnelModalID---"
 
@@ -1012,8 +1012,8 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    And I click on menu icon of chart "Enhanced Funnel" with title "Menu"
-    When I select "Show All Data" from chart menu of chart "Enhanced Funnel"
+    And I click on menu icon of chart "Enhanced_Funnel" with title "Menu"
+    When I select "Show All Data" from chart menu of chart "Enhanced_Funnel"
     Then I do not see "Change Request #" in flex table header "---program:-:Enhanced_FunnelModalID---"
 
     Examples:

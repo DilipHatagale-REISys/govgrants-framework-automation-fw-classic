@@ -1370,3 +1370,79 @@ Feature: dynamic forms Component Scenarios
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I hovering mouse on help text icon inside page block detail "Written"
     Then I see "Test Automation Written Help" shown as help text
+
+  @92641    @ValidateHelpTextAtCheckboxFieldInsideDynamicFormInEditMode
+  Scenario: validate the help text is displayed at Checkbox field as configured in Question Help Text field in edit mode on dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Help Text |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue                 | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Help Text | Test Automation Checkbox Help | CI-0008            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I hovering mouse on help text icon inside page block detail "Checkbox"
+    Then I see "Test Automation Checkbox Help" shown as help text
+
+  @92640    @ValidateHelpTextAtRichTextAreaFieldInsideDynamicFormInEditMode
+  Scenario: validate the help text is displayed at Rich Text Area field as configured in Question Help Text field in edit mode on dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Help Text |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue                       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Help Text | Test Automation Rich Text Area Help | CI-0010            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I hovering mouse on help text icon inside page block detail "Rich Text Area"
+    Then I see "Test Automation Rich Text Area Help" shown as help text
+
+  @92639    @ValidateHelpTextAtRadioFieldInsideDynamicFormInEditMode
+  Scenario: validate the help text is displayed at radio field as configured in Question Help Text field in edit mode on dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Help Text |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue              | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Help Text | Test Automation Radio Help | CI-0008            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I hovering mouse on help text icon inside page block detail "Radio"
+    Then I see "Test Automation Radio Help" shown as help text
+
+  @92637    @ValidateHelpTextAtPicklistFieldInsideDynamicFormInEditMode
+  Scenario: validate the help text is displayed at picklist field as configured in Question Help Text field in edit mode on dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Help Text |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue                 | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Help Text | Test Automation Picklist Help | CI-0006            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I hovering mouse on help text icon inside page block detail "Picklist"
+    Then I see "Test Automation Picklist Help" shown as help text

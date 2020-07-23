@@ -209,9 +209,12 @@ public class ChartsPage extends GovGrantsManager {
         for (int i = 1; i < chartsColor.size(); i++) {
             switch (colorName.toUpperCase()) {
                 case "LIGHTBLUE":
-                    if (chartsColor.get(i).getCssValue("color").contains("rgb(124, 181, 236)")
-                            || chartsColor.get(i).getAttributes("fill").contains("rgb(124,181,236)")) {
+                    if (chartsColor.get(i).getCssValue("fill").contains("rgb(124, 181, 236)")
+                            || chartsColor.get(i).getAttributes("fill").contains("#7cb5ec")
+                            || chartsColor.get(i).getCssValue("fill").contains("rgb(149, 206, 255)")
+                            || chartsColor.get(i).getAttributes("fill").contains("rgb(149, 206, 255)") ) {
                         I.amPerforming().scroll().toMoveToElement(chartsColor.get(i));
+                        chartsColor.get(i).click();
                         chartsColor.get(i).click();
                     }
                     break;

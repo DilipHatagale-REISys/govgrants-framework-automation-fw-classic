@@ -252,6 +252,16 @@ public class LibraryFilesPage extends GovGrantsManager {
     }
 
     /**
+     * assert true if file is displayed under expected library or folder- phase level
+     *
+     * @param fileName
+     * @param libraryOrFolderName
+     */
+    public void assertFileDisplayedUnderExpectedLibrary(String fileName, String libraryOrFolderName) {
+        Assert.assertTrue(isFileDisplayedUnderExpectedLibrary(fileName,libraryOrFolderName));
+    }
+
+    /**
      * get dropdown options under respective Library/File/Folder - Home phase
      *
      * @param libraryFileFolderName
@@ -481,7 +491,7 @@ public class LibraryFilesPage extends GovGrantsManager {
     private boolean isSearchedValueDisplayedInTableAtFileUploadModal(String tableValue, String tableId) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//*[@id='" + tableId + "']//tr//lightning-formatted-text[text()='" + tableValue + "']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//*[@id='" + tableId + "']//tr//lightning-base-formatted-text[text()='" + tableValue + "']"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -586,6 +596,24 @@ public class LibraryFilesPage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//a[text()='"+ buttonName +"']"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if file is displayed under expected library or folder- phase level
+     *
+     * @param fileName
+     * @param libraryOrFolderName
+     * @return
+     */
+    private boolean isFileDisplayedUnderExpectedLibrary(String fileName,String libraryOrFolderName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//span[text()='"+libraryOrFolderName+"']/../following-sibling::li//span[text()='"+fileName+"']"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
