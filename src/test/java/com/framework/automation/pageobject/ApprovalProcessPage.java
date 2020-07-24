@@ -75,7 +75,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
             if (whileHandler == 2) {
                 break;
             }
-            I.amPerforming().actionToGet().pageRefresh();
+            I.amPerforming().browserOperationsTo().refreshPage();
             I.amPerforming().getElementReference().of(pendingTasksTableRef);
             approvalStartButtonTable = I.amPerforming().getElementReference().forListOfElements().of(startButton);
             approvalStartButtonTableSize = approvalStartButtonTable.size();

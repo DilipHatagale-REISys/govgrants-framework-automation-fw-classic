@@ -640,7 +640,7 @@ public class PhaseConfigPage extends GovGrantsManager {
     private Boolean isCurrentDateDisplayedOnStickyNote() {
         WebElement stickyDate = I.amPerforming().getElementReference().of(By.xpath("//div[contains(@class,'dateFieldNotes ng-binding')]"));
         String sDate = stickyDate.getText().split(" ")[0];
-        String currentDate = I.amPerforming().actionToGet().currentDateInDesiredFormat(DateTimeFormatter.ofPattern("MM/dd/yyyy"));
+        String currentDate = I.amPerforming().dateOperationsToGet().currentDateInDesiredFormat(DateTimeFormatter.ofPattern("MM/dd/yyyy"));
         boolean flag = false;
         if (sDate.equals(currentDate)) {
             flag = true;

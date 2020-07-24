@@ -415,7 +415,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      * To verify reported date field contains today's date
      */
     public void assertBugetPeriodDateField() {
-        Assert.assertEquals(I.amPerforming().propertiesFileOperationsTo().getValue("BPdate1"), I.amPerforming().actionToGet().currentDateInDesiredFormat(DateTimeFormatter.ofPattern("MM/dd/yyyy")).replaceAll("^0", ""));
+        Assert.assertEquals(I.amPerforming().propertiesFileOperationsTo().getValue("BPdate1"), I.amPerforming().dateOperationsToGet().currentDateInDesiredFormat(DateTimeFormatter.ofPattern("MM/dd/yyyy")).replaceAll("^0", ""));
     }
 
     /**
@@ -1317,7 +1317,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         boolean flag = false;
         try {
             WebElement dateAndDateTime = I.amPerforming().getElementReference().of(By.xpath("//table/tbody/tr/td//*[@field-name='" + fieldApiNAme + "']/span"));
-            if (dateAndDateTime.getText().equalsIgnoreCase(I.amPerforming().actionToGet().currentDateInDesiredFormat(DateTimeFormatter.ofPattern("M/d/yyyy")))) {
+            if (dateAndDateTime.getText().equalsIgnoreCase(I.amPerforming().dateOperationsToGet().currentDateInDesiredFormat(DateTimeFormatter.ofPattern("M/d/yyyy")))) {
                 flag = true;
             }
         } catch (Exception e) {
