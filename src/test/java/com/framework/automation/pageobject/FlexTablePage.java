@@ -887,7 +887,7 @@ public class FlexTablePage extends GovGrantsManager {
         Boolean isRecordsDisplayed = false;
         for (String expectedRecords : recordsName) {
             if (expectedRecords.equalsIgnoreCase("currentdate")) {
-                expectedRecords = I.amPerforming().dateOperationsToGet().currentDateInDesiredFormat((DateTimeFormatter.ofPattern("M/d/yyyy hh:mm a").withLocale(Locale.US)).replaceAll("^0", "");
+                expectedRecords = I.amPerforming().dateOperationsToGet().currentDateInDesiredFormat((DateTimeFormatter.ofPattern("M/d/yyyy hh:mm a").withLocale(Locale.US))).replaceAll("^0", "");
                 I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='myTabbedContent']//a[@title='" + flexTableHeader + "']/../../../following-sibling::div//tbody//td//span[text()='" + expectedRecords + "'] "));
                 isRecordsDisplayed = true;
             } else {
@@ -904,7 +904,7 @@ public class FlexTablePage extends GovGrantsManager {
     private boolean isContentGettingSavedBySanpShotOption(String text) {
         boolean result = true;
         if (text.equalsIgnoreCase("Todays Date")) {
-            String cdate = I.amPerforming().dateOperationsToGet().currentDateInDesiredFormat((DateTimeFormatter.ofPattern("M/d/yyyy h:mm a").withLocale(Locale.US)).replaceAll("^0", "");
+            String cdate = I.amPerforming().dateOperationsToGet().currentDateInDesiredFormat((DateTimeFormatter.ofPattern("M/d/yyyy h:mm a").withLocale(Locale.US))).replaceAll("^0", "");
             System.out.println("The current date:-" + cdate);
             String[] currentsplit = (cdate.split(":", 2));
             String[] arrCSplit = currentsplit[1].split("\\s");
