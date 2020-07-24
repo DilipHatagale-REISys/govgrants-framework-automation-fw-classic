@@ -491,20 +491,20 @@ public class FlexTablePage extends GovGrantsManager {
         govgrants.perform().mainPage().waitForNavigationLogoToDisappear();
         govgrants.perform().flexTable().flexTableShowEntriesDropDown("toggleFlexTablePrograms", "10");
         govgrants.perform().mainPage().waitForNavigationLogoToDisappear();
-        I.amPerforming().actionToGet().pageRefresh();
+        I.amPerforming().browserOperationsTo().refreshPage();
         I.amPerforming().waitFor().makeThreadSleep(1000);
         govgrants.perform().flexTable().flexTablePagination("toggleFlexTablePrograms", "Next");
         govgrants.perform().mainPage().waitForNavigationLogoToDisappear();
         I.amPerforming().waitFor().makeThreadSleep(500);
         govgrants.perform().flexTable().flexTablePagination("toggleFlexTablePrograms", "Previous");
-        I.amPerforming().actionToGet().pageRefresh();
+        I.amPerforming().browserOperationsTo().refreshPage();
         I.amPerforming().waitFor().makeThreadSleep(1000);
         govgrants.perform().mainPage().waitForNavigationLogoToDisappear();
         I.amPerforming().click().on(govgrants.perform().flexTable().getSpecificElementFromTableHeader("ID"));
         govgrants.perform().mainPage().waitForNavigationLogoToDisappear();
         I.amPerforming().click().on(govgrants.perform().flexTable().getSpecificElementFromTableHeader("Program Name"));
         govgrants.perform().mainPage().waitForNavigationLogoToDisappear();
-        I.amPerforming().actionToGet().pageRefresh();
+        I.amPerforming().browserOperationsTo().refreshPage();
         I.amPerforming().waitFor().makeThreadSleep(1000);
         govgrants.perform().phasePanel().clickParallelMenuBars("Draft Programs");
         govgrants.perform().phasePanel().selectItemFromParallelMenuBars("Draft Programs", "Refresh");
@@ -512,7 +512,7 @@ public class FlexTablePage extends GovGrantsManager {
 
     private boolean isErrorMessageNotDisplayed(String errorMessage) {
         boolean flag = false;
-        if (I.amPerforming().actionToGet().pageSource().contains(errorMessage)) {
+        if (I.amPerforming().browserOperationsTo().getPageSource().contains(errorMessage)) {
             flag = true;
         }
         return flag;
@@ -695,7 +695,7 @@ public class FlexTablePage extends GovGrantsManager {
      * return true if entire page refreshed on button click
      */
     private String isPageRefreshOnButtonClick() {
-        return I.amPerforming().actionToGet().pageLoadStatus();
+        return I.amPerforming().browserOperationsTo().getPageLoadStatus();
     }
 
     /**
@@ -803,7 +803,7 @@ public class FlexTablePage extends GovGrantsManager {
      * @return true/false
      */
     private boolean isEditActionOpenedWithSpecifiedUrl(String newActionUrl) {
-        String currentUrl = I.amPerforming().actionToGet().currentURL();
+        String currentUrl = I.amPerforming().browserOperationsTo().getCurrentUrl();
         if (currentUrl.contains(newActionUrl)) {
             return true;
         } else
@@ -887,7 +887,7 @@ public class FlexTablePage extends GovGrantsManager {
         Boolean isRecordsDisplayed = false;
         for (String expectedRecords : recordsName) {
             if (expectedRecords.equalsIgnoreCase("currentdate")) {
-                expectedRecords = I.amPerforming().actionToGet().currentDateTimeInDesiredFormat(DateTimeFormatter.ofPattern("M/d/yyyy hh:mm a").withLocale(Locale.US)).replaceAll("^0", "");
+                expectedRecords = I.amPerforming().dateOperationsToGet().currentDateInDesiredFormat((DateTimeFormatter.ofPattern("M/d/yyyy hh:mm a").withLocale(Locale.US)).replaceAll("^0", "");
                 I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='myTabbedContent']//a[@title='" + flexTableHeader + "']/../../../following-sibling::div//tbody//td//span[text()='" + expectedRecords + "'] "));
                 isRecordsDisplayed = true;
             } else {
@@ -904,7 +904,7 @@ public class FlexTablePage extends GovGrantsManager {
     private boolean isContentGettingSavedBySanpShotOption(String text) {
         boolean result = true;
         if (text.equalsIgnoreCase("Todays Date")) {
-            String cdate = I.amPerforming().actionToGet().currentDateTimeInDesiredFormat(DateTimeFormatter.ofPattern("M/d/yyyy h:mm a").withLocale(Locale.US)).replaceAll("^0", "");
+            String cdate = I.amPerforming().dateOperationsToGet().currentDateInDesiredFormat((DateTimeFormatter.ofPattern("M/d/yyyy h:mm a").withLocale(Locale.US)).replaceAll("^0", "");
             System.out.println("The current date:-" + cdate);
             String[] currentsplit = (cdate.split(":", 2));
             String[] arrCSplit = currentsplit[1].split("\\s");

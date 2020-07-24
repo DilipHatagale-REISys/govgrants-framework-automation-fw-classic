@@ -175,7 +175,7 @@ public class GovGrantsManager extends ProjectWebServices {
      * @param pageTitle
      */
     public void assertPageTitle(String pageTitle) {
-        Assert.assertEquals(I.amPerforming().actionToGet().pageTitle(), pageTitle);
+        Assert.assertEquals(I.amPerforming().browserOperationsTo().getPageTitle(), pageTitle);
     }
 
     /**
@@ -321,7 +321,7 @@ public class GovGrantsManager extends ProjectWebServices {
      */
     private boolean isCurrentURL(String content) {
         boolean flag = false;
-        if (I.amPerforming().actionToGet().currentURL().contains(content)) {
+        if (I.amPerforming().browserOperationsTo().getCurrentUrl().contains(content)) {
             flag = true;
         }
         return flag;

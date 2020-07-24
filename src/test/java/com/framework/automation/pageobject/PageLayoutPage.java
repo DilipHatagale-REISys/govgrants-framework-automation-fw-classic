@@ -1673,7 +1673,7 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     private boolean isExpectedFieldGettingFocused() {
         boolean flag = false;
-        double yoffSet1 = I.amPerforming().actionToGet().getPageOffSetYAxis();
+        double yoffSet1 = I.amPerforming().browserOperationsTo().getPageYOffSet();
         if (yoffSet1 > 0) {
             flag = true;
         }
@@ -1713,7 +1713,7 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean IsSessionTimeoutRemainderCountdownDisplayed(String countDownTimer) {
         boolean flag = false;
         I.amPerforming().waitFor().makeThreadSleep(2000);
-        String ele = I.amPerforming().actionToGet().pageTitle();
+        String ele = I.amPerforming().browserOperationsTo().getPageTitle();
         try {
             if (ele.contains(countDownTimer)) {
                 flag = true;
@@ -1732,14 +1732,14 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean IsLogoutPageDisplayed(String usage, String logoutURL) {
         boolean flag = false;
         if (!usage.equalsIgnoreCase("complete")) {
-            String ele = I.amPerforming().actionToGet().currentURL();
+            String ele = I.amPerforming().browserOperationsTo().getCurrentUrl();
             String[] d = ele.split("/", 4);
             String d1 = d[0] + "/" + d[1] + "/" + d[2];
             if (d1.equalsIgnoreCase(logoutURL)) {
                 flag = true;
             }
         } else {
-            String ele = I.amPerforming().actionToGet().currentURL();
+            String ele = I.amPerforming().browserOperationsTo().getCurrentUrl();
             if (ele.equalsIgnoreCase(logoutURL)) {
                 flag = true;
             }

@@ -165,7 +165,7 @@ public class SideBarPage extends GovGrantsManager {
         for (int index = 0; index < tabHandles.size(); index++) {
             I.amPerforming().switchTo().windowHandler(index);
             I.amPerforming().waitFor().makeThreadSleep(2000);
-            if (I.amPerforming().actionToGet().pageTitle().equalsIgnoreCase(pageTitle)) {
+            if (I.amPerforming().browserOperationsTo().getPageTitle().equalsIgnoreCase(pageTitle)) {
                 myNewTabFound = true;
                 break;
             }
