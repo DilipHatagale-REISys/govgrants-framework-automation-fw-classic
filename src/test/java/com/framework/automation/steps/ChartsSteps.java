@@ -37,9 +37,9 @@ public class ChartsSteps {
         chartsPage.clickOnEnhancedDualAxesChartsOnMainPage(chartsId, chartsLabelName);
     }
 
-    @And("I click on enhanced charts id {string} with color {string}")
-    public void iClickOnEnhancedChartsIdWithColor(String chartId, String colorName) {
-        chartsPage.clickOnEnhancedCharts(chartId, colorName);
+    @And("I click on enhanced charts id {string}")
+    public void iClickOnEnhancedChartsId(String chartId) {
+        chartsPage.clickOnEnhancedCharts(chartId);
     }
 
     @Then("^I see \"([^\"]*)\" displayed in modal$")

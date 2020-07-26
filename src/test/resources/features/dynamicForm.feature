@@ -756,8 +756,8 @@ Feature: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I enter values into "Section 1" page block
-      | Field    | Value |
-      | Checkbox |       |
+      | Field    | Value     |
+      | Checkbox | unchecked |
     When I click on "Save" in the page details
     Then I see the following message in the page details :
       | Checkbox is Required to save under Section 1. |

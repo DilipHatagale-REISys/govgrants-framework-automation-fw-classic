@@ -1727,6 +1727,7 @@ Feature: Logged Issues Scenarios
       | ID          | Total Adjusted Amount |
       | GT-bvaa-001 | 10                    |
     Then I see over all total for "TotalAdjustedAmount__c" at enhanced grid
+
     Examples:
       | newFieldsApi                                | defaultFieldsApi                                                                                                                                                                                                                                          | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                             |
       | Name,ProjectTitle__c,TotalAdjustedAmount__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,TotalAdjustedAmount__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c = 'test Program' |
@@ -3026,3 +3027,169 @@ Feature: Logged Issues Scenarios
     Examples:
       | newFieldsApi                                  | defaultFieldsApi                                                                                                 |
       | Name,ProgramName__c,FundedAmount__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+
+  @89797  @verifyPlaceHolderOfQuickSearchBoxAtLookupModalUnderCreateAnnouncementModalWindow @flexTable
+  Scenario: validate a place holder of quick search box for a lookup modal displayed by click on program field under create announcement modal window
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click on top right button "Create" in flex table with id "---program:-:AnnouncementTableId---"
+    When I click search icon for "Program ID Lookup (New Window)" lookup modal and swithing to frame "iframeCustomLookupModalId"
+    Then I see placeholder for quick search box as "Search..." inside "---program:-:programSearchFlexTableID---" table
+
+  @87265   @verifyAProgramRecordIsGettingCreatedAndIdIsDisplayedAsPerGivenLastSequenceIfSkipAutoNumberCheckBoIsUnchecked
+  Scenario: validate that a program record is getting created with program id as per given last sequence in config if skip auto number checkbox is unchecked
+    Given I have "default" configuration as below:
+      | configurationCategory         | fieldName     | fieldOrignalValue           | filterId         |
+      | Name Template Sequence Config | Last Sequence |                             | ApiGeneratedId:0 |
+      | Page Layout                   | Header        | Program - {!ProgramName__c} | ApiGeneratedId:1 |
+    Given I have "customNameTemplate" configuration as below:
+      | id                 | Name       | AutoNumberFormat | StartNumber | booleanValue                                          | customSettingApiName       |
+      | a0e15000008FjIyAAK | Program__c | {000}            | 1           | GNT__Active__c:true,GNT__SkipAutoNumberReset__c:false | GNT__NameTemplateConfig__c |
+    Given I setup test configuration as below:
+      | configurationCategory                       | fieldName     | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue     |
+      | Name Template Sequence Config:Name Template | Last Sequence | 2                 |                       | Internal Unique Id        | p8BKf5E0q1cd1Re8ybgBWh1jQ0Ap3D |
+      | Page Layout:General                         | Header        | Program - {!Name} | Grantee State Program |                           |                                |
+    And I update custom name template setting changes:
+      | id                 | Name       | AutoNumberFormat | StartNumber | booleanValue                                          | customSettingApiName       |
+      | a0e15000008FjIyAAK | Program__c | {000}            | 1           | GNT__Active__c:true,GNT__SkipAutoNumberReset__c:false | GNT__NameTemplateConfig__c |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    Then I see the sub-header is "PG-343-003" in the page details
+
+  @93594  @verifyIfTopLevelActionOpensInNewWindowAtEnhancedGrid-gPlanning @enhancedGrid
+  Scenario: validate if top level action is opened in new tab at EnhancedGrid - gPlanning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Where To Open ? | Modal             | TmpActiveGrantsGrid | Name                      | Create                     |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Where To Open ? | NewTab        | TmpActiveGrantsGrid | Name                      | Create                     |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I click on top right button "Create" in flex table with id "---program:-:flexGridEnhancedID---"
+    Then I see new tab is opened
+
+  @93627    @verifyOverallTotalForCurrencyFieldAtParentFlexTableForEnhancedGrid-gPlanning @enhancedGrid
+  Scenario Outline: validate overall total displayed if currency field value edited and saved inside enhanced grid of programs-planning
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName             | fieldOrignalValue               | filterId         |
+      | Flex Table List           | Enable Over All Total | false                           | ApiGeneratedId:0 |
+      | Flex Grid:Flex Table List | Is Master View        | true                            | ApiGeneratedId:1 |
+      | Flex Grid:Flex Table List | Filter Clause         | <defaultFilterClauseForFLV2539> | ApiGeneratedId:2 |
+      | Flex Grid                 | Display Field Names   | <defaultFieldsApi>              | ApiGeneratedId:3 |
+      | Flex Grid:General         | Default Page Size     | 5                               | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName             | fieldNewValue               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List           | Enable Over All Total | true                        | TmpActiveGrantsGrid | Name                      | FTC-1518                   |
+      | Flex Grid:Flex Table List | Is Master View        | true                        | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Grid:Flex Table List | Filter Clause         | <newFilterClauseForFLV2539> | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Grid:General         | Display Field Names   | <newFieldsApi>              | TmpActiveGrantsGrid |                           |                            |
+      | Flex Grid:General         | Default Page Size     | 10                          | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I click on "Edit" icon for "MDH Test Application # 1" inside table
+    When I enter value "300" into field "CumulativeAwardedAmount__c"
+    When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
+    Then I see over all total for "CumulativeAwardedAmount__c" at enhanced grid
+
+    Examples:
+      | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                                             | defaultFieldsApi                                                                                                                                                                                                                   | newFieldsApi                                              |
+      | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c like 'MDH Test Application # 1%' | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | Name,ProjectTitle__c,Status__c,CumulativeAwardedAmount__c |
+
+  @93635    @verifyOverallTotalForNumberFieldAtParentFlexTableForEnhancedGrid-gPlanning @enhancedGrid
+  Scenario Outline: validate overall total displayed if number field value edited and saved inside enhanced grid of programs-planning
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName             | fieldOrignalValue               | filterId         |
+      | Flex Table List           | Enable Over All Total | false                           | ApiGeneratedId:0 |
+      | Flex Grid:Flex Table List | Is Master View        | true                            | ApiGeneratedId:1 |
+      | Flex Grid:Flex Table List | Filter Clause         | <defaultFilterClauseForFLV2539> | ApiGeneratedId:2 |
+      | Flex Grid                 | Display Field Names   | <defaultFieldsApi>              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName             | fieldNewValue               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List           | Enable Over All Total | true                        | TmpActiveGrantsGrid | Name                      | FTC-1522                   |
+      | Flex Grid:Flex Table List | Is Master View        | true                        | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Grid:Flex Table List | Filter Clause         | <newFilterClauseForFLV2539> | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Grid:General         | Display Field Names   | <newFieldsApi>              | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I click on "Edit" icon for "MDH Test Application # 1" inside table
+    When I enter value "300" into field "NUMBER__c"
+    When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
+    Then I see over all total for "NUMBER__c" at enhanced grid
+
+    Examples:
+      | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                                             | defaultFieldsApi                                                                                                                                                                                                                   | newFieldsApi                             |
+      | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c like 'MDH Test Application # 1%' | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | Name,ProjectTitle__c,Status__c,NUMBER__c |
+
+  @93678    @verifyOverallTotalForPercentFieldAtParentFlexTableForEnhancedGrid-gPlanning @enhancedGrid
+  Scenario Outline: validate overall total displayed if percent field value edited and saved inside enhanced grid of programs-planning
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName             | fieldOrignalValue               | filterId         |
+      | Flex Table List           | Enable Over All Total | false                           | ApiGeneratedId:0 |
+      | Flex Grid:Flex Table List | Is Master View        | true                            | ApiGeneratedId:1 |
+      | Flex Grid:Flex Table List | Filter Clause         | <defaultFilterClauseForFLV2539> | ApiGeneratedId:2 |
+      | Flex Grid                 | Display Field Names   | <defaultFieldsApi>              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName             | fieldNewValue               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List           | Enable Over All Total | true                        | TmpActiveGrantsGrid | Name                      | FTC-1523                   |
+      | Flex Grid:Flex Table List | Is Master View        | true                        | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Grid:Flex Table List | Filter Clause         | <newFilterClauseForFLV2539> | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Grid:General         | Display Field Names   | <newFieldsApi>              | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I click on "Edit" icon for "MDH Test Application # 1" inside table
+    When I enter value "30" into field "PercentTest__c"
+    When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
+    Then I see over all total for "PercentTest__c" at enhanced grid
+
+    Examples:
+      | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                                             | defaultFieldsApi                                                                                                                                                                                                                   | newFieldsApi                                  |
+      | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c like 'MDH Test Application # 1%' | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | Name,ProjectTitle__c,Status__c,PercentTest__c |
+
+  @93679  @verifyIfTopLevelActionOpensInNewWindowAtEnhancedGridChildTable-gPlanning @enhancedGrid
+  Scenario: validate if top level action is opened in new tab at EnhancedGrid child table - gPlanning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Where To Open ? | Modal             | TmpGrantorActiveAwardsGrid | Name                      | New Action                 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Where To Open ? | NewTab        | TmpGrantorActiveAwardsGrid | Name                      | New Action                 |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    When I expand nested table containing column value "Demo_Title"
+    When I click on top right button "New Action" in flex table with id "---program:-:tmpGrantorActiveAwardsGridTableId---"
+    Then I see new tab is opened

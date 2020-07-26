@@ -1336,10 +1336,10 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         String subTotal = "";
         try {
             List<Elements> rows_table = I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//table/tbody//tr/td//*[@field-name='" + fieldApiName + "']/span"));
-            subTotal = (rows_table.get(rows_table.size() - 1).getText()).replaceAll("[$|,|']", "");
+            subTotal = (rows_table.get(rows_table.size() - 1).getText()).replaceAll("[$|,|%]", "");
             for (int row = 0; row < rows_table.size() - 1; row++) {
                 if (rows_table.get(row).getText() != null) {
-                    sum += Double.valueOf((rows_table.get(row).getText()).replaceAll("[$|,|']", ""));
+                    sum += Double.valueOf((rows_table.get(row).getText()).replaceAll("[$|,|%]", ""));
                 }
             }
             if (String.format("%.2f", Double.valueOf(subTotal)).equals(String.format("%.2f", sum))) {
