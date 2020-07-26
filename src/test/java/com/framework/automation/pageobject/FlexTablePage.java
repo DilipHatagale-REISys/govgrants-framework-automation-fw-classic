@@ -323,6 +323,13 @@ public class FlexTablePage extends GovGrantsManager {
     }
 
     /**
+     * assert true if quick search box placeholder displayed inside lookup window modal table
+     */
+    public void assertQuickSearchBoxPlaceHolder(String placeHolder, String tableId) {
+        Assert.assertTrue(isQuickSearchBoxPlaceHolderDisplaysInsideTable(placeHolder, tableId));
+    }
+
+    /**
      * return false if specified item is displayed
      *
      * @param dropDownValue
@@ -986,4 +993,23 @@ public class FlexTablePage extends GovGrantsManager {
         }
         return flag;
     }
+
+    /**
+     * return true if quick search box placeholder displayed inside lookup window modal table
+     *
+     * @param placeHolder
+     * @param tableId
+     * @return
+     */
+    private boolean isQuickSearchBoxPlaceHolderDisplaysInsideTable(String placeHolder, String tableId) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='" + tableId + "']//input[@placeholder='" + placeHolder + "']"))) {
+                flag = true;
+            }
+        } catch (NoSuchElementException e) {
+        }
+        return flag;
+    }
+
 }

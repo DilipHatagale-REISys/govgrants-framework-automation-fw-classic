@@ -191,7 +191,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I pause execution for "5" seconds
-    And I click on enhanced charts id "---program:-:EnhancedPiechartID---" with color "LightBlue"
+    And I click on enhanced charts id "---program:-:EnhancedPiechartID---"
     Then I see the following rows under the following columns in table with id "---program:-:EnhancedPiechartModalID---" :
       | Announcement Title     | Announcement Type |
       | Test application..1234 | Competitive       |
@@ -421,7 +421,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I click modal button "Close"
     Then I see chart legends are displayed for chart/enhanced Charts "EnhancedDualAxes"
 
-  @71041    @validateDataTableQueryForSelectedDataField-gHOME-EnhancedDualAxesCharts  @71934
+  @71041    @validateDataTableQueryForSelectedDataField-gHOME-EnhancedDualAxesCharts
   Scenario Outline: Validate expected values as per query provided inside fields 'Data Table Query for selected data'
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                           | fieldOrignalValue          | filterId         |
@@ -435,7 +435,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I pause execution for "5" seconds
-    And I click on enhanced charts id "---program:-:EnhancedPiechartID---" with color "LightBlue"
+    And I click on enhanced charts id "---program:-:EnhancedPiechartID---"
     Then I see the following rows under the following columns in table with id "---program:-:EnhancedPiechartModalID---" :
       | Announcement Title     | Announcement Type |
       | Test application..1234 | Competitive       |

@@ -2369,10 +2369,16 @@ Feature: Page Layout Component Scenarios
       | configurationCategory         | fieldName     | fieldOrignalValue           | filterId         |
       | Name Template Sequence Config | Last Sequence |                             | ApiGeneratedId:0 |
       | Page Layout                   | Header        | Program - {!ProgramName__c} | ApiGeneratedId:1 |
+    Given I have "customNameTemplate" configuration as below:
+      | id                 | Name       | AutoNumberFormat | StartNumber | booleanValue                                          | customSettingApiName       |
+      | a0e15000008FjIyAAK | Program__c | {000}            | 1           | GNT__Active__c:true,GNT__SkipAutoNumberReset__c:false | GNT__NameTemplateConfig__c |
     Given I setup test configuration as below:
       | configurationCategory                       | fieldName     | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue     |
       | Name Template Sequence Config:Name Template | Last Sequence | 2                 |                       | Internal Unique Id        | p8BKf5E0q1cd1Re8ybgBWh1jQ0Ap3D |
       | Page Layout:General                         | Header        | Program - {!Name} | Grantee State Program |                           |                                |
+    And I update custom name template setting changes:
+      | id                 | Name       | AutoNumberFormat | StartNumber | booleanValue                                         | customSettingApiName       |
+      | a0e15000008FjIyAAK | Program__c | {000}            | 1           | GNT__Active__c:true,GNT__SkipAutoNumberReset__c:true | GNT__NameTemplateConfig__c |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"

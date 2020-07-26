@@ -251,4 +251,9 @@ public class FlexTableSteps {
     public void iSeeActionsAreAligned() throws IOException {
         flexTablePage.assertActionsAreAligned();
     }
+
+    @Then("I see placeholder for quick search box as {string} inside {string} table")
+    public void placeholderForQuickSearchBoxInsideTable(String placeholder, String tableId) {
+        flexTablePage.assertQuickSearchBoxPlaceHolder(placeholder,tableId);
+    }
 }

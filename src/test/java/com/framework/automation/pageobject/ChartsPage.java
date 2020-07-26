@@ -203,41 +203,15 @@ public class ChartsPage extends GovGrantsManager {
         I.amPerforming().click().on(By.xpath(parentLocator));
     }
 
-    public void clickOnEnhancedCharts(String chartId, String colorName) {
-        List<Elements> chartsColor = I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//div[@id='" + chartId + "']//*[local-name()='g' and contains(@class,'highcharts-series-group')]//*[local-name()='path']"));
-
-        for (int i = 1; i < chartsColor.size(); i++) {
-            switch (colorName.toUpperCase()) {
-                case "LIGHTBLUE":
-                    if (chartsColor.get(i).getCssValue("fill").contains("rgb(124, 181, 236)")
-                            || chartsColor.get(i).getAttributes("fill").contains("#7cb5ec")
-                            || chartsColor.get(i).getCssValue("fill").contains("rgb(149, 206, 255)")
-                            || chartsColor.get(i).getAttributes("fill").contains("rgb(149, 206, 255)") ) {
-                        I.amPerforming().scroll().toMoveToElement(chartsColor.get(i));
-                        chartsColor.get(i).click();
-                        chartsColor.get(i).click();
-                    }
-                    break;
-                case "GREY":
-                    if (chartsColor.get(i).getCssValue("color").contains("rgb(67,67,72)")
-                            || chartsColor.get(i).getAttributes("fill").contains("rgb(67,67,72)")) {
-                        chartsColor.get(i).click();
-                    }
-                    break;
-                case "GREEN":
-                    if (chartsColor.get(i).getCssValue("color").contains("rgb(144, 237, 125)")
-                            || chartsColor.get(i).getAttributes("fill").contains("rgb(144, 237, 125)")) {
-                        chartsColor.get(i).click();
-                    }
-                    break;
-                case "LIGHTORANGE":
-                    if (chartsColor.get(i).getCssValue("color").contains("rgb(247,163,92)")
-                            || chartsColor.get(i).getAttributes("fill").contains("rgb(247,163,92)")) {
-                        chartsColor.get(i).click();
-                    }
-                    break;
-            }
-        }
+    /**
+     * perform click on enhanced pie chart on main page
+     *
+     * @param chartId
+     * @return
+     */
+    public void clickOnEnhancedCharts(String chartId) {
+        By chart = By.xpath("//div[@id='" + chartId + "']//*[local-name()='g' and contains(@class,'highcharts-series-group')]");
+        I.amPerforming().click().on(chart);
     }
 
 

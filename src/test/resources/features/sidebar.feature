@@ -414,3 +414,47 @@ Feature: Side bar Component Scenarios
     Examples:
       | newFieldsApi                                                                                                                                                                     | defaultFieldsApi                                                                                                                                        |
       | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,NumberofProjectAreas__c,Status__c,GrantAbbreviation__c,TotalAwardObligatedAmount__c,AddressProgramContact__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,NumberofProjectAreas__c,Status__c,GrantAbbreviation__c,TotalAwardObligatedAmount__c |
+
+  @77697    @enableOverallTotalFieldAtParentFlexTableForEnhancedGridAtSideBar-gPlanning
+  Scenario Outline: validate enabling of overall total field after checking checkbox true of Enable Over All Total from config and validating it inside enhanced grid at sidebar - home phase
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName             | fieldOrignalValue               | filterId         |
+      | Flex Table List           | Enable Over All Total | false                           | ApiGeneratedId:0 |
+      | Flex Grid:Flex Table List | Filter Clause         | <defaultFilterClauseForFLV2539> | ApiGeneratedId:1 |
+      | Flex Grid:Flex Table List | Is Master View        | true                            | ApiGeneratedId:2 |
+      | Flex Grid                 | Display Field Names   | <defaultFieldsApi>              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName             | fieldNewValue               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List           | Enable Over All Total | true                        | TmpActiveGrantsGrid | Name                      | FTC-1497                   |
+      | Flex Grid:Flex Table List | Filter Clause         | <newFilterClauseForFLV2539> | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Grid:Flex Table List | Is Master View        | true                        | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Grid:General         | Display Field Names   | <newFieldsApi>              | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Flex Grid Enhanced" content inside "Manage Organizations" subheader on left panel
+    Then I see over all total for "NumberofAwards__c" field at enhanced grid
+
+    Examples:
+      | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                         | defaultFieldsApi                                                                                                                                                                                                                   | newFieldsApi                                     |
+      | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c like 'Road%' | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | Name,ProjectTitle__c,Status__c,NumberofAwards__c |
+
+  @77466    @validateOverallTotalAtEnhancedDataTableAtSideBar-gHOME
+  Scenario Outline: validate overall total at enhanced table at sidebar - home phase
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names   | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Grid             | Enable Over All Total | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names   | <newFieldsApi> | EnhancedDataTable  |                           |                            |
+      | Flex Table List       | Enable Over All Total | true           | EnhancedDataTable  | Name                      | FTC-1524                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Data table enhanced record" content inside "Manage Organizations" subheader on left panel
+    Then I see over all total for "TotalAwardObligatedAmount__c" at enhanced grid
+
+    Examples:
+      | newFieldsApi                                                | defaultFieldsApi                                                                                                                                        |
+      | Name,ProjectTitle__c,Status__c,TotalAwardObligatedAmount__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,NumberofProjectAreas__c,Status__c,GrantAbbreviation__c,TotalAwardObligatedAmount__c |
