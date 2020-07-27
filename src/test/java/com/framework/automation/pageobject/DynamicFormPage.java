@@ -83,6 +83,19 @@ public class DynamicFormPage extends GovGrantsManager {
         I.amPerforming().assertionsTo().assertThat(isFieldErrorMessageDisplayedInsideFormDetails(message, fieldName));
     }
 
+    /**
+     * assert true if comment box displayed as per expected type long text / rich text
+     *
+     * @param commentBoxType
+     */
+    public void assertCommentBoxDisplayTypeAtDynamicForms(String usage, String commentBoxType) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isCommentBoxDisplayInsideDynamicForms(commentBoxType));
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isCommentBoxDisplayInsideDynamicForms(commentBoxType)).isFalse();
+        }
+    }
+
     /*********
      * "Local Methods with complete functionality - private"
      *****************/
@@ -158,6 +171,22 @@ public class DynamicFormPage extends GovGrantsManager {
     private boolean isFieldErrorMessageDisplayedInsideFormDetails(String message, String fieldName) {
         boolean flag = false;
         if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//span[contains(text(),'" + fieldName + "')]/ancestor::dl//p[contains(@class,'errorCheck') and text()='" + message + "']"))) {
+            return true;
+        }
+        return flag;
+    }
+
+
+    /**
+     * assert true if comment box displayed as per expected type long text / rich text
+     *
+     * @param commentBoxType
+     */
+    private boolean isCommentBoxDisplayInsideDynamicForms(String commentBoxType) {
+        boolean flag = false;
+        if (commentBoxType.equalsIgnoreCase("Long Text Area") && I.amPerforming().checkToSee().isDisplayed(By.xpath("//textarea[contains(@id,'LongTextArea')]"))) {
+            return true;
+        } else if (commentBoxType.equalsIgnoreCase("Rich Text Area") && I.amPerforming().checkToSee().isDisplayed(By.xpath("//textarea[contains(@id,'RichTextArea')]"))) {
             return true;
         }
         return flag;

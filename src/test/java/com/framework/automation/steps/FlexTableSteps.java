@@ -256,4 +256,9 @@ public class FlexTableSteps {
     public void placeholderForQuickSearchBoxInsideTable(String placeholder, String tableId) {
         flexTablePage.assertQuickSearchBoxPlaceHolder(placeholder,tableId);
     }
+
+    @Then("I see advance filter with data target value {string} displayed at right side of table {string}")
+    public void iSeeAdvanceFilterDisplayedAtRightSideOfTable(String dataTargetValue, String tableId) {
+        flexTablePage.assertDisplayOfAdvanceFilterAtRightSideOfTable(dataTargetValue, tableId);
+    }
 }

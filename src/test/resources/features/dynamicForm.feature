@@ -1446,3 +1446,77 @@ Feature: dynamic forms Component Scenarios
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I hovering mouse on help text icon inside page block detail "Picklist"
     Then I see "Test Automation Picklist Help" shown as help text
+
+  @93717   @validateCommentApplicableForLongTextAreaValueAtWrittenFieldInsideDynamicFormInEditMode
+  Scenario: validate Comment Applicable? field for long text area in edit mode on dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Capture Item          | Comment Applicable? |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Comment Applicable? | Long TextArea Applicable | CI-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    Then I see comment box displayed as "Long Text Area"
+
+  @93716   @validateCommentApplicableForRichTextAreaValueAtWrittenFieldInsideDynamicFormInEditMode
+  Scenario: validate Comment Applicable? field for rich text area in edit mode on dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Capture Item          | Comment Applicable? |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Comment Applicable? | Rich TextArea Applicable | CI-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    Then I see comment box displayed as "Rich Text Area"
+
+  @93718   @validateCommentApplicableForNotApplicableValueAtWrittenFieldInsideDynamicFormInEditMode
+  Scenario: validate Comment Applicable? field for not applicable value in edit mode on dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Capture Item          | Comment Applicable? |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Comment Applicable? | Not Applicable | CI-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    Then I softly do not see comment box displayed as "Rich Text Area"
+    Then I softly do not see comment box displayed as "Long Text Area"
+
+  @93717   @validateCommentApplicableForNoneValueAtWrittenFieldInsideDynamicFormInEditMode
+  Scenario: validate Comment Applicable? field for none value in edit mode on dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Capture Item          | Comment Applicable? |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Comment Applicable? |               | CI-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    Then I softly do not see comment box displayed as "Rich Text Area"
+    Then I softly do not see comment box displayed as "Long Text Area"
