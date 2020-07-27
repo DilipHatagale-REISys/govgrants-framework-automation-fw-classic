@@ -330,6 +330,16 @@ public class FlexTablePage extends GovGrantsManager {
     }
 
     /**
+     * assert true if advance search filter displayed at top right side of table
+     *
+     * @param tableId
+     * @param dataTargetValue
+     */
+    public void assertDisplayOfAdvanceFilterAtRightSideOfTable(String dataTargetValue, String tableId) {
+        Assert.assertTrue(isAdvanceFilterDisplaysAtRightSideOfTable(dataTargetValue, tableId));
+    }
+
+    /**
      * return false if specified item is displayed
      *
      * @param dropDownValue
@@ -1012,4 +1022,21 @@ public class FlexTablePage extends GovGrantsManager {
         return flag;
     }
 
+    /**
+     * return true if advance search filter displayed at top right side of table
+     *
+     * @param tableId
+     * @param dataTargetValue
+     * @return
+     */
+    private boolean isAdvanceFilterDisplaysAtRightSideOfTable(String dataTargetValue, String tableId) {
+        boolean flag = false;
+        try {
+            if (govgrants.perform().phasePanel().getAdvanceFilterItem(tableId, dataTargetValue).getAttribute("class").contains("pull-right")) {
+                flag = true;
+            }
+        } catch (NoSuchElementException e) {
+        }
+        return flag;
+    }
 }

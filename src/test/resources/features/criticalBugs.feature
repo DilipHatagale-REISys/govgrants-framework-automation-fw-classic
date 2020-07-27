@@ -3193,3 +3193,37 @@ Feature: Logged Issues Scenarios
     When I expand nested table containing column value "Demo_Title"
     When I click on top right button "New Action" in flex table with id "---program:-:tmpGrantorActiveAwardsGridTableId---"
     Then I see new tab is opened
+
+  @93709    @validateAdvanceFilterPositionIfQuickSearchIsDisabled-gPlanning
+  Scenario: validate position advance filter if quick search box is disabled at-Program flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter       | true              | ApiGeneratedId:0 |
+      | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter       | true          | Programs           |                           |                            |
+      | Flex Table:General    | Enable Quick Search | false         | Programs           |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    Then I see advance filter with data target value "#advfPrograms" displayed at right side of table "---program:-:ProgramsFlexTableToggleId---"
+
+  @93725    @validateQuickSearchBoxReturnSearchedResultInsideEnhancedGrid-gPlanning
+  Scenario: validate quick search box return searched result only inside enhanced grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Grid             | Enable Quick Search | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Quick Search | true         | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
+    Then I see value "Demo_Title" for title "Project Title" inside table "---program:-:flexGridEnhancedID---"

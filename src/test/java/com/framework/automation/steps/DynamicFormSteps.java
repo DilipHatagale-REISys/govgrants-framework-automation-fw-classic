@@ -46,4 +46,9 @@ public class DynamicFormSteps {
     public void iSeeTheMessageInTheFormDetails(String message, String fieldName) {
         dynamicFormPage.assertFieldErrorMessageInTheFormDetails(message, fieldName);
     }
+
+    @Then("^I (see|softly do not see) comment box displayed as \"([^\"]*)\"$")
+    public void iSeeCommentBoxDisplayedAs(String usage, String commentBoxType) {
+        dynamicFormPage.assertCommentBoxDisplayTypeAtDynamicForms(usage, commentBoxType);
+    }
 }
