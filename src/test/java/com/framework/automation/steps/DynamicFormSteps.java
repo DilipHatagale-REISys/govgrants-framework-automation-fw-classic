@@ -27,9 +27,9 @@ public class DynamicFormSteps {
         dynamicFormPage.assertFieldsDisplayedInExpectedSectionAtDynamicForm(fieldName, sectionName);
     }
 
-    @Then("^I see section as \"([^\"]*)\" inside dynamic form layout$")
-    public void assertSectionDisplayedAInsideDynamicForm(String sectionName) {
-        dynamicFormPage.assertSectionDisplayedInsideDynamicFormLayout(sectionName);
+    @Then("^I (see|softly see) section as \"([^\"]*)\" inside dynamic form layout$")
+    public void assertSectionDisplayedAInsideDynamicForm(String usage, String sectionName) {
+        dynamicFormPage.assertSectionDisplayedInsideDynamicFormLayout(usage, sectionName);
     }
 
     @Then("I see the instruction text is as follows :")

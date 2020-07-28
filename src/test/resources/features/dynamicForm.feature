@@ -1502,7 +1502,7 @@ Feature: dynamic forms Component Scenarios
     Then I softly do not see comment box displayed as "Rich Text Area"
     Then I softly do not see comment box displayed as "Long Text Area"
 
-  @93717   @validateCommentApplicableForNoneValueAtWrittenFieldInsideDynamicFormInEditMode
+  @93711   @validateCommentApplicableForNoneValueAtWrittenFieldInsideDynamicFormInEditMode
   Scenario: validate Comment Applicable? field for none value in edit mode on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -1520,3 +1520,51 @@ Feature: dynamic forms Component Scenarios
     When I click on "Edit" icon for "Dynamic Form" inside table
     Then I softly do not see comment box displayed as "Rich Text Area"
     Then I softly do not see comment box displayed as "Long Text Area"
+
+  @93781    @ValidateThatValidateButtonIsNotDisplayedAtDynamicFormLayoutInEditModeOnMultipleSectionsForm
+  Scenario: validate the validate button is not displayed in edit mode if Validation Button Visibility is set as Show from config at dynamic form with multiple sections
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                    | fieldOrignalValue | filterId         |
+      | Capture Form          | Validation Button Visibility | Show              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                    | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Validation Button Visibility | Show          | CF-0006            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    Then I see "Validate" button is not displayed
+
+  @88160    @validateThatAllPresentSectionsAreDisplayedAtDynamicFormLayoutInViewMode
+  Scenario: validate that a single section is displayed inside dynamic form layout in view mode
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form 1" inside table
+    Then I softly see section as "Section 1" inside dynamic form layout
+    Then I softly see section as "Section 2" inside dynamic form layout
+    Then I softly see section as "Section 3" inside dynamic form layout
+    Then I softly see section as "Section 4" inside dynamic form layout
+
+  @93861    @validateThatAllPresentSectionsAreDisplayedAtDynamicFormLayoutInEditMode
+  Scenario: validate that a single section is displayed inside dynamic form layout in edit mode
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    Then I softly see section as "Section 1" inside dynamic form layout
+    Then I softly see section as "Section 2" inside dynamic form layout
+    Then I softly see section as "Section 3" inside dynamic form layout
+    Then I softly see section as "Section 4" inside dynamic form layout

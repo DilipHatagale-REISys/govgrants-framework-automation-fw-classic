@@ -147,30 +147,12 @@ public class ChartsPage extends GovGrantsManager {
      * perform click on bars of enhanced dual axes charts coming on modal
      *
      * @param chartId
-     * @param chartsLabelName
+     * @param chartLabelPosition
      * @return
      */
-    public void clickOnEnhancedDualAxesChartsOnModal(String chartId, String chartsLabelName) {
-        String parentLocator = "//div[@id='" + chartId + "' and @data-highcharts-chart='0']//*[local-name()='tspan' and contains(text(),'" + chartsLabelName + "')]//ancestor::*[local-name()='g']//preceding-sibling::*[local-name()='g' and @class='highcharts-series-group']//*[local-name()='rect']";
-        switch (chartsLabelName.toLowerCase()) {
-            case "unitedhealth group":
-                parentLocator = parentLocator + "[1]";
-                break;
-            case "sportDev":
-                parentLocator = parentLocator + "[2]";
-                break;
-            case "who":
-                parentLocator = parentLocator + "[3]";
-                break;
-            case "child development":
-                parentLocator = parentLocator + "[4]";
-                break;
-            case "Va Transport Services":
-                parentLocator = parentLocator + "[5]";
-                break;
-        }
-        I.amPerforming().scroll().toMoveToElement(By.xpath(parentLocator));
-        I.amPerforming().click().on(By.xpath(parentLocator));
+    public void clickOnChartLabelAtGivenPositionInsideChartOnModal(String chartLabelPosition, String chartId) {
+        By getChart = By.xpath("//div[@id='" + chartId + "' and @data-highcharts-chart='0']//*[local-name()='g' and @class='highcharts-series-group']//*[local-name()='rect'][" + chartLabelPosition + "]");
+        I.amPerforming().click().on(getChart);
     }
 
     /**
