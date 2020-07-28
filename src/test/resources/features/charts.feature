@@ -177,8 +177,8 @@ Feature: Charts and Enhanced Charts Component Scenarios
     And I navigate to "Announcements" tab
     Then I do not see chart legends are displayed for chart/enhanced Charts "EnhancedPiechart"
 
-  @71020    @validateDataTableQueryForSelectedDataField-gAnnouncement-EnhancedCharts
-  Scenario Outline: Validate expected values as per query provided inside fields 'Data Table Query for selected data'
+  @71020    @validateDataTableQueryForSelectedDataField-gAnnouncement-EnhancedPieCharts
+  Scenario Outline: Validate expected values as per query provided inside fields 'Data Table Query for selected data' - enhanced pie chart
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                           | fieldOrignalValue          | filterId         |
       | Charts Config         | Data Table Query(For Selected Data) | <default_Data_Table_Query> | ApiGeneratedId:0 |
@@ -424,25 +424,26 @@ Feature: Charts and Enhanced Charts Component Scenarios
   @71041    @validateDataTableQueryForSelectedDataField-gHOME-EnhancedDualAxesCharts
   Scenario Outline: Validate expected values as per query provided inside fields 'Data Table Query for selected data'
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName                           | fieldOrignalValue          | filterId         |
-      | Charts Config         | Data Table Query(For Selected Data) | <default_Data_Table_Query> | ApiGeneratedId:0 |
-      | Charts Config         | Active                              | false                      | ApiGeneratedId:1 |
+      | configurationCategory | fieldName                           | fieldOrignalValue           | filterId         |
+      | Charts Config         | Data Table Query(For Selected Data) | <Data_Table_Selected_Query> | ApiGeneratedId:0 |
+      | Charts Config         | Active                              | true                        | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                           | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Charts Config         | Data Table Query(For Selected Data) | <new_Data_Table_Query> | FundingOpportunity | Name                      | Enhanced Pie chart         |
-      | Charts Config         | Active                              | true                   | FundingOpportunity | Name                      | Enhanced Pie chart         |
+      | configurationCategory | fieldName                           | fieldNewValue               | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Data Table Query(For Selected Data) | <Data_Table_Selected_Query> | GrantorHome        | Name                      | Enhanced Dual Axes         |
+      | Charts Config         | Active                              | true                        | GrantorHome        | Name                      | Enhanced Dual Axes         |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Announcements" tab
+    And I navigate to "HOME" tab
     And I pause execution for "5" seconds
-    And I click on enhanced charts id "---program:-:EnhancedPiechartID---"
-    Then I see the following rows under the following columns in table with id "---program:-:EnhancedPiechartModalID---" :
-      | Announcement Title     | Announcement Type |
-      | Test application..1234 | Competitive       |
+    And I click on menu icon of chart "Enhanced Dual Axes" with title "Enhanced View"
+    When I click on chart label at position "1" inside chart with id "---program:-:EnhancedDualAxesChartID---" on modal
+    Then I see the following rows under the following columns in table with id "---program:-:EnhancedDualAxesModalID---" :
+      | Account Name       |
+      | UnitedHealth Group |
 
     Examples:
-      | default_Data_Table_Query                                                                                                                                     | new_Data_Table_Query                                                                                                                                         |
-      | SELECT Name,AnnouncementName__c,AnnouncementType__c,Status__c FROM Announcement__c Where AnnouncementType__c = '{!XAxisValue}' And RecordType.Name='Grantor' | SELECT Name,AnnouncementName__c,AnnouncementType__c,Status__c FROM Announcement__c Where AnnouncementType__c = '{!XAxisValue}' And RecordType.Name='Grantor' |
+      | Data_Table_Selected_Query                                                                                                                                                          |
+      | SELECT TotalGrantAwardAmount__c ,Grant__r.InternalOrganization__r.Name FROM Award__c where Grant__r.InternalOrganization__r.name='{!XAxisValue}' AND TotalGrantAwardAmount__c != 0 |
 
   @71127    @validateAllDataTableHeaderFieldOnEnhancedViewClick-gHOME-EnhancedDualAxesCharts
   Scenario: Validate All Data table header text on UI after making changes from config
@@ -492,7 +493,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     And I click on menu icon of chart "Enhanced Dual Axes" with title "Enhanced View"
-    When I click on barCharts "---program:-:EnhancedDualAxesChartID---" with charts label name "UnitedHealth Group" on modal
+    When I click on chart label at position "1" inside chart with id "---program:-:EnhancedDualAxesChartID---" on modal
     Then I see "Test Automation Header" displayed in modal
 
   @71136    @validateElementsOnModalComingOnBarChartsClick-gHOME-EnhancedDualAxesCharts
@@ -501,7 +502,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     And I click on menu icon of chart "Enhanced Dual Axes" with title "Enhanced View"
-    When I click on barCharts "---program:-:EnhancedDualAxesChartID---" with charts label name "UnitedHealth Group" on modal
+    When I click on chart label at position "1" inside chart with id "---program:-:EnhancedDualAxesChartID---" on modal
     When I click modal button "Close"
     Then I see chart legends are displayed for chart/enhanced Charts "EnhancedDualAxes"
 
@@ -549,7 +550,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     And I pause execution for "5" seconds
-    When I click on barCharts "---program:-:EnhancedDualAxesChartID---" with charts label name "UnitedHeal" on main Page
+    When I click on chart label at position "1" inside chart with id "---program:-:EnhancedDualAxesChartID---" on modal
     Then I see the following rows under the following columns in table with id "---program:-:EnhancedDualAxesModalID---" :
       | Total Awarded Amount | Account Name       |
       | $350000.00           | UnitedHealth Group |
@@ -2474,3 +2475,80 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I hovering mouse on specific enhanced charts id "---program:-:EnhancedBubbleID---" and charts type "highcharts-grid-line"
     And I pause execution for "2" seconds
     Then I see "false" shown inside enhanced charts on hover
+
+  @71195    @validateDataTableQueryForSelectedDataField-gAnnouncement-EnhancedFunnelCharts
+  Scenario Outline: Validate expected values as per query provided inside fields 'Data Table Query for selected data' at enhanced funnel chart
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                           | fieldOrignalValue                   | filterId         |
+      | Charts Config         | Data Table Query(For Selected Data) | <default_Data_Table_Selected_Query> | ApiGeneratedId:0 |
+      | Charts Config         | Active                              | true                                | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                           | fieldNewValue                   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Data Table Query(For Selected Data) | <new_Data_Table_Selected_Query> | Application        | Name                      | Enhanced_Funnel            |
+      | Charts Config         | Active                              | true                            | Application        | Name                      | Enhanced_Funnel            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I pause execution for "5" seconds
+    And I click on enhanced charts id "---program:-:Enhanced_FunnelID---"
+    Then I see the following rows under the following columns in table with id "---program:-:Enhanced_FunnelModalID---" :
+      | Announcement Title | Status  |
+      | Testing            | Created |
+
+    Examples:
+      | default_Data_Table_Selected_Query                                                                                                                            | new_Data_Table_Selected_Query                                                                                                  |
+      | SELECT Name,AnnouncementName__c,AnnouncementType__c,Status__c FROM Announcement__c Where AnnouncementType__c = '{!XAxisValue}' And RecordType.Name='Grantor' | SELECT Name,AnnouncementName__c,Status__c FROM Announcement__c Where Status__c = '{!XAxisValue}' And RecordType.Name='Grantor' |
+
+  @71178    @validateDataTableQueryForSelectedDataField-gAnnouncement-EnhancedSemiCircleDonutCharts
+  Scenario Outline: Validate expected values as per query provided inside fields 'Data Table Query for selected data' at semi circle donut chart
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                           | fieldOrignalValue                   | filterId         |
+      | Charts Config         | Data Table Query(For Selected Data) | <default_Data_Table_Selected_Query> | ApiGeneratedId:0 |
+      | Charts Config         | Active                              | true                                | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                           | fieldNewValue                   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue  |
+      | Charts Config         | Data Table Query(For Selected Data) | <new_Data_Table_Selected_Query> | FundingOpportunity | Name                      | Announcement status funding |
+      | Charts Config         | Active                              | true                            | FundingOpportunity | Name                      | Announcement status funding |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I pause execution for "5" seconds
+    And I click on enhanced charts id "---program:-:AnnouncementStatusFundingID---"
+    Then I do not see "Announcement Type" in flex table header "---program:-:AnnouncementStatusFundingModalID---"
+
+    Examples:
+      | default_Data_Table_Selected_Query                                                                                                                            | new_Data_Table_Selected_Query                                                                                                  |
+      | SELECT Name,AnnouncementName__c,AnnouncementType__c,Status__c FROM Announcement__c Where AnnouncementType__c = '{!XAxisValue}' And RecordType.Name='Grantor' | SELECT Name,AnnouncementName__c,Status__c FROM Announcement__c Where Status__c = '{!XAxisValue}' And RecordType.Name='Grantor' |
+
+  @71926    @validateDataTableHeaderField-gHome-EnhancedColumnChart
+  Scenario:  Change chart data table header for 'EnhancedColumn' chart in config and validating inside selected data modal - enhanced view
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Charts Config         | Data table header | All Amendment     | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue              | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Data table header | Test Automation Amendments | FundingOpportunity | Name                      | Testing_Column             |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click on menu icon of chart "Testing column" with title "Enhanced View"
+    When I click on chart label at position "1" inside chart with id "---program:-:Testing_ColumnChartId---" on modal
+    Then I see "Test Automation Amendments" displayed in modal
+
+  @71187    @validateDataTableQueryForSelectedDataField-gAnnouncement-EnhancedBarCharts
+  Scenario: Validate expected values as per query provided inside fields 'Data Table Query for selected data' at enhanced bar chart
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Charts Config         | Active    | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Active    | true          | GrantorHome        | Name                      | Enhanced Bar               |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I pause execution for "5" seconds
+    And I click on menu icon of chart "Enhanced Bar" with title "Enhanced View"
+    When I click on chart label at position "1" inside chart with id "---program:-:EnhancedBarChartId---" on modal
+    Then I see the following rows under the following columns in table with id "---program:-:EnhancedBarModalID---" :
+      | AwardCeiling |
+      | $200000      |

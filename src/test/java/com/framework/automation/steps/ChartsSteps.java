@@ -27,11 +27,6 @@ public class ChartsSteps {
         chartsPage.clickSpecificLinkOnTaskSummary(linkName, chartName);
     }
 
-    @When("I click on barCharts \"([^\"]*)\" with charts label name \"([^\"]*)\" on modal$")
-    public void clickOnBarChartsWithChartsLabelNameOnModal(String chartsId, String chartsLabelName) {
-        chartsPage.clickOnEnhancedDualAxesChartsOnModal(chartsId, chartsLabelName);
-    }
-
     @When("I click on barCharts \"([^\"]*)\" with charts label name \"([^\"]*)\" on main Page$")
     public void clickOnBarChartsWithChartsLabelNameOnMainPage(String chartsId, String chartsLabelName) {
         chartsPage.clickOnEnhancedDualAxesChartsOnMainPage(chartsId, chartsLabelName);
@@ -40,6 +35,11 @@ public class ChartsSteps {
     @And("I click on enhanced charts id {string}")
     public void iClickOnEnhancedChartsId(String chartId) {
         chartsPage.clickOnEnhancedCharts(chartId);
+    }
+
+    @When("I click on chart label at position {string} inside chart with id {string} on modal")
+    public void clickOnChartLabelAtGivenPositionInsideChartInModal(String chartLabelPosition, String chartId) {
+        chartsPage.clickOnChartLabelAtGivenPositionInsideChartOnModal(chartLabelPosition,chartId);
     }
 
     @Then("^I see \"([^\"]*)\" displayed in modal$")

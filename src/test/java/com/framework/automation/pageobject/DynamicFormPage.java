@@ -50,8 +50,12 @@ public class DynamicFormPage extends GovGrantsManager {
      *
      * @param sectionName
      */
-    public void assertSectionDisplayedInsideDynamicFormLayout(String sectionName) {
-        Assert.assertTrue(isSectionDisplayedInsideDynamicFormLayout(sectionName));
+    public void assertSectionDisplayedInsideDynamicFormLayout(String usage, String sectionName) {
+        if (usage.equalsIgnoreCase("see")){
+        Assert.assertTrue(isSectionDisplayedInsideDynamicFormLayout(sectionName)); }
+        else if (usage.equalsIgnoreCase("softly see")){
+            I.amPerforming().assertionsTo().assertThat(isSectionDisplayedInsideDynamicFormLayout(sectionName)).isTrue();
+        }
     }
 
     /**
@@ -184,10 +188,13 @@ public class DynamicFormPage extends GovGrantsManager {
      */
     private boolean isCommentBoxDisplayInsideDynamicForms(String commentBoxType) {
         boolean flag = false;
-        if (commentBoxType.equalsIgnoreCase("Long Text Area") && I.amPerforming().checkToSee().isDisplayed(By.xpath("//textarea[contains(@id,'LongTextArea')]"))) {
-            return true;
-        } else if (commentBoxType.equalsIgnoreCase("Rich Text Area") && I.amPerforming().checkToSee().isDisplayed(By.xpath("//textarea[contains(@id,'RichTextArea')]"))) {
-            return true;
+        try {
+            if (commentBoxType.equalsIgnoreCase("Long Text Area") && I.amPerforming().checkToSee().isDisplayed(By.xpath("//textarea[contains(@id,'LongTextArea')]"))) {
+                return true;
+            } else if (commentBoxType.equalsIgnoreCase("Rich Text Area") && I.amPerforming().checkToSee().isDisplayed(By.xpath("//textarea[contains(@id,'RichTextArea')]"))) {
+                return true;
+            }
+        } catch (Exception e) {
         }
         return flag;
     }
