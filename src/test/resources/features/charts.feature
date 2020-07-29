@@ -550,7 +550,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     And I pause execution for "5" seconds
-    When I click on chart label at position "1" inside chart with id "---program:-:EnhancedDualAxesChartID---" on modal
+    When I click on chart label at position "1" inside chart with id "---program:-:EnhancedDualAxesChartID---" on page
     Then I see the following rows under the following columns in table with id "---program:-:EnhancedDualAxesModalID---" :
       | Total Awarded Amount | Account Name       |
       | $350000.00           | UnitedHealth Group |
@@ -2552,3 +2552,18 @@ Feature: Charts and Enhanced Charts Component Scenarios
     Then I see the following rows under the following columns in table with id "---program:-:EnhancedBarModalID---" :
       | AwardCeiling |
       | $200000      |
+
+  @71501    @validateDataTableHeaders-gHome-EnhancedLineChart @issue
+  Scenario:  Change chart data table header for 'EnhancedLine' chart in config and validating inside home - enhanced view
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Charts Config         | Data table header | All Application   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue               | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Data table header | Test Automation Application | GrantorHome        | Name                      | Enhanced Line              |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    And I click on menu icon of chart "Enhanced Line" with title "Enhanced View"
+    When I click on chart label at position "1" inside chart with id "---program:-:EnhancedLineChartId---" on modal
+    Then I see "Test Automation Application" displayed in modal

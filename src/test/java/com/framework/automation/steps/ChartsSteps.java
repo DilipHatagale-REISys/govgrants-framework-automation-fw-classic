@@ -37,9 +37,9 @@ public class ChartsSteps {
         chartsPage.clickOnEnhancedCharts(chartId);
     }
 
-    @When("I click on chart label at position {string} inside chart with id {string} on modal")
-    public void clickOnChartLabelAtGivenPositionInsideChartInModal(String chartLabelPosition, String chartId) {
-        chartsPage.clickOnChartLabelAtGivenPositionInsideChartOnModal(chartLabelPosition,chartId);
+    @When("^I click on chart label at position \"([^\"]*)\" inside chart with id \"([^\"]*)\" on (modal|page)$")
+    public void clickOnChartLabelAtGivenPositionInsideChartInModal(String chartLabelPosition, String chartId, String uiType) {
+        chartsPage.clickOnChartLabelAtGivenPositionInsideChart(chartLabelPosition,chartId, uiType.equalsIgnoreCase("modal"));
     }
 
     @Then("^I see \"([^\"]*)\" displayed in modal$")
