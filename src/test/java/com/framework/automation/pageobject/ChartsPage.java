@@ -150,9 +150,15 @@ public class ChartsPage extends GovGrantsManager {
      * @param chartLabelPosition
      * @return
      */
-    public void clickOnChartLabelAtGivenPositionInsideChartOnModal(String chartLabelPosition, String chartId) {
-        By getChart = By.xpath("//div[@id='" + chartId + "' and @data-highcharts-chart='0']//*[local-name()='g' and @class='highcharts-series-group']//*[local-name()='rect'][" + chartLabelPosition + "]");
-        I.amPerforming().click().on(getChart);
+    public void clickOnChartLabelAtGivenPositionInsideChart(String chartLabelPosition, String chartId, Boolean isModal) {
+        if (isModal) {
+            By getChartOnModal = By.xpath("//div[@id='filter_Div']/following-sibling::div//*[@id='" + chartId + "' and @data-highcharts-chart='0']//*[local-name()='g' and @class='highcharts-series-group']//*[local-name()='rect'][" + chartLabelPosition + "] | " +
+                    "//div[@id='filter_Div']/following-sibling::div//*[@id='" + chartId + "']//*[local-name()='g' and @class='highcharts-series-group']//*[local-name()='path' and contains(@class,'highcharts-point')][" + chartLabelPosition + "]");
+            I.amPerforming().click().on(getChartOnModal);
+        } else {
+            By getChartOnPage = By.xpath("//div[@id='" + chartId + "']//*[local-name()='g' and @class='highcharts-series-group']//*[local-name()='rect'][" + chartLabelPosition + "]");
+            I.amPerforming().click().on(getChartOnPage);
+        }
     }
 
     /**

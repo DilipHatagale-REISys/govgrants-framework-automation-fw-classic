@@ -79,14 +79,14 @@ public class DynamicForm {
                         String.valueOf(SObjectAPIs.GNT__CaptureSection__c),
                         apiUtilities.getComponentCoreFieldId(
                                 String.valueOf(SObjectAPIs.GNT__CaptureSection__c), filterClause),
-                        String.valueOf(SObjectAPIs.GNT__Name__c	), value);
+                        String.valueOf(SObjectAPIs.GNT__Name__c), value);
                 break;
             case "SECTION COLUMN":
                 finalPayload = String.format(payloadForStringValue,
                         String.valueOf(SObjectAPIs.GNT__CaptureSection__c),
                         apiUtilities.getComponentCoreFieldId(
                                 String.valueOf(SObjectAPIs.GNT__CaptureSection__c), filterClause),
-                        String.valueOf(SObjectAPIs.GNT__SectionColumn__c	), value);
+                        String.valueOf(SObjectAPIs.GNT__SectionColumn__c), value);
                 break;
         }
         System.out.println(finalPayload);
@@ -108,31 +108,45 @@ public class DynamicForm {
         switch (fieldLabel.toUpperCase()) {
             case "QUESTION APPLICABLE ?":
                 finalPayload = String.format(payloadForStringValue,
-                        String.valueOf(SObjectAPIs.GNT__CaptureItem__c	),
+                        String.valueOf(SObjectAPIs.GNT__CaptureItem__c),
                         apiUtilities.getComponentCoreFieldId(
-                                String.valueOf(SObjectAPIs.GNT__CaptureItem__c	), filterClause),
+                                String.valueOf(SObjectAPIs.GNT__CaptureItem__c), filterClause),
                         String.valueOf(SObjectAPIs.GNT__QuestionApplicable__c), value);
                 break;
             case "MAX SCORE":
                 finalPayload = String.format(payloadForIntValue,
-                        String.valueOf(SObjectAPIs.GNT__CaptureItem__c	),
+                        String.valueOf(SObjectAPIs.GNT__CaptureItem__c),
                         apiUtilities.getComponentCoreFieldId(
-                                String.valueOf(SObjectAPIs.GNT__CaptureItem__c	), filterClause),
+                                String.valueOf(SObjectAPIs.GNT__CaptureItem__c), filterClause),
                         String.valueOf(SObjectAPIs.GNT__MaxScore__c), value);
                 break;
             case "QUESTION HELP TEXT":
                 finalPayload = String.format(payloadForStringValue,
-                        String.valueOf(SObjectAPIs.GNT__CaptureItem__c	),
+                        String.valueOf(SObjectAPIs.GNT__CaptureItem__c),
                         apiUtilities.getComponentCoreFieldId(
-                                String.valueOf(SObjectAPIs.GNT__CaptureItem__c	), filterClause),
-                        String.valueOf(SObjectAPIs.GNT__HelpText__c	), value);
+                                String.valueOf(SObjectAPIs.GNT__CaptureItem__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__HelpText__c), value);
                 break;
             case "COMMENT APPLICABLE?":
                 finalPayload = String.format(payloadForStringValue,
-                        String.valueOf(SObjectAPIs.GNT__CaptureItem__c	),
+                        String.valueOf(SObjectAPIs.GNT__CaptureItem__c),
                         apiUtilities.getComponentCoreFieldId(
-                                String.valueOf(SObjectAPIs.GNT__CaptureItem__c	), filterClause),
+                                String.valueOf(SObjectAPIs.GNT__CaptureItem__c), filterClause),
                         String.valueOf(SObjectAPIs.GNT__CommentApplicable__c), value);
+                break;
+            case "QUESTION IDENTIFIER":
+                finalPayload = String.format(payloadForStringValue,
+                        String.valueOf(SObjectAPIs.GNT__CaptureItem__c),
+                        apiUtilities.getComponentCoreFieldId(
+                                String.valueOf(SObjectAPIs.GNT__CaptureItem__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__QuestionIdentifier__c), value);
+                break;
+            case "DEPENDENT QUESTION JSON":
+                finalPayload = String.format(payloadForStringValue,
+                        String.valueOf(SObjectAPIs.GNT__CaptureItem__c),
+                        apiUtilities.getComponentCoreFieldId(
+                                String.valueOf(SObjectAPIs.GNT__CaptureItem__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__DependentQuestionJson__c), value);
                 break;
         }
         System.out.println(finalPayload);

@@ -51,9 +51,9 @@ public class DynamicFormPage extends GovGrantsManager {
      * @param sectionName
      */
     public void assertSectionDisplayedInsideDynamicFormLayout(String usage, String sectionName) {
-        if (usage.equalsIgnoreCase("see")){
-        Assert.assertTrue(isSectionDisplayedInsideDynamicFormLayout(sectionName)); }
-        else if (usage.equalsIgnoreCase("softly see")){
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isSectionDisplayedInsideDynamicFormLayout(sectionName));
+        } else if (usage.equalsIgnoreCase("softly see")) {
             I.amPerforming().assertionsTo().assertThat(isSectionDisplayedInsideDynamicFormLayout(sectionName)).isTrue();
         }
     }
@@ -98,6 +98,17 @@ public class DynamicFormPage extends GovGrantsManager {
         } else if (usage.equalsIgnoreCase("softly do not see")) {
             I.amPerforming().assertionsTo().assertThat(isCommentBoxDisplayInsideDynamicForms(commentBoxType)).isFalse();
         }
+    }
+
+    /**
+     * assert true if fields are hidden or disabled inside section on dynamic form layout
+     *
+     * @param fieldName
+     * @param sectionName
+     * @param isHidden
+     */
+    public void assertFieldInsideDynamicForm(String fieldName, String sectionName, Boolean isHidden) {
+        I.amPerforming().assertionsTo().assertThat(isFieldInsideDynamicFormDisplayed(fieldName, sectionName, isHidden));
     }
 
     /*********
@@ -195,6 +206,24 @@ public class DynamicFormPage extends GovGrantsManager {
                 return true;
             }
         } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * assert true if fields are hidden or disabled inside section on dynamic form layout
+     *
+     * @param fieldName
+     * @param sectionName
+     * @param isHidden
+     */
+    private boolean isFieldInsideDynamicFormDisplayed(String fieldName, String sectionName, boolean isHidden) {
+        boolean flag = false;
+        WebElement getDynamicFormFields = I.amPerforming().getElementReference().of(By.xpath("//a[@title='Section: " + sectionName + "']/ancestor::div[@class='panel-heading']/following-sibling::div//span[text()='" + fieldName + "']/ancestor::div[contains(@class,'formRowWrap')]"));
+        if (isHidden && getDynamicFormFields.getAttribute("Style").equalsIgnoreCase("display: none;")) {
+            return true;
+        } else if (getDynamicFormFields.getAttribute("class").contains("disabledbutton")) {
+            return true;
         }
         return flag;
     }
