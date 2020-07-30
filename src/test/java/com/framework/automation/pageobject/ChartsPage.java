@@ -3,6 +3,7 @@ package com.framework.automation.pageobject;
 import com.framework.automation.projectmanager.GovGrantsManager;
 import com.testingblaze.objects.Elements;
 import com.testingblaze.register.I;
+import com.testingblaze.report.LogLevel;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -151,10 +152,15 @@ public class ChartsPage extends GovGrantsManager {
      * @return
      */
     public void clickOnChartLabelAtGivenPositionInsideChart(String chartLabelPosition, String chartId, Boolean isModal) {
+        By getChartOnModal = By.xpath("//div[@id='filter_Div']/following-sibling::div//*[@id='" + chartId + "' and @data-highcharts-chart='0']//*[local-name()='g' and @class='highcharts-series-group']//*[local-name()='rect'][" + chartLabelPosition + "] | " +
+                "//div[@id='filter_Div']/following-sibling::div//*[@id='" + chartId + "']//*[local-name()='g' and @class='highcharts-series-group']//*[local-name()='path' and contains(@class,'highcharts-point')][" + chartLabelPosition + "]");
         if (isModal) {
-            By getChartOnModal = By.xpath("//div[@id='filter_Div']/following-sibling::div//*[@id='" + chartId + "' and @data-highcharts-chart='0']//*[local-name()='g' and @class='highcharts-series-group']//*[local-name()='rect'][" + chartLabelPosition + "] | " +
-                    "//div[@id='filter_Div']/following-sibling::div//*[@id='" + chartId + "']//*[local-name()='g' and @class='highcharts-series-group']//*[local-name()='path' and contains(@class,'highcharts-point')][" + chartLabelPosition + "]");
             I.amPerforming().click().on(getChartOnModal);
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@aria-hidden='false' and @aria-labelledby='myRecordsModalLabel']"))) {
+                I.amPerforming().updatingOfReportWith().write(LogLevel.PROJECT_LAYER_ERROR, "An exception pop-up occured after click on chart");
+            } else {
+                I.amPerforming().click().on(getChartOnModal);
+            }
         } else {
             By getChartOnPage = By.xpath("//div[@id='" + chartId + "']//*[local-name()='g' and @class='highcharts-series-group']//*[local-name()='rect'][" + chartLabelPosition + "]");
             I.amPerforming().click().on(getChartOnPage);

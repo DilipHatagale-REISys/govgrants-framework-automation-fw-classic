@@ -1,5 +1,5 @@
 @expressionbuilder-component @regression @expressionBuilder
-Feature: Expression Builder Component Scenarios
+Business Need: Expression Builder Component Scenarios
   Test all expression builder component based scenarios
   As a configuration manager i make different configurational changes in expression builder component and will validate them.
 

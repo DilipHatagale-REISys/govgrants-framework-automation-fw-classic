@@ -1,5 +1,5 @@
 @customAppConfig-component @regression @customAppConfig
-Feature: Custom App Config Component Scenarios
+Business Need: Custom App Config Component Scenarios
   Test all custom app config component based scenarios
   As a configuration manager i make different configurational changes in custom app component and will validate them.
 

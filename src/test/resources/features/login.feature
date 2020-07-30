@@ -1,5 +1,5 @@
 @login
-Feature: Login Scenarios
+Business Need: Login Scenarios
   Test all login based scenarios
 
   @validlogin @smoke

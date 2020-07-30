@@ -1,5 +1,5 @@
 @flextable-component @regression @flexTable
-Feature: Flex Table Component Scenarios
+Business Need: Flex Table Component Scenarios
   Test all flex table component based scenarios
   As a configuration manager i make different configurational changes in flex table component and will validate them.
 

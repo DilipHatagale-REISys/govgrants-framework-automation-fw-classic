@@ -52,8 +52,8 @@ public class DynamicFormSteps {
         dynamicFormPage.assertCommentBoxDisplayTypeAtDynamicForms(usage, commentBoxType);
     }
 
-    @Then("^I see \"([^\"]*)\" field inside \"([^\"]*)\" is (hidden|disabled)$")
-    public void iSeeFieldInsideIs(String fieldName, String sectionName, String displayType) {
-        dynamicFormPage.assertFieldInsideDynamicForm(fieldName, sectionName, displayType.equalsIgnoreCase("hidden"));
+    @Then("^I (see|softly see) \"([^\"]*)\" field inside \"([^\"]*)\" is (hidden|disabled)$")
+    public void iSeeFieldInsideIs(String usage,String fieldName, String sectionName, String displayType) {
+        dynamicFormPage.assertFieldInsideDynamicForm(usage, fieldName, sectionName, displayType.equalsIgnoreCase("hidden"));
     }
 }

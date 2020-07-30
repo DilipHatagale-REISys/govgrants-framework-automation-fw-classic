@@ -1,5 +1,5 @@
 @approvalprocess-component @regression @approvalProcess
-Feature: Approval Process Component Scenarios
+Business Need: Approval Process Component Scenarios
   Test all approval process component based scenarios
   As a configuration manager i make different configurational changes in approval process component and will validate them.
 

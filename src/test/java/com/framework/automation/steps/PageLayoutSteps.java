@@ -373,9 +373,9 @@ public class PageLayoutSteps {
         pageLayoutPage.assertSVGArrowOrderForLightningLookUp(order);
     }
 
-    @Then("^I see expand collapse is working as expected$")
-    public void assertExpandCollapseWorking() {
-        pageLayoutPage.assertFunctionalityOfExpandCollapse();
+    @Then("^I (see|do not see|softly do not see) \"([^\"]*)\" is collapsed$")
+    public void assertExpandCollapseWorking(String usage, String blockName) {
+        pageLayoutPage.assertFunctionalityOfExpandCollapse(usage, blockName);
     }
 
     @Then("^I see error message \"([^\"]*)\" for invalid input at \"([^\"]*)\"$")
@@ -531,5 +531,10 @@ public class PageLayoutSteps {
     @Then("^I (see|do not see) asterisk mark at \"([^\"]*)\" field is displayed at send email modal$")
     public void iSeeAsteriskMarkAtFieldIsDisplayedAtSendEmailModal(String usage, String fieldName) {
         pageLayoutPage.assertAsteriskMarkAtSendEmailModal(usage, fieldName);
+    }
+
+    @Then("I see search icon for lookup {string}")
+    public void iSeeSearchIconForLookup(String searchBtnName) {
+        pageLayoutPage.assertSearchIconAtLookupField(searchBtnName);
     }
 }

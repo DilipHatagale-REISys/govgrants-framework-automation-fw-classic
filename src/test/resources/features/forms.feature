@@ -1,5 +1,5 @@
 @forms-component @regression
-Feature: Forms Component Scenarios
+Business Need: Forms Component Scenarios
   Test all forms component based scenarios
   As a configuration manager i make different configurational changes in forms component and will validate them.
 

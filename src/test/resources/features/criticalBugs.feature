@@ -1,5 +1,5 @@
 @loggedIssueScenarios @regression
-Feature: Logged Issues Scenarios
+Business Need: Logged Issues Scenarios
   Test all logged issues based scenarios
   As a configuration manager i make different configurational changes and will validate them.
 
@@ -1007,7 +1007,7 @@ Feature: Logged Issues Scenarios
     When I click on "View" icon for "Pre-Screen Review Panel" inside table
     And I click on top right button "Associate Internal user" in flex table with id "RelatedTemplateReviewers"
     And I click on expand collapse icon for panel heading "Internal Review Panel Users"
-    Then I see expand collapse is working as expected
+    Then I see "Internal Review Panel Users" is collapsed
 
   @58956    @formsPrevievLinkShouldOpensFormsCorrectly
   Scenario: validate preview lookup link is working correctly on click at forms modal
@@ -3217,7 +3217,7 @@ Feature: Logged Issues Scenarios
       | Flex Grid             | Enable Quick Search | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Quick Search | true         | TmpActiveGrantsGrid |                           |                            |
+      | Flex Table:General    | Enable Quick Search | true          | TmpActiveGrantsGrid |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3227,3 +3227,26 @@ Feature: Logged Issues Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     Then I see value "Demo_Title" for title "Project Title" inside table "---program:-:flexGridEnhancedID---"
+
+  @93824    @verifyColumnNameInsideLookupModalWindow-gPlanning @pageLayout
+  Scenario: verify column name displayed inside lookup modal window by click on search icon at lookup field
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I click search icon for lookup "Organization Lookup (New Window)"
+    Then I see "Account Name" shown inside flex table with id "---program:-:AccountTableId---"
+
+  @93823   @verifySearchIconDisplayedAtLookupFieldInsideModalWindow-gPlanning @pageLayout
+  Scenario: verify search icon displayed at lookup field inside modal window
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Roles" sub tab
+    When I click on top right button "New" in flex table with id "---program:-:programTableDivId---"
+    Then I see search icon for lookup "Assigned to User Lookup (New Window)"

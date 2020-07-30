@@ -1,5 +1,5 @@
 @libraryFiles-component @regression @libraryFiles
-Feature: Library Files Component Scenarios
+Business Need: Library Files Component Scenarios
   Test all library files component based scenarios
   As a configuration manager i make different configurations changes in library files component and will validate them.
 

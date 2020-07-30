@@ -1,5 +1,5 @@
 @flexgrid-component @regression @flexGrid
-Feature: Flex Grid Component Scenarios
+Business Need: Flex Grid Component Scenarios
   Abbreviations: ProgramPerformanceMgmtGridView (PPMGV)
   Test all flex grid component based scenarios
   As a configuration manager i make different configurational changes in flex grid component and will validate them.
