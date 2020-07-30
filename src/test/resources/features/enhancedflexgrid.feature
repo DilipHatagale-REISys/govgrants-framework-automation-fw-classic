@@ -1,5 +1,5 @@
 @enhancedflexgrid-component @regression @enhancedGrid
-Feature: Enhanced Flex Grid Component Scenarios
+Business Need: Enhanced Flex Grid Component Scenarios
   Test all enhanced flex grid component based scenarios
   As a configuration manager i make different configurational changes in enhanced flex grid component and will validate them.
 

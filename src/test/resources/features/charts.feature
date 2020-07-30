@@ -1,5 +1,5 @@
 @charts-Enhanced @Charts-component @regression @enhancedCharts
-Feature: Charts and Enhanced Charts Component Scenarios
+Business Need: Charts and Enhanced Charts Component Scenarios
   Test all charts/enhanced charts component based scenarios
   As a configuration manager i make different configurational changes in charts/enhanced charts component and will validate them.
 
@@ -2553,7 +2553,7 @@ Feature: Charts and Enhanced Charts Component Scenarios
       | AwardCeiling |
       | $200000      |
 
-  @71501    @validateDataTableHeaders-gHome-EnhancedLineChart @issue
+  @71501    @validateDataTableHeaders-gHome-EnhancedLineChart
   Scenario:  Change chart data table header for 'EnhancedLine' chart in config and validating inside home - enhanced view
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |

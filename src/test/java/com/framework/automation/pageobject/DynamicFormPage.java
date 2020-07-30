@@ -107,8 +107,12 @@ public class DynamicFormPage extends GovGrantsManager {
      * @param sectionName
      * @param isHidden
      */
-    public void assertFieldInsideDynamicForm(String fieldName, String sectionName, Boolean isHidden) {
-        I.amPerforming().assertionsTo().assertThat(isFieldInsideDynamicFormDisplayed(fieldName, sectionName, isHidden));
+    public void assertFieldInsideDynamicForm(String usage, String fieldName, String sectionName, Boolean isHidden) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isFieldInsideDynamicFormDisplayed(fieldName, sectionName, isHidden));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isFieldInsideDynamicFormDisplayed(fieldName, sectionName, isHidden));
+        }
     }
 
     /*********

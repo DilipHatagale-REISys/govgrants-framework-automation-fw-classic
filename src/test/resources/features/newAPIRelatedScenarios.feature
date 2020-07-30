@@ -1,5 +1,5 @@
 @NewAPIRelatedScenarios @regression
-Feature: New API related scenarios temporary
+Business Need: New API related scenarios temporary
 
   @54772    @lookUpHeaderTextFieldWithNumberOfAwardsAtPageBlockDetail-gPlanning @check @wip
   Scenario: Adding column header with number of award Api name to lookup modal from config and validating it on program detail page

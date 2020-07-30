@@ -1,5 +1,5 @@
 @SnapShot-component @regression
-Feature: Snapshot Config Component Scenarios
+Business Need: Snapshot Config Component Scenarios
   Test all sanpshot config component based scenarios
   As a configuration manager i make different configurational changes in snapshot component and will validate them.
 

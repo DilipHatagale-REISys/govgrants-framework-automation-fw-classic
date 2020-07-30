@@ -1,5 +1,5 @@
 @GGFSanityBusinessFlow @regression
-Feature: Sanity check for all Component Scenarios
+Business Need: Sanity check for all Component Scenarios
   Test all component scenarios for sanity
 
   @34666    @validateTitleField-gplanning @enhancedCharts

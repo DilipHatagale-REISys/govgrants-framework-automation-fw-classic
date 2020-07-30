@@ -391,8 +391,15 @@ public class PageLayoutPage extends GovGrantsManager {
     /**
      * return true if expand collapse working correctly
      */
-    public void assertFunctionalityOfExpandCollapse() {
-        Assert.assertTrue(isExpandCollapseWorkingAsExpected());
+    public void assertFunctionalityOfExpandCollapse(String usage, String blockName) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isExpandCollapseWorkingAsExpected(blockName));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isExpandCollapseWorkingAsExpected(blockName));
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isExpandCollapseWorkingAsExpected(blockName)).isFalse();
+        }
+
     }
 
     /**
@@ -1067,7 +1074,6 @@ public class PageLayoutPage extends GovGrantsManager {
         Assert.assertTrue(isSearchItemDisplayBoxSizeIsDisplayedProperlyAtSendEmailModal(fieldName, condition));
     }
 
-
     /**
      * return true if asterisk mark at required field is displayed at Send Email Modal
      */
@@ -1077,6 +1083,15 @@ public class PageLayoutPage extends GovGrantsManager {
         } else if (usage.equalsIgnoreCase("do not see")) {
             I.amPerforming().assertionsTo().assertThat(isAsteriskMarkDisplayAtSendEmailModal(fieldName)).isFalse();
         }
+    }
+
+    /**
+     * return true if search icon displayed at lookup field
+     *
+     * @param searchBtnName
+     */
+    public void assertSearchIconAtLookupField(String searchBtnName) {
+        Assert.assertTrue(isSearchIconAtLookupFieldDisplay(searchBtnName));
     }
 
     /**
@@ -1647,9 +1662,9 @@ public class PageLayoutPage extends GovGrantsManager {
      *
      * @return
      */
-    private boolean isExpandCollapseWorkingAsExpected() {
+    private boolean isExpandCollapseWorkingAsExpected(String blockName) {
         boolean flag = false;
-        if (I.amPerforming().actionToGet().attribute(By.xpath("//div[@class='panel-heading']//a[@title='Internal Review Panel Users']"), "class").equalsIgnoreCase("collapsed")) {
+        if (I.amPerforming().actionToGet().attribute(By.xpath("//div[@class='panel-heading']//a[@title='" + blockName + "']"), "class").equalsIgnoreCase("collapsed")) {
             flag = true;
         }
         return flag;
@@ -2094,6 +2109,23 @@ public class PageLayoutPage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//label[contains(@class,'control-label') and contains(text(),'" + fieldName + "')]"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if search icon displayed at lookup field
+     *
+     * @param searchBtnName
+     * @return
+     */
+    private boolean isSearchIconAtLookupFieldDisplay(String searchBtnName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//img[@title='" + searchBtnName + "']"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
