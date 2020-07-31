@@ -41,8 +41,16 @@ public class DynamicFormPage extends GovGrantsManager {
      * @param fieldName
      * @param sectionName
      */
-    public void assertFieldsDisplayedInExpectedSectionAtDynamicForm(String fieldName, String sectionName) {
-        Assert.assertTrue(isFieldDisplayedInExpectedSectionAtDynamicForm(fieldName, sectionName));
+    public void assertFieldsDisplayedInExpectedSectionAtDynamicForm(String usage, String fieldName, String sectionName) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isFieldDisplayedInExpectedSectionAtDynamicForm(fieldName, sectionName));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isFieldDisplayedInExpectedSectionAtDynamicForm(fieldName, sectionName));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isFieldDisplayedInExpectedSectionAtDynamicForm(fieldName, sectionName)).isTrue();
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isFieldDisplayedInExpectedSectionAtDynamicForm(fieldName, sectionName)).isFalse();
+        }
     }
 
     /**
@@ -111,7 +119,7 @@ public class DynamicFormPage extends GovGrantsManager {
         if (usage.equalsIgnoreCase("see")) {
             Assert.assertTrue(isFieldInsideDynamicFormDisplayed(fieldName, sectionName, isHidden));
         } else if (usage.equalsIgnoreCase("softly see")) {
-            I.amPerforming().assertionsTo().assertThat(isFieldInsideDynamicFormDisplayed(fieldName, sectionName, isHidden));
+            I.amPerforming().assertionsTo().assertThat(isFieldInsideDynamicFormDisplayed(fieldName, sectionName, isHidden)).isFalse();
         }
     }
 
