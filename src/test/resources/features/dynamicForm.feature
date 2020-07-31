@@ -1589,7 +1589,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
-    Then I see "Currency" field inside "Section 1" is hidden
+    Then I do not see "Currency" inside "Section 1" at dynamic form
 
   @94007   @validateDependentQuestionJsonFieldByHidingCurrencyFieldOnTheBasisOfWrittenFieldInsideDynamicFormInEditMode
   Scenario: validate Dependent Question Json Field by hiding currency field on the basisi of written field in form edit mode
@@ -1633,7 +1633,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
-    Then I see "Currency" field inside "Section 1" is disabled
+    Then I see "Currency" inside "Section 1" at dynamic form
 
   @94015   @validateDependentQuestionJsonFieldByDisablingCurrencyFieldOnTheBasisOfWrittenFieldInsideDynamicFormInEditMode
   Scenario: validate Dependent Question Json Field by disabling currency field on the basis of written field in form edit mode
@@ -1726,7 +1726,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
-    Then I see "Currency" field inside "Section 1" is hidden
+    Then I do not see "Currency" inside "Section 1" at dynamic form
 
   @94066   @validateDependentQuestionJsonFieldAndProvidingUniqueFieldNameInQuestionIdentifierFieldByDisablingFieldInsideDynamicFormInEditMode
   Scenario: validate Dependent Question Json Field by disabling currency field on the basis of written field value and providing unique field name in Question Identifier in form edit mode
@@ -1792,7 +1792,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
-    Then I see "Currency" field inside "Section 1" is disabled
+    Then I see "Currency" inside "Section 1" at dynamic form
 
   @94224   @validateQuestionIdentifierFieldForShowRequiredJSONInsideDynamicFormInEditMode
   Scenario: validate Question Identifier field for show required in JSON in dynamic form edit layout
@@ -1868,8 +1868,8 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
-    Then I softly see "Currency" field inside "Section 1" is hidden
-    Then I softly see "Number" field inside "Section 1" is disabled
+    Then I softly do not see "Currency" inside "Section 1" at dynamic form
+    Then I softly see "Number" inside "Section 1" at dynamic form
 
   @94253   @validateDependentQuestionJsonFieldByShowRequiredCurrencyAndDisablingNumberFieldOnTheBasisOfWrittenFieldInsideDynamicFormInEditMode
   Scenario: validate Dependent Question Json Field by show required currency and disabling number field using written field value in form edit mode
@@ -1900,3 +1900,206 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Save" in the page details
     Then I softly see the following message in the page details :
       | Currency is Required to save under Section 1. |
+
+  @94416   @validateDependentQuestionJsonFieldByHidingWrittenFieldUsingCurrencyFieldValueInsideDynamicFormInEditMode
+  Scenario: validate Dependent Question Json Field by hiding written field on the basis of currency field value in form edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                             | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Written                                                                   | CI-0018            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:HideWrittenUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                  | CI-0022            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    Then I see "Written" field inside "Section 1" is hidden
+
+  @94417   @validateDependentQuestionJsonFieldByHidingWrittenFieldUsingCurrencyFieldValueInsideDynamicFormInViewMode
+  Scenario: validate Dependent Question Json Field by hiding written field on the basis of currency field value in form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                             | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Written                                                                   | CI-0018            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:HideWrittenUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                  | CI-0022            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form 1" inside table
+    Then I do not see "Written" inside "Section 1" at dynamic form
+
+  @94227   @validateDependentQuestionJsonFieldByDisablingWrittenFieldUsingCurrencyFieldValueInsideDynamicFormInEditMode
+  Scenario: validate Dependent Question Json Field by disabling written field on the basis of currency field value in form edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                 | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Written                                                                       | CI-0018            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:DisabledWrittenUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                      | CI-0022            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    Then I see "Written" field inside "Section 1" is disabled
+
+  @94228   @validateDependentQuestionJsonFieldByDisablingWrittenFieldUsingCurrencyFieldValueInsideDynamicFormInViewMode
+  Scenario: validate Dependent Question Json Field by disabling written field on the basis of currency field value in form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                 | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Written                                                                       | CI-0018            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:DisabledWrittenUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                      | CI-0022            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form 1" inside table
+    Then I see "Written" inside "Section 1" at dynamic form
+
+  @94431   @validateDependentQuestionJsonFieldByMakingWrittenFieldAsRequiredUsingCurrencyFieldValueInsideDynamicFormInEditMode
+  Scenario: validate Dependent Question Json Field by making written field as required on the basis of currency field value in form edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Written                                                                           | CI-0018            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:ShowRequiredWrittenUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                          | CI-0022            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    When I enter values into "Section 1" page block
+      | Field   | Value |
+      | Written |       |
+    When I click on "Save" in the page details
+    Then I see the following message in the page details :
+      | Written is Required to save under Section 1. |
+
+  @94451   @validateDependentQuestionJsonFieldByHidingWrittenFieldUsingNumberFieldValueInsideDynamicFormInEditMode
+  Scenario: validate Dependent Question Json Field by hiding written field on the basis of number field value in form edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Written                                                                 | CI-0018            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:HideWrittenUsingNumberFieldValueByProvidingNameOfField | CI-0023            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Number                                                                  | CI-0023            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    Then I see "Written" field inside "Section 1" is hidden
+
+  @94455   @validateDependentQuestionJsonFieldByHidingWrittenFieldUsingNumberFieldValueInsideDynamicFormInViewMode
+  Scenario: validate Dependent Question Json Field by hiding written field on the basis of number field value in form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Written                                                                 | CI-0018            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:HideWrittenUsingNumberFieldValueByProvidingNameOfField | CI-0023            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Number                                                                  | CI-0023            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form 1" inside table
+    Then I do not see "Written" inside "Section 1" at dynamic form
+
+  @94456   @validateDependentQuestionJsonFieldByDisableWrittenFieldUsingNumberFieldValueInsideDynamicFormInEditMode
+  Scenario: validate Dependent Question Json Field by disabling written field on the basis of number field value in form edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                              | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Written                                                                    | CI-0018            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:DisableWrittenUsingNumberFieldValueByProvidingNameOfField | CI-0023            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Number                                                                     | CI-0023            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    Then I see "Written" field inside "Section 1" is disabled
+
+  @94457   @validateDependentQuestionJsonFieldByHidingWrittenFieldUsingNumberFieldValueInsideDynamicFormInViewMode
+  Scenario: validate Dependent Question Json Field by hiding written field on the basis of currency field value in form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                              | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Written                                                                    | CI-0018            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:DisableWrittenUsingNumberFieldValueByProvidingNameOfField | CI-0023            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Number                                                                     | CI-0023            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form 1" inside table
+    Then I see "Written" inside "Section 1" at dynamic form

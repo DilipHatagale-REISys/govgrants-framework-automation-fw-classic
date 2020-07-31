@@ -22,9 +22,9 @@ public class DynamicFormSteps {
         dynamicFormPage.assertFieldValueInsideDynamicForm(fieldName, fieldValue);
     }
 
-    @Then("^I see \"([^\"]*)\" inside \"([^\"]*)\" at dynamic form$")
-    public void iSeeInsideAtDynamicForm(String fieldName, String sectionName) {
-        dynamicFormPage.assertFieldsDisplayedInExpectedSectionAtDynamicForm(fieldName, sectionName);
+    @Then("^I (see|do not see|softly see|softly do not see) \"([^\"]*)\" inside \"([^\"]*)\" at dynamic form$")
+    public void iSeeInsideAtDynamicForm(String usage, String fieldName, String sectionName) {
+        dynamicFormPage.assertFieldsDisplayedInExpectedSectionAtDynamicForm(usage, fieldName, sectionName);
     }
 
     @Then("^I (see|softly see) section as \"([^\"]*)\" inside dynamic form layout$")
