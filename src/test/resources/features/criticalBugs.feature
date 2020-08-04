@@ -3282,7 +3282,7 @@ Business Need: Logged Issues Scenarios
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
     Then I do not see "View Submitted Applications" options inside "Draft Programs" enabled
 
-  @94813    @hideDecisionFieldAtApplicationBudgetCategoryFlexTableViewActionChildTable-gApplications @flexGrid
+  @94807    @hideDecisionFieldAtApplicationBudgetCategoryFlexTableViewActionAtSobjectChildTable-gApplications @flexGrid
   Scenario: Hide decision field at row level action from configuration and validating it at under Application Budget child flex table
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName           | fieldOrignalValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
