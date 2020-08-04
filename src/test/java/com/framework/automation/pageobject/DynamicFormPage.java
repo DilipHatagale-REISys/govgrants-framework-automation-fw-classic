@@ -119,7 +119,7 @@ public class DynamicFormPage extends GovGrantsManager {
         if (usage.equalsIgnoreCase("see")) {
             Assert.assertTrue(isFieldInsideDynamicFormDisplayed(fieldName, sectionName, isHidden));
         } else if (usage.equalsIgnoreCase("softly see")) {
-            I.amPerforming().assertionsTo().assertThat(isFieldInsideDynamicFormDisplayed(fieldName, sectionName, isHidden)).isFalse();
+            I.amPerforming().assertionsTo().assertThat(isFieldInsideDynamicFormDisplayed(fieldName, sectionName, isHidden)).isTrue();
         }
     }
 
@@ -232,7 +232,7 @@ public class DynamicFormPage extends GovGrantsManager {
     private boolean isFieldInsideDynamicFormDisplayed(String fieldName, String sectionName, boolean isHidden) {
         boolean flag = false;
         WebElement getDynamicFormFields = I.amPerforming().getElementReference().of(By.xpath("//a[@title='Section: " + sectionName + "']/ancestor::div[@class='panel-heading']/following-sibling::div//span[text()='" + fieldName + "']/ancestor::div[contains(@class,'formRowWrap')]"));
-        if (isHidden && getDynamicFormFields.getAttribute("Style").equalsIgnoreCase("display: none;")) {
+        if (isHidden && getDynamicFormFields.getAttribute("style").equalsIgnoreCase("display: none;")) {
             return true;
         } else if (getDynamicFormFields.getAttribute("class").contains("disabledbutton")) {
             return true;

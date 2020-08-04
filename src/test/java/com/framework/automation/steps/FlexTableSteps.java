@@ -122,9 +122,9 @@ public class FlexTableSteps {
         flexTablePage.assertActionIconNotDisplayedInsideflexTable(iconName, uniqueColumnValue);
     }
 
-    @Then("^I see \"([^\"]*)\" options inside \"([^\"]*)\" enabled$")
-    public void assertTopRightParallelLinesBarOptionsEnabled(String menuOption, String pannelTitleName) {
-        flexTablePage.assertTopRightParallelLinesBarSpecificOptionsEnabled(menuOption, pannelTitleName);
+    @Then("^I (see|do not see) \"([^\"]*)\" options inside \"([^\"]*)\" enabled$")
+    public void assertTopRightParallelLinesBarOptionsEnabled(String usage, String menuOption, String pannelTitleName) {
+        flexTablePage.assertTopRightParallelLinesBarSpecificOptionsEnabled(usage, menuOption, pannelTitleName);
     }
 
     @Then("^I see \"([^\"]*)\" with page size dropdown at \"([^\"]*)\"$")
