@@ -2241,3 +2241,91 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Save" in the page details
     Then I see the following message in the page details :
       | Picklist(Required Field) is Required to save under Section 1. |
+
+  @94563   @validateDependentQuestionJsonFieldByDisablingCurrencyFieldUsingRichTextAreaFieldValueInsideDynamicFormInEditMode
+  Scenario: validate Dependent Question Json Field by Disabling currency field on the basis of richTextArea field value in form edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Currency                                                                          | CI-0022            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:DisableCurrencyUsingRichTextAreaFieldValueByProvidingNameOfField | CI-0026            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Rich Text area                                                                    | CI-0026            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    Then I see "Currency" field inside "Section 1" is disabled
+
+  @94564   @validateDependentQuestionJsonFieldByDisablingCurrencyFieldUsingRichTextAreaFieldValueInsideDynamicFormInViewMode
+  Scenario: validate Dependent Question Json Field by Disabling currency field on the basis of richTextArea field value in form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Currency                                                                          | CI-0022            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:DisableCurrencyUsingRichTextAreaFieldValueByProvidingNameOfField | CI-0026            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Rich Text area                                                                    | CI-0026            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form 1" inside table
+    Then I see "Currency" inside "Section 1" at dynamic form
+
+  @94561   @validateDependentQuestionJsonFieldByHidingCurrencyFieldUsingRichTextAreaFieldValueInsideDynamicFormInViewMode
+  Scenario: validate Dependent Question Json Field by Disabling currency field on the basis of richTextArea field value in form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Currency                                                                       | CI-0022            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:HideCurrencyUsingRichTextAreaFieldValueByProvidingNameOfField | CI-0026            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Rich Text area                                                                 | CI-0026            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form 1" inside table
+    Then I do not see "Currency" inside "Section 1" at dynamic form
+
+  @94599   @validateDependentQuestionJsonFieldByHidingCurrencyFieldUsingRichTextAreaFieldValueInsideDynamicFormInEditMode
+  Scenario: validate Dependent Question Json Field by Disabling currency field on the basis of richTextArea field value in form edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Currency                                                                       | CI-0022            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:HideCurrencyUsingRichTextAreaFieldValueByProvidingNameOfField | CI-0026            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Rich Text area                                                                 | CI-0026            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    Then I see "Currency" field inside "Section 1" is hidden
