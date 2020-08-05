@@ -189,8 +189,12 @@ public class FlexTablePage extends GovGrantsManager {
      * @param menuOption
      * @param pannelTitleName
      */
-    public void assertTopRightParallelLinesBarSpecificOptionsEnabled(String menuOption, String pannelTitleName) {
-        Assert.assertTrue(isTopRightParallelLinesBarSpecificOptionsEnabled(menuOption, pannelTitleName));
+    public void assertTopRightParallelLinesBarSpecificOptionsEnabled(String usage, String menuOption, String pannelTitleName) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isTopRightParallelLinesBarSpecificOptionsEnabled(menuOption, pannelTitleName));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isTopRightParallelLinesBarSpecificOptionsEnabled(menuOption, pannelTitleName)).isFalse();
+        }
     }
 
     /**
@@ -729,7 +733,7 @@ public class FlexTablePage extends GovGrantsManager {
                 flag = true;
             }
         } catch (Exception e) {
-            flag = true;
+            flag = false;
         }
         return flag;
     }

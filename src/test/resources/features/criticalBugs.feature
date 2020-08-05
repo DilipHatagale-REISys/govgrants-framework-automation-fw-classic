@@ -3250,3 +3250,54 @@ Business Need: Logged Issues Scenarios
     When I navigate to "Roles" sub tab
     When I click on top right button "New" in flex table with id "---program:-:programTableDivId---"
     Then I see search icon for lookup "Assigned to User Lookup (New Window)"
+
+  @94671  @verifyByClickOnRefreshButtonSearchBoxIsGettingClearOutAtEnhancedGrid-gPlanning @enhancedGrid
+  Scenario: validate by click on refresh button, a search box is getting clearout at EnhancedGrid - gPlanning
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
+    And I select "Refresh" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
+    Then I see "Entries" with page size dropdown in enhanced grid "---program:-:enhancedGridTableId---"
+
+  @94672    @verifyHideForProfileFieldIfActionDisplayTypeIsMenuAtFlexTableTopLevelAction-gPlanning @flexTable
+  Scenario: verify hide for profile field if action display type is Menu at flex table top level action
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue  |
+      | Flex Table Action     | Header Action Display Type | Button            | Programs           | Name                      | View Submitted Applications |
+      | Flex Table Action     | Hide For Profile           |                   | Programs           | Name                      | View Submitted Applications |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue  |
+      | Flex Table Action     | Header Action Display Type | Menu                 | Programs           | Name                      | View Submitted Applications |
+      | Flex Table Action     | Hide For Profile           | System Administrator | Programs           | Name                      | View Submitted Applications |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
+    Then I do not see "View Submitted Applications" options inside "Draft Programs" enabled
+
+  @94807    @hideDecisionFieldAtApplicationBudgetCategoryFlexTableViewActionAtSobjectChildTable-gApplications @flexGrid
+  Scenario: Hide decision field at row level action from configuration and validating it at under Application Budget child flex table
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName           | fieldOrignalValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Decision Field | HideApplicationEditDelete__c | AppLineItems       | Name                      | Edit                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName           | fieldNewValue                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Decision Field | HideApplicationEditDelete__c | AppLineItems       | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "BP-01"
+    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    When I click on "Add Line Items" icon for "Indirect Cost Rate" inside table
+    Then I see "Edit" icon for "Demo Line 1" is not displayed inside flex table
