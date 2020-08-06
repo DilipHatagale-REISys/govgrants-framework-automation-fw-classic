@@ -2308,7 +2308,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I do not see "Currency" inside "Section 1" at dynamic form
 
-  @94599   @validateDependentQuestionJsonFieldByHidingCurrencyFieldUsingRichTextAreaFieldValueInsideDynamicFormInEditMode
+  @94559   @validateDependentQuestionJsonFieldByHidingCurrencyFieldUsingRichTextAreaFieldValueInsideDynamicFormInEditMode
   Scenario: validate Dependent Question Json Field by Disabling currency field on the basis of richTextArea field value in form edit mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -2329,3 +2329,216 @@ Business Need: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     Then I see "Currency" field inside "Section 1" is hidden
+
+  @94551   @validateDependentQuestionJsonFieldByMakingCurrencyFieldAsRequiredUsingPercentFieldValueInsideDynamicFormInEditMode
+  Scenario: validate Dependent Question Json Field by making currency field as required on the basis of percent field value in form edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Currency                                                                          | CI-0022            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:ShowRequiredCurrencyUsingPercentFieldValueByProvidingNameOfField | CI-0024            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Percent                                                                           | CI-0024            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    When I enter values into "Section 1" page block
+      | Field    | Value |
+      | Currency |       |
+    When I click on "Save" in the page details
+    Then I see the following message in the page details :
+      | Currency is Required to save under Section 1. |
+
+  @94567   @validateDependentQuestionJsonFieldByMakingCurrencyFieldAsRequiredUsingRichTextAreaFieldValueInsideDynamicFormInEditMode
+  Scenario: validate Dependent Question Json Field by making currency field as required on the basis of rich text area field value in form edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Currency                                                                               | CI-0022            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:ShowRequiredCurrencyUsingRichTextAreaFieldValueByProvidingNameOfField | CI-0026            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Rich Text area                                                                         | CI-0026            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    When I enter values into "Section 1" page block
+      | Field    | Value |
+      | Currency |       |
+    When I click on "Save" in the page details
+    Then I see the following message in the page details :
+      | Currency is Required to save under Section 1. |
+
+  @94686   @validateDependentQuestionJsonFieldByHidingPicklistFieldUsingCurrencyFieldValueInsideDynamicFormInEditMode
+  Scenario: validate Dependent Question Json Field by hiding picklist field on the basis of currency field value in form edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                              | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Picklist                                                                   | CI-0027            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:HidePicklistUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                   | CI-0022            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    Then I see "Picklist" field inside "Section 1" is hidden
+
+  @94687   @validateDependentQuestionJsonFieldByHidingPercentFieldUsingCurrencyFieldValueInsideDynamicFormInViewMode
+  Scenario: validate Dependent Question Json Field by hiding picklist field on the basis of currency field value in form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                              | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Picklist                                                                   | CI-0027            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:HidePicklistUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                   | CI-0022            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form 1" inside table
+    Then I do not see "Picklist" inside "Section 1" at dynamic form
+
+  @94692   @validateDependentQuestionJsonFieldByDisablingPicklistFieldUsingCurrencyFieldValueInsideDynamicFormInEditMode
+  Scenario: validate Dependent Question Json Field by disabling picklist field on the basis of currency field value in form edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                 | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Picklist                                                                      | CI-0027            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:DisablePicklistUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                      | CI-0022            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    Then I see "Picklist" field inside "Section 1" is disabled
+
+  @94695   @validateDependentQuestionJsonFieldByHidingPercentFieldUsingCurrencyFieldValueInsideDynamicFormInViewMode
+  Scenario: validate Dependent Question Json Field by hiding picklist field on the basis of currency field value in form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                              | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Picklist                                                                   | CI-0027            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:HidePicklistUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                   | CI-0022            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form 1" inside table
+    Then I see "Picklist" inside "Section 1" at dynamic form
+
+  @94697   @validateDependentQuestionJsonFieldByMakingPicklistFieldAsRequiredUsingCurrencyFieldValueInsideDynamicFormInEditMode
+  Scenario: validate Dependent Question Json Field by making picklist field as required on the basis of currency field value in form edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Picklist(Required Field)                                                           | CI-0029            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:ShowRequiredPicklistUsingCurrencyFieldValueByProvidingNameOfField | CI-0004            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                           | CI-0004            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I enter values into "Section 1" page block
+      | Field                    | Value |
+      | Picklist(Required Field) |       |
+    When I click on "Save" in the page details
+    Then I see the following message in the page details :
+      | Picklist(Required Field) is Required to save under Section 1. |
+
+  @94961   @validateDependentQuestionJsonFieldByHidingRadioFieldUsingCurrencyFieldValueInsideDynamicFormInEditMode
+  Scenario: validate Dependent Question Json Field by hiding radio field on the basis of currency field value in form edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Radio                                                                   | CI-0025            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:HideRadioUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                | CI-0022            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    Then I see "Radio" field inside "Section 1" is hidden
+
+  @94962   @validateDependentQuestionJsonFieldByHidingRadioFieldUsingCurrencyFieldValueInsideDynamicFormInViewMode
+  Scenario: validate Dependent Question Json Field by hiding radio field on the basis of currency field value in form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Radio                                                                   | CI-0025            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:HideRadioUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                | CI-0022            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form 1" inside table
+    Then I do not see "Radio" inside "Section 1" at dynamic form
