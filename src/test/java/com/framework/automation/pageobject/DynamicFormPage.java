@@ -152,7 +152,6 @@ public class DynamicFormPage extends GovGrantsManager {
      */
     private boolean isFieldDisplayedInExpectedSectionAtDynamicForm(String fieldName, String sectionName) {
         boolean flag = false;
-        //By getFieldValue = By.xpath("//a[@title='Section: " + sectionName + "']/../../../following-sibling::div//span[text()='" + fieldName + "']");
         try {
             if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//a[@title='Section: " + sectionName + "']/../../../following-sibling::div//span[text()='" + fieldName + "']"))) {
                 return true;
