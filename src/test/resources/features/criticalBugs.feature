@@ -3419,3 +3419,24 @@ Business Need: Logged Issues Scenarios
     Examples:
       | newFieldsApi                                                                         | defaultFieldsApi                                                                                                                               |
       | Name,GrantAwardName__c,Status__c,TotalObligateAmount__c,ReadGrantSupervisorFields__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
+
+  @94214    @validateHelpTextFieldWithSpecialCharactersAtPageBlock-gPlanning
+  Scenario Outline: verify special characters inside help text at page block inside program detail page
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block:Page Block Detail | Help Text | <old_helpText>    | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Help Text | <new_helpText> | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I hovering mouse on help text icon inside "Program Information"
+    Then I see "<new_helpText>" shown as help text
+
+    Examples:
+      | new_helpText             | old_helpText                                                                           |
+      | "This section Submitted" | The section gives program overview along with funder and funding organization details. |

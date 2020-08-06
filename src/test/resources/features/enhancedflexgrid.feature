@@ -1250,7 +1250,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    Then I see "Number of Awards : 1" inside rows of enhanced grid id "---program:-:enhancedGridTableId---"
+    Then I see "Number of Awards :" inside rows of enhanced grid id "---program:-:enhancedGridTableId---"
 
   @49244    @hideGroupingColumnFieldAtParentFlexTableForEnhancedGrid-gPlanning
   Scenario: validate hide of particular column after checking checkbox true of Hide Grouping Column from config and validating it inside enhanced grid of programs-planning
@@ -1387,7 +1387,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
-    Then I see "Total Obligated Amount : 72000" inside rows of enhanced grid id "---program:-:enhancedGridTableId---"
+    Then I see "Total Obligated Amount :" inside rows of enhanced grid id "---program:-:enhancedGridTableId---"
 
   @49353    @hideGroupingColumnFieldAtChildFlexTableForEnhancedGrid-gPlanning
   Scenario: validate hide of particular column after checking checkbox true of Hide Grouping Column from config and validating it inside enhanced grid of programs-planning
