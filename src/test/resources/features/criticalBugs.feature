@@ -3282,7 +3282,7 @@ Business Need: Logged Issues Scenarios
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
     Then I do not see "View Submitted Applications" options inside "Draft Programs" enabled
 
-  @94807    @hideDecisionFieldAtApplicationBudgetCategoryFlexTableViewActionAtSobjectChildTable-gApplications @flexGrid
+  @94807    @hideDecisionFieldAtApplicationBudgetCategoryFlexTableRowLevelActionAtSobjectChildTable-gApplications @flexGrid
   Scenario: Hide decision field at row level action from configuration and validating it at under Application Budget child flex table
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName           | fieldOrignalValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -3301,3 +3301,121 @@ Business Need: Logged Issues Scenarios
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     When I click on "Add Line Items" icon for "Indirect Cost Rate" inside table
     Then I see "Edit" icon for "Demo Line 1" is not displayed inside flex table
+
+  @94813    @hideDecisionFieldAtApplicationBudgetCategoryFlexTableRowLevelActionAtChildTable-gApplications @flexGrid
+  Scenario: Hide decision field at row level actions from configuration and validating it at under Application Budget child flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Decision Field | HideApplicationEditDelete__c | AppLineItems       | Name                      | Test View                  |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Decision Field | HideApplicationEditDelete__c | AppLineItems       | Name                      | Test View                  |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "BP-01"
+    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    When I click on "Add Line Items" icon for "Indirect Cost Rate" inside table
+    Then I see "Test View" icon for "Demo Line 1" is not displayed inside flex table
+
+  @94923 @hideCellJsonfieldAtEnhancedGridUsingRollupSummaryTypeField-gPlanning @smoke
+  Scenario Outline: Hiding specific cell value using rollup summary field value and validating it inside enhanced grid of programs-planning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Hide Cell JSON      |                    | ApiGeneratedId:0 |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                             | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON      | govgrants_config:HideCellJsonForEnhancedGridRollUpSummary | TmpActiveGrantsGrid | Name                      | FTC-1490                   |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi>                                            | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "AA_Application for NIDA Announcement" in "---program:-:flexGridEnhancedTableId---" panel
+    Then I see "*****" shown inside enhanced grid table for specified record "AA_Application for NIDA Announcement"
+
+    Examples:
+      | newFieldsApi                                                    | defaultFieldsApi                                                                                                                                                                                                                   |
+      | ProjectTitle__c,Name,Status__c,AmountAwardedThisBudgetPeriod__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @94924 @hideCellJsonfieldAtEnhancedGridForFormulaType-gPlanning @smoke
+  Scenario Outline: Hiding specific cell value using formula field value and validating it inside enhanced grid of programs-planning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Hide Cell JSON      |                    | ApiGeneratedId:0 |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                                | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON      | govgrants_config:HideCellJsonForEnhancedGridFormulaFieldType | TmpActiveGrantsGrid | Name                      | FTC-1490                   |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi>                                               | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
+    Then I see "*****" shown inside enhanced grid table for specified record "Demo_Title"
+
+    Examples:
+      | newFieldsApi                                        | defaultFieldsApi                                                                                                                                                                                                                   |
+      | ProjectTitle__c,Name,Status__c,BuildUpGridNeeded__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @94925 @hideCellJsonfieldAtEnhancedGridChildTableUsingRollupSummaryTypeField-gPlanning @smoke
+  Scenario Outline: Hiding specific cell value using rollup summary field value and validating it inside enhanced grid child table of programs-planning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Hide Cell JSON      |                    | ApiGeneratedId:0 |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                                       | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON      | govgrants_config:HideCellJsonForEnhancedChildTableGridRollUpSummary | TmpGrantorActiveAwardsGrid | Name                      | FTC-1499                   |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi>                                                      | TmpGrantorActiveAwardsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    When I expand nested table containing column value "Demo_Title"
+    Then I see "*****" shown inside enhanced grid table for specified record "Demo_Title"
+
+    Examples:
+      | newFieldsApi                                                        | defaultFieldsApi                                                                                                                               |
+      | Name,GrantAwardName__c,Status__c,ProjectAmountofBudgetCategories__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
+
+  @94929 @hideCellJsonfieldAtEnhancedGridChildTableUsingFormulaTypeField-gPlanning @smoke
+  Scenario Outline: Hiding specific cell value using formula field value and validating it inside enhanced grid child table of programs-planning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Hide Cell JSON      |                    | ApiGeneratedId:0 |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                                     | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON      | govgrants_config:HideCellJsonForEnhancedChildTableGridFormulaType | TmpGrantorActiveAwardsGrid | Name                      | FTC-1498                   |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi>                                                    | TmpGrantorActiveAwardsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    When I expand nested table containing column value "Demo_Title"
+    Then I see "*****" shown inside enhanced grid table for specified record "Demo_Title"
+
+    Examples:
+      | newFieldsApi                                                                         | defaultFieldsApi                                                                                                                               |
+      | Name,GrantAwardName__c,Status__c,TotalObligateAmount__c,ReadGrantSupervisorFields__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |

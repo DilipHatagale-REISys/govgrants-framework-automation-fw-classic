@@ -304,16 +304,18 @@ Business Need: Flex Table enhanced Component Scenarios
     When I navigate to "Financials" sub tab
     Then I see "Number of Project Areas : 1" inside rows of enhanced grid id "---program:-:EnhancedDataTableId---"
 
-  @77413    @enableSubTotalFieldAtFlexTableEnhanced-gPlanning @wip
-  Scenario: validate total of number of project areas after checking checkbox true of Enable Sub Total field from config and validating it inside enhanced data table -planning
+  @77413    @enableSubTotalFieldAtFlexTableEnhanced-gPlanning
+  Scenario Outline: validate total of number of project areas after checking checkbox true of Enable Sub Total field from config and validating it inside enhanced data table -planning
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table List       | Enable Sub Total    | false             | ApiGeneratedId:0 |
-      | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:1 |
+      | configurationCategory | fieldName           | fieldOrignalValue     | filterId         |
+      | Flex Table List       | Enable Sub Total    | false                 | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Row Grouping | false                 | ApiGeneratedId:1 |
+      | Flex Table List       | Filter Clause       | <defaultFilterClause> | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Sub Total    | true          | EnhancedDataTable  | Name                      | FTC-1511                   |
-      | Flex Table List       | Enable Row Grouping | true          | EnhancedDataTable  | Name                      | FTC-1511                   |
+      | configurationCategory | fieldName           | fieldNewValue     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Sub Total    | true              | EnhancedDataTable  | Name                      | FTC-1511                   |
+      | Flex Table List       | Enable Row Grouping | true              | EnhancedDataTable  | Name                      | FTC-1511                   |
+      | Flex Table List       | Filter Clause       | <newFilterClause> | EnhancedDataTable  | Name                      | FLV-2548                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -322,6 +324,10 @@ Business Need: Flex Table enhanced Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     Then I see cell subtotal for "NumberofProjectAreas__c" at enhanced grid
+
+    Examples:
+      | defaultFilterClause                 | newFilterClause                                                   |
+      | TotalAwardObligatedAmount__c=300000 | TotalAwardObligatedAmount__c=300000 and NumberofProjectAreas__c=1 |
 
   @77401    @hideExpressionJsonFieldAtTopLevelActionFlexTableForEnhanced-gPlanning
   Scenario: Set up configuration to hide New action and validating it inside enhanced data table -planning

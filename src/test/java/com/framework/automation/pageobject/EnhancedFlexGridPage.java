@@ -977,12 +977,12 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     private boolean isExpectedSumValueForNumberOfAwardsAtEnhancedGridTableDisplayed(String fieldApiName) {
         boolean flag = false;
         try {
-            I.amPerforming().scroll().onPageToSpecificElement(By.xpath("//table/tbody//*[@field-name='" + fieldApiName + "']//span"));
-            List<Elements> rows_table = I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//table/tbody//*[@field-name='" + fieldApiName + "']//span"));
-            double rowTotal = 0.00;
+            I.amPerforming().scroll().onPageToSpecificElement(By.xpath("//table/tbody//td[@class!='groupTitle']//*[@field-name='" + fieldApiName + "']//span"));
+            List<Elements> rows_table = I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//table/tbody//td[@class!='groupTitle']//*[@field-name='" + fieldApiName + "']//span"));
             double sum = 0.00;
+            double rowTotal = Double.valueOf(rows_table.get(rows_table.size() - 1).getText());
+
             for (int row = 0; row < rows_table.size(); row++) {
-                rowTotal = Double.valueOf(rows_table.get(rows_table.size() - 1).getText());
                 if (row < rows_table.size() - 1) {
                     if (rows_table.get(row).getText() != null) {
                         sum += Double.valueOf(rows_table.get(row).getText());
@@ -1060,10 +1060,10 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         boolean flag = false;
         I.amPerforming().waitFor().makeThreadSleep(4000);
         try {
+            double sum = 0.00;
             I.amPerforming().scroll().onPageToSpecificElement(obligatedAmountSpecificCellsAtChildTable);
             List<Elements> rows_table = I.amPerforming().getElementReference().forListOfElements().of(obligatedAmountSpecificCellsAtChildTable);
-            double sum = 0.00;
-            double totalVal = Double.valueOf(rows_table.get(rows_table.size() - 2).getText().replaceAll("[$|,|']", ""));
+            double totalVal = Double.valueOf(rows_table.get(rows_table.size() - 1).getText().replaceAll("[$|,|']", ""));
             for (int row = 0; row < rows_table.size() - 2; row++) {
                 if (rows_table.get(row).getText() != null) {
                     sum += Double.valueOf(rows_table.get(row).getText().replaceAll("[$|,|']", ""));

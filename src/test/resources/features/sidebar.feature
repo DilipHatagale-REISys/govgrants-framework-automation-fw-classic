@@ -444,7 +444,7 @@ Business Need: Side bar Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue  | filterId         |
       | Flex Grid             | Display Field Names   | <defaultFieldsApi> | ApiGeneratedId:0 |
-      | Flex Grid             | Enable Over All Total | false              | ApiGeneratedId:1 |
+      | Flex Table List       | Enable Over All Total | false              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names   | <newFieldsApi> | EnhancedDataTable  |                           |                            |

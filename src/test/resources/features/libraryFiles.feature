@@ -1375,27 +1375,6 @@ Business Need: Library Files Component Scenarios
     When I perform quick search inside global search "SendEmailAttachment.pdf"
     Then I see value "SendEmailAttachment.pdf" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
 
-  @70288 @validateThatFoldersPresentAtHomePhaseFilesLibraryArePresentAtRecordLevelUploadFileModal-RecordLevel @wip
-  Scenario: Verify that file added from record level is displayed under home phase files list tab - record level
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
-    When I click on "My_Workspace_File"
-    When I click on "My_Workspace_Library"
-    When I click on expand icon at library/folder "Department of Community Health"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I navigate to "Attachments" sub tab
-    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
-    When I upload file "SendEmailAttachment.pdf" into library
-    When I click on SelectChange Folder in add file modal
-    When I Select/Change Folder as "Department of Community Health" in add file modal
-    And I save the field containing "<string>" as "<string>"
-    And I save the field labeled "<string>" as "<string>"
-    Then I softly see field "Cash Match Required (%)" as "{SavedValue:MatchPercentage}"
-
   @81170 @validateLabelOfUploadFileFromComputerTabUnderPlanningFilesTable-RecordLevel
   Scenario: Verify that by click on Add file action at planning files table, first tab label displayed correctly - Planing Phase
     When I login as "Automation" user

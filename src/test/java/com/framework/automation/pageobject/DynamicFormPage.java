@@ -1,6 +1,7 @@
 package com.framework.automation.pageobject;
 
 import com.framework.automation.projectmanager.GovGrantsManager;
+import com.testingblaze.controller.TestingBlazeGlobal;
 import com.testingblaze.register.I;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -151,9 +152,11 @@ public class DynamicFormPage extends GovGrantsManager {
      */
     private boolean isFieldDisplayedInExpectedSectionAtDynamicForm(String fieldName, String sectionName) {
         boolean flag = false;
-        By getFieldValue = By.xpath("//a[@title='Section: " + sectionName + "']/../../../following-sibling::div//span[text()='" + fieldName + "']");
-        if (I.amPerforming().checkToSee().isDisplayed(getFieldValue)) {
-            return true;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//a[@title='Section: " + sectionName + "']/../../../following-sibling::div//span[text()='" + fieldName + "']"))) {
+                return true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
         }
         return flag;
     }
@@ -231,6 +234,7 @@ public class DynamicFormPage extends GovGrantsManager {
      */
     private boolean isFieldInsideDynamicFormDisplayed(String fieldName, String sectionName, boolean isHidden) {
         boolean flag = false;
+        TestingBlazeGlobal.setVariable("highlightElements", "off");
         WebElement getDynamicFormFields = I.amPerforming().getElementReference().of(By.xpath("//a[@title='Section: " + sectionName + "']/ancestor::div[@class='panel-heading']/following-sibling::div//span[text()='" + fieldName + "']/ancestor::div[contains(@class,'formRowWrap')]"));
         if (isHidden && getDynamicFormFields.getAttribute("style").equalsIgnoreCase("display: none;")) {
             return true;
