@@ -569,7 +569,7 @@ Business Need: dynamic forms Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                    | fieldOrignalValue | filterId         |
       | Capture Form          | Validation Button Visibility | Show              | ApiGeneratedId:0 |
-      | Capture Item          | Question Applicable ?        |                   | ApiGeneratedId:0 |
+      | Capture Item          | Question Applicable ?        |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                    | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Form:General  | Validation Button Visibility | Show          | CF-0000            |                           |                            |
@@ -2542,3 +2542,163 @@ Business Need: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I do not see "Radio" inside "Section 1" at dynamic form
+
+  @95133   @validateDependentQuestionJsonFieldByHidingCheckboxFieldUsingCurrencyFieldValueInsideDynamicFormInEditMode
+  Scenario: validate Dependent Question Json Field by hiding checkbox field on the basis of currency field value in form edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                              | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Checkbox                                                                   | CI-0028            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:HideCheckboxUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                   | CI-0022            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    Then I see "Checkbox" field inside "Section 1" is hidden
+
+  @95134   @validateDependentQuestionJsonFieldByHidingCheckboxFieldUsingCurrencyFieldValueInsideDynamicFormInViewMode
+  Scenario: validate Dependent Question Json Field by hiding checkbox field on the basis of currency field value in form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                              | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Checkbox                                                                   | CI-0028            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:HideCheckboxUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                   | CI-0022            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form 1" inside table
+    Then I do not see "Checkbox" inside "Section 1" at dynamic form
+
+  @95137   @validateDependentQuestionJsonFieldByDisablingCheckboxFieldUsingCurrencyFieldValueInsideDynamicFormInEditMode
+  Scenario: validate Dependent Question Json Field by disabling checkbox field on the basis of currency field value in form edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                 | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Checkbox                                                                      | CI-0028            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:DisableCheckboxUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                      | CI-0022            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    Then I see "Checkbox" field inside "Section 1" is disabled
+
+  @95142   @validateDependentQuestionJsonFieldByDisablingCheckboxFieldUsingCurrencyFieldValueInsideDynamicFormInViewMode
+  Scenario: validate Dependent Question Json Field by disabling checkbox field on the basis of currency field value in form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                 | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Checkbox                                                                      | CI-0028            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:DisableCheckboxUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                      | CI-0022            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form 1" inside table
+    Then I see "Checkbox" inside "Section 1" at dynamic form
+
+  @95143   @validateDependentQuestionJsonFieldByMakingCheckboxFieldAsRequiredUsingCurrencyFieldValueInsideDynamicFormInEditMode
+  Scenario: validate Dependent Question Json Field by making checkbox field as required on the basis of currency field value in form edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Checkbox                                                                           | CI-0028            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:ShowRequiredCheckboxUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                           | CI-0022            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I enter values into "Section 1" page block
+      | Field    | Value     |
+      | Checkbox | unchecked |
+    When I click on "Save" in the page details
+    Then I see the following message in the page details :
+      | Checkbox is Required to save under Section 1. |
+
+  @93778   @ValidateValidationMessageAtDynamicFormHavingMultipleSectionsInOneForm
+  Scenario: validate that validation message should display by click on validate button on dynamic form layout having multiple sections
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                    | fieldOrignalValue | filterId         |
+      | Capture Form          | Validation Button Visibility | Show              | ApiGeneratedId:0 |
+      | Capture Item          | Question Applicable ?        |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                    | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Validation Button Visibility | Show          | CF-0000            |                           |                            |
+      | Capture Item:General  | Question Applicable ?        |               | CI-0020            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I click on "Save" button in right header
+    When I click on "Validate" button in right header
+    Then I see the following message in the page details :
+      | Written Section 2 in Section Section 2 question not answered |
+
+  @94966   @validateDependentQuestionJsonFieldByDisablingRadioFieldUsingCurrencyFieldValueInsideDynamicFormInEditMode
+  Scenario: validate Dependent Question Json Field by disabling radio field on the basis of currency field value in form edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Radio                                                                   | CI-0025            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:DisableRadioUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                | CI-0022            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    Then I see "Radio" field inside "Section 1" is disabled

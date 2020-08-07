@@ -91,6 +91,21 @@ public class PageLayout {
                                 filterClause),
                         String.valueOf(SObjectAPIs.GNT__HideApprovalDecisionComponentinEdit__c), value);
                 break;
+            case "HIDE APPROVAL DECISION COMPONENT":
+                if (m.find() || (value.contains("true")) || (value.contains("false"))) {
+                    finalPayload = String
+                            .format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PageLayoutConfig__c),
+                                    apiUtilities.getComponentCoreFieldId(
+                                            String.valueOf(SObjectAPIs.GNT__PageLayoutConfig__c), filterClause),
+                                    String.valueOf(SObjectAPIs.GNT__HideApprovalDecisionComponentinEdit__c), value);
+                } else {
+                    finalPayload = String
+                            .format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageLayoutConfig__c),
+                                    apiUtilities.getComponentCoreFieldId(
+                                            String.valueOf(SObjectAPIs.GNT__PageLayoutConfig__c), filterClause),
+                                    String.valueOf(SObjectAPIs.GNT__HideApprovalDecisionComponentinEdit__c), value);
+                }
+                break;
         }
         System.out.println(finalPayload);
         return finalPayload;
