@@ -3440,3 +3440,51 @@ Business Need: Logged Issues Scenarios
     Examples:
       | new_helpText             | old_helpText                                                                           |
       | "This section Submitted" | The section gives program overview along with funder and funding organization details. |
+
+  @94534    @verifyHideDecisionActionComponent-Programs
+  Scenario: Hiding approve decision component from configuration and validating in pending tasks approval decision
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                        | fieldOrignalValue | filterId         |
+      | Page Layout:General   | Hide Approval Decision Component | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                        | fieldNewValue | coreComponentField                                         |
+      | Program               | Status                           | Created       | Test program for automation -  SA mode only - Not approved |
+      | Page Layout:General   | Hide Approval Decision Component | true          | Grantee State Program                                      |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
+    And I navigate to "Planning" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    Then I cannot see the approval decision
+
+  @94535    @verifyHideApprovalDecisionActionFieldIfSetAsFalse-Programs
+  Scenario: displaying approve decision component from configuration and validating in pending tasks approval decision
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                        | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Approval Decision Component | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                        | fieldNewValue | coreComponentField                                         |
+      | Program               | Status                           | Created       | Test program for automation -  SA mode only - Not approved |
+      | Page Layout:General   | Hide Approval Decision Component | false         | Grantee State Program                                      |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
+    And I navigate to "Planning" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
+    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    Then I can see the approval decision
