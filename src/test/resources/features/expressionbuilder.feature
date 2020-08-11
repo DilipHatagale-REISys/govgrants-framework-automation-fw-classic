@@ -7149,3 +7149,64 @@ Business Need: Expression Builder Component Scenarios
     Examples:
       | newFieldsApi                                                          | defaultFieldsApi                                                                                                                               |
       | Name,GrantAwardName__c,Status__c,BudgetPeriodStartDates__c,Account__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
+
+  @94980   @hide_Expression_Enhancedgrid_EditActionWithInOperator
+  Scenario: Set up configuration to hide edit action of parent enhanced grid using IN operator and validating it inside enhanced table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                           | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionJSONEnhancedgridEditActionWithINOperator | TmpActiveGrantsGrid | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    Then I see "Edit" icon for "Demo_Title" is not displayed inside flex table
+
+  @94981  @hideExpressionEnhancedgridEditActionWithNotInOperator
+  Scenario: Set up configuration to hide edit action of parent enhanced grid using NOT IN operator and validating it inside enhanced table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                              | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionJSONEnhancedgridEditActionWithNOTINOperator | TmpActiveGrantsGrid | Name                      | Edit                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    Then I see "Edit" icon for "Demo_Title" is not displayed inside flex table
+
+  @94983   @hideExpressionJSONAtEnhancedGridChildTableEditActionWithInOperator
+  Scenario Outline: Set up configuration to hide edit action of child enhanced grid using IN operator and validating it inside enhanced table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue  | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                    | ApiGeneratedId:0 |
+      | Flex Grid             | Display Field Names  | <defaultFieldsApi> | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                     | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionJSONEnhancedgridChildTableEditActionWithINOperator | TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
+      | Flex Grid:General     | Display Field Names  | <newFieldsApi>                                                                    | TmpGrantorActiveAwardsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    When I expand nested table containing column value "Demo_Title"
+    Then I see "Edit" icon for "AD-GG PJ--00" is not displayed inside flex table
+
+    Examples:
+      | newFieldsApi                     | defaultFieldsApi                                                                                                                               |
+      | GrantAwardName__c,Name,Status__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |

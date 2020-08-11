@@ -3439,7 +3439,7 @@ Business Need: Logged Issues Scenarios
 
     Examples:
       | new_helpText             | old_helpText                                                                           |
-      | "This section Submitted" | The section gives program overview along with funder and funding organization details. |
+      | This \"section Submitted | The section gives program overview along with funder and funding organization details. |
 
   @94534    @verifyHideDecisionActionComponent-Programs
   Scenario: Hiding approve decision component from configuration and validating in pending tasks approval decision
@@ -3488,3 +3488,65 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I can see the approval decision
+
+  @95369    @validateByClickOnAttachmentEditActionAnEditModalAppearsWithType
+  Scenario: validate by click on Attachment edit action, an edit attachment modal appears -planning
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "Edit" icon for "Program Artifacts" inside table
+    Then I see "Program Artifacts:Financial Artifacts:Other Artifacts" inside Type selectbox
+
+  @95484 @verifyWorkingOfSearchBoxWithSpecialCharactersAtLookupModalWindow
+  Scenario: verify search function with special character at lookup modal window is working properly
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I click search icon for lookup "Organization Lookup (New Window)"
+    When I perform quick search for "tes't" in "---program:-:AccountTableId---" panel
+    Then I see "No Records Found" inside flex table with id "---program:-:AccountTableId---"
+
+  @95445 @verifyWorkingOfSearchBoxAtLookupModalWindow
+  Scenario:  verify search function at lookup modal window is working properly
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I click search icon for lookup "Organization Lookup (New Window)"
+    When I perform quick search for "Child Secretary of Health Organization" in "---program:-:AccountTableId---" panel
+    Then I see "Child Secretary of Health Organization" inside flex table with id "---program:-:AccountTableId---"
+
+  @94935  @validateInlineEditShouldWorkProperlyAtChildTableOfEnhancedGrid
+  Scenario Outline: validate inline edit is working properly at child table of enhanced grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpGrantorActiveAwardsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "GT-test-003" in "---program:-:flexGridEnhancedID---" panel
+    When I expand nested table containing column value "GT-test-003"
+    When I click on "Edit" icon for "AD-test--04" inside table
+    When I enter value "0" into field "ProjectPeriodEndDate__c"
+    When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
+    Then I see field value is current date for "ProjectPeriodEndDate__c" at enhanced grid
+
+    Examples:
+      | newFieldsApi                                             | defaultFieldsApi                                                                                                                               |
+      | GrantAwardName__c,Name,Status__c,ProjectPeriodEndDate__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |

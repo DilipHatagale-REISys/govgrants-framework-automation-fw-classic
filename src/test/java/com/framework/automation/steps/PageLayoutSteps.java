@@ -321,7 +321,7 @@ public class PageLayoutSteps {
         pageLayoutPage.assertSequenceOfEditButtonAction(buttonName, Integer.parseInt(sequenceNumber));
     }
 
-    @Then("^I see \"([^\"]*)\" shown as help text$")
+    @Then("I see {string} shown as help text")
     public void assertHelpText(String helpText) {
         pageLayoutPage.assertHelpTextAtPageBlock(helpText);
     }
