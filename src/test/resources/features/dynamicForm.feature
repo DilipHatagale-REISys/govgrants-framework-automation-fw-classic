@@ -2689,10 +2689,10 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
       | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName               | fieldNewValue                                                           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Capture Item:General  | Question Identifier     | Radio                                                                   | CI-0025            |                           |                            |
+      | configurationCategory | fieldName               | fieldNewValue                                                              | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Radio                                                                      | CI-0025            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:DisableRadioUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
-      | Capture Item:General  | Question Identifier     | Currency                                                                | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                   | CI-0022            |                           |                            |
     When I login as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -2702,3 +2702,77 @@ Business Need: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     Then I see "Radio" field inside "Section 1" is disabled
+
+  @94967   @validateDependentQuestionJsonFieldByDisablingRadioFieldUsingCurrencyFieldValueInsideDynamicFormInViewMode
+  Scenario: validate Dependent Question Json Field by disabling radio field on the basis of currency field value in form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                              | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Radio                                                                      | CI-0025            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:DisableRadioUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                   | CI-0022            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form 1" inside table
+    Then I see "Radio" inside "Section 1" at dynamic form
+
+  @94968   @validateDependentQuestionJsonFieldByMakingRadioFieldAsRequiredUsingCurrencyFieldValueInsideDynamicFormInEditMode
+  Scenario: validate Dependent Question Json Field by making radio field as required on the basis of currency field value in form edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Radio                                                                           | CI-0016            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:ShowRequiredRadioUsingCurrencyFieldValueByProvidingNameOfField | CI-0004            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                        | CI-0004            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I enter values into "Section 1" page block
+      | Field     | Value |
+      | Radio New |       |
+    When I click on "Save" in the page details
+    Then I see the following message in the page details :
+      | Radio New is Required to save under Section 1. |
+
+  @95444   @validateDependentQuestionJsonFieldByHidingNumberAndDisablingPercentFieldUsingCurrencyFieldValueInsideDynamicFormInEditMode
+  Scenario: validate Dependent Question Json Field by hiding number and disabling percent field on the basis of currency field value in form edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                             | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Number                                                                                    | CI-0023            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:HideNumberAndDisablePercentUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                                  | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Percent                                                                                   | CI-0024            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    Then I softly see "Number" field inside "Section 1" is hidden
+    Then I softly see "Percent" field inside "Section 1" is disabled

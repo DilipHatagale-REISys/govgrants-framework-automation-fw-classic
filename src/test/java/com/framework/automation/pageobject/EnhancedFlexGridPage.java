@@ -1317,7 +1317,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         boolean flag = false;
         try {
             WebElement dateAndDateTime = I.amPerforming().getElementReference().of(By.xpath("//table/tbody/tr/td//*[@field-name='" + fieldApiNAme + "']/span"));
-            if (dateAndDateTime.getText().equalsIgnoreCase(I.amPerforming().dateOperationsToGet().currentDateInDesiredFormat(DateTimeFormatter.ofPattern("M/d/yyyy")))) {
+            if (dateAndDateTime.getText().equalsIgnoreCase(I.amPerforming().dateOperationsToGet().currentDateInDesiredFormat(DateTimeFormatter.ofPattern("MM/dd/yyyy")))) {
                 flag = true;
             }
         } catch (Exception e) {
