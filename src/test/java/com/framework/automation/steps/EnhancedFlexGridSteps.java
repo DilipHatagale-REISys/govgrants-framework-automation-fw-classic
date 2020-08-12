@@ -4,6 +4,8 @@ import com.framework.automation.pageobject.EnhancedFlexGridPage;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import java.io.IOException;
+
 public class EnhancedFlexGridSteps {
     EnhancedFlexGridPage enhancedFlexGrid;
 
@@ -275,5 +277,11 @@ public class EnhancedFlexGridSteps {
     @Then("^I see Advance Filter box is displayed with id \"([^\"]*)\"$")
     public void iSeeAdvanceFilterBoxIsDisplayedWithId(String tableId) {
         enhancedFlexGrid.assertAdvanceFilterBoxIsDisplayed(tableId);
+    }
+
+    @Then("I see actions under {string} table are aligned and compared with {string}")
+    public void iSeeActionsUnderTableAreAlignedAndComparedWith(String tableId, String imageName)  throws IOException{
+        enhancedFlexGrid.assertActionsAreAlignedInsideFlexTable(tableId, imageName);
+
     }
 }

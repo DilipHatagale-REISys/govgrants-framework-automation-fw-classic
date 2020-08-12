@@ -151,6 +151,7 @@ public class DynamicFormPage extends GovGrantsManager {
      * @param sectionName
      */
     private boolean isFieldDisplayedInExpectedSectionAtDynamicForm(String fieldName, String sectionName) {
+        TestingBlazeGlobal.setVariable("highlightElements", "off");
         boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//a[@title='Section: " + sectionName + "']/../../../following-sibling::div//span[text()='" + fieldName + "']"))) {

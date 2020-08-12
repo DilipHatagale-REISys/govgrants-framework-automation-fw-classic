@@ -2417,3 +2417,15 @@ Business Need: Enhanced Flex Grid Component Scenarios
     Examples:
       | newFieldsApi                                | defaultFieldsApi                                                                                                                               |
       | Name,GrantAwardName__c,Status__c,Account__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
+
+  @80889  @VerifyActionsAreAlignedInsideEnhancedGridTable
+  Scenario: verify that actions are aligned inside enhanced grid table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    Then I see actions under "---program:-:enhancedGridTableId---" table are aligned and compared with "actionsAtEgrid.png"

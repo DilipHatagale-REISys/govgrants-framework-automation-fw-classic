@@ -13,7 +13,6 @@ import org.openqa.selenium.WebElement;
 
 import java.io.IOException;
 import java.time.format.DateTimeFormatter;
-import java.util.List;
 import java.util.Locale;
 
 public class FlexTablePage extends GovGrantsManager {
@@ -488,12 +487,13 @@ public class FlexTablePage extends GovGrantsManager {
     }
 
     /**
-     * return true if flex table actions are aligned
+     * return true if actions are aligned at flex table
      */
-    public void assertActionsAreAligned() throws IOException {
+    public void assertActionsAreAlignedAtAttachment() throws IOException {
         TestingBlazeGlobal.setVariable("highlightElements", "off");
         WebElement actionsAligned = I.amPerforming().getElementReference().of(By.xpath("//a[@title='Attachments']/../../../..//a[@class='actionIcons']/.."));
-        Assert.assertTrue(I.amPerforming().comparisonOf().image().isElementImage(actionsAligned, "test.png"));
+        I.amPerforming().snapShotTo().takeElementScreenShot(actionsAligned,"captureAction");
+        Assert.assertTrue(I.amPerforming().comparisonOf().image().isImagesSame("target/Automation-Report/captureAction.png","src/main/resources/actionsAtAttachment.png"));
     }
 
     /*********

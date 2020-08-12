@@ -2,12 +2,14 @@ package com.framework.automation.pageobject;
 
 import com.automation.rei.handlers.govgrants;
 import com.framework.automation.projectmanager.GovGrantsManager;
+import com.testingblaze.controller.TestingBlazeGlobal;
 import com.testingblaze.objects.Elements;
 import com.testingblaze.register.I;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
@@ -519,6 +521,20 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      */
     public void assertAdvanceFilterBoxIsDisplayed(String tableId) {
         Assert.assertTrue(assertAdvanceFilterBoxIsDisplayedInsideTable(tableId));
+    }
+
+    /**
+     * return true if actions are aligned inside enhanced grid/table
+     *
+     * @param tableId
+     * @param imageName
+     */
+    public void assertActionsAreAlignedInsideFlexTable(String tableId, String imageName) throws IOException {
+        TestingBlazeGlobal.setVariable("highlightElements", "off");
+        WebElement actionsAligned = I.amPerforming().getElementReference().of(By.xpath("//div[@id='" + tableId + "']//div[contains(@class,'actionColIconWrap')]/.."));
+        I.amPerforming().waitFor().makeThreadSleep(1000);
+        I.amPerforming().snapShotTo().takeElementScreenShot(actionsAligned, "captureActions");
+        Assert.assertTrue(I.amPerforming().comparisonOf().image().isImagesSame("target/Automation-Report/captureActions.png", "src/main/resources/"+imageName+""));
     }
 
     /*********

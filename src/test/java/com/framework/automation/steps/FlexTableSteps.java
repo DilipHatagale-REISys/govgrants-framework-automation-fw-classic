@@ -247,9 +247,9 @@ public class FlexTableSteps {
         flexTablePage.assertButtonsIsDisplayedAtModalWindow(usage,buttonName,buttonPosition);
     }
 
-    @Then("I see actions are aligned")
-    public void iSeeActionsAreAligned() throws IOException {
-        flexTablePage.assertActionsAreAligned();
+    @Then("I see actions are aligned at attachment")
+    public void iSeeActionsAreAlignedAtAttachment() throws IOException {
+        flexTablePage.assertActionsAreAlignedAtAttachment();
     }
 
     @Then("I see placeholder for quick search box as {string} inside {string} table")

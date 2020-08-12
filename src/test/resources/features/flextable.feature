@@ -1244,8 +1244,8 @@ Business Need: Flex Table Component Scenarios
       | newFieldsApi                                 | defaultFieldsApi                                                                                                 |
       | Name,ProgramName__c,DateandTime__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
-  @80953     @VerifyFlexTableActionsAreAlignedProperly-gPlanning
-  Scenario: validate alignment of actions under flex table - Planning phase
+  @96030     @VerifyAttachmentTableActionsAreAlignedProperly-gPlanning
+  Scenario: validate alignment of actions under attachment table - Planning phase
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1253,7 +1253,16 @@ Business Need: Flex Table Component Scenarios
     When I perform quick search for "test send to owner 2"
     When I click on "View Program Details " icon for "test send to owner 2" inside table
     When I navigate to "Attachments" sub tab
-    Then I see actions are aligned
+    Then I see actions are aligned at attachment
+
+  @80953   @VerifyFlexTableActionsAreAlignedProperly-gPlanning
+  Scenario: validate alignment of actions under flex table - Planning phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "test send to owner 2"
+    Then I see actions under "---program:-:programsTableId---" table are aligned and compared with "actionsAtFlexTable.png"
 
 #  @flextablebug-test
 #  Scenario: Run flex table specific steps for specific time continuosly to ensure no error is displayed
