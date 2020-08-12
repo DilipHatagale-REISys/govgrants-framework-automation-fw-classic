@@ -2776,3 +2776,203 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     Then I softly see "Number" field inside "Section 1" is hidden
     Then I softly see "Percent" field inside "Section 1" is disabled
+
+  @95447   @validateDependentQuestionJsonFieldByDisablingNumberAndHidingPercentFieldUsingCurrencyFieldValueInsideDynamicFormInEditMode
+  Scenario: validate Dependent Question Json Field by disabling number and hiding percent field on the basis of currency field value in form edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                             | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Number                                                                                    | CI-0023            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:DisableNumberAndHidePercentUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                                  | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Percent                                                                                   | CI-0024            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    Then I softly see "Number" field inside "Section 1" is disabled
+    Then I softly see "Percent" field inside "Section 1" is hidden
+
+  @95448   @validateDependentQuestionJsonFieldByHidingNumberDisablingPercentAndWrittenFieldUsingCurrencyFieldValueInsideDynamicFormInEditMode
+  Scenario: validate Dependent Question Json Field by hiding number and disabling percent and written field on the basis of currency field value in form edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:3 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                                            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Number                                                                                                   | CI-0023            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:HideNumberAndDisablePercentAndWrittenFieldUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                                                 | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Percent                                                                                                  | CI-0024            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Written                                                                                                  | CI-0018            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    Then I softly see "Number" field inside "Section 1" is hidden
+    Then I softly see "Percent" field inside "Section 1" is disabled
+    Then I softly see "Written" field inside "Section 1" is disabled
+
+  @95449   @validateDependentQuestionJsonFieldByDisablingNumberPercentAndWrittenFieldUsingCurrencyFieldValueInsideDynamicFormInEditMode
+  Scenario: validate Dependent Question Json Field by disabling number, percent and written field on the basis of currency field value in form edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:3 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                                     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Number                                                                                            | CI-0023            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:DisableNumberPercentAndWrittenFieldUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                                          | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Percent                                                                                           | CI-0024            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Written                                                                                           | CI-0018            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    Then I softly see "Number" field inside "Section 1" is disabled
+    Then I softly see "Percent" field inside "Section 1" is disabled
+    Then I softly see "Written" field inside "Section 1" is disabled
+
+  @95493   @validateDependentQuestionJsonFieldByHidingNumberPercentAndWrittenFieldUsingCurrencyFieldValueInsideDynamicFormInEditMode
+  Scenario: validate Dependent Question Json Field by hiding number, percent and written field on the basis of currency field value in form edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:3 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Number                                                                                         | CI-0023            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:HideNumberPercentAndWrittenFieldUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                                       | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Percent                                                                                        | CI-0024            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Written                                                                                        | CI-0018            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    Then I softly see "Number" field inside "Section 1" is hidden
+    Then I softly see "Percent" field inside "Section 1" is hidden
+    Then I softly see "Written" field inside "Section 1" is hidden
+
+  @95494   @validateDependentQuestionJsonFieldByHidingNumberPercentAndWrittenFieldUsingCurrencyFieldValueInsideDynamicFormInViewMode
+  Scenario: validate Dependent Question Json Field by hiding number, percent and written field on the basis of currency field value in form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:3 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Number                                                                                         | CI-0023            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:HideNumberPercentAndWrittenFieldUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                                       | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Percent                                                                                        | CI-0024            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Written                                                                                        | CI-0018            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form 1" inside table
+    Then I softly do not see "Number" inside "Section 1" at dynamic form
+    Then I softly do not see "Percent" inside "Section 1" at dynamic form
+    Then I softly do not see "Written" inside "Section 1" at dynamic form
+
+  @95498   @validateDependentQuestionJsonFieldByHidingNumberPercentAndWrittenFieldUsingCurrencyFieldValueInsideDynamicFormInViewMode
+  Scenario: validate Dependent Question Json Field by hiding number, percent and written field on the basis of currency field value in form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:3 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                                          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Number                                                                                                 | CI-0023            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:ShowRequiredNumberPercentAndWrittenFieldUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                                               | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Percent                                                                                                | CI-0024            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Written                                                                                                | CI-0018            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    When I enter values into "Section 1" page block
+      | Field   | Value |
+      | Number  |       |
+      | Percent |       |
+      | Written |       |
+    When I click on "Save" in the page details
+    Then I see the following message in the page details :
+      | Number is Required to save under Section 1.  |
+      | Percent is Required to save under Section 1. |
+      | Written is Required to save under Section 1. |
+
+  @95499   @validateDependentQuestionJsonFieldByHidingNumberPercentAndWrittenFieldUsingCurrencyFieldValueInsideDynamicFormInViewMode
+  Scenario: validate Dependent Question Json Field by hiding number, percent and written field on the basis of currency field value in form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:3 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                                     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Number                                                                                            | CI-0023            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:DisableNumberPercentAndWrittenFieldUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                                          | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Percent                                                                                           | CI-0024            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Written                                                                                           | CI-0018            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form 1" inside table
+    Then I softly see "Number" inside "Section 1" at dynamic form
+    Then I softly see "Percent" inside "Section 1" at dynamic form
+    Then I softly see "Written" inside "Section 1" at dynamic form
