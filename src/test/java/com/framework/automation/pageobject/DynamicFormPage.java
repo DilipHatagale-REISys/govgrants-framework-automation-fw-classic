@@ -2,10 +2,13 @@ package com.framework.automation.pageobject;
 
 import com.framework.automation.projectmanager.GovGrantsManager;
 import com.testingblaze.controller.TestingBlazeGlobal;
+import com.testingblaze.objects.Elements;
 import com.testingblaze.register.I;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 public class DynamicFormPage extends GovGrantsManager {
 
@@ -124,6 +127,35 @@ public class DynamicFormPage extends GovGrantsManager {
         }
     }
 
+    /**
+     * assert true if field displayed with blank value inside dynamic form layout
+     *
+     * @param fieldName
+     */
+    public void assertFieldDisplayedWithBlankValueAtDynamicForm(String fieldName) {
+        Assert.assertTrue(isFieldDisplayedWithBlankValue(fieldName));
+    }
+
+    /**
+     * assert true if field displayed at expected position inside dynamic form layout
+     *
+     * @param fieldName
+     * @param fieldPosition
+     * @param sectionName
+     */
+    public void assertSortOrderOfFieldAtDynamicFormLayout(String fieldName, int fieldPosition, String sectionName) {
+        Assert.assertTrue(isFieldDisplayedAtExpectedPositionInFormLayout(fieldName, fieldPosition, sectionName));
+    }
+
+    /**
+     * get list of fields inside section at dynamic form layout like Section 1 etc
+     *
+     * @param sectionName
+     */
+    public List<Elements> getListOfFieldsInsideDynamicFormLayout(String sectionName) {
+        return I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//h3//a[contains(@title,'Section 1')]/ancestor::div[2]/following-sibling::div//*[contains(@class,'textFieldWrap')]//dt//span"));
+    }
+
     /*********
      * "Local Methods with complete functionality - private"
      *****************/
@@ -240,6 +272,35 @@ public class DynamicFormPage extends GovGrantsManager {
         if (isHidden && getDynamicFormFields.getAttribute("style").equalsIgnoreCase("display: none;")) {
             return true;
         } else if (getDynamicFormFields.getAttribute("class").contains("disabledbutton")) {
+            return true;
+        }
+        return flag;
+    }
+
+    /**
+     * assert true if field displayed with blank value inside dynamic form layout
+     *
+     * @param fieldName
+     */
+    private boolean isFieldDisplayedWithBlankValue(String fieldName) {
+        boolean flag = false;
+        if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//span[text()='" + fieldName + "']/../following-sibling::dd[not(descendant::span)] |" +
+                "//span[text()='" + fieldName + "']/../following-sibling::dd//textarea[not(text())]"))) {
+            return true;
+        }
+        return flag;
+    }
+
+    /**
+     * assert true if field displayed at expected position inside dynamic form layout
+     *
+     * @param fieldName
+     * @param fieldPosition
+     * @param sectionName
+     */
+    private boolean isFieldDisplayedAtExpectedPositionInFormLayout(String fieldName, int fieldPosition, String sectionName) {
+        boolean flag = false;
+        if (getListOfFieldsInsideDynamicFormLayout(sectionName).get(fieldPosition).getText().contains(fieldName)) {
             return true;
         }
         return flag;

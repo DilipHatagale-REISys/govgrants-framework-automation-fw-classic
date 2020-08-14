@@ -3438,8 +3438,8 @@ Business Need: Logged Issues Scenarios
     Then I see "<new_helpText>" shown as help text
 
     Examples:
-      | new_helpText             | old_helpText                                                                           |
-      | This \"section Submitted | The section gives program overview along with funder and funding organization details. |
+      | new_helpText            | old_helpText                                                                           |
+      | This @section Submitted | The section gives program overview along with funder and funding organization details. |
 
   @94534    @verifyHideDecisionActionComponent-Programs
   Scenario: Hiding approve decision component from configuration and validating in pending tasks approval decision
@@ -3550,3 +3550,87 @@ Business Need: Logged Issues Scenarios
     Examples:
       | newFieldsApi                                             | defaultFieldsApi                                                                                                                               |
       | GrantAwardName__c,Name,Status__c,ProjectPeriodEndDate__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
+
+  @84618 @verifyThatLightGrayColorIsDisplayedAtSidebarSubMenuBackgroundForLoggedInUser-StateAsAGrantor
+  Scenario: verify that Light gray color is displayed as background for sidebar sub-menu for logged in user-StateAsAGrantor
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    Then I see sidebar sub menu has light grey background colour
+
+  @93700   @VerifySearchResultDisplayedCorrectlyAfterChangingThePaginationAtFlexTable-gPlanning
+  Scenario Outline: validate searched result is displayed correctly after changing the pagination under flex table - Planning phase
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table List       | Filter Clause     | <oldSoqlFilter>   | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size | 10                | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination | false             | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Filter Clause     | <newSoqlFilter> | Programs           | Name                      | FLV-1837                   |
+      | Flex Table:General    | Default Page Size | 5               | Programs           |                           |                            |
+      | Flex Table:General    | Enable Pagination | true            | Programs           |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Created"
+    And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
+    Then I see record with text "Created" in "---program:-:programTableDivId---"
+
+    Examples:
+      | newSoqlFilter                                                                                                      | oldSoqlFilter                                                                                                             |
+      | RecordType.Name = 'Internal Program' and Status__c = 'Created' and Account__r.Name='Department of Children health' | RecordType.Name = 'Internal Program' and Status__c IN ( 'Created','Change Requested','Submitted for Approval','Approved') |
+
+  @93699   @VerifySearchResultDisplayedCorrectlyAfterChangingThePageSizeAtFlexTable-gPlanning
+  Scenario Outline: validate searched result is displayed correctly after changing the page size under flex table - Planning phase
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table List       | Filter Clause     | <oldSoqlFilter>   | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size | 10                | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination | false             | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Filter Clause     | <newSoqlFilter> | Programs           | Name                      | FLV-1837                   |
+      | Flex Table:General    | Default Page Size | 5               | Programs           |                           |                            |
+      | Flex Table:General    | Enable Pagination | true            | Programs           |                           |                            |
+      | Flex Table:General    | Enable Page Size  | true            | Programs           |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Created"
+    And I select value inside table "---program:-:programTableDivId---" is "10"
+    Then I see record with text "Created" in "---program:-:programTableDivId---"
+
+    Examples:
+      | newSoqlFilter                                                                                                      | oldSoqlFilter                                                                                                             |
+      | RecordType.Name = 'Internal Program' and Status__c = 'Created' and Account__r.Name='Department of Children health' | RecordType.Name = 'Internal Program' and Status__c IN ( 'Created','Change Requested','Submitted for Approval','Approved') |
+
+  @89907  @VerifyThatTheBackgroundColorAsBlueIsDisplayedAtSelectedConditionAtEnhancedFlexTable @flexTableEnhanced
+  Scenario: validate background color of selected condition at advance search filter at enhanced flex table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I click on advance filter "#advfEnhancedDataTable" of table id "---program:-:EnhancedDataTableId---"
+    When I enter advance filter values inside id "advfEnhancedDataTable"
+      | Status | equals to | Active |
+    Then I see background color of selected filter criteria is Moderate Blue
+
+  @89908  @VerifyThatTheBackgroundColorAsBlueIsDisplayedAtSelectedConditionAtEnhancedGridFlexTable @enhancedGrid
+  Scenario: validate background color of selected condition at advance search filter at enhanced grid
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I click on advance filter "#advfTmpActiveGrantsGrid" of table id "---program:-:enhancedGridTableId---"
+    When I enter advance filter values inside id "advfTmpActiveGrantsGrid"
+      | Status | equals to | Active |
+    Then I see background color of selected filter criteria is Moderate Blue

@@ -534,7 +534,14 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         WebElement actionsAligned = I.amPerforming().getElementReference().of(By.xpath("//div[@id='" + tableId + "']//div[contains(@class,'actionColIconWrap')]/.."));
         I.amPerforming().waitFor().makeThreadSleep(1000);
         I.amPerforming().snapShotTo().takeElementScreenShot(actionsAligned, "captureActions");
-        Assert.assertTrue(I.amPerforming().comparisonOf().image().isImagesSame("target/Automation-Report/captureActions.png", "src/main/resources/"+imageName+""));
+        Assert.assertTrue(I.amPerforming().comparisonOf().image().isImagesSame("target/Automation-Report/captureActions.png", "src/main/resources/" + imageName + ""));
+    }
+
+    /**
+     * return true if background color of selected filter criteria at advance filter is Moderate blue
+     */
+    public void assertBackgroundColorOfSelectedFilterCriteria() {
+        Assert.assertTrue(isBackgroundColorOfSelectedFilterCriteriaDisplayed());
     }
 
     /*********
@@ -1481,6 +1488,21 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
                 flag = true;
             }
         } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * Return true if if background color of selected filter criteria at advance filter is Moderate blue
+     */
+    private boolean isBackgroundColorOfSelectedFilterCriteriaDisplayed() {
+        WebElement getColor = I.amPerforming().getElementReference().of(By.xpath("//span[contains(@class,'advfDetail')]"));
+        boolean flag = false;
+        try {
+            if (getColor.getCssValue("background-color").contains("rgba(76, 144, 181, 1)") || getColor.getCssValue("background-color").contains("rgb(76, 144, 181))")) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
         }
         return flag;
     }

@@ -282,6 +282,10 @@ public class EnhancedFlexGridSteps {
     @Then("I see actions under {string} table are aligned and compared with {string}")
     public void iSeeActionsUnderTableAreAlignedAndComparedWith(String tableId, String imageName)  throws IOException{
         enhancedFlexGrid.assertActionsAreAlignedInsideFlexTable(tableId, imageName);
+    }
 
+    @Then("I see background color of selected filter criteria is Moderate Blue")
+    public void iSeeBackgroundColorOfSelectedFilterCriteriaIs() {
+        enhancedFlexGrid.assertBackgroundColorOfSelectedFilterCriteria();
     }
 }
