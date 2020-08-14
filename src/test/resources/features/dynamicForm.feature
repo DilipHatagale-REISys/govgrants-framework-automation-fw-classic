@@ -2976,3 +2976,420 @@ Business Need: dynamic forms Component Scenarios
     Then I softly see "Number" inside "Section 1" at dynamic form
     Then I softly see "Percent" inside "Section 1" at dynamic form
     Then I softly see "Written" inside "Section 1" at dynamic form
+
+  @95144  @validateIfResponseIsClearOutThenWrittenFieldShouldDisplayEmptyInsideDynamicFormInViewLayout
+  Scenario: validate if response is removed from written field then a field with blank value is displayed in form view layout
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    When I enter values into "Section 2" page block
+      | Field             | Value        |
+      | Written Section 2 | Demo Testing |
+    When I click on "Save" in the page details
+    When I click on "Edit" in the page details
+    When I enter values into "Section 2" page block
+      | Field             | Value |
+      | Written Section 2 |       |
+    When I click on "Save" in the page details
+    Then I see "Written Section 2" field displayed with blank value at dynamic form
+
+  @95145   @validateIfResponseIsClearOutThenWrittenFieldShouldDisplayEmptyInsideDynamicFormInEditLayout
+  Scenario: validate if response is removed from written field then a field with blank value is displayed in form edit layout
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    When I enter values into "Section 2" page block
+      | Field             | Value        |
+      | Written Section 2 | Demo Testing |
+    When I click on "Save" in the page details
+    When I click on "Edit" in the page details
+    When I enter values into "Section 2" page block
+      | Field             | Value |
+      | Written Section 2 |       |
+    When I click on "Save" in the page details
+    When I click on "Edit" in the page details
+    Then I see "Written Section 2" field displayed with blank value at dynamic form
+
+  @95521   @validateDependentQuestionJsonFieldByDisablingNumberPercentAndWrittenFieldUsingCurrencyFieldValueInsideDynamicFormInEditMode
+  Scenario: validate Dependent Question Json Field by disabling number, percent and written field on the basis of currency field value in form edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:3 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:4 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                                         | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Number                                                                                                | CI-0023            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:DisableNumberPercentDateAndWrittenFieldUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                                              | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Percent                                                                                               | CI-0024            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Written                                                                                               | CI-0018            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Date                                                                                                  | CI-0019            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    Then I softly see "Number" field inside "Section 1" is disabled
+    Then I softly see "Percent" field inside "Section 1" is disabled
+    Then I softly see "Written" field inside "Section 1" is disabled
+    Then I softly see "Date" field inside "Section 1" is disabled
+
+  @93705    @validateSortOrderFieldAtDynamicFormLayoutInViewMode
+  Scenario: validate that
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form 1" inside table
+    Then I see "Written" field is shown at position "1" in "Section 1"
+
+  @93707    @validateSortOrderFieldAtDynamicFormLayoutInEditMode
+  Scenario: validate that a form is displayed in edit mode and edit button is not displayed by clicking on edit action
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    Then I see "Written" field is shown at position "0" in "Section 1"
+
+  @9552   @validateDependentQuestionJsonFieldByDisablingNumberPercentAndWrittenFieldUsingCurrencyFieldValueInsideDynamicFormInViewMode
+  Scenario: validate Dependent Question Json Field by disabling number, percent and written field on the basis of currency field value in form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:3 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:4 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                                         | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Number                                                                                                | CI-0023            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:DisableNumberPercentDateAndWrittenFieldUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                                              | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Percent                                                                                               | CI-0024            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Written                                                                                               | CI-0018            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Date                                                                                                  | CI-0019            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form 1" inside table
+    Then I softly see "Number" inside "Section 1" at dynamic form
+    Then I softly see "Percent" inside "Section 1" at dynamic form
+    Then I softly see "Written" inside "Section 1" at dynamic form
+    Then I softly see "Date" inside "Section 1" at dynamic form
+
+  @96395   @validateDependentQuestionJsonFieldByShowRequiredNumberPercentFieldAndDisablingWrittenFieldUsingCurrencyFieldValueInsideDynamicFormInEditMode
+  Scenario: validate Dependent Question Json Field by making required number, percent field and disabling written field on the basis of currency field value in form edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:3 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Number                                                                                                       | CI-0023            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:ShwRequiredNumberPercentAndDisableWrittenFieldUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                                                     | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Percent                                                                                                      | CI-0024            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Written                                                                                                      | CI-0018            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    Then I softly see "Written" field inside "Section 1" is disabled
+    When I enter values into "Section 1" page block
+      | Field   | Value |
+      | Number  |       |
+      | Percent |       |
+    When I click on "Save" in the page details
+    Then I softly see the following message in the page details :
+      | Number is Required to save under Section 1.  |
+      | Percent is Required to save under Section 1. |
+
+  @96396   @validateDependentQuestionJsonFieldByShowRequiredNumberPercentFieldAndDisablingWrittenPicklistRadioFieldUsingCurrencyFieldValueInsideDynamicFormInEditMode
+  Scenario: validate Dependent Question Json Field by making required number, percent field and disabling written, radio, picklist field on the basis of currency field value in form edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:3 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:4 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:5 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:6 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                                                             | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Number                                                                                                                    | CI-0023            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:ShwRequiredNumberPercentAndDisableWrittenPicklistRadioFieldUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                                                                  | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Percent                                                                                                                   | CI-0024            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Written                                                                                                                   | CI-0018            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Picklist                                                                                                                  | CI-0027            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Radio                                                                                                                     | CI-0025            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    Then I softly see "Written" field inside "Section 1" is disabled
+    Then I softly see "Picklist" field inside "Section 1" is disabled
+    Then I softly see "Radio" field inside "Section 1" is disabled
+    When I enter values into "Section 1" page block
+      | Field   | Value |
+      | Number  |       |
+      | Percent |       |
+    When I click on "Save" in the page details
+    Then I softly see the following message in the page details :
+      | Number is Required to save under Section 1.  |
+      | Percent is Required to save under Section 1. |
+
+  @96397   @validateDependentQuestionJsonFieldByDisablingNumberPercentWrittenPicklistRadioFieldUsingCurrencyFieldValueInsideDynamicFormInViewMode
+  Scenario: validate Dependent Question Json Field by making number, percent, written, radio, picklist field disabled on the basis of currency field value in form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:3 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:4 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:5 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:6 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Number                                                                                                       | CI-0023            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:DisabledNumberPercentWrittenPicklistRadioFieldUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                                                     | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Percent                                                                                                      | CI-0024            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Written                                                                                                      | CI-0018            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Picklist                                                                                                     | CI-0027            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Radio                                                                                                        | CI-0025            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    Then I softly see "Number" field inside "Section 1" is disabled
+    Then I softly see "Percent" field inside "Section 1" is disabled
+    Then I softly see "Written" field inside "Section 1" is disabled
+    Then I softly see "Picklist" field inside "Section 1" is disabled
+    Then I softly see "Radio" field inside "Section 1" is disabled
+
+  @96398   @validateDependentQuestionJsonFieldByHidingNumberPercentWrittenPicklistRadioFieldUsingCurrencyFieldValueInsideDynamicFormInViewMode
+  Scenario: validate Dependent Question Json Field by making number, percent, written, radio, picklist field hide on the basis of currency field value in form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:3 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:4 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:5 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:6 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                                            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Number                                                                                                   | CI-0023            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:HideNumberPercentWrittenPicklistRadioFieldUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                                                 | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Percent                                                                                                  | CI-0024            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Written                                                                                                  | CI-0018            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Picklist                                                                                                 | CI-0027            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Radio                                                                                                    | CI-0025            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    Then I softly see "Number" field inside "Section 1" is hidden
+    Then I softly see "Percent" field inside "Section 1" is hidden
+    Then I softly see "Written" field inside "Section 1" is hidden
+    Then I softly see "Picklist" field inside "Section 1" is hidden
+    Then I softly see "Radio" field inside "Section 1" is hidden
+
+  @96399   @validateDependentQuestionJsonFieldByHidingNumberPercentWrittenPicklistRadioFieldUsingCurrencyFieldValueInsideDynamicFormInEditMode
+  Scenario: validate Dependent Question Json Field by making number, percent, written, radio, picklist field hide on the basis of currency field value in form edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:3 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:4 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:5 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:6 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                                            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Number                                                                                                   | CI-0023            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:HideNumberPercentWrittenPicklistRadioFieldUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                                                 | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Percent                                                                                                  | CI-0024            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Written                                                                                                  | CI-0018            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Picklist                                                                                                 | CI-0027            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Radio                                                                                                    | CI-0025            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form 1" inside table
+    Then I softly do not see "Number" inside "Section 1" at dynamic form
+    Then I softly do not see "Percent" inside "Section 1" at dynamic form
+    Then I softly do not see "Written" inside "Section 1" at dynamic form
+    Then I softly do not see "Picklist" inside "Section 1" at dynamic form
+    Then I softly do not see "Radio" inside "Section 1" at dynamic form
+
+  @96510   @validateDependentQuestionJsonFieldByShowRequiredNumberPercentWrittenPicklistRadioFieldUsingCurrencyFieldValueInsideDynamicFormInEditMode
+  Scenario: validate Dependent Question Json Field by making required number, percent, written, radio, picklist field on the basis of currency field value in form edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:3 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:4 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                                                   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Number                                                                                                          | CI-0023            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:ShwRequiredNumberPercentWrittenPicklistRadioFieldUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                                                        | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Percent                                                                                                         | CI-0024            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Written                                                                                                         | CI-0018            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Radio Required Field                                                                                            | CI-0031            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    When I enter values into "Section 1" page block
+      | Field   | Value |
+      | Number  |       |
+      | Percent |       |
+      | Written |       |
+    When I click on "Save" in the page details
+    Then I see the following message in the page details :
+      | Number is Required to save under Section 1.               |
+      | Percent is Required to save under Section 1.              |
+      | Written is Required to save under Section 1.              |
+      | Radio Required Field is Required to save under Section 2. |
+
+  @96512   @validateDependentQuestionJsonFieldByHidingNumberPercentWrittenPicklistRadioAndDisablingCheckboxFieldUsingCurrencyFieldValueInsideDynamicFormInEditMode
+  Scenario: validate Dependent Question Json Field by making number, percent, written, radio, picklist field hide and checkbox field as disabled on the basis of currency field value in form edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:3 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:4 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:5 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:6 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:7 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                                                              | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Number                                                                                                                     | CI-0023            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:HideNumberPercentWrittenPicklistRadioAndDisableCheckboxFieldUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                                                                   | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Percent                                                                                                                    | CI-0024            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Written                                                                                                                    | CI-0018            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Picklist                                                                                                                   | CI-0027            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Radio                                                                                                                      | CI-0025            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Checkbox                                                                                                                      | CI-0028            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    Then I softly see "Number" field inside "Section 1" is hidden
+    Then I softly see "Percent" field inside "Section 1" is hidden
+    Then I softly see "Written" field inside "Section 1" is hidden
+    Then I softly see "Picklist" field inside "Section 1" is hidden
+    Then I softly see "Radio" field inside "Section 1" is hidden
+    Then I softly see "Checkbox" field inside "Section 1" is disabled
+
+  @96518   @validateDependentQuestionJsonFieldByHidingNumberPercentWrittenPicklistRadioAndDisablingCheckboxFieldUsingCurrencyFieldValueInsideDynamicFormInViewMode
+  Scenario: validate Dependent Question Json Field by making number, percent, written, radio, picklist field hide and checkbox field as disabled on the basis of currency field value in form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:3 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:4 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:5 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:6 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:7 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                                                              | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Number                                                                                                                     | CI-0023            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:HideNumberPercentWrittenPicklistRadioAndDisableCheckboxFieldUsingCurrencyFieldValueByProvidingNameOfField | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                                                                   | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Percent                                                                                                                    | CI-0024            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Written                                                                                                                    | CI-0018            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Picklist                                                                                                                   | CI-0027            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Radio                                                                                                                      | CI-0025            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Checkbox                                                                                                                      | CI-0028            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form 1" inside table
+    Then I softly do not see "Number" inside "Section 1" at dynamic form
+    Then I softly do not see "Percent" inside "Section 1" at dynamic form
+    Then I softly do not see "Written" inside "Section 1" at dynamic form
+    Then I softly do not see "Picklist" inside "Section 1" at dynamic form
+    Then I softly do not see "Radio" inside "Section 1" at dynamic form
+    Then I softly see "Checkbox" inside "Section 1" at dynamic form

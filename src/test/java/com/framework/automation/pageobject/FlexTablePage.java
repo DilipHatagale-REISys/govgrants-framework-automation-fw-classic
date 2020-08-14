@@ -492,8 +492,18 @@ public class FlexTablePage extends GovGrantsManager {
     public void assertActionsAreAlignedAtAttachment() throws IOException {
         TestingBlazeGlobal.setVariable("highlightElements", "off");
         WebElement actionsAligned = I.amPerforming().getElementReference().of(By.xpath("//a[@title='Attachments']/../../../..//a[@class='actionIcons']/.."));
-        I.amPerforming().snapShotTo().takeElementScreenShot(actionsAligned,"captureAction");
-        Assert.assertTrue(I.amPerforming().comparisonOf().image().isImagesSame("target/Automation-Report/captureAction.png","src/main/resources/actionsAtAttachment.png"));
+        I.amPerforming().snapShotTo().takeElementScreenShot(actionsAligned, "captureAction");
+        Assert.assertTrue(I.amPerforming().comparisonOf().image().isImagesSame("target/Automation-Report/captureAction.png", "src/main/resources/actionsAtAttachment.png"));
+    }
+
+    /**
+     * perform click and select value inside show entries dropdown
+     *
+     * @param flexTableId
+     * @param numberofEntries
+     */
+    public void clickAndSelectValueInsideShowEntriesDropdown(String flexTableId, String numberofEntries) {
+        govgrants.perform().flexTable().flexTableShowEntriesDropDown(flexTableId, numberofEntries);
     }
 
     /*********
@@ -889,9 +899,9 @@ public class FlexTablePage extends GovGrantsManager {
     private Boolean isFlexTableRecordsContainsTextAsExpected(String text, String tableId) {
         boolean flag = false;
         try {
-            for (Elements ele : govgrants.perform().flexTable().getCompleteTableRow()) {
-                ele.getText().contains(text);
-                flag = true;
+            for (int i = 0; i < getCompleteTableRow().size(); i++) {
+                if (getCompleteTableRow().get(i).getText().contains(text))
+                    flag = true;
             }
         } catch (Exception e) {
         }

@@ -60,4 +60,9 @@ public class SideBarSteps {
 	public void assertSubHeaderContentNameNotDisplayed(String sideBarCategory, String accordianSubHeaderDetail) {
 		sidebarPage.assertSubHeaderContentNotDisplayed(sideBarCategory, accordianSubHeaderDetail);
 	}
+
+	@Then("^I see sidebar sub menu has light grey background colour$")
+	public void assertSidebarSubMenuHasBackgroundColour() {
+		sidebarPage.asserSidebarBackgroundColor();
+	}
 }

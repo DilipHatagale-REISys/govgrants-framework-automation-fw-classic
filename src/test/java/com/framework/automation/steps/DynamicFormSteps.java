@@ -56,4 +56,14 @@ public class DynamicFormSteps {
     public void iSeeFieldInsideIs(String usage,String fieldName, String sectionName, String displayType) {
         dynamicFormPage.assertFieldInsideDynamicForm(usage, fieldName, sectionName, displayType.equalsIgnoreCase("hidden"));
     }
+
+    @Then("^I see \"([^\"]*)\" field displayed with blank value at dynamic form$")
+    public void iSeeFieldDisplayedWithBlankValueAtDynamicForm(String fieldName) {
+        dynamicFormPage.assertFieldDisplayedWithBlankValueAtDynamicForm(fieldName);
+    }
+
+    @Then("I see {string} field is shown at position {string} in {string}")
+    public void iSeeFieldIsShownAtPositionIn(String fieldName, String fieldPosition, String sectionName) {
+        dynamicFormPage.assertSortOrderOfFieldAtDynamicFormLayout(fieldName,Integer.parseInt(fieldPosition), sectionName );
+    }
 }

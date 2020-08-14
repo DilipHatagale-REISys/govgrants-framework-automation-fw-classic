@@ -5,6 +5,8 @@ import com.framework.automation.projectmanager.GovGrantsManager;
 import com.testingblaze.objects.Elements;
 import com.testingblaze.register.I;
 import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
 
@@ -92,6 +94,13 @@ public class SideBarPage extends GovGrantsManager {
      */
     public void assertSubHeaderContentNotDisplayed(String sideBarCategory, String accordianSubHeaderDetail) {
         Assert.assertFalse(isSideBarAccordionSubHeaderDisplayed(sideBarCategory, accordianSubHeaderDetail));
+    }
+
+    /**
+     * assert sidebar background color
+     */
+    public void asserSidebarBackgroundColor() {
+        Assert.assertTrue(isSidebarBackgroundColorChanged());
     }
 
     /*********
@@ -186,6 +195,21 @@ public class SideBarPage extends GovGrantsManager {
             }
         } catch (Exception e) {
 
+        }
+        return flag;
+    }
+
+    /**
+     * @return true if expected color displayed at sidebar sub menu background
+     */
+    private boolean isSidebarBackgroundColorChanged() {
+        boolean flag = false;
+        WebElement getSidebarSubMenu = I.amPerforming().getElementReference().of(By.xpath("//span[text()='Pending']/ancestor::li[contains(@class,'subMenuLink')]"));
+        try {
+            if (getSidebarSubMenu.getCssValue("background-color").contains("rgb(242, 245, 249)") || getSidebarSubMenu.getCssValue("background-color").contains("rgba(242, 245, 249, 1)")) {
+                flag = true;
+            }
+        } catch (Exception e) {
         }
         return flag;
     }

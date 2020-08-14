@@ -2,6 +2,7 @@ package com.framework.automation.steps;
 
 import com.framework.automation.pageobject.FlexTablePage;
 import com.testingblaze.exception.TestingBlazeCustomException;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.springframework.context.annotation.Description;
@@ -45,6 +46,11 @@ public class FlexTableSteps {
     @When("^I click toggle button for \"([^\"]*)\"$")
     public void clickToggleButtonAndSelect(String menuItemName) {
         flexTablePage.clickToggleButtonAndSelect(menuItemName);
+    }
+
+    @And("^I select value inside table \"([^\"]*)\" is \"([^\"]*)\"$")
+    public void selectValueInsideShowEntriesDropdown(String flexTableId, String numberofEntries) {
+        flexTablePage.clickAndSelectValueInsideShowEntriesDropdown(flexTableId, numberofEntries);
     }
 
     @Then("^I see \"([^\"]*)\" shown as flex table title$")
