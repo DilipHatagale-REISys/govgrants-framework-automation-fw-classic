@@ -267,4 +267,14 @@ public class FlexTableSteps {
     public void iSeeAdvanceFilterDisplayedAtRightSideOfTable(String dataTargetValue, String tableId) {
         flexTablePage.assertDisplayOfAdvanceFilterAtRightSideOfTable(dataTargetValue, tableId);
     }
+
+    @Then("^I see sequence of column \"([^\"]*)\" is in correct order inside table \"([^\"]*)\" with startvalue \"([^\"]*)\"$")
+    public void assertContentOfColumnInExpectedOrder(String columnName, String tableId, String startValue) {
+        flexTablePage.assertSequenceOfAutoIndexColumnDisplayed(columnName, tableId, Integer.parseInt(startValue));
+    }
+
+    @Then("^I see margin of \"([^\"]*)\" is present between scroll-bar and page size$")
+    public void assertMarginBetweenScrollBarAndPageSize(String marginBottom) {
+        flexTablePage.assertMarginBetweenScrollBarAndPageSize(marginBottom);
+    }
 }

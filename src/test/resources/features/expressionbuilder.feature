@@ -7210,3 +7210,34 @@ Business Need: Expression Builder Component Scenarios
     Examples:
       | newFieldsApi                     | defaultFieldsApi                                                                                                                               |
       | GrantAwardName__c,Name,Status__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
+
+  @96659  @hideExpressionJSONaTProgramFlexTableSObjectTopLevelActionWithProfileIN_SystemAdministratorORUserAppINStateAsGrantorAndUserTypeAsInternal
+  Scenario: Set up configuration to hide New action of program flex table by configuring json at sobject action config-planning
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | New                        |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName            | fieldNewValue                                                                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionAtFlexTableTopLevelActionsAtSobjectConfigUsingUserAppAndProfile | Programs           | Name                      | New                        |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    Then I see "New" button inside "Draft Programs" flex table not displayed
+
+  @96670  @hideExpressionJSONAtFundingAccountFlexTableTopLevelActionWithProfileIN_SystemAdministratorORUserAppINStateAsGrantorAndUserTypeAsInternal
+  Scenario: Set up configuration to hide Associate action of funding account by configuring json at Top action config-planning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON |                   | ProgramFundingAccount | Name                      | Associate                  |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionAtFlexTableTopLevelActionsUsingUserAppAndProfile | ProgramFundingAccount | Name                      | Associate                  |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table with table id "toggleFlexTablePrograms" without processing
+    When I navigate to "Financials" sub tab
+    Then I see "Associate" button inside "Funding Account Information" flex table not displayed

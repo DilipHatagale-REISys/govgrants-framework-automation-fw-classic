@@ -65,4 +65,9 @@ public class SideBarSteps {
 	public void assertSidebarSubMenuHasBackgroundColour() {
 		sidebarPage.asserSidebarBackgroundColor();
 	}
+
+	@Then("^I see sidebar scroll has blue colour$")
+	public void assertSidebarScrollHasBlueColour() {
+		sidebarPage.assertSidebarScrollHasBlueColour();
+	}
 }

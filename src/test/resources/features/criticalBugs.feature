@@ -3489,7 +3489,7 @@ Business Need: Logged Issues Scenarios
     When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     Then I can see the approval decision
 
-  @95369    @validateByClickOnAttachmentEditActionAnEditModalAppearsWithType
+  @95369    @validateByClickOnAttachmentEditActionAnEditModalAppearsWithType @pageLayout
   Scenario: validate by click on Attachment edit action, an edit attachment modal appears -planning
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -3501,7 +3501,7 @@ Business Need: Logged Issues Scenarios
     When I click on "Edit" icon for "Program Artifacts" inside table
     Then I see "Program Artifacts:Financial Artifacts:Other Artifacts" inside Type selectbox
 
-  @95484 @verifyWorkingOfSearchBoxWithSpecialCharactersAtLookupModalWindow
+  @95484 @verifyWorkingOfSearchBoxWithSpecialCharactersAtLookupModalWindow @flexTable
   Scenario: verify search function with special character at lookup modal window is working properly
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -3513,7 +3513,7 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "tes't" in "---program:-:AccountTableId---" panel
     Then I see "No Records Found" inside flex table with id "---program:-:AccountTableId---"
 
-  @95445 @verifyWorkingOfSearchBoxAtLookupModalWindow
+  @95445 @verifyWorkingOfSearchBoxAtLookupModalWindow @flexTable
   Scenario:  verify search function at lookup modal window is working properly
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -3525,7 +3525,7 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "Child Secretary of Health Organization" in "---program:-:AccountTableId---" panel
     Then I see "Child Secretary of Health Organization" inside flex table with id "---program:-:AccountTableId---"
 
-  @94935  @validateInlineEditShouldWorkProperlyAtChildTableOfEnhancedGrid
+  @94935  @validateInlineEditShouldWorkProperlyAtChildTableOfEnhancedGrid @enhancedGrid
   Scenario Outline: validate inline edit is working properly at child table of enhanced grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -3551,13 +3551,13 @@ Business Need: Logged Issues Scenarios
       | newFieldsApi                                             | defaultFieldsApi                                                                                                                               |
       | GrantAwardName__c,Name,Status__c,ProjectPeriodEndDate__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
 
-  @84618 @verifyThatLightGrayColorIsDisplayedAtSidebarSubMenuBackgroundForLoggedInUser-StateAsAGrantor
+  @84618 @verifyThatLightGrayColorIsDisplayedAtSidebarSubMenuBackgroundForLoggedInUser-StateAsAGrantor @sidebar
   Scenario: verify that Light gray color is displayed as background for sidebar sub-menu for logged in user-StateAsAGrantor
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     Then I see sidebar sub menu has light grey background colour
 
-  @93700   @VerifySearchResultDisplayedCorrectlyAfterChangingThePaginationAtFlexTable-gPlanning
+  @93700   @VerifySearchResultDisplayedCorrectlyAfterChangingThePaginationAtFlexTable-gPlanning @flexTable
   Scenario Outline: validate searched result is displayed correctly after changing the pagination under flex table - Planning phase
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -3581,7 +3581,7 @@ Business Need: Logged Issues Scenarios
       | newSoqlFilter                                                                                                      | oldSoqlFilter                                                                                                             |
       | RecordType.Name = 'Internal Program' and Status__c = 'Created' and Account__r.Name='Department of Children health' | RecordType.Name = 'Internal Program' and Status__c IN ( 'Created','Change Requested','Submitted for Approval','Approved') |
 
-  @93699   @VerifySearchResultDisplayedCorrectlyAfterChangingThePageSizeAtFlexTable-gPlanning
+  @93699   @VerifySearchResultDisplayedCorrectlyAfterChangingThePageSizeAtFlexTable-gPlanning @flexTable
   Scenario Outline: validate searched result is displayed correctly after changing the page size under flex table - Planning phase
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -3634,3 +3634,149 @@ Business Need: Logged Issues Scenarios
     When I enter advance filter values inside id "advfTmpActiveGrantsGrid"
       | Status | equals to | Active |
     Then I see background color of selected filter criteria is Moderate Blue
+
+  @93586  @VerifyFlexGridSequenceByClickOnTextPageArrow-gPlanning @enhancedGrid
+  Scenario: validate auto index sequence displayed properly under flex grid by click on next page arrow - Planning phase
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Grid             | Enable Auto Index | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Auto Index | true          | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    And I click on page navigation arrow "---program:-:enhancedGridTableId---" for table id "Next"
+    Then I see sequence of column "#" is in correct order inside table "---program:-:enhancedGridTableId---" with startvalue "6"
+
+  @93727  @VerifyFlexGridSequenceAtSearchPage-gPlanning @enhancedGrid
+  Scenario: validate auto index sequence displayed properly under flex grid at search page - Planning phase
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Grid             | Enable Auto Index | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Auto Index | true          | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "test" in "---program:-:flexGridEnhancedID---" panel
+    And I select value inside table "---program:-:enhancedGridTableId---" is "10"
+    Then I see sequence of column "#" is in correct order inside table "---program:-:enhancedGridTableId---" with startvalue "1"
+
+  @84726 @verifyThatBlueColorIsDisplayedAtSidebarScrollForLoggedInUser-StateAsAGrantor @sidebar
+  Scenario: verify that blue color is displayed at sidebar scroll bar for logged in user-StateAsAGrantor
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see sidebar scroll has blue colour
+
+  @96572 @verifyMarginIsDisplayedBetweenScrollAndPageSizeAtFlexTableBottom @flexTable
+  Scenario Outline: verify that margin is displayed between scroll bar and page size at bottom of flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see margin of "10px" is present between scroll-bar and page size
+
+    Examples:
+      | newFieldsApi                                                                                                                                                                                                | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,ApplicantTypes__c,Authorization__c,AwardActivityType__c,OrganizationName__c,Obligations__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+
+  @96570  @VerifyThatPageIsGettingRefreshedByClickOnRefreshOptionFromBurgerMenuAtFlexTable @flexTable
+  Scenario: validate that page is getting refreshed by click on refresh option from burger menu inside flex table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
+    And I select "Refresh" from parallel lines dropdown of "Draft Programs"
+    Then I see entire page is refreshing
+
+  @80890     @VerifyMeGridParentTableActionsAreAlignedProperly-gPlanning @flexGrid
+  Scenario: validate alignment of actions under me grid parent flex table - Planning phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    Then I see actions are aligned at "---program:-:applicationBudgetCategoryInlineEditTableId---" me grid parent table
+
+  @96567    @enableOverallTotalFieldAndRowGroupingAtParentFlexTableForEnhancedGrid-gPlanning @enhancedGrid
+  Scenario Outline: validate enabling of overall total field and row grouping inside enhanced grid of programs-planning
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName             | fieldOrignalValue               | filterId         |
+      | Flex Table List           | Enable Over All Total | false                           | ApiGeneratedId:0 |
+      | Flex Grid:Flex Table List | Is Master View        | true                            | ApiGeneratedId:1 |
+      | Flex Grid:Flex Table List | Filter Clause         | <defaultFilterClauseForFLV2539> | ApiGeneratedId:2 |
+      | Flex Table List           | Enable Row Grouping   | false                           | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName             | fieldNewValue               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List           | Enable Over All Total | true                        | TmpActiveGrantsGrid | Name                      | FTC-1497                   |
+      | Flex Grid:Flex Table List | Is Master View        | true                        | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Grid:Flex Table List | Filter Clause         | <newFilterClauseForFLV2539> | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Table List           | Enable Row Grouping   | true                        | TmpActiveGrantsGrid | Name                      | FTC-1497                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    Then I softly see over all total for "NumberofAwards__c" field at enhanced grid
+    Then I softly see "Number of Awards :" inside rows of enhanced grid id "---program:-:enhancedGridTableId---"
+
+    Examples:
+      | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                         |
+      | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c like 'Road%' |
+
+  @96610     @VerifyTotalRecordCountDisplayedAtBottomOfMeGridParentTableAndIsAlignedCentrally-gPlanning @flexGrid
+  Scenario: validate total record count is displayed at bottom and is centrally aligned under me grid parent flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Total Records Count | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Total Records Count | true          | ApplicationBudgetPeriods |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    Then I see total records count is centrally aligned at bottom of "---program:-:applicationBudgetCategoryInlineEditTableId---" parent table
+
+  @96618     @VerifyTotalRecordCountDisplayedAtBottomOfMeGridChildTableAndIsAlignedCentrally-gPlanning @flexGrid
+  Scenario: validate total record count is displayed at bottom and is centrally aligned under me grid child flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Total Records Count | true         | ApplicationBudgetCategoryFlexTable |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "BP-01"
+    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    Then I see total records count is centrally aligned at bottom of "---program:-:applicationBudgetCategoryInlineEditTableId---" child table

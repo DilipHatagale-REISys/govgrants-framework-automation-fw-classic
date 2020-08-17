@@ -432,7 +432,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Information" shown at number "5" inside page block
+    Then I see "Program Information" shown at number "5" inside detail page
 
   @35984    @headerInstructionTextFieldAtPageBlock-gPlanning
   Scenario: Setup header instruction text for program information page block from config and validating it at program detail page

@@ -2194,7 +2194,13 @@ Business Need: Flex Grid Component Scenarios
     Then I do not see default total at active grants flex grid
 
   @83657    @verifyByClickOnUserValueItShouldRedirectedToRespectiveRecordPageAtMEGridChildTable-gApplications @sanity
-  Scenario: validate by click on user lookup value in table , respective page should get opens at ME Grid child table - gApplications
+  Scenario Outline: validate by click on user lookup value in table , respective page should get opens at ME Grid child table - gApplications
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetCategoryFlexTable |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -2206,6 +2212,10 @@ Business Need: Flex Grid Component Scenarios
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     When I click on "Bob Samuela" icon for "Equipment" inside table
     Then I see "Community User" shown as over view header
+
+    Examples:
+      | newFieldsApi                                                                                                        | defaultFieldsApi                                                                                     |
+      | Id,ServiceAreaTitle__c,BudgetCategory__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c,CreatedBy.Name | Id,ServiceAreaTitle__c,BudgetCategory__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c |
 
   @83658    @verifyByClickOnUserValueItShouldRedirectedToRespectiveUserPageAtN2GGridChildTable-gGrant
   Scenario Outline: validate by click on user value in table , respective user page should get opens at N2G Grid child table- gGrant

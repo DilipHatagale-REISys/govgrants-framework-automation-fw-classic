@@ -3064,7 +3064,7 @@ Business Need: dynamic forms Component Scenarios
     Then I see "Written" field is shown at position "1" in "Section 1"
 
   @93707    @validateSortOrderFieldAtDynamicFormLayoutInEditMode
-  Scenario: validate that a form is displayed in edit mode and edit button is not displayed by clicking on edit action
+  Scenario: validate sort order field at capture items in dynamic form layout in edit mode
     When I login as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -3341,7 +3341,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Written                                                                                                                    | CI-0018            |                           |                            |
       | Capture Item:General  | Question Identifier     | Picklist                                                                                                                   | CI-0027            |                           |                            |
       | Capture Item:General  | Question Identifier     | Radio                                                                                                                      | CI-0025            |                           |                            |
-      | Capture Item:General  | Question Identifier     | Checkbox                                                                                                                      | CI-0028            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Checkbox                                                                                                                   | CI-0028            |                           |                            |
     When I login as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -3378,7 +3378,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item:General  | Question Identifier     | Written                                                                                                                    | CI-0018            |                           |                            |
       | Capture Item:General  | Question Identifier     | Picklist                                                                                                                   | CI-0027            |                           |                            |
       | Capture Item:General  | Question Identifier     | Radio                                                                                                                      | CI-0025            |                           |                            |
-      | Capture Item:General  | Question Identifier     | Checkbox                                                                                                                      | CI-0028            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Checkbox                                                                                                                   | CI-0028            |                           |                            |
     When I login as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -3393,3 +3393,85 @@ Business Need: dynamic forms Component Scenarios
     Then I softly do not see "Picklist" inside "Section 1" at dynamic form
     Then I softly do not see "Radio" inside "Section 1" at dynamic form
     Then I softly see "Checkbox" inside "Section 1" at dynamic form
+
+  @91319   @ValidateByClickOnViewLessOptionSectionInstructionTextGetsCollapsedAndDisplayedAtDynamicFormInViewMode @issue
+  Scenario Outline: validate that by click on view less button section instructions text is getting collapsed on dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue        | filterId         |
+      | Capture Section       | Section Instruction | Demo Section instruction | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName           | fieldNewValue         | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Section:General | Section Instruction | <enterNewInstruction> | CS-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    And I click on "view more" hyperlink in page instruction block
+    And I click on "view less" hyperlink in page instruction block
+    Then I see the instruction text is as follows :
+  """
+   {LongText:SectionInstructionCollapsed-Text}
+  """
+    Examples:
+      | enterNewInstruction                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+      | Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since thee 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum |
+
+  @89825    @validateQuestionApplicableFieldAsRequiredForSaveAtTextFieldTypeAtDynamicFormLayout
+  Scenario: changing value of question applicable as required for save and checking error message for written field at dynamic form
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Applicable ? |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Applicable ? | Required to save | CI-0032            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I click on "Save" in the page details
+    Then I see the following message in the page details :
+      | Date Required is Required to save under Section 1. |
+
+  @96619   @validateSortOrderAtSectionsAtDynamicFormLayoutInEditMode
+  Scenario: validate sort order field at capture section in dynamic form layout -edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Capture Section       | Order     | 1                 | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Section:General | Order     | 1             | CS-0009            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    Then I see "Section 1" shown at number "0" inside detail page
+
+  @96620   @validateSortOrderAtSectionsAtDynamicFormLayoutInViewMode
+  Scenario: validate sort order field at capture section in dynamic form layout -view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Capture Section       | Order     | 1                 | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Section:General | Order     | 1             | CS-0009            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form 1" inside table
+    Then I see "Section 1" shown at number "0" inside detail page

@@ -5,6 +5,8 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import java.io.IOException;
+
 
 public class FlexGridSteps {
     FlexGridPage flexGridPage;
@@ -148,5 +150,15 @@ public class FlexGridSteps {
     @Then("^I (see|do not see) format as \"([^\"]*)\" in \"([^\"]*)\" field total inside \"([^\"]*)\" me grid$")
     public void iSeeFormatAsInFieldTotalInsideMeGrid(String usage, String format, String fieldName, String tableId) {
         flexGridPage.assertTotalFieldFormatInsideMeGrid(usage, format, fieldName, tableId);
+    }
+
+    @Then("I see actions are aligned at {string} me grid parent table")
+    public void iSeeActionsAreAlignedInMeGridParentTable(String tableId) throws IOException {
+        flexGridPage.assertActionsAreAlignedInMeGridTable(tableId);
+    }
+
+    @Then("^I see total records count is centrally aligned at bottom of \"([^\"]*)\" (parent|child) table$")
+    public void iSeeIsCentrallyAlignedAtBottomOfTable(String tableId, String tableType) {
+        flexGridPage.assertTextIsCentrallyAlignedAtBottomOfTable(tableId, tableId.equalsIgnoreCase("parent"));
     }
 }

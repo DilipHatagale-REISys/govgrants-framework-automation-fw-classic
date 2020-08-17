@@ -322,12 +322,16 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     /**
      * assert true if row having expected text in enhanced grid
      */
-    public void assertTextContainingRowAtParentFlexTabel(String text, String tableId) {
-        try {
+    public void assertTextContainingRowAtParentFlexTabel(String usage, String text, String tableId) {
+        /*try {
             I.amPerforming().scroll().onPageToSpecificElement(completeTableRowOfEnhancedGrid);
         } catch (Exception e) {
+        }*/
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isExpectedTextIsDisplayedAtParentFlexTabledRow(text, tableId));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isExpectedTextIsDisplayedAtParentFlexTabledRow(text, tableId)).isTrue();
         }
-        Assert.assertTrue(isExpectedTextIsDisplayedAtParentFlexTabledRow(text, tableId));
     }
 
     /**
@@ -379,8 +383,12 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      * return true if cell over all total sum value is as expected for number of
      * award column
      */
-    public void assertOverAllTotalCellValueForNumberOfAwardsAtEnhancedGrid(String fieldApiName) {
-        Assert.assertTrue(isExpectedOverAllTotalSumValueForNumberOfAwardsAtEnhancedGridTableDisplayed(fieldApiName));
+    public void assertOverAllTotalCellValueForNumberOfAwardsAtEnhancedGrid(String usage, String fieldApiName) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isExpectedOverAllTotalSumValueForNumberOfAwardsAtEnhancedGridTableDisplayed(fieldApiName));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isExpectedOverAllTotalSumValueForNumberOfAwardsAtEnhancedGridTableDisplayed(fieldApiName)).isTrue();
+        }
     }
 
     /**
@@ -1111,8 +1119,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         boolean flag = false;
 
         try {
-            I.amPerforming().scroll().onPageToSpecificElement(By.xpath("//table/tbody//*[@field-name='" + fieldApiName + "']//span"));
-            List<Elements> rows_table = I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//table/tbody//*[@field-name='" + fieldApiName + "']//span"));
+            List<Elements> rows_table = I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//td//span//*[@field-name='" + fieldApiName + "']//span"));
             String sumStr = rows_table.get(rows_table.size() - 1).getText();
             double sum = 0.00;
             for (int row = 0; row < rows_table.size() - 1; row++) {

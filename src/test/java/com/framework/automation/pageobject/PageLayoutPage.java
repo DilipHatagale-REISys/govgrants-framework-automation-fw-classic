@@ -204,11 +204,12 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * return true if page block or form section is displayed in expected sort order inside page / dynamic form layout
      * @param pageBlockName
      * @param number
      */
-    public void assertSortingOfPageBlock(String pageBlockName, int number) {
-        Assert.assertTrue(isPageBlockSequence(pageBlockName, number));
+    public void assertSortingOfPageBlockAndFormSections(String pageBlockName, int number) {
+        Assert.assertTrue(isPageBlockAndFormSectionDisplayedInOrder(pageBlockName, number));
     }
 
     /**
@@ -1327,11 +1328,11 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
-     * Boolean status of page block sorting order
+     * return true if page block or form section is displayed in expected sort order inside page / dynamic form layout
      *
      * @param pageBlockName
      */
-    private Boolean isPageBlockSequence(String pageBlockName, int number) {
+    private Boolean isPageBlockAndFormSectionDisplayedInOrder(String pageBlockName, int number) {
         if (getListPageBlockInsideMainDetailPage().get(number).getText().contains(pageBlockName)) {
             return true;
         } else

@@ -13,6 +13,7 @@ import org.openqa.selenium.WebElement;
 
 import java.io.IOException;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.Locale;
 
 public class FlexTablePage extends GovGrantsManager {
@@ -494,6 +495,22 @@ public class FlexTablePage extends GovGrantsManager {
         WebElement actionsAligned = I.amPerforming().getElementReference().of(By.xpath("//a[@title='Attachments']/../../../..//a[@class='actionIcons']/.."));
         I.amPerforming().snapShotTo().takeElementScreenShot(actionsAligned, "captureAction");
         Assert.assertTrue(I.amPerforming().comparisonOf().image().isImagesSame("target/Automation-Report/captureAction.png", "src/main/resources/actionsAtAttachment.png"));
+    }
+
+    /**
+     * return true if auto index column sequence displayed in expected ascending order inside table
+     */
+    public void assertSequenceOfAutoIndexColumnDisplayed(String columnName, String tableId, int startValue) {
+        Assert.assertTrue(isSequenceOfAutoIndexColumnDisplayedInExpectedOrder(columnName, tableId, startValue));
+    }
+
+    /**
+     * return true if margin between scroll bar and page size is displayed at bottom of flex table
+     *
+     * @param marginBottom
+     */
+    public void assertMarginBetweenScrollBarAndPageSize(String marginBottom) {
+        Assert.assertTrue(isMarginBetweenScrollBarAndPageSizeDisplayed(marginBottom));
     }
 
     /**
@@ -1047,6 +1064,46 @@ public class FlexTablePage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (govgrants.perform().phasePanel().getAdvanceFilterItem(tableId, dataTargetValue).getAttribute("class").contains("pull-right")) {
+                flag = true;
+            }
+        } catch (NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if auto index sequence displayed in expected ascending order
+     *
+     * @return
+     */
+    private boolean isSequenceOfAutoIndexColumnDisplayedInExpectedOrder(String columnName, String tableId, int startValue) {
+        boolean flag = false;
+        List<Elements> getAutoIndex = I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//div[@id='" + tableId + "']//tr//th//span[contains(text(),'" + columnName + "')]/ancestor::thead/following-sibling::tbody//tr//td[2]"));
+        int j = startValue;
+        for (int i = 0; i < (getAutoIndex.size()); i++) {
+            String getAutoIndexText = getAutoIndex.get(i).getText();
+            int getAutoIndexCount = Integer.parseInt(getAutoIndexText);
+            if (getAutoIndexCount == j) {
+                j++;
+            } else {
+                flag = false;
+                break;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * return true if margin between scroll bar and page size is displayed at bottom of flex table
+     *
+     * @param marginBottom
+     * @return
+     */
+    private boolean isMarginBetweenScrollBarAndPageSizeDisplayed(String marginBottom) {
+        boolean flag = false;
+        WebElement getTableResponsiveCss = I.amPerforming().getElementReference().of(By.xpath("//div[@class='table-responsive']"));
+        try {
+            if (getTableResponsiveCss.getCssValue("margin-bottom").equalsIgnoreCase("10px")) {
                 flag = true;
             }
         } catch (NoSuchElementException e) {

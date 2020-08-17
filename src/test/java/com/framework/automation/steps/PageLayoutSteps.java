@@ -236,9 +236,9 @@ public class PageLayoutSteps {
         pageLayoutPage.assertHeaderOverviewTabDisplayed();
     }
 
-    @Then("^I see \"([^\"]*)\" shown at number \"([^\"]*)\" inside page block$")
-    public void assertSequenceOfPageBlock(String pageBlockName, String number) {
-        pageLayoutPage.assertSortingOfPageBlock(pageBlockName, Integer.parseInt(number));
+    @Then("^I see \"([^\"]*)\" shown at number \"([^\"]*)\" inside detail page$")
+    public void assertSequenceOfPageBlockAndFormSections(String pageBlockName, String number) {
+        pageLayoutPage.assertSortingOfPageBlockAndFormSections(pageBlockName, Integer.parseInt(number));
     }
 
     @Then("^I see \"([^\"]*)\" shown as header instruction text for page block$")
