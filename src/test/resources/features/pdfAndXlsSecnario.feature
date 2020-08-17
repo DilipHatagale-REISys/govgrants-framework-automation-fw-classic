@@ -1915,3 +1915,20 @@ Business Need: All pdf and xls related scenario including component and complete
     And I click on top right button "Upload" in flex table with id "---program:-:programTableDivId---"
     When I click on button "Download File" on download & upload wizard modal
     Then I see "Program Name" in downloaded xls or csv file "govgrants"
+
+  @96571    @validateIfShowInPDFForAnyListViewIsCheckedThenThatListViewContentShouldBeDisplayedInDownloadedPDF @flexTable
+  Scenario: verify if Show in pdf for draft announcement list view is checked then draft announcement is displayed inside downloaded pdf
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table List       | Show in PDF | false             | ApiGeneratedId:0 |
+    Given I seGiven I setup test configuration as below:
+      | configurationCategory | fieldName   | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Show in PDF | true          | ActiveFundingOpportunities | Name                      | FLV-2399                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTableActiveFundingOpportunities"
+    And I select "Download as PDF" from parallel lines dropdown of "Draft Announcements"
+    And I download the file
+    Then I see "Draft Announcements" on page "1" of "govgrants" pdf file

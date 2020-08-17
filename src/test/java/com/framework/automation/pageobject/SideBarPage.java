@@ -103,6 +103,13 @@ public class SideBarPage extends GovGrantsManager {
         Assert.assertTrue(isSidebarBackgroundColorChanged());
     }
 
+    /**
+     * assert sidebar scroll color at grantor App
+     */
+    public void assertSidebarScrollHasBlueColour() {
+        Assert.assertTrue(isSidebarScrollHasBlueColour());
+    }
+
     /*********
      * "Local Methods with Limited functionality - Private"
      *****************/
@@ -207,6 +214,21 @@ public class SideBarPage extends GovGrantsManager {
         WebElement getSidebarSubMenu = I.amPerforming().getElementReference().of(By.xpath("//span[text()='Pending']/ancestor::li[contains(@class,'subMenuLink')]"));
         try {
             if (getSidebarSubMenu.getCssValue("background-color").contains("rgb(242, 245, 249)") || getSidebarSubMenu.getCssValue("background-color").contains("rgba(242, 245, 249, 1)")) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * @return true if expected color displayed at sidebar scrollbar at grantor app
+     */
+    private boolean isSidebarScrollHasBlueColour() {
+        boolean flag = false;
+        WebElement getSidebarScrollBar = I.amPerforming().getElementReference().of(By.xpath("//div[@id='sidebar-wrapper']"));
+        try {
+            if (getSidebarScrollBar.getAttribute("class").contains("sidebar-wrapper")) {
                 flag = true;
             }
         } catch (Exception e) {

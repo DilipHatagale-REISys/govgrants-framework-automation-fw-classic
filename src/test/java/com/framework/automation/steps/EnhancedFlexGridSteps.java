@@ -159,9 +159,9 @@ public class EnhancedFlexGridSteps {
         enhancedFlexGrid.assertTextInputBoxForIdColumnNotDisplayed();
     }
 
-    @Then("^I see \"([^\"]*)\" inside rows of enhanced grid id \"([^\"]*)\"$")
-    public void assertNewRowsWithTextAtParentFlexTable(String text, String tableId) {
-        enhancedFlexGrid.assertTextContainingRowAtParentFlexTabel(text, tableId);
+    @Then("^I (see|softly see) \"([^\"]*)\" inside rows of enhanced grid id \"([^\"]*)\"$")
+    public void assertNewRowsWithTextAtParentFlexTable(String usage,String text, String tableId) {
+        enhancedFlexGrid.assertTextContainingRowAtParentFlexTabel(usage, text, tableId);
     }
 
     @Then("^I see cell subtotal for \"([^\"]*)\" at enhanced grid$")
@@ -189,9 +189,9 @@ public class EnhancedFlexGridSteps {
         enhancedFlexGrid.assertCellValueForObligatedAmountAtChildFlexTableOfEnhancedGrid();
     }
 
-    @Then("^I see over all total for \"([^\"]*)\" field at enhanced grid$")
-    public void assertOverAllTotalCellValueAtNumberOfAwardsColumn(String fieldApiName) {
-        enhancedFlexGrid.assertOverAllTotalCellValueForNumberOfAwardsAtEnhancedGrid(fieldApiName);
+    @Then("^I (see|softly see) over all total for \"([^\"]*)\" field at enhanced grid$")
+    public void assertOverAllTotalCellValueAtNumberOfAwardsColumn(String usage, String fieldApiName) {
+        enhancedFlexGrid.assertOverAllTotalCellValueForNumberOfAwardsAtEnhancedGrid(usage, fieldApiName);
     }
 
     @Then("^I see edited value inside textarea is \"([^\"]*)\" for column value \"([^\"]*)\" of table \"([^\"]*)\"$")

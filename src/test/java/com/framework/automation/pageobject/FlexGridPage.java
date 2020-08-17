@@ -10,6 +10,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.io.IOException;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -274,6 +275,28 @@ public class FlexGridPage extends GovGrantsManager {
         } else if (usage.equalsIgnoreCase("do not see")) {
             Assert.assertFalse(isTotalFieldFormatDisplayedInsideMeGrid(format, fieldName, tableId));
         }
+    }
+
+    /**
+     * return true if actions are aligned inside enhanced grid/table
+     *
+     * @param tableId
+     */
+    public void assertActionsAreAlignedInMeGridTable(String tableId) throws IOException {
+        TestingBlazeGlobal.setVariable("highlightElements", "off");
+        WebElement actionsAligned = I.amPerforming().getElementReference().of(By.xpath("//div[@id='" + tableId + "']//table[not(@id='childTableId')]/tbody/tr/td[contains(@class,'actionColumn')]"));
+        I.amPerforming().waitFor().makeThreadSleep(1000);
+        I.amPerforming().snapShotTo().takeElementScreenShot(actionsAligned, "captureActions");
+        Assert.assertTrue(I.amPerforming().comparisonOf().image().isImagesSame("target/Automation-Report/captureActions.png", "src/main/resources/actionsAtMeGridTable.png"));
+    }
+
+    /**
+     * assert true if total record count is displayed at bottom of table and it is centrally aligned -  Flex Grid(ME Grid)
+     *
+     * @param tableId
+     */
+    public void assertTextIsCentrallyAlignedAtBottomOfTable(String tableId, Boolean isParent) {
+        Assert.assertTrue(isTextDisplayedCentrallyAlignedAtBottomOfTable(tableId, isParent));
     }
 
     /*********
@@ -616,6 +639,25 @@ public class FlexGridPage extends GovGrantsManager {
                 flag = true;
             }
         } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * @param tableId
+     * @return true if total record count is displayed at bottom of table and it is centrally aligned -  Flex Grid(ME Grid)
+     */
+    private Boolean isTextDisplayedCentrallyAlignedAtBottomOfTable(String tableId, Boolean isParent) {
+        boolean flag = false;
+        WebElement getTotalRecordCountFromFooter = I.amPerforming().getElementReference().of(By.xpath("//div[@id='" + tableId + "']//div[contains(@class,'panel-footer')]"));
+        WebElement getTotalRecordCountFromChildFooter = I.amPerforming().getElementReference().of(By.xpath("//div[@id='" + tableId + "']//div[@class='contentCenterH']"));
+
+        if (isParent) {
+            if (getTotalRecordCountFromFooter.getCssValue("text-align").equalsIgnoreCase("right")) {
+                return true;
+            }
+        } else if (getTotalRecordCountFromChildFooter.getCssValue("text-align").equalsIgnoreCase("center")) {
+            return true;
         }
         return flag;
     }

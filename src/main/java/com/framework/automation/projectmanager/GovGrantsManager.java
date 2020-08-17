@@ -346,11 +346,12 @@ public class GovGrantsManager extends ProjectWebServices {
     }
 
     /**
-     * get list of page block inside detail page like overview etc.
+     * get list of page block and form sections inside detail page like overview page block and Section 1 in dynamic forms etc.
      */
     public List<Elements> getListPageBlockInsideMainDetailPage() {
-        I.amPerforming().getElementReference().of(By.xpath("//div[@class='tab-pane fade active in']//div[@class='panel-heading']"));
-        return I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//div[@class='tab-pane fade active in']//div[@class='panel-heading']"));
+        I.amPerforming().getElementReference().of(By.xpath("//div[@class='tab-pane fade active in']//div[@class='panel-heading'] |" +
+                "//div[@class='tableBackground']//div[@class='panel-heading']"));
+        return I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//div[@class='tab-pane fade active in']//div[@class='panel-heading'] | //div[@class='tableBackground']//div[@class='panel-heading']"));
     }
 
     /**
