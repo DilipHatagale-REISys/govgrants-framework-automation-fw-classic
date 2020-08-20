@@ -7281,3 +7281,150 @@ Business Need: Expression Builder Component Scenarios
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     Then I see "Organization Unit" is not displayed inside page block detail
+
+  @97579    @verifyHideCellJSONAtEnhancedGridByHidingCellValueOnTheBasisOfPicklistField-EGrid @enhancedGrid
+  Scenario Outline: Verify Hide cell JSON By hiding cell on the basis of picklist field - enhanced grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Hide Cell JSON      |                    | ApiGeneratedId:0 |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                              | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON      | govgrants_config:HideCellJsonForPiklistFieldAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1491                   |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi>                                             | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
+    Then I see "*****" shown inside enhanced grid table for specified record "Demo_Title"
+
+    Examples:
+      | newFieldsApi                                                                         | defaultFieldsApi                                                                                                                                                                                                                   |
+      | ProjectTitle__c,Name,CreatedById,TotalAwardObligatedAmount__c,GrantType__c,Status__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @97581    @verifyHideCellJSONAtEnhancedGridByHidingCellValueOnTheBasisOfNumberField-EGrid @enhancedGrid
+  Scenario Outline: Verify Hide cell JSON By hiding cell on the basis of number field - enhanced grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Hide Cell JSON      |                    | ApiGeneratedId:0 |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                             | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON      | govgrants_config:HideCellJsonForNumberFieldAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1490                   |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi>                                            | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "MDH Test Application # 1" in "---program:-:flexGridEnhancedTableId---" panel
+    Then I see "*****" shown inside enhanced grid table for specified record "MDH Test Application # 1"
+
+    Examples:
+      | newFieldsApi                                         | defaultFieldsApi                                                                                                                                                                                                                   |
+      | ProjectTitle__c,Name,CreatedById,Status__c,NUMBER__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @97587    @verifyHideCellJSONAtEnhancedGridByHidingCellValueOnTheBasisOfCurrencyField-EGrid @enhancedGrid
+  Scenario Outline: Verify Hide cell JSON By hiding cell on the basis of currency field - enhanced grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Hide Cell JSON      |                    | ApiGeneratedId:0 |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON      | govgrants_config:HideCellJsonForCurrencyFieldAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1491                   |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi>                                              | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Test Demo" in "---program:-:flexGridEnhancedTableId---" panel
+    Then I see "*****" shown inside enhanced grid table for specified record "Test Demo"
+
+    Examples:
+      | newFieldsApi                                                                       | defaultFieldsApi                                                                                                                                                                                                                   |
+      | ProjectTitle__c,Name,TotalAdjustedAmount__c,Status__c,TotalAwardObligatedAmount__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @97589  @verifyHideCellJSONAtEnhancedGridByHidingCellValueOnTheBasisOfPicklistField-EGridChildTable @enhancedGrid
+  Scenario Outline: Verify Hide cell JSON By hiding cell on the basis of picklist field - enhanced grid child table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Hide Cell JSON      |                    | ApiGeneratedId:0 |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                                        | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON      | govgrants_config:HideCellJsonForPiklistFieldAtEnhancedGridChildTable | TmpGrantorActiveAwardsGrid | Name                      | FTC-1499                   |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi>                                                       | TmpGrantorActiveAwardsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    When I expand nested table containing column value "Demo_Title"
+    Then I see "*****" shown inside enhanced grid table for specified record "AD-GG PJ--00"
+
+    Examples:
+      | newFieldsApi                                      | defaultFieldsApi                                                                                                                               |
+      | Name,GrantAwardName__c,Status__c,AmendmentType__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
+
+  @97592  @verifyHideCellJSONAtEnhancedGridByHidingCellValueOnTheBasisOfNumberField-EGridChildTable @enhancedGrid
+  Scenario Outline: Verify Hide cell JSON By hiding cell on the basis of number field - enhanced grid child table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Hide Cell JSON      |                    | ApiGeneratedId:0 |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                                       | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON      | govgrants_config:HideCellJsonForNumberFieldAtEnhancedGridChildTable | TmpGrantorActiveAwardsGrid | Name                      | FTC-1499                   |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi>                                                      | TmpGrantorActiveAwardsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    When I expand nested table containing column value "Demo_Title"
+    Then I see "*****" shown inside enhanced grid table for specified record "AD-GG PJ--00"
+
+    Examples:
+      | newFieldsApi                                    | defaultFieldsApi                                                                                                                               |
+      | Name,GrantAwardName__c,Status__c,AwardNumber__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
+
+  @97591  @verifyHideCellJSONAtEnhancedGridByHidingCellValueOnTheBasisOfCurrencyField-EGridChildTable @enhancedGrid
+  Scenario Outline: Verify Hide cell JSON By hiding cell on the basis of currency field - enhanced grid child table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Hide Cell JSON      |                    | ApiGeneratedId:0 |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                                         | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON      | govgrants_config:HideCellJsonForCurrencyFieldAtEnhancedGridChildTable | TmpGrantorActiveAwardsGrid | Name                      | FTC-1499                   |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi>                                                        | TmpGrantorActiveAwardsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    When I expand nested table containing column value "Demo_Title"
+    Then I see "*****" shown inside enhanced grid table for specified record "AD-GG PJ--00"
+
+    Examples:
+      | newFieldsApi                                             | defaultFieldsApi                                                                                                                               |
+      | Name,GrantAwardName__c,Status__c,ObligatedAwardAmount__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |

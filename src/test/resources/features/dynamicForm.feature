@@ -3645,3 +3645,27 @@ Business Need: dynamic forms Component Scenarios
     Examples:
       | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
       | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalView |
+
+  @97564   @validateByClickOnViewActionAtFormOpenedInModalAnEditActionIsDisplayed
+  Scenario Outline: validate by click on view action at dynamic form an edit action is displayed on modal window
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL Long | <actionUrlLongOldValue> | DynamicFormTable   | Name                      | View                       |
+      | Flex Table Action     | Where To Open ? | NewTab                  | DynamicFormTable   | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicFormTable   | Name                      | View                       |
+      | Flex Table Action     | Where To Open ? | Modal                   | DynamicFormTable   | Name                      | View                       |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form 1" inside table
+    Then I see "Edit" button is displayed
+
+    Examples:
+      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
+      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalView |

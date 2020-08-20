@@ -554,7 +554,6 @@ public class PageLayoutPage extends GovGrantsManager {
      * @param lookUpLink
      */
     public void getLookUpLinkToHover(String lookUpLink) {
-        //I.amPerforming().scroll().toElementCenter(By.xpath("//h3//a[contains(text(),'Program Information')]/ancestor::div[@class='panel-heading']/following-sibling::div"));
         I.amPerforming().scroll().toMoveToElement(By.xpath("//dl//dd//a[contains(text(),'" + lookUpLink + "') or @class='tooltipstered']"), false);
     }
 

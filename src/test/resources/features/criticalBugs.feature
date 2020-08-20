@@ -1478,8 +1478,8 @@ Business Need: Logged Issues Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
     And I edit the following rows inline in flex table with id "---program:-:flexGridEnhancedID---" by clicking "Edit" :
-      | Total Adjusted Amount | NUMBER |
-      | Demo_Title            | -1234  |
+      | Project Title | NUMBER |
+      | Demo_Title    | -1234  |
     When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
     Then I see value "(1,234)" for title "NUMBER" inside table "---program:-:flexGridEnhancedID---"
 
@@ -3950,7 +3950,7 @@ Business Need: Logged Issues Scenarios
     When I click on advance filter "#advfTmpActiveGrantsGrid" of table id "---program:-:flexGridEnhancedID---"
     When I enter advance filter values inside id "advfTmpActiveGrantsGrid"
       | Project Period | starts with | 11/1/2018 |
-    Then I see value "11/1/2018--11/1/2020" for title "Test Demo" inside table "---program:-:flexGridEnhancedID---"
+    Then I see value "11/1/2018--11/1/2020" for title "Project Period" inside table "---program:-:flexGridEnhancedID---"
 
   @97522    @validateAdvanceFilterValueForDateFieldAtEnhancedGridChildTable
   Scenario: validate Advance filter search  for date field at enhanced grid child table
@@ -3965,5 +3965,50 @@ Business Need: Logged Issues Scenarios
     When I expand nested table containing column value "Test Demo"
     When I click on advance filter "#advfTmpGrantorActiveAwardsGrid" of table id "---program:-:tmpGrantorActiveAwardsGridTableId---"
     When I enter advance filter values inside id "advfTmpGrantorActiveAwardsGrid"
-      | Project Period | starts with | 11/1/2018 |
-    Then I see value "11/1/2018--1/30/2020" for title "Test Demo" inside table "---program:-:tmpGrantorActiveAwardsGridTableId---"
+      | Budget Period | starts with | 11/1/2018 |
+    Then I see value "11/1/2018--1/30/2020" for title "Budget Period" inside table "---program:-:tmpGrantorActiveAwardsGridTableId---"
+
+  @97523    @validateAdvanceFilterValueForCurrencyFieldAndGreaterThanOperatorAtEnhancedGridParentTable
+  Scenario: validate Advance filter search  for currency field at enhanced grid parent table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I click on advance filter "#advfTmpActiveGrantsGrid" of table id "---program:-:flexGridEnhancedID---"
+    When I enter advance filter values inside id "advfTmpActiveGrantsGrid"
+      | Total Award Obligated Amount | greater than | $690,000.00 |
+    Then I see value "$700,000.00" for title "Total Award Obligated Amount" inside table "---program:-:flexGridEnhancedID---"
+
+  @97524    @validateAdvanceFilterValueForCurrencyFieldAtEnhancedGridChildTable
+  Scenario: validate Advance filter search  for currency field at enhanced grid child table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    When I expand nested table containing column value "Demo_Title"
+    When I click on advance filter "#advfTmpGrantorActiveAwardsGrid" of table id "---program:-:tmpGrantorActiveAwardsGridTableId---"
+    When I enter advance filter values inside id "advfTmpGrantorActiveAwardsGrid"
+      | Total Awarded Amount | greater than | $50,000.00 |
+    Then I see value "$52,000.00" for title "Total Awarded Amount" inside table "---program:-:tmpGrantorActiveAwardsGridTableId---"
+
+  @97710    @validateQuickSearchBehaviourAtFlexTable-gPlanning
+  Scenario: validate quick search behaviour at flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Quick Search | true          | Programs           |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    Then I see record with text "{Framework_recordUsed:programForExpressionBuilderScenarios2}" in "---program:-:programTableDivId---"
