@@ -145,6 +145,17 @@ public class ChartsPage extends GovGrantsManager {
     }
 
     /**
+     * assert true/false if expected title is displayed at any modal
+     */
+    public void assertTitleOfModal(String usage, String titleName) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isTitleOfModal(titleName));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isTitleOfModal(titleName)).isTrue();
+        }
+    }
+
+    /**
      * perform click on bars of enhanced dual axes charts coming on modal
      *
      * @param chartId

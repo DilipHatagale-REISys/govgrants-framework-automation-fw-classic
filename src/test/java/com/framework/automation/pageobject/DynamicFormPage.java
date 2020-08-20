@@ -15,7 +15,7 @@ public class DynamicFormPage extends GovGrantsManager {
     private final By formInstructionText;
 
     public DynamicFormPage() {
-        formInstructionText = By.cssSelector("div.article>div");
+        formInstructionText = By.cssSelector("div.article>div[style='display: inline;']");
     }
 
     /******* "Key Methods with complete functionality - public" *****************/

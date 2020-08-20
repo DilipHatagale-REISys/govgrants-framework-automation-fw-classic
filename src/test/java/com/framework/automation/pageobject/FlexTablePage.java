@@ -422,7 +422,7 @@ public class FlexTablePage extends GovGrantsManager {
      * click on select dropdown At page detail
      */
     public void clickSelectDropdownAtPageDetail(String fieldApiName) {
-        I.amPerforming().click().on(By.xpath("//div[@id='" + fieldApiName + "']//select"));
+        I.amPerforming().click().on(By.xpath("//div[@id='" + fieldApiName + "']//select | //span[text()='" + fieldApiName + "']/../following-sibling::dd//select"));
     }
 
     /**
@@ -521,6 +521,28 @@ public class FlexTablePage extends GovGrantsManager {
      */
     public void clickAndSelectValueInsideShowEntriesDropdown(String flexTableId, String numberofEntries) {
         govgrants.perform().flexTable().flexTableShowEntriesDropDown(flexTableId, numberofEntries);
+    }
+
+    /**
+     * created to only upload attachment by selecting fileType and enter default comment in flex table
+     *
+     * @param fileName
+     * @param fileType
+     */
+    public void onlyUploadAttachmentFromComputerAtFlexTable(String fileName, String fileType) {
+        By attachmentClassificationPath = By.xpath("//select[@title='Classification' or text()='Classification']");
+        By attachmentDescriptionPath = By.xpath("//div//label[text()='Description']/..//textarea");
+        By attachmentFilePath = By.xpath("//div//label[text()='File']/..//input[@type='file']");
+        String defaultFilePath = System.getProperty("user.dir") + "/src/main/resources/";
+
+        //to click on add button at attachment table
+        I.amPerforming().getElementReference().of(By.xpath("//div[@id='myTabbedContent']//span[contains(text(),'Attachment')]/..//div[@class='panel-heading']//*[text()='Add']")).click();
+        //to select file type
+        I.amPerforming().dropDownSelection().from(attachmentClassificationPath).selectByValue(fileType);
+        //to enter description in description box
+        I.amPerforming().textInput().in(attachmentDescriptionPath, "Default Comment");
+        //to upload file
+        I.amPerforming().textInput().in(attachmentFilePath, defaultFilePath + fileName);
     }
 
     /*********

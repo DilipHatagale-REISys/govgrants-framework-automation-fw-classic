@@ -205,6 +205,7 @@ public class PageLayoutPage extends GovGrantsManager {
 
     /**
      * return true if page block or form section is displayed in expected sort order inside page / dynamic form layout
+     *
      * @param pageBlockName
      * @param number
      */
@@ -330,8 +331,14 @@ public class PageLayoutPage extends GovGrantsManager {
      *
      * @param buttonName
      */
-    public void assertTopRightButtonDisplayed(String buttonName) {
-        Assert.assertFalse(isTopRightHeaderButtonDisplayed(buttonName));
+    public void assertTopRightButtonDisplayed(String usage, String buttonName) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertFalse(isTopRightHeaderButtonDisplayed(buttonName));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isTopRightHeaderButtonDisplayed(buttonName)).isFalse();
+        } else if (usage.equalsIgnoreCase("do not see")){
+            I.amPerforming().assertionsTo().assertThat(isTopRightHeaderButtonDisplayed(buttonName)).isTrue();
+        }
     }
 
     /**
@@ -547,6 +554,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * @param lookUpLink
      */
     public void getLookUpLinkToHover(String lookUpLink) {
+        //I.amPerforming().scroll().toElementCenter(By.xpath("//h3//a[contains(text(),'Program Information')]/ancestor::div[@class='panel-heading']/following-sibling::div"));
         I.amPerforming().scroll().toMoveToElement(By.xpath("//dl//dd//a[contains(text(),'" + lookUpLink + "') or @class='tooltipstered']"), false);
     }
 
@@ -881,13 +889,6 @@ public class PageLayoutPage extends GovGrantsManager {
         WebElement iconAtLightningLookUp1 = I.amPerforming().getElementReference().of(By.xpath("//lightning-primitive-icon/*[name()='svg' and @data-key='" + iconName + "']"));
         I.amPerforming().scroll().toMoveToElement(By.xpath("//div[@id='custom_lookupAccount__c']"));
         I.amPerforming().click().on(iconAtLightningLookUp1);
-    }
-
-    /**
-     * click on send button present on send email modal window
-     */
-    public void clickOnSendEmailModalButton(String buttonName) {
-        I.amPerforming().click().withJavaScript(By.xpath("//button[text()='" + buttonName + "' or @title='" + buttonName + "'][not(contains(@class,'btn btn-default'))]"));
     }
 
     /**

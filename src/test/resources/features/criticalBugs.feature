@@ -100,6 +100,7 @@ Business Need: Logged Issues Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     When I click on "Delete" icon for "Notes Record" inside table
+    When I click "Yes" on modal confirmation box
     When I close alertbox
     When I add notes records
     Then I see the text containing :
@@ -128,6 +129,7 @@ Business Need: Logged Issues Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     When I click on "Delete" icon for "Success message on second tab" inside table
+    When I click "Yes" on modal confirmation box
     When I close alertbox
     When I upload attachment "AttachmentTesting.pdf" of type "Program Artifacts" and move on second tab
     Then I cannot see the following messages is not displayed in the page details contains:
@@ -817,8 +819,10 @@ Business Need: Logged Issues Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     When I click on "Delete" icon for "ContactUs.png" inside table
+    When I click "Yes" on modal confirmation box
     When I close alertbox
     When I click on "Delete" icon for "DynamicLayoutExport.pdf" inside table
+    When I click "Yes" on modal confirmation box
     When I close alertbox
     And I upload attachment "ContactUs.png,DynamicLayoutExport.pdf" from workspace
     Then I see table with header "Attachments" contains records "DynamicLayoutExport.pdf,ContactUs.png"
@@ -3769,7 +3773,7 @@ Business Need: Logged Issues Scenarios
       | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                  | fieldNewValue | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Total Records Count | true         | ApplicationBudgetCategoryFlexTable |                           |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | ApplicationBudgetCategoryFlexTable |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -3780,3 +3784,186 @@ Business Need: Logged Issues Scenarios
     When I expand nested table containing column value "BP-01"
     When I expand nested table containing column value "Proposed Uses Of Total Funds"
     Then I see total records count is centrally aligned at bottom of "---program:-:applicationBudgetCategoryInlineEditTableId---" child table
+
+  @96971    @validateWorkingOfAdvanceFilterAtEnhancedGridForTitleContainsText
+  Scenario: validate working of Advance filter search for project title contains text as test at enhanced grid
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I click on advance filter "#advfTmpActiveGrantsGrid" of table id "---program:-:flexGridEnhancedID---"
+    When I enter advance filter values inside id "advfTmpActiveGrantsGrid"
+      | Project Title | contains | Test Demo |
+    Then I see value "Test Demo" for title "Project Title" inside table "---program:-:flexGridEnhancedID---"
+
+  @96994    @validateWorkingOfQuickSearchAtEnhancedGridParentTable
+  Scenario: validate working of quick search functionality at enhanced grid parent flex table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "test Program for automation DND" in "flexGridEnhancedDivId" panel
+    Then I see value "test Program for automation DND" for title "Project Title" inside table "---program:-:flexGridEnhancedID---"
+
+  @97031    @validateWorkingOfSaveAndCloseButtonAtAddAttachmentModal
+  Scenario: validate an attachment is getting added in attachment block by click on save and close button at add attachment modal
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName                 | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block:Page Block Detail | Save Attachment Behaviour | Save              | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName                 | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Save Attachment Behaviour | Save and Close Modal | Grantee State Program | GNT__PageBlockTitle__c    | Attachments                |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "Delete" icon for "TestAutomation.txt" inside table
+    When I click "Yes" on modal confirmation box
+    When I close alertbox
+    When I only upload attachment "TestAutomation.txt" of type "Other Artifacts" from computer
+    And I click modal button "Save and Close Modal"
+    Then I see table with header "Attachments" contains records "TestAutomation.txt"
+
+  @97039    @validateByClickOnSaveButtonAtAddAttachmentModalAModalWindowShouldRemainsDisplayedOnPage
+  Scenario: validate by click on save button at add attachment modal a modal is not getting disappear
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName                 | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block:Page Block Detail | Save Attachment Behaviour | Save              | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName                 | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Save Attachment Behaviour | Save          | Grantee State Program | GNT__PageBlockTitle__c    | Attachments                |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "Delete" icon for "TestAutomation.txt" inside table
+    When I click "Yes" on modal confirmation box
+    When I close alertbox
+    When I only upload attachment "TestAutomation.txt" of type "Other Artifacts" from computer
+    And I click modal button "Save"
+    Then I see "Add Attachments" opens in overLay window
+
+  @96573  @VerifyMiniPageLayoutShouldDisplayedProperlyOnMouseHoverAtPageDetailInViewMode @pageLayout
+  Scenario Outline: validate that mini page layout is getting displayed properly on mouse hover at page detail in view mode
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    And I pause execution for "3" seconds
+    When I hover mouse on lookup link "Department of Community Health"
+    Then I see "<miniPageLayout_Text>" shown inside mini page layout on hover
+
+    Examples:
+      | miniPageLayout_Text            |
+      | Department of Community Health |
+
+  @97372  @VerifyDefaultValueFieldAtEnhancedGridParentTable @enhancedGrid
+  Scenario: validate default value field at enhanced grid parent table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table List       | Default Value |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Default Value | 1             | TmpActiveGrantsGrid | Name                      | FTC-1525                   |
+    Given I delete the record "Grant Created for default value testing" from the object "Grant__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I click on top right button "New" in flex table with id "---program:-:flexGridEnhancedID---"
+    When I enter value "Grant Created for default value testing" into field "ProjectTitle__c"
+    When I enter value "Active" into field "Status__c"
+    When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
+    When I perform quick search for "Grant Created for default value testing" in "---program:-:flexGridEnhancedID---" panel
+    Then I see value "1" for multiple cells at column "AddressProgramContact__c"
+
+  @97374  @VerifyDefaultValueFieldAtEnhancedGridChildTable @enhancedGrid
+  Scenario: validate default value field at enhanced grid child table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table List       | Default Value |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Default Value | 1             | TmpGrantorActiveAwardsGrid | Name                      | FTC-1526                   |
+    Given I delete the record "Award Created for default value testing" from the object "Award__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    When I expand nested table containing column value "Demo_Title"
+    When I click on top right button "New" in flex table with id "---program:-:tmpGrantorActiveAwardsGridTableId---"
+    When I enter value "Award Created for default value testing" into field "GrantAwardName__c"
+    When I enter value "Activated" into field "Status__c"
+    When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
+    When I perform quick search for "Award Created for default value testing" in "---program:-:tmpGrantorActiveAwardsGridTableId---" panel
+    Then I see value "1" for multiple cells at column "Agreement1__c"
+
+  @97354    @validateDownloadPDFBrowserTabTitleAtFlexTable-gPlanning @wip
+  Scenario: validate by click on download as pdf and error is not shown inside pdf browser tab title at program flex table-programs
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table List       | Show in PDF         | false             | ApiGeneratedId:0 |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Show in PDF         | true          | Programs           | Name                      | FLV-1835                   |
+      | Flex Table:General    | Enable Export (PDF) | true          | Programs           |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTableActiveFundingOpportunities"
+    And I select "Download as PDF" from parallel lines dropdown of "Draft Announcements"
+    Then I see page title "FlexTableExport"
+
+  @97519    @validateAdvanceFilterValueForDateFieldAtEnhancedGridParentTable
+  Scenario: validate Advance filter search  for date field at enhanced grid parent table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I click on advance filter "#advfTmpActiveGrantsGrid" of table id "---program:-:flexGridEnhancedID---"
+    When I enter advance filter values inside id "advfTmpActiveGrantsGrid"
+      | Project Period | starts with | 11/1/2018 |
+    Then I see value "11/1/2018--11/1/2020" for title "Test Demo" inside table "---program:-:flexGridEnhancedID---"
+
+  @97522    @validateAdvanceFilterValueForDateFieldAtEnhancedGridChildTable
+  Scenario: validate Advance filter search  for date field at enhanced grid child table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Test Demo" in "---program:-:flexGridEnhancedID---" panel
+    When I expand nested table containing column value "Test Demo"
+    When I click on advance filter "#advfTmpGrantorActiveAwardsGrid" of table id "---program:-:tmpGrantorActiveAwardsGridTableId---"
+    When I enter advance filter values inside id "advfTmpGrantorActiveAwardsGrid"
+      | Project Period | starts with | 11/1/2018 |
+    Then I see value "11/1/2018--1/30/2020" for title "Test Demo" inside table "---program:-:tmpGrantorActiveAwardsGridTableId---"

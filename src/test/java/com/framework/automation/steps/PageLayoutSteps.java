@@ -111,11 +111,6 @@ public class PageLayoutSteps {
         pageLayoutPage.enterValueInSendEmailModalFields(value, fieldLabel);
     }
 
-    @When("^I click on \"([^\"]*)\" button in send email modal$")
-    public void clickOnSendEmailModalButton(String buttonName) {
-        pageLayoutPage.clickOnSendEmailModalButton(buttonName);
-    }
-
     @When("^I click on \"([^\"]*)\" email Search By field and select dropdown value as \"([^\"]*)\"$")
     public void clickSearchByButtonOnSendEmailModal(String fieldLabel, String dropdownValue) {
         pageLayoutPage.clickSearchByButton(fieldLabel, dropdownValue);
@@ -306,9 +301,9 @@ public class PageLayoutSteps {
         pageLayoutPage.assertActionButtonOfPagrLayoutDisplayed(buttonName);
     }
 
-    @Then("^I see \"([^\"]*)\" button is displayed$")
-    public void assertTopRightHeaderButtonDisplayed(String buttonName) {
-        pageLayoutPage.assertTopRightButtonDisplayed(buttonName);
+    @Then("^I (see|softly see|do not see) \"([^\"]*)\" button is displayed$")
+    public void assertTopRightHeaderButtonDisplayed(String usage, String buttonName) {
+        pageLayoutPage.assertTopRightButtonDisplayed(usage, buttonName);
     }
 
     @Then("^I see Edit options inside Menu Dropdown$")
