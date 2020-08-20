@@ -7241,3 +7241,43 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table with table id "toggleFlexTablePrograms" without processing
     When I navigate to "Financials" sub tab
     Then I see "Associate" button inside "Funding Account Information" flex table not displayed
+
+  @96921    @ValidateHideExpressionJSONAtRowLevelActionAtEnhancedGridChildTable @enhancedGrid
+  Scenario: Set up configuration to hide edit action of child enhanced grid using NOTIN operator and validating it inside planning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                       | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:EnhancedGridChildTableHideExpressionJsonAtTopLevelActionUsingNOTIN | TmpGrantorActiveAwardsGrid | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    When I expand nested table containing column value "Demo_Title"
+    Then I see "Edit" icon for "AD-GG PJ--00" is displayed inside flex table
+
+  @97484    @validateHideExpressionJsonForLookupRelationalFieldInCreateMode-gPlanning
+  Scenario: validate hide expression json at lookup relational field in create program page
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active            | false             | Grantee State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue                                                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HideExpressionForLookupRelationalFieldInCreateMode | Grantee State Program | Name                      | PBD-3188                   |
+      | Page Block Config:Page Block Rule Detail | Is Active            | true                                                                | Grantee State Program | Name                      | PBD-3188                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I enter value "Automation test organization" into field "Division__c"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    Then I see "Organization Unit" is not displayed inside page block detail

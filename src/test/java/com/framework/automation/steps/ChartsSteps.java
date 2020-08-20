@@ -42,9 +42,9 @@ public class ChartsSteps {
         chartsPage.clickOnChartLabelAtGivenPositionInsideChart(chartLabelPosition,chartId, uiType.equalsIgnoreCase("modal"));
     }
 
-    @Then("^I see \"([^\"]*)\" displayed in modal$")
-    public void assertModalTitle(String titleName) {
-        chartsPage.isTitleOfModal(titleName);
+    @Then("^I (see|softly see) \"([^\"]*)\" displayed in modal$")
+    public void assertModalTitle(String usage, String titleName) {
+        chartsPage.assertTitleOfModal(usage, titleName);
     }
 
     @Then("^I (see|do not see) \"([^\"]*)\" displayed as chart title$")

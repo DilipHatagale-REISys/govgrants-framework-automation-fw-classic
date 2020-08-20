@@ -48,6 +48,11 @@ public class FlexTableSteps {
         flexTablePage.clickToggleButtonAndSelect(menuItemName);
     }
 
+    @When("I only upload attachment {string} of type {string} from computer")
+    public void iOnlyUploadAttachmentOfType(String fileName, String fileType) {
+        flexTablePage.onlyUploadAttachmentFromComputerAtFlexTable(fileName, fileType);
+    }
+
     @And("^I select value inside table \"([^\"]*)\" is \"([^\"]*)\"$")
     public void selectValueInsideShowEntriesDropdown(String flexTableId, String numberofEntries) {
         flexTablePage.clickAndSelectValueInsideShowEntriesDropdown(flexTableId, numberofEntries);

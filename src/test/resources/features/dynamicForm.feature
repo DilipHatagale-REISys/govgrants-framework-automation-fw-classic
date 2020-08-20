@@ -3475,3 +3475,173 @@ Business Need: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I see "Section 1" shown at number "0" inside detail page
+
+  @96635   @validatePicklistFieldDropdownOptionsShouldDisplayedAsGivenInQuestionFieldAtCaptureItem
+  Scenario: validate drop down options from picklist field if question is given in picklist capture items config
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Capture Item          | Options   | Forms;Items       | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Options   | Forms;Items;List | CI-0027            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    When I click dropdown field "Picklist"
+    When I pause execution for "3" seconds
+    Then I see only the following ordered options in dropdown field "Picklist" :
+      | Forms | Items | List |
+
+  @96644   @validateDynamicFormOpensInModalWindowByClickOnEditAction
+  Scenario Outline: validate by click on edit action at flex table a dynamic form is opened in overaly.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL Long | <actionUrlLongOldValue> | DynamicFormTable   | Name                      | Edit                       |
+      | Flex Table Action     | Where To Open ? | NewTab                  | DynamicFormTable   | Name                      | Edit                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicFormTable   | Name                      | Edit                       |
+      | Flex Table Action     | Where To Open ? | Modal                   | DynamicFormTable   | Name                      | Edit                       |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    Then I see "DynamicFormTable" displayed in modal
+
+    Examples:
+      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
+      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=Edit | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalEdit |
+
+  @96645 @validateByClickOnCloseIconAtModalThenModalIsGettingClosed-HomePhase
+  Scenario Outline: Verify that a modal is getting closed by lick on cross button at modal - home phase
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL Long | <actionUrlLongOldValue> | DynamicFormTable   | Name                      | Edit                       |
+      | Flex Table Action     | Where To Open ? | NewTab                  | DynamicFormTable   | Name                      | Edit                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicFormTable   | Name                      | Edit                       |
+      | Flex Table Action     | Where To Open ? | Modal                   | DynamicFormTable   | Name                      | Edit                       |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    When I close modal by clicking the top right x button
+    Then I see "DynamicFormTable" modal is closed
+
+    Examples:
+      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
+      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=Edit | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalEdit |
+
+  @97050   @validateDynamicFormOpensInModalWindowByClickOnViewAction
+  Scenario Outline: validate by click on View action at flex table a dynamic form is opened in overaly.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL Long | <actionUrlLongOldValue> | DynamicFormTable   | Name                      | View                       |
+      | Flex Table Action     | Where To Open ? | NewTab                  | DynamicFormTable   | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicFormTable   | Name                      | View                       |
+      | Flex Table Action     | Where To Open ? | Modal                   | DynamicFormTable   | Name                      | View                       |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form 1" inside table
+    Then I softly see "View Window" displayed in modal
+    Then I softly see "Edit" button is displayed
+
+    Examples:
+      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
+      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalView |
+
+  @97054   @validateByClickOnCrossIconAtFormOpenedInModalAModalIsGettingClosed
+  Scenario Outline: validate by click on cross icon at modal window a dynamic form modal is getting closed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL Long | <actionUrlLongOldValue> | DynamicFormTable   | Name                      | View                       |
+      | Flex Table Action     | Where To Open ? | NewTab                  | DynamicFormTable   | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicFormTable   | Name                      | View                       |
+      | Flex Table Action     | Where To Open ? | Modal                   | DynamicFormTable   | Name                      | View                       |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form 1" inside table
+    When I close modal by clicking the top right x button
+    Then I see "View Window" modal is closed
+
+    Examples:
+      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
+      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalView |
+
+  @97076   @validateByClickOnEditActionAtDynamicFormItOpensDynamicFormInEitMode
+  Scenario Outline: validate by click on edit action modal it opens modal in edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL Long | <actionUrlLongOldValue> | DynamicFormTable   | Name                      | Edit                       |
+      | Flex Table Action     | Where To Open ? | NewTab                  | DynamicFormTable   | Name                      | Edit                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicFormTable   | Name                      | Edit                       |
+      | Flex Table Action     | Where To Open ? | Modal                   | DynamicFormTable   | Name                      | Edit                       |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    Then I do not see "Edit" button is displayed
+
+    Examples:
+      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
+      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=Edit | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalEdit |
+
+  @97079   @validateByClickOnCancelActionAtFormOpenedInModalAModalIsGettingClosed
+  Scenario Outline: validate by click on cancel action at modal window a dynamic form modal is getting closed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL Long | <actionUrlLongOldValue> | DynamicFormTable   | Name                      | View                       |
+      | Flex Table Action     | Where To Open ? | NewTab                  | DynamicFormTable   | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicFormTable   | Name                      | View                       |
+      | Flex Table Action     | Where To Open ? | Modal                   | DynamicFormTable   | Name                      | View                       |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form 1" inside table
+    When I click on "Edit" button in right header
+    When I click on "Cancel" button in right header
+    Then I see "Edit" button is displayed
+
+    Examples:
+      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
+      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalView |
