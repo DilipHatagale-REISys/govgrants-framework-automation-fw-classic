@@ -17,6 +17,11 @@ public class DynamicFormSteps {
         dynamicFormPage.getHelpTextAtSectionInsideDynamicForm(sectionName);
     }
 
+    @When("I click on {string} button in right footer")
+    public void clickButtonOnRightFooter(String footerButtonName) {
+        dynamicFormPage.clickRightFooterButton(footerButtonName);
+    }
+
     @Then("^I see for \"([^\"]*)\" field value is \"([^\"]*)\" inside dynamic form$")
     public void fieldValueInsideDynamicForm(String fieldName, String fieldValue) {
         dynamicFormPage.assertFieldValueInsideDynamicForm(fieldName, fieldValue);
