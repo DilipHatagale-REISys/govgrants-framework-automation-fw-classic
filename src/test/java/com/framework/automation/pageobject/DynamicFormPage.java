@@ -30,6 +30,17 @@ public class DynamicFormPage extends GovGrantsManager {
     }
 
     /**
+     * click on any button on right footer inside dynamic form etc.
+     *
+     * @param footerButtonName
+     * @author - ashwini.mahore
+     */
+    public void clickRightFooterButton(String footerButtonName) {
+        By getAnyBottomRightButton = By.xpath("//*[contains(@class,'panel-footer')]//*[(local-name()='a' or local-name()='button' or local-name()='input') and not(contains(@class,'hidden')) and (@title='" + footerButtonName + "' or text()='" + footerButtonName + "' or @value='" + footerButtonName + "')]");
+        I.amPerforming().click().on(getAnyBottomRightButton);
+    }
+
+    /**
      * assert true if expected value is displayed in respective field at dynamic form layout
      *
      * @param fieldName

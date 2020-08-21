@@ -3394,7 +3394,7 @@ Business Need: dynamic forms Component Scenarios
     Then I softly do not see "Radio" inside "Section 1" at dynamic form
     Then I softly see "Checkbox" inside "Section 1" at dynamic form
 
-  @91319   @ValidateByClickOnViewLessOptionSectionInstructionTextGetsCollapsedAndDisplayedAtDynamicFormInViewMode @issue
+  @91319   @ValidateByClickOnViewLessOptionSectionInstructionTextGetsCollapsedAndDisplayedAtDynamicFormInViewMode
   Scenario Outline: validate that by click on view less button section instructions text is getting collapsed on dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue        | filterId         |
@@ -3665,6 +3665,205 @@ Business Need: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I see "Edit" button is displayed
+
+    Examples:
+      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
+      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalView |
+
+  @97566   @validateByClickOnViewActionAtFormOpenedInModalAnEditActionIsDisplayedAtBottom
+  Scenario Outline: validate by click on view action at dynamic form an edit action is displayed at bottom of modal
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL Long | <actionUrlLongOldValue> | DynamicFormTable   | Name                      | View                       |
+      | Flex Table Action     | Where To Open ? | NewTab                  | DynamicFormTable   | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicFormTable   | Name                      | View                       |
+      | Flex Table Action     | Where To Open ? | Modal                   | DynamicFormTable   | Name                      | View                       |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form 1" inside table
+    Then I see "Edit" button at "bottom" of  Modal window
+
+    Examples:
+      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
+      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalView |
+
+  @97567   @validateSectionsAreExpandedByDefaultAtDynamicFormLayoutViewModeOpensInModal
+  Scenario Outline: validate sections are expanded by default inside dynamic form view mode opens in modal
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL Long | <actionUrlLongOldValue> | DynamicFormTable   | Name                      | View                       |
+      | Flex Table Action     | Where To Open ? | NewTab                  | DynamicFormTable   | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicFormTable   | Name                      | View                       |
+      | Flex Table Action     | Where To Open ? | Modal                   | DynamicFormTable   | Name                      | View                       |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form 1" inside table
+    Then I softly do not see "Section: Section 1" is collapsed
+    Then I softly do not see "Section: Section 4" is collapsed
+
+    Examples:
+      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
+      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalView |
+
+  @97576   @ValidateMessageAppearsByClickOnValidateButtonAtDynamicFormInViewModeOpensInModal
+  Scenario Outline: validate a message should display by click on header validate button on dynamic form view mode opens in modal
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL Long | <actionUrlLongOldValue> | DynamicFormTable   | Name                      | View                       |
+      | Flex Table Action     | Where To Open ? | NewTab                  | DynamicFormTable   | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicFormTable   | Name                      | View                       |
+      | Flex Table Action     | Where To Open ? | Modal                   | DynamicFormTable   | Name                      | View                       |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form 1" inside table
+    When I click on "Validate" button in right header
+    Then I see the following message in the page details :
+      | Written Section 2 in Section Section 2 question not answered |
+
+    Examples:
+      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
+      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalView |
+
+  @97578   @ValidateMessageAppearsByClickOnValidateButtonAtBottomOfDynamicFormInViewModeOpensInModal
+  Scenario Outline: validate a message should display by click on footer validate button on dynamic form opens in modal
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL Long | <actionUrlLongOldValue> | DynamicFormTable   | Name                      | View                       |
+      | Flex Table Action     | Where To Open ? | NewTab                  | DynamicFormTable   | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicFormTable   | Name                      | View                       |
+      | Flex Table Action     | Where To Open ? | Modal                   | DynamicFormTable   | Name                      | View                       |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form 1" inside table
+    When I click on "Validate" button in right footer
+    Then I see the following message in the page details :
+      | Written Section 2 in Section Section 2 question not answered |
+
+    Examples:
+      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
+      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalView |
+
+  @97574   @validateEditButtonIsDisplayedAtTopRightCornerInViewModeAtDynamicFormOpensInModal
+  Scenario Outline: validate that Edit button is displayed at top right corner at dynamic form layout opens in modal
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL Long | <actionUrlLongOldValue> | DynamicFormTable   | Name                      | View                       |
+      | Flex Table Action     | Where To Open ? | NewTab                  | DynamicFormTable   | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicFormTable   | Name                      | View                       |
+      | Flex Table Action     | Where To Open ? | Modal                   | DynamicFormTable   | Name                      | View                       |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form 1" inside table
+    Then I see "Edit" button at "Top" of  Modal window
+
+    Examples:
+      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
+      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalView |
+
+  @97575   @validateEditButtonIsDisplayedAtTopRightCornerInViewModeAtDynamicFormOpensInModal
+  Scenario Outline: validate that Edit button is displayed at top right corner at dynamic form layout opens in modal
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL Long | <actionUrlLongOldValue> | DynamicFormTable   | Name                      | View                       |
+      | Flex Table Action     | Where To Open ? | NewTab                  | DynamicFormTable   | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicFormTable   | Name                      | View                       |
+      | Flex Table Action     | Where To Open ? | Modal                   | DynamicFormTable   | Name                      | View                       |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form 1" inside table
+    Then I see "Validate" button at "Top" of  Modal window
+
+    Examples:
+      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
+      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalView |
+
+  @97580   @validateThatFormIsOpenedInEditModeByClickOnEditButtonAtFooterAtDynamicFormOpensInModal
+  Scenario Outline: validate that form is opened in edit mode by click on bottom edit button at dynamic form layout opens in modal
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL Long | <actionUrlLongOldValue> | DynamicFormTable   | Name                      | View                       |
+      | Flex Table Action     | Where To Open ? | NewTab                  | DynamicFormTable   | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicFormTable   | Name                      | View                       |
+      | Flex Table Action     | Where To Open ? | Modal                   | DynamicFormTable   | Name                      | View                       |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form 1" inside table
+    When I click on "Edit" button in right footer
+    Then I see "Cancel" button at "Bottom" of  Modal window
+
+    Examples:
+      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
+      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalView |
+
+  @97583   @validateSaveButtonIsDisplayedAtBottomRightCornerInViewModeAtDynamicFormOpensInModal
+  Scenario Outline: validate that save button is displayed at bottom right corner at dynamic form layout opens in modal
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL Long | <actionUrlLongOldValue> | DynamicFormTable   | Name                      | View                       |
+      | Flex Table Action     | Where To Open ? | NewTab                  | DynamicFormTable   | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicFormTable   | Name                      | View                       |
+      | Flex Table Action     | Where To Open ? | Modal                   | DynamicFormTable   | Name                      | View                       |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form 1" inside table
+    When I click on "Edit" button in right footer
+    Then I see "Save" button at "Bottom" of  Modal window
 
     Examples:
       | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
