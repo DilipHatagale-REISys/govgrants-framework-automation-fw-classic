@@ -7108,13 +7108,15 @@ Business Need: Expression Builder Component Scenarios
       | Name,ProjectTitle__c,Status__c,CumulativeAwardedAmount__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
 
   @93697    @verifyHideCellJSONAtEnhancedGridByHidingCellValueOnTheBasisOfDateField-EGrid @enhancedGrid
-  Scenario: Verify Hide cell JSON By hiding cell on the basis of date field - enhanced grid
+  Scenario Outline: Verify Hide cell JSON By hiding cell on the basis of date field - enhanced grid
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
-      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Hide Cell JSON      |                    | ApiGeneratedId:0 |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName      | fieldNewValue                                             | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonUsingDateFieldAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1486                   |
+      | configurationCategory | fieldName           | fieldNewValue                                             | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON      | govgrants_config:HideCellJsonUsingDateFieldAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1486                   |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi>                                            | TmpActiveGrantsGrid |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7124,6 +7126,10 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     Then I see "*****" shown inside enhanced grid table for specified record "Demo_Title"
+
+    Examples:
+      | newFieldsApi                                                                                                                                                                                                                                    | defaultFieldsApi                                                                                                                                                                                                                   |
+      | ProjectTitle__c,Name,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c,IssueDate__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
 
   @93698  @verifyHideCellJSONAtEnhancedGridByHidingCellValueOnTheBasisOfDateFieldAtChildFlexTableAtEnhancedGrid-gPlanning
   Scenario Outline: Verify Hide cell JSON By hiding cell on the basis of date field at child flex table at enhanced grid-planning

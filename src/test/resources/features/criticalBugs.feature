@@ -1837,6 +1837,12 @@ Business Need: Logged Issues Scenarios
 
   @56392    @amountShouldGetEnterAtMatchSecuredFieldOnIEBrowser
   Scenario: validate amount should get enter at match secured field of Program budget table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Block            | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Is Active | true          | Grantee State Program | Name                      | PB-2591                    |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4012,3 +4018,49 @@ Business Need: Logged Issues Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
     Then I see record with text "{Framework_recordUsed:programForExpressionBuilderScenarios2}" in "---program:-:programTableDivId---"
+
+  @95511    @validateIconCSSAtAccordionHeaderInsideSidebar-gPlanning @sidebar
+  Scenario: validate icon is displayed as per configured at accordion header icon css field - gPlanning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | coreComponentField | filterId         |
+      | Accordian Header      | Icon CSS  |                   | GrantorPlanning    | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Accordian Header      | Icon CSS  | govgrants_config:accordionHeaderIconCSSValue | GrantorPlanning    | Name                      | My Tasks                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "fa fa-home" icon displayed at "My Tasks" accordion header
+
+  @97756    @enablePaginationFieldAtApplicationBudgetPeriodMEGridParentFlexTable-gApplication
+  Scenario: validate enabling of page size dropdown at bottom in ME Grid parent flex table at application phase
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Grid             | Enable Pagination | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Pagination | true          | ApplicationBudgetCategoryFlexGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "{Framework_recordUsed:AnnouncementHavingMultipleBudgetPeriods}"
+    When I click on "View" icon for "{Framework_recordUsed:AnnouncementHavingMultipleBudgetPeriods}" inside table
+    When I navigate to "Budget" sub tab
+    Then I see "Page" with pagination arrow at "---program:-:applicationBudgetCategoryFlexGridTableId---"
+
+  @96574  @VerifyMiniPageLayoutShouldDisplayedProperlyOnMouseHoverAtPageDetailInEditMode @pageLayout
+  Scenario Outline: validate that mini page layout is getting displayed properly on mouse hover at page detail in edit mode
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    And I pause execution for "3" seconds
+    When I hover mouse on lookup link "Department of Community Health"
+    Then I see "<miniPageLayout_Text>" shown inside mini page layout on hover
+
+    Examples:
+      | miniPageLayout_Text            |
+      | Department of Community Health |

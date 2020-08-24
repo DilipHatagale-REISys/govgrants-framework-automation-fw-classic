@@ -35,7 +35,7 @@ public class DynamicFormPage extends GovGrantsManager {
      * @param footerButtonName
      * @author - ashwini.mahore
      */
-    public void clickRightFooterButton(String footerButtonName) {
+    public void getButtonsOnDynamicform(String footerButtonName) {
         By getAnyBottomRightButton = By.xpath("//*[contains(@class,'panel-footer')]//*[(local-name()='a' or local-name()='button' or local-name()='input') and not(contains(@class,'hidden')) and (@title='" + footerButtonName + "' or text()='" + footerButtonName + "' or @value='" + footerButtonName + "')]");
         I.amPerforming().click().on(getAnyBottomRightButton);
     }
@@ -156,6 +156,21 @@ public class DynamicFormPage extends GovGrantsManager {
      */
     public void assertSortOrderOfFieldAtDynamicFormLayout(String fieldName, int fieldPosition, String sectionName) {
         Assert.assertTrue(isFieldDisplayedAtExpectedPositionInFormLayout(fieldName, fieldPosition, sectionName));
+    }
+
+    /**
+     * assert true if radio button options displayed at expected field inside dynamic form layout
+     *
+     * @param fieldName
+     * @param radioButtonName
+     * @author - ashwini.mahore
+     */
+    public void assertRadioButtonInFormLayout(String usage, String radioButtonName, String fieldName) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isRadioButtonDisplayedInFormLayout(radioButtonName, fieldName));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isRadioButtonDisplayedInFormLayout(radioButtonName, fieldName)).isTrue();
+        }
     }
 
     /**
@@ -312,6 +327,22 @@ public class DynamicFormPage extends GovGrantsManager {
     private boolean isFieldDisplayedAtExpectedPositionInFormLayout(String fieldName, int fieldPosition, String sectionName) {
         boolean flag = false;
         if (getListOfFieldsInsideDynamicFormLayout(sectionName).get(fieldPosition).getText().contains(fieldName)) {
+            return true;
+        }
+        return flag;
+    }
+
+    /**
+     * assert true if radio button options displayed at expected field inside dynamic form layout
+     *
+     * @param fieldName
+     * @param radioButtonName
+     * @author - ashwini.mahore
+     */
+    private boolean isRadioButtonDisplayedInFormLayout(String radioButtonName, String fieldName) {
+        boolean flag = false;
+        WebElement getRadioButtonsAtFields = I.amPerforming().getElementReference().of(By.xpath("//span[text()='Radio']/../following-sibling::dd//td//label[" + I.amPerforming().sanityOfXpathTo().equals("text()", radioButtonName) + "]"));
+        if (getRadioButtonsAtFields.isDisplayed()) {
             return true;
         }
         return flag;

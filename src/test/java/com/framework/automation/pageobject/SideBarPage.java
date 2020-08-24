@@ -110,6 +110,17 @@ public class SideBarPage extends GovGrantsManager {
         Assert.assertTrue(isSidebarScrollHasBlueColour());
     }
 
+    /**
+     * assert if icon is displayed at accordion header menu inside sidebar
+     *
+     * @param iconCssValue
+     * @param accodionHeaderName
+     * @author - ashwini.mahore
+     */
+    public void assertIconDisplayedAtAccordionHeader(String iconCssValue, String accodionHeaderName) {
+        Assert.assertTrue(isIconDisplayedAtAccordionHeader(iconCssValue,accodionHeaderName ));
+    }
+
     /*********
      * "Local Methods with Limited functionality - Private"
      *****************/
@@ -229,6 +240,25 @@ public class SideBarPage extends GovGrantsManager {
         WebElement getSidebarScrollBar = I.amPerforming().getElementReference().of(By.xpath("//div[@id='sidebar-wrapper']"));
         try {
             if (getSidebarScrollBar.getAttribute("class").contains("sidebar-wrapper")) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+
+    /**
+     * @return true if icon is displayed at accordion header menu inside sidebar
+     *
+     * @param iconCssValue
+     * @param accodionHeaderName
+     * @author - ashwini.mahore
+     */
+    private boolean isIconDisplayedAtAccordionHeader(String iconCssValue, String accodionHeaderName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//span[text()='"+accodionHeaderName+"']/preceding-sibling::span//i[@class='"+iconCssValue+"']"))) {
                 flag = true;
             }
         } catch (Exception e) {
