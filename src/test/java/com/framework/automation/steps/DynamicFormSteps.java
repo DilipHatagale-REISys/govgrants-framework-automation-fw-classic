@@ -1,7 +1,5 @@
 package com.framework.automation.steps;
-
 import com.framework.automation.pageobject.DynamicFormPage;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -19,7 +17,7 @@ public class DynamicFormSteps {
 
     @When("I click on {string} button in right footer")
     public void clickButtonOnRightFooter(String footerButtonName) {
-        dynamicFormPage.clickRightFooterButton(footerButtonName);
+        dynamicFormPage.getButtonsOnDynamicform(footerButtonName);
     }
 
     @Then("^I see for \"([^\"]*)\" field value is \"([^\"]*)\" inside dynamic form$")
@@ -70,5 +68,10 @@ public class DynamicFormSteps {
     @Then("I see {string} field is shown at position {string} in {string}")
     public void iSeeFieldIsShownAtPositionIn(String fieldName, String fieldPosition, String sectionName) {
         dynamicFormPage.assertSortOrderOfFieldAtDynamicFormLayout(fieldName,Integer.parseInt(fieldPosition), sectionName );
+    }
+
+    @Then("^I (see|softly see) radio button as \"([^\"]*)\" at \"([^\"]*)\" field in form layout$")
+    public void iSeeRadioButtonAsAtFieldOnFormLayout(String usage, String radioButtonName, String fieldName) {
+        dynamicFormPage.assertRadioButtonInFormLayout(usage, radioButtonName, fieldName);
     }
 }

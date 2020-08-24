@@ -3868,3 +3868,74 @@ Business Need: dynamic forms Component Scenarios
     Examples:
       | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
       | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalView |
+
+  @96639   @validateOptionsAtRadioFieldAreDisplayedIfOptionsAreConfiguredAtCaptureItemInViewMode
+  Scenario: validate options are displayed below radio field if configured at radio field capture item
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Capture Item          | Options   | Yes;No            | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Options   | Yes;Test      | CI-0025            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    Then I softly see radio button as "Yes" at "Radio" field in form layout
+    Then I softly see radio button as "Test" at "Radio" field in form layout
+
+  @97586   @validateByClickOnEditActionAtDynamicFormSaveButtonDisplayedInsideModalOfDynamicForm
+  Scenario Outline: validate by click on edit action a save button is displayed inside dynamic form modal
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL Long | <actionUrlLongOldValue> | DynamicFormTable   | Name                      | Edit                       |
+      | Flex Table Action     | Where To Open ? | NewTab                  | DynamicFormTable   | Name                      | Edit                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicFormTable   | Name                      | Edit                       |
+      | Flex Table Action     | Where To Open ? | Modal                   | DynamicFormTable   | Name                      | Edit                       |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    Then I see "Save" button is displayed
+
+    Examples:
+      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
+      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=Edit | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalEdit |
+
+  @97588   @validateAPicklistFieldIsEditableAndSvaesTheGivenValueInsideModalOfDynamicForm
+  Scenario Outline: validate that picklist field is ediatble and it saves the given value inside dynamic form modal window
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL Long | <actionUrlLongOldValue> | DynamicFormTable   | Name                      | Edit                       |
+      | Flex Table Action     | Where To Open ? | NewTab                  | DynamicFormTable   | Name                      | Edit                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | DynamicFormTable   | Name                      | Edit                       |
+      | Flex Table Action     | Where To Open ? | Modal                   | DynamicFormTable   | Name                      | Edit                       |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    When I enter values into "Section 1" page block
+      | Field    | Value |
+      | Picklist | Items |
+    When I click on "Save" button in right header
+    Then I see for "Picklist" field value is "Items" inside dynamic form
+
+    Examples:
+      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
+      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=Edit | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalEdit |

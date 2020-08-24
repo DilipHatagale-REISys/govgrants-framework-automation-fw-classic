@@ -336,7 +336,7 @@ public class PageLayoutPage extends GovGrantsManager {
             Assert.assertFalse(isTopRightHeaderButtonDisplayed(buttonName));
         } else if (usage.equalsIgnoreCase("softly see")) {
             I.amPerforming().assertionsTo().assertThat(isTopRightHeaderButtonDisplayed(buttonName)).isFalse();
-        } else if (usage.equalsIgnoreCase("do not see")){
+        } else if (usage.equalsIgnoreCase("do not see")) {
             I.amPerforming().assertionsTo().assertThat(isTopRightHeaderButtonDisplayed(buttonName)).isTrue();
         }
     }
@@ -554,7 +554,8 @@ public class PageLayoutPage extends GovGrantsManager {
      * @param lookUpLink
      */
     public void getLookUpLinkToHover(String lookUpLink) {
-        I.amPerforming().scroll().toMoveToElement(By.xpath("//dl//dd//a[contains(text(),'" + lookUpLink + "') or @class='tooltipstered']"), false);
+        I.amPerforming().scroll().toMoveToElement(By.xpath("//dl//dd//a[contains(text(),'" + lookUpLink + "') or @class='tooltipstered'] |" +
+                " //dd//input[@value='" + lookUpLink + "' and not(@type='hidden')]"), false);
     }
 
     /**

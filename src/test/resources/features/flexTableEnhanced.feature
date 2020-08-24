@@ -302,7 +302,7 @@ Business Need: Flex Table enhanced Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    Then I see "Number of Project Areas : 1" inside rows of enhanced grid id "---program:-:EnhancedDataTableId---"
+    Then I see "Number of Project Areas :" inside rows of enhanced grid id "---program:-:EnhancedDataTableId---"
 
   @77413    @enableSubTotalFieldAtFlexTableEnhanced-gPlanning
   Scenario Outline: validate total of number of project areas after checking checkbox true of Enable Sub Total field from config and validating it inside enhanced data table -planning
@@ -344,7 +344,7 @@ Business Need: Flex Table enhanced Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    Then I see "New" button inside "Grants Enhanced Table" enhanced grid
+    Then I see no "New" button inside "Grants Enhanced Table" enhanced grid
 
   @77329    @enableHideGroupingColumnFieldAtFlexTableEnhanced-gPlanning
   Scenario: validate display of number of project areas column after checking checkbox true of Hide Grouping Column field from config and validating it inside enhanced data table -planning

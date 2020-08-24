@@ -187,6 +187,12 @@ public class FlexGrid {
                                 .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
                         String.valueOf(SObjectAPIs.GNT__EnableHyperLinkAsText__c), value);
                 break;
+            case "ENABLE PAGINATION":
+                finalPayload = String.format(
+                        payloadForIntValue, String.valueOf(SObjectAPIs.GNT__FlexGridConfig__c), apiUtilities
+                                .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__FlexGridConfig__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__EnablePagination__c), value);
+                break;
         }
         System.out.println(finalPayload);
         return finalPayload;
