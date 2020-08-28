@@ -129,7 +129,7 @@ Business Need: Side bar Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     When I navigate to "Completed" content inside "My Tasks" subheader on left panel
-    Then I see page title "HOME: Completed"
+    Then I see page title "Account View"
     Examples:
       | New-TargetUrl              | Old-TargetUrl                                                  |
       | /apex/PendingRegistrations | /apex/FlexTableNewView?ft1=CompletedTasks&ft2=CompletedTasksBy |

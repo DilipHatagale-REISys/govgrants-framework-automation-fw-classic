@@ -490,7 +490,7 @@ Business Need: Logged Issues Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    Then I see "3" charts displayed
+    Then I see "1" charts displayed
 
   @56407    @associateButtonShouldDisplayForBudgetCategoryInFinancialTab
   Scenario: validate Associate button is displayed on budget category
@@ -4036,7 +4036,7 @@ Business Need: Logged Issues Scenarios
   Scenario: validate enabling of page size dropdown at bottom in ME Grid parent flex table at application phase
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Grid             | Enable Pagination | false             | ApiGeneratedId:0 |
+      | Flex Grid             | Enable Pagination | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Enable Pagination | true          | ApplicationBudgetCategoryFlexGrid |                           |                            |
@@ -4064,3 +4064,126 @@ Business Need: Logged Issues Scenarios
     Examples:
       | miniPageLayout_Text            |
       | Department of Community Health |
+
+  @97758    @disablePaginationFieldAtApplicationBudgetPeriodMEGridParentFlexTable-gApplication
+  Scenario: validate disable of page size dropdown at bottom in ME Grid parent flex table at application phase
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Grid             | Enable Pagination | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Pagination | false         | ApplicationBudgetCategoryFlexGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "{Framework_recordUsed:AnnouncementHavingMultipleBudgetPeriods}"
+    When I click on "View" icon for "{Framework_recordUsed:AnnouncementHavingMultipleBudgetPeriods}" inside table
+    When I navigate to "Budget" sub tab
+    Then I do not see "Page" with pagination arrow at "---program:-:applicationBudgetCategoryFlexGridTableId---"
+
+  @97682    @enablingQuickSearchFromConfigAndFromCustomSetting-gPlanning
+  Scenario: validate enabling of quick search in flex table of programs from custom setting config-planning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:0 |
+    Given I have "lightening" configuration as below:
+      | booleanValue | integerValue | id                 | description                           | name                           |
+      | true         | 0            | a0b1C00000OHGYIQA5 | to enable flex table quick search box | FlexTableEnableSearchAllFields |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Quick Search | true          | Programs           |                           |                            |
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description                           | name                           |
+      | true         | 0            | a0b1C00000OHGYIQA5 | to enable flex table quick search box | FlexTableEnableSearchAllFields |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    Then I see quick search option is displayed
+
+  @97688    @disableQuickSearchFromConfigAndFromCustomSetting-gPlanning
+  Scenario: validate disable of quick search in flex table of programs from custom setting config-planning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:0 |
+    Given I have "lightening" configuration as below:
+      | booleanValue | integerValue | id                 | description                           | name                           |
+      | true         | 0            | a0b1C00000OHGYIQA5 | to enable flex table quick search box | FlexTableEnableSearchAllFields |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Quick Search | false         | Programs           |                           |                            |
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description                           | name                           |
+      | false        | 0            | a0b1C00000OHGYIQA5 | to enable flex table quick search box | FlexTableEnableSearchAllFields |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    Then I do not see quick search option is displayed
+
+  @98002    @validateThatAfterInlineEditingRecordAtMeGridARecordIsGettingSavedAndLoadingIconIsNotDisplayed
+  Scenario: validate after inline editing record at me grid a record is getting saved and loading icon is not displayed
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "AP-755-214"
+    When I click on "View" icon for "AP-755-214" inside table
+    When I navigate to "Budget" sub tab
+    When I click on "Delete" icon for "BP-07" inside table
+    When I enter the following values into flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" by clicking "New" :
+      | Support Year |
+      | BP-07        |
+    Then I see the following messages in the page details :
+      | Record Saved Successfully. |
+
+  @99094    @validateQuickSearchRefreshBehaviourAtParentFlexTableForEnhancedGridAtSideBar-gHOME
+  Scenario: validate quick search refresh behaviour at enhanced grid at sidebar - home phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Flex Grid Enhanced" content inside "Manage Organizations" subheader on left panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
+    When I click on parallel lines menu bar with data target value "#TmpActiveGrantsGridFlexToggle"
+    And I select "Refresh" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
+    Then I see "Page" with pagination arrow at "---program:-:flexGridEnhancedTableId---"
+
+  @98282    @validateQuickSearchRefreshBehaviourAtParentFlexTableForEnhancedGridAtSideBar-gHOME
+  Scenario: validate quick search refresh behaviour at enhanced grid at sidebar - home phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Flex Grid Enhanced" content inside "Manage Organizations" subheader on left panel
+    Then I see expected table with id "---program:-:tmpActiveGrantsGridTableId---"
+
+  @100014   @verifyLookupFieldSearchBoxIsDisplayedAtEnhancedGridWhileCreatingNewRecord-gPlanning
+  Scenario: validate lookup field search box is displayed at enhanced grid while creating new record - gplanning
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I click on top right button "New" in flex table with id "---program:-:flexGridEnhancedID---"
+    Then I see "InternalOrganization__c" field is editable inside enhanced grid
+
+  @99984   @verifyLookupFieldSearchBoxIsDisplayedAtEnhancedGridAtSidebar-gHome
+  Scenario: validate lookup field search box is displayed at enhanced grid at sidebar - gHome
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I navigate to "Flex Grid Enhanced" content inside "Manage Organizations" subheader on left panel
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
+    When I click on "Edit" icon for "Demo_Title" inside table
+    Then I see "InternalOrganization__c" field is editable inside enhanced grid
+
+  @97931   @verifyClickOnPageNavigationArrowAtMeGridASecondPageIsDisplayed-gApplications
+  Scenario: validate 2nd page is displayed by click on page navigation arrow at me grid - gApplications
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "{Framework_recordUsed:AnnouncementHavingMultipleBudgetPeriods}"
+    When I click on "View" icon for "{Framework_recordUsed:AnnouncementHavingMultipleBudgetPeriods}" inside table
+    When I navigate to "Budget" sub tab
+    And I click on page navigation arrow "---program:-:applicationBudgetCategoryInlineEditTableId---" for table id "Next"
+    Then I see "Page 2" with pagination arrow at "---program:-:applicationBudgetCategoryFlexGridTableId---"

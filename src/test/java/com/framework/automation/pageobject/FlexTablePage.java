@@ -51,10 +51,14 @@ public class FlexTablePage extends GovGrantsManager {
     }
 
     /**
-     * assert if quick search is not displayed
+     * assert if quick search is  displayed or not
      */
-    public void assertquickSearchDisabled() {
-        Assert.assertTrue(isQuickSearchDisabled());
+    public void assertquickSearchEnabled(String usage) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isQuickSearchEnabled());
+        } else if (usage.equalsIgnoreCase("do not see")){
+            Assert.assertFalse(isQuickSearchEnabled());
+        }
     }
 
     /**
@@ -207,8 +211,12 @@ public class FlexTablePage extends GovGrantsManager {
     /**
      * assert true if pagination is enabled at program flex table
      */
-    public void assertFlexTabelPaginationEnabled(String text, String tableId) {
-        Assert.assertTrue(isFlexTableBottomElementEnabled(text, tableId));
+    public void assertFlexTabelPaginationEnabled(String usage, String text, String tableId) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isFlexTableBottomElementEnabled(text, tableId));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isFlexTableBottomElementEnabled(text, tableId));
+        }
     }
 
     /**
@@ -626,15 +634,15 @@ public class FlexTablePage extends GovGrantsManager {
     }
 
     /**
-     * validate if quick search is displayed or not
+     * @return validate if quick search is displayed or not at flex table
      *
-     * @return: true if it is not displayed
+     * @modifier- ashwini.mahore
      */
-    private boolean isQuickSearchDisabled() {
-        boolean flag = true;
+    private boolean isQuickSearchEnabled() {
+        boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(searchInput)) {
-                flag = false;
+                flag = true;
             }
         } catch (Exception e) {
         }

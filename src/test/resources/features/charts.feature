@@ -598,7 +598,7 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     And I navigate to "Announcements" tab
     And I click on menu icon of chart "Test" with title "Enhanced View"
     When I click modal button "Close"
-    Then I see chart legends are displayed for chart/enhanced Charts "Test"
+    Then I see chart legends are displayed for chart/enhanced Charts "Announcemnenttest_1"
 
   @71029    @validateTitleFieldAtCharts-gAnnouncement-Testing_column
   Scenario: Changing chart title for 'Testing_column' enhanced chart in configuration and validating inside- gAnnouncement
@@ -992,7 +992,7 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    And I click on menu icon of chart "Enhanced_Funnel" with title "Enhanced View"
+    And I click on menu icon of chart "Enhanced Funnel" with title "Enhanced View"
     When I click modal button "Show All Data"
     Then I do not see "Change Request #" in flex table header "---program:-:Enhanced_FunnelModalID---"
 
@@ -1014,7 +1014,7 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click on menu icon of chart "Enhanced_Funnel" with title "Menu"
-    When I select "Show All Data" from chart menu of chart "Enhanced_Funnel"
+    When I select "Show All Data" from chart menu of chart "Enhanced Funnel"
     Then I do not see "Change Request #" in flex table header "---program:-:Enhanced_FunnelModalID---"
 
     Examples:

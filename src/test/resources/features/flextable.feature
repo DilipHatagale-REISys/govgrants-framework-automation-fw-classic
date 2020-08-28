@@ -58,7 +58,7 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    Then I see quick search option disabled
+    Then I do not see quick search option is displayed
 
   @34027    @disablingAdvanceFilter-gPlanning
   Scenario: validate disabling of advance filter from planning-Program flex table
