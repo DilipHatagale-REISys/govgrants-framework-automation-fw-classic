@@ -415,7 +415,7 @@ Business Need: Sanity check for all Component Scenarios
   Scenario Outline: Change chart y-axis label for 'EnhancedPiechartId' enhanced chart from configuration and validating inside Announcement
     Given I have "default" configuration as below:
       | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
-      | Charts Config         | Y-Axis Label |                   | ApiGeneratedId:0 |
+      | Charts Config         | Y-Axis Label | Count             | ApiGeneratedId:0 |
       | Charts Config         | Active       | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName    | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |

@@ -1932,3 +1932,14 @@ Business Need: All pdf and xls related scenario including component and complete
     And I select "Download as PDF" from parallel lines dropdown of "Draft Announcements"
     And I download the file
     Then I see "Draft Announcements" on page "1" of "govgrants" pdf file
+
+  @98869    @verifyDownloadingAsPDFAtAwardTable-gAward @flexTable
+  Scenario: validate by click download as pdf at active award flex table then it is shown in downloaded pdf
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I navigate to "Active Awards" content inside "Manage Grants, Awards & Amendments" subheader on left panel
+    When I click on parallel lines menu bar with data target value "#toggleFlexTableGrantorActiveAwards"
+    And I select "Download as PDF" from parallel lines dropdown of "Active Awards"
+    And I download the file
+    Then I see "Active Awards" on page "1" of "govgrants" pdf file

@@ -573,7 +573,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName                    | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Form:General  | Validation Button Visibility | Show          | CF-0000            |                           |                            |
-      | Capture Item:General  | Question Applicable ?        |               | CI-0016            |                           |                            |
+      | Capture Item:General  | Question Applicable ?        |               | CI-0033            |                           |                            |
     When I login as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -792,7 +792,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item          | Question Applicable ? | Required to save  | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Capture Item:General  | Question Applicable ? | Required to save | CI-0016            |                           |                            |
+      | Capture Item:General  | Question Applicable ? | Required to save | CI-0033            |                           |                            |
     When I login as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -801,9 +801,6 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
-    When I enter values into "Section 1" page block
-      | Field     | Value |
-      | Radio New |       |
     When I click on "Save" in the page details
     Then I see the following message in the page details :
       | Radio New is Required to save under Section 1. |
@@ -1757,7 +1754,9 @@ Business Need: dynamic forms Component Scenarios
     And I navigate to "Announcements" tab
     And I click toggle button to select "Announcements - All"
     When I perform quick search for "AnnouncementTest"
-    When I click on "Edit" icon for "AnnouncementTest" inside table
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
     Then I softly do not see "Section: Section 1" is collapsed
     Then I softly do not see "Section: Section 4" is collapsed
 
@@ -1769,6 +1768,8 @@ Business Need: dynamic forms Component Scenarios
     And I click toggle button to select "Announcements - All"
     When I perform quick search for "AnnouncementTest"
     When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form 1" inside table
     Then I softly do not see "Section: Section 1" is collapsed
     Then I softly do not see "Section: Section 4" is collapsed
 
@@ -2226,7 +2227,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item          | Question Applicable ? |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Capture Item:General  | Question Applicable ? | Required to save | CI-0029            |                           |                            |
+      | Capture Item:General  | Question Applicable ? | Required to save | CI-0034            |                           |                            |
     When I login as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -2235,9 +2236,6 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
-    When I enter values into "Section 1" page block
-      | Field                    | Value |
-      | Picklist(Required Field) |       |
     When I click on "Save" in the page details
     Then I see the following message in the page details :
       | Picklist(Required Field) is Required to save under Section 1. |
@@ -2470,7 +2468,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
-    Then I see "Picklist" inside "Section 1" at dynamic form
+    Then I do not see "Picklist" inside "Section 1" at dynamic form
 
   @94697   @validateDependentQuestionJsonFieldByMakingPicklistFieldAsRequiredUsingCurrencyFieldValueInsideDynamicFormInEditMode
   Scenario: validate Dependent Question Json Field by making picklist field as required on the basis of currency field value in form edit mode
@@ -2481,7 +2479,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName               | fieldNewValue                                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Capture Item:General  | Question Identifier     | Picklist(Required Field)                                                           | CI-0029            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Picklist(Required Field)                                                           | CI-0034            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:ShowRequiredPicklistUsingCurrencyFieldValueByProvidingNameOfField | CI-0004            |                           |                            |
       | Capture Item:General  | Question Identifier     | Currency                                                                           | CI-0004            |                           |                            |
     When I login as "Admin" user
@@ -2492,9 +2490,6 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
-    When I enter values into "Section 1" page block
-      | Field                    | Value |
-      | Picklist(Required Field) |       |
     When I click on "Save" in the page details
     Then I see the following message in the page details :
       | Picklist(Required Field) is Required to save under Section 1. |
@@ -2734,7 +2729,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName               | fieldNewValue                                                                   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Capture Item:General  | Question Identifier     | Radio                                                                           | CI-0016            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Radio                                                                           | CI-0033            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:ShowRequiredRadioUsingCurrencyFieldValueByProvidingNameOfField | CI-0004            |                           |                            |
       | Capture Item:General  | Question Identifier     | Currency                                                                        | CI-0004            |                           |                            |
     When I login as "Admin" user
@@ -2745,9 +2740,6 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
-    When I enter values into "Section 1" page block
-      | Field     | Value |
-      | Radio New |       |
     When I click on "Save" in the page details
     Then I see the following message in the page details :
       | Radio New is Required to save under Section 1. |

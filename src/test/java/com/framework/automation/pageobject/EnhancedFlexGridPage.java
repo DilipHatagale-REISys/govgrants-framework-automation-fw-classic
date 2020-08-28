@@ -425,7 +425,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      * To verify reported date field contains today's date
      */
     public void assertBugetPeriodDateField() {
-        Assert.assertEquals(I.amPerforming().propertiesFileOperationsTo().getValue("BPdate1"), I.amPerforming().dateOperationsToGet().currentDateInDesiredFormat(DateTimeFormatter.ofPattern("MM/dd/yyyy")).replaceAll("^0", ""));
+        Assert.assertEquals(I.amPerforming().propertiesFileOperationsTo().getValue("BPdate1"), I.amPerforming().dateOperationsToGet().currentDateInDesiredFormat(DateTimeFormatter.ofPattern("MM/dd/yyyy")));
     }
 
     /**

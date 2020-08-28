@@ -1409,7 +1409,7 @@ Business Need: Library Files Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
-    Then I see Classification as "Select File Classification" at upload file modal
+    Then I see Classification as "Select file classification" at upload file modal
 
   @81173 @validateUploadFileButtonNameAtPlanningFilesTable-RecordLevel
   Scenario: Verify upload file button name at add file modal - Planing Phase
@@ -1473,7 +1473,7 @@ Business Need: Library Files Component Scenarios
     When I click on expand icon at library/folder "Department of Community Health"
     Then I do not see Default keyword "testAutomationDefaultFolder" at library/folder inside "fileLibrary"
 
-  @81311 @validateThatUploadFileFromLibraryTabIsNotDisplayedAtAddFileModalForSPIProfile-RecordLevel
+  @81311 @validateThatUploadFileFromLibraryTabIsNotDisplayedAtAddFileModalForSPIProfile-RecordLevel @NeedAPIForCustomMetaData
   Scenario: Verify that upload file from library tab is not Displayed at add file modal for SPI profile
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
@@ -1638,7 +1638,7 @@ Business Need: Library Files Component Scenarios
     When I click on SelectChange Folder in add file modal
     Then I see Default keyword "UnitedHealth Group" at library/folder inside "modaltemp"
 
-  @81674 @validateThatDefaultKeyWordIsDisplayedAtFolderUnderSelectChangeFolderModalWindowForGovGrantAdminProfile-RecordLevel
+  @81674 @validateThatDefaultKeyWordIsDisplayedAtFolderUnderSelectChangeFolderModalWindowForGovGrantAdminProfile-RecordLevel @NeedAPIForCustomMetaData
   Scenario: Verify that default keyword is Displayed at folder at select or change folder modal for GovGrant Admin profile -Record level
     When I login as "Automation" user
     When I setup my app as "As a Grantor"

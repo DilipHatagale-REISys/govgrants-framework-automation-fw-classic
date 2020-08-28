@@ -68,9 +68,9 @@ public class FlexTableSteps {
         flexTablePage.assertTopRightParallelLinesBarSpecificOptionsDisabled(option1, pannelTitleName);
     }
 
-    @Then("^I see quick search option disabled$")
-    public void assertQuickSearchOptionDisabled() {
-        flexTablePage.assertquickSearchDisabled();
+    @Then("^I (see|do not see) quick search option is displayed")
+    public void assertQuickSearchOptionDisabled(String usage) {
+        flexTablePage.assertquickSearchEnabled(usage);
     }
 
     @Then("^I see Menu icon is disabled from planning flex table \"([^\"]*)\"$")
@@ -143,9 +143,9 @@ public class FlexTableSteps {
         flexTablePage.assertFlexTabelPageSizeEnabled(text, tableId);
     }
 
-    @Then("^I see \"([^\"]*)\" with pagination arrow at \"([^\"]*)\"$")
-    public void assertFlexTablePaginationEnabled(String text, String tableId) {
-        flexTablePage.assertFlexTabelPaginationEnabled(text, tableId);
+    @Then("^I (see|do not see) \"([^\"]*)\" with pagination arrow at \"([^\"]*)\"$")
+    public void assertFlexTablePaginationEnabled(String usage, String text, String tableId) {
+        flexTablePage.assertFlexTabelPaginationEnabled(usage, text, tableId);
     }
 
     @Then("^I see \"([^\"]*)\" records inside flex table id \"([^\"]*)\"$")
