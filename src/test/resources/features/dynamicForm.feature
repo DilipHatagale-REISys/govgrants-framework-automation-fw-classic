@@ -3532,7 +3532,7 @@ Business Need: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     When I close modal by clicking the top right x button
-    Then I see "DynamicFormTable" modal is closed
+    Then I see "DynamicFormTable" modal window with id "---program:-:DynamicFormTableModalId---" is not displayed
 
     Examples:
       | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
@@ -3931,3 +3931,358 @@ Business Need: dynamic forms Component Scenarios
     Examples:
       | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
       | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=Edit | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalEdit |
+
+  @100110    @ValidateDisplayOfValidateButtonAtDynamicFormLayoutInEditMode
+  Scenario: validate the display of validate button in edit mode if Validation Button Visibility is set as shown from config at dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                    | fieldOrignalValue | filterId         |
+      | Capture Form          | Validation Button Visibility | Show              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                    | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Validation Button Visibility | Show          | CF-0006            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select " Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    Then I do not see "Validate" button is displayed
+
+  @100107    @validateThatByClickOnCancelButtonAFormIsGettingDisplayedInViewMode
+  Scenario: validate that by click on cancel button a form is displayed in view mode
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    When I click on "Cancel" button in right header
+    Then I see "FormViewLayout" is displayed at detail page
+
+  @100108    @validateThatByClickOnSaveButtonAFormIsGettingDisplayedInViewMode
+  Scenario: validate that by click on save button a form is displayed in view mode
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    When I click on "Save" button in right header
+    Then I see "FormViewLayout" is displayed at detail page
+
+  @100112   @validateDependentQuestionJsonFieldByDisablingCurrencyFieldFromMultipleSectionsUsingWrittenFieldValueInsideDynamicFormInEditMode
+  Scenario: validate Dependent Question Json Field by disabling currency from section 1 and section 3 on the basis of written field value in form edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:3 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:4 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Written                                                                           | CI-0018            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:DisableCurrencyFieldUsingWrittenFieldValueByProvidingNameOfField | CI-0018            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                          | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | a4Cg0000000MoXz                                                                   | CI-0035            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:DisableCurrencyFieldUsingWrittenFieldValueByProvidingIdOfField   | CI-0035            |                           |                            |
+      | Capture Item:General  | Question Identifier     | a4Cg0000000MoY4                                                                   | CI-0036            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    Then I softly see "Currency" field inside "Section 1" is disabled
+    Then I softly see "Currency Section 3" field inside "Section 3" is disabled
+
+  @100126   @validateDependentQuestionJsonFieldByHidingNumberAndWrittenFieldFromMultipleSectionsUsingCurrencyFieldValueInsideDynamicFormInEditMode
+  Scenario: validate Dependent Question Json Field by hiding number and written from section 1 and section 3 on the basis of currency field value in form edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:3 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:4 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:5 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:6 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:7 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Currency                                                                             | CI-0022            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:HideNumberFieldUsingCurrencyFieldValueByProvidingNameOfField        | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Number                                                                               | CI-0023            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Written                                                                              | CI-0018            |                           |                            |
+      | Capture Item:General  | Question Identifier     | a4Cg0000000MoY4                                                                      | CI-0036            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:HideWrittenNumberFieldUsingCurrencyFieldValueByProvidingNameOfField | CI-0036            |                           |                            |
+      | Capture Item:General  | Question Identifier     | a4Cg0000000MoYE                                                                      | CI-0038            |                           |                            |
+      | Capture Item:General  | Question Identifier     | a4Cg0000000MoXz                                                                      | CI-0035            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    Then I softly see "Written" field inside "Section 1" is hidden
+    Then I softly see "Number" field inside "Section 1" is hidden
+    Then I softly see "Written Section 3" field inside "Section 3" is hidden
+    Then I softly see "Number Section 3" field inside "Section 3" is hidden
+
+  @100113   @validateDependentQuestionJsonFieldByDisablingCurrencyAndHidingPercentFromSection1And3UsingWrittenFieldValueInsideDynamicFormInEditMode
+  Scenario: validate Dependent Question Json Field by disabling currency and hiding percent from section 1 and 3 on the basis of written field value in form edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:3 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:4 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:5 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:6 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:7 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                                             | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Written                                                                                                   | CI-0018            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:DisableCurrencyAndHidingPercentFieldSection1UsingWrittenFieldValueByProvidingNameOfField | CI-0018            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                                                  | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Percent                                                                                                   | CI-0024            |                           |                            |
+      | Capture Item:General  | Question Identifier     | a4Cg0000000MoXz                                                                                           | CI-0035            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:DisableCurrencyAndHidingPercentFieldSection3UsingWrittenFieldValueByProvidingNameOfField | CI-0035            |                           |                            |
+      | Capture Item:General  | Question Identifier     | a4Cg0000000MoY4                                                                                           | CI-0036            |                           |                            |
+      | Capture Item:General  | Question Identifier     | a4Cg0000000MoY9                                                                                           | CI-0037            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    Then I softly see "Currency" field inside "Section 1" is disabled
+    Then I softly see "Percent" field inside "Section 1" is hidden
+    Then I softly see "Currency Section 3" field inside "Section 3" is disabled
+    Then I softly see "Percent Section 3" field inside "Section 3" is hidden
+
+  @100115   @validateDependentQuestionJsonFieldByDisablingCurrencyAndHidingPercentFromSection1And3UsingWrittenFieldValueInsideDynamicFormInViewMode
+  Scenario: validate Dependent Question Json Field by disabling currency and hiding percent from section 1 and 3 on the basis of written field value in form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:3 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:4 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:5 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:6 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:7 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                                             | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Written                                                                                                   | CI-0018            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:DisableCurrencyAndHidingPercentFieldSection1UsingWrittenFieldValueByProvidingNameOfField | CI-0018            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                                                  | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Percent                                                                                                   | CI-0024            |                           |                            |
+      | Capture Item:General  | Question Identifier     | a4Cg0000000MoXz                                                                                           | CI-0035            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:DisableCurrencyAndHidingPercentFieldSection3UsingWrittenFieldValueByProvidingNameOfField | CI-0035            |                           |                            |
+      | Capture Item:General  | Question Identifier     | a4Cg0000000MoY4                                                                                           | CI-0036            |                           |                            |
+      | Capture Item:General  | Question Identifier     | a4Cg0000000MoY9                                                                                           | CI-0037            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form 1" inside table
+    Then I softly see "Currency" inside "Section 1" at dynamic form
+    Then I softly do not see "Percent" inside "Section 1" at dynamic form
+    Then I softly see "Currency Section 3" inside "Section 3" at dynamic form
+    Then I softly do not see "Percent Section 3" inside "Section 3" at dynamic form
+
+  @100118   @validateDependentQuestionJsonFieldByReqCurrencyAndHidingPercentFromSection1And3UsingWrittenFieldValueInsideDynamicFormInEditMode
+  Scenario: validate Dependent Question Json Field by making currency req and hiding percent from section 1 and 3 on the basis of written field value in form edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:3 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:4 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:5 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:6 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:7 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                                             | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Written                                                                                                   | CI-0018            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:ShowReqCurrencyAndHidingPercentFieldSection1UsingWrittenFieldValueByProvidingNameOfField | CI-0018            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                                                  | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Percent                                                                                                   | CI-0024            |                           |                            |
+      | Capture Item:General  | Question Identifier     | a4Cg0000000MoXz                                                                                           | CI-0035            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:ShowReqCurrencyAndHidingPercentFieldSection3UsingWrittenFieldValueByProvidingNameOfField | CI-0035            |                           |                            |
+      | Capture Item:General  | Question Identifier     | a4Cg0000000MoY4                                                                                           | CI-0036            |                           |                            |
+      | Capture Item:General  | Question Identifier     | a4Cg0000000MoY9                                                                                           | CI-0037            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    Then I softly see "Percent" field inside "Section 1" is hidden
+    Then I softly see "Percent Section 3" field inside "Section 3" is hidden
+    When I enter values into "Section 1" page block
+      | Field    | Value |
+      | Currency |       |
+    When I enter values into "Section 3" page block
+      | Field              | Value |
+      | Currency Section 3 |       |
+    When I click on "Save" in the page details
+    Then I softly see the following message in the page details :
+      | Currency is Required to save under Section 1.           |
+      | Currency Section 3 is Required to save under Section 3. |
+
+  @100123   @validateDependentQuestionJsonFieldByDisablingNumberAndWrittenFieldFromMultipleSectionsUsingCurrencyFieldValueInsideDynamicFormInEditMode
+  Scenario: validate Dependent Question Json Field by disabling number and written from section 1 and section 3 on the basis of currency field value in form edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:3 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:4 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:5 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:6 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:7 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Currency                                                                                | CI-0022            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:DisableNumberFieldUsingCurrencyFieldValueByProvidingNameOfField        | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Number                                                                                  | CI-0023            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Written                                                                                 | CI-0018            |                           |                            |
+      | Capture Item:General  | Question Identifier     | a4Cg0000000MoY4                                                                         | CI-0036            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:DisableWrittenNumberFieldUsingCurrencyFieldValueByProvidingNameOfField | CI-0036            |                           |                            |
+      | Capture Item:General  | Question Identifier     | a4Cg0000000MoYE                                                                         | CI-0038            |                           |                            |
+      | Capture Item:General  | Question Identifier     | a4Cg0000000MoXz                                                                         | CI-0035            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    Then I softly see "Written" field inside "Section 1" is disabled
+    Then I softly see "Number" field inside "Section 1" is disabled
+    Then I softly see "Written Section 3" field inside "Section 3" is disabled
+    Then I softly see "Number Section 3" field inside "Section 3" is disabled
+
+  @100124   @validateDependentQuestionJsonFieldByDisablingNumberAndWrittenFieldFromMultipleSectionsUsingCurrencyFieldValueInsideDynamicFormInViewMode
+  Scenario: validate Dependent Question Json Field by disabling number and written from section 1 and section 3 on the basis of currency field value in form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:3 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:4 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:5 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:6 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:7 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Currency                                                                                | CI-0022            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:DisableNumberFieldUsingCurrencyFieldValueByProvidingNameOfField        | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Number                                                                                  | CI-0023            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Written                                                                                 | CI-0018            |                           |                            |
+      | Capture Item:General  | Question Identifier     | a4Cg0000000MoY4                                                                         | CI-0036            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:DisableWrittenNumberFieldUsingCurrencyFieldValueByProvidingNameOfField | CI-0036            |                           |                            |
+      | Capture Item:General  | Question Identifier     | a4Cg0000000MoYE                                                                         | CI-0038            |                           |                            |
+      | Capture Item:General  | Question Identifier     | a4Cg0000000MoXz                                                                         | CI-0035            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form 1" inside table
+    Then I softly see "Written" inside "Section 1" at dynamic form
+    Then I softly see "Number" inside "Section 1" at dynamic form
+    Then I softly see "Written Section 3" inside "Section 3" at dynamic form
+    Then I softly see "Number Section 3" inside "Section 3" at dynamic form
+
+  @100125   @validateDependentQuestionJsonFieldByHidingNumberAndWrittenFieldFromMultipleSectionsUsingCurrencyFieldValueInsideDynamicFormInEditMode
+  Scenario: validate Dependent Question Json Field by hiding number and written from section 1 and section 3 on the basis of currency field value in form edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:3 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:4 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:5 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:6 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:7 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Currency                                                                             | CI-0022            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:HideNumberFieldUsingCurrencyFieldValueByProvidingNameOfField        | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Number                                                                               | CI-0023            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Written                                                                              | CI-0018            |                           |                            |
+      | Capture Item:General  | Question Identifier     | a4Cg0000000MoY4                                                                      | CI-0036            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:HideWrittenNumberFieldUsingCurrencyFieldValueByProvidingNameOfField | CI-0036            |                           |                            |
+      | Capture Item:General  | Question Identifier     | a4Cg0000000MoYE                                                                      | CI-0038            |                           |                            |
+      | Capture Item:General  | Question Identifier     | a4Cg0000000MoXz                                                                      | CI-0035            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form 1" inside table
+    Then I softly do not see "Written" inside "Section 1" at dynamic form
+    Then I softly do not see "Number" inside "Section 1" at dynamic form
+    Then I softly do not see "Written Section 3" inside "Section 3" at dynamic form
+    Then I softly do not see "Number Section 3" inside "Section 3" at dynamic form
+
+  @100128   @validateDependentQuestionJsonFieldByDisablingCurrencyFieldFromMultipleSectionsUsingWrittenFieldValueInsideDynamicFormInViewMode
+  Scenario: validate Dependent Question Json Field by disabling currency from section 1 and section 3 on the basis of written field value in form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:3 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:4 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Written                                                                           | CI-0018            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:DisableCurrencyFieldUsingWrittenFieldValueByProvidingNameOfField | CI-0018            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                                          | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | a4Cg0000000MoXz                                                                   | CI-0035            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:DisableCurrencyFieldUsingWrittenFieldValueByProvidingIdOfField   | CI-0035            |                           |                            |
+      | Capture Item:General  | Question Identifier     | a4Cg0000000MoY4                                                                   | CI-0036            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form 1" inside table
+    Then I softly see "Currency" inside "Section 1" at dynamic form
+    Then I softly see "Currency Section 3" inside "Section 3" at dynamic form

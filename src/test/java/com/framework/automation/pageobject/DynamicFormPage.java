@@ -182,6 +182,16 @@ public class DynamicFormPage extends GovGrantsManager {
         return I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//h3//a[contains(@title,'Section 1')]/ancestor::div[2]/following-sibling::div//*[contains(@class,'textFieldWrap')]//dt//span"));
     }
 
+    /**
+     * assert true if form is displayed in view/edit mode
+     *
+     * @param displayMode
+     * @author - ashwini.mahore
+     */
+    public void assertFormDisplayedInViewOrEditMode(String displayMode) {
+        Assert.assertTrue(isFormDisplayedInViewOrEditMode(displayMode));
+    }
+
     /*********
      * "Local Methods with complete functionality - private"
      *****************/
@@ -343,6 +353,20 @@ public class DynamicFormPage extends GovGrantsManager {
         boolean flag = false;
         WebElement getRadioButtonsAtFields = I.amPerforming().getElementReference().of(By.xpath("//span[text()='Radio']/../following-sibling::dd//td//label[" + I.amPerforming().sanityOfXpathTo().equals("text()", radioButtonName) + "]"));
         if (getRadioButtonsAtFields.isDisplayed()) {
+            return true;
+        }
+        return flag;
+    }
+
+    /**
+     * assert true if form is displayed in view or edit mode at layout
+     *
+     * @param displayMode
+     * @author - ashwini.mahore
+     */
+    private boolean isFormDisplayedInViewOrEditMode(String displayMode) {
+        boolean flag = false;
+        if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@class='panel-body']//span[contains(@id,'" + displayMode + "')]"))) {
             return true;
         }
         return flag;
