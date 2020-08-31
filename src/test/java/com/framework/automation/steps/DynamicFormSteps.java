@@ -74,4 +74,9 @@ public class DynamicFormSteps {
     public void iSeeRadioButtonAsAtFieldOnFormLayout(String usage, String radioButtonName, String fieldName) {
         dynamicFormPage.assertRadioButtonInFormLayout(usage, radioButtonName, fieldName);
     }
+
+    @Then("I see {string} is displayed at detail page")
+    public void iSeeIsDisplayedAtDetailPage(String displayMode) {
+        dynamicFormPage.assertFormDisplayedInViewOrEditMode(displayMode);
+    }
 }
