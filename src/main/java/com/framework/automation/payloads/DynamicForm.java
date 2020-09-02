@@ -1,5 +1,8 @@
 package com.framework.automation.payloads;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class DynamicForm {
     private String payloadForStringValue = "{\"sObjectAPIName\" : \"%s\",\"fieldMapStr\" : \"{\\\"Id\\\":\\\"%s\\\",\\\"%s\\\":\\\"%s\\\"}\"}";
     private String payloadForIntValue = "{\"sObjectAPIName\" : \"%s\",\"fieldMapStr\" : \"{\\\"Id\\\":\\\"%s\\\",\\\"%s\\\":%s}\"}";
@@ -20,6 +23,8 @@ public class DynamicForm {
      */
     public String setDynamicFormCaptureFormConfig(String fieldLabel, String value, String filterClause) {
         String finalPayload = null;
+        Pattern p = Pattern.compile("([0-9])");
+        Matcher m = p.matcher(value);
         switch (fieldLabel.toUpperCase()) {
             case "FORM INSTRUCTION":
                 finalPayload = String.format(payloadForStringValue,
@@ -41,6 +46,36 @@ public class DynamicForm {
                         apiUtilities.getComponentCoreFieldId(
                                 String.valueOf(SObjectAPIs.GNT__CaptureForm__c), filterClause),
                         String.valueOf(SObjectAPIs.GNT__Name__c), value);
+                break;
+            case "HIDE PDF DOWNLOAD":
+                if (m.find() || (value.contains("true")) || (value.contains("false"))) {
+                    finalPayload = String
+                            .format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__CaptureForm__c),
+                                    apiUtilities.getComponentCoreFieldId(
+                                            String.valueOf(SObjectAPIs.GNT__CaptureForm__c), filterClause),
+                                    String.valueOf(SObjectAPIs.GNT__HidePDFDownload__c), value);
+                } else {
+                    finalPayload = String
+                            .format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__CaptureForm__c),
+                                    apiUtilities.getComponentCoreFieldId(
+                                            String.valueOf(SObjectAPIs.GNT__CaptureForm__c), filterClause),
+                                    String.valueOf(SObjectAPIs.GNT__HidePDFDownload__c), value);
+                }
+                break;
+            case "SKIP PDF DEFAULT THEME":
+                if (m.find() || (value.contains("true")) || (value.contains("false"))) {
+                    finalPayload = String
+                            .format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__CaptureForm__c),
+                                    apiUtilities.getComponentCoreFieldId(
+                                            String.valueOf(SObjectAPIs.GNT__CaptureForm__c), filterClause),
+                                    String.valueOf(SObjectAPIs.GNT__SkipPDFDefaultTheme__c), value);
+                } else {
+                    finalPayload = String
+                            .format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__CaptureForm__c),
+                                    apiUtilities.getComponentCoreFieldId(
+                                            String.valueOf(SObjectAPIs.GNT__CaptureForm__c), filterClause),
+                                    String.valueOf(SObjectAPIs.GNT__SkipPDFDefaultTheme__c), value);
+                }
                 break;
         }
         System.out.println(finalPayload);

@@ -41,6 +41,19 @@ public class DynamicFormPage extends GovGrantsManager {
     }
 
     /**
+     * click on any button on right header inside modal window with overview header at dynamic form etc.
+     *
+     * @param actionName
+     * @param modalOverviewHeader
+     * @author - ashwini.mahore
+     */
+    public void performClickOnModalActionButton(String actionName, String modalOverviewHeader) {
+        By getToRightButtonAtModalWithOverviewHeader = By.xpath("//b[text()='" + modalOverviewHeader + "']/ancestor::div//*[@title='" + actionName + "']");
+        I.amPerforming().click().on(getToRightButtonAtModalWithOverviewHeader);
+    }
+
+
+    /**
      * assert true if expected value is displayed in respective field at dynamic form layout
      *
      * @param fieldName
@@ -190,6 +203,17 @@ public class DynamicFormPage extends GovGrantsManager {
      */
     public void assertFormDisplayedInViewOrEditMode(String displayMode) {
         Assert.assertTrue(isFormDisplayedInViewOrEditMode(displayMode));
+    }
+
+    /**
+     * assert true if action button with overview header is not displayed inside dynamic form modal like Menu
+     *
+     * @param actionName
+     * @param modalOverviewHeader
+     * @author - ashwini.mahore
+     */
+    public void assertTopRightActionsAtModalWindowWithOverviewHeader(String actionName, String modalOverviewHeader) {
+        Assert.assertTrue(isTopRightActionsDisplayedAtModalWindowWithOverviewHeader(actionName, modalOverviewHeader));
     }
 
     /*********
@@ -367,6 +391,23 @@ public class DynamicFormPage extends GovGrantsManager {
     private boolean isFormDisplayedInViewOrEditMode(String displayMode) {
         boolean flag = false;
         if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@class='panel-body']//span[contains(@id,'" + displayMode + "')]"))) {
+            return true;
+        }
+        return flag;
+    }
+
+    /**
+     * assert true if action button with overview header is not displayed inside dynamic form modal like Menu
+     *
+     * @param actionName
+     * @param modalOverviewHeader
+     * @author - ashwini.mahore
+     */
+    private boolean isTopRightActionsDisplayedAtModalWindowWithOverviewHeader(String actionName, String modalOverviewHeader) {
+        TestingBlazeGlobal.setVariable("highlightElements", "off");
+        boolean flag = false;
+        WebElement getTopRightActions = I.amPerforming().getElementReference().of(By.xpath("//b[text()='" + modalOverviewHeader + "']/ancestor::div//*[@title='" + actionName + "']/ancestor::div[@class='dropdown']"));
+        if (getTopRightActions.getAttribute("style").contains("visibility: hidden")) {
             return true;
         }
         return flag;

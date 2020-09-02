@@ -1,4 +1,4 @@
-@allPdfAndXlxRelatedScenarios @regression @wip
+@allPdfAndXlxRelatedScenarios @regression @skipOnJenkins
 Business Need: All pdf and xls related scenario including component and completed backlogs
   Test all download pdf and xls based scenarios
   As a configuration manager i make different configurational changes for download pdf and xls related scenarios and will validate them.
@@ -1943,3 +1943,16 @@ Business Need: All pdf and xls related scenario including component and complete
     And I select "Download as PDF" from parallel lines dropdown of "Active Awards"
     And I download the file
     Then I see "Active Awards" on page "1" of "govgrants" pdf file
+
+  @100659    @validateFormatOfCurrencyFieldValueWithDollarSymbolInsideDownloadedPDFAtPageBlockDetail-gPlanning @pageLayout
+  Scenario: validate format of currency field value with $ symbol inside program detail page
+   When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see "($500,000)" on page "1" of "govgrants" pdf file

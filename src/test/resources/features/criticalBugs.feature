@@ -4004,7 +4004,7 @@ Business Need: Logged Issues Scenarios
       | Total Awarded Amount | greater than | $50,000.00 |
     Then I see value "$52,000.00" for title "Total Awarded Amount" inside table "---program:-:tmpGrantorActiveAwardsGridTableId---"
 
-  @97710    @validateQuickSearchBehaviourAtFlexTable-gPlanning
+  @97710    @validateQuickSearchBehaviourAtFlexTable-gPlanning @flexTable
   Scenario: validate quick search behaviour at flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -4032,7 +4032,7 @@ Business Need: Logged Issues Scenarios
     And I navigate to "Planning" tab
     Then I see "fa fa-home" icon displayed at "My Tasks" accordion header
 
-  @97756    @enablePaginationFieldAtApplicationBudgetPeriodMEGridParentFlexTable-gApplication
+  @97756    @enablePaginationFieldAtApplicationBudgetPeriodMEGridParentFlexTable-gApplication @flexGrid
   Scenario: validate enabling of page size dropdown at bottom in ME Grid parent flex table at application phase
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -4065,7 +4065,7 @@ Business Need: Logged Issues Scenarios
       | miniPageLayout_Text            |
       | Department of Community Health |
 
-  @97758    @disablePaginationFieldAtApplicationBudgetPeriodMEGridParentFlexTable-gApplication
+  @97758    @disablePaginationFieldAtApplicationBudgetPeriodMEGridParentFlexTable-gApplication @flexGrid
   Scenario: validate disable of page size dropdown at bottom in ME Grid parent flex table at application phase
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -4081,7 +4081,7 @@ Business Need: Logged Issues Scenarios
     When I navigate to "Budget" sub tab
     Then I do not see "Page" with pagination arrow at "---program:-:applicationBudgetCategoryFlexGridTableId---"
 
-  @97682    @enablingQuickSearchFromConfigAndFromCustomSetting-gPlanning
+  @97682    @enablingQuickSearchFromConfigAndFromCustomSetting-gPlanning @flexTable
   Scenario: validate enabling of quick search in flex table of programs from custom setting config-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -4101,7 +4101,7 @@ Business Need: Logged Issues Scenarios
     And I click toggle button to select "Draft Programs"
     Then I see quick search option is displayed
 
-  @97688    @disableQuickSearchFromConfigAndFromCustomSetting-gPlanning
+  @97688    @disableQuickSearchFromConfigAndFromCustomSetting-gPlanning @flexTable
   Scenario: validate disable of quick search in flex table of programs from custom setting config-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -4121,8 +4121,8 @@ Business Need: Logged Issues Scenarios
     And I click toggle button to select "Draft Programs"
     Then I do not see quick search option is displayed
 
-  @98002    @validateThatAfterInlineEditingRecordAtMeGridARecordIsGettingSavedAndLoadingIconIsNotDisplayed
-  Scenario: validate after inline editing record at me grid a record is getting saved and loading icon is not displayed
+  @98002    @validateThatAfterInlineAddingRecordAtMeGridARecordIsGettingSavedAndLoadingIconIsNotDisplayed @flexGrid
+  Scenario: validate after inline adding new record at me grid a record is getting saved and loading icon is not displayed
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -4136,7 +4136,7 @@ Business Need: Logged Issues Scenarios
     Then I see the following messages in the page details :
       | Record Saved Successfully. |
 
-  @99094    @validateQuickSearchRefreshBehaviourAtParentFlexTableForEnhancedGridAtSideBar-gHOME
+  @99094    @validateQuickSearchRefreshBehaviourAtParentFlexTableForEnhancedGridAtSideBar-gHOME @sidebar
   Scenario: validate quick search refresh behaviour at enhanced grid at sidebar - home phase
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -4147,7 +4147,7 @@ Business Need: Logged Issues Scenarios
     And I select "Refresh" from parallel lines dropdown of "Monitoring Schedule For All Active Grants"
     Then I see "Page" with pagination arrow at "---program:-:flexGridEnhancedTableId---"
 
-  @98282    @validateQuickSearchRefreshBehaviourAtParentFlexTableForEnhancedGridAtSideBar-gHOME
+  @98282    @validateQuickSearchRefreshBehaviourAtParentFlexTableForEnhancedGridAtSideBar-gHOME @sidebar
   Scenario: validate quick search refresh behaviour at enhanced grid at sidebar - home phase
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -4155,7 +4155,7 @@ Business Need: Logged Issues Scenarios
     When I navigate to "Flex Grid Enhanced" content inside "Manage Organizations" subheader on left panel
     Then I see expected table with id "---program:-:tmpActiveGrantsGridTableId---"
 
-  @100014   @verifyLookupFieldSearchBoxIsDisplayedAtEnhancedGridWhileCreatingNewRecord-gPlanning
+  @100014   @verifyLookupFieldSearchBoxIsDisplayedAtEnhancedGridWhileCreatingNewRecord-gPlanning @enhancedGrid
   Scenario: validate lookup field search box is displayed at enhanced grid while creating new record - gplanning
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -4167,7 +4167,7 @@ Business Need: Logged Issues Scenarios
     When I click on top right button "New" in flex table with id "---program:-:flexGridEnhancedID---"
     Then I see "InternalOrganization__c" field is editable inside enhanced grid
 
-  @99984   @verifyLookupFieldSearchBoxIsDisplayedAtEnhancedGridAtSidebar-gHome
+  @99984   @verifyLookupFieldSearchBoxIsDisplayedAtEnhancedGridAtSidebar-gHome @sidebar
   Scenario: validate lookup field search box is displayed at enhanced grid at sidebar - gHome
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -4177,7 +4177,7 @@ Business Need: Logged Issues Scenarios
     When I click on "Edit" icon for "Demo_Title" inside table
     Then I see "InternalOrganization__c" field is editable inside enhanced grid
 
-  @97931   @verifyClickOnPageNavigationArrowAtMeGridASecondPageIsDisplayed-gApplications
+  @97931   @verifyClickOnPageNavigationArrowAtMeGridASecondPageIsDisplayed-gApplications @flexGrid
   Scenario: validate 2nd page is displayed by click on page navigation arrow at me grid - gApplications
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -4187,3 +4187,70 @@ Business Need: Logged Issues Scenarios
     When I navigate to "Budget" sub tab
     And I click on page navigation arrow "---program:-:applicationBudgetCategoryInlineEditTableId---" for table id "Next"
     Then I see "Page 2" with pagination arrow at "---program:-:applicationBudgetCategoryFlexGridTableId---"
+
+  @91800    @VerifyOverallTotalIsNotDisplayedAtChildFlexTableInsideMEGrid-gGrant @flexGrid
+  Scenario Outline: Validating overall total is not displayed at child flex table under ME Grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table:General    | Enable Total Row    | true               | ApiGeneratedId:0 |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Total Row    | false          | ApplicationBudgetCategoryFlexTable |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetCategoryFlexTable |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-02" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "BP-02"
+    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    Then I do not see default total at "---program:-:applicationBudgetCategoryFlexGridTableId---" flex grid
+
+    Examples:
+      | defaultFieldsApi                                                                                     | newFieldsApi                                              |
+      | Id,ServiceAreaTitle__c,BudgetCategory__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c | Id,ServiceAreaTitle__c,BudgetCategory__c,GrantorAmount__c |
+
+  @98008    @validateThatAfterInlineEditingRecordAtMeGridARecordIsGettingSavedAndLoadingIconIsNotDisplayed @flexGrid
+  Scenario: validate after inline editing record at me grid a record is getting saved and loading icon is not displayed
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "AP-755-214"
+    When I click on "View" icon for "AP-755-214" inside table
+    When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I click on "Edit" icon for "BP-01" inside table
+    When I click on top right button "Save" in flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---"
+    And I pause execution for "3" seconds
+    Then I see loader at "Application Budget" list view is not displayed
+
+  @100657    @validateCurrencyFieldValueWithDollarSignIsDisplayProperlyAtPageBlockDetailInViewMode @pageLayout
+  Scenario: Validate currency field value is displayed with $ sign inside page block detail in view mode
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I enter value "-500000" into field "ExpectedFunding__c"
+    And I click on "Save" in the page details
+    Then I see field "Expected Future Funding" as "($500,000)"
+
+  @100658    @validateCurrencyFieldValueWithDollarSignIsDisplayProperlyAtPageBlockDetailInEditMode @pageLayout
+  Scenario: Validate currency field value is displayed with $ sign inside page block detail in edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Read Only | false             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Read Only | true          | Grantee State Program | Name                      | PBD-688                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    Then I see field "Expected Future Funding" as "($500,000)"

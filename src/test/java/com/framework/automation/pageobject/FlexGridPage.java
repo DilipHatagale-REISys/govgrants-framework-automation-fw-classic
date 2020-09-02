@@ -299,6 +299,15 @@ public class FlexGridPage extends GovGrantsManager {
         Assert.assertTrue(isTextDisplayedCentrallyAlignedAtBottomOfTable(tableId, isParent));
     }
 
+    /**
+     * assert true if loader is not displayed at flex table list view
+     *
+     * @param listView
+     */
+    public void assertLoaderAtFlexTableListView(String listView) {
+        Assert.assertTrue(isLoaderDisplayedAtFlexTableListView(listView));
+    }
+
     /*********
      * "Local Methods with complete functionality - private"
      *****************/
@@ -586,7 +595,7 @@ public class FlexGridPage extends GovGrantsManager {
     private Boolean isDefaultTotalDisplayedAtFlexGrid(String tableId) {
         boolean flag = false;
         By enableTotalSumValueForTargetColumn = By.xpath("//div[@id='" + tableId + "']//b[@class='totalFullDisplayFlex']//span |" +
-                "//div[@id='" + tableId + "']//tbody//tfoot");
+                "//div[@id='" + tableId + "']//tbody//tfoot//tr");
         try {
             if (I.amPerforming().checkToSee().isDisplayed(enableTotalSumValueForTargetColumn)) {
                 flag = true;
@@ -658,6 +667,23 @@ public class FlexGridPage extends GovGrantsManager {
             }
         } else if (getTotalRecordCountFromChildFooter.getCssValue("text-align").equalsIgnoreCase("center")) {
             return true;
+        }
+        return flag;
+    }
+
+    /**
+     * @return true if loader is not displayed at flex table list view
+     * @param listView
+     *
+     * @author ashwini.mahore
+     */
+    private Boolean isLoaderDisplayedAtFlexTableListView(String listView) {
+        boolean flag = true;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//a[text()='"+listView+"']/following-sibling::span//img[@alt='loading Icon']"))) {
+                flag = false;
+            }
+        } catch (Exception e) {
         }
         return flag;
     }

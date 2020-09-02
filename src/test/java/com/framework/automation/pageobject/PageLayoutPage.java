@@ -81,21 +81,17 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
-     * assert download pdf option not displayed inside menu dropdown for program
-     * detail page
-     */
-    public void assertDownloadPDFDisabled() {
-        Assert.assertTrue(isOptionsDownloadPDFDisabled());
-    }
-
-    /**
-     * assert take snapshot option not displayed inside menu dropdown for program
-     * detail page
+     * assert if options displayed or not displayed inside menu dropdown for page layout
      *
-     * @param option
+     * @param options
+     * @modifier: ashwini.mahore
      */
-    public void assertTakeSnapshotDisabled(String option) {
-        Assert.assertTrue(isTakeSnapshotDisabled(option));
+    public void assertTopRightParallelLinesBarOptionsAtPageLayout(String usage, String options) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isTopRightParallelLinesBarOptionsAtPageLayoutDisplayed(options));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isTopRightParallelLinesBarOptionsAtPageLayoutDisplayed(options));
+        }
     }
 
     /**
@@ -710,8 +706,8 @@ public class PageLayoutPage extends GovGrantsManager {
      *
      * @return
      */
-    public WebElement getPDFOptionForVerification() {
-        return I.amPerforming().getElementReference().of(By.cssSelector(".dropdown.open>.dropdown-menu-right>li:nth-child(8)"));
+    public WebElement getPDFOptionForVerification(String options) {
+        return I.amPerforming().getElementReference().of(By.xpath("//ul[@aria-labelledby='dropdownMenu1']//*[@title='" + options + "']/ancestor::li"));
     }
 
     /**
@@ -1167,39 +1163,19 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
-     * validate if options are not displayed in Detail page
-     *
-     * @return: true if it is not displayed
+     * @param options
+     * @return: if options displayed or not displayed inside menu dropdown for page layout
+     * @modifier - ashwini.mahore
      */
-    private boolean isOptionsDownloadPDFDisabled() {
+    private boolean isTopRightParallelLinesBarOptionsAtPageLayoutDisplayed(String options) {
         TestingBlazeGlobal.setVariable("highlightElements", "off");
-        boolean flag = false;
-        try {
-            if (getPDFOptionForVerification().getAttribute("style").toLowerCase().contains("display: none")) {
-                flag = true;
-            }
-        } catch (Exception e) {
-            flag = false;
-        }
-        return flag;
-    }
+        boolean flag = true;
 
-    /**
-     * validate if options are not displayed in Detail page
-     *
-     * @param option
-     * @return: true if it is not displayed
-     */
-    private boolean isTakeSnapshotDisabled(String option) {
-        TestingBlazeGlobal.setVariable("highlightElements", "off");
-        boolean flag = false;
-        try {
-            if (getTakeSnapshotOptionForVerification(option).getAttribute("style").toLowerCase()
-                    .contains("display: none")) {
-                flag = true;
-            }
-        } catch (Exception e) {
+        if (getPDFOptionForVerification(options).getAttribute("style").toLowerCase().contains("display: none")) {
             flag = false;
+
+        } else if (getPDFOptionForVerification(options).isDisplayed()) {
+            flag = true;
         }
         return flag;
     }

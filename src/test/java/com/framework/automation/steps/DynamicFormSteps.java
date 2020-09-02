@@ -20,6 +20,11 @@ public class DynamicFormSteps {
         dynamicFormPage.getButtonsOnDynamicform(footerButtonName);
     }
 
+    @When("I click on {string} action at the {string} modal")
+    public void iClickOnActionAtTheModal(String actionName, String modalOverviewHeader) {
+        dynamicFormPage.performClickOnModalActionButton(actionName, modalOverviewHeader);
+    }
+
     @Then("^I see for \"([^\"]*)\" field value is \"([^\"]*)\" inside dynamic form$")
     public void fieldValueInsideDynamicForm(String fieldName, String fieldValue) {
         dynamicFormPage.assertFieldValueInsideDynamicForm(fieldName, fieldValue);
@@ -78,5 +83,10 @@ public class DynamicFormSteps {
     @Then("I see {string} is displayed at detail page")
     public void iSeeIsDisplayedAtDetailPage(String displayMode) {
         dynamicFormPage.assertFormDisplayedInViewOrEditMode(displayMode);
+    }
+
+    @Then("^I see \"([^\"]*)\" action is not displayed at the \"([^\"]*)\" modal$")
+    public void iSeeActionIsNotDisplayedAtTheModal(String actionName, String modalOverviewHeader) {
+        dynamicFormPage.assertTopRightActionsAtModalWindowWithOverviewHeader(actionName,modalOverviewHeader);
     }
 }

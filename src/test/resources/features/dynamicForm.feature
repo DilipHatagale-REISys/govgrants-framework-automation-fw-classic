@@ -4286,3 +4286,257 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I softly see "Currency" inside "Section 1" at dynamic form
     Then I softly see "Currency Section 3" inside "Section 3" at dynamic form
+
+  @100446    @validateEnablePdfDownloadFromMenuFromDynamicFormLayoutViewMode
+  Scenario: validating Download as pdf option is displayed inside burger menu at dynamic form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Capture Form          | Hide Pdf Download | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Hide Pdf Download | false         | CF-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Menu" in the page details
+    Then I see "Download as PDF" options is displayed
+
+  @100450    @validateDisablingOfPdfDownloadFromMenuFromDynamicFormLayout
+  Scenario: validating Download as pdf option is not displayed inside burger menu at dynamic form
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Capture Form          | Hide Pdf Download | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Hide Pdf Download | true          | CF-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    Then I see "Menu" action is not displayed at the "Dynamic Form" modal
+
+  @100451    @validateEnablePdfDownloadFromMenuFromDynamicFormLayoutEditMode
+  Scenario: validating Download as pdf option is not displayed inside burger menu at dynamic form edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Capture Form          | Hide Pdf Download | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Hide Pdf Download | false         | CF-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    Then I see "Save" button is displayed
+
+  @100456    @validateEnablingOfPdfDownloadFromMenuFromDynamicFormViewModalWindow
+  Scenario Outline: validating Download as pdf option is displayed inside burger menu at dynamic form view modal window
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue | filterId         |
+      | Capture Form          | Hide Pdf Download | false                   |                    |                           |                            | ApiGeneratedId:0 |
+      | Flex Table Action     | Action URL Long   | <actionUrlLongOldValue> | DynamicFormTable   | Name                      | View                       |                  |
+      | Flex Table Action     | Where To Open ?   | NewTab                  | DynamicFormTable   | Name                      | View                       |                  |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Hide Pdf Download | false                   | CF-0000            |                           |                            |
+      | Flex Table Action     | Action URL Long   | <actionUrlLongNewValue> | DynamicFormTable   | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?   | Modal                   | DynamicFormTable   | Name                      | View                       |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Menu" action at the "Dynamic Form" modal
+    Then I see "Download as PDF" options is displayed
+
+    Examples:
+      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
+      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalView |
+
+  @100460    @validateDisablingOfPdfDownloadOptionAtDynamicFormViewModalWindow
+  Scenario Outline: validating Menu button for Download as pdf option is not displayed inside burger menu at dynamic form view modal window
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue | filterId         |
+      | Capture Form          | Hide Pdf Download | false                   |                    |                           |                            | ApiGeneratedId:0 |
+      | Flex Table Action     | Action URL Long   | <actionUrlLongOldValue> | DynamicFormTable   | Name                      | View                       |                  |
+      | Flex Table Action     | Where To Open ?   | NewTab                  | DynamicFormTable   | Name                      | View                       |                  |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Hide Pdf Download | true                    | CF-0000            |                           |                            |
+      | Flex Table Action     | Action URL Long   | <actionUrlLongNewValue> | DynamicFormTable   | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?   | Modal                   | DynamicFormTable   | Name                      | View                       |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    Then I see "Menu" action is not displayed at the "Dynamic Form" modal
+
+    Examples:
+      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
+      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalView |
+
+  @100462    @validateDisablingOfPdfDownloadFromMenuFromDynamicFormEditModalWindow
+  Scenario Outline: validating Menu button for Download as pdf option is not displayed inside burger menu at dynamic form edit modal window
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue | filterId         |
+      | Capture Form          | Hide Pdf Download | false                   |                    |                           |                            | ApiGeneratedId:0 |
+      | Flex Table Action     | Action URL Long   | <actionUrlLongOldValue> | DynamicFormTable   | Name                      | Edit                       |                  |
+      | Flex Table Action     | Where To Open ?   | NewTab                  | DynamicFormTable   | Name                      | Edit                       |                  |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Hide Pdf Download | false                   | CF-0000            |                           |                            |
+      | Flex Table Action     | Action URL Long   | <actionUrlLongNewValue> | DynamicFormTable   | Name                      | Edit                       |
+      | Flex Table Action     | Where To Open ?   | Modal                   | DynamicFormTable   | Name                      | Edit                       |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    Then I see "Save" button is displayed
+
+    Examples:
+      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
+      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=Edit | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalEdit |
+
+  @100463    @validateByClickOnDowloadAtPDFItIsGettingOpenedInNewTabAtDynamicFormLayoutViewMode
+  Scenario: validate by click on download as pdf it is getting open in new tab at dynamic form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Capture Form          | Hide Pdf Download | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Hide Pdf Download | false         | CF-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see new tab is opened
+
+  @100486    @validateDownloadAsPDFIfSkipPDFDefaultThemeCheckBoxIsCheckedAtDynamicFormModalViewMode
+  Scenario Outline: validate by download as pdf if skip default theme checkbox is checked at dynamic form modal view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue | filterId         |
+      | Capture Form          | Hide Pdf Download      | false                   |                    |                           |                            | ApiGeneratedId:0 |
+      | Capture Form          | Skip PDF Default Theme | false                   |                    |                           |                            | ApiGeneratedId:1 |
+      | Flex Table Action     | Action URL Long        | <actionUrlLongOldValue> | DynamicFormTable   | Name                      | View                       |                  |
+      | Flex Table Action     | Where To Open ?        | NewTab                  | DynamicFormTable   | Name                      | View                       |                  |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Hide Pdf Download      | false                   | CF-0000            |                           |                            |
+      | Capture Form:General  | Skip PDF Default Theme | true                    | CF-0000            |                           |                            |
+      | Flex Table Action     | Action URL Long        | <actionUrlLongNewValue> | DynamicFormTable   | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?        | Modal                   | DynamicFormTable   | Name                      | View                       |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Menu" action at the "Dynamic Form" modal
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see "Dynamic Form" on page "1" of "govgrants" pdf file
+
+    Examples:
+      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
+      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalView |
+
+  @100489    @validateDownloadAsPDFIfSkipPDFDefaultThemeCheckBoxIsCheckedAtDynamicFormLayoutViewMode
+  Scenario: validate by download as pdf if skip default theme checkbox is checked at dynamic form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Capture Form          | Hide Pdf Download      | false             | ApiGeneratedId:0 |
+      | Capture Form          | Skip PDF Default Theme | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Hide Pdf Download      | false         | CF-0000            |                           |                            |
+      | Capture Form:General  | Skip PDF Default Theme | true          | CF-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see "Dynamic Form" on page "1" of "govgrants" pdf file
+
+  @100127   @validateDependentQuestionJsonFieldByMakingNumberAndWrittenFieldAsRequiredFromMultipleSectionsUsingCurrencyFieldValueInsideDynamicFormInEditMode
+  Scenario: validate Dependent Question Json Field by making number and written as req from section 1 and section 3 on the basis of currency field value in form edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:3 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:4 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:5 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:6 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:7 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                                        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Currency                                                                                             | CI-0022            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:ShowReqWrittenAndNumberFieldUsingCurrencyFieldValueAtSection1ByProvidingNameOfField | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Number                                                                                               | CI-0023            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Written                                                                                              | CI-0018            |                           |                            |
+      | Capture Item:General  | Question Identifier     | a4Cg0000000MoY4                                                                                      | CI-0036            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:ShowReqWrittenAndNumberFieldCurrencyFieldValueAtSection3ByProvidingNameOfField      | CI-0036            |                           |                            |
+      | Capture Item:General  | Question Identifier     | a4Cg0000000MoYE                                                                                      | CI-0038            |                           |                            |
+      | Capture Item:General  | Question Identifier     | a4Cg0000000MoXz                                                                                      | CI-0035            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    When I enter values into "Section 1" page block
+      | Field   | Value |
+      | Written |       |
+      | Number  |       |
+    When I enter values into "Section 3" page block
+      | Field             | Value |
+      | Written Section 3 |       |
+      | Number Section 3  |       |
+    When I click on "Save" in the page details
+    Then I see the following message in the page details :
+      | Written is Required to save under Section 1.           |
+      | Number is Required to save under Section 1.            |
+      | Written Section 3 is Required to save under Section 3. |
+      | Number Section 3 is Required to save under Section 3.  |
