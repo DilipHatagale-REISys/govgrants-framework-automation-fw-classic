@@ -161,4 +161,9 @@ public class FlexGridSteps {
     public void iSeeIsCentrallyAlignedAtBottomOfTable(String tableId, String tableType) {
         flexGridPage.assertTextIsCentrallyAlignedAtBottomOfTable(tableId, tableId.equalsIgnoreCase("parent"));
     }
+
+    @Then("I see loader at {string} list view is not displayed")
+    public void iSeeLoaderAtListViewIsNotDisplayed(String listView) {
+        flexGridPage.assertLoaderAtFlexTableListView(listView);
+    }
 }

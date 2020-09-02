@@ -176,14 +176,9 @@ public class PageLayoutSteps {
         pageLayoutPage.assertTopRightButtonNotDisplayed(buttonName);
     }
 
-    @Then("^I see Download as PDF options disabled$")
-    public void assertPDFDownloadOptionsDisabled() {
-        pageLayoutPage.assertDownloadPDFDisabled();
-    }
-
-    @Then("^I see \"([^\"]*)\" options disabled$")
-    public void assertTopRightParallelLinesBarOptionsDisabled(String option) {
-        pageLayoutPage.assertTakeSnapshotDisabled(option);
+    @Then("^I (see|do not see) \"([^\"]*)\" options is displayed")
+    public void assertTopRightParallelLinesBarOptionsAtPageLayout(String usage, String options) {
+        pageLayoutPage.assertTopRightParallelLinesBarOptionsAtPageLayout(usage, options);
     }
 
     @Then("^I see prompt For automation is displayed$")

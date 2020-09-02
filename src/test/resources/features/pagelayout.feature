@@ -120,7 +120,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I click on "Menu" in the page details
-    Then I see Download as PDF options disabled
+    Then I do not see "Download as PDF" options is displayed
 
   @34046    @HideTakeSnapshotFromMenuForMainPageLayout-gPlanning
   Scenario: Disabling of Take snapshot option from configuration and validating it from menu dropdown inside program detail page
@@ -137,7 +137,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I click on "Menu" in the page details
-    Then I see "Take Snapshot" options disabled
+    Then I do not see "Take Snapshot" options is displayed
 
   @34055    @enablePromptInputDialog-gPlanning
   Scenario: Enable prompt input box for Submit for approval button configuration and validating it for Created status view icon
