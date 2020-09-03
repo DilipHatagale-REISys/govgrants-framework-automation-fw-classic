@@ -21,8 +21,8 @@ public class DynamicFormSteps {
     }
 
     @When("I click on {string} action at the {string} modal")
-    public void iClickOnActionAtTheModal(String actionName, String modalOverviewHeader) {
-        dynamicFormPage.performClickOnModalActionButton(actionName, modalOverviewHeader);
+    public void iClickOnActionAtTheDynamicFormModal(String actionName, String modalOverviewHeader) {
+        dynamicFormPage.performClickOnModalActionButtonAtDynamicForm(actionName, modalOverviewHeader);
     }
 
     @Then("^I see for \"([^\"]*)\" field value is \"([^\"]*)\" inside dynamic form$")
