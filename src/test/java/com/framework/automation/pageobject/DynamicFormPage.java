@@ -47,7 +47,7 @@ public class DynamicFormPage extends GovGrantsManager {
      * @param modalOverviewHeader
      * @author - ashwini.mahore
      */
-    public void performClickOnModalActionButton(String actionName, String modalOverviewHeader) {
+    public void performClickOnModalActionButtonAtDynamicForm(String actionName, String modalOverviewHeader) {
         By getToRightButtonAtModalWithOverviewHeader = By.xpath("//b[text()='" + modalOverviewHeader + "']/ancestor::div//*[@title='" + actionName + "']");
         I.amPerforming().click().on(getToRightButtonAtModalWithOverviewHeader);
     }

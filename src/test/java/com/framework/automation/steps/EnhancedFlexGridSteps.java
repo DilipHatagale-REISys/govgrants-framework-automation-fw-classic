@@ -159,11 +159,6 @@ public class EnhancedFlexGridSteps {
         enhancedFlexGrid.assertTextInputBoxForIdColumnNotDisplayed();
     }
 
-    @Then("^I (see|softly see) \"([^\"]*)\" inside rows of enhanced grid id \"([^\"]*)\"$")
-    public void assertNewRowsWithTextAtParentFlexTable(String usage,String text, String tableId) {
-        enhancedFlexGrid.assertTextContainingRowAtParentFlexTabel(usage, text, tableId);
-    }
-
     @Then("^I see cell subtotal for \"([^\"]*)\" at enhanced grid$")
     public void assertCellValueAtNumberOfAwardsColumn(String fieldApiName) {
         enhancedFlexGrid.assertCellValueForNumberOfAwardsAtEnhancedGrid(fieldApiName);

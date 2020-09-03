@@ -166,4 +166,9 @@ public class FlexGridSteps {
     public void iSeeLoaderAtListViewIsNotDisplayed(String listView) {
         flexGridPage.assertLoaderAtFlexTableListView(listView);
     }
+
+    @Then("I see currency field value at {string} table is right aligned")
+    public void iSeeCurrencyFieldValuesAtTableAreRightAligned(String tableId) {
+        flexGridPage.assertCurrencyFieldValuesAreRightAlignedInsideFlexTable(tableId);
+    }
 }

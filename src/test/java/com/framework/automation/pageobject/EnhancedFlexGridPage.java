@@ -320,21 +320,6 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     }
 
     /**
-     * assert true if row having expected text in enhanced grid
-     */
-    public void assertTextContainingRowAtParentFlexTabel(String usage, String text, String tableId) {
-        /*try {
-            I.amPerforming().scroll().onPageToSpecificElement(completeTableRowOfEnhancedGrid);
-        } catch (Exception e) {
-        }*/
-        if (usage.equalsIgnoreCase("see")) {
-            Assert.assertTrue(isExpectedTextIsDisplayedAtParentFlexTabledRow(text, tableId));
-        } else if (usage.equalsIgnoreCase("softly see")) {
-            I.amPerforming().assertionsTo().assertThat(isExpectedTextIsDisplayedAtParentFlexTabledRow(text, tableId)).isTrue();
-        }
-    }
-
-    /**
      * return true if cell sum value is as expected for number of award column
      */
     public void assertCellValueForNumberOfAwardsAtEnhancedGrid(String fieldApiName) {
@@ -969,31 +954,6 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
             if (I.amPerforming().checkToSee().isDisplayed(idColumnForChildFlexTable)) {
                 flag = true;
             }
-        } catch (Exception e) {
-        }
-        return flag;
-    }
-
-    /**
-     * @return true if expected text is displayed inside enhanced grid rows
-     */
-    private Boolean isExpectedTextIsDisplayedAtParentFlexTabledRow(String text, String tableId) {
-        boolean flag = false;
-        try {
-            ArrayList<String> obtainedList = new ArrayList<>();
-            List<Elements> rows_table = govgrants.perform().flexTable().getCompleteTableRow(tableId);
-            for (Elements we : rows_table) {
-                obtainedList.add(we.getText());
-            }
-            for (int row = 0; row < obtainedList.size(); row++) {
-                if (obtainedList.get(row).contains(text)) {
-                    flag = true;
-                    break;
-                } else {
-                    flag = false;
-                }
-            }
-
         } catch (Exception e) {
         }
         return flag;

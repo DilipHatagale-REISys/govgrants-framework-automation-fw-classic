@@ -1946,7 +1946,7 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @100659    @validateFormatOfCurrencyFieldValueWithDollarSymbolInsideDownloadedPDFAtPageBlockDetail-gPlanning @pageLayout
   Scenario: validate format of currency field value with $ symbol inside program detail page
-   When I login as "Automation" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
