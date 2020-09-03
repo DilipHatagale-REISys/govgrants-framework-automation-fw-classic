@@ -308,6 +308,16 @@ public class FlexGridPage extends GovGrantsManager {
         Assert.assertTrue(isLoaderDisplayedAtFlexTableListView(listView));
     }
 
+    /**
+     * assert true if currency field values are displayed as right aligned inside ME Grid flex table
+     *
+     * @param tableId
+     * @author - ashwini.mahore
+     */
+    public void assertCurrencyFieldValuesAreRightAlignedInsideFlexTable(String tableId) {
+        Assert.assertTrue(isCurrencyFieldValueDisplayedRightAlignedInsideFlexTable(tableId));
+    }
+
     /*********
      * "Local Methods with complete functionality - private"
      *****************/
@@ -672,16 +682,33 @@ public class FlexGridPage extends GovGrantsManager {
     }
 
     /**
-     * @return true if loader is not displayed at flex table list view
      * @param listView
-     *
+     * @return true if loader is not displayed at flex table list view
      * @author ashwini.mahore
      */
     private Boolean isLoaderDisplayedAtFlexTableListView(String listView) {
         boolean flag = true;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//a[text()='"+listView+"']/following-sibling::span//img[@alt='loading Icon']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//a[text()='" + listView + "']/following-sibling::span//img[@alt='loading Icon']"))) {
                 flag = false;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * assert true if currency field values are displayed as right aligned inside ME Grid flex table
+     *
+     * @param tableId
+     * @author - ashwini.mahore
+     */
+    private Boolean isCurrencyFieldValueDisplayedRightAlignedInsideFlexTable(String tableId) {
+        boolean flag = false;
+        WebElement getCurrencyFieldValue = I.amPerforming().getElementReference().of(By.xpath("//div[@id='" + tableId + "']//td//span[contains(@class,'pull-right')]"));
+        try {
+            if (getCurrencyFieldValue.isDisplayed()) {
+                flag = true;
             }
         } catch (Exception e) {
         }

@@ -907,8 +907,8 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I click on "Save" in the page details
-    Then I see the following message in the page details :
-      | Program Sub Type is Required to save under Overview. |
+    Then I see the following message in the page details contains:
+      | Program Sub Type is required to save under Overview. |
 
   @36050    @attachementClassificationFieldAtPageBlock-gPlanning @smoke
   Scenario: Changing the values for Attachement classifications field from config and validating it at Program detail page
@@ -1589,8 +1589,8 @@ Business Need: Page Layout Component Scenarios
     When I enter value "   " into field "ProgramNameText__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
-    Then I see the following message in the page details :
-      | Program Name Text is Required to submit under Overview. |
+    Then I see the following message in the page details contains:
+      | Program Name Text is required to submit under Overview. |
 
   @53389    @requiredForSubmitBehaviourAtPageBlockDetailForOwnerOrganizationField-gPlanning
   Scenario: changing value of required behaviour and removing owner organization value and validating error message while submitting program for approval
@@ -1610,8 +1610,8 @@ Business Need: Page Layout Component Scenarios
     When I enter value "" into field "fieldAccount__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
-    Then I see the following message in the page details :
-      | Owner Organization is Required to submit under Overview. |
+    Then I see the following message in the page details contains:
+      | Owner Organization is required to submit under Overview. |
 
   @53390    @requiredForSubmitBehaviourAtPageBlockDetailForNumberField-gPlanning
   Scenario: changing value of required behaviour and removing Number Field and validating error message while submitting program for approval
@@ -1630,8 +1630,8 @@ Business Need: Page Layout Component Scenarios
     When I enter value "" into field "fieldNumber__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
-    Then I see the following message in the page details :
-      | Number is Required to submit under Overview. |
+    Then I see the following message in the page details contains:
+      | Number is required to submit under Overview. |
 
   @53391    @requiredForSubmitBehaviourAtPageBlockDetailForKPIRequiredField-gPlanning
   Scenario: changing value of required behaviour and keeping none at kpi required Field and validating error message while submitting program for approval
@@ -1650,8 +1650,8 @@ Business Need: Page Layout Component Scenarios
     When I enter value "--None--" into field "fieldKPIsRequired__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
-    Then I see the following message in the page details :
-      | KPI's Required? is Required to submit under Overview. |
+    Then I see the following message in the page details contains:
+      | KPI's Required? is required to submit under Overview. |
 
   @53392    @requiredForSubmitBehaviourAtPageBlockDetailForProjectPeriodStartDateField-gPlanning
   Scenario: changing value of required behaviour and keeping none at project start period Field and validating error message while submitting program for approval
@@ -1671,8 +1671,8 @@ Business Need: Page Layout Component Scenarios
     When I enter value "" into field "fieldStartDate__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
-    Then I see the following message in the page details :
-      | Project Period Start Date is Required to submit under Overview. |
+    Then I see the following message in the page details contains:
+      | Project Period Start Date is required to submit under Overview. |
 
   @53393    @requiredForSubmitBehaviourAtPageBlockDetailForExpectedFutureFundingField-gPlanning
   Scenario: changing value of required behaviour and keeping none at expected future funding and validating error message while submitting program for approval
@@ -1692,8 +1692,8 @@ Business Need: Page Layout Component Scenarios
     When I enter value "" into field "fieldExpectedFunding__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
-    Then I see the following message in the page details :
-      | Expected Future Funding is Required to submit under Overview. |
+    Then I see the following message in the page details contains:
+      | Expected Future Funding is required to submit under Overview. |
 
   @53394    @requiredForSubmitBehaviourAtPageBlockDetailForUrlField-gPlanning
   Scenario: changing value of required behaviour and keeping none at URL field and validating error message while submitting program for approval
@@ -1713,8 +1713,8 @@ Business Need: Page Layout Component Scenarios
     When I enter value "" into field "fieldWebsiteAddress__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
-    Then I see the following message in the page details :
-      | Website Address is Required to submit under Overview. |
+    Then I see the following message in the page details contains:
+      | Website Address is required to submit under Overview. |
 
   @53395    @requiredForSubmitBehaviourAtPageBlockDetailForProjectsGoalsField-gPlanning
   Scenario: changing value of required behaviour and keeping none at project goals field and validating error message while submitting program for approval
@@ -1734,8 +1734,8 @@ Business Need: Page Layout Component Scenarios
     When I enter value "" into field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
-    Then I see the following message in the page details :
-      | Project Goals is Required to submit under Overview. |
+    Then I see the following message in the page details contains:
+      | Project Goals is required to submit under Overview. |
 
   @53396    @requiredForSubmitBehaviourAtPageBlockDetailForPercentageField-gPlanning
   Scenario: changing value of required behaviour and keeping none at percentage field and validating error message while submitting program for approval
@@ -1754,8 +1754,8 @@ Business Need: Page Layout Component Scenarios
     When I enter value "" into field "fieldPercent__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
-    Then I see the following message in the page details :
-      | Percent is Required to submit under Overview. |
+    Then I see the following message in the page details contains:
+      | Percent is required to submit under Overview. |
 
   @53397   @requiredForSubmitBehaviourAtPageBlockDetailForDateAndTimeField-gPlanning
   Scenario: changing value of required behaviour and keeping none at date and time field and validating error message while submitting program for approval
@@ -1774,8 +1774,8 @@ Business Need: Page Layout Component Scenarios
     When I enter value "" into field "fieldDateandTime__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
-    Then I see the following message in the page details :
-      | DateandTime is Required to submit under Overview. |
+    Then I see the following message in the page details contains:
+      | DateandTime is required to submit under Overview. |
 
   @53398   @requiredForSubmitBehaviourAtPageBlockDetailForTimeField-gPlanning
   Scenario: changing value of required behaviour and keeping none at time field and validating error message while submitting program for approval
@@ -1794,8 +1794,8 @@ Business Need: Page Layout Component Scenarios
     When I enter value "" into field "fieldTime__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
-    Then I see the following message in the page details :
-      | Time is Required to submit under Overview. |
+    Then I see the following message in the page details contains:
+      | Time is required to submit under Overview. |
 
   @53399   @requiredForSubmitBehaviourAtPageBlockDetailForAuthorizationField-gPlanning
   Scenario: changing value of required behaviour and keeping none at authorization field and validating error message while submitting program for approval
@@ -1814,8 +1814,8 @@ Business Need: Page Layout Component Scenarios
     When I enter value "" into field "fieldAuthorization__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
-    Then I see the following message in the page details :
-      | Authorization is Required to submit under Overview. |
+    Then I see the following message in the page details contains:
+      | Authorization is required to submit under Overview. |
 
   @79735    @verifyByClickOnUserValueItShouldRedirectedToRespectiveUserPageAtPageLayout-gPlanning
   Scenario: validate by click on user value in table , respective user page should get opens at page layout - gPlanning
@@ -1915,8 +1915,8 @@ Business Need: Page Layout Component Scenarios
     When I click on top right button "Create" in flex table with id "ActiveFundingOpportunities"
     When I enter value "PG-343-0034" into field "Program__c"
     And I click modal button "Continue"
-    Then I see the following message in the page details :
-      | Funding Opportunity Web Address is Required to save. |
+    Then I see the following message in the page details contains:
+      | Funding Opportunity Web Address is required to save. |
 
   @83324   @verifyAlertMessageForEnteringIncorrectDataAtURLFieldInModal-gAnnouncement
   Scenario: validate alert message for enetering incorrect data at url field on modal

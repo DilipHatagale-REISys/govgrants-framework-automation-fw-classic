@@ -4246,7 +4246,7 @@ Business Need: Logged Issues Scenarios
       | Page Block Config:Page Block Rule Detail | Read Only | false             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Read Only | true          | Grantee State Program | Name                      | PBD-688                   |
+      | Page Block Config:Page Block Rule Detail | Read Only | true          | Grantee State Program | Name                      | PBD-688                    |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4254,3 +4254,24 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     Then I see field "Expected Future Funding" as "($500,000)"
+
+  @100200    @verifyThatTotalValueAndDollarSymbolIsRightAlignedInsideTable
+  Scenario Outline: validate that total value and dollar symbol is right aligned inside table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ProjectCostForApplication |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "AP-755-213"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-0001" in "---program:-:ProjectCostForApplicationFlexGridTableId---" panel
+    Then I see currency field value at "---program:-:ProjectCostForApplicationFlexGridTableId---" table is right aligned
+
+    Examples:
+      | newFieldsApi                                                                  | defaultFieldsApi                                                                                                            |
+      | Id,ProgramServiceArea__c,BudgetPeriod__c,Name,UnsecuredAmount__c,Narration__c | Id,ProgramServiceArea__c,BudgetPeriod__c,SourceType__c,Name,UnsecuredAmount__c,SecuredAmount__c,TotalAmount__c,Narration__c |

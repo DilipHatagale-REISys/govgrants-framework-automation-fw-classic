@@ -4540,3 +4540,194 @@ Business Need: dynamic forms Component Scenarios
       | Number is Required to save under Section 1.            |
       | Written Section 3 is Required to save under Section 3. |
       | Number Section 3 is Required to save under Section 3.  |
+
+  @100873    @validateCurrencyValueWithSymbolIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
+  Scenario: validate currency value with symbol is displayed inside downloaded PDF at dynamic form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Capture Form          | Hide Pdf Download | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Hide Pdf Download | false         | CF-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see "$12.00" on page "1" of "govgrants" pdf file
+
+  @100874    @validatePercentValueWithSymbolIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
+  Scenario: validate percent value with symbol is displayed inside downloaded PDF at dynamic form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Capture Form          | Hide Pdf Download | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Hide Pdf Download | false         | CF-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see "12.00 %" on page "1" of "govgrants" pdf file
+
+  @100877    @validateMaxScoreIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
+  Scenario: validate max score as 0.0 is displayed inside downloaded PDF at dynamic form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Capture Form          | Hide Pdf Download | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Hide Pdf Download | false         | CF-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see "0.0" on page "1" of "govgrants" pdf file
+
+  @100879    @validateThatForCheckboxAValueAsTrueOrFalseIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
+  Scenario: validate if checkbox field is checked then it should displayed inside downloaded PDF as true at dynamic form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Capture Form          | Hide Pdf Download | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Hide Pdf Download | false         | CF-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see "true" on page "1" of "govgrants" pdf file
+
+  @100880    @validateDecimalValuesAtNumberCurrencyPercentFieldIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
+  Scenario: validate decimal values are displayed for number , currency, percent field inside downloaded PDF at dynamic form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Capture Form          | Hide Pdf Download | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Hide Pdf Download | false         | CF-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I softly see "$12.00" on page "1" of "govgrants" pdf file
+    Then I softly see "12.00 %" on page "1" of "govgrants" pdf file
+    Then I softly see "12.00" on page "1" of "govgrants" pdf file
+
+  @100994    @validateSectionInstructionIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
+  Scenario: validate section instruction is displayed inside downloaded PDF at dynamic form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Capture Form          | Hide Pdf Download | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Hide Pdf Download | false         | CF-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see "Demo Section instruction" on page "1" of "govgrants" pdf file
+
+  @101005    @validateSectionInstructionIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
+  Scenario: validate section instruction is displayed inside downloaded PDF at dynamic form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Capture Form          | Hide Pdf Download | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Hide Pdf Download | false         | CF-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see "Demo Section instruction" on page "1" of "govgrants" pdf file
+
+  @101005    @validateWrittenFieldValueIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
+  Scenario: validate written field value is displayed inside downloaded PDF at dynamic form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Capture Form          | Hide Pdf Download | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Hide Pdf Download | false         | CF-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see "Test Automation" on page "1" of "govgrants" pdf file
+
+  @101006    @validateRichTextAreaFieldValueIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
+  Scenario: validate rich text area field value is displayed inside downloaded PDF at dynamic form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Capture Form          | Hide Pdf Download | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Hide Pdf Download | false         | CF-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see "Test Automation Rich Text" on page "1" of "govgrants" pdf file
