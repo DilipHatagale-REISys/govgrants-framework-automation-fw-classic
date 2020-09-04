@@ -1958,61 +1958,6 @@ Business Need: Logged Issues Scenarios
     Then I softly see Classification as "Medical Reports" at upload file modal
     Then I softly see Classification as "Clinical Budgets" at upload file modal
 
-
-  @89268 @validateTheItemsPresentInSearByFieldDropDownAtTOEmailFieldAtSendEmailModal @sendEmail
-  Scenario: Validate the options present under search by field dropdown at TO email field at send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I navigate to "Collab" sub tab
-    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "To" email Search By field
-    Then I softly see "To" email search by field contains dropdown value as "Internal"
-    Then I softly see "To" email search by field contains dropdown value as "External"
-    Then I softly see "To" email search by field contains dropdown value as "Groups"
-
-  @89269 @validateTheItemsPresentInSearByFieldDropDownAtCCEmailFieldAtSendEmailModal @sendEmail
-  Scenario: Validate the options present under search by field dropdown at CC email field at send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I navigate to "Collab" sub tab
-    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "CC" email Search By field
-    Then I softly see "CC" email search by field contains dropdown value as "Internal"
-    Then I softly see "CC" email search by field contains dropdown value as "External"
-    Then I softly see "CC" email search by field contains dropdown value as "Groups"
-
   @89365  @VerifyThatTheLookupFieldValueIsOverridedByCurrencyFieldAtEnhancedGridChildFlexTable @enhancedGrid
   Scenario Outline: verify that the lookup field value is overrided by currency field at child flex table at enhanced grid
     Given I have "default" configuration as below:
@@ -2039,130 +1984,6 @@ Business Need: Logged Issues Scenarios
     Examples:
       | newFieldsApi                                | defaultFieldsApi                                                                                                                               |
       | Name,GrantAwardName__c,Status__c,Account__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
-
-  @89615 @validateEmailSubjectWithSpecialCharacterIsShownProperlyInViewModal @sendEmail
-  Scenario: Validate special characters present under subject in sent email view modal are displayed properly
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I navigate to "Collab" sub tab
-    When I perform quick search for "1@&%#$*\|/test;:!<>?[]{}()" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "Delete" icon for "1@&%#$*\|/test;:!<>?[]{}()" inside table
-    When I pause execution for "2" seconds
-    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "To" email Search By field and select dropdown value as "Internal"
-    When I enter value "Automation PM" into field "To" on send email modal
-    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
-    When I enter value "1@&%#$*\|/test;:!<>?[]{}()" into field "Subject" on send email modal
-    When I enter value "1@&%#$*\|/test;:!<>?[]{}()" into field "Body Content" on send email modal
-    When I click on "Send" button in send email modal
-    When I close modal by clicking the top right x button
-    And I refresh the page
-    When I navigate to "Collab" sub tab
-    When I perform quick search for "1@&%#$*\|/test;:!<>?[]{}()" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "View" icon for "1@&%#$*\|/test;:!<>?[]{}()" inside table
-    Then I see "1@&%#$*\|/test;:!<>?[]{}()" as "Subject" on send email modal
-
-  @89619 @validateEmailBodyWithSpecialCharacterIsShownProperlyInViewModal @sendEmail
-  Scenario: Validate special characters present under body in sent email view modal are displayed properly
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I navigate to "Collab" sub tab
-    When I perform quick search for "1@&%#$*\|/test;:!<>?[]{}()" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "Delete" icon for "1@&%#$*\|/test;:!<>?[]{}()" inside table
-    When I pause execution for "2" seconds
-    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "To" email Search By field and select dropdown value as "Internal"
-    When I enter value "Automation PM" into field "To" on send email modal
-    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
-    When I enter value "1@&%#$*\|/test;:!<>?[]{}()" into field "Subject" on send email modal
-    When I enter value "1@&%#$*\|/test;:!<>?[]{}()" into field "Body Content" on send email modal
-    When I click on "Send" button in send email modal
-    When I close modal by clicking the top right x button
-    And I refresh the page
-    When I navigate to "Collab" sub tab
-    When I perform quick search for "1@&%#$*\|/test;:!<>?[]{}()" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "View" icon for "1@&%#$*\|/test;:!<>?[]{}()" inside table
-    Then I see "1@&%#$*\|/test;:!<>?[]{}()" as "Body Content" on send email modal
-
-  @89617 @validateReplyEmailSubjectAndBodyWithSpecialCharacterIsShownProperlyInReplyEmailViewModal @sendEmail
-  Scenario: Validate special characters present under body and subject in reply mail on send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I navigate to "Collab" sub tab
-    When I perform quick search for "Re: Reply1@&%#$*\|/test;:!<>?[]{}()" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "Delete" icon for "Re: Reply1@&%#$*\|/test;:!<>?[]{}()" inside table
-    When I pause execution for "2" seconds
-    When I perform quick search for "Reply1@&%#$*\|/test;:!<>?[]{}()" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "Delete" icon for "Reply1@&%#$*\|/test;:!<>?[]{}()" inside table
-    When I pause execution for "2" seconds
-    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "To" email Search By field and select dropdown value as "Internal"
-    When I enter value "Automation PM" into field "To" on send email modal
-    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
-    When I enter value "Reply1@&%#$*\|/test;:!<>?[]{}()" into field "Subject" on send email modal
-    When I click on "Send" button in send email modal
-    When I close modal by clicking the top right x button
-    And I refresh the page
-    When I navigate to "Collab" sub tab
-    When I perform quick search for "Reply1@&%#$*\|/test;:!<>?[]{}()" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "Reply" icon for "Reply1@&%#$*\|/test;:!<>?[]{}()" inside table
-    When I enter value "Reply1@&%#$*\|/test;:!<>?[]{}()" into field "Body Content" on send email modal
-    When I click on "Send" button in send email modal
-    When I close modal by clicking the top right x button
-    And I refresh the page
-    When I navigate to "Collab" sub tab
-    When I perform quick search for "Reply1@&%#$*\|/test;:!<>?[]{}()" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "View" icon for "Reply1@&%#$*\|/test;:!<>?[]{}()" inside table
-    Then I softly see "Re: Reply1@&%#$*\|/test;:!<>?[]{}()" as "Subject" on send email modal
-    Then I softly see "Re: Reply1@&%#$*\|/test;:!<>?[]{}()" as "Body Content" on send email modal
 
   @89674  @verifyThatByClickOnPendingTaskCountInTaskSummaryByPhaseChartForProgramAPendingTasksTableIsDisplayed @phase
   Scenario: validate by click on pending task count for planning inside Task Summary By Phase chart , pending tasks table gets displayed
@@ -2259,31 +2080,6 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "BP-02" in "---program:-:applicationBudgetCategoryFlexGridTableId---" panel
     When I click on "Edit" icon for "BP-02" inside table
     Then I see Undo action displayed by inline editing record under "---program:-:applicationBudgetCategoryFlexGridTableId---" table
-
-  @89743 @validateReplyModalTitleAtSendEmail @sendEmail
-  Scenario: Validate reply modal title at send email
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I navigate to "Collab" sub tab
-    When I perform quick search for "DND-Test Automation Record" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "Reply" icon for "DND-Test Automation Record" inside table
-    Then I see "Reply" opens in overLay window
 
   @89789    @mandatoryCommentsBoxAlignmentAtApproveDecisionSectionForApproveAction-Programs @approvalProcess
   Scenario: verify comments requried box alignment for approval action inside approval decision section
@@ -2576,68 +2372,6 @@ Business Need: Logged Issues Scenarios
     When I navigate to "Overview" sub tab
     Then I see a boarder is displayed at page block section
 
-  @89675 @validateThatFileIsDeletedSuccessfullyByclickOnCrossIconAtAttachedFileInSendEmailModal @sendEmail
-  Scenario: Validate that attached file is deleted successfully by click on cross icon at send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I navigate to "Collab" sub tab
-    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "To" email Search By field and select dropdown value as "Internal"
-    When I enter value "Automation PM" into field "To" on send email modal
-    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
-    When I enter value "Test automation mail subject 1" into field "Subject" on send email modal
-    When I upload attachment "SendEmailAttachment.pdf" in send email modal
-    When I click on cross icon at "SendEmailAttachment.pdf" attachment inside send email modal
-    Then I see attached file "SendEmailAttachment.pdf" is deleted successfully inside send email modal
-
-  @89677 @validateThatFileIsDeletedSuccessfullyFromMultipleFilesByclickOnCrossIconAtAttachedFileInSendEmailModal @sendEmail
-  Scenario: Validate that attached file is deleted successfully from multiple uploaded file by click on cross icon at send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I navigate to "Collab" sub tab
-    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "To" email Search By field and select dropdown value as "Internal"
-    When I enter value "Automation PM" into field "To" on send email modal
-    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
-    When I enter value "Test automation mail subject 1" into field "Subject" on send email modal
-    When I upload attachment "SendEmailAttachment.pdf" in send email modal
-    When I upload attachment "AttachmentTesting.pdf" in send email modal
-    When I upload attachment "test.png" in send email modal
-    When I click on cross icon at "SendEmailAttachment.pdf" attachment inside send email modal
-    Then I see attached file "SendEmailAttachment.pdf" is deleted successfully inside send email modal
-
   @90634 @validateThatBackToPreviousButtonIsDisplayedAtSelectFolderModalOfViewFile-RecordLevel @libraryFiles
   Scenario: Verify that by click on back to previes modal button, user should get redirect to upload file modal - record level
     When I login as "Automation" user
@@ -2673,170 +2407,6 @@ Business Need: Logged Issues Scenarios
     When I click on global search and select "All"
     When I perform quick search inside global search "PG-343-0058"
     Then I see "PG-343-0058" value in flex table id "---program:-:programSearchFlexTableID---"
-
-  @90397 @validateDisplayOfRequiredFieldvalidationMessageInSendEmailModal @sendEmail
-  Scenario: Validate if required field value is not entered and click on save then alert message is displayed on send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I navigate to "Collab" sub tab
-    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I enter value "Test automation mail subject 1" into field "Subject" on send email modal
-    When I click on "Send" button in send email modal
-    Then I see the following messages in the page details contains:
-      | Enter To Email Address. |
-
-  @90390 @validateToEmailSuggestionBoxSizeIfGreaterThan5RecordAreSuggestedInSendEmailModal @sendEmail
-  Scenario: Validate suggested email's box size at To field if more than 5 records are suggested inside send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I navigate to "Collab" sub tab
-    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "To" email Search By field and select dropdown value as "Internal"
-    When I enter value "Automation" into field "To" on send email modal
-    Then I see search item display box size at "To" field is proper for "greater than 5" results
-
-  @90388 @validateToEmailSuggestionBoxSizeIfLessThan5RecordAreSuggestedInSendEmailModal @sendEmail
-  Scenario: Validate suggested email's box size at To field if less than 5 records are suggested inside send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I navigate to "Collab" sub tab
-    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "To" email Search By field and select dropdown value as "Internal"
-    When I enter value "David PM" into field "To" on send email modal
-    Then I see search item display box size at "To" field is proper for "Less than 5" results
-
-  @89234 @validateDisplayOfToEmailSentSUccessfullyMessageInSendEmailModal @sendEmail
-  Scenario: Validate if reply email is sent then alert message is displayed on send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I navigate to "Collab" sub tab
-    When I perform quick search for "Re: DND-Test Automation Record" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "Delete" icon for "Re: DND-Test Automation Record" inside table
-    When I pause execution for "2" seconds
-    When I navigate to "Collab" sub tab
-    When I perform quick search for "DND-Test Automation Record" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "Reply" icon for "DND-Test Automation Record" inside table
-    When I enter value "test body content" into field "Body Content" on send email modal
-    When I click on "Send" button in send email modal
-    When I close modal by clicking the top right x button
-    And I refresh the page
-    When I navigate to "Collab" sub tab
-    When I perform quick search for "Re: DND-Test Automation Record" in "---program:-:communicationHistoryTableId---" panel
-    Then I see "Re: DND-Test Automation Record" value in flex table id "---program:-:communicationHistoryTableId---"
-
-  @89725 @validateAsteriskMarkAtRequiredFieldsInSendEmailModalAtViewSendEmailWindow @sendEmail
-  Scenario: Validate asterisk mark is displayed at required fields in send email modal at view mail window
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I navigate to "Collab" sub tab
-    When I perform quick search for "DND-Test Automation Record" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "view" icon for "DND-Test Automation Record" inside table
-    Then I do not see asterisk mark at "To" field is displayed at send email modal
-
-  @91328 @validateAsteriskMarkAtRequiredFieldsInSendEmailModalAtReplyMailWindow @sendEmail
-  Scenario: Validate asterisk mark is displayed at required fields in send email modal at reply mail window
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-    And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue               | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I navigate to "Collab" sub tab
-    When I perform quick search for "DND-Test Automation Record" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "Reply" icon for "DND-Test Automation Record" inside table
-    Then I see asterisk mark at "To" field is displayed at send email modal
 
   @86985 @validateThatAlertMessageWillAppearAtModalIfUserDonnotHaveAccessToEditFileAtFileList @libraryFiles
   Scenario: Verify that user can upload file from HomePhase - FileList table
@@ -4275,3 +3845,20 @@ Business Need: Logged Issues Scenarios
     Examples:
       | newFieldsApi                                                                  | defaultFieldsApi                                                                                                            |
       | Id,ProgramServiceArea__c,BudgetPeriod__c,Name,UnsecuredAmount__c,Narration__c | Id,ProgramServiceArea__c,BudgetPeriod__c,SourceType__c,Name,UnsecuredAmount__c,SecuredAmount__c,TotalAmount__c,Narration__c |
+
+  @100501    @verifySnapshotIsGettingGeneratedAndSavedInsideHistoryTabIfPicklistValueIsChanged
+  Scenario: validate if picklist value is changed and taken a snapshot then snapshot is getting generated inside history tab
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I enter value "Project Grants" into field "ProgramSubType__c"
+    And I enter value "123" into field "FederalProgramCFDA__c"
+    And I click on "Save" in the page details
+    When I click on "Menu" in the page details
+    And I select "Take Snapshot" from dropdown
+    When I navigate to "History" sub tab
+    Then I see table with header "Snapshot History" contains records "currentdate"

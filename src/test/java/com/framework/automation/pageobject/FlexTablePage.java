@@ -965,7 +965,7 @@ public class FlexTablePage extends GovGrantsManager {
         Boolean isRecordsDisplayed = false;
         for (String expectedRecords : recordsName) {
             if (expectedRecords.equalsIgnoreCase("currentdate")) {
-                expectedRecords = I.amPerforming().dateOperationsToGet().currentDateInDesiredFormat((DateTimeFormatter.ofPattern("M/d/yyyy hh:mm a").withLocale(Locale.US))).replaceAll("^0", "");
+                expectedRecords = I.amPerforming().dateOperationsToGet().currentDateInDesiredFormat((DateTimeFormatter.ofPattern("M/d/yyyy h:mm a").withLocale(Locale.US))).replaceAll("^0", "");
                 I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='myTabbedContent']//a[@title='" + flexTableHeader + "']/../../../following-sibling::div//tbody//td//span[text()='" + expectedRecords + "'] "));
                 isRecordsDisplayed = true;
             } else {

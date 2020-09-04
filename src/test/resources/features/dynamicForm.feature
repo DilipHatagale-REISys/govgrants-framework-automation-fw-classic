@@ -4731,3 +4731,53 @@ Business Need: dynamic forms Component Scenarios
     And I select "Download As PDF" from dropdown
     And I download the file
     Then I see "Test Automation Rich Text" on page "1" of "govgrants" pdf file
+
+  @101025   @validateIfCurrencyFieldIsHiddenFromUIThenItIsNotDisplayedInsideDownloadedPDFAtDynamicForm
+  Scenario: validate if currency field is hidden from ui then it is not displayed in downloaded pdf at dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                             | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Written                                                   | CI-0000            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:HideCurrencyUsingWrittenFieldValueForPDF | CI-0000            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                  | CI-0004            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I cannot see "Currency" on page "1" of "govgrants" pdf file
+
+  @101026   @validateIfCurrencyFieldIsDisabledFromUIThenItIsDisplayedInsideDownloadedPDFAtDynamicForm
+  Scenario: validate if currency field is disabled from ui then it is displayed in downloaded pdf at dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Written                                                      | CI-0000            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:DisableCurrencyUsingWrittenFieldValueForPDF | CI-0000            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                     | CI-0004            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see "Currency" on page "1" of "govgrants" pdf file

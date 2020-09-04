@@ -1956,3 +1956,81 @@ Business Need: All pdf and xls related scenario including component and complete
     And I select "Download As PDF" from dropdown
     And I download the file
     Then I see "($500,000)" on page "1" of "govgrants" pdf file
+
+  @101055 @validateSentDateOfEmailInISTModeInsideDownloadedPDF
+  Scenario: Validate send date of an email for IST time zone inside downloaded PDF
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I have "timeZoneLocale" configuration as below:
+      | locale | timeZone         |
+      | en_US  | America/New_York |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    And I update the locale and timezone related changes:
+      | locale | timeZone     |
+      | en_IN  | Asia/Kolkata |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Collab" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFlexTableCommunicationHistory"
+    And I select "Download as PDF" from parallel lines dropdown of "Messages"
+    And I download the file
+    Then I see "4/9/2020 3:35 PM" on page "1" of "govgrants" pdf file
+
+  @101057 @validateSentDateOfEmailInEDTModeInsideDownloadedPDF
+  Scenario: Validate send date of an email for EDT time zone inside downloaded PDF
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I have "timeZoneLocale" configuration as below:
+      | locale | timeZone         |
+      | en_US  | America/New_York |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    And I update the locale and timezone related changes:
+      | locale | timeZone         |
+      | en_CA  | America/New_York |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Collab" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFlexTableCommunicationHistory"
+    And I select "Download as PDF" from parallel lines dropdown of "Messages"
+    And I download the file
+    Then I see "04/09/2020 6:05 AM" on page "1" of "govgrants" pdf file
+
+  @101056 @validateSentDateOfEmailInESTModeInsideDownloadedPDF
+  Scenario: Validate send date of an email for EST time zone inside downloaded PDF
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I have "timeZoneLocale" configuration as below:
+      | locale | timeZone         |
+      | en_US  | America/New_York |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    And I update the locale and timezone related changes:
+      | locale | timeZone       |
+      | en_US  | America/Panama |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Collab" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFlexTableCommunicationHistory"
+    And I select "Download as PDF" from parallel lines dropdown of "Messages"
+    And I download the file
+    Then I see "09/04/2020 5:05 AM" on page "1" of "govgrants" pdf file
