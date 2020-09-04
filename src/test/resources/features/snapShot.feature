@@ -63,7 +63,7 @@ Business Need: Snapshot Config Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Auto Snapshot         | Is Active | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:1 |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName       | fieldNewValue                           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Auto Snapshot:Sobject Auto Snapshot | Is Active       | true                                    | Program__c            | Name                      | SAS-0000                   |
