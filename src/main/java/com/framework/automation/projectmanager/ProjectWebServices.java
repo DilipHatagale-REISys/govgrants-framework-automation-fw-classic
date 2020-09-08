@@ -227,6 +227,27 @@ public class ProjectWebServices {
         assertStatusCode(response);
     }
 
+    /**
+     * calls the api to access and update custom meta data config
+     *
+     * @param id
+     * @param booleanValue
+     * @param label
+     */
+    public void updateCustomMetaDataConfig(String id, String label, Boolean booleanValue) {
+        getAuthToken();
+        String finalEndPoint = endPoint + "/services/apexrest/frameworkCustomMetadataAPI/CustomMetadata?id=" + id;
+        JsonArray jArray = new JsonArray();
+        JsonObject jsonObject = new JsonObject();
+        JsonObject jsonContainer = new JsonObject();
+        jsonObject.addProperty("GNT__BooleanValue__c", booleanValue);
+        jsonContainer.add("fieldvalues", jsonObject);
+        jsonContainer.addProperty("custommetadatafullname", "GNT__KeyValueHolder__mdt." + label);
+        jArray.add(jsonContainer);
+        I.amPerforming().restHttp().putCall(null, jArray.toString(), finalEndPoint, null, null, tokenString);
+    }
+
+
     ////////////// Setup Default Config//////////////
 
     /**
@@ -261,6 +282,9 @@ public class ProjectWebServices {
         }
         if (configurationType.equalsIgnoreCase("customNameTemplate")) {
             setDefaultCustomNameTemplateSettingForAllCustomSettings("customNameTemplate");
+        }
+        if (configurationType.equalsIgnoreCase("customMetaData")) {
+            setDefaultCustomMetaData("customMetaData");
         }
     }
 
@@ -475,6 +499,19 @@ public class ProjectWebServices {
     }
 
     /**
+     * It will take key and its value from feature file to make default config changes for custom meta data
+     * <p>
+     * id - it will take unique custom meta data id where changes is supposed to made
+     * booleanValue - accept true/false for to enable disable custom meta data details boolean fields
+     * label - it will take custom meta data full name where changes is supposed to made
+     */
+    private void setDefaultCustomMetaData(String key) {
+        for (Map<String, String> customMap : ConfigurationParameters.getDefaultConfigurationParameters().get(key)) {
+            updateCustomMetaDataConfig(customMap.get("id"), customMap.get("label"), (Boolean.parseBoolean(customMap.get("booleanValue"))));
+        }
+    }
+
+    /**
      * handle setting up new configurational setting
      *
      * @param configCategory
@@ -485,7 +522,7 @@ public class ProjectWebServices {
      */
     private Response postConfigCall(String configCategory, String fieldName, String value, String filterClause) {
         Response response = null;
-        var callingEndPoint=endPoint + defaultUpdateEndPoint;
+        var callingEndPoint = endPoint + defaultUpdateEndPoint;
         if (value.contains("ApiGeneratedId")) {
             String[] getValueAt = value.split(":");
             response = I.amPerforming().restHttp().postCall(null,

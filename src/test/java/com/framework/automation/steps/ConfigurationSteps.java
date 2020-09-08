@@ -78,4 +78,12 @@ public class ConfigurationSteps {
             ProjectWebServices.dynamicApi = "customNameTemplate";
         }
     }
+
+    @And("^I update custom metadata setting changes:$")
+    public void iUpdateCustoSettingsAsNameTemplate(List<Map<String, String>> configParameters) {
+        for (Map<String, String> parameters : configParameters) {
+            projectAPI.updateCustomMetaDataConfig(parameters.get("id"), parameters.get("label"), Boolean.parseBoolean(parameters.get("booleanValue")));
+            ProjectWebServices.dynamicApi = "customMetaData";
+        }
+    }
 }

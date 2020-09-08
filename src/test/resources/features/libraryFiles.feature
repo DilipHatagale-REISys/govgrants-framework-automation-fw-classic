@@ -298,6 +298,7 @@ Business Need: Library Files Component Scenarios
     When I click on dropdown at library/folder/file "testAutomationFolder1"
     When I click on "Rename Folder" option at library/folder/file "testAutomationFolder1"
     When I enter value as "" in field "Folder Name" at Library Files
+    When I enter value as "" in field "Folder Name" at Library Files
     Then I see the text containing :
       | Folder name is required |
 
@@ -388,7 +389,7 @@ Business Need: Library Files Component Scenarios
     When I click on dropdown at library/folder/file "Department of Community Health"
     When I click on "Add New Folder" option at library/folder/file "Department of Community Health"
     When I enter value as "" in field "Folder Name" at Library Files
-    When I click on "Save" button in send email modal
+    When I enter value as "" in field "Folder Name" at Library Files
     Then I see the text containing :
       | Folder name is required |
 
@@ -1914,3 +1915,288 @@ Business Need: Library Files Component Scenarios
     When I drag the "DragAndDropFolderToFolderDND.png" file from "Library - Folder 2 DND" folder and drop in "Library-Folder 1 DND" folder at library
     When I pause execution for "3" seconds
     Then I see file "DragAndDropFolderToFolderDND.png" is displayed under "Library-Folder 1 DND" library or folder
+
+  @101473 @validateThatUserCanAddFileWithSameNameUnderFolder-HomePhase
+  Scenario: Verify that admin user can add file with same name under folder
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "UnitedHealth Group"
+    When I click on expand icon at library/folder "Duplicate"
+    When I click on dropdown at library/folder/file "DuplicateFile.txt"
+    When I click on "Delete File" option at library/folder/file "DuplicateFile.txt"
+    When I click on dropdown at library/folder/file "DuplicateFile.txt"
+    When I click on "Delete File" option at library/folder/file "DuplicateFile.txt"
+    When I click on dropdown at library/folder/file "Duplicate"
+    When I click on "Upload File" option at library/folder/file "Duplicate"
+    When I upload file "DuplicateFile.txt" into library
+    When I click on "Upload" button in send email modal
+    When I click on dropdown at library/folder/file "Duplicate"
+    When I click on "Upload File" option at library/folder/file "Duplicate"
+    When I upload file "DuplicateFile.txt" into library
+    When I click on "Upload" button in send email modal
+    Then I see files "DuplicateFile.txt" is displayed under "Duplicate" folder
+
+  @101476 @validateThatMultipleFilesWithSameNameAreDisplayedUnderOneFolder-HomePhase
+  Scenario: Verify that admin user can add file with same name multiple times under same folder
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "UnitedHealth Group"
+    When I click on expand icon at library/folder "Duplicate"
+    When I click on dropdown at library/folder/file "DuplicateFile.txt"
+    When I click on "Delete File" option at library/folder/file "DuplicateFile.txt"
+    When I click on dropdown at library/folder/file "DuplicateFile.txt"
+    When I click on "Delete File" option at library/folder/file "DuplicateFile.txt"
+    When I click on dropdown at library/folder/file "DuplicateFile.txt"
+    When I click on "Delete File" option at library/folder/file "DuplicateFile.txt"
+    When I click on dropdown at library/folder/file "Duplicate"
+    When I click on "Upload File" option at library/folder/file "Duplicate"
+    When I upload file "DuplicateFile.txt" into library
+    When I click on "Upload" button in send email modal
+    When I click on dropdown at library/folder/file "Duplicate"
+    When I click on "Upload File" option at library/folder/file "Duplicate"
+    When I upload file "DuplicateFile.txt" into library
+    When I click on "Upload" button in send email modal
+    When I click on dropdown at library/folder/file "Duplicate"
+    When I click on "Upload File" option at library/folder/file "Duplicate"
+    When I upload file "DuplicateFile.txt" into library
+    When I click on "Upload" button in send email modal
+    Then I see files "DuplicateFile.txt" is displayed under "Duplicate" folder
+
+  @101098 @validateThatShowOptionsSectionIsDisplayedIfCustomMetadAtBooleanValueIsTrueToSystemAdminUser-HomePhase
+  Scenario: Verify show options section is displayed to admin user if custom metadat boolean value is set to true
+    Given I have "customMetaData" configuration as below:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "UnitedHealth Group"
+    When I click on dropdown at library/folder/file "Library-Folder 1 DND"
+    When I click on "Upload File" option at library/folder/file "Library-Folder 1 DND"
+    Then I see sharing option as "Select sharing options" at upload file modal
+
+  @101113 @validateThatShowOptionsSectionIsNotDisplayedForSPIUser-HomePhase
+  Scenario: Verify that show options select box is not displayed to SPI user at upload file modal
+    Given I have "customMetaData" configuration as below:
+      | id              | customMetaDataFullName | booleanValue | customSettingApiName |
+      | m031C000000XZY7 | ShowSharingPrivacy     | false        | KeyValueHolder__mdt  |
+    And I update custom metadata setting changes:
+      | id              | customMetaDataFullName | booleanValue | customSettingApiName |
+      | m031C000000XZY7 | ShowSharingPrivacy     | true         | KeyValueHolder__mdt  |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "UnitedHealth Group"
+    When I click on dropdown at library/folder/file "Library-Folder 1 DND"
+    When I click on "Upload File" option at library/folder/file "Library-Folder 1 DND"
+    Then I do not see sharing option as "Select sharing options" at upload file modal
+
+  @101488 @validateThatShowOptionsSectionIsDisplayedWithAsteriskMarkAtUploadFileModalWindow-HomePhase
+  Scenario: Verify that show options section is displayed wih asterisk mark at upload file modal window - home phase
+    Given I have "customMetaData" configuration as below:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "UnitedHealth Group"
+    When I click on dropdown at library/folder/file "Library-Folder 1 DND"
+    When I click on "Upload File" option at library/folder/file "Duplicate"
+    Then I see asterisk mark at "Sharing Options" field
+
+  @101494 @validateThatIfSharingOptionIsNotSelectedThenUploadButtonIsDisabled-HomePhase
+  Scenario: Verify that Upload button is disabled when user has not selected sharing options - home phase library
+    Given I have "customMetaData" configuration as below:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on dropdown at library/folder/file "UnitedHealth Group"
+    When I click on "Upload File" option at library/folder/file "UnitedHealth Group"
+    When I upload file "TestAutomationFile.csv" into library
+    When I enter value as "test Automation upload from record level" in field "Description" at Library Files
+    Then I see "Upload" button is disabled at modal under library
+
+  @101496 @validateThatIfSharingOptionIsSelectedAsBlankThenAlertMessageIsDisabledelowFiels-HomePhase
+  Scenario: Verify that sharing option is selected as blank then alert message is displayed below field - home phase library
+    Given I have "customMetaData" configuration as below:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on dropdown at library/folder/file "UnitedHealth Group"
+    When I click on "Upload File" option at library/folder/file "UnitedHealth Group"
+    When I select sharing option as "Select sharing options" at upload file modal
+    When I enter value as "test Automation Description" in field "Description" at Library Files
+    Then I see the text containing :
+      | Complete this field. |
+
+  @101499 @validateThatShowOptionsSectionIsDisplayedAtEditFileModalIfCustomMetadataAtBooleanValueIsTrue-HomePhase
+  Scenario: Verify show options section is displayed at edit file modal if custom metadat boolean value is set to true
+    Given I have "customMetaData" configuration as below:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "Department of Community Health"
+    When I click on expand icon at library/folder "testAutomationFolder1"
+    When I click on dropdown at library/folder/file "SendEmailAttachment.png"
+    When I click on "Edit File" option at library/folder/file "SendEmailAttachment.png"
+    Then I see sharing option as "Visible to Anyone With Record Access" at upload file modal
+
+  @101500 @validateThatIfSharingOptionIsChangedFromEditFileModalThenItShouldDisplayAtRespectiveFileUnderEditFileModal-HomePhase
+  Scenario: Verify that if sharing option is changed at any file then updated option is displayed at edit file modal- home phase library
+    Given I have "customMetaData" configuration as below:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "Department of Community Health"
+    When I click on expand icon at library/folder "testAutomationFolder2"
+    When I click on dropdown at library/folder/file "automationTestingOfFiles.xls"
+    When I click on "Edit File" option at library/folder/file "automationTestingOfFiles.xls"
+    When I select sharing option as "Private on Records" at upload file modal
+    When I click on "Save" button in send email modal
+    When I click on "Edit File" option at library/folder/file "automationTestingOfFiles.xls"
+    Then I see sharing option as "Private on Records" at upload file modal
+
+  @101548 @validateThatSharingOptionSectionIsDisplayedAtFileUploadModal-RecordLevel
+  Scenario: Verify that sharing option is displayed at add/upload file modal - Record level
+    Given I have "customMetaData" configuration as below:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    Then I see sharing option as "Select sharing options" at upload file modal
+
+  @101550 @validateThatShowOptionsSectionIsDisplayedWithAsteriskMarkAtUploadFileModalWindow-RecordLevel
+  Scenario: Verify that show options section is displayed wih asterisk mark at upload file modal window - record level
+    Given I have "customMetaData" configuration as below:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    Then I see asterisk mark at "Sharing Options" field
+
+  @101554 @validateThatIfSharingOptionIsSelectedAsBlankThenAlertMessageIsDisplayedBelowField-ReordLevel
+  Scenario: Verify that sharing option is selected as blank then alert message is displayed below field - record level
+    Given I have "customMetaData" configuration as below:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    When I select sharing option as "Select sharing options" at upload file modal
+    When I enter value as "test Automation Description" in field "Description" at Library Files
+    Then I see the text containing :
+      | Complete this field. |
+
+  @101556 @validateThatDefaultSharingOptionIsDisplayUnderEditFileModal-RecordLevel
+  Scenario: Verify that default sharing option is displayed at edit file modal- record level
+    Given I have "customMetaData" configuration as below:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "testAutomationFileDND.png" in "---program:-:PlanningFilesFlexGridId---" panel
+    When I click on "Edit" icon for "testAutomationFileDND.png" inside table
+    Then I see sharing option as "Visible to Anyone With Record Access" at upload file modal
+
+  @101557 @validateThatIfSharingOptionIsChangedFromEditFileModalThenItShouldDisplayAtRespectiveFileUnderEditFileModal-RecordLevel
+  Scenario: Verify that if sharing option is changed at any file then updated option is displayed at edit file modal- record level
+    Given I have "customMetaData" configuration as below:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "Automation Test Data File-DND.png" in "---program:-:PlanningFilesFlexGridId---" panel
+    When I click on "Edit" icon for "Automation Test Data File-DND.png" inside table
+    When I select sharing option as "Private on Records" at upload file modal
+    When I click on "Save" button in send email modal
+    When I perform quick search for "Automation Test Data File-DND.png" in "---program:-:PlanningFilesFlexGridId---" panel
+    When I click on "Edit" icon for "Automation Test Data File-DND.png" inside table
+    Then I see sharing option as "Private on Records" at upload file modal

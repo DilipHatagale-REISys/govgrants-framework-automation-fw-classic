@@ -1027,7 +1027,7 @@ Business Need: Page Layout Component Scenarios
     When I click search icon for lookup "Organization Lookup (New Window)"
     Then I see modal box with body "Organization Automation" is displayed
 
-  @36170    @lookupDisplayFieldNamesFieldAtPageBlockDetail-gPlanning @smoke @wip
+  @36170    @lookupDisplayFieldNamesFieldAtPageBlockDetail-gPlanning @smoke
   Scenario: Changing column header and its data of lookup modal from config and valiodating it on program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
@@ -1041,7 +1041,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click search icon for look up field "Organization Lookup (New Window)" without toClearing
+    When I click search icon for look up field "Organization Lookup (New Window)" with clearing
     Then I see "Code" in table header on lookup Modal
 
   @36172    @lookupFilterCriteriaFieldAtPAgeBlockDetail-gPlanning @smoke
@@ -1060,7 +1060,8 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I click search icon for look up field "Organization Lookup (New Window)" with toClearing
+    When I click search icon for look up field "Organization Lookup (New Window)" with clearing
+    When I perform quick search for "Automation test organization" in "---program:-:AccountTableId---" panel
     Then I see "Created" status in lookup modal table
 
     Examples:

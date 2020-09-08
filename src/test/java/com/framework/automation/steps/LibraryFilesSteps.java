@@ -1,8 +1,6 @@
 package com.framework.automation.steps;
 
-import com.automation.rei.handlers.govgrants;
 import com.framework.automation.pageobject.LibraryFilesPage;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.springframework.context.annotation.Description;
@@ -41,6 +39,13 @@ public class LibraryFilesSteps {
     public void clickOnDropdownOptionsAtLibrary(String dropDownOption, String libraryFileFolderName) {
         libraryFilesPage.clickOnDropdownOptionsAtLibraryFolderFile(dropDownOption, libraryFileFolderName);
     }
+
+    @Description("Select sharing option from dropdown under upload file modal window")
+    @When("I select sharing option as {string} at upload file modal")
+    public void iSelectSharingOptionAtUploadFileModal(String sharingOptions) {
+        libraryFilesPage.selectSharingOptionsFromDropDownAtUploadFileModal(sharingOptions);
+    }
+
 
     @Then("^I (see|do not see|softly see|softly do not see) library/folder/file \"([^\"]*)\" is displayed under files library$")
     public void asserLibraryFileFolderIsDisplayedOnUI(String usuage, String libraryFileFolderName) {
@@ -125,5 +130,18 @@ public class LibraryFilesSteps {
     @Then("I see file {string} is displayed under {string} library or folder")
     public void iSeeFileIsDisplayedUnderFilesLibrary(String fileName, String libraryOrFolderName) {
         libraryFilesPage.assertFileDisplayedUnderExpectedLibrary(fileName, libraryOrFolderName);
+    }
+
+    @Then("I see files {string} is displayed under {string} folder")
+    public void iSeeFileIsDisplayedUnderFolder(String fileName, String folderName) {
+    libraryFilesPage.assertFilesWithSameNameDisplayedInFolder(fileName,folderName );}
+
+    @Then("^I (see|do not see) sharing option as \"([^\"]*)\" at upload file modal$")
+    public void iSeeSharingOptionAsAtUploadFileModal(String usage, String sharingOption) {
+    libraryFilesPage.assertSharingOptionsDisplayedAtFileUploadModal(usage,sharingOption);}
+
+    @Then("I see asterisk mark at {string} field")
+    public void iSeeIsRequiredForSave(String fieldName) {
+        libraryFilesPage.assertAsteriskMarkIsDisplayedAtRequiredFieldsAtUploadFileModal(fieldName);
     }
 }

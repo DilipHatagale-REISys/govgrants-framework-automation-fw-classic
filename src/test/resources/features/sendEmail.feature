@@ -488,6 +488,7 @@ Business Need: Send Email Component Scenarios
     When I perform quick search for "Re: Reply1@&%#$*\|/test;:!<>?[]{}()" in "---program:-:communicationHistoryTableId---" panel
     When I click on "Delete" icon for "Re: Reply1@&%#$*\|/test;:!<>?[]{}()" inside table
     When I pause execution for "2" seconds
+    When I navigate to "Collab" sub tab
     When I perform quick search for "Reply1@&%#$*\|/test;:!<>?[]{}()" in "---program:-:communicationHistoryTableId---" panel
     When I click on "Delete" icon for "Reply1@&%#$*\|/test;:!<>?[]{}()" inside table
     When I pause execution for "2" seconds
