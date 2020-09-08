@@ -247,7 +247,7 @@ public class LibraryFilesPage extends GovGrantsManager {
      * @param expectedAlertMessage
      */
     public void assertAlertMessageInsideLibraryFilesModal(String modalId, String expectedAlertMessage) {
-        I.amPerforming().assertionsTo().assertThat(I.amPerforming().actionToGet().text(By.xpath("//div[@id='"+modalId+"']//h3")))
+        I.amPerforming().assertionsTo().assertThat(I.amPerforming().actionToGet().text(By.xpath("//div[@id='" + modalId + "']//h3")))
                 .isEqualToNormalizingWhitespace(expectedAlertMessage);
     }
 
@@ -258,7 +258,51 @@ public class LibraryFilesPage extends GovGrantsManager {
      * @param libraryOrFolderName
      */
     public void assertFileDisplayedUnderExpectedLibrary(String fileName, String libraryOrFolderName) {
-        Assert.assertTrue(isFileDisplayedUnderExpectedLibrary(fileName,libraryOrFolderName));
+        Assert.assertTrue(isFileDisplayedUnderExpectedLibrary(fileName, libraryOrFolderName));
+    }
+
+    /**
+     * assert true if file with same name is displayed under expected library or folder- phase level
+     *
+     * @param fileName
+     * @param folderName
+     */
+    public void assertFilesWithSameNameDisplayedInFolder(String fileName, String folderName) {
+        Assert.assertTrue(isSameNameFileDisplayedUnderExpectedFolder(fileName, folderName));
+    }
+
+    /**
+     * assert true if sharing Option is displayed under sharing Option field at upload file modal - phase/Record level
+     *
+     * @param sharingOption
+     */
+    public void assertSharingOptionsDisplayedAtFileUploadModal(String usuage, String sharingOption) {
+        if (usuage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isSharingOptionsDisplayedAtFileUploadModal(sharingOption));
+        } else if (usuage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isSharingOptionsDisplayedAtFileUploadModal(sharingOption)).isFalse();
+        }
+    }
+
+    /**
+     * assert true if asterisk mark is displayed at required field under upload file modal window
+     *
+     * @param fieldName
+     * @author - ashwini.mahore
+     */
+    public void assertAsteriskMarkIsDisplayedAtRequiredFieldsAtUploadFileModal(String fieldName) {
+        Assert.assertTrue(isFieldDisplayedWithRequiredForSaveAsteriskMardAtUploadModal(fieldName));
+    }
+
+    /**
+     * get sharing options at upload file modal window - Library files Home phase/record level
+     *
+     * @param sharingOptions
+     * @author ashwini.mahore
+     */
+    public WebElement getSharingOptionsAtUploadFileModalUnderLibrary(String sharingOptions) {
+        By selectValueFromDropdown = By.xpath("//select[@name='SharingOptions']//option[text()='" + sharingOptions + "']");
+        return I.amPerforming().getElementReference().of(selectValueFromDropdown);
     }
 
     /**
@@ -319,6 +363,19 @@ public class LibraryFilesPage extends GovGrantsManager {
      */
     public void clickOnDropdownOptionsAtLibraryFolderFile(String dropDownOption, String libraryFileFolderName) {
         I.amPerforming().click().on(dropdownOptionAtLibraryFolderFile(dropDownOption, libraryFileFolderName));
+        if (dropDownOption.contains("Edit") || dropDownOption.contains("Delete")) {
+            I.amPerforming().waitFor().ElementToDisappear(By.xpath("//img[@class='nav-logo']"));
+        }
+    }
+
+    /**
+     * perform click on sharing options under upload file modal window - home/record level
+     *
+     * @param sharingOptions
+     * @author ashwini.mahore
+     */
+    public void selectSharingOptionsFromDropDownAtUploadFileModal(String sharingOptions) {
+        I.amPerforming().click().on(getSharingOptionsAtUploadFileModalUnderLibrary(sharingOptions));
     }
 
     /**
@@ -595,7 +652,7 @@ public class LibraryFilesPage extends GovGrantsManager {
     private boolean isButtonDisplayedInsideSelectFolderModal(String buttonName) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//a[text()='"+ buttonName +"']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//a[text()='" + buttonName + "']"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -610,10 +667,71 @@ public class LibraryFilesPage extends GovGrantsManager {
      * @param libraryOrFolderName
      * @return
      */
-    private boolean isFileDisplayedUnderExpectedLibrary(String fileName,String libraryOrFolderName) {
+    private boolean isFileDisplayedUnderExpectedLibrary(String fileName, String libraryOrFolderName) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//span[text()='"+libraryOrFolderName+"']/../following-sibling::li//span[text()='"+fileName+"']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//span[text()='" + libraryOrFolderName + "']/../following-sibling::li//span[text()='" + fileName + "']"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if file with same name is displayed under expected library or folder- phase level
+     *
+     * @param fileName
+     * @param folderName
+     * @return
+     */
+    private boolean isSameNameFileDisplayedUnderExpectedFolder(String fileName, String folderName) {
+        boolean flag = false;
+        for (int i = 1; i <= getFilesFromFolder(folderName).size(); i++) {
+            if (getFilesFromFolder(folderName).get(i).getText().equals(fileName)) {
+                return true;
+            }
+        }
+        return flag;
+    }
+
+    /**
+     * get all files from folder at Library files Home phase/record level
+     *
+     * @param folderName
+     * @author ashwini.mahore
+     */
+    private List<Elements> getFilesFromFolder(String folderName) {
+        return I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//span[text()='" + folderName + "']/../following-sibling::li//span[" +
+                "" + I.amPerforming().sanityOfXpathTo().equals("@class", "file-name") + "]"));
+    }
+
+    /**
+     * return true if sharing Option is displayed under sharing Option field at upload file modal - phase/Record level
+     *
+     * @param sharingOption
+     * @author - ashwini.mahore
+     */
+    private boolean isSharingOptionsDisplayedAtFileUploadModal(String sharingOption) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(getSharingOptionsAtUploadFileModalUnderLibrary(sharingOption))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    /**
+     * @param fieldName
+     * @return true if asterisk mark is displayed at required field under upload file modal window
+     * @author ashwini.mahore
+     */
+    private boolean isFieldDisplayedWithRequiredForSaveAsteriskMardAtUploadModal(String fieldName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//span[text()='" + fieldName + "']/..//*[@class='slds-required' and text()='*']"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
