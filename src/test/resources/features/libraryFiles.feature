@@ -2200,3 +2200,259 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "Automation Test Data File-DND.png" in "---program:-:PlanningFilesFlexGridId---" panel
     When I click on "Edit" icon for "Automation Test Data File-DND.png" inside table
     Then I see sharing option as "Private on Records" at upload file modal
+
+  @101486 @validateThatUserCanUploadDuplicateFileWithSameNameFromRecord-RecordLevel
+  Scenario: Verify that use can upload same file which is already present inside record - record level
+    Given I have "customMetaData" configuration as below:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "RecordLevelDuplicateFile.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
+    When I click on "Delete" icon for "RecordLevelDuplicateFile.pdf" inside table
+    When I click "Yes" on modal confirmation box
+    When I click on "Delete" icon for "RecordLevelDuplicateFile.pdf" inside table
+    When I click "Yes" on modal confirmation box
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    When I upload file "RecordLevelDuplicateFile.pdf" into library
+    When I enter value as "test data - do not delete file" in field "Description" at Library Files
+    When I select sharing option as "Private on Records" at upload file modal
+    When I click on "Upload" button in send email modal
+    When I perform quick search for "RecordLevelDuplicateFile.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see value "RecordLevelDuplicateFile.pdf" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    When I upload file "RecordLevelDuplicateFile.pdf" into library
+    When I enter value as "test data - do not delete file" in field "Description" at Library Files
+    When I select sharing option as "Private on Records" at upload file modal
+    When I click on "Upload" button in send email modal
+    Then I perform quick search for "RecordLevelDuplicateFile.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I softly see value "RecordLevelDuplicateFile.pdf" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
+
+  @101559 @validateThatShowOptionsSectionIsDisplayedIfCustomMetadAtBooleanValueIsTrueToPMUser-RecordPhase
+  Scenario: Verify show options section is displayed to pm user if custom metadat boolean value is set to true- record level
+    Given I have "customMetaData" configuration as below:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    Then I see sharing option as "Select sharing options" at upload file modal
+
+  @101560 @validateThatShowOptionsSectionIsDisplayedIfCustomMetadAtBooleanValueIsTrueToPMUser-HomePhase
+  Scenario: Verify show options section is displayed to pm user if custom metadat boolean value is set to true- home phase
+    Given I have "customMetaData" configuration as below:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "UnitedHealth Group"
+    When I click on dropdown at library/folder/file "Library-Folder 1 DND"
+    When I click on "Upload File" option at library/folder/file "Library-Folder 1 DND"
+    Then I see sharing option as "Select sharing options" at upload file modal
+
+  @101474 @validateThatUserCanAddFileWithSameNameUnderFolderIfSharingOptionIsEnabled-HomePhase
+  Scenario: Verify that admin user can add file with same name under folder if sharing option is enabled - home phase
+    Given I have "customMetaData" configuration as below:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | true         | GNT__KeyValueHolder__mdt |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "UnitedHealth Group"
+    When I click on expand icon at library/folder "Duplicate"
+    When I click on dropdown at library/folder/file "DuplicateFile.txt"
+    When I click on "Delete File" option at library/folder/file "DuplicateFile.txt"
+    When I click on dropdown at library/folder/file "DuplicateFile.txt"
+    When I click on "Delete File" option at library/folder/file "DuplicateFile.txt"
+    When I click on dropdown at library/folder/file "Duplicate"
+    When I click on "Upload File" option at library/folder/file "Duplicate"
+    When I upload file "DuplicateFile.txt" into library
+    When I select sharing option as "Private on Records" at upload file modal
+    When I click on "Upload" button in send email modal
+    When I click on dropdown at library/folder/file "Duplicate"
+    When I click on "Upload File" option at library/folder/file "Duplicate"
+    When I select sharing option as "Private on Records" at upload file modal
+    When I upload file "DuplicateFile.txt" into library
+    When I click on "Upload" button in send email modal
+    Then I see files "DuplicateFile.txt" is displayed under "Duplicate" folder
+
+  @101686 @validateThatFilterGivenLibraryIsDisplayedAtAddFileModalAsPerGivenClauseInKeyValueMapConfig-RecordLevel
+  Scenario Outline: Verify that filter given library is displayed at add file modal as per filter claus given at key value map - record level
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue           | filterId         |
+      | Flex Table Action     | Action URL Long | <actionUrlLongDefaultValue> | ApiGeneratedId:0 |
+      | Page Block            | Is Active       | true                        | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName       | fieldNewValue           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action            | Action URL Long | <actionUrlLongNewValue> | PlanningFiles         | Name                      | Add Files                  |
+      | Page Block:Page Block Detail | Is Active       | false                   | Grantee State Program | GNT__PageBlockTitle__c    | Library View               |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    When I click on SelectChange Folder in add file modal
+    Then I softly do not see library/folder/file "Department of Community Health" is displayed under files library
+    Then I softly see library/folder/file "UnitedHealth Group" is displayed under files library
+
+    Examples:
+      | actionUrlLongNewValue                                                                                                            | actionUrlLongDefaultValue                                                                           |
+      | /apex/SalesforceFiles?pageName=GNT__FileUpload&parentId={!Program__c.Id}&pageBlockId={!pageBlockId}&workspaceIds={!workspaceIds} | /apex/SalesforceFiles?pageName=GNT__FileUpload&parentId={!Program__c.Id}&pageBlockId={!pageBlockId} |
+
+  @101687 @validateThatFilterGivenLibraryFoldersIsDisplayedAtAddFileModalAsPerGivenClauseInKeyValueMapConfig-RecordLevel
+  Scenario Outline: Verify that filter given library folders are displayed at add file modal as per filter claus given at key value map - record level
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue           | filterId         |
+      | Flex Table Action     | Action URL Long | <actionUrlLongDefaultValue> | ApiGeneratedId:0 |
+      | Page Block            | Is Active       | true                        | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName       | fieldNewValue           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action            | Action URL Long | <actionUrlLongNewValue> | PlanningFiles         | Name                      | Add Files                  |
+      | Page Block:Page Block Detail | Is Active       | false                   | Grantee State Program | GNT__PageBlockTitle__c    | Library View               |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    When I click on SelectChange Folder in add file modal
+    When I click on expand icon at library/folder "UnitedHealth Group"
+    Then I softly see library/folder/file "Library-Folder 1 DND" is displayed under files library
+    Then I softly see library/folder/file "Library - Folder 2 DND" is displayed under files library
+    Then I softly see library/folder/file "Duplicate" is displayed under files library
+    Then I softly do not see library/folder/file "testAutomationFolder1" is displayed under files library
+
+    Examples:
+      | actionUrlLongNewValue                                                                                                            | actionUrlLongDefaultValue                                                                           |
+      | /apex/SalesforceFiles?pageName=GNT__FileUpload&parentId={!Program__c.Id}&pageBlockId={!pageBlockId}&workspaceIds={!workspaceIds} | /apex/SalesforceFiles?pageName=GNT__FileUpload&parentId={!Program__c.Id}&pageBlockId={!pageBlockId} |
+
+  @101696 @validateThatFilesPresentUnderFilterGivenLibraryShouldDisplayedAtAddFileModalAsPerGivenClauseInKeyValueMapConfig-RecordLevel
+  Scenario Outline: Verify that files uploaded under filter given library folders are displayed at add file modal under upload from library tab - record level
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue           | filterId         |
+      | Flex Table Action     | Action URL Long | <actionUrlLongDefaultValue> | ApiGeneratedId:0 |
+      | Page Block            | Is Active       | true                        | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName       | fieldNewValue           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action            | Action URL Long | <actionUrlLongNewValue> | PlanningFiles         | Name                      | Add Files                  |
+      | Page Block:Page Block Detail | Is Active       | false                   | Grantee State Program | GNT__PageBlockTitle__c    | Library View               |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    And I click on "Upload File from Library" tab at files library upload modal
+    When I perform quick search for "asd.png" under files library
+    Then I see "asd.png" inside flex table with id "---program:-:WorkspaceFilesUploadId---"
+
+    Examples:
+      | actionUrlLongNewValue                                                                                                            | actionUrlLongDefaultValue                                                                           |
+      | /apex/SalesforceFiles?pageName=GNT__FileUpload&parentId={!Program__c.Id}&pageBlockId={!pageBlockId}&workspaceIds={!workspaceIds} | /apex/SalesforceFiles?pageName=GNT__FileUpload&parentId={!Program__c.Id}&pageBlockId={!pageBlockId} |
+
+  @101699 @validateThatFilesOtherThanFilterGivenLibraryShouldNotDisplayedAtAddFileModalAsPerGivenClauseInKeyValueMapConfig-RecordLevel
+  Scenario Outline: Verify that files other than filter given library folders are not displayed at add file modal under upload from library tab - record level
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue           | filterId         |
+      | Flex Table Action     | Action URL Long | <actionUrlLongDefaultValue> | ApiGeneratedId:0 |
+      | Page Block            | Is Active       | true                        | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName       | fieldNewValue           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action            | Action URL Long | <actionUrlLongNewValue> | PlanningFiles         | Name                      | Add Files                  |
+      | Page Block:Page Block Detail | Is Active       | false                   | Grantee State Program | GNT__PageBlockTitle__c    | Library View               |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    And I click on "Upload File from Library" tab at files library upload modal
+    When I perform quick search for "SendEmailAttachment.png" under files library
+    Then I see "No Records Found" inside flex table with id "---program:-:WorkspaceFilesUploadId---"
+
+    Examples:
+      | actionUrlLongNewValue                                                                                                            | actionUrlLongDefaultValue                                                                           |
+      | /apex/SalesforceFiles?pageName=GNT__FileUpload&parentId={!Program__c.Id}&pageBlockId={!pageBlockId}&workspaceIds={!workspaceIds} | /apex/SalesforceFiles?pageName=GNT__FileUpload&parentId={!Program__c.Id}&pageBlockId={!pageBlockId} |
+
+  @101477 @validateThanMultipleFilesWithSameNameCanBeUploadedIntoLibrary-HomePhase
+  Scenario: Verify that multiple files with same name can be uploaded in one library - home phase
+    Given I have "customMetaData" configuration as below:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label              | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY7QAO | ShowSharingPrivacy | false        | GNT__KeyValueHolder__mdt |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I click on expand icon at library/folder "UnitedHealth Group"
+    When I click on dropdown at library/folder/file "duplicateFileInFolder.png"
+    When I click on "Delete File" option at library/folder/file "duplicateFileInFolder.png"
+    When I click on dropdown at library/folder/file "duplicateFileInFolder.png"
+    When I click on "Delete File" option at library/folder/file "duplicateFileInFolder.png"
+    When I click on dropdown at library/folder/file "UnitedHealth Group"
+    When I click on "Upload File" option at library/folder/file "UnitedHealth Group"
+    When I upload file "duplicateFileInFolder.png" into library
+    When I click on "Upload" button in send email modal
+    When I click on dropdown at library/folder/file "UnitedHealth Group"
+    When I click on "Upload File" option at library/folder/file "UnitedHealth Group"
+    When I upload file "duplicateFileInFolder.png" into library
+    When I click on "Upload" button in send email modal
+    Then I see files "duplicateFileInFolder.png" is displayed under "UnitedHealth Group" folder
+
+  @101484 @validateThatMultipleFilesWithSameNameCanBeUploadedIntoLibraryFromUploadFileFromLibraryTab-RecordLevel
+  Scenario: Verify that multiple files with same name can be uploaded from upload file from library tab-  record level
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I perform quick search for "DuplicateFile.txt" in "---program:-:PlanningFilesFlexGridId---" panel
+    When I click on "Delete" icon for "DuplicateFile.txt" inside table
+    When I click "Yes" on modal confirmation box
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    And I click on "Upload File from Library" tab at files library upload modal
+    When I perform quick search for "DuplicateFile.txt" under files library
+    When I upload file "DuplicateFile.txt" present in the flex table "WorkspaceFilesUpload" from library
+    When I perform quick search for "DuplicateFile.txt" in "---program:-:PlanningFilesFlexGridId---" panel
+    Then I see value "DuplicateFile.txt" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
