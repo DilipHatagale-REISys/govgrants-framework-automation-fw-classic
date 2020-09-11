@@ -1954,7 +1954,7 @@ Business Need: Logged Issues Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
-    Then I softly see Classification as "Select File Classification" at upload file modal
+    Then I softly see Classification as "Select file classification" at upload file modal
     Then I softly see Classification as "Medical Reports" at upload file modal
     Then I softly see Classification as "Clinical Budgets" at upload file modal
 

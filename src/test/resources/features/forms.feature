@@ -124,3 +124,63 @@ Business Need: Forms Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on "View" icon of form "General Application Budget Form" program in flex table
     Then I see "Monitoring Schedule For All Active Grants" shown as inside "---program:-:TmpActiveGrantsGridTableId---"
+
+  @102056 @verifyTheSwitchKeywordIsDisplayedCorrectlyInsideConfirmationBoxAtFormPreviewPage-gAnnouncement
+  Scenario:validate switch is displayed correctly in confirmation box on forms preview layout
+    Given I have "lightening" configuration as below:
+      | booleanValue | integerValue | id                 | description                 | name                               |
+      | true         | 0            | a0b1C00000N9XxsQAF | hideBusinessFormFieldOnEdit | hideBusinessFormFieldOnEdit record |
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description                 | name                               |
+      | false        | 0            | a0b1C00000N9XxsQAF | hideBusinessFormFieldOnEdit | hideBusinessFormFieldOnEdit record |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Application For Automation"
+    When I click on "View" icon for "Test Application For Automation" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon of form "General Application Form" program in flex table
+    When I click on "Edit" in the page details
+    When I select "General Application Cover Page" from dropdown at forms
+    Then I see the text containing :
+      | switch |
+
+  @102060 @verifyThatOKKeywordIsDisplayedCorrectlyInsideConfirmationBoxAtFormPreviewPage-gAnnouncement
+  Scenario:validate OK is displayed correctly in confirmation box on forms preview layout
+    Given I have "lightening" configuration as below:
+      | booleanValue | integerValue | id                 | description                 | name                               |
+      | true         | 0            | a0b1C00000N9XxsQAF | hideBusinessFormFieldOnEdit | hideBusinessFormFieldOnEdit record |
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description                 | name                               |
+      | false        | 0            | a0b1C00000N9XxsQAF | hideBusinessFormFieldOnEdit | hideBusinessFormFieldOnEdit record |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Application For Automation"
+    When I click on "View" icon for "Test Application For Automation" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon of form "General Application Form" program in flex table
+    When I click on "Edit" in the page details
+    When I select "General Application Cover Page" from dropdown at forms
+    Then I see the text containing :
+      | Ok |
+
+  @102058 @verifyThatDifferentWordIsDisplayedCorrectlyInsideConfirmationBoxAtFormPreviewPage-gAnnouncement
+  Scenario:validate different is displayed correctly in confirmation box on forms preview layout
+    Given I have "lightening" configuration as below:
+      | booleanValue | integerValue | id                 | description                 | name                               |
+      | true         | 0            | a0b1C00000N9XxsQAF | hideBusinessFormFieldOnEdit | hideBusinessFormFieldOnEdit record |
+    And I update custom setting changes:
+      | booleanValue | integerValue | id                 | description                 | name                               |
+      | false        | 0            | a0b1C00000N9XxsQAF | hideBusinessFormFieldOnEdit | hideBusinessFormFieldOnEdit record |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Application For Automation"
+    When I click on "View" icon for "Test Application For Automation" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon of form "General Application Form" program in flex table
+    When I click on "Edit" in the page details
+    When I select "General Application Cover Page" from dropdown at forms
+    Then I see the text containing :
+      | different |

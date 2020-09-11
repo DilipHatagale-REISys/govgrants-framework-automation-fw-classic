@@ -1093,6 +1093,19 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * return true if select files section displayed under send email modal window
+     *
+     * @author ashwini.mahore
+     */
+    public void assertSelectFilesSectionIsDisplayedUnderSendEmailModal(String usage) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isSelectFilesSectionDisplayUnderSendEmailModal());
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isSelectFilesSectionDisplayUnderSendEmailModal()).isFalse();
+        }
+    }
+
+    /**
      * get owner organisation lookup modal complete content
      *
      * @return
@@ -1590,7 +1603,7 @@ public class PageLayoutPage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(By.xpath(
-                    "//div[@id='" + fieldApiName + "']//select[@disabled]"))) {
+                    "//div[@id='" + fieldApiName + "']//select[@disabled] | //span[@id='" + fieldApiName + "']//input[@disabled] "))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -1801,7 +1814,7 @@ public class PageLayoutPage extends GovGrantsManager {
     private Boolean isAttachmentPresentInSendEmailModal(String attachmentName) {
         boolean flag = false;
 
-        if (I.amPerforming().getElementReference().of(By.xpath("//tbody//tr//td[contains(text(),'" + attachmentName + "')]")).isDisplayed()) {
+        if (I.amPerforming().getElementReference().of(By.xpath("//tbody//tr//td[contains(text(),'" + attachmentName + "')] | //a[text()='" + attachmentName + "']")).isDisplayed()) {
             flag = true;
         }
         return flag;
@@ -2104,6 +2117,22 @@ public class PageLayoutPage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//img[@title='" + searchBtnName + "']"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if select files section displayed under send email modal window
+     *
+     * @author ashwini.mahore
+     */
+    private boolean isSelectFilesSectionDisplayUnderSendEmailModal() {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//button[text()='Select Files']/parent::div"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
