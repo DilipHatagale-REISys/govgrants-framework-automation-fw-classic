@@ -527,4 +527,9 @@ public class PageLayoutSteps {
     public void iSeeSearchIconForLookup(String searchBtnName) {
         pageLayoutPage.assertSearchIconAtLookupField(searchBtnName);
     }
+
+    @Then("^I (see|do not see) select files section is displayed under send email modal$")
+    public void iSeeSelectFilesSectionIsDisplayedUnderSendEmailModal(String usage) {
+        pageLayoutPage.assertSelectFilesSectionIsDisplayedUnderSendEmailModal(usage);
+    }
 }

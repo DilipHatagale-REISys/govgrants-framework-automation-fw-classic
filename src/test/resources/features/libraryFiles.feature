@@ -280,11 +280,10 @@ Business Need: Library Files Component Scenarios
     When I click on "Add New Folder" option at library/folder/file "Department of Community Health"
     When I enter value as "testAutomationFolderByAuthor" in field "Folder Name" at Library Files
     When I click on "Save" button in send email modal
-    And I pause execution for "2" seconds
     When I click on expand icon at library/folder "Department of Community Health"
     When I click on dropdown at library/folder/file "testAutomationFolderByAuthor"
     When I click on "Delete Folder" option at library/folder/file "testAutomationFolderByAuthor"
-    And I pause execution for "3" seconds
+    And I pause execution for "5" seconds
     Then I do not see library/folder/file "testAutomationFolderByAuthor" is displayed under files library
 
   @70363 @validateThatAlertMessageIsDisplayedByClickOnSaveButtonIfFolderNameIsEmptyAtRenameFolderOperation-HomePhase
@@ -529,11 +528,10 @@ Business Need: Library Files Component Scenarios
     When I click on "Add New Folder" option at library/folder/file "Department of Community Health"
     When I enter value as "testAutomationFolderByAdmin" in field "Folder Name" at Library Files
     When I click on "Save" button in send email modal
-    And I pause execution for "2" seconds
     When I click on expand icon at library/folder "Department of Community Health"
     When I click on dropdown at library/folder/file "testAutomationFolderByAdmin"
     When I click on "Delete Folder" option at library/folder/file "testAutomationFolderByAdmin"
-    And I pause execution for "3" seconds
+    And I pause execution for "5" seconds
     Then I do not see library/folder/file "testAutomationFolderByAdmin" is displayed under files library
 
   @70491 @validateThatIfFileIsAssociatedWithAnyRecordThenShouldNotBeDeleted-HomePhase
@@ -1118,17 +1116,17 @@ Business Need: Library Files Component Scenarios
     When I click on dropdown at library/folder/file "testAutomationFolder1"
     Then I softly do not see "Set As Default Folder" option is present at library/folder/file "testAutomationFolder1"
 
-  @70484 @validateThatSetAsDefaultFolderDropdownOptionIsNotDisplayedAtLibraryForAuthorProfileHomePhase
+  @70484 @validateThatSetAsDefaultFolderDropdownOptionIsDisplayedAtLibraryForAuthorProfileHomePhase
   Scenario: Verify that Dropdown Option as Set As Default Folder is not Displayed at File under home phase library for Author profile
     When I login as "Automation-PM" user
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "Department of Community Health"
-    Then I softly do not see "Set As Default Folder" option is present at library/folder/file "Department of Community Health"
+    Then I softly see "Set As Default Folder" option is present at library/folder/file "Department of Community Health"
     When I click on expand icon at library/folder "Department of Community Health"
     When I click on dropdown at library/folder/file "testAutomationFolder1"
-    Then I softly do not see "Set As Default Folder" option is present at library/folder/file "testAutomationFolder1"
+    Then I softly see "Set As Default Folder" option is present at library/folder/file "testAutomationFolder1"
 
   @70486 @validateThatByClickOnRefreshButtonQuickSearchResultIsGettingRefreshed-HomePhase
   Scenario: Verify that by click on Refresh button quick search result disappears - Home Phase
@@ -1269,7 +1267,7 @@ Business Need: Library Files Component Scenarios
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     And I click on "Upload File from Library" tab at files library upload modal
     When I select "2" page from dropdown at search table with id "WorkspaceFilesUpload" at file upload modal
-    Then I see "DummyFile2_DND.jpg" shown in search table with id "WorkspaceFilesUpload" at file upload modal
+    Then I see "Showing 5 to 10" inside flex table with id "---program:-:WorkspaceFilesUploadId---"
 
   @70741 @validateThatUserCanUploadXlsxTypeFileUnderPlanningFilesTable-HomePhase @NeedDeleteAPI
   Scenario: Verify that user can upload .xlsx type of file under planning files table as it is - Home Phase
@@ -1474,8 +1472,14 @@ Business Need: Library Files Component Scenarios
     When I click on expand icon at library/folder "Department of Community Health"
     Then I do not see Default keyword "testAutomationDefaultFolder" at library/folder inside "fileLibrary"
 
-  @81311 @validateThatUploadFileFromLibraryTabIsNotDisplayedAtAddFileModalForSPIProfile-RecordLevel @NeedAPIForCustomMetaData
+  @81311 @validateThatUploadFileFromLibraryTabIsNotDisplayedAtAddFileModalForSPIProfile-RecordLevel
   Scenario: Verify that upload file from library tab is not Displayed at add file modal for SPI profile
+    Given I have "customMetaData" configuration as below:
+      | id                 | label                       | booleanValue | customMetaDataApiName    |
+      | m031C000000XZWkQAO | DisableUploadFromLibraryTab | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label                       | booleanValue | customMetaDataApiName    |
+      | m031C000000XZWkQAO | DisableUploadFromLibraryTab | true         | GNT__KeyValueHolder__mdt |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
     And I navigate to "Applications" tab
@@ -1641,6 +1645,12 @@ Business Need: Library Files Component Scenarios
 
   @81674 @validateThatDefaultKeyWordIsDisplayedAtFolderUnderSelectChangeFolderModalWindowForGovGrantAdminProfile-RecordLevel @NeedAPIForCustomMetaData
   Scenario: Verify that default keyword is Displayed at folder at select or change folder modal for GovGrant Admin profile -Record level
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Block            | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Is Active | false         | Grantee State Program | GNT__PageBlockTitle__c    | Library View               |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1671,6 +1681,12 @@ Business Need: Library Files Component Scenarios
 
   @81515 @validateThatUserCanEditFileAndChangeFolderOfExistingFile-RecordLevel
   Scenario: Verify that user is able to edit existing file and change folder of that file - record level
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Block            | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Is Active | false         | Grantee State Program | GNT__PageBlockTitle__c    | Library View               |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2019,7 +2035,7 @@ Business Need: Library Files Component Scenarios
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
     When I click on dropdown at library/folder/file "Library-Folder 1 DND"
-    When I click on "Upload File" option at library/folder/file "Duplicate"
+    When I click on "Upload File" option at library/folder/file "Library-Folder 1 DND"
     Then I see asterisk mark at "Sharing Options" field
 
   @101494 @validateThatIfSharingOptionIsNotSelectedThenUploadButtonIsDisabled-HomePhase
@@ -2099,6 +2115,7 @@ Business Need: Library Files Component Scenarios
     When I click on "Edit File" option at library/folder/file "automationTestingOfFiles.xls"
     When I select sharing option as "Private on Records" at upload file modal
     When I click on "Save" button in send email modal
+    When I click on dropdown at library/folder/file "automationTestingOfFiles.xls"
     When I click on "Edit File" option at library/folder/file "automationTestingOfFiles.xls"
     Then I see sharing option as "Private on Records" at upload file modal
 

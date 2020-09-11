@@ -379,11 +379,11 @@ Business Need: Sanity check for all Component Scenarios
       | Phase Config          | Total Charts Allowed | 3                 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue | coreComponentField |
-      | Phase Config:General  | Total Charts Allowed | 2             | GrantorPlanning    |
+      | Phase Config:General  | Total Charts Allowed | 1             | GrantorPlanning    |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    Then I see "2" charts are displayed
+    Then I see "1" charts are displayed
 
   @69217 @validateIfGroupCheckboxCheckedAtCCFieldThenOnlyUserGroupsIsShownInAutoSuggestionBox @sendEmail
   Scenario: Validate If Group checkbox is checked At CC Field then only Group is shown in suggestion box at send email modal
