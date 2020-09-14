@@ -10,6 +10,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.io.IOException;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Map;
 
@@ -1106,6 +1107,27 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * return true if disabled date field value is not changes after page scroll on page layout edit mode
+     *
+     * @param fieldValue
+     * @param fieldName
+     * @author ashwini.mahore
+     */
+    public void assertDisabledFieldValueAfterPageScroll(String fieldValue, String fieldName) {
+        Assert.assertTrue(isDisabledFieldValueChangedAfterPageScroll(fieldValue, fieldName));
+    }
+
+    /**
+     * return true if current date is displayed on send email modal
+     *
+     * @param label
+     * @author ashwini.mahore
+     */
+    public void assertDisplayOfCurrentDateOnSendEmailModal(String label) {
+        Assert.assertTrue(isCurrentDateDisplayedOnSendEmailModal(label));
+    }
+
+    /**
      * get owner organisation lookup modal complete content
      *
      * @return
@@ -2133,6 +2155,45 @@ public class PageLayoutPage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//button[text()='Select Files']/parent::div"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if disabled date field value is not changes after page scroll on page layout edit mode
+     *
+     * @param fieldValue
+     * @param fieldName
+     * @author ashwini.mahore
+     */
+    private boolean isDisabledFieldValueChangedAfterPageScroll(String fieldValue, String fieldName) {
+        boolean flag = false;
+        By getDisabledFieldValue = By.xpath("//span[text()='" + fieldName + "']/ancestor::dt/following-sibling::dd//input[@value='" + fieldValue + "']");
+        I.amPerforming().scroll().toMoveToElement(getDisabledFieldValue);
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(getDisabledFieldValue)) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if current date is displayed on send email modal
+     *
+     * @param label
+     * @author ashwini.mahore
+     */
+    private boolean isCurrentDateDisplayedOnSendEmailModal(String label) {
+        boolean flag = false;
+        WebElement getCurrentDateOnModal = I.amPerforming().getElementReference().of(By.xpath("//label[text()='Sent Date']/following-sibling::div"));
+        try {
+            if (getCurrentDateOnModal.getText().contains(I.amPerforming().dateOperationsToGet().currentDateInDesiredFormat(DateTimeFormatter.ofPattern("M/D/YYYY")))) {
+                System.out.println(getCurrentDateOnModal.getText().contains(I.amPerforming().dateOperationsToGet().currentDateInDesiredFormat(DateTimeFormatter.ofPattern("M/D/YYYY"))));
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {

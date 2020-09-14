@@ -2053,3 +2053,30 @@ Business Need: All pdf and xls related scenario including component and complete
     And I select "Download As PDF" from dropdown
     And I download the file
     Then I cannot see "Title" on page "1" of "govgrants" pdf file
+
+  @100500 @verifyThatIfPicklistFieldValueIsChanagedThenItIsDisplayedInFieldHistoryTableInDownloadedPDFFromPageLyout
+  Scenario: verify that if picklist field value is changed then it is displayed correctly field history table in downloaded pdf from page layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active       | false             | ApiGeneratedId:0 |
+      | Page Tabs Config      | Skip for Export | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName       | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active       | false         | Grantee State Program | Name                      | TAB-026                    |
+      | Page Tabs Config:Page Layout Action | Skip for Export | true          | Grantee State Program | Name                      | TAB-980                    |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I click on "Edit" in the page details
+    When I navigate to "Overview" sub tab
+    And I enter value "Loan" into field "ProgramType__c"
+    And I click on "Save" in the page details
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see "Loan" on page "5" of "govgrants" pdf file

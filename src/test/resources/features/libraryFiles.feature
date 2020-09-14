@@ -47,23 +47,23 @@ Business Need: Library Files Component Scenarios
 
   @70282 @validateThatAccessGivenLibraryShouldDisplayOnUIForAuthorProfileHomePhase
   Scenario: Verify that govgrant Viewer access given library is displayed under home phase library for Viewer profile
-    When I login as "Automation-PM" user
+    When I login as "Automation-EXE" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
-    Then I see library/folder/file "Department of Community Health" is displayed under files library
+    Then I see library/folder/file "Secretary of Health" is displayed under files library
 
   @70283 @validateThatByClickOnLibraryMultipleFoldersShouldDisplayedOnUIForAuthorProfileHomePhase
   Scenario: Verify that By click on library expand icon, multiple folders Should get displayed under home phase library by author
-    When I login as "Automation-PM" user
+    When I login as "Automation-EXE" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
-    When I click on expand icon at library/folder "Department of Community Health"
-    Then I softly see library/folder/file "testAutomationFolder1" is displayed under files library
-    Then I softly see library/folder/file "testAutomationFolder2" is displayed under files library
+    When I click on expand icon at library/folder "Secretary of Health"
+    Then I softly see library/folder/file "AuthorFolder1" is displayed under files library
+    Then I softly see library/folder/file "AdminCreatedFolder1" is displayed under files library
 
   @70285 @validateThatByClickOnAddNewFolderAFolderShouldGetAddedInLibraryByAuthor-HomePhase @reqChangeInMsg
   Scenario: Verify that By click on Add New Folder, a folder should get added under home phase library by author
@@ -187,7 +187,7 @@ Business Need: Library Files Component Scenarios
 
   @70284 @validateThatAuthorCanSeeAllActionsAtLibrary-HomePhase
   Scenario: Verify that admin can see add new folder,upload file, download file actions- Home phase
-    When I login as "Automation-PM" user
+    When I login as "Automation-EXE" user
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
@@ -239,16 +239,16 @@ Business Need: Library Files Component Scenarios
 
   @70360 @validateThatDeleteFolderIsDisplayedInLibraryByAuthor-HomePhase
   Scenario: Verify that the Delete folder option is available at library dropdown under home phase by author
-    When I login as "Automation-PM" user
+    When I login as "Automation-EXE" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
-    When I click on expand icon at library/folder "Department of Community Health"
-    When I click on dropdown at library/folder/file "Department of Community Health"
-    When I click on "Add New Folder" option at library/folder/file "Department of Community Health"
+    When I click on dropdown at library/folder/file "Secretary of Health"
+    When I click on "Add New Folder" option at library/folder/file "Secretary of Health"
     When I enter value as "testAutomationFolderByAuthor" in field "Folder Name" at Library Files
     When I click on "Save" button in send email modal
+    When I click on expand icon at library/folder "Secretary of Health"
     Then I softly see library/folder/file "testAutomationFolderByAuthor" is displayed under files library
     When I click on dropdown at library/folder/file "testAutomationFolderByAuthor"
     Then I softly see "Delete Folder" option is present at library/folder/file "testAutomationFolderByAuthor"
@@ -271,16 +271,16 @@ Business Need: Library Files Component Scenarios
 
   @70362 @validateThatFolderCanBeDeletedFromLibraryByAuthor-HomePhase
   Scenario: Verify that folder present under library can be deleted by author - Home phase
-    When I login as "Automation-PM" user
+    When I login as "Automation-EXE" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
-    When I click on dropdown at library/folder/file "Department of Community Health"
-    When I click on "Add New Folder" option at library/folder/file "Department of Community Health"
+    When I click on dropdown at library/folder/file "Secretary of Health"
+    When I click on "Add New Folder" option at library/folder/file "Secretary of Health"
     When I enter value as "testAutomationFolderByAuthor" in field "Folder Name" at Library Files
     When I click on "Save" button in send email modal
-    When I click on expand icon at library/folder "Department of Community Health"
+    When I click on expand icon at library/folder "Secretary of Health"
     When I click on dropdown at library/folder/file "testAutomationFolderByAuthor"
     When I click on "Delete Folder" option at library/folder/file "testAutomationFolderByAuthor"
     And I pause execution for "5" seconds
@@ -355,28 +355,24 @@ Business Need: Library Files Component Scenarios
     Then I see the following messages in the page details contains:
       | You can delete a Content Folder only if it's empty. |
 
-  @70286 @validateThatAuthorCanUploadFileUnderFolder-HomePhase @NeedDeleteAPI
+  @70286 @validateThatAuthorCanUploadFileUnderFolder-HomePhase
   Scenario: Verify that an author can upload file in folder under home phase library
-    When I login as "Automation-PM" user
+    When I login as "Automation-EXE" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
-    When I click on expand icon at library/folder "Department of Community Health"
-    When I click on dropdown at library/folder/file "testAutomationFolder1"
-    When I click on "Upload File" option at library/folder/file "testAutomationFolder1"
+    When I click on expand icon at library/folder "Secretary of Health"
+    When I click on dropdown at library/folder/file "AuthorFolder1"
+    When I click on "Upload File" option at library/folder/file "AuthorFolder1"
     When I upload file "SendEmailAttachment.pdf" into library
     When I enter value as "test Automation Description" in field "Description" at Library Files
     When I click on "Upload" button in send email modal
-    And I pause execution for "5" seconds
-    And I refresh the page
-    When I click on "My_Workspace_File"
-    When I click on "My_Workspace_Library"
-    When I click on expand icon at library/folder "Department of Community Health"
-    When I click on expand icon at library/folder "testAutomationFolder1"
+    When I click on expand icon at library/folder "AuthorFolder1"
     Then I softly see library/folder/file "SendEmailAttachment.pdf" is displayed under files library
     When I click on dropdown at library/folder/file "SendEmailAttachment.pdf"
     When I click on "Delete File" option at library/folder/file "SendEmailAttachment.pdf"
+    Then I softly do not see library/folder/file "SendEmailAttachment.pdf" is displayed under files library
 
   @70338 @validateThatAlertMessageIsDisplayedByClickOnSaveButtonIfFolderNameIsEmptyAtAddNewFolderOperation-HomePhase
   Scenario: Verify that required fields validation msg appears below folder name field under Add New folder modal - home phase
@@ -417,22 +413,17 @@ Business Need: Library Files Component Scenarios
 
   @70407 @validateThatFileFromLibraryFolderShouldBeEditableByAuthor-HomePhase
   Scenario: Verify that By click on edit file, a file name should get updated and shown under library - by author
-    When I login as "Automation-PM" user
+    When I login as "Automation-EXE" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
-    When I click on expand icon at library/folder "Department of Community Health"
-    When I click on dropdown at library/folder/file "testAutomationFolder1"
+    When I click on expand icon at library/folder "Secretary of Health"
+    When I click on dropdown at library/folder/file "AuthorFolder1"
     When I click on "Upload File" option at library/folder/file "testAutomationFolder1"
     When I upload file "TestAutomation.txt" into library
     When I click on "Upload" button in send email modal
-    When I pause execution for "5" seconds
-    And I refresh the page
-    When I click on "My_Workspace_File"
-    When I click on "My_Workspace_Library"
-    When I click on expand icon at library/folder "Department of Community Health"
-    When I click on expand icon at library/folder "testAutomationFolder1"
+    When I click on expand icon at library/folder "AuthorFolder1"
     Then I softly see library/folder/file "TestAutomation.txt" is displayed under files library
     When I click on dropdown at library/folder/file "TestAutomation.txt"
     When I click on "Edit File" option at library/folder/file "TestAutomation.txt"
@@ -442,7 +433,7 @@ Business Need: Library Files Component Scenarios
     Then I softly see library/folder/file "EditTestAutomation.txt" is displayed under files library
     When I click on dropdown at library/folder/file "EditTestAutomation.txt"
     When I click on "Delete File" option at library/folder/file "EditTestAutomation.txt"
-    When I pause execution for "7" seconds
+    When I pause execution for "3" seconds
     Then I softly do not see library/folder/file "EditTestAutomation.txt" is displayed under files library
 
   @70410 @validateThatUserCanUploadFileFromFileList-HomePhase-FileList @NeedDeleteAPI
@@ -1116,17 +1107,17 @@ Business Need: Library Files Component Scenarios
     When I click on dropdown at library/folder/file "testAutomationFolder1"
     Then I softly do not see "Set As Default Folder" option is present at library/folder/file "testAutomationFolder1"
 
-  @70484 @validateThatSetAsDefaultFolderDropdownOptionIsDisplayedAtLibraryForAuthorProfileHomePhase
+  @70484 @validateThatSetAsDefaultFolderDropdownOptionIsNotDisplayedAtLibraryForAuthorProfileHomePhase
   Scenario: Verify that Dropdown Option as Set As Default Folder is not Displayed at File under home phase library for Author profile
-    When I login as "Automation-PM" user
+    When I login as "Automation-EXE" user
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
-    When I click on dropdown at library/folder/file "Department of Community Health"
-    Then I softly see "Set As Default Folder" option is present at library/folder/file "Department of Community Health"
-    When I click on expand icon at library/folder "Department of Community Health"
-    When I click on dropdown at library/folder/file "testAutomationFolder1"
-    Then I softly see "Set As Default Folder" option is present at library/folder/file "testAutomationFolder1"
+    When I click on dropdown at library/folder/file "Secretary of Health"
+    Then I softly do not see "Set As Default Folder" option is present at library/folder/file "Secretary of Health"
+    When I click on expand icon at library/folder "Secretary of Health"
+    When I click on dropdown at library/folder/file "AuthorFolder1"
+    Then I softly do not see "Set As Default Folder" option is present at library/folder/file "AuthorFolder1"
 
   @70486 @validateThatByClickOnRefreshButtonQuickSearchResultIsGettingRefreshed-HomePhase
   Scenario: Verify that by click on Refresh button quick search result disappears - Home Phase
@@ -1455,6 +1446,12 @@ Business Need: Library Files Component Scenarios
 
   @81236 @validateThatDefaultKeyWordIsNotDisplayedAtLibraryForSPIProfile-HomePhase
   Scenario: Verify that default keyword is not Displayed at Library under home phase library for SPI profile
+    Given I have "customMetaData" configuration as below:
+      | id                 | label            | booleanValue | customMetaDataApiName    |
+      | m031C000000XZWpQAO | ExternalProfiles | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label            | booleanValue | customMetaDataApiName    |
+      | m031C000000XZWpQAO | ExternalProfiles | true         | GNT__KeyValueHolder__mdt |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
     And I navigate to "HOME" tab
@@ -1464,6 +1461,12 @@ Business Need: Library Files Component Scenarios
 
   @81302 @validateThatDefaultKeyWordIsNotDisplayedAtFolderForSPIProfile-HomePhase
   Scenario: Verify that  default keyword is not Displayed at folder under home phase library for SPI profile
+    Given I have "customMetaData" configuration as below:
+      | id                 | label            | booleanValue | customMetaDataApiName    |
+      | m031C000000XZWpQAO | ExternalProfiles | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label            | booleanValue | customMetaDataApiName    |
+      | m031C000000XZWpQAO | ExternalProfiles | true         | GNT__KeyValueHolder__mdt |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
     And I navigate to "HOME" tab
@@ -1541,8 +1544,14 @@ Business Need: Library Files Component Scenarios
     When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
     Then I see pre-selected library/folder as "testAutomationDefaultFolder" is displayed at add file modal
 
-  @81525 @validateIfLibraryIsSetAsDefaultThenItsNameIsDisplayedAsPre-SelectedFolderAtAddFileModalUnderPlanningFilesTable-RecordLevel @needMetaDataAPIs @wip
+  @81525 @validateIfLibraryIsSetAsDefaultThenItsNameIsDisplayedAsPre-SelectedFolderAtAddFileModalUnderPlanningFilesTable-RecordLevel
   Scenario: Verify if default library is set then that folder name is displayed under select/change folder field at add file modal - Planing Phase
+    Given I have "customMetaData" configuration as below:
+      | id                 | label            | booleanValue | customMetaDataApiName    |
+      | m031C000000XZWpQAO | ExternalProfiles | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label            | booleanValue | customMetaDataApiName    |
+      | m031C000000XZWpQAO | ExternalProfiles | false        | GNT__KeyValueHolder__mdt |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
     And I navigate to "Applications" tab
@@ -1552,8 +1561,14 @@ Business Need: Library Files Component Scenarios
     When I click on top right button "Add Files" in flex table with id "---program:-:ApplicationFilesFlexGridId---"
     Then I see pre-selected library/folder as "UnitedHealth Group" is displayed at add file modal
 
-  @81534 @validateIfLibraryIsSetAsDefaultThenItsNameIsDisplayedAsPre-SelectedFolderAtAddFileModalUnderPlanningFilesTable-PhaseLevel @needMetaDataAPIs @wip
+  @81534 @validateIfLibraryIsSetAsDefaultThenItsNameIsDisplayedAsPre-SelectedFolderAtAddFileModalUnderPlanningFilesTable-PhaseLevel
   Scenario: Verify if default library is set then that folder name is displayed under select/change folder field at add file modal - home Phase
+    Given I have "customMetaData" configuration as below:
+      | id                 | label            | booleanValue | customMetaDataApiName    |
+      | m031C000000XZWpQAO | ExternalProfiles | false        | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label            | booleanValue | customMetaDataApiName    |
+      | m031C000000XZWpQAO | ExternalProfiles | false         | GNT__KeyValueHolder__mdt |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
     And I navigate to "HOME" tab
@@ -1580,44 +1595,44 @@ Business Need: Library Files Component Scenarios
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
-    When I click on expand icon at library/folder "Department of Community Health"
-    When I click on expand icon at library/folder "testAutomationFolder1"
-    When I click on dropdown at library/folder/file "SendEmailAttachment.png"
-    Then I do not see "Edit File" option is present at library/folder/file "SendEmailAttachment.png"
+    When I click on expand icon at library/folder "Secretary of Health"
+    When I click on expand icon at library/folder "AdminCreatedFolder1"
+    When I click on dropdown at library/folder/file "AdminCreatedFile.txt"
+    Then I do not see "Edit File" option is present at library/folder/file "AdminCreatedFile.txt"
 
   @81593 @validateThatAuthorCannotDeleteFileUploadedByOtherUser-HomePhase
   Scenario: Verify that author cannot see the Delete option at file uploaded by other users
-    When I login as "Automation-PM" user
+    When I login as "Automation-EXE" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
-    When I click on expand icon at library/folder "Department of Community Health"
-    When I click on expand icon at library/folder "testAutomationFolder1"
-    When I click on dropdown at library/folder/file "SendEmailAttachment.png"
-    Then I do not see "Delete File" option is present at library/folder/file "SendEmailAttachment.png"
+    When I click on expand icon at library/folder "Secretary of Health"
+    When I click on expand icon at library/folder "AdminCreatedFolder1"
+    When I click on dropdown at library/folder/file "AdminCreatedFile.txt"
+    Then I do not see "Delete File" option is present at library/folder/file "AdminCreatedFile.txt"
 
   @81646 @validateThatAuthorCannotDeleteFolderUploadedByOtherUser-HomePhase
   Scenario: Verify that author cannot see the Delete Folder option at file uploaded by other users
-    When I login as "Automation-PM" user
+    When I login as "Automation-EXE" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
-    When I click on expand icon at library/folder "Department of Community Health"
-    When I click on dropdown at library/folder/file "testAutomationFolder1"
-    Then I do not see "Delete Folder" option is present at library/folder/file "testAutomationFolder1"
+    When I click on expand icon at library/folder "Secretary of Health"
+    When I click on dropdown at library/folder/file "AdminCreatedFolder1"
+    Then I do not see "Delete Folder" option is present at library/folder/file "AdminCreatedFolder1"
 
   @81648 @validateThatAuthorCannotRenameFolderUploadedByOtherUser-HomePhase
   Scenario: Verify that author cannot see the rename Folder option at file uploaded by other users
-    When I login as "Automation-PM" user
+    When I login as "Automation-EXE" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
-    When I click on expand icon at library/folder "Department of Community Health"
-    When I click on dropdown at library/folder/file "testAutomationFolder1"
-    Then I do not see "Rename Folder" option is present at library/folder/file "testAutomationFolder1"
+    When I click on expand icon at library/folder "Secretary of Health"
+    When I click on dropdown at library/folder/file "AdminCreatedFolder1"
+    Then I do not see "Rename Folder" option is present at library/folder/file "AdminCreatedFolder1"
 
   @81745 @validateThatDefaultKeyWordIsDisplayedAtLibraryUnderSelectChangeFolderModalWindowForGovGrantAdminProfile-HomePhase
   Scenario: Verify that default keyword is Displayed at library at select or change folder modal for GovGrant Admin profile - -HomePhase
@@ -1643,7 +1658,7 @@ Business Need: Library Files Component Scenarios
     When I click on SelectChange Folder in add file modal
     Then I see Default keyword "UnitedHealth Group" at library/folder inside "modaltemp"
 
-  @81674 @validateThatDefaultKeyWordIsDisplayedAtFolderUnderSelectChangeFolderModalWindowForGovGrantAdminProfile-RecordLevel @NeedAPIForCustomMetaData
+  @81674 @validateThatDefaultKeyWordIsDisplayedAtFolderUnderSelectChangeFolderModalWindowForGovGrantAdminProfile-RecordLevel
   Scenario: Verify that default keyword is Displayed at folder at select or change folder modal for GovGrant Admin profile -Record level
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |

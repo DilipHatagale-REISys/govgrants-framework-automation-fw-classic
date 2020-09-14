@@ -1057,7 +1057,7 @@ Business Need: Logged Issues Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Roles" sub tab
     And I click on top right button "New" in flex table with id "ProgramRolesAndResponsibilities"
-    When I click search icon for "Assigned to User Lookup (New Window),enter" lookup modal and swithing to frame "iframeCustomLookupModalId"
+    When I click search icon for "Assigned to User Lookup (New Window)" lookup modal and swithing to frame "iframeCustomLookupModalId"
     Then I see "Allen PM" status in lookup modal table
 
   @59145    @orderBySortByFieldAtParentDataTable

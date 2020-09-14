@@ -20,15 +20,6 @@ public class FormPage extends GovGrantsManager {
 
     /******* "Key Methods with complete functionality - public" *****************/
 
-     /**
-     * perform click on dropdown at top right corner at form layout
-      *
-      * @param options
-     */
-    public void selectValueFromDropdownAtFormLayout(String options) {
-        I.amPerforming().click().on(By.xpath("//select[contains(@aria-label,'Select Form')]//option[text()='"+options+"']"));
-    }
-
     /**
      * assert business form not displayed inside attachment under application view
      * detail page
