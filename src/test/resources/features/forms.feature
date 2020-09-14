@@ -102,7 +102,6 @@ Business Need: Forms Component Scenarios
     When I click on "View" icon of form "General Application Form" program in flex table
     Then I see "Test Automation" shown as over view header
 
-
   @83501 @verifyEnhancedGridWithHeaderIsDisplayedOnFormPreviewPage-gAnnouncement
   Scenario:validate that enhanced grid with header is displayed on forms preview layout
     When I login as "Automation" user

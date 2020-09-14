@@ -338,6 +338,19 @@ public class PageLayout {
                         apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__TabConfig__c), filterClause),
                         String.valueOf(SObjectAPIs.GNT__Operator__c), value);
                 break;
+            case "SKIP FOR EXPORT":
+                if (m.find() || (value.contains("true")) || (value.contains("false"))) {
+                    finalPayload = String.format(
+                            payloadForIntValue, String.valueOf(SObjectAPIs.GNT__TabConfig__c), apiUtilities
+                                    .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__TabConfig__c), filterClause),
+                            String.valueOf(SObjectAPIs.GNT__SkipForExport__c), value);
+                } else {
+                    finalPayload = String.format(
+                            payloadForStringValue, String.valueOf(SObjectAPIs.GNT__TabConfig__c), apiUtilities
+                                    .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__TabConfig__c), filterClause),
+                            String.valueOf(SObjectAPIs.GNT__SkipForExport__c), value);
+                }
+                break;
         }
         System.out.println(finalPayload);
         return finalPayload;

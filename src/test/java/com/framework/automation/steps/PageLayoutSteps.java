@@ -532,4 +532,13 @@ public class PageLayoutSteps {
     public void iSeeSelectFilesSectionIsDisplayedUnderSendEmailModal(String usage) {
         pageLayoutPage.assertSelectFilesSectionIsDisplayedUnderSendEmailModal(usage);
     }
+
+    @Then("I see value {string} of {string} field is not changed on page scroll")
+    public void iSeeValueOfFieldIsNotChangedAfterScroll(String fieldValue, String fieldName) {
+        pageLayoutPage.assertDisabledFieldValueAfterPageScroll(fieldValue, fieldName);
+    }
+
+    @Then("I see current date is displayed in {string} on send email modal")
+    public void iSeeCurrentDateIsDisplayedInOnSendEmailModal(String label) {
+   pageLayoutPage.assertDisplayOfCurrentDateOnSendEmailModal(label); }
 }

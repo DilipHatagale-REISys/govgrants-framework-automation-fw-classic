@@ -11,12 +11,6 @@ public class FormStep {
 		this.formPage = new FormPage();
 	}
 
-
-	@When("I select {string} from dropdown at forms")
-	public void iSelectFromDropdownAtForms(String options) {
-		formPage.selectValueFromDropdownAtFormLayout(options);
-	}
-
 	@Then("^I see Business Form section is not displayed$")
 	public void assertBusinessFormSection() {
 		formPage.assertBusinessFormVisibility();

@@ -789,7 +789,7 @@ Business Need: dynamic forms Component Scenarios
   Scenario: changing value of question applicable as required for save and checking error message for radio new field at dynamic form
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
-      | Capture Item          | Question Applicable ? | Required to save  | ApiGeneratedId:0 |
+      | Capture Item          | Question Applicable ? |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Question Applicable ? | Required to save | CI-0033            |                           |                            |
