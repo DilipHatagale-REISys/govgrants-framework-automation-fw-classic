@@ -2044,7 +2044,7 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     Then I see charts "EnhancedDualAxes1Id" with type as "highcharts-tracker-line"
     Then I see charts "EnhancedDualAxes1Id" with type as "highcharts-area"
 
-  @71171    @validateEnhancedChartIsDisplayedOnlyToAutomationUser-gHOME-EnhancedDualAxesCharts
+  @71171    @validateEnhancedChartIsDisplayedOnlyToAutomationUser-gHOME-EnhancedDualAxesCharts @wip
   Scenario: Validating dual axes chart is displayed to Automation user only if the chart unique id is given under custom settings config
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -2061,7 +2061,7 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     And I navigate to "HOME" tab
     Then I do not see charts with id "---program:-:EnhancedDualAxesID---" displayed
 
-  @71172    @validateEnhancedChartIsDisplayedOnlyToAdminrUser-gHOME-EnhancedDualAxesCharts
+  @71172    @validateEnhancedChartIsDisplayedOnlyToAdminrUser-gHOME-EnhancedDualAxesCharts @wip
   Scenario: Validating dual axes chart is displayed to Admin user only if the chart unique id is given under custom settings config
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -2567,3 +2567,96 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     And I click on menu icon of chart "Enhanced Line" with title "Enhanced View"
     When I click on chart label at position "1" inside chart with id "---program:-:EnhancedLineChartId---" on modal
     Then I see "Test Automation Application" displayed in modal
+
+  @103509    @validateDisplayAreaFieldAtChartsOnDashboardLevelWhenValueIsBoth-gHome-EnhancedClassBasedConfigCharts
+  Scenario: Validating charts is getting displayed at dashboard if display area is set to Both -gHome
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
+      | Charts Config         | Display Area | Both              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName    | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue      |
+      | Charts Config         | Display Area | Both          | GrantorHome        | Name                      | GrantPerformanceScatterClsBased |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Analytics" tab
+    Then I see charts with id "---program:-:GrantPerformanceScatterClsBasedID---" displayed
+
+  @103416    @validateDisplayAreaFieldAtChartsOnPhaseLevelWhenValueIsSetAsBoth-gHome-EnhancedClassBasedConfigCharts
+  Scenario: Validating charts is getting displayed at phase if display area is set to Both -gHome
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
+      | Charts Config         | Display Area | Both              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName    | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue      |
+      | Charts Config         | Display Area | Both          | GrantorHome        | Name                      | GrantPerformanceScatterClsBased |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see charts with id "---program:-:GrantPerformanceScatterClsBasedID---" displayed
+
+  @103367    @validateChartsNotDisplayedOnPhaseLevelWhenDisplayAreaFieldIsSetAsDashboard-gHome-EnhancedClassBasedConfigCharts
+  Scenario: Validating charts is not displayed at home phase if display area is set to dashboard -gHome
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
+      | Charts Config         | Display Area | Both              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName    | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue      |
+      | Charts Config         | Display Area | Dashboard     | GrantorHome        | Name                      | GrantPerformanceScatterClsBased |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I do not see charts with id "---program:-:GrantPerformanceScatterClsBasedID---" displayed
+
+  @103417     @validateChartsDisplayedOnPhaseLevelWhenDisplayAreaFieldIsSetAsPhase-gHome-EnhancedClassBasedConfigCharts
+  Scenario: Validating charts is displayed at home phase if display area is set to phase -gHome
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
+      | Charts Config         | Display Area | Both              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName    | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue      |
+      | Charts Config         | Display Area | Phase         | GrantorHome        | Name                      | GrantPerformanceScatterClsBased |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see charts with id "---program:-:GrantPerformanceScatterClsBasedID---" displayed
+
+  @103568    @validateChartsnOTDisplayedOnDashboardLevelWhenDisplayAreaFieldIsSetAsPhase-gHome-EnhancedClassBasedConfigCharts
+  Scenario: Validating charts is not displayed at dashboard phase if display area is set to phase -gHome
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
+      | Charts Config         | Display Area | Both              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName    | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue      |
+      | Charts Config         | Display Area | Phase         | GrantorHome        | Name                      | GrantPerformanceScatterClsBased |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Analytics" tab
+    Then I do not see charts with id "---program:-:GrantPerformanceScatterClsBasedID---" displayed
+
+  @103767    @validateChartsDisplayedToSystemAdminUserWhenAvailableForProfileIsSetForSysAdminOnly-gHome-EnhancedClassBasedConfigCharts
+  Scenario: Validating charts is displayed at home phase if display area is set to phase -gHome
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue                 | filterId         |
+      | Charts Config         | Available for Profiles | PM; PO; SPI; System Administrator | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue      |
+      | Charts Config         | Available for Profiles | System Administrator | GrantorHome        | Name                      | GrantPerformanceScatterClsBased |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see charts with id "---program:-:GrantPerformanceScatterClsBasedID---" displayed
+
+  @103774    @validateChartsDisplayedToSystemAdminUserWhenAvailableForProfileIsSetForSysAdminOnly-gHome-EnhancedClassBasedConfigCharts
+  Scenario: Validating charts is displayed at home phase if display area is set to phase -gHome
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue                 | filterId         |
+      | Charts Config         | Available for Profiles | PM; PO; SPI; System Administrator | ApiGeneratedId:0 |
+      | Charts Config         | Display Area           | Both                              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue      |
+      | Charts Config         | Available for Profiles | System Administrator | GrantorHome        | Name                      | GrantPerformanceScatterClsBased |
+      | Charts Config         | Display Area           | Dashboard            | GrantorHome        | Name                      | GrantPerformanceScatterClsBased |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Analytics" tab
+    Then I see charts with id "---program:-:GrantPerformanceScatterClsBasedID---" displayed

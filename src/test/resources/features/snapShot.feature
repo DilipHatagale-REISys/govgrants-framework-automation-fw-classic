@@ -47,13 +47,16 @@ Business Need: Snapshot Config Component Scenarios
   @70014    @verifyAutoSnapShotNotCapturedWithIsActiveField
   Scenario: Validate Auto Snapshot is not getting captured after record submission as submit for approval
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Auto Snapshot         | Is Active | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:1 |
+      | configurationCategory | fieldName                       | fieldOrignalValue | filterId         |
+      | Auto Snapshot         | Is Active                       | false             | ApiGeneratedId:0 |
+      | Page Tabs Config      | Is Active                       | true              | ApiGeneratedId:1 |
+      | Page Layout Action    | History Snapshot-Action Enable? | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Auto Snapshot:Sobject Auto Snapshot | Is Active | true          | Program__c            | Name                      | SAS-0000                   |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-027                    |
+      | configurationCategory               | fieldName                       | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Auto Snapshot:Sobject Auto Snapshot | Is Active                       | false         | Program__c            | Name                      | SAS-0000                   |
+      | Page Tabs Config:Page Layout Action | Is Active                       | true          | Grantee State Program | Name                      | TAB-027                    |
+      | Page Layout Action                  | History Snapshot-Action Enable? | false         | Grantee State Program | Name                      | Submit For Approval        |
+    And I click on "Submit For Approval" in the page details
     And I refresh the page
     When I navigate to "History" sub tab
     Then I see table with header "Snapshot History" contains records "currentdate"
@@ -61,14 +64,16 @@ Business Need: Snapshot Config Component Scenarios
   @70015    @verifyAutoSnapShotCapturedWithIsActiveField
   Scenario: Validate Auto Snapshot is getting captured after record submission as submit for approval
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Auto Snapshot         | Is Active | false             | ApiGeneratedId:0 |
-      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName                       | fieldOrignalValue | filterId         |
+      | Auto Snapshot         | Is Active                       | false             | ApiGeneratedId:0 |
+      | Page Tabs Config      | Is Active                       | true              | ApiGeneratedId:2 |
+      | Page Layout Action    | History Snapshot-Action Enable? | true              | ApiGeneratedId:3 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName       | fieldNewValue                           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Auto Snapshot:Sobject Auto Snapshot | Is Active       | true                                    | Program__c            | Name                      | SAS-0000                   |
-      | Auto Snapshot:Sobject Auto Snapshot | Expression JSON | govgrants_config:SnapShotExpressionJSON | Program__c            | Name                      | SAS-0000                   |
-      | Page Tabs Config:Page Layout Action | Is Active       | true                                    | Grantee State Program | Name                      | TAB-027                    |
+      | configurationCategory               | fieldName                       | fieldNewValue                           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Auto Snapshot:Sobject Auto Snapshot | Is Active                       | true                                    | Program__c            | Name                      | SAS-0000                   |
+      | Auto Snapshot:Sobject Auto Snapshot | Expression JSON                 | govgrants_config:SnapShotExpressionJSON | Program__c            | Name                      | SAS-0000                   |
+      | Page Tabs Config:Page Layout Action | Is Active                       | true                                    | Grantee State Program | Name                      | TAB-027                    |
+      | Page Layout Action                  | History Snapshot-Action Enable? | false                                   | Grantee State Program | Name                      | Submit For Approval        |
     And I click on "Submit For Approval" in the page details
     And I refresh the page
     When I navigate to "History" sub tab
@@ -77,15 +82,17 @@ Business Need: Snapshot Config Component Scenarios
   @70016    @verifyAutoSnapShotFileNameWithSnapShotFileName
   Scenario: Validate Auto Snapshot record name is getting chages after making changes inside field SnapShot File Name at config page
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
-      | Auto Snapshot         | Snapshot File Name |                   | ApiGeneratedId:0 |
-      | Auto Snapshot         | Is Active          | false             | ApiGeneratedId:1 |
-      | Page Tabs Config      | Is Active          | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName                       | fieldOrignalValue | filterId         |
+      | Auto Snapshot         | Snapshot File Name              |                   | ApiGeneratedId:0 |
+      | Auto Snapshot         | Is Active                       | false             | ApiGeneratedId:1 |
+      | Page Tabs Config      | Is Active                       | false             | ApiGeneratedId:2 |
+      | Page Layout Action    | History Snapshot-Action Enable? | true              | ApiGeneratedId:3 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName          | fieldNewValue          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Auto Snapshot:Sobject Auto Snapshot | Snapshot File Name | testAutomationSnapshot | Program__c            | Name                      | SAS-0000                   |
-      | Auto Snapshot:Sobject Auto Snapshot | Is Active          | true                   | Program__c            | Name                      | SAS-0000                   |
-      | Page Tabs Config:Page Layout Action | Is Active          | true                   | Grantee State Program | Name                      | TAB-027                    |
+      | configurationCategory               | fieldName                       | fieldNewValue          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Auto Snapshot:Sobject Auto Snapshot | Snapshot File Name              | testAutomationSnapshot | Program__c            | Name                      | SAS-0000                   |
+      | Auto Snapshot:Sobject Auto Snapshot | Is Active                       | true                   | Program__c            | Name                      | SAS-0000                   |
+      | Page Tabs Config:Page Layout Action | Is Active                       | true                   | Grantee State Program | Name                      | TAB-027                    |
+      | Page Layout Action                  | History Snapshot-Action Enable? | false                  | Grantee State Program | Name                      | Submit For Approval        |
     And I click on "Submit For Approval" in the page details
     And I refresh the page
     When I navigate to "History" sub tab
@@ -94,13 +101,17 @@ Business Need: Snapshot Config Component Scenarios
   @70049    @verifyAutoSnapShotIsGettingCapturedWithFieldCaptureSnapshotonApproval-Approval
   Scenario: Validate Auto Snapshot is getting captured on record approval after making change for field Capture Snapshot on Approval at config
     Given I have "default" configuration as below:
-      | configurationCategory     | fieldName                       | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action        | History Snapshot-Action Enable? | true          | Grantee State Program | Name                      | Submit For Approval        |
-      | Auto Snapshot On Approval | Capture Snapshot On Approval?   | false         | Program__c            |                           |                            |
+      | configurationCategory             | fieldName                       | fieldOrignalValue | filterId         |
+      | Page Layout Action                | History Snapshot-Action Enable? | true              | ApiGeneratedId:0 |
+      | Auto Snapshot On Approval         | Capture Snapshot On Approval?   | false             | ApiGeneratedId:1 |
+      | Page Tabs Config                  | Is Active                       | false             | ApiGeneratedId:2 |
+      | Auto Snapshot On Approval:General | Approval Snapshot File Name     |                   | ApiGeneratedId:3 |
     Given I setup test configuration as below:
-      | configurationCategory             | fieldName                       | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action                | History Snapshot-Action Enable? | false         | Grantee State Program | Name                      | Submit For Approval        |
-      | Auto Snapshot On Approval:General | Capture Snapshot On Approval?   | true          | Program__c            |                           |                            |
+      | configurationCategory               | fieldName                       | fieldNewValue                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action                  | History Snapshot-Action Enable? | false                            | Grantee State Program | Name                      | Submit For Approval        |
+      | Auto Snapshot On Approval:General   | Capture Snapshot On Approval?   | true                             | Program__c            |                           |                            |
+      | Page Tabs Config:Page Layout Action | Is Active                       | true                             | Grantee State Program | Name                      | TAB-027                    |
+      | Auto Snapshot On Approval:General   | Approval Snapshot File Name     | TestAutomationSnapshotOnApproval | Program__c            |                           |                            |
     And I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
@@ -114,15 +125,17 @@ Business Need: Snapshot Config Component Scenarios
   @70027    @verifyAutoSnapShotFileNameWithFieldApprovalSnapShotFileName
   Scenario: Validate Auto Snapshot record name is getting chaged after making changes inside field Approval Snapshot File Name at config page
     Given I have "default" configuration as below:
-      | configurationCategory             | fieldName                       | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action                | History Snapshot-Action Enable? | true          | Grantee State Program | Name                      | Submit For Approval        |
-      | Auto Snapshot On Approval:General | Capture Snapshot On Approval?   | false         | Program__c            |                           |                            |
-      | Auto Snapshot On Approval:General | Approval Snapshot File Name     |               | Program__c            |                           |                            |
+      | configurationCategory             | fieldName                       | fieldOrignalValue | filterId         |
+      | Page Layout Action                | History Snapshot-Action Enable? | true              | ApiGeneratedId:0 |
+      | Auto Snapshot On Approval         | Capture Snapshot On Approval?   | false             | ApiGeneratedId:1 |
+      | Page Tabs Config                  | Is Active                       | false             | ApiGeneratedId:2 |
+      | Auto Snapshot On Approval:General | Approval Snapshot File Name     |                   | ApiGeneratedId:3 |
     Given I setup test configuration as below:
-      | configurationCategory             | fieldName                       | fieldNewValue                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action                | History Snapshot-Action Enable? | false                            | Grantee State Program | Name                      | Submit For Approval        |
-      | Auto Snapshot On Approval:General | Capture Snapshot On Approval?   | true                             | Program__c            |                           |                            |
-      | Auto Snapshot On Approval:General | Approval Snapshot File Name     | TestAutomationSnapshotOnApproval | Program__c            |                           |                            |
+      | configurationCategory               | fieldName                       | fieldNewValue                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action                  | History Snapshot-Action Enable? | false                            | Grantee State Program | Name                      | Submit For Approval        |
+      | Auto Snapshot On Approval:General   | Capture Snapshot On Approval?   | true                             | Program__c            |                           |                            |
+      | Page Tabs Config:Page Layout Action | Is Active                       | true                             | Grantee State Program | Name                      | TAB-027                    |
+      | Auto Snapshot On Approval:General   | Approval Snapshot File Name     | TestAutomationSnapshotOnApproval | Program__c            |                           |                            |
     And I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
@@ -135,12 +148,17 @@ Business Need: Snapshot Config Component Scenarios
 
   @70028    @verifyAutoSnapShotIsGettingCapturedWithFieldCaptureSnapshotonApproval-Rejection
   Scenario: Validate Auto Snapshot is getting captured on record rejection after making change for field Capture Snapshot on Approval at config
-    Given I have "default" configuration as below:
-      | configurationCategory             | fieldName                     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Auto Snapshot On Approval:General | Capture Snapshot On Approval? | false         | Program__c         |                           |                            |
+  | configurationCategory             | fieldName                       | fieldOrignalValue | filterId         |
+  | Page Layout Action                | History Snapshot-Action Enable? | true              | ApiGeneratedId:0 |
+  | Auto Snapshot On Approval         | Capture Snapshot On Approval?   | false             | ApiGeneratedId:1 |
+  | Page Tabs Config                  | Is Active                       | false             | ApiGeneratedId:2 |
+  | Auto Snapshot On Approval:General | Approval Snapshot File Name     |                   | ApiGeneratedId:3 |
     Given I setup test configuration as below:
-      | configurationCategory             | fieldName                     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Auto Snapshot On Approval:General | Capture Snapshot On Approval? | true          | Program__c         |                           |                            |
+      | configurationCategory               | fieldName                       | fieldNewValue                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action                  | History Snapshot-Action Enable? | false                            | Grantee State Program | Name                      | Submit For Approval        |
+      | Auto Snapshot On Approval:General   | Capture Snapshot On Approval?   | true                             | Program__c            |                           |                            |
+      | Page Tabs Config:Page Layout Action | Is Active                       | true                             | Grantee State Program | Name                      | TAB-027                    |
+      | Auto Snapshot On Approval:General   | Approval Snapshot File Name     | TestAutomationSnapshotOnApproval | Program__c            |                           |                            |
     And I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
@@ -153,12 +171,17 @@ Business Need: Snapshot Config Component Scenarios
 
   @70029    @verifyAutoSnapShotIsGettingCapturedWithFieldCaptureSnapshotonApproval-Reassign
   Scenario: Validate Auto Snapshot is getting captured on record forward after making change for field Capture Snapshot on Approval at config
-    Given I have "default" configuration as below:
-      | configurationCategory             | fieldName                     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Auto Snapshot On Approval:General | Capture Snapshot On Approval? | false         | Program__c         |                           |                            |
+  | configurationCategory             | fieldName                       | fieldOrignalValue | filterId         |
+  | Page Layout Action                | History Snapshot-Action Enable? | true              | ApiGeneratedId:0 |
+  | Auto Snapshot On Approval         | Capture Snapshot On Approval?   | false             | ApiGeneratedId:1 |
+  | Page Tabs Config                  | Is Active                       | false             | ApiGeneratedId:2 |
+  | Auto Snapshot On Approval:General | Approval Snapshot File Name     |                   | ApiGeneratedId:3 |
     Given I setup test configuration as below:
-      | configurationCategory             | fieldName                     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Auto Snapshot On Approval:General | Capture Snapshot On Approval? | true          | Program__c         |                           |                            |
+      | configurationCategory               | fieldName                       | fieldNewValue                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action                  | History Snapshot-Action Enable? | false                            | Grantee State Program | Name                      | Submit For Approval        |
+      | Auto Snapshot On Approval:General   | Capture Snapshot On Approval?   | true                             | Program__c            |                           |                            |
+      | Page Tabs Config:Page Layout Action | Is Active                       | true                             | Grantee State Program | Name                      | TAB-027                    |
+      | Auto Snapshot On Approval:General   | Approval Snapshot File Name     | TestAutomationSnapshotOnApproval | Program__c            |                           |                            |
     And I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
@@ -171,12 +194,17 @@ Business Need: Snapshot Config Component Scenarios
 
   @70032    @verifyAutoSnapShotIsGettingCapturedWithFieldCaptureSnapshotonApproval-SendBack
   Scenario: Validate Auto Snapshot is getting captured on record sent back to owner after making change for field Capture Snapshot on Approval at config
-    Given I have "default" configuration as below:
-      | configurationCategory             | fieldName                     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Auto Snapshot On Approval:General | Capture Snapshot On Approval? | false         | Program__c         |                           |                            |
+  | configurationCategory             | fieldName                       | fieldOrignalValue | filterId         |
+  | Page Layout Action                | History Snapshot-Action Enable? | true              | ApiGeneratedId:0 |
+  | Auto Snapshot On Approval         | Capture Snapshot On Approval?   | false             | ApiGeneratedId:1 |
+  | Page Tabs Config                  | Is Active                       | false             | ApiGeneratedId:2 |
+  | Auto Snapshot On Approval:General | Approval Snapshot File Name     |                   | ApiGeneratedId:3 |
     Given I setup test configuration as below:
-      | configurationCategory             | fieldName                     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Auto Snapshot On Approval:General | Capture Snapshot On Approval? | true          | Program__c         |                           |                            |
+      | configurationCategory               | fieldName                       | fieldNewValue                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action                  | History Snapshot-Action Enable? | false                            | Grantee State Program | Name                      | Submit For Approval        |
+      | Auto Snapshot On Approval:General   | Capture Snapshot On Approval?   | true                             | Program__c            |                           |                            |
+      | Page Tabs Config:Page Layout Action | Is Active                       | true                             | Grantee State Program | Name                      | TAB-027                    |
+      | Auto Snapshot On Approval:General   | Approval Snapshot File Name     | TestAutomationSnapshotOnApproval | Program__c            |                           |                            |
     And I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab

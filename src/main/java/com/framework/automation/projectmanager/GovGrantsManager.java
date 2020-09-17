@@ -234,15 +234,6 @@ public class GovGrantsManager extends ProjectWebServices {
     }
 
     /**
-     * Assert true if any part of the content matches with current url
-     *
-     * @param content
-     */
-    public void assertCurrentURL(String content) {
-        Assert.assertTrue(isCurrentURL(content));
-    }
-
-    /**
      * click on menu of charts
      *
      * @param chartName
@@ -312,20 +303,6 @@ public class GovGrantsManager extends ProjectWebServices {
     }
 
     /******* "Local Methods with Limited functionality " **********/
-
-    /**
-     * match the current url content with provided content
-     *
-     * @param content
-     * @return true if any part is matched
-     */
-    private boolean isCurrentURL(String content) {
-        boolean flag = false;
-        if (I.amPerforming().browserOperationsTo().getCurrentUrl().contains(content)) {
-            flag = true;
-        }
-        return flag;
-    }
 
     /**
      * get sub tab inside detail each main detail page like overview etc.

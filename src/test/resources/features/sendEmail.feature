@@ -613,7 +613,7 @@ Business Need: Send Email Component Scenarios
     When I enter value "Test automation mail subject 1" into field "Subject" on send email modal
     When I upload attachment "SendEmailAttachment.pdf" in send email modal
     When I upload attachment "AttachmentTesting.pdf" in send email modal
-    When I upload attachment "test.png" in send email modal
+    When I upload attachment "TestAutomation.txt" in send email modal
     When I click on cross icon at "SendEmailAttachment.pdf" attachment inside send email modal
     Then I see attached file "SendEmailAttachment.pdf" is deleted successfully inside send email modal
 

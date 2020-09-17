@@ -23,10 +23,4 @@ public class CommonSteps {
     public void asserPageTitle(String pageTitle) {
         govGrantsManager.assertPageTitle(pageTitle);
     }
-
-    @Then("^I see \"([^\"]*)\" in current url$")
-    public void assertPlanningDefaultLandingTab(String content) {
-        govGrantsManager.assertCurrentURL(content);
-        ;
-    }
 }

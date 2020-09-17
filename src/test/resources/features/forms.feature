@@ -183,3 +183,37 @@ Business Need: Forms Component Scenarios
     When I select "General Application Cover Page" from dropdown at forms
     Then I see the text containing :
       | different |
+
+  @103084 @verifyThatEnhancedGridIsDisplayedAtFormPreviewPage-gApplications
+  Scenario:validate enhanced grid is displayed at forms preview layout
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "Preview" icon of form "General Application Form" program in flex table
+    Then I see expected table with id "---program:-:tmpActiveGrantsGridTableId---"
+
+  @103092 @verifyThatEnhancedGridIsDisplayedAtFormViewPage-gApplications
+  Scenario:validate enhanced grid is displayed at forms view layout
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon of form "General Application Form" program in flex table
+    Then I see expected table with id "---program:-:tmpActiveGrantsGridTableId---"
+
+  @103093 @verifyThatEnhancedGridIsDisplayedAtFormEditPage-gApplications
+  Scenario:validate enhanced grid is displayed at forms edit layout
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon of form "General Application Form" program in flex table
+    When I click on "Edit" in the page details
+    Then I see expected table with id "---program:-:tmpActiveGrantsGridTableId---"

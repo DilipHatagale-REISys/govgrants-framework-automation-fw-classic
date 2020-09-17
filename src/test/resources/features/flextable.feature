@@ -617,7 +617,7 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    Then I see "View Submitted Applications" options inside "Draft Programs" enabled
+    Then I see "View Submitted Applications" button inside "Draft Programs" flex table
 
   @40100    @showConfirmationBoxFieldForProgramFlexTAbleViewAction-gPlanning
   Scenario: Setup confirmation box for program flex table view action configuration and validating it at flex table of program-planning

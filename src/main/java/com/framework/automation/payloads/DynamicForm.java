@@ -124,7 +124,7 @@ public class DynamicForm {
                         String.valueOf(SObjectAPIs.GNT__SectionColumn__c), value);
                 break;
             case "ORDER":
-                finalPayload = String.format(payloadForStringValue,
+                finalPayload = String.format(payloadForIntValue,
                         String.valueOf(SObjectAPIs.GNT__CaptureSection__c),
                         apiUtilities.getComponentCoreFieldId(
                                 String.valueOf(SObjectAPIs.GNT__CaptureSection__c), filterClause),
