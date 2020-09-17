@@ -573,7 +573,7 @@ Business Need: dynamic forms Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName                    | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Form:General  | Validation Button Visibility | Show          | CF-0000            |                           |                            |
-      | Capture Item:General  | Question Applicable ?        |               | CI-0033            |                           |                            |
+      | Capture Item:General  | Question Applicable ?        |               | CI-0040            |                           |                            |
     When I login as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -585,7 +585,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Save" button in right header
     When I click on "Validate" button in right header
     Then I see the following message in the page details :
-      | Radio New in Section Section 1 question not answered |
+      | Date Required in Section Section 1 question not answered |
 
   @90063    @ValidateSectionNameAtDynamicFormInViewMode
   Scenario: validate the section name apears as configured in view mode on dynamic form layout
@@ -792,7 +792,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item          | Question Applicable ? |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Capture Item:General  | Question Applicable ? | Required to save | CI-0033            |                           |                            |
+      | Capture Item:General  | Question Applicable ? | Required to save | CI-0040            |                           |                            |
     When I login as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -2729,7 +2729,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName               | fieldNewValue                                                                   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Capture Item:General  | Question Identifier     | Radio                                                                           | CI-0033            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Radio                                                                           | CI-0040            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:ShowRequiredRadioUsingCurrencyFieldValueByProvidingNameOfField | CI-0004            |                           |                            |
       | Capture Item:General  | Question Identifier     | Currency                                                                        | CI-0004            |                           |                            |
     When I login as "Admin" user
@@ -3961,7 +3961,8 @@ Business Need: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     When I click on "Cancel" button in right header
-    Then I see "FormViewLayout" is displayed at detail page
+    When I pause execution for "3" seconds
+    Then I see "uformview" in current url
 
   @100108    @validateThatByClickOnSaveButtonAFormIsGettingDisplayedInViewMode
   Scenario: validate that by click on save button a form is displayed in view mode
@@ -3974,7 +3975,8 @@ Business Need: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     When I click on "Save" button in right header
-    Then I see "FormViewLayout" is displayed at detail page
+    When I pause execution for "2" seconds
+    Then I see "uformview" in current url
 
   @100112   @validateDependentQuestionJsonFieldByDisablingCurrencyFieldFromMultipleSectionsUsingWrittenFieldValueInsideDynamicFormInEditMode
   Scenario: validate Dependent Question Json Field by disabling currency from section 1 and section 3 on the basis of written field value in form edit mode
@@ -4345,10 +4347,10 @@ Business Need: dynamic forms Component Scenarios
   @100456    @validateEnablingOfPdfDownloadFromMenuFromDynamicFormViewModalWindow
   Scenario Outline: validating Download as pdf option is displayed inside burger menu at dynamic form view modal window
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue | filterId         |
-      | Capture Form          | Hide Pdf Download | false                   |                    |                           |                            | ApiGeneratedId:0 |
-      | Flex Table Action     | Action URL Long   | <actionUrlLongOldValue> | DynamicFormTable   | Name                      | View                       |                  |
-      | Flex Table Action     | Where To Open ?   | NewTab                  | DynamicFormTable   | Name                      | View                       |                  |
+      | configurationCategory | fieldName         | fieldOrignalValue       | filterId         |
+      | Capture Form          | Hide Pdf Download | false                   | ApiGeneratedId:0 |
+      | Flex Table Action     | Action URL Long   | <actionUrlLongOldValue> | ApiGeneratedId:1 |
+      | Flex Table Action     | Where To Open ?   | NewTab                  | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Form:General  | Hide Pdf Download | false                   | CF-0000            |                           |                            |
@@ -4372,10 +4374,10 @@ Business Need: dynamic forms Component Scenarios
   @100460    @validateDisablingOfPdfDownloadOptionAtDynamicFormViewModalWindow
   Scenario Outline: validating Menu button for Download as pdf option is not displayed inside burger menu at dynamic form view modal window
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue | filterId         |
-      | Capture Form          | Hide Pdf Download | false                   |                    |                           |                            | ApiGeneratedId:0 |
-      | Flex Table Action     | Action URL Long   | <actionUrlLongOldValue> | DynamicFormTable   | Name                      | View                       |                  |
-      | Flex Table Action     | Where To Open ?   | NewTab                  | DynamicFormTable   | Name                      | View                       |                  |
+      | configurationCategory | fieldName         | fieldOrignalValue       | filterId         |
+      | Capture Form          | Hide Pdf Download | false                   | ApiGeneratedId:0 |
+      | Flex Table Action     | Action URL Long   | <actionUrlLongOldValue> | ApiGeneratedId:1 |
+      | Flex Table Action     | Where To Open ?   | NewTab                  | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Form:General  | Hide Pdf Download | true                    | CF-0000            |                           |                            |
@@ -4398,10 +4400,10 @@ Business Need: dynamic forms Component Scenarios
   @100462    @validateDisablingOfPdfDownloadFromMenuFromDynamicFormEditModalWindow
   Scenario Outline: validating Menu button for Download as pdf option is not displayed inside burger menu at dynamic form edit modal window
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue | filterId         |
-      | Capture Form          | Hide Pdf Download | false                   |                    |                           |                            | ApiGeneratedId:0 |
-      | Flex Table Action     | Action URL Long   | <actionUrlLongOldValue> | DynamicFormTable   | Name                      | Edit                       |                  |
-      | Flex Table Action     | Where To Open ?   | NewTab                  | DynamicFormTable   | Name                      | Edit                       |                  |
+      | configurationCategory | fieldName         | fieldOrignalValue       | filterId         |
+      | Capture Form          | Hide Pdf Download | false                   | ApiGeneratedId:0 |
+      | Flex Table Action     | Action URL Long   | <actionUrlLongOldValue> | ApiGeneratedId:1 |
+      | Flex Table Action     | Where To Open ?   | NewTab                  | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Form:General  | Hide Pdf Download | false                   | CF-0000            |                           |                            |
@@ -4445,11 +4447,11 @@ Business Need: dynamic forms Component Scenarios
   @100486    @validateDownloadAsPDFIfSkipPDFDefaultThemeCheckBoxIsCheckedAtDynamicFormModalViewMode
   Scenario Outline: validate by download as pdf if skip default theme checkbox is checked at dynamic form modal view mode
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName              | fieldOrignalValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue | filterId         |
-      | Capture Form          | Hide Pdf Download      | false                   |                    |                           |                            | ApiGeneratedId:0 |
-      | Capture Form          | Skip PDF Default Theme | false                   |                    |                           |                            | ApiGeneratedId:1 |
-      | Flex Table Action     | Action URL Long        | <actionUrlLongOldValue> | DynamicFormTable   | Name                      | View                       |                  |
-      | Flex Table Action     | Where To Open ?        | NewTab                  | DynamicFormTable   | Name                      | View                       |                  |
+      | configurationCategory | fieldName              | fieldOrignalValue       | filterId         |
+      | Capture Form          | Hide Pdf Download      | false                   | ApiGeneratedId:0 |
+      | Capture Form          | Skip PDF Default Theme | false                   | ApiGeneratedId:1 |
+      | Flex Table Action     | Action URL Long        | <actionUrlLongOldValue> | ApiGeneratedId:2 |
+      | Flex Table Action     | Where To Open ?        | NewTab                  | ApiGeneratedId:3 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName              | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Form:General  | Hide Pdf Download      | false                   | CF-0000            |                           |                            |

@@ -7150,7 +7150,7 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
-    Then I see "*****" shown inside enhanced grid table for specified record "Demo_Title"
+    Then I see "*****" shown inside enhanced grid table for specified record "AD-GG PJ--00"
 
     Examples:
       | newFieldsApi                                                          | defaultFieldsApi                                                                                                                               |

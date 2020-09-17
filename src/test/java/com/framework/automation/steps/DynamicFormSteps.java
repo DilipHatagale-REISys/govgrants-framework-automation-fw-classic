@@ -80,11 +80,6 @@ public class DynamicFormSteps {
         dynamicFormPage.assertRadioButtonInFormLayout(usage, radioButtonName, fieldName);
     }
 
-    @Then("I see {string} is displayed at detail page")
-    public void iSeeIsDisplayedAtDetailPage(String displayMode) {
-        dynamicFormPage.assertFormDisplayedInViewOrEditMode(displayMode);
-    }
-
     @Then("^I see \"([^\"]*)\" action is not displayed at the \"([^\"]*)\" modal$")
     public void iSeeActionIsNotDisplayedAtTheModal(String actionName, String modalOverviewHeader) {
         dynamicFormPage.assertTopRightActionsAtModalWindowWithOverviewHeader(actionName,modalOverviewHeader);
