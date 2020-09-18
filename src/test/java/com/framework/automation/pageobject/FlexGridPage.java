@@ -318,6 +318,28 @@ public class FlexGridPage extends GovGrantsManager {
         Assert.assertTrue(isCurrencyFieldValueDisplayedRightAlignedInsideFlexTable(tableId));
     }
 
+    /**
+     * assert true if currency total displayed in an expected format like $n,nnn,nnn.nn inside me grid
+     *
+     * @param tableId
+     * @param fieldName
+     * @author - ashwini.mahore
+     */
+    public void assertCurrencyTotalWithCorrectFormattingIsDisplayed(String tableId, String fieldName) {
+        Assert.assertTrue(isCurrencyCurrencyTotalWithCorrectFormattingDisplayed(tableId, fieldName));
+    }
+
+    /**
+     * get overall total at me grid parent flex table
+     *
+     * @param tableId
+     * @param fieldName
+     * @author ashwini.mahore
+     */
+    public WebElement getTotalValueFromLastRow(String tableId, String fieldName) {
+        return I.amPerforming().getElementReference().of(By.xpath("//div[@id='" + tableId + "']//span[text()='" + fieldName + "']/ancestor::tbody/following-sibling::tfoot//span[contains(@ng-bind,'isTotalRow')]"));
+    }
+
     /*********
      * "Local Methods with complete functionality - private"
      *****************/
@@ -652,9 +674,8 @@ public class FlexGridPage extends GovGrantsManager {
      */
     private Boolean isTotalFieldFormatDisplayedInsideMeGrid(String format, String fieldName, String tableId) {
         boolean flag = false;
-        WebElement getTotalValueFromLastRow = I.amPerforming().getElementReference().of(By.xpath("//div[@id='" + tableId + "']//span[text()='" + fieldName + "']/ancestor::tbody/following-sibling::tfoot//span[contains(@ng-bind,'isTotalRow')]"));
         try {
-            if (getTotalValueFromLastRow.getText().contains(format)) {
+            if (getTotalValueFromLastRow(fieldName, tableId).getText().contains(format)) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -711,6 +732,24 @@ public class FlexGridPage extends GovGrantsManager {
                 flag = true;
             }
         } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * assert true if if currency total displayed in an expected format like $n,nnn,nnn.nn inside me grid
+     *
+     * @param tableId
+     * @param fieldName
+     * @author - ashwini.mahore
+     */
+    private Boolean isCurrencyCurrencyTotalWithCorrectFormattingDisplayed(String tableId, String fieldName) {
+        boolean flag = false;
+        String regex;
+        String totalCurrency = getTotalValueFromLastRow(tableId, fieldName).getText();
+        regex = "^\\$\\d{1,3}(,?\\d{3})*(\\.\\d{2})?$";
+        if (totalCurrency.matches(regex)) {
+            return true;
         }
         return flag;
     }

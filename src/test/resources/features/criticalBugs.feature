@@ -3905,3 +3905,116 @@ Business Need: Logged Issues Scenarios
     When I click alert button "OK"
     When I navigate to "History" sub tab
     Then I see table with header "Snapshot History" contains records "currentdate"
+
+  @103187    @validateCurrencyFieldFormattingAtTotalDisplayedUnderMeGridParentTable
+  Scenario Outline: validating currency field formatting of total amount under me grid parent table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Enable Total        | false              | ApiGeneratedId:0 |
+      | Flex Table:General    | Enable Total Row    | true               | ApiGeneratedId:1 |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Total        | true           | ApplicationBudgetPeriods | Name                      | FTC-1520                   |
+      | Flex Table:General    | Enable Total Row    | true           | ApplicationBudgetPeriods |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetPeriods |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "{Framework_recordUsed:AnnouncementHavingMultipleBudgetPeriods}"
+    When I click on "View" icon for "{Framework_recordUsed:AnnouncementHavingMultipleBudgetPeriods}" inside table
+    When I navigate to "Budget" sub tab
+    And I perform quick search for "BP-08" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I click on "Delete" icon for "BP-08" inside table
+    When I pause execution for "3" seconds
+    When I enter the following values into flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" by clicking "New" :
+      | Support Year | Test Currency Field |
+      | BP-08        | 100000              |
+    When I navigate to "Budget" sub tab
+    Then I see total amount at "TestField" currency field is displayed in a correct format inside "---program:-:applicationBudgetCategoryFlexGridTableId---"
+
+    Examples:
+      | defaultFieldsApi                                                         | newFieldsApi                   |
+      | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,TestField__c |
+
+  @103842    @validateCurrencyFieldFormattingAtValueDisplayedUnderCurrencyFieldMeGridParentTable
+  Scenario Outline: validating field formatting of currency field value under me grid parent table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetPeriods |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "{Framework_recordUsed:AnnouncementHavingMultipleBudgetPeriods}"
+    When I click on "View" icon for "{Framework_recordUsed:AnnouncementHavingMultipleBudgetPeriods}" inside table
+    When I navigate to "Budget" sub tab
+    And I perform quick search for "BP-08" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I click on "Delete" icon for "BP-08" inside table
+    When I pause execution for "3" seconds
+    When I enter the following values into flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" by clicking "New" :
+      | Support Year | Test Currency Field |
+      | BP-08        | 100000              |
+    When I pause execution for "4" seconds
+    And I perform quick search for "BP-08" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    Then I see value "$100,000.00" for title "TestField" inside table "---program:-:applicationBudgetCategoryFlexGridTableId---"
+
+    Examples:
+      | defaultFieldsApi                                                         | newFieldsApi                   |
+      | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,TestField__c |
+
+  @103910    @validateNumberFieldFormattingWithCommasAtMeGridParentTable
+  Scenario Outline: validating formatting of number field value under me grid parent table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetPeriods |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "{Framework_recordUsed:AnnouncementHavingMultipleBudgetPeriods}"
+    When I click on "View" icon for "{Framework_recordUsed:AnnouncementHavingMultipleBudgetPeriods}" inside table
+    When I navigate to "Budget" sub tab
+    When I click on "Delete" icon for "BP-08" inside table
+    When I pause execution for "3" seconds
+    When I enter the following values into flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" by clicking "New" :
+      | Support Year | Sequence Number |
+      | BP-08        | 100000          |
+    When I pause execution for "4" seconds
+    And I perform quick search for "BP-08" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    Then I see value "100,000" for title "Sequence Number" inside table "---program:-:applicationBudgetCategoryFlexGridTableId---"
+
+    Examples:
+      | defaultFieldsApi                                                         | newFieldsApi                        |
+      | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,SequenceNumber__c |
+
+  @103906    @validateDecimalPlacesNotDisplayedUnderNumberFieldMeGridParentTable
+  Scenario Outline: validating decimal places not displayed at number field value under me grid parent table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetPeriods |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "{Framework_recordUsed:AnnouncementHavingMultipleBudgetPeriods}"
+    When I click on "View" icon for "{Framework_recordUsed:AnnouncementHavingMultipleBudgetPeriods}" inside table
+    When I navigate to "Budget" sub tab
+    When I click on "Delete" icon for "BP-08" inside table
+    When I pause execution for "3" seconds
+    When I enter the following values into flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" by clicking "New" :
+      | Support Year | Sequence Number |
+      | BP-08        | 100000          |
+    When I pause execution for "4" seconds
+    And I perform quick search for "BP-08" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    Then I do not see value "100,000.00" for title "Sequence Number" inside table "---program:-:applicationBudgetCategoryFlexGridTableId---"
+
+    Examples:
+      | defaultFieldsApi                                                         | newFieldsApi                        |
+      | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,SequenceNumber__c |
