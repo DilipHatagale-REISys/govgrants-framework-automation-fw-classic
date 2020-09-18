@@ -2651,7 +2651,7 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue                 | filterId         |
       | Charts Config         | Available for Profiles | PM; PO; SPI; System Administrator | ApiGeneratedId:0 |
-      | Charts Config         | Display Area           | Both                              | ApiGeneratedId:0 |
+      | Charts Config         | Display Area           | Both                              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName              | fieldNewValue        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue      |
       | Charts Config         | Available for Profiles | System Administrator | GrantorHome        | Name                      | GrantPerformanceScatterClsBased |
@@ -2660,3 +2660,63 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Analytics" tab
     Then I see charts with id "---program:-:GrantPerformanceScatterClsBasedID---" displayed
+
+  @103964    @validateChartsDisplayedToPMUserAtPhaseWhenAvailableForProfileIsSetForPMOnly-gHome
+  Scenario: Validating charts is displayed at home phase if display area is set to phase for PM/PO user -gHome
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue                 | filterId         |
+      | Charts Config         | Available for Profiles | PM; PO; SPI; System Administrator | ApiGeneratedId:0 |
+      | Charts Config         | Display Area           | Both                              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue      |
+      | Charts Config         | Available for Profiles | PM; PO        | GrantorHome        | Name                      | GrantPerformanceScatterClsBased |
+      | Charts Config         | Display Area           | Phase         | GrantorHome        | Name                      | GrantPerformanceScatterClsBased |
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see charts with id "---program:-:GrantPerformanceScatterClsBasedID---" displayed
+
+  @103971    @validateChartsDisplayedToPM/POUserAtDashboardWhenAvailableForProfileIsSetForPMOnly-gHome
+  Scenario: Validating charts is displayed at dashboard if display area is set to dashboard for PM/PO user -gHome
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue                 | filterId         |
+      | Charts Config         | Available for Profiles | PM; PO; SPI; System Administrator | ApiGeneratedId:0 |
+      | Charts Config         | Display Area           | Both                              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue      |
+      | Charts Config         | Available for Profiles | PM; PO        | GrantorHome        | Name                      | GrantPerformanceScatterClsBased |
+      | Charts Config         | Display Area           | Dashboard     | GrantorHome        | Name                      | GrantPerformanceScatterClsBased |
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Analytics" tab
+    Then I see charts with id "---program:-:GrantPerformanceScatterClsBasedID---" displayed
+
+  @104117    @validateChartsDisplayedToSPIUserAtPhaseWhenAvailableForProfileIsSetForSPIOnly-gHome
+  Scenario: Validating charts is displayed at phase if display area is set to phase for SPI user -gHome
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Charts Config         | Available for Profiles | SPI               | ApiGeneratedId:0 |
+      | Charts Config         | Display Area           | Both              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Available for Profiles | SPI           | RecipientAwards    | Name                      | Grants Awarded             |
+      | Charts Config         | Display Area           | Phase         | RecipientAwards    | Name                      | Grants Awarded             |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Grants" tab
+    Then I see charts with id "chartGrantsAwardedId" displayed
+
+  @104123    @validateChartsDisplayedToSPIUserAtDashboardWhenAvailableForProfileIsSetForSPIOnly-gHome
+  Scenario: Validating charts is displayed at dashboard if display area is set to dashboard for SPI user -gHome
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Charts Config         | Available for Profiles | SPI               | ApiGeneratedId:0 |
+      | Charts Config         | Display Area           | Both              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Available for Profiles | SPI           | RecipientAwards    | Name                      | Grants Awarded             |
+      | Charts Config         | Display Area           | Dashboard     | RecipientAwards    | Name                      | Grants Awarded             |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Analytics" tab
+    Then I see charts with id "chartGrantsAwardedId" displayed

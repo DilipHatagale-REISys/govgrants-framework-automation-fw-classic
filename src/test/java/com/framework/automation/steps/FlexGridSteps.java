@@ -171,4 +171,9 @@ public class FlexGridSteps {
     public void iSeeCurrencyFieldValuesAtTableAreRightAligned(String tableId) {
         flexGridPage.assertCurrencyFieldValuesAreRightAlignedInsideFlexTable(tableId);
     }
+
+    @Then("^I see total amount at \"([^\"]*)\" currency field is displayed in a correct format inside \"([^\"]*)\"$")
+    public void iSeeCurrencyTotalWithCorrectFormattingIsDisplayed(String fieldName, String tableId) {
+        flexGridPage.assertCurrencyTotalWithCorrectFormattingIsDisplayed(tableId, fieldName);
+    }
 }
