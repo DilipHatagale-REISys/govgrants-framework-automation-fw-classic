@@ -3928,7 +3928,7 @@ Business Need: Logged Issues Scenarios
     When I click on "Delete" icon for "BP-08" inside table
     When I pause execution for "3" seconds
     When I enter the following values into flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" by clicking "New" :
-      | Support Year | Test Currency Field |
+      | Support Year | TestField |
       | BP-08        | 100000              |
     When I navigate to "Budget" sub tab
     Then I see total amount at "TestField" currency field is displayed in a correct format inside "---program:-:applicationBudgetCategoryFlexGridTableId---"
@@ -3955,7 +3955,7 @@ Business Need: Logged Issues Scenarios
     When I click on "Delete" icon for "BP-08" inside table
     When I pause execution for "3" seconds
     When I enter the following values into flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" by clicking "New" :
-      | Support Year | Test Currency Field |
+      | Support Year | TestField |
       | BP-08        | 100000              |
     When I pause execution for "4" seconds
     And I perform quick search for "BP-08" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel

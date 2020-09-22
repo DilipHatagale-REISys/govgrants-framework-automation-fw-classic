@@ -540,5 +540,11 @@ public class PageLayoutSteps {
 
     @Then("I see current date is displayed in {string} on send email modal")
     public void iSeeCurrentDateIsDisplayedInOnSendEmailModal(String label) {
-   pageLayoutPage.assertDisplayOfCurrentDateOnSendEmailModal(label); }
+        pageLayoutPage.assertDisplayOfCurrentDateOnSendEmailModal(label);
+    }
+
+    @Then("I see hyperlink at value \"([^\"]*)\" inside \"([^\"]*)\" modal")
+    public void assertHyperlinkAtColumnValueInsideEnhancedGrid(String value, String modalId) {
+        pageLayoutPage.assertHyperlinkIsDisplayedAtValueInsideModal(value, modalId);
+    }
 }
