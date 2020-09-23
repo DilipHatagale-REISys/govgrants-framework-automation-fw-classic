@@ -2486,3 +2486,43 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see value "11/30/2020 5:00 PM" of "DateandTime" field is not changed on page scroll
+
+  @104377    @verifyThatUserIsAbleToSaveValueInURLFieldWhenURLValidationRegexCustomMetadataCheckboxIsSetToTrue
+  Scenario: verify that user can enter and save value in url field in a valid format when URL Validation Regex is set to true from custom metadata config
+    Given I have "customMetaData" configuration as below:
+      | id                 | label                | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY2QAO | URL Validation Regex | true         | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label                | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY2QAO | URL Validation Regex | true         | GNT__KeyValueHolder__mdt |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    And I enter value "www.google.com" into field "URL__c"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    Then I softly see link "www.google.com" inside Page block
+
+  @104754   @verifyThatUserIsNotAbleToSaveInvalidValueInURLFieldWhenURLValidationRegexCustomMetadataCheckboxIsSetToTrue
+  Scenario: verify that user cannot enter and save value in url field in an in-valid format when URL Validation Regex is set to true from custom metadata config
+    Given I have "customMetaData" configuration as below:
+      | id                 | label                | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY2QAO | URL Validation Regex | true         | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label                | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY2QAO | URL Validation Regex | true        | GNT__KeyValueHolder__mdt |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    And I enter value "http://www.example.com:8800/" into field "URL__c"
+    And I click on "Save" in the page details
+    Then I see the following message in the page details contains:
+      | Please enter valid URL value. |

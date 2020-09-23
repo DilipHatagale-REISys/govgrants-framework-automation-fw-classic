@@ -2720,3 +2720,33 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     When I login to "Grants Portal" app as "Automation-SPI" user
     And I navigate to "Analytics" tab
     Then I see charts with id "chartGrantsAwardedId" displayed
+
+  @104333    @validateChartsNotDisplayedToSPIUserAtDashboardWhenAvailableForProfileIsSetForAdminOnly-gHome
+  Scenario: Validating chart is not displayed at dashboard to spi user if available for profile is set to admin only -gHome
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Charts Config         | Available for Profiles | SPI               | ApiGeneratedId:0 |
+      | Charts Config         | Display Area           | Both              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Available for Profiles | System Administrator | RecipientAwards    | Name                      | Grants Awarded             |
+      | Charts Config         | Display Area           | Dashboard            | RecipientAwards    | Name                      | Grants Awarded             |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Analytics" tab
+    Then I do not see charts with id "chartGrantsAwardedId" displayed
+
+  @104334    @validateChartsNotDisplayedToSPIUserAtPhaseWhenAvailableForProfileIsSetForAdminOnly-gHome
+  Scenario: Validating chart is not displayed at dashboard to spi user if available for profile is set to admin only -gHome
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue                 | filterId         |
+      | Charts Config         | Available for Profiles | PM; PO; SPI; System Administrator | ApiGeneratedId:0 |
+      | Charts Config         | Display Area           | Both                              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Charts Config         | Available for Profiles | System Administrator | RecipientAwards    | Name                      | Grants Awarded             |
+      | Charts Config         | Display Area           | Phase                | RecipientAwards    | Name                      | Grants Awarded             |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Grants" tab
+    Then I do not see charts with id "chartGrantsAwardedId" displayed

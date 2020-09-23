@@ -45,7 +45,7 @@ Given I setup test configuration as below:
   And I update the locale and timezone related changes:
   | locale | timeZone       |
 
-3.CustomSettingREST (To access the custom Local settings for user)
+3.CustomSettingREST (To access the all custom settings from key value store for user)
   ENDPOINT: /services/apexrest/frameworkCustomsettingAPI
  
   STEPS:

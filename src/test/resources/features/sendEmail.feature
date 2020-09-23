@@ -1125,8 +1125,8 @@ Business Need: Send Email Component Scenarios
     When I click on "View" icon for "DND Email Created To Check Date" inside table
     Then I see current date is displayed in "Send Date" on send email modal
 
-  @102240 @validateDisplayOfToEmailSentSUccessfullyMessageInSendEmailModal @sendEmail
-  Scenario: Validate if reply email is sent then alert message is displayed on send email modal
+  @102240 @validateDisplayOfHypelinkInsertedAtSelectFileSectionWhileSendingEmil
+  Scenario: Validate if email is sent by inserting link then a hyperlink is displayed inside message table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
@@ -1154,3 +1154,96 @@ Business Need: Send Email Component Scenarios
     When I navigate to "Collab" sub tab
     When I perform quick search for "Email Created To Check Attached File Link" in "---program:-:communicationHistoryTableId---" panel
     Then I see hyperlink at column value "ProgramRecordDoNotDelete.png" inside "---program:-:communicationHistoryTableId---" table
+
+  @104344 @validateDisplayOfSelectFilesComponentInSendEmailModalAtReply
+  Scenario: Enabling select files section from custom metadata config and validating display of attachments in send email modal at reply
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    Given I have "customMetaData" configuration as below:
+      | id                 | label                          | booleanValue | customMetaDataApiName    |
+      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | false        | GNT__KeyValueHolder__mdt |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    And I update custom metadata setting changes:
+      | id                 | label                          | booleanValue | customMetaDataApiName    |
+      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | true         | GNT__KeyValueHolder__mdt |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    When I navigate to "Collab" sub tab
+    When I perform quick search for "Email Created To Check Attached File Link	" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "Reply" icon for "Email Created To Check Attached File Link	" inside table
+    Then I see select files section is displayed under send email modal
+
+  @104330 @validateDisplayOfHyperlinkAtSelectFileNameInsideBodyAtReplyModal
+  Scenario: validate hyperlink is displayed for the selected linked file name inside body at reply modal window
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    Given I have "customMetaData" configuration as below:
+      | id                 | label                          | booleanValue | customMetaDataApiName    |
+      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | false        | GNT__KeyValueHolder__mdt |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    And I update custom metadata setting changes:
+      | id                 | label                          | booleanValue | customMetaDataApiName    |
+      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | true         | GNT__KeyValueHolder__mdt |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    When I navigate to "Collab" sub tab
+    When I perform quick search for "Email Created To Check Attached File Link	" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "Reply" icon for "Email Created To Check Attached File Link	" inside table
+    Then I see hyperlink is present at "ProgramRecordDoNotDelete.png" in rich text area field
+
+  @104328 @validateDisplayOfHyperlinkAtSelectFileNameInsideBodyAtViewModal
+  Scenario: validate hyperlink is displayed for the selected linked file name inside body at view modal window
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    Given I have "customMetaData" configuration as below:
+      | id                 | label                          | booleanValue | customMetaDataApiName    |
+      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | false        | GNT__KeyValueHolder__mdt |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    And I update custom metadata setting changes:
+      | id                 | label                          | booleanValue | customMetaDataApiName    |
+      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | true         | GNT__KeyValueHolder__mdt |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    When I navigate to "Collab" sub tab
+    When I perform quick search for "Email Created To Check Attached File Link	" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "View" icon for "Email Created To Check Attached File Link	" inside table
+    Then I see hyperlink at value "ProgramRecordDoNotDelete.png" inside "sendEmail" modal

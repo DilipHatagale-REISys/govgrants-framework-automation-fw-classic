@@ -2111,3 +2111,97 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | defaultFieldsApi                                                         | newFieldsApi                        |
       | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,SequenceNumber__c |
+
+  @104345 @validateDisplayOfSelectedFileNameInDescriptionInsidePDFDownloadedFromMessageTable @sendEmail
+  Scenario: Validate selected linked file name is displayed inside description at pdf downloaded from message table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+    Given I have "global" configuration as below:
+      | id                 | ownerId            | booleanValue                | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
+    Given I have "customMetaData" configuration as below:
+      | id                 | label                          | booleanValue | customMetaDataApiName    |
+      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | false        | GNT__KeyValueHolder__mdt |
+    And I update custom global setting changes:
+      | id                 | ownerId            | booleanValue               | customSettingApiName |
+      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    And I update custom metadata setting changes:
+      | id                 | label                          | booleanValue | customMetaDataApiName    |
+      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | true         | GNT__KeyValueHolder__mdt |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    When I navigate to "Collab" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFlexTableCommunicationHistory"
+    And I select "Download as PDF" from parallel lines dropdown of "Messages"
+    And I download the file
+    Then I see "ProgramRecordDoNotDelete.png" on page "1" of "govgrants" pdf file
+
+  @104470    @validateCurrencyFieldFormattingAfterAddingNewRecordAtMEGridParentTableDownloadedPDF
+  Scenario Outline: validating field formatting of currency field value after adding new record under me grid parent table in downloaded pdf
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Export (PDF) | true               | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetPeriods |                           |                            |
+      | Flex Table:General    | Enable Export (PDF) | true           | ApplicationBudgetPeriods |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "{Framework_recordUsed:AnnouncementHavingMultipleBudgetPeriods}"
+    When I click on "View" icon for "{Framework_recordUsed:AnnouncementHavingMultipleBudgetPeriods}" inside table
+    When I navigate to "Budget" sub tab
+    When I click on "Delete" icon for "BP-09" inside table
+    When I pause execution for "3" seconds
+    When I enter the following values into flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" by clicking "New" :
+      | Support Year | TestField |
+      | BP-09        | 100000    |
+    When I pause execution for "4" seconds
+    When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
+    And I select "Download as PDF" from parallel lines dropdown of "Application Budget"
+    And I download the file
+    Then I see "$100,000.00" on page "1" of "govgrants" pdf file
+
+    Examples:
+      | defaultFieldsApi                                                         | newFieldsApi                   |
+      | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,TestField__c |
+
+  @104473    @validateTotalCurrencyFormattingAfterAddingNewRecordAtMEGridParentTableDownloadedPDF
+  Scenario Outline: validating formatting of currency total value after adding new record  under me grid parent table in downloaded pdf
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Export (PDF) | true               | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetPeriods |                           |                            |
+      | Flex Table:General    | Enable Export (PDF) | true           | ApplicationBudgetPeriods |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "{Framework_recordUsed:ApplicationHavingSingleBudgetPeriodToValidateTotalAmount}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationHavingSingleBudgetPeriodToValidateTotalAmount}" inside table
+    When I navigate to "Budget" sub tab
+    When I click on "Delete" icon for "BP-001" inside table
+    When I pause execution for "3" seconds
+    When I enter the following values into flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" by clicking "New" :
+      | Support Year | TestField |
+      | BP-001       | 100000    |
+    When I pause execution for "4" seconds
+    When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
+    And I select "Download as PDF" from parallel lines dropdown of "Application Budget"
+    And I download the file
+    Then I see "$100,000.00" on page "1" of "govgrants" pdf file
+
+    Examples:
+      | defaultFieldsApi                                                         | newFieldsApi                   |
+      | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,TestField__c |

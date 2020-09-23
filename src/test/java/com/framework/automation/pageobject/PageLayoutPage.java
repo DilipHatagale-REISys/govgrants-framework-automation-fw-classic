@@ -1128,6 +1128,17 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * return true if hyperlink is displayed at value inside table/modal
+     *
+     * @param value
+     * @param modalId
+     * @author ashwini.mahore
+     */
+    public void assertHyperlinkIsDisplayedAtValueInsideModal(String value, String modalId) {
+        Assert.assertTrue(isHyperlinkIsDisplayedAtColumnValueInsideEnhancedGrid(value,modalId));
+    }
+
+    /**
      * get owner organisation lookup modal complete content
      *
      * @return

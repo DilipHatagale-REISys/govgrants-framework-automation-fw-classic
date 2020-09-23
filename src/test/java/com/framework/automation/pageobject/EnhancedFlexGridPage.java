@@ -1395,22 +1395,6 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     }
 
     /**
-     * @param columnValue
-     * @param tableId
-     * @return true if hyperlink is displayed at enhanced grid column value
-     */
-    private Boolean isHyperlinkIsDisplayedAtColumnValueInsideEnhancedGrid(String columnValue, String tableId) {
-        boolean flag = false;
-        try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='" + tableId + "']//span[text()='" + columnValue + "'] | //div[@id='" + tableId + "']//a[text()='" + columnValue + "']"))) {
-                flag = true;
-            }
-        } catch (Exception e) {
-        }
-        return flag;
-    }
-
-    /**
      * @param tableId
      * @return true if quick search box is displayed as disabled at enhanced grid
      */
