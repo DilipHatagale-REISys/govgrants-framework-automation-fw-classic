@@ -275,12 +275,17 @@ public class EnhancedFlexGridSteps {
     }
 
     @Then("I see actions under {string} table are aligned and compared with {string}")
-    public void iSeeActionsUnderTableAreAlignedAndComparedWith(String tableId, String imageName)  throws IOException{
+    public void iSeeActionsUnderTableAreAlignedAndComparedWith(String tableId, String imageName) throws IOException {
         enhancedFlexGrid.assertActionsAreAlignedInsideFlexTable(tableId, imageName);
     }
 
     @Then("I see background color of selected filter criteria is Moderate Blue")
     public void iSeeBackgroundColorOfSelectedFilterCriteriaIs() {
         enhancedFlexGrid.assertBackgroundColorOfSelectedFilterCriteria();
+    }
+
+    @Then("^I (see|softly see) sorting label as \"([^\"]*)\" inside \"([^\"]*)\" table$")
+    public void iSeeSortingLabelAsInsideTable(String usage, String label, String tableId) {
+        enhancedFlexGrid.assertSortingLabelAtEnhancedGrid(usage, label, tableId);
     }
 }

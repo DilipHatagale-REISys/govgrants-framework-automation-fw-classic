@@ -1,4 +1,4 @@
-@sendEmail-component @regression @sendEmail
+@sendEmail-component @regression-test5@sendEmail
 Business Need: Send Email Component Scenarios
   Test all send email component based scenarios
   As a configuration manager i make different configurational changes in send email component custom metadata and will validate them.

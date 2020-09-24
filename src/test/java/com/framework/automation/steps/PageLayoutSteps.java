@@ -161,6 +161,16 @@ public class PageLayoutSteps {
         pageLayoutPage.clickOnSelectLinkForLookupSpecificRecord(organizationName);
     }
 
+    @And("^I enter value \"([^\"]*)\" in my feed section and share the (post|comment)$")
+    public void iEnterValueInMyFeedSectionAndShareThePost( String value, String sharingType) {
+        pageLayoutPage.enterValueInMyFeedSectionAndShareThePost(value,sharingType.equalsIgnoreCase("post"));
+    }
+
+    @And("^I click on \"([^\"]*)\" (action|action from dropdown) at \"([^\"]*)\" comment inside my feed$")
+    public void iClickOnActionsAtCommentInsideMyFeed(String actionName, String chooseAction, String comment) {
+        pageLayoutPage.clickOnActionsAtCommentSection(actionName, chooseAction.equalsIgnoreCase("action"), comment);
+    }
+
     @Then("^I see \"([^\"]*)\" shown as over view title in header \"([^\"]*)\"$")
     public void assertOverViewTitleWithHeader(String overViewTitle, String overViewHeader) {
         pageLayoutPage.assertOverViewTitleWithHeader(overViewTitle, overViewHeader);
@@ -546,5 +556,10 @@ public class PageLayoutSteps {
     @Then("I see hyperlink at value \"([^\"]*)\" inside \"([^\"]*)\" modal")
     public void assertHyperlinkAtColumnValueInsideEnhancedGrid(String value, String modalId) {
         pageLayoutPage.assertHyperlinkIsDisplayedAtValueInsideModal(value, modalId);
+    }
+
+    @Then("I see entered text in my feed section displayed properly")
+    public void iSeeEnteredTextInMyFeedSectionDisplayedProperly() {
+    pageLayoutPage.assertAlignmentOfTextInsideMyFeedSection();
     }
 }

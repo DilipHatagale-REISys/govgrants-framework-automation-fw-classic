@@ -1,4 +1,4 @@
-@history-component @regression @history
+@history-component @regression-test5@history
 Business Need: history Component Scenarios
   Test all history Component based scenarios
   As a configuration manager i make different changes related to flow and will validate them in history component.

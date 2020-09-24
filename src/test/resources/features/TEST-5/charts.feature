@@ -1,4 +1,4 @@
-@charts-Enhanced @Charts-component @regression @enhancedCharts
+@charts-Enhanced @Charts-component @regression-test5@enhancedCharts
 Business Need: Charts and Enhanced Charts Component Scenarios
   Test all charts/enhanced charts component based scenarios
   As a configuration manager i make different configurational changes in charts/enhanced charts component and will validate them.

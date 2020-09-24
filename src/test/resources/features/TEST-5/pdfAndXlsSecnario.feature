@@ -1,4 +1,4 @@
-@allPdfAndXlxRelatedScenarios @regression @skipOnJenkins
+@allPdfAndXlxRelatedScenarios @regression-test5@skipOnJenkins
 Business Need: All pdf and xls related scenario including component and completed backlogs
   Test all download pdf and xls based scenarios
   As a configuration manager i make different configurational changes for download pdf and xls related scenarios and will validate them.
@@ -2205,3 +2205,38 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | defaultFieldsApi                                                         | newFieldsApi                   |
       | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,TestField__c |
+
+  @104475    @validateTotalNumberFormattingAfterAddingNewRecordAtMEGridParentTableDownloadedPDF
+  Scenario Outline: validating formatting of number total value after adding new record  under me grid parent table in downloaded pdf
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Export (PDF) | true               | ApiGeneratedId:1 |
+      | Flex Table List       | Enable Total        | false              | ApiGeneratedId:2 |
+      | Flex Table:General    | Enable Total Row    | false              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetPeriods |                           |                            |
+      | Flex Table:General    | Enable Export (PDF) | true           | ApplicationBudgetPeriods |                           |                            |
+      | Flex Table List       | Enable Total        | true           | ApplicationBudgetPeriods | Name                      | FTC-1532                   |
+      | Flex Table:General    | Enable Total Row    | true           | ApplicationBudgetPeriods |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "{Framework_recordUsed:ApplicationHavingSingleBudgetPeriodToValidateTotalAmount}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationHavingSingleBudgetPeriodToValidateTotalAmount}" inside table
+    When I navigate to "Budget" sub tab
+    When I click on "Delete" icon for "BP-002" inside table
+    When I pause execution for "3" seconds
+    When I enter the following values into flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" by clicking "New" :
+      | Support Year | Sequence Number |
+      | BP-002       | 100000          |
+    When I pause execution for "4" seconds
+    When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
+    And I select "Download as PDF" from parallel lines dropdown of "Application Budget"
+    And I download the file
+    Then I see "100,000" on page "1" of "govgrants" pdf file
+
+    Examples:
+      | defaultFieldsApi                                                         | newFieldsApi                        |
+      | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,SequenceNumber__c |

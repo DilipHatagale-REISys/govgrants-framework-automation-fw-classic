@@ -876,6 +876,43 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     *  enter value at comment/ post textarea inside my feed section at colab
+     * @param value
+     * @param isPost -to handle two different text-box as post and comment
+     * @author ashwini.mahore
+     */
+    public void enterValueInMyFeedSectionAndShareThePost(String value, Boolean isPost) {
+        if (isPost == true) {
+            By feedSection = By.xpath("//div/textarea[@class='mention-for-post']");
+            I.amPerforming().textInput().in(feedSection, value);
+            I.amPerforming().waitFor().makeThreadSleep(2000);
+            I.amPerforming().click().on(By.xpath("//div/input[@id='PostToFeedButton']"));
+        } else {
+            By commentSection = By.xpath("//div[@class='mentions-autocomplete-list' and @style='display: none;']/preceding-sibling::textarea[@class='mention-for-comment']");
+            I.amPerforming().waitFor().ElementToBeVisible(commentSection, 2000);
+            I.amPerforming().textInput().in(commentSection, value);
+            I.amPerforming().click().on(By.xpath("//div[@class='mentions-autocomplete-list' and @style='display: none;']/ancestor::div[@class='mentions-input-box']/following-sibling::input[@value='Comment']"));
+        }
+    }
+
+    /**
+     * perform click on actions at comments under my feed section like : like, Delete,Share etc
+     *
+     * @param comment
+     * @param actionName
+     * @author ashwini.mahore
+     */
+    public void clickOnActionsAtCommentSection(String actionName, Boolean chooseAction, String comment) {
+        if (chooseAction == true) {
+            I.amPerforming().click().on(By.xpath("//div[text()='" + comment + "']/ancestor::div[contains(@class,'singleComment')]//a[text()='" + actionName + "'] | " +
+                    "//div[text()='" + comment + "']//a[text()='" + actionName + "']"));
+        } else {
+            I.amPerforming().click().on(By.xpath("//div[text()='" + comment + "']//a[text()='More Options']"));
+            I.amPerforming().click().on(By.xpath("//div[text()='" + comment + "']//a[text()='" + actionName + "']"));
+        }
+    }
+
+    /**
      * click on close/search for lightning look up modal at page block detail
      */
     public void clickOnIconsAtOwnerOrganisationLightningLookUpModal(String iconName) {
@@ -1135,7 +1172,16 @@ public class PageLayoutPage extends GovGrantsManager {
      * @author ashwini.mahore
      */
     public void assertHyperlinkIsDisplayedAtValueInsideModal(String value, String modalId) {
-        Assert.assertTrue(isHyperlinkIsDisplayedAtColumnValueInsideEnhancedGrid(value,modalId));
+        Assert.assertTrue(isHyperlinkIsDisplayedAtColumnValueInsideEnhancedGrid(value, modalId));
+    }
+
+    /**
+     * return true if text alignment displayed properly in my feed section
+     *
+     * @author ashwini.mahore
+     */
+    public void assertAlignmentOfTextInsideMyFeedSection() {
+        Assert.assertTrue(isAlignmentOfTextInsideMyFeedSectionDisplayedProperly());
     }
 
     /**
@@ -2204,7 +2250,23 @@ public class PageLayoutPage extends GovGrantsManager {
         WebElement getCurrentDateOnModal = I.amPerforming().getElementReference().of(By.xpath("//label[text()='Sent Date']/following-sibling::div"));
         try {
             if (getCurrentDateOnModal.getText().contains(I.amPerforming().dateOperationsToGet().currentDateInDesiredFormat(DateTimeFormatter.ofPattern("M/D/YYYY")))) {
-                System.out.println(getCurrentDateOnModal.getText().contains(I.amPerforming().dateOperationsToGet().currentDateInDesiredFormat(DateTimeFormatter.ofPattern("M/D/YYYY"))));
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if text alignment displayed properly in my feed section
+     *
+     * @author ashwini.mahore
+     */
+    private boolean isAlignmentOfTextInsideMyFeedSectionDisplayedProperly() {
+        boolean flag = false;
+        WebElement getInputBoxStyle = I.amPerforming().getElementReference().of(By.xpath("//textarea[@class='mention-for-post']"));
+        try {
+            if (getInputBoxStyle.getCssValue("max-width").equals("100%")) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {

@@ -120,6 +120,7 @@ public class UsersAndURL implements UsersController {
         username.put("EXE", "autoexe@yopmail.com.ux");
         username.put("PM", "donaldpm@yopmail.com.ux");
         username.put("FO", "autofm@yopmail.com.ux");
+        username.put("SPI", "autospi@yopmail.com.ux");
         if (userLevel.toUpperCase() != null) {
             return username.get(userLevel.toUpperCase());
         } else {
@@ -131,8 +132,9 @@ public class UsersAndURL implements UsersController {
         Map<String, String> password = new HashMap<>();
         password.put("ADMIN", "test@12345");
         password.put("EXE", "test@1234");
-        password.put("PM", "test@1234");
+        password.put("PM", "test@12345");
         password.put("FO", "test@1234");
+        password.put("SPI", "test@12345");
         if (userType.toUpperCase() != null) {
             return password.get(userType.toUpperCase());
         } else {

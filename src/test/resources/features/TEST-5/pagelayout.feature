@@ -1,4 +1,4 @@
-@pagelayout-component @regression @pageLayout
+@pagelayout-component @regression-test5@pageLayout
 Business Need: Page Layout Component Scenarios
   Test all page layout component based scenarios
   As a configuration manager i make different configurational changes in page layout component and will validate them.
@@ -2526,3 +2526,23 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
       | Please enter valid URL value. |
+
+  @105118    @verifyThatUserIsAbleToSaveSpecificURLFieldWhenURLValidationRegexCustomMetadataCheckboxIsSetToTrue
+  Scenario: verify that user can enter and save specific url in  url field in a valid format when URL Validation Regex is set to true from custom metadata config
+    Given I have "customMetaData" configuration as below:
+      | id                 | label                | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY2QAO | URL Validation Regex | true         | GNT__KeyValueHolder__mdt |
+    And I update custom metadata setting changes:
+      | id                 | label                | booleanValue | customMetaDataApiName    |
+      | m031C000000XZY2QAO | URL Validation Regex | true         | GNT__KeyValueHolder__mdt |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    And I enter value "http://schools.utah.gov/eseastateinitiatives/schoolimprovement?mid=1384&tid=1" into field "URL__c"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    Then I softly see link "http://schools.utah.gov/eseastateinitiatives/schoolimprovement?mid=1384&tid=1" inside Page block

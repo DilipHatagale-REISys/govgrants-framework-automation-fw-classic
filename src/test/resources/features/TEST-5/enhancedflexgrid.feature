@@ -1,4 +1,4 @@
-@enhancedflexgrid-component @regression @enhancedGrid
+@enhancedflexgrid-component @regression-test5@enhancedGrid
 Business Need: Enhanced Flex Grid Component Scenarios
   Test all enhanced flex grid component based scenarios
   As a configuration manager i make different configurational changes in enhanced flex grid component and will validate them.
@@ -2429,3 +2429,29 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     Then I see actions under "---program:-:enhancedGridTableId---" table are aligned and compared with "actionsAtEgrid.png"
+
+  @104863  @VerifySortingLabelInsideEnhancedGridTable
+  Scenario: verify that sorting label displayed inside enhanced grid table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    Then I softly see sorting label as "* Records are sorted by " inside "---program:-:enhancedGridTableId---" table
+    Then I softly see sorting label as "Last Modified Date ascending order" inside "---program:-:enhancedGridTableId---" table
+
+  @104864  @VerifySortingLabelInsideEnhancedGridChildTable
+  Scenario: verify that sorting label displayed inside enhanced grid child table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    When I expand nested table containing column value "Demo_Title"
+    Then I softly see sorting label as "* Records are sorted by" inside "---program:-:tmpGrantorActiveAwardsGridTableId---" table
+    Then I softly see sorting label as "Last Modified Date ascending order" inside "---program:-:tmpGrantorActiveAwardsGridTableId---" table
