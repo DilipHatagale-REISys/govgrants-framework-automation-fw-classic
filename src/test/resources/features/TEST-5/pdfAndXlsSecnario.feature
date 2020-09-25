@@ -1,4 +1,4 @@
-@allPdfAndXlxRelatedScenarios @regression @skipOnJenkins
+@allPdfAndXlxRelatedScenarios @regression-test5 @skipOnJenkins
 Business Need: All pdf and xls related scenario including component and completed backlogs
   Test all download pdf and xls based scenarios
   As a configuration manager i make different configurational changes for download pdf and xls related scenarios and will validate them.
@@ -2205,3 +2205,101 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | defaultFieldsApi                                                         | newFieldsApi                   |
       | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,TestField__c |
+
+  @104475    @validateTotalNumberFormattingAfterAddingNewRecordAtMEGridParentTableDownloadedPDF
+  Scenario Outline: validating formatting of number total value after adding new record  under me grid parent table in downloaded pdf
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Export (PDF) | true               | ApiGeneratedId:1 |
+      | Flex Table List       | Enable Total        | false              | ApiGeneratedId:2 |
+      | Flex Table:General    | Enable Total Row    | false              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetPeriods |                           |                            |
+      | Flex Table:General    | Enable Export (PDF) | true           | ApplicationBudgetPeriods |                           |                            |
+      | Flex Table List       | Enable Total        | true           | ApplicationBudgetPeriods | Name                      | FTC-1532                   |
+      | Flex Table:General    | Enable Total Row    | true           | ApplicationBudgetPeriods |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "{Framework_recordUsed:ApplicationHavingSingleBudgetPeriodToValidateTotalAmount}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationHavingSingleBudgetPeriodToValidateTotalAmount}" inside table
+    When I navigate to "Budget" sub tab
+    When I click on "Delete" icon for "BP-002" inside table
+    When I pause execution for "3" seconds
+    When I enter the following values into flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" by clicking "New" :
+      | Support Year | Sequence Number |
+      | BP-002       | 100000          |
+    When I pause execution for "4" seconds
+    When I click on parallel lines menu bar with data target value "#toggleFGridApplicationBudgetCategoryFlexGrid"
+    And I select "Download as PDF" from parallel lines dropdown of "Application Budget"
+    And I download the file
+    Then I see "100,000" on page "1" of "govgrants" pdf file
+
+    Examples:
+      | defaultFieldsApi                                                         | newFieldsApi                        |
+      | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,SequenceNumber__c |
+
+  @105416    @validateDollarSymbolInDownloaedDFAtFlexTableEnhanced-gPlanning @flexTableEnhanced
+  Scenario: validate dollar sign in downloaded pdf file for enhanced data table -planning
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Grid:Flex Table List | Show in PDF         | true              | ApiGeneratedId:0 |
+      | Flex Grid                 | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Show in PDF         | true          | EnhancedDataTable  | Name                      | FLV-2548                   |
+      | Flex Grid:General     | Enable Export (PDF) | true          | EnhancedDataTable  |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I click on parallel lines menu bar with data target value "#EnhancedDataTableFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Grants Enhanced Table"
+    And I download the file
+    Then I see "$300000" on page "1" of "govgrants" pdf file
+
+  @105419    @validateDollarSignAtSingleLevelMEGridParentTableDownloadedPDF
+  Scenario: validating dollar sign under single level me grid parent table in downloaded pdf
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "{Framework_recordUsed:ApplicationHavingSingleBudgetPeriodToValidateTotalAmount}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationHavingSingleBudgetPeriodToValidateTotalAmount}" inside table
+    When I navigate to "Budget" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFGridProjectCostForApplication"
+    And I select "Download as PDF" from parallel lines dropdown of "Program Financials"
+    And I download the file
+    Then I see "$8,000.00" on page "1" of "govgrants" pdf file
+
+  @105385 @verifyThatSelectedValueIsDisplayedAtTheMultiPicklistFieldUsingCheckBoxButtonInsideDownloadedPDF
+  Scenario:validate that selected value is displayed inside multipicklist field rendered as checkbox button in downloaded pdf
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon for "General Application Form" inside flex table with id "FormEnhancedTable"
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see "Display 1" on page "1" of "govgrants" pdf file
+
+  @105388 @verifyThatSelectedValueIsDisplayedAtTheMultiPicklistFieldUsingRadioButtonInsideDownloadedPDF
+  Scenario:validate that selected value is displayed inside multipicklist field rendered as radio buton in downloaded pdf
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon for "General Application Form" inside flex table with id "FormEnhancedTable"
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see "Display 1" on page "1" of "govgrants" pdf file

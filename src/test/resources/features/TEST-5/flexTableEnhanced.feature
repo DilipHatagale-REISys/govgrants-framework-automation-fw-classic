@@ -1,4 +1,4 @@
-@flextableEnhanced-component @regression @flexTableEnhanced
+@flextableEnhanced-component @regression-test5 @flexTableEnhanced
 Business Need: Flex Table enhanced Component Scenarios
   Test all flex table enhanced component based scenarios
   As a configuration manager i make different configurational changes in flex table enhanced component and will validate them.
@@ -376,3 +376,28 @@ Business Need: Flex Table enhanced Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "{Framework_recordUsed:GrantInsideEnhancedGrid}" in "---program:-:flexGridEnhancedDataTableId---" panel
     Then I see actions under "---program:-:flexGridEnhancedDataTableId---" table are aligned and compared with "actionsAtEnhancedDataTable.png"
+
+  @104862  @VerifySortingLabelInsideEnhancedDataTable
+  Scenario: verify that sorting label displayed inside enhanced data table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    Then I softly see sorting label as "* Records are sorted by " inside "---program:-:EnhancedDataTableId---" table
+    Then I softly see sorting label as "Last Modified Date ascending order" inside "---program:-:EnhancedDataTableId---" table
+
+  @104409    @validatePicklistFieldValueAsNoneAtEnhancedDataTableInInlineMode-gPlanning
+  Scenario: validate picklist field value as none inside enhanced data table in inline edit mode
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Applicationg test88888" in "---program:-:flexGridEnhancedDataTableId---" panel
+    When I click on "Edit" icon for "Applicationg test88888" inside table
+    Then I softly see "--None--" inside selectbox field "Status__c"

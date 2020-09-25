@@ -1,4 +1,4 @@
-@forms-component @regression
+@forms-component @regression-test5
 Business Need: Forms Component Scenarios
   Test all forms component based scenarios
   As a configuration manager i make different configurational changes in forms component and will validate them.
@@ -217,3 +217,25 @@ Business Need: Forms Component Scenarios
     When I click on "View" icon of form "General Application Form" program in flex table
     When I click on "Edit" in the page details
     Then I see expected table with id "---program:-:tmpActiveGrantsGridTableId---"
+
+  @105382 @verifyValueSavedUnderMultipicklistRadioButtonAtFormLayout
+  Scenario:validate that saved value is displayed inside multi picklist field at form layout
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon for "General Application Form" inside flex table with id "FormEnhancedTable"
+    Then I see for "Multi-Picklist Field" field value is "Display 1" inside dynamic form
+
+  @105387 @verifyThatRadioButtonsAreDisplayedAtMultipicklistFieldAtFormsLayoutInViewMode
+  Scenario:validate that radio button displayed at multipicklist field inside form layout
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon for "General Application Form" inside flex table with id "FormEnhancedTable"
+    Then I see radio buttons for "Multi-Picklist Field" field inside form

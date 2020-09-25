@@ -1,4 +1,4 @@
-@loggedIssueScenarios @regression
+@loggedIssueScenarios @regression-test5
 Business Need: Logged Issues Scenarios
   Test all logged issues based scenarios
   As a configuration manager i make different configurational changes and will validate them.
@@ -3929,7 +3929,7 @@ Business Need: Logged Issues Scenarios
     When I pause execution for "3" seconds
     When I enter the following values into flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" by clicking "New" :
       | Support Year | TestField |
-      | BP-08        | 100000              |
+      | BP-08        | 100000    |
     When I navigate to "Budget" sub tab
     Then I see total amount at "TestField" currency field is displayed in a correct format inside "---program:-:applicationBudgetCategoryFlexGridTableId---"
 
@@ -3956,7 +3956,7 @@ Business Need: Logged Issues Scenarios
     When I pause execution for "3" seconds
     When I enter the following values into flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" by clicking "New" :
       | Support Year | TestField |
-      | BP-08        | 100000              |
+      | BP-08        | 100000    |
     When I pause execution for "4" seconds
     And I perform quick search for "BP-08" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
     Then I see value "$100,000.00" for title "TestField" inside table "---program:-:applicationBudgetCategoryFlexGridTableId---"

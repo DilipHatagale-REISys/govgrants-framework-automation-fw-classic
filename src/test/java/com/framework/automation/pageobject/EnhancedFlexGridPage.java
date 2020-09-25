@@ -537,6 +537,21 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         Assert.assertTrue(isBackgroundColorOfSelectedFilterCriteriaDisplayed());
     }
 
+    /**
+     * return true if sorting label displayed at the top right corner of enhanced table/grid
+     *
+     * @param label
+     * @param tableId
+     * @author ashwini.mahore
+     */
+    public void assertSortingLabelAtEnhancedGrid(String usage, String label, String tableId) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isSortingLabelDisplayedAtEnhancedGrid(label, tableId));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isSortingLabelDisplayedAtEnhancedGrid(label, tableId)).isTrue();
+        }
+    }
+
     /*********
      * "Local Methods with complete functionality - private"
      *****************/
@@ -1454,6 +1469,25 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if sorting label displayed at the top right corner of enhanced table/grid
+     *
+     * @param label
+     * @param tableId
+     * @author ashwini.mahore
+     */
+    private boolean isSortingLabelDisplayedAtEnhancedGrid(String label, String tableId) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='" + tableId + "']//div[contains(@class,'sortFieldMsg') and "
+                    + I.amPerforming().sanityOfXpathTo().contains(".", label) + "]"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
         }
         return flag;
     }

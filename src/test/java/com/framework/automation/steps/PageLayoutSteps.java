@@ -547,4 +547,14 @@ public class PageLayoutSteps {
     public void assertHyperlinkAtColumnValueInsideEnhancedGrid(String value, String modalId) {
         pageLayoutPage.assertHyperlinkIsDisplayedAtValueInsideModal(value, modalId);
     }
+
+    @Then("I see entered text in my feed section displayed properly")
+    public void iSeeEnteredTextInMyFeedSectionDisplayedProperly() {
+    pageLayoutPage.assertAlignmentOfTextInsideMyFeedSection();
+    }
+
+    @Then("^I see \"([^\"]*)\" shown as page instruction text$")
+    public void assertPageInstructionText(String pageInstructionText) {
+        pageLayoutPage.assertPageInstructionText(pageInstructionText);
+    }
 }

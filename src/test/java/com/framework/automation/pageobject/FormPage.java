@@ -79,6 +79,16 @@ public class FormPage extends GovGrantsManager {
                 .equalsIgnoreCase(versionNo));
     }
 
+    /**
+     * assert true if radio checkboxes displayed inside fields at form layout
+     *
+     * @param fieldName
+     * @author ashwini.mahore
+     */
+    public void assertRadioCheckboxesAtFieldsUnderForm(String fieldName) {
+        Assert.assertTrue(isRadioCheckboxesDisplayedAtFieldsUnderForm(fieldName));
+    }
+
     /*********
      * "Local Methods with complete functionality - private"
      *****************/
@@ -167,5 +177,23 @@ public class FormPage extends GovGrantsManager {
      */
     private WebElement getAllActionItemInsideFormDetalPage(String actionButtonName) {
         return I.amPerforming().getElementReference().of(By.xpath(("//div[@id='headerButtonsPanel']//*[@title='" + actionButtonName + "']")));
+    }
+
+    /**
+     * assert true if radio checkboxes displayed inside fields at form layout
+     *
+     * @param fieldName
+     * @author ashwini.mahore
+     */
+    private boolean isRadioCheckboxesDisplayedAtFieldsUnderForm(String fieldName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//span[text()='" + fieldName + "']/ancestor::dt/following-sibling::dd//input[@type='radio' and @checked]"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+            flag = false;
+        }
+        return flag;
     }
 }

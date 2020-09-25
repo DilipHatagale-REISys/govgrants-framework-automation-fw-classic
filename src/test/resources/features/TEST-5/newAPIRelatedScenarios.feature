@@ -1,4 +1,4 @@
-@NewAPIRelatedScenarios @regression
+@NewAPIRelatedScenarios @regression-test5
 Business Need: New API related scenarios temporary
 
   @54772    @lookUpHeaderTextFieldWithNumberOfAwardsAtPageBlockDetail-gPlanning @check @wip

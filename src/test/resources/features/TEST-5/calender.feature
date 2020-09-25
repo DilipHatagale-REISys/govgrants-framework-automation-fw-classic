@@ -1,4 +1,4 @@
-@calenderConfig-component @regression @calenderConfig
+@calenderConfig-component @regression-test5 @calenderConfig
 Business Need: Calender Config Component Scenarios
   Test all calender config component based scenarios
   As a configuration manager i make different configurational changes in calender component and will validate them.

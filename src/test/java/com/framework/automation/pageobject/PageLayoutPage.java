@@ -1135,7 +1135,23 @@ public class PageLayoutPage extends GovGrantsManager {
      * @author ashwini.mahore
      */
     public void assertHyperlinkIsDisplayedAtValueInsideModal(String value, String modalId) {
-        Assert.assertTrue(isHyperlinkIsDisplayedAtColumnValueInsideEnhancedGrid(value,modalId));
+        Assert.assertTrue(isHyperlinkIsDisplayedAtColumnValueInsideEnhancedGrid(value, modalId));
+    }
+
+    /**
+     * return true if text alignment displayed properly in my feed section
+     *
+     * @author ashwini.mahore
+     */
+    public void assertAlignmentOfTextInsideMyFeedSection() {
+        Assert.assertTrue(isAlignmentOfTextInsideMyFeedSectionDisplayedProperly());
+    }
+
+    /**
+     * assert true if correct page instruction text is displayed
+     */
+    public void assertPageInstructionText(String text) {
+        Assert.assertTrue(isPageInstructionTextDisplayed(text));
     }
 
     /**
@@ -2204,10 +2220,41 @@ public class PageLayoutPage extends GovGrantsManager {
         WebElement getCurrentDateOnModal = I.amPerforming().getElementReference().of(By.xpath("//label[text()='Sent Date']/following-sibling::div"));
         try {
             if (getCurrentDateOnModal.getText().contains(I.amPerforming().dateOperationsToGet().currentDateInDesiredFormat(DateTimeFormatter.ofPattern("M/D/YYYY")))) {
-                System.out.println(getCurrentDateOnModal.getText().contains(I.amPerforming().dateOperationsToGet().currentDateInDesiredFormat(DateTimeFormatter.ofPattern("M/D/YYYY"))));
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if text alignment displayed properly in my feed section
+     *
+     * @author ashwini.mahore
+     */
+    private boolean isAlignmentOfTextInsideMyFeedSectionDisplayedProperly() {
+        boolean flag = false;
+        WebElement getInputBoxStyle = I.amPerforming().getElementReference().of(By.xpath("//textarea[@class='mention-for-post']"));
+        try {
+            if (getInputBoxStyle.getCssValue("max-width").equals("100%")) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+
+    /**
+     * return true if text is displayed
+     *
+     * @param text
+     * @return
+     */
+    private boolean isPageInstructionTextDisplayed(String text) {
+        boolean flag = false;
+        if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@class='article']//div[" + I.amPerforming().sanityOfXpathTo().equals(".", text) + "]"))) {
+            flag = true;
         }
         return flag;
     }
