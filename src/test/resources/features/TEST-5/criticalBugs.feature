@@ -1,4 +1,4 @@
-@loggedIssueScenarios @regression
+@loggedIssueScenarios @regression-test5
 Business Need: Logged Issues Scenarios
   Test all logged issues based scenarios
   As a configuration manager i make different configurational changes and will validate them.

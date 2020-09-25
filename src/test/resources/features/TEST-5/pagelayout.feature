@@ -1,4 +1,4 @@
-@pagelayout-component @regression-test5@pageLayout
+@pagelayout-component @regression-test5 @pageLayout
 Business Need: Page Layout Component Scenarios
   Test all page layout component based scenarios
   As a configuration manager i make different configurational changes in page layout component and will validate them.
@@ -33,10 +33,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see the instruction text is as follows :
-  """
-   {LongText:PageInstruction-Text}
-  """
+    Then I see "Automation Instruction Text" shown as page instruction text
 
   @34049    @setUpHeaderOverRideField-gPlanning
   Scenario: setting up header over ride configuration and validating its content after clicking New button
@@ -2527,7 +2524,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Please enter valid URL value. |
 
-  @105118    @verifyThatUserIsAbleToSaveSpecificURLFieldWhenURLValidationRegexCustomMetadataCheckboxIsSetToTrue
+  @105118    @verifyThatUserIsAbleToSaveSpecificURLFieldWhenURLValidationRegexCustomMetadataCheckboxIsSetToTrue @sanity
   Scenario: verify that user can enter and save specific url in  url field in a valid format when URL Validation Regex is set to true from custom metadata config
     Given I have "customMetaData" configuration as below:
       | id                 | label                | booleanValue | customMetaDataApiName    |

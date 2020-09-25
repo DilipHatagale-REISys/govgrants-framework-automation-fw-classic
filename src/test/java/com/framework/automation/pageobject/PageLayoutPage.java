@@ -876,43 +876,6 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
-     *  enter value at comment/ post textarea inside my feed section at colab
-     * @param value
-     * @param isPost -to handle two different text-box as post and comment
-     * @author ashwini.mahore
-     */
-    public void enterValueInMyFeedSectionAndShareThePost(String value, Boolean isPost) {
-        if (isPost == true) {
-            By feedSection = By.xpath("//div/textarea[@class='mention-for-post']");
-            I.amPerforming().textInput().in(feedSection, value);
-            I.amPerforming().waitFor().makeThreadSleep(2000);
-            I.amPerforming().click().on(By.xpath("//div/input[@id='PostToFeedButton']"));
-        } else {
-            By commentSection = By.xpath("//div[@class='mentions-autocomplete-list' and @style='display: none;']/preceding-sibling::textarea[@class='mention-for-comment']");
-            I.amPerforming().waitFor().ElementToBeVisible(commentSection, 2000);
-            I.amPerforming().textInput().in(commentSection, value);
-            I.amPerforming().click().on(By.xpath("//div[@class='mentions-autocomplete-list' and @style='display: none;']/ancestor::div[@class='mentions-input-box']/following-sibling::input[@value='Comment']"));
-        }
-    }
-
-    /**
-     * perform click on actions at comments under my feed section like : like, Delete,Share etc
-     *
-     * @param comment
-     * @param actionName
-     * @author ashwini.mahore
-     */
-    public void clickOnActionsAtCommentSection(String actionName, Boolean chooseAction, String comment) {
-        if (chooseAction == true) {
-            I.amPerforming().click().on(By.xpath("//div[text()='" + comment + "']/ancestor::div[contains(@class,'singleComment')]//a[text()='" + actionName + "'] | " +
-                    "//div[text()='" + comment + "']//a[text()='" + actionName + "']"));
-        } else {
-            I.amPerforming().click().on(By.xpath("//div[text()='" + comment + "']//a[text()='More Options']"));
-            I.amPerforming().click().on(By.xpath("//div[text()='" + comment + "']//a[text()='" + actionName + "']"));
-        }
-    }
-
-    /**
      * click on close/search for lightning look up modal at page block detail
      */
     public void clickOnIconsAtOwnerOrganisationLightningLookUpModal(String iconName) {
@@ -1182,6 +1145,13 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public void assertAlignmentOfTextInsideMyFeedSection() {
         Assert.assertTrue(isAlignmentOfTextInsideMyFeedSectionDisplayedProperly());
+    }
+
+    /**
+     * assert true if correct page instruction text is displayed
+     */
+    public void assertPageInstructionText(String text) {
+        Assert.assertTrue(isPageInstructionTextDisplayed(text));
     }
 
     /**
@@ -2270,6 +2240,21 @@ public class PageLayoutPage extends GovGrantsManager {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+
+    /**
+     * return true if text is displayed
+     *
+     * @param text
+     * @return
+     */
+    private boolean isPageInstructionTextDisplayed(String text) {
+        boolean flag = false;
+        if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@class='article']//div[" + I.amPerforming().sanityOfXpathTo().equals(".", text) + "]"))) {
+            flag = true;
         }
         return flag;
     }

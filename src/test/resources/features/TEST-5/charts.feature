@@ -1,4 +1,4 @@
-@charts-Enhanced @Charts-component @regression-test5@enhancedCharts
+@charts-Enhanced @Charts-component @regression-test5 @enhancedCharts
 Business Need: Charts and Enhanced Charts Component Scenarios
   Test all charts/enhanced charts component based scenarios
   As a configuration manager i make different configurational changes in charts/enhanced charts component and will validate them.
@@ -1833,7 +1833,7 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     And I click on menu icon of chart "Enhanced Spline" with title "Enhanced View"
     When I click modal button "Show All Data"
     When I perform quick search for "AR-0142" inside charts modal with id "---program:-:EnhancedSplineSearchTableID---"
-    Then I see value "AR-0142" for title "Change Request #" inside table "---program:-:EnhancedSplineModalID---"
+    Then I see "AR-0142" value in flex table id "---program:-:EnhancedSplineModalID---"
 
   @74085    @validateActiveFieldAtCharts-gHome-EnhancedBubbleCharts
   Scenario: Validating enhanced bubble charts is getting displayed on UI while making changes of boolean field Active at configuration page -gHome
@@ -2024,7 +2024,7 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     When I click modal button "Show All Data"
     When I pause execution for "2" seconds
     When I perform quick search for "AR-0142" inside charts modal with id "---program:-:EnhancedSplineSearchTableID---"
-    Then I see value "AR-0142" for title "Change Request #" inside table "---program:-:EnhancedSplineModalID---"
+    Then I see "AR-0142" value in flex table id "---program:-:EnhancedSplineModalID---"
 
   @71289    @validateDualChartType1AndDualChartType2FieldAtCharts-gHOME-EnhancedDualAxes1Charts
   Scenario: Changing value of Dual Chart Type1 And Dual Chart Type2 for 'EnhancedDualAxes1Id' enhanced dual axes1 chart in configuration and validating inside planning-programs
