@@ -557,4 +557,9 @@ public class PageLayoutSteps {
     public void assertPageInstructionText(String pageInstructionText) {
         pageLayoutPage.assertPageInstructionText(pageInstructionText);
     }
+
+    @Then("I see value as {string} is selected at {string} inside dynamic form")
+    public void iSeeValueAsIsSelectedAtInsideDynamicForm(String value, String fieldName) {
+    pageLayoutPage.assertSelectedValueInRadioField(value, fieldName);
+    }
 }

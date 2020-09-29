@@ -2278,6 +2278,12 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @105385 @verifyThatSelectedValueIsDisplayedAtTheMultiPicklistFieldUsingCheckBoxButtonInsideDownloadedPDF
   Scenario:validate that selected value is displayed inside multipicklist field rendered as checkbox button in downloaded pdf
+    Given I have "dynamicFieldConfig" configuration as below:
+      | id                 | Type  | Name                 |
+      | a0L1C00000WNaMrUAL | Radio | Multi-Picklist Field |
+    And I update custom Dynamic Field setting changes:
+      | id                 | Type     | Name                 |
+      | a0L1C00000WNaMrUAL | Checkbox | Multi-Picklist Field |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -2292,6 +2298,12 @@ Business Need: All pdf and xls related scenario including component and complete
 
   @105388 @verifyThatSelectedValueIsDisplayedAtTheMultiPicklistFieldUsingRadioButtonInsideDownloadedPDF
   Scenario:validate that selected value is displayed inside multipicklist field rendered as radio buton in downloaded pdf
+    Given I have "dynamicFieldConfig" configuration as below:
+      | id                 | Type  | Name                 |
+      | a0L1C00000WNaMrUAL | Radio | Multi-Picklist Field |
+    And I update custom Dynamic Field setting changes:
+      | id                 | Type  | Name                 |
+      | a0L1C00000WNaMrUAL | Radio | Multi-Picklist Field |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
