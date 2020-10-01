@@ -56,7 +56,7 @@ public class FlexTablePage extends GovGrantsManager {
     public void assertquickSearchEnabled(String usage) {
         if (usage.equalsIgnoreCase("see")) {
             Assert.assertTrue(isQuickSearchEnabled());
-        } else if (usage.equalsIgnoreCase("do not see")){
+        } else if (usage.equalsIgnoreCase("do not see")) {
             Assert.assertFalse(isQuickSearchEnabled());
         }
     }
@@ -522,6 +522,15 @@ public class FlexTablePage extends GovGrantsManager {
     }
 
     /**
+     * return true if label contains expected searched value inside advance filter
+     *
+     * @param value
+     */
+    public void assertTextInsideLabelAtAdvanceFilter(String value) {
+        Assert.assertTrue(isTextInsideLabelDisplayedAtAdvanceFilter(value));
+    }
+
+    /**
      * perform click and select value inside show entries dropdown
      *
      * @param flexTableId
@@ -635,7 +644,6 @@ public class FlexTablePage extends GovGrantsManager {
 
     /**
      * @return validate if quick search is displayed or not at flex table
-     *
      * @modifier- ashwini.mahore
      */
     private boolean isQuickSearchEnabled() {
@@ -1134,6 +1142,22 @@ public class FlexTablePage extends GovGrantsManager {
         WebElement getTableResponsiveCss = I.amPerforming().getElementReference().of(By.xpath("//div[@class='table-responsive']"));
         try {
             if (getTableResponsiveCss.getCssValue("margin-bottom").equalsIgnoreCase("10px")) {
+                flag = true;
+            }
+        } catch (NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if label contains expected searched value inside advance filter
+     *
+     * @param value
+     */
+    private boolean isTextInsideLabelDisplayedAtAdvanceFilter(String value) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//span[contains(@class,'btn-primary')]//span[text()='" + value + "']"))) {
                 flag = true;
             }
         } catch (NoSuchElementException e) {

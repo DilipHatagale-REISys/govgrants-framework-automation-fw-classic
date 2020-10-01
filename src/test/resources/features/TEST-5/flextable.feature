@@ -1264,6 +1264,80 @@ Business Need: Flex Table Component Scenarios
     When I perform quick search for "test send to owner 2"
     Then I see actions under "---program:-:programsTableId---" table are aligned and compared with "actionsAtFlexTable.png"
 
+  @106401    @validateDateCanBeEnteredSuccessfulyInsideAdvanceFilterValueInputBoxAtFlexTable
+  Scenario: validate date inside value input box field is inserted successfully at flex table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
+    When I enter advance filter values inside id "advfPrograms"
+      | Start Date | Equals to | 09/16/2020 |
+    Then I see label containing value as "09/16/2020" inside advance filter
+
+  @106403    @validateAdvanceFilterValueForDateFieldWithOperatorGreaterThanAtFlexTable
+  Scenario: validate Advance filter search for date field with greater than operator at flex table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
+    When I enter advance filter values inside id "advfPrograms"
+      | Start Date | Greater than | 09/16/2020 |
+    Then I softly do not see value "09/16/2020" for title "Start Date" inside table "---program:-:programsTableId---"
+    Then I softly do not see value "07/01/2018" for title "Start Date" inside table "---program:-:programsTableId---"
+    Then I softly see value "05/19/2026" for title "Start Date" inside table "---program:-:programsTableId---"
+
+  @106404    @validateAdvanceFilterValueForDateFieldWithOperatorLessThanAtFlexTable
+  Scenario: validate Advance filter search for date field with less than operator at flex table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
+    When I enter advance filter values inside id "advfPrograms"
+      | Start Date | Less than | 09/16/2020 |
+    Then I softly do not see value "09/16/2020" for title "Start Date" inside table "---program:-:programsTableId---"
+    Then I softly see value "07/01/2018" for title "Start Date" inside table "---program:-:programsTableId---"
+    Then I softly do not see value "05/19/2026" for title "Start Date" inside table "---program:-:programsTableId---"
+
+  @106406    @validateAdvanceFilterValueForDateFieldWithOperatorGreaterThanOrEqualtoAtFlexTable
+  Scenario: validate Advance filter search for date field with Greater than or Equal to operator at flex table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
+    When I enter advance filter values inside id "advfPrograms"
+      | Start Date | Greater than or Equal to | 09/16/2020 |
+    Then I softly see value "09/16/2020" for title "Start Date" inside table "---program:-:programsTableId---"
+    Then I softly do not see value "07/01/2018" for title "Start Date" inside table "---program:-:programsTableId---"
+    Then I softly see value "05/19/2026" for title "Start Date" inside table "---program:-:programsTableId---"
+
+  @106407    @validateAdvanceFilterValueForDateFieldWithOperatorLessThanOrEqualtoAtFlexTable
+  Scenario: validate Advance filter search for date field with less than or Equal to operator at flex table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
+    When I enter advance filter values inside id "advfPrograms"
+      | Start Date | Less than or Equal to | 09/16/2020 |
+    Then I softly see value "09/16/2020" for title "Start Date" inside table "---program:-:programsTableId---"
+    Then I softly see value "07/01/2018" for title "Start Date" inside table "---program:-:programsTableId---"
+    Then I softly do not see value "05/19/2026" for title "Start Date" inside table "---program:-:programsTableId---"
+
+  @106409    @validateAdvanceFilterValueForDateFieldAtFlexTable
+  Scenario: validate Advance filter search  for date field with equals operator at flex table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
+    When I enter advance filter values inside id "advfPrograms"
+      | Start Date | Equals to | 09/16/2020 |
+    Then I see value "09/16/2020" for title "Start Date" inside table "---program:-:programsTableId---"
+
 #  @flextablebug-test
 #  Scenario: Run flex table specific steps for specific time continuosly to ensure no error is displayed
 #    When I login as "Automation" user

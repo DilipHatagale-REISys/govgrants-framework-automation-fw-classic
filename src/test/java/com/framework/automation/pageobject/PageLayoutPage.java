@@ -488,6 +488,7 @@ public class PageLayoutPage extends GovGrantsManager {
         ;
     }
 
+
     /**
      * get send email search by field at send email modal
      */
@@ -1152,17 +1153,6 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public void assertPageInstructionText(String text) {
         Assert.assertTrue(isPageInstructionTextDisplayed(text));
-    }
-
-    /**
-     * assert true if selected/checked Value In Radio Field is displayed at form layout
-     *
-     * @param value
-     * @param fieldName
-     * @author ashwini.mahore
-     */
-    public void assertSelectedValueInRadioField(String value, String fieldName) {
-        Assert.assertTrue(isSelectedValueInRadioFieldDisplayed(value, fieldName));
     }
 
     /**
@@ -2265,21 +2255,6 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean isPageInstructionTextDisplayed(String text) {
         boolean flag = false;
         if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@class='article']//div[" + I.amPerforming().sanityOfXpathTo().equals(".", text) + "]"))) {
-            flag = true;
-        }
-        return flag;
-    }
-
-    /**
-     * assert true if selected/checked Value In Radio Field is displayed at form layout
-     *
-     * @param value
-     * @param fieldName
-     * @author ashwini.mahore
-     */
-    private boolean isSelectedValueInRadioFieldDisplayed(String value, String fieldName) {
-        boolean flag = false;
-        if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//span[text()='" + fieldName + "']/ancestor::dt/following-sibling::dd//label[" + I.amPerforming().sanityOfXpathTo().equals("text()", value) + "]/preceding-sibling::input[@checked]"))) {
             flag = true;
         }
         return flag;
