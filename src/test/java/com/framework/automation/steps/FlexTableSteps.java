@@ -282,4 +282,9 @@ public class FlexTableSteps {
     public void assertMarginBetweenScrollBarAndPageSize(String marginBottom) {
         flexTablePage.assertMarginBetweenScrollBarAndPageSize(marginBottom);
     }
+
+    @Then("I see label containing value as {string} inside advance filter")
+    public void iSeeLabelWithTextInsideAdvanceFilter(String value) {
+        flexTablePage.assertTextInsideLabelAtAdvanceFilter(value);
+    }
 }

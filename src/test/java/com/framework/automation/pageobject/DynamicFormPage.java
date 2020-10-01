@@ -219,8 +219,7 @@ public class DynamicFormPage extends GovGrantsManager {
     private boolean isFieldValueDisplayedInsideDynamicForm(String fieldName, String fieldValue) {
         boolean flag = false;
         By getFieldValue = By.xpath("//span[text()='" + fieldName + "']/../following-sibling::dd//span[text()='" + fieldValue + "']" +
-                " | //span[text()='" + fieldName + "']/../following-sibling::dd//span//img[@alt='" + fieldValue + "'] " +
-                "| //span[text()='" + fieldName + "']/ancestor::dt/following-sibling::dd//label[" + I.amPerforming().sanityOfXpathTo().equals("text()", fieldValue) + "]");
+                " | //span[text()='" + fieldName + "']/../following-sibling::dd//span//img[@alt='" + fieldValue + "']");
         if (I.amPerforming().checkToSee().isDisplayed(getFieldValue)) {
             return true;
         }

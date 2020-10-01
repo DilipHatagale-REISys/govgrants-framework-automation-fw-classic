@@ -86,4 +86,12 @@ public class ConfigurationSteps {
             ProjectWebServices.dynamicApi = "customMetaData";
         }
     }
+
+    @And("^I update custom Dynamic Field setting changes:$")
+    public void iUpdateDynamicFieldConfig(List<Map<String, String>> configParameters) {
+        for (Map<String, String> parameters : configParameters) {
+            projectAPI.updateDynamicFieldConfig(parameters.get("id"),parameters.get("Name"), parameters.get("Type"));
+            ProjectWebServices.dynamicApi = "dynamicFieldConfig";
+        }
+    }
 }

@@ -220,17 +220,33 @@ Business Need: Forms Component Scenarios
 
   @105382 @verifyValueSavedUnderMultipicklistRadioButtonAtFormLayout
   Scenario:validate that saved value is displayed inside multi picklist field at form layout
+    Given I have "dynamicFieldConfig" configuration as below:
+      | id                 | Type  | Name                 |
+      | a0L1C00000WNaMrUAL | Radio | Multi-Picklist Field |
+    And I update custom Dynamic Field setting changes:
+      | id                 | Type  | Name                 |
+      | a0L1C00000WNaMrUAL | Radio | Multi-Picklist Field |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Attachments" sub tab
-    When I click on "View" icon for "General Application Form" inside flex table with id "FormEnhancedTable"
-    Then I see for "Multi-Picklist Field" field value is "Display 1" inside dynamic form
+    When I click on "Edit" icon for "General Application Form" inside flex table with id "FormEnhancedTable"
+    When I enter values into "PROGRAM INFORMATION" page block
+      | Field                | Value     |
+      | Multi-Picklist Field | Display 1 |
+    When I click on "Save" in the page details
+    Then I see value as "Display 1" is selected at "Multi-Picklist Field" inside dynamic form
 
   @105387 @verifyThatRadioButtonsAreDisplayedAtMultipicklistFieldAtFormsLayoutInViewMode
   Scenario:validate that radio button displayed at multipicklist field inside form layout
+    Given I have "dynamicFieldConfig" configuration as below:
+      | id                 | Type  | Name                 |
+      | a0L1C00000WNaMrUAL | Radio | Multi-Picklist Field |
+    And I update custom Dynamic Field setting changes:
+      | id                 | Type  | Name                 |
+      | a0L1C00000WNaMrUAL | Radio | Multi-Picklist Field |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -239,3 +255,52 @@ Business Need: Forms Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on "View" icon for "General Application Form" inside flex table with id "FormEnhancedTable"
     Then I see radio buttons for "Multi-Picklist Field" field inside form
+
+  @105740 @verifyThatFlexTableIsDisplayedAtFormViewPage-gApplications
+  Scenario:validate flex table is displayed at forms view layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Block            | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Is Active | true          | Application - Simple | Name                      | PB-1852                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "View" icon of form "General Application Form" program in flex table
+    Then I see expected table with id "---program:-:toggleFlexTableBudgetCategoriesId---"
+
+  @106159 @verifyValueSavedUnderMultipicklistRadioButtonAtFormLayout
+  Scenario:validate that saved value is displayed inside multi picklist field at form layout
+    Given I have "dynamicFieldConfig" configuration as below:
+      | id                 | Type  | Name                 |
+      | a0L1C00000WNaMrUAL | Radio | Multi-Picklist Field |
+    And I update custom Dynamic Field setting changes:
+      | id                 | Type     | Name                 |
+      | a0L1C00000WNaMrUAL | Checkbox | Multi-Picklist Field |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "Edit" icon for "General Application Form" inside flex table with id "FormEnhancedTable"
+    Then I select below checkbox options for field "Multi-Picklist Field"
+      | Display 1  |
+    When I click on "Save" in the page details
+    Then I see value as "Display 1" is selected at "Multi-Picklist Field" inside dynamic form
+
+  @105844 @verifyByClickAtCancelButtonAtFormLayoutItShouldRedirectToApplicationDetailPage
+  Scenario:validate that by click on form layout, it is re-directed to application detail page
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on "Edit" icon for "General Application Form" inside flex table with id "FormEnhancedTable"
+    When I click on "Cancel" in the page details
+    Then I see "Application" shown as over view header

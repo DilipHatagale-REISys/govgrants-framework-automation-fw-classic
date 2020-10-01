@@ -4783,3 +4783,130 @@ Business Need: dynamic forms Component Scenarios
     And I select "Download As PDF" from dropdown
     And I download the file
     Then I see "Currency" on page "1" of "govgrants" pdf file
+
+  @106081   @validateIfCurrencyNumberPercentFieldIsHiddenFromUIThenItIsNotDisplayedInsideDownloadedPDFAtDynamicForm
+  Scenario: validate if currency, number , percent field is hidden from ui then it is not displayed in downloaded pdf at dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:3 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                         | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Written                                               | CI-0000            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:HideCurrencyNumberPercentFieldsOnPDF | CI-0000            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                              | CI-0004            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Number                                                | CI-0006            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Percent                                               | CI-0005            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I softly cannot see "Currency" on page "1" of "govgrants" pdf file
+    Then I softly cannot see "Number" on page "1" of "govgrants" pdf file
+    Then I softly cannot see "Percent" on page "1" of "govgrants" pdf file
+
+  @106082   @validateIfCurrencyNumberPercentFieldIsDisabledFromUIThenItIsDisplayedInsideDownloadedPDFAtDynamicForm
+  Scenario: validate if currency, number , percent field is disabled from ui then it is displayed in downloaded pdf at dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:3 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Written                                                  | CI-0000            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:DisableCurrencyNumberPercentFieldsOnPDF | CI-0000            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                 | CI-0004            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Number                                                   | CI-0006            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Percent                                                  | CI-0005            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I softly see "Currency" on page "1" of "govgrants" pdf file
+    Then I softly see "Number" on page "1" of "govgrants" pdf file
+    Then I softly see "Percent" on page "1" of "govgrants" pdf file
+
+  @106087   @validateIfCurrencyIsDisabledAndNumberPercentFieldIsHiddenFromUIThenItIsDisplayedInsideDownloadedPDFAtDynamicForm
+  Scenario: validate if currency is disabled and number, percent field is hidden from ui then it is displayed accordingly in downloaded pdf at dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:3 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Written                                                         | CI-0000            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:HideAndDisableCurrencyNumberPercentFieldsOnPDF | CI-0000            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                        | CI-0004            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Number                                                          | CI-0006            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Percent                                                         | CI-0005            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I softly see "Number" on page "1" of "govgrants" pdf file
+    Then I softly cannot see "Currency" on page "1" of "govgrants" pdf file
+    Then I softly cannot see "Percent" on page "1" of "govgrants" pdf file
+
+  @106088   @validateDisabledAndHiddenFieldsLikeCurrencyNumberPercentDateDisplayedInsideDownloadedPDFAtDynamicForm
+  Scenario: validate disabled and hidden fields like number, percent, currency, date field displayed accordingly in downloaded pdf at dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:3 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:4 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Written                                                         | CI-0000            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:HideAndDisableCurrencyNumberPercentDateFieldsOnPDF | CI-0000            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                        | CI-0004            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Number                                                          | CI-0006            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Percent                                                         | CI-0005            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Date                                                         | CI-0001            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I softly see "Number" on page "1" of "govgrants" pdf file
+    Then I softly cannot see "Currency" on page "1" of "govgrants" pdf file
+    Then I softly cannot see "Percent" on page "1" of "govgrants" pdf file
+    Then I softly cannot see "Date" on page "1" of "govgrants" pdf file

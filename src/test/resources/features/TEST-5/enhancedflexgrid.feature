@@ -2455,3 +2455,53 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I expand nested table containing column value "Demo_Title"
     Then I softly see sorting label as "* Records are sorted by" inside "---program:-:tmpGrantorActiveAwardsGridTableId---" table
     Then I softly see sorting label as "Last Modified Date ascending order" inside "---program:-:tmpGrantorActiveAwardsGridTableId---" table
+
+  @106419   @validateAdvanceFilterValueForDateFieldWithOperatorStartWithAtEnhancedGrid
+  Scenario Outline: validate Advance filter search for date field with start with operator At enhanced grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I click on advance filter "#advfTmpActiveGrantsGrid" of table id "---program:-:flexGridEnhancedID---"
+    When I enter advance filter values inside id "advfTmpActiveGrantsGrid"
+      | Project Period | starts with | 10/1/2016 |
+    Then I softly see value "10/1/2016--12/31/2022" for title "Project Period" inside table "---program:-:flexGridEnhancedID---"
+    Then I softly do not see value "12/31/2022--10/1/2016" for title "Project Period" inside table "---program:-:flexGridEnhancedID---"
+
+    Examples:
+      | newFieldsApi                            | defaultFieldsApi                                                                                                                                                                                                                   |
+      | ProjectTitle__c,CurrentProjectPeriod__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @106421   @validateAdvanceFilterValueForDateFieldWithOperatorEndWithAtEnhancedGrid
+  Scenario Outline: validate Advance filter search for date field with end with operator At enhanced grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I click on advance filter "#advfTmpActiveGrantsGrid" of table id "---program:-:flexGridEnhancedID---"
+    When I enter advance filter values inside id "advfTmpActiveGrantsGrid"
+      | Project Period | ends with | 2/15/2022 |
+    Then I softly see value "2/15/2018--2/15/2022" for title "Project Period" inside table "---program:-:flexGridEnhancedID---"
+    Then I softly do not see value "12/31/2022--10/1/2016" for title "Project Period" inside table "---program:-:flexGridEnhancedID---"
+
+    Examples:
+      | newFieldsApi                            | defaultFieldsApi                                                                                                                                                                                                                   |
+      | ProjectTitle__c,CurrentProjectPeriod__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
