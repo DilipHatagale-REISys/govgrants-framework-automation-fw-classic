@@ -218,3 +218,41 @@ Business Need: security review Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatus}" inside table
     When I navigate to "Budget" sub tab
     Then I see expected table with id "EnhanceAppGrantorBudgetPeriodsFlexToggle"
+
+  @107085    @verifyThatEnhancedGridIsDisplayedAtRecordLevelByLoggedInAsPMUser
+  Scenario: validate enhanced grid at record table is rendered properly by PM user
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Setup" sub tab
+    Then I see expected table with id "ProgramReviewStepTemplatesFlexToggle"
+
+  @107083    @verifyThatEnhancedDataTableIsDisplayedAtRecordLevelByLoggedInAsPMUser
+  Scenario: validate enhanced data table at record table is rendered properly by PM user
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Overview" sub tab
+    Then I see expected table with id "DataTableEnhanceProgramContactsFlexToggle"
+
+  @107109    @verifyThatEnhancedGridIsDisplayedAtPhaseLevelByLoggedInAsAdminUser
+  Scenario: validate enhanced grid at phase table is rendered properly by admin user
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    When I navigate to "Site Visits" content inside "Activities" subheader on left panel
+    Then I see expected table with id "LatestSiteVisitReportsGridFlexToggle"
+
+  @107086    @verifyThatEnhancedGridIsDisplayedAtPhaseLevelByLoggedInAsPMUser
+  Scenario: validate enhanced grid at phase table is rendered properly by PM user
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    When I navigate to "Site Visits" content inside "Activities" subheader on left panel
+    Then I see expected table with id "LatestSiteVisitReportsGridFlexToggle"

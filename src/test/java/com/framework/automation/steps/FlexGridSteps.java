@@ -172,8 +172,8 @@ public class FlexGridSteps {
         flexGridPage.assertCurrencyFieldValuesAreRightAlignedInsideFlexTable(tableId);
     }
 
-    @Then("^I see total amount at \"([^\"]*)\" currency field is displayed in a correct format inside \"([^\"]*)\"$")
-    public void iSeeCurrencyTotalWithCorrectFormattingIsDisplayed(String fieldName, String tableId) {
-        flexGridPage.assertCurrencyTotalWithCorrectFormattingIsDisplayed(tableId, fieldName);
+    @Then("^I see (total|subtotal) amount at \"([^\"]*)\" currency field is displayed in a correct format inside \"([^\"]*)\"$")
+    public void iSeeCurrencyTotalWithCorrectFormattingIsDisplayed(String overallTotal, String fieldName, String tableId) {
+        flexGridPage.assertCurrencyTotalWithCorrectFormattingIsDisplayed(overallTotal.equalsIgnoreCase("total"), tableId, fieldName);
     }
 }

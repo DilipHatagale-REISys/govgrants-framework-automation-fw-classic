@@ -488,6 +488,17 @@ public class PageLayoutPage extends GovGrantsManager {
         ;
     }
 
+    /**
+     * select value from radio buttons at form layout
+     *
+     * @param value
+     * @param fieldApiName
+     * @author ashwini.mahore
+     */
+    public void selectValueInsideRadioFieldAtFormLayout(String value, String fieldApiName) {
+        By getRadioButtons = By.xpath("//div[@id='"+fieldApiName+"']//*[local-name()='label' and contains(text(),'"+value+"')]");
+        I.amPerforming().click().on(getRadioButtons);
+    }
 
     /**
      * get send email search by field at send email modal

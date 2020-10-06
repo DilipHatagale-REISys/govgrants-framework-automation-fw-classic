@@ -2488,3 +2488,50 @@ Business Need: Library Files Component Scenarios
     When I upload file "DuplicateFile.txt" present in the flex table "WorkspaceFilesUpload" from library
     When I perform quick search for "DuplicateFile.txt" in "---program:-:PlanningFilesFlexGridId---" panel
     Then I see value "DuplicateFile.txt" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
+
+  @106620 @validateThatIfInvalidFileIsSearchedInGlobalSearchUnderFilesTableThenNoRecordFoundDisplayed-HomePhase
+  Scenario: Verify that if invalid file name is searched in global search-Files table then, no record found is displayed in files table - Home Phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on global search and select "Files"
+    When I perform quick search inside global search "teestDummyDataSearch"
+    And I expand table with header "Planning Files"
+    Then I see "No Records Found" inside flex table with id "---program:-:PlanningFilesFlexGridId---"
+
+  @106621 @validateThatIfInvalidFileIsSearchedInGlobalSearchUnderFilesTableThenNoRecordFoundDisplayedByLoginAsPMUser-HomePhase
+  Scenario: Verify that if invalid file name is searched in global search-Files table then, no record found is displayed in files table by login as PM user
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on global search and select "Files"
+    When I perform quick search inside global search "teestDummyDataSearch"
+    And I expand table with header "Planning Files"
+    Then I see "No Records Found" inside flex table with id "---program:-:PlanningFilesFlexGridId---"
+
+  @106624 @validateThatUserCanSearchRecordLevelFilesInGlobalSearchUnderFilesTableByLoginAsPMUser-HomePhase
+  Scenario: Verify that if record level file name is searched in global search-Files table then, it is displayed in files table by PM user
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on global search and select "Files"
+    When I perform quick search inside global search "RecordLevelDuplicateFile.pdf"
+    Then I see value "RecordLevelDuplicateFile.pdf" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
+
+  @106618 @validateThatUserCanSearchFilesInGlobalSearchUnderAllTableByLoginAsPMUser-HomePhase
+  Scenario: Verify that if file name is searched in global search-All table then, it is displayed in files table by PM user
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on global search and select "All"
+    When I perform quick search inside global search "RecordLevelDuplicateFile.pdf"
+    Then I see value "RecordLevelDuplicateFile.pdf" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
+
+  @106622 @validateThatUserCanSearchPhaseLevelFilesInGlobalSearchUnderFilesTableByLoginAsPMUser-HomePhase
+  Scenario: Verify that if phase level file name is searched in global search-Files table then, it is displayed in files table by PM user
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on global search and select "Files"
+    When I perform quick search inside global search "AssetLibraryTestData.pdf"
+    Then I see value "AssetLibraryTestData.pdf" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"

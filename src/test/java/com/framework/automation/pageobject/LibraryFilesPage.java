@@ -379,6 +379,17 @@ public class LibraryFilesPage extends GovGrantsManager {
     }
 
     /**
+     * perform click on expand icon at flex table
+     *
+     * @param tableHeader
+     * @author ashwini.mahore
+     */
+    public void clcikOnTableHeaderToExpand(String tableHeader) {
+        By flexTableExpandCollapseIconSelector = By.xpath("//span[text()='" + tableHeader + "']//ancestor::a[contains(@class,'collapsed')]");
+        I.amPerforming().click().on(flexTableExpandCollapseIconSelector);
+    }
+
+    /**
      * drag files from one folder (source) and drop it in another folder (destination)- Library files home phase
      *
      * @param fileName
