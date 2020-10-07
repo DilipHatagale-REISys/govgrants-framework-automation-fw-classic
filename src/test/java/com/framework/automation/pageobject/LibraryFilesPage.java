@@ -2,6 +2,7 @@ package com.framework.automation.pageobject;
 
 import com.automation.rei.handlers.govgrants;
 import com.framework.automation.projectmanager.GovGrantsManager;
+import com.testingblaze.actionsfactory.api.ByUsing;
 import com.testingblaze.objects.Elements;
 import com.testingblaze.register.I;
 import org.junit.Assert;
@@ -742,7 +743,7 @@ public class LibraryFilesPage extends GovGrantsManager {
     private boolean isFieldDisplayedWithRequiredForSaveAsteriskMardAtUploadModal(String fieldName) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//span[text()='" + fieldName + "']/..//*[@class='slds-required' and text()='*']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[text()='" + fieldName + "']/..//*[@class='slds-required' and text()='*']"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
