@@ -2,6 +2,7 @@ package com.framework.automation.pageobject;
 
 import com.automation.rei.handlers.govgrants;
 import com.framework.automation.projectmanager.GovGrantsManager;
+import com.testingblaze.actionsfactory.api.ByUsing;
 import com.testingblaze.objects.Elements;
 import com.testingblaze.register.I;
 import org.junit.Assert;
@@ -379,6 +380,17 @@ public class LibraryFilesPage extends GovGrantsManager {
     }
 
     /**
+     * perform click on expand icon at flex table
+     *
+     * @param tableHeader
+     * @author ashwini.mahore
+     */
+    public void clcikOnTableHeaderToExpand(String tableHeader) {
+        By flexTableExpandCollapseIconSelector = By.xpath("//span[text()='" + tableHeader + "']//ancestor::a[contains(@class,'collapsed')]");
+        I.amPerforming().click().on(flexTableExpandCollapseIconSelector);
+    }
+
+    /**
      * drag files from one folder (source) and drop it in another folder (destination)- Library files home phase
      *
      * @param fileName
@@ -731,7 +743,7 @@ public class LibraryFilesPage extends GovGrantsManager {
     private boolean isFieldDisplayedWithRequiredForSaveAsteriskMardAtUploadModal(String fieldName) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//span[text()='" + fieldName + "']/..//*[@class='slds-required' and text()='*']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[text()='" + fieldName + "']/..//*[@class='slds-required' and text()='*']"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {

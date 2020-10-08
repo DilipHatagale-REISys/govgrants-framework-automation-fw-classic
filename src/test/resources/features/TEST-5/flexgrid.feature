@@ -2362,3 +2362,26 @@ Business Need: Flex Grid Component Scenarios
     When I navigate to "Budget" sub tab
     When I perform quick search for "BP-02" in "---program:-:applicationBudgetCategoryFlexGridTableId---" panel
     Then I see value "1/6/2020" for title "Start Date" inside table "---program:-:applicationBudgetCategoryFlexGridTableId---"
+
+  @105119    @VerifySubTotalIsDisplayedInAStandardFormatAtChildFlexTableInsideMEGrid-gGrant @flexGrid
+  Scenario Outline: Validating sub total is displayed in a standard format at child flex table under ME Grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField                 | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetCategoryFlexTable |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I expand nested table containing column value "BP-01"
+    When I expand nested table containing column value "Proposed Uses Of Total Funds"
+    Then I see subtotal amount at "Grantor Share" currency field is displayed in a correct format inside "---program:-:applicationBudgetCategoryFlexGridTableId---"
+
+    Examples:
+      | defaultFieldsApi                                                                                     | newFieldsApi                                              |
+      | Id,ServiceAreaTitle__c,BudgetCategory__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c | Id,ServiceAreaTitle__c,BudgetCategory__c,GrantorAmount__c |

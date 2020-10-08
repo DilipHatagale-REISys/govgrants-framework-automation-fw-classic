@@ -1,6 +1,7 @@
 package com.framework.automation.steps;
 
 import com.framework.automation.pageobject.LibraryFilesPage;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.springframework.context.annotation.Description;
@@ -46,6 +47,10 @@ public class LibraryFilesSteps {
         libraryFilesPage.selectSharingOptionsFromDropDownAtUploadFileModal(sharingOptions);
     }
 
+    @And("I expand table with header {string}")
+    public void iExpandTableWithHeader(String tableHeader) {
+        libraryFilesPage.clcikOnTableHeaderToExpand(tableHeader);
+    }
 
     @Then("^I (see|do not see|softly see|softly do not see) library/folder/file \"([^\"]*)\" is displayed under files library$")
     public void asserLibraryFileFolderIsDisplayedOnUI(String usuage, String libraryFileFolderName) {

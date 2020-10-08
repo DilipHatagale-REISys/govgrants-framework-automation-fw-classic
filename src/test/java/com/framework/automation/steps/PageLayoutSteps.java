@@ -151,6 +151,11 @@ public class PageLayoutSteps {
         pageLayoutPage.clickOnCrossIconAtAttachmentSectionAtSendEmailModal(attachmentName);
     }
 
+    @When("I select value as {string} inside {string} radio field")
+    public void iSelectValueAsInsideRadioField(String value, String fieldApiName) {
+        pageLayoutPage.selectValueInsideRadioFieldAtFormLayout(value, fieldApiName);
+    }
+
     @And("^I click on expand collapse icon for panel heading \"([^\"]*)\"$")
     public void clickOnExpandColapseIcon(String panelHeaderName) {
         pageLayoutPage.clickExpandCollapseIconAtTableHeader(panelHeaderName);

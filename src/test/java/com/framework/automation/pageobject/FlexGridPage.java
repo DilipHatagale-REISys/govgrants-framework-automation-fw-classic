@@ -319,14 +319,14 @@ public class FlexGridPage extends GovGrantsManager {
     }
 
     /**
-     * assert true if currency total displayed in an expected format like $n,nnn,nnn.nn inside me grid
+     * assert true if currency total/sub total displayed in an expected format like $n,nnn,nnn.nn inside me grid
      *
      * @param tableId
      * @param fieldName
      * @author - ashwini.mahore
      */
-    public void assertCurrencyTotalWithCorrectFormattingIsDisplayed(String tableId, String fieldName) {
-        Assert.assertTrue(isCurrencyCurrencyTotalWithCorrectFormattingDisplayed(tableId, fieldName));
+    public void assertCurrencyTotalWithCorrectFormattingIsDisplayed(Boolean isTotal, String tableId, String fieldName) {
+        Assert.assertTrue(isCurrencyCurrencyTotalWithCorrectFormattingDisplayed(isTotal, tableId, fieldName));
     }
 
     /**
@@ -339,6 +339,18 @@ public class FlexGridPage extends GovGrantsManager {
     public WebElement getTotalValueFromLastRow(String tableId, String fieldName) {
         return I.amPerforming().getElementReference().of(By.xpath("//div[@id='" + tableId + "']//span[text()='" + fieldName + "']/ancestor::tbody/following-sibling::tfoot//span[contains(@ng-bind,'isTotalRow')]"));
     }
+
+    /**
+     * get sub total at me grid parent flex table
+     *
+     * @param tableId
+     * @param fieldName
+     * @author ashwini.mahore
+     */
+    public WebElement getSubTotalValueFromLastRow(String tableId, String fieldName) {
+        return I.amPerforming().getElementReference().of(By.xpath("//div[@id='" + tableId + "']//span[text()='" + fieldName + "']/ancestor::tr/following-sibling::tr[contains(@class,'subTotalRow')]//td//b/span"));
+    }
+
 
     /*********
      * "Local Methods with complete functionality - private"
@@ -737,19 +749,27 @@ public class FlexGridPage extends GovGrantsManager {
     }
 
     /**
-     * assert true if if currency total displayed in an expected format like $n,nnn,nnn.nn inside me grid
+     * assert true if if currency total/sub total displayed in an expected format like $n,nnn,nnn.nn inside me grid
      *
      * @param tableId
      * @param fieldName
      * @author - ashwini.mahore
      */
-    private Boolean isCurrencyCurrencyTotalWithCorrectFormattingDisplayed(String tableId, String fieldName) {
+    private Boolean isCurrencyCurrencyTotalWithCorrectFormattingDisplayed(Boolean isTotal, String tableId, String fieldName) {
         boolean flag = false;
         String regex;
         String totalCurrency = getTotalValueFromLastRow(tableId, fieldName).getText();
+        String subTotalCurrency = getSubTotalValueFromLastRow(tableId, fieldName).getText();
+
         regex = "^\\$\\d{1,3}(,?\\d{3})*(\\.\\d{2})?$";
-        if (totalCurrency.matches(regex)) {
-            return true;
+        if (isTotal) {
+            if (totalCurrency.matches(regex)) {
+                return true;
+            }
+        } else {
+            if (subTotalCurrency.matches(regex)) {
+                return true;
+            }
         }
         return flag;
     }
