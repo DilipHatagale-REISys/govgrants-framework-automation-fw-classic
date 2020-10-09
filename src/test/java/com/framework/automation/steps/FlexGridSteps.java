@@ -112,9 +112,9 @@ public class FlexGridSteps {
         flexGridPage.assertLookupFieldRenderingBehaviourInEditMode(lookupFieldName);
     }
 
-    @Then("^I see expected table with id \"([^\"]*)\"$")
-    public void assertTableWithId(String tableId) {
-        flexGridPage.assertTableRenderedCompletely(tableId);
+    @Then("^I (see|softly see) expected table with id \"([^\"]*)\"$")
+    public void assertTableWithId(String usage, String tableId) {
+        flexGridPage.assertTableRenderedCompletely(usage,tableId);
     }
 
     @Then("^I see Date Time field is in view mode$")
