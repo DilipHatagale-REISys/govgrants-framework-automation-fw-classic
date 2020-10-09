@@ -2385,3 +2385,51 @@ Business Need: Flex Grid Component Scenarios
     Examples:
       | defaultFieldsApi                                                                                     | newFieldsApi                                              |
       | Id,ServiceAreaTitle__c,BudgetCategory__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c | Id,ServiceAreaTitle__c,BudgetCategory__c,GrantorAmount__c |
+
+  @107146    @verifyDateAndTimeFieldFormatForLocalAsESTUnderN2GGridParentFlexTable
+  Scenario: validate the date and time field format under N2G Grid parent flex table with respective to EST Local
+    Given I have "timeZoneLocale" configuration as below:
+      | locale | timeZone         |
+      | en_US  | America/New_York |
+    When I login as "Automation" user
+    And I update the locale and timezone related changes:
+      | locale | timeZone       |
+      | en_US  | America/Panama |
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Financials" sub tab
+    Then I see value "10/07/2020 3:53 PM" for title "DateTime" inside table "---program:-:grantFinancialsTableId---"
+
+  @107130    @verifyDateAndTimeFieldFormatForLocalAsEDTUnderN2GGridParentFlexTable
+  Scenario: validate the date and time field format under N2G Grid parent flex table with respective to EDT Local
+    Given I have "timeZoneLocale" configuration as below:
+      | locale | timeZone         |
+      | en_US  | America/New_York |
+    When I login as "Automation" user
+    And I update the locale and timezone related changes:
+      | locale | timeZone         |
+      | en_CA  | America/New_York |
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Financials" sub tab
+    Then I see value "07/10/2020 3:53 PM" for title "DateTime" inside table "---program:-:grantFinancialsTableId---"
+
+  @107110    @verifyDateAndTimeFieldFormatForLocalAsISTUnderN2GGridParentFlexTable
+  Scenario: validate the date and time field format under N2G Grid parent flex table with respective to IST Local
+    Given I have "timeZoneLocale" configuration as below:
+      | locale | timeZone         |
+      | en_US  | America/New_York |
+    When I login as "Automation" user
+    And I update the locale and timezone related changes:
+      | locale | timeZone     |
+      | en_IN  | Asia/Kolkata |
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Financials" sub tab
+    Then I see value "10/07/2020 3:53 PM" for title "DateTime" inside table "---program:-:grantFinancialsTableId---"

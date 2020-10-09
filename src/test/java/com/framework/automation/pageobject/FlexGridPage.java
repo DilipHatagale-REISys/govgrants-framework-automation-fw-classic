@@ -208,8 +208,12 @@ public class FlexGridPage extends GovGrantsManager {
      *
      * @param tableId
      */
-    public void assertTableRenderedCompletely(String tableId) {
-        Assert.assertTrue(isTableLoadedProperlyWithTableId(tableId));
+    public void assertTableRenderedCompletely(String usage, String tableId) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isTableLoadedProperlyWithTableId(tableId));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isTableLoadedProperlyWithTableId(tableId)).isTrue();
+        }
     }
 
     /**
