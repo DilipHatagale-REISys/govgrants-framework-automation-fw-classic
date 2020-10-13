@@ -2387,7 +2387,13 @@ Business Need: Flex Grid Component Scenarios
       | Id,ServiceAreaTitle__c,BudgetCategory__c,GrantorAmount__c,GranteeAmount__c,Amount__c,GranteeShare__c | Id,ServiceAreaTitle__c,BudgetCategory__c,GrantorAmount__c |
 
   @107146    @verifyDateAndTimeFieldFormatForLocalAsESTUnderN2GGridParentFlexTable
-  Scenario: validate the date and time field format under N2G Grid parent flex table with respective to EST Local
+  Scenario Outline: validate the date and time field format under N2G Grid parent flex table with respective to EST Local
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | GrantorBudgetPeriod |                           |                            |
     Given I have "timeZoneLocale" configuration as below:
       | locale | timeZone         |
       | en_US  | America/New_York |
@@ -2402,8 +2408,18 @@ Business Need: Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     Then I see value "10/07/2020 3:53 PM" for title "DateTime" inside table "---program:-:grantFinancialsTableId---"
 
+    Examples:
+      | defaultFieldsApi                                               | newFieldsApi                                                               |
+      | Year__c,BudgetStartDate__c,BudgetEndDate__c,Status__c,Notes__c | Year__c,BudgetStartDate__c,BudgetEndDate__c,Status__c,Notes__c,DateTime__c |
+
   @107130    @verifyDateAndTimeFieldFormatForLocalAsEDTUnderN2GGridParentFlexTable
-  Scenario: validate the date and time field format under N2G Grid parent flex table with respective to EDT Local
+  Scenario Outline: validate the date and time field format under N2G Grid parent flex table with respective to EDT Local
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | GrantorBudgetPeriod |                           |                            |
     Given I have "timeZoneLocale" configuration as below:
       | locale | timeZone         |
       | en_US  | America/New_York |
@@ -2418,8 +2434,18 @@ Business Need: Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     Then I see value "07/10/2020 3:53 PM" for title "DateTime" inside table "---program:-:grantFinancialsTableId---"
 
-  @107110    @verifyDateAndTimeFieldFormatForLocalAsISTUnderN2GGridParentFlexTable
-  Scenario: validate the date and time field format under N2G Grid parent flex table with respective to IST Local
+    Examples:
+      | defaultFieldsApi                                               | newFieldsApi                                                               |
+      | Year__c,BudgetStartDate__c,BudgetEndDate__c,Status__c,Notes__c | Year__c,BudgetStartDate__c,BudgetEndDate__c,Status__c,Notes__c,DateTime__c |
+
+  @107110   @verifyDateAndTimeFieldFormatForLocalAsISTUnderN2GGridParentFlexTable
+  Scenario Outline: validate the date and time field format under N2G Grid parent flex table with respective to IST Local
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | GrantorBudgetPeriod |                           |                            |
     Given I have "timeZoneLocale" configuration as below:
       | locale | timeZone         |
       | en_US  | America/New_York |
@@ -2433,3 +2459,7 @@ Business Need: Flex Grid Component Scenarios
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Financials" sub tab
     Then I see value "10/07/2020 3:53 PM" for title "DateTime" inside table "---program:-:grantFinancialsTableId---"
+
+    Examples:
+      | defaultFieldsApi                                               | newFieldsApi                                                               |
+      | Year__c,BudgetStartDate__c,BudgetEndDate__c,Status__c,Notes__c | Year__c,BudgetStartDate__c,BudgetEndDate__c,Status__c,Notes__c,DateTime__c |

@@ -735,7 +735,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Title" shown at number "7" inside page block detail
+    Then I see "Title" shown at number "8" inside page block detail
 
   @36101    @fieldLabelOverrideFieldAtPageBlockDetail-gPlanning
   Scenario: Changing label of program name page block detail fom config and validating it at program detail page

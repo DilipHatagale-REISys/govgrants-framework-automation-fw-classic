@@ -400,10 +400,16 @@ Business Need: Flex Table enhanced Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "Applicationg test88888" in "---program:-:flexGridEnhancedDataTableId---" panel
     When I click on "Edit" icon for "Applicationg test88888" inside table
-    Then I softly see "--None--" inside selectbox field "Status__c"
+    Then I see "--None--:Active:Expired:Terminated:Draft:Closed/Completed" inside selectbox field "Status__c"
 
   @106413  @validateDateCanBeEnteredSuccessfulyInsideAdvanceFilterValueInputBoxAtFlexTableEnhanced
-  Scenario: validate date inside value input box field is inserted successfullyAtFlexTableEnhanced
+  Scenario Outline: validate date inside value input box field is inserted successfullyAtFlexTableEnhanced
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhancedDataTable  |                           |                            |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -415,6 +421,10 @@ Business Need: Flex Table enhanced Component Scenarios
     When I enter advance filter values inside id "advfEnhancedDataTable"
       | Project Period | contains | 1/15/2018-1/15/2022 |
     Then I see label containing value as "1/15/2018-1/15/2022" inside advance filter
+
+    Examples:
+      | newFieldsApi                                      | defaultFieldsApi                                                                                                                                        |
+      | ProjectTitle__c,Status__c,CurrentProjectPeriod__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,NumberofProjectAreas__c,Status__c,GrantAbbreviation__c,TotalAwardObligatedAmount__c |
 
   @106417  @validateAdvanceFilterValueForDateFieldWithOperatorStartWithAtFlexTableEnhanced
   Scenario Outline: validate Advance filter search for date field with start with operator At Flex Table Enhanced
