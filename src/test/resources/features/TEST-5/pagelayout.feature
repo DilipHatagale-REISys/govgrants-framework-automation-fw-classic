@@ -2511,7 +2511,7 @@ Business Need: Page Layout Component Scenarios
       | m031C000000XZY2QAO | URL Validation Regex | true         | GNT__KeyValueHolder__mdt |
     And I update custom metadata setting changes:
       | id                 | label                | booleanValue | customMetaDataApiName    |
-      | m031C000000XZY2QAO | URL Validation Regex | true        | GNT__KeyValueHolder__mdt |
+      | m031C000000XZY2QAO | URL Validation Regex | true         | GNT__KeyValueHolder__mdt |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2543,3 +2543,28 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     Then I softly see link "http://schools.utah.gov/eseastateinitiatives/schoolimprovement?mid=1384&tid=1" inside Page block
+
+  @105141    @validateURLFieldAtRolesAndResponsilitiesModalWindow-gPlanning
+  Scenario Outline: validate URL field at roles and responsibility view modal
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ProgramRolesAndResponsibilities           |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Roles" sub tab
+    When I click on "Edit" icon for "Owner" to save inside subtab
+    And I enter value "http://schools.utah.gov/eseastateinitiatives/schoolimprovement?mid=1384&tid=1" into field "Test_URL__c"
+    And I click on "Save" in the page details
+    When I navigate to "Roles" sub tab
+    Then I see hyperlink at column value "http://schools.utah.gov/eseastateinitiatives/schoolimprovement?mid=1384&tid=1" inside "---program:-:rolesAndResponsibilitiesTableId---" table
+
+    Examples:
+      | newFieldsApi                                           | defaultFieldsApi                           |
+      | Name1__c,BusinessRole__c,Responsibility__c,Test_URL__c | Name1__c,BusinessRole__c,Responsibility__c |

@@ -75,3 +75,140 @@ Business Need: All pdf and xls related scenario including component and complete
     And I select "Download As PDF" from dropdown
     And I download the file
     Then I see "Automation Directed Announcement" on page "1" of "govgrants" pdf file
+
+  @109378    @verifyThatByLoginAsSPIUserMEGridDisplayedInsideDownloadedPDF
+  Scenario: validate by logged in as SPI user ME grid displayed inside downloaded pdf
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block:Page Block Detail | Is Active | false             | RecipientAwards    | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Is Active | true          | RecipientAwards    | GNT__PageBlockTitle__c    | Focus Areas                |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    When I navigate to "Subawards" content inside "Activities" subheader on left panel
+    When I click on "View" icon for "{Framework_recordUsed:AutomationPermanentAward}" inside table
+    When I navigate to "Budget" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFGridRecipentAwardServiceAreas"
+    And I select "Download as PDF" from parallel lines dropdown of "Focus Areas"
+    And I download the file
+    Then I see "Automation Permanent Focus Area" on page "1" of "govgrants" pdf file
+
+  @109381    @verifyThatByLoginAsSPIUserN2GGridDisplayedInsideDownloadedPDF
+  Scenario: validate by logged in as SPI user N2G grid displayed inside downloaded pdf
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block:Page Block Detail | Is Active | false             | Awards             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Is Active | true          | Awards             | GNT__PageBlockTitle__c    | Site Visit Requirements    |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    When I navigate to "Subawards" content inside "Activities" subheader on left panel
+    When I click on "View" icon for "{Framework_recordUsed:AutomationPermanentAward}" inside table
+    When I navigate to "Management" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFGridRecipentSiteVisitSchedule"
+    And I select "Download as PDF" from parallel lines dropdown of "Site Visits Requirements"
+    And I download the file
+    Then I see "Site Visit Period" on page "1" of "govgrants" pdf file
+
+  @109384    @verifyThatByLoginAsSPIUserFlexTableDisplayedInsideDownloadedPDF
+  Scenario: validate by logged in as SPI user flex table grid displayed inside downloaded pdf
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTablepopupflextable"
+    And I select "Download as PDF" from parallel lines dropdown of "Applications - All"
+    And I download the file
+    Then I see "Applications - All" on page "1" of "govgrants" pdf file
+
+  @109387    @verifyThatByLoginAsSPIUserFlexTableEnhancedDisplayedInsideDownloadedPDF
+  Scenario: validate by logged in as SPI user flex table enhanced displayed inside downloaded pdf
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatus}" inside table
+    When I navigate to "Overview" sub tab
+    When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Contacts"
+    And I download the file
+    Then I see "Project Director/Manager" on page "1" of "govgrants" pdf file
+
+  @109385    @verifyThatByLoginAsSPIUserFlexGridEnhancedAtRecordLevelDisplayedInsideDownloadedPDF
+  Scenario: validate by logged in as SPI user flex grid enhanced at record level is displayed inside downloaded pdf
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatus}" inside table
+    When I navigate to "Budget" sub tab
+    When I click on parallel lines menu bar with data target value "#EnhanceAppGrantorBudgetPeriodsFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Budget Periods"
+    And I download the file
+    Then I see "Budget Periods" on page "1" of "govgrants" pdf file
+
+  @109673    @verifyThatByLoginAsSPIUserFlexTableEnhancedDisplayedInsideDownloadedXLS
+  Scenario: validate by logged in as SPI user flex table enhanced displayed inside downloaded XLS
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatus}" inside table
+    When I navigate to "Overview" sub tab
+    When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
+    And I select "Download as XLS" from parallel lines dropdown of "Contacts"
+    Then I see "Project Director/Manager" in downloaded xls or csv file "govgrants"
+
+  @109766    @verifyThatByLoginAsSPIUserFlexTableDisplayedInsideDownloadedCSV
+  Scenario: validate by logged in as SPI user flex table displayed inside downloaded csv
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTablepopupflextable"
+    And I select "Download as CSV" from parallel lines dropdown of "Applications - All"
+    Then I see "Applications - All" in downloaded xls or csv file "govgrants"
+
+  @109769    @verifyThatFlexTableIsDisplayedAtPhaseLevelByLoggedInAsPMUserInsideDownloadedCSV
+  Scenario: validate flex table at phase level is rendered properly by PM user inside downloaded csv
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatus}" inside table
+    When I navigate to "Budget" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFlexTableFocusAreaApp"
+    And I select "Download as CSV" from parallel lines dropdown of "Focus Area"
+    Then I see "Focus Area" in downloaded xls or csv file "govgrants"
+
+  @109661    @verifyThatEnhancedDataTableIsDisplayedAtRecordLevelByLoggedInAsPMUserInsideDownloadedXLS
+  Scenario: validate enhanced data table at record table is rendered properly by PM user inside downloaded XLS
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
+    When I navigate to "Overview" sub tab
+    When I click on parallel lines menu bar with data target value "#DataTableEnhanceProgramContactsFlexToggle"
+    And I select "Download as XLS" from parallel lines dropdown of "Contacts"
+    Then I see "Project Role" in downloaded xls or csv file "govgrants"
+
+  @109258    @verifyThatApplicationFlexTableIsDisplayedAtPhaseByLoggedInAsPMUserInsideDownloadedPDF
+  Scenario: validate flex table at application phase level is rendered properly by PM user inside downloaded PDF
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTableAppReviewList"
+    And I select "Download as PDF" from parallel lines dropdown of "Applications - All"
+    And I download the file
+    Then I see "Applications - All" on page "1" of "govgrants" pdf file
