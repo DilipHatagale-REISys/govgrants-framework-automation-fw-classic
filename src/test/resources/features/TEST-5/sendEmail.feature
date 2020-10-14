@@ -502,33 +502,21 @@ Business Need: Send Email Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Collab" sub tab
-    When I perform quick search for "Re: Reply1@&%#$*\|/test;:!<>?[]{}()" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "Delete" icon for "Re: Reply1@&%#$*\|/test;:!<>?[]{}()" inside table
+    When I perform quick search for "Re: special char in reply as @&%#$*\|/test;:!<>?[]{}()" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "Delete" icon for "Re: special char in reply as @&%#$*\|/test;:!<>?[]{}()" inside table
     When I pause execution for "2" seconds
     When I navigate to "Collab" sub tab
-    When I perform quick search for "Reply1@&%#$*\|/test;:!<>?[]{}()" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "Delete" icon for "Reply1@&%#$*\|/test;:!<>?[]{}()" inside table
-    When I pause execution for "2" seconds
-    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "To" email Search By field and select dropdown value as "Internal"
-    When I enter value "Automation PM" into field "To" on send email modal
-    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
-    When I enter value "Reply1@&%#$*\|/test;:!<>?[]{}()" into field "Subject" on send email modal
+    When I perform quick search for "DO NOT DELETE EMAIL @&%#$*\|/test;:!<>?[]{}()" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "Reply" icon for "DO NOT DELETE EMAIL @&%#$*\|/test;:!<>?[]{}()" inside table
+    When I enter value "Re: special char in reply as @&%#$*\|/test;:!<>?[]{}()" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
     And I refresh the page
     When I navigate to "Collab" sub tab
-    When I perform quick search for "Reply1@&%#$*\|/test;:!<>?[]{}()" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "Reply" icon for "Reply1@&%#$*\|/test;:!<>?[]{}()" inside table
-    When I enter value "Reply1@&%#$*\|/test;:!<>?[]{}()" into field "Body Content" on send email modal
-    When I click on "Send" button in send email modal
-    When I close modal by clicking the top right x button
-    And I refresh the page
-    When I navigate to "Collab" sub tab
-    When I perform quick search for "Reply1@&%#$*\|/test;:!<>?[]{}()" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "View" icon for "Reply1@&%#$*\|/test;:!<>?[]{}()" inside table
-    Then I softly see "Re: Reply1@&%#$*\|/test;:!<>?[]{}()" as "Subject" on send email modal
-    Then I softly see "Re: Reply1@&%#$*\|/test;:!<>?[]{}()" as "Body Content" on send email modal
+    When I perform quick search for "Re: special char in reply as @&%#$*\|/test;:!<>?[]{}()" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "View" icon for "Re: special char in reply as @&%#$*\|/test;:!<>?[]{}()" inside table
+    Then I softly see "DO NOT DELETE EMAIL @&%#$*\|/test;:!<>?[]{}()" as "Subject" on send email modal
+    Then I softly see "Re: special char in reply as @&%#$*\|/test;:!<>?[]{}()" as "Body Content" on send email modal
 
   @89743 @validateReplyModalTitleAtSendEmail @sendEmail
   Scenario: Validate reply modal title at send email
@@ -1081,7 +1069,6 @@ Business Need: Send Email Component Scenarios
     When I enter value "Automation PM" into field "To" on send email modal
     When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
     When I enter value "Test data select file" into field "Subject" on send email modal
-    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click modal button "Select Files"
     When I check "testAutomationFileDND.png" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
     When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"

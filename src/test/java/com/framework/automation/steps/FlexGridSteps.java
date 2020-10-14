@@ -176,4 +176,9 @@ public class FlexGridSteps {
     public void iSeeCurrencyTotalWithCorrectFormattingIsDisplayed(String overallTotal, String fieldName, String tableId) {
         flexGridPage.assertCurrencyTotalWithCorrectFormattingIsDisplayed(overallTotal.equalsIgnoreCase("total"), tableId, fieldName);
     }
+
+    @Then("I see total amount at {string} number field is displayed in a correct format inside {string}")
+    public void iSeeTotalAmountAtNumberFieldIsDisplayedInACorrectFormatInside(String fieldName, String tableId) {
+    flexGridPage.assertNumberTotalWithoutDecimalIsDisplayed(fieldName, tableId);
+    }
 }

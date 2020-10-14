@@ -4018,3 +4018,34 @@ Business Need: Logged Issues Scenarios
     Examples:
       | defaultFieldsApi                                                         | newFieldsApi                        |
       | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,SequenceNumber__c |
+
+  @103197    @validateNumberFieldFormattingAtTotalDisplayedUnderMeGridParentTable
+  Scenario Outline: validating number field formatting of total amount under me grid parent table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Enable Total        | false              | ApiGeneratedId:0 |
+      | Flex Table:General    | Enable Total Row    | true               | ApiGeneratedId:1 |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Total        | true           | ApplicationBudgetPeriods | Name                      | FTC-1532                   |
+      | Flex Table:General    | Enable Total Row    | true           | ApplicationBudgetPeriods |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ApplicationBudgetPeriods |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "{Framework_recordUsed:AnnouncementHavingMultipleBudgetPeriods}"
+    When I click on "View" icon for "{Framework_recordUsed:AnnouncementHavingMultipleBudgetPeriods}" inside table
+    When I navigate to "Budget" sub tab
+    And I perform quick search for "BP-10" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    When I click on "Delete" icon for "BP-10" inside table
+    When I pause execution for "3" seconds
+    When I enter the following values into flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" by clicking "New" :
+      | Support Year | Sequence Number |
+      | BP-10        | 1000            |
+    When I navigate to "Budget" sub tab
+    Then I see total amount at "Sequence Number" number field is displayed in a correct format inside "---program:-:applicationBudgetCategoryFlexGridTableId---"
+
+    Examples:
+      | defaultFieldsApi                                                         | newFieldsApi                        |
+      | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,SequenceNumber__c |

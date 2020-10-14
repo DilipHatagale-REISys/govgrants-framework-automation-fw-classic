@@ -112,7 +112,7 @@ Business Need: collab Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I perform quick search f1or "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
     When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
     When I navigate to "Collab" sub tab
     Then I see entered text in my feed section displayed properly

@@ -499,3 +499,108 @@ Business Need: security review Scenarios
     When I click on global search and select "Opportunities"
     When I perform quick search inside global search "An"
     Then I see expected table with id "toggleFlexTableAnnouncement__c"
+
+  @107807 @validateThatIfAnSearchedInGlobalSearchThenApplicationsTableDisplayedByLoginAsSPIUser-HomePhase
+  Scenario: Verify that if record name as AP is searched in global search then, applications Table is displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    When I click on global search and select "Applications / Negotiations"
+    When I perform quick search inside global search "AP"
+    Then I see expected table with id "toggleFlexTableApplication__c"
+
+  @107809 @validateThatIfAnSearchedInGlobalSearchThenGrantsTableDisplayedByLoginAsSPIUser-HomePhase
+  Scenario: Verify that if record name as AP is searched in global search then, grants Table is displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    When I click on global search and select "Grants"
+    When I perform quick search inside global search "Gr"
+    Then I see expected table with id "toggleFlexTableGrant__c"
+
+  @107836 @validateThatIfAnSearchedInGlobalSearchThenAwardTableDisplayedByLoginAsSPIUser-HomePhase
+  Scenario: Verify that if record name as Aw is searched in global search then, award Table is displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Monitoring" tab
+    When I click on global search and select "Awards"
+    When I perform quick search inside global search "Aw"
+    Then I see expected table with id "toggleFlexTableAward__c"
+
+  @109267    @verifyThatByLoginAsPMUserAndByClickOnSidebarLinkFromGrantPhaseTaskMenuThenPendingTaskAssignedToMeTableOpens
+  Scenario: validate by logged in as PM user and hit the sidebar link from grant phase task menu then pending task assigned to me table displayed
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I navigate to "Pending Tasks" content inside "Tasks" subheader on left panel
+    Then I see expected table with id "toggleFlexTablePhasePendingTasks"
+
+  @109268    @verifyThatByLoginAsPMUserAndByClickOnSidebarLinkFromGrantPhaseTaskMenuThenPendingTaskAssignedByMeTableOpens
+  Scenario: validate by logged in as PM user and hit the sidebar link from grant phase task menu then pending task assigned by me table displayed
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I navigate to "Pending Tasks" content inside "Tasks" subheader on left panel
+    Then I see expected table with id "toggleFlexTablePhasePendingTasksBy"
+
+  @109269    @verifyThatByLoginAsPMUserAndViewCompletedTaskAssignedByMeThenGrantShouldGetOpenInViewMode
+  Scenario: validate by logged in as PM user and view completed task at grants phase from assigned by me table then respective record opens in view mode
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I navigate to "Completed Tasks" content inside "Tasks" subheader on left panel
+    When I perform quick search for "AD-12345-01"
+    When I click on "View" icon for "AD-12345-01" inside table
+    Then I see "Subaward" shown as over view header
+
+  @109270    @verifyThatByLoginAsLoginAsPMUserAndByClickOnSidebarLinkFromGrantPhaseTaskMenuThenGrantsAndSubAwardsTableOpens
+  Scenario: validate by logged in as PM user and hit the sidebar link from grant phase task menu then grants and subawards table displayed
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I navigate to "Grants and Subawards" content inside "Activities" subheader on left panel
+    Then I see expected table with id "toggleFlexTableActiveGrants"
+
+  @109272    @verifyThatByLoginAsPMUserAndByClickOnSidebarLinkFromMonitoringPhaseTaskMenuThenPendingTaskAssignedToMeAndByMeTableOpens
+  Scenario: validate by logged in as PM user and hit the sidebar link from monitoring phase task menu then pending task assigned to me and by me table displayed
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    When I navigate to "Pending Tasks" content inside "Tasks" subheader on left panel
+    Then I softly see expected table with id "toggleFlexTablePhasePendingTasks"
+    Then I softly see expected table with id "toggleFlexTablePhasePendingTasksBy"
+
+  @109273    @verifyThatByLoginAsPMUserAndByClickOnSidebarLinkFromMonitoringPhaseTaskMenuThenProgressReportTableOpens
+  Scenario: validate by logged in as PM user and hit the sidebar link from monitoring phase task menu then progress report table displayed
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    When I navigate to "Progress Reports" content inside "Activities" subheader on left panel
+    Then I see expected table with id "toggleFlexTableGrantorProgressReportsInternal"
+
+  @109274    @verifyThatByLoginAsPMUserAndByClickOnSidebarLinkFromMonitoringPhaseTaskMenuThenAdvancesTableOpens
+  Scenario: validate by logged in as PM user and hit the sidebar link from monitoring phase task menu then advances table displayed
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    When I navigate to "Advances" content inside "Activities" subheader on left panel
+    Then I see expected table with id "toggleFlexTableGrantorPaymentRequestAdvances"
+
+  @109280    @verifyThatByLoginAsPMUserN2GGridDisplayed
+  Scenario: validate by logged in as PM user N2G grid displayed
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block:Page Block Detail | Is Active | false             | Awards             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Is Active | true          | Awards             | GNT__PageBlockTitle__c    | Site Visit Requirements    |
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{Framework_recordUsed:AutomationPermanentAward}"
+    When I click on "View" icon for "{Framework_recordUsed:AutomationPermanentAward}" inside table
+    When I navigate to "Subawards" sub tab
+    When I click on "View" icon for "{Framework_recordUsed:AutomationPermanentAward}" inside table
+    When I navigate to "Management" sub tab
+    Then I see expected table with id "toggleFlexTableGrantorSiteVisitsAward"

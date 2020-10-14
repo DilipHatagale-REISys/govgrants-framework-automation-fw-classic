@@ -2,6 +2,7 @@ package com.framework.automation.pageobject;
 
 import com.automation.rei.handlers.govgrants;
 import com.framework.automation.projectmanager.GovGrantsManager;
+import com.testingblaze.actionsfactory.api.ByUsing;
 import com.testingblaze.controller.TestingBlazeGlobal;
 import com.testingblaze.objects.Elements;
 import com.testingblaze.register.I;
@@ -2057,7 +2058,7 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     private boolean isLookupModalWidthRenderedProperly(String width) {
         boolean flag = false;
-        WebElement getModalWidth = I.amPerforming().getElementReference().of(By.xpath("//div[@id='customLookupModalDialog']"));
+        WebElement getModalWidth = I.amPerforming().getElementReference().of(ByUsing.healingXpathName("pageLayout_getLookupModalWidth"));
         try {
             if (getModalWidth.getCssValue("width").equalsIgnoreCase(width)) {
                 flag = true;

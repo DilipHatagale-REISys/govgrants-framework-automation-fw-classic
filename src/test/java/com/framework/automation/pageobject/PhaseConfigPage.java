@@ -2,6 +2,8 @@ package com.framework.automation.pageobject;
 
 import com.automation.rei.handlers.govgrants;
 import com.framework.automation.projectmanager.GovGrantsManager;
+import com.testingblaze.actionsfactory.api.ByUsing;
+import com.testingblaze.controller.TestingBlazeGlobal;
 import com.testingblaze.objects.Elements;
 import com.testingblaze.register.I;
 import org.junit.Assert;
@@ -757,11 +759,13 @@ public class PhaseConfigPage extends GovGrantsManager {
      */
     private Boolean isHeaderActionButtonBackgroundColorChanged(String colorName) {
         boolean flag = false;
-        WebElement actionButton = I.amPerforming().getElementReference().of(By.xpath("//div[contains(@class,'header-buttons')]"));
+        TestingBlazeGlobal.setVariable("highlightElements", "off");
+     WebElement actionButton = I.amPerforming().getElementReference().of(ByUsing.xpath("//button[contains(@class,'secondaryBtn')]"));
+
         switch (colorName.toUpperCase()) {
             case "DARK BLUE":
                 if (actionButton.getCssValue("background-color").contains("rgba(5, 89, 156, 1)")
-                        || actionButton.getCssValue("color").contains("rgb(5, 89, 156)")) {
+                        || actionButton.getCssValue("background").contains("rgb(5, 89, 156)")) {
                     flag = true;
                 }
                 break;
