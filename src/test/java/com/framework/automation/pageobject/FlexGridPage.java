@@ -2,6 +2,7 @@ package com.framework.automation.pageobject;
 
 import com.automation.rei.handlers.govgrants;
 import com.framework.automation.projectmanager.GovGrantsManager;
+import com.testingblaze.actionsfactory.api.ByUsing;
 import com.testingblaze.controller.TestingBlazeGlobal;
 import com.testingblaze.objects.Elements;
 import com.testingblaze.register.I;
@@ -352,7 +353,7 @@ public class FlexGridPage extends GovGrantsManager {
      * @author ashwini.mahore
      */
     public WebElement getTotalValueFromLastRow(String tableId, String fieldName) {
-        return I.amPerforming().getElementReference().of(By.xpath("//div[@id='" + tableId + "']//span[text()='" + fieldName + "']/ancestor::tbody/following-sibling::tfoot//span[contains(@ng-bind,'calculateTotal')]"));
+        return I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@id='" + tableId + "']//span[text()='" + fieldName + "']/ancestor::tbody/following-sibling::tfoot//span[contains(@ng-bind,'calculateTotal')]"));
     }
 
     /**
@@ -772,15 +773,15 @@ public class FlexGridPage extends GovGrantsManager {
      */
     private Boolean isCurrencyCurrencyTotalWithCorrectFormattingDisplayed(Boolean isTotal, String tableId, String fieldName) {
         boolean flag = false;
-        String regex = "^\\$\\d{1,3}(,?\\d{3})*(\\.\\d{2})?$";
+        String currencyInStandardFormat = "^\\$\\d{1,3}(,?\\d{3})*(\\.\\d{2})?$";
         if (isTotal) {
             String totalCurrency = getTotalValueFromLastRow(tableId, fieldName).getText();
-            if (totalCurrency.matches(regex)) {
+            if (totalCurrency.matches(currencyInStandardFormat)) {
                 return true;
             }
         } else {
             String subTotalCurrency = getSubTotalValueFromLastRow(tableId, fieldName).getText();
-            if (subTotalCurrency.matches(regex)) {
+            if (subTotalCurrency.matches(currencyInStandardFormat)) {
                 return true;
             }
         }
@@ -789,10 +790,10 @@ public class FlexGridPage extends GovGrantsManager {
 
     private Boolean isNumberFieldTotalWithCorrectFormattingDisplayed(String fieldName, String tableId) {
         boolean flag = false;
-        String regex;
+        String numberInStandardFormat;
         String totalCurrency = getTotalValueFromLastRow(tableId, fieldName).getText();
-        regex = "^\\d{1,3}(?:,\\d{3})*$";
-        if (totalCurrency.matches(regex)) {
+        numberInStandardFormat = "^\\d{1,3}(?:,\\d{3})*$";
+        if (totalCurrency.matches(numberInStandardFormat)) {
             return true;
         }
         return flag;
