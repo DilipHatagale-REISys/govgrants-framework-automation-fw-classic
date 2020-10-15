@@ -604,3 +604,36 @@ Business Need: security review Scenarios
     When I click on "View" icon for "{Framework_recordUsed:AutomationPermanentAward}" inside table
     When I navigate to "Management" sub tab
     Then I see expected table with id "toggleFlexTableGrantorSiteVisitsAward"
+
+  @109620    @verifySnapshotIsGettingGeneratedAndSavedInsideHistoryTabIfCurrencyValueIsChangedByLoginAsPMUser
+  Scenario: validate if currency value is changed by pm user and taken a snapshot then snapshot is getting generated inside history tab
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}"
+    When I click on "Edit" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
+    When I navigate to "Overview" sub tab
+    And I enter value "5000" into field "FundedAmount__c"
+    And I click on "Save" in the page details
+    When I click on "Menu" in the page details
+    And I select "Take Snapshot" from dropdown
+    When I click alert button "OK"
+    When I navigate to "History" sub tab
+    Then I see "$5,000" shown inside "New Value" column in history table
+
+  @109617    @verifySnapshotIsGettingGeneratedAndSavedInsideHistoryTabByLoginAsPMUser
+  Scenario: validate that if click on take a snapshot from menu then snapshot is getting generated inside history tab by login as PM user
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values_Test8.xlsx"
+    And I click on "Save" in the page details
+    When I click on "Menu" in the page details
+    And I select "Take Snapshot" from dropdown
+    When I click alert button "OK"
+    When I navigate to "History" sub tab
+    Then I see table with header "Snapshot History" contains records "currentdate"

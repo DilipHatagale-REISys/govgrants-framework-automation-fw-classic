@@ -212,3 +212,129 @@ Business Need: All pdf and xls related scenario including component and complete
     And I select "Download as PDF" from parallel lines dropdown of "Applications - All"
     And I download the file
     Then I see "Applications - All" on page "1" of "govgrants" pdf file
+
+  @109391    @verifyThatByLoginAsPMUserMEGridDisplayedInsideDownloadedPDF
+  Scenario: validate by logged in as PM user ME grid displayedInsideDownloadedPDF
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block:Page Block Detail | Is Active | false             | Awards             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Is Active | true          | Awards             | GNT__PageBlockTitle__c    | Focus Areas                |
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{Framework_recordUsed:AutomationPermanentAward}"
+    When I click on "View" icon for "{Framework_recordUsed:AutomationPermanentAward}" inside table
+    When I navigate to "Subawards" sub tab
+    When I click on "View" icon for "{Framework_recordUsed:AutomationPermanentAward}" inside table
+    When I navigate to "Budget" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFGridGrantorAwardServiceAreas"
+    And I select "Download as PDF" from parallel lines dropdown of "Focus Areas"
+    And I download the file
+    Then I see "Focus Area" on page "1" of "govgrants" pdf file
+
+  @109748    @verifyThatByLoginAsPMUserN2GGridDisplayedInsideDownloadedXLS
+  Scenario: validate by logged in as PM user N2G grid displayed inside downloaded xls
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block:Page Block Detail | Is Active | false             | Awards             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Is Active | true          | Awards             | GNT__PageBlockTitle__c    | Site Visit Requirements    |
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{Framework_recordUsed:AutomationPermanentAward}"
+    When I click on "View" icon for "{Framework_recordUsed:AutomationPermanentAward}" inside table
+    When I navigate to "Subawards" sub tab
+    When I click on "View" icon for "{Framework_recordUsed:AutomationPermanentAward}" inside table
+    When I navigate to "Management" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFGridSiteVisitSchedule"
+    And I select "Download as XLS" from parallel lines dropdown of "Site Visits Requirements"
+    Then I see "Visit Name" in downloaded xls or csv file "govgrants"
+
+  @109830    @verifyThatByLoginAsSPIUserMEGridDisplayedInsideDownloadedXLS
+  Scenario: validate by logged in as SPI user ME grid displayed inside downloaded XLS
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block:Page Block Detail | Is Active | false             | RecipientAwards    | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Is Active | true          | RecipientAwards    | GNT__PageBlockTitle__c    | Focus Areas                |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    When I navigate to "Subawards" content inside "Activities" subheader on left panel
+    When I click on "View" icon for "{Framework_recordUsed:AutomationPermanentAward}" inside table
+    When I navigate to "Budget" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFGridRecipentAwardServiceAreas"
+    And I select "Download as XLS" from parallel lines dropdown of "Focus Areas"
+    Then I see "Automation Permanent Focus Area" in downloaded xls or csv file "govgrants"
+
+  @110011    @verifyThatByLoginAsSPIUserN2GGridDisplayedInsideDownloadedXLS
+  Scenario: validate by logged in as SPI user N2G grid displayed inside downloaded XLS
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block:Page Block Detail | Is Active | false             | Awards             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Is Active | true          | Awards             | GNT__PageBlockTitle__c    | Site Visit Requirements    |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    When I navigate to "Subawards" content inside "Activities" subheader on left panel
+    When I click on "View" icon for "{Framework_recordUsed:AutomationPermanentAward}" inside table
+    When I navigate to "Management" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFGridRecipentSiteVisitSchedule"
+    And I select "Download as XLS" from parallel lines dropdown of "Site Visits Requirements"
+    Then I see "Site Visit Period" in downloaded xls or csv file "govgrants"
+
+  @109749    @verifyThatFlexGridEnhancedIsDisplayedAtRecordLevelByLoggedInAsPMUserInsideDownloadedXLS
+  Scenario: validate flex grid enhanced at record table is rendered properly by PM user inside downloaded XLS
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
+    When I navigate to "Setup" sub tab
+    When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
+    And I select "Download as XLS" from parallel lines dropdown of "Review Steps"
+    Then I see "Pre-Screen Review" in downloaded xls or csv file "govgrants"
+
+  @109393    @verifyThatByLoginAsPMUserMEGridDisplayedInsideDownloadedXLS
+  Scenario: validate by logged in as PM user ME grid displayed Inside Downloaded XLS
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block:Page Block Detail | Is Active | false             | Awards             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Is Active | true          | Awards             | GNT__PageBlockTitle__c    | Focus Areas                |
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{Framework_recordUsed:AutomationPermanentAward}"
+    When I click on "View" icon for "{Framework_recordUsed:AutomationPermanentAward}" inside table
+    When I navigate to "Subawards" sub tab
+    When I click on "View" icon for "{Framework_recordUsed:AutomationPermanentAward}" inside table
+    When I navigate to "Budget" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFGridGrantorAwardServiceAreas"
+    And I select "Download as XLS" from parallel lines dropdown of "Focus Areas"
+    Then I see "Focus Area" in downloaded xls or csv file "govgrants"
+
+  @110014    @verifyThatFlexGridEnhancedIsDisplayedAtRecordLevelByLoggedInAsPMUserInsideDownloadedPDF
+  Scenario: validate flex grid enhanced at record table is rendered properly by PM user inside downloaded PDF
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
+    When I navigate to "Setup" sub tab
+    When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
+    And I select "Download as XLS" from parallel lines dropdown of "Review Steps"
+    Then I see "Pre-Screen Review" in downloaded xls or csv file "govgrants"
