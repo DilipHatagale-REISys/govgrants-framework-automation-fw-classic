@@ -53,7 +53,7 @@ Business Need: Snapshot Config Component Scenarios
       | Page Layout Action    | History Snapshot-Action Enable? | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName                       | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Auto Snapshot:Sobject Auto Snapshot | Is Active                       | false         | Program__c            | Name                      | SAS-0000                   |
+      | Auto Snapshot:Sobject Auto Snapshot | Is Active                       | true         | Program__c            | Name                      | SAS-0000                   |
       | Page Tabs Config:Page Layout Action | Is Active                       | true          | Grantee State Program | Name                      | TAB-027                    |
       | Page Layout Action                  | History Snapshot-Action Enable? | false         | Grantee State Program | Name                      | Submit For Approval        |
     And I click on "Submit For Approval" in the page details

@@ -637,3 +637,154 @@ Business Need: security review Scenarios
     When I click alert button "OK"
     When I navigate to "History" sub tab
     Then I see table with header "Snapshot History" contains records "currentdate"
+
+  @109914    @verifyProgramtIsGettingCreatedByLoginAsPMUser
+  Scenario: validate that program is getting created by login as PM user
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values_Test8.xlsx"
+    And I click on "Save" in the page details
+    Then I see the sub-header is "Automation Internal Program for flow" in the page details
+
+  @109928    @verifyProgramInSubmitForApprovalModeIsGettingCreatedByLoginAsPMUser
+  Scenario: validate that program in submit for approval mode is getting created by login as PM user
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values_Test8.xlsx"
+    And I click on "Save" in the page details
+    And I get the "EGMS ID"
+    And I click on "Edit" in the page details
+    When I enter "EditionProgram" values from "Program_Field_Values_Test8.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Add" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I close "Contacts" modal by clicking the top right x button
+    When I navigate to "Responsibilities" sub tab
+    And I edit the following rows inline in flex table with id "---program:-:approverTableId---" by clicking "Edit" :
+      | Responsibility     | Name                   | Description                 |
+      | Program Approver   | Automation PM          | Automation Test Description |
+      | Executive Approver | Automation Contact EXE | Automation Test Description |
+    And I click on "Submit For Approval" in the page details
+    Then I see status in Progress-bar is "Submitted for Approval" and is "green"
+
+  @109931    @verifyProgramInApprovedModeByLoginAsPMUser
+  Scenario: validate status of program is changed to approved after getting approved by both the approvers
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values_Test8.xlsx"
+    And I click on "Save" in the page details
+    And I get the "EGMS ID"
+    And I click on "Edit" in the page details
+    When I enter "EditionProgram" values from "Program_Field_Values_Test8.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Add" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I close "Contacts" modal by clicking the top right x button
+    When I navigate to "Responsibilities" sub tab
+    And I edit the following rows inline in flex table with id "---program:-:approverTableId---" by clicking "Edit" :
+      | Responsibility     | Name                   | Description                 |
+      | Program Approver   | Automation PM          | Automation Test Description |
+      | Executive Approver | Automation Contact EXE | Automation Test Description |
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "PM" user on "test8" portal
+    And I navigate to "Planning" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---"
+    When I "Approve" in the approval decision
+    Then I softly see status in Progress-bar is "Submitted for Approval" and is "green"
+
+    When I re-login to "As a Grantor" app as "Contact EXE" user on "test8" portal
+    And I navigate to "Planning" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordCreatedToTestFlow}" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "{Framework_recordUsed:ProgramRecordCreatedToTestFlow}" inside flex table with id "---program:-:pendingTaskTableId---"
+    When I "Approve" in the approval decision
+    Then I softly see status in Progress-bar is "Approved" and is "Green"
+
+    When I re-login to "As a Grantor" app as "Admin" user on "test8" portal
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordCreatedToTestFlow}" in "---program:-:programsTableId---" panel
+    And I click on "View" icon for "{Framework_recordUsed:ProgramRecordCreatedToTestFlow}" inside flex table with id "---program:-:programsTableId---"
+    Then I softly see status in Progress-bar is "Approved" and is "Green"
+
+  @109932    @verifyProgramInActiveModeByLoginAsPMUser
+  Scenario: validate status of program is changed to active after getting approved by both the approvers
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values_Test8.xlsx"
+    And I click on "Save" in the page details
+    And I get the "EGMS ID"
+    And I click on "Edit" in the page details
+    When I enter "EditionProgram" values from "Program_Field_Values_Test8.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Add" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I close "Contacts" modal by clicking the top right x button
+    When I navigate to "Responsibilities" sub tab
+    And I edit the following rows inline in flex table with id "---program:-:approverTableId---" by clicking "Edit" :
+      | Responsibility     | Name                   | Description                 |
+      | Program Approver   | Automation PM          | Automation Test Description |
+      | Executive Approver | Automation Contact EXE | Automation Test Description |
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "PM" user on "test8" portal
+    And I navigate to "Planning" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---"
+    When I "Approve" in the approval decision
+    Then I softly see status in Progress-bar is "Submitted for Approval" and is "green"
+
+    When I re-login to "As a Grantor" app as "Contact EXE" user on "test8" portal
+    And I navigate to "Planning" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---"
+    When I "Approve" in the approval decision
+    Then I softly see status in Progress-bar is "Approved" and is "Green"
+
+    When I re-login to "As a Grantor" app as "Admin" user on "test8" portal
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Record Id" in "---program:-:programsTableId---" panel
+    And I click on "View" icon for "Record Id" inside flex table with id "---program:-:programsTableId---"
+    Then I softly see status in Progress-bar is "Approved" and is "Green"
+
+    And I click on "Activate" in the page details
+    Then I see status in Progress-bar is "Active" and is "Green"
+
+  @109618    @verifySnapshotIsGettingGeneratedAndSavedInsideHistoryTabByLoginAsSPIUser
+  Scenario: validate that if click on take a snapshot from menu then snapshot is getting generated inside history tab by login as SPI user
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordToCheckSnapshotOnly}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordToCheckSnapshotOnly}" inside table
+    When I click on "Menu" in the page details
+    And I select "Take Snapshot" from dropdown
+    When I click alert button "OK"
+    When I navigate to "History" sub tab
+    Then I see table with header "Snapshot History" contains records "currentdate"

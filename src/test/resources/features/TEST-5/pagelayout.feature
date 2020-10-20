@@ -1549,7 +1549,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     When I click on "Edit" icon for "Program Artifacts" inside table
-    Then I see "Save and Close Modal" at bottom of Attachment Modal
+    Then I see "Save and Close" at bottom of Attachment Modal
 
   @53093    @saveAttachementBehaviourFieldAtNotesAndAttachmentPageBlockAsSaveAndSaveAndCloseModal-gPlanning
   Scenario: Changing save attachment behaviour at attachment modal from config and validating it at attachment modal
@@ -1568,7 +1568,7 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on "Edit" icon for "Program Artifacts" inside table
     And I see "Save" at bottom of Attachment Modal
-    Then I see "Save and Close Modal" at bottom of Attachment Modal
+    Then I see "Save and Close" at bottom of Attachment Modal
 
   @53388    @requiredForSubmitBehaviourAtPageBlockDetailForTitleField-gPlanning
   Scenario: changing value of required behaviour and removing program title and validating error message while submitting program for approval

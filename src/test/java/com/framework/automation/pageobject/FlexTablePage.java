@@ -1157,7 +1157,7 @@ public class FlexTablePage extends GovGrantsManager {
     private boolean isTextInsideLabelDisplayedAtAdvanceFilter(String value) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//span[contains(@class,'btn-primary')]//span[text()='" + value + "']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[contains(@class,'advf')]//span[text()='" + value + "']"))) {
                 flag = true;
             }
         } catch (NoSuchElementException e) {
