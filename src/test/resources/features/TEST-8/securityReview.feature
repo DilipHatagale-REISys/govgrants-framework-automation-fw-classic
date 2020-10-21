@@ -670,9 +670,9 @@ Business Need: security review Scenarios
     When I close "Contacts" modal by clicking the top right x button
     When I navigate to "Responsibilities" sub tab
     And I edit the following rows inline in flex table with id "---program:-:approverTableId---" by clicking "Edit" :
-      | Responsibility     | Name                   | Description                 |
-      | Program Approver   | Automation PM          | Automation Test Description |
-      | Executive Approver | Automation Contact EXE | Automation Test Description |
+      | Responsibility     | Name           | Description                 |
+      | Program Approver   | Automation PM  | Automation Test Description |
+      | Executive Approver | Automation PM1 | Automation Test Description |
     And I click on "Submit For Approval" in the page details
     Then I see status in Progress-bar is "Submitted for Approval" and is "green"
 
@@ -696,11 +696,11 @@ Business Need: security review Scenarios
     When I close "Contacts" modal by clicking the top right x button
     When I navigate to "Responsibilities" sub tab
     And I edit the following rows inline in flex table with id "---program:-:approverTableId---" by clicking "Edit" :
-      | Responsibility     | Name                   | Description                 |
-      | Program Approver   | Automation PM          | Automation Test Description |
-      | Executive Approver | Automation Contact EXE | Automation Test Description |
+      | Responsibility     | Name          | Description                 |
+      | Program Approver   | Admin         | Automation Test Description |
+      | Executive Approver | Automation PM | Automation Test Description |
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "PM" user on "test8" portal
+    When I re-login to "As a Grantor" app as "Admin" user on "test8" portal
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
@@ -708,7 +708,7 @@ Business Need: security review Scenarios
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "green"
 
-    When I re-login to "As a Grantor" app as "Contact EXE" user on "test8" portal
+    When I re-login to "As a Grantor" app as "PM" user on "test8" portal
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:ProgramRecordCreatedToTestFlow}" in "---program:-:pendingTaskTableId---" panel
@@ -719,9 +719,9 @@ Business Need: security review Scenarios
     When I re-login to "As a Grantor" app as "Admin" user on "test8" portal
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordCreatedToTestFlow}" in "---program:-:programsTableId---" panel
-    And I click on "View" icon for "{Framework_recordUsed:ProgramRecordCreatedToTestFlow}" inside flex table with id "---program:-:programsTableId---"
+    And I click on "View Program Details" icon for "{Framework_recordUsed:ProgramRecordCreatedToTestFlow}" inside flex table with id "---program:-:programsTableId---"
     Then I softly see status in Progress-bar is "Approved" and is "Green"
 
   @109932    @verifyProgramInActiveModeByLoginAsPMUser
@@ -744,11 +744,11 @@ Business Need: security review Scenarios
     When I close "Contacts" modal by clicking the top right x button
     When I navigate to "Responsibilities" sub tab
     And I edit the following rows inline in flex table with id "---program:-:approverTableId---" by clicking "Edit" :
-      | Responsibility     | Name                   | Description                 |
-      | Program Approver   | Automation PM          | Automation Test Description |
-      | Executive Approver | Automation Contact EXE | Automation Test Description |
+      | Responsibility     | Name          | Description                 |
+      | Program Approver   | Admin         | Automation Test Description |
+      | Executive Approver | Automation PM | Automation Test Description |
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "PM" user on "test8" portal
+    When I re-login to "As a Grantor" app as "Admin" user on "test8" portal
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
@@ -756,7 +756,7 @@ Business Need: security review Scenarios
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "green"
 
-    When I re-login to "As a Grantor" app as "Contact EXE" user on "test8" portal
+    When I re-login to "As a Grantor" app as "PM" user on "test8" portal
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
@@ -767,13 +767,13 @@ Business Need: security review Scenarios
     When I re-login to "As a Grantor" app as "Admin" user on "test8" portal
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Record Id" in "---program:-:programsTableId---" panel
-    And I click on "View" icon for "Record Id" inside flex table with id "---program:-:programsTableId---"
+    And I click on "View Program Details" icon for "Record Id" inside flex table with id "---program:-:programsTableId---"
     Then I softly see status in Progress-bar is "Approved" and is "Green"
 
     And I click on "Activate" in the page details
-    Then I see status in Progress-bar is "Active" and is "Green"
+    Then I softly see status in Progress-bar is "Active" and is "Green"
 
   @109618    @verifySnapshotIsGettingGeneratedAndSavedInsideHistoryTabByLoginAsSPIUser
   Scenario: validate that if click on take a snapshot from menu then snapshot is getting generated inside history tab by login as SPI user
@@ -788,3 +788,193 @@ Business Need: security review Scenarios
     When I click alert button "OK"
     When I navigate to "History" sub tab
     Then I see table with header "Snapshot History" contains records "currentdate"
+
+  @83372   @verifyOrderOfActionAtHistoryTableFromProgramCreationToActivationByReassigningToUser
+  Scenario: validate order of action inside history table from program creation to activation by reassigning to user
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values_Test8.xlsx"
+    And I click on "Save" in the page details
+    And I get the "EGMS ID"
+    And I click on "Edit" in the page details
+    When I enter "EditionProgram" values from "Program_Field_Values_Test8.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Add" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I close "Contacts" modal by clicking the top right x button
+    When I navigate to "Responsibilities" sub tab
+    And I edit the following rows inline in flex table with id "---program:-:approverTableId---" by clicking "Edit" :
+      | Responsibility     | Name          | Description                 |
+      | Program Approver   | Admin         | Automation Test Description |
+      | Executive Approver | Automation PM | Automation Test Description |
+    And I click on "Submit For Approval" in the page details
+    When I navigate to "History" sub tab
+    Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
+
+    # @83372 - first approval
+    When I re-login to "As a Grantor" app as "Admin" user on "test8" portal
+    And I navigate to "Planning" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---"
+    When I "Approve" in the approval decision
+    When I navigate to "History" sub tab
+    Then I softly see column "Status" inside row "1" at position "2" and column at position "5" contains text "Pending"
+    Then I softly see column "Status" inside row "2" at position "2" and column at position "5" contains text "Approved"
+    Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
+
+  # @83372 - reassigned by second approval
+    When I re-login to "As a Grantor" app as "PM" user on "test8" portal
+    And I navigate to "Planning" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---"
+    When I "Reassign" to user "Admin" in the approval decision
+    When I navigate to "History" sub tab
+    Then I softly see column "Status" inside row "1" at position "2" and column at position "5" contains text "Pending"
+    Then I softly see column "Status" inside row "1" at position "3" and column at position "5" contains text "Reassigned"
+    Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
+
+  # @83372 - approved by second approval
+    When I re-login to "As a Grantor" app as "Admin" user on "test8" portal
+    And I navigate to "Planning" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---"
+    When I "Approve" in the approval decision
+    Then I softly see status in Progress-bar is "Approved" and is "Green"
+    When I navigate to "History" sub tab
+    Then I softly see column "Status" inside row "1" at position "2" and column at position "5" contains text "Approved"
+
+  # @83372 - activated by owner
+    When I re-login to "As a Grantor" app as "PM" user on "test8" portal
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Record Id" in "---program:-:programsTableId---" panel
+    And I click on "View Program Details" icon for "Record Id" inside flex table with id "---program:-:programsTableId---"
+    Then I softly see status in Progress-bar is "Approved" and is "Green"
+    And I click on "Activate" in the page details
+    Then I softly see status in Progress-bar is "Active" and is "Green"
+    When I navigate to "History" sub tab
+    Then I softly see column "Status" inside row "1" at position "2" and column at position "5" contains text "Approved"
+    Then I softly see column "Status" inside row "1" at position "3" and column at position "5" contains text "Reassigned"
+    Then I softly see column "Status" inside row "2" at position "2" and column at position "5" contains text "Approved"
+    Then I softly see column "Status" inside row "3" at position "2" and column at position "5" contains text "Started"
+
+  @83371   @verifyOrderOfActionAtHistoryTableFromProgramCreationToActivationUsingSendBack
+  Scenario: validate order of action inside history table from program creation to activation by sending back the record to owser for approval
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values_Test8.xlsx"
+    And I click on "Save" in the page details
+    And I get the "EGMS ID"
+    And I click on "Edit" in the page details
+    When I enter "EditionProgram" values from "Program_Field_Values_Test8.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Add" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I close "Contacts" modal by clicking the top right x button
+    When I navigate to "Responsibilities" sub tab
+    And I edit the following rows inline in flex table with id "---program:-:approverTableId---" by clicking "Edit" :
+      | Responsibility     | Name          | Description                 |
+      | Program Approver   | Admin         | Automation Test Description |
+      | Executive Approver | Automation PM | Automation Test Description |
+    And I click on "Submit For Approval" in the page details
+    When I navigate to "History" sub tab
+    Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
+
+  # @83371 - first approval
+    When I re-login to "As a Grantor" app as "Admin" user on "test8" portal
+    And I navigate to "Planning" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---"
+    When I "Approve" in the approval decision
+    When I navigate to "History" sub tab
+    Then I softly see column "Status" inside row "1" at position "2" and column at position "5" contains text "Pending"
+    Then I softly see column "Status" inside row "2" at position "2" and column at position "5" contains text "Approved"
+    Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
+
+  # @83371 - send back to owner by second approval
+    When I re-login to "As a Grantor" app as "PM" user on "test8" portal
+    And I navigate to "Planning" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---"
+    And I "Send to Owner" in the approval decision
+    When I navigate to "History" sub tab
+    Then I softly see column "Status" inside row "1" at position "2" and column at position "5" contains text "Sent Back"
+    Then I softly see status in Progress-bar is "Created" and is "Green"
+    And I click on "Submit For Approval" in the page details
+    When I navigate to "History" sub tab
+    Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
+
+  # @83371 - approved by first approval
+    When I re-login to "As a Grantor" app as "Admin" user on "test8" portal
+    And I navigate to "Planning" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---"
+    When I "Approve" in the approval decision
+    When I navigate to "History" sub tab
+    Then I softly see column "Status" inside row "1" at position "2" and column at position "5" contains text "Pending"
+    Then I softly see column "Status" inside row "2" at position "2" and column at position "5" contains text "Approved"
+    Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
+
+  # @83371 - approved by second approval
+    When I re-login to "As a Grantor" app as "PM" user on "test8" portal
+    And I navigate to "Planning" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---"
+    When I "Approve" in the approval decision
+    Then I softly see status in Progress-bar is "Approved" and is "Green"
+    When I navigate to "History" sub tab
+    Then I softly see column "Status" inside row "1" at position "2" and column at position "5" contains text "Approved"
+
+  # @83371 - activated by owner
+    When I navigate to "History" sub tab
+    And I click on "Activate" in the page details
+    Then I softly see column "Status" inside row "1" at position "2" and column at position "5" contains text "Approved"
+    Then I softly see column "Status" inside row "2" at position "2" and column at position "5" contains text "Approved"
+    Then I softly see column "Status" inside row "3" at position "2" and column at position "5" contains text "Started"
+    Then I softly see column "Status" inside row "4" at position "2" and column at position "5" contains text "Sent Back"
+    Then I softly see column "Status" inside row "5" at position "2" and column at position "5" contains text "Approved"
+    Then I softly see column "Status" inside row "6" at position "2" and column at position "5" contains text "Started"
+
+  @110722    @verifyQuickSearchAtFlexGridEnhancedTableIsWorkingCorrectly
+  Scenario: validate that quick search is working or not at flex grid enhanced table
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{Framework_recordUsed:AutomationPermanentAward}"
+    When I click on "View" icon for "{Framework_recordUsed:AutomationPermanentAward}" inside table
+    When I navigate to "Subawards" sub tab
+    When I perform quick search for "{Framework_recordUsed:AutomationPermanentAward}" in "---program:-:flexGridRelatedSubAwardId---" panel
+    When I click on "View" icon for "{Framework_recordUsed:AutomationPermanentAward}" inside table
+    When I navigate to "Budget" sub tab
+    When I perform quick search for "100" in "---program:-:flexGridSubAwardBudgetCategoryID---" panel
+    Then I see value "Construction" for title "Budget Category" inside table "---program:-:flexGridSubAwardBudgetCategoryID---"
+
+  @110743    @verifyQuickSearchAtFlexTableEnhancedTableIsWorkingCorrectly
+  Scenario: validate that quick search is working or not at flex table enhanced table
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:ProgramToCheckQuickSearch}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramToCheckQuickSearch}" inside table
+    When I navigate to "Overview" sub tab
+    When I perform quick search for "Krishna S" in "---program:-:programContactsTableId---" panel
+    Then I see value "Krishna S" for title "Name" inside table "---program:-:programContactsTableId---"
