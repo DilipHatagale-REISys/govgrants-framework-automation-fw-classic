@@ -420,7 +420,7 @@ Business Need: Library Files Component Scenarios
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Secretary of Health"
     When I click on dropdown at library/folder/file "AuthorFolder1"
-    When I click on "Upload File" option at library/folder/file "testAutomationFolder1"
+    When I click on "Upload File" option at library/folder/file "AuthorFolder1"
     When I upload file "TestAutomation.txt" into library
     When I click on "Upload" button in send email modal
     When I click on expand icon at library/folder "AuthorFolder1"

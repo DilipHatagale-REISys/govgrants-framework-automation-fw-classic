@@ -73,7 +73,7 @@ Business Need: Logged Issues Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     When I add notes records
-    When I click on "Delete" icon for "Notes Record" inside table
+    When I click on "Delete" icon for "Automation Notes" inside table
     Then I see confirmation box with body "Record deleted successfully." is displayed
 
   @54857    @validateNotesEditActionWorkingOrNot
@@ -99,7 +99,7 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    When I click on "Delete" icon for "Notes Record" inside table
+    When I click on "Delete" icon for "Automation Notes" inside table
     When I click "Yes" on modal confirmation box
     When I close alertbox
     When I add notes records
@@ -507,7 +507,7 @@ Business Need: Logged Issues Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Roles" sub tab
     When I click on top right button "New" in flex table with id "---program:-:programTableDivId---"
-    When I click modal button "Save"
+    And I click on "Save" in the page details
     Then I see the text containing :
       | is Required to save. |
       | Assigned to User     |

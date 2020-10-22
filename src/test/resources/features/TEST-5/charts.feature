@@ -1013,7 +1013,7 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    And I click on menu icon of chart "Enhanced_Funnel" with title "Menu"
+    And I click on menu icon of chart "Enhanced Funnel" with title "Menu"
     When I select "Show All Data" from chart menu of chart "Enhanced Funnel"
     Then I do not see "Change Request #" in flex table header "---program:-:Enhanced_FunnelModalID---"
 

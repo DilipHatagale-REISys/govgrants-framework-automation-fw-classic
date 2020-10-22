@@ -1795,6 +1795,12 @@ Business Need: Enhanced Flex Grid Component Scenarios
 
   @78091    @verifyByClickOnLookupValueItShouldRedirectedToRespectiveRecordPageAtEnhancedGrid-gPlanning
   Scenario: validate by click on lookup value in table , respective page should get opens at EnhancedGrid - gPlanning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Grid             | Display Field |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Display Field |               | TmpActiveGrantsGrid | Name                      | FTC-1487                   |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab

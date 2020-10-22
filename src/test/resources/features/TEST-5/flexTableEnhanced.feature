@@ -419,8 +419,8 @@ Business Need: Flex Table enhanced Component Scenarios
     When I navigate to "Financials" sub tab
     When I click on advance filter "#advfEnhancedDataTable" of table id "---program:-:EnhancedDataTableId---"
     When I enter advance filter values inside id "advfEnhancedDataTable"
-      | Project Period | contains | 1/15/2018-1/15/2022 |
-    Then I see label containing value as "1/15/2018-1/15/2022" inside advance filter
+      | Project Period | contains | 1/2/2019--1/25/2023 |
+    Then I see label containing value as "1/2/2019--1/25/2023" inside advance filter
 
     Examples:
       | newFieldsApi                                      | defaultFieldsApi                                                                                                                                        |
