@@ -700,6 +700,8 @@ Business Need: security review Scenarios
       | Program Approver   | Admin         | Automation Test Description |
       | Executive Approver | Automation PM | Automation Test Description |
     And I click on "Submit For Approval" in the page details
+
+  # @109931 - first approval
     When I re-login to "As a Grantor" app as "Admin" user on "test8" portal
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
@@ -708,6 +710,7 @@ Business Need: security review Scenarios
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "green"
 
+  # @109931 - second approval
     When I re-login to "As a Grantor" app as "PM" user on "test8" portal
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
@@ -716,9 +719,9 @@ Business Need: security review Scenarios
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Approved" and is "Green"
 
+  # @109931 - status displayed to admin user
     When I re-login to "As a Grantor" app as "Admin" user on "test8" portal
     And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordCreatedToTestFlow}" in "---program:-:programsTableId---" panel
     And I click on "View Program Details" icon for "{Framework_recordUsed:ProgramRecordCreatedToTestFlow}" inside flex table with id "---program:-:programsTableId---"
@@ -734,11 +737,12 @@ Business Need: security review Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values_Test8.xlsx"
     And I click on "Save" in the page details
-    And I get the "EGMS ID"
+    And I pause execution for "3" seconds
     And I click on "Edit" in the page details
     When I enter "EditionProgram" values from "Program_Field_Values_Test8.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
+    And I get the "EGMS ID"
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     When I click "Add" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
     When I close "Contacts" modal by clicking the top right x button
@@ -748,6 +752,9 @@ Business Need: security review Scenarios
       | Program Approver   | Admin         | Automation Test Description |
       | Executive Approver | Automation PM | Automation Test Description |
     And I click on "Submit For Approval" in the page details
+    And I pause execution for "3" seconds
+
+  # @109932 - first approval
     When I re-login to "As a Grantor" app as "Admin" user on "test8" portal
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
@@ -756,6 +763,7 @@ Business Need: security review Scenarios
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "green"
 
+  # @109932 - second approval
     When I re-login to "As a Grantor" app as "PM" user on "test8" portal
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
@@ -764,15 +772,14 @@ Business Need: security review Scenarios
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Approved" and is "Green"
 
-    When I re-login to "As a Grantor" app as "Admin" user on "test8" portal
+  # @109932 - activated by owner
+    When I re-login to "As a Grantor" app as "PM" user on "test8" portal
     And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "Record Id" in "---program:-:programsTableId---" panel
     And I click on "View Program Details" icon for "Record Id" inside flex table with id "---program:-:programsTableId---"
-    Then I softly see status in Progress-bar is "Approved" and is "Green"
-
     And I click on "Activate" in the page details
+    And I pause execution for "3" seconds
     Then I softly see status in Progress-bar is "Active" and is "Green"
 
   @109618    @verifySnapshotIsGettingGeneratedAndSavedInsideHistoryTabByLoginAsSPIUser
@@ -816,7 +823,7 @@ Business Need: security review Scenarios
     When I navigate to "History" sub tab
     Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
 
-    # @83372 - first approval
+  # @83372 - first approval
     When I re-login to "As a Grantor" app as "Admin" user on "test8" portal
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
@@ -978,3 +985,136 @@ Business Need: security review Scenarios
     When I navigate to "Overview" sub tab
     When I perform quick search for "Krishna S" in "---program:-:programContactsTableId---" panel
     Then I see value "Krishna S" for title "Name" inside table "---program:-:programContactsTableId---"
+
+  @106456    @verifyThatEnhancedDataTableAsDefaultPackageIsDisplayedAtRecordLevelByLoggedInAsPMUser
+  Scenario: validate enhanced data table as default package at record table is rendered properly by PM user
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Test program for automation - Created mode only"
+    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I navigate to "Setup" sub tab
+    Then I see expected table with id "toggleFlexTableProramPackagesGrantor"
+
+  @110209   @verifyAnnouncementInSubmittedForApprovalMode
+  Scenario: validate announcement in submitted for approval state
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values_Test8.xlsx"
+    And I click on "Save" in the page details
+    And I get the "EGMS ID"
+    And I click on "Edit" in the page details
+    When I enter "EditionProgram" values from "Program_Field_Values_Test8.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Add" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I close "Contacts" modal by clicking the top right x button
+    When I navigate to "Responsibilities" sub tab
+    And I edit the following rows inline in flex table with id "---program:-:approverTableId---" by clicking "Edit" :
+      | Responsibility     | Name          | Description                 |
+      | Program Approver   | Admin         | Automation Test Description |
+      | Executive Approver | Automation PM | Automation Test Description |
+    And I click on "Submit For Approval" in the page details
+    Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
+    When I re-login to "As a Grantor" app as "Admin" user on "test8" portal
+    And I navigate to "Planning" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---"
+    When I "Approve" in the approval decision
+    Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
+    When I re-login to "As a Grantor" app as "PM" user on "test8" portal
+    And I navigate to "Planning" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---"
+    When I "Approve" in the approval decision
+    Then I softly see status in Progress-bar is "Approved" and is "Green"
+
+  # @110209 - program activation by owner
+    When I navigate to "History" sub tab
+    And I click on "Activate" in the page details
+    Then I softly see status in Progress-bar is "Active" and is "Green"
+
+  # @110209 - announcement in created state
+    And I navigate to "Announcements" tab
+    And I click on top right button "New" in flex table with id "---program:-:allAnnouncementTableId---"
+    And I enter "CompetitiveAnnouncement" values from "Program_Field_Values_Test8.xlsx"
+    And I click modal button "Continue"
+    When I enter "Creation Second Modal" values from "Program_Field_Values_Test8.xlsx"
+    And I click modal button "Save and Continue"
+    When I click on "Save" in the page details
+    And I get the "EGMS ID"
+    Then I softly see status in Progress-bar is "Created" and is "Green"
+
+  # @110209 - announcement submitted for approval
+    When I click on "Edit" in the page details
+    And I enter "EditionAnn" values from "Program_Field_Values_Test8.xlsx"
+    And I click on "Save" in the page details
+    And I pause execution for "3" seconds
+    And I click on "Edit" in the page details
+    And I enter value "Test" into field "Justification__c"
+    And I click on "Save" in the page details
+    When I navigate to "Financials" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:fundingAccountsTableId---"
+    When I click "Add" after selection of "Automation Permanent Funding Account" in the table "---program:-:fundingAccTableId---"
+    When I close "Associate" modal by clicking the top right x button
+    And I click on top right button "Add Budget Period" in flex table with id "---program:-:budgetPeriodTableId---"
+    And I refresh the page    And I edit the following rows inline in flex table with id "---program:-:budgetPeriodTableId---" by clicking "Edit" :
+      | Budget Period Name | Start Date | End Date |
+      | BP01               | 90         | 350      |
+    When I navigate to "Responsibilities" sub tab
+    And I edit the following rows inline in flex table with id "---program:-:approversTableId---" by clicking "Edit" :
+      | Role               | Name           | Description                 |
+      | Program Approver   | Admin          | Automation Test Description |
+      | Executive Approver | Automation EXE | Automation Test Description |
+      | Fiscal Approver    | Automation FO  | Automation Test Description |
+    And I click on "Submit For Approval" in the page details
+    Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
+
+  @110868    @verifyQuickSearchAtFlexTableEnhancedTableIsWorkingCorrectlyForSPIUser
+  Scenario: validate that quick search is working or not at flex table enhanced table by login as SPI user
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatus}" inside table
+    When I navigate to "Overview" sub tab
+    When I perform quick search for "Project Director/Manager" in "---program:-:flexTableEnhancedAppContactId---" panel
+    Then I see value "Project Director/Manager" for title "Project Role" inside table "---program:-:flexTableEnhancedAppContactId---"
+
+  @110866    @verifyQuickSearchAtFlexGridEnhancedIsWorkingCorrectlyForSPIUser
+  Scenario: validate that quick search is working or not at flex grid enhanced by login as SPI user
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{Framework_recordUsed:AutomationPermanentAward}"
+    When I click on "View" icon for "{Framework_recordUsed:AutomationPermanentAward}" inside table
+    When I navigate to "Subawards" sub tab
+    When I perform quick search for "{Framework_recordUsed:AutomationPermanentAward}" in "---program:-:flexGridRecipientRelatedSubAwardId---" panel
+    When I click on "View" icon for "{Framework_recordUsed:AutomationPermanentAward}" inside table
+    When I navigate to "Budget" sub tab
+    When I perform quick search for "100" in "---program:-:flexGridRecipientSubAwardBudgetCategoryID---" panel
+    Then I see value "Construction" for title "Budget Category" inside table "---program:-:flexGridRecipientSubAwardBudgetCategoryID---"
+
+  @110745   @verifyAdvanceFilterAtFlexTableEnhancedTableIsWorkingCorrectly
+  Scenario: validate that advance filter is working or not at flex table enhanced table
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:ProgramToCheckQuickSearch}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramToCheckQuickSearch}" inside table
+    When I navigate to "Overview" sub tab
+    When I click on advance filter "#advfDataTableEnhanceProgramContacts" of table id "---program:-:programContactsTableId---"
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
+      | Project Role | not equals to | Fiscal Contact |
+    Then I do not see value "Fiscal Contact" for title "Project Role" inside table "---program:-:programContactsTableId---"
