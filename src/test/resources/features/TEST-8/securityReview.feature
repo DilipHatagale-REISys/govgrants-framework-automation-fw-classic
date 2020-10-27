@@ -1066,7 +1066,8 @@ Business Need: security review Scenarios
     When I click "Add" after selection of "Automation Permanent Funding Account" in the table "---program:-:fundingAccTableId---"
     When I close "Associate" modal by clicking the top right x button
     And I click on top right button "Add Budget Period" in flex table with id "---program:-:budgetPeriodTableId---"
-    And I refresh the page    And I edit the following rows inline in flex table with id "---program:-:budgetPeriodTableId---" by clicking "Edit" :
+    And I refresh the page
+    And I edit the following rows inline in flex table with id "---program:-:budgetPeriodTableId---" by clicking "Edit" :
       | Budget Period Name | Start Date | End Date |
       | BP01               | 90         | 350      |
     When I navigate to "Responsibilities" sub tab
@@ -1118,3 +1119,267 @@ Business Need: security review Scenarios
     When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | Project Role | not equals to | Fiscal Contact |
     Then I do not see value "Fiscal Contact" for title "Project Role" inside table "---program:-:programContactsTableId---"
+
+  @109392   @verifyAnnouncementInCreatedMode
+  Scenario: validate announcement in created state
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values_Test8.xlsx"
+    And I click on "Save" in the page details
+    And I get the "EGMS ID"
+    And I click on "Edit" in the page details
+    When I enter "EditionProgram" values from "Program_Field_Values_Test8.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Add" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I close "Contacts" modal by clicking the top right x button
+    When I navigate to "Responsibilities" sub tab
+    And I edit the following rows inline in flex table with id "---program:-:approverTableId---" by clicking "Edit" :
+      | Responsibility     | Name          | Description                 |
+      | Program Approver   | Admin         | Automation Test Description |
+      | Executive Approver | Automation PM | Automation Test Description |
+    And I click on "Submit For Approval" in the page details
+    Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
+    When I re-login to "As a Grantor" app as "Admin" user on "test8" portal
+    And I navigate to "Planning" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---"
+    When I "Approve" in the approval decision
+    Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
+    When I re-login to "As a Grantor" app as "PM" user on "test8" portal
+    And I navigate to "Planning" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---"
+    When I "Approve" in the approval decision
+    Then I softly see status in Progress-bar is "Approved" and is "Green"
+
+  # @109392 - program activation by owner
+    When I navigate to "History" sub tab
+    And I click on "Activate" in the page details
+    Then I softly see status in Progress-bar is "Active" and is "Green"
+
+  # @109392 - announcement in created state
+    And I navigate to "Announcements" tab
+    And I click on top right button "New" in flex table with id "---program:-:allAnnouncementTableId---"
+    And I enter "CompetitiveAnnouncement" values from "Program_Field_Values_Test8.xlsx"
+    And I click modal button "Continue"
+    When I enter "Creation Second Modal" values from "Program_Field_Values_Test8.xlsx"
+    And I click modal button "Save and Continue"
+    When I click on "Save" in the page details
+    And I get the "EGMS ID"
+    Then I softly see status in Progress-bar is "Created" and is "Green"
+
+  @110694   @verifyRejectActionAtProgramSubmittedForApproval
+  Scenario: validate reject action at program submitted for approval
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values_Test8.xlsx"
+    And I click on "Save" in the page details
+    And I get the "EGMS ID"
+    And I click on "Edit" in the page details
+    And I pause execution for "2" seconds
+    When I enter "EditionProgram" values from "Program_Field_Values_Test8.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Add" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I close "Contacts" modal by clicking the top right x button
+    When I navigate to "Responsibilities" sub tab
+    And I edit the following rows inline in flex table with id "---program:-:approverTableId---" by clicking "Edit" :
+      | Responsibility     | Name          | Description                 |
+      | Program Approver   | Admin         | Automation Test Description |
+      | Executive Approver | Automation PM | Automation Test Description |
+    And I click on "Submit For Approval" in the page details
+    When I navigate to "History" sub tab
+    Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
+
+  # @110694 - first approval
+    When I re-login to "As a Grantor" app as "Admin" user on "test8" portal
+    And I navigate to "Planning" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---"
+    When I "Approve" in the approval decision
+    When I navigate to "History" sub tab
+    Then I softly see column "Status" inside row "1" at position "2" and column at position "5" contains text "Pending"
+    Then I softly see column "Status" inside row "2" at position "2" and column at position "5" contains text "Approved"
+    Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
+
+  # @110694 - rejected by second approval
+    When I re-login to "As a Grantor" app as "PM" user on "test8" portal
+    And I navigate to "Planning" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---"
+    And I "Reject" in the approval decision
+    When I navigate to "History" sub tab
+    Then I softly see status in Progress-bar is "Rejected" and is "Red"
+
+  @110717   @verifySendBackActionPerformedByProgramApprover
+  Scenario: validate sending back action performed by program approver
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values_Test8.xlsx"
+    And I click on "Save" in the page details
+    And I get the "EGMS ID"
+    And I click on "Edit" in the page details
+    When I enter "EditionProgram" values from "Program_Field_Values_Test8.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Add" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I close "Contacts" modal by clicking the top right x button
+    When I navigate to "Responsibilities" sub tab
+    And I edit the following rows inline in flex table with id "---program:-:approverTableId---" by clicking "Edit" :
+      | Responsibility     | Name          | Description                 |
+      | Program Approver   | Admin         | Automation Test Description |
+      | Executive Approver | Automation PM | Automation Test Description |
+    And I click on "Submit For Approval" in the page details
+    When I navigate to "History" sub tab
+    Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
+
+  # @110717 - Program Approver
+    When I re-login to "As a Grantor" app as "Admin" user on "test8" portal
+    And I navigate to "Planning" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---"
+    And I "Send to Owner" in the approval decision
+    When I navigate to "History" sub tab
+    Then I softly see status in Progress-bar is "Created" and is "Green"
+
+  @110725    @verifyAdvanceSearchAtFlexGridEnhancedIsWorkingCorrectlyForPMUser
+  Scenario: validate that advance search is working or not at flex grid enhanced by login as PM user
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{Framework_recordUsed:AutomationPermanentAward}"
+    When I click on "View" icon for "{Framework_recordUsed:AutomationPermanentAward}" inside table
+    When I navigate to "Subawards" sub tab
+    When I click on "View" icon for "{Framework_recordUsed:AutomationPermanentAward}" inside table
+    When I navigate to "Budget" sub tab
+    When I click on advance filter "#advfSubawardBudgetCategoryFlexTable" of table id "---program:-:flexGridSubAwardBudgetCategoryID---"
+    When I enter advance filter values inside id "advfSubawardBudgetCategoryFlexTable"
+      | Awarded Budget | equals to | 1000 |
+    Then I see value "$1,000.00" for title "Awarded Budget" inside table "---program:-:flexGridSubAwardBudgetCategoryID---"
+
+  @110214   @verifyAnnouncementInPublishedMode
+  Scenario: validate announcement in published state
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values_Test8.xlsx"
+    And I click on "Save" in the page details
+    And I get the "EGMS ID"
+    And I click on "Edit" in the page details
+    When I enter "EditionProgram" values from "Program_Field_Values_Test8.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Add" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I close "Contacts" modal by clicking the top right x button
+    When I navigate to "Responsibilities" sub tab
+    And I edit the following rows inline in flex table with id "---program:-:approverTableId---" by clicking "Edit" :
+      | Responsibility     | Name          | Description                 |
+      | Program Approver   | Admin         | Automation Test Description |
+      | Executive Approver | Automation PM | Automation Test Description |
+    And I click on "Submit For Approval" in the page details
+    Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
+    When I re-login to "As a Grantor" app as "Admin" user on "test8" portal
+    And I navigate to "Planning" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---"
+    When I "Approve" in the approval decision
+    Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
+    When I re-login to "As a Grantor" app as "PM" user on "test8" portal
+    And I navigate to "Planning" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---"
+    When I "Approve" in the approval decision
+    Then I softly see status in Progress-bar is "Approved" and is "Green"
+    When I navigate to "History" sub tab
+    And I click on "Activate" in the page details
+    Then I softly see status in Progress-bar is "Active" and is "Green"
+    And I navigate to "Announcements" tab
+    And I click on top right button "New" in flex table with id "---program:-:allAnnouncementTableId---"
+    And I enter "CompetitiveAnnouncement" values from "Program_Field_Values_Test8.xlsx"
+    And I click modal button "Continue"
+    When I enter "Creation Second Modal" values from "Program_Field_Values_Test8.xlsx"
+    And I click modal button "Save and Continue"
+    When I click on "Save" in the page details
+    And I get the "EGMS ID"
+    Then I softly see status in Progress-bar is "Created" and is "Green"
+    When I click on "Edit" in the page details
+    And I enter "EditionAnn" values from "Program_Field_Values_Test8.xlsx"
+    And I click on "Save" in the page details
+    And I pause execution for "3" seconds
+    And I click on "Edit" in the page details
+    And I enter value "Test" into field "Justification__c"
+    And I click on "Save" in the page details
+    When I navigate to "Financials" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:fundingAccountsTableId---"
+    When I click "Add" after selection of "Automation Permanent Funding Account" in the table "---program:-:fundingAccTableId---"
+    When I close "Associate" modal by clicking the top right x button
+    And I click on top right button "Add Budget Period" in flex table with id "---program:-:budgetPeriodTableId---"
+    And I refresh the page
+    And I edit the following rows inline in flex table with id "---program:-:budgetPeriodTableId---" by clicking "Edit" :
+      | Budget Period Name | Start Date | End Date |
+      | BP01               | 90         | 350      |
+    When I navigate to "Responsibilities" sub tab
+    And I edit the following rows inline in flex table with id "---program:-:approversTableId---" by clicking "Edit" :
+      | Role               | Name           | Description                 |
+      | Program Approver   | Admin          | Automation Test Description |
+      | Executive Approver | Automation EXE | Automation Test Description |
+      | Fiscal Approver    | Automation FO  | Automation Test Description |
+    And I click on "Submit For Approval" in the page details
+    Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
+    When I re-login to "As a Grantor" app as "Admin" user on "test8" portal
+    And I navigate to "Announcement" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---"
+    When I "Approve" in the approval decision
+    Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
+    When I re-login to "As a Grantor" app as "EXE" user on "test8" portal
+    And I navigate to "Announcement" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---"
+    When I "Approve" in the approval decision
+    Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
+    When I re-login to "As a Grantor" app as "FO" user on "test8" portal
+    And I navigate to "Announcement" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---"
+    When I "Approve" in the approval decision
+    Then I softly see status in Progress-bar is "Approved" and is "Green"
+
+  # @110214 - publish by owner
+    When I re-login to "As a Grantor" app as "PM" user on "test8" portal
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "Record Id"
+    When I click on "View" icon for "Record Id" inside table
+    And I click on "Publish" in the page details
+    Then I see status in Progress-bar is "Published" and is "green"
