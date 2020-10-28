@@ -125,7 +125,7 @@ Business Need: Sanity check for all Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory            | fieldName            | fieldNewValue                                                                                                                  | coreComponentField |
       | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_Profile_NOTIN_SystemAdministrator_OR_UserType_IN_Internal | ADAC-0009          |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -257,7 +257,7 @@ Business Need: Sanity check for all Component Scenarios
 
   @69960   @VerifyAssignedApproverUserInsideChevron @approvalProcess
   Scenario: Validating chevron contain Approver user and Initial submitter after submission of record to submit for approval
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -323,7 +323,7 @@ Business Need: Sanity check for all Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName                   | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Hide Approval Decision comp | true          | Grantee State Program |                           |                            |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -500,7 +500,7 @@ Business Need: Sanity check for all Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-027                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab

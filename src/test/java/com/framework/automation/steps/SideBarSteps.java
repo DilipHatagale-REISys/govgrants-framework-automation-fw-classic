@@ -51,16 +51,6 @@ public class SideBarSteps {
         sidebarPage.assertAccordionContentWithNewTab(pageTitle);
     }
 
-    @Then("^I see \"([^\"]*)\" inside \"([^\"]*)\" is displayed$")
-    public void assertSubHeaderContentNameDisplayed(String sideBarCategory, String accordianSubHeaderDetail) {
-        sidebarPage.assertSubHeaderContentDisplayed(sideBarCategory, accordianSubHeaderDetail);
-    }
-
-    @Then("^I see \"([^\"]*)\" inside \"([^\"]*)\" is not displayed$")
-    public void assertSubHeaderContentNameNotDisplayed(String sideBarCategory, String accordianSubHeaderDetail) {
-        sidebarPage.assertSubHeaderContentNotDisplayed(sideBarCategory, accordianSubHeaderDetail);
-    }
-
     @Then("^I see sidebar sub menu has light grey background colour$")
     public void assertSidebarSubMenuHasBackgroundColour() {
         sidebarPage.asserSidebarBackgroundColor();

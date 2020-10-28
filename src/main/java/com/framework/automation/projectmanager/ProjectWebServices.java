@@ -207,17 +207,18 @@ public class ProjectWebServices {
     /**
      * calls the api to delete test program data
      *
-     * @param objectName - the object for which test data should be deleted
-     * @param recordName - the name or title of the record
+     * @param objectName   - the object for which test data should be deleted
+     * @param recordName   - the name or title of the record
+     * @param fieldApiName - the field API name for which the test data should be deleted
      */
-    public void deletionApiProgramRecord(String recordName, String objectName) {
+    public void deletionApiProgramRecord(String recordName, String objectName, String fieldApiName) {
         System.out.print("Making API call... ");
         getAuthToken();
         String finalEndPoint = endPoint + "/services/apexrest/AutomationAPI/delete";
 
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("objectName", objectName);
-        jsonObject.addProperty("criteria", "ProgramName__c='" + recordName + "'");
+        jsonObject.addProperty("criteria", "" + fieldApiName + "='" + recordName + "'");
 
         Response response = I.amPerforming().restHttp().DeleteCall(jsonObject, null, finalEndPoint, "Authorization", "Bearer " + tokenString,
                 null);
@@ -268,7 +269,6 @@ public class ProjectWebServices {
         jArray.add(jsonContainer);
         I.amPerforming().restHttp().putCall(null, jArray.toString(), finalEndPoint, null, null, tokenString);
     }
-
 
 
     ////////////// Setup Default Config//////////////
@@ -546,7 +546,7 @@ public class ProjectWebServices {
      */
     private void setDefaultCustomDynamicFieldConfig(String key) {
         for (Map<String, String> customMap : ConfigurationParameters.getDefaultConfigurationParameters().get(key)) {
-            updateDynamicFieldConfig(customMap.get("id"),customMap.get("Name"), customMap.get("Type"));
+            updateDynamicFieldConfig(customMap.get("id"), customMap.get("Name"), customMap.get("Type"));
         }
     }
 

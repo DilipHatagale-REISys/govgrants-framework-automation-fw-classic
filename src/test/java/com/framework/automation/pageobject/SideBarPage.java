@@ -38,7 +38,7 @@ public class SideBarPage extends GovGrantsManager {
      * @param mainTabName
      */
     public void assertnewSubHeaderContentLabel(String subTabName, String mainTabName) {
-        Assert.assertEquals(getSideBarAccordianSubHeaderContent(mainTabName, subTabName).getText(), subTabName);
+        Assert.assertEquals(govgrants.perform().sideBar().getSideBarAccordianSubHeaderContent(mainTabName, subTabName).getText(), subTabName);
     }
 
     /**
@@ -74,26 +74,6 @@ public class SideBarPage extends GovGrantsManager {
      */
     public void assertAccordionContentWithNewTab(String Pagetitle) {
         Assert.assertTrue(isNewTabOpens(Pagetitle));
-    }
-
-    /**
-     * assert if accordion sub header is displayed
-     *
-     * @param sideBarCategory
-     * @param accordianSubHeaderDetail
-     */
-    public void assertSubHeaderContentDisplayed(String sideBarCategory, String accordianSubHeaderDetail) {
-        Assert.assertTrue(isSideBarAccordionSubHeaderDisplayed(sideBarCategory, accordianSubHeaderDetail));
-    }
-
-    /**
-     * assert if accordion sub header is not displayed
-     *
-     * @param sideBarCategory
-     * @param accordianSubHeaderDetail
-     */
-    public void assertSubHeaderContentNotDisplayed(String sideBarCategory, String accordianSubHeaderDetail) {
-        Assert.assertFalse(isSideBarAccordionSubHeaderDisplayed(sideBarCategory, accordianSubHeaderDetail));
     }
 
     /**
@@ -201,23 +181,6 @@ public class SideBarPage extends GovGrantsManager {
     }
 
     /**
-     * @param sideBarCategory
-     * @param accordianSubHeaderDetail
-     * @return true if accordion sub header is displayed
-     */
-    private boolean isSideBarAccordionSubHeaderDisplayed(String sideBarCategory, String accordianSubHeaderDetail) {
-        boolean flag = false;
-        try {
-            if (I.amPerforming().checkToSee().isDisplayed(getSideBarAccordianSubHeaderContent(sideBarCategory, accordianSubHeaderDetail))) {
-                flag = true;
-            }
-        } catch (Exception e) {
-
-        }
-        return flag;
-    }
-
-    /**
      * @return true if expected color displayed at sidebar sub menu background
      */
     private boolean isSidebarBackgroundColorChanged() {
@@ -246,7 +209,6 @@ public class SideBarPage extends GovGrantsManager {
         }
         return flag;
     }
-
 
     /**
      * @return true if icon is displayed at accordion header menu inside sidebar

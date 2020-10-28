@@ -750,7 +750,7 @@ Business Need: Flex Table Component Scenarios
       | configurationCategory     | fieldName                | fieldNewValue              | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Decision Expression |                            | Programs           | Name                      | Edit                       |
       | Flex Table Action Sobject | Hide Decision Field      | <defaultHideDecisionField> | Programs           | Name                      | Edit                       |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab

@@ -35,9 +35,9 @@ public class ConfigurationSteps {
         }
     }
 
-    @Given("^I delete the record \"([^\"]*)\" from the object \"([^\"]*)\"$")
-    public void deleteTestData(String recordName, String objectType) {
-        projectAPI.deletionApiProgramRecord(recordName, objectType);
+    @Given("^I delete the record \"([^\"]*)\" from the object \"([^\"]*)\" with field \"([^\"]*)\"$")
+    public void deleteTestData(String recordName, String objectType, String fieldApiName) {
+        projectAPI.deletionApiProgramRecord(recordName, objectType, fieldApiName);
     }
 
     @And("I update the locale and timezone related changes:$")
