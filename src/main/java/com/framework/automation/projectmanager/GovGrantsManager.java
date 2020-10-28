@@ -100,17 +100,6 @@ public class GovGrantsManager extends ProjectWebServices {
     }
 
     /**
-     * access side bar sub header detail
-     *
-     * @param sideBarCategory
-     * @param accordianSubHeaderDetail
-     * @return
-     */
-    public WebElement getSideBarAccordianSubHeaderContent(String sideBarCategory, String accordianSubHeaderDetail) {
-        return govgrants.perform().sideBar().getSideBarContent(sideBarCategory, accordianSubHeaderDetail);
-    }
-
-    /**
      * click on flex table icons. Inside click on any tab with flex table.Reach out
      * to any panel header
      *

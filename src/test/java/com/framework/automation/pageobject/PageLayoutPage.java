@@ -356,13 +356,6 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
-     * assert true if mentioned help text displayed
-     */
-    public void assertHelpTextAtPageBlock(String helptext) {
-        Assert.assertTrue(govgrants.perform().pageDetails().isHelpTextDisplayed(helptext));
-    }
-
-    /**
      * assert if specified button is displayed on modal
      *
      * @param buttonName
@@ -547,16 +540,6 @@ public class PageLayoutPage extends GovGrantsManager {
     public void getHelpTextAtPageBlock(String blockTitle) {
         I.amPerforming().scroll().toMoveToElement(By.xpath("//h3//a[contains(text(),'" + blockTitle + "')]/..//span[contains(@class,'fa-info')]"));
     }
-
-    /**
-     * hover on help text inside program name page block details
-     *
-     * @param pageBlockDetailTitle
-     */
-    public void getHelpTextAtPageBlockDetail(String pageBlockDetailTitle) {
-        I.amPerforming().scroll().toMoveToElement(By.xpath("//span[contains(text(),'" + pageBlockDetailTitle + "')]/..//span[contains(@class,'fa-info')]"));
-    }
-
 
     /**
      * hover on look up link at page block details

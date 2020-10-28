@@ -36,11 +36,6 @@ public class PageLayoutSteps {
         pageLayoutPage.getHelpTextAtPageBlock(blockTitle);
     }
 
-    @When("^I hovering mouse on help text icon inside page block detail \"([^\"]*)\"$")
-    public void getHelpTextIconsAtPageBlockDetail(String pageBlockDetailTitle) {
-        pageLayoutPage.getHelpTextAtPageBlockDetail(pageBlockDetailTitle);
-    }
-
     @When("^I hover mouse on lookup link \"([^\"]*)\"$")
     public void hoverOnLookUpLinkAtPageBlockDetail(String lookUpLink) {
         pageLayoutPage.getLookUpLinkToHover(lookUpLink);
@@ -314,11 +309,6 @@ public class PageLayoutSteps {
     @Then("^I see \"([^\"]*)\" Button at position \"([^\"]*)\"$")
     public void assertSequenceOfPageLayoutEditButtonAction(String buttonName, String sequenceNumber) {
         pageLayoutPage.assertSequenceOfEditButtonAction(buttonName, Integer.parseInt(sequenceNumber));
-    }
-
-    @Then("I see {string} shown as help text")
-    public void assertHelpText(String helpText) {
-        pageLayoutPage.assertHelpTextAtPageBlock(helpText);
     }
 
     @Then("^I see \"([^\"]*)\" at bottom of Attachment Modal$")

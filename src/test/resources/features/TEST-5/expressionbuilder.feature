@@ -2990,7 +2990,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    Then I see "Activities" inside "Manage Funding Source" is not displayed
+    Then I do not see "Activities" inside "Manage Funding Source" is displayed
 
   @46395    @render_expression_SideBar_ManageFundingSource_With_Profile_IN_SystemAdministrator @smoke
   Scenario: Set up configuration for display Manage funding source from side bar using Profile IN (System Administrator) -gPlanning
@@ -3018,7 +3018,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    Then I see "Activities" inside "Manage Funding Source" is not displayed
+    Then I do not see "Activities" inside "Manage Funding Source" is displayed
 
   @46397    @render_expression_SideBar_ManageFundingSource_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal
   Scenario: Set up configuration for display Manage funding source from side bar using Profile IN (System Administrator ) AND UserType IN (Internal) -gPlanning
@@ -3060,7 +3060,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    Then I see "Activities" inside "Manage Funding Source" is not displayed
+    Then I do not see "Activities" inside "Manage Funding Source" is displayed
 
   @46416    @render_expression_SideBar_ManageFundingSource_With_Profile_IN_SystemAdministrator_OR_Profile_IN_PM
   Scenario: Set up configuration for display Manage funding source from side bar using (Profile IN (System Administrator) OR Profile IN PM) -gPlanning
@@ -3088,7 +3088,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    Then I see "Activities" inside "Manage Funding Source" is not displayed
+    Then I do not see "Activities" inside "Manage Funding Source" is displayed
 
   @46400    @render_expression_SideBar_ManageFundingSource_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator
   Scenario: Set up configuration for hide Manage funding source from side bar using (UserType NOT IN (Internal) OR Profile NOT IN (System Administrator) -gPlanning
@@ -3102,7 +3102,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    Then I see "Activities" inside "Manage Funding Source" is not displayed
+    Then I do not see "Activities" inside "Manage Funding Source" is displayed
 
   @46417    @render_expression_SideBar_ManageFundingSource_With_UserType_IN_Applicant_Reviewer
   Scenario: Set up configuration for hide Manage funding source from side bar using UserType IN Applicant, Reviewer -gPlanning
@@ -3116,7 +3116,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    Then I see "Activities" inside "Manage Funding Source" is not displayed
+    Then I do not see "Activities" inside "Manage Funding Source" is displayed
 
   @46418    @render_expression_SideBar_ManageFundingSource_With_UserType_NOTIN_Applicant_Reviewer
   Scenario: Set up configuration for display Manage funding source from side bar using UserType NOTIN Applicant, Reviewer -gPlanning
@@ -3158,7 +3158,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    Then I see "Activities" inside "Manage Funding Source" is not displayed
+    Then I do not see "Activities" inside "Manage Funding Source" is displayed
 
   @46403    @render_expression_CustomApp_With_UserType_IN_Internal @smoke
   Scenario: Set up configuration for display state as grantor custom app using User Type IN Internal -gHome
@@ -4613,7 +4613,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory            | fieldName            | fieldNewValue                                                                                | coreComponentField                                         |
       | Program                          | Status               | Created                                                                                      | Test program for automation -  SA mode only - Not approved |
       | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_UserType_NOTIN_Internal | ADAC-0011                                                  |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab

@@ -1039,7 +1039,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-027                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1067,7 +1067,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory               | fieldName                 | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active                 | true          | Grantee State Program | Name                      | TAB-027                    |
       | Flex Table:General                  | Enable Export (XLS / CSV) | true          | History               |                           |                            |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2064,7 +2064,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory               | fieldName       | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active       | false         | Grantee State Program | Name                      | TAB-026                    |
       | Page Tabs Config:Page Layout Action | Skip for Export | true          | Grantee State Program | Name                      | TAB-980                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab

@@ -393,7 +393,7 @@ Business Need: Logged Issues Scenarios
 
   @56624    @recordShouldOpensProperlyFoePendingTasksAssignedByMeSection
   Scenario: validate record of pending tasks assigned by me section should opens properly while logging as PM user
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2131,7 +2131,7 @@ Business Need: Logged Issues Scenarios
     Given I setup test configuration as below:
       | configurationCategory            | fieldName         | fieldNewValue | coreComponentField |
       | Approval Decision Action:General | Comments Required | true          | ADAC-0009          |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2187,7 +2187,7 @@ Business Need: Logged Issues Scenarios
     Given I setup test configuration as below:
       | configurationCategory            | fieldName         | fieldNewValue | coreComponentField |
       | Approval Decision Action:General | Comments Required | true          | ADAC-0010          |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2243,7 +2243,7 @@ Business Need: Logged Issues Scenarios
     Given I setup test configuration as below:
       | configurationCategory            | fieldName         | fieldNewValue | coreComponentField |
       | Approval Decision Action:General | Comments Required | true          | ADAC-0011          |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2299,7 +2299,7 @@ Business Need: Logged Issues Scenarios
     Given I setup test configuration as below:
       | configurationCategory            | fieldName         | fieldNewValue | coreComponentField |
       | Approval Decision Action:General | Comments Required | true          | ADAC-0011          |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2675,7 +2675,7 @@ Business Need: Logged Issues Scenarios
     And I update custom name template setting changes:
       | id                 | Name       | AutoNumberFormat | StartNumber | booleanValue                                          | customSettingApiName       |
       | a0e15000008FjIyAAK | Program__c | {000}            | 1           | GNT__Active__c:true,GNT__SkipAutoNumberReset__c:false | GNT__NameTemplateConfig__c |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3890,7 +3890,7 @@ Business Need: Logged Issues Scenarios
 
   @100501    @verifySnapshotIsGettingGeneratedAndSavedInsideHistoryTabIfPicklistValueIsChanged
   Scenario: validate if picklist value is changed and taken a snapshot then snapshot is getting generated inside history tab
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab

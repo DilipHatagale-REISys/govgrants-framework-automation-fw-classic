@@ -4,7 +4,7 @@ Business Need: Snapshot Config Component Scenarios
   As a configuration manager i make different configurational changes in snapshot component and will validate them.
 
   Background: Create Program
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c"
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
