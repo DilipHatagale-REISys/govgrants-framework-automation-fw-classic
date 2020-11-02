@@ -134,19 +134,6 @@ public class FlexTablePage extends GovGrantsManager {
     }
 
     /**
-     * assert if correct title is displayed in overlay iframe window
-     *
-     * @param titleName
-     */
-    public void asserTextInOverLayIframe(String usage, String titleName) {
-        if (usage.equalsIgnoreCase("see")) {
-            Assert.assertTrue(isSpecificOverlayDisplayed(titleName));
-        } else if (usage.equalsIgnoreCase("softly see")) {
-            I.amPerforming().assertionsTo().assertThat(isSpecificOverlayDisplayed(titleName)).isTrue();
-        }
-    }
-
-    /**
      * assert if entire page is refreshing
      */
     public void asserEntirePageRefreshOnButtonClick() {
@@ -743,38 +730,6 @@ public class FlexTablePage extends GovGrantsManager {
             sameTabFound = true;
         }
         return sameTabFound;
-    }
-
-    /**
-     * get webelemnt with title inside overlay iframe
-     *
-     * @param titleName
-     * @return
-     */
-    private WebElement getOverLayTitle(String titleName) {
-        return I.amPerforming().getElementReference().of(By.xpath(
-                "//iframe[contains(@ng-src,'apex') or contains(@src,'apex')]//ancestor::div[contains(@class,'modal-content')][1]//p[text()='"
-                        + titleName
-                        + "']|//iframe[contains(@ng-src,'apex') or contains(@src,'apex')]//ancestor::div[contains(@class,'modal-content')][1]//p[text()='"
-                        + titleName
-                        + "']| //iframe[contains(@ng-src,'apex') or contains(@src,'apex')]//ancestor::div[contains(@class,'modal-content')][1]//div[contains(text(),'"
-                        + titleName + "')]"));
-    }
-
-    /**
-     * return true if overlay open up with the required title
-     *
-     * @param titleName
-     * @return
-     */
-    private boolean isSpecificOverlayDisplayed(String titleName) {
-        I.amPerforming().switchTo().parentFrame();
-        govgrants.perform().mainPage().waitForNavigationLogoToDisappear();
-        boolean flag = false;
-        if (I.amPerforming().checkToSee().isDisplayed(getOverLayTitle(titleName))) {
-            flag = true;
-        }
-        return flag;
     }
 
     /**

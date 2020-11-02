@@ -113,11 +113,6 @@ public class FlexTableSteps {
         flexTablePage.assertEditOpenInSameTab();
     }
 
-    @Then("^I (see|softly see) \"([^\"]*)\" opens in overLay window$")
-    public void assertEditOpensInOverLayWindow(String usage, String titleName) {
-        flexTablePage.asserTextInOverLayIframe(usage, titleName);
-    }
-
     @Then("^I see entire page is refreshing$")
     public void assertEntirePageRefresh() {
         flexTablePage.asserEntirePageRefreshOnButtonClick();
