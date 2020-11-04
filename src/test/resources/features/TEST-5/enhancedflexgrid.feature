@@ -2511,3 +2511,38 @@ Business Need: Enhanced Flex Grid Component Scenarios
     Examples:
       | newFieldsApi                            | defaultFieldsApi                                                                                                                                                                                                                   |
       | ProjectTitle__c,CurrentProjectPeriod__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+
+  @111923  @validateToolTipDisplayedAtHoverOnColumnValueInsideEnhancedGrid
+  Scenario Outline: validate tool tip displayed at hover on column value inside Flex grid Enhanced
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Road Construction Annoumsment" in "---program:-:enhancedGridTableId---" panel
+    When I hovering mouse on "<new_helpText>" at column inside table "---program:-:enhancedGridTableId---"
+    Then I see "<new_helpText>" shown at mouse hover inside "---program:-:enhancedGridTableId---" table
+
+    Examples:
+      | new_helpText                  |
+      | Road Construction Annoumsment |
+
+  @111921  @validateToolTipDisplayedAtHoverOnColumnValueInsideEnhancedGridChildTable
+  Scenario Outline: validate tool tip displayed at hover on column value inside Flex grid Enhanced child table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "USAID/Burundi TUBITEHO Health Activity" in "---program:-:enhancedGridTableId---" panel
+    When I expand nested table containing column value "USAID/Burundi TUBITEHO Health Activity"
+    When I hovering mouse on "<new_helpText>" at column inside table "---program:-:tmpGrantorActiveAwardsGridTableId---"
+    Then I see "<new_helpText>" shown at mouse hover inside "---program:-:tmpGrantorActiveAwardsGridTableId---" table
+
+    Examples:
+      | new_helpText                  |
+      | Road Construction Annoumsment |

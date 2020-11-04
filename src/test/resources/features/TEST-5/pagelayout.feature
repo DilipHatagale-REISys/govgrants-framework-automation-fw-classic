@@ -2568,3 +2568,54 @@ Business Need: Page Layout Component Scenarios
     Examples:
       | newFieldsApi                                           | defaultFieldsApi                           |
       | Name1__c,BusinessRole__c,Responsibility__c,Test_URL__c | Name1__c,BusinessRole__c,Responsibility__c |
+
+  @111877    @verifyBulbIconAtHeaderInstructionTextInsidePageLayoutForPMUser-gPlanning
+  Scenario: verify bulb icon at header instruction text at program detail page for pm user
+   When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    Then I see bulb icon at header instruction is displayed
+
+  @111900    @verifyBulbIconAtHeaderInstructionTextInsidePageLayoutForPMUser-gApplication
+  Scenario: verify bulb icon at header instruction text at program detail page for pm user at application phase
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    Then I see bulb icon at header instruction is displayed
+
+  @112569   @validateRequiredForSubmitSymbolAtPageBlockDetailForDescriptionField-gPlanning
+  Scenario: validate required for submit icon at description Field
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantee State Program | Name                      | PBD-2781                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+   Then I see required for submit symbol as "fa-exclamation-triangle" at "fieldObjectives__c" field
+
+  @112540   @validateRequiredForSubmitSymbolAtPageBlockDetailForDescriptionFieldForPMUser-gPlanning
+  Scenario: validate required for submit icon at description Field for PM user
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantee State Program | Name                      | PBD-2781                    |
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    Then I see required for submit symbol as "fa-exclamation-triangle" at "fieldObjectives__c" field

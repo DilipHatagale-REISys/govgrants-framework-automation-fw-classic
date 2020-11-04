@@ -161,6 +161,11 @@ public class PageLayoutSteps {
         pageLayoutPage.clickOnSelectLinkForLookupSpecificRecord(organizationName);
     }
 
+    @And("I click on refresh button at collab")
+    public void iClickOnRefreshButtonAtCollab() {
+        pageLayoutPage.clickRefreshButtonAtCollabPhase();
+    }
+
     @Then("^I see \"([^\"]*)\" shown as over view title in header \"([^\"]*)\"$")
     public void assertOverViewTitleWithHeader(String overViewTitle, String overViewHeader) {
         pageLayoutPage.assertOverViewTitleWithHeader(overViewTitle, overViewHeader);
@@ -545,11 +550,26 @@ public class PageLayoutSteps {
 
     @Then("I see entered text in my feed section displayed properly")
     public void iSeeEnteredTextInMyFeedSectionDisplayedProperly() {
-    pageLayoutPage.assertAlignmentOfTextInsideMyFeedSection();
+        pageLayoutPage.assertAlignmentOfTextInsideMyFeedSection();
     }
 
     @Then("^I see \"([^\"]*)\" shown as page instruction text$")
     public void assertPageInstructionText(String pageInstructionText) {
         pageLayoutPage.assertPageInstructionText(pageInstructionText);
+    }
+
+    @Then("I see bulb icon at header instruction is displayed")
+    public void iSeeBulbIconAtHeaderInstructionIsDisplayed() {
+        pageLayoutPage.assertBulbIconAtHeaderInstruction();
+    }
+
+    @Then("I see collab my feed page refreshed")
+    public void iSeeCollabMyFeedPageRefreshed() {
+        pageLayoutPage.assertCollabPageRefreshed();
+    }
+
+    @Then("I see required for submit symbol as {string} at {string} field")
+    public void iSeeRequiredForSubmitSymbolAsAtField(String symbol, String fieldName) {
+        pageLayoutPage.assertSymbolAtRequiredForSubmitField(symbol, fieldName);
     }
 }

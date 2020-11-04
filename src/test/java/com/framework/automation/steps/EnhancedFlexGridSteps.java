@@ -28,6 +28,11 @@ public class EnhancedFlexGridSteps {
         enhancedFlexGrid.enterValueForTextareaAtEnhancedGridColumn(enteredValue, tableId);
     }
 
+    @When("I hovering mouse on {string} at column inside table {string}")
+    public void iHoveringMouseOnTextInsideTable(String text, String tableId) {
+        enhancedFlexGrid.mouseHoverOnColumnValueInsideTableId(text, tableId);
+    }
+
     @Then("^I see Advance Filter is disabled from table \"([^\"]*)\" with data target value \"([^\"]*)\"$")
     public void assertAdvanceFilterOptionDisabled(String tableId, String dataTargetValue) {
         enhancedFlexGrid.assertDisableAdvanceFilterFromEnhancedGrid(tableId, dataTargetValue);
@@ -287,5 +292,10 @@ public class EnhancedFlexGridSteps {
     @Then("^I (see|softly see) sorting label as \"([^\"]*)\" inside \"([^\"]*)\" table$")
     public void iSeeSortingLabelAsInsideTable(String usage, String label, String tableId) {
         enhancedFlexGrid.assertSortingLabelAtEnhancedGrid(usage, label, tableId);
+    }
+
+    @Then("I see {string} shown at mouse hover inside {string} table")
+    public void iSeeShownAtMouseHoverInsideTable(String hoverText, String tableId) {
+        enhancedFlexGrid.assertMouseHoverTextAtColumnValueInsideTableId(hoverText,tableId);
     }
 }
