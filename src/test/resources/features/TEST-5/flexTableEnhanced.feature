@@ -461,7 +461,7 @@ Business Need: Flex Table enhanced Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "" in "---program:-:flexGridEnhancedDataTableId---" panel
-    When I hovering mouse on "<new_helpText>" at column inside table "---program:-:flexGridEnhancedDataTableId---"
+    When I hovering mouse on table id "---program:-:flexGridEnhancedDataTableId---" with table row level icon "<new_helpText>" for column value "GT-IE11G-001"
     Then I see "<new_helpText>" shown at mouse hover inside "---program:-:flexGridEnhancedDataTableId---" table
 
     Examples:

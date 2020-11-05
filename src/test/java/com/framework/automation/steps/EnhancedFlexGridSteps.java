@@ -28,11 +28,6 @@ public class EnhancedFlexGridSteps {
         enhancedFlexGrid.enterValueForTextareaAtEnhancedGridColumn(enteredValue, tableId);
     }
 
-    @When("I hovering mouse on {string} at column inside table {string}")
-    public void iHoveringMouseOnTextInsideTable(String text, String tableId) {
-        enhancedFlexGrid.mouseHoverOnColumnValueInsideTableId(text, tableId);
-    }
-
     @Then("^I see Advance Filter is disabled from table \"([^\"]*)\" with data target value \"([^\"]*)\"$")
     public void assertAdvanceFilterOptionDisabled(String tableId, String dataTargetValue) {
         enhancedFlexGrid.assertDisableAdvanceFilterFromEnhancedGrid(tableId, dataTargetValue);

@@ -1187,6 +1187,28 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * return true if required field message displayed at page layout top right header
+     *
+     * @param message1
+     * @param message2
+     * @author ashwini.mahore
+     */
+    public void assertRequiredFieldMessageAtHeader(String message1, String message2) {
+        Assert.assertTrue(isExpectedRequiredFieldMessageDisplayedAtHeader(message1, message2));
+    }
+
+
+    /**
+     * return true if yellow dot badge displayed at tab under page layout if any required field is blank
+     *
+     * @param tabName
+     * @author ashwini.mahore
+     */
+    public void assertMissingFieldBadgeOnTab(String tabName) {
+        Assert.assertTrue(isRequiredFieldBadgeDisplayedAtExpectedTab(tabName));
+    }
+
+    /**
      * get owner organisation lookup modal complete content
      *
      * @return
@@ -2328,6 +2350,38 @@ public class PageLayoutPage extends GovGrantsManager {
     public Boolean isExpectedSymbolDisplayedAtRequiredForSubmitField(String symbol, String fieldName) {
         boolean flag = false;
         if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + fieldName + "']//span[contains(@class,'" + symbol + "')]"))) {
+            flag = true;
+        }
+        return flag;
+    }
+
+    /**
+     * return true if expected triangle symbol displayed at required for submit field at page layout
+     *
+     * @param message1
+     * @param message2
+     * @author ashwini.mahore
+     */
+    public Boolean isExpectedRequiredFieldMessageDisplayedAtHeader(String message1, String message2) {
+        boolean flag = false;
+        WebElement fieldMessage = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@class='fieldMessage']"));
+        if (fieldMessage.getText().contains(message1) && fieldMessage.getText().contains(message2)) {
+            flag = true;
+        }
+        return flag;
+    }
+
+
+    /**
+     * return true if yellow dot badge displayed at tab under page layout if any required field is blank
+     *
+     * @param tabName
+     * @author ashwini.mahore
+     */
+    public Boolean isRequiredFieldBadgeDisplayedAtExpectedTab(String tabName) {
+        boolean flag = false;
+        TestingBlazeGlobal.setVariable("highlightElements", "off");
+        if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[" + I.amPerforming().sanityOfXpathTo().equals("text()", tabName) + "]//span[contains(@class,'tabYellowDot')]"))) {
             flag = true;
         }
         return flag;

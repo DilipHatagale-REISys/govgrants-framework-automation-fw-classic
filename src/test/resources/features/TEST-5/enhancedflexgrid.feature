@@ -2522,7 +2522,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "Road Construction Annoumsment" in "---program:-:enhancedGridTableId---" panel
-    When I hovering mouse on "<new_helpText>" at column inside table "---program:-:enhancedGridTableId---"
+    When I hovering mouse on table id "---program:-:enhancedGridTableId---" with table row level icon "<new_helpText>" for column value "GT-12132-001"
     Then I see "<new_helpText>" shown at mouse hover inside "---program:-:enhancedGridTableId---" table
 
     Examples:
@@ -2530,7 +2530,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
       | Road Construction Annoumsment |
 
   @111921  @validateToolTipDisplayedAtHoverOnColumnValueInsideEnhancedGridChildTable
-  Scenario Outline: validate tool tip displayed at hover on column value inside Flex grid Enhanced child table
+  Scenario: validate tool tip displayed at hover on column value inside Flex grid Enhanced child table
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2540,9 +2540,5 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     When I perform quick search for "USAID/Burundi TUBITEHO Health Activity" in "---program:-:enhancedGridTableId---" panel
     When I expand nested table containing column value "USAID/Burundi TUBITEHO Health Activity"
-    When I hovering mouse on "<new_helpText>" at column inside table "---program:-:tmpGrantorActiveAwardsGridTableId---"
-    Then I see "<new_helpText>" shown at mouse hover inside "---program:-:tmpGrantorActiveAwardsGridTableId---" table
-
-    Examples:
-      | new_helpText                  |
-      | Road Construction Annoumsment |
+    When I hovering mouse on table id "---program:-:tmpGrantorActiveAwardsGridTableId---" with table row level icon "USAID/Burundi TUBITEHO Health Activity" for column value "AD-Grant--10"
+    Then I see "USAID/Burundi TUBITEHO Health Activity" shown at mouse hover inside "---program:-:tmpGrantorActiveAwardsGridTableId---" table

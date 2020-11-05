@@ -87,16 +87,6 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         }
     }
 
-    /**
-     * hover on column value inside enhanced grid/enhanced data table
-     *
-     * @param text
-     * @param tableId
-     * @author ashwini.mahore
-     */
-    public void mouseHoverOnColumnValueInsideTableId(String text, String tableId) {
-        I.amPerforming().scroll().toMoveToElement(I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@id='" + tableId + "']//*[text()='" + text + "']")));
-    }
 
     /**
      * assert true if changed icon css of enhanced grid table edit action is

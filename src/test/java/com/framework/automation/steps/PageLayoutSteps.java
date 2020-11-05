@@ -572,4 +572,14 @@ public class PageLayoutSteps {
     public void iSeeRequiredForSubmitSymbolAsAtField(String symbol, String fieldName) {
         pageLayoutPage.assertSymbolAtRequiredForSubmitField(symbol, fieldName);
     }
+
+    @Then("I see field message with text as {string} and {string}")
+    public void iSeeFieldMessageWithTextAsAnd(String message1, String message2) {
+        pageLayoutPage.assertRequiredFieldMessageAtHeader(message1,message2);
+    }
+
+    @Then("I see missing field badge on {string} tab")
+    public void iSeeMissingFieldBadgeOnTab(String tabName) {
+        pageLayoutPage.assertMissingFieldBadgeOnTab(tabName);
+    }
 }
