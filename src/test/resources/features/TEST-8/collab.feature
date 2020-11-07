@@ -8,9 +8,13 @@ Business Need: collab Component Scenarios
     When I login as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
+    When I click on "Menu" in the page details
+    And I select "All Users" from dropdown
     And I click on "Delete" action at "Test Automation Admin Comment" comment inside my feed
     And I click modal button "OK"
     And I refresh the page
+    When I click on "Menu" in the page details
+    And I select "All Users" from dropdown
     And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
     And I enter value "Test Automation Admin Comment" in my feed section and share the comment
     And I click on "Delete" action at "Test Automation Admin Comment" comment inside my feed
@@ -21,9 +25,13 @@ Business Need: collab Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Home" tab
+    When I click on "Menu" in the page details
+    And I select "All Users" from dropdown
     And I click on "Delete" action at "Test Automation SPI Comment" comment inside my feed
     And I click modal button "OK"
     And I refresh the page
+    When I click on "Menu" in the page details
+    And I select "All Users" from dropdown
     And I click on "Comment" action at "Test Post for automation-SPI DND" comment inside my feed
     And I enter value "Test Automation SPI Comment" in my feed section and share the comment
     And I click on "Delete" action at "Test Automation SPI Comment" comment inside my feed
@@ -74,9 +82,13 @@ Business Need: collab Component Scenarios
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
+    When I click on "Menu" in the page details
+    And I select "All Users" from dropdown
     And I click on "Delete" action at "Test Automation PM Comment" comment inside my feed
     And I click modal button "OK"
     And I refresh the page
+    When I click on "Menu" in the page details
+    And I select "All Users" from dropdown
     And I click on "Comment" action at "Test Post for automation-PM DND" comment inside my feed
     And I enter value "Test Automation PM Comment" in my feed section and share the comment
     And I click on "Delete" action at "Test Automation PM Comment" comment inside my feed
@@ -99,11 +111,15 @@ Business Need: collab Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Home" tab
+    When I click on "Menu" in the page details
+    And I select "All Users" from dropdown
     And I click on "Comment" action at "Test Post for automation-SPI DND" comment inside my feed
     And I enter value "Test Automation SPI Comment delete" in my feed section and share the comment
     And I click on "Delete" action at "Test Automation SPI Comment delete" comment inside my feed
     And I click modal button "OK"
     And I refresh the page
+    When I click on "Menu" in the page details
+    And I select "All Users" from dropdown
     Then I do not see "Test Automation SPI Comment delete" inside flex table with id "---program:-:myFeedTableId---"
 
   @104338    @verifyPostBoxAcceptAndWrapTextInProperFormatByLoggedInAsSPIUserAtApplicationPhase
@@ -170,3 +186,27 @@ Business Need: collab Component Scenarios
     And I enter value "Test Automation PM application phase Comment" in my feed section and share the post
     And I click on "Delete" action from dropdown at "Test Automation PM application phase Comment" comment inside my feed
     Then I see confirmation box with body "Are you sure to delete this post?" is displayed
+
+  @111868    @verifyThatByClickOnRefreshIconALoadingIconAppearsAtCollabTabByLoginAsADMINUser
+  Scenario: validate that by click on refresh icon, a loading icon appears at collab tab by login as ADMIN user
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I click on refresh button at collab
+    Then I see collab my feed page refreshed
+
+  @111864    @verifyThatByClickOnRefreshIconALoadingIconAppearsAtCollabTabByLoginAsPMUser
+  Scenario: validate that by click on refresh icon, a loading icon appears at collab tab by login as pm user
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I click on refresh button at collab
+    Then I see collab my feed page refreshed
+
+  @111866    @verifyThatByClickOnRefreshIconALoadingIconAppearsAtCollabTabByLoginAsSPIUser
+  Scenario: validate that by click on refresh icon, a loading icon appears at collab tab by login as SPI user
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Collaboration (Collab)" tab
+    And I click on refresh button at collab
+    Then I see collab my feed page refreshed

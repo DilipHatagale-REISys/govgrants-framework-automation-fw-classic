@@ -2,6 +2,7 @@ package com.framework.automation.pageobject;
 
 import com.automation.rei.handlers.govgrants;
 import com.framework.automation.projectmanager.GovGrantsManager;
+import com.testingblaze.actionsfactory.api.ByUsing;
 import com.testingblaze.controller.TestingBlazeGlobal;
 import com.testingblaze.objects.Elements;
 import com.testingblaze.register.I;
@@ -85,6 +86,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
             inputField.enterText(enteredValue);
         }
     }
+
 
     /**
      * assert true if changed icon css of enhanced grid table edit action is
@@ -550,6 +552,17 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         } else if (usage.equalsIgnoreCase("softly see")) {
             I.amPerforming().assertionsTo().assertThat(isSortingLabelDisplayedAtEnhancedGrid(label, tableId)).isTrue();
         }
+    }
+
+    /**
+     * return true if text displayed on mouse hover at column value inside enhanced table/enhanced flex grid
+     *
+     * @param text
+     * @param tableId
+     * @author ashwini.mahore
+     */
+    public void assertMouseHoverTextAtColumnValueInsideTableId(String text, String tableId) {
+        Assert.assertTrue(isMouseHoverTextAtColumnValueDisplayedInsideTableId(text, tableId));
     }
 
     /*********
@@ -1485,6 +1498,24 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         try {
             if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='" + tableId + "']//div[contains(@class,'sortFieldMsg') and "
                     + I.amPerforming().sanityOfXpathTo().contains(".", label) + "]"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    /**
+     * return true if text displayed on mouse hover at column value inside enhanced table/enhanced flex grid
+     *
+     * @param text
+     * @param tableId
+     * @author ashwini.mahore
+     */
+    private boolean isMouseHoverTextAtColumnValueDisplayedInsideTableId(String text, String tableId) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']//*[@title='"+text+"']"))) {
                 flag = true;
             }
         } catch (Exception e) {

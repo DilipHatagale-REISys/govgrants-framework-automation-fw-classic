@@ -288,4 +288,9 @@ public class EnhancedFlexGridSteps {
     public void iSeeSortingLabelAsInsideTable(String usage, String label, String tableId) {
         enhancedFlexGrid.assertSortingLabelAtEnhancedGrid(usage, label, tableId);
     }
+
+    @Then("I see {string} shown at mouse hover inside {string} table")
+    public void iSeeShownAtMouseHoverInsideTable(String hoverText, String tableId) {
+        enhancedFlexGrid.assertMouseHoverTextAtColumnValueInsideTableId(hoverText,tableId);
+    }
 }

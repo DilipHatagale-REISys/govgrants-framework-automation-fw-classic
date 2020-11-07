@@ -490,7 +490,7 @@ public class PageLayoutPage extends GovGrantsManager {
      * @author ashwini.mahore
      */
     public void selectValueInsideRadioFieldAtFormLayout(String value, String fieldApiName) {
-        By getRadioButtons = By.xpath("//div[@id='"+fieldApiName+"']//*[local-name()='label' and contains(text(),'"+value+"')]");
+        By getRadioButtons = By.xpath("//div[@id='" + fieldApiName + "']//*[local-name()='label' and contains(text(),'" + value + "')]");
         I.amPerforming().click().on(getRadioButtons);
     }
 
@@ -872,6 +872,14 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * click on refresh button at collab my feed section inside page block detail
+     */
+    public void clickRefreshButtonAtCollabPhase() {
+        WebElement getRefreshButtonAtCollabPhase = I.amPerforming().getElementReference().of(ByUsing.healingXpathName("pageLayout_getCollabRefreshIcon"));
+        I.amPerforming().click().on(getRefreshButtonAtCollabPhase);
+    }
+
+    /**
      * click on close/search for lightning look up modal at page block detail
      */
     public void clickOnIconsAtOwnerOrganisationLightningLookUpModal(String iconName) {
@@ -1148,6 +1156,56 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public void assertPageInstructionText(String text) {
         Assert.assertTrue(isPageInstructionTextDisplayed(text));
+    }
+
+
+    /**
+     * assert true if bulb icon displayed at page instruction inside page layout
+     */
+    public void assertBulbIconAtHeaderInstruction() {
+        Assert.assertTrue(isBulbIconDisplayedAtPageInstructionInsidePageLayout());
+    }
+
+    /**
+     * assert true if collab my feed section refreshed
+     *
+     * @author ashwini.mahore
+     */
+    public void assertCollabPageRefreshed() {
+        Assert.assertTrue(isCollabMyFeedPageRefreshed());
+    }
+
+    /**
+     * return true if expected triangle symbol displayed at required for submit field at page layout
+     *
+     * @param symbol
+     * @param fieldName
+     * @author ashwini.mahore
+     */
+    public void assertSymbolAtRequiredForSubmitField(String symbol, String fieldName) {
+        Assert.assertTrue(isExpectedSymbolDisplayedAtRequiredForSubmitField(symbol, fieldName));
+    }
+
+    /**
+     * return true if required field message displayed at page layout top right header
+     *
+     * @param message1
+     * @param message2
+     * @author ashwini.mahore
+     */
+    public void assertRequiredFieldMessageAtHeader(String message1, String message2) {
+        Assert.assertTrue(isExpectedRequiredFieldMessageDisplayedAtHeader(message1, message2));
+    }
+
+
+    /**
+     * return true if yellow dot badge displayed at tab under page layout if any required field is blank
+     *
+     * @param tabName
+     * @author ashwini.mahore
+     */
+    public void assertMissingFieldBadgeOnTab(String tabName) {
+        Assert.assertTrue(isRequiredFieldBadgeDisplayedAtExpectedTab(tabName));
     }
 
     /**
@@ -2250,6 +2308,80 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean isPageInstructionTextDisplayed(String text) {
         boolean flag = false;
         if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@class='article']//div[" + I.amPerforming().sanityOfXpathTo().equals(".", text) + "]"))) {
+            flag = true;
+        }
+        return flag;
+    }
+
+
+    /**
+     * @return return true if text is displayed
+     * @author ashwini.mahore
+     */
+    private boolean isBulbIconDisplayedAtPageInstructionInsidePageLayout() {
+        boolean flag = false;
+        TestingBlazeGlobal.setVariable("highlightElements", "off");
+        if (I.amPerforming().checkToSee().isDisplayed(ByUsing.healingXpathName("pageLayout_getBulbIconAtHeaderInstruction"))) {
+            flag = true;
+        }
+        return flag;
+    }
+
+
+    /**
+     * @return return true if collab my feed section refreshed
+     * @author ashwini.mahore
+     */
+    private boolean isCollabMyFeedPageRefreshed() {
+        boolean flag = false;
+        if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='collabContainer']//div[@class='loadingCollabFeed active']"))) {
+            flag = true;
+        }
+        return flag;
+    }
+
+    /**
+     * return true if expected triangle symbol displayed at required for submit field at page layout
+     *
+     * @param symbol
+     * @param fieldName
+     * @author ashwini.mahore
+     */
+    public Boolean isExpectedSymbolDisplayedAtRequiredForSubmitField(String symbol, String fieldName) {
+        boolean flag = false;
+        if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + fieldName + "']//span[contains(@class,'" + symbol + "')]"))) {
+            flag = true;
+        }
+        return flag;
+    }
+
+    /**
+     * return true if expected triangle symbol displayed at required for submit field at page layout
+     *
+     * @param message1
+     * @param message2
+     * @author ashwini.mahore
+     */
+    public Boolean isExpectedRequiredFieldMessageDisplayedAtHeader(String message1, String message2) {
+        boolean flag = false;
+        WebElement fieldMessage = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@class='fieldMessage']"));
+        if (fieldMessage.getText().contains(message1) && fieldMessage.getText().contains(message2)) {
+            flag = true;
+        }
+        return flag;
+    }
+
+
+    /**
+     * return true if yellow dot badge displayed at tab under page layout if any required field is blank
+     *
+     * @param tabName
+     * @author ashwini.mahore
+     */
+    public Boolean isRequiredFieldBadgeDisplayedAtExpectedTab(String tabName) {
+        boolean flag = false;
+        TestingBlazeGlobal.setVariable("highlightElements", "off");
+        if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[" + I.amPerforming().sanityOfXpathTo().equals("text()", tabName) + "]//span[contains(@class,'tabYellowDot')]"))) {
             flag = true;
         }
         return flag;
