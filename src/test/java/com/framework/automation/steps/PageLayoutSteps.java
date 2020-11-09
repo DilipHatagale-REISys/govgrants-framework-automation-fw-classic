@@ -543,7 +543,7 @@ public class PageLayoutSteps {
         pageLayoutPage.assertDisplayOfCurrentDateOnSendEmailModal(label);
     }
 
-    @Then("I see hyperlink at value \"([^\"]*)\" inside \"([^\"]*)\" modal")
+    @Then("I see hyperlink at value \"([^\"]*)\" inside \"([^\"]*)\" modal$")
     public void assertHyperlinkAtColumnValueInsideEnhancedGrid(String value, String modalId) {
         pageLayoutPage.assertHyperlinkIsDisplayedAtValueInsideModal(value, modalId);
     }
@@ -575,11 +575,26 @@ public class PageLayoutSteps {
 
     @Then("I see field message with text as {string} and {string}")
     public void iSeeFieldMessageWithTextAsAnd(String message1, String message2) {
-        pageLayoutPage.assertRequiredFieldMessageAtHeader(message1,message2);
+        pageLayoutPage.assertRequiredFieldMessageAtHeader(message1, message2);
     }
 
     @Then("I see missing field badge on {string} tab")
     public void iSeeMissingFieldBadgeOnTab(String tabName) {
         pageLayoutPage.assertMissingFieldBadgeOnTab(tabName);
+    }
+
+    @Then("^I (see|do not see|softly see|softly do not see) \"([^\"]*)\" comment inside \"([^\"]*)\" post at collab$")
+    public void iSoftlySeeCommentInsidePostAtCollab(String usage, String comment, String post) {
+        pageLayoutPage.assertCommentAtCollabPhase(usage, comment, post);
+    }
+
+    @Then("I see {string} option is displayed at collab menu")
+    public void iSeeOptionIsDisplayedAtCollabMenu(String option) {
+        pageLayoutPage.assertMenuOptionsUnderCollab(option);
+    }
+
+    @Then("I see {string} page displayed")
+    public void iSeePageDisplayed(String page) {
+        pageLayoutPage.assertchatterPageDisplayed(page);
     }
 }
