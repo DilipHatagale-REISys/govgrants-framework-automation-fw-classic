@@ -1209,6 +1209,45 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * return true if yellow dot badge displayed at tab under page layout if any required field is blank
+     *
+     * @param comment
+     * @param post
+     * @author ashwini.mahore
+     */
+    public void assertCommentAtCollabPhase(String usage, String comment, String post) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isCommentRequiredAtCollabPhase(comment, post));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isCommentRequiredAtCollabPhase(comment, post)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isCommentRequiredAtCollabPhase(comment, post));
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isCommentRequiredAtCollabPhase(comment, post)).isFalse();
+        }
+    }
+
+    /**
+     * return true if expected options displayed under menu at collab
+     *
+     * @param option
+     * @author ashwini.mahore
+     */
+    public void assertMenuOptionsUnderCollab(String option) {
+        Assert.assertTrue(isMenuOptionsUnderCollabDisplayed(option));
+    }
+
+    /**
+     * return true if expected page displayed
+     *
+     * @param page
+     * @author ashwini.mahore
+     */
+    public void assertchatterPageDisplayed(String page) {
+        Assert.assertTrue(isChatterPageDisplayed(page));
+    }
+
+    /**
      * get owner organisation lookup modal complete content
      *
      * @return
@@ -2371,7 +2410,6 @@ public class PageLayoutPage extends GovGrantsManager {
         return flag;
     }
 
-
     /**
      * return true if yellow dot badge displayed at tab under page layout if any required field is blank
      *
@@ -2382,6 +2420,50 @@ public class PageLayoutPage extends GovGrantsManager {
         boolean flag = false;
         TestingBlazeGlobal.setVariable("highlightElements", "off");
         if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[" + I.amPerforming().sanityOfXpathTo().equals("text()", tabName) + "]//span[contains(@class,'tabYellowDot')]"))) {
+            flag = true;
+        }
+        return flag;
+    }
+
+    /**
+     * return true if yellow dot badge displayed at tab under page layout if any required field is blank
+     *
+     * @param comment
+     * @param post
+     * @author ashwini.mahore
+     */
+    public Boolean isCommentRequiredAtCollabPhase(String comment, String post) {
+        boolean flag = false;
+        WebElement getComment = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@id='collabContainer']//*[text()='" + post + "']/ancestor::div[contains(@class,'feedItem')]//div[contains(@class,'singleCommentTextWrap')]//div/following-sibling::div"));
+        if (getComment.getText().contains(comment)) {
+            flag = true;
+        }
+        return flag;
+    }
+
+    /**
+     * return true if expected options displayed under menu at collab
+     *
+     * @param option
+     * @author ashwini.mahore
+     */
+    public Boolean isMenuOptionsUnderCollabDisplayed(String option) {
+        boolean flag = false;
+        if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//ul[contains(@class,'dropdown-menu')]//*[text()='option']"))) {
+            flag = true;
+        }
+        return flag;
+    }
+
+    /**
+     * return true if expected page displayed
+     *
+     * @param option
+     * @author ashwini.mahore
+     */
+    public Boolean isChatterPageDisplayed(String option) {
+        boolean flag = false;
+        if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='" + option + "']"))) {
             flag = true;
         }
         return flag;

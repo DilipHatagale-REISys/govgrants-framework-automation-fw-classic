@@ -2763,3 +2763,91 @@ Business Need: Page Layout Component Scenarios
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
     Then I see missing field badge on "Overview" tab
+
+  @112370    @verifyBadgesShownAtOverviewTabInEditLayoutIfRequiredForSubmitFieldIsBlankForPMUser-gPlanning
+  Scenario: verify that badges shown at Overview tab in page edit mode if required field from overview tab is blank for PM user
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantee State Program | Name                      | PBD-9163                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    Then I see missing field badge on "Overview" tab
+
+  @112363    @requiredForSaveBehaviourAtPageBlockDetailForAdminUser-gPlanning
+  Scenario Outline: Changing value for required for save behaviour field from config and checking error message at program save for admin user
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to url "<URL_Value>"
+    Then I see "chatterPage" page displayed
+
+    Examples:
+      | URL_Value                                                    |
+      | https://login.salesforce.com/_ui/core/chatter/ui/ChatterPage |
+
+  @112373  @verifyBadgesShownAtOverviewTabInViewLayoutIfRequiredForSubmitFieldIsBlankByLoginAsSPIUser
+  Scenario: verify that badges shown at Overview tab in page view mode if required field from overview tab is blank by login as SPI user
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | ApplicationView    | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | ApplicationView    | Name                      | PBD-3896                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "{Framework_recordUsed:ApplicationWitEditActionForSPIUser}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationWitEditActionForSPIUser}" inside table
+    Then I see missing field badge on "Overview" tab
+
+  @112913    @verifyHelpTextAtAtPageBlockSeperator-gPlanning
+  Scenario Outline: Changing content of help text long field at page block seperator type of block from config and validating it at program detail page
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName      | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active      | false             | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <old_helpText>    | Grantee State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName      | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true           | Grantee State Program | Name                      | PBD-9228                   |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText> | Grantee State Program | Name                      | PBD-9228                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I hovering mouse on help text icon inside "Test Page Block1"
+    Then I see "<new_helpText>" shown as help text
+
+    Examples:
+      | new_helpText             | old_helpText |
+      | Help Text for Automation | Help Text    |
+
+  @113065    @verifyHelpTextAtAtPageBlockSeperatorForPMUser-gPlanning
+  Scenario Outline: Changing content of help text long field at page block seperator type of block from config and validating it at program detail page for PM user
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName      | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active      | false             | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <old_helpText>    | Grantee State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName      | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true           | Grantee State Program | Name                      | PBD-9228                   |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText> | Grantee State Program | Name                      | PBD-9228                   |
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I hovering mouse on help text icon inside "Test Page Block1"
+    Then I see "<new_helpText>" shown as help text
+
+    Examples:
+      | new_helpText             | old_helpText |
+      | Help Text for Automation | Help Text    |
