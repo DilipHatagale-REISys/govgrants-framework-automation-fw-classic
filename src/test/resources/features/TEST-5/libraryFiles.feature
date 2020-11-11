@@ -1598,7 +1598,7 @@ Business Need: Library Files Component Scenarios
     When I click on expand icon at library/folder "Secretary of Health"
     When I click on expand icon at library/folder "AdminCreatedFolder1"
     When I click on dropdown at library/folder/file "AdminCreatedFile.txt"
-    Then I do not see "Edit File" option is present at library/folder/file "AdminCreatedFile.txt"
+    Then I see "Edit File" option is present at library/folder/file "AdminCreatedFile.txt"
 
   @81593 @validateThatAuthorCannotDeleteFileUploadedByOtherUser-HomePhase
   Scenario: Verify that author cannot see the Delete option at file uploaded by other users
@@ -1771,8 +1771,8 @@ Business Need: Library Files Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I click on SelectChange Folder in add file modal
-    Then I softly see library/folder/file "Department of Community Health" is displayed under files library
-    Then I softly do not see library/folder/file "UnitedHealth Group" is displayed under files library
+    Then I softly do not see library/folder/file "Department of Community Health" is displayed under files library
+    Then I softly see library/folder/file "UnitedHealth Group" is displayed under files library
 
     Examples:
       | actionUrlLongNewValue                                                                                                          | actionUrlLongDefaultValue                                                                           |
@@ -2535,3 +2535,15 @@ Business Need: Library Files Component Scenarios
     When I click on global search and select "Files"
     When I perform quick search inside global search "AssetLibraryTestData.pdf"
     Then I see value "AssetLibraryTestData.pdf" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
+
+  @114029 @validateTextBelowChooseFileBoxAtUploadFileModal-RecordLevel
+  Scenario: Verify the text given below upload choose file box under upload file modal at record level
+    When I login as "Automation-PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Attachments" sub tab
+    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+    Then I see informative text as "Upload single file up to 2 GB" inside upload file modal

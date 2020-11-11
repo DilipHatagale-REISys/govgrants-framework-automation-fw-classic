@@ -214,3 +214,36 @@ Business Need: Snapshot Config Component Scenarios
     When I "Send to Owner" in the approval decision
     When I navigate to "History" sub tab
     Then I see table with header "Snapshot History" contains records "currentdate"
+
+  @112878    @verifyAutoSnapShotCapturedWithIsActiveFieldByLoginAsAdminUser
+  Scenario: Validate Auto Snapshot is getting captured after record submission as submit for approval for second time by admin user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                       | fieldOrignalValue | filterId         |
+      | Auto Snapshot         | Is Active                       | false             | ApiGeneratedId:0 |
+      | Page Tabs Config      | Is Active                       | true              | ApiGeneratedId:2 |
+      | Page Layout Action    | History Snapshot-Action Enable? | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName                       | fieldNewValue                           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Auto Snapshot:Sobject Auto Snapshot | Is Active                       | true                                    | Program__c            | Name                      | SAS-0000                   |
+      | Auto Snapshot:Sobject Auto Snapshot | Expression JSON                 | govgrants_config:SnapShotExpressionJSON | Program__c            | Name                      | SAS-0000                   |
+      | Page Tabs Config:Page Layout Action | Is Active                       | true                                    | Grantee State Program | Name                      | TAB-027                    |
+      | Page Layout Action                  | History Snapshot-Action Enable? | false                                   | Grantee State Program | Name                      | Submit For Approval        |
+    And I click on "Submit For Approval" in the page details
+    And I refresh the page
+    When I navigate to "History" sub tab
+    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
+    And I navigate to "Planning" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
+    When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
+    When I "Send to Owner" in the approval decision
+    When I re-login to "As a Grantor" app as "Automation" user on "default" portal
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click on "Submit For Approval" in the page details
+    And I refresh the page
+    When I navigate to "History" sub tab
+    Then I see table with header "Snapshot History" contains records "currentdate"
