@@ -151,6 +151,11 @@ public class PageLayoutSteps {
         pageLayoutPage.selectValueInsideRadioFieldAtFormLayout(value, fieldApiName);
     }
 
+    @And("^I enter value \"([^\"]*)\" in the (post|comment) at collab$")
+    public void iEnterValueInThePostAtMyFeedSection(String postOrComment, String sharingType) {
+        pageLayoutPage.enterValueInsidePostOrCommentCollab(postOrComment, sharingType.equalsIgnoreCase("post"));
+    }
+
     @And("^I click on expand collapse icon for panel heading \"([^\"]*)\"$")
     public void clickOnExpandColapseIcon(String panelHeaderName) {
         pageLayoutPage.clickExpandCollapseIconAtTableHeader(panelHeaderName);
@@ -271,9 +276,9 @@ public class PageLayoutSteps {
         pageLayoutPage.assertChangedFieldInsidePageBlockDetailDisplayed(changedFieldName);
     }
 
-    @Then("^I see \"([^\"]*)\" is not displayed inside page block detail$")
-    public void assertSpecificFieldAtPageBlockDetailNotDisplayed(String changedFieldName) {
-        pageLayoutPage.assertSpecificFieldInsidePageBlockDetailNotDisplayed(changedFieldName);
+    @Then("^I (see|softly see) \"([^\"]*)\" is not displayed inside page block detail$")
+    public void assertSpecificFieldAtPageBlockDetailNotDisplayed(String usage, String changedFieldName) {
+        pageLayoutPage.assertSpecificFieldInsidePageBlockDetailNotDisplayed(usage, changedFieldName);
     }
 
     @Then("^I see \"([^\"]*)\" shown at number \"([^\"]*)\" inside page block detail$")
@@ -578,9 +583,9 @@ public class PageLayoutSteps {
         pageLayoutPage.assertRequiredFieldMessageAtHeader(message1, message2);
     }
 
-    @Then("I see missing field badge on {string} tab")
-    public void iSeeMissingFieldBadgeOnTab(String tabName) {
-        pageLayoutPage.assertMissingFieldBadgeOnTab(tabName);
+    @Then("^I (see|do not see|softly do not see) missing field badge on \"([^\"]*)\" tab$")
+    public void iSeeMissingFieldBadgeOnTab(String usage, String tabName) {
+        pageLayoutPage.assertMissingFieldBadgeOnTab(usage, tabName);
     }
 
     @Then("^I (see|do not see|softly see|softly do not see) \"([^\"]*)\" comment inside \"([^\"]*)\" post at collab$")
@@ -596,5 +601,15 @@ public class PageLayoutSteps {
     @Then("I see {string} page displayed")
     public void iSeePageDisplayed(String page) {
         pageLayoutPage.assertchatterPageDisplayed(page);
+    }
+
+    @Then("I see informative text as {string} inside upload file modal")
+    public void iSeeTextAsInsideUploadFileModal(String text) {
+        pageLayoutPage.assertTextInsideUploadFileModal(text);
+    }
+
+    @Then("^I (see|do not see) mention auto complete list is displayed at collab$")
+    public void iSeeMentionAutoCompleteListIsNotDisplayedAtCollab(String usage) {
+        pageLayoutPage.isMentionAutoCompleteListDisplayedAtCollab(usage);
     }
 }

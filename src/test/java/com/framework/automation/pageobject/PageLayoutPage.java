@@ -273,8 +273,12 @@ public class PageLayoutPage extends GovGrantsManager {
      *
      * @param changedFieldName
      */
-    public void assertSpecificFieldInsidePageBlockDetailNotDisplayed(String changedFieldName) {
-        Assert.assertTrue(isSpecificFieldAtPageBlockDetailDisplayed(changedFieldName));
+    public void assertSpecificFieldInsidePageBlockDetailNotDisplayed(String usage, String changedFieldName) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isSpecificFieldAtPageBlockDetailDisplayed(changedFieldName));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isSpecificFieldAtPageBlockDetailDisplayed(changedFieldName)).isTrue();
+        }
     }
 
     /**
@@ -492,6 +496,26 @@ public class PageLayoutPage extends GovGrantsManager {
     public void selectValueInsideRadioFieldAtFormLayout(String value, String fieldApiName) {
         By getRadioButtons = By.xpath("//div[@id='" + fieldApiName + "']//*[local-name()='label' and contains(text(),'" + value + "')]");
         I.amPerforming().click().on(getRadioButtons);
+    }
+
+    /**
+     * select value from radio buttons at form layout
+     *
+     * @param value
+     * @author ashwini.mahore
+     */
+    public void enterValueInsidePostOrCommentCollab(String value, Boolean isPost) {
+        if (isPost) {
+            By feedSection = By.xpath("//div/textarea[@class='mention-for-post']");
+            I.amPerforming().textInput().in(feedSection, value);
+            I.amPerforming().waitFor().makeThreadSleep(2000);
+        } else {
+            By commentSection = By.xpath("//div[@class='mentions-autocomplete-list' and @style='display: none;']/preceding-sibling::textarea[@class='mention-for-comment']");
+            I.amPerforming().waitFor().ElementToBeVisible(commentSection, 2000);
+            I.amPerforming().click().withJavaScript(commentSection);
+            I.amPerforming().textInput().in(commentSection, value);
+        }
+
     }
 
     /**
@@ -1204,8 +1228,14 @@ public class PageLayoutPage extends GovGrantsManager {
      * @param tabName
      * @author ashwini.mahore
      */
-    public void assertMissingFieldBadgeOnTab(String tabName) {
-        Assert.assertTrue(isRequiredFieldBadgeDisplayedAtExpectedTab(tabName));
+    public void assertMissingFieldBadgeOnTab(String usage, String tabName) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isRequiredFieldBadgeDisplayedAtExpectedTab(tabName));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isRequiredFieldBadgeDisplayedAtExpectedTab(tabName));
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isRequiredFieldBadgeDisplayedAtExpectedTab(tabName));
+        }
     }
 
     /**
@@ -1245,6 +1275,29 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public void assertchatterPageDisplayed(String page) {
         Assert.assertTrue(isChatterPageDisplayed(page));
+    }
+
+    /**
+     * return true if expected text displayed inside upload file modal
+     *
+     * @param text
+     * @author ashwini.mahore
+     */
+    public void assertTextInsideUploadFileModal(String text) {
+        Assert.assertTrue(isTextInsideUploadFileModalDisplayed(text));
+    }
+
+    /**
+     * return true if @ mention autocomplete list is displayed inside collab - my feed section
+     *
+     * @author ashwini.mahore
+     */
+    public void isMentionAutoCompleteListDisplayedAtCollab(String usage) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isMentionAutoCompleteListDisplayed());
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isMentionAutoCompleteListDisplayed());
+        }
     }
 
     /**
@@ -2419,8 +2472,11 @@ public class PageLayoutPage extends GovGrantsManager {
     public Boolean isRequiredFieldBadgeDisplayedAtExpectedTab(String tabName) {
         boolean flag = false;
         TestingBlazeGlobal.setVariable("highlightElements", "off");
-        if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[" + I.amPerforming().sanityOfXpathTo().equals("text()", tabName) + "]//span[contains(@class,'tabYellowDot')]"))) {
+        WebElement getBadgesOnTab = I.amPerforming().getElementReference().of(ByUsing.xpath("//span[" + I.amPerforming().sanityOfXpathTo().equals("text()", tabName) + "]//span[contains(@class,'tabYellowDot')]"));
+        if (getBadgesOnTab.getAttribute("style").contains("inline-block")) {
             flag = true;
+        } else if (getBadgesOnTab.getAttribute("style").contains("display:none")) {
+            flag = false;
         }
         return flag;
     }
@@ -2467,5 +2523,34 @@ public class PageLayoutPage extends GovGrantsManager {
             flag = true;
         }
         return flag;
+    }
+
+    /**
+     * return true if expected text displayed inside upload file modal
+     *
+     * @param text
+     * @author ashwini.mahore
+     */
+    public Boolean isTextInsideUploadFileModalDisplayed(String text) {
+        boolean flag = false;
+        if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='WorkspaceFiles']//*[contains(normalize-space(text()),'" + text + "')]"))) {
+            flag = true;
+        }
+        return flag;
+    }
+
+    /**
+     * return true if @ mention autocomplete list is displayed inside collab - my feed section
+     *
+     * @author ashwini.mahore
+     */
+    public Boolean isMentionAutoCompleteListDisplayed() {
+        boolean flag = false;
+        TestingBlazeGlobal.setVariable("highlightElements", "off");
+        WebElement ele = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@class='post active']//div[@class='mentions-autocomplete-list']"));
+        if (ele.getAttribute("style").contains("none")) {
+            flag = true;
+        }
+        return false;
     }
 }

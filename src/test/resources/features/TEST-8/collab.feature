@@ -333,3 +333,20 @@ Business Need: collab Component Scenarios
     When I click on "Menu" in the page details
     And I select "All Users" from dropdown
     Then I see "Framework Admin" inside flex table with id "---program:-:myFeedTableId---"
+
+  @112027    @verifyThatIfpmUserTriesToMentionExternalUserThenAutoCompleteListShouldNotDisplayedAtPost
+  Scenario: validate that if pm user tries to mention external user in post then mention auto complete list is not displayed
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Hello @Automation SPI" in the post at collab
+    Then I do not see mention auto complete list is displayed at collab
+
+  @114121    @verifyThatIfPMUserTriesToMenionExternalUserThenAutoCompleteListShouldNotDisplayedAtComment
+  Scenario: validate that if pm user tries to mention external user in comment then mention auto complete list is not displayed
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
+    And I enter value "Hello @Automation SPI" in the comment at collab
+    Then I do not see mention auto complete list is displayed at collab

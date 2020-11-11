@@ -2851,3 +2851,290 @@ Business Need: Page Layout Component Scenarios
     Examples:
       | new_helpText             | old_helpText |
       | Help Text for Automation | Help Text    |
+
+  @113066    @verifyHelpTextAtAtPageBlockSeperatorForSPIUser-gPlanning
+  Scenario Outline: Changing content of help text long field at page block seperator type of block from config and validating it at program detail page for SPI user
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName      | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active      | false             | ISASpend           | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <old_helpText>    | ISASpend           | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName      | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true           | ISASpend           | Name                      | PBD-9229                   |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText> | ISASpend           | Name                      | PBD-9229                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Grants" tab
+    When I perform quick search for "Test Data DND"
+    When I click on "View" icon for "Test Data DND" inside table
+    When I hovering mouse on help text icon inside "Test Automation Seperator"
+    Then I see "<new_helpText>" shown as help text
+
+    Examples:
+      | new_helpText             | old_helpText |
+      | Help Text for Automation | Help Text    |
+
+  @112368    @verifyBadgesShouldNotDisplayedAtOverviewTabInEditLayoutIfAllTheRequiredForSubmitFieldsAreFilledForAdminUser-gPlanning
+  Scenario: verify that badges are not displayed at Overview tab in page edit mode if all required for submit fields all filled for admin user
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantee State Program | Name                      | PBD-3098                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    Then I do not see missing field badge on "Overview" tab
+
+  @114071    @verifyDisplayOfBadgesIfReqFieldProjectGoalIsHiddenByUsingHideFieldJSONOnPicklistFieldValueFromConfig
+  Scenario: verify display of badges if req field is hidden by using hide field json at picklist field
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I clear the value from field "fieldProjectGoals__c"
+    When I click on "Save" in the page details
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HideBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValue | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                         | Grantee State Program | Name                      | PBD-9163                   |
+    When I click on "Edit" in the page details
+    And I enter value "Loan" into field "ProgramType__c"
+    Then I softly see "Project Goals" is not displayed inside page block detail
+    When I click on "Save" in the page details
+    Then I softly do not see missing field badge on "Overview" tab
+
+  @114073    @verifyDisplayOfBadgesIfReqTextFieldIsHiddenByUsingHideFieldJSONOnPicklistFieldValueAsCooperativeAgreement
+  Scenario: verify display of badges if req field is hidden by using hide field json at picklist field for value as Cooperative Agreement
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I clear the value from field "fieldProjectGoals__c"
+    When I click on "Save" in the page details
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue                                                                                   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HideBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValueCooperativeAgreement | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                                             | Grantee State Program | Name                      | PBD-9163                   |
+    When I click on "Edit" in the page details
+    And I enter value "Cooperative Agreement" into field "ProgramType__c"
+    Then I softly see "Project Goals" is not displayed inside page block detail
+    When I click on "Save" in the page details
+    Then I softly do not see missing field badge on "Overview" tab
+
+  @114084    @verifyDisplayOfBadgesIfMultipleReqtFieldsIsHiddenByUsingHideFieldJSONOnPicklistFieldValue
+  Scenario: verify display of badges if multiple req fields is hidden by using hide field json at picklist field
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I clear the value from field "fieldProjectGoals__c"
+    When I click on "Save" in the page details
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue                                                                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HideBadgesIfMultipleReqFieldIsHiddenOnTheBasisOfPicklistFieldValue | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                                 | Grantee State Program | Name                      | PBD-9163                   |
+    When I click on "Edit" in the page details
+    And I enter value "Loan" into field "ProgramType__c"
+    Then I softly see "Project Goals" is not displayed inside page block detail
+    Then I softly see "Project Period Start Date" is not displayed inside page block detail
+    When I click on "Save" in the page details
+    Then I softly do not see missing field badge on "Overview" tab
+
+  @114096    @verifyDisplayOfBadgesIfReqFieldProjectGoalIsHiddenByUsingHideFieldJSONNotEqualsToOnPicklistFieldValueFromConfig
+  Scenario: verify display of badges if req field is hidden by using hide field json not equals to operator at picklist field
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I clear the value from field "fieldProjectGoals__c"
+    When I click on "Save" in the page details
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue                                                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValueUsingNotOperator | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                                           | Grantee State Program | Name                      | PBD-9163                   |
+    When I click on "Edit" in the page details
+    And I enter value "Loan" into field "ProgramType__c"
+    Then I softly see "Project Goals" is not displayed inside page block detail
+    When I click on "Save" in the page details
+    Then I softly do not see missing field badge on "Overview" tab
+
+  @114195    @verifyDisplayOfBadgesIfReqFieldProjectGoalIsHiddenByUsingHideFieldJSONPicklistFieldValueIfValueIsProjectGrants
+  Scenario: verify display of badges if req field is hidden by using hide field json at picklist field if value is project grants
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I clear the value from field "fieldProjectGoals__c"
+    When I click on "Save" in the page details
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue                                                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValueAsProjectGrants | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                                          | Grantee State Program | Name                      | PBD-9163                   |
+    When I click on "Edit" in the page details
+    And I enter value "Project Grants" into field "ProgramType__c"
+    Then I softly see "Project Goals" is not displayed inside page block detail
+    When I click on "Save" in the page details
+    Then I softly do not see missing field badge on "Overview" tab
+
+  @114203    @verifyDisplayOfBadgesIfReqFieldProjectGoalIsHiddenByUsingHideFieldJSONNotEqualsToPicklistFieldValueFromConfigInEditMode
+  Scenario: verify display of badges if req field is hidden by using hide field json not equals to operator at picklist field in edit mode
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I clear the value from field "fieldProjectGoals__c"
+    When I click on "Save" in the page details
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue                                                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValueUsingNotOperator | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                                           | Grantee State Program | Name                      | PBD-9163                   |
+    When I click on "Edit" in the page details
+    And I enter value "Loan" into field "ProgramType__c"
+    Then I softly see "Project Goals" is not displayed inside page block detail
+    When I click on "Save" in the page details
+    When I click on "Edit" in the page details
+    Then I softly do not see missing field badge on "Overview" tab
+
+  @114198    @verifyDisplayOfBadgesIfMultipleReqtFieldsAsPicklistAndTextIsHiddenByUsingHideFieldJSONOnPicklistFieldValue
+  Scenario: verify display of badges if multiple req fields as picklist and text are hidden by using hide field json at picklist field
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I clear the value from field "fieldProjectGoals__c"
+    When I click on "Save" in the page details
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue                                                                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HideBadgesIfMultipleReqFieldAsPicklistAndTextAreHiddenOnTheBasisOfPicklistFieldValue | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                                                   | Grantee State Program | Name                      | PBD-9163                   |
+    When I click on "Edit" in the page details
+    And I enter value "Loan" into field "ProgramType__c"
+    Then I softly see "Project Goals" is not displayed inside page block detail
+    Then I softly see "Primary Funder Type" is not displayed inside page block detail
+    When I click on "Save" in the page details
+    Then I softly do not see missing field badge on "Overview" tab
+
+  @114220    @verifyDisplayOfBadgesIfSubmitReqFieldIsHiddenUsingNotEqualsOperatorAndSaveReqFieldUsingEqualsOperator
+  Scenario: verify display of badges if req field is hidden usig not equals operator and save req field hidden by equals operator
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I clear the value from field "fieldProjectGoals__c"
+    When I click on "Save" in the page details
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination1 | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                  | Grantee State Program | Name                      | PBD-9163                   |
+    When I click on "Edit" in the page details
+    And I enter value "Grant" into field "ProgramType__c"
+    Then I softly see "Project Goals" is not displayed inside page block detail
+    And I enter value "Loan" into field "ProgramType__c"
+    Then I softly see "Primary Funder Type" is not displayed inside page block detail
+    When I click on "Save" in the page details
+    Then I softly do not see missing field badge on "Overview" tab
+
+  @114195    @verifyDisplayOfBadgesIfMultipleReqForSaveAndSubmitFieldsAresHiddenUsingHideFieldJSON
+  Scenario: verify badges are hidden if req for save and submit fields are hidden
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I clear the value from field "fieldProjectGoals__c"
+    When I click on "Save" in the page details
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination2 | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                  | Grantee State Program | Name                      | PBD-9163                   |
+    When I click on "Edit" in the page details
+    And I enter value "Loan" into field "ProgramType__c"
+    Then I softly see "Project Goals" is not displayed inside page block detail
+    Then I softly see "Project Period Start Date" is not displayed inside page block detail
+    Then I softly see "Project Period End Date" is not displayed inside page block detail
+    When I click on "Save" in the page details
+    Then I softly do not see missing field badge on "Overview" tab
+
+  @111861    @verifyDisplayOfBadgesIfMultipleReqForSaveAndSubmitFieldsAresHiddenUsingHideFieldJSONCombinations
+  Scenario: verify badges are hidden if req for save and submit fields are hidden using hide field json combinations
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I clear the value from field "fieldProjectGoals__c"
+    When I click on "Save" in the page details
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination3 | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                  | Grantee State Program | Name                      | PBD-9163                   |
+    When I click on "Edit" in the page details
+    And I enter value "Loan" into field "ProgramType__c"
+    Then I softly see "Project Goals" is not displayed inside page block detail
+    And I enter value "Grant" into field "ProgramType__c"
+    Then I softly see "Primary Funder Type" is not displayed inside page block detail
+    When I click on "Save" in the page details
+    Then I softly do not see missing field badge on "Overview" tab
