@@ -52,17 +52,6 @@ public class DynamicFormPage extends GovGrantsManager {
         I.amPerforming().click().on(getToRightButtonAtModalWithOverviewHeader);
     }
 
-
-    /**
-     * assert true if expected value is displayed in respective field at dynamic form layout
-     *
-     * @param fieldName
-     * @param fieldValue
-     */
-    public void assertFieldValueInsideDynamicForm(String fieldName, String fieldValue) {
-        Assert.assertTrue(isFieldValueDisplayedInsideDynamicForm(fieldName, fieldValue));
-    }
-
     /**
      * assert true if field is displayed in expected section at dynamic form layout
      *
@@ -209,22 +198,6 @@ public class DynamicFormPage extends GovGrantsManager {
     /*********
      * "Local Methods with complete functionality - private"
      *****************/
-
-    /**
-     * assert true if expected value is displayed in respective field at dynamic form layout
-     *
-     * @param fieldName
-     * @param fieldValue
-     */
-    private boolean isFieldValueDisplayedInsideDynamicForm(String fieldName, String fieldValue) {
-        boolean flag = false;
-        By getFieldValue = By.xpath("//span[text()='" + fieldName + "']/../following-sibling::dd//span[text()='" + fieldValue + "']" +
-                " | //span[text()='" + fieldName + "']/../following-sibling::dd//span//img[@alt='" + fieldValue + "']");
-        if (I.amPerforming().checkToSee().isDisplayed(getFieldValue)) {
-            return true;
-        }
-        return flag;
-    }
 
     /**
      * assert true if field is displayed in expected section at dynamic form layout

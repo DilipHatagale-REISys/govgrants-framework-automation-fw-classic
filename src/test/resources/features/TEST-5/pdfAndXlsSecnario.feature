@@ -2315,3 +2315,33 @@ Business Need: All pdf and xls related scenario including component and complete
     And I select "Download As PDF" from dropdown
     And I download the file
     Then I see "Display 1" on page "1" of "govgrants" pdf file
+
+  @114427    @verifyReqFieldsAreHiddenFromDownloadPDFAtPageLayoutUsingHideFieldJSON
+  Scenario: verify req fields are not displayed in downloaded pdf which are hidden using hide field JSON config field
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I clear the value from field "fieldProjectGoals__c"
+    When I click on "Save" in the page details
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination11 | Grantee State Program | Name                      | PBD-3883                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                   | Grantee State Program | Name                      | PBD-9163                   |
+    When I click on "Edit" in the page details
+    And I enter value "NGO" into field "FunderType__c"
+    Then I softly see "Project Goals" is not displayed inside page block detail
+    Then I softly see "Program Type" is not displayed inside page block detail
+    When I click on "Save" in the page details
+    Then I softly do not see missing field badge on "Overview" tab
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I softly cannot see "Project Goals" on page "1" of "govgrants" pdf file
+    Then I softly cannot see "Program Type" on page "1" of "govgrants" pdf file

@@ -25,11 +25,6 @@ public class DynamicFormSteps {
         dynamicFormPage.performClickOnModalActionButtonAtDynamicForm(actionName, modalOverviewHeader);
     }
 
-    @Then("^I see for \"([^\"]*)\" field value is \"([^\"]*)\" inside dynamic form$")
-    public void fieldValueInsideDynamicForm(String fieldName, String fieldValue) {
-        dynamicFormPage.assertFieldValueInsideDynamicForm(fieldName, fieldValue);
-    }
-
     @Then("^I (see|do not see|softly see|softly do not see) \"([^\"]*)\" inside \"([^\"]*)\" at dynamic form$")
     public void iSeeInsideAtDynamicForm(String usage, String fieldName, String sectionName) {
         dynamicFormPage.assertFieldsDisplayedInExpectedSectionAtDynamicForm(usage, fieldName, sectionName);
