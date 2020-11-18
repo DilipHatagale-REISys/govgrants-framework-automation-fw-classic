@@ -261,16 +261,6 @@ public class PageLayoutSteps {
         pageLayoutPage.assertCorrectFlexGridDisplayedAtPageBlock();
     }
 
-    @Then("^I see edit icon is disabled inside \"([^\"]*)\" page block$")
-    public void assertActionEditIconIsDisabledForAttachmentPageBlock(String pageBlockName) {
-        pageLayoutPage.assertEditActionItemDisabledForAttachment(pageBlockName);
-    }
-
-    @Then("^I see edit icon is not visible inside \"([^\"]*)\" page block$")
-    public void assertEditActionItemNotVisibleForAttachmentPageBlock(String pageBlockName) {
-        pageLayoutPage.assertEditActionItemNotVisibleForAttachment(pageBlockName);
-    }
-
     @Then("^I see \"([^\"]*)\" inside page block details$")
     public void assertChangedFieldInsidePageBlockDetail(String changedFieldName) {
         pageLayoutPage.assertChangedFieldInsidePageBlockDetailDisplayed(changedFieldName);
@@ -289,11 +279,6 @@ public class PageLayoutSteps {
     @Then("^I see \"([^\"]*)\" in table header on lookup Modal$")
     public void assertFlexTableHeaderName(String headerColumnName) {
         pageLayoutPage.assertTableHeaderColumnNameForLookupModal(headerColumnName);
-    }
-
-    @Then("^I see \"([^\"]*)\" status in lookup modal table$")
-    public void assertSpecificStatusCategoryNotDisplayed(String statusCategory) {
-        pageLayoutPage.assertTableStatusInsideLookupModal(statusCategory);
     }
 
     @Then("^I see \"([^\"]*)\" message inside confirmation box is displayed on click \"([^\"]*)\"$")
