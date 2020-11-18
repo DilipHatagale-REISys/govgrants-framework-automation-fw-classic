@@ -260,6 +260,7 @@ Business Need: collab Component Scenarios
 
   @112491    @verifyThatAdminCanSendACommentFromRecordLevelPlanningPhase-MyFeedSection
   Scenario: validate that admin can send a comment to post from record level collab tab
+    When I login as "Admin" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}"
@@ -350,3 +351,23 @@ Business Need: collab Component Scenarios
     And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
     And I enter value "Hello @Automation SPI" in the comment at collab
     Then I do not see mention auto complete list is displayed at collab
+
+  @115006    @verifyThatByClickOnRefreshIconALoadingIconAppearsAtRecordLevelCollabByLoginAsADMINUser
+  Scenario: validate that by click on refresh icon, a loading icon appears at record level collab tab by login as ADMIN user
+    When I login as "Admin" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on refresh button at collab
+    Then I see collab my feed page refreshed
+
+  @115004    @verifyThatByClickOnRefreshIconALoadingIconAppearsAtHomeLevelCollabByLoginAsADMINUser
+  Scenario: validate that by click on refresh icon, a loading icon appears at home level collab tab by login as ADMIN user
+    When I login as "Admin" user
+    And I navigate to "Home" tab
+    When I click on "Menu" in the page details
+    And I select "All Users" from dropdown
+    And I click on refresh button at collab
+    Then I see collab my feed page refreshed

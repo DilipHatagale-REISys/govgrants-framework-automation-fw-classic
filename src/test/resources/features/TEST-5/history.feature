@@ -509,3 +509,32 @@ Business Need: history Component Scenarios
     When I navigate to "History" sub tab
     Then I softly see "4/6/2020 3:00 PM" shown inside "New Value" column in history table
     Then I softly see "3/6/2020 1:00 PM" shown inside "Old Value" column in history table
+
+  @114727  @verifyCurrencyFieldFormatForNewValueUnderHistoryTable
+  Scenario: validate the currency field format under field history table inside new value column
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-027                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I navigate to "History" sub tab
+    Then I see "$400,000" shown inside "New Value" column in history table
+
+  @114729  @verifyDecimalCurrencyFieldFormatForNewValueUnderHistoryTable
+  Scenario: validate the decimal currency field format under field history table inside new value column
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I perform quick search for "Announcement for email notification check"
+    When I click on "View" icon for "Announcement for email notification check" inside table
+    When I navigate to "History" sub tab
+    Then I softly see "$300,000.00" shown inside "New Value" column in history table
+    Then I softly see "$400,000.00" shown inside "Old Value" column in history table

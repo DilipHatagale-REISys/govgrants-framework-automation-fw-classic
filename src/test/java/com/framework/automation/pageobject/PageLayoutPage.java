@@ -241,24 +241,6 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
-     * assert if Edit action item is disabled inside attachment page block
-     *
-     * @param pageBlockName
-     */
-    public void assertEditActionItemDisabledForAttachment(String pageBlockName) {
-        Assert.assertTrue(isEditActionItemDisabledForAttachment(pageBlockName));
-    }
-
-    /**
-     * assert if Edit action item is not visible inside attachment page block
-     *
-     * @param pageBlockName
-     */
-    public void assertEditActionItemNotVisibleForAttachment(String pageBlockName) {
-        Assert.assertFalse(isEditActionItemDisabledForAttachment(pageBlockName));
-    }
-
-    /**
      * assert if changed field inside page block detail is displayed
      *
      * @param changedFieldName
@@ -296,16 +278,6 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public void assertTableHeaderColumnNameForLookupModal(String headerColumnName) {
         Assert.assertTrue(isTableColumnHeaderNameOnLookModal(headerColumnName));
-    }
-
-    /**
-     * return true if specific status category is displayed inside lookup modal
-     * table
-     *
-     * @param statusName
-     */
-    public void assertTableStatusInsideLookupModal(String statusName) {
-        Assert.assertTrue(isStatusDisplayedForLookupModal(statusName));
     }
 
     /**
@@ -694,16 +666,6 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public List<Elements> getCompleteTableRowOfLookupModal() {
         return I.amPerforming().getElementReference().forListOfElements().of(completeTableRowInsideLookupModal);
-    }
-
-    /**
-     * return locator for status column inside lookup modal
-     *
-     * @param columnValueName
-     * @return
-     */
-    public By getTableColumnOfLookupModal(String columnValueName) {
-        return By.xpath("//td//span/a[@title='" + columnValueName + "' or text()='" + columnValueName + "']| //td//span[@title='" + columnValueName + "' or text()='" + columnValueName + "']");
     }
 
     /**
@@ -1593,35 +1555,6 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
-     * Boolean status of Edit action item inside attachment page block row
-     *
-     * @param pageBlockName
-     */
-    private boolean isEditActionItemDisabledForAttachment(String pageBlockName) {
-        boolean flag = false;
-        try {
-            if (getListAttachmentTableSpecificColumnActions(pageBlockName).size() > 0) {
-                flag = true;
-            }
-        } catch (Exception e) {
-            flag = false;
-        }
-        return flag;
-    }
-
-    /**
-     * get list of element in attachment table action
-     *
-     * @param pageBlockName
-     * @return
-     */
-    private List<Elements> getListAttachmentTableSpecificColumnActions(String pageBlockName) {
-        return I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//div[@class='panel-heading']//a[@title='"
-                + pageBlockName
-                + "']/../../../following-sibling::div[contains(@class,'panel-body')]//table/tbody/tr/td//a/span[contains(@class,'fa fa-pencil disable-action')]"));
-    }
-
-    /**
      * @param changedFieldName
      * @return true if changed field inside page block detail is displayed
      */
@@ -1689,24 +1622,6 @@ public class PageLayoutPage extends GovGrantsManager {
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
             flag = false;
-        }
-        return flag;
-    }
-
-    /**
-     * return true if statusName is displayed
-     *
-     * @param statusName
-     * @return
-     */
-    private Boolean isStatusDisplayedForLookupModal(String statusName) {
-        boolean flag = false;
-        I.amPerforming().waitFor().makeThreadSleep(5000);
-        try {
-            if (I.amPerforming().checkToSee().isDisplayed(getTableColumnOfLookupModal(statusName))) {
-                flag = true;
-            }
-        } catch (org.openqa.selenium.NoSuchElementException e) {
         }
         return flag;
     }
@@ -2426,7 +2341,7 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     private boolean isCollabMyFeedPageRefreshed() {
         boolean flag = false;
-        if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='collabContainer']//div[@class='loadingCollabFeed active']"))) {
+        if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='collabContainer']//div[@class='loadingCollabFeed active'] | //div[@class='loadingCollabFeed active']"))) {
             flag = true;
         }
         return flag;

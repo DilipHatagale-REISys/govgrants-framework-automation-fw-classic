@@ -2345,3 +2345,59 @@ Business Need: All pdf and xls related scenario including component and complete
     And I download the file
     Then I softly cannot see "Project Goals" on page "1" of "govgrants" pdf file
     Then I softly cannot see "Program Type" on page "1" of "govgrants" pdf file
+
+  @114728    @verifyCurrencyFieldValueIsShownInDownloadedPDFAtHistoryTable-gPlanning @history
+  Scenario: validate a currency field value is shown in downloaded pdf at history table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-027                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I navigate to "History" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFlexTableHistory"
+    And I select "Download as PDF" from parallel lines dropdown of "Field History"
+    And I download the file
+    Then I see "$400,000" on page "1" of "govgrants" pdf file
+
+  @114730    @verifyDecimalCurrencyFieldValueIsShownInDownloadedPDFAtHistoryTable-gPlanning @history
+  Scenario: validate a decimal currency field value is shown in downloaded pdf at history table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Draft Announcements"
+    When I perform quick search for "Announcement for email notification check"
+    When I click on "View" icon for "Announcement for email notification check" inside table
+    When I navigate to "History" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFlexTableHistory"
+    And I select "Download as PDF" from parallel lines dropdown of "Field History"
+    And I download the file
+    Then I softly see "$400,000.00" on page "1" of "govgrants" pdf file
+    Then I softly see "$300,000.00" on page "1" of "govgrants" pdf file
+
+  @114969    @verifyPageBlockSeperatorDisplayedInsideDownloadedPDF-gPlanning
+  Scenario: verify page block seperator is displayed inside downloaded PDF from program detail page
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName      | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active      | false             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName      | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true           | Grantee State Program | Name                      | PBD-9228                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    And I pause execution for "2" seconds
+    Then I see "Test Page Block1" on page "1" of "govgrants" pdf file

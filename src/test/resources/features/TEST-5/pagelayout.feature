@@ -3540,3 +3540,45 @@ Business Need: Page Layout Component Scenarios
     Then I softly see "Project Goals" is not displayed inside page block detail
     When I click on "Save" in the page details
     Then I softly do not see missing field badge on "Overview" tab
+
+  @114989    @verifyPageBlockSeperatorDisplayedForSPIUser-gPlanning
+  Scenario: verify page block seperator displayed at SPI user if is active field is checked for record type as page block seperator
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName      | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active      | false             | ISASpend           | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName      | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true           | ISASpend           | Name                      | PBD-9229                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Grants" tab
+    When I perform quick search for "Test Data DND"
+    When I click on "View" icon for "Test Data DND" inside table
+    Then I see "Test Automation Seperator" page block displayed
+
+  @114538   @verifyTitleAndBadgeIsNotDisplayedIfTextIsHidddenUsingDateAndNumberFieldUsing2DifferentJSONInViewMode
+  Scenario: verify badge is hidden from overview tab if text field hidden using 2 different JSON on date, text field in view mode
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I clear the value from field "fieldProjectGoals__c"
+    When I click on "Save" in the page details
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination6  | Grantee State Program | Name                      | PBD-9161                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination16 | Grantee State Program | Name                      | PBD-9171                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                   | Grantee State Program | Name                      | PBD-9163                   |
+    When I click on "Edit" in the page details
+    And I enter value "12/11/2020" into field "Publisheddate__c"
+    And I enter value "123" into field "Number__c"
+    When I click on "Save" in the page details
+    Then I softly see "Project Goals" is not displayed inside page block detail
+    Then I softly do not see missing field badge on "Overview" tab
