@@ -1568,7 +1568,7 @@ Business Need: Library Files Component Scenarios
       | m031C000000XZWpQAO | ExternalProfiles | false        | GNT__KeyValueHolder__mdt |
     And I update custom metadata setting changes:
       | id                 | label            | booleanValue | customMetaDataApiName    |
-      | m031C000000XZWpQAO | ExternalProfiles | false         | GNT__KeyValueHolder__mdt |
+      | m031C000000XZWpQAO | ExternalProfiles | false        | GNT__KeyValueHolder__mdt |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
     And I navigate to "HOME" tab
@@ -1610,7 +1610,7 @@ Business Need: Library Files Component Scenarios
     When I click on expand icon at library/folder "Secretary of Health"
     When I click on expand icon at library/folder "AdminCreatedFolder1"
     When I click on dropdown at library/folder/file "AdminCreatedFile.txt"
-    Then I do not see "Delete File" option is present at library/folder/file "AdminCreatedFile.txt"
+    Then I see "Delete File" option is present at library/folder/file "AdminCreatedFile.txt"
 
   @81646 @validateThatAuthorCannotDeleteFolderUploadedByOtherUser-HomePhase
   Scenario: Verify that author cannot see the Delete Folder option at file uploaded by other users
@@ -2354,12 +2354,12 @@ Business Need: Library Files Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I click on SelectChange Folder in add file modal
-    Then I softly do not see library/folder/file "Department of Community Health" is displayed under files library
-    Then I softly see library/folder/file "UnitedHealth Group" is displayed under files library
+    Then I softly see library/folder/file "Department of Community Health" is displayed under files library
+    Then I softly do not see library/folder/file "UnitedHealth Group" is displayed under files library
 
     Examples:
-      | actionUrlLongNewValue                                                                                                            | actionUrlLongDefaultValue                                                                           |
-      | /apex/SalesforceFiles?pageName=GNT__FileUpload&parentId={!Program__c.Id}&pageBlockId={!pageBlockId}&workspaceIds={!workspaceIds} | /apex/SalesforceFiles?pageName=GNT__FileUpload&parentId={!Program__c.Id}&pageBlockId={!pageBlockId} |
+      | actionUrlLongNewValue                                                                                                          | actionUrlLongDefaultValue                                                                           |
+      | /apex/SalesforceFiles?pageName=GNT__FileUpload&parentId={!Program__c.Id}&pageBlockId={!pageBlockId}&workspaceId={!workspaceId} | /apex/SalesforceFiles?pageName=GNT__FileUpload&parentId={!Program__c.Id}&pageBlockId={!pageBlockId} |
 
   @101687 @validateThatFilterGivenLibraryFoldersIsDisplayedAtAddFileModalAsPerGivenClauseInKeyValueMapConfig-RecordLevel
   Scenario Outline: Verify that filter given library folders are displayed at add file modal as per filter claus given at key value map - record level
