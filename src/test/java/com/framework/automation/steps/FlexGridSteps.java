@@ -147,9 +147,9 @@ public class FlexGridSteps {
         flexGridPage.assertTotalFieldFormatInsideMeGrid(usage, format, fieldName, tableId);
     }
 
-    @Then("I see actions are aligned at {string} me grid parent table")
-    public void iSeeActionsAreAlignedInMeGridParentTable(String tableId) throws IOException {
-        flexGridPage.assertActionsAreAlignedInMeGridTable(tableId);
+    @Then("^I see actions are aligned at \"([^\"]*)\" me grid parent table and compared with \"([^\"]*)\"$")
+    public void iSeeActionsAreAlignedInMeGridParentTable(String tableId, String imageName) throws IOException {
+        flexGridPage.assertActionsAreAlignedInMeGridTable(tableId, imageName);
     }
 
     @Then("^I see total records count is centrally aligned at bottom of \"([^\"]*)\" (parent|child) table$")

@@ -16,3 +16,10 @@ Business Need: Calender Config Component Scenarios
     And I navigate to "HOME" tab
     When I click on "My_Workspace_Calendar"
     Then I see all programs inside calender is not displayed
+
+  @114993    @validateCalendarTabIsDisplayedAtHomePhase
+  Scenario: validate calendar tab is displayed at grantor-Home phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see "My_Workspace_Calendar" tab is displayed at Home

@@ -61,13 +61,6 @@ public class FlexTablePage extends GovGrantsManager {
         }
     }
 
-    /**
-     * assert if menu icon is disabled from planning flex table
-     */
-    public void assertDisableMenuIcon(String panelTitleName) {
-        Assert.assertTrue(isMenuIconDisabled(panelTitleName));
-    }
-
     /***
      * assert true if check box select record enabled
      */
@@ -172,20 +165,6 @@ public class FlexTablePage extends GovGrantsManager {
         I.amPerforming().scroll().toMoveToElement(By.xpath("//div[contains(@class,'panel-title')]//div[text()='" + blockTitle
                 + "']/../..//a[@id='Programstooltip']/span[contains(@class,'fa-info')]|//div/a[@title='"
                 + blockTitle + "']/..//span[contains(@class,'fa-info')]"));
-    }
-
-    /**
-     * assert specific items are displayed in top righ parallel lines bar
-     *
-     * @param menuOption
-     * @param pannelTitleName
-     */
-    public void assertTopRightParallelLinesBarSpecificOptionsEnabled(String usage, String menuOption, String pannelTitleName) {
-        if (usage.equalsIgnoreCase("see")) {
-            Assert.assertTrue(isTopRightParallelLinesBarSpecificOptionsEnabled(menuOption, pannelTitleName));
-        } else if (usage.equalsIgnoreCase("do not see")) {
-            I.amPerforming().assertionsTo().assertThat(isTopRightParallelLinesBarSpecificOptionsEnabled(menuOption, pannelTitleName)).isFalse();
-        }
     }
 
     /**
@@ -645,23 +624,6 @@ public class FlexTablePage extends GovGrantsManager {
     }
 
     /**
-     * Boolean status of menu icon from program flex table
-     *
-     * @param panelTitleName
-     */
-    private Boolean isMenuIconDisabled(String panelTitleName) {
-        boolean flag = false;
-        try {
-            if (I.amPerforming().checkToSee().isDisplayed(govgrants.perform().phasePanel().getParallelBarsLocator(panelTitleName))) {
-                flag = false;
-            }
-        } catch (org.openqa.selenium.NoSuchElementException e) {
-            flag = true;
-        }
-        return flag;
-    }
-
-    /**
      * @return: true if select record check box eneabled
      */
     private boolean isSelectRecordCheckBox() {
@@ -737,25 +699,6 @@ public class FlexTablePage extends GovGrantsManager {
      */
     private String isPageRefreshOnButtonClick() {
         return I.amPerforming().browserOperationsTo().getPageLoadStatus();
-    }
-
-    /**
-     * validate if options are displayed in top right parallel line bar
-     *
-     * @param menuOption
-     * @param pannelTitleName
-     * @return: true if it is displayed
-     */
-    private boolean isTopRightParallelLinesBarSpecificOptionsEnabled(String menuOption, String pannelTitleName) {
-        boolean flag = false;
-        try {
-            if (I.amPerforming().checkToSee().isDisplayed(govgrants.perform().phasePanel().getItemFromParallelMenuBars(pannelTitleName, menuOption))) {
-                flag = true;
-            }
-        } catch (Exception e) {
-            flag = false;
-        }
-        return flag;
     }
 
     /**

@@ -3544,11 +3544,11 @@ Business Need: Page Layout Component Scenarios
   @114989    @verifyPageBlockSeperatorDisplayedForSPIUser-gPlanning
   Scenario: verify page block seperator displayed at SPI user if is active field is checked for record type as page block seperator
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName      | fieldOrignalValue | coreComponentField | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active      | false             | ISASpend           | ApiGeneratedId:0 |
+      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | ISASpend           | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName      | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active      | true           | ISASpend           | Name                      | PBD-9229                   |
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | ISASpend           | Name                      | PBD-9229                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
     And I navigate to "Grants" tab
@@ -3582,3 +3582,48 @@ Business Need: Page Layout Component Scenarios
     When I click on "Save" in the page details
     Then I softly see "Project Goals" is not displayed inside page block detail
     Then I softly do not see missing field badge on "Overview" tab
+
+  @115588    @verifySpecialCharacterInHelpTextAtAtPageBlockSeperator-gPlanning
+  Scenario Outline:validate special characters are accepted in help text field at page block seperator type of block at detail page
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName      | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active      | false             | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <old_helpText>    | Grantee State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName      | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true           | Grantee State Program | Name                      | PBD-9228                   |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText> | Grantee State Program | Name                      | PBD-9228                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I hovering mouse on help text icon inside "Test Page Block1"
+    Then I see "<new_helpText>" shown as help text
+
+    Examples:
+      | new_helpText                 | old_helpText |
+      | Help Text @#$ for Automation | Help Text    |
+
+  @115592    @verifySpecialCharaterInHelpTextAtAtPageBlockSeperatorForSPIUser-gPlanning
+  Scenario Outline:validate special characters are accepted in help text field at page block seperator type of block at detail page for SPI user
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName      | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active      | false             | ISASpend           | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <old_helpText>    | ISASpend           | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName      | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true           | ISASpend           | Name                      | PBD-9229                   |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText> | ISASpend           | Name                      | PBD-9229                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Grants" tab
+    When I perform quick search for "Test Data DND"
+    When I click on "View" icon for "Test Data DND" inside table
+    When I hovering mouse on help text icon inside "Test Automation Seperator"
+    Then I see "<new_helpText>" shown as help text
+
+    Examples:
+      | new_helpText                 | old_helpText |
+      | Help Text for @#$ Automation | Help Text    |
