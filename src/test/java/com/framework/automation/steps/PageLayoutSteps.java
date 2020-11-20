@@ -597,4 +597,19 @@ public class PageLayoutSteps {
     public void iSeeMentionAutoCompleteListIsNotDisplayedAtCollab(String usage) {
         pageLayoutPage.isMentionAutoCompleteListDisplayedAtCollab(usage);
     }
+
+    @Then("I see {string} tab is displayed at Home")
+    public void iSeeTabIsDisplayedAtHome(String myWorkspaceItem) {
+        pageLayoutPage.isTabDisplayedAtHomePhase(myWorkspaceItem);
+    }
+
+    @Then("I see sidebar global search box displayed in {string}")
+    public void iSeeSidebarGlobalSearchBoxDisplayedIn(String colorName) {
+        pageLayoutPage.assertSidebarGlobalSearchColor(colorName);
+    }
+
+    @Then("I see Menu bar is not displayed at my feed")
+    public void iSeeMenuBarIsNotDisplayedAtMyFeed() {
+        pageLayoutPage.assertMenuBarAtMyFeedSection();
+    }
 }

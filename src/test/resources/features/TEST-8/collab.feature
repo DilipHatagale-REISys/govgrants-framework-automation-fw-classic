@@ -355,6 +355,7 @@ Business Need: collab Component Scenarios
   @115006    @verifyThatByClickOnRefreshIconALoadingIconAppearsAtRecordLevelCollabByLoginAsADMINUser
   Scenario: validate that by click on refresh icon, a loading icon appears at record level collab tab by login as ADMIN user
     When I login as "Admin" user
+    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}"
@@ -366,8 +367,73 @@ Business Need: collab Component Scenarios
   @115004    @verifyThatByClickOnRefreshIconALoadingIconAppearsAtHomeLevelCollabByLoginAsADMINUser
   Scenario: validate that by click on refresh icon, a loading icon appears at home level collab tab by login as ADMIN user
     When I login as "Admin" user
+    When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I click on "Menu" in the page details
     And I select "All Users" from dropdown
     And I click on refresh button at collab
     Then I see collab my feed page refreshed
+
+  @115344    @verifyThatOnlyMyFeedSectionDisplayedToSPIUserAtHomePhase
+  Scenario: validate that only my feed section is displayed to SPI user at home phase
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Home" tab
+    Then I see Menu bar is not displayed at my feed
+
+  @115347    @verifyThatByClickOnRefreshIconALoadingIconAppearsAtHomeLevelCollabByLoginAsSPIUser
+  Scenario: validate that by click on refresh icon, a loading icon appears at home level collab tab by login as SPI user
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Home" tab
+    And I click on refresh button at collab
+    Then I see collab my feed page refreshed
+
+  @115450    @verifyThatNoFeedAvailableIsDisplayedAtMyFeedSectionToAdminUser
+  Scenario: validate that No feed available is displayed at my feed-to me only section by login as admin user
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Home" tab
+    When I click on "Menu" in the page details
+    And I select "To Me" from dropdown
+    Then I see "No feeds available." inside flex table with id "---program:-:myFeedTableId---"
+
+  @112330   @verifyThatNoFeedAvailableIsDisplayedAtCollabPhaseInsideToMeByLoginAsAdminUser
+  Scenario: validate that No feed available is displayed at my feed-to me only section at collab phase by login as admin user
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    When I navigate to "To Me" submenu inside "My Feeds" menu on collab left panel
+    Then I see "No feeds available." inside flex table with id "---program:-:myFeedTableId---"
+
+  @115482    @verifyThatNameOfUsersWhoLikesThePostIsDisplayedAtMyFeedSectionToAdminUser
+  Scenario: validate that name of users who like the post is displayed at my feed-to me only section by login as admin user
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Home" tab
+    When I click on "Menu" in the page details
+    And I select "All Users" from dropdown
+    Then I see "You, David FO, and 2 others like this." inside flex table with id "---program:-:myFeedTableId---"
+
+  @115483    @verifyThatNameOfUsersWhoLikesThePostIsDisplayedAtMyFeedSectionToPMUser
+  Scenario: validate that name of users who like the post is displayed at my feed-to me only section by login as PM user
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Home" tab
+    When I click on "Menu" in the page details
+    And I select "All Users" from dropdown
+    Then I see "You, David FO, and 2 others like this." inside flex table with id "---program:-:myFeedTableId---"
+
+  @115494   @verifyGovGrantLogoIsDisplayedAtCollabPhaseByLoginAsAdminUser
+  Scenario: validate that govgrants logo is displayed at collab phase by login as admin user
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    Then I see navigation logo on page
+
+  @115528    @verifyGovGrantLogoIsDisplayedAtCollabPhaseByLoginAsSPIUser
+  Scenario: validate that govgrants logo is displayed at collab phase by login as SPI user
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Collaboration (Collab)" tab
+    Then I see navigation logo on page

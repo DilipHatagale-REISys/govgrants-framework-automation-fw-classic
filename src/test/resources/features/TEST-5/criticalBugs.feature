@@ -3337,7 +3337,7 @@ Business Need: Logged Issues Scenarios
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
     When I perform quick search for "BP-01" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
-    Then I see actions are aligned at "---program:-:applicationBudgetCategoryInlineEditTableId---" me grid parent table
+    Then I see actions are aligned at "---program:-:applicationBudgetCategoryInlineEditTableId---" me grid parent table and compared with "actionsAtMeGridTable.png"
 
   @96567    @enableOverallTotalFieldAndRowGroupingAtParentFlexTableForEnhancedGrid-gPlanning @enhancedGrid
   Scenario Outline: validate enabling of overall total field and row grouping inside enhanced grid of programs-planning

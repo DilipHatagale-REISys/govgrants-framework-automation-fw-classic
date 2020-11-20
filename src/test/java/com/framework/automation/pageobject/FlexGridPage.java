@@ -287,12 +287,12 @@ public class FlexGridPage extends GovGrantsManager {
      *
      * @param tableId
      */
-    public void assertActionsAreAlignedInMeGridTable(String tableId) throws IOException {
+    public void assertActionsAreAlignedInMeGridTable(String tableId, String imageName) throws IOException {
         TestingBlazeGlobal.setVariable("highlightElements", "off");
         WebElement actionsAligned = I.amPerforming().getElementReference().of(By.xpath("//div[@id='" + tableId + "']//table[not(@id='childTableId')]/tbody/tr/td[contains(@class,'actionColumn')]"));
         I.amPerforming().waitFor().makeThreadSleep(1000);
         I.amPerforming().snapShotTo().takeElementScreenShot(actionsAligned, "captureActions");
-        Assert.assertTrue(I.amPerforming().comparisonOf().image().isImagesSame("target/Automation-Report/captureActions.png", "src/main/resources/actionsAtMeGridTable.png"));
+        Assert.assertTrue(I.amPerforming().comparisonOf().image().isImagesSame("target/Automation-Report/captureActions.png", "src/main/resources/" + imageName + ""));
     }
 
     /**

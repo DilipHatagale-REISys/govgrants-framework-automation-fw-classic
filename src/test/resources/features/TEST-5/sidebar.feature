@@ -458,3 +458,16 @@ Business Need: Side bar Component Scenarios
     Examples:
       | newFieldsApi                                                | defaultFieldsApi                                                                                                                                        |
       | Name,ProjectTitle__c,Status__c,TotalAwardObligatedAmount__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,NumberofProjectAreas__c,Status__c,GrantAbbreviation__c,TotalAwardObligatedAmount__c |
+
+  @115097    @validateColorOfGlobalSearchBoxAtSidebar-gHome
+  Scenario: validate color of global search box at sidebar
+   When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    Then I see sidebar global search box displayed in "blue"
+
+  @115099    @validateColorOfGlobalSearchBoxAtSidebarForExternalUser-gHome
+  Scenario: validate color of global search box at sidebar for external user
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "HOME" tab
+    Then I see sidebar global search box displayed in "blue"

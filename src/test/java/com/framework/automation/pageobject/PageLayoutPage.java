@@ -1263,6 +1263,36 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * return true if expected tab displayed inside home phase
+     *
+     * @param myWorkspaceItem
+     * @author ashwini.mahore
+     */
+    public void isTabDisplayedAtHomePhase(String myWorkspaceItem) {
+        Assert.assertTrue(isExpectedTabDisplayedAtHomePhase(myWorkspaceItem));
+    }
+
+
+    /**
+     * return true if expected sidebar global search box color displayed
+     *
+     * @param colorName
+     * @author ashwini.mahore
+     */
+    public void assertSidebarGlobalSearchColor(String colorName) {
+        Assert.assertTrue(isExpectedSidebarGlobalSearchColorDisplayed(colorName));
+    }
+
+    /**
+     * return true if menu bar is not displayed at my feed section
+     *
+     * @author ashwini.mahore
+     */
+    public void assertMenuBarAtMyFeedSection() {
+        Assert.assertTrue(isMenuBarAtMyFeedSectionDisplayed());
+    }
+
+    /**
      * get owner organisation lookup modal complete content
      *
      * @return
@@ -2468,4 +2498,54 @@ public class PageLayoutPage extends GovGrantsManager {
         }
         return false;
     }
+
+    /**
+     * return true if expected tab displayed inside home phase
+     *
+     * @param myWorkspaceItem
+     * @author ashwini.mahore
+     */
+    public Boolean isExpectedTabDisplayedAtHomePhase(String myWorkspaceItem) {
+        boolean flag = false;
+        if (I.amPerforming().checkToSee().isDisplayed(govgrants.perform().mainPage().getMyWorkSpaceSpecificItem(myWorkspaceItem))) {
+            flag = true;
+        }
+        return flag;
+    }
+
+    /**
+     * return true if expected sidebar global search box color displayed
+     *
+     * @param colorName
+     * @author ashwini.mahore
+     */
+    private boolean isExpectedSidebarGlobalSearchColorDisplayed(String colorName) {
+        boolean flag = false;
+        WebElement getGlobalSearchBoxProperty = I.amPerforming().getElementReference().of(ByUsing.xpath("//a[contains(@class,'sidebarSearchBtn')]"));
+        switch (colorName.toUpperCase()) {
+            case "BLUE":
+                if (getGlobalSearchBoxProperty.getCssValue("background-color").contains("rgba(5, 89, 156, 1)")
+                        || getGlobalSearchBoxProperty.getCssValue("background-color").contains("rgb(5, 89, 156)")) {
+                    flag = true;
+                }
+        }
+        return flag;
+    }
+
+    /**
+     * return true if menu bar is not displayed at my feed section
+     *
+     * @author ashwini.mahore
+     */
+    public Boolean isMenuBarAtMyFeedSectionDisplayed() {
+        boolean flag = false;
+            try {
+                if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//a[contains(@class,'menuLinks')]"))) {
+                    flag = false;
+                }
+            } catch (org.openqa.selenium.NoSuchElementException e) {
+                flag = true;
+            }
+            return flag;
+        }
 }

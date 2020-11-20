@@ -73,11 +73,6 @@ public class FlexTableSteps {
         flexTablePage.assertquickSearchEnabled(usage);
     }
 
-    @Then("^I see Menu icon is disabled from planning flex table \"([^\"]*)\"$")
-    public void assertDisableMenuIcon(String panelTitleName) {
-        flexTablePage.assertDisableMenuIcon(panelTitleName);
-    }
-
     @Then("^I see select check box enabled in flex table$")
     public void assertOptionEnabledInFlexTable() {
         flexTablePage.assertFlexTabelRecordSelectionEnabled();
@@ -126,11 +121,6 @@ public class FlexTableSteps {
     @Then("^I see \"([^\"]*)\" icon for \"([^\"]*)\" is not displayed inside flex table$")
     public void assertActionIconNotDisplayedForflexTable(String iconName, String uniqueColumnValue) {
         flexTablePage.assertActionIconNotDisplayedInsideflexTable(iconName, uniqueColumnValue);
-    }
-
-    @Then("^I (see|do not see) \"([^\"]*)\" options inside \"([^\"]*)\" enabled$")
-    public void assertTopRightParallelLinesBarOptionsEnabled(String usage, String menuOption, String pannelTitleName) {
-        flexTablePage.assertTopRightParallelLinesBarSpecificOptionsEnabled(usage, menuOption, pannelTitleName);
     }
 
     @Then("^I see \"([^\"]*)\" with page size dropdown at \"([^\"]*)\"$")

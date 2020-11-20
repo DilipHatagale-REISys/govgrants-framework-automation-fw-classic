@@ -2401,3 +2401,25 @@ Business Need: All pdf and xls related scenario including component and complete
     And I download the file
     And I pause execution for "2" seconds
     Then I see "Test Page Block1" on page "1" of "govgrants" pdf file
+
+  @115546     @VerifyMeGridTableViewActionsIsAlignedProperly-gPlanning @flexGrid
+  Scenario: validate alignment of view actions under me grid parent flex table - Planning phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I perform quick search for "Demo_Title"
+    When I click on "View" icon for "Demo_Title" inside table
+    When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-0001" in "---program:-:ProjectCostForApplicationFlexGridTableId---" panel
+    Then I see actions are aligned at "---program:-:ProjectCostForApplicationFlexGridTableId---" me grid parent table and compared with "meGridProgramFinancials.png"
+
+  @115547     @VerifyMeGridTableViewActionsIsAlignedProperly-gPlanning @flexGrid
+  Scenario: validate alignment of view actions under me grid parent flex table - Planning phase
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "Test Automation Application DND"
+    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I navigate to "Budget" sub tab
+    When I perform quick search for "BP-0001" in "---program:-:ProjectCostForApplicationFlexGridTableId---" panel
+    Then I see actions are aligned at "---program:-:ProjectCostForApplicationFlexGridTableId---" me grid parent table and compared with "meGridProgramFinancials.png"
