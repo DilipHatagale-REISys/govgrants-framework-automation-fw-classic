@@ -3627,3 +3627,22 @@ Business Need: Page Layout Component Scenarios
     Examples:
       | new_helpText                 | old_helpText |
       | Help Text for @#$ Automation | Help Text    |
+
+  @115664 @verifyThatVeryDarkBlueColorIsDisplayedAtPhasesTabForAdminUser-StateAsAGrantor
+  Scenario: verify that very dark blue coWhen I login as "Automation" user
+    When I setup my app as "As a Grantor"lor is displayed as background for phases tab for admin user-StateAsAGrantor
+
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    Then I see phase tab has "Very Dark Blue" background color
+
+  @115665 @verifyThatVeryDarkBlueColorIsDisplayedAtPhasesTabForSPIUser-StateAsAGrantor
+  Scenario: verify that very dark blue color is displayed as background for phases tab for SPI user
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "Automation-SPI" user
+    And I navigate to "Grants" tab
+    When I perform quick search for "Test Data DND"
+    When I click on "View" icon for "Test Data DND" inside table
+    Then I see phase tab has "Very dark cyan" background color

@@ -70,7 +70,7 @@ public class UsersAndURL implements UsersController {
                 password = "Automation@12345";
                 break;
             case "AUTOMATION-SPI":
-                password = "Automation@1234";
+                password = "Automation@123456";
                 break;
             default:
                 password = "Automation@12345";

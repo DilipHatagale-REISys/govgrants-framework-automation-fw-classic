@@ -132,7 +132,7 @@ public class ApprovalProcessPage extends GovGrantsManager {
     private List<Elements> validateSuccessEmail(String templateName) {
         return I.amPerforming().getElementReference().forListOfElements().of(By.xpath(
                 "//td//span[text()='nauman.shahid@reisystems.com']/../../../../following-sibling::td//span[text()='"
-                        + templateName + "']/../../../following-sibling::td//span[text()='Success']"));
+                        + templateName + "']/../../../following-sibling::td//span[text()='Processed']"));
     }
 
     /**
