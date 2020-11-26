@@ -270,6 +270,27 @@ public class ProjectWebServices {
         I.amPerforming().restHttp().putCall(null, jArray.toString(), finalEndPoint, null, null, tokenString);
     }
 
+    /**
+     * calls the api to access and update custom meta data DND config
+     *
+     * @param id
+     * @param dndCriteria
+     * @param label
+     */
+    public void updateCustomMetaDataDNDConfig(String id, String label, String dndCriteria, String filterCriteria) throws IOException {
+        getAuthToken();
+        String finalEndPoint = endPoint + "/services/apexrest/frameworkCustomMetadataAPI/CustomMetadata?id=" + id;
+        JsonArray jArray = new JsonArray();
+        JsonObject jsonObject = new JsonObject();
+        JsonObject jsonContainer = new JsonObject();
+        jsonObject.addProperty("GNT__DNDCriteria__c", dndCriteria);
+        jsonObject.addProperty("GNT__FilterCriteria__c", filterCriteria);
+        jsonContainer.add("fieldvalues", jsonObject);
+        jsonContainer.addProperty("custommetadatafullname", "GNT__DND__mdt." + label);
+        jArray.add(jsonContainer);
+        I.amPerforming().restHttp().putCall(null, jArray.toString(), finalEndPoint, null, null, tokenString);
+    }
+
 
     ////////////// Setup Default Config//////////////
 
@@ -279,7 +300,13 @@ public class ProjectWebServices {
      * @throws IOException
      */
     public void postDefaultConfigCall() {
-        ConfigurationParameters.getDefaultConfigurationParameters().keySet().stream().forEach(keys -> callRelevantConfiguration(keys));
+        ConfigurationParameters.getDefaultConfigurationParameters().keySet().stream().forEach(keys -> {
+            try {
+                callRelevantConfiguration(keys);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
     }
 
     ////////////// Private methods ///////////////////
@@ -291,7 +318,7 @@ public class ProjectWebServices {
      * -- "default" -- for all component configuration
      * -- "global"  -- for all global custom setting changes
      */
-    private void callRelevantConfiguration(String configurationType) {
+    private void callRelevantConfiguration(String configurationType) throws IOException {
         if (configurationType.equalsIgnoreCase("default"))
             executeDefaultConfigurations(configurationType);
         if (configurationType.equalsIgnoreCase("lightening"))
@@ -311,6 +338,9 @@ public class ProjectWebServices {
         }
         if (configurationType.equalsIgnoreCase("dynamicFieldConfig")) {
             setDefaultCustomDynamicFieldConfig("dynamicFieldConfig");
+        }
+        if (configurationType.equalsIgnoreCase("customMetaDataDND")) {
+            setDefaultCustomMetaDataDND("customMetaDataDND");
         }
     }
 
@@ -547,6 +577,19 @@ public class ProjectWebServices {
     private void setDefaultCustomDynamicFieldConfig(String key) {
         for (Map<String, String> customMap : ConfigurationParameters.getDefaultConfigurationParameters().get(key)) {
             updateDynamicFieldConfig(customMap.get("id"), customMap.get("Name"), customMap.get("Type"));
+        }
+    }
+
+    /**
+     * It will take key and its value from feature file to make default config changes for custom meta data DND config
+     * <p>
+     * id - it will take unique custom meta data DND id where changes is supposed to made
+     * booleanValue - accept true/false for to enable disable custom meta data DND details boolean fields
+     * label - it will take custom meta data DND full name where changes is supposed to made
+     */
+    private void setDefaultCustomMetaDataDND(String key) throws IOException {
+        for (Map<String, String> customMap : ConfigurationParameters.getDefaultConfigurationParameters().get(key)) {
+            updateCustomMetaDataDNDConfig(customMap.get("id"), customMap.get("label"), customMap.get("dndCriteria"), customMap.get("filterCriteria"));
         }
     }
 

@@ -338,3 +338,485 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Review Steps"
     Then I see "Pre-Screen Review" in downloaded xls or csv file "govgrants"
+
+
+  @100486    @validateDownloadAsPDFIfSkipPDFDefaultThemeCheckBoxIsCheckedAtDynamicFormModalViewMode
+  Scenario Outline: validate by download as pdf if skip default theme checkbox is checked at dynamic form modal view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue       | filterId         |
+      | Capture Form          | Hide Pdf Download      | false                   | ApiGeneratedId:0 |
+      | Capture Form          | Skip PDF Default Theme | false                   | ApiGeneratedId:1 |
+      | Flex Table Action     | Action URL Long        | <actionUrlLongOldValue> | ApiGeneratedId:2 |
+      | Flex Table Action     | Where To Open ?        | NewTab                  | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Hide Pdf Download      | false                   | CF-0000            |                           |                            |
+      | Capture Form:General  | Skip PDF Default Theme | true                    | CF-0000            |                           |                            |
+      | Flex Table Action     | Action URL Long        | <actionUrlLongNewValue> | DynamicFormTable   | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?        | Modal                   | DynamicFormTable   | Name                      | View                       |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Menu" action at the "Dynamic Form" modal
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see "Dynamic Form" on page "1" of "govgrants" pdf file
+
+    Examples:
+      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
+      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalView |
+
+  @100489    @validateDownloadAsPDFIfSkipPDFDefaultThemeCheckBoxIsCheckedAtDynamicFormLayoutViewMode
+  Scenario: validate by download as pdf if skip default theme checkbox is checked at dynamic form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Capture Form          | Hide Pdf Download      | false             | ApiGeneratedId:0 |
+      | Capture Form          | Skip PDF Default Theme | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Hide Pdf Download      | false         | CF-0000            |                           |                            |
+      | Capture Form:General  | Skip PDF Default Theme | true          | CF-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see "Dynamic Form" on page "1" of "govgrants" pdf file
+
+  @100127   @validateDependentQuestionJsonFieldByMakingNumberAndWrittenFieldAsRequiredFromMultipleSectionsUsingCurrencyFieldValueInsideDynamicFormInEditMode
+  Scenario: validate Dependent Question Json Field by making number and written as req from section 1 and section 3 on the basis of currency field value in form edit mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:3 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:4 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:5 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:6 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:7 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                                                        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Currency                                                                                             | CI-0022            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:ShowReqWrittenAndNumberFieldUsingCurrencyFieldValueAtSection1ByProvidingNameOfField | CI-0022            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Number                                                                                               | CI-0023            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Written                                                                                              | CI-0018            |                           |                            |
+      | Capture Item:General  | Question Identifier     | a4Cg0000000MoY4                                                                                      | CI-0036            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:ShowReqWrittenAndNumberFieldCurrencyFieldValueAtSection3ByProvidingNameOfField      | CI-0036            |                           |                            |
+      | Capture Item:General  | Question Identifier     | a4Cg0000000MoYE                                                                                      | CI-0038            |                           |                            |
+      | Capture Item:General  | Question Identifier     | a4Cg0000000MoXz                                                                                      | CI-0035            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form 1" inside table
+    When I enter values into "Section 1" page block
+      | Field   | Value |
+      | Written |       |
+      | Number  |       |
+    When I enter values into "Section 3" page block
+      | Field             | Value |
+      | Written Section 3 |       |
+      | Number Section 3  |       |
+    When I click on "Save" in the page details
+    Then I see the following message in the page details :
+      | Written is Required to save under Section 1.           |
+      | Number is Required to save under Section 1.            |
+      | Written Section 3 is Required to save under Section 3. |
+      | Number Section 3 is Required to save under Section 3.  |
+
+  @100873    @validateCurrencyValueWithSymbolIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
+  Scenario: validate currency value with symbol is displayed inside downloaded PDF at dynamic form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Capture Form          | Hide Pdf Download | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Hide Pdf Download | false         | CF-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see "$12.00" on page "1" of "govgrants" pdf file
+
+  @100874    @validatePercentValueWithSymbolIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
+  Scenario: validate percent value with symbol is displayed inside downloaded PDF at dynamic form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Capture Form          | Hide Pdf Download | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Hide Pdf Download | false         | CF-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see "12.00 %" on page "1" of "govgrants" pdf file
+
+  @100877    @validateMaxScoreIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
+  Scenario: validate max score as 0.0 is displayed inside downloaded PDF at dynamic form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Capture Form          | Hide Pdf Download | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Hide Pdf Download | false         | CF-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see "0.0" on page "1" of "govgrants" pdf file
+
+  @100879    @validateThatForCheckboxAValueAsTrueOrFalseIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
+  Scenario: validate if checkbox field is checked then it should displayed inside downloaded PDF as true at dynamic form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Capture Form          | Hide Pdf Download | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Hide Pdf Download | false         | CF-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see "true" on page "1" of "govgrants" pdf file
+
+  @100880    @validateDecimalValuesAtNumberCurrencyPercentFieldIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
+  Scenario: validate decimal values are displayed for number , currency, percent field inside downloaded PDF at dynamic form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Capture Form          | Hide Pdf Download | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Hide Pdf Download | false         | CF-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I softly see "$12.00" on page "1" of "govgrants" pdf file
+    Then I softly see "12.00 %" on page "1" of "govgrants" pdf file
+    Then I softly see "12.00" on page "1" of "govgrants" pdf file
+
+  @100994    @validateSectionInstructionIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
+  Scenario: validate section instruction is displayed inside downloaded PDF at dynamic form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Capture Form          | Hide Pdf Download | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Hide Pdf Download | false         | CF-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see "Demo Section instruction" on page "1" of "govgrants" pdf file
+
+  @101005    @validateSectionInstructionIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
+  Scenario: validate section instruction is displayed inside downloaded PDF at dynamic form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Capture Form          | Hide Pdf Download | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Hide Pdf Download | false         | CF-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see "Demo Section instruction" on page "1" of "govgrants" pdf file
+
+  @101005    @validateWrittenFieldValueIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
+  Scenario: validate written field value is displayed inside downloaded PDF at dynamic form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Capture Form          | Hide Pdf Download | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Hide Pdf Download | false         | CF-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see "Test Automation" on page "1" of "govgrants" pdf file
+
+  @101006    @validateRichTextAreaFieldValueIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
+  Scenario: validate rich text area field value is displayed inside downloaded PDF at dynamic form view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Capture Form          | Hide Pdf Download | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Hide Pdf Download | false         | CF-0000            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see "Test Automation Rich Text" on page "1" of "govgrants" pdf file
+
+  @101025   @validateIfCurrencyFieldIsHiddenFromUIThenItIsNotDisplayedInsideDownloadedPDFAtDynamicForm
+  Scenario: validate if currency field is hidden from ui then it is not displayed in downloaded pdf at dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                             | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Written                                                   | CI-0000            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:HideCurrencyUsingWrittenFieldValueForPDF | CI-0000            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                  | CI-0004            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I cannot see "Currency" on page "1" of "govgrants" pdf file
+
+  @101026   @validateIfCurrencyFieldIsDisabledFromUIThenItIsDisplayedInsideDownloadedPDFAtDynamicForm
+  Scenario: validate if currency field is disabled from ui then it is displayed in downloaded pdf at dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Written                                                      | CI-0000            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:DisableCurrencyUsingWrittenFieldValueForPDF | CI-0000            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                     | CI-0004            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see "Currency" on page "1" of "govgrants" pdf file
+
+  @106081   @validateIfCurrencyNumberPercentFieldIsHiddenFromUIThenItIsNotDisplayedInsideDownloadedPDFAtDynamicForm
+  Scenario: validate if currency, number , percent field is hidden from ui then it is not displayed in downloaded pdf at dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:3 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                         | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Written                                               | CI-0000            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:HideCurrencyNumberPercentFieldsOnPDF | CI-0000            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                              | CI-0004            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Number                                                | CI-0006            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Percent                                               | CI-0005            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I softly cannot see "Currency" on page "1" of "govgrants" pdf file
+    Then I softly cannot see "Number" on page "1" of "govgrants" pdf file
+    Then I softly cannot see "Percent" on page "1" of "govgrants" pdf file
+
+  @106082   @validateIfCurrencyNumberPercentFieldIsDisabledFromUIThenItIsDisplayedInsideDownloadedPDFAtDynamicForm
+  Scenario: validate if currency, number , percent field is disabled from ui then it is displayed in downloaded pdf at dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:3 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Written                                                  | CI-0000            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:DisableCurrencyNumberPercentFieldsOnPDF | CI-0000            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                 | CI-0004            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Number                                                   | CI-0006            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Percent                                                  | CI-0005            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I softly see "Currency" on page "1" of "govgrants" pdf file
+    Then I softly see "Number" on page "1" of "govgrants" pdf file
+    Then I softly see "Percent" on page "1" of "govgrants" pdf file
+
+  @106087   @validateIfCurrencyIsDisabledAndNumberPercentFieldIsHiddenFromUIThenItIsDisplayedInsideDownloadedPDFAtDynamicForm
+  Scenario: validate if currency is disabled and number, percent field is hidden from ui then it is displayed accordingly in downloaded pdf at dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:3 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Written                                                         | CI-0000            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:HideAndDisableCurrencyNumberPercentFieldsOnPDF | CI-0000            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                        | CI-0004            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Number                                                          | CI-0006            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Percent                                                         | CI-0005            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I softly see "Number" on page "1" of "govgrants" pdf file
+    Then I softly cannot see "Currency" on page "1" of "govgrants" pdf file
+    Then I softly cannot see "Percent" on page "1" of "govgrants" pdf file
+
+  @106088   @validateDisabledAndHiddenFieldsLikeCurrencyNumberPercentDateDisplayedInsideDownloadedPDFAtDynamicForm
+  Scenario: validate disabled and hidden fields like number, percent, currency, date field displayed accordingly in downloaded pdf at dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:0 |
+      | Capture Item          | Dependent Question Json |                   | ApiGeneratedId:1 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:2 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:3 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:4 |
+      | Capture Item          | Question Identifier     |                   | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue                                                   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Identifier     | Written                                                         | CI-0000            |                           |                            |
+      | Capture Item:General  | Dependent Question Json | govgrants_config:HideAndDisableCurrencyNumberPercentDateFieldsOnPDF | CI-0000            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                        | CI-0004            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Number                                                          | CI-0006            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Percent                                                         | CI-0005            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Date                                                         | CI-0001            |                           |                            |
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I softly see "Number" on page "1" of "govgrants" pdf file
+    Then I softly cannot see "Currency" on page "1" of "govgrants" pdf file
+    Then I softly cannot see "Percent" on page "1" of "govgrants" pdf file
+    Then I softly cannot see "Date" on page "1" of "govgrants" pdf file
+
+  @88132    @validateAFormIsDisplayedInDownloadedPDF
+  Scenario: validate that a form is displayed in downloaded PDF
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on parallel lines menu bar with data target value "#DynamicFormTableFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Dynamic form"
+    And I download the file
+    Then I see "Dynamic Form" on page "1" of "govgrants" pdf file

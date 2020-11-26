@@ -94,4 +94,12 @@ public class ConfigurationSteps {
             ProjectWebServices.dynamicApi = "dynamicFieldConfig";
         }
     }
+
+    @And("^I update custom metadata setting DND changes:$")
+    public void iUpdateCustomMetaDataDNDConfig(List<Map<String, String>> configParameters) throws IOException {
+        for (Map<String, String> parameters : configParameters) {
+            projectAPI.updateCustomMetaDataDNDConfig(parameters.get("id"), parameters.get("label"), parameters.get("dndCriteria"),parameters.get("filterCriteria"));
+            ProjectWebServices.dynamicApi = "customMetaDataDND";
+        }
+    }
 }
