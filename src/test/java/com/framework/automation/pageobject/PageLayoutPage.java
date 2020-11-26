@@ -1254,11 +1254,11 @@ public class PageLayoutPage extends GovGrantsManager {
      *
      * @author ashwini.mahore
      */
-    public void isMentionAutoCompleteListDisplayedAtCollab(String usage) {
+    public void isMentionAutoCompleteListDisplayedAtCollab(String usage, Boolean isPost) {
         if (usage.equalsIgnoreCase("see")) {
-            Assert.assertTrue(isMentionAutoCompleteListDisplayed());
+            Assert.assertTrue(isMentionAutoCompleteListDisplayed(isPost));
         } else if (usage.equalsIgnoreCase("do not see")) {
-            Assert.assertFalse(isMentionAutoCompleteListDisplayed());
+            Assert.assertFalse(isMentionAutoCompleteListDisplayed(isPost));
         }
     }
 
@@ -2489,14 +2489,28 @@ public class PageLayoutPage extends GovGrantsManager {
      *
      * @author ashwini.mahore
      */
-    public Boolean isMentionAutoCompleteListDisplayed() {
-        boolean flag = false;
+    public Boolean isMentionAutoCompleteListDisplayed(Boolean isPost) {
+        boolean flag = true;
         TestingBlazeGlobal.setVariable("highlightElements", "off");
-        WebElement ele = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@class='post active']//div[@class='mentions-autocomplete-list']"));
-        if (ele.getAttribute("style").contains("none")) {
-            flag = true;
+        WebElement getActivePost = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[contains(@class,'post active')]//div[@class='mentions-autocomplete-list']"));
+        WebElement getActiveComment = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[(contains(@class,'firstColor active'))]//div[@class='mentions-autocomplete-list']"));
+        try {
+            if (isPost) {
+                if (getActivePost.getAttribute("style").contains("none")) {
+                    flag = false;
+                } else if (getActivePost.getAttribute("style").contains("block")) {
+                    flag = true;
+                }
+            } else {
+                if (getActiveComment.getAttribute("style").contains("none")) {
+                    flag = false;
+                } else if (getActiveComment.getAttribute("style").contains("block")) {
+                    flag = true;
+                }
+            }
+        } catch (Exception e) {
         }
-        return false;
+        return flag;
     }
 
     /**
@@ -2539,13 +2553,13 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public Boolean isMenuBarAtMyFeedSectionDisplayed() {
         boolean flag = false;
-            try {
-                if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//a[contains(@class,'menuLinks')]"))) {
-                    flag = false;
-                }
-            } catch (org.openqa.selenium.NoSuchElementException e) {
-                flag = true;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//a[contains(@class,'menuLinks')]"))) {
+                flag = false;
             }
-            return flag;
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+            flag = true;
         }
+        return flag;
+    }
 }

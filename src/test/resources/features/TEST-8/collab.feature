@@ -124,7 +124,7 @@ Business Need: collab Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search f1or "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
     When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
     When I navigate to "Collab" sub tab
     Then I see entered text in my feed section displayed properly
@@ -341,7 +341,7 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Hello @Automation SPI" in the post at collab
-    Then I do not see mention auto complete list is displayed at collab
+    Then I do not see mention auto complete list is displayed at collab post
 
   @114121    @verifyThatIfPMUserTriesToMenionExternalUserThenAutoCompleteListShouldNotDisplayedAtComment
   Scenario: validate that if pm user tries to mention external user in comment then mention auto complete list is not displayed
@@ -350,7 +350,7 @@ Business Need: collab Component Scenarios
     And I navigate to "Collaboration (Collab)" tab
     And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
     And I enter value "Hello @Automation SPI" in the comment at collab
-    Then I do not see mention auto complete list is displayed at collab
+    Then I do not see mention auto complete list is displayed at collab comment
 
   @115006    @verifyThatByClickOnRefreshIconALoadingIconAppearsAtRecordLevelCollabByLoginAsADMINUser
   Scenario: validate that by click on refresh icon, a loading icon appears at record level collab tab by login as ADMIN user
@@ -437,3 +437,36 @@ Business Need: collab Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Collaboration (Collab)" tab
     Then I see navigation logo on page
+
+  @115988    @verifyThatIfAdminUserUsedAtMentionInCommentThenAutoCompleteListIsDisplayedAtComment
+  Scenario: validate that if admin user at mention user in comment then mention auto complete list is displayed
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Home" tab
+    When I click on "Menu" in the page details
+    And I select "All Users" from dropdown
+    And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
+    And I enter value "Hello @Automation" in the comment at collab
+    Then I see mention auto complete list is displayed at collab comment
+
+  @115989     @verifyThatIfAdminUserUsedAtMentionInCommentThenAutoCompleteListIsDisplayedAtCommentAtCollabPhase
+  Scenario: validate that if admin user at mention user in comment then mention auto complete list is displayed at collab phase
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
+    And I enter value "Hello @Automation" in the comment at collab
+    Then I see mention auto complete list is displayed at collab comment
+
+  @115990     @verifyThatIfAdminUserUsedAtMentionInCommentThenAutoCompleteListIsDisplayedAtCommentAtRecordLevelCollab
+  Scenario: validate that if admin user at mention user in comment then mention auto complete list is displayed at record level collab phase
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
+    And I enter value "Hello @Automation" in the comment at collab
+    Then I see mention auto complete list is displayed at collab comment

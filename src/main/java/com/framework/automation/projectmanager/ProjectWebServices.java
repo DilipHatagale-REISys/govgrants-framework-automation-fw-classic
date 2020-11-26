@@ -284,13 +284,7 @@ public class ProjectWebServices {
         JsonObject jsonObject = new JsonObject();
         JsonObject jsonContainer = new JsonObject();
         jsonObject.addProperty("GNT__DNDCriteria__c", dndCriteria);
-        if (filterCriteria.contains("govgrants_config")) {
-                String[] splittedValue = filterCriteria.split(":");
-            jsonObject.addProperty("GNT__FilterCriteria__c", readProp.ReadPropertyFile("govgrants_config.properties", splittedValue[1]));
-        } else {
-            jsonObject.addProperty("GNT__FilterCriteria__c", filterCriteria);
-        }
-
+        jsonObject.addProperty("GNT__FilterCriteria__c", filterCriteria);
         jsonContainer.add("fieldvalues", jsonObject);
         jsonContainer.addProperty("custommetadatafullname", "GNT__DND__mdt." + label);
         jArray.add(jsonContainer);

@@ -665,7 +665,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
     When I navigate to "Attachments" sub tab
-    Then I see edit icon is disabled inside "Attachments" page block
+    Then I see "Edit" icon is disabled inside "Attachments" page block
 
   @36053    @hideDisableAttachmentRowActionsFieldWithHideOptionAtPageBlock-gPlanning
   Scenario: Hiding edit action item at row level inside attachments page block from config using hide option and validating it at program-submitted for approval detail page
@@ -1303,7 +1303,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    Then I see edit icon is disabled inside "Attachments" page block
+    Then I see "Edit" icon is disabled inside "Attachments" page block
 
   @53095    @hideForProfileFieldAtNotesAndAttachmentPageBlockForEditAction-gPlanning
   Scenario: Hide edit action from attachment page block from config validating it at attachments table
@@ -1320,7 +1320,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    Then I see edit icon is disabled inside "Attachments" page block
+    Then I see "Edit" icon is disabled inside "Attachments" page block
 
   @53096    @hideForUserFieldAtNotesAndAttachmentPageBlockForEditAction-gPlanning
   Scenario: Hide edit action from attachment page block from config validating it at attachments table
@@ -1337,7 +1337,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    Then I see edit icon is disabled inside "Attachments" page block
+    Then I see "Edit" icon is disabled inside "Attachments" page block
 
 
   @53098    @hideOperatorFieldUsingOROperatorAtNotesAndAttachmentPageBlockForEditAction-gPlanning
@@ -1359,7 +1359,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    Then I see edit icon is disabled inside "Attachments" page block
+    Then I see "Edit" icon is disabled inside "Attachments" page block
 
   @53097    @hideOperatorFieldUsingANDOperatorAtNotesAndAttachmentPageBlockForEditAction-gPlanning
   Scenario: Hide edit row level action using AND operator from configuration and validating it at attachments table
@@ -1380,7 +1380,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
-    Then I see edit icon is disabled inside "Attachments" page block
+    Then I see "Edit" icon is disabled inside "Attachments" page block
 
   @53099    @hideForContextFieldAtNotesAndAttachmentPageBlockForEditActionWithRecordTypeNotesConfig-gPlanning
   Scenario Outline: Hide edit row level action using AND operator from configuration and validating it at attachments table
@@ -1510,7 +1510,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Test Demo"
     When I click on "View Program Details" icon for "Test Demo" inside table
     When I navigate to "Attachments" sub tab
-    Then I see edit icon is disabled inside "Attachments" page block
+    Then I see "Edit" icon is disabled inside "Attachments" page block
 
   @53261    @hideDecisionFieldAtNotesAndAttachmentPageBlockForEditActionWithRecordTypeNotesConfig-gPlanning
   Scenario Outline: Hide edit action from attachment page block from config validating it at attachments table
@@ -3646,3 +3646,21 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Test Data DND"
     When I click on "View" icon for "Test Data DND" inside table
     Then I see phase tab has "Very dark cyan" background color
+
+  @116346    @verifyHideFieldJsonFieldByHidingtextFieldOnTheBasisOfPicklistFieldValueInViewMode
+  Scenario: Set up hide field json value to Hide title from Overview page block using picklist field value in view mode
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                                                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistBlankValueUsingHideFiledJSON | Grantee State Program | Name                      | PBD-9163                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I enter value "--None--" into field "ProgramSubType__c"
+    And I click on "Save" in the page details
+    Then I see "Project Goals" is not displayed inside page block detail

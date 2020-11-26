@@ -593,9 +593,9 @@ public class PageLayoutSteps {
         pageLayoutPage.assertTextInsideUploadFileModal(text);
     }
 
-    @Then("^I (see|do not see) mention auto complete list is displayed at collab$")
-    public void iSeeMentionAutoCompleteListIsNotDisplayedAtCollab(String usage) {
-        pageLayoutPage.isMentionAutoCompleteListDisplayedAtCollab(usage);
+    @Then("^I (see|do not see) mention auto complete list is displayed at collab (comment|post)$")
+    public void iSeeMentionAutoCompleteListIsNotDisplayedAtCollab(String usage, String isPostOrComment) {
+        pageLayoutPage.isMentionAutoCompleteListDisplayedAtCollab(usage, isPostOrComment.equalsIgnoreCase("post"));
     }
 
     @Then("I see {string} tab is displayed at Home")
