@@ -703,7 +703,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Budgeting Preference" inside page block details
+    Then I see field "Budgeting Preference" inside page block
 
   @36099    @isActiveFieldAtPageBlockDetail-gPlanning @smoke
   Scenario: Disabling of program name page block detail from config and validating it at program detail page
@@ -751,7 +751,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Automation Title" inside page block details
+    Then I see field "Automation Title" inside page block
 
   @36106    @readOnlyFieldAtPageBlockDetail-gPlanning
   Scenario: changing rendering behaviour of program name read only from config and validaying it at program detail page

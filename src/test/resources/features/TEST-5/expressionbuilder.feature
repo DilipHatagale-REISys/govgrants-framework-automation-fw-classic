@@ -2242,7 +2242,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Program Code" inside page block details
+    Then I see field "Program Code" inside page block
 
   @45930    @hide_expression_ProgramCode_With_UserType_Internal_Profile_Admin_Operator_AND
   Scenario: Set up configuration for Hide Program code from Overview page block using UserType Internal and profile Admin with operator AND at program edit page
@@ -2738,9 +2738,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
-    Then I see "Website Address" inside page block details
-
-  @46373    @hide_expression_Website_Address_Page_Block_Details_With_StartDate_c_greaterequalto_11_30_2020 @smoke
+    Then I see "Website Address" inside page block@46373    @hide_expression_Website_Address_Page_Block_Details_With_StartDate_c_greaterequalto_11_30_2020 @smoke
   Scenario: Set up configuration for hide Website address from Overview page block details using Field (StartDate__c >= 11/30/2020) at program view page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -2786,7 +2784,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForFundedAmountAndNumber}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programForFundedAmountAndNumber}" inside table
-    Then I see "Website Address" inside page block details
+    Then I see field "Website Address" inside page block
 
   @46377    @hide_expression_Website_Address_Page_Block_Details_With_Number_c_lessthan_5678
   Scenario: Set up configuration for display Website address from Overview page block details using Field (Number__c < 5678) at program view page
@@ -2802,7 +2800,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
-    Then I see "Website Address" inside page block details
+    Then I see field "Website Address" inside page block
 
   @46378    @hide_expression_Website_Address_Page_Block_Details_With_CFDA_Data_c_equalto_true
   Scenario: Set up configuration for hide Website address from Overview page block details using Field (CFDA_Data__c = true) at program view page
@@ -2834,9 +2832,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Website Address" inside page block details
-
-  @46380    @hide_expression_Website_Address_Page_Block_Details_With_Number_c_greaterequalto_5678
+    Then I see "Website Address" inside page block@46380    @hide_expression_Website_Address_Page_Block_Details_With_Number_c_greaterequalto_5678
   Scenario: Set up configuration for hide Website address from Overview page block details using Field (Number__c >= 5678) at program view page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -2930,7 +2926,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Website Address" inside page block details
+    Then I see field "Website Address" inside page block
 
   @46388    @hide_expression_Website_Address_Page_Block_Details_With_ExpectedFunding_AND_FunderType_CONTAINS
   Scenario: Set up configuration for hide Website address from Overview page block details using Field ExpectedFunding AND FunderType CONTAINS at program view page

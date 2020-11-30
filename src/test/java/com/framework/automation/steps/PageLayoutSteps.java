@@ -261,11 +261,6 @@ public class PageLayoutSteps {
         pageLayoutPage.assertCorrectFlexGridDisplayedAtPageBlock();
     }
 
-    @Then("^I see \"([^\"]*)\" inside page block details$")
-    public void assertChangedFieldInsidePageBlockDetail(String changedFieldName) {
-        pageLayoutPage.assertChangedFieldInsidePageBlockDetailDisplayed(changedFieldName);
-    }
-
     @Then("^I (see|softly see) \"([^\"]*)\" is not displayed inside page block detail$")
     public void assertSpecificFieldAtPageBlockDetailNotDisplayed(String usage, String changedFieldName) {
         pageLayoutPage.assertSpecificFieldInsidePageBlockDetailNotDisplayed(usage, changedFieldName);

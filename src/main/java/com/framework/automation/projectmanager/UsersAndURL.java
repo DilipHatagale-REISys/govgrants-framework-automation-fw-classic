@@ -132,7 +132,7 @@ public class UsersAndURL implements UsersController {
 
     private String getTest8EnvironmentPassword(String userType) {
         Map<String, String> password = new HashMap<>();
-        password.put("ADMIN", "test@12345");
+        password.put("ADMIN", "test@123456");
         password.put("EXE", "test@12345");
         password.put("PM", "test@12345");
         password.put("FO", "test@12345");

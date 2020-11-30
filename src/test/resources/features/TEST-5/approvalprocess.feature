@@ -780,7 +780,7 @@ Business Need: Approval Process Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
-    Then I see "Automation Testing" inside page block details
+    Then I see field "Automation Testing" inside page block
 
   @38847    @confirmationMessageBoxPopupForSendToOwnerApprovalDecisionAction-Programs @smoke
   Scenario: Setup confirmation message inside confirmation message box for send back approval decision action using Approval Decision Action from configuration and validating it in pending tasks approval decision
@@ -1268,7 +1268,7 @@ Business Need: Approval Process Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
-    Then I see "Automation Testing" inside page block details
+    Then I see field "Automation Testing" inside page block
 
   @41063    @hideApproveOptionFromHideExpressionJSONField-Programs @smoke
   Scenario: Hiding approve option from configuration and validating its content in pending tasks approval decision

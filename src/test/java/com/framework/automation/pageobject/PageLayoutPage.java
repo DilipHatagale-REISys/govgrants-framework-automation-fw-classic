@@ -241,15 +241,6 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
-     * assert if changed field inside page block detail is displayed
-     *
-     * @param changedFieldName
-     */
-    public void assertChangedFieldInsidePageBlockDetailDisplayed(String changedFieldName) {
-        Assert.assertTrue(isChangedPageBlockDetailFieldDisplayed(changedFieldName));
-    }
-
-    /**
      * assert true if specific field inside page block detail as per name is not
      * displayed
      *
@@ -1582,22 +1573,6 @@ public class PageLayoutPage extends GovGrantsManager {
         } catch (Exception e) {
             return false;
         }
-    }
-
-    /**
-     * @param changedFieldName
-     * @return true if changed field inside page block detail is displayed
-     */
-    private boolean isChangedPageBlockDetailFieldDisplayed(String changedFieldName) {
-        boolean flag = false;
-        try {
-            if (I.amPerforming().checkToSee().isDisplayed(getPageBlockDetailsElement(changedFieldName))) {
-                flag = true;
-            }
-        } catch (Exception e) {
-
-        }
-        return flag;
     }
 
     /**
