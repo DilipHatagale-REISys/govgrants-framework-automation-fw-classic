@@ -261,19 +261,9 @@ public class PageLayoutSteps {
         pageLayoutPage.assertCorrectFlexGridDisplayedAtPageBlock();
     }
 
-    @Then("^I see \"([^\"]*)\" inside page block details$")
-    public void assertChangedFieldInsidePageBlockDetail(String changedFieldName) {
-        pageLayoutPage.assertChangedFieldInsidePageBlockDetailDisplayed(changedFieldName);
-    }
-
     @Then("^I (see|softly see) \"([^\"]*)\" is not displayed inside page block detail$")
     public void assertSpecificFieldAtPageBlockDetailNotDisplayed(String usage, String changedFieldName) {
         pageLayoutPage.assertSpecificFieldInsidePageBlockDetailNotDisplayed(usage, changedFieldName);
-    }
-
-    @Then("^I see \"([^\"]*)\" shown at number \"([^\"]*)\" inside page block detail$")
-    public void assertSequenceOfPageBlockElement(String changedFieldName, String number) {
-        pageLayoutPage.assertSortingOfPageBlockDetailElementSubTab(changedFieldName, Integer.parseInt(number));
     }
 
     @Then("^I see \"([^\"]*)\" in table header on lookup Modal$")

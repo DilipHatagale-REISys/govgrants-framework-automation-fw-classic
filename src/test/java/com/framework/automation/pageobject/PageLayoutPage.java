@@ -241,15 +241,6 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
-     * assert if changed field inside page block detail is displayed
-     *
-     * @param changedFieldName
-     */
-    public void assertChangedFieldInsidePageBlockDetailDisplayed(String changedFieldName) {
-        Assert.assertTrue(isChangedPageBlockDetailFieldDisplayed(changedFieldName));
-    }
-
-    /**
      * assert true if specific field inside page block detail as per name is not
      * displayed
      *
@@ -261,14 +252,6 @@ public class PageLayoutPage extends GovGrantsManager {
         } else if (usage.equalsIgnoreCase("softly see")) {
             I.amPerforming().assertionsTo().assertThat(isSpecificFieldAtPageBlockDetailDisplayed(changedFieldName)).isTrue();
         }
-    }
-
-    /**
-     * @param changedFieldName
-     * @param number
-     */
-    public void assertSortingOfPageBlockDetailElementSubTab(String changedFieldName, int number) {
-        Assert.assertTrue(isPageBlockDetailElementSequence(changedFieldName, number));
     }
 
     /**
@@ -719,15 +702,6 @@ public class PageLayoutPage extends GovGrantsManager {
         }
         I.amPerforming().click().withJavaScript(lookupButton);
         I.amPerforming().switchTo().frame(lookupFrame);
-    }
-
-    /**
-     * get list of element inside page block detail like program name, program code
-     * etc.
-     */
-    public List<Elements> getListOfPageBlockDetailElement() {
-        return I.amPerforming().getElementReference().forListOfElements().of(By
-                .xpath("//h3//a[contains(text(),'Program Information')]/ancestor::div[2]/following-sibling::div//dt"));
     }
 
     /**
@@ -1585,22 +1559,6 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
-     * @param changedFieldName
-     * @return true if changed field inside page block detail is displayed
-     */
-    private boolean isChangedPageBlockDetailFieldDisplayed(String changedFieldName) {
-        boolean flag = false;
-        try {
-            if (I.amPerforming().checkToSee().isDisplayed(getPageBlockDetailsElement(changedFieldName))) {
-                flag = true;
-            }
-        } catch (Exception e) {
-
-        }
-        return flag;
-    }
-
-    /**
      * return true if Specified field at page block detail is not displayed
      *
      * @param changedFieldName
@@ -1626,18 +1584,6 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     private WebElement getPageBlockDetailsElement(String changedFieldName) {
         return I.amPerforming().getElementReference().of(By.xpath("//span[contains(text(),'" + changedFieldName + "')]"));
-    }
-
-    /**
-     * Boolean status of page block detail element sorting order
-     *
-     * @param changedFieldName
-     */
-    private Boolean isPageBlockDetailElementSequence(String changedFieldName, int number) {
-        if (getListOfPageBlockDetailElement().get(number).getText().contains(changedFieldName)) {
-            return true;
-        } else
-            return false;
     }
 
     /**

@@ -4121,3 +4121,176 @@ Business Need: Logged Issues Scenarios
     And I refresh the page
     When I navigate to "History" sub tab
     Then I see table with header "Snapshot History" contains records "currentdate"
+
+  @116736    @validateFormulaTotalDisplayedAsOForNumberFieldIfAllTheValuesAreHiddenUsingHideLogic
+  Scenario Outline: Validate formula total at number field is all cell values are hidden using hide cell json
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName           | fieldOrignalValue               | filterId         |
+      | Flex Table List           | Formula             |                                 | ApiGeneratedId:0 |
+      | Flex Table List           | Hide Cell JSON      |                                 | ApiGeneratedId:1 |
+      | Flex Grid                 | Display Field Names | <defaultFieldsApi>              | ApiGeneratedId:2 |
+      | Flex Grid:Flex Table List | Filter Clause       | <defaultFilterClauseForFLV2539> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName           | fieldNewValue                                                        | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List           | Formula             | govgrants_config:FormulaFieldToDisplayFormulaAtLastRowAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1522                   |
+      | Flex Table List           | Hide Cell JSON      | govgrants_config:HideCellJsonForEnhancedGridNumberField              | TmpActiveGrantsGrid | Name                      | FTC-1522                   |
+      | Flex Grid:General         | Display Field Names | <newFieldsApi>                                                       | TmpActiveGrantsGrid |                           |                            |
+      | Flex Grid:Flex Table List | Filter Clause       | <newFilterClauseForFLV2539>                                          | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    And I click toggle button to select "Monitoring Schedule For All Active Grants"
+    Then I see value "0" for title "NUMBER" inside table "---program:-:flexGridEnhancedID---"
+
+    Examples:
+      | newFieldsApi                             | defaultFieldsApi                                                                                                                                                                                                                                          | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                          |
+      | Status__c,Name,ProjectTitle__c,NUMBER__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,TotalAdjustedAmount__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and NUMBER__c=100 |
+
+  @116744    @validate%SignInFormulaTotalDisplayedAtPercentFieldIfAllTheValuesAreHiddenUsingHideLogic
+  Scenario Outline: Validate % sign in formula total at percent field is all cell values are hidden using hide cell json
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName           | fieldOrignalValue               | filterId         |
+      | Flex Table List           | Formula             |                                 | ApiGeneratedId:0 |
+      | Flex Table List           | Hide Cell JSON      |                                 | ApiGeneratedId:1 |
+      | Flex Grid                 | Display Field Names | <defaultFieldsApi>              | ApiGeneratedId:2 |
+      | Flex Grid:Flex Table List | Filter Clause       | <defaultFilterClauseForFLV2539> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName           | fieldNewValue                                                        | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List           | Formula             | govgrants_config:FormulaFieldToDisplayFormulaAtLastRowAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1523                   |
+      | Flex Table List           | Hide Cell JSON      | govgrants_config:HideCellJsonForEnhancedGridNumberField              | TmpActiveGrantsGrid | Name                      | FTC-1523                   |
+      | Flex Grid:General         | Display Field Names | <newFieldsApi>                                                       | TmpActiveGrantsGrid |                           |                            |
+      | Flex Grid:Flex Table List | Filter Clause       | <newFilterClauseForFLV2539>                                          | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    And I click toggle button to select "Monitoring Schedule For All Active Grants"
+    Then I see value "0.00%" for title "PercentTest" inside table "---program:-:flexGridEnhancedID---"
+
+    Examples:
+      | newFieldsApi                                  | defaultFieldsApi                                                                                                                                                                                                                                          | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                          |
+      | Status__c,Name,ProjectTitle__c,PercentTest__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,TotalAdjustedAmount__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and NUMBER__c=100 |
+
+  @116741    @validateFormulaTotalDisplayedAtPercentFieldIfAllTheValuesAreHiddenUsingHideLogic
+  Scenario Outline: Validate formula total at percent field is all cell values are hidden using hide cell json
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName           | fieldOrignalValue               | filterId         |
+      | Flex Table List           | Formula             |                                 | ApiGeneratedId:0 |
+      | Flex Table List           | Hide Cell JSON      |                                 | ApiGeneratedId:1 |
+      | Flex Grid                 | Display Field Names | <defaultFieldsApi>              | ApiGeneratedId:2 |
+      | Flex Grid:Flex Table List | Filter Clause       | <defaultFilterClauseForFLV2539> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName           | fieldNewValue                                                        | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List           | Formula             | govgrants_config:FormulaFieldToDisplayFormulaAtLastRowAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1523                   |
+      | Flex Table List           | Hide Cell JSON      | govgrants_config:HideCellJsonForEnhancedGridNumberField              | TmpActiveGrantsGrid | Name                      | FTC-1523                   |
+      | Flex Grid:General         | Display Field Names | <newFieldsApi>                                                       | TmpActiveGrantsGrid |                           |                            |
+      | Flex Grid:Flex Table List | Filter Clause       | <newFilterClauseForFLV2539>                                          | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    And I click toggle button to select "Monitoring Schedule For All Active Grants"
+    Then I see value "0.00%" for title "PercentTest" inside table "---program:-:flexGridEnhancedID---"
+
+    Examples:
+      | newFieldsApi                                  | defaultFieldsApi                                                                                                                                                                                                                                          | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                          |
+      | Status__c,Name,ProjectTitle__c,PercentTest__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,TotalAdjustedAmount__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and NUMBER__c=100 |
+
+  @116722    @validateFormulaTotalDisplayedAtCurrencyFieldIfAllTheValuesAreHiddenUsingHideLogic
+  Scenario Outline: Validate formula total at currency field if all cell values are hidden using hide cell json
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName           | fieldOrignalValue               | filterId         |
+      | Flex Table List           | Formula             |                                 | ApiGeneratedId:0 |
+      | Flex Table List           | Hide Cell JSON      |                                 | ApiGeneratedId:1 |
+      | Flex Grid                 | Display Field Names | <defaultFieldsApi>              | ApiGeneratedId:2 |
+      | Flex Grid:Flex Table List | Filter Clause       | <defaultFilterClauseForFLV2539> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName           | fieldNewValue                                                        | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List           | Formula             | govgrants_config:FormulaFieldToDisplayFormulaAtLastRowAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1491                   |
+      | Flex Table List           | Hide Cell JSON      | govgrants_config:HideCellJsonForEnhancedGridNumberField              | TmpActiveGrantsGrid | Name                      | FTC-1491                   |
+      | Flex Grid:General         | Display Field Names | <newFieldsApi>                                                       | TmpActiveGrantsGrid |                           |                            |
+      | Flex Grid:Flex Table List | Filter Clause       | <newFilterClauseForFLV2539>                                          | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    And I click toggle button to select "Monitoring Schedule For All Active Grants"
+    Then I see value "$0.00" for title "Total Award Obligated Amount" inside table "---program:-:flexGridEnhancedID---"
+
+    Examples:
+      | newFieldsApi                                                | defaultFieldsApi                                                                                                                                                                                                                                          | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                          |
+      | Status__c,Name,ProjectTitle__c,TotalAwardObligatedAmount__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,TotalAdjustedAmount__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and NUMBER__c=100 |
+
+  @116738    @validateLookupFieldIsNotEditableIfAllTheValuesAreHiddenUsingHideLogic
+  Scenario Outline: Validate lookup field is not editable if all cell values are hidden using hide cell json
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName           | fieldOrignalValue               | filterId         |
+      | Flex Table List           | Formula             |                                 | ApiGeneratedId:0 |
+      | Flex Table List           | Hide Cell JSON      |                                 | ApiGeneratedId:1 |
+      | Flex Grid                 | Display Field Names | <defaultFieldsApi>              | ApiGeneratedId:2 |
+      | Flex Grid:Flex Table List | Filter Clause       | <defaultFilterClauseForFLV2539> | ApiGeneratedId:3 |
+      | Flex Table List           | Display Field       |                                 | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName           | fieldNewValue                                                        | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List           | Formula             | govgrants_config:FormulaFieldToDisplayFormulaAtLastRowAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1487                   |
+      | Flex Table List           | Hide Cell JSON      | govgrants_config:HideCellJsonForEnhancedGridNumberField              | TmpActiveGrantsGrid | Name                      | FTC-1487                   |
+      | Flex Grid:General         | Display Field Names | <newFieldsApi>                                                       | TmpActiveGrantsGrid |                           |                            |
+      | Flex Grid:Flex Table List | Filter Clause       | <newFilterClauseForFLV2539>                                          | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Table List           | Display Field       |                                                                      | TmpActiveGrantsGrid | Name                      | FTC-1486                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    And I click toggle button to select "Monitoring Schedule For All Active Grants"
+    When I click on "Edit" icon for "GT-MAC-1-001" inside table
+    Then I see lookup field "*****" is in view mode
+
+    Examples:
+      | newFieldsApi                                           | defaultFieldsApi                                                                                                                                                                                                                                          | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                          |
+      | Status__c,Name,ProjectTitle__c,ExternalOrganization__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,TotalAdjustedAmount__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and NUMBER__c=100 |
+
+  @116735    @validateAsteriskMarkDisplayedInsideCurrencyFieldColumnIfAllTheValuesAreHiddenUsingHideLogic
+  Scenario Outline: Validate lookup field is not editable if all cell values are hidden using hide cell json
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName           | fieldOrignalValue               | filterId         |
+      | Flex Table List           | Formula             |                                 | ApiGeneratedId:0 |
+      | Flex Table List           | Hide Cell JSON      |                                 | ApiGeneratedId:1 |
+      | Flex Grid                 | Display Field Names | <defaultFieldsApi>              | ApiGeneratedId:2 |
+      | Flex Grid:Flex Table List | Filter Clause       | <defaultFilterClauseForFLV2539> | ApiGeneratedId:3 |
+      | Flex Table List           | Display Field       |                                 | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName           | fieldNewValue                                                        | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List           | Formula             | govgrants_config:FormulaFieldToDisplayFormulaAtLastRowAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1487                   |
+      | Flex Table List           | Hide Cell JSON      | govgrants_config:HideCellJsonForEnhancedGridNumberField              | TmpActiveGrantsGrid | Name                      | FTC-1487                   |
+      | Flex Grid:General         | Display Field Names | <newFieldsApi>                                                       | TmpActiveGrantsGrid |                           |                            |
+      | Flex Grid:Flex Table List | Filter Clause       | <newFilterClauseForFLV2539>                                          | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+      | Flex Table List           | Display Field       |                                                                      | TmpActiveGrantsGrid | Name                      | FTC-1486                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    And I click toggle button to select "Monitoring Schedule For All Active Grants"
+    Then I see "*****" shown inside enhanced grid table for specified record "GT-MAC-1-001"
+
+    Examples:
+      | newFieldsApi                                           | defaultFieldsApi                                                                                                                                                                                                                                          | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                          |
+      | Status__c,Name,ProjectTitle__c,ExternalOrganization__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,TotalAdjustedAmount__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and NUMBER__c=100 |
