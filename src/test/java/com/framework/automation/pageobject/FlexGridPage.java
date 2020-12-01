@@ -582,7 +582,7 @@ public class FlexGridPage extends GovGrantsManager {
     private Boolean isLookupFieldComingInViewMode(String lookupFieldNAme) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//field//a[contains(text(),'" + lookupFieldNAme + "')]"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//field//a[contains(text(),'" + lookupFieldNAme + "')] | //field//span[@ng-bind='fieldValue' and contains(text(),'" + lookupFieldNAme + "')]"))) {
                 flag = true;
             }
         } catch (Exception e) {

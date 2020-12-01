@@ -67,11 +67,6 @@ public class LibraryFilesSteps {
         libraryFilesPage.asserModalWindowIsNotDisplayedAtLibraryFileFolder(usage, modalTitle);
     }
 
-    @Then("^I see \"([^\"]*)\" button is disabled at modal under library$")
-    public void asserModalButtonIsDisabledAtLibraryFileFolder(String buttonName) {
-        libraryFilesPage.asserModalButtonIsDisabledAtLibrary(buttonName);
-    }
-
     @Then("^I see default library/folder as \"([^\"]*)\" is displayed$")
     public void asserDefaultLibraryFolderIsDisabledAtUploadModal(String defaultFolder) {
         libraryFilesPage.asserDefaultLibraryFolderIsDisabledAtUploadModal(defaultFolder);

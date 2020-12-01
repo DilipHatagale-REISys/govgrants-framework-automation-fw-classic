@@ -97,15 +97,6 @@ public class LibraryFilesPage extends GovGrantsManager {
     }
 
     /**
-     * assert true if upload button at modal window is disabled under library - Home phase
-     *
-     * @param buttonName
-     */
-    public void asserModalButtonIsDisabledAtLibrary(String buttonName) {
-        Assert.assertTrue(isModalButtonDisabledAtLibrary(buttonName));
-    }
-
-    /**
      * assert true if default file/folder is displayed under upload file modal - Home Phase
      *
      * @param defaultFolder
@@ -452,23 +443,6 @@ public class LibraryFilesPage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//p[text()='" + modalTitle + "']"))) {
-                flag = true;
-            }
-        } catch (org.openqa.selenium.NoSuchElementException e) {
-        }
-        return flag;
-    }
-
-    /**
-     * return true if upload button at modal window is disabled under library - Home phase
-     *
-     * @param buttonName
-     * @return
-     */
-    private boolean isModalButtonDisabledAtLibrary(String buttonName) {
-        boolean flag = false;
-        try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//button[text()='" + buttonName + "' and @disabled='true']"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {

@@ -266,11 +266,6 @@ public class PageLayoutSteps {
         pageLayoutPage.assertSpecificFieldInsidePageBlockDetailNotDisplayed(usage, changedFieldName);
     }
 
-    @Then("^I see \"([^\"]*)\" shown at number \"([^\"]*)\" inside page block detail$")
-    public void assertSequenceOfPageBlockElement(String changedFieldName, String number) {
-        pageLayoutPage.assertSortingOfPageBlockDetailElementSubTab(changedFieldName, Integer.parseInt(number));
-    }
-
     @Then("^I see \"([^\"]*)\" in table header on lookup Modal$")
     public void assertFlexTableHeaderName(String headerColumnName) {
         pageLayoutPage.assertTableHeaderColumnNameForLookupModal(headerColumnName);
