@@ -4429,3 +4429,27 @@ Business Need: dynamic forms Component Scenarios
     And I select "Download As PDF" from dropdown
     And I download the file
     Then I see new tab is opened
+
+  @115550    @validateThatDownloadAsPDFOptionIsDisplayedAtDynamicFormFlexTableByLoginAsAdminUser
+  Scenario: verify that download as PDF button is displayed at dynamic form flex table by login as admin user
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on parallel lines menu bar with data target value "#DynamicFormTableFlexToggle"
+    Then I see "Download as PDF" inside flex table with id "DynamicFormTablegrid"
+
+  @115551    @validateThatDownloadAsPDFOptionIsDisplayedAtDynamicFormFlexTableByLoginAsPMUser
+  Scenario: verify that download as PDF button is displayed at dynamic form flex table by login as PM user
+    When I login as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Announcements - All"
+    When I perform quick search for "AnnouncementTest"
+    When I click on "View" icon for "AnnouncementTest" inside table
+    When I navigate to "Setup" sub tab
+    When I click on parallel lines menu bar with data target value "#DynamicFormTableFlexToggle"
+    Then I see "Download as PDF" inside flex table with id "DynamicFormTablegrid"

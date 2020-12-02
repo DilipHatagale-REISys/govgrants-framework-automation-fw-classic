@@ -2117,7 +2117,7 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean isExpectedFieldValueDisplayedAtSendEmailModal(String value, String fieldLabel) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//label[contains(text(),'" + fieldLabel + "')]/..//span[text()='" + value + "']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//label[contains(text(),'" + fieldLabel + "')]/..//span[contains(text(),'" + value + "')]"))) {
                 flag = true;
             }
         } catch (Exception e) {
