@@ -377,7 +377,7 @@ public class LibraryFilesPage extends GovGrantsManager {
      * @author ashwini.mahore
      */
     public void clcikOnTableHeaderToExpand(String tableHeader) {
-        By flexTableExpandCollapseIconSelector = By.xpath("//span[text()='" + tableHeader + "']//ancestor::a[contains(@class,'collapsed')]");
+        By flexTableExpandCollapseIconSelector = ByUsing.xpath("//*[@title='" + tableHeader + "']//span[contains(@class,'fa-caret-down')]");
         I.amPerforming().click().on(flexTableExpandCollapseIconSelector);
     }
 
