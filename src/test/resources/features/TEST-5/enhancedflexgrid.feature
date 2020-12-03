@@ -783,7 +783,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Closed/Reject Announcements"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
@@ -2542,3 +2542,31 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I expand nested table containing column value "USAID/Burundi TUBITEHO Health Activity"
     When I hovering mouse on table id "---program:-:tmpGrantorActiveAwardsGridTableId---" with table row level icon "USAID/Burundi TUBITEHO Health Activity" for column value "AD-Grant--10"
     Then I see "USAID/Burundi TUBITEHO Health Activity" shown at mouse hover inside "---program:-:tmpGrantorActiveAwardsGridTableId---" table
+
+  @116731    @verifyLoadingIconNotDisplayedWhenAllValuesFromCurrencyFieldAreHiddenUsingHideLogic-EGrid
+  Scenario Outline: Validate loading icon not displayed if all currency field values are hidden using hide logic
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName           | fieldOrignalValue               | filterId         |
+      | Flex Table List           | Formula             |                                 | ApiGeneratedId:0 |
+      | Flex Table List           | Hide Cell JSON      |                                 | ApiGeneratedId:1 |
+      | Flex Grid                 | Display Field Names | <defaultFieldsApi>              | ApiGeneratedId:2 |
+      | Flex Grid:Flex Table List | Filter Clause       | <defaultFilterClauseForFLV2539> | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName           | fieldNewValue                                                        | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List           | Formula             | govgrants_config:FormulaFieldToDisplayFormulaAtLastRowAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1491                   |
+      | Flex Table List           | Hide Cell JSON      | govgrants_config:HideCellJsonForEnhancedGridNumberField              | TmpActiveGrantsGrid | Name                      | FTC-1491                   |
+      | Flex Grid:General         | Display Field Names | <newFieldsApi>                                                       | TmpActiveGrantsGrid |                           |                            |
+      | Flex Grid:Flex Table List | Filter Clause       | <newFilterClauseForFLV2539>                                          | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    And I click toggle button to select "Monitoring Schedule For All Active Grants"
+    Then I donot see navigation logo on page
+
+    Examples:
+      | newFieldsApi                                                | defaultFieldsApi                                                                                                                                                                                                                                          | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                          |
+      | Status__c,Name,ProjectTitle__c,TotalAwardObligatedAmount__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,TotalAdjustedAmount__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and NUMBER__c=100 |

@@ -1076,7 +1076,7 @@ Business Need: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Draft Announcements"
+    And I click toggle button to select "Closed/Reject Announcements"
     When I perform quick search for "Test Announcement For Automation"
     When I click on "View" icon for "Test Announcement For Automation" inside table
     When I navigate to "Overview" sub tab
@@ -1952,7 +1952,7 @@ Business Need: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Draft Announcements"
+    And I click toggle button to select "Closed/Reject Announcements"
     When I perform quick search for "Test Announcement For Automation"
     When I click on "Edit" icon for "Test Announcement For Automation" inside table
     When I navigate to "Attachments" sub tab
@@ -2064,7 +2064,7 @@ Business Need: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Draft Announcements"
+    And I click toggle button to select "Closed/Reject Announcements"
     When I perform quick search for "Test Announcement For Automation"
     When I click on "View" icon for "Test Announcement For Automation" inside table
     When I navigate to "Attachments" sub tab
@@ -2229,7 +2229,7 @@ Business Need: Page Layout Component Scenarios
       | en_US  | America/Panama |
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Draft Announcements"
+    And I click toggle button to select "Closed/Reject Announcements"
     When I perform quick search for "Test Announcement For Automation"
     When I click on "View" icon for "Test Announcement For Automation" inside table
     When I navigate to "Overview" sub tab
@@ -2246,7 +2246,7 @@ Business Need: Page Layout Component Scenarios
       | en_CA  | America/New_York |
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Draft Announcements"
+    And I click toggle button to select "Closed/Reject Announcements"
     When I perform quick search for "Test Announcement For Automation"
     When I click on "View" icon for "Test Announcement For Automation" inside table
     When I navigate to "Overview" sub tab
@@ -2263,7 +2263,7 @@ Business Need: Page Layout Component Scenarios
       | en_IN  | Asia/Kolkata |
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Draft Announcements"
+    And I click toggle button to select "Closed/Reject Announcements"
     When I perform quick search for "Test Announcement For Automation"
     When I click on "View" icon for "Test Announcement For Automation" inside table
     When I navigate to "Overview" sub tab
@@ -2280,7 +2280,7 @@ Business Need: Page Layout Component Scenarios
       | en_US  | America/Panama |
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Draft Announcements"
+    And I click toggle button to select "Closed/Reject Announcements"
     When I perform quick search for "Test Announcement For Automation"
     When I click on "View" icon for "Test Announcement For Automation" inside table
     When I navigate to "Overview" sub tab
@@ -2297,7 +2297,7 @@ Business Need: Page Layout Component Scenarios
       | en_CA  | America/New_York |
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Draft Announcements"
+    And I click toggle button to select "Closed/Reject Announcements"
     When I perform quick search for "Test Announcement For Automation"
     When I click on "View" icon for "Test Announcement For Automation" inside table
     When I navigate to "Overview" sub tab
@@ -2314,7 +2314,7 @@ Business Need: Page Layout Component Scenarios
       | en_IN  | Asia/Kolkata |
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Draft Announcements"
+    And I click toggle button to select "Closed/Reject Announcements"
     When I perform quick search for "Test Announcement For Automation"
     When I click on "View" icon for "Test Announcement For Automation" inside table
     When I navigate to "Overview" sub tab

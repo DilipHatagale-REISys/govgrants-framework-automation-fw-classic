@@ -791,7 +791,7 @@ Business Need: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Draft Announcements"
+    And I click toggle button to select "Closed/Reject Announcements"
     When I perform quick search for "Test Announcement For Automation"
     When I click on "View" icon for "Test Announcement For Automation" inside table
     When I navigate to "Financials" sub tab
@@ -825,7 +825,7 @@ Business Need: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Draft Announcements"
+    And I click toggle button to select "Closed/Reject Announcements"
     When I perform quick search for "Test Announcement For Automation"
     When I click on "View" icon for "Test Announcement For Automation" inside table
     When I navigate to "Financials" sub tab
@@ -859,7 +859,7 @@ Business Need: Expression Builder Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Draft Announcements"
+    And I click toggle button to select "Closed/Reject Announcements"
     When I perform quick search for "Test Announcement For Automation"
     When I click on "View" icon for "Test Announcement For Automation" inside table
     When I navigate to "Financials" sub tab
@@ -2835,6 +2835,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Website Address" inside page block@46380    @hide_expression_Website_Address_Page_Block_Details_With_Number_c_greaterequalto_5678
+
   Scenario: Set up configuration for hide Website address from Overview page block details using Field (Number__c >= 5678) at program view page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -2974,7 +2975,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    Then I see "Activities" inside "Manage Funding Source" is displayed
+    Then I see "Manage Funding Source" inside "Activities" is displayed
 
   @46393    @render_expression_SideBar_ManageFundingSource_With_UserType_NOTIN_Internal
   Scenario: Set up configuration for hide Manage funding source from side bar using (UserType NOTIN(Internal) -gPlanning
@@ -2988,7 +2989,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    Then I do not see "Activities" inside "Manage Funding Source" is displayed
+    Then I do not see "Manage Funding Source" inside "Activities" is displayed
 
   @46395    @render_expression_SideBar_ManageFundingSource_With_Profile_IN_SystemAdministrator @smoke
   Scenario: Set up configuration for display Manage funding source from side bar using Profile IN (System Administrator) -gPlanning
@@ -3002,7 +3003,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    Then I see "Activities" inside "Manage Funding Source" is displayed
+    Then I see "Manage Funding Source" inside "Activities" is displayed
 
   @46396    @render_expression_SideBar_ManageFundingSource_With_Profile_NOTIN_SystemAdministrator
   Scenario: Set up configuration for Hide Manage funding source from side bar using Profile NOTIN (System Administrator) -gPlanning
@@ -3016,7 +3017,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    Then I do not see "Activities" inside "Manage Funding Source" is displayed
+    Then I do not see "Manage Funding Source" inside "Activities" is displayed
 
   @46397    @render_expression_SideBar_ManageFundingSource_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal
   Scenario: Set up configuration for display Manage funding source from side bar using Profile IN (System Administrator ) AND UserType IN (Internal) -gPlanning
@@ -3030,7 +3031,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    Then I see "Activities" inside "Manage Funding Source" is displayed
+    Then I see "Manage Funding Source" inside "Activities" is displayed
 
   @46398    @render_expression_SideBar_ManageFundingSource_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal
   Scenario: Set up configuration for display Manage funding source from side bar using (Profile IN (System Administrator) OR UserType IN (Internal) -gPlanning
@@ -3044,7 +3045,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    Then I see "Activities" inside "Manage Funding Source" is displayed
+    Then I see "Manage Funding Source" inside "Activities" is displayed
 
   @46415    @render_expression_SideBar_ManageFundingSource_With_Profile_IN_SystemAdministrator_AND_Profile_IN_PM
   Scenario: Set up configuration for hide Manage funding source from side bar using (Profile IN (System Administrator) AND Profile IN PM) -gPlanning
@@ -3058,7 +3059,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    Then I do not see "Activities" inside "Manage Funding Source" is displayed
+    Then I do not see "Manage Funding Source" inside "Activities" is displayed
 
   @46416    @render_expression_SideBar_ManageFundingSource_With_Profile_IN_SystemAdministrator_OR_Profile_IN_PM
   Scenario: Set up configuration for display Manage funding source from side bar using (Profile IN (System Administrator) OR Profile IN PM) -gPlanning
@@ -3072,7 +3073,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    Then I see "Activities" inside "Manage Funding Source" is displayed
+    Then I see "Manage Funding Source" inside "Activities" is displayed
 
   @46399    @render_expression_SideBar_ManageFundingSource_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator @smoke
   Scenario: Set up configuration for hide Manage funding source from side bar using (UserType NOT IN (Internal) AND Profile NOT IN (System Administrator) -gPlanning
@@ -3086,7 +3087,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    Then I do not see "Activities" inside "Manage Funding Source" is displayed
+    Then I do not see "Manage Funding Source" inside "Activities" is displayed
 
   @46400    @render_expression_SideBar_ManageFundingSource_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator
   Scenario: Set up configuration for hide Manage funding source from side bar using (UserType NOT IN (Internal) OR Profile NOT IN (System Administrator) -gPlanning
@@ -3100,7 +3101,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    Then I do not see "Activities" inside "Manage Funding Source" is displayed
+    Then I do not see "Manage Funding Source" inside "Activities" is displayed
 
   @46417    @render_expression_SideBar_ManageFundingSource_With_UserType_IN_Applicant_Reviewer
   Scenario: Set up configuration for hide Manage funding source from side bar using UserType IN Applicant, Reviewer -gPlanning
@@ -3114,7 +3115,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    Then I do not see "Activities" inside "Manage Funding Source" is displayed
+    Then I do not see "Manage Funding Source" inside "Activities" is displayed
 
   @46418    @render_expression_SideBar_ManageFundingSource_With_UserType_NOTIN_Applicant_Reviewer
   Scenario: Set up configuration for display Manage funding source from side bar using UserType NOTIN Applicant, Reviewer -gPlanning
@@ -3128,7 +3129,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    Then I see "Activities" inside "Manage Funding Source" is displayed
+    Then I see "Manage Funding Source" inside "Activities" is displayed
 
   @46401    @render_expression_SideBar_ManageFundingSource_With_UserType_IN_Applicant_Internal_Reviewer
   Scenario: Set up configuration for display Manage funding source from side bar using (UserType IN (Applicant, Internal, Reviewer) -gPlanning
@@ -3142,7 +3143,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    Then I see "Activities" inside "Manage Funding Source" is displayed
+    Then I see "Manage Funding Source" inside "Activities" is displayed
 
   @46402    @render_expression_SideBar_ManageFundingSource_With_UserType_NOTIN_Applicant_Internal_Reviewer
   Scenario: Set up configuration for hide Manage funding source from side bar using (UserType NOT IN (Applicant, Internal, Reviewer) -gPlanning
@@ -3156,7 +3157,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    Then I do not see "Activities" inside "Manage Funding Source" is displayed
+    Then I do not see "Manage Funding Source" inside "Activities" is displayed
 
   @46403    @render_expression_CustomApp_With_UserType_IN_Internal @smoke
   Scenario: Set up configuration for display state as grantor custom app using User Type IN Internal -gHome
@@ -3290,7 +3291,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
-    Then I see "Activities" inside "Manage Funding Source" is displayed
+    Then I see "Manage Funding Source" inside "Activities" is displayed
 
   @47285    @render_expression_CustomApp_With_UserType_IN_Applicant_Reviewer
   Scenario: Set up configuration for hide state as grantor custom app using UserType IN Applicant, Reviewer -gHome
@@ -7432,3 +7433,48 @@ Business Need: Expression Builder Component Scenarios
     Examples:
       | newFieldsApi                                             | defaultFieldsApi                                                                                                                               |
       | Name,GrantAwardName__c,Status__c,ObligatedAwardAmount__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
+
+  @116532  @verifyActionColumnIsHiddenWhenAllActionsAreHiddenAtEGridParentTable @enhancedGrid
+  Scenario: Verify action column is hidden if all other row level actions are hidden at enhanced grid parent table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Expression JSON |                   | ApiGeneratedId:0 |
+      | Flex Table Action     | Location             | Row               | ApiGeneratedId:1 |
+      | Flex Table Action     | Location             | Row               | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue                                                               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON       | govgrants_config:HideExpressionAtEditActionToHideActionColumnAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | Edit                       |
+      | Flex Table Action     | Location                   | Top                                                                         | TmpActiveGrantsGrid | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | Button                                                                      | TmpActiveGrantsGrid | Name                      | View                       |
+      | Flex Table Action     | Location                   | Top                                                                         | TmpActiveGrantsGrid | Name                      | Preview                    |
+      | Flex Table Action     | Header Action Display Type | Button                                                                      | TmpActiveGrantsGrid | Name                      | Preview                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    Then I do not see "Actions" in enhanced flex grid header "---program:-:tmpActiveGrantsGridTableId---"
+
+  @117405  @verifyActionColumnIsHiddenWhenAllActionsAreHiddenAtEGridChildTable @enhancedGrid
+  Scenario: Verify action column is hidden if all other row level actions are hidden at enhanced grid child table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Expression JSON |                   | ApiGeneratedId:0 |
+      | Flex Table Action     | Location             | Row               | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue                                                               | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON       | govgrants_config:HideExpressionAtEditActionToHideActionColumnAtEnhancedGridChildTable | TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
+      | Flex Table Action     | Location                   | Top                                                                         | TmpGrantorActiveAwardsGrid | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | Button                                                                      | TmpGrantorActiveAwardsGrid | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    When I expand nested table containing column value "Demo_Title"
+    Then I do not see "Actions" in enhanced flex grid header "---program:-:tmpGrantorActiveAwardsGridTableId---"

@@ -658,7 +658,7 @@ Business Need: New API related scenarios temporary
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Draft Announcements"
+    And I click toggle button to select "Closed/Reject Announcements"
     When I perform quick search for "Test Announcement For Automation"
     When I click on "View" icon for "Test Announcement For Automation" inside table
     When I navigate to "Roles" sub tab
