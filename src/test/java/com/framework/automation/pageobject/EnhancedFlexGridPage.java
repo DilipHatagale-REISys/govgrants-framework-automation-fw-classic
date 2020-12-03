@@ -134,8 +134,12 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      *
      * @param headerColumnName
      */
-    public void assertEnhancedFlexGridHeaderColumnName(String tableId, String headerColumnName) {
-        Assert.assertTrue(isEnhancedFlexGridColumnHeaderName(tableId, headerColumnName));
+    public void assertEnhancedFlexGridHeaderColumnName(String usage, String tableId, String headerColumnName) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isEnhancedFlexGridColumnHeaderName(tableId, headerColumnName));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isEnhancedFlexGridColumnHeaderName(tableId, headerColumnName));
+        }
     }
 
     /***
@@ -1515,7 +1519,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     private boolean isMouseHoverTextAtColumnValueDisplayedInsideTableId(String text, String tableId) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']//*[@title='"+text+"']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']//*[@title='" + text + "']"))) {
                 flag = true;
             }
         } catch (Exception e) {

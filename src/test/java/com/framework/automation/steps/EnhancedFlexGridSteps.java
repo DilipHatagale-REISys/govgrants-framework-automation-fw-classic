@@ -48,9 +48,9 @@ public class EnhancedFlexGridSteps {
         enhancedFlexGrid.assertEnhancedFlexGridTabelRowCountDisabled(text, tableId);
     }
 
-    @Then("^I see \"([^\"]*)\" in enhanced flex grid header \"([^\"]*)\"$")
-    public void assertFlexTableHeaderName(String headerColumnName, String tableId) {
-        enhancedFlexGrid.assertEnhancedFlexGridHeaderColumnName(tableId, headerColumnName);
+    @Then("^I (see|do not see) \"([^\"]*)\" in enhanced flex grid header \"([^\"]*)\"$")
+    public void assertFlexTableHeaderName(String usage, String headerColumnName, String tableId) {
+        enhancedFlexGrid.assertEnhancedFlexGridHeaderColumnName(usage, tableId, headerColumnName);
     }
 
     @Then("^I see select check box enabled in enhanced flex grid$")

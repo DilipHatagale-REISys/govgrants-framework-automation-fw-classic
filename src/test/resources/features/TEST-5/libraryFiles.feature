@@ -2547,3 +2547,15 @@ Business Need: Library Files Component Scenarios
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     Then I see informative text as "Upload single file up to 2 GB" inside upload file modal
+
+  @116222 @validateThatByClickOnRefreshButtonPageIsGettingRefreshed-HomePhase
+  Scenario: Verify that by click on Refresh button page is getting refreshed - Home Phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_Library"
+    When I perform quick search for "Test" under files library
+    When I click on "Refresh" button in send email modal
+    Then I cannot see the following messages in the page details :
+      | Value provided is invalid for action parameter 'mapFolderState' of type 'map' |
