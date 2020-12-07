@@ -602,4 +602,9 @@ public class PageLayoutSteps {
     public void iSeeMenuBarIsNotDisplayedAtMyFeed() {
         pageLayoutPage.assertMenuBarAtMyFeedSection();
     }
+
+    @Then("^I (softly see|softly do not see) user suggestion box displayed at send email modal$")
+    public void iSeeUserSuggestionBoxDisplayedAtSendEmailModal(String usage) {
+        pageLayoutPage.assertSuggestionBoxAtSendEmailModal(usage);
+    }
 }

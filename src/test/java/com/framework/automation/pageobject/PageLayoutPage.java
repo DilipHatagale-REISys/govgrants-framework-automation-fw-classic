@@ -1267,6 +1267,20 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * return true if suggestion box displayed at  to/cc email field in send email modal
+     *
+     * @author ashwini.mahore
+     */
+    public void assertSuggestionBoxAtSendEmailModal(String usage) {
+        if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isSuggestionBoxDisplayedAtSendEmailModal()).isTrue();
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isSuggestionBoxDisplayedAtSendEmailModal()).isFalse();
+        }
+    }
+
+
+    /**
      * get owner organisation lookup modal complete content
      *
      * @return
@@ -2505,6 +2519,24 @@ public class PageLayoutPage extends GovGrantsManager {
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
             flag = true;
+        }
+        return flag;
+    }
+
+
+    /**
+     * return true if suggestion box displayed at  to/cc email field in send email modal
+     *
+     * @author ashwini.mahore
+     */
+    public Boolean isSuggestionBoxDisplayedAtSendEmailModal() {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='listDropdownToScroll']"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+            flag = false;
         }
         return flag;
     }
