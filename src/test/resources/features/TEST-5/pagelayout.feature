@@ -3664,3 +3664,86 @@ Business Need: Page Layout Component Scenarios
     And I enter value "--None--" into field "ProgramSubType__c"
     And I click on "Save" in the page details
     Then I see "Project Goals" is not displayed inside page block detail
+
+  @117880    @verifyFaviconIconDisplayedAtBrowserTab
+  Scenario: verify favicon icon displayed at browser tab
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I softly see FaviconIcon at "Planning" browser tab
+    And I navigate to "Applications" tab
+    Then I softly see FaviconIcon at "Applications" browser tab
+    And I navigate to "Grants" tab
+    Then I softly see FaviconIcon at "Grants" browser tab
+
+  @117808    @verifyHideFieldJsonFieldByHidingtextFieldOnTheBasisOfPicklistFieldValueAsFormulaLoansInViewMode
+  Scenario: Set up hide field json value to Hide title from Overview page block using picklist field value as formula loans in view mode
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                                                             | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistValueUsingHideFiledJSON | Grantee State Program | Name                      | PBD-2600                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I enter value "Formula Grants" into field "ProgramSubType__c"
+    And I click on "Save" in the page details
+    Then I see "Project Goals" is not displayed inside page block detail
+
+  @117805    @verifyHideFieldJsonFieldByHidingtextFieldOnTheBasisOfPicklistFieldValueAsBlankAndUsingNotEqualsOperatorInViewMode
+  Scenario: Set up hide field json value to Hide title from Overview page block using picklist field value as blank and using not equals operator in view mode
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                                                                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistBlankValueUsingHideFiledJSONNotEqualsOperator | Grantee State Program | Name                      | PBD-2600                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I enter value "Formula Grants" into field "ProgramSubType__c"
+    And I click on "Save" in the page details
+    Then I see "Project Goals" is not displayed inside page block detail
+
+  @117809    @verifyHideFieldJsonFieldByHidingtextFieldOnTheBasisOfPicklistFieldValueAndUsingMultipleConditionsInViewMode
+  Scenario: Set up hide field json value to Hide title from Overview page block using picklist field value in view mode
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                                                                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistValueUsingHideFiledJSONMultipleCondition | Grantee State Program | Name                      | PBD-2600                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I enter value "Formula Grants" into field "ProgramSubType__c"
+    And I click on "Save" in the page details
+    Then I see "Project Goals" is not displayed inside page block detail
+
+  @117813    @verifyHideFieldJsonFieldByHidingtextFieldOnTheBasisOfPicklistFieldValueAndUsingNotEqualsOperatorInViewMode
+  Scenario: Set up hide field json value to Hide title from Overview page block using picklist field value and using multiple conditions in view mode
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName        | fieldNewValue                                                                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistValueUsingHideFiledJSONNotEqualsOperator | Grantee State Program | Name                      | PBD-2600                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I enter value "" into field "ProgramSubType__c"
+    And I click on "Save" in the page details
+    Then I see "Project Goals" is not displayed inside page block detail

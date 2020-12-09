@@ -7437,10 +7437,12 @@ Business Need: Expression Builder Component Scenarios
   @116532  @verifyActionColumnIsHiddenWhenAllActionsAreHiddenAtEGridParentTable @enhancedGrid
   Scenario: Verify action column is hidden if all other row level actions are hidden at enhanced grid parent table
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Flex Table List       | Hide Expression JSON |                   | ApiGeneratedId:0 |
-      | Flex Table Action     | Location             | Row               | ApiGeneratedId:1 |
-      | Flex Table Action     | Location             | Row               | ApiGeneratedId:2 |
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON       |                   | ApiGeneratedId:0 |
+      | Flex Table Action     | Location                   | Row               | ApiGeneratedId:1 |
+      | Flex Table Action     | Header Action Display Type |                   | ApiGeneratedId:2 |
+      | Flex Table Action     | Location                   | Row               | ApiGeneratedId:3 |
+      | Flex Table Action     | Header Action Display Type |                   | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                  | fieldNewValue                                                               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON       | govgrants_config:HideExpressionAtEditActionToHideActionColumnAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | Edit                       |
@@ -7461,13 +7463,60 @@ Business Need: Expression Builder Component Scenarios
   Scenario: Verify action column is hidden if all other row level actions are hidden at enhanced grid child table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Flex Table List       | Hide Expression JSON |                   | ApiGeneratedId:0 |
-      | Flex Table Action     | Location             | Row               | ApiGeneratedId:1 |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row               | TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
+      | Flex Table Action     | Header Action Display Type |                   | TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue                                                               | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory | fieldName                  | fieldNewValue                                                                         | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON       | govgrants_config:HideExpressionAtEditActionToHideActionColumnAtEnhancedGridChildTable | TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
-      | Flex Table Action     | Location                   | Top                                                                         | TmpGrantorActiveAwardsGrid | Name                      | View                       |
-      | Flex Table Action     | Header Action Display Type | Button                                                                      | TmpGrantorActiveAwardsGrid | Name                      | View                       |
+      | Flex Table Action     | Location                   | Top                                                                                   | TmpGrantorActiveAwardsGrid | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | Button                                                                                | TmpGrantorActiveAwardsGrid | Name                      | View                       |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
+    When I expand nested table containing column value "Demo_Title"
+    Then I do not see "Actions" in enhanced flex grid header "---program:-:tmpGrantorActiveAwardsGridTableId---"
+
+  @118109  @verifyActionColumnIsHiddenWhenAllThreeActionsAreHiddenUsingDateTimeAtEGridParentTable @enhancedGrid
+  Scenario: Verify action column is hidden if all three row level actions are hidden using date time field value at enhanced grid parent table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON       |                   | ApiGeneratedId:0 |
+      | Flex Table Action     | Hide Expression JSON       |                   | ApiGeneratedId:1 |
+      | Flex Table Action     | Location                   | Row               | ApiGeneratedId:2 |
+      | Flex Table Action     | Header Action Display Type |                   | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue                                                                          | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON       | govgrants_config:HideExpressionUsingFieldsAtEditActionToHideActionColumnAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | Edit                       |
+      | Flex Table Action     | Hide Expression JSON       | govgrants_config:HideExpressionAtViewActionToHideActionColumnAtEnhancedGrid            | TmpActiveGrantsGrid | Name                      | View                       |
+      | Flex Table Action     | Location                   | Top                                                                                    | TmpActiveGrantsGrid | Name                      | Preview                    |
+      | Flex Table Action     | Header Action Display Type | Button                                                                                 | TmpActiveGrantsGrid | Name                      | Preview                    |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    Then I do not see "Actions" in enhanced flex grid header "---program:-:tmpActiveGrantsGridTableId---"
+
+  @118118  @verifyActionColumnIsHiddenWhenAllActionsAreHiddenUsingDateTimeAtEGridChildTable @enhancedGrid
+  Scenario: Verify action column is hidden if all other row level actions are hidden using date time field value at enhanced grid child table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON       |                   | ApiGeneratedId:0 |
+      | Flex Table Action     | Hide Expression JSON       |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                          | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionAtViewActionToHideActionColumnAtEnhancedGridChildTable | TmpGrantorActiveAwardsGrid | Name                      | View                       |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionAtEditActionToHideActionColumnAtEnhancedGridChildTable | TmpGrantorActiveAwardsGrid | Name                      | Edit                       |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab

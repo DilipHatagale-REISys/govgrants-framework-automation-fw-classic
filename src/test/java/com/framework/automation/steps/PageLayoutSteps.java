@@ -607,4 +607,14 @@ public class PageLayoutSteps {
     public void iSeeUserSuggestionBoxDisplayedAtSendEmailModal(String usage) {
         pageLayoutPage.assertSuggestionBoxAtSendEmailModal(usage);
     }
+
+    @Then("^I (softly see|softly do not see) FaviconIcon at \"([^\"]*)\" browser tab$")
+    public void iSoftlySeeAtBrowserTab(String usage, String tabName) {
+        pageLayoutPage.assertFavIconAtBrowserTab(usage, tabName);
+    }
+
+    @Then("I see Menu Icon is not displayed at my feed section")
+    public void iSeeMenuIconIsNotDisplayedAtMyFeedSection() {
+        pageLayoutPage.assertMenuIconAtMyFeedSectionCollab();
+    }
 }
