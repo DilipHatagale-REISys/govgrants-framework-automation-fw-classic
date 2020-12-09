@@ -470,3 +470,10 @@ Business Need: collab Component Scenarios
     And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
     And I enter value "Hello @Automation" in the comment at collab
     Then I see mention auto complete list is displayed at collab comment
+
+  @115346    @verifyBurgerMenuIconIsNotDisplayedAtExternalUserCollabMyFeedSection-HomePhase
+  Scenario: validate that burger menu icon is not displayed at my feed section by login as external user - home phase
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Home" tab
+    Then I see Menu Icon is not displayed at my feed section

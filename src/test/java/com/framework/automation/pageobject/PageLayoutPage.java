@@ -1279,6 +1279,28 @@ public class PageLayoutPage extends GovGrantsManager {
         }
     }
 
+    /**
+     * return true if favIcon displayed at browser tab
+     *
+     * @param tabName
+     * @author ashwini.mahore
+     */
+    public void assertFavIconAtBrowserTab(String usage, String tabName) {
+        if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isFavIconAtBrowserTab(tabName)).isTrue();
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isFavIconAtBrowserTab(tabName)).isFalse();
+        }
+    }
+
+    /**
+     * return true if menu icon is not displayed at collab my feed section - home phase
+     *
+     * @author ashwini.mahore
+     */
+    public void assertMenuIconAtMyFeedSectionCollab() {
+        Assert.assertTrue(isMenuIconDisplayedAtMyFeedSectionCollab());
+    }
 
     /**
      * get owner organisation lookup modal complete content
@@ -2537,6 +2559,40 @@ public class PageLayoutPage extends GovGrantsManager {
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
             flag = false;
+        }
+        return flag;
+    }
+
+    /**
+     * return true if favIcon displayed at browser tab
+     *
+     * @param tabName
+     * @author ashwini.mahore
+     */
+    public Boolean isFavIconAtBrowserTab(String tabName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isEnabled(ByUsing.xpath("//title[text()='" + tabName + "']/preceding-sibling::link[contains(@href,'FaviconIcon')]"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+            flag = false;
+        }
+        return flag;
+    }
+
+    /**
+     * return true if menu icon is not displayed at collab my feed section - home phase
+     *
+     * @author ashwini.mahore
+     */
+    public Boolean isMenuIconDisplayedAtMyFeedSectionCollab() {
+        boolean flag = true;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//a[contains(@class,'menuLinks')]"))) {
+                flag = false;
+            }
+        } catch (Exception e) {
         }
         return flag;
     }
