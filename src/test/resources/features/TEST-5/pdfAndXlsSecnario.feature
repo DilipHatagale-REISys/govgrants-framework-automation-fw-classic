@@ -2456,3 +2456,14 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on parallel lines menu bar with data target value "#EnhancedDataTableFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Grants Enhanced Table"
     Then I see "$" in downloaded xls or csv file "govgrants"
+
+  @118383    @verifyDownloadAsPDFAtFDM-gApplication @flexGrid
+  Scenario: validate download as pdf at FDM table - gApplication
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I navigate to "Review FDM" content inside "Manage Application Review" subheader on left panel
+    When I click on parallel lines menu bar with data target value "#toggleFlexTableFDMList1"
+    And I select "Download as PDF" from parallel lines dropdown of "Funding Decision Memo"
+    And I download the file
+    Then I see "QA Team Announcement 1" on page "1" of "govgrants" pdf file
