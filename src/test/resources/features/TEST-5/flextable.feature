@@ -1337,6 +1337,16 @@ Business Need: Flex Table Component Scenarios
       | Start Date | Equals to | 09/16/2020 |
     Then I see value "09/16/2020" for title "Start Date" inside table "---program:-:programsTableId---"
 
+  @118453    @validateQuickSearchDisplayedRelevantDataOnlyAtFlexTable
+  Scenario: Validate quickSearch displayed relevant data only at flex table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Test Program For Automation - Expression Builder 2"
+    Then I softly see value "Test Program For Automation - Expression Builder 2" for title "Program Name" inside table "---program:-:programsTableId---"
+    Then I softly do not see value "Test Program For Automation - Expression Builder" for title "Program Name" inside table "---program:-:programsTableId---"
+
 #  @flextablebug-test
 #  Scenario: Run flex table specific steps for specific time continuosly to ensure no error is displayed
 #    When I login as "Automation" user

@@ -617,4 +617,14 @@ public class PageLayoutSteps {
     public void iSeeMenuIconIsNotDisplayedAtMyFeedSection() {
         pageLayoutPage.assertMenuIconAtMyFeedSectionCollab();
     }
+
+    @Then("I see fields are displayed without white space in modal")
+    public void iSeeFieldsAreAlignedWithoutWhiteSpaceInModal() throws IOException {
+        pageLayoutPage.assertFieldAlignmentInsideModal();
+    }
+
+    @Then("I see validate button is aligned at pannel header")
+    public void iSeeValidateButtonIsAlignedAtHeader() throws IOException {
+        pageLayoutPage.assertAlignmentOfValidationButtonAtFormTable();
+    }
 }

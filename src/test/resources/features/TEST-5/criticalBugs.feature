@@ -4294,3 +4294,34 @@ Business Need: Logged Issues Scenarios
     Examples:
       | newFieldsApi                                           | defaultFieldsApi                                                                                                                                                                                                                                          | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                          |
       | Status__c,Name,ProjectTitle__c,ExternalOrganization__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,TotalAdjustedAmount__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and NUMBER__c=100 |
+
+  @118821    @validateCreatedByStandardFieldValueIsDisplayProperlyAtPageBlockDetailInEditMode @pageLayout
+  Scenario: Validate created by standard field value is displayed inside page block detail in edit mode
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    Then I see field "Created By" as "Nauman Shahid"
+
+  @118822    @validateCreatedByStandardFieldValueIsDisplayProperlyAtPageBlockDetailInViewMode @pageLayout
+  Scenario: Validate created by standard field value is displayed inside page block detail in view mode
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    Then I see field "Created By" as "Nauman Shahid"
+
+  @117758    @validateAlignmentOfValidateButtonAtFlexTableInsidePageLayout @pageLayout
+  Scenario: Validate alignment of validate button at flex table header inside page layout
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "{Framework_recordUsed:ApplicationForValidateButtonAtBusinessForm}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationForValidateButtonAtBusinessForm}" inside table
+    When I navigate to "Attachments" sub tab
+    Then I see validate button is aligned at pannel header

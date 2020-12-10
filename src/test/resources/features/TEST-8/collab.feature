@@ -477,3 +477,15 @@ Business Need: collab Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Home" tab
     Then I see Menu Icon is not displayed at my feed section
+
+  @118099    @verifyThatAdminUserCanCommentOnPostAtCollabPhase
+  Scenario: validate that pop-up appears by perfomring delete action at my feed section by SPI user from home phase
+    When I login as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I click on "Delete" action at "test @Simon Automation" comment inside my feed
+    And I click modal button "OK"
+    And I refresh the page
+    And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
+    And I enter value "test @Simon Automation" in my feed section and share the comment
+    Then I see "test @Simon Automation" inside flex table with id "---program:-:myFeedTableId---"

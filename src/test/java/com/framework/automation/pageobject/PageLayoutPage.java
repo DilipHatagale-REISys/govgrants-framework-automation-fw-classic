@@ -1303,6 +1303,32 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * return true if field are displayed without whitespace inside modal window
+     *
+     * @author ashwini.mahore
+     */
+    public void assertFieldAlignmentInsideModal() throws IOException {
+        TestingBlazeGlobal.setVariable("highlightElements", "off");
+        WebElement fieldsAligned = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@id='fieldName__c']//ancestor::div[@class='textFieldWrapFlex']"));
+        I.amPerforming().waitFor().makeThreadSleep(1000);
+        I.amPerforming().snapShotTo().takeElementScreenShot(fieldsAligned, "captureFields");
+        Assert.assertTrue(I.amPerforming().comparisonOf().image().isImagesSame("target/Automation-Report/captureFields.png", "src/main/resources/captureModalFields.png"));
+    }
+
+    /**
+     * return true if menu icon is not displayed at collab my feed section - home phase
+     *
+     * @author ashwini.mahore
+     */
+    public void assertAlignmentOfValidationButtonAtFormTable() throws IOException {
+        TestingBlazeGlobal.setVariable("highlightElements", "off");
+        WebElement getValidationButton = I.amPerforming().getElementReference().of(ByUsing.xpath("//*[text()='Business Forms']/ancestor::div[@class='panel-heading']"));
+        I.amPerforming().waitFor().makeThreadSleep(1000);
+        I.amPerforming().snapShotTo().takeElementScreenShot(getValidationButton, "captureValidationButton");
+        Assert.assertTrue(I.amPerforming().comparisonOf().image().isImagesSame("target/Automation-Report/captureValidationButton.png", "src/main/resources/captureValidateButtonAtLayout.png"));
+    }
+
+    /**
      * get owner organisation lookup modal complete content
      *
      * @return

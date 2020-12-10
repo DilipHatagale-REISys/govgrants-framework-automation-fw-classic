@@ -194,7 +194,7 @@ public class FlexTable {
                         .format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c),
                                 apiUtilities.getComponentCoreFieldId(
                                         String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c), filterClause),
-                                String.valueOf(SObjectAPIs.GNT__DefaultValue__c	), value);
+                                String.valueOf(SObjectAPIs.GNT__DefaultValue__c), value);
                 break;
         }
         System.out.println(finalPayload);
@@ -503,6 +503,12 @@ public class FlexTable {
                         payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableAction__c), apiUtilities
                                 .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableAction__c), filterClause),
                         String.valueOf(SObjectAPIs.GNT__HideDecisionField__c), value);
+                break;
+            case "MODAL WIDTH":
+                finalPayload = String.format(
+                        payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableAction__c), apiUtilities
+                                .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableAction__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__ModalWidth__c), value);
                 break;
         }
         System.out.println(finalPayload);

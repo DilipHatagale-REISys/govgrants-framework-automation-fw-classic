@@ -2559,3 +2559,15 @@ Business Need: Library Files Component Scenarios
     When I click on "Refresh" button in send email modal
     Then I cannot see the following messages in the page details :
       | Value provided is invalid for action parameter 'mapFolderState' of type 'map' |
+
+  @118593 @validateThatErrorMessageIsNotDisplayedInsideAddFileModal-HomePhase-FileList
+  Scenario: Verify that file uploaded from FileList tab is displayed under selected folder/library at library files tab - Home phase
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    When I click on "My_Workspace_File"
+    When I click on "My_Workspace_FileList"
+    When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
+    When I click on SelectChange Folder in add file modal
+    Then I cannot see the following messages in the page details :
+      | Apex CPU time limit exceeded |
