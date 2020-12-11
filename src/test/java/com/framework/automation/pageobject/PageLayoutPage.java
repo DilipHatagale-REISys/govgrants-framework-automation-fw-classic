@@ -1329,6 +1329,19 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     /**
+     * return true if mini page layout displayed completely inside modal window
+     *
+     * @author ashwini.mahore
+     */
+    public void assertMiniPageLayoutDisplayedAtModalWindow(String imageName) throws IOException {
+        TestingBlazeGlobal.setVariable("highlightElements", "off");
+        WebElement getValidationButton = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@class='tooltipster-content']"));
+        I.amPerforming().waitFor().makeThreadSleep(1000);
+        I.amPerforming().snapShotTo().takeElementScreenShot(getValidationButton, "captureMiniPageLayout");
+        Assert.assertTrue(I.amPerforming().comparisonOf().image().isImagesSame("target/Automation-Report/captureMiniPageLayout.png", "src/main/resources/" + imageName + ""));
+    }
+
+    /**
      * get owner organisation lookup modal complete content
      *
      * @return
