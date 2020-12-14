@@ -375,7 +375,7 @@ Business Need: history Component Scenarios
     And I download the file
     Then I see "Entity Name" on page "1" of "govgrants" pdf file
 
-  @69546   @snapshotLinkShouldBeShownUnderHistoryTableByClickOnTakeASnapshotOption @checkwithDev
+  @69546   @snapshotLinkShouldBeShownUnderHistoryTableByClickOnTakeASnapshotOption @checkwithDev @wip
   Scenario: validate by click on Take a Snapshot option a snapshot PDF is getting downloaded
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -536,5 +536,5 @@ Business Need: history Component Scenarios
     When I perform quick search for "Announcement for email notification check"
     When I click on "View" icon for "Announcement for email notification check" inside table
     When I navigate to "History" sub tab
-    Then I softly see "$300,000.00" shown inside "New Value" column in history table
-    Then I softly see "$400,000.00" shown inside "Old Value" column in history table
+    Then I softly see "$200,000.50" shown inside "New Value" column in history table
+    Then I softly see "$300,000.00" shown inside "Old Value" column in history table

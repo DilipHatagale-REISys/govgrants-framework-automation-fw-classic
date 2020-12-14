@@ -2107,12 +2107,12 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Financials" sub tab
-    When I click on "Child Development Centre" icon for "2021" inside table
-    Then I see "Organization" shown as over view header
+    When I click on "GT-GG PJ-001" icon for "2021" inside table
+    Then I see "Grant View" shown as over view header
 
     Examples:
-      | defaultFieldsApi                                               | newFieldsApi                                                                                               |
-      | Year__c,BudgetStartDate__c,BudgetEndDate__c,Status__c,Notes__c | Year__c,BudgetStartDate__c,BudgetEndDate__c,Status__c,Notes__c,Application__r.ExternalOrganization__r.Name |
+      | defaultFieldsApi                                               | newFieldsApi                                                            |
+      | Year__c,BudgetStartDate__c,BudgetEndDate__c,Status__c,Notes__c | Year__c,BudgetStartDate__c,BudgetEndDate__c,Status__c,Notes__c,Grant__c |
 
   @79730    @verifyByClickOnUserValueItShouldRedirectedToRespectiveUserPageAtMEGrid-gApplication
   Scenario Outline: validate by click on user value in table , respective user page should get opens at ME Grid - gApplication

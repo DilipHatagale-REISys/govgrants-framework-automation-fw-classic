@@ -1386,7 +1386,6 @@ Business Need: Send Email Component Scenarios
     When I select value "Automation Testing Group" with iconName "fa fa-users" into field on send email modal
     When I enter value "Test Automation Email1" into field "Subject" on send email modal
     When I click on "Send" button in send email modal
-    And I pause execution
     When I close modal by clicking the top right x button
     And I refresh the page
     When I navigate to "Collab" sub tab
