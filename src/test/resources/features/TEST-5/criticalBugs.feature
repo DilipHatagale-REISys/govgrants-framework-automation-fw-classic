@@ -4325,3 +4325,70 @@ Business Need: Logged Issues Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ApplicationForValidateButtonAtBusinessForm}" inside table
     When I navigate to "Attachments" sub tab
     Then I see validate button is aligned at pannel header
+
+  @118836    @validateQuickSearchDisplayedRelevantDataIfSearchPicklistValueAtFlexTableInsideModal  @pageLayout
+  Scenario: Validate quickSearch displayed relevant data if searched picklist value at flex table inside modal
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    Then I see value "Internal" for title "Type" inside table "---program:-:contactsTableId---"
+
+  @118698    @verifyThatMiniPageLayoutShouldDisplayCompletelyUnderModalWindow
+  Scenario: validate that mini page layout is displayed completely on hover at lookup field inside modal window
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Roles" sub tab
+    When I click on "View" icon for "Nauman Shahid" inside table
+    When I hovering mouse on page block detail of label "Assigned to User" lookup field "Nauman Shahid"
+    Then I see mini page layout displayed and compared with "captureMiniPageLayoutAtModal.png"
+
+  @118847    @verifyHideCellJSONAtEnhancedGridIfUsedFieldIsNotPresentInsideTable-EGrid @enhancedGrid
+  Scenario: Verify Hide cell JSON By hiding cell if field used in expression is not displayed inside table - enhanced grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
+    Then I see "*****" shown inside enhanced grid table for specified record "Demo_Title"
+
+  @117577    @validateDecimalPlacesDisplayedAtPercentFieldInsideEGrid
+  Scenario Outline: Validate decimal places displayed at percent field inside enhanced grid
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName           | fieldOrignalValue               | filterId         |
+      | Flex Grid                 | Display Field Names | <defaultFieldsApi>              | ApiGeneratedId:0 |
+      | Flex Grid:Flex Table List | Filter Clause       | <defaultFilterClauseForFLV2539> | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName           | fieldNewValue               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General         | Display Field Names | <newFieldsApi>              | TmpActiveGrantsGrid |                           |                            |
+      | Flex Grid:Flex Table List | Filter Clause       | <newFilterClauseForFLV2539> | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    And I click toggle button to select "Monitoring Schedule For All Active Grants"
+    Then I see value "0.00%" for title "PercentTest" inside table "---program:-:flexGridEnhancedID---"
+
+    Examples:
+      | newFieldsApi                                  | defaultFieldsApi                                                                                                                                                                                                                                          | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                          |
+      | Status__c,Name,ProjectTitle__c,PercentTest__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,TotalAdjustedAmount__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and NUMBER__c=100 |

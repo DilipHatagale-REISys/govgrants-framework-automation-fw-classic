@@ -343,7 +343,7 @@ Business Need: collab Component Scenarios
     And I enter value "Hello @Automation SPI" in the post at collab
     Then I do not see mention auto complete list is displayed at collab post
 
-  @114121    @verifyThatIfPMUserTriesToMenionExternalUserThenAutoCompleteListShouldNotDisplayedAtComment
+  @114121    @verifyThatIfPMUserTriesToMenionExternalUserThenAutoCompleteListShouldNotDisplayedAtComment @wip
   Scenario: validate that if pm user tries to mention external user in comment then mention auto complete list is not displayed
     When I login as "PM" user
     When I setup my app as "As a Grantor"

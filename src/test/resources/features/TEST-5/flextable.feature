@@ -1347,6 +1347,27 @@ Business Need: Flex Table Component Scenarios
     Then I softly see value "Test Program For Automation - Expression Builder 2" for title "Program Name" inside table "---program:-:programsTableId---"
     Then I softly do not see value "Test Program For Automation - Expression Builder" for title "Program Name" inside table "---program:-:programsTableId---"
 
+  @119059    @validateQuickSearchDisplayedRelevantDataISearchedPicklistValueAtFlexTable
+  Scenario: Validate quickSearch displayed relevant data if searched picklist value at flex table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Change Requested"
+    Then I softly see value "Change Requested" for title "Status" inside table "---program:-:programsTableId---"
+    Then I softly do not see value "Created" for title "Status" inside table "---program:-:programsTableId---"
+
+  @119074    @validateQuickSearchDisplayedRelevantDataISearchedLookupValueAtFlexTable
+  Scenario: Validate quickSearch displayed relevant data if searched lookup value at flex table
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "Change Requested"
+    Then I softly see value "SYSTEM" for title "Organization" inside table "---program:-:programsTableId---"
+    Then I softly do not see value "Department of Community Health" for title "Organization" inside table "---program:-:programsTableId---"
+
+
 #  @flextablebug-test
 #  Scenario: Run flex table specific steps for specific time continuosly to ensure no error is displayed
 #    When I login as "Automation" user

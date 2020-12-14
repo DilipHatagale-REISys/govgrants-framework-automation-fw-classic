@@ -627,4 +627,9 @@ public class PageLayoutSteps {
     public void iSeeValidateButtonIsAlignedAtHeader() throws IOException {
         pageLayoutPage.assertAlignmentOfValidationButtonAtFormTable();
     }
+
+    @Then("I see mini page layout displayed and compared with {string}")
+    public void iSeeMiniPageLayoutDisplayedAtLookupModalWindowAndComparedWith(String imageName) throws IOException {
+        pageLayoutPage.assertMiniPageLayoutDisplayedAtModalWindow(imageName);
+    }
 }

@@ -465,7 +465,7 @@ public class PageLayoutPage extends GovGrantsManager {
             I.amPerforming().textInput().in(feedSection, value);
             I.amPerforming().waitFor().makeThreadSleep(2000);
         } else {
-            By commentSection = By.xpath("//div[@class='mentions-autocomplete-list' and @style='display: none;']/preceding-sibling::textarea[@class='mention-for-comment']");
+            By commentSection = By.xpath("//div[contains(@class,'createCollabComment') and contains(@class,'active')]//textarea[@class='mention-for-comment']");
             I.amPerforming().waitFor().ElementToBeVisible(commentSection, 2000);
             I.amPerforming().click().withJavaScript(commentSection);
             I.amPerforming().textInput().in(commentSection, value);
@@ -1326,6 +1326,19 @@ public class PageLayoutPage extends GovGrantsManager {
         I.amPerforming().waitFor().makeThreadSleep(1000);
         I.amPerforming().snapShotTo().takeElementScreenShot(getValidationButton, "captureValidationButton");
         Assert.assertTrue(I.amPerforming().comparisonOf().image().isImagesSame("target/Automation-Report/captureValidationButton.png", "src/main/resources/captureValidateButtonAtLayout.png"));
+    }
+
+    /**
+     * return true if mini page layout displayed completely inside modal window
+     *
+     * @author ashwini.mahore
+     */
+    public void assertMiniPageLayoutDisplayedAtModalWindow(String imageName) throws IOException {
+        TestingBlazeGlobal.setVariable("highlightElements", "off");
+        WebElement getValidationButton = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@class='tooltipster-content']"));
+        I.amPerforming().waitFor().makeThreadSleep(1000);
+        I.amPerforming().snapShotTo().takeElementScreenShot(getValidationButton, "captureMiniPageLayout");
+        Assert.assertTrue(I.amPerforming().comparisonOf().image().isImagesSame("target/Automation-Report/captureMiniPageLayout.png", "src/main/resources/" + imageName + ""));
     }
 
     /**
@@ -2500,16 +2513,16 @@ public class PageLayoutPage extends GovGrantsManager {
     public Boolean isMentionAutoCompleteListDisplayed(Boolean isPost) {
         boolean flag = true;
         TestingBlazeGlobal.setVariable("highlightElements", "off");
-        WebElement getActivePost = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[contains(@class,'post active')]//div[@class='mentions-autocomplete-list']"));
-        WebElement getActiveComment = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[(contains(@class,'firstColor active'))]//div[@class='mentions-autocomplete-list']"));
         try {
             if (isPost) {
+                WebElement getActivePost = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[contains(@class,'post active')]//div[@class='mentions-autocomplete-list']"));
                 if (getActivePost.getAttribute("style").contains("none")) {
                     flag = false;
                 } else if (getActivePost.getAttribute("style").contains("block")) {
                     flag = true;
                 }
             } else {
+                WebElement getActiveComment = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[(contains(@class,'firstColor active'))]//div[@class='mentions-autocomplete-list']"));
                 if (getActiveComment.getAttribute("style").contains("none")) {
                     flag = false;
                 } else if (getActiveComment.getAttribute("style").contains("block")) {

@@ -7527,3 +7527,27 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Demo_Title"
     Then I do not see "Actions" in enhanced flex grid header "---program:-:tmpGrantorActiveAwardsGridTableId---"
+
+  @118847    @verifyHideCellJSONAtEnhancedGridIfUsedFieldIsNotPresentInsideTable-EGrid @enhancedGrid
+  Scenario Outline: Verify Hide cell JSON By hiding cell if field used in expression is not displayed inside table - enhanced grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Hide Cell JSON      |                    | ApiGeneratedId:0 |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                              | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON      | govgrants_config:HideCellJsonForEnhancedGridReferenceField | TmpActiveGrantsGrid | Name                      | FTC-1487                   |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi>                                             | TmpActiveGrantsGrid |                           |                            |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I navigate to "Financials" sub tab
+    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
+    Then I see "12.00%" shown inside enhanced grid table for specified record "Demo_Title"
+
+    Examples:
+      | newFieldsApi                                           | defaultFieldsApi                                                                                                                                                                                                                   |
+      | ProjectTitle__c,Name,Status__c,ExternalOrganization__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
