@@ -268,10 +268,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "Test48Data"
@@ -290,10 +290,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "test"
@@ -326,10 +326,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "Test"
@@ -344,10 +344,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "USA"
@@ -362,10 +362,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "Text"
@@ -380,10 +380,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "USA"
@@ -398,10 +398,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "sne"
@@ -416,10 +416,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "Text"
@@ -434,10 +434,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "Text"
@@ -452,10 +452,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "abcd"
@@ -471,10 +471,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "Text"
@@ -489,10 +489,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "xyza"
@@ -508,10 +508,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "China"
@@ -526,10 +526,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "AS"
@@ -544,10 +544,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "abcf"
@@ -563,10 +563,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "France"
@@ -581,10 +581,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "IND"
@@ -600,10 +600,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "111"
@@ -618,10 +618,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "ABCXYZ"
@@ -637,10 +637,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "Text"
@@ -655,10 +655,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "USA"
@@ -674,10 +674,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "India"
@@ -693,10 +693,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search ".abc"
@@ -714,10 +714,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "MEXICO"
@@ -732,10 +732,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "test48"
@@ -750,10 +750,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "@text"
@@ -768,10 +768,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "yahoo"
@@ -787,10 +787,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "URL"
@@ -805,10 +805,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "Text"
@@ -823,10 +823,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "asbhca"
@@ -842,10 +842,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "facebook.com"
@@ -861,10 +861,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "yahoo.com"
@@ -880,10 +880,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "pqr.com"
@@ -898,10 +898,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "Nigeria"
@@ -918,10 +918,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "smd"
@@ -936,10 +936,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "usa"
@@ -955,10 +955,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "NV"
@@ -973,10 +973,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "NV/SN"
@@ -991,10 +991,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "Control"
@@ -1011,10 +1011,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "IND"
@@ -1029,10 +1029,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "Shambhavi"
@@ -1047,10 +1047,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "sne"
@@ -1065,10 +1065,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "framework"
@@ -1084,10 +1084,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "asbhca"
@@ -1103,10 +1103,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "XYZA"
@@ -1122,10 +1122,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "INDIA"
@@ -1140,10 +1140,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "INDIA"
@@ -1158,10 +1158,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "Text"
@@ -1176,10 +1176,10 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "htttttp"
@@ -1195,15 +1195,124 @@ Business Need: dnd Component Scenarios
     When I login as "Admin" user
     Given I have "customMetaDataDND" configuration as below:
       | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <dndCriteria>  | GNT__DND__mdt         |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
     And I update custom metadata setting DND changes:
-      | id                 | label   | dndCriteria | filterCriteria     | customMetaDataApiName |
-      | m05g00000004giNAAQ | Program |             | <DNDFilterClause1> | GNT__DND__mdt         |
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
     When I setup my app as "As a Grantor"
     When I click on global search and select "Programs"
     When I perform quick search inside global search "SNEP"
     Then I see value "SNEP" for title "Program Name" inside table "---program:-:programSearchFlexTableID---"
 
     Examples:
-      | DNDFilterClause1                                                               | dndCriteria                              |
+      | DNDFilterClause1                                                               | dndCriteria                                      |
       | {"objectField":"DND_Country__c","userField":"DNDCountries__c","operator":"=="} | ( ProgramApprover__r.name Like '%{!searchVal}%') |
+
+  @119161 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForRelationalField,TextAndURLFieldWithOperatorNotEquals
+  Scenario Outline: verify the global search result by setting dnd criteria for relational, text, url fields using '!=' operator in filter criteria
+    When I login as "Admin" user
+    Given I have "customMetaDataDND" configuration as below:
+      | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
+    And I update custom metadata setting DND changes:
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
+    When I setup my app as "As a Grantor"
+    When I click on global search and select "Programs"
+    When I perform quick search inside global search "pima"
+    Then I see value "Pima Agriculture Cotton Trust Fund" for title "Program Name" inside table "---program:-:programSearchFlexTableID---"
+
+    Examples:
+      | DNDFilterClause1                                                               | dndCriteria                                                                                                                             |
+      | {"objectField":"DND_Country__c","userField":"DNDCountries__c","operator":"!="} | ( ProgramApprover__r.name Like '%{!searchVal}%') AND ( DND_URL__c Like  '%{!searchVal}%') AND  (NOT DND_Text2__c Like '%{!searchVal}%') |
+
+  @119162 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForRelationalField,TextAndPicklistFieldWithOperatorNotEquals
+  Scenario Outline: verify the global search result by setting dnd criteria for relational, text, picklist fields using '!=' operator in filter criteria
+    When I login as "Admin" user
+    Given I have "customMetaDataDND" configuration as below:
+      | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
+    And I update custom metadata setting DND changes:
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
+    When I setup my app as "As a Grantor"
+    When I click on global search and select "Programs"
+    When I perform quick search inside global search "Nigeria"
+    Then I see value "Nigeria" for title "DND_Formula_Text" inside table "---program:-:programSearchFlexTableID---"
+
+    Examples:
+      | DNDFilterClause1                                                                     | dndCriteria                                                                                                                                |
+      | {"objectField":"DND_Country__c","userField":"DNDCountries__c","operator":"CONTAINS"} | (ProgramApprover__r.name Like '%{!searchVal}%') AND ( DND_Country__c Like  '%{!searchVal}%')  AND (NOT DND_Text2__c Like '%{!searchVal}%') |
+
+  @119163 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForRelationalField,TextAndPicklistFieldWithOperatorNotContains
+  Scenario Outline: verify the global search result by setting dnd criteria for relational, text, picklist fields using 'NotContains' operator in filter criteria
+    When I login as "Admin" user
+    Given I have "customMetaDataDND" configuration as below:
+      | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
+    And I update custom metadata setting DND changes:
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
+    When I setup my app as "As a Grantor"
+    When I click on global search and select "Programs"
+    When I perform quick search inside global search "SNEP"
+    Then I see value "SNEP" for title "Program Name" inside table "---program:-:programSearchFlexTableID---"
+
+    Examples:
+      | DNDFilterClause1                                                                        | dndCriteria                                                                                                                               |
+      | {"objectField":"DND_Country__c","userField":"DNDCountries__c","operator":"NOTCONTAINS"} | (NOT DND_Text2__c Like '%{​!searchVal}​%') AND (NOT DND_Country__c Like '%{​!searchVal}​%')  AND (NOT DND_Text2__c Like '%{!searchVal}%') |
+
+  @119164 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForMultiField
+  Scenario Outline: verify the global search result by setting dnd criteria for multi field
+    When I login as "Admin" user
+    Given I have "customMetaDataDND" configuration as below:
+      | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
+    And I update custom metadata setting DND changes:
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
+    When I setup my app as "As a Grantor"
+    When I click on global search and select "Programs"
+    When I perform quick search inside global search "Test"
+    Then I see value "Test48Data" for title "DND_Text2" inside table "---program:-:programSearchFlexTableID---"
+
+    Examples:
+      | DNDFilterClause1                                                               | dndCriteria                                                                                                                             |
+      | {"objectField":"DND_Country__c","userField":"DNDCountries__c","operator":"=="} | (NOT DND_Email__c Like '%{!searchVal}%') AND (NOT DND_Country__c Like '%{​!searchVal}​%')  AND (NOT DND_Text2__c Like '%{!searchVal}%') |
+
+  @119165 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForMultiFieldAndSearchingInvalidValue
+  Scenario Outline: verify the global search result by setting dnd criteria for multi field with invalid search value
+    When I login as "Admin" user
+    Given I have "customMetaDataDND" configuration as below:
+      | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
+    And I update custom metadata setting DND changes:
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
+    When I setup my app as "As a Grantor"
+    When I click on global search and select "Programs"
+    When I perform quick search inside global search "xzy"
+    And I expand table with header "NGO Programs"
+    Then I see "No Records Found" inside flex table with id "---program:-:programSearchFlexTableID---"
+
+    Examples:
+      | DNDFilterClause1                                                               | dndCriteria                                                                                                                             |
+      | {"objectField":"DND_Country__c","userField":"DNDCountries__c","operator":"=="} | (NOT DND_Email__c Like '%{!searchVal}%') AND (NOT DND_Country__c Like '%{​!searchVal}​%')  AND (NOT DND_Text2__c Like '%{!searchVal}%') |
+
+  @119166 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForMultiFieldAndSearchingValidValue
+  Scenario Outline: verify the global search result by setting dnd criteria for multi field with valid search value
+    When I login as "Admin" user
+    Given I have "customMetaDataDND" configuration as below:
+      | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
+    And I update custom metadata setting DND changes:
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
+    When I setup my app as "As a Grantor"
+    When I click on global search and select "Programs"
+    When I perform quick search inside global search "India"
+    Then I do not see value "India" for title "DND_Country" inside table "---program:-:programSearchFlexTableID---"
+
+    Examples:
+      | DNDFilterClause1                                                               | dndCriteria                                                                                                                                                                                   |
+      | {"objectField":"DND_Country__c","userField":"DNDCountries__c","operator":"=="} | (NOT DND_Email__c Like '%{!searchVal}%') AND (NOT DND_Country__c Like '%{​!searchVal}​%')  AND (NOT DND_Text2__c Like '%{!searchVal}%') AND (NOT DND_Formula_Text__c Like '%{!searchVal}%') |

@@ -703,7 +703,7 @@ public class FlexGridPage extends GovGrantsManager {
     private Boolean isTotalFieldFormatDisplayedInsideMeGrid(String format, String fieldName, String tableId) {
         boolean flag = false;
         try {
-            if (getTotalValueFromLastRow(fieldName, tableId).getText().contains(format)) {
+            if (getTotalValueFromLastRow(tableId,fieldName).getText().contains(format)) {
                 flag = true;
             }
         } catch (Exception e) {

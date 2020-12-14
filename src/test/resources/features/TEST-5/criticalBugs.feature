@@ -1982,6 +1982,7 @@ Business Need: Logged Issues Scenarios
     When I enter value "Test Automation" into field "AddressProgramContact__c"
     When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
     Then I see edited value inside textarea is "Test Automation" for column value "Road Construction Annoumsment" of table "---program:-:flexGridEnhancedID---"
+
     Examples:
       | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                         |
       | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c like 'Road%' |
@@ -2464,8 +2465,8 @@ Business Need: Logged Issues Scenarios
    {LongText:FileEditModalAlertMessageLong-Text}
   """
 
-  @91601    @numberFieldWithNoDecimalShouldDisplayedInDownloadPDFFileAtProgramFlexTable @flexTable
-  Scenario Outline: validate value of Number Field should displayed correctly in downloaded pdf file
+  @91601    @numberFieldWithNoDecimalShouldDisplayedProgramFlexTable @flexTable
+  Scenario Outline: validate value of Number Field should displayed correctly flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
@@ -2479,7 +2480,7 @@ Business Need: Logged Issues Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:ProgramTestSendToOwnerForNumberFieldValue}"
-    Then I see "20" value in flex table id "---program:-:programsTableId---"
+    Then I see value "20" for title "Number Test" inside table "---program:-:programsTableId---"
 
     Examples:
       | newFieldsApi                                 | defaultFieldsApi                                                                                                 |

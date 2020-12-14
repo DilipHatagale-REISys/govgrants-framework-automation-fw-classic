@@ -1587,7 +1587,7 @@ public class PageLayoutPage extends GovGrantsManager {
     private Boolean isExpectedNumberOfElementPresent(String titleName, int number) {
         boolean flag = false;
         List<Elements> firstRowElements = I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//h3//a[contains(text(),'" + titleName
-                + "')]/ancestor::div[2]/following-sibling::div[contains(@id,'toggleBlock')]/div[1]/div"));
+                + "')]/ancestor::div[@class='panel-heading']/following-sibling::div[contains(@id,'toggleBlock')]/div[1]/div"));
         if (firstRowElements.size() == number) {
             flag = true;
         } else {
@@ -2365,7 +2365,7 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     private boolean isPageInstructionTextDisplayed(String text) {
         boolean flag = false;
-        if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@class='article']//div[" + I.amPerforming().sanityOfXpathTo().equals(".", text) + "]"))) {
+        if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[contains(@class,'article')]//div[" + I.amPerforming().sanityOfXpathTo().equals(".", text) + "]"))) {
             flag = true;
         }
         return flag;

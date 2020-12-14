@@ -3003,10 +3003,10 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValueAsProjectGrants | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValueAsGrant | Grantee State Program | Name                      | PBD-646                    |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                                          | Grantee State Program | Name                      | PBD-9163                   |
     When I click on "Edit" in the page details
-    And I enter value "Project Grants" into field "ProgramType__c"
+    And I enter value "Grant" into field "ProgramType__c"
     Then I softly see "Project Goals" is not displayed inside page block detail
     When I click on "Save" in the page details
     Then I softly do not see missing field badge on "Overview" tab
@@ -3214,8 +3214,8 @@ Business Need: Page Layout Component Scenarios
     Then I softly see "Project Goals" is not displayed inside page block detail
     Then I softly do not see missing field badge on "Overview" tab
 
-  @114215    @verifyTitleAndBadgeIsNotDisplayedIfTextIsHidddenUsingURLFieldInViewMode
-  Scenario: verify badge is hidden from overview tab if text field hidden using hide field json on URL field in value in view mode
+  @114215    @verifyTitleAndBadgeIsNotDisplayedIfTextIsHidddenByUsingURLFieldInViewMode
+  Scenario: verify badge is hidden from overview tab if text field hidden using hide field json at URL field in value in view mode
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3235,7 +3235,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" in the page details
     And I enter value "www.google.com" into field "WebsiteAddress__c"
     When I click on "Save" in the page details
-    Then I softly see "Project Goals" is not displayed inside page block detail
+    Then I softly see field "Project Goals" inside page block
     Then I softly do not see missing field badge on "Overview" tab
 
   @114199    @verifyTitleAndBadgeIsNotDisplayedIfTextIsHidddenUsingTEXTFieldInViewMode
@@ -3690,6 +3690,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I enter value "Grant" into field "ProgramType__c"
     And I enter value "Formula Grants" into field "ProgramSubType__c"
     And I click on "Save" in the page details
     Then I see "Project Goals" is not displayed inside page block detail
@@ -3708,6 +3709,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I enter value "Grant" into field "ProgramType__c"
     And I enter value "Formula Grants" into field "ProgramSubType__c"
     And I click on "Save" in the page details
     Then I see "Project Goals" is not displayed inside page block detail
@@ -3726,6 +3728,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I enter value "Grant" into field "ProgramType__c"
     And I enter value "Formula Grants" into field "ProgramSubType__c"
     And I click on "Save" in the page details
     Then I see "Project Goals" is not displayed inside page block detail

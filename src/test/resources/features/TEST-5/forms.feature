@@ -308,10 +308,10 @@ Business Need: Forms Component Scenarios
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
+    When I perform quick search for "Test Application For Automation"
+    When I click on "View" icon for "Test Application For Automation" inside table
     When I navigate to "Attachments" sub tab
-    When I click on "View" icon for "General Application Form" inside flex table with id "advfFormEnhancedTable"
+    When I click on "View" icon for "General Application Form" inside flex table with id "FormEnhancedTable"
     Then I see for "Acknowledgment2" field value is "$@#" inside dynamic form
 
   @112036 @verifySpecialCharacterArAcceptedAtFormLayoutInEdit
