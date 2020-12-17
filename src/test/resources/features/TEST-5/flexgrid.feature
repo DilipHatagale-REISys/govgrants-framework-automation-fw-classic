@@ -2275,8 +2275,12 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "Demo_Title"
     When I click on "View" icon for "Demo_Title" inside table
     When I navigate to "Budget" sub tab
-    When I perform quick search for "BP-02" in "---program:-:applicationBudgetCategoryFlexGridTableId---" panel
-    Then I see value "06/01/2020 5:00 PM" for title "DateTime" inside table "---program:-:applicationBudgetCategoryFlexGridTableId---"
+    When I perform quick search for "BP-02" in "---program:-:applicationBudgetCategoryInlineEditTableId---" panel
+    And I edit the following rows inline in flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" by clicking "Edit" :
+      | Support Year | DateTime |
+      | BP-02        | 0        |
+    And I save the value from row "1" for column name "DateTime" as "DateTimeValue" from flex table "---program:-:applicationBudgetCategoryInlineEditTableId---"
+    Then I see value "{SavedValue:DateTimeValue}" for title "DateTime" inside table "---program:-:applicationBudgetCategoryFlexGridTableId---"
 
   @84700    @verifyDateAndTimeFieldFormatForLocalAsEDTUnderMEGridParentFlexTable
   Scenario: validate the date and time field format under ME Grid parent flex table with respective to EDT Local

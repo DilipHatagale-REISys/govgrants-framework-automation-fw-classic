@@ -703,7 +703,7 @@ public class FlexGridPage extends GovGrantsManager {
     private Boolean isTotalFieldFormatDisplayedInsideMeGrid(String format, String fieldName, String tableId) {
         boolean flag = false;
         try {
-            if (getTotalValueFromLastRow(tableId,fieldName).getText().contains(format)) {
+            if (getTotalValueFromLastRow(tableId, fieldName).getText().contains(format)) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -717,15 +717,16 @@ public class FlexGridPage extends GovGrantsManager {
      */
     private Boolean isTextDisplayedCentrallyAlignedAtBottomOfTable(String tableId, Boolean isParent) {
         boolean flag = false;
-        WebElement getTotalRecordCountFromFooter = I.amPerforming().getElementReference().of(By.xpath("//div[@id='" + tableId + "']//div[contains(@class,'panel-footer')]"));
-        WebElement getTotalRecordCountFromChildFooter = I.amPerforming().getElementReference().of(By.xpath("//div[@id='" + tableId + "']//div[@class='contentCenterH']"));
-
         if (isParent) {
+            WebElement getTotalRecordCountFromFooter = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@id='" + tableId + "']//div[contains(@class,'panel-footer')]"));
             if (getTotalRecordCountFromFooter.getCssValue("text-align").equalsIgnoreCase("right")) {
                 return true;
             }
-        } else if (getTotalRecordCountFromChildFooter.getCssValue("text-align").equalsIgnoreCase("center")) {
-            return true;
+        } else {
+            WebElement getTotalRecordCountFromChildFooter = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@id='" + tableId + "']//div[@class='contentCenterH']"));
+            if (getTotalRecordCountFromChildFooter.getCssValue("text-align").equalsIgnoreCase("center")) {
+                return true;
+            }
         }
         return flag;
     }

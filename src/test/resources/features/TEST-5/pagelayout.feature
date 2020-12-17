@@ -735,7 +735,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    Then I see "Title" shown at number "7" inside "Program Information" page block detail
+    Then I see "Title" shown at number "8" inside "Program Information" page block detail
 
   @36101    @fieldLabelOverrideFieldAtPageBlockDetail-gPlanning
   Scenario: Changing label of program name page block detail fom config and validating it at program detail page
@@ -1952,9 +1952,9 @@ Business Need: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed/Reject Announcements"
-    When I perform quick search for "Test Announcement For Automation"
-    When I click on "Edit" icon for "Test Announcement For Automation" inside table
+    And I click toggle button to select "Draft Announcements"
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify}"
+    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementForEmailNotify}" inside table
     When I navigate to "Attachments" sub tab
     Then I see "Digital signature" page block displayed
 
@@ -2035,7 +2035,7 @@ Business Need: Page Layout Component Scenarios
     And I update custom name template setting changes:
       | id                 | Name     | AutoNumberFormat | StartNumber | booleanValue                                         | customSettingApiName       |
       | a0e15000008FjIqAAK | Grant__c | {000}            | 0           | GNT__Active__c:true,GNT__SkipAutoNumberReset__c:true | GNT__NameTemplateConfig__c |
-    Given I delete the record "Test Automation Grants Record" from the object "Grant__c"
+    Given I delete the record "Test Automation Grants Record" from the object "Grant__c" with field "ProjectTitle__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
@@ -2627,7 +2627,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    Then I see field message with text as "Required for Save" and "Required for Submit"
+    Then I see field message with text as "Required to Save" and "Required to Submit"
 
   @112563    @requiredForSaveBehaviourAtPageBlockDetailForPMUser-gPlanning
   Scenario: Changing value for required for save behaviour field from config and checking error message at program save for PM user
@@ -2673,7 +2673,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I click on top right button "New" in flex table with id "Programs"
-    Then I see field message with text as "Required for Save" and "Required for Submit"
+    Then I see field message with text as "Required to Save" and "Required to Submit"
 
   @113061    @verifyBadgesShownAtOverviewTabInEditModeIfRequiredForSubmitFieldIsBlankForAdminUser-gPlanning
   Scenario: verify that badges shown at Overview tab in page edit mode if required field from overview tab is blank
@@ -3534,8 +3534,6 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                   | Grantee State Program | Name                      | PBD-9163                   |
     When I click on "Edit" in the page details
     And I enter value "12/11/2020" into field "Publisheddate__c"
-    And I pause execution for "3" seconds
-    Then I softly see "Project Goals" is not displayed inside page block detail
     And I enter value "123" into field "Number__c"
     Then I softly see "Project Goals" is not displayed inside page block detail
     When I click on "Save" in the page details
@@ -3629,9 +3627,9 @@ Business Need: Page Layout Component Scenarios
       | Help Text for @#$ Automation | Help Text    |
 
   @115664 @verifyThatVeryDarkBlueColorIsDisplayedAtPhasesTabForAdminUser-StateAsAGrantor
-  Scenario: verify that very dark blue coWhen I login as "Automation" user
-    When I setup my app as "As a Grantor"lor is displayed as background for phases tab for admin user-StateAsAGrantor
-
+  Scenario: verify that very dark blue color is displayed as background for phases tab for admin user-StateAsAGrantor
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
@@ -3770,3 +3768,13 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Roles" sub tab
     When I click on top right button "New" in flex table with id "---program:-:programTableDivId---"
     Then I see fields are displayed without white space in modal
+
+  @119856  @validateFieldMessageDisplayedAtHeaderForRequiredForSubmitAndSaveFieldsForAdminUserAtEditPage-gPlanning
+  Scenario: validate field message displayed for required for save and submit Field at page header for admin user at edit mode
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Active Grants"
+    When I perform quick search for "Demo_Title"
+    When I click on "Edit" icon for "Demo_Title" inside table
+    Then I see field message with text as "Required to Save" and "Required to Submit"

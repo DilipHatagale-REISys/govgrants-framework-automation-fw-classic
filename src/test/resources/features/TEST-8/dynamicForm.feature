@@ -1877,7 +1877,7 @@ Business Need: dynamic forms Component Scenarios
     And I navigate to "Announcements" tab
     And I click toggle button to select "Announcements - All"
     When I perform quick search for "AnnouncementTest"
-    When I click on "Edit" icon for "AnnouncementTest" inside table
+    When I click on "View" icon for "AnnouncementTest" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     Then I softly see "Number" field inside "Section 1" is disabled

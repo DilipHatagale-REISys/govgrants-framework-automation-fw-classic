@@ -529,12 +529,26 @@ Business Need: history Component Scenarios
 
   @114729  @verifyDecimalCurrencyFieldFormatForNewValueUnderHistoryTable
   Scenario: validate the decimal currency field format under field history table inside new value column
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantee State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantee State Program | Name                      | PBD-9232                   |
+    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Announcements" tab
-    And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Announcement for email notification check"
-    When I click on "View" icon for "Announcement for email notification check" inside table
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    When I navigate to "Overview" sub tab
+    And I enter value "$300,000.00" into field "DecimalCurrency__c"
+    And I click on "Save" in the page details
+    And I click on "Edit" in the page details
+    When I navigate to "Overview" sub tab
+    And I enter value "$200,000.50" into field "DecimalCurrency__c"
+    And I click on "Save" in the page details
     When I navigate to "History" sub tab
     Then I softly see "$200,000.50" shown inside "New Value" column in history table
     Then I softly see "$300,000.00" shown inside "Old Value" column in history table

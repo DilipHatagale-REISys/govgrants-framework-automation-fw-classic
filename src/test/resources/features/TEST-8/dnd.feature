@@ -1314,5 +1314,78 @@ Business Need: dnd Component Scenarios
     Then I do not see value "India" for title "DND_Country" inside table "---program:-:programSearchFlexTableID---"
 
     Examples:
-      | DNDFilterClause1                                                               | dndCriteria                                                                                                                                                                                   |
+      | DNDFilterClause1                                                               | dndCriteria                                                                                                                                                                                 |
       | {"objectField":"DND_Country__c","userField":"DNDCountries__c","operator":"=="} | (NOT DND_Email__c Like '%{!searchVal}%') AND (NOT DND_Country__c Like '%{​!searchVal}​%')  AND (NOT DND_Text2__c Like '%{!searchVal}%') AND (NOT DND_Formula_Text__c Like '%{!searchVal}%') |
+
+  @117325 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForFormulaFieldWithMultipleDNDCriteriaWithOperatorEqualsEqualsAndSearchInvalidValue
+  Scenario Outline: verify the global search result by setting dnd criteria for formula fields with multiple criteria using 'Equals Equals' operator in filter criteria and searching invalid value
+    When I login as "Admin" user
+    Given I have "customMetaDataDND" configuration as below:
+      | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
+    And I update custom metadata setting DND changes:
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
+    When I setup my app as "As a Grantor"
+    When I click on global search and select "Programs"
+    When I perform quick search inside global search "asbhca"
+    And I expand table with header "NGO Programs"
+    Then I see "No Records Found" inside flex table with id "---program:-:programSearchFlexTableID---"
+
+    Examples:
+      | DNDFilterClause1                                                               | dndCriteria                                     |
+      | {"objectField":"DND_Country__c","userField":"DNDCountries__c","operator":"=="} | (NOT DND_Formula_Text__c Like '%{!searchVal}%') |
+
+  @119360 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForEmail,PicklistAndTextFieldWithMultipleDNDCriteriaWithOperatorCONTAINSsAndSearchvalidValue
+  Scenario Outline: verify the global search result by setting dnd criteria for email,picklist and text fields with multiple criteria using 'CONTAINS' operator in filter criteria and searching valid value
+    When I login as "Admin" user
+    Given I have "customMetaDataDND" configuration as below:
+      | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
+    And I update custom metadata setting DND changes:
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
+    When I setup my app as "As a Grantor"
+    When I click on global search and select "Programs"
+    When I perform quick search inside global search "India"
+    Then I do not see value "India" for title "DND_Country" inside table "---program:-:programSearchFlexTableID---"
+
+    Examples:
+      | DNDFilterClause1                                                               | dndCriteria                                                                                                                                                                                   |
+      | {"objectField":"DND_Country__c","userField":"DNDCountries__c","operator":"=="} | (NOT DND_Email__c Like '%{!searchVal}%') AND (NOT DND_Country__c Like '%{​!searchVal}​%')  AND (NOT DND_Text2__c Like '%{!searchVal}%') AND   (NOT DND_Formula_Text__c Like '%{!searchVal}%') |
+
+  @119361 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForEmail,PicklistAndTextFieldWithMultipleDNDCriteriaWithOperatorNOTCONTAINSsAndSearchvalidValue
+  Scenario Outline: verify the global search result by setting dnd criteria for email,picklist and text fields with multiple criteria using 'NOTCONTAINS' operator in filter criteria and searching valid value
+    When I login as "Admin" user
+    Given I have "customMetaDataDND" configuration as below:
+      | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
+    And I update custom metadata setting DND changes:
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
+    When I setup my app as "As a Grantor"
+    When I click on global search and select "Programs"
+    When I perform quick search inside global search "India"
+    Then I do not see value "India" for title "DND_Country" inside table "---program:-:programSearchFlexTableID---"
+
+    Examples:
+      | DNDFilterClause1                                                                        | dndCriteria                                                                                                                                                                                   |
+      | {"objectField":"DND_Country__c","userField":"DNDCountries__c","operator":"NOTCONTAINS"} | (NOT DND_Email__c Like '%{!searchVal}%') AND (NOT DND_Country__c Like '%{​!searchVal}​%')  AND (NOT DND_Text2__c Like '%{!searchVal}%') AND   (NOT DND_Formula_Text__c Like '%{!searchVal}%') |
+
+  @119362 @verifyGlobalSearchResultDisplayedByChangingDNDCriteriaFromCustomMetadatConfigForEmail,PicklistAndTextFieldWithMultipleDNDCriteriaWithOperatorNotEqualssAndSearchvalidValueAsUS
+  Scenario Outline: verify the global search result by setting dnd criteria for email,picklist and text fields with multiple criteria using '!=' operator in filter criteria and searching valid value as US
+    When I login as "Admin" user
+    Given I have "customMetaDataDND" configuration as below:
+      | id                 | label   | dndCriteria | filterCriteria | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program |             |                | GNT__DND__mdt         |
+    And I update custom metadata setting DND changes:
+      | id                 | label   | dndCriteria   | filterCriteria     | customMetaDataApiName |
+      | m05g00000004giNAAQ | Program | <dndCriteria> | <DNDFilterClause1> | GNT__DND__mdt         |
+    When I setup my app as "As a Grantor"
+    When I click on global search and select "Programs"
+    When I perform quick search inside global search "us"
+    Then I see value "US" for title "DND_Country" inside table "---program:-:programSearchFlexTableID---"
+
+    Examples:
+      | DNDFilterClause1                                                               | dndCriteria                                                                                                                                                                                   |
+      | {"objectField":"DND_Country__c","userField":"DNDCountries__c","operator":"!="} | (NOT DND_Email__c Like '%{!searchVal}%') AND (NOT DND_Country__c Like '%{​!searchVal}​%')  AND (NOT DND_Text2__c Like '%{!searchVal}%') AND   (NOT DND_Formula_Text__c Like '%{!searchVal}%') |

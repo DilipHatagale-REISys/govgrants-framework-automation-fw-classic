@@ -1784,10 +1784,10 @@ Business Need: Enhanced Flex Grid Component Scenarios
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
     When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
-    When I click on "Edit" icon for "GT-GTRC-001" inside table
+    When I click on "Edit" icon for "GT-12132-001" inside table
     When I enter value "Test Automation" into field "AddressProgramContact__c"
     When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
-    When I perform quick search for "GT-GTRC-001" in "---program:-:flexGridEnhancedID---" panel
+    When I perform quick search for "GT-12132-001" in "---program:-:flexGridEnhancedID---" panel
     Then I see value "Test Automation" for multiple cells at column "AddressProgramContact__c"
     Examples:
       | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                         |
@@ -2294,7 +2294,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
-      | Flex Grid             | Display Field       |                    | ApiGeneratedId:1 |
+      | Flex Table List       | Display Field       |                    | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
